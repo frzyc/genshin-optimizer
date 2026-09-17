@@ -1,5 +1,6 @@
-import * as path from 'path'
 /// <reference types='vitest' />
+
+import * as path from 'node:path'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'

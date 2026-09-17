@@ -1,0 +1,24 @@
+{
+  "name": "Frostatem",
+  "description": {
+    "0": "Eine von Raureif umhüllte Eislanze, die der Überlieferung nach in ferner Vergangenheit einst dem Zaren Belyi von Snezhnaya gehört haben soll."
+  },
+  "passiveName": "Alles auf eine Karte",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht innerhalb von 15 s nach dem Auslösen einer mit Kryo oder Hydro in Zusammenhang stehenden Reaktion den ANG des Trägers um <cryo>20 %</cryo> und stellt den eigenen Truppenmitgliedern <cryo>6</cryo> Punkte Elementarenergie wieder her. 16 s Abklingzeit."
+    },
+    "1": {
+      "0": "Erhöht innerhalb von 15 s nach dem Auslösen einer mit Kryo oder Hydro in Zusammenhang stehenden Reaktion den ANG des Trägers um <cryo>25 %</cryo> und stellt den eigenen Truppenmitgliedern <cryo>7,5</cryo> Punkte Elementarenergie wieder her. 16 s Abklingzeit."
+    },
+    "2": {
+      "0": "Erhöht innerhalb von 15 s nach dem Auslösen einer mit Kryo oder Hydro in Zusammenhang stehenden Reaktion den ANG des Trägers um <cryo>30 %</cryo> und stellt den eigenen Truppenmitgliedern <cryo>9</cryo> Punkte Elementarenergie wieder her. 16 s Abklingzeit."
+    },
+    "3": {
+      "0": "Erhöht innerhalb von 15 s nach dem Auslösen einer mit Kryo oder Hydro in Zusammenhang stehenden Reaktion den ANG des Trägers um <cryo>35 %</cryo> und stellt den eigenen Truppenmitgliedern <cryo>10,5</cryo> Punkte Elementarenergie wieder her. 16 s Abklingzeit."
+    },
+    "4": {
+      "0": "Erhöht innerhalb von 15 s nach dem Auslösen einer mit Kryo oder Hydro in Zusammenhang stehenden Reaktion den ANG des Trägers um <cryo>40 %</cryo> und stellt den eigenen Truppenmitgliedern <cryo>12</cryo> Punkte Elementarenergie wieder her. 16 s Abklingzeit."
+    }
+  }
+}

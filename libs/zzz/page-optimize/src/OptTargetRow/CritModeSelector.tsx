@@ -1,7 +1,6 @@
 import { DropdownButton } from '@genshin-optimizer/common/ui'
 import type { critModeKey } from '@genshin-optimizer/zzz/db'
-import { critModeKeys } from '@genshin-optimizer/zzz/db'
-import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
+import { critModeKeys, getTeamFrame0 } from '@genshin-optimizer/zzz/db'
 import {
   useCharacterContext,
   useDatabaseContext,

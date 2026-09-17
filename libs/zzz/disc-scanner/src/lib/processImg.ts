@@ -1,3 +1,4 @@
+import type { Color } from '@genshin-optimizer/common/img-util'
 import {
   crop,
   darkerColor,
@@ -11,7 +12,6 @@ import {
   thresholdFilter,
   urlToImageData,
 } from '@genshin-optimizer/common/img-util'
-import type { Color } from '@genshin-optimizer/common/img-util'
 import { clamp, levenshteinDistance } from '@genshin-optimizer/common/util'
 import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import { discSlotToMainStatKeys } from '@genshin-optimizer/zzz/consts'

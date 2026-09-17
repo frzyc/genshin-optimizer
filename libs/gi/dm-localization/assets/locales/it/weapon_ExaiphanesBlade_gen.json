@@ -1,0 +1,24 @@
+{
+  "name": "Lama exaiphanes",
+  "description": {
+    "0": "Una spada lunga che un tempo brillava della luce degli astri. Nelle mani di chi viaggia, diventa una luce nuova priva di ogni legame con le epoche passate."
+  },
+  "passiveName": "Cammino {F#della viaggiatrice}{M#del viaggiatore}",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando {F#la viaggiatrice}{M#il viaggiatore} equipaggia quest'arma, il suo ATT aumenta di un <cryo>16%</cryo> per <cryo>8 </cryo>s dopo che ha colpito un avversario; allo stesso tempo, la sua energia elementale si ripristina di <cryo>3</cryo>. Quest'effetto può attivarsi una volta ogni <cryo>5 </cryo>s, anche quando il personaggio non si trova in campo."
+    },
+    "1": {
+      "0": "Quando {F#la viaggiatrice}{M#il viaggiatore} equipaggia quest'arma, i DAN da CRIT aumentano di un 6% per ogni elemento con cui ha risuonato. In più, il suo ATT aumenta di un <cryo>20%</cryo> per 8 s dopo che ha colpito un avversario; allo stesso tempo, la sua energia elementale si ripristina di <cryo>3</cryo>. Quest'effetto può attivarsi una volta ogni 5 s, anche quando il personaggio non si trova in campo."
+    },
+    "2": {
+      "0": "Quando {F#la viaggiatrice}{M#il viaggiatore} equipaggia quest'arma, i DAN da CRIT aumentano di un 6% per ogni elemento con cui ha risuonato. In più, il suo ATT aumenta di un <cryo>24%</cryo> per 8 s dopo che ha colpito un avversario; allo stesso tempo, la sua energia elementale si ripristina di <cryo>5</cryo>. Quest'effetto può attivarsi una volta ogni 5 s, anche quando il personaggio non si trova in campo."
+    },
+    "3": {
+      "0": "Quando {F#la viaggiatrice}{M#il viaggiatore} equipaggia quest'arma, i DAN da CRIT aumentano di un 6% per ogni elemento con cui ha risuonato. In più, il suo ATT aumenta di un <cryo>32%</cryo> per 8 s dopo che ha colpito un avversario. Allo stesso tempo, la sua energia elementale si ripristina di <cryo>5</cryo>. Quest'effetto può attivarsi una volta ogni 5 s, anche quando il personaggio non si trova in campo."
+    },
+    "4": {
+      "0": "Quando {F#la viaggiatrice}{M#il viaggiatore} equipaggia quest'arma, i DAN da CRIT aumentano di un 6% per ogni elemento con cui ha risuonato. In più, il suo ATT aumenta di un <cryo>40%</cryo> per 8 s dopo che ha colpito un avversario. Allo stesso tempo, la sua energia elementale si ripristina di <cryo>5</cryo>. Quest'effetto può attivarsi una volta ogni 5 s, anche quando il personaggio non si trova in campo."
+    }
+  }
+}

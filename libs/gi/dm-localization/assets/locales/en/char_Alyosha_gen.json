@@ -1,0 +1,255 @@
+{
+  "name": "Alyosha",
+  "title": "Swift-Striding Hound",
+  "description": "A \"professional hunter\" and master of the Snezhnayan snowfields. A fierce, distinct \"idealism\" burns beneath his calm demeanor.",
+  "constellationName": "Canis Borzoides",
+  "auto": {
+    "name": "Skirmishing Spear",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Performs up to 4 consecutive spear strikes and applies the <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Hunter's Mark</strong></tooltip> to the opponent hit by the final strike."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents in his path."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "Charged Attack DMG",
+      "5": "Charged Attack Stamina Cost",
+      "6": "Plunge DMG",
+      "7": "Low/High Plunge DMG",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%+{{3, percent(fixed: 1)}}%",
+      "3": "{{4, percent(fixed: 1)}}%",
+      "4": "{{5, percent(fixed: 1)}}%",
+      "5": "{{6, fixed(fixed: 1)}}",
+      "6": "{{7, percent(fixed: 1)}}%",
+      "7": "{{8, percent(fixed: 1)}}%/{{9, percent(fixed: 1)}}%",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Thunderbolt Strike",
+    "description": {
+      "0": "Follows his hunter's instincts. Tap or hold to produce different effects as well as apply the <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Hunter's Mark</strong></tooltip> effect to the hit opponents.",
+      "1": "<br/>",
+      "2": "<strong>Tapping</strong>",
+      "3": "Fires at opponents in front of him, dealing <electro>AoE Electro DMG</electro>.",
+      "4": "<br/>",
+      "5": "<strong>Holding</strong>",
+      "6": "Enters aiming mode, then targets opponents within a certain area in front of him. Alyosha's Interruption RES is enhanced when in this mode.",
+      "7": "At the end of the button hold, he deals <electro>Electro DMG</electro> to the targeted opponents.",
+      "8": "<br/>",
+      "9": "<i>The reckless hunter once reached for the spear's edge, and it was only after they survived a lesson paid in blood that they came to understand the harsh truths of survival on the frozen plains.</i>"
+    },
+    "skillParams": {
+      "0": "Press DMG",
+      "1": "Hold DMG",
+      "2": "CD",
+      "3": "Hunter's Mark Duration",
+      "4": "Hunter's Precision ATK Bonus",
+      "5": "Hunter's Precision Duration",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, fixed(fixed: 1)}}s",
+      "3": "{{3, fixed(fixed: 1)}}s",
+      "4": "{{4, percent(fixed: 1)}}%",
+      "5": "{{5, fixed(fixed: 1)}}s",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Hunter's Advance",
+    "description": {
+      "0": "Summons his trusted companion <strong>Tugarin</strong> to fight alongside him on the field. This also turns an area in front of him into a <strong>Fulgurite Hunting Field</strong> for a short time.",
+      "1": "<br/>",
+      "2": "<strong>Fulgurite Hunting Field</strong>",
+      "3": [
+        " Continuously taunts nearby opponents to incite them to attack.",
+        " Every 2s, deals an instance of <electro>AoE Electro DMG</electro> to any opponent that enters the field."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Tugarin</strong>",
+      "6": [
+        " If there are any opponents nearby, Tugarin will quickly move close to an opponent and maul them every 2s, dealing <strong>Electro DMG</strong>.",
+        " If an opponent affected by the <strong>Hunter's Mark</strong> effect is hit, the <strong>Hunter's Mark</strong> will also be activated.",
+        " Where there are multiple opponents, Tugarin will attack those affected by the <strong>Hunter's Mark</strong> effect first."
+      ],
+      "7": "<br/>",
+      "8": "<i>Wait. Keep waiting until the impatience fades. That's when the red-bellied plover shall sweep across the birch grove and present itself before one's arrow.</i>"
+    },
+    "skillParams": {
+      "0": "Fulgurite Hunting Field DMG",
+      "1": "Tugarin DMG",
+      "2": "Duration",
+      "3": "CD",
+      "4": "Energy Cost",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, fixed(fixed: 1)}}s",
+      "3": "{{3, fixed(fixed: 1)}}s",
+      "4": "{{4}}",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Awakened by the Baying Hounds",
+    "description": {
+      "0": "When <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> attacks, it will also restore HP to nearby active characters at 120% of Alyosha's ATK."
+    }
+  },
+  "passive2": {
+    "name": "Suffer the Winter Wheat Will",
+    "description": {
+      "0": "Increases the DMG Alyosha deals with his Elemental Skill and Elemental Burst by 0.35% for every 1% of his Energy Recharge. Up to a 70% increase can be obtained in this way."
+    }
+  },
+  "passive3": {
+    "name": "Into the Fray",
+    "description": {
+      "0": "Alyosha will enter the <strong>Radiance: Stellar-Conduct</strong> state when inside a <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>.",
+      "1": "<strong>Radiance: Stellar-Conduct</strong>: The <strong>Hunter's Precision</strong> effect obtained when the <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Hunter's Mark</strong></tooltip> is activated will also increase Stellar-Conduct reaction DMG dealt by the character when on the field by 20%."
+    }
+  },
+  "passive": {
+    "name": "Treetop Watch",
+    "description": {
+      "0": "Displays the location of nearby <strong>resources unique to Snezhnaya</strong> on the mini-map."
+    }
+  },
+  "constellation1": {
+    "name": "Frostvale Thunderclap",
+    "description": {
+      "0": "Alyosha regenerates 15 Elemental Energy when nearby party members trigger an <electro>Electro-related reaction</electro> on an opponent. This effect can trigger once every 18s."
+    }
+  },
+  "constellation2": {
+    "name": "Howl From Afar",
+    "description": {
+      "0": "The duration of the Elemental Burst <strong>Hunter's Advance</strong> is extended by 6s.",
+      "1": "Additionally, each time <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> attacks the opponent, he will also apply the <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Hunter's Mark</strong></tooltip> to a target. This effect does not activate existing <strong>Hunter's Marks</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Friendly Call",
+    "description": {
+      "0": "Increases the Level of the Elemental Skill <strong>Thunderbolt Strike</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Harvest the Spoils",
+    "description": {
+      "0": "When <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> attacks, he will also restore 60% of Alyosha's ATK as HP to the nearby party member with the lowest HP by percentage."
+    }
+  },
+  "constellation5": {
+    "name": "When the Nightbird Falls Silent",
+    "description": {
+      "0": "Increases the Level of the Elemental Burst <strong>Hunter's Advance</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Standard Reclaimed",
+    "description": {
+      "0": "The <strong>Hunter's Precision</strong> effect obtained from activating a <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Hunter's Mark</strong></tooltip> can now stack, max 2 stacks. When the stack count reaches 2, characters affected by <strong>Hunter's Precision</strong> will also have their Elemental Mastery increased by 100 if they are on the field."
+    }
+  }
+}

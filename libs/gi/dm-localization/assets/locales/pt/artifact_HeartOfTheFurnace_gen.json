@@ -1,0 +1,29 @@
+{
+  "setName": "Coração Forjado",
+  "setEffects": {
+    "2": "ATQ +18%",
+    "4": "Nos 12s após o portador desencadear Brilho Estelar ou causar Dano de Brilho Estelar, aumenta o ATQ em 12% e o Dano de Brilho Estelar de todos os membros próximos da equipe em 50%. Esse efeito pode ser desencadeado mesmo quando o portador não for o personagem ativo. O efeito de bônus de Dano de conjuntos de Artefatos iguais não acumula."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Suposição do Forjador",
+      "desc": "Ele sabia que a prosperidade mortal não era calorosa como uma fornalha, mas que podia ser medida e mudada."
+    },
+    "plume": {
+      "name": "Observação do Forjador",
+      "desc": "Ele sabia que o fluxo do mundo mortal não tinha as mesmas cores de uma fornalha, e podia observar claramente o resultado."
+    },
+    "sands": {
+      "name": "Contagem do Forjador",
+      "desc": "Ele sabia que o poder não funcionava como a energia de uma fornalha, mas que podia ser controlado com um botão."
+    },
+    "goblet": {
+      "name": "Magnanimidade do Forjador",
+      "desc": "Ele sabia que, não como a chamas de uma fornalha, que os materiais poderiam queimar sem jamais extinguirem-se, a amizade era muito mais efêmera."
+    },
+    "circlet": {
+      "name": "Ambição do Forjador",
+      "desc": "Ele sabia que os sonhos não eram firmes como o brilho de uma fornalha, e que não podia ser passado como uma tocha para seus herdeiros."
+    }
+  }
+}

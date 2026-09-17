@@ -7,8 +7,8 @@ import {
 import { clamp } from '@genshin-optimizer/common/util'
 import {
   type AscensionKey,
-  type CharacterKey,
   allCharacterKeys,
+  type CharacterKey,
   talentLimits,
   validateCharLevelAsc,
 } from '@genshin-optimizer/gi/consts'

@@ -1,5 +1,5 @@
-import { writeFileSync } from 'fs'
-import * as path from 'path'
+import { writeFileSync } from 'node:fs'
+import * as path from 'node:path'
 import { formatText } from '@genshin-optimizer/common/pipeline'
 import {
   extractCondMetadata,

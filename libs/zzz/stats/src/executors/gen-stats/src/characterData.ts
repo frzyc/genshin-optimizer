@@ -6,14 +6,14 @@ import {
   transposeArray,
   verifyObjKeys,
 } from '@genshin-optimizer/common/util'
-import { type CharacterKey, allSkillKeys } from '@genshin-optimizer/zzz/consts'
+import { allSkillKeys, type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import type { CharacterData } from '@genshin-optimizer/zzz/dm'
 import {
   charactersDetailedJSONData,
   filterUnbuffedKits,
   hakushinSkillMap,
 } from '@genshin-optimizer/zzz/dm'
-import { type CharacterDatum } from '../../../char'
+import type { CharacterDatum } from '../../../char'
 import { extractParamsFromString } from './util'
 
 export type CharactersData = Record<CharacterKey, CharacterDatum>
@@ -128,6 +128,8 @@ const avatarSkillLevelIndexing = [
   'specialLevel',
   'dodgeLevel',
   'chainLevel',
+  'PLEASE_CHECK_IF_CORRECT',
+  'PLEASE_CHECK_IF_CORRECT',
   'assistLevel',
 ]
 function extractCalcedParams(skills: CharacterData['skills']) {
@@ -146,7 +148,7 @@ function extractCalcedParams(skills: CharacterData['skills']) {
                         formula: par.Desc.replace(
                           /AvatarSkillLevel\((\d)\)/g,
                           (_match, index) =>
-                            avatarSkillLevelIndexing[parseInt(index)]
+                            avatarSkillLevelIndexing[Number.parseInt(index)]
                         ),
                       }
                     : undefined

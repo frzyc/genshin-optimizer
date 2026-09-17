@@ -231,7 +231,7 @@
       "0": "After completing <strong>Witch's Homework: Of the Waking of Wind</strong>, Venti will become a <strong>Hexerei</strong> character. When the party includes at least 2 Hexerei characters, you will gain the <strong>Hexerei: Secret Rite</strong> effect, which enhances Hexerei characters.",
       "1": "<br/>",
       "2": "<strong>Hexerei: Secret Rite</strong>",
-      "3": "While the Stormeye created by the Elemental Burst <strong>Wind's Grand Ode</strong> is active, for 4s after a nearby active character triggers a Swirl reaction, that character's DMG is increased by 50%, and Venti's Stormeye deals 135% of its original DMG."
+      "3": "While the Stormeye created by the Elemental Burst <strong>Wind's Grand Ode</strong> is active, for 4s after a nearby active character triggers a Swirl or Stellar Swirl reaction, that character's DMG is increased by 50%, and Venti's Stormeye deals 135% of its original DMG."
     }
   },
   "constellation1": {

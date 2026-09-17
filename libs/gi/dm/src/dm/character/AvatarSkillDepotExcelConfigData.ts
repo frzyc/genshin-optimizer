@@ -39,7 +39,7 @@ type AvatarSkillDepotExcelConfigDataObf = {
 }
 export type AvatarSkillDepotExcelConfigData = {
   id: number //3401,
-  energySkill: number //10343, //burst
+  energySkill?: number //10343, //burst
   skills: number[] // [10341, 10342, 0, 0], //[normal, skill]
   subSkills: number[] //[10344, 10101, 10102, 5034010], //not used? seem to go nowhere
   extraAbilities: string[] //["", "", ""],

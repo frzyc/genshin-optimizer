@@ -1,0 +1,24 @@
+{
+  "name": "Whitelake Frostfeather",
+  "description": {
+    "0": "A longsword light as the feathers of a snow swan, and which stays pure and untainted at all times."
+  },
+  "passiveName": "Snow Swan's Finale",
+  "passiveDescription": {
+    "0": {
+      "0": "When the equipping character hits an opponent with their Elemental Skill, they gain \"Lake-Hued Lament\": ATK increases by <cryo>8%</cryo> for 8s. This effect can trigger once every 0.1s. Max 3 stacks, and each stack's duration is independent. At 3 stacks, the CRIT DMG of any Stellar Glimmer reaction DMG caused by the equipping character is increased by <cryo>50%</cryo>, and triggering Stellar Glimmer reactions or Stellar Glimmer reaction DMG will also restore <cryo>4</cryo> Elemental Energy to the character. This Energy recovery effect can trigger once every 3.5s. Can be triggered even when the equipping character is off-field."
+    },
+    "1": {
+      "0": "When the equipping character hits an opponent with their Elemental Skill, they gain \"Lake-Hued Lament\": ATK increases by <cryo>10%</cryo> for 8s. This effect can trigger once every 0.1s. Max 3 stacks, and each stack's duration is independent. At 3 stacks, the CRIT DMG of any Stellar Glimmer reaction DMG caused by the equipping character is increased by <cryo>65%</cryo>, and triggering Stellar Glimmer reactions or Stellar Glimmer reaction DMG will also restore <cryo>4.5</cryo> Elemental Energy to the character. This Energy recovery effect can trigger once every 3.5s. Can be triggered even when the equipping character is off-field."
+    },
+    "2": {
+      "0": "When the equipping character hits an opponent with their Elemental Skill, they gain \"Lake-Hued Lament\": ATK increases by <cryo>12%</cryo> for 8s. This effect can trigger once every 0.1s. Max 3 stacks, and each stack's duration is independent. At 3 stacks, the CRIT DMG of any Stellar Glimmer reaction DMG caused by the equipping character is increased by <cryo>80%</cryo>, and triggering Stellar Glimmer reactions or Stellar Glimmer reaction DMG will also restore <cryo>5</cryo> Elemental Energy to the character. This Energy recovery effect can trigger once every 3.5s. Can be triggered even when the equipping character is off-field."
+    },
+    "3": {
+      "0": "When the equipping character hits an opponent with their Elemental Skill, they gain \"Lake-Hued Lament\": ATK increases by <cryo>14%</cryo> for 8s. This effect can trigger once every 0.1s. Max 3 stacks, and each stack's duration is independent. At 3 stacks, the CRIT DMG of any Stellar Glimmer reaction DMG caused by the equipping character is increased by <cryo>95%</cryo>, and triggering Stellar Glimmer reactions or Stellar Glimmer reaction DMG will also restore <cryo>5.5</cryo> Elemental Energy to the character. This Energy recovery effect can trigger once every 3.5s. Can be triggered even when the equipping character is off-field."
+    },
+    "4": {
+      "0": "When the equipping character hits an opponent with their Elemental Skill, they gain \"Lake-Hued Lament\": ATK increases by <cryo>16%</cryo> for 8s. This effect can trigger once every 0.1s. Max 3 stacks, and each stack's duration is independent. At 3 stacks, the CRIT DMG of any Stellar Glimmer reaction DMG caused by the equipping character is increased by <cryo>110%</cryo>, and triggering Stellar Glimmer reactions or Stellar Glimmer reaction DMG will also restore <cryo>6</cryo> Elemental Energy to the character. This Energy recovery effect can trigger once every 3.5s. Can be triggered even when the equipping character is off-field."
+    }
+  }
+}

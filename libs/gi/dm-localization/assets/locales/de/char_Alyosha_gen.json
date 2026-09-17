@@ -1,0 +1,189 @@
+{
+  "name": "Alyosha",
+  "title": "Flinker Jagdhund",
+  "description": "Ein „Berufsjäger“, der die Schneefelder von Snezhnaya durchstreift. Unter seinem ruhigen Äußeren scheint sich ein besonders feuriges „Ideal“ zu verbergen.",
+  "constellationName": "Canis Borzoides",
+  "auto": {
+    "name": "Speerjagd",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Lanzenstiche hintereinander aus und belegt einen Gegner bei dessen letztem Treffer mit dem Effekt <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Mal der Jäger</strong></tooltip>."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer, sticht geschwind nach vorn und fügt allen Gegnern in der Bahn Schaden zu."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge",
+      "5": "Ausdauerverbrauch heftiger Schläge",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Lauernder Donner",
+    "description": {
+      "0": "Folge dem Instinkt des Jägers. Erzeugt je nach Drücken oder Gedrückthalten unterschiedliche Effekte und belegt einen getroffenen Gegner mit dem Effekt <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Mal der Jäger</strong></tooltip>.",
+      "1": "<br/>",
+      "2": "<strong>Drücken</strong>",
+      "3": "Schießt nach vorn und verursacht <electro>Elektro-Flächenschaden</electro>.",
+      "4": "<br/>",
+      "5": "<strong>Gedrückthalten</strong>",
+      "6": "Tritt in den Zielmodus ein und wählt Gegner aus, die sich in einem bestimmten Bereich davor befinden. Erhöht in diesem Zustand Alyoshas Unterbrechungs-WDS.",
+      "7": "Fügt den ausgewählten Gegnern beim Ende des Gedrückthaltens <electro>Elektro-Schaden</electro> zu.",
+      "8": "<br/>",
+      "9": "<i>Ein unvorsichtiger Jäger kletterte einst zur Lanzenspitze. Danach überlebte er zum Glück diese blutige Lektion und verstand die wahre Überlebensregel im Schneefeld.</i>"
+    },
+    "skillParams": {
+      "0": "SCH bei Drücken",
+      "1": "SCH bei Gedrückthalten",
+      "2": "Abklingzeit",
+      "3": "Dauer von „Mal der Jäger“",
+      "4": "ANG-Bonus für „Genauigkeit der Jäger“",
+      "5": "Dauer von „Genauigkeit der Jäger“",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Jagdrevier",
+    "description": {
+      "0": "Beschwört den treuen Gefährten <strong>Tugarin</strong>, um gemeinsam in den Kampf zu ziehen, und verwandelt den Bereich davor kurzzeitig in ein <strong>donnerndes Jagdrevier</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Donnerndes Jagdrevier</strong>",
+      "3": [
+        " Verspottet Gegner in der Umgebung fortlaufend und zieht ihre Angriffe auf sich.",
+        " Fügt Gegnern, die diesen Bereich betreten, alle 2 s einmal <electro>Elektro-Flächenschaden</electro> zu."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Tugarin</strong>",
+      "6": [
+        " Bewegt sich, wenn sich in der Umgebung Gegner befinden, alle 2 s schnell in die Nähe eines Gegners, greift diesen mit Bissangriffen an und fügt ihm <strong>Elektro-Schaden</strong> zu.",
+        " Aktiviert zudem, wenn der getroffene Gegner vom Effekt <strong>Mal der Jäger</strong> betroffen ist, den Effekt <strong>Mal der Jäger</strong>.",
+        " Greift bevorzugt vom Effekt <strong>Mal der Jäger</strong> beeinflusste Gegner an."
+      ],
+      "7": "<br/>",
+      "8": "<i>Er wartet und wartet, bis die Ungeduld nachlässt. Dann fliegt ein Rotbauch-Pfeifer über den Birkenwald und erwartet seinen Schuss.</i>"
+    },
+    "skillParams": {
+      "0": "SCH durch „Donnerndes Jagdrevier“",
+      "1": "SCH durch Tugarin",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Erwecken der schlummernden Waldlinie",
+    "description": {
+      "0": "Stellt, wenn <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> angreift, dem aktuellen Truppenmitglied in der Nähe LP in Höhe von 120 % von Alyoshas ANG wieder her."
+    }
+  },
+  "passive2": {
+    "name": "Abschied von Weizen und Blättern",
+    "description": {
+      "0": "Erhöht basierend auf Alyoshas Aufladerate den durch Alyoshas Elementarfähigkeit und Spezialfähigkeit verursachten Schaden: Erhöht den oben genannten Schaden pro Prozentpunkt der Aufladerate um 0,35 %, auf maximal 70 %."
+    }
+  },
+  "passive3": {
+    "name": "Sternenreise ins Gefahrengebiet",
+    "description": {
+      "0": "Versetzt Alyosha, wenn er sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet, in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong>.",
+      "1": "<strong>Leuchten – Stellar-Supraleiter</strong>: Verleiht beim Aktivieren von <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Mal der Jäger</strong></tooltip> den Effekt <strong>Genauigkeit der Jäger</strong> und erhöht zudem, wenn sich die Figur auf dem Feld befindet, den Schaden durch die Reaktion Stellar-Supraleiter um 25 %."
+    }
+  },
+  "passive": {
+    "name": "Baumwache",
+    "description": {
+      "0": "Zeigt alle <strong>Besonderheiten Snezhnayas</strong> in der Nähe auf der Minikarte an."
+    }
+  },
+  "constellation1": {
+    "name": "Donner im Eistal",
+    "description": {
+      "0": "Stellt, wenn Truppenmitglieder in der Nähe bei Gegnern eine <electro>Elektro-Reaktion</electro> auslösen, Alyosha 15 Punkte Elementarenergie wieder her, 18 s Abklingzeit."
+    }
+  },
+  "constellation2": {
+    "name": "Ferne Botschaft des Heulens",
+    "description": {
+      "0": "Verlängert die Dauer der Spezialfähigkeit <strong>Jagdrevier</strong> um 6 s.",
+      "1": "Zusätzlich belegt <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> vor jedem Angriff ein Ziel mit dem <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Mal der Jäger</strong></tooltip>. Dieser Effekt aktiviert kein bereits vorhandenes <strong>Mal der Jäger</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Ruf der Gefährten",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong>Lauernder Donner</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Beute sichern",
+    "description": {
+      "0": "Stellt, wenn <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> angreift, dem Truppenmitglied in der Nähe mit dem niedrigsten LP-Anteil LP in Höhe von 60 % von Alyoshas ANG wieder her."
+    }
+  },
+  "constellation5": {
+    "name": "Wenn der Vogelruf verstummt",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Jagdrevier</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Rückeroberung des Banners",
+    "description": {
+      "0": "Verleiht, wenn <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Mal der Jäger</strong></tooltip> aktiviert wird, <strong>Genauigkeit der Jäger</strong>. Dieser Effekt ist bis zu 2-fach stapelbar. Erhöht bei 2 Stapeln zudem die Elementarkunde der von diesem Effekt beeinflussten aktuellen Figur um 100 Punkte."
+    }
+  }
+}

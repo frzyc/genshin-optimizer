@@ -1,0 +1,187 @@
+{
+  "auto": {
+    "name": "異邦寒芒",
+    "fields": {
+      "normal": {
+        "0": "<strong>普通攻擊</strong>",
+        "1": "進行至多五段的連續劍擊。"
+      },
+      "charged": {
+        "0": "<strong>重擊</strong>",
+        "1": "消耗一定體力，瞬間向前方揮出兩劍。"
+      },
+      "plunging": {
+        "0": "<strong>下落攻擊</strong>",
+        "1": "從空中下墜衝擊地面，攻擊下落路徑上的敵人，並在落地時造成範圍傷害。"
+      }
+    },
+    "skillParams": {
+      "0": "一段傷害",
+      "1": "二段傷害",
+      "2": "三段傷害",
+      "3": "四段傷害",
+      "4": "五段傷害",
+      "5": "重擊傷害",
+      "6": "重擊體力消耗",
+      "7": "下墜期間傷害",
+      "8": "低空/高空墜地衝擊傷害",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "冰霧劍",
+    "description": {
+      "0": "揮動武器向前刺擊，釋放極寒冰霧，對前方造成<cryo>冰元素傷害</cryo>，並在身旁凝結栗烈寒星。",
+      "1": "<br/>",
+      "2": "<strong>栗烈寒星</strong>",
+      "3": [
+        "將跟隨隊伍中自己的角色，並間歇性發射冰晶攻擊附近的敵人，造成<cryo>冰元素傷害</cryo>。"
+      ],
+      "4": "<strong>輝映·星超導</strong>：栗烈寒星將不再間歇性發射冰晶，而是會在旅行者的普通攻擊、重擊或下落攻擊命中敵人時，發射一枚冰晶，協同攻擊敵人，每0.2秒最多觸發一次。",
+      "5": [
+        "冰晶命中敵人時，將為旅行者累積1層<tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>寒輝</strong></tooltip>，該效果至多累積8層。",
+        "不處於戰鬥狀態下時，<strong>寒輝</strong>將在30秒後清除。"
+      ],
+      "6": "<br/>",
+      "7": "<i>和派蒙一起觀察過霧凇的凝成。</i>"
+    },
+    "skillParams": {
+      "0": "技能傷害",
+      "1": "冰晶傷害",
+      "2": "栗烈寒星持續時間",
+      "3": "冷卻時間",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "聚冰成鋒",
+    "description": {
+      "0": "使用冰元素之力凝聚投矛，向敵人擲出，造成多次<cryo>冰元素傷害</cryo>。",
+      "1": "施放時，旅行者會消耗所有<tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>寒輝</strong></tooltip>層數，提升本次元素爆發造成的傷害；若消耗了8層<strong>寒輝</strong>，還會使投矛造成傷害的次數提升。",
+      "2": "<br/>",
+      "3": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>輝映·星爍</strong></tooltip>：本次元素爆發改為造成視為對應星爍反應傷害的<cryo>冰元素傷害</cryo>。",
+      "4": "<br/>",
+      "5": "<i>和派蒙一起感受過冰凌的鋒利。</i>"
+    },
+    "skillParams": {
+      "0": "投矛單段傷害",
+      "1": "寒輝傷害提升",
+      "2": "星超導投矛單段傷害",
+      "3": "星超導寒輝傷害提升",
+      "4": "星擴散投矛單段傷害",
+      "5": "星擴散寒輝傷害提升",
+      "6": "攻擊段數",
+      "7": "滿層寒輝額外攻擊段數",
+      "8": "冷卻時間",
+      "9": "元素能量",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "自銳的凜冰",
+    "description": {
+      "0": "<strong>輝映·星超導</strong>：<strong>栗烈寒星</strong>存在期間，旅行者的普通攻擊、重擊、下落攻擊將轉為造成無法被附魔覆蓋的<cryo>冰元素傷害</cryo>，且造成的傷害提升，提升值相當於旅行者攻擊力的80%。"
+    }
+  },
+  "passive2": {
+    "name": "通明的冽冰",
+    "description": {
+      "0": "旅行者的元素精通提升，提升值相當於旅行者攻擊力的8%。依此方式，至多使旅行者的元素精通提升160點。"
+    }
+  },
+  "passive3": {
+    "name": "星耀祝禮·幻變冰鏡",
+    "description": {
+      "0": "處於<tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>極星輝域</strong></tooltip>中時/隊伍中的角色在附近觸發星擴散反應後的8秒內，旅行者將分別進入<strong>輝映·星超導</strong>/<strong>輝映·星擴散</strong>狀態。",
+      "1": "隊伍中的角色觸發超導/冰元素擴散反應時，將轉為觸發星超導/星擴散反應，且基於旅行者的攻擊力，提升隊伍中角色造成的上述反應的基礎傷害：每100點攻擊力都將提升0.35%上述反應的基礎傷害，至多依此方式提升7%傷害。"
+    }
+  },
+  "lockedPassive": {
+    "name": "異邦的層冰",
+    "description": {
+      "0": "從過往的旅途中，汲取全新的力量。每與一種元素進行過共鳴，便會獲得額外的<tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>強化效果</strong></tooltip>。",
+      "1": "<br/>",
+      "2": "此外，隊伍中附近的角色造成星超導反應傷害或星擴散反應傷害時，旅行者將獲得一層「凝冰之刃」，每2秒至多依此方式獲得1層「凝冰之刃」，至多疊加3層。擁有3層「凝冰之刃」時進行重擊，會消耗所有的「凝冰之刃」，轉為進行特殊的<strong>重擊·冰凝</strong>。",
+      "3": "<br/>",
+      "4": "<strong>重擊·冰凝</strong>",
+      "5": [
+        "將造成傷害更高的<cryo>冰元素傷害</cryo>，傷害提升相當於旅行者攻擊力的140%，並使旅行者獲得2層<tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>寒輝</strong></tooltip>。",
+        "每15秒至多進行一次<strong>重擊·冰凝</strong>。此外，突破天賦「自銳的凜冰」的傷害加成效果對<strong>重擊·冰凝</strong>無效。"
+      ],
+      "6": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>輝映·星爍</strong></tooltip>：<strong>重擊·冰凝</strong>改為造成視為對應星爍反應傷害的<cryo>冰元素傷害</cryo>。"
+    }
+  },
+  "constellation1": {
+    "name": "漸肅的凝冰",
+    "description": {
+      "0": "旅行者造成了星爍反應傷害時，將為自身恢復5點元素能量，此效果至多每0.5秒觸發1次。"
+    }
+  },
+  "constellation2": {
+    "name": "嗡鳴的隕冰",
+    "description": {
+      "0": "元素戰技<strong><tooltip ns=char_TravelerCryoM_gen baseKey18=skill>冰霧劍</tooltip></strong>發射的<strong>冰晶</strong>命中敵人後，還會使目前場上角色的元素精通提升60點，持續5秒。",
+      "1": "此外，若受到上述效果影響的角色觸發了星爍反應，或造成了星爍反應傷害，則持續時間內，上述效果改為提升120點元素精通。"
+    }
+  },
+  "constellation3": {
+    "name": "斷金的銳冰",
+    "description": {
+      "0": "元素爆發<strong><tooltip ns=char_TravelerCryoM_gen baseKey18=burst>聚冰成鋒</tooltip></strong>的技能等級提高3級。",
+      "1": "至多提升至15級。"
+    }
+  },
+  "constellation4": {
+    "name": "不化的頑冰",
+    "description": {
+      "0": "元素戰技<strong><tooltip ns=char_TravelerCryoM_gen baseKey18=skill>冰霧劍</tooltip></strong>創造的<strong>栗烈寒星</strong>存在時間延長25%。"
+    }
+  },
+  "constellation5": {
+    "name": "深寒的霧冰",
+    "description": {
+      "0": "元素戰技<strong><tooltip ns=char_TravelerCryoM_gen baseKey18=skill>冰霧劍</tooltip></strong>的技能等級提高3級。",
+      "1": "至多提升至15級。"
+    }
+  },
+  "constellation6": {
+    "name": "肅殺的熙冰",
+    "description": {
+      "0": "施放元素爆發<strong><tooltip ns=char_TravelerCryoM_gen baseKey18=burst>聚冰成鋒</tooltip></strong>時，每消耗1層<tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>寒輝</strong></tooltip>，隊伍中其他角色造成的星爍反應傷害提升5%，至多依此方式提升40%，持續15秒。"
+    }
+  }
+}

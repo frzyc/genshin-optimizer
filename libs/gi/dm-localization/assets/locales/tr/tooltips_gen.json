@@ -12,6 +12,13 @@
       "7": "<cryo>Buz</cryo>: Kritik Hasar %20 artar."
     }
   },
+  "10050002": {
+    "name": "Buz Işıltısı",
+    "description": {
+      "0": "Gezgin tarafından oluşturulan bir <strong>Buzdelen Yıldızının</strong> buz kristali bir düşmana isabet ettiğinde veya Gezgin, <strong>Yabancı Buz Tabakası</strong> Yeteneğini açtıktan sonra <strong>Yüklü Saldırı: Donduran Buz</strong> kullandığında özel bir etki tetiklenir. 8 kademeye kadar birikir.",
+      "1": "<strong>Donuk Mızrak</strong> Element Patlamasını kullanmak, Gezginin tüm <strong>Buz Işıltısı</strong> kademelerini tüketir ve mevcut Element Patlamasının verdiği Hasarı artırır. Eğer 8 kademe tüketilirse Element Patlamasında gerçekleştirilen saldırı sayısı da artar."
+    }
+  },
   "11120001": {
     "name": "Soğuk Muhafaza Modu",
     "description": {
@@ -47,7 +54,7 @@
   "11130002": {
     "name": "Kurtarma Kiti",
     "description": {
-      "0": "En fazla 150 puan birikebilir. Ifa'nın sahip olduğu her Kurtarma Kiti puanı, yakındaki grup üyelerinin verdiği Elektrik Yüklü ve Girdap Hasarını %1,5 artırır, Ay Yüklü Hasarını ise %0,2 artırır. Ifa'nın Gece Ruhunun Lütfu durumu sona erdiğinde puanlar sıfırlanır."
+      "0": "En fazla 150 puan birikebilir. Ifa'nın sahip olduğu her Kurtarma Kiti puanı, yakındaki grup üyelerinin verdiği Elektrik Yüklü ve Girdap Hasarını %1,5 artırır, Ay Yüklü Hasarını %0,2 artırır, Yıldız Girdabı Tepkimesi Hasarını ise %0.24 artırır. Ifa'nın Gece Ruhunun Lütfu durumu sona erdiğinde puanlar sıfırlanır."
     }
   },
   "11130003": {
@@ -97,12 +104,12 @@
   "11130007": {
     "name": "Akıl Almaz Mantık",
     "description": {
-      "0": "Yakındaki grup üyeleri düşman üzerinde Donma, Süper İletim, Buz Girdabı veya Buz Kristalleşmesi tepkimelerini tetiklediğinde o düşmanın yakınında bir Boşluk Yarığı oluşur. Bu etki 2,5 saniyede bir tetiklenebilir. Savaş alanında aynı anda Skirk'ün yarattığı en fazla 3 Boşluk Yarığı bulunabilir.",
+      "0": "Yakındaki grup üyeleri düşman üzerinde Donma, Süper İletim, Yıldız İletimi, Buz Girdabı, Yıldız Girdabı veya Buz Kristalleşmesi tepkimelerini tetiklediğinde o düşmanın yakınında bir Boşluk Yarığı oluşur. Bu etki 2,5 saniyede bir tetiklenebilir. Savaş alanında aynı anda Skirk'ün yarattığı en fazla 3 Boşluk Yarığı bulunabilir.",
       "1": "<br/>",
       "2": "Skirk, yakınındaki Boşluk Yarıklarını aşağıdaki yollarla soğurur:",
       "3": [
         "Yedi Aşamalı Parıltı modundayken bir düşmana Yüklü Saldırı ile vurarak.",
-        "Yedi Aşamalı Parıltı modundayken <strong>Yıkım: Tükeniş</strong> Element Patlamasını kullanarak.",
+        "Yedi Aşamalı Parıltı modundayken <strong>Yıkım: Tükeniş</strong> özel Element Patlamasını kullanarak.",
         "<strong>Yıkım: Bükme</strong> Element Becerisine Basılı Tutup hızlı hareket etmeye başlayarak."
       ],
       "4": "<br/>",
@@ -429,8 +436,8 @@
       "0": "Cadı avcısının güvenilir yoldaşı! Bela Kovan Ant Çekici doğru koşullar altında Element Dönüşümü geçirerek tüm Hasarını ilgili Element Türünün Hasarına dönüştürür.",
       "1": "Prune, Element Dönüşümüne uğramış Bela Kovan Ant Çekicini aşağıdaki şekillerde çağırabilir:",
       "2": [
-        " Prune <strong>Ding Ding! Büyü Avı Zili</strong> Element Becerisi ile bir düşman üzerinde Girdap Tepkimesi tetiklendikten sonra belirli bir süreliğine <strong>Çın Çın! Cadıyı Cezalandırma Zamanı!</strong> özel Element Becerisini kullanabilir. Bu özel Element Becerisi kullanıldığında Bela Kovan Ant Çekici, söz konusu Girdap Tepkimesinde yer alan diğer Element Türüne dönüşür.",
-        "\"Yargı ve Ceza\" Yükseltme Yeteneği açıldıktan sonra, Avcı-Arayıcı modundaki Cadıkapan Çanı bir düşman üzerinde Girdap tetiklediğinde düşmana saldırmak için ilgili Element Dönüşümüne uğramış bir Bela Kovan Ant Çekici çağırır."
+        " Prune <strong>Ding Ding! Büyü Avı Zili</strong> Element Becerisi ile bir düşman üzerinde Girdap ya da Yıldız Girdabı Tepkimesi tetiklendikten sonra belirli bir süreliğine <strong>Çın Çın! Cadıyı Cezalandırma Zamanı!</strong> özel Element Becerisini kullanabilir. Bu özel Element Becerisi kullanıldığında Bela Kovan Ant Çekici, söz konusu Girdap ya da Yıldız Girdabı Tepkimesinde yer alan diğer Element Türüne dönüşür.",
+        "\"Yargı ve Ceza\" Yükseltme Yeteneği açıldıktan sonra, Avcı-Arayıcı modundaki Cadıkapan Çanı bir düşman üzerinde Girdap ya da Yıldız Girdabı tetiklediğinde düşmana saldırmak için ilgili Element Dönüşümüne uğramış bir Bela Kovan Ant Çekici çağırır."
       ]
     }
   },
@@ -451,7 +458,7 @@
     "description": {
       "0": "Yüklü Saldırı kullanıldığında Fagio bu moda geçer.",
       "1": "Bu moddayken Fagio önündeki düşmanlara bir tarama ateşi saldırısı yapar ve belirli aralıklarla yoğunlaştırılmış ışınlar ateşleyerek <cryo>Buz Alan Hasarı</cryo> verir.",
-      "2": "<strong>Işıltı: Yıldız İletimi</strong>: Yoğunlaştırılmış ışınlar bunun yerine Yıldız İletimi Hasarı sayılan <cryo>Buz Alan Hasarı</cryo> verir."
+      "2": "<strong>Işıltı: Yıldız Parıltısı</strong>: Yoğunlaştırılmış ışınlar bunun yerine ilgili Yıldız Parıltısı Hasarı sayılan <cryo>Buz Alan Hasarı</cryo> verir."
     }
   },
   "11330002": {
@@ -464,6 +471,60 @@
     "name": "Kutup Yıldızı Alanı",
     "description": {
       "0": "Yıldız İletimi tetiklendiğinde çevredeki alan kısa süreliğine bir <strong>Kutup Yıldızı Alanına</strong> dönüşür ve belirli karakterler bir Kutup Yıldızı Alanı içindeyken çeşitli beceri güçlendirmeleri sağlayan <strong>Işıltı: Yıldız İletimi</strong> durumuna girer."
+    }
+  },
+  "11400001": {
+    "name": "Ruh Kılıcı",
+    "description": {
+      "0": "\"Ruh Kılıcı\" Hakkında"
+    }
+  },
+  "11480001": {
+    "name": "Avcının İşareti",
+    "description": {
+      "0": "Alyosha'nın düşmana uygulayabileceği özel bir etki.",
+      "1": "Bu etki, önceden <strong>Avcının İşareti</strong> etkisi altında olan bir düşmana uygulandığında <strong>Avcının İşareti</strong> etkinleşir ve işaret kalkarak yakındaki tüm grup üyelerine <strong>Avcının Keskinliği</strong> etkisini verip karakterler alandayken Saldırılarını artırır."
+    }
+  },
+  "11480002": {
+    "name": "Tugarin",
+    "description": {
+      "0": "<strong>Avcının İlerleyişi</strong> Element Patlaması ile alana çağrılabilen, Alyosha'nın güvenilir av köpeği ve yoldaşı.",
+      "1": "Düzenli aralıklarla bir düşmana yaklaşıp ona saldırır ve mevcut tüm <strong>Avcının İşaretlerini</strong> etkinleştirir."
+    }
+  },
+  "11500001": {
+    "name": "Solo Dans Gölgesi",
+    "description": {
+      "0": "Odette ile dans düeti yapan psişik gölgesi. Element Becerisini veya Element Patlamasını kullanarak savaş alanına çağırabilir.",
+      "1": "<strong>Tüy</strong> ve <strong>Kanat</strong> dans hareketleri arasında geçiş yaparak belirli aralıklarla yakındaki düşmanlara saldırır ve <cryo>Buz Alan Hasarı</cryo> verir.",
+      "2": "Savaş alanında aynı anda Odette'in çağırdığı yalnızca bir <strong>Solo Dans Gölgesi</strong> bulunabilir.",
+      "3": "<br/>",
+      "4": "Ayrıca yakında Odette'in çağırdığı bir <strong>Dans Gölgesi</strong> varken Odette'in <strong>Yavaş Tempo: Hayalet Gece Dansçıları</strong> Element Becerisi değişerek <strong>Yavaş Tempo: Şafakla Gelen Son</strong> özel Element Becerisi olur."
+    }
+  },
+  "11500002": {
+    "name": "Yavaş Tempo: Şafakla Gelen Son",
+    "description": {
+      "0": "Odette'in özel Element Becerisi. Yakındaki düşmanlara zamanla <cryo>Buz Alan Hasarı</cryo> verir. Sonrasında dans düeti sona erdiğinde bir defa daha <cryo>Buz Alan Hasarı</cryo> verir; bu Hasar, Yıldız İletimi Hasarı sayılır. Dans düeti sırasında Odette, dans adımlarının yönünü kontrol edebilir.",
+      "1": "<strong>Işıltı: Yıldız Parıltısı</strong>: Dans düeti sona erince verilen Hasar, ilgili Yıldız tepkimesi türünün <cryo>Buz Alan Hasarına</cryo> dönüşür.",
+      "2": "<br/>",
+      "3": "Ayrıca Odette, <strong>Yavaş Tempo: Şafakla Gelen Son</strong> özel Element Becerisini kullandığında eğer <strong>Işıltı: Yıldız Parıltısı</strong> durumundaysa ve <strong>Dans Gölgesi</strong> de savaş alanındaysa; <strong>Dans Gölgesinin</strong> iki dans türü, ilgili Yıldız Parıltısı tepkimesi türünde ek <cryo>Buz Alan Hasarı</cryo> verir."
+    }
+  },
+  "11500003": {
+    "name": "Mucizevi İhtişam",
+    "description": {
+      "0": "Odette, \"Seçilmiş Kişinin Bahar Ayini\" Yükseltme Yeteneğini açtıktan sonra <strong>Solo Dans Gölgesini</strong> çağırdığında özel bir etki kazanır.",
+      "1": "Aktif her <strong>Mucizevi İhtişam</strong> kademesi, karakterin Yıldız Parıltısı Hasarını %15 artırır. Bu etki, <strong>Dans Gölgesi</strong> savaş alanından çıkana veya <strong>Solo Dans Gölgesi</strong> yeniden çağrılana kadar sürer.",
+      "2": "Odette alanda değilken her saniye 1 kademe <strong>Mucizevi İhtişam</strong> kaybeder, aynı zamanda yakındaki diğer grup üyeleri de aynı miktarda <strong>Mucizevi İhtişam</strong> kademesi kazanır."
+    }
+  },
+  "11500004": {
+    "name": "Işıltı: Yıldız Parıltısı",
+    "description": {
+      "0": "<strong>Işıltı: Yıldız İletimi</strong> ve <strong>Işıltı: Yıldız Girdabı</strong>, <strong>Işıltı: Yıldız Parıltısı</strong> durumu sayılır.",
+      "1": "Karakterler aynı anda yalnızca bir Işıltı durumunda olabilir. Birden fazla durumun tetiklenebileceği durumlarda önce <strong>Işıltı: Yıldız İletimi</strong> uygulanır."
     }
   }
 }

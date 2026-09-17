@@ -215,7 +215,7 @@
     },
     "upgradedDescription": {
       "0": "When Qiqi hits opponents with her Normal and Charged Attacks, she has a 50% chance to apply a Fortune-Preserving Talisman to them for 6s. This effect can only occur once every 30s.",
-      "1": "<strong>Radiance: Stellar-Conduct</strong>: The effect now has a 100% chance to trigger, and cooldown time is reduced to 15s."
+      "1": "<strong><tooltip ns=tooltips_gen baseKey18=11500004 values=[]>Radiance: Stellar Glimmer</strong></tooltip>: The effect now has a 100% chance to trigger, and cooldown time is reduced to 15s."
     }
   },
   "passive3": {
@@ -228,8 +228,10 @@
     "name": "Seven Sacred Treasures",
     "description": {
       "0": "The cooldown of the Elemental Skill <strong>Adeptus Art: Herald of Frost</strong> is reduced to 15s.",
-      "1": "<strong>Radiance: Stellar-Conduct</strong>: While the Herald of Frost is on the field, characters in Qiqi's party have their Superconduct and Stellar-Conduct Reaction DMG increased by 50%.",
-      "2": "Additionally, when inside a <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>, Qiqi will enter the <strong>Radiance: Stellar-Conduct</strong> state."
+      "1": "<strong>Radiance: Stellar Glimmer</strong>: While the Herald of Frost is on the field, Qiqi's own party members will have the DMG they deal via the corresponding reactions enhanced:",
+      "2": "<strong>Radiance: Stellar-Conduct</strong>: Superconduct and Stellar-Conduct reaction DMG is increased by 50%.",
+      "3": "<strong>Radiance: Stellar Swirl</strong>: Cryo Swirl and Stellar Swirl reaction DMG dealt is increased by 50%.",
+      "4": "Additionally, Qiqi will also enter the <strong>Radiance: Stellar-Conduct</strong> state when she is inside a <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>, or the <strong>Radiance: Stellar Swirl</strong> state for 8s after a nearby party character triggers a Stellar Swirl reaction."
     }
   },
   "constellation1": {
@@ -239,7 +241,7 @@
     },
     "upgradedDescription": {
       "0": "Qiqi regenerates 2 Energy when the Herald of Frost hits an opponent marked by a Fortune-Preserving Talisman.",
-      "1": "<strong>Radiance: Stellar-Conduct</strong>: Qiqi also regenerates 6 Elemental Energy when the Herald of Frost's attacks and coordinated attacks hit opponents. This effect can trigger once every 6s."
+      "1": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Radiance: Stellar Glimmer</strong></tooltip>: Qiqi also regenerates 6 Elemental Energy when the Herald of Frost's attacks and coordinated attacks hit opponents. This effect can trigger once every 6s."
     }
   },
   "constellation2": {
@@ -249,7 +251,7 @@
     },
     "upgradedDescription": {
       "0": "Qiqi's Normal and Charged Attack DMG against opponents affected by <cryo>Cryo</cryo> is increased by 15%.",
-      "1": "<strong>Radiance: Stellar-Conduct</strong>: Qiqi's ATK is increased by 50%."
+      "1": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Radiance: Stellar Glimmer</strong></tooltip>: Qiqi's ATK is increased by 50%."
     }
   },
   "constellation3": {
@@ -285,7 +287,7 @@
     "upgradedDescription": {
       "0": "Using <strong>Adeptus Art: Preserver of Fortune</strong> revives all fallen party members nearby and regenerates 50% of their HP.",
       "1": "This effect can only occur once every 15 mins.",
-      "2": "Additionally, after using <strong>Adeptus Art: Preserver of Fortune</strong>, Qiqi will also gain 4 stacks of <strong>Glimpse of Mystery</strong>, and when your current active character (other than Qiqi) deals Stellar-Conduct DMG, 1 stack of <strong>Glimpse of Mystery</strong> is consumed, and DMG dealt is increased by 600% of Qiqi's ATK. The <strong>Glimpse of Mystery</strong> effect lasts up to 12s, and unleashing <strong>Adeptus Art: Preserver of Fortune</strong> refreshes the stack count."
+      "2": "Additionally, after using <strong>Adeptus Art: Preserver of Fortune</strong>, Qiqi will also gain 4 stacks of <strong>Glimpse of Mystery</strong>, and when your current active character (other than Qiqi) deals Stellar-Conduct or Stellar Swirl reaction DMG with their Talent or skill, 1 stack of <strong>Glimpse of Mystery</strong> is consumed, and DMG dealt is increased by 600% of Qiqi's ATK. The <strong>Glimpse of Mystery</strong> effect lasts up to 12s, and unleashing <strong>Adeptus Art: Preserver of Fortune</strong> refreshes the stack count."
     }
   }
 }

@@ -1,0 +1,24 @@
+{
+  "name": "Emberwell",
+  "description": {
+    "0": "A longsword that is entirely gemstone, said to be crafted for the path of righteousness. When unsheathed, it glows with the luster of blue flame."
+  },
+  "passiveName": "Starfire Upon the Snowplains",
+  "passiveDescription": {
+    "0": {
+      "0": "Triggering an Elemental Reaction increases the equipping character's ATK by <cryo>16%</cryo> for 12s. Triggering a Stellar Glimmer reaction increases their Stellar Glimmer reaction DMG dealt by <cryo>16%</cryo> for 12s. The aforementioned effects can trigger even when the character is not on the field."
+    },
+    "1": {
+      "0": "Triggering an Elemental Reaction increases the equipping character's ATK by <cryo>20%</cryo> for 12s. Triggering a Stellar Glimmer reaction increases their Stellar Glimmer reaction DMG dealt by <cryo>20%</cryo> for 12s. The aforementioned effects can trigger even when the character is not on the field."
+    },
+    "2": {
+      "0": "Triggering an Elemental Reaction increases the equipping character's ATK by <cryo>24%</cryo> for 12s. Triggering a Stellar Glimmer reaction increases their Stellar Glimmer reaction DMG dealt by <cryo>24%</cryo> for 12s. The aforementioned effects can trigger even when the character is not on the field."
+    },
+    "3": {
+      "0": "Triggering an Elemental Reaction increases the equipping character's ATK by <cryo>28%</cryo> for 12s. Triggering a Stellar Glimmer reaction increases their Stellar Glimmer reaction DMG dealt by <cryo>28%</cryo> for 12s. The aforementioned effects can trigger even when the character is not on the field."
+    },
+    "4": {
+      "0": "Triggering an Elemental Reaction increases the equipping character's ATK by <cryo>32%</cryo> for 12s. Triggering a Stellar Glimmer reaction increases their Stellar Glimmer reaction DMG dealt by <cryo>32%</cryo> for 12s. The aforementioned effects can trigger even when the character is not on the field."
+    }
+  }
+}

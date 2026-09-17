@@ -61,7 +61,7 @@ function WeaponFilter({
   const [state, setState] = useState(database.displayWeapon.get())
 
   useEffect(() => {
-    database.displayWeapon.follow((r, dbMeta) => setState(dbMeta))
+    database.displayWeapon.follow((_r, dbMeta) => setState(dbMeta))
   }, [database])
 
   const { weaponType, rarity, locked, showEquipped, showInventory, locations } =

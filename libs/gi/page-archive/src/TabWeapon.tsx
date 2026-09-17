@@ -24,9 +24,9 @@ import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponStat } from '@genshin-optimizer/gi/stats'
 import {
   GetCalcDisplay,
+  resolveInfo,
   SubstatMultiAutocomplete,
   WeaponName,
-  resolveInfo,
 } from '@genshin-optimizer/gi/ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import { computeUIData } from '@genshin-optimizer/gi/uidata'
@@ -51,8 +51,8 @@ import {
   Typography,
 } from '@mui/material'
 import {
-  Suspense,
   memo,
+  Suspense,
   useCallback,
   useDeferredValue,
   useMemo,
@@ -162,7 +162,7 @@ export default function TabWeapon() {
       catTotal(allWeaponSubstatKeys, (ct) =>
         allWeaponKeys.forEach((wKey) => {
           const { subStat } = getWeaponStat(wKey)
-          if (!subStat || !subStat.type) return
+          if (!subStat?.type) return
           const { type } = subStat as { type: WeaponSubstatKey }
           ct[type].total++
           if (weaponKeys.includes(wKey)) ct[type].current++
@@ -238,6 +238,7 @@ export default function TabWeapon() {
           <TableRow>
             {columns.map(({ key, label, width }) => (
               <TableCell
+                key={key}
                 sortDirection={
                   weapon.sortOrderBy === key ? weapon.sortOrder : false
                 }

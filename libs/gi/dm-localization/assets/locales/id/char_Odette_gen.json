@@ -1,0 +1,191 @@
+{
+  "name": "Odette",
+  "title": "Swirling Snow",
+  "description": "Penari balet ternama dari Snezhnaya, bunga dingin yang mekar di tengah salju dan es.",
+  "constellationName": "Cygnus Olor",
+  "auto": {
+    "name": "Snow Swan Variation",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melepaskan tebasan memukau ke depan."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Adagio: Phantom Night Dancers",
+    "description": {
+      "0": "Sambil menampilkan gerakan tari yang lembut, Odette mengakibatkan <cryo>Cryo DMG Area</cryo> dan memanggil <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solo Dance Double</strong></tooltip> miliknya sendiri.",
+      "1": "Jika <strong>Solo Dance Double</strong> yang dipanggil Odette sendiri sudah ada di medan, maka ia akan dipanggil ulang dengan durasi yang diperbarui.",
+      "2": "<br/>",
+      "3": "<strong>Dance Double</strong>",
+      "4": "Menampilkan dua jenis tarian secara bergantian, yaitu <strong>Plume</strong> dan <strong>Wing</strong>, untuk menyerang musuh di sekitar secara berkala dengan gerakan tarian yang anggun dan ringan, mengakibatkan <cryo>Cryo DMG Area</cryo>.",
+      "5": "Selain itu, selama 6 detik setelah melancarkan Elemental Skill <strong>Adagio: Phantom Night Dancers</strong>, Elemental Skill Odette <strong>Adagio: Phantom Night Dancers</strong> akan berubah menjadi Elemental Skill khusus <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Coda at Dawn's Tolling</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip> yang terus-menerus mengakibatkan <cryo>Cryo DMG Area</cryo> terhadap musuh terdekat melalui tarian duet. Pada saat tarian duet ini berakhir, Odette akan mengakibatkan satu kali <cryo>Cryo DMG Area</cryo> lagi yang dianggap sebagai DMG reaksi Stellar-Conduct atau Stellar Swirl."
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Berkelanjutan dari Coda at Dawn's Tolling",
+      "2": "DMG Stellar-Conduct/Stellar Swirl dari Coda at Dawn's Tolling",
+      "3": "DMG Tarian \"Plume\"",
+      "4": "DMG Stellar-Conduct/Stellar Swirl dari Tarian \"Plume\"",
+      "5": "DMG Tarian \"Wing\"",
+      "6": "DMG Stellar-Conduct/Stellar Swirl dari Tarian \"Wing\"",
+      "7": "Cooldown Coda at Dawn's Tolling",
+      "8": "Durasi Solo Dance Double",
+      "9": "Cooldown",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Presto: Bluebird Finale",
+    "description": {
+      "0": "Sambil menampilkan gerakan tari yang gesit, Odette mengakibatkan <cryo>Cryo DMG Area</cryo> beberapa kali, kemudian memanggil <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solo Dance Double</strong></tooltip> dirinya sendiri. Odette juga akan mendapatkan efek <strong>Snow Swan's Dream</strong>: Meningkatkan DMG reaksi Stellar Glimmer yang diakibatkan oleh Odette.",
+      "1": "Selain itu, selama 6 detik setelah melancarkan Elemental Burst <strong>Presto: Bluebird Finale</strong>, Elemental Skill Odette <strong>Adagio: Phantom Night Dancers</strong> akan berubah menjadi Elemental Skill khusus <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Coda at Dawn's Tolling</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip>.",
+      "2": "<br/>",
+      "3": "Jika ada Solo Dance Double yang dipanggil Odette sendiri di medan, maka akan memanggilnya ke sisinya dan mengulang durasinya."
+    },
+    "skillParams": {
+      "0": "DMG Tebasan",
+      "1": "DMG Tebasan Akhir",
+      "2": "Peningkatan DMG Reaksi Stellar Glimmer dari Snow Swan's Dream",
+      "3": "Durasi Snow Swan's Dream",
+      "4": "Durasi Solo Dance Double",
+      "5": "Cooldown",
+      "6": "Konsumsi Energy",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Spring Rite of the Chosen One",
+    "description": {
+      "0": "Saat Odette memanggil <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solo Dance Double</strong></tooltip>, dia juga akan mendapatkan 4 lapis <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Marvelous Splendor</strong></tooltip>."
+    }
+  },
+  "passive2": {
+    "name": "Pathetique of Pateticheskaya",
+    "description": {
+      "0": "Untuk setiap 100 poin ATK Odette yang melebihi 1.000 poin, DMG reaksi Stellar Glimmer yang diakibatkan Odette mendapatkan DMG tambahan sebesar 1,5% dari DMG awalnya. Maksimum bisa mendapatkan 30% DMG tambahan dari DMG aslinya melalui cara ini."
+    }
+  },
+  "passive3": {
+    "name": "Stellar Jubilee: Dance of Aurore",
+    "description": {
+      "0": "Odette akan memasuki status <strong>Radiance: Stellar-Conduct</strong> saat berada di dalam <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip> atau <strong>Radiance: Stellar Swirl</strong> selama 8 detik setelah Karakter dalam party di sekitar memicu reaksi Stellar Swirl.",
+      "1": "Ketika Karakter dalam party memicu reaksi Superconduct/Cryo Swirl, reaksi ini akan berubah menjadi reaksi Stellar-Conduct/Stellar Swirl dan DMG dasar dari reaksi yang disebutkan di atas akan meningkat berdasarkan ATK Odette: Setiap 100 poin ATK akan meningkatkan DMG dasar reaksi sebesar 0,7%. Peningkatan DMG maksimum yang bisa didapatkan dengan cara ini adalah 14%."
+    }
+  },
+  "passive": {
+    "name": "Echo of Winter Daydreams",
+    "description": {
+      "0": "Memperlihatkan lokasi <strong>produk khas Snezhnaya</strong> di sekitar pada peta kecil.",
+      "1": "Saat latihan menari di saat senggang, mungkin ada efek lain yang bisa terpicu ...."
+    }
+  },
+  "constellation1": {
+    "name": "\"On This Danceless Morn, She Gazes at Her Reflection\"",
+    "description": {
+      "0": "Setelah melancarkan Elemental Skill Khusus <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Coda at Dawn's Tolling</strong></tooltip>, saat tarian duetnya berakhir, Odette akan mengakibatkan satu kali <cryo>Cryo DMG Area</cryo> tambahan terhadap musuh di sekitarnya. DMG ini dianggap sebagai:",
+      "1": [
+        "<strong>Radiance: Stellar-Conduct</strong> atau saat tidak berada dalam status Radiance: DMG reaksi Stellar-Conduct sebesar 300% ATK Odette.",
+        "<strong>Radiance: Stellar Swirl</strong>: DMG reaksi Stellar Swirl sebesar 450% ATK Odette."
+      ],
+      "2": "<br/>",
+      "3": "Selain itu, Talenta Ascension \"Spring Rite of the Chosen One\" juga akan diperkuat: saat Odette memanggil <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solo Dance Double</strong></tooltip> miliknya, ia juga akan mendapatkan 2 lapis <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Marvelous Splendor</strong></tooltip>. Dan saat Odette ada di dalam party namun sedang tidak berada di medan pertempuran, kecepatan penghapusan <strong>Marvelous Splendor</strong> meningkat menjadi 2 lapis per detik."
+    }
+  },
+  "constellation2": {
+    "name": "\"I Must See the Snow Swan's Unseen Dream for Myself, She Thought\"",
+    "description": {
+      "0": "Talenta Ascension \"Spring Rite of the Chosen One\" diperkuat: Setiap lapisan <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Marvelous Splendor</strong></tooltip> juga meningkatkan 7% ATK Karakter.",
+      "1": "Selain itu, saat <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solo Dance Double</strong></tooltip> berada di medan pertempuran dan Odette sedang berada dalam status <strong><tooltip ns=tooltips_gen baseKey18=11500004 values=[]>Radiance: Stellar Glimmer</tooltip></strong>, maka Elemental RES musuh di sekitar <strong>Solo Dance Double</strong> akan berkurang 20% untuk elemen berikut:",
+      "2": [
+        "<strong>Radiance: Stellar-Conduct</strong>: <cryo>Cryo</cryo> dan <electro>Electro</electro>."
+      ],
+      "3": "<strong>Radiance: Stellar Swirl</strong>: <cryo>Cryo</cryo> dan <anemo>Anemo</anemo>."
+    }
+  },
+  "constellation3": {
+    "name": "\"I'll Chase the Shouting Wind Along, Climbing Alone As I Go\"",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Odette_gen baseKey18=skill>Adagio: Phantom Night Dancers</tooltip> </strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Up, Up the Long, Delirious, Burning Blue\"",
+    "description": {
+      "0": "Elemental Burst <strong>Presto: Bluebird Finale</strong> diperkuat: Saat Odette mendapatkan efek <strong>Snow Swan's Dream</strong>, DMG reaksi Stellar Glimmer yang diakibatkan Karakter lain dalam party di sekitar juga akan meningkat sebesar 50% dari efek <strong>Snow Swan's Dream</strong>.",
+      "1": "<br/>",
+      "2": "Selain itu, saat serangan Karakter dalam party mengakibatkan DMG reaksi Stellar Glimmer terhadap musuh, Odette juga akan melancarkan satu kali serangan terkoordinasi terhadap musuh tersebut, mengakibatkan satu kali <cryo>Cryo DMG Area</cryo>. Efek ini dapat terpicu sekali setiap 3,5 detik dan dianggap sebagai:",
+      "3": [
+        "<strong>Radiance: Stellar-Conduct</strong> atau saat tidak berada dalam status Radiance: DMG reaksi Stellar-Conduct sebesar 66% ATK Odette.",
+        "<strong>Radiance: Stellar Swirl</strong>: DMG reaksi Stellar Swirl sebesar 99% ATK Odette."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "\"Oh! I Have Slipped the Surly Bonds of Earth\"",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong><tooltip ns=char_Odette_gen baseKey18=burst>Presto: Bluebird Finale</tooltip> </strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Put Out My Hand, and Touched the Face of the Divine\"",
+    "description": {
+      "0": "Talenta Ascension \"Spring Rite of the Chosen One\" diperkuat: Saat Odette memberikan <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Marvelous Splendor</strong></tooltip> kepada semua Karakter party di sekitar, maka Marvelous Splendor milik Odette sendiri tidak akan berkurang lagi.",
+      "1": "Selain itu, untuk Karakter yang berada di bawah pengaruh <strong>Marvelous Splendor</strong>, DMG reaksi Stellar Glimmer yang diakibatkannya terhadap musuh akan <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>bertumbuh</strong></tooltip> 25%, dan DMG reaksi Stellar Glimmer yang diakibatkan Odette terhadap musuh akan bertumbuh lagi sebesar 20%."
+    }
+  }
+}

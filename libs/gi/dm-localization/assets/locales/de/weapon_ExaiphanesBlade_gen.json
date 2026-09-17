@@ -1,0 +1,24 @@
+{
+  "name": "Sternspitzen-Klinge",
+  "description": {
+    "0": "Ein Langschwert, das einst im Sternenglanz erstrahlte. In der Hand einer Person, die sich auf eine Reise begeben hat, ist es zu einem ganz neuen Licht geworden, das keiner vergangenen Ära angehört."
+  },
+  "passiveName": "Weg der Reisenden",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht nach dem Ausrüsten durch {F#die Reisende}{M#den Reisenden}, nachdem ein Gegner getroffen wurde, den ANG <cryo>8</cryo> s lang um <cryo>16 %</cryo> und stellt {F#der}{M#dem} Reisenden <cryo>3</cryo> Punkte Elementarenergie wieder her, <cryo>5</cryo> s Abklingzeit. Der Effekt kann auch noch ausgelöst werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "1": {
+      "0": "Erhöht nach dem Ausrüsten durch {F#die Reisende}{M#den Reisenden} den Kritischen Schaden für jedes Element, für das elementarer Einklang bestand, um 6 %. Erhöht zudem, nachdem {F#die}{M#der} Reisende einen Gegner mit einem Angriff getroffen hat, den ANG 8 s lang um <cryo>20 %</cryo> und stellt {F#der}{M#dem} Reisenden <cryo>3</cryo> Punkte Elementarenergie wieder her, 5 s Abklingzeit. Der Effekt kann auch noch ausgelöst werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "2": {
+      "0": "Erhöht nach dem Ausrüsten durch {F#die Reisende}{M#den Reisenden} den Kritischen Schaden für jedes Element, für das elementarer Einklang bestand, um 6 %. Erhöht zudem, nachdem {F#die}{M#der} Reisende einen Gegner mit einem Angriff getroffen hat, den ANG 8 s lang um <cryo>24 %</cryo> und stellt {F#der}{M#dem} Reisenden <cryo>5</cryo> Punkte Elementarenergie wieder her, 5 s Abklingzeit. Der Effekt kann auch noch ausgelöst werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "3": {
+      "0": "Erhöht nach dem Ausrüsten durch {F#die Reisende}{M#den Reisenden} den Kritischen Schaden für jedes Element, für das elementarer Einklang bestand, um 6 %. Erhöht zudem, nachdem {F#die}{M#der} Reisende einen Gegner mit einem Angriff getroffen hat, den ANG 8 s lang um <cryo>32 %</cryo> und stellt {F#der}{M#dem} Reisenden <cryo>5</cryo> Punkte Elementarenergie wieder her, 5 s Abklingzeit. Der Effekt kann auch noch ausgelöst werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "4": {
+      "0": "Erhöht nach dem Ausrüsten durch {F#die Reisende}{M#den Reisenden} den Kritischen Schaden für jedes Element, für das elementarer Einklang bestand, um 6 %. Erhöht zudem, nachdem {F#die}{M#der} Reisende einen Gegner mit einem Angriff getroffen hat, den ANG 8 s lang um <cryo>40 %</cryo> und stellt {F#der}{M#dem} Reisenden <cryo>5</cryo> Punkte Elementarenergie wieder her, 5 s Abklingzeit. Der Effekt kann auch noch ausgelöst werden, wenn die Figur inaktiv in der Truppe ist."
+    }
+  }
+}

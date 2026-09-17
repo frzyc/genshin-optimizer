@@ -1,0 +1,191 @@
+{
+  "auto": {
+    "name": "Destello gélido extranjero",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 5 ataques consecutivos con espada."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para desatar un doble golpe de espada."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Daño de ATQ Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Espada brumahelada",
+    "description": {
+      "0": "Blande el arma y ejecuta una estocada hacia adelante para liberar una bruma helada que inflige <cryo>Daño Cryo</cryo> a los enemigos que tenga enfrente, y crea a su lado una estrella glacial.",
+      "1": "<br/>",
+      "2": "<strong>Estrella glacial</strong>",
+      "3": [
+        "Sigue a tus personajes del equipo y dispara periódicamente cristales de hielo a los enemigos cercanos para infligirles <cryo>Daño Cryo</cryo>."
+      ],
+      "4": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "5": "La estrella glacial ya no dispara cristales de hielo periódicamente, sino que, en su lugar, cuando {F#la Viajera}{M#el Viajero} golpee a un enemigo con un Ataque Normal, Cargado o Descendente, se disparará un cristal de hielo para realizar un ataque coordinado contra el enemigo. Esto solo puede ocurrir una vez cada 0.2 s.",
+      "6": [
+        "Cuando un cristal de hielo golpee a un enemigo, {F#la Viajera}{M#el Viajero} obtendrá 1 carga de <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>fulgor gélido</strong></tooltip>. Este efecto se puede acumular hasta 8 veces.",
+        "Cuando no esté en combate, las cargas de <strong>fulgor gélido</strong> se eliminarán después de 30 s."
+      ],
+      "7": "<br/>",
+      "8": "<i>Observaste con Paimon cómo se forma la escarcha.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de cristal de hielo",
+      "2": "Duración de estrella glacial",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Lanza álgida",
+    "description": {
+      "0": "Usa el poder del elemento Cryo para formar una lanza de hielo y arrojarla contra los enemigos, lo que les inflige varias veces <cryo>Daño Cryo</cryo>.",
+      "1": "Al usar esta habilidad, {F#la Viajera}{M#el Viajero} consumirá todas las cargas de <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>fulgor gélido</strong></tooltip>, lo que aumentará el daño infligido por la Habilidad Definitiva. Si se consumen 8 cargas de <strong>fulgor gélido</strong>, también aumentará la cantidad de veces que inflige daño la lanza.",
+      "2": "<br/>",
+      "3": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Esplendor: Destello Estelar</strong></tooltip>",
+      "4": "La Habilidad Definitiva pasará a infligir <cryo>Daño Cryo</cryo> considerado como daño de la reacción de Destello Estelar correspondiente.",
+      "5": "<br/>",
+      "6": "<i>Sentiste con Paimon el frío punzante de los carámbanos de hielo.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de lanza",
+      "1": "Aumento de daño de fulgor gélido",
+      "2": "Daño de Superconductor Estelar de lanza",
+      "3": "Aumento de daño de Superconductor Estelar de fulgor gélido",
+      "4": "Daño de Torbellino Estelar de lanza",
+      "5": "Aumento de daño de Torbellino Estelar de fulgor gélido",
+      "6": "Cantidad de ataques",
+      "7": "Ataques adicionales con máx. de cargas de fulgor gélido",
+      "8": "TdE",
+      "9": "Energía Elemental",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Algidez afilada",
+    "description": {
+      "0": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "1": "Mientras la <strong>estrella glacial</strong> esté activa, el daño de los Ataques Normales, Cargados y Descendentes {F#de la Viajera}{M#del Viajero} se convertirá en <cryo>Daño Cryo</cryo>, el cual no puede sustituirse imbuyéndose de otro elemento. Además, el daño que infligen aumentará en una cantidad equivalente al 80% del ATQ {F#de la Viajera}{M#del Viajero}."
+    }
+  },
+  "passive2": {
+    "name": "Témpano cristalino",
+    "description": {
+      "0": "La Maestría Elemental {F#de la Viajera}{M#del Viajero} aumenta en una cantidad equivalente al 8% de su ATQ. La Maestría Elemental solo puede aumentar en un máximo de 160 pts. de esta manera."
+    }
+  },
+  "passive3": {
+    "name": "Bendición fulgorestelar: Crioespejo ilusorio",
+    "description": {
+      "0": "Al estar dentro de un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>campo estrellapolar</strong></tooltip> o durante 8 s después de que un personaje del equipo cause una reacción de Torbellino Estelar en las cercanías, {F#la Viajera}{M#el Viajero} entrará en el estado de <strong>esplendor: Superconductor Estelar</strong> o el de <strong>esplendor: Torbellino Estelar</strong>, respectivamente.",
+      "1": "Cuando un personaje del equipo cause una reacción de Superconductor o Torbellino Cryo, esta se transformará respectivamente en una reacción de Superconductor Estelar o Torbellino Estelar. El daño base de estas reacciones de los personajes del equipo aumentará en un 0.35% por cada 100 pts. de ATQ que tenga {F#la Viajera}{M#el Viajero}. Como máximo, dicho daño puede aumentar en un 7% de esta manera."
+    }
+  },
+  "lockedPassive": {
+    "name": "Hielo extranjero",
+    "description": {
+      "0": "Obtienes nuevos poderes gracias a tus viajes pasados, de manera que ganarás <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>fortalecimientos</strong></tooltip> adicionales por cada elemento con el que hayas resonado.",
+      "1": "<br/>",
+      "2": "Además, cuando un personaje cercano del equipo inflija daño de Superconductor Estelar o de Torbellino Estelar, {F#la Viajera}{M#el Viajero} obtendrá 1 carga de “filo congelante”. Como máximo, se puede obtener 1 carga de filo congelante de esta forma cada 2 s, y puede acumularse hasta 3 veces. Al tener 3 cargas y realizar un Ataque Cargado, se consumirán todas las cargas de filo congelante para ejecutar un <strong>Ataque Cargado: Criocondensación</strong> especial.",
+      "3": "<br/>",
+      "4": "<strong>Ataque Cargado: Criocondensación</strong>",
+      "5": [
+        "Aumenta el <cryo>Daño Cryo</cryo> que inflige en una cantidad equivalente al 140% del ATQ {F#de la Viajera}{M#del Viajero}, y le otorga 2 cargas de <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>fulgor gélido</strong></tooltip>.",
+        "Como máximo, solo se puede ejecutar un <strong>Ataque Cargado: Criocondensación</strong> cada 15 s. Además, el efecto de bono de daño del talento de ascensión “Algidez afilada” no afectará al <strong>Ataque Cargado: Criocondensación</strong>."
+      ],
+      "6": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Esplendor: Destello Estelar</strong></tooltip>",
+      "7": "El <strong>Ataque Cargado: Criocondensación</strong> pasa a infligir <cryo>Daño Cryo</cryo> considerado como daño de la reacción de Destello Estelar correspondiente."
+    }
+  },
+  "constellation1": {
+    "name": "Congelación sombría",
+    "description": {
+      "0": "Cuando {F#la Viajera}{M#el Viajero} inflija daño de Destello Estelar, recuperará 5 pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 0.5 s."
+    }
+  },
+  "constellation2": {
+    "name": "Meteorito helado reverberante",
+    "description": {
+      "0": "Cuando un <strong>cristal de hielo</strong> disparado por la Habilidad Elemental, <strong><tooltip ns=char_TravelerCryoF_gen baseKey18=skill>Espada brumahelada</tooltip></strong>, golpea a un enemigo, la Maestría Elemental del personaje en uso aumenta en 60 pts. durante 5 s.",
+      "1": "Además, si el personaje que recibe este efecto causa una reacción de Destello Estelar o inflige daño de Destello Estelar, dicho efecto pasará a aumentar la Maestría Elemental en 120 pts. mientras dure."
+    }
+  },
+  "constellation3": {
+    "name": "Estalactita cortante",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_TravelerCryoF_gen baseKey18=burst>Lanza álgida</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Hielo perpetuo",
+    "description": {
+      "0": "Aumenta en un 25% la duración de la <strong>estrella glacial</strong> creada con la Habilidad Elemental, <strong><tooltip ns=char_TravelerCryoF_gen baseKey18=skill>Espada brumahelada</tooltip></strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Neblina polar",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_TravelerCryoF_gen baseKey18=skill>Espada brumahelada</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Gelidez severa",
+    "description": {
+      "0": "Al usar la Habilidad Definitiva, <strong><tooltip ns=char_TravelerCryoF_gen baseKey18=burst>Lanza álgida</tooltip></strong>, el daño de Destello Estelar infligido por los demás personajes del equipo aumenta en un 5% por cada carga consumida de <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>fulgor gélido</strong></tooltip>. Como máximo, este aumento de daño puede ser del 40%, y tiene una duración de 15 s."
+    }
+  }
+}

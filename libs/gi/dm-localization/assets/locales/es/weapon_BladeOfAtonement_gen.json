@@ -1,0 +1,24 @@
+{
+  "name": "Tajo Redentor",
+  "description": {
+    "0": "Una gran espada legada por los Luchkin. Se dice que solo los guerreros más valientes son dignos de empuñarla."
+  },
+  "passiveName": "Redención del pecado",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras causar una Reacción Elemental, la Maestría Elemental del portador de esta arma aumenta en <cryo>64</cryo> pts. durante 12 s. Tras causar una reacción de Destello Estelar, el ATQ del portador aumenta en un <cryo>16%</cryo> durante 12 s. Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Tras causar una Reacción Elemental, la Maestría Elemental del portador de esta arma aumenta en <cryo>80</cryo> pts. durante 12 s. Tras causar una reacción de Destello Estelar, el ATQ del portador aumenta en un <cryo>20%</cryo> durante 12 s. Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Tras causar una Reacción Elemental, la Maestría Elemental del portador de esta arma aumenta en <cryo>96</cryo> pts. durante 12 s. Tras causar una reacción de Destello Estelar, el ATQ del portador aumenta en un <cryo>24%</cryo> durante 12 s. Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Tras causar una Reacción Elemental, la Maestría Elemental del portador de esta arma aumenta en <cryo>112</cryo> pts. durante 12 s. Tras causar una reacción de Destello Estelar, el ATQ del portador aumenta en un <cryo>28%</cryo> durante 12 s. Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Tras causar una Reacción Elemental, la Maestría Elemental del portador de esta arma aumenta en <cryo>128</cryo> pts. durante 12 s. Tras causar una reacción de Destello Estelar, el ATQ del portador aumenta en un <cryo>32%</cryo> durante 12 s. Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    }
+  }
+}

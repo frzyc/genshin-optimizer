@@ -2,8 +2,9 @@ import { Link } from '@mui/material'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
 import type { AdDims } from '../type'
-import { ZO_LINK, isZOURL } from '../urlUtil'
+import { isZOURL, ZO_LINK } from '../urlUtil'
 import zo_rect_chat from './zo_rect_chat.png'
+
 function ZORectAd({ children }: { children: ReactNode }) {
   return (
     <Box

@@ -229,7 +229,7 @@ export function DiscSwapCard({
       }}
     >
       <CardContent>
-        <Typography>{t(`slotName`, { slotKey: slotKey })}</Typography>
+        <Typography>{t('slotName', { slotKey: slotKey })}</Typography>
       </CardContent>
       <Divider />
       <Box

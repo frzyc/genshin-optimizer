@@ -14,8 +14,8 @@ import {
   allRelicSubStatKeys,
 } from '@genshin-optimizer/sr/consts'
 import { z } from 'zod'
-import { DataEntry } from '../DataEntry'
 import type { SroDatabase } from '../Database'
+import { DataEntry } from '../DataEntry'
 
 export const relicSortKeys = [
   'rarity',
@@ -78,7 +78,7 @@ export class DisplayRelicEntry extends DataEntry<
   override set(
     value:
       | Partial<IDisplayRelic>
-      | ((v: IDisplayRelic) => Partial<IDisplayRelic> | void)
+      | ((v: IDisplayRelic) => Partial<IDisplayRelic> | undefined)
       | { action: 'reset' }
   ): boolean {
     if ('action' in value) {

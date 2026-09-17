@@ -18,7 +18,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   customHealNode,
@@ -26,6 +25,7 @@ import {
   dmgNode,
   plungingDmgNodes,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet.d'
 
 const key: CharacterKey = 'HuTao'
 const elementKey: ElementKey = 'pyro'
@@ -246,7 +246,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.6`),
+            name: ct.chg('auto.skillParams.6'),
           }),
         },
         {
@@ -284,7 +284,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.dmg, {
-            name: ct.chg(`skill.skillParams.2`),
+            name: ct.chg('skill.skillParams.2'),
           }),
         },
         {
@@ -344,22 +344,22 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.dmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.lowHpDmg, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.regen, {
-            name: ct.chg(`burst.skillParams.2`),
+            name: ct.chg('burst.skillParams.2'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.lowHpRegen, {
-            name: ct.chg(`burst.skillParams.3`),
+            name: ct.chg('burst.skillParams.3'),
           }),
         },
         {

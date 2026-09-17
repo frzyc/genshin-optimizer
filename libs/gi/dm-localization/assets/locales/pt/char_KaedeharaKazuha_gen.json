@@ -136,7 +136,7 @@
   "passive2": {
     "name": "Poesia de Fuubutsu",
     "description": {
-      "0": "Depois de Kaedehara Kazuha causar uma Reação de Redemoinho, cada ponto de sua Proficiência Elemental fornecerá a todos os membros da Equipe um aumento de 0.04% de Dano Adicional Elemental por 8s. Podem existir simultaneamente distintos Bônus de Dano Elemental obtidos desta maneira."
+      "0": "Depois de Kaedehara Kazuha causar uma Reação de Redemoinho ou Redemoinho Estelar, cada ponto de sua Proficiência Elemental fornecerá a todos os membros da equipe um aumento de 0.04% de Bônus de Dano Elemental correspondente por 8s. Podem existir simultaneamente distintos Bônus de Dano Elemental obtidos desta maneira."
     }
   },
   "passive3": {

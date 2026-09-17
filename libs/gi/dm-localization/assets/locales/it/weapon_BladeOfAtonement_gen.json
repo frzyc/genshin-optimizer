@@ -1,0 +1,24 @@
+{
+  "name": "Lama dell'espiazione",
+  "description": {
+    "0": "Uno spadone tramandato dai Luchkin. Si dice che solo il guerriero più coraggioso sia degno di brandirlo."
+  },
+  "passiveName": "Penitenza e redenzione",
+  "passiveDescription": {
+    "0": {
+      "0": "Innescare una reazione elementale aumenta la maestria elementale del personaggio che equipaggia l'arma di <cryo>64</cryo> per 12 s, mentre innescare una reazione di Barlume astrale ne aumenta l'ATT di un <cryo>16%</cryo> per la medesima durata. Gli effetti sopracitati possono innescarsi anche quando il personaggio non è in campo."
+    },
+    "1": {
+      "0": "Innescare una reazione elementale aumenta la maestria elementale del personaggio che equipaggia l'arma di <cryo>80</cryo> per 12 s, mentre innescare una reazione di Barlume astrale ne aumenta l'ATT di un <cryo>20%</cryo> per la medesima durata. Gli effetti sopracitati possono innescarsi anche quando il personaggio non è in campo."
+    },
+    "2": {
+      "0": "Innescare una reazione elementale aumenta la maestria elementale del personaggio che equipaggia l'arma di <cryo>96</cryo> per 12 s, mentre innescare una reazione di Barlume astrale ne aumenta l'ATT di un <cryo>24%</cryo> per la medesima durata. Gli effetti sopracitati possono innescarsi anche quando il personaggio non è in campo."
+    },
+    "3": {
+      "0": "Innescare una reazione elementale aumenta la maestria elementale del personaggio che equipaggia l'arma di <cryo>112</cryo> per 12 s, mentre innescare una reazione di Barlume astrale ne aumenta l'ATT di un <cryo>28%</cryo> per la medesima durata. Gli effetti sopracitati possono innescarsi anche quando il personaggio non è in campo."
+    },
+    "4": {
+      "0": "Innescare una reazione elementale aumenta la maestria elementale del personaggio che equipaggia l'arma di <cryo>128</cryo> per 12 s, mentre innescare una reazione di Barlume astrale ne aumenta l'ATT di un <cryo>32%</cryo> per la medesima durata. Gli effetti sopracitati possono innescarsi anche quando il personaggio non è in campo."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Flammenquelle",
+  "description": {
+    "0": "Ein Langschwert aus Edelstein, das angeblich für den Weg der Gerechtigkeit geschmiedet wurde. Beim Ziehen aus der Scheide leuchtet es in blauen Flammen."
+  },
+  "passiveName": "Im Schneefeld brennendes Sternfeuer",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht innerhalb von 12 s nach dem Auslösen einer Elementarreaktion den ANG des Trägers um <cryo>16 %</cryo>. Erhöht innerhalb von 12 s nach dem Auslösen einer Stellarfunkeln-Reaktion den durch den Träger mithilfe der Stellarfunkeln-Reaktion verursachten Schaden um <cryo>16 %</cryo>. Die oben genannten Effekte können auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "1": {
+      "0": "Erhöht innerhalb von 12 s nach dem Auslösen einer Elementarreaktion den ANG des Trägers um <cryo>20 %</cryo>. Erhöht innerhalb von 12 s nach dem Auslösen einer Stellarfunkeln-Reaktion den durch den Träger mithilfe der Stellarfunkeln-Reaktion verursachten Schaden um <cryo>20 %</cryo>. Die oben genannten Effekte können auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "2": {
+      "0": "Erhöht innerhalb von 12 s nach dem Auslösen einer Elementarreaktion den ANG des Trägers um <cryo>24 %</cryo>. Erhöht innerhalb von 12 s nach dem Auslösen einer Stellarfunkeln-Reaktion den durch den Träger mithilfe der Stellarfunkeln-Reaktion verursachten Schaden um <cryo>24 %</cryo>. Die oben genannten Effekte können auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "3": {
+      "0": "Erhöht innerhalb von 12 s nach dem Auslösen einer Elementarreaktion den ANG des Trägers um <cryo>28 %</cryo>. Erhöht innerhalb von 12 s nach dem Auslösen einer Stellarfunkeln-Reaktion den durch den Träger mithilfe der Stellarfunkeln-Reaktion verursachten Schaden um <cryo>28 %</cryo>. Die oben genannten Effekte können auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "4": {
+      "0": "Erhöht innerhalb von 12 s nach dem Auslösen einer Elementarreaktion den ANG des Trägers um <cryo>32 %</cryo>. Erhöht innerhalb von 12 s nach dem Auslösen einer Stellarfunkeln-Reaktion den durch den Träger mithilfe der Stellarfunkeln-Reaktion verursachten Schaden um <cryo>32 %</cryo>. Die oben genannten Effekte können auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    }
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "name": "奥黛塔",
+  "title": "翾风回雪",
+  "description": "至冬知名芭蕾舞者，于冰雪中绽放的凛冽之花。",
+  "constellationName": "雪鹄座",
+  "auto": {
+    "name": "雪鹄变奏",
+    "fields": {
+      "normal": {
+        "0": "<strong>普通攻击</strong>",
+        "1": "进行至多五段的连续剑击。"
+      },
+      "charged": {
+        "0": "<strong>重击</strong>",
+        "1": "消耗一定体力，向前方挥出闪耀夺目的斩击。"
+      },
+      "plunging": {
+        "0": "<strong>下落攻击</strong>",
+        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。"
+      }
+    },
+    "skillParams": {
+      "0": "一段伤害",
+      "1": "二段伤害",
+      "2": "三段伤害",
+      "3": "四段伤害",
+      "4": "五段伤害",
+      "5": "重击伤害",
+      "6": "重击体力消耗",
+      "7": "下坠期间伤害",
+      "8": "低空/高空坠地冲击伤害",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "柔板·幻灵夜舞",
+    "description": {
+      "0": "呈现柔缓的舞步，造成<cryo>冰元素范围伤害</cryo>，并召唤出自身的<tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>独舞倒影</strong></tooltip>。",
+      "1": "若场上存在奥黛塔自己召唤的<strong>独舞倒影</strong>，则会重新召唤，并重置其持续时间。",
+      "2": "<br/>",
+      "3": "<strong>独舞倒影</strong>",
+      "4": "交替呈现<strong>拂羽</strong>与<strong>旋翼</strong>两种舞步，以优雅轻盈的舞姿间歇性攻击附近的敌人，造成<cryo>冰元素范围伤害</cryo>。",
+      "5": "此外，施放元素战技<strong>柔板·幻灵夜舞</strong>后的6秒内，奥黛塔的元素战技<strong>柔板·幻灵夜舞</strong>将会被替换为特殊的元素战技<tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>柔板·破晓终奏</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip>，以共舞对附近的敌人持续造成<cryo>冰元素范围伤害</cryo>，并在共舞结束时，造成一次视为星超导或星扩散反应伤害的<cryo>冰元素范围伤害</cryo>。"
+    },
+    "skillParams": {
+      "0": "技能伤害",
+      "1": "破晓终奏持续伤害",
+      "2": "破晓终奏星超导/星扩散伤害",
+      "3": "拂羽舞步伤害",
+      "4": "拂羽舞步星超导/星扩散伤害",
+      "5": "旋翼舞步伤害",
+      "6": "旋翼舞步星超导/星扩散伤害",
+      "7": "破晓终奏冷却时间",
+      "8": "独舞倒影持续时间",
+      "9": "技能冷却时间",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "疾板·苍羽一梦",
+    "description": {
+      "0": "呈现迅疾的舞步，造成多次<cryo>冰元素范围伤害</cryo>，召唤出自身的<tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>独舞倒影</strong></tooltip>，并获得<strong>雪鹄之梦</strong>：提升奥黛塔造成的星烁反应伤害。",
+      "1": "此外，施放元素爆发<strong>疾板·苍羽一梦</strong>后的6秒内，奥黛塔的元素战技<strong>柔板·幻灵夜舞</strong>将会被替换为特殊的元素战技<tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>柔板·破晓终奏</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip>。",
+      "2": "<br/>",
+      "3": "若场上存在奥黛塔自己召唤的独舞倒影，则将其召唤至身边，并重置其持续时间。"
+    },
+    "skillParams": {
+      "0": "斩击伤害",
+      "1": "斩击最终段伤害",
+      "2": "雪鹄之梦星烁反应伤害提升",
+      "3": "雪鹄之梦持续时间",
+      "4": "独舞倒影持续时间",
+      "5": "冷却时间",
+      "6": "元素能量",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "获选者的春祭",
+    "description": {
+      "0": "奥黛塔召唤<tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>独舞倒影</strong></tooltip>时，还会获得4层<tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>华彩</strong></tooltip>。"
+    }
+  },
+  "passive2": {
+    "name": "赤忱者的悲歌",
+    "description": {
+      "0": "基于奥黛塔攻击力超过1000点的部分，每100点攻击力都将使奥黛塔造成的星烁反应伤害额外造成原本1.5%的伤害，至多通过这种方式额外造成原本30%的伤害。"
+    }
+  },
+  "passive3": {
+    "name": "星耀祝礼·银晓之舞",
+    "description": {
+      "0": "处于<tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>极星辉域</strong></tooltip>中时/队伍中的角色在附近触发星扩散反应后的8秒内，奥黛塔将分别进入<strong>辉映·星超导</strong>/<strong>辉映·星扩散</strong>状态。",
+      "1": "队伍中的角色触发超导/冰元素扩散反应时，将转为触发星超导/星扩散反应，且基于奥黛塔的攻击力，提升队伍中角色造成的上述反应的基础伤害：每100点攻击力都将提升0.7%上述反应的基础伤害，至多通过这种方式提升14%伤害。"
+    }
+  },
+  "passive": {
+    "name": "回响中的冬梦",
+    "description": {
+      "0": "在小地图上显示周围的<strong>至冬区域特产</strong>的位置。",
+      "1": "在闲暇时练习舞蹈，或许还会触发其他的效果…"
+    }
+  },
+  "constellation1": {
+    "name": "「不曾起舞的清晨，她望向倒影」",
+    "description": {
+      "0": "施放特殊元素战技<tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>柔板·破晓终奏</strong></tooltip>后，在共舞结束时，奥黛塔将对附近的敌人造成一次额外的<cryo>冰元素范围伤害</cryo>，该伤害视为：",
+      "1": [
+        "<strong>辉映·星超导</strong>或不处于辉映状态：相当于奥黛塔攻击力300%的星超导反应伤害；",
+        "<strong>辉映·星扩散</strong>：相当于奥黛塔攻击力450%的星扩散反应伤害。"
+      ],
+      "2": "<br/>",
+      "3": "此外，突破天赋「获选者的春祭」获得强化：召唤<tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>独舞倒影</strong></tooltip>时，奥黛塔将额外获得2层<tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>华彩</strong></tooltip>，且奥黛塔处于队伍后台时，清除<strong>华彩</strong>的速度提升至每秒2层。"
+    }
+  },
+  "constellation2": {
+    "name": "「她想，我要见证雪鹄未见之梦」",
+    "description": {
+      "0": "突破天赋「获选者的春祭」获得强化：每层<tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>华彩</strong></tooltip>还会使角色的攻击力提升7%。",
+      "1": "此外，<tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>独舞倒影</strong></tooltip>在场时，若奥黛塔处于<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>辉映·星烁</strong></tooltip>状态，<strong>独舞倒影</strong>附近敌人的对应元素抗性还会降低20%：",
+      "2": [
+        "<strong>辉映·星超导</strong>：<cryo>冰元素</cryo>、<electro>雷元素</electro>；",
+        "<strong>辉映·星扩散</strong>：<cryo>冰元素</cryo>、<anemo>风元素</anemo>。"
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "「我要追逐呼啸的风，向上独行」",
+    "description": {
+      "0": "元素战技<strong><tooltip ns=char_Odette_gen baseKey18=skill>柔板·幻灵夜舞</tooltip></strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
+    }
+  },
+  "constellation4": {
+    "name": "「向上，坠往恍惚、燃烧的蓝空」",
+    "description": {
+      "0": "元素爆发<strong>疾板·苍羽一梦</strong>获得强化：奥黛塔获得<strong>雪鹄之梦</strong>时，还会使队伍中附近的其他角色造成的星烁反应伤害提升，提升值相当于<strong>雪鹄之梦</strong>效果的50%。",
+      "1": "<br/>",
+      "2": "此外，队伍中的角色对敌人造成星烁反应伤害时，奥黛塔还会对敌人进行一次协同攻击，造成一次<cryo>冰元素范围伤害</cryo>，每3.5秒至多触发一次，该伤害视为：",
+      "3": [
+        "<strong>辉映·星超导</strong>或不处于辉映状态：相当于奥黛塔攻击力66%的星超导反应伤害；",
+        "<strong>辉映·星扩散</strong>：相当于奥黛塔攻击力99%的星扩散反应伤害。"
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "「看呀，我已告别尘与土的苦痛」",
+    "description": {
+      "0": "元素爆发<strong><tooltip ns=char_Odette_gen baseKey18=burst>疾板·苍羽一梦</tooltip></strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
+    }
+  },
+  "constellation6": {
+    "name": "「伸出手，触及苍穹永恒的面容」",
+    "description": {
+      "0": "突破天赋「获选者的春祭」获得强化：奥黛塔赋予队伍中附近的所有角色<tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>华彩</strong></tooltip>时，自己的华彩不再会减少。",
+      "1": "此外，处于<strong>华彩</strong>影响下的角色，对敌人造成的星烁反应伤害<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>擢升</strong></tooltip>25%，且奥黛塔对敌人造成的星烁反应伤害额外擢升20%。"
+    }
+  }
+}

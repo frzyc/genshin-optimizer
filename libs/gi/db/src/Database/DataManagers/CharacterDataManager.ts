@@ -22,6 +22,7 @@ export interface ICachedCharacter extends ICharacter {
   equippedArtifacts: Record<ArtifactSlotKey, string>
   equippedWeapon: string
 }
+
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
 import { GOSource } from '../exim'
@@ -213,7 +214,7 @@ export class CharacterDataManager extends DataManager<
       idsToRemove.delete('Somnia')
 
       const idtoRemoveArr = Array.from(idsToRemove)
-      if (result.keepNotInImport || result.ignoreDups)
+      if (result.keepCharNotInImport || result.ignoreDups)
         result.characters.notInImport = idtoRemoveArr.length
       else idtoRemoveArr.forEach((k) => this.remove(k))
       result.characters.unchanged = []

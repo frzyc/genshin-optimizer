@@ -1,0 +1,29 @@
+{
+  "setName": "Scarlet Proof",
+  "setEffects": {
+    "2": "ATK +18%.",
+    "4": "Increases the equipping character's CRIT Rate by 16%, and their Stellar Swirl reaction dealt by 40%, for 10s after they trigger a Stellar Swirl reaction."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Honor to Your Devotion",
+      "desc": "A bright red flower ornament that symbolizes blazing glory."
+    },
+    "plume": {
+      "name": "Glory to Your Legacy",
+      "desc": "A bright red quill pen, granted to the youngest blood."
+    },
+    "sands": {
+      "name": "Time Gifted Unto You",
+      "desc": "A bright red pocket watch marking the time allotted for a conversation."
+    },
+    "goblet": {
+      "name": "Chalice of Your Blood and Sorrow",
+      "desc": "A bright red wine bottle. May you never learn what's been in it."
+    },
+    "circlet": {
+      "name": "Testament to Your Faith",
+      "desc": "A bright red helmet. Hopefully it has, once upon a time, protected someone."
+    }
+  }
+}

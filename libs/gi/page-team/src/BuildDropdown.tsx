@@ -5,6 +5,7 @@ import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import { Box, MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'
+import { BuildNameWithSource } from './BuildNameWithSource'
 
 export default function BuildDropdown({
   teamId,
@@ -19,7 +20,14 @@ export default function BuildDropdown({
   const database = useDatabase()
   const { teamCharId, buildType, buildId, buildTcId } = loadoutDatum
   const teamChar = database.teamChars.get(teamCharId)!
-  const { buildIds, buildTcIds } = teamChar
+  const characterBuilds = database.builds.entriesForCharacter(
+    teamChar.key,
+    teamCharId
+  )
+  const characterTcBuilds = database.buildTcs.entriesForCharacter(
+    teamChar.key,
+    teamCharId
+  )
   const onChangeLoadoutDatum = (l: Partial<LoadoutDatum>) =>
     database.teams.setLoadoutDatum(teamId, teamCharId, l)
 
@@ -43,8 +51,7 @@ export default function BuildDropdown({
       >
         {t('buildDropdown.equipped')}
       </MenuItem>
-      {buildIds.map((bId) => {
-        const { name } = database.builds.get(bId)!
+      {characterBuilds.map(([bId, { name, srcTeamCharId }]) => {
         return (
           <MenuItem
             key={bId}
@@ -54,13 +61,12 @@ export default function BuildDropdown({
             }
             sx={{ display: 'flex', gap: 1 }}
           >
-            {name}
+            <BuildNameWithSource name={name} srcTeamCharId={srcTeamCharId} />
           </MenuItem>
         )
       })}
 
-      {buildTcIds.map((btcId) => {
-        const { name } = database.buildTcs.get(btcId)!
+      {characterTcBuilds.map(([btcId, { name, srcTeamCharId }]) => {
         return (
           <MenuItem
             key={btcId}
@@ -70,8 +76,13 @@ export default function BuildDropdown({
             }
             sx={{ display: 'flex', gap: 1 }}
           >
-            <span>{name}</span>
-            <SqBadge color="success">{t('buildDropdown.tcBadge')}</SqBadge>
+            <BuildNameWithSource
+              name={name}
+              srcTeamCharId={srcTeamCharId}
+              suffix={
+                <SqBadge color="success">{t('buildDropdown.tcBadge')}</SqBadge>
+              }
+            />
           </MenuItem>
         )
       })}

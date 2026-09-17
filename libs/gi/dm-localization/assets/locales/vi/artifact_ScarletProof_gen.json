@@ -1,0 +1,29 @@
+{
+  "setName": "Bằng Chứng Máu Đỏ",
+  "setEffects": {
+    "2": "Tấn Công tăng 18%.",
+    "4": "Trong 10s sau khi người trang bị kích hoạt phản ứng Tinh-Khuếch Tán, Tỷ Lệ Bạo Kích tăng 16%, sát thương phản ứng Tinh-Khuếch Tán tăng 40%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Cảm Ơn Cống Hiến Của Ngươi",
+      "desc": "Hoa trang sức màu đỏ tươi. Tượng trưng cho vinh quang như ngọn lửa."
+    },
+    "plume": {
+      "name": "Khắc Ghi Công Lao Của Ngươi",
+      "desc": "Bút lông màu đỏ tươi. Dành tặng cho dòng máu trẻ tuổi nhất."
+    },
+    "sands": {
+      "name": "Trao Tặng Tháng Năm Của Ngươi",
+      "desc": "Đồng hồ bỏ túi màu đỏ tươi. Ghi lại thời gian của một cuộc trò chuyện."
+    },
+    "goblet": {
+      "name": "Uống Cạn Lệ Máu Của Ngươi",
+      "desc": "Chai rượu màu đỏ tươi. Chúc quý vị không biết được bên trong từng chứa thứ gì."
+    },
+    "circlet": {
+      "name": "Tưởng Niệm Tín Ngưỡng Của Ngươi",
+      "desc": "Mũ bảo hộ màu đỏ tươi. Mong rằng nó đã từng bảo vệ được ai đó."
+    }
+  }
+}

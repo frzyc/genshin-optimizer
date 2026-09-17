@@ -1,0 +1,191 @@
+{
+  "name": "Odette",
+  "title": "Schneewirbelnde Anmut",
+  "description": "Eine berühmte Balletttänzerin aus Snezhnaya – eine kühle Blume, inmitten von Eis und Schnee erblühend.",
+  "constellationName": "Cygnus Olor",
+  "auto": {
+    "name": "Variation des Schneeschwans",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 5 Schwerthiebe hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und führt einen gleißenden Hieb nach vorn aus."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH heftiger Schläge",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Langsamer Tanz – Phantomnacht",
+    "description": {
+      "0": "Verursacht mit sanften Tanzschritten <cryo>Kryo-Flächenschaden</cryo> und beschwört den eigenen <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solotanz-Schatten</strong></tooltip> herauf.",
+      "1": "Beschwört, wenn auf dem Feld bereits ein von Odette selbst beschworener <strong>Solotanz-Schatten</strong> existiert, diesen erneut herauf und setzt die Dauer zurück.",
+      "2": "<br/>",
+      "3": "<strong>Solotanz-Schatten</strong>",
+      "4": "Wechselt zwischen den Tanzschritten <strong>Federstreich</strong> und <strong>Flügelwirbel</strong>, greift Gegner in der Nähe in regelmäßigen Abständen elegant und leichtfüßig an, und fügt diesen <cryo>Kryo-Flächenschaden</cryo> zu.",
+      "5": "Ersetzt zudem innerhalb von 6 s nach dem Anwenden von Odettes Elementarfähigkeit <strong>Langsamer Tanz – Phantomnacht</strong> diese durch die besondere Elementarfähigkeit <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Langsamer Tanz – Finale bei Tagesanbruch</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip>. Führt einen gemeinsamen Tanz auf, der Gegnern in der Nähe fortlaufend <cryo>Kryo-Flächenschaden</cryo> zufügt. Verursacht nach Ende des Tanzes einmalig <cryo>Kryo-Flächenschaden</cryo>, der als Schaden durch die Reaktion Stellar-Supraleiter oder Stellar-Verwirbelung gewertet wird."
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Fortlaufender SCH durch „Finale bei Tagesanbruch“",
+      "2": "SCH durch Stellar-Supraleiter/Stellar-Verwirbelung bei „Finale bei Tagesanbruch“",
+      "3": "SCH durch „Federstreich“-Schritt",
+      "4": "SCH durch „Federstreich“-Schritt bei Stellar-Supraleiter/Stellar-Verwirbelung",
+      "5": "SCH durch „Flügelwirbel“-Schritt",
+      "6": "SCH durch „Flügelwirbel“-Schritt bei Stellar-Supraleiter/Stellar-Verwirbelung",
+      "7": "Abklingzeit von „Finale bei Tagesanbruch“",
+      "8": "Dauer von Solotanz-Schatten",
+      "9": "Abklingzeit",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Schneller Tanz – Federntraum",
+    "description": {
+      "0": "Führt schnelle Tanzschritte aus, verursacht mehrfach <cryo>Kryo-Flächenschaden</cryo>, beschwört den eigenen <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solotanz-Schatten</strong></tooltip> herauf und verleiht <strong>Traum der Schneeschwänin</strong>: Erhöht den durch Odettes Stellarfunkeln-Reaktionen verursachten Schaden.",
+      "1": "Ersetzt nach dem Anwenden der Spezialfähigkeit <strong>Schneller Tanz – Federntraum</strong> innerhalb von 6 s Odettes Elementarfähigkeit <strong>Langsamer Tanz – Phantomnacht</strong> durch die besondere Elementarfähigkeit <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Langsamer Tanz – Finale bei Tagesanbruch</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip>.",
+      "2": "<br/>",
+      "3": "Ruft, wenn auf dem Feld ein von Odette selbst beschworener Solotanz-Schatten vorhanden ist, diesen herbei und setzt dessen Wirkungsdauer zurück."
+    },
+    "skillParams": {
+      "0": "Schwerthieb-SCH",
+      "1": "SCH des letzten Hiebs",
+      "2": "SCH-Bonus von Stellarfunkeln-Reaktion bei „Traum der Schneeschwänin“",
+      "3": "Dauer von „Traum der Schneeschwänin“",
+      "4": "Dauer von Solotanz-Schatten",
+      "5": "Abklingzeit",
+      "6": "Elementarenergie",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Frühling der Auserwählten",
+    "description": {
+      "0": "Verleiht Odette, wenn sie einen <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solotanz-Schatten</strong></tooltip> beschwört, zusätzlich 4 Stapelungen <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Farbenpracht</strong></tooltip>."
+    }
+  },
+  "passive2": {
+    "name": "Klage der Aufrichtigen",
+    "description": {
+      "0": "Erhöht für den Anteil von Odettes ANG, der 1.000 überschreitet, den durch eine Stellarfunkeln-Reaktion verursachten Schaden pro 100 Punkte ANG zusätzlich um 1,5 % des ursprünglichen Schaden. Auf diese Weise kann der Schaden um maximal 30 % des ursprünglichen Schadens erhöht werden."
+    }
+  },
+  "passive3": {
+    "name": "Sternensegnung – Tanz der Silberdämmerung",
+    "description": {
+      "0": "Versetzt Odette, wenn sie sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet oder ein Truppenmitglied in der Nähe die Reaktion Stellar-Verwirbelung auslöst, innerhalb von 8 s in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong>/<strong>Leuchten – Stellar-Verwirbelung</strong>.",
+      "1": "Wandelt, wenn ein Truppenmitglied die Reaktion Supraleiter/Kryo-Verwirbelung auslöst, diese stattdessen in die Reaktion Stellar-Supraleiter/Stellar-Verwirbelung um und erhöht den Basis-Schaden der oben genannten Reaktionen von Truppenmitgliedern basierend auf Odettes ANG: Erhöht den Basis-SCH der oben genannten Reaktionen pro 100 Punkte um 0,7 %. Auf diese Weise kann der Schaden um bis zu 14 % erhöht werden."
+    }
+  },
+  "passive": {
+    "name": "Widerhall des Wintertraums",
+    "description": {
+      "0": "Zeigt alle <strong>Besonderheiten Snezhnayas</strong> in der Nähe auf der Minikarte an.",
+      "1": "Durch Tanzübungen in der Freizeit lassen sich vielleicht auch noch andere Effekte erzielen ..."
+    }
+  },
+  "constellation1": {
+    "name": "„Eines Morgens, an dem sie nicht tanzte, blickte sie auf ihr Spiegelbild“",
+    "description": {
+      "0": "Odette verursacht nach Anwenden der besonderen Elementarfähigkeit <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Langsamer Tanz – Finale bei Tagesanbruch</strong></tooltip> und beim Ende des Walzers einmalig zusätzlich <cryo>Kryo-Flächenschaden</cryo> bei Gegnern in der Nähe. Hierdurch verursachter Schaden gilt als:",
+      "1": [
+        " <strong>Leuchten – Stellar-Supraleiter</strong>, oder, wenn nicht im Leuchten-Zustand: Stellar-Supraleiter-Reaktionsschaden in Höhe von 300 % von Odettes ANG.",
+        " <strong>Leuchten – Stellar-Verwirbelung</strong>: Stellar-Verwirbelung-Reaktionsschaden in Höhe von 450 % von Odettes ANG."
+      ],
+      "2": "<br/>",
+      "3": "Verstärkt zudem das Aufstiegstalent „Frühling der Auserwählten“: Verleiht Odette, wenn sie einen <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solotanz-Schatten</strong></tooltip> beschwört, zusätzlich 2 Stapelungen <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Farbenpracht</strong></tooltip>. Ist Odette inaktiv in der Truppe, erhöht sich die Geschwindigkeit, mit der die Stapelungen von <strong>Farbenpracht</strong> abgebaut werden, auf 2 Stapelungen pro s."
+    }
+  },
+  "constellation2": {
+    "name": "„Sie dachte: ‚Ich möchte Zeugin des Traums werden, den die Schneeschwänin nie gesehen hat.‘“",
+    "description": {
+      "0": "Verstärkt das Aufstiegstalent „Frühling der Auserwählten“: Erhöht für jede Stapelung <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Farbenpracht</strong></tooltip> zudem den ANG der Figur um 7 %.",
+      "1": "Verringert außerdem, wenn der <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solotanz-Schatten</strong></tooltip> aktiv ist und Odette sich im Zustand <tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Leuchten – Stellarfunkeln</strong></tooltip> befindet, den entsprechenden Elementar-WDS von Gegnern in der Nähe des <strong>Solotanz-Schattens</strong> um 20 %:",
+      "2": [
+        " <strong>Leuchten – Stellar-Supraleiter</strong>: <cryo>Kryo</cryo> und <electro>Elektro</electro>.",
+        " <strong>Leuchten – Stellar-Verwirbelung</strong>: <cryo>Kryo</cryo> und <anemo>Anemo</anemo>."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "„Ich will dem heulenden Wind nachjagen und allein emporstreben.“",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Odette_gen baseKey18=skill>Langsamer Tanz – Phantomnacht</tooltip> </strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "„Aufwärts, hinab in den träumerischen, lodernden blauen Himmel“",
+    "description": {
+      "0": "Verstärkt die Spezialfähigkeit <strong>Schneller Tanz – Federntraum</strong>: Erhöht, wenn Odette <strong>Traum der Schneeschwänin</strong> erhält, den von Truppenmitgliedern in der Nähe durch Stellarfunkeln-Reaktionen verursachten Schaden um 50 % des Effekts <strong>Traum der Schneeschwänin</strong>.",
+      "1": "<br/>",
+      "2": "Wenn ein Truppenmitglied einem Gegner Schaden mit der Reaktion Stellarfunkeln zufügt, führt Odette einen abgestimmten Angriff auf den Gegner aus, der diesem einmalig <cryo>Kryo-Flächenschaden</cryo> zufügt, 3,5 s Abklingzeit. Hierdurch verursachter Schaden gilt als:",
+      "3": [
+        " <strong>Leuchten – Stellar-Supraleiter</strong>, oder, wenn nicht im Leuchten-Zustand: Stellar-Supraleiter-Reaktionsschaden in Höhe von 66 % von Odettes ANG.",
+        " <strong>Leuchten – Stellar-Verwirbelung</strong>: Stellar-Verwirbelung-Reaktionsschaden in Höhe von 99 % von Odettes ANG."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "„Seht, denn ich habe mich vom irdischen Leiden verabschiedet“",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_Odette_gen baseKey18=burst>Schneller Tanz – Federntraum</tooltip> </strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "„Strecke deine Hand aus und berühre das ewige Antlitz des Himmels“",
+    "description": {
+      "0": "Verstärkt das Aufstiegstalent „Frühling der Auserwählten“: Reduziert, wenn Odette allen Truppenmitgliedern in der Nähe <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Farbenpracht</strong></tooltip> verleiht, ihre eigene Farbenpracht nicht mehr.",
+      "1": "Erhöht zudem den Schaden durch Stellarfunkeln-Reaktionen, den Figuren unter dem Einfluss von <strong>Farbenpracht</strong> Gegnern zufügen, um <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>25 %</strong></tooltip>. Steigert außerdem den Schaden durch Stellarfunkeln-Reaktionen, den Odette Gegnern zufügt, um weitere 20 %."
+    }
+  }
+}

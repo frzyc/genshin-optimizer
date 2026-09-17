@@ -1,0 +1,187 @@
+{
+  "auto": {
+    "name": "Yabancı Buz Parıltısı",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "En fazla 5 hızlı saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak 2 hızlı kılıç saldırısı yapar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Buz Sisi Kılıcı",
+    "description": {
+      "0": "Silahını düşmana saplar ve buz gibi soğuk bir sis ortaya çıkarır. Bu saldırı, önündeki düşmanlara <cryo>Buz Hasarı</cryo> verir ve Gezginin yanında bir Buzdelen Yıldızı oluşturur.",
+      "1": "<br/>",
+      "2": "<strong>Buzdelen Yıldızı</strong>",
+      "3": [
+        "Kendi grup üyelerini savaş alanında takip eder ve düzenli aralıklarla yakındaki düşmanlara buz kristalleri fırlatarak <cryo>Buz Hasarı</cryo> verir."
+      ],
+      "4": "<strong>Işıltı: Yıldız İletimi</strong>: Buzdelen Yıldızı artık düzenli aralıklarla düşmanlara buz kristalleri fırlatmaz. Bunun yerine, Gezgin bir düşmana Normal Saldırı, Yüklü Saldırı veya Havadan Saldırıyla vurduğunda ortak saldırı yaparak düşmanlara buz kristali fırlatır. Bu etki 0,2 saniyede bir tetiklenebilir.",
+      "5": [
+        "Bir düşmana buz kristali isabet ettiğinde Gezgin 1 kademe <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Buz Işıltısı</strong></tooltip> kazanır, 8 kademeye kadar birikebilir.",
+        "Savaşta değilken <strong>Buz Işıltısı</strong> 30sn sonra sona erer."
+      ],
+      "6": "<br/>",
+      "7": "<i>Paimon ile birlikte buzun oluşumunu gözlemlediniz.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Buz Kristali Hasarı",
+      "2": "Buzdelen Yıldızı Süresi",
+      "3": "BS",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Donuk Mızrak",
+    "description": {
+      "0": "Buz elementinin gücüyle bir buz mızrağı oluşturur, ardından mızrağı düşmana fırlatarak birden fazla defa <cryo>Buz Hasarı</cryo> verir.",
+      "1": "Kullanıldığında Gezgin mevcut tüm <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Buz Işıltısı</strong></tooltip> kademelerini tüketerek bu Element Patlamasının verdiği Hasarı artırır. 8 kademe <strong>Buz Işıltısı</strong> tüketildiğinde mızrakların Hasar verme sayısı da artar.",
+      "2": "<br/>",
+      "3": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Işıltı: Yıldız Parıltısı</strong></tooltip>: Mevcut Element Patlamasının Hasarı değişerek ilgili Yıldız Parıltısı tepkimesi türünün <cryo>Buz Hasarını</cryo> verir.",
+      "4": "<br/>",
+      "5": "<i>Paimon ile beraber buz sarkıtlarının keskin kenarlarını hissettiniz.</i>"
+    },
+    "skillParams": {
+      "0": "Buz Mızrağı Hasarı",
+      "1": "Buz Işıltısı Hasar Bonusu",
+      "2": "Yıldız İletimi Buz Mızrağı Tek Vuruş Hasarı",
+      "3": "Yıldız İletimi Buz Işıltısı Hasar Bonusu",
+      "4": "Yıldız Girdabı Buz Mızrağı Tek Vuruş Hasarı",
+      "5": "Yıldız Girdabı Buz Işıltısı Hasar Bonusu",
+      "6": "Saldırıdaki Darbe Sayısı",
+      "7": "Maks. Kademede Ek Buz Işıltısı Darbesi",
+      "8": "BS",
+      "9": "Enerji Maliyeti",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Keskin Soğuk",
+    "description": {
+      "0": "<strong>Işıltı: Yıldız İletimi</strong>: Alanda bir <strong>Buzdelen Yıldızı</strong> varken Gezginin Normal, Yüklü ve Havadan Saldırılarıyla verdiği Hasar, başka bir Element Tesiriyle değiştirilemeyecek şekilde <cryo>Buz Hasarına</cryo> dönüşür. Ayrıca verilen Hasar, Gezginin Saldırısının %80'i kadar artar."
+    }
+  },
+  "passive2": {
+    "name": "Berrak Buz",
+    "description": {
+      "0": "Gezginin Element Ustalığı, Saldırısının %8'i kadar artar. Bu şekilde en fazla 160 Element Ustalığı artışı sağlanabilir."
+    }
+  },
+  "passive3": {
+    "name": "Yıldız Takdisi: Yanıltıcı Buzul Ayna",
+    "description": {
+      "0": "Gezgin bir <strong>Kutup Yıldızı Alanı</strong> içindeyken <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Işıltı: Yıldız İletimi</strong></tooltip> durumuna, yakındaki bir grup üyesi bir Yıldız Girdabı tepkimesi tetiklediğinde ise 8 saniyeliğine <strong>Işıltı: Yıldız Girdabı</strong> durumuna girer.",
+      "1": "Bir grup üyesi bir Süper İletim veya Buz Girdabı tepkimesi tetiklediğinde bu tepkime, Yıldız İletimi veya Yıldız Girdabı tepkimesine dönüşür ve Gezginin Saldırısının her 100 puanı için söz konusu tepkimenin Temel Hasarı %0,35 artar. Bu şekilde en fazla %7 artış elde edilebilir."
+    }
+  },
+  "lockedPassive": {
+    "name": "Yabancı Buz Tabakası",
+    "description": {
+      "0": "Geçmiş seyahatlerinden yeni bir güç alır. Gezginin etkileşime girmiş olduğu her Element Türü ona ek bir <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>geliştirme etkisi</strong></tooltip> verir.",
+      "1": "<br/>",
+      "2": "Ayrıca yakındaki bir grup üyesi Yıldız İletimi veya Yıldız Girdabı Hasarı verdiğinde Gezgin 1 kademe \"Buz Ucu\" kazanır. Bu şekilde her 2 saniyede 1 Buz Ucu kademesi kazanılabilir, en fazla 3 kademe elde edilebilir. Gezgin 3 kademe Buz Ucuna sahipken bir Yüklü Saldırı yaptığında tüm kademeler tüketilir ve saldırı, <strong>Yüklü Saldırı: Donduran Buz</strong> özel Yüklü Saldırısına dönüşür.",
+      "3": "<br/>",
+      "4": "<strong>Yüklü Saldırı: Donduran Buz</strong>",
+      "5": [
+        "Verilen <cryo>Buz Hasarı</cryo>, Gezginin Saldırısının %140'ı kadar artar ve Gezgin 2 kademe <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Buz Işıltısı</strong></tooltip> kazanır.",
+        "<strong>Yüklü Saldırı: Donduran Buz</strong> her 15 saniyede bir kullanılabilir. Ayrıca \"Keskin Soğuk\" Yükseltme Yeteneğinin verdiği Hasar Bonusu, <strong>Yüklü Saldırı: Donduran Buz</strong> için uygulanmaz."
+      ],
+      "6": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Işıltı: Yıldız Parıltısı</strong></tooltip>: <strong>Yüklü Saldırı: Donduran Buz</strong> tarafından verilen Hasar, ilgili Yıldız Parıltısı tepkimesi türünün <cryo>Buz Hasarı</cryo> kabul edilir."
+    }
+  },
+  "constellation1": {
+    "name": "Kasvetli Kırağı",
+    "description": {
+      "0": "Gezgin, Yıldız Parıltısı Hasarı verdiğinde 5 Element Enerjisi yeniler. Bu etki 0,5 saniyede bir tetiklenebilir."
+    }
+  },
+  "constellation2": {
+    "name": "Karların Yankısı",
+    "description": {
+      "0": "<strong><tooltip ns=char_TravelerCryoF_gen baseKey18=skill>Buz Sisi Kılıcı</tooltip></strong> Element Becerisi ile fırlatılan bir <strong>buz kristali</strong> bir düşmana isabet ettiğinde 5 saniyeliğine aktif karakterin Element Ustalığı 60 artar.",
+      "1": "Ayrıca yukarıdaki etki altındaki bir karakter bir Yıldız Parıltısı tepkimesi tetiklediğinde veya Yıldız Parıltısı Tepkimesi Hasarı verdiğinde yukarıdaki Element Ustalığı artışı, etki süresi boyunca 120'ye çıkar."
+    }
+  },
+  "constellation3": {
+    "name": "Buzul Parçası",
+    "description": {
+      "0": "<strong><tooltip ns=char_TravelerCryoF_gen baseKey18=burst>Donuk Mızrak</tooltip></strong> Element Patlamasının seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Erimeyen Buz",
+    "description": {
+      "0": "<strong><tooltip ns=char_TravelerCryoF_gen baseKey18=skill>Buz Sisi Kılıcı</tooltip></strong> Element Becerisi tarafından oluşturulan <strong>Buzdelen Yıldızının</strong> süresi %25 artar."
+    }
+  },
+  "constellation5": {
+    "name": "Yoğun Soğuk Sis",
+    "description": {
+      "0": "<strong><tooltip ns=char_TravelerCryoF_gen baseKey18=skill>Buz Sisi Kılıcı</tooltip></strong> Element Becerisinin seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Ağır Buz Örtüsü",
+    "description": {
+      "0": "<tooltip ns=char_TravelerCryoF_gen baseKey18=burst><strong>Donuk Mızrak</strong></tooltip> Element Patlamasını kullanırken tüketilen her <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Buz Işıltısı</strong></tooltip> kademesi, 15 saniyeliğine diğer grup üyelerinin verdiği Yıldız Parıltısı Tepkimesi Hasarını %5 artırır. Bu şekilde en fazla %40 artış elde edilebilir."
+    }
+  }
+}

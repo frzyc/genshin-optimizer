@@ -1,9 +1,9 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import { nameToKey } from '@genshin-optimizer/common/util'
-import { TextMapEN } from '../../TextMapUtil'
 import { PROJROOT_PATH } from '../../consts'
 import type { CharacterId, DQualityKey, DWeaponTypeKey } from '../../mapping'
 import { characterIdMap } from '../../mapping'
+import { TextMapEN } from '../../TextMapUtil'
 import { readDMJSON } from '../../util'
 import type { CharacterGrowCurveKey } from './AvatarCurveExcelConfigData'
 
@@ -38,7 +38,7 @@ type AvatarExcelConfigData = {
   cutsceneShow: string //"",
   skillDepotId: number //3401,
   staminaRecoverSpeed: number //25.0,
-  candSkillDepotIds: number[] //[], used by Traveler?
+  candSkillDepotIds?: number[] //[], used by Traveler?
   manekinJsonConfigHashSuffix: number //4186788044,
   manekinJsonConfigHashPre: number //152,
   manekinMotionConfig: number //103,

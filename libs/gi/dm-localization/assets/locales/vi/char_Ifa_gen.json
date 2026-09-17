@@ -105,7 +105,7 @@
   "passive1": {
     "name": "Tầm Nhìn Của Thầy Thuốc",
     "description": {
-      "0": "Khi Ifa trong trạng thái Dạ Hồn Chúc Phúc, sẽ căn cứ vào tổng điểm Dạ Hồn hiện tại của tất cả nhân vật trong đội, Ifa sẽ nhận được 1 điểm <tooltip ns=tooltips_gen baseKey18=11130002 values=[\"150\",\"0.015\"]><strong>Cứu Hộ Thiết Yếu</strong></tooltip> với mỗi 1 điểm Dạ Hồn. Cứu Hộ Thiết Yếu sẽ giúp tăng sát thương phản ứng Khuếch Tán, Điện Cảm, Nguyệt-Điện Cảm cho nhân vật trong đội ở gần."
+      "0": "Khi Ifa trong trạng thái Dạ Hồn Chúc Phúc, sẽ căn cứ vào tổng điểm Dạ Hồn hiện tại của tất cả nhân vật trong đội, Ifa sẽ nhận được 1 điểm <tooltip ns=tooltips_gen baseKey18=11130002 values=[\"150\",\"0.015\"]><strong>Cứu Hộ Thiết Yếu</strong></tooltip> với mỗi 1 điểm Dạ Hồn. Cứu Hộ Thiết Yếu sẽ giúp tăng sát thương phản ứng Khuếch Tán, Tinh-Khuếch Tán, Điện Cảm, Nguyệt-Điện Cảm cho nhân vật trong đội ở gần."
     }
   },
   "passive2": {

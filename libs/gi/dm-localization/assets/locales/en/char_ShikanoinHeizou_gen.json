@@ -181,7 +181,7 @@
   "passive1": {
     "name": "Paradoxical Practice",
     "description": {
-      "0": "When Shikanoin Heizou activates a Swirl reaction while on the field, he will gain 1 Declension stack for <strong>Heartstopper Strike</strong>. This effect can be triggered once every 0.1s."
+      "0": "When Shikanoin Heizou activates a Swirl or Stellar Swirl reaction while on the field, he will gain 1 Declension stack for <strong>Heartstopper Strike</strong>. This effect can be triggered once every 0.1s."
     }
   },
   "passive2": {

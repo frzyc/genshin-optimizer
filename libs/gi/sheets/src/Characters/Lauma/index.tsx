@@ -10,7 +10,7 @@ import {
   infoMut,
   input,
   lookup,
-  lunarDmg,
+  lunarDmgNode,
   min,
   naught,
   percent,
@@ -21,7 +21,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, nonStackBuff, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -30,6 +29,7 @@ import {
   plungingDmgNodes,
   splitScaleDmgNode,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
 
 const key: CharacterKey = 'Lauma'
 const skillParam_gen = allStats.char.skillParam[key]
@@ -287,7 +287,7 @@ const dmgFormulas = {
   skill: {
     pressDmg: dmgNode('atk', dm.skill.pressDmg, 'skill'),
     hold1Dmg: dmgNode('atk', dm.skill.hold1Dmg, 'skill'),
-    hold2Dmg: lunarDmg(
+    hold2Dmg: lunarDmgNode(
       prod(
         skillVerdantDew,
         subscript(input.total.skillIndex, dm.skill.hold2Dmg, { unit: '%' })
@@ -327,12 +327,12 @@ const dmgFormulas = {
     dmg1: greaterEq(
       input.constellation,
       6,
-      lunarDmg(percent(dm.constellation6.dmg1), 'eleMas', 'lunarbloom')
+      lunarDmgNode(percent(dm.constellation6.dmg1), 'eleMas', 'lunarbloom')
     ),
     dmg2: greaterEq(
       input.constellation,
       6,
-      lunarDmg(percent(dm.constellation6.dmg2), 'eleMas', 'lunarbloom')
+      lunarDmgNode(percent(dm.constellation6.dmg2), 'eleMas', 'lunarbloom')
     ),
   },
 }
@@ -424,7 +424,7 @@ const sheet: TalentSheet = {
         },
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.8`),
+            name: ct.chg('auto.skillParams.8'),
           }),
         },
       ],

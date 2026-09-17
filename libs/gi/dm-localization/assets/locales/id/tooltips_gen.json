@@ -12,6 +12,13 @@
       "7": "<cryo>Cryo</cryo>: CRIT DMG meningkat 20%."
     }
   },
+  "10050002": {
+    "name": "Frostglow",
+    "description": {
+      "0": "Efek khusus yang diperoleh Pengembara saat kristal es dari <strong>Frostpierce Star</strong> mengenai musuh atau saat melancarkan <strong>Charged Attack: Freezing Ice</strong> setelah membuka Talenta <strong>Foreign Permafrost</strong>. Efek ini dapat ditumpuk sampai 8 lapis.",
+      "1": "Saat melancarkan Elemental Burst <strong>Frostbound Javelin</strong>, Pengembara akan mengonsumsi semua lapisan <strong>Frostglow</strong> untuk meningkatkan DMG yang diakibatkan oleh Elemental Burst kali ini. Jika mengonsumsi 8 lapis Frostglow, maka jumlah serangan yang diakibatkan oleh Elemental Burst kali ini juga akan bertambah."
+    }
+  },
   "11120001": {
     "name": "Cold Storage Mode",
     "description": {
@@ -47,7 +54,7 @@
   "11130002": {
     "name": "Rescue Essentials",
     "description": {
-      "0": "Maksimum 150 poin. Untuk setiap 1 poin Rescue Essentials yang dimiliki Ifa, DMG reaksi Swirl dan Electro-Charged yang diakibatkan anggota party di sekitar +1,5%, dan DMG yang diakibatkan reaksi Lunar-Charged +0,2%. Poin Rescue Essentials akan hilang setelah status Nightsoul's Blessing Ifa berakhir."
+      "0": "Maksimum 150 poin. Untuk setiap 1 poin Rescue Essentials yang dimiliki Ifa, DMG reaksi Swirl dan Electro-Charged yang diakibatkan anggota party di sekitar +1,5%, DMG yang diakibatkan reaksi Lunar-Charged +0,2%, dan DMG yang diakibatkan reaksi Stellar Swirl +0.24%. Poin Rescue Essentials akan hilang setelah status Nightsoul's Blessing Ifa berakhir."
     }
   },
   "11130003": {
@@ -97,7 +104,7 @@
   "11130007": {
     "name": "Reason Beyond Reason",
     "description": {
-      "0": "Saat Karakter di dalam party memicu reaksi Frozen, Superconduct, Cryo Swirl, atau Cryo Crystallize terhadap musuh di sekitar, akan tercipta sebuah Void Rift di sekitar musuh tersebut. Efek ini dapat terpicu sekali setiap 2,5 detik, dan maksimum 3 Void Rift dapat tercipta di medan pertempuran dalam satu waktu.",
+      "0": "Saat Karakter di dalam party memicu reaksi Frozen, Superconduct, Stellar-Conduct, Cryo Swirl, Stellar Swirl, atau Cryo Crystallize terhadap musuh di sekitar, akan tercipta sebuah Void Rift di sekitar musuh tersebut. Efek ini dapat terpicu sekali setiap 2,5 detik, dan maksimum 3 Void Rift dapat tercipta di medan pertempuran dalam satu waktu.",
       "1": "<br/>",
       "2": "Skirk bisa menyerap Void Rift di sekitarnya dengan cara berikut:",
       "3": [
@@ -426,8 +433,8 @@
       "0": "Teman baik pemburu penyihir yang pantas dipercaya! Dapat memicu Elemental Conversion saat memenuhi kondisi tertentu, seluruh DMG awal yang diakibatkan Banehunter Oathhammer akan dikonversi menjadi DMG dengan jenis elemen yang sesuai terhadap musuh.",
       "1": "Prune dapat memanggil Banehunter Oathhammer yang telah memicu Elemental Conversion melalui cara berikut:",
       "2": [
-        "Dalam beberapa saat setelah Elemental Skill <strong>Ring-A-Ding-Ding! Hexhunter Chime</strong> yang dilancarkan memicu reaksi Swirl terhadap musuh, Prune dapat melancarkan Elemental Skill Khusus <strong>Clang Clang! Witch-tribution Comes!</strong>. Saat melancarkan Elemental Skill Khusus ini, Banehunter Oathhammer akan dikonversi menjadi jenis elemen lain yang terlibat dalam reaksi Swirl sebelumnya.",
-        "Setelah membuka Talenta Ascension \"Verdict and Punishment\", jika Witchlure Bell dalam mode Hunter-Seeker memicu reaksi Swirl terhadap musuh, maka akan memanggil Banehunter Oathhammer yang sudah mengalami Elemental Conversion berdasarkan reaksi Swirl kali ini untuk menyerang musuh."
+        "Dalam beberapa saat setelah Elemental Skill <strong>Ring-A-Ding-Ding! Hexhunter Chime</strong> yang dilancarkan memicu reaksi Swirl atau Stellar Swirl terhadap musuh, Prune dapat melancarkan Elemental Skill Khusus <strong>Clang Clang! Witch-tribution Comes!</strong>. Saat melancarkan Elemental Skill Khusus ini, Banehunter Oathhammer akan dikonversi menjadi jenis elemen lain yang terlibat dalam reaksi Swirl atau Stellar Swirl sebelumnya.",
+        "Setelah membuka Talenta Ascension \"Verdict and Punishment\", jika Witchlure Bell dalam mode Hunter-Seeker memicu reaksi Swirl atau Stellar Swirl terhadap musuh, maka akan memanggil Banehunter Oathhammer yang sudah mengalami Elemental Conversion berdasarkan reaksi Swirl atau Stellar Swirl kali ini untuk menyerang musuh."
       ]
     }
   },
@@ -449,7 +456,7 @@
       "0": "Fagio akan beralih ke mode ini saat melakukan Charged Attack.",
       "1": "Dalam mode ini, Fagio akan melancarkan tembakan beruntun ke musuh di depannya, serta menembakkan sinar terkondensasi secara berkala, mengakibatkan <cryo>Cryo DMG Area</cryo>.",
       "2": "<br/>",
-      "3": "<strong>Radiance: Stellar-Conduct</strong>: DMG dari sinar terkondensasinya berubah menjadi <cryo>Cryo DMG Area</cryo> yang dianggap sebagai DMG reaksi Stellar-Conduct."
+      "3": "<strong>Radiance: Stellar Glimmer</strong>: DMG dari sinar terkondensasinya berubah menjadi <cryo>Cryo DMG Area</cryo> yang dianggap sebagai DMG reaksi Stellar Glimmer."
     }
   },
   "11330002": {
@@ -462,6 +469,59 @@
     "name": "Polestar Field",
     "description": {
       "0": "Saat reaksi Stellar-Conduct terpicu, area di sekitar akan berubah menjadi <strong>Polestar Field</strong> untuk sementara. Saat berada di dalam Polestar Field, beberapa Karakter tertentu akan memasuki status <strong>Radiance: Stellar-Conduct</strong> yang memberikan efek penguatan pada skill-nya."
+    }
+  },
+  "11400001": {
+    "name": "Spirit Blade",
+    "description": {
+      "0": "Pengenalan \"Spirit Blade\""
+    }
+  },
+  "11480001": {
+    "name": "Hunter's Mark",
+    "description": {
+      "0": "Efek khusus yang bisa diberikan Alyosha terhadap musuh.",
+      "1": "Saat efek ini diberikan lagi kepada musuh yang sudah berada dalam pengaruh efek <strong>Hunter's Mark</strong>, maka <strong>Hunter's Mark</strong> tersebut akan diaktifkan: menghapus Hunter's Mark ini dan membuat semua Karakter party di sekitar mendapatkan efek <strong>Hunter's Precision</strong>: ATK meningkat saat berada di medan pertempuran."
+    }
+  },
+  "11480002": {
+    "name": "Tugarin",
+    "description": {
+      "0": "Rekan anjing pemburu yang sangat dipercaya oleh Alyosha. Dapat dipanggil ke medan pertempuran dengan cara melancarkan Elemental Burst <strong>Hunter's Advance</strong>. Tugarin akan bergerak cepat untuk mendekati salah satu musuh dan menggigitnya secara berkala, serta mengaktifkan <strong>Hunter's Mark</strong> yang sudah ada."
+    }
+  },
+  "11500001": {
+    "name": "Solo Dance Double",
+    "description": {
+      "0": "Bayangan batin yang menari bersama Odette, dapat dipanggil ke medan pertempuran dengan cara melancarkan Elemental Skill atau Elemental Burst.",
+      "1": "Akan menampilkan dua jenis tarian secara bergantian, yaitu <strong>Plume</strong> dan <strong>Wing</strong>, untuk menyerang musuh di sekitar secara berkala dengan gerakan tarian yang anggun dan ringan, mengakibatkan <cryo>Cryo DMG Area</cryo>.",
+      "2": "Hanya bisa ada satu <strong>Solo Dance Double</strong> yang diciptakan oleh Odette sendiri di saat yang sama.",
+      "3": "<br/>",
+      "4": "Selain itu, saat <strong>Solo Dance Double</strong> yang dipanggil oleh Odette sendiri berada di dekatnya, Elemental Skill <strong>Adagio: Phantom Night Dancers<</strong> milik Odette akan berubah menjadi Elemental Skill khusus <strong>Adagio: Coda at Dawn's Tolling</strong>."
+    }
+  },
+  "11500002": {
+    "name": "Adagio: Coda at Dawn's Tolling",
+    "description": {
+      "0": "Elemental Skill khusus milik Odette yang mengakibatkan <cryo>Cryo DMG Area</cryo> secara terus-menerus terhadap musuh di sekitarnya. Saat tarian duetnya berakhir, Odette akan mengakibatkan satu kali <cryo>Cryo DMG Area</cryo> yang dianggap sebagai DMG reaksi Stellar-Conduct. Saat tarian duetnya berlangsung, Odette dapat mengontrol arah langkah tariannya.",
+      "1": "<strong>Radiance: Stellar Glimmer</strong>: Efek yang muncul saat tarian duetnya berakhir akan diganti menjadi mengakibatkan satu kali <cryo>Cryo DMG Area</cryo> yang dianggap sebagai DMG reaksi Stellar Glimmer yang sesuai.",
+      "2": "<br/>",
+      "3": "Selain itu, setelah melancarkan Elemental Skill khusus <strong>Adagio: Coda at Dawn's Tolling</strong>, jika Odette berada dalam status <strong>Radiance: Stellar Glimmer</strong> dan selama <strong>Solo Dance Double</strong> miliknya masih aktif, maka kedua langkah tari <strong>Solo Dance Double</strong> juga akan mengakibatkan <cryo>Cryo DMG Area</cryo> tambahan yang dianggap sebagai DMG reaksi Stellar Glimmer yang sesuai."
+    }
+  },
+  "11500003": {
+    "name": "Marvelous Splendor",
+    "description": {
+      "0": "Efek khusus yang didapatkan Odette saat memanggil <strong>Solo Dance Double</strong> setelah ia membuka Talenta Ascension \"Spring Rite of the Chosen One\".",
+      "1": "Setiap lapisan <strong>Marvelous Splendor</strong> akan meningkatkan DMG reaksi Stellar Glimmer yang diakibatkan Karakter sebesar 15%. Efek ini berlangsung hingga <strong>Solo Dance Double</strong> miliknya keluar dari medan pertempuran atau saat <strong>Solo Dance Double</strong> dipanggil ulang.",
+      "2": "Saat Odette ada di dalam party namun sedang tidak berada di medan pertempuran, Odette akan kehilangan 1 lapis <strong>Marvelous Splendor</strong> setiap detiknya, tapi Karakter lain di sekitar dalam party akan mendapatkan lapisan <strong>Marvelous Splendor</strong> dengan jumlah yang sesuai."
+    }
+  },
+  "11500004": {
+    "name": "Radiance: Stellar Glimmer",
+    "description": {
+      "0": "Baik <strong>Radiance: Stellar-Conduct</strong> maupun <strong>Radiance: Stellar Swirl</strong> terhitung sebagai status <strong>Radiance: Stellar Glimmer</strong>.",
+      "1": "Karakter hanya dapat dipengaruhi oleh satu jenis status Radiance dalam satu waktu, dengan status <strong>Radiance: Stellar-Conduct</strong> yang menjadi prioritasnya."
     }
   }
 }

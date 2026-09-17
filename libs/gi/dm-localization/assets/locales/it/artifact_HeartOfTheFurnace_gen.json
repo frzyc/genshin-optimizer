@@ -1,0 +1,29 @@
+{
+  "setName": "Cuore della fornace",
+  "setEffects": {
+    "2": "ATT +18%.",
+    "4": "Quando il personaggio innesca una reazione di Barlume astrale o quando infligge DAN da reazione di Barlume astrale, il suo ATT aumenta di un 12% per 12 s. Inoltre, i DAN da reazione di Barlume astrale inflitti dai membri vicini del gruppo aumentano di un 50%. Gli effetti sopracitati possono attivarsi anche quando il personaggio non è in campo, e i bonus DAN forniti da set di manufatti con lo stesso nome non si accumulano."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Congettura del fonditore",
+      "desc": "Sapeva che, a differenza della temperatura al centro della fornace, il calore o la freddezza di un cuore umano nei confronti di un altro non possono essere misurati con precisione in gradi."
+    },
+    "plume": {
+      "name": "Osservazione del fonditore",
+      "desc": "Sapeva che, a differenza dei colori al centro della fornace, il risultato di varie questioni mondane non poteva essere previsto tramite la mera osservazione."
+    },
+    "sands": {
+      "name": "Calcolo del fonditore",
+      "desc": "Sapeva che, a differenza del calore al centro della fornace, il funzionamento del potere non poteva essere controllato semplicemente tirando una leva o toccando un pulsante."
+    },
+    "goblet": {
+      "name": "Magnanimità del fonditore",
+      "desc": "Sapeva che, a differenza della fiamma al centro della fornace, che continua a bruciare finché fornita di carburante, l'amicizia era molto più effimera."
+    },
+    "circlet": {
+      "name": "Eredità del fonditore",
+      "desc": "Sapeva che, a differenza della fiamma al centro della fornace, la determinazione nel perseguire un sogno non poteva essere semplicemente trasmessa ai discendenti."
+    }
+  }
+}

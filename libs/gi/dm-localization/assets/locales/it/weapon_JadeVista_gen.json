@@ -1,0 +1,49 @@
+{
+  "name": "Visione di giada",
+  "description": {
+    "0": "Un arco lungo di immensa potenza. Risplende della luce dei sogni anche nelle notti più buie."
+  },
+  "passiveName": "Una candela di notte intessuta",
+  "passiveDescription": {
+    "0": {
+      "0": "Ogni membro del gruppo diverso dal personaggio che equipaggia l'arma fornisce a quest'ultimo un potenziamento in base al suo tipo elementale.",
+      "1": [
+        " Se condivide lo stesso tipo elementale del personaggio che equipaggia l'arma, la maestria elementale di quest'ultimo aumenta di <cryo>64</cryo>.",
+        " Se non condivide lo stesso tipo elementale del personaggio che equipaggia l'arma, l'ATT di quest'ultimo aumenta di un <cryo>12%</cryo>."
+      ],
+      "2": "I due effetti sopracitati possono accumularsi fino a 3 volte in totale, con priorità all'effetto relativo alla maestria elementale."
+    },
+    "1": {
+      "0": "Ogni membro del gruppo diverso dal personaggio che equipaggia l'arma fornisce a quest'ultimo un potenziamento in base al suo tipo elementale.",
+      "1": [
+        " Se condivide lo stesso tipo elementale del personaggio che equipaggia l'arma, la maestria elementale di quest'ultimo aumenta di <cryo>80</cryo>.",
+        " Se non condivide lo stesso tipo elementale del personaggio che equipaggia l'arma, l'ATT di quest'ultimo aumenta di un <cryo>15%</cryo>."
+      ],
+      "2": "I due effetti sopracitati possono accumularsi fino a 3 volte in totale, con priorità all'effetto relativo alla maestria elementale."
+    },
+    "2": {
+      "0": "Ogni membro del gruppo diverso dal personaggio che equipaggia l'arma fornisce a quest'ultimo un potenziamento in base al suo tipo elementale.",
+      "1": [
+        " Se condivide lo stesso tipo elementale del personaggio che equipaggia l'arma, la maestria elementale di quest'ultimo aumenta di <cryo>96</cryo>.",
+        " Se non condivide lo stesso tipo elementale del personaggio che equipaggia l'arma, l'ATT di quest'ultimo aumenta di un <cryo>18%</cryo>."
+      ],
+      "2": "I due effetti sopracitati possono accumularsi fino a 3 volte in totale, con priorità all'effetto relativo alla maestria elementale."
+    },
+    "3": {
+      "0": "Ogni membro del gruppo diverso dal personaggio che equipaggia l'arma fornisce a quest'ultimo un potenziamento in base al suo tipo elementale.",
+      "1": [
+        " Se condivide lo stesso tipo elementale del personaggio che equipaggia l'arma, la maestria elementale di quest'ultimo aumenta di <cryo>112</cryo>.",
+        " Se non condivide lo stesso tipo elementale del personaggio che equipaggia l'arma, l'ATT di quest'ultimo aumenta di un <cryo>21%</cryo>."
+      ],
+      "2": "I due effetti sopracitati possono accumularsi fino a 3 volte in totale, con priorità all'effetto relativo alla maestria elementale."
+    },
+    "4": {
+      "0": "Ogni membro del gruppo diverso dal personaggio che equipaggia l'arma fornisce a quest'ultimo un potenziamento in base al suo tipo elementale.",
+      "1": [
+        " Se condivide lo stesso tipo elementale del personaggio che equipaggia l'arma, la maestria elementale di quest'ultimo aumenta di <cryo>128</cryo>.",
+        " Se non condivide lo stesso tipo elementale del personaggio che equipaggia l'arma, l'ATT di quest'ultimo aumenta di un <cryo>24%</cryo>."
+      ],
+      "2": "I due effetti sopracitati possono accumularsi fino a 3 volte in totale, con priorità all'effetto relativo alla maestria elementale."
+    }
+  }
+}

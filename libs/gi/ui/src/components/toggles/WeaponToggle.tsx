@@ -6,6 +6,7 @@ import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import { allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 import { Chip, ToggleButton, useMediaQuery, useTheme } from '@mui/material'
 import type { ReactNode } from 'react'
+
 type WeaponToggleProps = Omit<
   SolidToggleButtonGroupProps,
   'onChange' | 'value'

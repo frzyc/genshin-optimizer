@@ -12,8 +12,8 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
+import type { SetEffectSheet } from '../IArtifactSheet'
 
 const key: ArtifactSetKey = 'PaleFlame'
 const setHeader = setHeaderTemplate(key)

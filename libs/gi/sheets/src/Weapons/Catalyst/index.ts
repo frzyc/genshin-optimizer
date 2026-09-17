@@ -1,16 +1,18 @@
 import type { WeaponCatalystKey } from '@genshin-optimizer/gi/consts'
 import type { WeaponSheet } from '../WeaponSheet'
-import AThousandFloatingDreams from './AThousandFloatingDreams'
 import AngelosHeptades from './AngelosHeptades'
 import ApprenticesNotes from './ApprenticesNotes'
 import AshGravenDrinkingHorn from './AshGravenDrinkingHorn'
+import AThousandFloatingDreams from './AThousandFloatingDreams'
 import BalladOfTheBoundlessBlue from './BalladOfTheBoundlessBlue'
 import BlackcliffAgate from './BlackcliffAgate'
 import BlackmarrowLantern from './BlackmarrowLantern'
 import CashflowSupervision from './CashflowSupervision'
+import ClashOfKings from './ClashOfKings'
 import CranesEchoingCall from './CranesEchoingCall'
 import DawningFrost from './DawningFrost'
 import DodocoTales from './DodocoTales'
+import EchoesOfTheHeart from './EchoesOfTheHeart'
 import EmeraldOrb from './EmeraldOrb'
 import EtherlightSpindlelute from './EtherlightSpindlelute'
 import EverlastingMoonglow from './EverlastingMoonglow'
@@ -52,6 +54,7 @@ import VividNotions from './VividNotions'
 import WanderingEvenstar from './WanderingEvenstar'
 import WaveridingWhirl from './WaveridingWhirl'
 import WineAndSong from './WineAndSong'
+
 const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   AThousandFloatingDreams,
   AngelosHeptades,
@@ -61,9 +64,11 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   BlackcliffAgate,
   BlackmarrowLantern,
   CashflowSupervision,
+  ClashOfKings,
   CranesEchoingCall,
   DawningFrost,
   DodocoTales,
+  EchoesOfTheHeart,
   EmeraldOrb,
   EtherlightSpindlelute,
   EverlastingMoonglow,

@@ -14,7 +14,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -24,6 +23,7 @@ import {
   shieldElement,
   shieldNodeTalent,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet.d'
 
 const key: CharacterKey = 'Diona'
 const elementKey: ElementKey = 'cryo'
@@ -174,7 +174,7 @@ const dmgFormulas = {
   },
 }
 
-const [condLockStellarRadianceScPath, condLockStellarRadianceSc] = cond(
+const [condLockStellarRadiancePath, condLockStellarRadiance] = cond(
   key,
   'lockStellarRadianceSc'
 )
@@ -218,7 +218,7 @@ const nodeC6superconduct_dmg_disp = greaterEq(
     condLockRevelation,
     'on',
     equal(
-      condLockStellarRadianceSc,
+      condLockStellarRadiance,
       'on',
       unequal(condC6, undefined, dm.constellation6.sc_dmg_)
     )
@@ -236,7 +236,7 @@ const nodeC6stellarconduct_dmg_disp = greaterEq(
     condLockRevelation,
     'on',
     equal(
-      condLockStellarRadianceSc,
+      condLockStellarRadiance,
       'on',
       unequal(condC6, undefined, dm.constellation6.sc_dmg_)
     )
@@ -246,6 +246,43 @@ const nodeC6stellarconduct_dmg_ = equal(
   input.activeCharKey,
   target.charKey,
   nodeC6stellarconduct_dmg_disp
+)
+
+const nodeC6swirl_dmg_disp = greaterEq(
+  input.constellation,
+  6,
+  equal(
+    condLockRevelation,
+    'on',
+    equal(
+      condLockStellarRadiance,
+      'ss',
+      unequal(condC6, undefined, dm.constellation6.sc_dmg_)
+    )
+  )
+)
+const nodeC6swirl_dmg_ = equal(
+  input.activeCharKey,
+  target.charKey,
+  nodeC6swirl_dmg_disp
+)
+const nodeC6stellarswirl_dmg_disp = greaterEq(
+  input.constellation,
+  6,
+  equal(
+    condLockRevelation,
+    'on',
+    equal(
+      condLockStellarRadiance,
+      'ss',
+      unequal(condC6, undefined, dm.constellation6.sc_dmg_)
+    )
+  )
+)
+const nodeC6stellarswirl_dmg_ = equal(
+  input.activeCharKey,
+  target.charKey,
+  nodeC6stellarswirl_dmg_disp
 )
 
 export const data = dataObjForCharacterSheet(key, dmgFormulas, {
@@ -263,6 +300,8 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       incHeal_: nodeC6healing_,
       superconduct_dmg_: nodeC6superconduct_dmg_,
       stellarconduct_dmg_: nodeC6stellarconduct_dmg_,
+      swirl_dmg_: nodeC6swirl_dmg_,
+      stellarswirl_dmg_: nodeC6stellarswirl_dmg_,
     },
   },
 })
@@ -286,12 +325,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.aimed, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.aimedCharged, {
-            name: ct.chg(`auto.skillParams.6`),
+            name: ct.chg('auto.skillParams.6'),
           }),
         },
       ],
@@ -325,7 +364,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.skillDmg, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
@@ -356,12 +395,12 @@ const sheet: TalentSheet = {
           fixed: 1,
         },
         {
-          text: ct.chg(`skill.skillParams.3`),
+          text: ct.chg('skill.skillParams.3'),
           value: dm.skill.cdPress,
           unit: 's',
         },
         {
-          text: ct.chg(`skill.skillParams.4`),
+          text: ct.chg('skill.skillParams.4'),
           value: dm.skill.cdHold,
           unit: 's',
         },
@@ -371,7 +410,7 @@ const sheet: TalentSheet = {
       teamBuff: true,
       value: condA1,
       path: condA1Path,
-      name: ct.ch(`a1shielded`),
+      name: ct.ch('a1shielded'),
       states: {
         on: {
           fields: [
@@ -404,17 +443,17 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.skillDmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.fieldDmg, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.healDot, {
-            name: ct.chg(`burst.skillParams.2`),
+            name: ct.chg('burst.skillParams.2'),
           }),
         },
         {
@@ -459,6 +498,18 @@ const sheet: TalentSheet = {
                 isTeamBuff: true,
               }),
             },
+            {
+              node: infoMut(nodeC6swirl_dmg_disp, {
+                path: 'swirl_dmg_',
+                isTeamBuff: true,
+              }),
+            },
+            {
+              node: infoMut(nodeC6stellarswirl_dmg_disp, {
+                path: 'stellarswirl_dmg_',
+                isTeamBuff: true,
+              }),
+            },
           ],
         },
         higher: {
@@ -476,6 +527,18 @@ const sheet: TalentSheet = {
             {
               node: infoMut(nodeC6stellarconduct_dmg_disp, {
                 path: 'stellarconduct_dmg_',
+                isTeamBuff: true,
+              }),
+            },
+            {
+              node: infoMut(nodeC6swirl_dmg_disp, {
+                path: 'swirl_dmg_',
+                isTeamBuff: true,
+              }),
+            },
+            {
+              node: infoMut(nodeC6stellarswirl_dmg_disp, {
+                path: 'stellarswirl_dmg_',
                 isTeamBuff: true,
               }),
             },
@@ -505,16 +568,30 @@ const sheet: TalentSheet = {
       },
     }),
     ct.condTem('lockedPassive', {
-      path: condLockStellarRadianceScPath,
-      value: condLockStellarRadianceSc,
+      path: condLockStellarRadiancePath,
+      value: condLockStellarRadiance,
       teamBuff: true,
       canShow: lockRevelation,
-      name: st('elementalReaction.polestar.inside'),
+      name: st('elementalReaction.stellar.radiance'),
       states: {
         on: {
+          name: st('elementalReaction.polestar.inside'),
           fields: [
             {
-              text: st('elementalReaction.gainRadianceSc'),
+              text: st('elementalReaction.stellar.gainRadianceSc'),
+            },
+          ],
+        },
+        ss: {
+          name: st('elementalReaction.stellarswirl'),
+          fields: [
+            {
+              text: st('elementalReaction.stellar.gainRadianceSs'),
+            },
+            {
+              text: stg('duration'),
+              value: 8,
+              unit: 's',
             },
           ],
         },

@@ -12,6 +12,13 @@
       "7": "<cryo>Cryo</cryo> : augmente les DGT CRIT de 20 %."
     }
   },
+  "10050002": {
+    "name": "Lueur givrée",
+    "description": {
+      "0": "L'effet Lueur givrée est accordé lorsqu'un cristal de glace tiré par une <strong>étoile perce-givre</strong> formée par {M#le voyageur}{F#la voyageuse} touche un ennemi ou que {M#ce dernier}{F#cette dernière} a effectué une <strong>attaque chargée « Glace givrante »</strong> après avoir débloqué l'aptitude <strong>Pergélisol d'ailleurs</strong>, et peut être cumulé 8 fois maximum.",
+      "1": "En utilisant le déchaînement élémentaire <strong>Javelot de congélation</strong>, {M#le voyageur}{F#la voyageuse} consomme tous les cumuls de <strong>lueur givrée</strong> pour augmenter les DGT infligés cette fois-là. De plus, consommer 8 cumuls augmente également le nombre de coups infligés par le déchaînement élémentaire."
+    }
+  },
   "11120001": {
     "name": "Mode « Stockage à froid »",
     "description": {
@@ -47,7 +54,7 @@
   "11130002": {
     "name": "Essentiels de sauvetage",
     "description": {
-      "0": "Chaque point d'essentiels de sauvetage qu'Ifa possède augmente les DGT infligés par les réactions de Dispersion et d'Électrocution des membres de l'équipe à proximité de 1,5 % et ceux des réactions de Sélénocution de 0,2 %, Ifa pouvant posséder un maximum de 150 pts d'essentiels de sauvetage. Tous les points d'essentiels de sauvetage sont annulés lorsque la bénédiction noctâme d'Ifa prend fin."
+      "0": "Chaque point d'essentiels de sauvetage qu'Ifa possède augmente les DGT infligés par les réactions de Dispersion et d'Électrocution des membres de l'équipe à proximité de 1,5 %, ceux des réactions de Sélénocution de 0,2 % et ceux des réactions d'Astrodispersion de 0.24 %, Ifa pouvant posséder un maximum de 150 pts d'essentiels de sauvetage. Tous les points d'essentiels de sauvetage sont annulés lorsque la bénédiction noctâme d'Ifa prend fin."
     }
   },
   "11130003": {
@@ -97,7 +104,7 @@
   "11130007": {
     "name": "Raisonnement outre-raison",
     "description": {
-      "0": "Lorsqu'un membre de l'équipe à proximité déclenche une réaction de Gel, de Supraconduction, de Dispersion Cryo ou de Cristallisation Cryo sur un ennemi, une faille du néant apparaît à proximité de ce dernier. Cet effet peut être déclenché une fois toutes les 2,5 s et un maximum de 3 failles du néant créées par Skirk peut exister en même temps sur le terrain.",
+      "0": "Lorsqu'un membre de l'équipe à proximité déclenche une réaction de Gel, de Supraconduction, d'Astroconduction, de Dispersion Cryo, d'Astrodispersion ou de Cristallisation Cryo sur un ennemi, une faille du néant apparaît à proximité de ce dernier. Cet effet peut être déclenché une fois toutes les 2,5 s et un maximum de 3 failles du néant créées par Skirk peut exister en même temps sur le terrain.",
       "1": "<br/>",
       "2": "Skirk peut absorber les failles du néant à proximité des manières suivantes :",
       "3": [
@@ -428,8 +435,8 @@
       "0": "Le fidèle compagnon de la chasseuse de sorcières ! Dans les conditions adéquates, le marteau-serment de chasse des fléaux subit une absorption élémentaire, convertissant tous ses DGT en l'élément correspondant.",
       "1": "Prune peut invoquer un marteau-serment de chasse des fléaux dont l'élément a été converti des manières suivantes :",
       "2": [
-        " Pendant un certain moment après avoir utilisé sa compétence élémentaire <strong>Ding ding ding ! Carillon de chasse aux sorcières</strong> pour déclencher une réaction de Dispersion sur un ennemi, Prune peut utiliser la compétence élémentaire spéciale <strong>Bang bang ! Arrivée de la rétribution de sorcière</strong>. Utiliser cette compétence élémentaire spéciale convertit le marteau-serment de chasse des fléaux en l'autre élément impliqué dans cette réaction de Dispersion.",
-        " Après avoir débloqué l'aptitude d'élévation « Verdict et peine », déclencher une réaction de Dispersion sur un ennemi avec la cloche de l'ensorceleuse pendant le mode Chasse-traque invoque un marteau-serment de chasse des fléaux de l'élément de la réaction de Dispersion pour attaquer l'ennemi."
+        " Pendant un certain moment après avoir utilisé sa compétence élémentaire <strong>Ding ding ding ! Carillon de chasse aux sorcières</strong> pour déclencher une réaction de Dispersion ou d'Astrodispersion sur un ennemi, Prune peut utiliser la compétence élémentaire spéciale <strong>Bang bang ! Arrivée de la rétribution de sorcière</strong>. Utiliser cette compétence élémentaire spéciale convertit le marteau-serment de chasse des fléaux en l'autre élément impliqué dans cette réaction de Dispersion ou d'Astrodispersion.",
+        " Après avoir débloqué l'aptitude d'élévation « Verdict et peine », déclencher une réaction de Dispersion ou d'Astrodispersion sur un ennemi avec la cloche de l'ensorceleuse pendant le mode Chasse-traque invoque un marteau-serment de chasse des fléaux de l'élément de la réaction de Dispersion ou d'Astrodispersion pour attaquer l'ennemi."
       ]
     }
   },
@@ -450,7 +457,7 @@
     "description": {
       "0": "Fagio passe en mode Décodage lors d'une attaque chargée.",
       "1": "Dans ce mode, Fagio déchaîne une attaque de tir dévastatrice sur les ennemis en avant et tire périodiquement des rayons condensés, infligeant des <cryo>DGT Cryo de zone</cryo>.",
-      "2": "<strong>Radiance « Astroconduction »</strong> : Les rayons condensés infligent à la place des <cryo>DGT Cryo de zone</cryo> considérés comme des DGT de réaction d'Astroconduction."
+      "2": "<strong>Radiance astrale</strong> : Les rayons condensés infligent à la place des <cryo>DGT Cryo de zone</cryo> considérés comme des DGT de réaction astrale correspondante."
     }
   },
   "11330002": {
@@ -463,6 +470,59 @@
     "name": "Étendue polaris",
     "description": {
       "0": "Lorsqu'une réaction d'Astroconduction est déclenchée, la zone environnante se transforme temporairement en <strong>étendue polaris</strong>. Dans cette étendue polaris, certains personnages passent en <strong>radiance « Astroconduction »</strong>, ce qui accorde des bonus à leurs capacités."
+    }
+  },
+  "11400001": {
+    "name": "Pouvoir de la lame spirituelle",
+    "description": {
+      "0": "À propos du pouvoir de la lame spirituelle..."
+    }
+  },
+  "11480001": {
+    "name": "Marque de broussailleur",
+    "description": {
+      "0": "Alyosha peut appliquer cet effet spécial sur les ennemis.",
+      "1": "Appliquer une nouvelle fois cet effet sur un ennemi déjà sous l'effet d'une <strong>marque de broussailleur</strong> permet à la place d'activer la <strong>marque de broussailleur</strong> : retire la marque pour accorder l'effet <strong>Précision de broussailleur</strong> à tous les membres de l'équipe à proximité, augmentant l'ATQ sur le terrain."
+    }
+  },
+  "11480002": {
+    "name": "Tugarin",
+    "description": {
+      "0": "Fidèle chien de chasse et compagnon d'Alyosha, Tugarin peut être invoqué sur le terrain grâce au déchaînement élémentaire <strong>Avancée du broussailleur</strong>. Il se rapproche de façon intermittente d'un ennemi afin de le mordre et d'activer toute <strong>marque de broussailleur</strong> présente."
+    }
+  },
+  "11500001": {
+    "name": "Doublure de danse solo",
+    "description": {
+      "0": "Cette doublure psychique d'Odette qui danse avec elle peut être invoquée sur le terrain grâce à sa compétence élémentaire ou à son déchaînement élémentaire.",
+      "1": "Elle alterne entre la danse de type <strong>Plume</strong> et celle de type <strong>Aile</strong>, attaquant de façon intermittente les ennemis proches avec des mouvements élégants et légers afin de leur infliger des <cryo>DGT Cryo de zone</cryo>.",
+      "2": "Il ne peut exister qu'une seule <strong>doublure de danse solo</strong> créée par Odette à la fois.",
+      "3": "<br/>",
+      "4": "De plus, si une <strong>doublure de danse solo</strong> invoquée par Odette est à proximité, la compétence élémentaire <strong>Danse lente : Transe nocturne fantôme</strong> d'Odette est remplacée par la compétence élémentaire spéciale <strong>Danse lente : Final de l'aube</strong>."
+    }
+  },
+  "11500002": {
+    "name": "Danse lente : Final de l'aube",
+    "description": {
+      "0": "Cette compétence élémentaire spéciale d'Odette inflige des <cryo>DGT Cryo de zone</cryo> de façon continue aux ennemis proches, puis une instance de <cryo>DGT Cryo de zone</cryo> considérés comme des DGT de réaction d'Astroconduction est infligée à la fin de la danse en duo. De plus, Odette peut contrôler la direction des pas de danse pendant la danse en duo.",
+      "1": "<strong>Radiance astrale</strong> : Les DGT infligés à la fin de la danse en duo sont convertis pour infliger des <cryo>DGT Cryo de zone</cryo> considérés comme des DGT de réaction astrale correspondante.",
+      "2": "<br/>",
+      "3": "De plus, si Odette utilise sa compétence élémentaire spéciale <strong>Danse lente : Final de l'aube</strong> tout en étant en <strong>radiance astrale</strong> alors que sa <strong>doublure de danse solo</strong> est toujours active, les deux types de danse de la <strong>doublure de danse solo</strong> infligent en plus des <cryo>DGT Cryo de zone</cryo> considérés comme des DGT de réaction astrale correspondante."
+    }
+  },
+  "11500003": {
+    "name": "Splendeur merveilleuse",
+    "description": {
+      "0": "Odette obtient cet effet spécial lorsqu'elle invoque sa <strong>doublure de danse solo</strong> après avoir débloqué l'aptitude d'élévation « Printemps de l'élue ».",
+      "1": "Chaque cumul de <strong>splendeur merveilleuse</strong> augmente les DGT de réaction astrale infligés par un personnage de 15 % jusqu'à la fin de la <strong>doublure de danse solo</strong> ou l'invocation d'une nouvelle <strong>doublure de danse solo</strong>.",
+      "2": "Lorsque Odette fait partie de l'équipe mais n'est pas déployée, elle perd 1 cumul de <strong>splendeur merveilleuse</strong> toutes les secondes, tandis que les autres membres de l'équipe à proximité obtiennent la quantité correspondante de cumuls de <strong>splendeur merveilleuse</strong>."
+    }
+  },
+  "11500004": {
+    "name": "Radiance astrale",
+    "description": {
+      "0": "La <strong>radiance « Astroconduction »</strong> et la <strong>radiance « Astrodispersion »</strong> sont toutes les deux considérées comme des <strong>radiances astrales</strong>.",
+      "1": "Les personnages peuvent être affectés par un seul type de radiance à la fois, la <strong>radiance « Astroconduction »</strong> ayant la priorité."
     }
   }
 }

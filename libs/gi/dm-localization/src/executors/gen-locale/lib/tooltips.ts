@@ -60,7 +60,7 @@ function replaceTalentLinkWithTooltip(
   let talent = ''
   // Use .find since it returns early
   const data = Object.values(avatarSkillDepotExcelConfigData).find((data) => {
-    if (id === data.energySkill.toString()) {
+    if (id === data.energySkill?.toString()) {
       talent = 'burst'
       return true
     } else if (

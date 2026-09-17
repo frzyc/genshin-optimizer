@@ -51,7 +51,7 @@
       "3": [
         "Khi trong trạng thái Mộng Trôi, Yumemizuki Mizuki sẽ liên tục trôi về phía trước, đồng thời gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo> cho kẻ địch gần đó theo chu kỳ.",
         "Trong thời gian này, Yumemizuki Mizuki có thể điều khiển hướng trôi, đồng thời tăng khoảng cách thu thập <strong>Đồ Ăn Vặt Yumemi</strong> từ Kỹ Năng Nộ <strong>Liệu Pháp Bí Truyền Anraku</strong>.",
-        "Căn cứ vào Tinh Thông Nguyên Tố của Yumemizuki Mizuki để gia tăng sát thương phản ứng Khuếch Tán gây ra bởi nhân vật trong đội gần đó.",
+        "Căn cứ vào Tinh Thông Nguyên Tố của Yumemizuki Mizuki để gia tăng sát thương phản ứng Khuếch Tán và Tinh-Khuếch Tán gây ra bởi nhân vật trong đội gần đó.",
         "Khi Yumemizuki Mizuki rời trận hoặc kích hoạt lại kỹ năng này lần nữa thì trạng thái Mộng Trôi sẽ kết thúc."
       ],
       "4": "<br/>",
@@ -61,9 +61,9 @@
       "0": "Sát Thương Kỹ Năng",
       "1": "Sát Thương Tấn Công Theo Chu Kỳ",
       "2": "Thời Gian Duy Trì Mộng Trôi",
-      "3": "Phần Trăm Sát Thương Khuếch Tán Tăng Bởi Mỗi Điểm Tinh Thông",
-      "4": "CD",
-      "5": "",
+      "3": "Phần trăm sát thương Khuếch Tán tăng bởi mỗi 100 điểm Tinh Thông",
+      "4": "Phần trăm sát thương Tinh-Khuếch Tán tăng bởi mỗi 100 điểm Tinh Thông",
+      "5": "CD",
       "6": "",
       "7": "",
       "8": "",
@@ -116,7 +116,7 @@
   "passive1": {
     "name": "Tiếng Vọng Đêm Trăng",
     "description": {
-      "0": "Khi Yumemizuki Mizuki kích hoạt phản ứng Khuếch Tán trong trạng thái Mộng Trôi, thời gian duy trì trạng thái Mộng Trôi sẽ kéo dài 2.5s. Hiệu quả này mỗi 0.3s tối đa kích hoạt 1 lần, trong một lần Mộng Trôi tối đa kích hoạt 2 lần."
+      "0": "Khi Yumemizuki Mizuki kích hoạt phản ứng Khuếch Tán hoặc Tinh-Khuếch Tán trong trạng thái Mộng Trôi, thời gian duy trì trạng thái Mộng Trôi sẽ kéo dài 2.5s. Hiệu quả này mỗi 0.3s tối đa kích hoạt 1 lần, trong một lần Mộng Trôi tối đa kích hoạt 2 lần."
     }
   },
   "passive2": {
@@ -134,17 +134,21 @@
   "lockedPassive": {
     "name": "Giấc Mơ Sáng Tỏ",
     "description": {
-      "0": "Sau khi Yumemizuki Mizuki kích hoạt phản ứng Khuếch Tán trong trạng thái Mộng Trôi, trong thời gian Mộng Trôi lần này, lần sau gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo> theo chu kỳ lên kẻ địch ở gần sẽ tăng sát thương gây ra, mức tăng tương đương 1000% Tinh Thông Nguyên Tố của Yumemizuki Mizuki. Hiệu quả nêu trên mỗi 2.5s tối đa kích hoạt một lần.",
-      "1": "Ngoài ra, khi trong trạng thái Mộng Trôi, các nhân vật trong đội ở gần sẽ tăng Tinh Thông Nguyên Tố, mức tăng tương đương 10% Tinh Thông Nguyên Tố của bản thân Yumemizuki Mizuki."
+      "0": "Sau khi Yumemizuki Mizuki kích hoạt phản ứng Khuếch Tán hoặc Tinh-Khuếch Tán trong trạng thái Mộng Trôi, trong thời gian Mộng Trôi lần này, lần sau gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo> theo chu kỳ lên kẻ địch ở gần sẽ tăng sát thương gây ra, mức tăng tương đương 1000% Tinh Thông Nguyên Tố của Yumemizuki Mizuki. Hiệu quả nêu trên mỗi 2.5s tối đa kích hoạt một lần.",
+      "1": "<strong>Tỏa Sáng: Tinh-Khuếch Tán</strong>: Khi Yumemizuki Mizuki gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo> được cường hóa kể trên lên kẻ địch, sẽ còn gây thêm một lần <anemo>Sát Thương Nguyên Tố Phong</anemo> dựa trên 1000% Tinh Thông Nguyên Tố của Mizuki, sát thương này được xem là sát thương phản ứng Tinh-Khuếch Tán.",
+      "2": "<br/>",
+      "3": "Ngoài ra, khi trong trạng thái Mộng Trôi, các nhân vật trong đội ở gần sẽ tăng Tinh Thông Nguyên Tố, mức tăng tương đương 10% Tinh Thông Nguyên Tố của bản thân Yumemizuki Mizuki.",
+      "4": "Trong 8s sau khi nhân vật trong đội kích hoạt phản ứng Tinh-Khuếch Tán ở gần, Yumemizuki Mizuki sẽ vào trạng thái <strong>Tỏa Sáng: Tinh-Khuếch Tán</strong>."
     }
   },
   "constellation1": {
     "name": "Sương Mù Mờ Ảo Như Nước Xa",
     "description": {
-      "0": "Yumemizuki Mizuki khi ở trong trạng thái Mộng Trôi, mỗi 3.5s sẽ gán hiệu ứng \"Chờ Đợi Hai Mươi Ba Đêm\" cho kẻ địch gần đó trong 3s. Kẻ địch bị ảnh hưởng bởi hiệu quả \"Chờ Đợi Hai Mươi Ba Đêm\" khi chịu Sát Thương Nguyên Tố Phong và kích hoạt phản ứng Khuếch Tán sẽ xóa bỏ hiệu quả này, khiến sát thương của lần Khuếch Tán đó lên kẻ địch gia tăng tương ứng với 1100% Tinh Thông Nguyên Tố của Mizuki."
+      "0": "Yumemizuki Mizuki khi ở trong trạng thái Mộng Trôi, mỗi 3.5s sẽ gán hiệu ứng \"Chờ Đợi Hai Mươi Ba Đêm\" cho kẻ địch gần đó trong 3s. Kẻ địch bị ảnh hưởng bởi hiệu quả \"Chờ Đợi Hai Mươi Ba Đêm\" khi chịu Sát Thương Nguyên Tố Phong và kích hoạt phản ứng Khuếch Tán/Tinh-Khuếch Tán, sẽ xóa bỏ hiệu quả này, khiến sát thương Khuếch Tán/Tinh-Khuếch Tán gây lên kẻ địch lần đó gia tăng tương ứng với 1100%/550% Tinh Thông Nguyên Tố của Mizuki."
     },
     "upgradedDescription": {
-      "0": "Yumemizuki Mizuki khi ở trong trạng thái Mộng Trôi, mỗi 3.5s sẽ gán hiệu ứng \"Chờ Đợi Hai Mươi Ba Đêm\" cho kẻ địch gần đó trong 3s. Kẻ địch bị ảnh hưởng bởi hiệu quả \"Chờ Đợi Hai Mươi Ba Đêm\" khi chịu Sát Thương Nguyên Tố Phong và kích hoạt phản ứng Khuếch Tán sẽ xóa bỏ hiệu quả này, khiến sát thương của lần Khuếch Tán đó lên kẻ địch gia tăng tương ứng với 1100% Tinh Thông Nguyên Tố của Mizuki, đồng thời thực hiện thêm một lần tấn công lên kẻ địch này, gây <anemo>Sát Thương Nguyên Tố Phong</anemo> tương đương 1000% Tinh Thông Nguyên Tố của Mizuki."
+      "0": "Yumemizuki Mizuki khi ở trong trạng thái Mộng Trôi, mỗi 3.5s sẽ gán hiệu ứng \"Chờ Đợi Hai Mươi Ba Đêm\" cho kẻ địch gần đó trong 3s. Kẻ địch bị ảnh hưởng bởi hiệu quả \"Chờ Đợi Hai Mươi Ba Đêm\" khi chịu Sát Thương Nguyên Tố Phong và kích hoạt phản ứng Khuếch Tán/Tinh-Khuếch Tán, sẽ xóa bỏ hiệu quả này, khiến sát thương Khuếch Tán/Tinh-Khuếch Tán gây lên kẻ địch lần đó gia tăng tương ứng với 1100%/550% Tinh Thông Nguyên Tố của Mizuki, đồng thời thực hiện thêm một lần tấn công lên kẻ địch này, gây <anemo>Sát Thương Nguyên Tố Phong</anemo> tương đương 1000% Tinh Thông Nguyên Tố của Mizuki.",
+      "1": "<strong>Tỏa Sáng: Tinh-Khuếch Tán</strong>: Sát thương thêm kể trên sẽ chuyển sang <anemo>Sát Thương Nguyên Tố Phong</anemo> tương đương 400% Tinh Thông Nguyên Tố của Mizuki và được xem là sát thương phản ứng Tinh-Khuếch Tán."
     }
   },
   "constellation2": {
@@ -183,10 +187,10 @@
   "constellation6": {
     "name": "Nỗi Nhớ Quanh Quẩn Vướng Trong Tim",
     "description": {
-      "0": "Khi Yumemizuki Mizuki ở trong trạng thái Mộng Trôi, sát thương phản ứng Khuếch Tán kích hoạt từ nhân vật trong đội gần đó có thể Bạo Kích, với Tỷ Lệ Bạo Kích cố định là 30%, Sát Thương Bạo Kích cố định là 100%."
+      "0": "Khi Yumemizuki Mizuki ở trong trạng thái Mộng Trôi, sát thương phản ứng Khuếch Tán kích hoạt từ nhân vật trong đội gần đó có thể Bạo Kích, với Tỷ Lệ Bạo Kích cố định là 30%, Sát Thương Bạo Kích cố định là 100%. Đồng thời, sát thương phản ứng Tinh-Khuếch Tán gây ra bởi những nhân vật này sẽ tăng 10% Tỷ Lệ Bạo Kích, tăng 20% Sát Thương Bạo Kích."
     },
     "upgradedDescription": {
-      "0": "Khi Yumemizuki Mizuki ở trong trạng thái Mộng Trôi, sát thương phản ứng Khuếch Tán kích hoạt từ nhân vật trong đội gần đó có thể Bạo Kích, với Tỷ Lệ Bạo Kích cố định là 30%, Sát Thương Bạo Kích cố định là 100%.",
+      "0": "Khi Yumemizuki Mizuki ở trong trạng thái Mộng Trôi, sát thương phản ứng Khuếch Tán kích hoạt từ nhân vật trong đội gần đó có thể Bạo Kích, với Tỷ Lệ Bạo Kích cố định là 30%, Sát Thương Bạo Kích cố định là 100%. Đồng thời, sát thương phản ứng Tinh-Khuếch Tán gây ra bởi những nhân vật này sẽ tăng 10% Tỷ Lệ Bạo Kích, tăng 20% Sát Thương Bạo Kích.",
       "1": "Dựa trên phần Tinh Thông Nguyên Tố vượt quá 500 của Yumemizuki Mizuki, mỗi điểm sẽ khiến Yumemizuki Mizuki tăng 0.04% Tỷ Lệ Bạo Kích và 0.16% Sát Thương Bạo Kích, tối đa khiến Yumemizuki Mizuki tăng 20% Tỷ Lệ Bạo Kích và 80% Sát Thương Bạo Kích theo cách này."
     }
   }

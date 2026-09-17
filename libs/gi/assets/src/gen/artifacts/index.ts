@@ -23,6 +23,7 @@ import GildedDreams from './GildedDreams'
 import GladiatorsFinale from './GladiatorsFinale'
 import GoldenTroupe from './GoldenTroupe'
 import HeartOfDepth from './HeartOfDepth'
+import HeartOfTheFurnace from './HeartOfTheFurnace'
 import HuskOfOpulentDreams from './HuskOfOpulentDreams'
 import Instructor from './Instructor'
 import Lavawalker from './Lavawalker'
@@ -44,6 +45,7 @@ import PrayersForWisdom from './PrayersForWisdom'
 import PrayersToSpringtime from './PrayersToSpringtime'
 import ResolutionOfSojourner from './ResolutionOfSojourner'
 import RetracingBolide from './RetracingBolide'
+import ScarletProof from './ScarletProof'
 import Scholar from './Scholar'
 import ScrollOfTheHeroOfCinderCity from './ScrollOfTheHeroOfCinderCity'
 import ShimenawasReminiscence from './ShimenawasReminiscence'
@@ -86,6 +88,7 @@ const data = {
   GladiatorsFinale,
   GoldenTroupe,
   HeartOfDepth,
+  HeartOfTheFurnace,
   HuskOfOpulentDreams,
   Instructor,
   Lavawalker,
@@ -107,6 +110,7 @@ const data = {
   PrayersToSpringtime,
   ResolutionOfSojourner,
   RetracingBolide,
+  ScarletProof,
   Scholar,
   ScrollOfTheHeroOfCinderCity,
   ShimenawasReminiscence,

@@ -62,8 +62,7 @@ const sheet = registerWengine(
         )
       )
     ),
-    showSpecialtyAndEquipped(key),
-    true
+    showSpecialtyAndEquipped(key)
   )
 )
 export default sheet

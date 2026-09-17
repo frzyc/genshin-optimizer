@@ -65,9 +65,7 @@ const sheet = registerWengine(
           prod(fireExSpecialUsed, percent(subscript(phase, dm.common_dmg_)))
         )
       )
-    ),
-    undefined,
-    true
+    )
   )
 )
 export default sheet

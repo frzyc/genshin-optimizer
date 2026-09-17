@@ -1018,5 +1018,39 @@
       "flower",
       "sands"
     ]
+  },
+  "ScarletProof": {
+    "setNum": [
+      2,
+      4
+    ],
+    "rarities": [
+      4,
+      5
+    ],
+    "slots": [
+      "goblet",
+      "plume",
+      "circlet",
+      "flower",
+      "sands"
+    ]
+  },
+  "HeartOfTheFurnace": {
+    "setNum": [
+      2,
+      4
+    ],
+    "rarities": [
+      4,
+      5
+    ],
+    "slots": [
+      "goblet",
+      "plume",
+      "circlet",
+      "flower",
+      "sands"
+    ]
   }
 }

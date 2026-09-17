@@ -5,12 +5,11 @@ import type {
   TravelerKey,
 } from '@genshin-optimizer/gi/consts'
 import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
-import type { CharacterSheet } from './CharacterSheet'
-
 import Aino from './Aino'
 import Albedo from './Albedo'
 import Alhaitham from './Alhaitham'
 import Aloy from './Aloy'
+import Alyosha from './Alyosha'
 import Amber from './Amber'
 import AratakiItto from './AratakiItto'
 import Arlecchino from './Arlecchino'
@@ -19,6 +18,7 @@ import Barbara from './Barbara'
 import Beidou from './Beidou'
 import Bennett from './Bennett'
 import Candace from './Candace'
+import type { CharacterSheet } from './CharacterSheet'
 import Charlotte from './Charlotte'
 import Chasca from './Chasca'
 import Chevreuse from './Chevreuse'
@@ -85,6 +85,7 @@ import Nicole from './Nicole'
 import Nilou from './Nilou'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
+import Odette from './Odette'
 import Ororon from './Ororon'
 import Prune from './Prune'
 import Qiqi from './Qiqi'
@@ -106,6 +107,8 @@ import Thoma from './Thoma'
 import Tighnari from './Tighnari'
 import TravelerAnemoF from './TravelerAnemoF'
 import TravelerAnemoM from './TravelerAnemoM'
+import TravelerCryoF from './TravelerCryoF'
+import TravelerCryoM from './TravelerCryoM'
 import TravelerDendroF from './TravelerDendroF'
 import TravelerDendroM from './TravelerDendroM'
 import TravelerElectroF from './TravelerElectroF'
@@ -142,6 +145,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Albedo,
   Alhaitham,
   Aloy,
+  Alyosha,
   Amber,
   AratakiItto,
   Arlecchino,
@@ -216,6 +220,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Nilou,
   Ningguang,
   Noelle,
+  Odette,
   Ororon,
   Prune,
   Qiqi,
@@ -236,12 +241,14 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Thoma,
   Tighnari,
   TravelerAnemoF,
-  TravelerGeoF,
-  TravelerElectroF,
-  TravelerDendroF,
   TravelerAnemoM,
+  TravelerCryoF,
+  TravelerCryoM,
+  TravelerGeoF,
   TravelerGeoM,
+  TravelerElectroF,
   TravelerElectroM,
+  TravelerDendroF,
   TravelerDendroM,
   TravelerHydroF,
   TravelerHydroM,

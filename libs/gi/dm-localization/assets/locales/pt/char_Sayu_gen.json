@@ -128,7 +128,7 @@
   "passive1": {
     "name": "Alguém Mais Adequado",
     "description": {
-      "0": "Quando Sayu desencadeia uma reação de Redemoinho enquanto ela estiver no campo de batalha, ela cura todos os seus personagens e aliados próximos em 300 de Vida. Ela também curará um adicional de 1.2 de Vida para cada ponto de Proficiência Elemental que ela possuir.",
+      "0": "Quando Sayu desencadeia uma reação de Redemoinho ou Redemoinho Estelar, enquanto ela estiver no campo de batalha, ela cura todos os seus personagens e aliados próximos em 300 de Vida. Ela também curará um adicional de 1.2 de Vida para cada ponto de Proficiência Elemental que ela possuir.",
       "1": "Esse efeito pode ocorrer uma vez a cada 2s."
     }
   },
@@ -173,7 +173,7 @@
   "constellation4": {
     "name": "Novo Método de Ser Preguiçosa",
     "description": {
-      "0": "Sayu regenera 1.2 de Energia quando ela desencadeia uma reação de Redemoinho.",
+      "0": "Sayu regenera 1.2 de Energia quando ela desencadeia uma reação de Redemoinho ou Redemoinho Estelar.",
       "1": "Este efeito ocorre uma vez a cada 2s."
     }
   },

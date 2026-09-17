@@ -140,8 +140,8 @@
   "lockedPassive": {
     "name": "Tuyệt Phẩm Tuyển Chọn",
     "description": {
-      "0": "Trong 20s sau khi thi triển Kỹ Năng Nguyên Tố <strong>Móng Mèo Lạnh Giá</strong>, khi nhân vật trong đội kích hoạt phản ứng Siêu Dẫn, Tinh-Siêu Dẫn, Diona sẽ đồng thời bắn thêm 3 <strong>Móng Mèo Lạnh Giá</strong>. <strong>Móng Mèo Lạnh Giá</strong> bắn ra theo cách này sẽ không tạo ra hạt nhân nguyên tố, cũng không tạo ra khiên khi trúng kẻ địch. Hiệu quả này mỗi 3.5s tối đa kích hoạt một lần.",
-      "1": "Ngoài ra, khi ở trong <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Vùng Trục Sao</strong></tooltip>, Diona sẽ vào trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>."
+      "0": "Trong 20s sau khi thi triển Kỹ Năng Nguyên Tố <strong>Móng Mèo Lạnh Giá</strong>, khi nhân vật trong đội kích hoạt phản ứng Tinh-Siêu Dẫn, Siêu Dẫn, Khuếch Tán Nguyên Tố Băng, Tinh-Khuếch Tán, Diona sẽ đồng thời bắn thêm 3 <strong>Móng Mèo Lạnh Giá</strong>. <strong>Móng Mèo Lạnh Giá</strong> bắn ra theo cách này sẽ không tạo ra hạt nhân nguyên tố, cũng không tạo ra khiên khi trúng kẻ địch. Hiệu quả này mỗi 3.5s tối đa kích hoạt một lần.",
+      "1": "Ngoài ra, khi ở trong <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Vùng Trục Sao</strong></tooltip>/trong 8s sau khi nhân vật trong đội kích hoạt phản ứng Tinh-Khuếch Tán ở gần, Diona sẽ phân biệt tiến vào trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>/<strong>Tỏa Sáng: Tinh-Khuếch Tán</strong>."
     }
   },
   "constellation1": {
@@ -194,8 +194,9 @@
       ],
       "2": "<br/>",
       "3": "Ngoài ra, Diona sẽ tăng 25% Giới Hạn HP.",
-      "4": "<br/>",
-      "5": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Nhân vật trong khu vực <strong>Đặc Chế Mãnh Liệt</strong> sẽ tăng 40% sát thương phản ứng Siêu Dẫn, Tinh-Siêu Dẫn."
+      "4": "<strong>Tỏa Sáng: Tinh Tú Lấp Lánh</strong>: Nhân vật trong khu vực Đặc Chế Mãnh Liệt sẽ tăng sát thương phản ứng tương ứng:",
+      "5": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Sát thương phản ứng Siêu Dẫn, Tinh-Siêu Dẫn tăng 40%.",
+      "6": "<strong>Tỏa Sáng: Tinh-Khuếch Tán</strong>: Sát thương phản ứng Khuếch Tán Nguyên Tố Băng, Tinh-Khuếch Tán tăng 40%."
     }
   }
 }

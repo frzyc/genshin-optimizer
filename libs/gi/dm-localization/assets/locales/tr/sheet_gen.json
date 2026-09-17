@@ -65,7 +65,9 @@
     "hyperbloom": "Aşırı Çiçeklenme",
     "quicken": "Hızlandı",
     "aggravate": "Şiddetlenme",
-    "spread": "Yayılma"
+    "spread": "Yayılma",
+    "stellarconduct": "Yıldız İletimi",
+    "stellarswirl": "Yıldız Girdabı"
   },
   "stat": {
     "def": "Savunma",
@@ -77,15 +79,15 @@
   "talentLvl": "Yetenek Sv. {{level}}",
   "talents": {
     "auto": "Normal Saldırı",
-    "skill": "",
-    "burst": "",
+    "skill": "Element Becerisi",
+    "burst": "Element Patlaması",
     "altSprint": "Alternatif Depar"
   },
   "unlockPassive1": "1. Karakter Yükseltme Aşamasında açılır",
   "unlockPassive2": "4. Karakter Yükseltme Aşamasında açılır",
   "unlockPassive3": "Pasif Yetenek",
   "unlockLockedPassive": "Öncelikli görevler tamamlandıktan sonra açılır",
-  "witchPassive": "",
+  "witchPassive": "Cadının Ödevi",
   "moonsign": "Ay Sembolü",
   "hexerei": "Cadılık"
 }

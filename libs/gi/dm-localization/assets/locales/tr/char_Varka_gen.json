@@ -118,7 +118,7 @@
   "passive2": {
     "name": "Rüzgarın Öncüsü",
     "description": {
-      "0": "Yakındaki grup üyeleri Girdap tepkimesi tetiklediğinde Varka bir <strong>Mavi Dişin Yemini</strong> kademesi kazanır ve 8 saniyeliğine Normal Saldırıları, Yüklü Saldırıları, <strong>Gök Yutan</strong> özel Yüklü Saldırısı ve <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Dört Rüzgarın Yükselişi</strong></tooltip> özel Element Becerisinin verdiği Hasar %7,5 artar. 4 kademeye kadar birikebilir. Her karakter Varka'ya bu şekilde her saniye 1 kademe <strong>Mavi Dişin Yemini</strong> kazandırabilir."
+      "0": "Yakındaki grup üyeleri bir Girdap veya Yıldız Girdabı tepkimesi tetiklediğinde Varka 1 <strong>Mavi Dişin Yemini</strong> kademesi kazanır ve 8 saniyeliğine Normal Saldırıları, Yüklü Saldırıları, <strong>Gök Yutan</strong> özel Yüklü Saldırısı ve <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Dört Rüzgarın Yükselişi</strong></tooltip> özel Element Becerisinin verdiği Hasar %7,5 artar. 4 kademeye kadar birikebilir. Her karakter Varka'ya bu şekilde her saniye 1 kademe <strong>Mavi Dişin Yemini</strong> kazandırabilir."
     }
   },
   "passive3": {
@@ -160,7 +160,7 @@
   "constellation4": {
     "name": "\"Kimse Alamaz Şarkı Söyleme Özgürlüğümüzü Elimizden\"",
     "description": {
-      "0": "Varka bir Girdap tepkimesi tetiklediğinde tepkimeye dahil olan Element Türlerine bağlı olarak 10 saniyeliğine yakındaki tüm grup üyeleri %20 <anemo>Rüzgar Hasarı Bonusu</anemo> ve ilgili Element Hasarı Bonusu kazanır."
+      "0": "Varka bir Girdap veya Yıldız Girdabı tepkimesi tetiklediğinde tepkimeye dahil olan Element Türlerine bağlı olarak 10 saniyeliğine yakındaki tüm grup üyeleri %20 <anemo>Rüzgar Hasarı Bonusu</anemo> ve ilgili Element Hasarı Bonusu kazanır."
     }
   },
   "constellation5": {

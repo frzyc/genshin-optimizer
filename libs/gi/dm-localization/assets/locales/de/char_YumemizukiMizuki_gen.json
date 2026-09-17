@@ -51,7 +51,7 @@
       "3": [
         " Yumemizuki Mizuki bewegt sich, wenn sie im Zustand Träumerisches Treiben ist, fortlaufend nach vorn und fügt Gegnern in der Nähe in gewissen zeitlichen Abständen <anemo>Anemo-Flächenschaden</anemo> zu.",
         " Während dieser Zeit kann Yumemizuki Mizuki die Richtung, in die sie schwebt, steuern. Erhöht währenddessen die Reichweite zum Aufsammeln von <strong>Snacks nach Yumemi-Art</strong> der Spezialfähigkeit <strong>Anraku-Therapie in den geheimen Quellen</strong>.",
-        " Erhöht den von Truppenmitgliedern in der Nähe beim Auslösen der Reaktion Verwirbelung verursachten Schaden basierend auf Yumemizuki Mizukis Elementarkunde.",
+        " Erhöht den von Truppenmitgliedern in der Nähe beim Auslösen der Reaktion Verwirbelung und Stellar-Verwirbelung verursachten Schaden basierend auf Yumemizuki Mizukis Elementarkunde.",
         " Beim Auswechseln von Yumemizuki Mizuki oder erneuten Anwenden der Fähigkeit endet der Zustand Träumerisches Treiben."
       ],
       "4": "<br/>",
@@ -61,9 +61,9 @@
       "0": "Fähigkeits-SCH",
       "1": "SCH fortlaufenden Angriffs",
       "2": "Dauer von Träumerisches Treiben",
-      "3": "Verwirbelung-SCH-Bonus pro Punkt Elementarkunde",
-      "4": "Abklingzeit",
-      "5": "",
+      "3": "Verwirbelung-SCH-Bonus pro 100 Punkte Elementarkunde",
+      "4": "Stellar-Verwirbelung-SCH-Bonus pro 100 Punkt Elementarkunde",
+      "5": "Abklingzeit",
       "6": "",
       "7": "",
       "8": "",
@@ -116,7 +116,7 @@
   "passive1": {
     "name": "Ruhelose Stimme des hellen Mondes",
     "description": {
-      "0": "Verlängert, wenn Yumemizuki Mizuki im Zustand Träumerisches Treiben die Reaktion Verwirbelung auslöst, die Wirkungsdauer dieses Zustands um 2,5 s. 0,3 s Abklingzeit, 2-mal auslösbar während einer Wirkungsdauer des Zustands Träumerisches Treiben."
+      "0": "Verlängert, wenn Yumemizuki Mizuki im Zustand Träumerisches Treiben die Reaktion Verwirbelung oder Stellar-Verwirbelung auslöst, die Wirkungsdauer dieses Zustands um 2,5 s. 0,3 s Abklingzeit, 2-mal auslösbar während einer Wirkungsdauer des Zustands Träumerisches Treiben."
     }
   },
   "passive2": {
@@ -134,17 +134,21 @@
   "lockedPassive": {
     "name": "Ein Traum entsteht",
     "description": {
-      "0": "Erhöht, nachdem Yumemizuki Mizuki im Zustand „Träumerisches Treiben“ eine Verwirbelung ausgelöst hat, den den Gegnern in der Nähe beim nächsten Mal zugefügten, regelmäßigen <anemo>Anemo-Flächenschaden</anemo> während der Wirkungsdauer dieses „Träumerischen Treibens“ um 1.000 % von Yumemizuki Mizukis Elementarkunde, 2,5 s Abklingzeit.",
-      "1": "Erhöht zudem, solange Yumemizuki Mizuki sich im Zustand „Träumerisches Treiben“ befindet, die Elementarkunde der Truppenmitglieder in der Nähe um 10 % von Yumemizuki Mizukis Elementarkunde."
+      "0": "Erhöht, nachdem Yumemizuki Mizuki im Zustand „Träumerisches Treiben“ eine Verwirbelung oder Stellar-Verwirbelung ausgelöst hat, den den Gegnern in der Nähe beim nächsten Mal zugefügten, regelmäßigen <anemo>Anemo-Flächenschaden</anemo> während der Wirkungsdauer dieses „Träumerischen Treibens“ um 1.000 % von Yumemizuki Mizukis Elementarkunde, 2,5 s Abklingzeit.",
+      "1": "<strong>Leuchten – Stellar-Verwirbelung</strong>: Verursacht, wenn Yumemizuki Mizuki einem Gegner den oben genannten, verstärkten <anemo>Anemo-Flächenschaden</anemo> zufügt, einmal zusätzlich <anemo>Anemo-SCH</anemo> in Höhe von 1.000 % von Yumemizuki Mizukis Elementarkunde. Hierdurch verursachter Schaden gilt als Schaden durch eine Stellar-Verwirbelungs-Reaktion.",
+      "2": "<br/>",
+      "3": "Erhöht zudem, wenn sie sich im Zustand „Träumerisches Treibens“ befindet, die Elementarkunde von Truppenmitgliedern in der Nähe um 10 % von Yumemizuki Mizukis Elementarkunde.",
+      "4": "Versetzt Yumemizuki Mizuki, nachdem sie die Reaktion Stellar-Verwirbelung ausgelöst hat, innerhalb von 8 s in den Zustand <strong>Leuchten – Stellar-Verwirbelung</strong>."
     }
   },
   "constellation1": {
     "name": "Fernen Wassern gleicher Nebel in der Nacht",
     "description": {
-      "0": "Yumemizuki Mizuki fügt im Zustand Träumerisches Treiben alle 3,5 s Gegnern in der Nähe den 3 s haltenden Effekt „Dreiundzwanzig Nächte des Wartens“ zu. Entfernt diesen Effekt von Gegnern, sobald diese von einer Reaktion Verwirbelung erfasst werden, die durch Anemo-Schaden entsteht, und erhöht den diesen Gegnern durch diese Reaktion zugefügten Schaden einmalig um 1.100 % von Yumemizuki Mizukis Elementarkunde."
+      "0": "Yumemizuki Mizuki fügt im Zustand Träumerisches Treiben alle 3,5 s Gegnern in der Nähe den 3 s haltenden Effekt „Dreiundzwanzig Nächte des Wartens“ zu. Entfernt diesen Effekt von Gegnern, sobald diese von einer Reaktion Verwirbelung oder Stellar-Verwirbelung erfasst werden, die durch Anemo-Schaden entsteht, und erhöht den diesen Gegnern durch diese Reaktion Verwirbelung oder Stellar-Verwirbelung zugefügten Schaden einmalig um jeweils 1.100 %/550 % von Yumemizuki Mizukis Elementarkunde."
     },
     "upgradedDescription": {
-      "0": "Yumemizuki Mizuki fügt im Zustand Träumerisches Treiben alle 3,5 s Gegnern in der Nähe den 3 s haltenden Effekt „Dreiundzwanzig Nächte des Wartens“ zu. Entfernt diesen Effekt von Gegnern, sobald diese von einer Reaktion Verwirbelung erfasst werden, die durch Anemo-Schaden entsteht, und erhöht den dem Gegner durch diese Reaktion zugefügten Schaden um 1.100 % von Yumemizuki Mizukis Elementarkunde. Greift diesen Gegner zusätzlich einmal an und fügt ihm <anemo>Anemo-SCH</anemo> in Höhe von 1.000 % von Yumemizuki Mizukis Elementarkunde zu."
+      "0": "Yumemizuki Mizuki fügt im Zustand Träumerisches Treiben alle 3,5 s Gegnern in der Nähe den 3 s haltenden Effekt „Dreiundzwanzig Nächte des Wartens“ zu. Entfernt diesen Effekt von Gegnern, sobald diese von einer Reaktion Verwirbelung oder Stellar-Verwirbelung erfasst werden, die durch Anemo-Schaden entsteht, und erhöht den dem Gegner durch diese Reaktion Verwirbelung oder Stellar-Verwirbelung zugefügten Schaden um jeweils 1.100 %/550 % von Yumemizuki Mizukis Elementarkunde. Greift diesen Gegner zusätzlich einmal an und fügt ihm <anemo>Anemo-SCH</anemo> in Höhe von 1.000 % von Yumemizuki Mizukis Elementarkunde zu.",
+      "1": "<strong>Leuchten – Stellar-Verwirbelung</strong>: Wandelt oben genannten, zusätzlichen Schaden in <anemo>Anemo-SCH</anemo> in Höhe von 400 % von Yumemizuki Mizukis Elementarkunde um. Dieser Schaden wird als Schaden durch die Reaktion Stellar-Verwirbelung gewertet."
     }
   },
   "constellation2": {
@@ -183,10 +187,10 @@
   "constellation6": {
     "name": "Sehnsucht tief in meinem Herzen",
     "description": {
-      "0": "Wenn Yumemizuki Mizuki im Zustand Träumerisches Treiben ist, können beim Verursachen der Reaktion Verwirbelung durch Truppenmitglieder in der Nähe Kritische Treffer des entsprechenden Schadens ausgelöst werden, wobei die KT auf 30 % und der KSCH auf 100 % festgelegt sind."
+      "0": "Wenn Yumemizuki Mizuki im Zustand Träumerisches Treiben ist, können beim Verursachen der Reaktion Verwirbelung durch Truppenmitglieder in der Nähe Kritische Treffer des entsprechenden Schadens ausgelöst werden, wobei die KT auf 30 % und der Kritische Schaden auf 100 % festgelegt sind. Erhöht zudem die KT des Stellar-Verwirbelung-Schadens dieser Figuren um 10 % und den Kritische Schaden um 20 %."
     },
     "upgradedDescription": {
-      "0": "Wenn Yumemizuki Mizuki im Zustand Träumerisches Treiben ist, können beim Verursachen der Reaktion Verwirbelung durch Truppenmitglieder in der Nähe Kritische Treffer des entsprechenden Schadens ausgelöst werden, wobei die KT auf 30 % und der Kritische Schaden auf 100 % festgelegt sind.",
+      "0": "Wenn Yumemizuki Mizuki im Zustand Träumerisches Treiben ist, können beim Verursachen der Reaktion Verwirbelung durch Truppenmitglieder in der Nähe Kritische Treffer des entsprechenden Schadens ausgelöst werden, wobei die KT auf 30 % und der Kritische Schaden auf 100 % festgelegt sind. Erhöht zudem die durch diese Figuren mit einer Stellar-Verwirbelungs-Reaktion verursachte KT um 10 % sowie den Kritischen Schaden um 20 %.",
       "1": "Erhöht für den Teil, der 500 Punkte von Yumemizuki Mizukis Elementarkunde überschreitet, für jeden Punkt Elementarkunde die KT um 0,04 % und den KSCH um 0,16 %. Auf diese Weise können Yumemizuki Mizukis KT um max. 20 % und ihr KSCH um max. 80 % erhöht werden."
     }
   }

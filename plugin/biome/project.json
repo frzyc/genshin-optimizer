@@ -1,0 +1,41 @@
+{
+  "name": "biome",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "plugin/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/plugin",
+        "main": "plugin/src/index.ts",
+        "tsConfig": "plugin/tsconfig.lib.json",
+        "assets": [
+          "plugin/*.md",
+          {
+            "input": "./plugin/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./plugin/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./plugin",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./plugin",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    }
+  }
+}

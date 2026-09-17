@@ -70,7 +70,7 @@ jobs:
           cache: 'yarn'
       - name: Yarn install
         run: |
-          yarn install --immutable --immutable-cache
+          yarn install --immutable
       - name: Build Somnia
         run: |
           cp apps/somnia/src/config.empty.json apps/somnia/src/config.json

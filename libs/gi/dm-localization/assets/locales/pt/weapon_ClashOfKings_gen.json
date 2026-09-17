@@ -1,0 +1,24 @@
+{
+  "name": "Duelo de Reis",
+  "description": {
+    "0": "Uma caixa dourada ricamente incrustada com joias preciosas. Ela guarda um jogo muito apreciado pelos reis das areias."
+  },
+  "passiveName": "Esquecido pelo Dia e Noite",
+  "passiveDescription": {
+    "0": {
+      "0": "Depois que o portador lançar a Habilidade Elemental, obtém o efeito Regras do Tabuleiro por 6s: aumenta o ATQ em <cryo>20%</cryo> e a Proficiência Elemental em <cryo>100</cryo>. Esse efeito pode ser desencadeado uma vez a cada 12s, e não é acumulável. Na duração, quando o Ataque Carregado do portador atingir o inimigo, prolonga a duração desse efeito em 6s. É possível prolongar a duração do efeito dessa forma em até 6s."
+    },
+    "1": {
+      "0": "Depois que o portador lançar a Habilidade Elemental, obtém o efeito Regras do Tabuleiro por 6s: aumenta o ATQ em <cryo>25%</cryo> e a Proficiência Elemental em <cryo>125</cryo>. Esse efeito pode ser desencadeado uma vez a cada 12s, e não é acumulável. Na duração, quando o Ataque Carregado do portador atingir o inimigo, prolonga a duração desse efeito em 6s. É possível prolongar a duração do efeito dessa forma em até 6s."
+    },
+    "2": {
+      "0": "Depois que o portador lançar a Habilidade Elemental, obtém o efeito Regras do Tabuleiro por 6s: aumenta o ATQ em <cryo>30%</cryo> e a Proficiência Elemental em <cryo>150</cryo>. Esse efeito pode ser desencadeado uma vez a cada 12s, e não é acumulável. Na duração, quando o Ataque Carregado do portador atingir o inimigo, prolonga a duração desse efeito em 6s. É possível prolongar a duração do efeito dessa forma em até 6s."
+    },
+    "3": {
+      "0": "Depois que o portador lançar a Habilidade Elemental, obtém o efeito Regras do Tabuleiro por 6s: aumenta o ATQ em <cryo>35%</cryo> e a Proficiência Elemental em <cryo>175</cryo>. Esse efeito pode ser desencadeado uma vez a cada 12s, e não é acumulável. Na duração, quando o Ataque Carregado do portador atingir o inimigo, prolonga a duração desse efeito em 6s. É possível prolongar a duração do efeito dessa forma em até 6s."
+    },
+    "4": {
+      "0": "Depois que o portador lançar a Habilidade Elemental, obtém o efeito Regras do Tabuleiro por 6s: aumenta o ATQ em <cryo>40%</cryo> e a Proficiência Elemental em <cryo>200</cryo>. Esse efeito pode ser desencadeado uma vez a cada 12s, e não é acumulável. Na duração, quando o Ataque Carregado do portador atingir o inimigo, prolonga a duração desse efeito em 6s. É possível prolongar a duração do efeito dessa forma em até 6s."
+    }
+  }
+}

@@ -5,7 +5,7 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/pando/engine'
-import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
@@ -184,9 +184,7 @@ const sheet = register(
     'core_anomProf',
     teamBuff.combat.anomProf.add(
       shield_active.ifOn(percent(subscript(char.core, dm.core.anomProf)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'ability_anomBuildupRes_',
@@ -201,9 +199,7 @@ const sheet = register(
         3,
         chain_finish_hit.ifOn(percent(-dm.ability.anomBuildupRes_))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm2_basic_electric_anomBuildup_',

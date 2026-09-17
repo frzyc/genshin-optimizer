@@ -65,6 +65,8 @@ export const characterIdMap = {
   '1551': 'Pyrois',
   '1561': 'Velina',
   '1571': 'Norma',
+  '1581': 'Remielle',
+  '1591': 'Sigrid',
 } as const
 
 export const attributeMap: Record<number, AttributeKey> = {
@@ -74,6 +76,7 @@ export const attributeMap: Record<number, AttributeKey> = {
   203: 'electric',
   205: 'ether',
   204: 'wind',
+  300: 'lumiflux',
 } as const
 export const specialityMap: Record<number, SpecialityKey> = {
   1: 'attack',
@@ -100,6 +103,7 @@ export const factionMap: Record<number, FactionKey> = {
   13: 'AngelsOfDelusion',
   15: 'Phaethon',
   16: 'RoscaeliferExternalStrategyDepartment',
+  17: 'CovenantOfDayat',
 }
 
 export const characterRarityMap: Record<number, CharacterRarityKey> = {

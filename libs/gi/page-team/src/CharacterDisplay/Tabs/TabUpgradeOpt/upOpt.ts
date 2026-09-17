@@ -2,28 +2,30 @@ import { linspace, range } from '@genshin-optimizer/common/util'
 import {
   type ArtifactSetKey,
   type ArtifactSlotKey,
+  allArtifactSlotKeys,
+  allSubstatKeys,
   type MainStatKey,
   type SubstatKey,
-  allSubstatKeys,
-  artSlotMainKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { ArtifactBuildData } from '@genshin-optimizer/gi/solver'
 import { compactArtifacts } from '@genshin-optimizer/gi/solver-tc'
+import type {
+  ElixirSimplifiedCache,
+  EvaluatedMarkovNode,
+  MarkovNode,
+  Objective,
+} from '@genshin-optimizer/gi/upopt'
 import {
+  accumulateEvaluations,
   deduplicate,
   dustReshape,
-  elixirDefinition,
+  elixirDefinitionMemoSimplified,
   evalMarkovNode,
   expandNode,
   expandNodes,
   levelUpArtifact,
   makeObjective,
-} from '@genshin-optimizer/gi/upopt'
-import type {
-  EvaluatedMarkovNode,
-  MarkovNode,
-  Objective,
 } from '@genshin-optimizer/gi/upopt'
 import { type OptNode, optimize, precompute } from '@genshin-optimizer/gi/wr'
 import { removeSetKeys } from './formulaUtils'
@@ -51,9 +53,13 @@ type ReshapeConfig = {
 }
 type DefineConfig = {
   enabled: boolean
-  setKeys: ArtifactSetKey[]
-  slotKeys: ArtifactSlotKey[]
-  mainStats: MainStatKey[]
+  setSlotMainStatKeys: Record<
+    ArtifactSlotKey,
+    {
+      setKeys: readonly ArtifactSetKey[]
+      mainStats: readonly MainStatKey[]
+    }
+  >
   substats: SubstatKey[]
 }
 
@@ -78,7 +84,7 @@ export type UpOptInfo = LevelUpInfo | ReshapeInfo | DefineInfo
 
 function canLevelUp(art: ICachedArtifact) {
   // Restricted to 5* artifacts for now.
-  return art.level < 20 && art.rarity === 5
+  return art.rarity === 5
 }
 
 export function canReshape(art: ICachedArtifact) {
@@ -102,6 +108,7 @@ export class UpOptCalculatorV2 {
   obj: Objective
   candidates: EvaluatedMarkovTree[] = []
   fixedIx = 0
+  cache: ElixirSimplifiedCache = new Map()
 
   /** Serializes exact-calc work so candidates are refined one at a time. */
   private exactQueue: Promise<unknown> = Promise.resolve()
@@ -179,45 +186,42 @@ export class UpOptCalculatorV2 {
 
   fromReshapeInfo(info: ReshapeInfo, art: ICachedArtifact) {
     return {
-      ...this.evaluateNodes(
-        dustReshape(art, this.build, info.affixes, info.mintotal)
-      ),
+      ...this.evaluateNodes(dustReshape({ art, ...info }, this.build)),
       info,
       evalMode: 'substat' as const,
       id: `${this.candidates.length}`,
     }
   }
 
-  tryDefine({ setKeys, slotKeys, mainStats, substats }: DefineConfig) {
-    setKeys = setKeys.filter((setKey) => this.obj.allReadKeys.includes(setKey))
-    if (!setKeys.length) {
-      console.warn(
-        'No useful set keys available for definition; picking Glad as default'
+  tryDefine({ setSlotMainStatKeys, substats }: DefineConfig) {
+    allArtifactSlotKeys.forEach((slotKey) => {
+      const { setKeys, mainStats } = setSlotMainStatKeys[slotKey]
+      let validSetKeys = setKeys.filter((setKey) =>
+        this.obj.allReadKeys.includes(setKey)
       )
-      setKeys = ['GladiatorsFinale'] // Default to something so user sees some results
-    }
-    setKeys.forEach((setKey) => {
-      slotKeys.forEach((slotKey) => {
-        artSlotMainKeys[slotKey]
-          .filter((mainStat) => mainStats.includes(mainStat))
-          .forEach((mainStatKey) => {
-            const subOptions = allSubstatKeys
-              .filter((substat) => substat !== mainStatKey)
-              .filter((substat) => substats.includes(substat))
-            for (let i = 0; i < subOptions.length; i++) {
-              for (let j = i + 1; j < subOptions.length; j++) {
-                const affixes = [subOptions[i], subOptions[j]]
-                const info: DefineInfo = {
-                  type: 'definition',
-                  setKey,
-                  slotKey,
-                  mainStatKey,
-                  affixes,
-                }
-                this.candidates.push(this.fromDefineInfo(info))
+      if (!validSetKeys.length && setKeys.length > 0) {
+        console.warn(`Picking ${setKeys[0]} b/c none of them matter.`)
+        validSetKeys = [setKeys[0]] // Default to something so user sees some results
+      }
+      validSetKeys.forEach((setKey) => {
+        mainStats.forEach((mainStatKey) => {
+          const subOptions = allSubstatKeys
+            .filter((substat) => substat !== mainStatKey)
+            .filter((substat) => substats.includes(substat))
+          for (let i = 0; i < subOptions.length; i++) {
+            for (let j = i + 1; j < subOptions.length; j++) {
+              const affixes = [subOptions[i], subOptions[j]]
+              const info: DefineInfo = {
+                type: 'definition',
+                setKey,
+                slotKey,
+                mainStatKey,
+                affixes,
               }
+              this.candidates.push(this.fromDefineInfo(info))
             }
-          })
+          }
+        })
       })
     })
   }
@@ -225,7 +229,12 @@ export class UpOptCalculatorV2 {
   fromDefineInfo(info: DefineInfo) {
     return {
       ...this.evaluateNodes(
-        elixirDefinition({ ...info, prob_4line: 0.34 }, this.build)
+        elixirDefinitionMemoSimplified(
+          { ...info, prob_4line: 0.34 },
+          this.build,
+          this.obj,
+          this.cache
+        )
       ),
       info,
       evalMode: 'substat' as const,
@@ -443,19 +452,4 @@ function compare(a: EvaluatedMarkovTree, b: EvaluatedMarkovTree) {
     0
   )
   return meanB - meanA
-}
-
-function accumulateEvaluations(
-  evaluated: { p: number; n: EvaluatedMarkovNode }[]
-) {
-  const { p, upAvgAcc, lower, upper } = evaluated.reduce(
-    (acc, { p, n: { evaluation } }) => ({
-      p: acc.p + p * evaluation.prob,
-      upAvgAcc: acc.upAvgAcc + p * evaluation.prob * evaluation.upAvg,
-      lower: Math.min(acc.lower, evaluation.lower),
-      upper: Math.max(acc.upper, evaluation.upper),
-    }),
-    { p: 0, upAvgAcc: 0, lower: Infinity, upper: -Infinity }
-  )
-  return { p, upAvg: p < 1e-6 ? 0 : upAvgAcc / p, lower, upper }
 }

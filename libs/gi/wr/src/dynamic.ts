@@ -2,6 +2,7 @@ import { deepClone, objKeyMap, objMap } from '@genshin-optimizer/common/util'
 import { allMainStatKeys, allSubstatKeys } from '@genshin-optimizer/gi/consts'
 import { input } from './formula'
 import { setReadNodeKeys } from './utils'
+
 const dynamic = setReadNodeKeys(
   deepClone({ dyn: { ...input.art, ...input.artSet } })
 )

@@ -1,0 +1,190 @@
+{
+  "name": "오데트",
+  "title": "백조의 춤",
+  "description": "스네즈나야의 유명 발레리나이자, 눈얼음 속에서 피어난 차디찬 꽃",
+  "constellationName": "백조자리",
+  "auto": {
+    "name": "백조의 변주",
+    "fields": {
+      "normal": {
+        "0": "<strong>일반 공격</strong>",
+        "1": "검으로 최대 5번 공격한다."
+      },
+      "charged": {
+        "0": "<strong>강공격</strong>",
+        "1": "일정 스태미나를 소모해 전방을 향해 눈부신 참격을 날린다."
+      },
+      "plunging": {
+        "0": "<strong>낙하 공격</strong>",
+        "1": "공중에서 땅을 내려찍어 경로상의 적을 공격하고, 착지 시 범위 피해를 준다"
+      }
+    },
+    "skillParams": {
+      "0": "1단 공격 피해",
+      "1": "2단 공격 피해",
+      "2": "3단 공격 피해",
+      "3": "4단 공격 피해",
+      "4": "5단 공격 피해",
+      "5": "강공격 피해",
+      "6": "강공격 스태미나 소모",
+      "7": "낙하 기간 피해",
+      "8": "저공/고공 추락 충격 피해",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "아다지오·한밤의 춤",
+    "description": {
+      "0": "부드러운 스텝을 선보이며 <cryo>얼음 원소 범위 피해</cryo>를 주고, 자신의 <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>눈 그림자</strong></tooltip>를 소환한다.",
+      "1": "만약 필드에 이미 오데트 자신이 소환한 <strong>눈 그림자</strong>가 존재할 경우, 다시 소환하고 지속 시간이 갱신된다.",
+      "2": "<br/>",
+      "3": "<strong>눈 그림자</strong>",
+      "4": "<strong>비상</strong>과 <strong>회전</strong> 두 가지 스텝을 번갈아 선보이며, 우아하고 가벼운 춤사위로 주변의 적을 간헐적으로 공격해 <cryo>얼음 원소 범위 피해</cryo>를 준다.",
+      "5": "또한, 원소전투 스킬 <strong>아다지오·한밤의 춤</strong> 발동 후 6초 동안, 오데트의 원소전투 스킬 <strong>아다지오·한밤의 춤</strong>이 특수 원소전투 스킬<tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>아다지오·여명의 춤</strong></tooltip>으로 대체된다. 합동 춤을 통해 주변의 적에게 지속적으로 <cryo>얼음 원소 범위 피해</cryo>를 주고, 합동 춤 종료 시 별 초전도 또는 별 확산 반응 피해로 간주되는 <cryo>얼음 원소 범위 피해</cryo>를 1회 준다"
+    },
+    "skillParams": {
+      "0": "스킬 피해",
+      "1": "여명의 춤 지속 피해",
+      "2": "여명의 춤 별 초전도/별 확산 피해",
+      "3": "비상 스텝 피해",
+      "4": "비상 스텝 별 초전도/별 확산 피해",
+      "5": "회전 스텝 피해",
+      "6": "회전 스텝 별 초전도/별 확산 피해",
+      "7": "여명의 춤 재사용 대기시간",
+      "8": "눈 그림자 지속 시간",
+      "9": "스킬 재사용 대기시간",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "프레스토·하얀 날개의 꿈",
+    "description": {
+      "0": "빠른 스텝을 선보이며 <cryo>얼음 원소 범위 피해</cryo>를 여러 차례 주고, 자신의 <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>눈 그림자</strong></tooltip>를 소환하여 <strong>백조의 꿈</strong>을 획득한다: 오데트가 주는 별빛 반응 피해가 증가한다.",
+      "1": "또한, 원소폭발 <strong>프레스토·하얀 날개의 꿈</strong> 발동 후 6초 동안, 오데트의 원소전투 스킬 <strong>아다지오·한밤의 춤</strong>이 특수 원소전투 스킬 <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>아다지오·여명의 춤</strong></tooltip>으로 대체된다.",
+      "2": "<br/>",
+      "3": "필드에 오데트 자신이 소환한 눈 그림자가 존재할 경우, 해당 그림자를 자신의 곁으로 소환하고 지속 시간을 갱신한다"
+    },
+    "skillParams": {
+      "0": "참격 피해",
+      "1": "마지막 참격 피해",
+      "2": "백조의 꿈 별빛 반응 피해 증가",
+      "3": "백조의 꿈 지속 시간",
+      "4": "눈 그림자 지속 시간",
+      "5": "재사용 대기시간",
+      "6": "원소 에너지",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "봄의 제전",
+    "description": {
+      "0": "오데트가 <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>눈 그림자</strong></tooltip> 소환 시, 추가로 <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>광채</strong></tooltip> 4스택을 획득한다"
+    }
+  },
+  "passive2": {
+    "name": "진실의 애가",
+    "description": {
+      "0": "오데트의 공격력이 1000pt를 초과할 경우, 초과한 공격력 100pt마다 오데트가 주는 별빛 반응 피해에 기존 피해의 1.5%에 해당하는 추가 피해를 준다. 해당 방식으로 최대 기존의 30%에 해당하는 추가 피해를 준다"
+    }
+  },
+  "passive3": {
+    "name": "별빛 축복·춤추는 은빛 여명",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>극지의 별영역</strong></tooltip> 내에 있을 때/파티 내 캐릭터가 주변에 별 확산 반응 발동 후 8초 동안, 오데트는 각각 <strong>섬광·별 초전도</strong>/<strong>섬광·별 확산</strong> 상태에 진입한다.",
+      "1": "파티 내 캐릭터가 초전도/얼음 원소 확산 반응 발동 시, 별 초전도/별 확산 반응 발동으로 전환되며, 오데트의 공격력에 기반하여 파티 내 캐릭터가 주는 상술한 반응의 기본 피해가 증가한다: 공격력 100pt당 상술한 반응의 기본 피해가 0.7% 증가하며, 해당 방식으로 최대 14% 증가한다"
+    }
+  },
+  "passive": {
+    "name": "겨울꿈의 메아리",
+    "description": {
+      "0": "미니맵에 주위의 <strong>스네즈나야 지역 특산물</strong> 위치가 나타난다.",
+      "1": "한가할 때 춤을 연습하면 다른 효과가 발동될지도 모른다…"
+    }
+  },
+  "constellation1": {
+    "name": "「춤추지 않아도 되는 이른 아침」",
+    "description": {
+      "0": "특수 원소전투 스킬 <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>아다지오·여명의 춤</strong></tooltip> 발동 후, 합동 춤이 끝나면 오데트는 주변의 적에게 추가로 <cryo>얼음 원소 범위 피해</cryo>를 1회 준다. 해당 피해는:",
+      "1": [
+        "<strong>섬광·별 초전도</strong> 또는 섬광 상태가 아닌 경우: 오데트 공격력의 300%에 해당하는 별 초전도 반응 피해를 준다.",
+        "<strong>섬광·별 확산</strong>: 오데트 공격력의 450%에 해당하는 별 확산 반응 피해를 준다."
+      ],
+      "2": "또한, 돌파 특성 「봄의 제전」이 강화된다: <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>눈 그림자</strong></tooltip> 소환 시, 오데트가 추가로 <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>광채</strong></tooltip>를 2스택 획득하며, 오데트가 대기 상태일 때 <strong>광채</strong>의 제거 속도가 1초당 2스택으로 증가한다"
+    }
+  },
+  "constellation2": {
+    "name": "「검은 백조의 못다 한 꿈을 품은 채」",
+    "description": {
+      "0": "돌파 특성 「봄의 제전」 강화: <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>광채</strong></tooltip> 1스택당 캐릭터의 공격력이 7% 증가한다.",
+      "1": "또한, <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>눈 그림자</strong></tooltip>가 필드에 존재하고 오데트가 <tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>섬광·별빛</strong></tooltip> 상태일 경우, <strong>눈 그림자</strong> 주변 적의 상응하는 원소 내성이 20% 감소한다:",
+      "2": [
+        "<strong>섬광·별 초전도</strong>: <cryo>얼음 원소</cryo>, <electro>번개 원소</electro>.",
+        "<strong>섬광·별 확산</strong>: <cryo>얼음 원소</cryo>, <anemo>바람 원소</anemo>"
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "「바람을 따라 홀로 날아올라」",
+    "description": {
+      "0": "원소전투 스킬 <strong><tooltip ns=char_Odette_gen baseKey18=skill>아다지오·한밤의 춤</tooltip></strong>의 스킬 레벨+3",
+      "1": "최대 Lv.15까지 상승"
+    }
+  },
+  "constellation4": {
+    "name": "「찬란히 불타는 하늘로 떨어지리라」",
+    "description": {
+      "0": "원소폭발 <strong>프레스토·하얀 날개의 꿈</strong> 강화: 오데트가 <strong>백조의 꿈</strong> 획득 시, 파티 내 주변의 다른 캐릭터가 주는 별빛 반응 피해가 증가한다. 증가량은 <strong>백조의 꿈</strong> 효과의 50%에 해당한다.",
+      "1": "<br/>",
+      "2": "또한, 파티 내 캐릭터가 적에게 별빛 반응 피해를 줄 경우, 오데트는 적에게 협동 공격을 1회 발동해 <cryo>얼음 원소 범위 피해</cryo>를 1회 준다. 3.5초마다 최대 1회 발동되며, 해당 피해는:",
+      "3": [
+        "<strong>섬광·별 초전도</strong> 또는 섬광 상태가 아닌 경우: 오데트 공격력의 66%에 해당하는 별 초전도 반응 피해.",
+        "<strong>섬광·별 확산</strong>: 오데트 공격력의 99%에 해당하는 별 확산 반응 피해"
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "「보아라 나는 지상의 고통과 작별했으니」",
+    "description": {
+      "0": "원소폭발 <strong><tooltip ns=char_Odette_gen baseKey18=burst>프레스토·하얀 날개의 꿈</tooltip></strong>의 스킬 레벨+3",
+      "1": "최대 Lv.15까지 상승"
+    }
+  },
+  "constellation6": {
+    "name": "「손을 뻗어 영원한 창공에 닿으리라」",
+    "description": {
+      "0": "돌파 특성 「봄의 제전」 강화: 오데트가 주변에 있는 파티 내 모든 캐릭터에게 <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>광채</strong></tooltip> 부여 시, 자신의 광채가 더 이상 감소하지 않는다.",
+      "1": "또한, <strong>광채</strong>의 영향을 받는 캐릭터가 적에게 주는 별빛 반응 피해가 25% <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>승격</strong></tooltip>되고, 오데트가 적에게 주는 별빛 반응 피해가 추가로 20% 승격된다"
+    }
+  }
+}

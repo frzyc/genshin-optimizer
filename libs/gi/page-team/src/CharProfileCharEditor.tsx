@@ -7,8 +7,8 @@ import {
 import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
 import {
   CharacterContext,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import {

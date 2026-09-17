@@ -6,6 +6,7 @@ import {
   FireIcon,
   FrostIcon,
   IceIcon,
+  LumifluxIcon,
   PhysicalIcon,
   WindIcon,
 } from '../icons'
@@ -32,5 +33,7 @@ export function ElementIcon({
       return <EtherIcon {...iconProps} />
     case 'wind':
       return <WindIcon {...iconProps} />
+    case 'lumiflux':
+      return <LumifluxIcon {...iconProps} />
   }
 }

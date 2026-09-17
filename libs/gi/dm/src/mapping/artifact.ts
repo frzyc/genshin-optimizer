@@ -62,6 +62,8 @@ export const artifactIdMap: Record<string | number, ArtifactSetKey> = {
   15044: 'ADayCarvedFromRisingWinds',
   15045: 'CelestialGift',
   15046: 'DisenchantmentInDeepShadow',
+  15047: 'ScarletProof',
+  15048: 'HeartOfTheFurnace',
 } as const
 
 export const artifactSlotMap = {

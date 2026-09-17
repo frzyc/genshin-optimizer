@@ -118,7 +118,7 @@
   "passive2": {
     "name": "Avanguardia del vento",
     "description": {
-      "0": "Quando i membri del gruppo vicini innescano reazioni di Turbinio, Varka ottiene 1 accumulo di <strong>Giuramento della Zanna azzurra</strong>, che aumenta di un 7,5% per 8 s i DAN inflitti dai suoi attacchi normali, dagli attacchi caricati, dall'attacco caricato speciale <strong>Divorazzurro</strong> e dall'abilità elementale speciale <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Ascensione dei Quattro Venti</strong></tooltip>. Massimo 4 accumuli. In questo modo, ogni personaggio può fornire a Varka 1 accumulo di <strong>Giuramento della Zanna azzurra</strong> al secondo."
+      "0": "Quando i membri del gruppo vicini innescano una reazione di Turbinio o di Turbinio astrale, Varka ottiene 1 accumulo di <strong>Giuramento della Zanna azzurra</strong>, che aumenta di un 7,5% per 8 s i DAN inflitti dai suoi attacchi normali, dagli attacchi caricati, dall'attacco caricato speciale <strong>Divorazzurro</strong> e dall'abilità elementale speciale <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Ascensione dei Quattro Venti</strong></tooltip>. Massimo 4 accumuli. In questo modo, ogni personaggio può fornire a Varka 1 accumulo di <strong>Giuramento della Zanna azzurra</strong> al secondo."
     }
   },
   "passive3": {
@@ -160,7 +160,7 @@
   "constellation4": {
     "name": "\"Perché nessuno potrà mai privarci della nostra libertà di cantare\"",
     "description": {
-      "0": "Quando Varka innesca una reazione di Turbinio, tutti i membri vicini del gruppo ottengono per 10 s un 20% di <anemo>bonus DAN da Anemo</anemo> e il bonus DAN elementali corrispondente in base ai tipi elementali coinvolti nella reazione."
+      "0": "Quando Varka innesca una reazione di Turbinio o di Turbinio astrale, tutti i membri vicini del gruppo ottengono per 10 s un 20% di <anemo>bonus DAN da Anemo</anemo> e il bonus DAN elementali corrispondente in base ai tipi elementali coinvolti nella reazione."
     }
   },
   "constellation5": {

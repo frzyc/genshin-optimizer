@@ -4,28 +4,28 @@ import { artSubstatRollData } from '@genshin-optimizer/gi/consts'
 import type { BuildTc } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
 import type { TCWorkerResult } from '@genshin-optimizer/gi/solver-tc'
 import {
-  TCWorker,
   getMinSubAndOtherRolls,
+  TCWorker,
 } from '@genshin-optimizer/gi/solver-tc'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
   BuildAlert,
   DataContext,
-  HitModeToggle,
-  ReactionToggle,
-  StatDisplayComponent,
   getBuildTcArtifactData,
   getBuildTcWeaponData,
   getTeamDataCalc,
+  HitModeToggle,
   initialBuildStatus,
   optimizeNodesForScaling,
+  ReactionToggle,
+  StatDisplayComponent,
 } from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import CalculateIcon from '@mui/icons-material/Calculate'
@@ -209,7 +209,7 @@ export default function TabTheorycraft() {
       } = buildTc
       buildTc.optimization.distributedSubstats =
         20 - (rarity === 5 ? 0 : rarity === 4 ? 10 : 15)
-      buildTc.artifact.substats.stats = objMap(stats, (val, statKey) => {
+      buildTc.artifact.substats.stats = objMap(stats, (_val, statKey) => {
         const substatValue = getSubstatValue(statKey, rarity, type)
         return substatValue * 2
       })
@@ -272,17 +272,23 @@ export default function TabTheorycraft() {
         <DataContext.Provider value={dataContextValue}>
           <Box>
             <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
-              <Grid item sx={{ flexGrow: -1, maxWidth: '400px' }}>
+              <Grid
+                item
+                xs={12}
+                md={6}
+                xl={3}
+                sx={{ flexGrow: -1, maxWidth: '400px' }}
+              >
                 <WeaponEditorCard
                   weaponTypeKey={weaponTypeKey}
                   disabled={solving}
                 />
                 <StatFilterCard disabled={solving} />
               </Grid>
-              <Grid item sx={{ flexGrow: -2 }}>
+              <Grid item xs={12} md={6} xl={4} sx={{ flexGrow: -2 }}>
                 <ArtifactMainStatAndSetEditor disabled={solving} />
               </Grid>
-              <Grid item sx={{ flexGrow: 1 }}>
+              <Grid item xs={12} xl={5} sx={{ flexGrow: 1 }}>
                 <ArtifactSubCard
                   disabled={solving}
                   maxTotalRolls={maxTotalRolls}

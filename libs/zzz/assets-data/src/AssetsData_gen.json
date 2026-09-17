@@ -167,6 +167,18 @@
       "cd_s": "ItemSuitTheSkyAblaze_S.png",
       "cd_a": "ItemSuitTheSkyAblaze_A.png",
       "cd_b": "ItemSuitTheSkyAblaze_B.png"
+    },
+    "FeatheredFate": {
+      "circle": "SuitFeatheredFate.png",
+      "cd_s": "ItemSuitFeatheredFate_S.png",
+      "cd_a": "ItemSuitFeatheredFate_A.png",
+      "cd_b": "ItemSuitFeatheredFate_B.png"
+    },
+    "ThornedRose": {
+      "circle": "SuitThornedRose.png",
+      "cd_s": "ItemSuitThornedRose_S.png",
+      "cd_a": "ItemSuitThornedRose_A.png",
+      "cd_b": "ItemSuitThornedRose_B.png"
     }
   },
   "chars": {
@@ -561,6 +573,20 @@
       "trap": "IconRoleGeneral65.png",
       "select": "IconRoleSelect65.png",
       "interknot": "IconInterKnotRole0065.png"
+    },
+    "Remielle": {
+      "full": "IconRole67.png",
+      "circle": "IconRoleCircle67.png",
+      "trap": "IconRoleGeneral67.png",
+      "select": "IconRoleSelect67.png",
+      "interknot": "IconInterKnotRole0067.png"
+    },
+    "Sigrid": {
+      "full": "IconRole66.png",
+      "circle": "IconRoleCircle66.png",
+      "trap": "IconRoleGeneral66.png",
+      "select": "IconRoleSelect66.png",
+      "interknot": "IconInterKnotRole0066.png"
     }
   },
   "wengines": {
@@ -935,6 +961,14 @@
     "ChiefSidekick": {
       "icon": "Weapon_S_1571.png",
       "big": "Weapon_S_1571Big.png"
+    },
+    "OdeOfResurrectedWings": {
+      "icon": "Weapon_S_1581.png",
+      "big": "Weapon_S_1581Big.png"
+    },
+    "KnightsExtolment": {
+      "icon": "Weapon_S_1591.png",
+      "big": "Weapon_S_1591Big.png"
     }
   }
 }

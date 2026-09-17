@@ -151,16 +151,18 @@ export interface ConstantNode<Value> extends Base<any> {
       : undefined
 }
 
-type _StrictInput<T, Num, Str> = T extends ReadNode<number>
-  ? Num
-  : T extends ReadNode<string>
-    ? Str
-    : { [key in keyof T]: _StrictInput<T[key], Num, Str> }
-type _Input<T, Num, Str> = T extends ReadNode<number>
-  ? Num
-  : T extends ReadNode<string>
-    ? Str
-    : { [key in keyof T]?: _Input<T[key], Num, Str> }
+type _StrictInput<T, Num, Str> =
+  T extends ReadNode<number>
+    ? Num
+    : T extends ReadNode<string>
+      ? Str
+      : { [key in keyof T]: _StrictInput<T[key], Num, Str> }
+type _Input<T, Num, Str> =
+  T extends ReadNode<number>
+    ? Num
+    : T extends ReadNode<string>
+      ? Str
+      : { [key in keyof T]?: _Input<T[key], Num, Str> }
 export type StrictInput<Num = NumNode, Str = StrNode> = _StrictInput<
   typeof input,
   Num,

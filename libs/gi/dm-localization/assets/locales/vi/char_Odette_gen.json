@@ -1,0 +1,191 @@
+{
+  "name": "Odette",
+  "title": "Vòng Xoay Tuyết Trắng",
+  "description": "Vũ công ba lê nổi tiếng của Snezhnaya, đóa hoa giá lạnh nở rộ trong băng tuyết.",
+  "constellationName": "Cung Tuyết Hộc",
+  "auto": {
+    "name": "Biến Tấu Thiên Nga Tuyết",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, vung nhát chém rực rỡ về phía trước."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát thương lần 1",
+      "1": "Sát thương lần 2",
+      "2": "Sát thương lần 3",
+      "3": "Sát thương lần 4",
+      "4": "Sát thương lần 5",
+      "5": "Sát thương Trọng Kích",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Sát thương khi đáp",
+      "8": "Sát thương khi đáp từ độ cao thấp/cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Nhịp Chậm - Điệu Múa Đêm Huyền Ảo",
+    "description": {
+      "0": "Trình diễn bước nhảy nhẹ nhàng, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>, đồng thời triệu hồi <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Bóng Hình Độc Diễn</strong></tooltip> của bản thân.",
+      "1": "Nếu trên sân tồn tại <strong>Bóng Hình Độc Diễn</strong> do bản thân Odette triệu hồi, sẽ tiến hành triệu hồi lại và làm mới thời gian duy trì.",
+      "2": "<br/>",
+      "3": "<strong>Bóng Hình Độc Diễn</strong>",
+      "4": "Trình diễn luân phiên hai vũ điệu <strong>Phất Lông</strong> và <strong>Xoay Cánh</strong>, dùng tư thế múa thanh lịch uyển chuyển để tấn công kẻ địch xung quanh theo chu kỳ, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>.",
+      "5": "Ngoài ra, trong 6s sau khi thi triển Kỹ Năng Nguyên Tố <strong>Nhịp Chậm - Điệu Múa Đêm Huyền Ảo</strong>, Kỹ Năng Nguyên Tố <strong>Nhịp Chậm - Điệu Múa Đêm Huyền Ảo</strong> của Odette sẽ được thay thế bằng Kỹ Năng Nguyên Tố đặc biệt <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Nhịp Chậm - Đoạn Kết Ánh Bình Minh</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip>, dùng điệu múa chung để liên tiếp gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> lên kẻ địch xung quanh, đồng thời khi điệu múa chung kết thúc, sẽ gây một lần <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> được xem là sát thương phản ứng Tinh-Siêu Dẫn hoặc Tinh-Khuếch Tán."
+    },
+    "skillParams": {
+      "0": "Sát thương kỹ năng",
+      "1": "Sát thương liên tiếp Đoạn Kết Ánh Bình Minh",
+      "2": "Sát thương Tinh-Siêu Dẫn/Tinh-Khuếch Tán Đoạn Kết Ánh Bình Minh",
+      "3": "Sát thương vũ điệu Phất Lông",
+      "4": "Sát thương Tinh-Siêu Dẫn/Tinh-Khuếch Tán vũ điệu Phất Lông",
+      "5": "Sát thương vũ điệu Xoay Cánh",
+      "6": "Sát thương Tinh-Siêu Dẫn/Tinh-Khuếch Tán vũ điệu Xoay Cánh",
+      "7": "CD Đoạn Kết Ánh Bình Minh",
+      "8": "Bóng Hình Độc Diễn duy trì",
+      "9": "CD kỹ năng",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Nhịp Nhanh - Mộng Ước Cánh Chim Xanh",
+    "description": {
+      "0": "Trình diễn bước nhảy nhanh và dồn dập, gây nhiều lần <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>, triệu hồi <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Bóng Hình Độc Diễn</strong></tooltip> của bản thân và nhận <strong>Giấc Mơ Thiên Nga Tuyết</strong>: Tăng sát thương phản ứng Tinh Tú Lấp Lánh do Odette gây ra.",
+      "1": "Ngoài ra, trong 6s sau khi thi triển Kỹ Năng Nộ <strong>Nhịp Nhanh - Mộng Ước Cánh Chim Xanh</strong>, Kỹ Năng Nguyên Tố <strong>Nhịp Chậm - Điệu Múa Đêm Huyền Ảo</strong> của Odette sẽ được thay thế bằng Kỹ Năng Nguyên Tố đặc biệt <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Nhịp Chậm - Đoạn Kết Ánh Bình Minh</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip>.",
+      "2": "<br/>",
+      "3": "Nếu trong trận tồn tại Bóng Hình Độc Diễn do bản thân Odette triệu hồi, thì sẽ triệu hồi nó đến bên cạnh và đặt lại thời gian duy trì."
+    },
+    "skillParams": {
+      "0": "Sát thương đòn chém",
+      "1": "Sát thương đòn chém cuối",
+      "2": "Giấc Mơ Thiên Nga Tuyết tăng sát thương phản ứng Tinh Tú Lấp Lánh",
+      "3": "Giấc Mơ Thiên Nga Tuyết duy trì",
+      "4": "Bóng Hình Độc Diễn duy trì",
+      "5": "CD",
+      "6": "Năng Lượng Nguyên Tố",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Lễ Xuân Của Người Được Chọn",
+    "description": {
+      "0": "Khi Odette triệu hồi <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Bóng Hình Độc Diễn</strong></tooltip>, sẽ còn nhận được 4 tầng <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Lộng Lẫy</strong></tooltip>."
+    }
+  },
+  "passive2": {
+    "name": "Bi Ca Của Kẻ Chân Thành",
+    "description": {
+      "0": "Dựa trên phần Tấn Công vượt quá 1000 điểm của Odette, cứ mỗi 100 điểm Tấn Công sẽ khiến sát thương phản ứng Tinh Tú Lấp Lánh do Odette gây ra tăng thêm 1.5% mức gốc, tối đa tăng thêm 30% sát thương gốc theo cách này."
+    }
+  },
+  "passive3": {
+    "name": "Chúc Phúc Tinh Tú - Vũ Điệu Bình Minh Bạc",
+    "description": {
+      "0": "Khi ở trong <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Vùng Trục Sao</strong></tooltip>/Trong 8s sau khi nhân vật trong đội kích hoạt phản ứng Tinh-Khuếch Tán ở gần, Odette sẽ phân biệt tiến vào trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>/<strong>Tỏa Sáng: Tinh-Khuếch Tán</strong>.",
+      "1": "Khi nhân vật trong đội kích hoạt phản ứng Siêu Dẫn/Khuếch Tán Nguyên Tố Băng, sẽ chuyển thành phản ứng Tinh-Siêu Dẫn/Tinh-Khuếch Tán, đồng thời tăng sát thương cơ bản của các phản ứng kể trên do nhân vật trong đội gây ra dựa trên Tấn Công của Odette: Mỗi 100 điểm Tấn Công sẽ tăng 0.7% sát thương cơ bản của các phản ứng kể trên, tối đa tăng 14% sát thương theo cách này."
+    }
+  },
+  "passive": {
+    "name": "Giấc Mộng Mùa Đông Trong Tiếng Vọng",
+    "description": {
+      "0": "Hiển thị <strong>đặc sản khu vực Snezhnaya</strong> trên bản đồ nhỏ.",
+      "1": "Luyện tập vũ đạo trong lúc rảnh rỗi, biết đâu sẽ còn kích hoạt thêm hiệu quả khác..."
+    }
+  },
+  "constellation1": {
+    "name": "\"Sớm Mai Chưa Từng Nhảy Múa, Nàng Ngắm Nhìn Bóng Đổ\"",
+    "description": {
+      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố đặc biệt <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Nhịp Chậm - Đoạn Kết Ánh Bình Minh</strong></tooltip>, khi kết thúc điệu múa chung, Odette sẽ còn gây thêm một lần <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> lên kẻ địch ở gần, sát thương này được xem là:",
+      "1": [
+        "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong> hoặc không trong trạng thái Tỏa Sáng: Sát thương phản ứng Tinh-Siêu Dẫn tương đương 300% Tấn Công của Odette.",
+        "<strong>Tỏa Sáng: Tinh-Khuếch Tán</strong>: Sát thương phản ứng Tinh-Khuếch Tán tương đương 450% Tấn Công của Odette."
+      ],
+      "2": "<br/>",
+      "3": "Ngoài ra, Thiên Phú Đột Phá \"Lễ Xuân Của Người Được Chọn\" sẽ được cường hóa: Khi triệu hồi <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Bóng Hình Độc Diễn</strong></tooltip>, Odette sẽ nhận thêm 2 tầng <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Lộng Lẫy</strong></tooltip>, đồng thời khi Odette dự bị trong đội, tốc độ xóa <strong>Lộng Lẫy</strong> tăng lên thành 2 tầng mỗi giây."
+    }
+  },
+  "constellation2": {
+    "name": "\"Nàng Muốn Thấy Giấc Mơ Thiên Nga Tuyết Chưa Từng Thấy\"",
+    "description": {
+      "0": "Thiên Phú Đột Phá \"Lễ Xuân Của Người Được Chọn\" được cường hóa: Mỗi tầng <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Lộng Lẫy</strong></tooltip> sẽ còn tăng 7% Tấn Công của nhân vật.",
+      "1": "Ngoài ra, khi <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Bóng Hình Độc Diễn</strong></tooltip> trong trận, nếu Odette đang trong trạng thái <tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Tỏa Sáng: Tinh Tú Lấp Lánh</strong></tooltip>, kẻ địch ở gần <strong>Bóng Hình Độc Diễn</strong> sẽ còn giảm 20% Kháng Nguyên Tố tương ứng:",
+      "2": [
+        "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Nguyên Tố <cryo>Băng</cryo> và <electro>Lôi</electro>.",
+        "<strong>Tỏa Sáng: Tinh-Khuếch Tán</strong>: Nguyên Tố <cryo>Băng</cryo> và <anemo>Phong</anemo>."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "\"Phải Đuổi Theo Cơn Gió Gào Thét, Một Mình Bay Lên\"",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Odette_gen baseKey18=skill>Nhịp Chậm - Điệu Múa Đêm Huyền Ảo</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Bay Lên, Rơi Xuống Bầu Trời Xanh Mơ Hồ Và Rực Cháy\"",
+    "description": {
+      "0": "Kỹ Năng Nộ <strong>Nhịp Nhanh - Mộng Ước Cánh Chim Xanh</strong> được cường hóa: Khi Odette nhận <strong>Giấc Mơ Thiên Nga Tuyết</strong>, sẽ còn khiến nhân vật khác trong đội ở gần tăng sát thương phản ứng Tinh Tú Lấp Lánh gây ra, mức tăng tương đương 50% hiệu quả <strong>Giấc Mơ Thiên Nga Tuyết</strong>.",
+      "1": "<br/>",
+      "2": "Ngoài ra, khi nhân vật trong đội gây sát thương phản ứng Tinh Tú Lấp Lánh lên kẻ địch, Odette sẽ còn thực hiện một lần tấn công phối hợp lên kẻ địch, gây một lần <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>, mỗi 3.5s tối đa kích hoạt một lần, sát thương này được xem là:",
+      "3": [
+        "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong> hoặc không trong trạng thái Tỏa Sáng: Sát thương phản ứng Tinh-Siêu Dẫn tương đương 66% Tấn Công của Odette.",
+        "<strong>Tỏa Sáng: Tinh-Khuếch Tán</strong>: Sát thương phản ứng Tinh-Khuếch Tán tương đương 99% Tấn Công của Odette."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "\"Xem Kìa, Ta Đã Tạm Biệt Nỗi Đau Của Bụi Và Đất\"",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Odette_gen baseKey18=burst>Nhịp Nhanh - Mộng Ước Cánh Chim Xanh</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Vươn Tay, Chạm Vào Gương Mặt Vĩnh Hằng Của Vòm Trời\"",
+    "description": {
+      "0": "Thiên Phú Đột Phá \"Lễ Xuân Của Người Được Chọn\" được cường hóa: Khi Odette áp dụng <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Lộng Lẫy</strong></tooltip> cho tất cả nhân vật trong đội ở gần, Lộng Lẫy của bản thân sẽ không giảm đi nữa.",
+      "1": "Ngoài ra, với nhân vật đang áp dụng <strong>Lộng Lẫy</strong>, sát thương phản ứng Tinh Tú Lấp Lánh gây ra cho kẻ địch sẽ <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Thăng Tiến</strong></tooltip> 25%, đồng thời sát thương phản ứng Tinh Tú Lấp Lánh Odette gây ra cho kẻ địch sẽ Thăng Tiến thêm 20%."
+    }
+  }
+}

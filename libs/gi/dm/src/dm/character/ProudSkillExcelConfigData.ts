@@ -167,4 +167,5 @@ proudSkillExcelConfigDataSrc.forEach((dataObf) => {
     proudSkillExcelConfigData[proudSkillGroupId] = []
   proudSkillExcelConfigData[proudSkillGroupId][level - 1] = data
 })
+
 export { proudSkillExcelConfigData }

@@ -1,9 +1,7 @@
 import { useTitle } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
-import type { DebugReadContextObj } from '@genshin-optimizer/game-opt/formula-ui'
 import {
-  DebugReadContext,
-  DebugReadModal,
+  DebugReadProvider,
   TagContext,
 } from '@genshin-optimizer/game-opt/formula-ui'
 import type { SetConditionalFunc } from '@genshin-optimizer/game-opt/sheet-ui'
@@ -12,30 +10,29 @@ import {
   SetConditionalContext,
   SrcDstDisplayContext,
 } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import { characterKeyToGenderedKey } from '@genshin-optimizer/sr/assets'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import { allCharacterKeys } from '@genshin-optimizer/sr/consts'
 import {
   CharacterContext,
-  useCharOpt,
   useCharacter,
+  useCharOpt,
   useDatabaseContext,
 } from '@genshin-optimizer/sr/db-ui'
 import {
-  type Tag,
   getConditional,
   isMember,
   isSheet,
+  type Tag,
 } from '@genshin-optimizer/sr/formula'
 import { CharacterAutocomplete, CharacterName } from '@genshin-optimizer/sr/ui'
 import { Box } from '@mui/material'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { CharCalcProvider } from './CharCalcProvider'
 import { CharacterOptDisplay } from './CharacterOptDisplay'
-import { OptSelector } from './OptSelector'
+import { CharCalcProvider } from './CharCalcProvider'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
+import { OptSelector } from './OptSelector'
 
 export default function PageOptimize() {
   const { database } = useDatabaseContext()
@@ -100,19 +97,11 @@ export default function PageOptimize() {
     () => ({
       src: characterKey,
       dst: characterKey,
-      preset: `preset0`,
+      preset: 'preset0',
     }),
     [characterKey]
   )
 
-  const [debugRead, setDebugRead] = useState<BaseRead>()
-  const debugObj = useMemo<DebugReadContextObj>(
-    () => ({
-      read: debugRead,
-      setRead: setDebugRead,
-    }),
-    [debugRead]
-  )
   return (
     <Box>
       <CharacterAutocomplete
@@ -126,8 +115,7 @@ export default function PageOptimize() {
               <SrcDstDisplayContext.Provider value={srcDstDisplayContextValue}>
                 <ConditionalValuesContext.Provider value={charOpt.conditionals}>
                   <SetConditionalContext.Provider value={setConditional}>
-                    <DebugReadContext.Provider value={debugObj}>
-                      <DebugReadModal />
+                    <DebugReadProvider>
                       <Box
                         sx={{
                           display: 'flex',
@@ -141,7 +129,7 @@ export default function PageOptimize() {
                           <CharacterOptDisplay />
                         </TeamHeaderHeightContext.Provider>
                       </Box>
-                    </DebugReadContext.Provider>
+                    </DebugReadProvider>
                   </SetConditionalContext.Provider>
                 </ConditionalValuesContext.Provider>
               </SrcDstDisplayContext.Provider>

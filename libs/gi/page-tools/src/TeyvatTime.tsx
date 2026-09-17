@@ -19,7 +19,7 @@ export default function TeyvatTime() {
   const database = useDatabase()
   const [{ timeZoneKey }, setState] = useState(() => database.displayTool.get())
   useEffect(
-    () => database.displayTool.follow((r, s) => setState(s)),
+    () => database.displayTool.follow((_r, s) => setState(s)),
     [database]
   )
   const setTimeZoneKey = useCallback(

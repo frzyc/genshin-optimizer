@@ -1,0 +1,191 @@
+{
+  "name": "Odette",
+  "title": "Neve volteggiante",
+  "description": "Celebre ballerina di Snezhnaya, sboccia nel paesaggio ghiacciato con una bellezza tagliente come il gelo.",
+  "constellationName": "Cygnus Olor",
+  "auto": {
+    "name": "Variazione del cigno delle nevi",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra un attacco di spada che infligge fino a 5 colpi consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una certa quantità di vigore per sferrare un fendente abbagliante contro gli avversari davanti a sé."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto col suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Adagio: Danza della Notte fantasma",
+    "description": {
+      "0": "Con passi di danza lenti e aggraziati, Odette infligge <cryo>DAN da Cryo ad area</cryo> all'avversario ed evoca in campo la sua <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Controfigura danzante solista</strong></tooltip>.",
+      "1": "Se una <strong>Controfigura danzante</strong> evocata da Odette è già in campo, questa seconda evocazione ne ripristina la durata.",
+      "2": "<br/>",
+      "3": "<strong>Controfigura danzante solista</strong>",
+      "4": "Alterna i passi di danza <strong>Piuma</strong> e <strong>Ala</strong>, attaccando periodicamente gli avversari vicini e infliggendo loro <cryo>DAN da Cryo ad area</cryo>.",
+      "5": "Inoltre, per 6 s dopo aver scatenato la sua abilità elementale <strong>Adagio: Danza della Notte fantasma</strong>, quest'ultima si trasforma nell'abilità elementale speciale <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Gran finale dell'alba</strong></tooltip>, che infligge <cryo>DAN da Cryo ad area</cryo> nel tempo agli avversari vicini durante un duetto di danza. Al termine del duetto, Odette infligge un'ulteriore iterazione di <cryo>DAN da Cryo ad area</cryo> considerati come DAN da Astroconduzione o da Turbinio astrale."
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN nel tempo Gran finale dell'alba",
+      "2": "DAN da Astroconduzione/Turbinio astrale Gran finale dell'alba",
+      "3": "DAN da passo di danza Piuma",
+      "4": "DAN da Astroconduzione/Turbinio astrale passo di danza Piuma",
+      "5": "DAN da passo di danza Ala",
+      "6": "DAN da Astroconduzione/Turbinio astrale passo di danza Ala",
+      "7": "TdR Gran finale dell'alba",
+      "8": "Durata Controfigura danzante solista",
+      "9": "TdR",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Presto: Ultimo atto dell'Uccello azzurro",
+    "description": {
+      "0": "Con passi di danza rapidi e vivaci, Odette infligge diverse iterazioni di <cryo>DAN da Cryo ad area</cryo> ed evoca la sua <strong><tooltip ns=tooltips_gen baseKey18=11500001 values=[]>Controfigura danzante solista</tooltip></strong>. Ottiene inoltre <strong>Sogno del cigno delle nevi</strong>, che aumenta i DAN da reazione di Barlume astrale inflitti da Odette.",
+      "1": "Inoltre, per 6 s dopo aver scatenato il suo Tripudio elementale <strong>Presto: Ultimo atto dell'Uccello azzurro</strong> l'abilità elementale <strong>Adagio: Danza della Notte fantasma</strong> si trasforma nell'abilità elementale speciale <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Gran finale dell'alba</strong></tooltip>.",
+      "2": "<br/>",
+      "3": "Se in campo è presente la Controfigura danzante solista evocata da Odette, quest'ultima viene evocata di nuovo al suo fianco, ripristinandone al contempo la durata."
+    },
+    "skillParams": {
+      "0": "DAN da fendente",
+      "1": "DAN da fendente finale",
+      "2": "Bonus DAN da reazione di Barlume astrale Sogno del cigno delle nevi",
+      "3": "Durata Sogno del cigno delle nevi",
+      "4": "Durata Controfigura danzante solista",
+      "5": "TdR",
+      "6": "Costo energia",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Rito primaverile della Prescelta",
+    "description": {
+      "0": "Quando Odette evoca la sua <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Controfigura danzante solista</strong></tooltip>, ottiene anche 4 accumuli di <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Splendore stupefacente</strong></tooltip>."
+    }
+  },
+  "passive2": {
+    "name": "Patetica di Pateticheskaya",
+    "description": {
+      "0": "I DAN da Barlume astrale aumentano di un 1,5% aggiuntivo dei DAN originali per ogni 100 di ATT di Odette al di sopra di 1.000. In questo modo può infliggere fino a un 30% di DAN aggiuntivi."
+    }
+  },
+  "passive3": {
+    "name": "Giubileo astrale: Danza dell'aurora",
+    "description": {
+      "0": "Odette entra nello stato di <strong>Splendore: Astroconduzione</strong> quando si trova all'interno di un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo astropolare</strong></tooltip> o nello stato di <strong>Splendore: Turbinio astrale</strong> per 8 s dopo che un membro vicino del gruppo ha innescato una reazione di Turbinio astrale.",
+      "1": "Quando un membro del gruppo innesca una reazione di Superconduzione o Turbinio di Cryo, quest'ultima diventa una reazione di Astroconduzione o di Turbinio astrale, e i DAN base di tale reazione aumentano di un ulteriore 0,7% per ogni 100 di ATT di Odette. In questo modo è possibile ottenere fino a un 14% di aumento massimo."
+    }
+  },
+  "passive": {
+    "name": "Eco di sogni a occhi aperti invernali",
+    "description": {
+      "0": "Mostra sulla minimappa la posizione delle <strong>specialità locali di Snezhnaya</strong>.",
+      "1": "Esercitarsi nella danza nel tempo libero potrebbe persino attivare altri effetti..."
+    }
+  },
+  "constellation1": {
+    "name": "\"In questo mattino senza danza, ella osserva il suo riflesso\"",
+    "description": {
+      "0": "Dopo aver sprigionato l'abilità elementale speciale <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Gran finale dell'alba</strong></tooltip>, Odette infligge un'iterazione di <cryo>DAN da Cryo ad area</cryo> aggiuntiva agli avversari vicini al termine del duetto. La natura di tali DAN varia in base ai seguenti criteri.",
+      "1": [
+        " Nello stato di <strong>Splendore: Astroconduzione</strong> o in nessuno stato di Splendore, Odette infligge DAN da Astroconduzione pari a un 300% del suo ATT.",
+        " Nello stato di <strong>Splendore: Turbinio astrale</strong>, Odette infligge DAN da Turbinio astrale pari a un 450% del suo ATT."
+      ],
+      "2": "<br/>",
+      "3": "Inoltre, il talento d'ascensione \"Rito primaverile della Prescelta\" riceve un potenziamento: ora, quando la <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Controfigura danzante solista</strong></tooltip> viene evocata, Odette ottiene anche 2 accumuli di <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Splendore stupefacente</strong></tooltip> e, quando non è in campo, la velocità di riduzione di <strong>Splendore stupefacente</strong> aumenta a 2 accumuli al secondo."
+    }
+  },
+  "constellation2": {
+    "name": "\"'Devo ammirare il sogno invisibile del cigno delle nevi coi miei occhi', pensò\"",
+    "description": {
+      "0": "Il talento d'ascensione \"Rito primaverile della Prescelta\" viene potenziato come segue: ogni accumulo di <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Splendore stupefacente</strong></tooltip> attivo aumenta anche l'ATT del personaggio di un 7%.",
+      "1": "Inoltre, se Odette si trova in uno stato di <tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Splendore: Barlume astrale</strong></tooltip> quando è presente una <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Controfigura danzante solista</strong></tooltip> in campo, anche la rispettiva RES elementale degli avversari vicini alla <strong>Controfigura danzante</strong> si riduce di un 20%.",
+      "2": [
+        " <strong>Splendore: Astroconduzione</strong>: <cryo>Cryo</cryo> ed <electro>Electro</electro>.",
+        " <strong>Splendore: Turbinio astrale</strong>: <cryo>Cryo</cryo> e <anemo>Anemo</anemo>."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "\"Inseguirò il vento urlante, arrampicandomi sola lungo il cammino\"",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Odette_gen baseKey18=skill>Adagio: Danza della Notte fantasma</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Su, su, nel lungo, delirante, ardente blu\"",
+    "description": {
+      "0": "Il Tripudio elementale <strong>Presto: Ultimo atto dell'Uccello azzurro</strong> viene potenziato come segue: quando Odette ottiene <strong>Sogno del cigno delle nevi</strong>, i DAN da reazione di Barlume astrale inflitti dagli altri membri vicini del gruppo aumentano di un 50% degli effetti di <strong>Sogno del cigno delle nevi</strong>.",
+      "1": "<br/>",
+      "2": "Inoltre, quando un membro del gruppo infligge DAN da reazione di Barlume astrale a un avversario, anche Odette sferra un attacco coordinato, infliggendo un'iterazione di <cryo>DAN da Cryo ad area</cryo>. Questo effetto può attivarsi una volta ogni 3,5 s. La natura di tali DAN varia in base ai seguenti criteri.",
+      "3": [
+        " Nello stato di <strong>Splendore: Astroconduzione</strong> o in nessuno stato di Splendore, Odette infligge DAN da reazione di Astroconduzione pari a un 66% del suo ATT.",
+        " Nello stato di <strong>Splendore: Turbinio astrale</strong>, Odette infligge DAN da reazione di Turbinio astrale pari a un 99% del suo ATT."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "\"Ah! Sono libera dai torvi legami della terra\"",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Odette_gen baseKey18=burst>Presto: Ultimo atto dell'Uccello azzurro</tooltip> </strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Ho proteso la mano e sfiorato il volto del divino\"",
+    "description": {
+      "0": "Il talento d'ascensione \"Rito primaverile della Prescelta\" viene potenziato come segue: quando Odette conferisce <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Splendore stupefacente</strong></tooltip> a tutti i membri del gruppo vicini, i suoi accumuli di Splendore stupefacente non diminuiscono più.",
+      "1": "Inoltre, i DAN da Barlume astrale inflitti agli avversari dai personaggi sotto l'effetto di <strong>Splendore stupefacente</strong> vengono <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>innalzati</strong></tooltip> di un 25%, e i DAN da Barlume astrale inflitti da Odette vengono innalzati di un ulteriore 20%."
+    }
+  }
+}

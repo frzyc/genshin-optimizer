@@ -105,15 +105,15 @@
       "Passion": [],
       "BasicAttackSalchowJump": [
         {
-          "DamagePercentage": 3.008,
-          "DamagePercentageGrowth": 0.274,
-          "StunRatio": 2.292,
-          "StunRatioGrowth": 0.105,
-          "SpRecovery": 749.9,
+          "DamagePercentage": 4.821,
+          "DamagePercentageGrowth": 0.439,
+          "StunRatio": 3.227,
+          "StunRatioGrowth": 0.147,
+          "SpRecovery": 1056,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 5728.25,
+          "FeverRecovery": 8068.5,
           "FeverRecoveryGrowth": 0,
-          "AttributeInfliction": 273.4
+          "AttributeInfliction": 365.76
         },
         {
           "DamagePercentage": 1.613,
@@ -230,6 +230,19 @@
           "FeverRecovery": 17030.75,
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 473.96
+        }
+      ],
+      "EXSpecialAttackAerialSweepOnslaught": [
+        {
+          "DamagePercentage": 5.951,
+          "DamagePercentageGrowth": 0.541,
+          "StunRatio": 4.872,
+          "StunRatioGrowth": 0.222,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 17578,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 491.91
         }
       ]
     },
@@ -353,7 +366,8 @@
     },
     "special": {
       "SpecialAttackAerialSweep": [],
-      "EXSpecialAttackAerialSweepClearout": []
+      "EXSpecialAttackAerialSweepClearout": [],
+      "EXSpecialAttackAerialSweepOnslaught": []
     },
     "chain": { "ChainAttackFlowersOfSin": [], "UltimateFinalCurtain": [] },
     "assist": {
@@ -379,5 +393,5 @@
     [2],
     [0.2, 0.4, 16]
   ],
-  "potentialParams": []
+  "potentialParams": [[0, 0.1, 0.15, 0.2, 25, 0.3]]
 }

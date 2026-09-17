@@ -188,6 +188,8 @@ export const characterIdMap: Record<
   10000131: 'Nicole',
   10000132: 'Prune',
   10000133: 'Sandrone',
+  10000148: 'Alyosha',
+  10000150: 'Odette',
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",

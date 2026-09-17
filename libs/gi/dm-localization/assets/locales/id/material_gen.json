@@ -260,6 +260,15 @@
   "VenuePopularity": {
     "name": "Venue Popularity"
   },
+  "TournamentPoints": {
+    "name": "Tournament Point"
+  },
+  "FervorCoupon": {
+    "name": "Fervor Coupon"
+  },
+  "PrimeIceCount": {
+    "name": "Prime Ice Count"
+  },
   "Primogem": {
     "name": "Primogem"
   },
@@ -382,6 +391,9 @@
   },
   "CollectiveOfPlentyReputationEXP": {
     "name": "EXP Reputasi \"Berlimpah Jaya\""
+  },
+  "ExpeditionInsights": {
+    "name": "Expedition Insights"
   },
   "MemoryOfEternalFlames": {
     "name": "Memory of Eternal Flames"
@@ -1013,6 +1025,12 @@
   "LargeMagneticEnergyOrb": {
     "name": "Large Magnetic Energy Orb"
   },
+  "SnezhnayanPowerEnergyOrb": {
+    "name": "Snezhnayan Power Energy Orb"
+  },
+  "SnezhnayanMaterialEnergyOrb": {
+    "name": "Snezhnayan Material Energy Orb"
+  },
   "TestRandomTreasureChest": {
     "name": ""
   },
@@ -1169,6 +1187,12 @@
   "Sandrone": {
     "name": "Sandrone"
   },
+  "Alyosha": {
+    "name": "Alyosha"
+  },
+  "Odette": {
+    "name": "Odette"
+  },
   "KachinasStellaFortuna": {
     "name": "Kachina's Stella Fortuna"
   },
@@ -1264,6 +1288,12 @@
   },
   "SandronesStellaFortuna": {
     "name": "Sandrone's Stella Fortuna"
+  },
+  "AlyoshasStellaFortuna": {
+    "name": "Alyosha's Stella Fortuna"
+  },
+  "OdettesStellaFortuna": {
+    "name": "Odette's Stella Fortuna"
   },
   "Apple": {
     "name": "Apple"
@@ -3746,6 +3776,30 @@
   "EtherwingMoth": {
     "name": "Etherwing Moth"
   },
+  "FrostfairyFlower": {
+    "name": "Frostfairy Flower"
+  },
+  "Flockingweed": {
+    "name": "Flockingweed"
+  },
+  "GoldenFern": {
+    "name": "Golden Fern"
+  },
+  "RedBeet": {
+    "name": "Red Beet"
+  },
+  "Glaciafruit": {
+    "name": "Glaciafruit"
+  },
+  "SnowballFlower": {
+    "name": "Snowball Flower"
+  },
+  "Rimecurrant": {
+    "name": "Rimecurrant"
+  },
+  "Lumifluorite": {
+    "name": "Lumifluorite"
+  },
   "BirchWood": {
     "name": "Birch Wood"
   },
@@ -3832,6 +3886,18 @@
   },
   "AlderWood": {
     "name": "Alder Wood"
+  },
+  "SnowPoplarWood": {
+    "name": "Snow Poplar Wood"
+  },
+  "WhiteBirchWood": {
+    "name": "White Birch Wood"
+  },
+  "BluebeechWood": {
+    "name": "Bluebeech Wood"
+  },
+  "LarchWood": {
+    "name": "Larch Wood"
   },
   "Fabric": {
     "name": "Fabric"
@@ -5399,6 +5465,33 @@
   "PhilosophiesOfVagrancy": {
     "name": "Philosophies of Vagrancy"
   },
+  "TeachingsOfCharity": {
+    "name": "Teachings of Charity"
+  },
+  "GuideToCharity": {
+    "name": "Guide to Charity"
+  },
+  "PhilosophiesOfCharity": {
+    "name": "Philosophies of Charity"
+  },
+  "TeachingsOfFortitude": {
+    "name": "Teachings of Fortitude"
+  },
+  "GuideToFortitude": {
+    "name": "Guide to Fortitude"
+  },
+  "PhilosophiesOfFortitude": {
+    "name": "Philosophies of Fortitude"
+  },
+  "TeachingsOfGlory": {
+    "name": "Teachings of Glory"
+  },
+  "GuideToGlory": {
+    "name": "Guide to Glory"
+  },
+  "PhilosophiesOfGlory": {
+    "name": "Philosophies of Glory"
+  },
   "SanctifyingDroplet": {
     "name": "Sanctifying Droplet"
   },
@@ -5513,14 +5606,23 @@
   "BorderlandShrineOfDepthsKey": {
     "name": "Borderland Shrine of Depths Key"
   },
-  "FrostMoonShrineOfDepthsKey": {
-    "name": "Frost Moon Shrine of Depths Key"
+  "KuuhenkiShrineKey": {
+    "name": "Kuuhenki Shrine Key"
   },
   "MnemonicCluster": {
     "name": "Skill Cluster"
   },
   "MemoryFactor": {
     "name": "Memory Factor"
+  },
+  "Cryoculus": {
+    "name": "Cryoculus"
+  },
+  "ShadowWingdrop": {
+    "name": "Shadow Wingdrop"
+  },
+  "SnezhnayaShrineOfDepthsKey": {
+    "name": "Snezhnaya Shrine of Depths Key"
   },
   "Dish": {
     "name": "Masakan"
@@ -8417,6 +8519,51 @@
   "TeaPartyPreludeArtfulLatte": {
     "name": "Tea Party Prelude: Artful Latte"
   },
+  "SuspiciousZharkoye": {
+    "name": "Suspicious Zharkoye"
+  },
+  "Zharkoye": {
+    "name": "Zharkoye"
+  },
+  "DeliciousZharkoye": {
+    "name": "Delicious Zharkoye"
+  },
+  "SuspiciousPodvoryeSmokedSausage": {
+    "name": "Suspicious Podvorye Smoked Sausage"
+  },
+  "PodvoryeSmokedSausage": {
+    "name": "Podvorye Smoked Sausage"
+  },
+  "DeliciousPodvoryeSmokedSausage": {
+    "name": "Delicious Podvorye Smoked Sausage"
+  },
+  "SuspiciousStroganina": {
+    "name": "Suspicious Stroganina"
+  },
+  "Stroganina": {
+    "name": "Stroganina"
+  },
+  "DeliciousStroganina": {
+    "name": "Delicious Stroganina"
+  },
+  "SuspiciousSnowrealmOkroshkas": {
+    "name": "Suspicious Snowrealm Okroshkas"
+  },
+  "SnowrealmOkroshkas": {
+    "name": "Snowrealm Okroshkas"
+  },
+  "DeliciousSnowrealmOkroshkas": {
+    "name": "Delicious Snowrealm Okroshkas"
+  },
+  "SuspiciousBorscht": {
+    "name": "Suspicious Borscht"
+  },
+  "Borscht": {
+    "name": "Borscht"
+  },
+  "DeliciousBorscht": {
+    "name": "Delicious Borscht"
+  },
   "RecipeItem": {
     "name": "Bahan Resep"
   },
@@ -9230,6 +9377,39 @@
   "RecipeMeatFilledRyeBun": {
     "name": "Resep: Meat-Filled Rye Bun"
   },
+  "RecipeZharkoye": {
+    "name": "Resep: Zharkoye"
+  },
+  "RecipePodvoryeSmokedSausage": {
+    "name": "Resep: Podvorye Smoked Sausage"
+  },
+  "RecipeStroganina": {
+    "name": "Resep: Stroganina"
+  },
+  "RecipeSnowrealmOkroshkas": {
+    "name": "Resep: Snowrealm Okroshkas"
+  },
+  "RecipeBorscht": {
+    "name": "Resep: Borscht"
+  },
+  "RecipeRimecurrantIceCream": {
+    "name": "Resep: Rimecurrant Ice Cream"
+  },
+  "RecipeGlupovRyeBread": {
+    "name": "Resep: Glupov Rye Bread"
+  },
+  "RecipeMedovik": {
+    "name": "Resep: Medovik"
+  },
+  "RecipeSnezhnayaShashliks": {
+    "name": "Resep: Snezhnaya Shashliks"
+  },
+  "RecipeSnowballBloomsAtopSnowfields": {
+    "name": "Resep: Snowball Blooms Atop Snowfields"
+  },
+  "RecipeSweetScoops": {
+    "name": "Resep: Sweet Scoops"
+  },
   "CraftedItems": {
     "name": "Hasil Craft"
   },
@@ -9277,6 +9457,9 @@
   },
   "RyeFlour": {
     "name": "Rye Flour"
+  },
+  "Honey": {
+    "name": "Honey"
   },
   "HeatshieldPotion": {
     "name": "Heatshield Potion"
@@ -9370,6 +9553,9 @@
   },
   "RefreshingLakkaBait": {
     "name": "Refreshing Lakka Bait"
+  },
+  "GlimmeringBait": {
+    "name": "Glimmering Bait"
   },
   "PrimordialEssence": {
     "name": "Primordial Essence"
@@ -9806,6 +9992,42 @@
   "UnblemishedLunarIron": {
     "name": "Unblemished Lunar Iron"
   },
+  "EtherealGlimmershard": {
+    "name": "Ethereal Glimmershard"
+  },
+  "EtherealCrystal": {
+    "name": "Ethereal Crystal"
+  },
+  "EtherealCrystalscaleStone": {
+    "name": "Ethereal Crystalscale Stone"
+  },
+  "ChimericCore": {
+    "name": "Chimeric Core"
+  },
+  "SymbioticChimericNucleus": {
+    "name": "Symbiotic Chimeric Nucleus"
+  },
+  "PrimeChimericNexus": {
+    "name": "Prime Chimeric Nexus"
+  },
+  "AccretedFragment": {
+    "name": "Accreted Fragment"
+  },
+  "AccretedMass": {
+    "name": "Accreted Mass"
+  },
+  "AccretedGrowth": {
+    "name": "Accreted Growth"
+  },
+  "HollowRootOfLife": {
+    "name": "Hollow Root of Life"
+  },
+  "SproutNodeOfLife": {
+    "name": "Sprout Node of Life"
+  },
+  "CoiledCoreOfLife": {
+    "name": "Coiled Core of Life"
+  },
   "HurricaneSeed": {
     "name": "Hurricane Seed"
   },
@@ -10073,6 +10295,12 @@
   "ProfanedSprout": {
     "name": "Profaned Sprout"
   },
+  "UnscorchedBlossomBranch": {
+    "name": "Unscorched Blossom Branch"
+  },
+  "SeveredTailOfTheSkyRoamer": {
+    "name": "Severed Tail of the Sky-Roamer"
+  },
   "TileOfDecarabiansTower": {
     "name": "Tile of Decarabian's Tower"
   },
@@ -10324,6 +10552,42 @@
   },
   "AureateRadianceOfTheFarNorthScions": {
     "name": "Aureate Radiance of the Far-North Scions"
+  },
+  "RiseOfThePaleStarArmy": {
+    "name": "Rise of the Pale Star Army"
+  },
+  "MusterOfThePaleStarArmy": {
+    "name": "Muster of the Pale Star Army"
+  },
+  "ClarionOfThePaleStarArmy": {
+    "name": "Clarion of the Pale Star Army"
+  },
+  "TriumphOfThePaleStarArmy": {
+    "name": "Triumph of the Pale Star Army"
+  },
+  "MeasuredPourOfTheCellaredSpiritualNectar": {
+    "name": "Measured Pour of the Cellared Spiritual Nectar"
+  },
+  "IntoxicationOfTheCellaredSpiritualNectar": {
+    "name": "Intoxication of the Cellared Spiritual Nectar"
+  },
+  "ExhilarationOfTheCellaredSpiritualNectar": {
+    "name": "Exhilaration of the Cellared Spiritual Nectar"
+  },
+  "RevelryOfTheCellaredSpiritualNectar": {
+    "name": "Revelry of the Cellared Spiritual Nectar"
+  },
+  "TheFrostEmperorsRevival": {
+    "name": "The Frost Emperor's Revival"
+  },
+  "TheFrostEmperorsCeremony": {
+    "name": "The Frost Emperor's Ceremony"
+  },
+  "TheFrostEmperorsLament": {
+    "name": "The Frost Emperor's Lament"
+  },
+  "TheFrostEmperorsFarewell": {
+    "name": "The Frost Emperor's Farewell"
   },
   "StarterSupplyBundle": {
     "name": "Starter Supply Bundle"
@@ -13595,6 +13859,12 @@
   "TheShiniestAndBrightestBerylConch": {
     "name": "Beryl Conch \"Paling Berkilau dan Terang\""
   },
+  "PebbleOfCrystallineEssence": {
+    "name": "Kerikil Esensi Kristal"
+  },
+  "SnegovikLaboratoryKey": {
+    "name": "Kunci Laboratorium Snegovik"
+  },
   "RhinedottirsGift": {
     "name": "\"Hadiah\" Rhinedottir"
   },
@@ -13651,6 +13921,21 @@
   },
   "Moonlight": {
     "name": "Cahaya Rembulan"
+  },
+  "RedKey": {
+    "name": "Kunci Merah"
+  },
+  "WhiteKey": {
+    "name": "Kunci Putih"
+  },
+  "BlueKey": {
+    "name": "Kunci Biru"
+  },
+  "InvitationToTheRitual": {
+    "name": "Undangan Menyaksikan \"Upacara\""
+  },
+  "SeveredFragmentOfIkhor": {
+    "name": "Pecahan Ikhor yang Terpisah"
   },
   "LostNotesIV": {
     "name": "Catatan yang Hilang (IV)"
@@ -13859,8 +14144,17 @@
   "AStackOfPaper": {
     "name": "Tumpukan Kertas"
   },
+  "PebbleOfFreezingHeart": {
+    "name": "Kerikil Beku Berhati Dingin"
+  },
+  "PebbleOfSerpentineAlgae": {
+    "name": "Kerikil Ganggang Ular"
+  },
   "SelectedMoonfallSilver": {
     "name": "Moonfall Silver Pilihan"
+  },
+  "LegendaryThiefsTreasureLocation": {
+    "name": "Lokasi \"Harta Karun Pencuri Ulung\""
   },
   "LohensWorkReport": {
     "name": "Laporan Kerja Lohen"
@@ -13895,6 +14189,27 @@
   "PhotoWithTheLittleWitchesAndTheirImaginaryFriends": {
     "name": "Foto dengan Penyihir Cilik dan Teman Khayalannya"
   },
+  "UnnamedPotionFormula": {
+    "name": "Resep Potion Tanpa Nama"
+  },
+  "NotesByACertainNobleIndividualI": {
+    "name": "Catatan Seorang Bangsawan (I)"
+  },
+  "NotesByACertainNobleIndividualII": {
+    "name": "Catatan Seorang Bangsawan (II)"
+  },
+  "NotesByACertainNobleIndividualIII": {
+    "name": "Catatan Seorang Bangsawan (III)"
+  },
+  "NotesByACertainNobleIndividualIV": {
+    "name": "Catatan Seorang Bangsawan (IV)"
+  },
+  "NotesByACertainNobleIndividualV": {
+    "name": "Catatan Seorang Bangsawan (V)"
+  },
+  "NotesByACertainNobleIndividualVI": {
+    "name": "Catatan Seorang Bangsawan (VI)"
+  },
   "AnomalousTreeMarrowI": {
     "name": "Sumsum Pohon Heterogen I"
   },
@@ -13919,8 +14234,29 @@
   "LostFlowerOfAncientTimes": {
     "name": "Bunga Kuno yang Hilang"
   },
+  "NeatlyWrittenNotes": {
+    "name": "Catatan dengan Tulisan Rapi"
+  },
+  "NotesLeftByUnknownPerson": {
+    "name": "Catatan yang Ditulis Entah Oleh Siapa"
+  },
+  "IzmaylovGuardsJournal": {
+    "name": "Jurnal Penjaga Izmaylov"
+  },
+  "YettobeCompletedNewHighTableMelody": {
+    "name": "\"Melodi High Table\" yang Belum Selesai"
+  },
   "SandronesTeaPartyInvitationLetter": {
     "name": "Surat Undangan Pesta Teh Sandrone"
+  },
+  "MetalControlWheel": {
+    "name": "Roda Kendali Logam"
+  },
+  "SewerLiftControlWheel": {
+    "name": "Roda Kendali Lift Saluran Pembuangan"
+  },
+  "LiftControlWheel": {
+    "name": "Roda Kendali Lift"
   },
   "AncientMondstadtRoyalSeal": {
     "name": "Ancient Mondstadt Royal Seal"
@@ -13937,11 +14273,188 @@
   "AlainGuillotinsEpitaph": {
     "name": "Epitaf Alain Guillotin"
   },
+  "OddlyShapedEmblem": {
+    "name": "Lencana Berbentuk Aneh"
+  },
+  "VIPPass": {
+    "name": "Tanda Pengenal Tamu VIP"
+  },
+  "GangMembersForgottenKey": {
+    "name": "Kunci yang Ditinggalkan Anggota Geng"
+  },
+  "SmeltedKristallOre": {
+    "name": "Bijih Kristall yang Dilebur"
+  },
+  "SewerEntranceExitGuide": {
+    "name": "Panduan Keluar Masuk Saluran Pembuangan"
+  },
+  "StrangeCard": {
+    "name": "Kartu Aneh"
+  },
+  "ShadowRealmVaultAccessCard": {
+    "name": "Kartu Akses Brankas Alam Bayangan"
+  },
+  "IncompleteDataBlock": {
+    "name": "Blok Data Tak Lengkap"
+  },
   "MoongazersEngravingI": {
     "name": "Ukiran Penatap Bulan (I)"
   },
   "MoongazersEngravingII": {
     "name": "Ukiran Penatap Bulan (II)"
+  },
+  "IntricatelyPatternedButton": {
+    "name": "Kancing Berpola Rumit"
+  },
+  "SnezhnayaVestnik": {
+    "name": "Snezhnaya Vestnik"
+  },
+  "ChampionsTrophyOfTheFirstAdventurersTournament": {
+    "name": "Trofi Juara \"Gebyar Kompetisi Petualang\" Perdana"
+  },
+  "Rumbletwig": {
+    "name": "Rumbletwig"
+  },
+  "HatBucket": {
+    "name": "Topi: Ember Bagus"
+  },
+  "HatPolite": {
+    "name": "Topi: Sopan"
+  },
+  "HatPointy": {
+    "name": "Topi: Runcing"
+  },
+  "HatFunTopper": {
+    "name": "Topi: Lucu"
+  },
+  "SnowSwanFeather": {
+    "name": "Bulu Angsa Salju"
+  },
+  "TideSongIceflower": {
+    "name": "Bunga Es Lagu Pasang Surut"
+  },
+  "ScarfWarmRed": {
+    "name": "Syal: Merah Hangat"
+  },
+  "ScarfDreamStar": {
+    "name": "Syal: Bintang Mimpi"
+  },
+  "ScarfPlaid": {
+    "name": "Syal: Kotak-Kotak"
+  },
+  "ScarfNoveltyBrace": {
+    "name": "Syal: Penjepit Unik"
+  },
+  "StalkerHood": {
+    "name": "Tudung Penguntit"
+  },
+  "KeyOfAncientDesign": {
+    "name": "Kunci Tua Berdesain Kuno"
+  },
+  "OrderIllustration": {
+    "name": "Ilustrasi Pesanan"
+  },
+  "TrainDecorationGuide": {
+    "name": "Panduan Dekorasi Kereta"
+  },
+  "BlackSnowSwanArchive": {
+    "name": "Arsip \"Black Snow Swan\""
+  },
+  "OdettesPerformancePhoto": {
+    "name": "Foto Penampilan Odette"
+  },
+  "AutographedBlackSnowSwanPoster": {
+    "name": "Poster \"Black Snow Swan\" Bertanda Tangan"
+  },
+  "WhiteFeatherBookmark": {
+    "name": "Pembatas Buku Bulu Putih"
+  },
+  "StardustTrailRadiantGlow": {
+    "name": "Stardust Trail: Radiant Glow"
+  },
+  "RemnantIncenseGuideSnowgrave": {
+    "name": "Remnant Incense Guide - Snowgrave"
+  },
+  "RemnantIncenseGuideFellfrostPeak": {
+    "name": "Remnant Incense Guide - Fellfrost Peak"
+  },
+  "RemnantIncenseGuideEverfrozenEarth": {
+    "name": "Remnant Incense Guide - Everfrozen Earth"
+  },
+  "SpiritSeekerPreviewCommemorativePhoto": {
+    "name": "Pratinjau Foto Peringatan \"Spirit Seeker\""
+  },
+  "BranchesOfNastyasHead": {
+    "name": "Dedaunan di Kepala Nastya"
+  },
+  "NastyasHandDrawnDiagram": {
+    "name": "Diagram yang Digambar Tangan oleh Nastya"
+  },
+  "YoungKidsDrawings": {
+    "name": "Coretan Anak-Anak"
+  },
+  "EntranceDoorLeverForACertainBasementRoom": {
+    "name": "Tuas Pintu Masuk Suatu Ruangan Bawah Tanah"
+  },
+  "ExitDoorLeverForACertainBasementRoom": {
+    "name": "Tuas Pintu Keluar Suatu Ruangan Bawah Tanah"
+  },
+  "KresnikEnergy": {
+    "name": "Kresnik Energy"
+  },
+  "PeculiarReagentSample": {
+    "name": "Sampel Reagen Aneh"
+  },
+  "StardustTrailRadiantGlowSigil": {
+    "name": "Stardust Trail: Radiant Glow Sigil"
+  },
+  "PolestarBalletAnthologyI": {
+    "name": "Koleksi Drama Tari Polaris (I)"
+  },
+  "PolestarBalletAnthologyII": {
+    "name": "Koleksi Drama Tari Polaris (II)"
+  },
+  "PolestarBalletAnthologyIII": {
+    "name": "Koleksi Drama Tari Polaris (III)"
+  },
+  "PolestarBalletAnthologyIV": {
+    "name": "Koleksi Drama Tari Polaris (IV)"
+  },
+  "GeneralHistoryOfSnezhnayaI": {
+    "name": "Sejarah Umum Snezhnaya (I)"
+  },
+  "GeneralHistoryOfSnezhnayaII": {
+    "name": "Sejarah Umum Snezhnaya (II)"
+  },
+  "IceCreamContainer": {
+    "name": "Ice Cream Container"
+  },
+  "SpecialIceCreamContainer": {
+    "name": "Special Ice Cream Container"
+  },
+  "PictureOfNastyaWithHerMom": {
+    "name": "Foto Nastya bersama Ibunya"
+  },
+  "RecordsOfTheOrderbearer": {
+    "name": "Catatan Pelaksana Perintah"
+  },
+  "InvestigationNotes": {
+    "name": "Catatan Investigasi"
+  },
+  "TheAlchemistsNotesI": {
+    "name": "Catatan Alkemis (I)"
+  },
+  "TheAlchemistsNotesII": {
+    "name": "Catatan Alkemis (II)"
+  },
+  "GrandDukeAlvissNotes": {
+    "name": "Catatan Grand Duke Alvis"
+  },
+  "TheAshenTravelersNotes": {
+    "name": "Catatan Pengembara yang Berdebu"
+  },
+  "DocumentWithYellowedPages": {
+    "name": "Dokumen dengan Halaman Menguning"
   },
   "TearsAmongTheStars": {
     "name": "Air Mata di Lautan Bintang"
@@ -14080,6 +14593,24 @@
   },
   "PineAmberSeed": {
     "name": "Pine Amber Seed"
+  },
+  "FrostfairyFlowerSeed": {
+    "name": "Frostfairy Flower Seed"
+  },
+  "FlockingweedSeed": {
+    "name": "Flockingweed Seed"
+  },
+  "GoldenFernSeed": {
+    "name": "Golden Fern Seed"
+  },
+  "RedBeetSeed": {
+    "name": "Red Beet Seed"
+  },
+  "RimecurrantSeed": {
+    "name": "Rimecurrant Seed"
+  },
+  "SnowballFlowerSeed": {
+    "name": "Snowball Flower Seed"
   },
   "Medaka": {
     "name": "Medaka"
@@ -14239,6 +14770,102 @@
   },
   "CeruleanDoppeldrake": {
     "name": "Cerulean Doppeldrake"
+  },
+  "CharcoalSnowfin": {
+    "name": "Charcoal Snowfin"
+  },
+  "CreamSnowfin": {
+    "name": "Cream Snowfin"
+  },
+  "MoonlightSnowfin": {
+    "name": "Moonlight Snowfin"
+  },
+  "RubyStarbloomFish": {
+    "name": "Ruby Starbloom Fish"
+  },
+  "FrostpetalStarbloomFish": {
+    "name": "Frostpetal Starbloom Fish"
+  },
+  "IridescentStarbloomFish": {
+    "name": "Iridescent Starbloom Fish"
+  },
+  "SuspiciousRimecurrantIceCream": {
+    "name": "Suspicious Rimecurrant Ice Cream"
+  },
+  "RimecurrantIceCream": {
+    "name": "Rimecurrant Ice Cream"
+  },
+  "DeliciousRimecurrantIceCream": {
+    "name": "Delicious Rimecurrant Ice Cream"
+  },
+  "SuspiciousGlupovRyeBread": {
+    "name": "Suspicious Glupov Rye Bread"
+  },
+  "GlupovRyeBread": {
+    "name": "Glupov Rye Bread"
+  },
+  "DeliciousGlupovRyeBread": {
+    "name": "Delicious Glupov Rye Bread"
+  },
+  "SuspiciousMedovik": {
+    "name": "Suspicious Medovik"
+  },
+  "Medovik": {
+    "name": "Medovik"
+  },
+  "DeliciousMedovik": {
+    "name": "Delicious Medovik"
+  },
+  "SuspiciousSnezhnayaShashliks": {
+    "name": "Suspicious Snezhnaya Shashliks"
+  },
+  "SnezhnayaShashliks": {
+    "name": "Snezhnaya Shashliks"
+  },
+  "DeliciousSnezhnayaShashliks": {
+    "name": "Delicious Snezhnaya Shashliks"
+  },
+  "SuspiciousSnowballBloomsAtopSnowfields": {
+    "name": "Suspicious Snowball Blooms Atop Snowfields"
+  },
+  "SnowballBloomsAtopSnowfields": {
+    "name": "Snowball Blooms Atop Snowfields"
+  },
+  "DeliciousSnowballBloomsAtopSnowfields": {
+    "name": "Delicious Snowball Blooms Atop Snowfields"
+  },
+  "TheBullseyeRoast": {
+    "name": "The Bullseye Roast"
+  },
+  "LakesideSnowSwan": {
+    "name": "Lakeside Snow Swan"
+  },
+  "SuspiciousSweetScoops": {
+    "name": "Suspicious Sweet Scoops"
+  },
+  "SweetScoops": {
+    "name": "Sweet Scoops"
+  },
+  "DeliciousSweetScoops": {
+    "name": "Delicious Sweet Scoops"
+  },
+  "AlyoshaThemedIceCream": {
+    "name": "Alyosha-Themed Ice Cream"
+  },
+  "OdetteThemedIceCream": {
+    "name": "Odette-Themed Ice Cream"
+  },
+  "Kvass": {
+    "name": "Kvass"
+  },
+  "SpicedHoneyBrew": {
+    "name": "Spiced Honey Brew"
+  },
+  "GlacialStarbrew": {
+    "name": "Glacial Starbrew"
+  },
+  "RegularIceCream": {
+    "name": "Regular Ice Cream"
   },
   "WingsOfFirstFlight": {
     "name": "Wings of First Flight"
@@ -14912,6 +15539,42 @@
   "RadiantSpincrystal188": {
     "name": "Radiant Spincrystal 188"
   },
+  "RadiantSpincrystal189": {
+    "name": "Radiant Spincrystal 189"
+  },
+  "RadiantSpincrystal190": {
+    "name": "Radiant Spincrystal 190"
+  },
+  "RadiantSpincrystal191": {
+    "name": "Radiant Spincrystal 191"
+  },
+  "RadiantSpincrystal192": {
+    "name": "Radiant Spincrystal 192"
+  },
+  "RadiantSpincrystal193": {
+    "name": "Radiant Spincrystal 193"
+  },
+  "RadiantSpincrystal194": {
+    "name": "Radiant Spincrystal 194"
+  },
+  "RadiantSpincrystal195": {
+    "name": "Radiant Spincrystal 195"
+  },
+  "RadiantSpincrystal196": {
+    "name": "Radiant Spincrystal 196"
+  },
+  "RadiantSpincrystal197": {
+    "name": "Radiant Spincrystal 197"
+  },
+  "RadiantSpincrystal198": {
+    "name": "Radiant Spincrystal 198"
+  },
+  "RadiantSpincrystal199": {
+    "name": "Radiant Spincrystal 199"
+  },
+  "RadiantSpincrystal200": {
+    "name": "Radiant Spincrystal 200"
+  },
   "LanternFiber": {
     "name": "Lantern Fiber"
   },
@@ -15172,6 +15835,9 @@
   },
   "MoongleamSapling": {
     "name": "Moongleam Sapling"
+  },
+  "ScepterOfTheSnowAnglerKing": {
+    "name": "Scepter of the Snow Angler King"
   },
   "GenshinImpactANewWorld": {
     "name": "Genshin Impact: Dunia Baru"
@@ -16016,6 +16682,30 @@
   "TravelNotesSunnySummer": {
     "name": "Catatan Perjalanan: Musim Panas yang Cerah"
   },
+  "OdetteTheSingularSwan": {
+    "name": "Odette: The Singular Swan"
+  },
+  "AlyoshaSit": {
+    "name": "Alyosha: Sit"
+  },
+  "AchievementResplendence": {
+    "name": "Achievement: Kemegahan"
+  },
+  "SnezhnayaLongNight": {
+    "name": "Snezhnaya: Malam Panjang"
+  },
+  "AchievementTreadingSnow": {
+    "name": "Achievement: Menerobos Salju"
+  },
+  "SnezhnayaFleetingGlimpses": {
+    "name": "Snezhnaya: Sekilas Pandang"
+  },
+  "AchievementEnigmaticCore": {
+    "name": "Achievement: Inti Labirin"
+  },
+  "TravelNotesFrostfarer": {
+    "name": "Catatan Perjalanan: Pengelanaan Beku"
+  },
   "EchoDandelionKnight": {
     "name": "Echo: Dandelion Knight"
   },
@@ -16079,6 +16769,12 @@
   "EchoHelmOfTheRadiantRose": {
     "name": "Echo: Helm of the Radiant Rose"
   },
+  "EchoChilde": {
+    "name": "Echo: Childe"
+  },
+  "EchoVigilantYaksha": {
+    "name": "Echo: Vigilant Yaksha"
+  },
   "FaintGlow": {
     "name": "Faint Glow"
   },
@@ -16090,6 +16786,24 @@
   },
   "BrimmingSpiritflow": {
     "name": "Brimming Spiritflow"
+  },
+  "SiegeBreach": {
+    "name": "Penembusan"
+  },
+  "TemperedIron": {
+    "name": "Besi Tempa"
+  },
+  "FirstSnow": {
+    "name": "Salju Pertama"
+  },
+  "CrystallineFrost": {
+    "name": "Embun Beku"
+  },
+  "Snowbound": {
+    "name": "Tertutup Salju"
+  },
+  "Everwinter": {
+    "name": "Musim Dingin Abadi"
   },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone"
@@ -16430,8 +17144,17 @@
   "SandronesPortableTeaTable": {
     "name": "Sandrone's Portable Tea Table"
   },
+  "EyeOfGraeae": {
+    "name": "Eye of Graeae"
+  },
   "WitchsRevelationCase": {
     "name": "Witch's Revelation Case"
+  },
+  "MAANKamera": {
+    "name": "MAAN-Kamera"
+  },
+  "CryoTreasureCompass": {
+    "name": "Cryo Treasure Compass"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Panduan: Anemoculus Resonance Stone"
@@ -16571,6 +17294,21 @@
   "DiagramProspectorsShovel": {
     "name": "Diagram: Prospector's Shovel"
   },
+  "DiagramEmberwell": {
+    "name": "Diagram: Emberwell"
+  },
+  "DiagramCovenantOfFrostAndSnow": {
+    "name": "Diagram: Covenant of Frost and Snow"
+  },
+  "DiagramBladeOfAtonement": {
+    "name": "Diagram: Blade of Atonement"
+  },
+  "DiagramEchoesOfTheHeart": {
+    "name": "Diagram: Echoes of the Heart"
+  },
+  "DiagramSongOfTheVigil": {
+    "name": "Diagram: Song of the Vigil"
+  },
   "InstructionsDendroculusResonanceStone": {
     "name": "Panduan: Dendroculus Resonance Stone"
   },
@@ -16606,6 +17344,9 @@
   },
   "FormulaRefreshingLakkaBait": {
     "name": "Resep: Refreshing Lakka Bait"
+  },
+  "FormulaGlimmeringBait": {
+    "name": "Resep: Glimmering Bait"
   },
   "SilkenPrint": {
     "name": "Silken Print"
@@ -16675,6 +17416,57 @@
   },
   "ObligingLittleYuegui": {
     "name": "Obliging Little Yuegui"
+  },
+  "ShatanayasFrostsilverMuzzle": {
+    "name": "Shatanaya's Frostsilver: Muzzle"
+  },
+  "ShatanayasFrostsilverAmmoFeed": {
+    "name": "Shatanaya's Frostsilver: Ammo Feed"
+  },
+  "ShatanayasFrostsilverGunstock": {
+    "name": "Shatanaya's Frostsilver: Gunstock"
+  },
+  "ShatanayasFrostsilverSight": {
+    "name": "Shatanaya's Frostsilver: Gunsight"
+  },
+  "BalsagsSunwheelMuzzle": {
+    "name": "Balsag's Sunwheel: Muzzle"
+  },
+  "BalsagsSunwheelAmmoFeed": {
+    "name": "Balsag's Sunwheel: Ammo Feed"
+  },
+  "BalsagsSunwheelGunstock": {
+    "name": "Balsag's Sunwheel: Gunstock"
+  },
+  "BalsagsSunwheelSight": {
+    "name": "Balsag's Sunwheel: Gunsight"
+  },
+  "AshamezsThunderMuzzle": {
+    "name": "Ashamez's Thunder: Muzzle"
+  },
+  "AshamezsThunderAmmoFeed": {
+    "name": "Ashamez's Thunder: Ammo Feed"
+  },
+  "AshamezsThunderGunstock": {
+    "name": "Ashamez's Thunder: Gunstock"
+  },
+  "AshamezsThunderSight": {
+    "name": "Ashamez's Thunder: Gunsight"
+  },
+  "ConstructAppearanceJackFrost": {
+    "name": "Tampilan Construct: Jack Frost"
+  },
+  "ConstructAppearancePolyarbear": {
+    "name": "Tampilan Construct: Polyarbear"
+  },
+  "ConstructAppearanceTheBallerina": {
+    "name": "Tampilan Construct: Penari"
+  },
+  "ConstructAppearanceTheHound": {
+    "name": "Tampilan Construct: Anjing Pemburu"
+  },
+  "ConstructAppearanceTheTides": {
+    "name": "Tampilan Construct: Gelombang Pasang"
   },
   "UpbeatEncouragement": {
     "name": "Bersuka Ria"
@@ -17063,6 +17855,21 @@
   "MajesticBearing": {
     "name": "Sikap Berwibawa"
   },
+  "LanternUpWeaponsReady": {
+    "name": "Lentera Menyala, Senjata Bersiap"
+  },
+  "CollectYourDelivery": {
+    "name": "Terima Paket"
+  },
+  "ByTheKuuhenkisSide": {
+    "name": "Menemani Kuuhenki"
+  },
+  "HappyDays": {
+    "name": "Momen Ceria"
+  },
+  "KeepingWatchByLanternLight": {
+    "name": "Lentera Penjaga Cahaya"
+  },
   "FantasticalMarvel": {
     "name": "Fantastical Marvel"
   },
@@ -17257,6 +18064,9 @@
   },
   "BlackSerpentKnightWindcutter": {
     "name": "Black Serpent Knight: Windcutter"
+  },
+  "HydroHypostasis": {
+    "name": "Hydro Hypostasis"
   },
   "UndividedHeart": {
     "name": "Undivided Heart"
@@ -17683,6 +18493,27 @@
   },
   "OnceTheLoneWindThatKeptTheDarkCalamityAtBay": {
     "name": "\"Once, the Lone Wind That Kept the Dark Calamity at Bay...\""
+  },
+  "AdamahsRedemption": {
+    "name": "Adamah's Redemption"
+  },
+  "BackstreetGuile": {
+    "name": "Backstreet Guile"
+  },
+  "TreacherousTorrent": {
+    "name": "Treacherous Torrent"
+  },
+  "GenesisOfStarsigns": {
+    "name": "Genesis of Starsigns"
+  },
+  "SparkborneMagic": {
+    "name": "Sparkborne Magic"
+  },
+  "PhantasmalNocturne": {
+    "name": "Phantasmal Nocturne"
+  },
+  "TemporalWindsEulogy": {
+    "name": "Temporal Wind's Eulogy"
   },
   "MagicGuide": {
     "name": "Magic Guide"
@@ -18536,6 +19367,12 @@
   "ThePowerOfResearch": {
     "name": "The Power of Research"
   },
+  "WitchsHomework": {
+    "name": "Witch's Homework"
+  },
+  "FeastingInASharedToast": {
+    "name": "Feasting in a Shared Toast"
+  },
   "Origin": {
     "name": "Origin"
   },
@@ -18616,6 +19453,9 @@
   },
   "NodKrai": {
     "name": "Nod-Krai"
+  },
+  "Snezhnaya": {
+    "name": "Snezhnaya"
   },
   "BeginnerPlayerBadge": {
     "name": "Lencana Pemain Pemula"
@@ -18731,11 +19571,23 @@
   "SerpentDevourerSublimation": {
     "name": "Serpent Devourer - Sublimation"
   },
+  "GoldenBoughOfNemorensis": {
+    "name": "Golden Bough of Nemorensis"
+  },
+  "GoldenBoughOfNemorensisSublimation": {
+    "name": "Golden Bough of Nemorensis - Sublimation"
+  },
   "ArdentStorm": {
     "name": "Ardent Storm"
   },
   "ArdentStormSublimation": {
     "name": "Ardent Storm - Sublimation"
+  },
+  "SilverRadianceOfGradlon": {
+    "name": "Silver Radiance of Gradlon"
+  },
+  "SilverRadianceOfGradlonSublimation": {
+    "name": "Silver Radiance of Gradlon - Sublimation"
   },
   "ShatteredMoon": {
     "name": "Shattered Moon"
@@ -18743,11 +19595,23 @@
   "ShatteredMoonSublimation": {
     "name": "Shattered Moon - Sublimation"
   },
+  "StarlightOfFylkir": {
+    "name": "Starlight of Fylkir"
+  },
+  "StarlightOfFylkirSublimation": {
+    "name": "Starlight of Fylkir - Sublimation"
+  },
   "HallowedFetters": {
     "name": "Hallowed Fetters"
   },
   "HallowedFettersSublimation": {
     "name": "Hallowed Fetters - Sublimation"
+  },
+  "DawnstarOfShahar": {
+    "name": "Dawnstar of Shahar"
+  },
+  "DawnstarOfShaharSublimation": {
+    "name": "Dawnstar of Shahar - Sublimation"
   },
   "Starpiercer": {
     "name": "Starpiercer"
@@ -18755,11 +19619,20 @@
   "StarpiercerSublimation": {
     "name": "Starpiercer - Sublimation"
   },
+  "Yayu": {
+    "name": "Yayu"
+  },
+  "YayuSublimation": {
+    "name": "Yayu - Sublimation"
+  },
   "PhantasmalGiftStarOmen": {
     "name": "Phantasmal Gift: Star Omen"
   },
   "SuperAwesomeMagicKey": {
     "name": "Super Awesome Magic Key"
+  },
+  "ATouchOfFrostInScorchingSummer": {
+    "name": "A Touch of Frost in Scorching Summer!"
   },
   "UnbreakableDurandarte": {
     "name": "Unbreakable: Durandarte"
@@ -19367,6 +20240,9 @@
   "StandingStreetLampBeaconInTheMistyNight": {
     "name": "Lampu Jalan Berdiri: Mercusuar di Malam Berkabut"
   },
+  "ChirpingAboutAsBirdsDo": {
+    "name": "Saling Berkicau Seperti Burung-Burung"
+  },
   "EfflorescentIllumination": {
     "name": "Iluminasi Berbunga"
   },
@@ -19453,6 +20329,12 @@
   },
   "HotelWardrobeExtraRoom": {
     "name": "Lemari Pakaian Hotel: Ruang Tambahan"
+  },
+  "OpeningBusinessHours": {
+    "name": "Hari Buka Usaha"
+  },
+  "IndoorStandingCabinetTheSteepledLittleHouse": {
+    "name": "Lemari Dalam Ruangan: Bangunan Beratap Runcing"
   },
   "TwoTierLibraryBookshelf": {
     "name": "Rak Buku Perpustakaan 2 Lapis"
@@ -19649,6 +20531,9 @@
   "TeaPartyDiningTableThePerfectGathering": {
     "name": "Meja Makan Pesta Teh: Tempat Berkumpul yang Sempurna"
   },
+  "CandlePerchTallSquareTable": {
+    "name": "Meja Kaki Tinggi \"Pemegang Lilin\""
+  },
   "BreezeBlessedBed": {
     "name": "Ranjang Sesejuk Angin"
   },
@@ -19690,6 +20575,9 @@
   },
   "FrostMoonStoneBedFreshCool": {
     "name": "Ranjang Batu Bulan Embun: Segar dan Sejuk"
+  },
+  "SweetUntroubledSlumber": {
+    "name": "Tidur Nyenyak Tanpa Cemas"
   },
   "PineReceptionCounter": {
     "name": "Konter Penerima Tamu dari Kayu Pinus"
@@ -19819,6 +20707,12 @@
   },
   "TeaPartyChairCrimsonAndGold": {
     "name": "Kursi Pesta Teh: Merah Tua dan Emas"
+  },
+  "AQuietSighOnASnowboundNight": {
+    "name": "Menghela Napas di Malam Bersalju"
+  },
+  "IndoorSeatClashingColors": {
+    "name": "Kursi Dalam Ruangan: Seni Beradu Warna"
   },
   "NorthernStoneHearth": {
     "name": "Perapian Batu Northland"
@@ -20093,6 +20987,12 @@
   "TeaPartyCarpetSoftToTheTouch": {
     "name": "Karpet Pesta Teh: Tekstur Lembut"
   },
+  "IndoorRugFrostbloomBeneathTheIce": {
+    "name": "Karpet Dalam Ruangan: Bunga Es"
+  },
+  "IndoorRugWarmth": {
+    "name": "Karpet Dalam Ruangan: Warna Hangat"
+  },
   "VibrantPotBornInFlames": {
     "name": "Pot Berwarna-Warni: \"Lahir dari Api\""
   },
@@ -20110,6 +21010,9 @@
   },
   "HeroicWarcry": {
     "name": "Teriakan Sang Pahlawan"
+  },
+  "TallCappedSentinel": {
+    "name": "Prajurit Topi Tinggi"
   },
   "TrustyPortableLamp": {
     "name": "Lentera yang Tidak Pernah Padam"
@@ -20164,6 +21067,12 @@
   },
   "TwistyMushroom": {
     "name": "Jamur Berliku"
+  },
+  "ForWhomItShines": {
+    "name": "Demi Siapa Kilaumu"
+  },
+  "IndoorTableLampSoftLight": {
+    "name": "Lampu Meja Dalam Ruangan: Cahaya Lembut"
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Karangan Bunga: Biru yang Tenang"
@@ -20333,6 +21242,12 @@
   "TeaPartyCartDessertTime": {
     "name": "Gerobak Pesta Teh: Waktunya Hidangan Penutup"
   },
+  "RoundAndRoundTheLittleFishGo": {
+    "name": "Ikan Berputar-putar"
+  },
+  "WindandSnowpiercer": {
+    "name": "Melintasi Badai Salju"
+  },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "name": "Peralatan Kedai Teh: Tak Seringan Debu"
   },
@@ -20378,6 +21293,15 @@
   "TeaPartyCupRefreshingFlavor": {
     "name": "Cangkir Pesta Teh: Rasa yang Menyegarkan"
   },
+  "TeaTimeEtiquette": {
+    "name": "Etika Minum Teh"
+  },
+  "BalancedBoughs": {
+    "name": "Ranting Seimbang"
+  },
+  "SteadyCompanionThroughDreams": {
+    "name": "Mimpi Selalu Menyertai"
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "\"Kesadaran dari Tanah Kebijaksanaan\""
   },
@@ -20410,6 +21334,12 @@
   },
   "DecorativePottedPlantBuddingFragrance": {
     "name": "Pohon Bonsai Pemandangan: Keharuman yang Mekar"
+  },
+  "PottedBouquetElegantBlackthorn": {
+    "name": "Merangkai Bunga: Semak Duri Elegan"
+  },
+  "DecorativeFlowerbedBrightcoreBlossoms": {
+    "name": "Hamparan Bunga Hias: Kelopak Bersinar"
   },
   "LandscapePaintingCountryHome": {
     "name": "Lukisan Pemandangan: Kampung Halaman"
@@ -20530,6 +21460,12 @@
   },
   "LingeringMoment": {
     "name": "Momen tak Terlupakan"
+  },
+  "AGoldenWinter": {
+    "name": "Musim Dingin Keemasan"
+  },
+  "TheLoveOneSeeks": {
+    "name": "Cinta Siapakah yang Dicari"
   },
   "StrawHut": {
     "name": "Pondok Jerami"
@@ -21346,6 +22282,27 @@
   },
   "BasePillarUniversalBeacon": {
     "name": "Pilar Markas: Suar Serbaguna"
+  },
+  "LargeWinchandAxleCrane": {
+    "name": "Perangkat Derek Roda Besar"
+  },
+  "TownDwellingCozyWarmth": {
+    "name": "\"Hunian Perkotaan: Rumah yang Hangat dan Nyaman\""
+  },
+  "TheRoundSnowball": {
+    "name": "Bola Salju Bulat"
+  },
+  "WaitingPlatformQuietAnticipation": {
+    "name": "Platform Tunggu: Menanti dalam Keheningan"
+  },
+  "SnezhnayanDwellingWarmTonedPortico": {
+    "name": "Rumah Penduduk Snezhnaya: Beranda Hangat"
+  },
+  "TheRoundOnion": {
+    "name": "Bawang Bulat"
+  },
+  "SnezhnayanDwellingElegantCarvings": {
+    "name": "Rumah Penduduk Snezhnaya: Ukiran Elegan"
   },
   "BirdAndBlossomDesignFountain": {
     "name": "Air Mancur Bunga & Burung"
@@ -22565,6 +23522,15 @@
   "UnusableLegacy": {
     "name": "Warisan yang Tidak Dapat Digunakan"
   },
+  "CherishThePresent": {
+    "name": "Hargai Momen Ini"
+  },
+  "AnUnmeltedHome": {
+    "name": "Hunian yang Tidak Mencair"
+  },
+  "OpenWide": {
+    "name": "Buka Mulut Lebar-Lebar!"
+  },
   "WeatheredBambooFence": {
     "name": "Pagar Bambu Lapuk"
   },
@@ -22724,6 +23690,12 @@
   "EchoesOfSilence": {
     "name": "Gema Keheningan"
   },
+  "StationBenchReadingBetweenTrains": {
+    "name": "Bangku Stasiun: Membaca di Saat Menunggu"
+  },
+  "TheLingeringWarmthOfTheWait": {
+    "name": "Kehangatan dari Penantian"
+  },
   "TwoStoryHilichurlSentryTower": {
     "name": "Menara Penjaga 2 Lapis Hilichurl"
   },
@@ -22816,6 +23788,9 @@
   },
   "WarmAndCozy": {
     "name": "Hangat dan Nyaman"
+  },
+  "UselessAdvice": {
+    "name": "Saran yang Tidak Berguna"
   },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Rak Toko Anggur: Sepuas Hati"
@@ -23000,6 +23975,24 @@
   "SignallessTower": {
     "name": "Menara Tanpa Sinyal"
   },
+  "BasicTransportSled": {
+    "name": "Kereta Luncur Pengangkut Sederhana"
+  },
+  "BasicTentANapBeneathTheSnow": {
+    "name": "Tenda Sederhana: Istirahat di Bawah Salju"
+  },
+  "SturdyAsSolidIce": {
+    "name": "Sekokoh Es Beku"
+  },
+  "PortableSmallHeatingDevice": {
+    "name": "Pemanas Portabel Mini"
+  },
+  "PrimeIceOreNeatlyArrayed": {
+    "name": "Bijih Prime Ice: Tersusun Rapi"
+  },
+  "SmallGaugePanelControlConsole": {
+    "name": "Konsol \"Panel Pengukur\" Kecil"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "\"Kesatria Kapi Bertaring Panjang\""
   },
@@ -23038,5 +24031,8 @@
   },
   "MoonEnvoyOfSilverRadiance": {
     "name": "Utusan Bulan Cahaya Perak"
+  },
+  "DancingBeneathSilverWhiteWings": {
+    "name": "Menari di Bawah Sayap Putih Perak"
   }
 }

@@ -3,12 +3,11 @@ import {
   compileTagMapKeys,
   compileTagMapValues,
 } from '@genshin-optimizer/pando/engine'
-import { type TagMapNodeEntries, fixedTags, queryTypes } from './util'
-
 import charData from './char'
 import common from './common'
 import lcData from './lightCone'
 import relic from './relic'
+import { fixedTags, queryTypes, type TagMapNodeEntries } from './util'
 
 export const data: TagMapNodeEntries = [
   ...charData,

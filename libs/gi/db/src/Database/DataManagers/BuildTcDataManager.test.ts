@@ -23,7 +23,7 @@ describe('BuildTcDataManager', () => {
   })
 
   it('should clamp Build(TC) weapon level/ascension by rarity', () => {
-    const base = initCharTC('DullBlade')
+    const base = initCharTC('Bennett', 'DullBlade')
     const result = buildTcs['validate']({
       ...base,
       weapon: {
@@ -39,7 +39,7 @@ describe('BuildTcDataManager', () => {
   })
 
   it('should default Build(TC) character to optimizer-friendly values', () => {
-    const base = initCharTC('DullBlade')
+    const base = initCharTC('Bennett', 'DullBlade')
     const result = buildTcs['validate']({
       ...base,
       character: {},

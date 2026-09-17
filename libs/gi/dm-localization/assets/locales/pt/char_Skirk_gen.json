@@ -117,7 +117,7 @@
   "passive1": {
     "name": "Razão Além da Razão",
     "description": {
-      "0": "Quando membros próximos da equipe desencadearem reações de Congelado, Supercondutor, Supercondutor Estelar, Redemoinho Cryo ou Cristalização Cryo contra inimigos, uma Fenda do Vazio será criada próxima a esse inimigo. Esse efeito pode ser desencadeado uma vez a cada 2.5s. Um máximo de 3 Fendas do Vazio criadas pela própria Skirk pode existir simultaneamente em campo.",
+      "0": "Quando membros próximos da equipe desencadearem reações de Congelado, Supercondutor, Supercondutor Estelar, Redemoinho Cryo, Redemoinho Estelar ou Cristalização Cryo contra inimigos, uma Fenda do Vazio será criada próxima a esse inimigo. Esse efeito pode ser desencadeado uma vez a cada 2.5s. Um máximo de 3 Fendas do Vazio criadas pela própria Skirk pode existir simultaneamente em campo.",
       "1": "<br/>",
       "2": "Skirk pode usar os seguintes métodos para absorver Fendas do Vazio próximas:",
       "3": [

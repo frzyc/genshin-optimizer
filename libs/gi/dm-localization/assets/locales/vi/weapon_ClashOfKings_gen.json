@@ -1,0 +1,24 @@
+{
+  "name": "Trò Chơi Của Các Nhà Vua",
+  "description": {
+    "0": "Chiếc hộp vàng được khảm vô số châu báu lộng lẫy, bên trong chứa đựng trò chơi yêu thích nhất của các vị vua biển cát."
+  },
+  "passiveName": "Ngày Đêm Bị Lãng Quên",
+  "passiveDescription": {
+    "0": {
+      "0": "Sau khi người trang bị thi triển Kỹ Năng Nguyên Tố, sẽ nhận hiệu quả \"Pháp Lệnh Bàn Cờ\" duy trì 6s: Tấn Công tăng <cryo>20%</cryo>, Tinh Thông Nguyên Tố tăng <cryo>100</cryo> điểm. Hiệu quả này mỗi 12s tối đa kích hoạt một lần, không thể cộng dồn. Trong thời gian duy trì, khi Trọng Kích của người trang bị đánh trúng kẻ địch, thời gian duy trì hiệu quả nêu trên sẽ còn kéo dài thêm 6s, tối đa kéo dài 6s thông qua cách này."
+    },
+    "1": {
+      "0": "Sau khi người trang bị thi triển Kỹ Năng Nguyên Tố, sẽ nhận hiệu quả \"Pháp Lệnh Bàn Cờ\" duy trì 6s: Tấn Công tăng <cryo>25%</cryo>, Tinh Thông Nguyên Tố tăng <cryo>125</cryo> điểm. Hiệu quả này mỗi 12s tối đa kích hoạt một lần, không thể cộng dồn. Trong thời gian duy trì, khi Trọng Kích của người trang bị đánh trúng kẻ địch, thời gian duy trì hiệu quả nêu trên sẽ còn kéo dài thêm 6s, tối đa kéo dài 6s thông qua cách này."
+    },
+    "2": {
+      "0": "Sau khi người trang bị thi triển Kỹ Năng Nguyên Tố, sẽ nhận hiệu quả \"Pháp Lệnh Bàn Cờ\" duy trì 6s: Tấn Công tăng <cryo>30%</cryo>, Tinh Thông Nguyên Tố tăng <cryo>150</cryo> điểm. Hiệu quả này mỗi 12s tối đa kích hoạt một lần, không thể cộng dồn. Trong thời gian duy trì, khi Trọng Kích của người trang bị đánh trúng kẻ địch, thời gian duy trì hiệu quả nêu trên sẽ còn kéo dài thêm 6s, tối đa kéo dài 6s thông qua cách này."
+    },
+    "3": {
+      "0": "Sau khi người trang bị thi triển Kỹ Năng Nguyên Tố, sẽ nhận hiệu quả \"Pháp Lệnh Bàn Cờ\" duy trì 6s: Tấn Công tăng <cryo>35%</cryo>, Tinh Thông Nguyên Tố tăng <cryo>175</cryo> điểm. Hiệu quả này mỗi 12s tối đa kích hoạt một lần, không thể cộng dồn. Trong thời gian duy trì, khi Trọng Kích của người trang bị đánh trúng kẻ địch, thời gian duy trì hiệu quả nêu trên sẽ còn kéo dài thêm 6s, tối đa kéo dài 6s thông qua cách này."
+    },
+    "4": {
+      "0": "Sau khi người trang bị thi triển Kỹ Năng Nguyên Tố, sẽ nhận hiệu quả \"Pháp Lệnh Bàn Cờ\" duy trì 6s: Tấn Công tăng <cryo>40%</cryo>, Tinh Thông Nguyên Tố tăng <cryo>200</cryo> điểm. Hiệu quả này mỗi 12s tối đa kích hoạt một lần, không thể cộng dồn. Trong thời gian duy trì, khi Trọng Kích của người trang bị đánh trúng kẻ địch, thời gian duy trì hiệu quả nêu trên sẽ còn kéo dài thêm 6s, tối đa kéo dài 6s thông qua cách này."
+    }
+  }
+}

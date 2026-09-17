@@ -117,16 +117,16 @@
   "passive1": {
     "name": "Vernunft jenseits der Vernunft",
     "description": {
-      "0": "Erzeugt, wenn Truppenmitglieder in der Nähe an Gegnern die Reaktionen Gefroren, Supraleiter, Stellar-Supraleiter, Kryo-Verwirbelung oder Kryo-Kristall auslösen, in der Nähe des Gegners einen Leere-Riss, 2,5 s Abklingzeit. Es können gleichzeitig nur 3 von Skirk selbst erzeugte Leere-Risse auf dem Feld existieren.",
+      "0": "Erzeugt, wenn Truppenmitglieder in der Nähe an Gegnern die Reaktionen Gefroren, Supraleiter, Stellar-Supraleiter, Kryo-Verwirbelung, Stellar-Verwirbelung oder Kryo-Kristall auslösen, in der Nähe des Gegners einen Leere-Riss, 2,5 s Abklingzeit. Es können gleichzeitig nur 3 von Skirk selbst erzeugte Leere-Risse auf dem Feld existieren.",
       "1": "<br/>",
       "2": "Skirk kann auf die folgenden Weisen Leere-Risse in einem bestimmten Umkreis absorbieren:",
       "3": [
-        " Wenn sie im <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>„Sieben-Phasen-Blitzmodus“</strong></tooltip> Gegner mit heftigen Schlägen trifft.",
-        " Wenn sie im „Sieben-Phasen-Blitzmodus“ ihre besondere Spezialfähigkeit <strong>„Verdorbene Kunst – Vernichtung“</strong> auslöst.",
+        " Wenn sie im <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Sieben-Phasen-Blitzmodus</strong></tooltip> Gegner mit heftigen Schlägen trifft.",
+        " Wenn sie im „Sieben-Phasen-Blitzmodus“ ihre besondere Spezialfähigkeit <strong>Verdorbene Kunst – Vernichtung</strong> auslöst.",
         " Wenn sie durch Gedrückthalten ihre Elementarfähigkeit <strong>Verdorbene Kunst – Verzerrung</strong> auslöst, um sich schnell zu bewegen."
       ],
       "4": "<br/>",
-      "5": "Skirk erhält für jeden absorbierten Riss 8 Pkt. <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>„List der Schlange“</strong></tooltip>."
+      "5": "Skirk erhält für jeden absorbierten Riss 8 Pkt. <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>List der Schlange</strong></tooltip>."
     }
   },
   "passive2": {

@@ -1,0 +1,29 @@
+{
+  "name": "Kim Luật Đúc Ảnh",
+  "description": {
+    "0": "Trọng kiếm được trang trí bằng vàng, tương truyền trong quá khứ xa xôi từng là binh khí được một nhà chỉnh âm vĩ đại vô cùng yêu thích."
+  },
+  "passiveName": "Hòa Tấu Ngày Và Đêm",
+  "passiveDescription": {
+    "0": {
+      "0": "Mỗi 10s, người trang bị sẽ dựa trên thứ tự dưới đây để lần lượt tấu lên \"Bản Nhạc Hài Hòa\" tương ứng: Tấn Công tăng <cryo>18%</cryo>/Tinh Thông Nguyên Tố tăng <cryo>120</cryo> điểm/Sát thương phản ứng Tinh Tú Lấp Lánh tăng <cryo>28%</cryo>. Mỗi loại hiệu quả bản nhạc sẽ duy trì 10s, người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên.",
+      "1": "Sau khi kích hoạt phản ứng Tinh Tú Lấp Lánh, sẽ còn nhận thêm hiệu quả \"Bản Nhạc Hài Hòa: Phức Điệu\" duy trì 12s, có hiệu quả tương đồng với Bản Nhạc Hài Hòa đã tấu vào lúc kích hoạt phản ứng Tinh Tú Lấp Lánh. Hiệu quả này có thể cộng dồn với bản nhạc gốc, mỗi 12s tối đa kích hoạt một lần."
+    },
+    "1": {
+      "0": "Mỗi 10s, người trang bị sẽ dựa trên thứ tự dưới đây để lần lượt tấu lên \"Bản Nhạc Hài Hòa\" tương ứng: Tấn Công tăng <cryo>22.5%</cryo>/Tinh Thông Nguyên Tố tăng <cryo>150</cryo> điểm/Sát thương phản ứng Tinh Tú Lấp Lánh tăng <cryo>35%</cryo>. Mỗi loại hiệu quả bản nhạc sẽ duy trì 10s, người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên.",
+      "1": "Sau khi kích hoạt phản ứng Tinh Tú Lấp Lánh, sẽ còn nhận thêm hiệu quả \"Bản Nhạc Hài Hòa: Phức Điệu\" duy trì 12s, có hiệu quả tương đồng với Bản Nhạc Hài Hòa đã tấu vào lúc kích hoạt phản ứng Tinh Tú Lấp Lánh. Hiệu quả này có thể cộng dồn với bản nhạc gốc, mỗi 12s tối đa kích hoạt một lần."
+    },
+    "2": {
+      "0": "Mỗi 10s, người trang bị sẽ dựa trên thứ tự dưới đây để lần lượt tấu lên \"Bản Nhạc Hài Hòa\" tương ứng: Tấn Công tăng <cryo>27%</cryo>/Tinh Thông Nguyên Tố tăng <cryo>180</cryo> điểm/Sát thương phản ứng Tinh Tú Lấp Lánh tăng <cryo>42%</cryo>. Mỗi loại hiệu quả bản nhạc sẽ duy trì 10s, người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên.",
+      "1": "Sau khi kích hoạt phản ứng Tinh Tú Lấp Lánh, sẽ còn nhận thêm hiệu quả \"Bản Nhạc Hài Hòa: Phức Điệu\" duy trì 12s, có hiệu quả tương đồng với Bản Nhạc Hài Hòa đã tấu vào lúc kích hoạt phản ứng Tinh Tú Lấp Lánh. Hiệu quả này có thể cộng dồn với bản nhạc gốc, mỗi 12s tối đa kích hoạt một lần."
+    },
+    "3": {
+      "0": "Mỗi 10s, người trang bị sẽ dựa trên thứ tự dưới đây để lần lượt tấu lên \"Bản Nhạc Hài Hòa\" tương ứng: Tấn Công tăng <cryo>31.5%</cryo>/Tinh Thông Nguyên Tố tăng <cryo>210</cryo> điểm/Sát thương phản ứng Tinh Tú Lấp Lánh tăng <cryo>49%</cryo>. Mỗi loại hiệu quả bản nhạc sẽ duy trì 10s, người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên.",
+      "1": "Sau khi kích hoạt phản ứng Tinh Tú Lấp Lánh, sẽ còn nhận thêm hiệu quả \"Bản Nhạc Hài Hòa: Phức Điệu\" duy trì 12s, có hiệu quả tương đồng với Bản Nhạc Hài Hòa đã tấu vào lúc kích hoạt phản ứng Tinh Tú Lấp Lánh. Hiệu quả này có thể cộng dồn với bản nhạc gốc, mỗi 12s tối đa kích hoạt một lần."
+    },
+    "4": {
+      "0": "Mỗi 10s, người trang bị sẽ dựa trên thứ tự dưới đây để lần lượt tấu lên \"Bản Nhạc Hài Hòa\" tương ứng: Tấn Công tăng <cryo>36%</cryo>/Tinh Thông Nguyên Tố tăng <cryo>240</cryo> điểm/Sát thương phản ứng Tinh Tú Lấp Lánh tăng <cryo>56%</cryo>. Mỗi loại hiệu quả bản nhạc sẽ duy trì 10s, người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên.",
+      "1": "Sau khi kích hoạt phản ứng Tinh Tú Lấp Lánh, sẽ còn nhận thêm hiệu quả \"Bản Nhạc Hài Hòa: Phức Điệu\" duy trì 12s, có hiệu quả tương đồng với Bản Nhạc Hài Hòa đã tấu vào lúc kích hoạt phản ứng Tinh Tú Lấp Lánh. Hiệu quả này có thể cộng dồn với bản nhạc gốc, mỗi 12s tối đa kích hoạt một lần."
+    }
+  }
+}

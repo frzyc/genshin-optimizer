@@ -3,7 +3,6 @@ export const entryTypes = [
   'enemy',
   'team',
   'target',
-  'prevMember',
   'teamBuff',
   'notOwnBuff',
   'enemyDeBuff', // Ends with 'Buff' so `Calculator` can pick up on this tag

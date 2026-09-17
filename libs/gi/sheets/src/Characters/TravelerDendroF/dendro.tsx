@@ -20,7 +20,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import type { Palette } from '@mui/material'
 import { cond, st, stg } from '../../SheetUtil'
-import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -28,6 +27,7 @@ import {
   dmgNode,
   hitEle,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet.d'
 
 export default function dendro(
   key: CharacterSheetKey,
@@ -37,7 +37,7 @@ export default function dendro(
   const condCharKey = 'TravelerDendro'
   const ct = charTemplates(key)
 
-  const skillParam_gen = allStats.char.skillParam.TravelerDendroF
+  const skillParam_gen = allStats.char.skillParam[key]
   let s = 0,
     b = 0
   const dm = {
@@ -218,7 +218,7 @@ export default function dendro(
         fields: [
           {
             node: infoMut(dmgFormulas.skill.dmg, {
-              name: ct.chg(`skill.skillParams.0`),
+              name: ct.chg('skill.skillParams.0'),
             }),
           },
           {
@@ -235,12 +235,12 @@ export default function dendro(
         fields: [
           {
             node: infoMut(dmgFormulas.burst.lampDmg, {
-              name: ct.chg(`burst.skillParams.0`),
+              name: ct.chg('burst.skillParams.0'),
             }),
           },
           {
             node: infoMut(dmgFormulas.burst.explosionDmg, {
-              name: ct.chg(`burst.skillParams.1`),
+              name: ct.chg('burst.skillParams.1'),
             }),
           },
           {

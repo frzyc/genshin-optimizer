@@ -1,4 +1,7 @@
-import type { Tag as BaseTag } from '@genshin-optimizer/game-opt/engine'
+import type {
+  Tag as BaseTag,
+  EntryType,
+} from '@genshin-optimizer/game-opt/engine'
 import {
   Read as BaseRead,
   reader as baseReader,
@@ -16,11 +19,11 @@ import type {
   TagMapNodeEntry,
 } from '.'
 import {
-  type Sheet,
   damageTypes,
   elementalTypes,
   members,
   paths,
+  type Sheet,
   sheets,
 } from './listing'
 
@@ -38,7 +41,7 @@ export const fixedTags = {
   // Count
   path: paths,
 }
-export type Tag = BaseTag<Sheet, Src, Dst> & {
+export type Tag = BaseTag<Sheet, Src, Dst, EntryType> & {
   elementalType?: ElementalType | null
   damageType1?: DamageType | null
   damageType2?: DamageType | null
@@ -186,7 +189,7 @@ export function tagStr(tag: Tag, ex?: any): string {
     includedBar = false
   function required(str: string | undefined | null, name: string) {
     if (!str && str !== null) return
-    result += str === null ? `!${name} ` : str + ' '
+    result += str === null ? `!${name} ` : `${str} `
     includedRequired = true
   }
   function optional(str: string | undefined | null, name: string) {
@@ -195,7 +198,7 @@ export function tagStr(tag: Tag, ex?: any): string {
       includedBar = true
       result += '| '
     }
-    result += str === null ? `!${name} ` : str + ' '
+    result += str === null ? `!${name} ` : `${str} `
   }
   required(name && `#${name}`, 'name')
   required(preset, 'preset')
@@ -210,7 +213,7 @@ export function tagStr(tag: Tag, ex?: any): string {
   optional(elementalType, 'ele')
   optional(damageType1 && `1:${damageType1}`, 'dmg1')
   optional(damageType2 && `2:${damageType2}`, 'dmg2')
-  optional(path && `p:{path}`, 'path')
+  optional(path && 'p:{path}', 'path')
   if (ex) result += `[${ex}] `
-  return result + '}'
+  return `${result}}`
 }

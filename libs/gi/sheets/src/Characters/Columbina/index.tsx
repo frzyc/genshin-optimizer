@@ -1,7 +1,7 @@
 import { objKeyMap, objKeyValMap, range } from '@genshin-optimizer/common/util'
 import {
-  type CharacterKey,
   allLunarReactionKeys,
+  type CharacterKey,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
@@ -11,7 +11,7 @@ import {
   infoMut,
   input,
   lookup,
-  lunarDmg,
+  lunarDmgNode,
   min,
   naught,
   percent,
@@ -23,7 +23,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -32,6 +31,7 @@ import {
   shieldElement,
   shieldNode,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
 
 const key: CharacterKey = 'Columbina'
 const skillParam_gen = allStats.char.skillParam[key]
@@ -375,7 +375,7 @@ const dmgFormulas = {
   },
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
-    dewDmg: lunarDmg(
+    dewDmg: lunarDmgNode(
       subscript(input.total.autoIndex, dm.charged.dewDmg, { unit: '%' }),
       'hp',
       'lunarbloom'
@@ -385,7 +385,7 @@ const dmgFormulas = {
   skill: {
     skillDmg: dmgNode('hp', dm.skill.skillDmg, 'skill'),
     continuousDmg: dmgNode('hp', dm.skill.continuousDmg, 'skill'),
-    lunarchargedDmg: lunarDmg(
+    lunarchargedDmg: lunarDmgNode(
       subscript(input.total.skillIndex, dm.skill.lchargedDmg, { unit: '%' }),
       'hp',
       'lunarcharged',
@@ -395,7 +395,7 @@ const dmgFormulas = {
         },
       }
     ),
-    lunarbloomDmg: lunarDmg(
+    lunarbloomDmg: lunarDmgNode(
       subscript(input.total.skillIndex, dm.skill.lbloomDmg, { unit: '%' }),
       'hp',
       'lunarbloom',
@@ -405,7 +405,7 @@ const dmgFormulas = {
         },
       }
     ),
-    lunarcrystallizeDmg: lunarDmg(
+    lunarcrystallizeDmg: lunarDmgNode(
       subscript(input.total.skillIndex, dm.skill.lcrystallizeDmg, {
         unit: '%',
       }),
@@ -488,7 +488,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.3`),
+            name: ct.chg('auto.skillParams.3'),
           }),
         },
         {
@@ -497,7 +497,7 @@ const sheet: TalentSheet = {
         },
         {
           node: infoMut(dmgFormulas.charged.dewDmg, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
             multi: 3,
           }),
         },

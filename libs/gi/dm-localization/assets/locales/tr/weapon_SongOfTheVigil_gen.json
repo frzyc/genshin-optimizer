@@ -1,0 +1,24 @@
+{
+  "name": "Nöbet Türküsü",
+  "description": {
+    "0": "Bir zamanlar her yere muhafızlık eden uzun bir mızrak. Bugün ise çocuklar ve onların hayali oyunlarıyla yeni bir amaç buldu."
+  },
+  "passiveName": "Geçmiş Günlerin Ahengi",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Element Tepkimesi tetiklediğinde kuşanan karakter için <cryo>4</cryo> Element Enerjisi yenilenir. Bu etki her 9 saniyede bir tetiklenebilir. Bir Yıldız Parıltısı tepkimesi tetiklediğinde ise 12sn boyunca kuşanan karakterin Saldırısı <cryo>%20</cryo> artar. Bu etkiler karakter alanda olmasa da tetiklenebilir."
+    },
+    "1": {
+      "0": "Bir Element Tepkimesi tetiklediğinde kuşanan karakter için <cryo>5</cryo> Element Enerjisi yenilenir. Bu etki her 9 saniyede bir tetiklenebilir. Bir Yıldız Parıltısı tepkimesi tetiklediğinde ise 12sn boyunca kuşanan karakterin Saldırısı <cryo>%25</cryo> artar. Bu etkiler karakter alanda olmasa da tetiklenebilir."
+    },
+    "2": {
+      "0": "Bir Element Tepkimesi tetiklediğinde kuşanan karakter için <cryo>6</cryo> Element Enerjisi yenilenir. Bu etki her 9 saniyede bir tetiklenebilir. Bir Yıldız Parıltısı tepkimesi tetiklediğinde ise 12sn boyunca kuşanan karakterin Saldırısı <cryo>%30</cryo> artar. Bu etkiler karakter alanda olmasa da tetiklenebilir."
+    },
+    "3": {
+      "0": "Bir Element Tepkimesi tetiklediğinde kuşanan karakter için <cryo>7</cryo> Element Enerjisi yenilenir. Bu etki her 9 saniyede bir tetiklenebilir. Bir Yıldız Parıltısı tepkimesi tetiklediğinde ise 12sn boyunca kuşanan karakterin Saldırısı <cryo>%35</cryo> artar. Bu etkiler karakter alanda olmasa da tetiklenebilir."
+    },
+    "4": {
+      "0": "Bir Element Tepkimesi tetiklediğinde kuşanan karakter için <cryo>8</cryo> Element Enerjisi yenilenir. Bu etki her 9 saniyede bir tetiklenebilir. Bir Yıldız Parıltısı tepkimesi tetiklediğinde ise 12sn boyunca kuşanan karakterin Saldırısı <cryo>%40</cryo> artar. Bu etkiler karakter alanda olmasa da tetiklenebilir."
+    }
+  }
+}

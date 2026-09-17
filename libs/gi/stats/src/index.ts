@@ -28,6 +28,7 @@ export function getCharEle(ck: CharacterSheetKey | CharacterKey): ElementKey {
   else if (ck.startsWith('TravelerDendro')) return 'dendro'
   else if (ck.startsWith('TravelerHydro')) return 'hydro'
   else if (ck.startsWith('TravelerPyro')) return 'pyro'
+  else if (ck.startsWith('TravelerCryo')) return 'cryo'
   else return allStats.char.data[ck as NonTravelerCharacterKey].ele!
 }
 

@@ -1,5 +1,5 @@
 import { objKeyMap, objKeyValMap, range } from '@genshin-optimizer/common/util'
-import { type CharacterKey, absorbableEle } from '@genshin-optimizer/gi/consts'
+import { absorbableEle, type CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   active,
@@ -21,7 +21,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { any, cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -30,6 +29,7 @@ import {
   hitEle,
   plungingDmgNodes,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
 
 const key: CharacterKey = 'Prune'
 const skillParam_gen = allStats.char.skillParam[key]
@@ -104,28 +104,39 @@ const [condLockHomeworkPath, condLockHomework] = cond(key, 'lockHomework')
 const lockHomework_hexerei = equal(condLockHomework, 'on', 1)
 
 const [condA4RallyPath, condA4Rally] = cond(key, 'a4Rally')
-const a4Rally_normal_dmg_ = greaterEq(
-  input.asc,
-  4,
-  equal(
-    condA4Rally,
-    'on',
-    max(
-      min(
-        prod(
-          percent(dm.passive2.dmg_),
-          sum(input.premod.atk, -dm.passive2.atkThresh)
-        ),
-        percent(dm.passive2.maxDmg_)
-      ),
-      naught
-    )
+const rallyBuffs = [
+  'normal_dmg_',
+  'charged_dmg_',
+  'plunging_dmg_',
+  'skill_dmg_',
+  'burst_dmg_',
+]
+const a4Rally_dmg_dispObj = objKeyMap(rallyBuffs, (k) =>
+  infoMut(
+    greaterEq(
+      input.asc,
+      4,
+      equal(
+        condA4Rally,
+        'on',
+        max(
+          min(
+            prod(
+              percent(dm.passive2.dmg_),
+              sum(input.premod.atk, -dm.passive2.atkThresh)
+            ),
+            percent(dm.passive2.maxDmg_)
+          ),
+          naught
+        )
+      )
+    ),
+    { path: k, isTeamBuff: true }
   )
 )
-const a4Rally_charged_dmg_ = { ...a4Rally_normal_dmg_ }
-const a4Rally_plunging_dmg_ = { ...a4Rally_normal_dmg_ }
-const a4Rally_skill_dmg_ = { ...a4Rally_normal_dmg_ }
-const a4Rally_burst_dmg_ = { ...a4Rally_normal_dmg_ }
+const a4Rally_dmg_obj = objKeyMap(rallyBuffs, (k) =>
+  unequal(target.charKey, key, a4Rally_dmg_dispObj[k])
+)
 
 const [condLockRallyReactionPath, condLockRallyReaction] = cond(
   key,
@@ -161,11 +172,11 @@ const lockRallyReaction_teamAtk_disp = greaterEq(
     )
   )
 )
-// Technically non-anemo can trigger this, but it requires enemy with anemo aura, which is not realy a thing
+// Technically non-anemo can trigger this, but it requires enemy with anemo aura, which is not really a thing
 const lockRallyReaction_teamAtk_ = equal(
   target.charEle,
   'anemo',
-  lockRallyReaction_teamAtk_disp
+  unequal(target.charKey, key, lockRallyReaction_teamAtk_disp)
 )
 
 const [condC2StackPath, condC2Stack] = cond(key, 'c2Stack')
@@ -245,7 +256,7 @@ const dmgFormulas = {
       )
     ),
   ]),
-  passive2: { a4Rally_normal_dmg_ },
+  passive2: a4Rally_dmg_dispObj,
   constellation4: objKeyValMap(absorbableEle, (ele) => [
     `${ele}Dmg`,
     greaterEq(
@@ -274,11 +285,7 @@ export const data = dataObjForCharacterSheet(
     },
     teamBuff: {
       premod: {
-        normal_dmg_: a4Rally_normal_dmg_,
-        charged_dmg_: a4Rally_charged_dmg_,
-        plunging_dmg_: a4Rally_plunging_dmg_,
-        skill_dmg_: a4Rally_skill_dmg_,
-        burst_dmg_: a4Rally_burst_dmg_,
+        ...a4Rally_dmg_obj,
         atk_: lockRallyReaction_teamAtk_,
         atk: c6RallyReaction_atk,
       },
@@ -311,7 +318,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.3`),
+            name: ct.chg('auto.skillParams.3'),
           }),
         },
         {
@@ -413,21 +420,7 @@ const sheet: TalentSheet = {
       states: {
         on: {
           fields: [
-            {
-              node: a4Rally_normal_dmg_,
-            },
-            {
-              node: a4Rally_charged_dmg_,
-            },
-            {
-              node: a4Rally_plunging_dmg_,
-            },
-            {
-              node: a4Rally_skill_dmg_,
-            },
-            {
-              node: a4Rally_burst_dmg_,
-            },
+            ...Object.values(a4Rally_dmg_dispObj).map((node) => ({ node })),
             {
               text: stg('duration'),
               value: dm.passive2.duration,

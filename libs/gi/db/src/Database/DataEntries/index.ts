@@ -11,7 +11,7 @@ import { type TeamSortKey, teamSortKeys } from './DisplayTeamEntry'
 import type { TimeZoneKey } from './DisplayTool'
 import { RESIN_MAX, timeZones } from './DisplayTool'
 import type { WeaponSortKey } from './DisplayWeaponEntry'
-export { characterSortKeys, RESIN_MAX, teamSortKeys, timeZones }
+
 export type {
   ArchiveArtifactOption,
   ArchiveCharacterOption,
@@ -21,3 +21,4 @@ export type {
   TimeZoneKey,
   WeaponSortKey,
 }
+export { characterSortKeys, RESIN_MAX, teamSortKeys, timeZones }

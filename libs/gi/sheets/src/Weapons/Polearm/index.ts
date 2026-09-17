@@ -2,8 +2,8 @@ import type { WeaponPoleArmKey } from '@genshin-optimizer/gi/consts'
 import type { WeaponSheet } from '../WeaponSheet'
 import BalladOfTheFjords from './BalladOfTheFjords'
 import BeginnersProtector from './BeginnersProtector'
-import BlackTassel from './BlackTassel'
 import BlackcliffPole from './BlackcliffPole'
+import BlackTassel from './BlackTassel'
 import BloodsoakedRuins from './BloodsoakedRuins'
 import CalamityQueller from './CalamityQueller'
 import CrescentPike from './CrescentPike'
@@ -17,6 +17,7 @@ import EngulfingLightning from './EngulfingLightning'
 import FavoniusLance from './FavoniusLance'
 import FootprintOfTheRainbow from './FootprintOfTheRainbow'
 import FracturedHalo from './FracturedHalo'
+import Frostbreath from './Frostbreath'
 import Halberd from './Halberd'
 import IronPoint from './IronPoint'
 import KitainCrossSpear from './KitainCrossSpear'
@@ -33,6 +34,7 @@ import RightfulReward from './RightfulReward'
 import RoyalSpear from './RoyalSpear'
 import SacrificersStaff from './SacrificersStaff'
 import SkywardSpine from './SkywardSpine'
+import SongOfTheVigil from './SongOfTheVigil'
 import StaffOfHoma from './StaffOfHoma'
 import StaffOfTheScarletSands from './StaffOfTheScarletSands'
 import SymphonistOfScents from './SymphonistOfScents'
@@ -41,6 +43,7 @@ import TheCatch from './TheCatch'
 import VortexVanquisher from './VortexVanquisher'
 import WavebreakersFin from './WavebreakersFin'
 import WhiteTassel from './WhiteTassel'
+
 const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   BalladOfTheFjords,
   BeginnersProtector,
@@ -59,6 +62,7 @@ const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   FavoniusLance,
   FootprintOfTheRainbow,
   FracturedHalo,
+  Frostbreath,
   Halberd,
   IronPoint,
   KitainCrossSpear,
@@ -75,6 +79,7 @@ const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   RoyalSpear,
   SacrificersStaff,
   SkywardSpine,
+  SongOfTheVigil,
   StaffOfHoma,
   StaffOfTheScarletSands,
   SymphonistOfScents,

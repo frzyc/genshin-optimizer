@@ -260,6 +260,15 @@
   "VenuePopularity": {
     "name": "Popolarità della struttura"
   },
+  "TournamentPoints": {
+    "name": "Punti Torneo"
+  },
+  "FervorCoupon": {
+    "name": "Coupon Fervore"
+  },
+  "PrimeIceCount": {
+    "name": "Risorsa di Ghiaccio sublime"
+  },
   "Primogem": {
     "name": "Primogemma"
   },
@@ -382,6 +391,9 @@
   },
   "CollectiveOfPlentyReputationEXP": {
     "name": "ESP reputazione della Comunità dell'Abbondanza"
+  },
+  "ExpeditionInsights": {
+    "name": "Intuizioni di spedizione"
   },
   "MemoryOfEternalFlames": {
     "name": "Memoria delle fiamme eterne"
@@ -1013,6 +1025,12 @@
   "LargeMagneticEnergyOrb": {
     "name": "Grande sfera d'energia magnetica"
   },
+  "SnezhnayanPowerEnergyOrb": {
+    "name": "Sfera d'energia di Snezhnaya"
+  },
+  "SnezhnayanMaterialEnergyOrb": {
+    "name": "Sfera d'energia materiale di Snezhnaya"
+  },
   "TestRandomTreasureChest": {
     "name": ""
   },
@@ -1169,6 +1187,12 @@
   "Sandrone": {
     "name": "Sandrone"
   },
+  "Alyosha": {
+    "name": "Alyosha"
+  },
+  "Odette": {
+    "name": "Odette"
+  },
   "KachinasStellaFortuna": {
     "name": "Stella Fortuna di Kachina"
   },
@@ -1264,6 +1288,12 @@
   },
   "SandronesStellaFortuna": {
     "name": "Stella Fortuna di Sandrone"
+  },
+  "AlyoshasStellaFortuna": {
+    "name": "Stella Fortuna di Alyosha"
+  },
+  "OdettesStellaFortuna": {
+    "name": "Stella Fortuna di Odette"
   },
   "Apple": {
     "name": "Mela"
@@ -3746,6 +3776,30 @@
   "EtherwingMoth": {
     "name": "Aleterea"
   },
+  "FrostfairyFlower": {
+    "name": "Fiore Brina di Fata"
+  },
+  "Flockingweed": {
+    "name": "Ciufferba"
+  },
+  "GoldenFern": {
+    "name": "Felce dorata"
+  },
+  "RedBeet": {
+    "name": "Barbabietola rossa"
+  },
+  "Glaciafruit": {
+    "name": "Ghiacciofrutto"
+  },
+  "SnowballFlower": {
+    "name": "Fiore Palla di neve"
+  },
+  "Rimecurrant": {
+    "name": "Ribes artico"
+  },
+  "Lumifluorite": {
+    "name": "Lumifluorite"
+  },
   "BirchWood": {
     "name": "Legno di betulla"
   },
@@ -3832,6 +3886,18 @@
   },
   "AlderWood": {
     "name": "Legno di ontano"
+  },
+  "SnowPoplarWood": {
+    "name": "Legno di pioppo delle nevi"
+  },
+  "WhiteBirchWood": {
+    "name": "Legno di betulla bianca"
+  },
+  "BluebeechWood": {
+    "name": "Legno di faggio blu"
+  },
+  "LarchWood": {
+    "name": "Legno di larice"
   },
   "Fabric": {
     "name": "Stoffa"
@@ -5399,6 +5465,33 @@
   "PhilosophiesOfVagrancy": {
     "name": "Filosofie dell'erranza"
   },
+  "TeachingsOfCharity": {
+    "name": "Insegnamenti della benevolenza"
+  },
+  "GuideToCharity": {
+    "name": "Guida alla benevolenza"
+  },
+  "PhilosophiesOfCharity": {
+    "name": "Filosofie della benevolenza"
+  },
+  "TeachingsOfFortitude": {
+    "name": "Insegnamenti della fermezza"
+  },
+  "GuideToFortitude": {
+    "name": "Guida alla fermezza"
+  },
+  "PhilosophiesOfFortitude": {
+    "name": "Filosofie della fermezza"
+  },
+  "TeachingsOfGlory": {
+    "name": "Insegnamenti della gloria"
+  },
+  "GuideToGlory": {
+    "name": "Guida alla gloria"
+  },
+  "PhilosophiesOfGlory": {
+    "name": "Filosofie della gloria"
+  },
   "SanctifyingDroplet": {
     "name": ""
   },
@@ -5513,14 +5606,23 @@
   "BorderlandShrineOfDepthsKey": {
     "name": "Chiave del Santuario delle Profondità del confine"
   },
-  "FrostMoonShrineOfDepthsKey": {
-    "name": "Chiave del Santuario delle Profondità della Luna gelata"
+  "KuuhenkiShrineKey": {
+    "name": "Chiave dei Santuari delle Kuuhenki"
   },
   "MnemonicCluster": {
     "name": "Ammasso mnemonico"
   },
   "MemoryFactor": {
     "name": "Fattore di memoria"
+  },
+  "Cryoculus": {
+    "name": "Cryoculus"
+  },
+  "ShadowWingdrop": {
+    "name": "Goccia d'ala oscura"
+  },
+  "SnezhnayaShrineOfDepthsKey": {
+    "name": "Chiave del Santuario delle Profondità di Snezhnaya"
   },
   "Dish": {
     "name": "Piatto"
@@ -8417,6 +8519,51 @@
   "TeaPartyPreludeArtfulLatte": {
     "name": "Preludio del ricevimento: Latte macchiato artistico"
   },
+  "SuspiciousZharkoye": {
+    "name": "Zharkoye sospetto"
+  },
+  "Zharkoye": {
+    "name": "Zharkoye"
+  },
+  "DeliciousZharkoye": {
+    "name": "Zharkoye delizioso"
+  },
+  "SuspiciousPodvoryeSmokedSausage": {
+    "name": "Salsiccia affumicata del Podvorye sospetta"
+  },
+  "PodvoryeSmokedSausage": {
+    "name": "Salsiccia affumicata del Podvorye"
+  },
+  "DeliciousPodvoryeSmokedSausage": {
+    "name": "Salsiccia affumicata del Podvorye deliziosa"
+  },
+  "SuspiciousStroganina": {
+    "name": "Stroganina sospetta"
+  },
+  "Stroganina": {
+    "name": "Stroganina"
+  },
+  "DeliciousStroganina": {
+    "name": "Stroganina deliziosa"
+  },
+  "SuspiciousSnowrealmOkroshkas": {
+    "name": "Okroska del regno innevato sospetta"
+  },
+  "SnowrealmOkroshkas": {
+    "name": "Okroska del regno innevato"
+  },
+  "DeliciousSnowrealmOkroshkas": {
+    "name": "Okroska del regno innevato delizioso"
+  },
+  "SuspiciousBorscht": {
+    "name": "Borsc sospetto"
+  },
+  "Borscht": {
+    "name": "Borsc"
+  },
+  "DeliciousBorscht": {
+    "name": "Borsc delizioso"
+  },
   "RecipeItem": {
     "name": "Ingrediente"
   },
@@ -9230,6 +9377,39 @@
   "RecipeMeatFilledRyeBun": {
     "name": "Ricetta: panino di segale ripieno di carne"
   },
+  "RecipeZharkoye": {
+    "name": "Ricetta: zharkoye"
+  },
+  "RecipePodvoryeSmokedSausage": {
+    "name": "Ricetta: salsiccia affumicata del Podvorye"
+  },
+  "RecipeStroganina": {
+    "name": "Ricetta: stroganina"
+  },
+  "RecipeSnowrealmOkroshkas": {
+    "name": "Ricetta: okroska del regno innevato"
+  },
+  "RecipeBorscht": {
+    "name": "Ricetta: borsc"
+  },
+  "RecipeRimecurrantIceCream": {
+    "name": "Ricetta: gelato al ribes artico"
+  },
+  "RecipeGlupovRyeBread": {
+    "name": "Ricetta: pagnotta di segale alla Glupov"
+  },
+  "RecipeMedovik": {
+    "name": "Ricetta: medovik"
+  },
+  "RecipeSnezhnayaShashliks": {
+    "name": "Ricetta: saslyk alla snezhnayana"
+  },
+  "RecipeSnowballBloomsAtopSnowfields": {
+    "name": "Ricetta: Fiori Palla di neve sui campi innevati"
+  },
+  "RecipeSweetScoops": {
+    "name": "Ricetta: palline dolci"
+  },
   "CraftedItems": {
     "name": "Oggetti creati"
   },
@@ -9277,6 +9457,9 @@
   },
   "RyeFlour": {
     "name": "Farina di segale"
+  },
+  "Honey": {
+    "name": "Miele"
   },
   "HeatshieldPotion": {
     "name": "Pozione ignifuga"
@@ -9370,6 +9553,9 @@
   },
   "RefreshingLakkaBait": {
     "name": "Esca Lakka rinfrescante"
+  },
+  "GlimmeringBait": {
+    "name": "Esca baluginante"
   },
   "PrimordialEssence": {
     "name": "Essenza primordiale"
@@ -9806,6 +9992,42 @@
   "UnblemishedLunarIron": {
     "name": "Ferro lunare immacolato"
   },
+  "EtherealGlimmershard": {
+    "name": "Frammento scintillante etereo"
+  },
+  "EtherealCrystal": {
+    "name": "Cristallo etereo"
+  },
+  "EtherealCrystalscaleStone": {
+    "name": "Litosquama di cristallo eterea"
+  },
+  "ChimericCore": {
+    "name": "Nucleo chimerico"
+  },
+  "SymbioticChimericNucleus": {
+    "name": "Nucleo chimerico simbiotico"
+  },
+  "PrimeChimericNexus": {
+    "name": "Nucleo chimerico primordiale"
+  },
+  "AccretedFragment": {
+    "name": "Frammento aggregato"
+  },
+  "AccretedMass": {
+    "name": "Massa aggregata"
+  },
+  "AccretedGrowth": {
+    "name": "Escrescenza aggregata"
+  },
+  "HollowRootOfLife": {
+    "name": "Radice cava della vita"
+  },
+  "SproutNodeOfLife": {
+    "name": "Nodo germogliato della vita"
+  },
+  "CoiledCoreOfLife": {
+    "name": "Nucleo attorcigliato della vita"
+  },
   "HurricaneSeed": {
     "name": "Seme d'uragano"
   },
@@ -10073,6 +10295,12 @@
   "ProfanedSprout": {
     "name": "Germoglio profanato"
   },
+  "UnscorchedBlossomBranch": {
+    "name": "Ramo fiorito incombusto"
+  },
+  "SeveredTailOfTheSkyRoamer": {
+    "name": "Coda recisa dell'errante celeste"
+  },
   "TileOfDecarabiansTower": {
     "name": "Tegola della Torre di Decarabian"
   },
@@ -10324,6 +10552,42 @@
   },
   "AureateRadianceOfTheFarNorthScions": {
     "name": "Radiosità aurea dell'Erede dell'Estremo Nord"
+  },
+  "RiseOfThePaleStarArmy": {
+    "name": "Ascesa dell'esercito della Candida Stella"
+  },
+  "MusterOfThePaleStarArmy": {
+    "name": "Adunata dell'esercito della Candida Stella"
+  },
+  "ClarionOfThePaleStarArmy": {
+    "name": "Fragore dell'esercito della Candida Stella"
+  },
+  "TriumphOfThePaleStarArmy": {
+    "name": "Trionfo dell'esercito della Candida Stella"
+  },
+  "MeasuredPourOfTheCellaredSpiritualNectar": {
+    "name": "Sorso di nettare spirituale invecchiato"
+  },
+  "IntoxicationOfTheCellaredSpiritualNectar": {
+    "name": "Ebbrezza del nettare spirituale invecchiato"
+  },
+  "ExhilarationOfTheCellaredSpiritualNectar": {
+    "name": "Euforia del nettare spirituale invecchiato"
+  },
+  "RevelryOfTheCellaredSpiritualNectar": {
+    "name": "Baldoria del nettare spirituale invecchiato"
+  },
+  "TheFrostEmperorsRevival": {
+    "name": "Rinascita dell'Imperatore del gelo"
+  },
+  "TheFrostEmperorsCeremony": {
+    "name": "Cerimonia dell'Imperatore del gelo"
+  },
+  "TheFrostEmperorsLament": {
+    "name": "Lamento dell'Imperatore del gelo"
+  },
+  "TheFrostEmperorsFarewell": {
+    "name": "Addio dell'Imperatore del gelo"
   },
   "StarterSupplyBundle": {
     "name": "Bundle di rifornimenti del principiante"
@@ -13595,6 +13859,12 @@
   "TheShiniestAndBrightestBerylConch": {
     "name": "La conchiglia di Béryl più brillante e splendente"
   },
+  "PebbleOfCrystallineEssence": {
+    "name": "Uovo dell'essenza cristallina"
+  },
+  "SnegovikLaboratoryKey": {
+    "name": "Chiave del laboratorio degli Snegovik"
+  },
   "RhinedottirsGift": {
     "name": "\"Dono\" di Rhinedottir"
   },
@@ -13651,6 +13921,21 @@
   },
   "Moonlight": {
     "name": "Chiaro di luna"
+  },
+  "RedKey": {
+    "name": "Chiave rossa"
+  },
+  "WhiteKey": {
+    "name": "Chiave bianca"
+  },
+  "BlueKey": {
+    "name": "Chiave blu"
+  },
+  "InvitationToTheRitual": {
+    "name": "Invito al \"Rituale\""
+  },
+  "SeveredFragmentOfIkhor": {
+    "name": "Frammento reciso di Ikhor"
   },
   "LostNotesIV": {
     "name": "Appunti perduti (IV)"
@@ -13859,8 +14144,17 @@
   "AStackOfPaper": {
     "name": "Pila di carta"
   },
+  "PebbleOfFreezingHeart": {
+    "name": "Uovo del cuore gelido"
+  },
+  "PebbleOfSerpentineAlgae": {
+    "name": "Uovo di alghe serpentine"
+  },
   "SelectedMoonfallSilver": {
     "name": "Argento lunare selezionato"
+  },
+  "LegendaryThiefsTreasureLocation": {
+    "name": "Posizione del \"leggendario tesoro del ladro\""
   },
   "LohensWorkReport": {
     "name": "Rapporto di lavoro di Lohen"
@@ -13895,6 +14189,27 @@
   "PhotoWithTheLittleWitchesAndTheirImaginaryFriends": {
     "name": "Foto con le streghette e i loro amici immaginari"
   },
+  "UnnamedPotionFormula": {
+    "name": "Formula per pozione senza nome"
+  },
+  "NotesByACertainNobleIndividualI": {
+    "name": "Note di un certo nobile (I)"
+  },
+  "NotesByACertainNobleIndividualII": {
+    "name": "Note di un certo nobile (II)"
+  },
+  "NotesByACertainNobleIndividualIII": {
+    "name": "Note di un certo nobile (III)"
+  },
+  "NotesByACertainNobleIndividualIV": {
+    "name": "Note di un certo nobile (IV)"
+  },
+  "NotesByACertainNobleIndividualV": {
+    "name": "Note di un certo nobile (V)"
+  },
+  "NotesByACertainNobleIndividualVI": {
+    "name": "Note di un certo nobile (VI)"
+  },
   "AnomalousTreeMarrowI": {
     "name": "Midollo d'albero anomalo I"
   },
@@ -13919,8 +14234,29 @@
   "LostFlowerOfAncientTimes": {
     "name": "Fiore perduto dei tempi antichi"
   },
+  "NeatlyWrittenNotes": {
+    "name": "Appunti scritti con cura"
+  },
+  "NotesLeftByUnknownPerson": {
+    "name": "Note lasciate da uno sconosciuto"
+  },
+  "IzmaylovGuardsJournal": {
+    "name": "Diario della guardia degli Izmaylov"
+  },
+  "YettobeCompletedNewHighTableMelody": {
+    "name": "\"Melodia del nuovo Tavolo dei Dignitari\" incompleta"
+  },
   "SandronesTeaPartyInvitationLetter": {
     "name": "Lettera di invito al tè di Sandrone"
+  },
+  "MetalControlWheel": {
+    "name": "Ruota di controllo di metallo"
+  },
+  "SewerLiftControlWheel": {
+    "name": "Ruota di controllo dell'ascensore delle fogne"
+  },
+  "LiftControlWheel": {
+    "name": "Ruota di controllo dell'ascensore"
   },
   "AncientMondstadtRoyalSeal": {
     "name": "Antico sigillo reale di Mondstadt"
@@ -13937,11 +14273,188 @@
   "AlainGuillotinsEpitaph": {
     "name": "Epitaffio di Alain Guillotin"
   },
+  "OddlyShapedEmblem": {
+    "name": "Emblema dalla forma bizzarra"
+  },
+  "VIPPass": {
+    "name": "Pass VIP"
+  },
+  "GangMembersForgottenKey": {
+    "name": "Chiave dimenticata del membro della banda"
+  },
+  "SmeltedKristallOre": {
+    "name": "Minerale di Kristall fuso"
+  },
+  "SewerEntranceExitGuide": {
+    "name": "Guida all'entrata/uscita delle fogne"
+  },
+  "StrangeCard": {
+    "name": "Tessera misteriosa"
+  },
+  "ShadowRealmVaultAccessCard": {
+    "name": "Tessera d'accesso alla stanza del tesoro del Regno delle Ombre"
+  },
+  "IncompleteDataBlock": {
+    "name": "Blocco di dati incompleto"
+  },
   "MoongazersEngravingI": {
     "name": "Incisione dei Miraluna (I)"
   },
   "MoongazersEngravingII": {
     "name": "Incisione dei Miraluna (II)"
+  },
+  "IntricatelyPatternedButton": {
+    "name": "Bottone con motivo intricato"
+  },
+  "SnezhnayaVestnik": {
+    "name": "Vestnik di Snezhnaya"
+  },
+  "ChampionsTrophyOfTheFirstAdventurersTournament": {
+    "name": "Trofeo del Campione del primo Torneo degli Avventurieri"
+  },
+  "Rumbletwig": {
+    "name": "Fuscellotuono"
+  },
+  "HatBucket": {
+    "name": "Cappello \"Secchio\""
+  },
+  "HatPolite": {
+    "name": "Cappello \"Educazione\""
+  },
+  "HatPointy": {
+    "name": "Cappello \"A punta\""
+  },
+  "HatFunTopper": {
+    "name": "Cappello \"Divertimento\""
+  },
+  "SnowSwanFeather": {
+    "name": "Piuma di cigno delle nevi"
+  },
+  "TideSongIceflower": {
+    "name": "Fiordighiaccio Cantamarea"
+  },
+  "ScarfWarmRed": {
+    "name": "Sciarpa \"Rosso caldo\""
+  },
+  "ScarfDreamStar": {
+    "name": "Sciarpa \"Stella onirica\""
+  },
+  "ScarfPlaid": {
+    "name": "Sciarpa \"A quadri\""
+  },
+  "ScarfNoveltyBrace": {
+    "name": "Sciarpa \"Collare originale\""
+  },
+  "StalkerHood": {
+    "name": "Cappuccio da inseguitore"
+  },
+  "KeyOfAncientDesign": {
+    "name": "Chiave dal design antico"
+  },
+  "OrderIllustration": {
+    "name": "Illustrazione dell'ordine"
+  },
+  "TrainDecorationGuide": {
+    "name": "Guida alla decorazione del treno"
+  },
+  "BlackSnowSwanArchive": {
+    "name": "Archivio del Cigno nero delle nevi"
+  },
+  "OdettesPerformancePhoto": {
+    "name": "Foto dell'esibizione di Odette"
+  },
+  "AutographedBlackSnowSwanPoster": {
+    "name": "Manifesto autografato del Cigno nero delle nevi"
+  },
+  "WhiteFeatherBookmark": {
+    "name": "Segnalibro a forma di piuma bianca"
+  },
+  "StardustTrailRadiantGlow": {
+    "name": "Scia di Polvere stellare: Bagliore splendente"
+  },
+  "RemnantIncenseGuideSnowgrave": {
+    "name": "Guida dell'Incenso residuo - Tomba innevata"
+  },
+  "RemnantIncenseGuideFellfrostPeak": {
+    "name": "Guida dell'Incenso residuo - Picco Gelotruce"
+  },
+  "RemnantIncenseGuideEverfrozenEarth": {
+    "name": "Guida dell'Incenso residuo - Terra del Geleterno"
+  },
+  "SpiritSeekerPreviewCommemorativePhoto": {
+    "name": "Foto commemorativa dell'anteprima de \"La cercatrice di spiriti\""
+  },
+  "BranchesOfNastyasHead": {
+    "name": "Ramo della testa di Nastya"
+  },
+  "NastyasHandDrawnDiagram": {
+    "name": "Diagramma disegnato a mano da Nastya"
+  },
+  "YoungKidsDrawings": {
+    "name": "Disegno dei bambini"
+  },
+  "EntranceDoorLeverForACertainBasementRoom": {
+    "name": "Leva della porta d'ingresso di una certa stanza nel seminterrato"
+  },
+  "ExitDoorLeverForACertainBasementRoom": {
+    "name": "Leva della porta d'uscita di una certa stanza nel seminterrato"
+  },
+  "KresnikEnergy": {
+    "name": "Energia di Kresnik"
+  },
+  "PeculiarReagentSample": {
+    "name": "Campione di reagente peculiare"
+  },
+  "StardustTrailRadiantGlowSigil": {
+    "name": "Scia di Polvere stellare: Sigillo splendente"
+  },
+  "PolestarBalletAnthologyI": {
+    "name": "Antologia del balletto Astropolare (I)"
+  },
+  "PolestarBalletAnthologyII": {
+    "name": "Antologia del balletto Astropolare (II)"
+  },
+  "PolestarBalletAnthologyIII": {
+    "name": "Antologia del balletto Astropolare (III)"
+  },
+  "PolestarBalletAnthologyIV": {
+    "name": "Antologia del balletto Astropolare (IV)"
+  },
+  "GeneralHistoryOfSnezhnayaI": {
+    "name": "Storia generale di Snezhnaya (I)"
+  },
+  "GeneralHistoryOfSnezhnayaII": {
+    "name": "Storia generale di Snezhnaya (II)"
+  },
+  "IceCreamContainer": {
+    "name": "Recipiente per gelato"
+  },
+  "SpecialIceCreamContainer": {
+    "name": "Recipiente speciale per gelato"
+  },
+  "PictureOfNastyaWithHerMom": {
+    "name": "Foto di Nastya con la madre"
+  },
+  "RecordsOfTheOrderbearer": {
+    "name": "Registro dell'esecutore degli ordini"
+  },
+  "InvestigationNotes": {
+    "name": "Appunti investigativi"
+  },
+  "TheAlchemistsNotesI": {
+    "name": "Note dell'alchimista (I)"
+  },
+  "TheAlchemistsNotesII": {
+    "name": "Note dell'alchimista (II)"
+  },
+  "GrandDukeAlvissNotes": {
+    "name": "Note del granduca Alvis"
+  },
+  "TheAshenTravelersNotes": {
+    "name": "Appunti del viaggiatore cinereo"
+  },
+  "DocumentWithYellowedPages": {
+    "name": "Documento con pagine ingiallite"
   },
   "TearsAmongTheStars": {
     "name": "Lacrime tra le stelle"
@@ -14080,6 +14593,24 @@
   },
   "PineAmberSeed": {
     "name": "Seme di ambra di pino"
+  },
+  "FrostfairyFlowerSeed": {
+    "name": "Seme di Fiore Brina di Fata"
+  },
+  "FlockingweedSeed": {
+    "name": "Seme di Ciufferba"
+  },
+  "GoldenFernSeed": {
+    "name": "Seme di felce dorata"
+  },
+  "RedBeetSeed": {
+    "name": "Seme di barbabietola rossa"
+  },
+  "RimecurrantSeed": {
+    "name": "Seme di ribes artico"
+  },
+  "SnowballFlowerSeed": {
+    "name": "Seme di Fiore Palla di neve"
   },
   "Medaka": {
     "name": "Medaka"
@@ -14239,6 +14770,102 @@
   },
   "CeruleanDoppeldrake": {
     "name": "Koi ceruleo"
+  },
+  "CharcoalSnowfin": {
+    "name": "Pinnaneve carbone"
+  },
+  "CreamSnowfin": {
+    "name": "Pinnaneve panna"
+  },
+  "MoonlightSnowfin": {
+    "name": "Pinnaneve lunare"
+  },
+  "RubyStarbloomFish": {
+    "name": "Pesce Fiorestella rubino"
+  },
+  "FrostpetalStarbloomFish": {
+    "name": "Pesce Fiorestella Petalbrina"
+  },
+  "IridescentStarbloomFish": {
+    "name": "Pesce Fiorestella iridescente"
+  },
+  "SuspiciousRimecurrantIceCream": {
+    "name": "Gelato al ribes artico sospetto"
+  },
+  "RimecurrantIceCream": {
+    "name": "Gelato al ribes artico"
+  },
+  "DeliciousRimecurrantIceCream": {
+    "name": "Gelato al ribes artico delizioso"
+  },
+  "SuspiciousGlupovRyeBread": {
+    "name": "Pagnotta di segale alla Glupov sospetta"
+  },
+  "GlupovRyeBread": {
+    "name": "Pagnotta di segale alla Glupov"
+  },
+  "DeliciousGlupovRyeBread": {
+    "name": "Pagnotta di segale alla Glupov deliziosa"
+  },
+  "SuspiciousMedovik": {
+    "name": "Medovik sospetto"
+  },
+  "Medovik": {
+    "name": "Medovik"
+  },
+  "DeliciousMedovik": {
+    "name": "Medovik delizioso"
+  },
+  "SuspiciousSnezhnayaShashliks": {
+    "name": "Saslyk alla snezhnayana sospetti"
+  },
+  "SnezhnayaShashliks": {
+    "name": "Saslyk alla snezhnayana"
+  },
+  "DeliciousSnezhnayaShashliks": {
+    "name": "Saslyk alla snezhnayana deliziosi"
+  },
+  "SuspiciousSnowballBloomsAtopSnowfields": {
+    "name": "Fiori Palla di neve sui campi innevati sospetti"
+  },
+  "SnowballBloomsAtopSnowfields": {
+    "name": "Fiori Palla di neve sui campi innevati"
+  },
+  "DeliciousSnowballBloomsAtopSnowfields": {
+    "name": "Fiori Palla di neve sui campi innevati deliziosi"
+  },
+  "TheBullseyeRoast": {
+    "name": "Spiedino del cecchino"
+  },
+  "LakesideSnowSwan": {
+    "name": "Cigno delle nevi in riva al lago"
+  },
+  "SuspiciousSweetScoops": {
+    "name": "Palline dolci sospette"
+  },
+  "SweetScoops": {
+    "name": "Palline dolci"
+  },
+  "DeliciousSweetScoops": {
+    "name": "Palline dolci deliziose"
+  },
+  "AlyoshaThemedIceCream": {
+    "name": "Gelato a tema Alyosha"
+  },
+  "OdetteThemedIceCream": {
+    "name": "Gelato a tema Odette"
+  },
+  "Kvass": {
+    "name": "Kvas"
+  },
+  "SpicedHoneyBrew": {
+    "name": "Infuso al miele speziato"
+  },
+  "GlacialStarbrew": {
+    "name": "Stella d'inverno"
+  },
+  "RegularIceCream": {
+    "name": "Gelato normale"
   },
   "WingsOfFirstFlight": {
     "name": "Ali del principiante"
@@ -14912,6 +15539,42 @@
   "RadiantSpincrystal188": {
     "name": "Voltacristallo radioso 188"
   },
+  "RadiantSpincrystal189": {
+    "name": "Voltacristallo radioso 189"
+  },
+  "RadiantSpincrystal190": {
+    "name": "Voltacristallo radioso 190"
+  },
+  "RadiantSpincrystal191": {
+    "name": "Voltacristallo radioso 191"
+  },
+  "RadiantSpincrystal192": {
+    "name": "Voltacristallo radioso 192"
+  },
+  "RadiantSpincrystal193": {
+    "name": "Voltacristallo radioso 193"
+  },
+  "RadiantSpincrystal194": {
+    "name": "Voltacristallo radioso 194"
+  },
+  "RadiantSpincrystal195": {
+    "name": "Voltacristallo radioso 195"
+  },
+  "RadiantSpincrystal196": {
+    "name": "Voltacristallo radioso 196"
+  },
+  "RadiantSpincrystal197": {
+    "name": "Voltacristallo radioso 197"
+  },
+  "RadiantSpincrystal198": {
+    "name": "Voltacristallo radioso 198"
+  },
+  "RadiantSpincrystal199": {
+    "name": "Voltacristallo radioso 199"
+  },
+  "RadiantSpincrystal200": {
+    "name": "Voltacristallo radioso 200"
+  },
   "LanternFiber": {
     "name": "Fibra per lanterna"
   },
@@ -15172,6 +15835,9 @@
   },
   "MoongleamSapling": {
     "name": "Alberello lunare"
+  },
+  "ScepterOfTheSnowAnglerKing": {
+    "name": "Scettro del Re dei pescatori delle nevi"
   },
   "GenshinImpactANewWorld": {
     "name": "Genshin Impact: Un mondo nuovo"
@@ -16016,6 +16682,30 @@
   "TravelNotesSunnySummer": {
     "name": "Appunti di viaggio: Estate soleggiata"
   },
+  "OdetteTheSingularSwan": {
+    "name": "Odette: Il cigno diverso dagli altri"
+  },
+  "AlyoshaSit": {
+    "name": "Alyosha: Seduto"
+  },
+  "AchievementResplendence": {
+    "name": "Obiettivo: Splendore"
+  },
+  "SnezhnayaLongNight": {
+    "name": "Snezhnaya: Lunga notte"
+  },
+  "AchievementTreadingSnow": {
+    "name": "Obiettivo: Passi nella neve"
+  },
+  "SnezhnayaFleetingGlimpses": {
+    "name": "Snezhnaya: Visioni fugaci"
+  },
+  "AchievementEnigmaticCore": {
+    "name": "Obiettivo: Nucleo enigmatico"
+  },
+  "TravelNotesFrostfarer": {
+    "name": "Appunti di viaggio: Viandante del gelo"
+  },
   "EchoDandelionKnight": {
     "name": "Eco: Cavaliere del Dente di leone"
   },
@@ -16079,6 +16769,12 @@
   "EchoHelmOfTheRadiantRose": {
     "name": "Eco: Timoniere della rosa splendente"
   },
+  "EchoChilde": {
+    "name": "Eco: Principe"
+  },
+  "EchoVigilantYaksha": {
+    "name": "Eco: Custode Yaksha"
+  },
   "FaintGlow": {
     "name": "Flebile bagliore"
   },
@@ -16090,6 +16786,24 @@
   },
   "BrimmingSpiritflow": {
     "name": "Spirito rigoglioso"
+  },
+  "SiegeBreach": {
+    "name": "Breccia d'assedio"
+  },
+  "TemperedIron": {
+    "name": "Ferro temprato"
+  },
+  "FirstSnow": {
+    "name": "Prima neve"
+  },
+  "CrystallineFrost": {
+    "name": "Gelo cristallino"
+  },
+  "Snowbound": {
+    "name": "Manto innevato"
+  },
+  "Everwinter": {
+    "name": "Gelo eterno"
   },
   "AnemoculusResonanceStone": {
     "name": "Pietra di risonanza per Anemoculi"
@@ -16430,8 +17144,17 @@
   "SandronesPortableTeaTable": {
     "name": "Tavolino da tè portatile di Sandrone"
   },
+  "EyeOfGraeae": {
+    "name": "Occhio delle Graie"
+  },
   "WitchsRevelationCase": {
     "name": "Cofanetto delle Rivelazioni della strega"
+  },
+  "MAANKamera": {
+    "name": "Fotokamera RAMS"
+  },
+  "CryoTreasureCompass": {
+    "name": "Bussola cercatesori di Cryo"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Istruzioni: pietra di risonanza per Anemoculi"
@@ -16571,6 +17294,21 @@
   "DiagramProspectorsShovel": {
     "name": "Progetto: Pala del prospettore"
   },
+  "DiagramEmberwell": {
+    "name": "Progetto: Fonte ignea"
+  },
+  "DiagramCovenantOfFrostAndSnow": {
+    "name": "Progetto: Patto del gelo e della neve"
+  },
+  "DiagramBladeOfAtonement": {
+    "name": "Progetto: Lama dell'espiazione"
+  },
+  "DiagramEchoesOfTheHeart": {
+    "name": "Progetto: Echi del cuore"
+  },
+  "DiagramSongOfTheVigil": {
+    "name": "Progetto: Ballata della veglia"
+  },
   "InstructionsDendroculusResonanceStone": {
     "name": "Istruzioni: pietra di risonanza per Dendroculi"
   },
@@ -16606,6 +17344,9 @@
   },
   "FormulaRefreshingLakkaBait": {
     "name": "Ricetta: esca Lakka rinfrescante"
+  },
+  "FormulaGlimmeringBait": {
+    "name": "Ricetta: esca baluginante"
   },
   "SilkenPrint": {
     "name": "Stampa di seta"
@@ -16675,6 +17416,57 @@
   },
   "ObligingLittleYuegui": {
     "name": "Un aiuto per il Piccolo Yuegui"
+  },
+  "ShatanayasFrostsilverMuzzle": {
+    "name": "Argento gelido di Shatanaya: bocca"
+  },
+  "ShatanayasFrostsilverAmmoFeed": {
+    "name": "Argento gelido di Shatanaya: caricatore"
+  },
+  "ShatanayasFrostsilverGunstock": {
+    "name": "Argento gelido di Shatanaya: calcio"
+  },
+  "ShatanayasFrostsilverSight": {
+    "name": "Argento gelido di Shatanaya: mirino"
+  },
+  "BalsagsSunwheelMuzzle": {
+    "name": "Ruota solare di Balsag: bocca"
+  },
+  "BalsagsSunwheelAmmoFeed": {
+    "name": "Ruota solare di Balsag: caricatore"
+  },
+  "BalsagsSunwheelGunstock": {
+    "name": "Ruota solare di Balsag: calcio"
+  },
+  "BalsagsSunwheelSight": {
+    "name": "Ruota solare di Balsag: mirino"
+  },
+  "AshamezsThunderMuzzle": {
+    "name": "Tuono di Ashamez: bocca"
+  },
+  "AshamezsThunderAmmoFeed": {
+    "name": "Tuono di Ashamez: caricatore"
+  },
+  "AshamezsThunderGunstock": {
+    "name": "Tuono di Ashamez: calcio"
+  },
+  "AshamezsThunderSight": {
+    "name": "Tuono di Ashamez: mirino"
+  },
+  "ConstructAppearanceJackFrost": {
+    "name": "Aspetto costrutto: Jokul Frosti"
+  },
+  "ConstructAppearancePolyarbear": {
+    "name": "Aspetto costrutto: Polaorso"
+  },
+  "ConstructAppearanceTheBallerina": {
+    "name": "Aspetto costrutto: Ballerina"
+  },
+  "ConstructAppearanceTheHound": {
+    "name": "Aspetto costrutto: Segugio"
+  },
+  "ConstructAppearanceTheTides": {
+    "name": "Aspetto costrutto: Maree"
   },
   "UpbeatEncouragement": {
     "name": "Incoraggiamento gioioso"
@@ -17063,6 +17855,21 @@
   "MajesticBearing": {
     "name": "Portamento maestoso"
   },
+  "LanternUpWeaponsReady": {
+    "name": "Lanterna alzata, armi alla mano"
+  },
+  "CollectYourDelivery": {
+    "name": "Ritira la tua consegna"
+  },
+  "ByTheKuuhenkisSide": {
+    "name": "Al fianco della Kuuhenki"
+  },
+  "HappyDays": {
+    "name": "Giorni lieti"
+  },
+  "KeepingWatchByLanternLight": {
+    "name": "Veglia alla luce della lanterna"
+  },
   "FantasticalMarvel": {
     "name": "Prodigio fantastico"
   },
@@ -17214,7 +18021,7 @@
     "name": "Guardiano dell'Oasi di Apep"
   },
   "FrostOperative": {
-    "name": "Operativo del Gelo"
+    "name": "Operativa del Gelo"
   },
   "HydroHilichurlRogue": {
     "name": "Hilichurl reietto di Hydro"
@@ -17257,6 +18064,9 @@
   },
   "BlackSerpentKnightWindcutter": {
     "name": "Cavaliere del Serpente nero: Fendivento"
+  },
+  "HydroHypostasis": {
+    "name": "Ipostasi di Hydro"
   },
   "UndividedHeart": {
     "name": "Cuore indivisibile"
@@ -17683,6 +18493,27 @@
   },
   "OnceTheLoneWindThatKeptTheDarkCalamityAtBay": {
     "name": "\"Un tempo, il vento solitario che teneva a bada l'oscura calamità...\""
+  },
+  "AdamahsRedemption": {
+    "name": "Redenzione dell'Adamah"
+  },
+  "BackstreetGuile": {
+    "name": "Astuzia dei vicoli"
+  },
+  "TreacherousTorrent": {
+    "name": "Torrente insidioso"
+  },
+  "GenesisOfStarsigns": {
+    "name": "Genesi del Presagio stellare"
+  },
+  "SparkborneMagic": {
+    "name": "Magia scintillante"
+  },
+  "PhantasmalNocturne": {
+    "name": "Notturno fantasmatico"
+  },
+  "TemporalWindsEulogy": {
+    "name": "Elogio del Vento temporale"
   },
   "MagicGuide": {
     "name": "Manuale di magia"
@@ -18536,6 +19367,12 @@
   "ThePowerOfResearch": {
     "name": "Il potere della ricerca"
   },
+  "WitchsHomework": {
+    "name": "Compiti della strega"
+  },
+  "FeastingInASharedToast": {
+    "name": "Banchetto del brindisi comune"
+  },
   "Origin": {
     "name": "Origine"
   },
@@ -18616,6 +19453,9 @@
   },
   "NodKrai": {
     "name": "Nod-Krai"
+  },
+  "Snezhnaya": {
+    "name": "Snezhnaya"
   },
   "BeginnerPlayerBadge": {
     "name": "Distintivo del giocatore principiante"
@@ -18731,11 +19571,23 @@
   "SerpentDevourerSublimation": {
     "name": "Divoraserpenti: Sublimazione"
   },
+  "GoldenBoughOfNemorensis": {
+    "name": "Frasca d'oro di Nemorensis"
+  },
+  "GoldenBoughOfNemorensisSublimation": {
+    "name": "Frasca d'oro di Nemorensis: Sublimazione"
+  },
   "ArdentStorm": {
     "name": "Tempesta ardente"
   },
   "ArdentStormSublimation": {
     "name": "Tempesta ardente: Sublimazione"
+  },
+  "SilverRadianceOfGradlon": {
+    "name": "Argenteo bagliore di Gradlon"
+  },
+  "SilverRadianceOfGradlonSublimation": {
+    "name": "Argenteo bagliore di Gradlon: Sublimazione"
   },
   "ShatteredMoon": {
     "name": "Luna infranta"
@@ -18743,11 +19595,23 @@
   "ShatteredMoonSublimation": {
     "name": "Luna infranta: Sublimazione"
   },
+  "StarlightOfFylkir": {
+    "name": "Luce stellare di Fylkir"
+  },
+  "StarlightOfFylkirSublimation": {
+    "name": "Luce stellare di Fylkir: Sublimazione"
+  },
   "HallowedFetters": {
     "name": "Catene sacre"
   },
   "HallowedFettersSublimation": {
     "name": "Catene sacre: Sublimazione"
+  },
+  "DawnstarOfShahar": {
+    "name": "Albastella di Shahar"
+  },
+  "DawnstarOfShaharSublimation": {
+    "name": "Albastella di Shahar: Sublimazione"
   },
   "Starpiercer": {
     "name": "Trafiggistelle"
@@ -18755,11 +19619,20 @@
   "StarpiercerSublimation": {
     "name": "Trafiggistelle: Sublimazione"
   },
+  "Yayu": {
+    "name": "Yayu"
+  },
+  "YayuSublimation": {
+    "name": "Yayu: Sublimazione"
+  },
   "PhantasmalGiftStarOmen": {
     "name": "Dono fantasmico: Presagio stellare"
   },
   "SuperAwesomeMagicKey": {
     "name": "Chiave fantasmagorica"
+  },
+  "ATouchOfFrostInScorchingSummer": {
+    "name": "Gelo estivo!"
   },
   "UnbreakableDurandarte": {
     "name": "Indistruttibile: Durandarte"
@@ -19367,6 +20240,9 @@
   "StandingStreetLampBeaconInTheMistyNight": {
     "name": "Lampione Faro nella notte nebbiosa"
   },
+  "ChirpingAboutAsBirdsDo": {
+    "name": "Cinguettando come fanno gli uccelli"
+  },
   "EfflorescentIllumination": {
     "name": "Illuminazione in boccio"
   },
@@ -19453,6 +20329,12 @@
   },
   "HotelWardrobeExtraRoom": {
     "name": "Guardaroba da hotel Camera extra"
+  },
+  "OpeningBusinessHours": {
+    "name": "Orari di apertura"
+  },
+  "IndoorStandingCabinetTheSteepledLittleHouse": {
+    "name": "Armadio a colonna da interni Casetta dal tetto spiovente"
   },
   "TwoTierLibraryBookshelf": {
     "name": "Libreria a due piani"
@@ -19649,6 +20531,9 @@
   "TeaPartyDiningTableThePerfectGathering": {
     "name": "Tavolo da ricevimento Ritrovo perfetto"
   },
+  "CandlePerchTallSquareTable": {
+    "name": "Tavolino alto quadrato Appoggio per candele"
+  },
   "BreezeBlessedBed": {
     "name": "Letto Dolce brezza"
   },
@@ -19690,6 +20575,9 @@
   },
   "FrostMoonStoneBedFreshCool": {
     "name": "Letto di pietra della Luna gelata Fresco e refrigerante"
+  },
+  "SweetUntroubledSlumber": {
+    "name": "Dolce e placido sonno"
   },
   "PineReceptionCounter": {
     "name": "Banco da reception in pino"
@@ -19819,6 +20707,12 @@
   },
   "TeaPartyChairCrimsonAndGold": {
     "name": "Sedia da tè Cremisi e oro"
+  },
+  "AQuietSighOnASnowboundNight": {
+    "name": "Sospiro silenzioso in una notte innevata"
+  },
+  "IndoorSeatClashingColors": {
+    "name": "Seduta da interno Colori contrastanti"
   },
   "NorthernStoneHearth": {
     "name": "Camino in pietra del Nord"
@@ -20093,6 +20987,12 @@
   "TeaPartyCarpetSoftToTheTouch": {
     "name": "Tappeto da tè Morbido al tatto"
   },
+  "IndoorRugFrostbloomBeneathTheIce": {
+    "name": "Tappeto da interno Fiore ghiacciato sotto la brina"
+  },
+  "IndoorRugWarmth": {
+    "name": "Tappeto da interno Calore"
+  },
   "VibrantPotBornInFlames": {
     "name": "Vaso dalle tinte vivaci Nato dalle fiamme"
   },
@@ -20110,6 +21010,9 @@
   },
   "HeroicWarcry": {
     "name": "Grido di guerra eroico"
+  },
+  "TallCappedSentinel": {
+    "name": "Sentinella dall'alto cappello"
   },
   "TrustyPortableLamp": {
     "name": "Lampada perpetua portatile"
@@ -20164,6 +21067,12 @@
   },
   "TwistyMushroom": {
     "name": "Fungo sinuoso"
+  },
+  "ForWhomItShines": {
+    "name": "Per chi risplende"
+  },
+  "IndoorTableLampSoftLight": {
+    "name": "Lampada da tavolo per interni Luce soffusa"
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Composizione floreale Tranquillità celeste"
@@ -20333,6 +21242,12 @@
   "TeaPartyCartDessertTime": {
     "name": "Carrello da tè Ora del dessert"
   },
+  "RoundAndRoundTheLittleFishGo": {
+    "name": "\"Gira, gira, pesciolino\""
+  },
+  "WindandSnowpiercer": {
+    "name": "Perforavento e bucaneve"
+  },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "name": "Utensile della sala da tè Perfezione millimetrica"
   },
@@ -20378,6 +21293,15 @@
   "TeaPartyCupRefreshingFlavor": {
     "name": "Tazza da tè Sapore rinfrescante"
   },
+  "TeaTimeEtiquette": {
+    "name": "Galateo dell'ora del tè"
+  },
+  "BalancedBoughs": {
+    "name": "Rami bilanciati"
+  },
+  "SteadyCompanionThroughDreams": {
+    "name": "Compagno fidato nei sogni"
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "Zelo della Terra della Saggezza"
   },
@@ -20410,6 +21334,12 @@
   },
   "DecorativePottedPlantBuddingFragrance": {
     "name": "Pianta ornamentale in vaso Fragranza germogliante"
+  },
+  "PottedBouquetElegantBlackthorn": {
+    "name": "Bouquet in vaso Prugnolo elegante"
+  },
+  "DecorativeFlowerbedBrightcoreBlossoms": {
+    "name": "Vaso di fiori decorativo Boccioli Cuordiluce"
   },
   "LandscapePaintingCountryHome": {
     "name": "Dipinto paesaggistico Casa di campagna"
@@ -20530,6 +21460,12 @@
   },
   "LingeringMoment": {
     "name": "Momento indimenticabile"
+  },
+  "AGoldenWinter": {
+    "name": "Inverno dorato"
+  },
+  "TheLoveOneSeeks": {
+    "name": "Anelito d'amore"
   },
   "StrawHut": {
     "name": "Capanna di paglia"
@@ -21346,6 +22282,27 @@
   },
   "BasePillarUniversalBeacon": {
     "name": "Pilastro della base Faro universale"
+  },
+  "LargeWinchandAxleCrane": {
+    "name": "Grande gru con argano e asse"
+  },
+  "TownDwellingCozyWarmth": {
+    "name": "Abitazione cittadina Tepore accogliente"
+  },
+  "TheRoundSnowball": {
+    "name": "Palla di neve rotonda"
+  },
+  "WaitingPlatformQuietAnticipation": {
+    "name": "Banchina d'attesa Trepidazione silenziosa"
+  },
+  "SnezhnayanDwellingWarmTonedPortico": {
+    "name": "Abitazione di Snezhnaya Portico dai toni caldi"
+  },
+  "TheRoundOnion": {
+    "name": "Cipolla rotonda"
+  },
+  "SnezhnayanDwellingElegantCarvings": {
+    "name": "Abitazione di Snezhnaya Intagli eleganti"
   },
   "BirdAndBlossomDesignFountain": {
     "name": "Fontana con fiori e uccelli"
@@ -22565,6 +23522,15 @@
   "UnusableLegacy": {
     "name": "Eredità inutilizzabile"
   },
+  "CherishThePresent": {
+    "name": "Apprezza il presente"
+  },
+  "AnUnmeltedHome": {
+    "name": "Dimora indissolubile"
+  },
+  "OpenWide": {
+    "name": "\"Apri bene!\""
+  },
   "WeatheredBambooFence": {
     "name": "Recinto in bambù consumato"
   },
@@ -22724,6 +23690,12 @@
   "EchoesOfSilence": {
     "name": "Echi del silenzio"
   },
+  "StationBenchReadingBetweenTrains": {
+    "name": "Panchina della stazione Letture tra i treni"
+  },
+  "TheLingeringWarmthOfTheWait": {
+    "name": "Calore persistente dell'attesa"
+  },
   "TwoStoryHilichurlSentryTower": {
     "name": "Torre della sentinella hilichurliana"
   },
@@ -22816,6 +23788,9 @@
   },
   "WarmAndCozy": {
     "name": "Calore e conforto"
+  },
+  "UselessAdvice": {
+    "name": "Consiglio inutile"
   },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Bancarella espositiva dell'enoteca Vino a volontà"
@@ -23000,6 +23975,24 @@
   "SignallessTower": {
     "name": "Torre senza segnale"
   },
+  "BasicTransportSled": {
+    "name": "Slitta da trasporto standard"
+  },
+  "BasicTentANapBeneathTheSnow": {
+    "name": "Tenda semplice Pisolino sotto la neve"
+  },
+  "SturdyAsSolidIce": {
+    "name": "Robusto come il ghiaccio solido"
+  },
+  "PortableSmallHeatingDevice": {
+    "name": "Dispositivo di riscaldamento portatile piccolo"
+  },
+  "PrimeIceOreNeatlyArrayed": {
+    "name": "Minerale di Ghiaccio sublime Disposizione ordinata"
+  },
+  "SmallGaugePanelControlConsole": {
+    "name": "Quadro di comando piccolo Pannello indicatore"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "Messer Capibara l'Incisivo"
   },
@@ -23038,5 +24031,8 @@
   },
   "MoonEnvoyOfSilverRadiance": {
     "name": "Emissaria lunare dell'argenteo bagliore"
+  },
+  "DancingBeneathSilverWhiteWings": {
+    "name": "Danza sotto candide ali d'argento"
   }
 }

@@ -18,16 +18,12 @@ export default register(
     'frostbite_crit_dmg_',
     teamBuff.combat.crit_dmg_.add(
       cmpGE(team.common.count.ice, 1, frostbite.ifOn(percent(0.1)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'windswept_direct_dmg_',
     teamBuff.combat.direct_dmg_.add(
       cmpGE(team.common.count.wind, 1, windswept.ifOn(percent(0.1)))
-    ),
-    undefined,
-    true
+    )
   )
 )

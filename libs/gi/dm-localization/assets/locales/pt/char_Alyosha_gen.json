@@ -1,0 +1,189 @@
+{
+  "name": "Alyosha",
+  "title": "Lupino de Passos Ligeiros",
+  "description": "Um \"caçador profissional\" que domina os campos de neve de Snezhnaya. Sob sua aparência calma, parece arder um \"ideal\" intenso e distinto.",
+  "constellationName": "Canis Borzoides",
+  "auto": {
+    "name": "Lança de Caça",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 golpes rápidos, e o último golpe atingido aplica <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Selo da Caçada</strong></tooltip> no inimigo."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para avançar em frente, causando Dano aos inimigos pelo caminho."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano de Ataque Carregado",
+      "5": "Consumo de Stamina de Ataque Carregado",
+      "6": "Dano Durante a Queda",
+      "7": "Dano de Queda de Baixa/Alta Altitude",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Emboscada Selvagem",
+    "description": {
+      "0": "Seguindo seu instinto de caçador, gera efeitos diferentes se Pressionar ou Manter Pressionado, e ao atingir o inimigo, aplica <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Selo da Caçada</strong></tooltip>.",
+      "1": "<br/>",
+      "2": "<strong>Pressionar</strong>",
+      "3": "Dispara em frente causando <electro>Dano Electro em AdE</electro>.",
+      "4": "<br/>",
+      "5": "<strong>Manter Pressionado</strong>",
+      "6": "Entra no modo de mira, seleciona os alvos dentro de uma área específica à sua frente e aumenta a RES contra Interrupção de Alyosha nesse estado.",
+      "7": "Quando terminar de Manter Pressionado, causa <electro>Dano Electro</electro> contra os inimigos selecionados.",
+      "8": "<br/>",
+      "9": "<i>Uma vez, um caçador imprudente escalou a ponta de uma lança. Ele teve sorte de sobreviver a essa lição de sangue, e foi assim que aprendeu a essência da sobrevivência nas planícies nevadas.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Pressionar",
+      "1": "Dano ao Manter Pressionado",
+      "2": "Recarga",
+      "3": "Duração de Selo da Caçada",
+      "4": "Aumento de ATQ de Mira do Caçador",
+      "5": "Duração de Mira do Caçador",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Perseguição Caçadora",
+    "description": {
+      "0": "Invoca seu confiável companheiro <strong>Tugarin</strong> e transforma a área em frente em <strong>Campo de Caça Eletrizante</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Campo de Caça Eletrizante</strong>",
+      "3": [
+        " Provoca os inimigos constantemente, atraindo seus ataques.",
+        " A cada 2s, causa uma instância de <electro>Dano Electro em AdE</electro> contra o inimigo que entrar no campo."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Tugarin</strong>.",
+      "6": [
+        " Se houver inimigos por perto, Tugarin se moverá rapidamente para perto de um inimigo a cada 2s, mordendo-o e causando <strong>Dano Electro</strong>.",
+        " Se atingir um inimigo que está afetado por <strong>Selo da Caçada</strong>, ativará <strong>Selo da Caçada</strong>.",
+        " Tugarin priorizará atacar inimigos afetados por <strong>Selo da Caçada</strong>."
+      ],
+      "7": "<br/>",
+      "8": "<i>Espere. Espere até a impaciência passar. É nesse momento que a Tarambola de Barriga Vermelha mergulhará entre as árvores e passará na frente da flecha.</i>"
+    },
+    "skillParams": {
+      "0": "Dano do Campo de Caça Eletrizante",
+      "1": "Dano de Tugarin",
+      "2": "Duração",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Linha das Árvores Despertadas",
+    "description": {
+      "0": "Quando <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> atacar, regenera Vida para o personagem ativo próximo em 120% do ATQ de Alyosha."
+    }
+  },
+  "passive2": {
+    "name": "Adeus ao Inverno e às Folhas Partidas",
+    "description": {
+      "0": "Aumenta o Dano da Habilidade Elemental e do Supremo de Alyosha com base na sua Recarga de Energia: cada 1% de Recarga de Energia aumenta o Dano em 0.35%. É possível aumentar até 70% dessa forma."
+    }
+  },
+  "passive3": {
+    "name": "Travessia Estelar Perigosa",
+    "description": {
+      "0": "Quando está dentro do <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo da Estrela Polar</strong></tooltip>, Alyosha entrará no estado <strong>Brilho Reluzente: Supercondutor Estelar</strong>.",
+      "1": "<strong>Brilho Reluzente: Supercondutor Estelar</strong>: ao ativar o <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Selo da Caçada</strong></tooltip>, obter o efeito <strong>Mira do Caçador</strong> aumenta o Dano de Supercondutor Estelar do personagem ativo em 20%."
+    }
+  },
+  "passive": {
+    "name": "Vigia Arbórea",
+    "description": {
+      "0": "Mostra a localização de <strong>Especialidades de Snezhnaya</strong> próximas no mapa."
+    }
+  },
+  "constellation1": {
+    "name": "Trovão do Vale Gelado",
+    "description": {
+      "0": "Quando um personagem da equipe desencadear <electro>uma reação Electro</electro> no inimigo, regenera 15 de Energia Elemental para Alyosha. Esse efeito pode ser desencadeado uma vez a cada 18s."
+    }
+  },
+  "constellation2": {
+    "name": "Latido Longínquo",
+    "description": {
+      "0": "Aumenta a duração do Supremo <strong>Perseguição Caçadora</strong> em 6s.",
+      "1": "Além disso, toda vez antes de <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> atacar o inimigo, aplicará <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Selo da Caçada</strong></tooltip> no alvo. Esse efeito não ativará os <strong>Selos da Caçada</strong> já possuídos."
+    }
+  },
+  "constellation3": {
+    "name": "Chamado de Companheiros",
+    "description": {
+      "0": "Aumenta o nível da Habilidade Elemental <strong>Emboscada Selvagem</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Botim da Caçada",
+    "description": {
+      "0": "Quando <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> atacar, regenera Vida para o personagem próximo com menor proporção de Vida em 60% do ATQ de Alyosha."
+    }
+  },
+  "constellation5": {
+    "name": "Cessar do Cantarolar dos Pássaros",
+    "description": {
+      "0": "Aumenta o nível do Supremo <strong>Perseguição Caçadora</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Estandarte da Reconquista",
+    "description": {
+      "0": "Ao ativar o <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Selo da Caçada</strong></tooltip>, o efeito <strong>Mira do Caçador</strong> pode ser acumulado até 2 vezes. Ao acumular 2 vezes, aumenta a Proficiência Elemental do personagem em campo em 100."
+    }
+  }
+}

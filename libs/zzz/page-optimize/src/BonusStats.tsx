@@ -8,7 +8,7 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { stableArr } from '@genshin-optimizer/common/util'
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
-import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
+import { allAttributeAnomalyKeys } from '@genshin-optimizer/zzz/consts'
 import type {
   BonusStatKey,
   BonusStatTag,
@@ -17,16 +17,17 @@ import type {
 import {
   bonusStatDamageTypes,
   bonusStatDmgTypeIncStats,
+  bonusStatKeys,
   bonusStatQtKeys,
+  newBonusStatTag,
 } from '@genshin-optimizer/zzz/db'
-import { bonusStatKeys, newBonusStatTag } from '@genshin-optimizer/zzz/db'
 import {
   useCharacterContext,
   useDatabaseContext,
   useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
 import type { Attribute, Tag } from '@genshin-optimizer/zzz/formula'
-import { TagDisplay, qtMap } from '@genshin-optimizer/zzz/formula-ui'
+import { qtMap, TagDisplay } from '@genshin-optimizer/zzz/formula-ui'
 import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
 import {
   CheckBox,
@@ -252,7 +253,7 @@ function AttributeDropdown({
       color={tag.attribute!}
     >
       <MenuItem onClick={() => setAttribute(null)}>No Attribute</MenuItem>
-      {allAttributeKeys.map((attr) => (
+      {allAttributeAnomalyKeys.map((attr) => (
         <MenuItem key={attr} onClick={() => setAttribute(attr)}>
           <ColorText color={attr}>
             <AttributeName attribute={attr} />

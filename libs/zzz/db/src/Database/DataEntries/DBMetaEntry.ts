@@ -1,12 +1,12 @@
 import type { Database } from '@genshin-optimizer/common/database'
 import {
-  type CharacterKey,
   allCharacterKeys,
+  type CharacterKey,
 } from '@genshin-optimizer/zzz/consts'
 import { z } from 'zod'
-import type { IZZZDatabase, IZenlessObjectDescription } from '../../Interfaces'
-import { DataEntry } from '../DataEntry'
+import type { IZenlessObjectDescription, IZZZDatabase } from '../../Interfaces'
 import type { ZzzDatabase } from '../Database'
+import { DataEntry } from '../DataEntry'
 import type { ImportResult } from '../exim'
 
 // Schema with defaults - single source of truth

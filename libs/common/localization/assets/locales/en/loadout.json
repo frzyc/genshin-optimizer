@@ -1,7 +1,6 @@
 {
   "loadoutSettings": {
-    "alert": "<strong>Loadouts</strong> provides character context data, including bonus stats, conditionals, multi-targets, optimization config, and stores builds. A single <strong>Loadout</strong> can be used for many teams.",
-    "title": "Build Management",
+    "alert": "<strong>Loadouts</strong> provide character context data, including bonus stats, conditionals, multi-targets, and optimization config. A single <strong>Loadout</strong> can be used for many teams.",
     "builds": "Builds",
     "newBuildBtn": "New Build",
     "tcBuilds": "TC Builds",
@@ -39,13 +38,9 @@
     },
     "label": "Loadout: ",
     "create": "Create a new Loadout",
-    "builds": "{{count}} Builds",
-    "tcs": "{{count}} TC Builds",
     "multi": "{{count}} Multi-Opt"
   },
   "loadoutHeader": {
-    "builds": "Builds: ",
-    "tcBuilds": "TC Builds: ",
     "mltTargets": "Custom multi-targets: ",
     "optTarget": "Optimization Target:"
   },
@@ -57,7 +52,6 @@
     "delBtn": "Delete Loadout",
     "optTarget": "Optimization Target",
     "conditionals": "Conditionals: ",
-    "builds": "Builds",
     "teams": "Teams",
     "addNewTeam": "Add new Team",
     "bonusStats": "Bonus Stats",
@@ -66,8 +60,6 @@
   "loadoutDelModal": {
     "title": "Delete Loadout: <1>{{name}}</１>?",
     "desc": "Deleting the Loadout will also delete the following data:",
-    "builds": "All saved builds: ",
-    "tcBuilds": "All saved TC builds: ",
     "mTargets": "All Custom Multi-targets: ",
     "bonus": "Bonus stats: ",
     "condi": "Conditionals: ",

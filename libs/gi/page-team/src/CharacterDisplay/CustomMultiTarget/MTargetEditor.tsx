@@ -7,8 +7,8 @@ import {
 import { objPathValue } from '@genshin-optimizer/common/util'
 import type {
   AdditiveReactionKey,
-  AmpReactionKey,
   AmplifyingReactionKey,
+  AmpReactionKey,
   ElementKey,
   InfusionAuraElementKey,
 } from '@genshin-optimizer/gi/consts'
@@ -25,8 +25,8 @@ import {
   AdditiveReactionModeText,
   AmpReactionModeText,
   DataContext,
-  StatEditorList,
   infusionVals,
+  StatEditorList,
 } from '@genshin-optimizer/gi/ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import { allInputPremodKeys } from '@genshin-optimizer/gi/wr-types'
@@ -131,7 +131,7 @@ export default function MTargetEditor({
       sx={{
         boxShadow: '0 0 10px black',
         position: 'sticky',
-        bottom: `10px`,
+        bottom: '10px',
         zIndex: 1000,
       }}
     >
@@ -169,7 +169,7 @@ export default function MTargetEditor({
           }}
           type="number"
           value={rank.toString()}
-          onChange={(v) => setTargetIndex(parseInt(v))}
+          onChange={(v) => setTargetIndex(Number.parseInt(v))}
           size="small"
           sx={{ minWidth: isMobile ? '4em' : '6em' }}
         />
@@ -197,7 +197,7 @@ export default function MTargetEditor({
                 }}
                 type="number"
                 value={weight.toString()}
-                onChange={(v) => setWeight(parseFloat(v))}
+                onChange={(v) => setWeight(Number.parseFloat(v))}
                 size="small"
               />
               <OptimizationTargetSelector

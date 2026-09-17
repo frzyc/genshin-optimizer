@@ -1,3 +1,4 @@
+/** biome-ignore-all assist/source/organizeImports: custom order */
 import bow from './icon_bow.png'
 import catalyst from './icon_catalyst.png'
 import claymore from './icon_claymore.png'

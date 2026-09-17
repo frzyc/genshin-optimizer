@@ -129,7 +129,7 @@
   "passive1": {
     "name": "Qualcuno più qualificato",
     "description": {
-      "0": "Quando Sayu innesca una reazione di Turbinio mentre è attiva, ripristina 300 PS di tutti i personaggi e alleati vicini. Inoltre, ripristina 1,2 PS aggiuntivi per ogni punto di maestria elementale in suo possesso.",
+      "0": "Quando Sayu innesca una reazione di Turbinio o di Turbinio astrale mentre è attiva, ripristina 300 PS di tutti i personaggi e alleati vicini. Inoltre, ripristina 1,2 PS aggiuntivi per ogni punto di maestria elementale in suo possesso.",
       "1": "Quest'effetto può attivarsi una volta ogni 2 s."
     }
   },
@@ -176,8 +176,8 @@
   "constellation4": {
     "name": "Pigrizia: nuove tecniche",
     "description": {
-      "0": "Quando Sayu innesca una reazione di Turbinio, la sua energia si ripristina di 1,2.",
-      "1": "L'effetto si può verificare una sola volta ogni 2 s."
+      "0": "Quando Sayu innesca una reazione di Turbinio o di Turbinio astrale mentre è in campo, la sua energia si ripristina di 1,2.",
+      "1": "L'effetto si può verificare una volta ogni 2 s."
     }
   },
   "constellation5": {

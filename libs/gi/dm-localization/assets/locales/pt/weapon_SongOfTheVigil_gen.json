@@ -1,0 +1,24 @@
+{
+  "name": "Canção da Vigília",
+  "description": {
+    "0": "Uma lança longa que vigiou a todos. Hoje, possui um novo propósito entre crianças e seus jogos de faz-de-conta."
+  },
+  "passiveName": "Cadência dos Dias Passados",
+  "passiveDescription": {
+    "0": {
+      "0": "Depois de desencadear uma reação Elemental, regenera <cryo>4</cryo> de Energia Elemental para o portador. Esse efeito pode ser desencadeado uma vez a cada 9s. Nos 12s após desencadear uma reação de Brilho Estelar, aumenta o ATQ do portador em <cryo>20%</cryo>. Esse efeito pode ser desencadeado mesmo quando o portador não for o personagem ativo."
+    },
+    "1": {
+      "0": "Depois de desencadear uma reação Elemental, regenera <cryo>5</cryo> de Energia Elemental para o portador. Esse efeito pode ser desencadeado uma vez a cada 9s. Nos 12s após desencadear uma reação de Brilho Estelar, aumenta o ATQ do portador em <cryo>25%</cryo>. Esse efeito pode ser desencadeado mesmo quando o portador não for o personagem ativo."
+    },
+    "2": {
+      "0": "Depois de desencadear uma reação Elemental, regenera <cryo>6</cryo> de Energia Elemental para o portador. Esse efeito pode ser desencadeado uma vez a cada 9s. Nos 12s após desencadear uma reação de Brilho Estelar, aumenta o ATQ do portador em <cryo>30%</cryo>. Esse efeito pode ser desencadeado mesmo quando o portador não for o personagem ativo."
+    },
+    "3": {
+      "0": "Depois de desencadear uma reação Elemental, regenera <cryo>7</cryo> de Energia Elemental para o portador. Esse efeito pode ser desencadeado uma vez a cada 9s. Nos 12s após desencadear uma reação de Brilho Estelar, aumenta o ATQ do portador em <cryo>35%</cryo>. Esse efeito pode ser desencadeado mesmo quando o portador não for o personagem ativo."
+    },
+    "4": {
+      "0": "Depois de desencadear uma reação Elemental, regenera <cryo>8</cryo> de Energia Elemental para o portador. Esse efeito pode ser desencadeado uma vez a cada 9s. Nos 12s após desencadear uma reação de Brilho Estelar, aumenta o ATQ do portador em <cryo>40%</cryo>. Esse efeito pode ser desencadeado mesmo quando o portador não for o personagem ativo."
+    }
+  }
+}

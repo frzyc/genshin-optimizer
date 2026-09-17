@@ -1,5 +1,9 @@
 {
   "dmg": "DMG",
+  "otherDmg": {
+    "stellarconduct": "Stellar-Conduct DMG",
+    "stellarswirl": "Stellar Swirl DMG"
+  },
   "hits_one": "{{count}} Hit",
   "hits_other": "{{count}} Hits",
   "lessPercentHP": "HP less than {{percent}}%",
@@ -167,6 +171,13 @@
     "constellation5": "C5",
     "constellation6": "C6"
   },
+  "talentEnhance": {
+    "auto": "Auto enhanced",
+    "skill": "Skill enhanced",
+    "burst": "Burst enhanced",
+    "passive1": "Ascension Talent 1 enhanced",
+    "passive2": "Ascension Talent 4 enhanced"
+  },
   "swirlReaction": {
     "hydro": "After triggering a <hydro>Hydro</hydro> Swirl reaction",
     "pyro": "After triggering a <pyro>Pyro</pyro> Swirl reaction",
@@ -184,12 +195,20 @@
     "anemo": "After triggering an <anemo>Anemo-related</anemo> Elemental Reaction",
     "geo": "After triggering a <geo>Geo-related</geo> Elemental Reaction",
     "shatter": "After triggering a <shattered>Shatter</shattered> Elemental Reaction",
+    "cryoOrHydro": "After triggering a <cryo>Cryo</cryo> or <hydro>Hydro</hydro>-related Elemental Reaction",
     "crystallizeOrLunar": "After triggering a <geo>Crystallize</geo> or <lunarcrystallize>Lunar-Crystallize</lunarcrystallize> reaction",
     "moondriftTrigger": "After triggering Moondrift Harmony",
     "moondriftNearby": "Moondrift nearby",
     "lunarcharged": "After triggering a <lunarcharged>Lunar-Charged</lunarcharged> Reaction",
     "superconductOrStellarconduct": "After triggering a <superconduct>Super-Conduct</superconduct> or <stellarconduct>Stellar-Conduct</stellarconduct> reaction or dealing <stellarconduct>Stellar-Conduct</stellarconduct> DMG",
-    "gainRadianceSc": "Character gains the <strong>Radiance: Stellar-Conduct</strong> effect",
+    "stellarswirl": "After triggering a <stellarswirl>Stellar Swirl</stellarswirl> Reaction",
+    "stellarglimmer": "After triggering a Stellar Glimmer Reaction",
+    "stellar": {
+      "radiance": "Radiance effect",
+      "gainRadianceSc": "Character gains the <strong>Radiance: Stellar-Conduct</strong> effect",
+      "gainRadianceSs": "Character gains the <strong>Radiance: Stellar Swirl</strong> effect",
+      "triggerOrHit": "Character triggers a Stellar Glimmer reaction or deals Stellar Glimmer reaction DMG"
+    },
     "polestar": {
       "inside": "Character inside a Polestar Field",
       "oppInside": "Opponent inside a Polestar Field",

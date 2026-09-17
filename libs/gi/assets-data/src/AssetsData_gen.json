@@ -144,6 +144,14 @@
       "icon": "UI_EquipIcon_Sword_Miekka",
       "awakenIcon": "UI_EquipIcon_Sword_Miekka_Awaken"
     },
+    "HereticsMoltenBlade": {
+      "icon": "UI_EquipIcon_Sword_SerpentTooth",
+      "awakenIcon": "UI_EquipIcon_Sword_SerpentTooth_Awaken"
+    },
+    "Emberwell": {
+      "icon": "UI_EquipIcon_Sword_GlintstoneSword",
+      "awakenIcon": "UI_EquipIcon_Sword_GlintstoneSword_Awaken"
+    },
     "AquilaFavonia": {
       "icon": "UI_EquipIcon_Sword_Falcon",
       "awakenIcon": "UI_EquipIcon_Sword_Falcon_Awaken"
@@ -207,6 +215,14 @@
     "LightbearingMoonshard": {
       "icon": "UI_EquipIcon_Sword_SilverwareSaw",
       "awakenIcon": "UI_EquipIcon_Sword_SilverwareSaw_Awaken"
+    },
+    "WhitelakeFrostfeather": {
+      "icon": "UI_EquipIcon_Sword_Swanlake",
+      "awakenIcon": "UI_EquipIcon_Sword_Swanlake_Awaken"
+    },
+    "ExaiphanesBlade": {
+      "icon": "UI_EquipIcon_Sword_WeaponQuestSnezhnaya",
+      "awakenIcon": "UI_EquipIcon_Sword_WeaponQuestSnezhnaya"
     },
     "WasterGreatsword": {
       "icon": "UI_EquipIcon_Claymore_Aniki",
@@ -335,6 +351,14 @@
     "MasterKey": {
       "icon": "UI_EquipIcon_Claymore_Ilmarinen",
       "awakenIcon": "UI_EquipIcon_Claymore_Ilmarinen_Awaken"
+    },
+    "ForgedByTheGoldenMelody": {
+      "icon": "UI_EquipIcon_Claymore_EscapeWheel",
+      "awakenIcon": "UI_EquipIcon_Claymore_EscapeWheel_Awaken"
+    },
+    "BladeOfAtonement": {
+      "icon": "UI_EquipIcon_Claymore_GlintstoneClaymore",
+      "awakenIcon": "UI_EquipIcon_Claymore_GlintstoneClaymore_Awaken"
     },
     "SkywardPride": {
       "icon": "UI_EquipIcon_Claymore_Dvalin",
@@ -491,6 +515,14 @@
     "SacrificersStaff": {
       "icon": "UI_EquipIcon_Pole_Krivule",
       "awakenIcon": "UI_EquipIcon_Pole_Krivule_Awaken"
+    },
+    "Frostbreath": {
+      "icon": "UI_EquipIcon_Pole_FaesCrystalle",
+      "awakenIcon": "UI_EquipIcon_Pole_FaesCrystalle_Awaken"
+    },
+    "SongOfTheVigil": {
+      "icon": "UI_EquipIcon_Pole_GlintstonePolearm",
+      "awakenIcon": "UI_EquipIcon_Pole_GlintstonePolearm_Awaken"
     },
     "StaffOfHoma": {
       "icon": "UI_EquipIcon_Pole_Homa",
@@ -671,6 +703,14 @@
     "DawningFrost": {
       "icon": "UI_EquipIcon_Catalyst_Ziedas",
       "awakenIcon": "UI_EquipIcon_Catalyst_Ziedas_Awaken"
+    },
+    "ClashOfKings": {
+      "icon": "UI_EquipIcon_Catalyst_SandMemoria",
+      "awakenIcon": "UI_EquipIcon_Catalyst_SandMemoria_Awaken"
+    },
+    "EchoesOfTheHeart": {
+      "icon": "UI_EquipIcon_Catalyst_GlintstoneCatalyst",
+      "awakenIcon": "UI_EquipIcon_Catalyst_GlintstoneCatalyst_Awaken"
     },
     "SkywardAtlas": {
       "icon": "UI_EquipIcon_Catalyst_Dvalin",
@@ -887,6 +927,14 @@
     "RainbowSerpentsRainBow": {
       "icon": "UI_EquipIcon_Bow_ElegguaBow",
       "awakenIcon": "UI_EquipIcon_Bow_ElegguaBow_Awaken"
+    },
+    "JadeVista": {
+      "icon": "UI_EquipIcon_Bow_ShatteredMirror",
+      "awakenIcon": "UI_EquipIcon_Bow_ShatteredMirror_Awaken"
+    },
+    "CovenantOfFrostAndSnow": {
+      "icon": "UI_EquipIcon_Bow_GlintstoneBow",
+      "awakenIcon": "UI_EquipIcon_Bow_GlintstoneBow_Awaken"
     },
     "SkywardHarp": {
       "icon": "UI_EquipIcon_Bow_Dvalin",
@@ -1349,6 +1397,20 @@
       "sands": "UI_RelicIcon_15046_5",
       "goblet": "UI_RelicIcon_15046_1",
       "circlet": "UI_RelicIcon_15046_3"
+    },
+    "ScarletProof": {
+      "flower": "UI_RelicIcon_15047_4",
+      "plume": "UI_RelicIcon_15047_2",
+      "sands": "UI_RelicIcon_15047_5",
+      "goblet": "UI_RelicIcon_15047_1",
+      "circlet": "UI_RelicIcon_15047_3"
+    },
+    "HeartOfTheFurnace": {
+      "flower": "UI_RelicIcon_15048_4",
+      "plume": "UI_RelicIcon_15048_2",
+      "sands": "UI_RelicIcon_15048_5",
+      "goblet": "UI_RelicIcon_15048_1",
+      "circlet": "UI_RelicIcon_15048_3"
     }
   },
   "chars": {
@@ -3376,6 +3438,42 @@
       "constellation5": "UI_Talent_U_MarionetteNew_02",
       "constellation6": "UI_Talent_S_MarionetteNew_04"
     },
+    "Alyosha": {
+      "icon": "UI_AvatarIcon_Alyosha",
+      "iconSide": "UI_AvatarIcon_Side_Alyosha",
+      "banner": "UI_NameCardPic_Alyosha_P",
+      "bar": "UI_NameCardPic_Alyosha_Alpha",
+      "skill": "Skill_S_Alyosha_01",
+      "burst": "Skill_E_Alyosha_01_HD",
+      "passive1": "UI_Talent_S_Alyosha_05",
+      "passive2": "UI_Talent_S_Alyosha_06",
+      "passive3": "UI_Talent_S_Alyosha_07",
+      "passive": "UI_Talent_S_Alyosha_08",
+      "constellation1": "UI_Talent_S_Alyosha_01",
+      "constellation2": "UI_Talent_S_Alyosha_02",
+      "constellation3": "UI_Talent_U_Alyosha_01",
+      "constellation4": "UI_Talent_S_Alyosha_03",
+      "constellation5": "UI_Talent_U_Alyosha_02",
+      "constellation6": "UI_Talent_S_Alyosha_04"
+    },
+    "Odette": {
+      "icon": "UI_AvatarIcon_Odette",
+      "iconSide": "UI_AvatarIcon_Side_Odette",
+      "banner": "UI_NameCardPic_Odette_P",
+      "bar": "UI_NameCardPic_Odette_Alpha",
+      "skill": "Skill_S_Odette_01",
+      "burst": "Skill_E_Odette_01_HD",
+      "passive1": "UI_Talent_S_Odette_05",
+      "passive2": "UI_Talent_S_Odette_06",
+      "passive3": "UI_Talent_S_Odette_07",
+      "passive": "UI_Talent_S_Odette_08",
+      "constellation1": "UI_Talent_S_Odette_01",
+      "constellation2": "UI_Talent_S_Odette_02",
+      "constellation3": "UI_Talent_U_Odette_01",
+      "constellation4": "UI_Talent_S_Odette_03",
+      "constellation5": "UI_Talent_U_Odette_02",
+      "constellation6": "UI_Talent_S_Odette_04"
+    },
     "TravelerAnemo": {
       "skill": "Skill_S_PlayerWind_01",
       "burst": "Skill_E_PlayerWind_01_HD",
@@ -3453,6 +3551,20 @@
       "constellation4": "UI_Talent_S_PlayerFire_03",
       "constellation5": "UI_Talent_U_PlayerFire_02",
       "constellation6": "UI_Talent_S_PlayerFire_04"
+    },
+    "TravelerCryo": {
+      "skill": "Skill_E_PlayerIce_01",
+      "burst": "Skill_S_PlayerIce_01_HD",
+      "passive1": "UI_Talent_S_PlayerIce_05",
+      "passive2": "UI_Talent_S_PlayerIce_06",
+      "passive3": "UI_Talent_S_PlayerIce_07",
+      "lockedPassive": "UI_Talent_S_PlayerIce_08",
+      "constellation1": "UI_Talent_S_PlayerIce_01",
+      "constellation2": "UI_Talent_S_PlayerIce_02",
+      "constellation3": "UI_Talent_U_PlayerIce_01",
+      "constellation4": "UI_Talent_S_PlayerIce_03",
+      "constellation5": "UI_Talent_U_PlayerIce_02",
+      "constellation6": "UI_Talent_S_PlayerIce_04"
     },
     "Somnia": {}
   }

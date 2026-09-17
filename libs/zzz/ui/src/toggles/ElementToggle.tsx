@@ -6,6 +6,7 @@ import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
 import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
 import { Chip, ToggleButtonGroup, useMediaQuery, useTheme } from '@mui/material'
 import type { ReactNode } from 'react'
+
 type ElementToggleProps = Omit<
   SolidToggleButtonGroupProps,
   'onChange' | 'value'

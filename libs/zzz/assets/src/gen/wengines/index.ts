@@ -35,6 +35,7 @@ import IdentityBase from './IdentityBase'
 import IdentityInflection from './IdentityInflection'
 import JoyauDore from './JoyauDore'
 import KaboomTheCannon from './KaboomTheCannon'
+import KnightsExtolment from './KnightsExtolment'
 import KrakensCradle from './KrakensCradle'
 import LunarDecrescent from './LunarDecrescent'
 import LunarNoviluna from './LunarNoviluna'
@@ -46,6 +47,7 @@ import MarcatoDesire from './MarcatoDesire'
 import Metanukimorphosis from './Metanukimorphosis'
 import MyriadEclipse from './MyriadEclipse'
 import NeonFantasies from './NeonFantasies'
+import OdeOfResurrectedWings from './OdeOfResurrectedWings'
 import OriginalTransmorpher from './OriginalTransmorpher'
 import PeacekeeperSpecialized from './PeacekeeperSpecialized'
 import PracticedPerfection from './PracticedPerfection'
@@ -130,6 +132,7 @@ const data = {
   IdentityInflection,
   JoyauDore,
   KaboomTheCannon,
+  KnightsExtolment,
   KrakensCradle,
   LunarDecrescent,
   LunarNoviluna,
@@ -141,6 +144,7 @@ const data = {
   Metanukimorphosis,
   MyriadEclipse,
   NeonFantasies,
+  OdeOfResurrectedWings,
   OriginalTransmorpher,
   PeacekeeperSpecialized,
   PracticedPerfection,

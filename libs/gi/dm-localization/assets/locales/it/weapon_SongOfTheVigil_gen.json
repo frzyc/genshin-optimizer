@@ -1,0 +1,24 @@
+{
+  "name": "Ballata della veglia",
+  "description": {
+    "0": "Una lunga lancia che un tempo vegliava su tutto. Oggi ha trovato un nuovo scopo nei giochi dei bambini."
+  },
+  "passiveName": "Ritmo di giorni che furono",
+  "passiveDescription": {
+    "0": {
+      "0": "Innescare una reazione elementale ripristina di <cryo>4</cryo> l'energia elementale del personaggio che equipaggia l'arma. Quest'effetto può attivarsi una volta ogni 9 s. Quando si innesca una reazione di Barlume astrale, invece, l'ATT aumenta di un <cryo>20%</cryo> per 12 s. Gli effetti sopracitati possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "1": {
+      "0": "Innescare una reazione elementale ripristina di <cryo>5</cryo> l'energia elementale del personaggio che equipaggia l'arma. Quest'effetto può attivarsi una volta ogni 9 s. Quando si innesca una reazione di Barlume astrale, invece, l'ATT aumenta di un <cryo>25%</cryo> per 12 s. Gli effetti sopracitati possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "2": {
+      "0": "Innescare una reazione elementale ripristina di <cryo>6</cryo> l'energia elementale del personaggio che equipaggia l'arma. Quest'effetto può attivarsi una volta ogni 9 s. Quando si innesca una reazione di Barlume astrale, invece, l'ATT aumenta di un <cryo>30%</cryo> per 12 s. Gli effetti sopracitati possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "3": {
+      "0": "Innescare una reazione elementale ripristina di <cryo>7</cryo> l'energia elementale del personaggio che equipaggia l'arma. Quest'effetto può attivarsi una volta ogni 9 s. Quando si innesca una reazione di Barlume astrale, invece, l'ATT aumenta di un <cryo>35%</cryo> per 12 s. Gli effetti sopracitati possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "4": {
+      "0": "Innescare una reazione elementale ripristina di <cryo>8</cryo> l'energia elementale del personaggio che equipaggia l'arma. Quest'effetto può attivarsi una volta ogni 9 s. Quando si innesca una reazione di Barlume astrale, invece, l'ATT aumenta di un <cryo>40%</cryo> per 12 s. Gli effetti sopracitati possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    }
+  }
+}

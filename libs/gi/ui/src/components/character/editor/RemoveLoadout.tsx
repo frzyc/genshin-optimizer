@@ -1,6 +1,5 @@
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import CheckroomIcon from '@mui/icons-material/Checkroom'
 import CloseIcon from '@mui/icons-material/Close'
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
@@ -33,20 +32,14 @@ export function RemoveLoadout({
   show: boolean
   onHide: () => void
   teamCharId: string
-  teamIds: string[]
   onDelete: () => void
+  teamIds: string[]
   conditionalCount: number
 }) {
   const { t } = useTranslation('loadout')
   const database = useDatabase()
-  const {
-    name,
-    description,
-    buildIds,
-    buildTcIds,
-    customMultiTargets,
-    bonusStats,
-  } = database.teamChars.get(teamCharId)!
+  const { name, description, customMultiTargets, bonusStats } =
+    database.teamChars.get(teamCharId)!
 
   const onDeleteLoadout = useCallback(() => {
     onHide()
@@ -82,66 +75,6 @@ export function RemoveLoadout({
           )}
           <Typography>{t('loadoutDelModal.desc')}</Typography>
           <List sx={{ listStyleType: 'disc', pl: 4 }}>
-            {!!buildIds.length && (
-              <ListItem sx={{ display: 'list-item' }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  {t('loadoutDelModal.builds')}
-                  {buildIds.length}{' '}
-                  <Tooltip
-                    title={
-                      <Box>
-                        {buildIds.map((bId) => (
-                          <Typography
-                            key={bId}
-                            sx={{
-                              display: 'flex',
-                              alignItems: 'center',
-                              gap: 1,
-                            }}
-                          >
-                            <CheckroomIcon />
-                            <span>{database.builds.get(bId)?.name}</span>
-                          </Typography>
-                        ))}
-                      </Box>
-                    }
-                  >
-                    <InfoIcon />
-                  </Tooltip>
-                </Box>
-              </ListItem>
-            )}
-
-            {!!buildTcIds.length && (
-              <ListItem sx={{ display: 'list-item' }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  {t('loadoutDelModal.tcBuilds')}
-                  {buildTcIds.length}{' '}
-                  <Tooltip
-                    title={
-                      <Box>
-                        {buildTcIds.map((bId) => (
-                          <Typography
-                            key={bId}
-                            sx={{
-                              display: 'flex',
-                              alignItems: 'center',
-                              gap: 1,
-                            }}
-                          >
-                            <CheckroomIcon />
-                            <span>{database.buildTcs.get(bId)?.name}</span>
-                          </Typography>
-                        ))}
-                      </Box>
-                    }
-                  >
-                    <InfoIcon />
-                  </Tooltip>
-                </Box>
-              </ListItem>
-            )}
-
             {!!customMultiTargets.length && (
               <ListItem sx={{ display: 'list-item' }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>

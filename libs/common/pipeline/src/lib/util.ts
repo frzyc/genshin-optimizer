@@ -1,6 +1,6 @@
-import { spawn } from 'child_process'
-import { mkdirSync, writeFileSync } from 'fs'
-import { dirname, join } from 'path'
+import { spawn } from 'node:child_process'
+import { mkdirSync, writeFileSync } from 'node:fs'
+import { dirname, join } from 'node:path'
 import { workspaceRoot } from '@nx/devkit'
 
 /**
@@ -26,9 +26,6 @@ export async function formatText(path: string, text: string): Promise<string> {
       'check',
       `--stdin-file-path=${path}`,
       `--config-path=${biomeConfigPath}`,
-      '--formatter-enabled=true',
-      '--organize-imports-enabled=true',
-      '--linter-enabled=false',
       '--fix',
     ])
 

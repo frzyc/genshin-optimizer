@@ -1,0 +1,24 @@
+{
+  "name": "Sopro Gélido",
+  "description": {
+    "0": "Uma lança de gelo sólido imbuída de um frio glacial. Diz-se que outrora pertenceu ao Czar Belyi que governou Snezhnaya em tempos remotos."
+  },
+  "passiveName": "Arremesso Distante",
+  "passiveDescription": {
+    "0": {
+      "0": "Nos 15s após desencadear uma reação Cryo ou Hydro, aumenta o ATQ do portador em <cryo>20%</cryo>, e regenera <cryo>6</cryo> de Energia Elemental para os outros personagens da equipe. Esse efeito pode ser desencadeado uma vez a cada 16s."
+    },
+    "1": {
+      "0": "Nos 15s após desencadear uma reação Cryo ou Hydro, aumenta o ATQ do portador em <cryo>25%</cryo>, e regenera <cryo>7.5</cryo> de Energia Elemental para os outros personagens da equipe. Esse efeito pode ser desencadeado uma vez a cada 16s."
+    },
+    "2": {
+      "0": "Nos 15s após desencadear uma reação Cryo ou Hydro, aumenta o ATQ do portador em <cryo>30%</cryo>, e regenera <cryo>9</cryo> de Energia Elemental para os outros personagens da equipe. Esse efeito pode ser desencadeado uma vez a cada 16s."
+    },
+    "3": {
+      "0": "Nos 15s após desencadear uma reação Cryo ou Hydro, aumenta o ATQ do portador em <cryo>35%</cryo>, e regenera <cryo>10.5</cryo> de Energia Elemental para os outros personagens da equipe. Esse efeito pode ser desencadeado uma vez a cada 16s."
+    },
+    "4": {
+      "0": "Nos 15s após desencadear uma reação Cryo ou Hydro, aumenta o ATQ do portador em <cryo>40%</cryo>, e regenera <cryo>12</cryo> de Energia Elemental para os outros personagens da equipe. Esse efeito pode ser desencadeado uma vez a cada 16s."
+    }
+  }
+}

@@ -138,7 +138,7 @@
     "description": {
       "0": "<strong>Esplendor: Superconductor Estelar</strong>",
       "1": "Transforma el efecto del talento de ascensión “Refutación del dogma”:",
-      "2": "Cuando la Vida de Wriothesley está por debajo del 60%, obtiene el efecto de “merced reprensora: manifestación”, el cual fortalece el siguiente Ataque Cargado de <strong>Ataque Normal: Combo glaciodemoledor</strong> para convertirlo en un gancho alto cenital que no consume Aguante y que, al golpear al enemigo, restaura Vida a Wriothesley en una cantidad equivalente al 30% de su propia Vida Máx. Como máximo, podrá restaurar Vida de esta manera una vez cada 2 s.",
+      "2": "Cuando la Vida de Wriothesley está por debajo del 60%, obtiene el efecto de “merced reprensora: manifestación”, el cual fortalece el Ataque Cargado de <strong>Ataque Normal: Combo glaciodemoledor</strong> para convertirlo en un gancho alto cenital que no consume Aguante y que, al golpear al enemigo, restaura Vida a Wriothesley en una cantidad equivalente al 30% de su propia Vida Máx. Como máximo, podrá restaurar Vida de esta manera una vez cada 2 s.",
       "3": "Además, los puñetazos expeledores tercero y quinto fortalecidos por <strong>sentencia gélida</strong> infligirán, respectivamente, el 60/80% del <cryo>Daño Cryo</cryo> original, y el gancho alto cenital infligirá el 100% del <cryo>Daño Cryo en el AdE</cryo> original. Estos se consideran daño de Superconductor Estelar, y el daño de esta reacción infligido por Wriothesley aumenta en un 30%.",
       "4": "Además, Wriothesley entrará en el estado de <strong>esplendor: Superconductor Estelar</strong> mientras se encuentre dentro de un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>campo estrellapolar</strong></tooltip>."
     }
@@ -238,7 +238,7 @@
       "2": "<strong>Esplendor: Superconductor Estelar</strong>",
       "3": "El efecto anterior cambia a:",
       "4": [
-        "Aumenta en un 10% la Prob. CRIT y en un 80% el Daño CRIT del puñetazo expeledor fortalecido por <strong>sentencia gélida</strong> y del gancho alto cenital. Además, el quinto puñetazo expeledor fortalecido por <strong>sentencia gélida</strong> y el gancho alto cenital pueden crear un carámbano adicional que inflige el 60% del <cryo>Daño Cryo</cryo> original considerado como daño de Superconductor Estelar."
+        "Aumenta en un 10% la Prob. CRIT y en un 80% el Daño CRIT del puñetazo expeledor fortalecido por <strong>sentencia gélida</strong> y del gancho alto cenital. Además, el quinto puñetazo expeledor fortalecido por <strong>sentencia gélida</strong> y el gancho alto cenital pueden crear un carámbano adicional que inflige el 20% del <cryo>Daño Cryo</cryo> original considerado como daño de Superconductor Estelar."
       ],
       "5": "<br/>",
       "6": "Es necesario desbloquear el talento de ascensión “Refutación del dogma”."

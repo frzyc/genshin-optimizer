@@ -1,6 +1,7 @@
 import type { AnyNode, Const, NumNode, StrNode, OP as TaggedOP } from '../node'
 import { calculation, constant, mapBottomUp } from '../node'
 import { ArrayMap, assertUnreachable } from '../util'
+
 type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
 const { arithmetic } = calculation
 

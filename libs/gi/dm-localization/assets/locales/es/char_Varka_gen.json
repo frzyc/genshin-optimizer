@@ -118,7 +118,7 @@
   "passive2": {
     "name": "Estandarte del viento",
     "description": {
-      "0": "Cuando un personaje cercano del equipo causa una reacción de Torbellino, Varka obtiene 1 carga de <strong>juramento colmilloazur</strong>, lo cual aumenta en un 7.5% el daño infligido por los Ataques Normales, Ataques Cargados, el Ataque Cargado especial <strong>Devorazul</strong> y la Habilidad Elemental especial <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Alzamiento de los Cuatro Vientos</strong></tooltip> de Varka. Este efecto dura 8 s y puede acumularse hasta 4 veces. Como máximo, cada personaje puede otorgar a Varka 1 carga de <strong>juramento colmilloazur</strong> por segundo de esta forma."
+      "0": "Cuando un personaje cercano del equipo causa una reacción de Torbellino o Torbellino Estelar, Varka obtiene 1 carga de <strong>juramento colmilloazur</strong>, lo cual aumenta en un 7.5% el daño infligido por los Ataques Normales, Ataques Cargados, el Ataque Cargado especial <strong>Devorazul</strong> y la Habilidad Elemental especial <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Alzamiento de los Cuatro Vientos</strong></tooltip> de Varka. Este efecto dura 8 s y puede acumularse hasta 4 veces. Como máximo, cada personaje puede otorgar a Varka 1 carga de <strong>juramento colmilloazur</strong> por segundo de esta forma."
     }
   },
   "passive3": {
@@ -160,7 +160,7 @@
   "constellation4": {
     "name": "“Pues nadie puede arrebatarnos la libertad de cantar”",
     "description": {
-      "0": "Cuando Varka causa una reacción de Torbellino, todos los personajes cercanos del equipo obtienen durante 10 s un 20% de <anemo>Bono de Daño Anemo</anemo> y bono de daño del elemento correspondiente en función de los elementos que hayan contribuido a la reacción."
+      "0": "Cuando Varka causa una reacción de Torbellino o Torbellino Estelar, todos los personajes cercanos del equipo obtienen durante 10 s un 20% de <anemo>Bono de Daño Anemo</anemo> y bono de daño del elemento correspondiente en función de los elementos que hayan contribuido a la reacción."
     }
   },
   "constellation5": {

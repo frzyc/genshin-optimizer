@@ -1,5 +1,5 @@
 import { cmpGE, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
-import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
@@ -135,9 +135,7 @@ const sheet = register(
           )
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'ability_crit_',
@@ -171,9 +169,7 @@ const sheet = register(
           )
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm2_crit_',

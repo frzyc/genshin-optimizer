@@ -12,6 +12,13 @@
       "7": "<cryo>Cryo</cryo>: Daño CRIT +20%."
     }
   },
+  "10050002": {
+    "name": "Fulgor gélido",
+    "description": {
+      "0": "Efecto especial que se obtiene cuando los cristales de hielo disparados por la <strong>estrella glacial</strong> creada por {F#la Viajera}{M#el Viajero} golpean a un enemigo, o cuando se realiza un <strong>Ataque Cargado: Criocondensación</strong> tras haber desbloqueado el talento <strong>Hielo extranjero</strong>. Este efecto puede acumularse hasta 8 veces.",
+      "1": "Al usar la Habilidad Definitiva, <strong>Lanza álgida</strong>, {F#la Viajera}{M#el Viajero} consumirá todas las cargas de <strong>fulgor gélido</strong> para aumentar el daño infligido por dicha habilidad. Si se consumen 8 cargas, también aumentará la cantidad de veces que inflige daño la Habilidad Definitiva."
+    }
+  },
   "11120001": {
     "name": "Modo crioalmacenamiento",
     "description": {
@@ -49,7 +56,7 @@
   "11130002": {
     "name": "Fundamentos de rescate",
     "description": {
-      "0": "Máximo: 150 pts. Por cada punto de fundamentos de rescate que tenga Ifá, el daño de las reacciones de Torbellino y Electrocargado de los personajes cercanos del equipo aumenta en un 1.5%, y el de la reacción de Electrocargado Lunar aumenta en un 0.2%. El efecto de fundamentos de rescate se eliminará cuando termine el estado de bendición noctámbula de Ifá."
+      "0": "Máximo: 150 pts. Por cada punto de fundamentos de rescate que tenga Ifá, el daño de las reacciones de Torbellino y Electrocargado de los personajes cercanos del equipo aumenta en un 1.5%, el de la reacción de Electrocargado Lunar aumenta en un 0.2%, y el de Torbellino Estelar aumenta en un 0.24%. El efecto de fundamentos de rescate se eliminará cuando termine el estado de bendición noctámbula de Ifá."
     }
   },
   "11130003": {
@@ -99,7 +106,7 @@
   "11130007": {
     "name": "La razón más allá de la razón",
     "description": {
-      "0": "Cuando un personaje cercano del equipo cause una reacción de Congelado, Superconductor, Torbellino Cryo o Cristalización Cryo contra un enemigo, se creará una fisura del vacío cerca de dicho oponente. Este efecto puede ocurrir, como mucho, una vez cada 2.5 s, y podrán crearse un máximo de 3 fisuras del vacío a la vez.",
+      "0": "Cuando un personaje cercano del equipo cause una reacción de Congelado, Superconductor, Superconductor Estelar, Torbellino Cryo, Torbellino Estelar o Cristalización Cryo contra un enemigo, se creará una fisura del vacío cerca de dicho oponente. Este efecto puede ocurrir, como mucho, una vez cada 2.5 s, y podrán crearse un máximo de 3 fisuras del vacío a la vez.",
       "1": "<br/>",
       "2": "Skirk puede absorber las fisuras del vacío que haya en un área cercana de las siguientes maneras:",
       "3": [
@@ -430,8 +437,8 @@
       "0": "¡Un compañero de confianza para cazar brujas! Tras cumplirse ciertas condiciones, podrá sufrir un cambio elemental mediante el cual todo el daño infligido a los enemigos con el Martillo del Juramento Cazahecatombes pasará a ser daño del elemento correspondiente.",
       "1": "Prune puede invocar de las siguientes formas el Martillo del Juramento Cazahecatombes que ha sufrido un cambio elemental:",
       "2": [
-        "Durante cierto tiempo después de que Prune cause una reacción de Torbellino contra un enemigo con la Habilidad Elemental, <strong>“¡Tilín!”: Tañido cazaconjuros</strong>, podrá usar la Habilidad Elemental especial <strong>“¡Clang-clang!”: Retribución juzgabrujas</strong>. Al usar esta habilidad especial, el Martillo del Juramento Cazahecatombes cambiará al otro elemento que participó en la reacción de Torbellino.",
-        "Tras desbloquear el talento de ascensión “Juicio y condena”, si el Cascabel Cautivabrujas causa una reacción de Torbellino contra un enemigo en el modo rastreapresas, se invocará un Martillo del Juramento Cazahecatombes que haya sufrido el cambio elemental correspondiente para atacar al enemigo."
+        "Durante cierto tiempo después de que Prune cause una reacción de Torbellino o Torbellino Estelar contra un enemigo con la Habilidad Elemental, <strong>“¡Tilín!”: Tañido cazaconjuros</strong>, podrá usar la Habilidad Elemental especial <strong>“¡Clang-clang!”: Retribución juzgabrujas</strong>. Al usar esta habilidad especial, el Martillo del Juramento Cazahecatombes cambiará al otro elemento que participó en la reacción de Torbellino o Torbellino Estelar.",
+        "Tras desbloquear el talento de ascensión “Juicio y condena”, si el Cascabel Cautivabrujas causa una reacción de Torbellino o Torbellino Estelar contra un enemigo en el modo rastreapresas, se invocará un Martillo del Juramento Cazahecatombes que haya sufrido el cambio elemental correspondiente para atacar al enemigo."
       ]
     }
   },
@@ -452,8 +459,8 @@
     "description": {
       "0": "Al realizar un Ataque Cargado, Fagio entrará en este modo.",
       "1": "Mientras el modo esté activo, Fagio realizará un ataque de ráfaga contra los enemigos que tenga enfrente y disparará un rayo criocondensador de forma periódica que inflige <cryo>Daño Cryo en el AdE</cryo>.",
-      "2": "<strong>Esplendor: Superconductor Estelar</strong>",
-      "3": "El rayo criocondensador pasará a infligir <cryo>Daño Cryo en el AdE</cryo> considerado como daño de Superconductor Estelar."
+      "2": "<strong>Esplendor: Destello Estelar</strong>",
+      "3": "El rayo criocondensador pasará a infligir <cryo>Daño Cryo en el AdE</cryo> considerado como daño de la reacción de Destello Estelar correspondiente."
     }
   },
   "11330002": {
@@ -466,6 +473,60 @@
     "name": "Campo estrellapolar",
     "description": {
       "0": "Al causar una reacción de Superconductor Estelar, el área cercana se convertirá en un <strong>campo estrellapolar</strong> durante un breve periodo de tiempo. Al encontrarse dentro de un campo estrellapolar, ciertos personajes entrarán en el estado de <strong>esplendor: Superconductor Estelar</strong>, lo que causará que sus diferentes habilidades obtengan el efecto de fortalecimiento correspondiente."
+    }
+  },
+  "11400001": {
+    "name": "Poderío de espada espiritual",
+    "description": {
+      "0": "Sobre “Poderío de espada espiritual”"
+    }
+  },
+  "11480001": {
+    "name": "Marca de caza",
+    "description": {
+      "0": "Efecto especial que Aliosha aplica a los enemigos.",
+      "1": "Cuando vuelva a aplicar este efecto a un enemigo que ya está afectado por una <strong>marca de caza</strong>, esta se activará, lo que eliminará la marca y otorgará a todos los personajes cercanos del equipo el efecto de <strong>precisión de cazador</strong>, el cual aumentará su ATQ mientras estén en uso."
+    }
+  },
+  "11480002": {
+    "name": "Tugarin",
+    "description": {
+      "0": "El compañero sabueso en quien más confía Aliosha. Se puede invocar mediante la Habilidad Definitiva, <strong>Avance depredador</strong>, y cada cierto tiempo se desplazará rápidamente hacia un enemigo cercano para morderle y activar las <strong>marcas de caza</strong> ya existentes."
+    }
+  },
+  "11500001": {
+    "name": "Doble bailarina",
+    "description": {
+      "0": "Una proyección mental que baila junto a Odette. Puede invocarse tanto con la Habilidad Elemental como con la Definitiva.",
+      "1": "Alterna entre dos tipos de pasos de baile, el <strong>plumífero</strong> y el <strong>alado</strong>, para atacar cada cierto tiempo a los enemigos cercanos con unos movimientos gráciles y elegantes que infligen <cryo>Daño Cryo en el AdE</cryo>.",
+      "2": "Como máximo, solo puede haber al mismo tiempo una <strong>doble bailarina</strong> creada por Odette.",
+      "3": "<br/>",
+      "4": "Además, cuando ya haya una <strong>doble bailarina</strong> invocada por Odette en las cercanías, su Habilidad Elemental, <strong>Adagio: Danza nocturna fantasmagórica</strong>, se remplazará por la Habilidad Elemental especial Adagio: Coda del amanecer."
+    }
+  },
+  "11500002": {
+    "name": "Adagio: Coda del amanecer",
+    "description": {
+      "0": "La Habilidad Elemental especial de Odette. Inflige <cryo>Daño Cryo en el AdE</cryo> continuamente a los enemigos cercanos y, al finalizar el dueto, inflige una vez <cryo>Daño Cryo en el AdE</cryo> considerado como daño de Superconductor Estelar. Durante el dueto, Odette puede controlar la dirección de los pasos de baile.",
+      "1": "<strong>Esplendor: Destello Estelar</strong>",
+      "2": "Al finalizar el dueto, pasa a infligir una vez <cryo>Daño Cryo en el AdE</cryo> considerado como daño de la reacción de Destello Estelar correspondiente.",
+      "3": "<br/>",
+      "4": "Además, tras usar la Habilidad Elemental especial <strong>Adagio: Coda del amanecer</strong>, si Odette se encuentra en estado de <strong>esplendor: Destello Estelar</strong> cuando la duración de la <strong>doble bailarina</strong> aún no haya terminado, los dos pasos de baile diferentes de la <strong>doble bailarina</strong> infligirán <cryo>Daño Cryo en el AdE</cryo> adicional considerado como daño de la reacción de Destello Estelar correspondiente."
+    }
+  },
+  "11500003": {
+    "name": "Cadenza",
+    "description": {
+      "0": "Efecto especial que obtiene Odette al invocar a su <strong>doble bailarina</strong> una vez desbloqueado el talento de ascensión “Primavera de la elegida”.",
+      "1": "El daño de Destello Estelar infligido por el personaje aumentará en un 15% por cada carga de <strong>cadenza</strong>. Este efecto durará hasta que la <strong>doble bailarina</strong> se retire de combate o hasta que se invoque de nuevo.",
+      "2": "Cuando Odette esté en tu equipo pero no en uso, perderá 1 carga de <strong>cadenza</strong> por segundo y otorgará a los demás personajes cercanos del equipo la cantidad correspondiente de cargas de <strong>cadenza</strong>."
+    }
+  },
+  "11500004": {
+    "name": "Esplendor: Destello Estelar",
+    "description": {
+      "0": "<strong>Esplendor: Superconductor Estelar</strong> y <strong>esplendor: Torbellino Estelar</strong> se denominan conjuntamente “estado de <strong>esplendor: Destello Estelar</strong>”.",
+      "1": "Un personaje solo puede verse afectado por un tipo de estado de esplendor a la vez, y el de <strong>esplendor: Superconductor Estelar</strong> tendrá prioridad."
     }
   }
 }

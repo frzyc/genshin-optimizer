@@ -9,8 +9,8 @@ import {
   allSpecialityKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { z } from 'zod'
-import { DataEntry } from '../DataEntry'
 import type { ZzzDatabase } from '../Database'
+import { DataEntry } from '../DataEntry'
 
 export const characterSortKeys = ['new', 'level', 'rarity', 'name'] as const
 export type CharacterSortKey = (typeof characterSortKeys)[number]

@@ -1,6 +1,5 @@
-import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-
 import { subscript } from '@genshin-optimizer/pando/engine'
+import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
 import { own, ownBuff, registerBuff } from '../../util'
 import {

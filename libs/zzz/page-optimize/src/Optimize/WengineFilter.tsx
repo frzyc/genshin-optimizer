@@ -260,7 +260,10 @@ function getWengine(key: WengineKey): IWengine {
 function WengineCondCard({
   wengineKey,
   count,
-}: { wengineKey: WengineKey; count: number }) {
+}: {
+  wengineKey: WengineKey
+  count: number
+}) {
   const wengine = useMemo(() => getWengine(wengineKey), [wengineKey])
   return (
     <WengineSheetDisplay

@@ -14,9 +14,9 @@ import type { BuildTcArtifactSlot } from '@genshin-optimizer/gi/db'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
+  artifactLevelVariant,
   StatColoredWithUnit,
   StatWithUnit,
-  artifactLevelVariant,
 } from '@genshin-optimizer/gi/ui'
 import {
   artDisplayValue,
@@ -86,7 +86,7 @@ export function ArtifactMainLevelSlot({
           </Box>
         ) : (
           <DropdownButton
-            sx={{ px: '0.5rem' }}
+            sx={{ px: '0.25rem' }}
             fullWidth
             title={<StatWithUnit statKey={statKey} />}
             color={KeyMap.getVariant(statKey) ?? 'success'}

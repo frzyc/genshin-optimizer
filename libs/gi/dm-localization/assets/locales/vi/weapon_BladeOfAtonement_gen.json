@@ -1,0 +1,24 @@
+{
+  "name": "Nhát Chém Cứu Rỗi",
+  "description": {
+    "0": "Thanh đại kiếm do Luchkin truyền lại, nghe nói chỉ những chiến binh dũng mãnh nhất mới có tư cách cầm nó lên."
+  },
+  "passiveName": "Ăn Năn Chuộc Tội",
+  "passiveDescription": {
+    "0": {
+      "0": "Kích hoạt phản ứng nguyên tố sẽ tăng <cryo>64</cryo> điểm Tinh Thông Nguyên Tố cho người trang bị trong 12s; Kích hoạt phản ứng Tinh Tú Lấp Lánh, người trang bị sẽ tăng <cryo>16%</cryo> Tấn Công trong 12s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "1": {
+      "0": "Kích hoạt phản ứng nguyên tố sẽ tăng <cryo>80</cryo> điểm Tinh Thông Nguyên Tố cho người trang bị trong 12s; Kích hoạt phản ứng Tinh Tú Lấp Lánh, người trang bị sẽ tăng <cryo>20%</cryo> Tấn Công trong 12s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "2": {
+      "0": "Kích hoạt phản ứng nguyên tố sẽ tăng <cryo>96</cryo> điểm Tinh Thông Nguyên Tố cho người trang bị trong 12s; Kích hoạt phản ứng Tinh Tú Lấp Lánh, người trang bị sẽ tăng <cryo>24%</cryo> Tấn Công trong 12s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "3": {
+      "0": "Kích hoạt phản ứng nguyên tố sẽ tăng <cryo>112</cryo> điểm Tinh Thông Nguyên Tố cho người trang bị trong 12s; Kích hoạt phản ứng Tinh Tú Lấp Lánh, người trang bị sẽ tăng <cryo>28%</cryo> Tấn Công trong 12s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "4": {
+      "0": "Kích hoạt phản ứng nguyên tố sẽ tăng <cryo>128</cryo> điểm Tinh Thông Nguyên Tố cho người trang bị trong 12s; Kích hoạt phản ứng Tinh Tú Lấp Lánh, người trang bị sẽ tăng <cryo>32%</cryo> Tấn Công trong 12s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    }
+  }
+}

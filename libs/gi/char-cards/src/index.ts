@@ -3,6 +3,7 @@ import Aino from './Character_Aino_Card.webp'
 import Albedo from './Character_Albedo_Card.png'
 import Alhaitham from './Character_Alhaitham_Card.jpg'
 import Aloy from './Character_Aloy_Card.png'
+import Alyosha from './Character_Alyosha_Card.webp'
 import Amber from './Character_Amber_Card.jpg'
 import AratakiItto from './Character_Arataki_Itto_Card.jpg'
 import Arlecchino from './Character_Arlecchino_Card.jpg'
@@ -78,6 +79,7 @@ import Nicole from './Character_Nicole_Card.png'
 import Nilou from './Character_Nilou_Card.jpg'
 import Ningguang from './Character_Ningguang_Card.jpg'
 import Noelle from './Character_Noelle_Card.jpg'
+import Odette from './Character_Odette_Card.webp'
 import Ororon from './Character_Ororon_Card.jpg'
 import Prune from './Character_Prune_Card.png'
 import Qiqi from './Character_Qiqi_Card.jpg'
@@ -124,6 +126,7 @@ const charCards = {
   Albedo,
   Alhaitham,
   Aloy,
+  Alyosha,
   Amber,
   AratakiItto,
   Arlecchino,
@@ -198,6 +201,7 @@ const charCards = {
   Nilou,
   Ningguang,
   Noelle,
+  Odette,
   Ororon,
   Prune,
   Qiqi,
@@ -249,6 +253,7 @@ export function charCard(charKey: CharacterKey, gender: GenderKey) {
     case 'TravelerGeo':
     case 'TravelerHydro':
     case 'TravelerPyro':
+    case 'TravelerCryo':
       return charCards[`Traveler${gender}`]
     default:
       return charCards[charKey]

@@ -1,0 +1,24 @@
+{
+  "name": "Urzeitlicher Jadebogen",
+  "description": {
+    "0": "Ein kraftvoller Langbogen, der selbst in der tiefsten, dunkelsten Nacht einen traumhaften Glanz ausstrahlt."
+  },
+  "passiveName": "Nächte erhellende Kerze",
+  "passiveDescription": {
+    "0": {
+      "0": "Für jede Figur in der Truppe außer dem Träger gilt: Stimmt der Elementartyp mit dem des Trägers überein: Erhöht die Elementarkunde des Trägers um <cryo>64</cryo> Punkte. Stimmt der Elementartyp nicht mit dem des Trägers überein: Erhöht den ANG des Trägers um <cryo>12 %</cryo>. Diese beiden Effekte können insgesamt bis zu 3-fach gestapelt werden. Der Effekt bei gleichem Elementartyp wird dabei bevorzugt aktiviert."
+    },
+    "1": {
+      "0": "Für jede Figur in der Truppe außer dem Träger gilt: Stimmt der Elementartyp mit dem des Trägers überein: Erhöht die Elementarkunde des Trägers um <cryo>80</cryo> Punkte. Stimmt der Elementartyp nicht mit dem des Trägers überein: Erhöht den ANG des Trägers um <cryo>15 %</cryo>. Diese beiden Effekte können insgesamt bis zu 3-fach gestapelt werden. Der Effekt bei gleichem Elementartyp wird dabei bevorzugt aktiviert."
+    },
+    "2": {
+      "0": "Für jede Figur in der Truppe außer dem Träger gilt: Stimmt der Elementartyp mit dem des Trägers überein: Erhöht die Elementarkunde des Trägers um <cryo>96</cryo> Punkte. Stimmt der Elementartyp nicht mit dem des Trägers überein: Erhöht den ANG des Trägers um <cryo>18 %</cryo>. Diese beiden Effekte können insgesamt bis zu 3-fach gestapelt werden. Der Effekt bei gleichem Elementartyp wird dabei bevorzugt aktiviert."
+    },
+    "3": {
+      "0": "Für jede Figur in der Truppe außer dem Träger gilt: Stimmt der Elementartyp mit dem des Trägers überein: Erhöht die Elementarkunde des Trägers um <cryo>112</cryo> Punkte. Stimmt der Elementartyp nicht mit dem des Trägers überein: Erhöht den ANG des Trägers um <cryo>21 %</cryo>. Diese beiden Effekte können insgesamt bis zu 3-fach gestapelt werden. Der Effekt bei gleichem Elementartyp wird dabei bevorzugt aktiviert."
+    },
+    "4": {
+      "0": "Für jede Figur in der Truppe außer dem Träger gilt: Stimmt der Elementartyp mit dem des Trägers überein: Erhöht die Elementarkunde des Trägers um <cryo>128</cryo> Punkte. Stimmt der Elementartyp nicht mit dem des Trägers überein: Erhöht den ANG des Trägers um <cryo>24 %</cryo>. Diese beiden Effekte können insgesamt bis zu 3-fach gestapelt werden. Der Effekt bei gleichem Elementartyp wird dabei bevorzugt aktiviert."
+    }
+  }
+}

@@ -36,6 +36,7 @@ import IdentityBase from './sheets/IdentityBase'
 import IdentityInflection from './sheets/IdentityInflection'
 import JoyauDore from './sheets/JoyauDore'
 import KaboomTheCannon from './sheets/KaboomTheCannon'
+import KnightsExtolment from './sheets/KnightsExtolment'
 import KrakensCradle from './sheets/KrakensCradle'
 import LunarDecrescent from './sheets/LunarDecrescent'
 import LunarNoviluna from './sheets/LunarNoviluna'
@@ -47,6 +48,7 @@ import MarcatoDesire from './sheets/MarcatoDesire'
 import Metanukimorphosis from './sheets/Metanukimorphosis'
 import MyriadEclipse from './sheets/MyriadEclipse'
 import NeonFantasies from './sheets/NeonFantasies'
+import OdeOfResurrectedWings from './sheets/OdeOfResurrectedWings'
 import OriginalTransmorpher from './sheets/OriginalTransmorpher'
 import PeacekeeperSpecialized from './sheets/PeacekeeperSpecialized'
 import PracticedPerfection from './sheets/PracticedPerfection'
@@ -131,6 +133,7 @@ const data: TagMapNodeEntries[] = [
   IdentityInflection,
   JoyauDore,
   KaboomTheCannon,
+  KnightsExtolment,
   KrakensCradle,
   LunarDecrescent,
   LunarNoviluna,
@@ -142,6 +145,7 @@ const data: TagMapNodeEntries[] = [
   Metanukimorphosis,
   MyriadEclipse,
   NeonFantasies,
+  OdeOfResurrectedWings,
   OriginalTransmorpher,
   PeacekeeperSpecialized,
   PracticedPerfection,

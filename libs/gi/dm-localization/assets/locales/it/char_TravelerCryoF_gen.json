@@ -1,0 +1,187 @@
+{
+  "auto": {
+    "name": "Gelobarlume straniero",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra fino a 5 colpi rapidi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per sferrare 2 colpi di spada rapidi."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Perforazione della Nebbia glaciale",
+    "description": {
+      "0": "{F#La viaggiatrice}{M#Il viaggiatore} attacca l'avversario sferrando un affondo con la sua arma e rilascia una nebbia glaciale, infliggendo <cryo>DAN da Cryo</cryo> agli avversari di fronte e creando una Stella perforagelo accanto a sé.",
+      "1": "<br/>",
+      "2": "<strong>Stella perforagelo</strong>",
+      "3": [
+        " Segue i membri del tuo gruppo per il campo e scaglia periodicamente cristalli di ghiaccio contro gli avversari vicini, infliggendo <cryo>DAN da Cryo</cryo>."
+      ],
+      "4": "Nello stato di <strong>Splendore: Astroconduzione</strong>, la Stella perforagelo non scaglia più cristalli di ghiaccio contro l'avversario periodicamente, bensì come attacco coordinato ogni volta che {M#il viaggiatore}{F#la viaggiatrice} colpisce un avversario con un attacco normale, caricato o in picchiata. Quest'effetto può attivarsi una volta ogni 0,2 s.",
+      "5": [
+        " Quando un avversario viene colpito da un cristallo di ghiaccio, {M#il viaggiatore}{F#la viaggiatrice} ottiene 1 accumulo di <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Gelobagliore</strong></tooltip>, per un massimo di 8.",
+        " Quando {F#la viaggiatrice}{M#il viaggiatore} non è in un combattimento, <strong>Gelobagliore</strong> si esaurisce dopo 30 s."
+      ],
+      "6": "<br/>",
+      "7": "<i>Hai esaminato la formazione del gelo insieme a Paimon.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da cristallo di ghiaccio",
+      "2": "Durata Stella perforagelo",
+      "3": "TdR",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Giavellotto glaciale",
+    "description": {
+      "0": "Genera un giavellotto di ghiaccio infuso di Cryo, scagliandolo contro i nemici per infliggere più iterazioni di <cryo>DAN da Cryo</cryo>.",
+      "1": "All'attivazione, {F#la viaggiatrice}{M#il viaggiatore} consuma tutti gli accumuli di <strong>Gelobagliore</strong> a disposizione, aumentando a sua volta i DAN inflitti dall'attuale iterazione del Tripudio elementale. Quando vengono consumati 8 accumuli di <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Gelobagliore</strong></tooltip>, aumenta anche il numero di iterazioni di DAN causate dai giavellotti.",
+      "2": "<br/>",
+      "3": "Nello stato di <tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Splendore: Barlume astrale</strong></tooltip>, i DAN dell'attuale iterazione del Tripudio elementale si convertono in <cryo>DAN da Cryo</cryo> del tipo di reazione Barlume astrale corrispondente.",
+      "4": "<br/>",
+      "5": "<i>Hai percepito la lama affilata delle stalattiti insieme a Paimon.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da giavellotto di ghiaccio",
+      "1": "Bonus DAN da Gelobagliore",
+      "2": "DAN da Astroconduzione giavellotto di ghiaccio",
+      "3": "Bonus DAN da Astroconduzione Gelobagliore",
+      "4": "DAN da Turbinio astrale giavellotto di ghiaccio",
+      "5": "Bonus DAN da Turbinio astrale Gelobagliore",
+      "6": "Nº colpi nell'attacco",
+      "7": "Colpi Gelobagliore aggiuntivi ad accumuli massimi",
+      "8": "TdR",
+      "9": "Costo energia",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Gelo perpetuo",
+    "description": {
+      "0": "Nello stato di <strong>Splendore: Astroconduzione</strong>, quando una <strong>Stella perforagelo</strong> è in campo, i DAN di attacchi normali, caricati e in picchiata {F#della viaggiatrice}{M#del viaggiatore} vengono convertiti in <cryo>DAN da Cryo</cryo> che non possono essere influenzati da altre infusioni elementali. In più, i DAN inflitti aumentano di un 80% dell'ATT {F#della viaggiatrice}{M#del viaggiatore}."
+    }
+  },
+  "passive2": {
+    "name": "Ghiaccio lucente",
+    "description": {
+      "0": "La maestria elementale {M#del viaggiatore}{F#della viaggiatrice} aumenta di un 8% del suo ATT. L'incremento massimo ottenibile in questo modo è di 160."
+    }
+  },
+  "passive3": {
+    "name": "Giubileo astrale: Specchio del gelo illusorio",
+    "description": {
+      "0": "{F#La viaggiatrice}{M#Il viaggiatore} entra nello stato di <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Splendore: Astroconduzione</strong></tooltip> quando si trova all'interno di un <strong>Campo astropolare</strong> o nello stato di <strong>Splendore: Turbinio astrale</strong> per 8 s dopo che un membro vicino del gruppo ha innescato una reazione di Turbinio astrale.",
+      "1": "Quando un membro del gruppo innesca una reazione di Superconduzione o Turbinio di Cryo, quest'ultima diventa una reazione di Astroconduzione o di Turbinio astrale, e i DAN base di tale reazione aumentano di un ulteriore 0,35% per ogni 100 di ATT {F#della viaggiatrice}{M#del viaggiatore}. In questo modo è possibile ottenere fino a un 7% di aumento massimo."
+    }
+  },
+  "lockedPassive": {
+    "name": "Permagelo straniero",
+    "description": {
+      "0": "Trai nuova forza dai tuoi viaggi passati. Ottieni <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>effetti positivi aggiuntivi</strong></tooltip> per ogni tipo elementale con cui hai risuonato.",
+      "1": "<br/>",
+      "2": "Inoltre, quando i membri vicini del gruppo infliggono DAN da Astroconduzione o da Turbinio astrale, {F#la viaggiatrice}{M#il viaggiatore} ottiene 1 accumulo di \"Punto di congelamento\". È possibile ottenere 1 accumulo in questo modo una volta ogni 2 s, per un massimo di 3 accumuli. Quando {F#la viaggiatrice}{M#il viaggiatore} sferra un attacco caricato con 3 accumuli di Punto di congelamento, questi vengono consumati per trasformare l'attacco in uno speciale <strong>Attacco caricato: Freddo glaciale</strong>.",
+      "3": "<br/>",
+      "4": "<strong>Attacco caricato: Freddo glaciale</strong>",
+      "5": [
+        " I <cryo>DAN da Cryo</cryo> inflitti aumentano di un 140% dell'ATT {F#della viaggiatrice}{M#del viaggiatore}, che ottiene anche 2 accumuli di <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Gelobagliore</strong></tooltip>.",
+        " <strong>Attacco caricato: Freddo glaciale</strong> può essere sferrato una volta ogni 15 s. Il bonus DAN del talento d'ascensione Gelo perpetuo non si applica all'<strong>Attacco caricato: Freddo glaciale</strong>."
+      ],
+      "6": "Nello stato di <tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Splendore: Barlume astrale</strong></tooltip>, i DAN da <strong>Attacco caricato: Freddo glaciale</strong> vengono invece considerati <cryo>DAN da Cryo</cryo> del tipo di reazione di Barlume astrale corrispondente."
+    }
+  },
+  "constellation1": {
+    "name": "Freddo tetro",
+    "description": {
+      "0": "L'energia elementale {F#della viaggiatrice}{M#del viaggiatore} si rigenera di 5 quando infligge DAN da Barlume astrale. Quest'effetto può attivarsi una volta ogni 0,5 s."
+    }
+  },
+  "constellation2": {
+    "name": "Riverbero della cascata di gelo",
+    "description": {
+      "0": "La maestria elementale del personaggio attivo aumenta di 60 per 5 s quando un avversario viene colpito da un <strong>cristallo di ghiaccio</strong> scagliato dall'abilità elementale <strong><tooltip ns=char_TravelerCryoF_gen baseKey18=skill>Perforazione della Nebbia glaciale</tooltip></strong>.",
+      "1": "Inoltre, quando un personaggio influenzato dal suddetto effetto innesca una reazione di Barlume astrale o infligge DAN da reazione di Barlume astrale, l'aumento di maestria elementale sopracitato aumenta a 120 per la sua durata."
+    }
+  },
+  "constellation3": {
+    "name": "Scheggia glaciale",
+    "description": {
+      "0": "Aumenta di 3 il livello del Tripudio elementale <strong><tooltip ns=char_TravelerCryoF_gen baseKey18=burst>Giavellotto glaciale</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Ghiaccio perenne",
+    "description": {
+      "0": "La durata della <strong>Stella perforagelo</strong> creata dall'abilità elementale <strong><tooltip ns=char_TravelerCryoF_gen baseKey18=skill>Perforazione della Nebbia glaciale</tooltip></strong> aumenta di un 25%."
+    }
+  },
+  "constellation5": {
+    "name": "Nebbia gelida",
+    "description": {
+      "0": "Aumenta di 3 il livello dell'abilità elementale <strong><tooltip ns=char_TravelerCryoF_gen baseKey18=skill>Perforazione della Nebbia glaciale</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Bruma del gelo cupo",
+    "description": {
+      "0": "Ogni accumulo di <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Gelobagliore</strong></tooltip> consumato quando si usa il Tripudio elementale <strong><tooltip ns=char_TravelerCryoF_gen baseKey18=burst>Giavellotto glaciale</tooltip></strong> aumenta i DAN da reazione di Barlume astrale inflitti dagli altri membri del gruppo di un 5% per 15 s. In questo modo è possibile ottenere un 40% di aumento massimo."
+    }
+  }
+}

@@ -3,6 +3,7 @@ import Aino from './Aino'
 import Albedo from './Albedo'
 import Alhaitham from './Alhaitham'
 import Aloy from './Aloy'
+import Alyosha from './Alyosha'
 import Amber from './Amber'
 import AratakiItto from './AratakiItto'
 import Arlecchino from './Arlecchino'
@@ -77,6 +78,7 @@ import Nicole from './Nicole'
 import Nilou from './Nilou'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
+import Odette from './Odette'
 import Ororon from './Ororon'
 import Prune from './Prune'
 import Qiqi from './Qiqi'
@@ -97,6 +99,7 @@ import Tartaglia from './Tartaglia'
 import Thoma from './Thoma'
 import Tighnari from './Tighnari'
 import TravelerAnemo from './TravelerAnemo'
+import TravelerCryo from './TravelerCryo'
 import TravelerDendro from './TravelerDendro'
 import TravelerElectro from './TravelerElectro'
 import TravelerGeo from './TravelerGeo'
@@ -128,6 +131,7 @@ const data: TagMapNodeEntries[] = [
   Albedo,
   Alhaitham,
   Aloy,
+  Alyosha,
   Amber,
   AratakiItto,
   Arlecchino,
@@ -202,6 +206,7 @@ const data: TagMapNodeEntries[] = [
   Nilou,
   Ningguang,
   Noelle,
+  Odette,
   Ororon,
   Prune,
   Qiqi,
@@ -247,5 +252,6 @@ const data: TagMapNodeEntries[] = [
   TravelerDendro,
   TravelerHydro,
   TravelerPyro,
+  TravelerCryo,
 ]
 export default data.flat()

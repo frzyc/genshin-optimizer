@@ -1,0 +1,29 @@
+{
+  "setName": "Im Feuer geschmolzenes Herz",
+  "setEffects": {
+    "2": "Erhöht den ANG um 18 %.",
+    "4": "Erhöht innerhalb von 12 s, nachdem der Träger eine Stellarfunkeln-Reaktion ausgelöst oder Schaden mit einer solchen verursacht hat, den ANG des Trägers um 12 % und den durch alle Truppenmitglieder in der Nähe mithilfe von Stellarfunkeln-Reaktionen verursachten Schaden um 50 %. Dieser Effekt kann auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet. Die SCH-Bonus-Effekte mehrerer gleicher Artefaktsets sind nicht stapelbar."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Mutmaßung des Schmieds",
+      "desc": "Er weiß, dass die Wärme des menschlichen Herzens sich nicht wie die Temperatur eines Ofens messen lässt."
+    },
+    "plume": {
+      "name": "Beobachtung des Schmieds",
+      "desc": "Er weiß, dass der Lauf der Dinge nicht wie die Farbe im Ofen ist, bei der man das Ergebnis einfach durch Beobachten erkennen kann."
+    },
+    "sands": {
+      "name": "Berechnung des Schmieds",
+      "desc": "Er weiß, dass Macht nicht wie die Energie im Ofen funktioniert, die sich einfach per Schalter steuern lässt."
+    },
+    "goblet": {
+      "name": "Großzügigkeit des Schmieds",
+      "desc": "Er weiß, dass Freundschaft nicht wie die Flamme im Ofen ist, die einfach weiterbrennt, solange man ihr Brennstoff gibt."
+    },
+    "circlet": {
+      "name": "Wille des Schmieds",
+      "desc": "Er weiß, dass die Standhaftigkeit eines Traums nicht wie das Glimmen im Ofen ist und sich nicht wie eine Fackel an die Nachkommen weitergeben lässt."
+    }
+  }
+}

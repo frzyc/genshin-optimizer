@@ -15,7 +15,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -23,6 +22,7 @@ import {
   dmgNode,
   plungingDmgNodes,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
 
 const key: CharacterKey = 'Aino'
 const skillParam_gen = allStats.char.skillParam[key]
@@ -266,12 +266,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.cyclicDmg, {
-            name: ct.chg(`auto.skillParams.3`),
+            name: ct.chg('auto.skillParams.3'),
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.finalDmg, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
         {
@@ -315,12 +315,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.dmg1, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.dmg2, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
@@ -337,7 +337,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.ballDmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {

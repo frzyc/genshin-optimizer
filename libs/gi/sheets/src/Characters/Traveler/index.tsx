@@ -1,8 +1,8 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import {
+  allElementKeys,
   type CharacterKey,
   type CharacterSheetKey,
-  allElementKeys,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { Data, DisplaySub } from '@genshin-optimizer/gi/wr'
@@ -15,12 +15,12 @@ import {
 import { cond, stg, trans } from '../../SheetUtil'
 import type { IDocumentHeader } from '../../sheet'
 import { CharacterSheet } from '../CharacterSheet'
+import { charTemplates } from '../charTemplates'
+import { dmgNode } from '../dataUtil'
 import type {
   TalentSheetElement,
   TalentSheetElementKey,
 } from '../ICharacterSheet.d'
-import { charTemplates } from '../charTemplates'
-import { dmgNode } from '../dataUtil'
 
 type TravelerTalentFunc = (
   key: CharacterSheetKey,
@@ -94,6 +94,7 @@ export function travelerSheet(
     'lockedPassive'
   )
   const allEleConds = objKeyMap(allElementKeys, (ele) => {
+    // Value automatically set in libs/gi/wr/src/api.ts
     const [path, value] = cond('Traveler', `traveler${ele}`)
     const buff = equal(
       condLockedPassive,
@@ -171,13 +172,13 @@ export function travelerSheet(
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg1, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
             textSuffix: '(1)',
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.dmg2, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
             textSuffix: '(2)',
           }),
         },

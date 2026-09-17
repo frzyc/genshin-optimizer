@@ -5,8 +5,8 @@ import { own } from '@genshin-optimizer/sr/formula'
 import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
 import { Box, ListItemText, MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import { getDmgType } from '..'
 import { TagDisplay } from '../../components'
+import { getDmgType } from '..'
 
 export function OptimizationTargetSelector({
   optTarget,

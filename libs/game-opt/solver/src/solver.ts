@@ -1,8 +1,8 @@
 import type { Candidate, NumTagFree } from '@genshin-optimizer/pando/engine'
 import { prune } from '@genshin-optimizer/pando/engine'
-import type { BuildResult, Progress, Work } from './common'
-import { buildCount } from './common'
-import type { Command, ErrMsg, Response } from './workerHandle'
+import type { BuildResult, Progress, Work } from './common.js'
+import { buildCount } from './common.js'
+import type { Command, ErrMsg, Response } from './workerHandle.js'
 
 const reportInterval = 50 // (minimum) progress report interval for solver, in ms
 
@@ -167,7 +167,7 @@ export class Solver<ID extends string | number> {
         this.distribute(msg.works)
         break
       case 'err':
-        this.terminate(msg.msg + ' (Worker Error)')
+        this.terminate(`${msg.msg} (Worker Error)`)
     }
   }
 }

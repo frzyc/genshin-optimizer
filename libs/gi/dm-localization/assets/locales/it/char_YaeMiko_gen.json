@@ -194,7 +194,7 @@
   "constellation6": {
     "name": "Arte proibita: Daisesshou",
     "description": {
-      "0": "Gli attacchi di un <strong>Sakura Sesshou</strong> ignorano un 60% della DIF degli avversari."
+      "0": "Gli attacchi dei <strong>Sakura Sesshou</strong> ignorano un 60% della DIF degli avversari."
     },
     "upgradedDescription": {
       "0": "Gli attacchi dei <strong>Sakura Sesshou</strong> ignorano un 60% della DIF degli avversari. I DAN da CRIT dei DAN da Astroconduzione di Yae Miko aumentano di un 200%."

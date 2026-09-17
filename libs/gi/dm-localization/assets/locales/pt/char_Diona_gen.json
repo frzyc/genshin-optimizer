@@ -136,8 +136,9 @@
   "lockedPassive": {
     "name": "Seleção Refinada",
     "description": {
-      "0": "Nos 20s após lançar a Habilidade Elemental <strong>Garra de Gato Gelada</strong>, quando um personagem da equipe desencadear Supercondutor ou Supercondutor Estelar, Diona disparará 3 <strong>Garras de Gato Gelada</strong> coordenadas. As <strong>Garras de Gato Geladas</strong> disparadas dessa forma não gerarão Partículas Elementais, e também não gerarão um Escudo ao atingirem um inimigo. Esse efeito pode ser desencadeado uma vez a cada 3.5s.",
-      "1": "Além disso, quando está no <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo da Estrela Polar</strong></tooltip>, Diona entrará no estado <strong>Brilho Reluzente: Supercondutor Estelar</strong>."
+      "0": "Nos 20s após lançar a Habilidade Elemental <strong>Garra de Gato Gelada</strong>, quando um personagem da equipe desencadear Supercondutor Estelar, Supercondutor, Redemoinho Cryo ou Redemoinho Estelar, Diona disparará 3 <strong>Garras de Gato Gelada</strong>. As <strong>Garras de Gato Gelada</strong> disparadas dessa forma não geram Partículas Elementais, e ao atingir um inimigo, não geram um Escudo. Esse efeito pode ser desencadeado uma vez a cada 3.5s.",
+      "1": "Além disso, quando estiver dentro de um <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo da Estrela Polar</strong></tooltip> nos 8s após um personagem próximo da equipe desencadear Redemoinho Estelar, Diona entrará nos estados <strong>Brilho Reluzente: Supercondutor Estelar</strong>",
+      "2": "<strong>Brilho Reluzente: Redemoinho Estelar</strong> respectivamente."
     }
   },
   "constellation1": {
@@ -180,13 +181,15 @@
       "2": "Quando a Vida é superior a 50%, a Proficiência Elemental aumenta 200."
     },
     "upgradedDescription": {
-      "0": "Os personagens dentro da AdE do <strong>Coquetel Assassino</strong>,de acordo com a Vida, obtêm o seguinte efeito:",
+      "0": "Os personagens dentro da AdE do <strong>Coquetel Assassino</strong> obtêm o seguinte efeito, de acordo com a Vida:",
       "1": "Quando a Vida é igual ou inferior a 50%, o Bônus de Cura Recebida aumenta 30%;",
       "2": "Quando a Vida é superior a 50%, a Proficiência Elemental aumenta 200.",
       "3": "<br/>",
       "4": "Além disso, aumenta a Vida Máxima de Diona em 25%.",
       "5": "<br/>",
-      "6": "<strong>Brilho Reluzente: Supercondutor Estelar</strong>: aumenta o Dano de Supercondutor e Supercondutor Estelar em 40% para os personagens que estiverem dentro da AdE de <strong>Coquetel Assassino</strong>."
+      "6": "<strong>Brilho Reluzente: Brilho Estelar</strong>: aumenta o Dano causado por personagens que estiverem dentro de Coquetel Assassino:",
+      "7": "<strong>Brilho Reluzente: Supercondutor Estelar</strong>: aumenta o Dano de Supercondutor e Supercondutor Estelar em 40%.",
+      "8": "<strong>Brilho Reluzente: Redemoinho Estelar</strong>: aumenta o Dano de Redemoinho Cryo e Redemoinho Estelar em 40%."
     }
   }
 }

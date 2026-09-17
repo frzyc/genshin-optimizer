@@ -6,8 +6,8 @@ import {
 } from '@genshin-optimizer/zzz/db-ui'
 import { formulas, isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import {
-  type FormulaDimension,
   dimensionByAbilityDim,
+  type FormulaDimension,
   formulaDimensionLabel,
   formulaDimensions,
   resolveAbilityDim,
@@ -41,8 +41,6 @@ export function DimensionSelector() {
             sheet,
             name,
             q: nextAbilityDim,
-            damageType1: target.damageType1,
-            damageType2: target.damageType2,
           },
         })
       }}

@@ -7,7 +7,7 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/pando/engine'
-import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
@@ -300,9 +300,7 @@ const sheet = register(
     'm2_pen_',
     teamBuff.combat.pen_.add(
       cmpGE(char.mindscape, 2, prod(thermal_penetration, percent(dm.m2.pen_)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm4_exSpecial_crit_',

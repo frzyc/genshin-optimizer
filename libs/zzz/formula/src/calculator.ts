@@ -7,7 +7,7 @@ import { Calculator as Base } from '@genshin-optimizer/game-opt/engine'
 import { createFilterDebug } from '@genshin-optimizer/game-opt/formula'
 import { DebugCalculator } from '@genshin-optimizer/pando/engine'
 import {
-  allAttributeKeys,
+  allAttributeAnomalyKeys,
   allDiscSetKeys,
   allWengineKeys,
 } from '@genshin-optimizer/zzz/consts'
@@ -55,9 +55,9 @@ export class Calculator extends Base<Tag, never> {
             'abloomDmgInst',
             'anomalyBuildupInst',
             'dazeInst',
-            ...allAttributeKeys.map((k) => `disorderDmgInst_${k}`),
+            ...allAttributeAnomalyKeys.map((k) => `disorderDmgInst_${k}`),
             'disorderDmgInst_frost',
-            ...allAttributeKeys.map((k) => `vortexDmgInst_${k}`),
+            ...allAttributeAnomalyKeys.map((k) => `vortexDmgInst_${k}`),
             'vortexDmgInst_frost',
           ].includes(r.tag.name ?? '')
       )

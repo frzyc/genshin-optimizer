@@ -8,14 +8,14 @@ import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
 import {
   CharacterContext,
   TeamCharacterContext,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
 } from '@genshin-optimizer/gi/db-ui'
 import { isTalentKey } from '@genshin-optimizer/gi/good'
 import {
   type DocumentSection,
-  type TalentSheetElementKey,
   getCharSheet,
+  type TalentSheetElementKey,
 } from '@genshin-optimizer/gi/sheets'
 import {
   DataContext,
@@ -84,6 +84,7 @@ export default function CharacterTalentPane() {
     () =>
       range(1, maxConstellationCount).map((i) => (
         <SkillDisplayCard
+          key={i}
           talentKey={`constellation${i}` as TalentSheetElementKey}
           subtitle={t('constellationLvl', { level: i })}
           onClickTitle={() =>

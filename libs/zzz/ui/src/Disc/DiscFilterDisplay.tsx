@@ -18,7 +18,7 @@ import {
   allLocationKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { type DiscFilterOption } from '@genshin-optimizer/zzz/util'
+import type { DiscFilterOption } from '@genshin-optimizer/zzz/util'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
@@ -180,7 +180,7 @@ export function DiscFilterDisplay({
                 setBoth={(levelLow, levelHigh) =>
                   filterOptionDispatch({ levelLow, levelHigh })
                 }
-              ></DiscLevelSlider>
+              />
             </Card>
             {/* Disc rarity filter */}
             <SolidToggleButtonGroup fullWidth value={rarity} size="small">

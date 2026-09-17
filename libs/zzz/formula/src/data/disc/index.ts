@@ -7,6 +7,7 @@ import ChaosJazz from './sheets/ChaosJazz'
 import ChaoticMetal from './sheets/ChaoticMetal'
 import DawnsBloom from './sheets/DawnsBloom'
 import FangedMetal from './sheets/FangedMetal'
+import FeatheredFate from './sheets/FeatheredFate'
 import FreedomBlues from './sheets/FreedomBlues'
 import HormonePunk from './sheets/HormonePunk'
 import InfernoMetal from './sheets/InfernoMetal'
@@ -23,6 +24,7 @@ import ShockstarDisco from './sheets/ShockstarDisco'
 import SoulRock from './sheets/SoulRock'
 import SwingJazz from './sheets/SwingJazz'
 import TheSkyAblaze from './sheets/TheSkyAblaze'
+import ThornedRose from './sheets/ThornedRose'
 import ThunderMetal from './sheets/ThunderMetal'
 import WhiteWaterBallad from './sheets/WhiteWaterBallad'
 import WoodpeckerElectro from './sheets/WoodpeckerElectro'
@@ -37,6 +39,7 @@ const data: TagMapNodeEntries[] = [
   ChaoticMetal,
   DawnsBloom,
   FangedMetal,
+  FeatheredFate,
   FreedomBlues,
   HormonePunk,
   InfernoMetal,
@@ -53,6 +56,7 @@ const data: TagMapNodeEntries[] = [
   SoulRock,
   SwingJazz,
   TheSkyAblaze,
+  ThornedRose,
   ThunderMetal,
   WhiteWaterBallad,
   WoodpeckerElectro,

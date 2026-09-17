@@ -1,0 +1,29 @@
+{
+  "setName": "Kızıl Kanıt",
+  "setEffects": {
+    "2": "+%18 Saldırı.",
+    "4": "Kuşanan karakter bir Yıldız Girdabı tepkimesi tetiklediğinde 10 saniyeliğine Kritik Oranı %16, verdiği Yıldız Girdabı Hasarı %40 artar."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Adanmışlığının Nişanesi",
+      "desc": "Parlak kırmızı renkli bir çiçek süsü. Daima yanan zafer tutkusunu simgeler."
+    },
+    "plume": {
+      "name": "Mirasının Şanı",
+      "desc": "Parlak kırmızı renkli bir tüy kalem. En genç olana verilir."
+    },
+    "sands": {
+      "name": "Sana Bahşedilen Zaman",
+      "desc": "Parlak kırmızı renkli bir cep saati. Bir sohbete ayrılan zamanı gösterir."
+    },
+    "goblet": {
+      "name": "Kanının ve Kederinin Kadehi",
+      "desc": "Parlak kırmızı renkli bir şarap şişesi. İçindekini hiçbir zaman öğrenmemen dileğiyle."
+    },
+    "circlet": {
+      "name": "İnancının Kanıtı",
+      "desc": "Parlak kırmızı renkli bir miğfer. Bir zamanlar birini korumuş olsa gerek."
+    }
+  }
+}

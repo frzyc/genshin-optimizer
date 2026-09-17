@@ -1,0 +1,24 @@
+{
+  "name": "Lama incandescente dell'eretico",
+  "description": {
+    "0": "Egli aveva estratto nuovamente quell'arma quando aveva incontrato per la prima volta la divinità della Fiamma venerata da tutti, ma era passato troppo tempo dall'ultima volta che l'aveva usata."
+  },
+  "passiveName": "Benedizione della luce solinga",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando il personaggio che equipaggia l'arma utilizza la propria abilità elementale, ottiene l'effetto \"Visione dell'alba\". Mentre è attivo, l'effetto monitora la distanza percorsa. Ogni secondo, il personaggio che equipaggia l'arma ottiene un bonus ATT compreso tra un <cryo>18%</cryo> e un <cryo>36%</cryo> in base alla distanza percorsa nell'ultimo secondo. L'effetto dura 14 s, può essere attivato una volta ogni 14 s e viene rimosso quando il personaggio lascia il campo."
+    },
+    "1": {
+      "0": "Quando il personaggio che equipaggia l'arma utilizza la propria abilità elementale, ottiene l'effetto \"Visione dell'alba\". Mentre è attivo, l'effetto monitora la distanza percorsa. Ogni secondo, il personaggio che equipaggia l'arma ottiene un bonus ATT compreso tra un <cryo>22,5%</cryo> e un <cryo>45%</cryo> in base alla distanza percorsa nell'ultimo secondo. L'effetto dura 14 s, può essere attivato una volta ogni 14 s e viene rimosso quando il personaggio lascia il campo."
+    },
+    "2": {
+      "0": "Quando il personaggio che equipaggia l'arma utilizza la propria abilità elementale, ottiene l'effetto \"Visione dell'alba\". Mentre è attivo, l'effetto monitora la distanza percorsa. Ogni secondo, il personaggio che equipaggia l'arma ottiene un bonus ATT compreso tra un <cryo>27%</cryo> e un <cryo>54%</cryo> in base alla distanza percorsa nell'ultimo secondo. L'effetto dura 14 s, può essere attivato una volta ogni 14 s e viene rimosso quando il personaggio lascia il campo."
+    },
+    "3": {
+      "0": "Quando il personaggio che equipaggia l'arma utilizza la propria abilità elementale, ottiene l'effetto \"Visione dell'alba\". Mentre è attivo, l'effetto monitora la distanza percorsa. Ogni secondo, il personaggio che equipaggia l'arma ottiene un bonus ATT compreso tra un <cryo>31,5%</cryo> e un <cryo>63%</cryo> in base alla distanza percorsa nell'ultimo secondo. L'effetto dura 14 s, può essere attivato una volta ogni 14 s e viene rimosso quando il personaggio lascia il campo."
+    },
+    "4": {
+      "0": "Quando il personaggio che equipaggia l'arma utilizza la propria abilità elementale, ottiene l'effetto \"Visione dell'alba\". Mentre è attivo, l'effetto monitora la distanza percorsa. Ogni secondo, il personaggio che equipaggia l'arma ottiene un bonus ATT compreso tra un <cryo>36%</cryo> e un <cryo>72%</cryo> in base alla distanza percorsa nell'ultimo secondo. L'effetto dura 14 s, può essere attivato una volta ogni 14 s e viene rimosso quando il personaggio lascia il campo."
+    }
+  }
+}

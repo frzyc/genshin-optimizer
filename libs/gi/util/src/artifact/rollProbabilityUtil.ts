@@ -145,7 +145,7 @@ function probability(
   artifact: IArtifact,
   _target: { [key in SubstatKey]?: number }
 ): number {
-  if (artifact.rarity <= 2) return NaN // Doesn't work with 1* and 2* should we decide to add them
+  if (artifact.rarity <= 2) return Number.NaN // Doesn't work with 1* and 2* should we decide to add them
 
   const { rarity, level, substats } = artifact
 
@@ -246,7 +246,7 @@ function probability(
       const pExtra = extra > 0 ? pNExtra[rolls + filler][extra] : 1
 
       for (const [_remaining, probability] of Object.entries(result)) {
-        const remaining = parseInt(_remaining)
+        const remaining = Number.parseInt(_remaining)
         if (remaining < rolls) continue
 
         // n := remaining - m
@@ -279,7 +279,7 @@ function probability(
  * 0 <= n <= N <= 5; 0 <= M <= 4
  */
 function pRollInto(m: number, n: number, M: number) {
-  return (cnr[m][n] * Math.pow(M - 1, m - n)) / Math.pow(M, m)
+  return (cnr[m][n] * (M - 1) ** (m - n)) / M ** m
 }
 
 // Given a list of substat (in that order), calculate the probability that filler rolls will have all `required` substats in any order

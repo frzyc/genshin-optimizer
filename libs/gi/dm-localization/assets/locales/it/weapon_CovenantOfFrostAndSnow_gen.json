@@ -1,0 +1,24 @@
+{
+  "name": "Patto del gelo e della neve",
+  "description": {
+    "0": "Un arco lungo creato per preservare l'ordine. Il suo freddo bagliore emana perfettamente gli ideali di assoluta equità e giustizia."
+  },
+  "passiveName": "L'equilibrio della legge",
+  "passiveDescription": {
+    "0": {
+      "0": "Per 12 s dopo che il personaggio che equipaggia l'arma ha usato l'abilità elementale, la sua maestria elementale aumenta di <cryo>120</cryo>."
+    },
+    "1": {
+      "0": "Per 12 s dopo che il personaggio che equipaggia l'arma ha usato l'abilità elementale, la sua maestria elementale aumenta di <cryo>150</cryo>."
+    },
+    "2": {
+      "0": "Per 12 s dopo che il personaggio che equipaggia l'arma ha usato l'abilità elementale, la sua maestria elementale aumenta di <cryo>180</cryo>."
+    },
+    "3": {
+      "0": "Per 12 s dopo che il personaggio che equipaggia l'arma ha usato l'abilità elementale, la sua maestria elementale aumenta di <cryo>210</cryo>."
+    },
+    "4": {
+      "0": "Per 12 s dopo che il personaggio che equipaggia l'arma ha usato l'abilità elementale, la sua maestria elementale aumenta di <cryo>240</cryo>."
+    }
+  }
+}

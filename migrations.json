@@ -1,0 +1,27 @@
+{
+  "migrations": [
+    {
+      "cli": "nx",
+      "version": "22.7.0-beta.0",
+      "description": "Adds .nx/polygraph to .gitignore",
+      "implementation": "./dist/src/migrations/update-22-7-0/add-polygraph-to-git-ignore",
+      "package": "nx",
+      "name": "22-7-0-add-polygraph-to-git-ignore"
+    },
+    {
+      "cli": "nx",
+      "version": "22.7.0-beta.0",
+      "description": "Adds .nx/self-healing to .gitignore",
+      "implementation": "./dist/src/migrations/update-22-2-0/add-self-healing-to-gitignore",
+      "package": "nx",
+      "name": "22-7-0-add-self-healing-to-gitignore"
+    },
+    {
+      "version": "22.7.0-beta.12",
+      "description": "Add missing inputs to @nx/eslint:lint executor target defaults",
+      "implementation": "./src/migrations/update-21-6-0/update-executor-lint-inputs",
+      "package": "@nx/eslint",
+      "name": "update-executor-lint-inputs"
+    }
+  ]
+}

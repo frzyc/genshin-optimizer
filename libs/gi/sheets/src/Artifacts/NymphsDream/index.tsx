@@ -11,8 +11,8 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
+import type { SetEffectSheet } from '../IArtifactSheet'
 
 const key: ArtifactSetKey = 'NymphsDream'
 const setHeader = setHeaderTemplate(key)

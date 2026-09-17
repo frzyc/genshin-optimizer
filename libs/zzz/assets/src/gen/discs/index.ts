@@ -6,6 +6,7 @@ import ChaosJazz from './ChaosJazz'
 import ChaoticMetal from './ChaoticMetal'
 import DawnsBloom from './DawnsBloom'
 import FangedMetal from './FangedMetal'
+import FeatheredFate from './FeatheredFate'
 import FreedomBlues from './FreedomBlues'
 import HormonePunk from './HormonePunk'
 import InfernoMetal from './InfernoMetal'
@@ -22,6 +23,7 @@ import ShockstarDisco from './ShockstarDisco'
 import SoulRock from './SoulRock'
 import SwingJazz from './SwingJazz'
 import TheSkyAblaze from './TheSkyAblaze'
+import ThornedRose from './ThornedRose'
 import ThunderMetal from './ThunderMetal'
 import WhiteWaterBallad from './WhiteWaterBallad'
 import WoodpeckerElectro from './WoodpeckerElectro'
@@ -36,6 +38,7 @@ const data = {
   ChaoticMetal,
   DawnsBloom,
   FangedMetal,
+  FeatheredFate,
   FreedomBlues,
   HormonePunk,
   InfernoMetal,
@@ -52,6 +55,7 @@ const data = {
   SoulRock,
   SwingJazz,
   TheSkyAblaze,
+  ThornedRose,
   ThunderMetal,
   WhiteWaterBallad,
   WoodpeckerElectro,

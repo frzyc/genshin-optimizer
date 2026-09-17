@@ -1,0 +1,29 @@
+{
+  "name": "Forgiata dalla Melodia dorata",
+  "description": {
+    "0": "Uno spadone decorato in oro. La leggenda narra che fosse l'arma prediletta di un certo Armosta supremo in un lontano passato."
+  },
+  "passiveName": "Contrappunto di notte e giorno",
+  "passiveDescription": {
+    "0": {
+      "0": "Ogni 10 s, il personaggio che equipaggia l'arma suona un \"Movimento armonico\" del tipo corrispondente ricevendo un effetto positivo in base al seguente ordine: ATT <cryo>+18%</cryo> > maestria elementale <cryo>+120</cryo> > DAN da Barlume astrale <cryo>+28%</cryo>. Ogni iterazione di Movimento armonico dura 10 s. Quest'effetto può attivarsi anche quando il personaggio che equipaggia l'arma non è in campo.",
+      "1": "Innescare una reazione di Barlume astrale conferisce anche un'iterazione aggiuntiva di \"Movimento armonico: Contrappuntistico\" della durata di 12 s, con gli stessi effetti del Movimento armonico attivato quando viene innescato Barlume astrale. Quest'effetto si accumula con quello originale, e può attivarsi una volta ogni 12 s."
+    },
+    "1": {
+      "0": "Ogni 10 s, il personaggio che equipaggia l'arma suona un \"Movimento armonico\" del tipo corrispondente ricevendo un effetto positivo in base al seguente ordine: ATT <cryo>+22,5%</cryo> > maestria elementale <cryo>+150</cryo> > DAN da Barlume astrale <cryo>+35%</cryo>. Ogni iterazione di Movimento armonico dura 10 s. Quest'effetto può attivarsi anche quando il personaggio che equipaggia l'arma non è in campo.",
+      "1": "Innescare una reazione di Barlume astrale conferisce anche un'iterazione aggiuntiva di \"Movimento armonico: Contrappuntistico\" della durata di 12 s, con gli stessi effetti del Movimento armonico attivato quando viene innescato Barlume astrale. Quest'effetto si accumula con quello originale, e può attivarsi una volta ogni 12 s."
+    },
+    "2": {
+      "0": "Ogni 10 s, il personaggio che equipaggia l'arma suona un \"Movimento armonico\" del tipo corrispondente ricevendo un effetto positivo in base al seguente ordine: ATT <cryo>+27%</cryo> > maestria elementale <cryo>+180</cryo> > DAN da Barlume astrale <cryo>+42%</cryo>. Ogni iterazione di Movimento armonico dura 10 s. Quest'effetto può attivarsi anche quando il personaggio che equipaggia l'arma non è in campo.",
+      "1": "Innescare una reazione di Barlume astrale conferisce anche un'iterazione aggiuntiva di \"Movimento armonico: Contrappuntistico\" della durata di 12 s, con gli stessi effetti del Movimento armonico attivato quando viene innescato Barlume astrale. Quest'effetto si accumula con quello originale, e può attivarsi una volta ogni 12 s."
+    },
+    "3": {
+      "0": "Ogni 10 s, il personaggio che equipaggia l'arma suona un \"Movimento armonico\" del tipo corrispondente ricevendo un effetto positivo in base al seguente ordine: ATT <cryo>+31,5%</cryo> > maestria elementale <cryo>+210</cryo> > DAN da Barlume astrale <cryo>+49%</cryo>. Ogni iterazione di Movimento armonico dura 10 s. Quest'effetto può attivarsi anche quando il personaggio che equipaggia l'arma non è in campo.",
+      "1": "Innescare una reazione di Barlume astrale conferisce anche un'iterazione aggiuntiva di \"Movimento armonico: Contrappuntistico\" della durata di 12 s, con gli stessi effetti del Movimento armonico attivato quando viene innescato Barlume astrale. Quest'effetto si accumula con quello originale, e può attivarsi una volta ogni 12 s."
+    },
+    "4": {
+      "0": "Ogni 10 s, il personaggio che equipaggia l'arma suona un \"Movimento armonico\" del tipo corrispondente ricevendo un effetto positivo in base al seguente ordine: ATT <cryo>+36%</cryo> > maestria elementale <cryo>+240</cryo> > DAN da Barlume astrale <cryo>+56%</cryo>. Ogni iterazione di Movimento armonico dura 10 s. Quest'effetto può attivarsi anche quando il personaggio che equipaggia l'arma non è in campo.",
+      "1": "Innescare una reazione di Barlume astrale conferisce anche un'iterazione aggiuntiva di \"Movimento armonico: Contrappuntistico\" della durata di 12 s, con gli stessi effetti del Movimento armonico attivato quando viene innescato Barlume astrale. Quest'effetto si accumula con quello originale, e può attivarsi una volta ogni 12 s."
+    }
+  }
+}

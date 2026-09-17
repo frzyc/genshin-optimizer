@@ -1,0 +1,24 @@
+{
+  "name": "Lame exaphane",
+  "description": {
+    "0": "Une épée longue qui, jadis, brillait de l'éclat de mille étoiles. Entre vos mains, elle devient une lumière inédite, étrangère à toute époque révolue."
+  },
+  "passiveName": "Voie du pèlerinage",
+  "passiveDescription": {
+    "0": {
+      "0": "Lorsque {M#le voyageur}{F#la voyageuse} équipe ceci, son ATQ augmente de <cryo>16 %</cryo> pendant <cryo>8</cryo> s et {M#il}{F#elle} récupère <cryo>3</cryo> pts d'énergie élémentaire lorsqu'{M#il}{F#elle} a touché un ennemi. Cet effet peut être déclenché une fois toutes les <cryo>5</cryo> s. L'effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "Lorsque {M#le voyageur}{F#la voyageuse} équipe ceci, ses DGT CRIT augmentent de 6 % pour chaque élément avec lequel {M#il est entré}{F#elle est entrée} en résonance. De plus, son ATQ augmente de <cryo>20 %</cryo> pendant 8 s et {M#il}{F#elle} récupère <cryo>3</cryo> pts d'énergie élémentaire lorsque son attaque a touché un ennemi. Cet effet peut être déclenché une fois toutes les 5 s. L'effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "Lorsque {M#le voyageur}{F#la voyageuse} équipe ceci, ses DGT CRIT augmentent de 6 % pour chaque élément avec lequel {M#il est entré}{F#elle est entrée} en résonance. De plus, son ATQ augmente de <cryo>24 %</cryo> pendant 8 s et {M#il}{F#elle} récupère <cryo>5</cryo> pts d'énergie élémentaire lorsque son attaque a touché un ennemi. Cet effet peut être déclenché une fois toutes les 5 s. L'effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "Lorsque {M#le voyageur}{F#la voyageuse} équipe ceci, ses DGT CRIT augmentent de 6 % pour chaque élément avec lequel {M#il est entré}{F#elle est entrée} en résonance. De plus, son ATQ augmente de <cryo>32 %</cryo> pendant 8 s et {M#il}{F#elle} récupère <cryo>5</cryo> pts d'énergie élémentaire lorsque son attaque a touché un ennemi. Cet effet peut être déclenché une fois toutes les 5 s. L'effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "Lorsque {M#le voyageur}{F#la voyageuse} équipe ceci, ses DGT CRIT augmentent de 6 % pour chaque élément avec lequel {M#il est entré}{F#elle est entrée} en résonance. De plus, son ATQ augmente de <cryo>40 %</cryo> pendant 8 s et {M#il}{F#elle} récupère <cryo>5</cryo> pts d'énergie élémentaire lorsque son attaque a touché un ennemi. Cet effet peut être déclenché une fois toutes les 5 s. L'effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

@@ -240,7 +240,7 @@ export function lookup<P extends OP>(
     op: 'lookup',
     br: [toV(index)],
     ex: Object.fromEntries(Object.keys(table).map((key, i) => [key, i + 1])),
-    x: toVs([defaultV ?? NaN, ...Object.values(table)]),
+    x: toVs([defaultV ?? Number.NaN, ...Object.values(table)]),
   }
 }
 /** table[index] */

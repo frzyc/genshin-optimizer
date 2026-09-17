@@ -1,7 +1,3 @@
-import {
-  DBLocalStorage,
-  SandboxStorage,
-} from '@genshin-optimizer/common/database'
 import { ScrollTop, useRefSize, useTitle } from '@genshin-optimizer/common/ui'
 import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
@@ -23,7 +19,8 @@ import {
   ThemeProvider,
   useTheme,
 } from '@mui/material'
-import { Suspense, lazy, useCallback, useMemo, useState } from 'react'
+import type { ComponentType } from 'react'
+import { lazy, Suspense, useCallback, useMemo } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import './App.scss'
 import {
@@ -31,43 +28,86 @@ import {
   AdBlockContextWrapper,
   AdRailSticky,
 } from '@genshin-optimizer/common/ad'
+import { useDatabases } from '@genshin-optimizer/common/database-ui'
 import ErrorBoundary from './ErrorBoundary'
 import Footer from './Footer'
 import Header from './Header'
 import Snow from './Snow'
 
-const PageHome = lazy(() => import('@genshin-optimizer/gi/page-home'))
-const PageArtifacts = lazy(() => import('@genshin-optimizer/gi/page-artifacts'))
-const PageTools = lazy(() => import('@genshin-optimizer/gi/page-tools'))
-const PageSettings = lazy(() => import('@genshin-optimizer/gi/page-settings'))
-const PageWeapons = lazy(() => import('@genshin-optimizer/gi/page-weapons'))
-const PageArchive = lazy(() => import('@genshin-optimizer/gi/page-archive'))
-const PageDocumentation = lazy(() => import('@genshin-optimizer/gi/page-doc'))
-const PageScanner = lazy(() => import('@genshin-optimizer/gi/page-scanner'))
-const PageCharacters = lazy(
-  () => import('@genshin-optimizer/gi/page-characters')
+const PageHome = lazy(
+  () =>
+    import('@genshin-optimizer/gi/page-home') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
 )
-const PageTeams = lazy(() => import('@genshin-optimizer/gi/page-teams'))
-const PageTeam = lazy(() => import('@genshin-optimizer/gi/page-team'))
+const PageArtifacts = lazy(
+  () =>
+    import('@genshin-optimizer/gi/page-artifacts') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
+)
+const PageTools = lazy(
+  () =>
+    import('@genshin-optimizer/gi/page-tools') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
+)
+const PageSettings = lazy(
+  () =>
+    import('@genshin-optimizer/gi/page-settings') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
+)
+const PageWeapons = lazy(
+  () =>
+    import('@genshin-optimizer/gi/page-weapons') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
+)
+const PageArchive = lazy(
+  () =>
+    import('@genshin-optimizer/gi/page-archive') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
+)
+const PageDocumentation = lazy(
+  () =>
+    import('@genshin-optimizer/gi/page-doc') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
+)
+const PageScanner = lazy(
+  () =>
+    import('@genshin-optimizer/gi/page-scanner') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
+)
+const PageCharacters = lazy(
+  () =>
+    import('@genshin-optimizer/gi/page-characters') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
+)
+const PageTeams = lazy(
+  () =>
+    import('@genshin-optimizer/gi/page-teams') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
+)
+const PageTeam = lazy(
+  () =>
+    import('@genshin-optimizer/gi/page-team') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
+)
 
 function App() {
-  const dbIndex = parseInt(localStorage.getItem('dbIndex') || '1')
-  const [databases, setDatabases] = useState(() => {
-    localStorage.removeItem('GONewTabDetection')
-    localStorage.setItem('GONewTabDetection', 'debug')
-    return ([1, 2, 3, 4] as const).map((index) => {
-      if (index === dbIndex) {
-        return new ArtCharDatabase(index, new DBLocalStorage(localStorage))
-      } else {
-        const dbName = `extraDatabase_${index}`
-        const eDB = localStorage.getItem(dbName)
-        const dbObj = eDB ? JSON.parse(eDB) : {}
-        const db = new ArtCharDatabase(index, new SandboxStorage(dbObj))
-        db.toExtraLocalDB()
-        return db
-      }
-    })
-  })
+  const dbIndex = Number.parseInt(localStorage.getItem('dbIndex') || '1')
+  const [databases, setDatabases] = useDatabases(
+    ArtCharDatabase,
+    dbIndex,
+    'GONewTabDetection'
+  )
   const setDatabase = useCallback(
     (index: number, db: ArtCharDatabase) => {
       const dbs = [...databases]

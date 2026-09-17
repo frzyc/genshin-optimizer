@@ -1,0 +1,29 @@
+{
+  "name": "Geschmiedet durch das goldene Gesetz",
+  "description": {
+    "0": "Ein mit Gold verziertes Großschwert, das der Legende nach in ferner Vergangenheit die Lieblingswaffe eines großen Meisters der Harmonie gewesen sein soll."
+  },
+  "passiveName": "Tag und Nacht im Gegenspiel",
+  "passiveDescription": {
+    "0": {
+      "0": "Alle 10 s spielt der Träger der Reihe nach folgende „Harmonie-Sinfonien“ mit den entsprechenden Effekten: Erhöht den ANG um <cryo>18 %</cryo>/Erhöht die Elementarkunde um <cryo>120</cryo> Punkte/Erhöht den durch Stellarfunkeln-Reaktionen verursachten Schaden um <cryo>28 %</cryo>. Jeder Sinfonie-Effekt hält 10 s an. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist.",
+      "1": "Verleiht nach dem Auslösen einer Stellarfunkeln-Reaktion zusätzlich eine 12 s andauernde „Harmonie-Sinfonie – Polyphonie“, die denselben Sinfonie-Effekt hat, der beim Auslösen der Stellarfunkeln-Reaktion gespielt wurde. Dieser Effekt kann mit dem ursprünglichen Sinfonie-Effekt gestapelt werden. 12 s Abklingzeit."
+    },
+    "1": {
+      "0": "Alle 10 s spielt der Träger der Reihe nach folgende „Harmonie-Sinfonien“ mit den entsprechenden Effekten: Erhöht den ANG um <cryo>22,5 %</cryo>/Erhöht die Elementarkunde um <cryo>150</cryo> Punkte/Erhöht den durch Stellarfunkeln-Reaktionen verursachten Schaden um <cryo>35 %</cryo>. Jeder Sinfonie-Effekt hält 10 s an. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist.",
+      "1": "Verleiht nach dem Auslösen einer Stellarfunkeln-Reaktion zusätzlich eine 12 s andauernde „Harmonie-Sinfonie – Polyphonie“, die denselben Sinfonie-Effekt hat, der beim Auslösen der Stellarfunkeln-Reaktion gespielt wurde. Dieser Effekt kann mit dem ursprünglichen Sinfonie-Effekt gestapelt werden. 12 s Abklingzeit."
+    },
+    "2": {
+      "0": "Alle 10 s spielt der Träger der Reihe nach folgende „Harmonie-Sinfonien“ mit den entsprechenden Effekten: Erhöht den ANG um <cryo>27 %</cryo>/Erhöht die Elementarkunde um <cryo>180</cryo> Punkte/Erhöht den durch Stellarfunkeln-Reaktionen verursachten Schaden um <cryo>42 %</cryo>. Jeder Sinfonie-Effekt hält 10 s an. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist.",
+      "1": "Verleiht nach dem Auslösen einer Stellarfunkeln-Reaktion zusätzlich eine 12 s andauernde „Harmonie-Sinfonie – Polyphonie“, die denselben Sinfonie-Effekt hat, der beim Auslösen der Stellarfunkeln-Reaktion gespielt wurde. Dieser Effekt kann mit dem ursprünglichen Sinfonie-Effekt gestapelt werden. 12 s Abklingzeit."
+    },
+    "3": {
+      "0": "Alle 10 s spielt der Träger der Reihe nach folgende „Harmonie-Sinfonien“ mit den entsprechenden Effekten: Erhöht den ANG um <cryo>31,5 %</cryo>/Erhöht die Elementarkunde um <cryo>210</cryo> Punkte/Erhöht den durch Stellarfunkeln-Reaktionen verursachten Schaden um <cryo>49 %</cryo>. Jeder Sinfonie-Effekt hält 10 s an. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist.",
+      "1": "Verleiht nach dem Auslösen einer Stellarfunkeln-Reaktion zusätzlich eine 12 s andauernde „Harmonie-Sinfonie – Polyphonie“, die denselben Sinfonie-Effekt hat, der beim Auslösen der Stellarfunkeln-Reaktion gespielt wurde. Dieser Effekt kann mit dem ursprünglichen Sinfonie-Effekt gestapelt werden. 12 s Abklingzeit."
+    },
+    "4": {
+      "0": "Alle 10 s spielt der Träger der Reihe nach folgende „Harmonie-Sinfonien“ mit den entsprechenden Effekten: Erhöht den ANG um <cryo>36 %</cryo>/Erhöht die Elementarkunde um <cryo>240</cryo> Punkte/Erhöht den durch Stellarfunkeln-Reaktionen verursachten Schaden um <cryo>56 %</cryo>. Jeder Sinfonie-Effekt hält 10 s an. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist.",
+      "1": "Verleiht nach dem Auslösen einer Stellarfunkeln-Reaktion zusätzlich eine 12 s andauernde „Harmonie-Sinfonie – Polyphonie“, die denselben Sinfonie-Effekt hat, der beim Auslösen der Stellarfunkeln-Reaktion gespielt wurde. Dieser Effekt kann mit dem ursprünglichen Sinfonie-Effekt gestapelt werden. 12 s Abklingzeit."
+    }
+  }
+}

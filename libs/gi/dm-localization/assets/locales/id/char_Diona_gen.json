@@ -140,8 +140,8 @@
   "lockedPassive": {
     "name": "Choice Treasures",
     "description": {
-      "0": "Selama 20 detik setelah melancarkan Elemental Skill <strong>Icy Paws</strong>, saat Karakter party memicu reaksi Superconduct atau Stellar-Conduct, maka Diona juga akan melancarkan 3 <strong>Icy Paw</strong> secara bersamaan. <strong>Icy Paw</strong> yang dilancarkan dengan cara ini tidak dapat menghasilkan Elemental Particle, dan tidak akan menciptakan Perisai saat mengenai musuh. Efek ini dapat terpicu sekali setiap 3,5 detik.",
-      "1": "Selain itu, saat berada di dalam <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>, Diona akan memasuki status <strong>Radiance: Stellar-Conduct</strong>."
+      "0": "Selama 20 detik setelah melancarkan Elemental Skill <strong>Icy Paws</strong>, saat Karakter party memicu reaksi Stellar-Conduct, Superconduct, Cryo Swirl, atau Stellar Swirl, maka Diona juga akan melancarkan 3 <strong>Icy Paw</strong> secara bersamaan. <strong>Icy Paw</strong> yang dilancarkan dengan cara ini tidak dapat menghasilkan Elemental Particle, dan tidak akan menciptakan Perisai saat mengenai musuh. Efek ini dapat terpicu sekali setiap 3,5 detik.",
+      "1": "Selain itu, Diona juga akan memasuki status <strong>Radiance: Stellar-Conduct</strong> saat berada di dalam <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip> atau memasuki status <strong>Radiance: Stellar Swirl</strong> selama 8 detik setelah Karakter dalam party di sekitar memicu reaksi Stellar Swirl."
     }
   },
   "constellation1": {
@@ -194,8 +194,9 @@
       ],
       "2": "<br/>",
       "3": "Selain itu, Max HP Diona meningkat 25%.",
-      "4": "<br/>",
-      "5": "<strong>Radiance: Stellar-Conduct</strong>: Meningkatkan 40% DMG Superconduct dan Stellar-Conduct yang diakibatkan oleh Karakter yang berada di dalam area <strong>Signature Mix</strong>."
+      "4": "<strong>Radiance: Stellar Glimmer</strong>: DMG reaksi yang sesuai yang diakibatkan oleh Karakter dalam area Signature Mix meningkat:",
+      "5": "<strong>Radiance: Stellar-Conduct</strong>: DMG reaksi Superconduct dan Stellar-Conduct meningkat 40%;",
+      "6": "<strong>Radiance: Stellar Swirl</strong>: DMG reaksi Cryo Swirl dan Stellar Swirl meningkat 40%."
     }
   }
 }

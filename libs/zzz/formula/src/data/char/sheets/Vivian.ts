@@ -1,6 +1,6 @@
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import { cmpGE, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
-import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
@@ -124,9 +124,7 @@ const sheet = register(
           )
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'core_electric_anom_mv_mult_',
@@ -141,9 +139,7 @@ const sheet = register(
           )
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'core_fire_anom_mv_mult_',
@@ -158,9 +154,7 @@ const sheet = register(
           )
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'core_physical_anom_mv_mult_',
@@ -175,9 +169,7 @@ const sheet = register(
           )
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'core_ice_anom_mv_mult_',
@@ -192,27 +184,21 @@ const sheet = register(
           )
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'ability_corruption_dmg_',
     teamBuff.combat.buff_.ether.addWithDmgType(
       'anomaly',
       abilityCheck(percent(dm.ability.ether_anom_dmg_))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'ability_corruption_disorder_dmg_',
     teamBuff.combat.buff_.ether.addWithDmgType(
       'disorder',
       abilityCheck(percent(dm.ability.ether_anom_dmg_))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm1_anomaly_dmg_',
@@ -223,18 +209,14 @@ const sheet = register(
         1,
         prophecy.ifOn(percent(dm.m1.anomaly_disorder_dmg_))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm1_disorder_dmg_',
     teamBuff.combat.buff_.addWithDmgType(
       'disorder',
       cmpGE(char.mindscape, 1, prophecy.ifOn(dm.m1.anomaly_disorder_dmg_))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm2_ether_anomBuildup_',
@@ -247,18 +229,14 @@ const sheet = register(
     teamBuff.combat.anom_mv_mult_.addWithDmgType(
       'abloom',
       cmpGE(char.mindscape, 2, abloom.ifOn(dm.m2.abloom_bonus))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm2_resIgn_',
     teamBuff.combat.resIgn_.addWithDmgType(
       'anomaly',
       cmpGE(char.mindscape, 2, abloom.ifOn(dm.m2.resIgn_))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff('m4_crit_', m4_crit_, undefined, undefined, false),
   registerBuff(

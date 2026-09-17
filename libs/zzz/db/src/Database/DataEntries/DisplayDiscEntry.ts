@@ -14,8 +14,8 @@ import {
   allLocationKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { z } from 'zod'
-import { DataEntry } from '../DataEntry'
 import type { ZzzDatabase } from '../Database'
+import { DataEntry } from '../DataEntry'
 
 export const discSortKeys = [
   'rarity',
@@ -78,7 +78,7 @@ export class DisplayDiscEntry extends DataEntry<
   override set(
     value:
       | Partial<IDisplayDisc>
-      | ((v: IDisplayDisc) => Partial<IDisplayDisc> | void)
+      | ((v: IDisplayDisc) => Partial<IDisplayDisc> | undefined)
       | { action: 'reset' }
   ): boolean {
     if ('action' in value) {

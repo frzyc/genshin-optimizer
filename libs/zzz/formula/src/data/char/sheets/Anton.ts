@@ -1,5 +1,5 @@
 import { cmpGE, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
-import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
@@ -258,9 +258,7 @@ const sheet = register(
     'm4_crit_',
     teamBuff.combat.crit_.add(
       cmpGE(char.mindscape, 4, chain_ult_used.ifOn(percent(dm.m4.crit_)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff('m6_dmg_', m6_dmg_, undefined, false, false)
 )

@@ -1,5 +1,6 @@
 import type { DBStorage } from '@genshin-optimizer/common/database'
 import { Database, SandboxStorage } from '@genshin-optimizer/common/database'
+import { compressToB64Gzip } from '@genshin-optimizer/common/util'
 import type { GenderKey } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
 import { DBMetaEntry } from './DataEntries/DBMetaEntry'
@@ -12,8 +13,8 @@ import { DisplayWeaponEntry } from './DataEntries/DisplayWeaponEntry'
 import { ArtifactDataManager } from './DataManagers/ArtifactDataManager'
 import { BuildDataManager } from './DataManagers/BuildDataManager'
 import { BuildTcDataManager } from './DataManagers/BuildTcDataManager'
-import { CharMetaDataManager } from './DataManagers/CharMetaDataManager'
 import { CharacterDataManager } from './DataManagers/CharacterDataManager'
+import { CharMetaDataManager } from './DataManagers/CharMetaDataManager'
 import { GeneratedBuildListDataManager } from './DataManagers/GeneratedBuildListDataManager'
 import { OptConfigDataManager } from './DataManagers/OptConfigDataManager'
 import { TeamCharacterDataManager } from './DataManagers/TeamCharacterDataManager'
@@ -158,7 +159,8 @@ export class ArtCharDatabase extends Database {
   }
   importGOOD(
     good: IGOOD & IGO,
-    keepNotInImport: boolean,
+    keepWepArtiNotInImport: boolean,
+    keepCharNotInImport: boolean,
     ignoreDups: boolean
   ): ImportResult {
     good = migrateGOOD(good)
@@ -172,7 +174,8 @@ export class ArtCharDatabase extends Database {
     }
     const result: ImportResult = newImportResult(
       source,
-      keepNotInImport,
+      keepWepArtiNotInImport,
+      keepCharNotInImport,
       ignoreDups
     )
 
@@ -220,13 +223,16 @@ export class ArtCharDatabase extends Database {
     this.saveStorage()
     other.saveStorage()
   }
-  toExtraLocalDB() {
+  override toExtraLocalDB() {
     const key = `extraDatabase_${this.storage.getDBIndex()}`
     const other = new SandboxStorage()
     const oldstorage = this.storage
     this.storage = other
     this.saveStorage()
     this.storage = oldstorage
-    localStorage.setItem(key, JSON.stringify(Object.fromEntries(other.entries)))
+    localStorage.setItem(
+      key,
+      compressToB64Gzip(Object.fromEntries(other.entries))
+    )
   }
 }

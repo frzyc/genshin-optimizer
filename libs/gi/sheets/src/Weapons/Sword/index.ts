@@ -11,6 +11,8 @@ import CinnabarSpindle from './CinnabarSpindle'
 import CoolSteel from './CoolSteel'
 import DarkIronSword from './DarkIronSword'
 import DullBlade from './DullBlade'
+import Emberwell from './Emberwell'
+import ExaiphanesBlade from './ExaiphanesBlade'
 import FavoniusSword from './FavoniusSword'
 import FesteringDesire from './FesteringDesire'
 import FilletBlade from './FilletBlade'
@@ -20,11 +22,12 @@ import FluteOfEzpitzal from './FluteOfEzpitzal'
 import FreedomSworn from './FreedomSworn'
 import HaranGeppakuFutsu from './HaranGeppakuFutsu'
 import HarbingerOfDawn from './HarbingerOfDawn'
+import HereticsMoltenBlade from './HereticsMoltenBlade'
 import IronSting from './IronSting'
 import KagotsurubeIsshin from './KagotsurubeIsshin'
 import KeyOfKhajNisut from './KeyOfKhajNisut'
-import LightOfFoliarIncision from './LightOfFoliarIncision'
 import LightbearingMoonshard from './LightbearingMoonshard'
+import LightOfFoliarIncision from './LightOfFoliarIncision'
 import LionsRoar from './LionsRoar'
 import MistsplitterReforged from './MistsplitterReforged'
 import MoonweaversDawn from './MoonweaversDawn'
@@ -50,8 +53,10 @@ import TheFlute from './TheFlute'
 import ToukabouShigure from './ToukabouShigure'
 import TravelersHandySword from './TravelersHandySword'
 import UrakuMisugiri from './UrakuMisugiri'
+import WhitelakeFrostfeather from './WhitelakeFrostfeather'
 import WolfFang from './WolfFang'
 import XiphosMoonlight from './XiphosMoonlight'
+
 const sword: Record<WeaponSwordKey, WeaponSheet> = {
   Absolution,
   AmenomaKageuchi,
@@ -64,6 +69,8 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   CoolSteel,
   DarkIronSword,
   DullBlade,
+  Emberwell,
+  ExaiphanesBlade,
   FavoniusSword,
   FesteringDesire,
   FilletBlade,
@@ -73,6 +80,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   FreedomSworn,
   HaranGeppakuFutsu,
   HarbingerOfDawn,
+  HereticsMoltenBlade,
   IronSting,
   KagotsurubeIsshin,
   KeyOfKhajNisut,
@@ -103,6 +111,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   ToukabouShigure,
   TravelersHandySword,
   UrakuMisugiri,
+  WhitelakeFrostfeather,
   WolfFang,
   XiphosMoonlight,
 } as const

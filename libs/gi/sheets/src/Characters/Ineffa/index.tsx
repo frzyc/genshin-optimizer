@@ -1,4 +1,4 @@
-import { type CharacterKey } from '@genshin-optimizer/gi/consts'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
@@ -6,7 +6,7 @@ import {
   greaterEq,
   infoMut,
   input,
-  lunarDmg,
+  lunarDmgNode,
   min,
   percent,
   prod,
@@ -15,7 +15,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -24,6 +23,7 @@ import {
   shieldElement,
   shieldNodeTalent,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
 
 const key: CharacterKey = 'Ineffa'
 const skillParam_gen = allStats.char.skillParam[key]
@@ -174,7 +174,7 @@ const dmgFormulas = {
     dmg: greaterEq(
       input.asc,
       1,
-      lunarDmg(percent(dm.passive1.dmg), 'atk', 'lunarcharged')
+      lunarDmgNode(percent(dm.passive1.dmg), 'atk', 'lunarcharged')
     ),
   },
   passive2: {
@@ -187,14 +187,14 @@ const dmgFormulas = {
     dmg: greaterEq(
       input.constellation,
       2,
-      lunarDmg(percent(dm.constellation2.dmg), 'atk', 'lunarcharged')
+      lunarDmgNode(percent(dm.constellation2.dmg), 'atk', 'lunarcharged')
     ),
   },
   constellation6: {
     dmg: greaterEq(
       input.constellation,
       6,
-      lunarDmg(percent(dm.constellation6.dmg), 'atk', 'lunarcharged')
+      lunarDmgNode(percent(dm.constellation6.dmg), 'atk', 'lunarcharged')
     ),
   },
 }
@@ -238,7 +238,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
         {
@@ -276,17 +276,17 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.skillDmg, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.shield, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.shieldElectro, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
@@ -296,7 +296,7 @@ const sheet: TalentSheet = {
         },
         {
           node: infoMut(dmgFormulas.skill.birgittaDmg, {
-            name: ct.chg(`skill.skillParams.3`),
+            name: ct.chg('skill.skillParams.3'),
           }),
         },
         {
@@ -318,7 +318,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.skillDmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {

@@ -28,9 +28,9 @@ import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from 'react-i18next'
 import { Link as RouterLink } from 'react-router-dom'
 import AdScanner from './AdeptiScanner.png'
+import Artiscan from './artiscan.png'
 import GIScanner from './GIScanner.png'
 import Irminsul from './Irminsul.webp'
-import Artiscan from './artiscan.png'
 
 export default function PageScanner() {
   const { t } = useTranslation('page_scanner')
@@ -191,7 +191,7 @@ export default function PageScanner() {
                 </WarningWrapper>
               </Typography>
               <Typography gutterBottom>
-                <Trans t={t} i18nKey="ik.p1"></Trans>
+                <Trans t={t} i18nKey="ik.p1" />
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="seelieme">
@@ -374,7 +374,7 @@ export default function PageScanner() {
                 </WarningWrapper>
               </Typography>
               <Typography gutterBottom>
-                <Trans t={t} i18nKey="is.p1"></Trans>
+                <Trans t={t} i18nKey="is.p1" />
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="seelieme">
@@ -427,7 +427,10 @@ export default function PageScanner() {
 function WarningWrapper({
   children,
   strong = false,
-}: { children: JSX.Element; strong?: boolean }) {
+}: {
+  children: JSX.Element
+  strong?: boolean
+}) {
   const { t } = useTranslation('page_scanner')
   return (
     <Tooltip

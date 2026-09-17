@@ -6,8 +6,8 @@ import {
   allRelicSlotKeys,
 } from '@genshin-optimizer/sr/consts'
 import { z } from 'zod'
-import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+import { DataManager } from '../DataManager'
 
 const relicIdValueSchema = z.union([z.string(), z.undefined()])
 const relicIdsSchema = zodTypedRecord(allRelicSlotKeys, relicIdValueSchema)

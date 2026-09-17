@@ -148,7 +148,7 @@ const x0=0` // making sure `const` has at least one entry
     }
   )
   body += `;\nreturn [${formulas.map((f) => names.get(f)!)}]`
-  return new (Function as any)(`b`, body)
+  return new (Function as any)('b', body)
 }
 
 function flatten(formulas: OptNode[]): OptNode[] {
@@ -365,7 +365,7 @@ export function constantFold(
           //   - (-infinity) + ... = -infinity
           // - NaN
           //   - operation(NaN, ...) = NaN
-          if (!isFinite(numericValue)) {
+          if (!Number.isFinite(numericValue)) {
             if (
               operation !== 'mul' &&
               (operation !== 'max' || numericValue > 0) &&
@@ -491,7 +491,7 @@ export function constantFold(
                 result =
                   formula.type === 'string'
                     ? constant(undefined)
-                    : constant(NaN)
+                    : constant(Number.NaN)
               else result = constant(allOperations[accu]([]))
             } else result = formula
           } else if (formula.accu === undefined || operands.length === 1)

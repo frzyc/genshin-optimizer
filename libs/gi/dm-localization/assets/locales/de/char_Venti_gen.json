@@ -165,7 +165,7 @@
       "0": "Wandelt Venti nach dem Abschluss von <strong>Aufgabe der Hexe – Vom Erwachen des Windes</strong> in eine <strong>Hexerei</strong>-Figur um. Verleiht, wenn sich in der Truppe mindestens 2 Hexerei-Figuren befinden, den Effekt <strong>Hexerei – Geheimes Ritual</strong>, der Hexerei-Figuren verstärkt.",
       "1": "<br/>",
       "2": "<strong>Hexerei – Geheimes Ritual</strong>",
-      "3": "Erhöht, während das durch die Spezialfähigkeit <strong>Ode vom Anemo-Archon</strong> hervorgerufene Zentrum des Sturms existiert und innerhalb von 4 s, nachdem die aktuelle Figur in der Nähe die Reaktion Verwirbelung ausgelöst hat, den von dieser Figur verursachten Schaden um 50 %. Der von Ventis eigenem Zentrum des Sturms verursachte Schaden liegt zudem bei 135 % des ursprünglichen Schadens."
+      "3": "Erhöht, während das durch die Spezialfähigkeit <strong>Ode vom Anemo-Archon</strong> hervorgerufene Zentrum des Sturms existiert und innerhalb von 4 s, nachdem die aktuelle Figur in der Nähe die Reaktion Verwirbelung oder Stellar-Verwirbelung ausgelöst hat, den von dieser Figur verursachten Schaden um 50 %. Der von Ventis eigenem Zentrum des Sturms verursachte Schaden liegt zudem bei 135 % des ursprünglichen Schadens."
     }
   },
   "constellation1": {

@@ -149,8 +149,7 @@
     },
     "upgradedDescription": {
       "0": "Saat Normal dan Charged Attack Qiqi mengenai musuh, Qiqi memiliki 50% kemungkinan untuk memberikan Fortune-Preserving Talisman kepada musuh selama 6 detik. Efek ini dapat terpicu setiap 30 detik.",
-      "1": "<br/>",
-      "2": "<strong>Radiance: Stellar-Conduct</strong>: Kemungkinan terpicunya efek ini meningkat menjadi 100%, dan waktu cooldown-nya berkurang menjadi 15 detik."
+      "1": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Radiance: Stellar Glimmer</strong></tooltip>: Kemungkinan terpicunya efek ini meningkat menjadi 100%, dan waktu cooldown-nya berkurang menjadi 15 detik."
     }
   },
   "passive3": {
@@ -163,9 +162,10 @@
     "name": "Seven Sacred Treasures",
     "description": {
       "0": "Cooldown Elemental Skill <strong>Adeptus Art: Herald of Frost</strong> berkurang menjadi 15 detik.",
-      "1": "<br/>",
-      "2": "<strong>Radiance: Stellar-Conduct</strong>: Selama Herald of Frost aktif, DMG reaksi Superconduct dan Stellar-Conduct yang diakibatkan Karakter sendiri di dalam party meningkat 50%.",
-      "3": "Selain itu, saat berada di dalam <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>, Qiqi akan memasuki status <strong>Radiance: Stellar-Conduct</strong>."
+      "1": "<strong>Radiance: Stellar Glimmer</strong>: Selama Herald of Frost aktif, DMG reaksi bersangkutan yang diakibatkan Karakter sendiri dalam party meningkat:",
+      "2": "<strong>Radiance: Stellar-Conduct</strong>: DMG reaksi Superconduct dan Stellar-Conduct meningkat sebesar 50%.",
+      "3": "<strong>Radiance: Stellar Swirl</strong>: DMG reaksi Cryo Swirl dan Stellar Swirl meningkat sebesar 50%.",
+      "4": "Selain itu, Qiqi juga akan memasuki status <strong>Radiance: Stellar-Conduct</strong> saat berada di dalam <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip> atau memasuki status <strong>Radiance: Stellar Swirl</strong> selama 8 detik setelah Karakter dalam party di sekitar memicu reaksi Stellar Swirl."
     }
   },
   "constellation1": {
@@ -174,8 +174,8 @@
       "0": "Saat Herald of Frost mengenai musuh yang ditandai oleh Fortune-Preserving Talisman, Qiqi memulihkan 2 Energy."
     },
     "upgradedDescription": {
-      "0": "Saat Herald of Frost mengenai musuh yang ditandai Fortune-Preserving Talisman, Qiqi memulihkan 2 poin Energy.",
-      "1": "<strong>Radiance: Stellar-Conduct</strong>: Saat serangan dan serangan terkoordinasi Herald of Frost mengenai musuh, Qiqi juga memulihkan 6 poin Energy. Efek ini dapat terpicu sekali setiap 6 detik."
+      "0": "Saat Herald of Frost mengenai musuh yang ditandai Fortune-Preserving Talisman, Qiqi akan memulihkan 2 poin Energy.",
+      "1": "<strong><tooltip ns=tooltips_gen baseKey18=11500004 values=[]>Radiance: Stellar Glimmer</tooltip></strong>: Saat serangan dan serangan terkoordinasi Herald of Frost mengenai musuh, Qiqi juga memulihkan 6 poin Energy. Efek ini dapat terpicu sekali setiap 6 detik."
     }
   },
   "constellation2": {
@@ -186,7 +186,7 @@
     "upgradedDescription": {
       "0": "DMG yang diakibatkan Normal Attack dan Charged Attack Qiqi terhadap musuh yang terpengaruh elemen <cryo>Cryo</cryo> meningkat 15%.",
       "1": "<br/>",
-      "2": "<strong>Radiance: Stellar-Conduct</strong>: ATK Qiqi meningkat 50%."
+      "2": "<strong><tooltip ns=tooltips_gen baseKey18=11500004 values=[]>Radiance: Stellar Glimmer</tooltip></strong>: ATK Qiqi meningkat 50%."
     }
   },
   "constellation3": {
@@ -222,7 +222,7 @@
     "upgradedDescription": {
       "0": "Menggunakan <strong>Adeptus Art: Preserver of Fortune</strong> akan menghidupkan kembali semua Karakter yang gugur di sekitar dan memulihkan 50% HP mereka.",
       "1": "Efek ini dapat terpicu sekali setiap 15 menit.",
-      "2": "Selain itu, saat melancarkan <strong>Adeptus Art: Preserver of Fortune</strong>, Qiqi juga akan mendapatkan 4 lapis <strong>Glimpse of Mystery</strong>: Saat Karakter aktif sendiri dalam party selain Qiqi mengakibatkan DMG reaksi Stellar-Conduct, akan mengonsumsi 1 lapis <strong>Glimpse of Mystery</strong>, untuk meningkatkan DMG yang diakibatkan sebesar 600% ATK Qiqi. <strong>Glimpse of Mystery</strong> berlangsung maksimum 12 detik dan jumlah lapisannya akan diperbarui saat melancarkan <strong>Adeptus Art: Preserver of Fortune</strong>."
+      "2": "Selain itu, saat melancarkan <strong>Adeptus Art: Preserver of Fortune</strong>, Qiqi juga akan mendapatkan 4 lapis <strong>Glimpse of Mystery</strong>: Saat Karakter aktif sendiri dalam party selain Qiqi mengakibatkan DMG reaksi Stellar-Conduct atau Stellar Swirl secara langsung melalui Talenta atau Skill, akan mengonsumsi 1 lapis <strong>Glimpse of Mystery</strong> untuk meningkatkan DMG yang diakibatkan sebesar 600% ATK Qiqi. <strong>Glimpse of Mystery</strong> berlangsung maksimum 12 detik dan jumlah lapisannya akan diperbarui saat melancarkan <strong>Adeptus Art: Preserver of Fortune</strong>."
     }
   }
 }

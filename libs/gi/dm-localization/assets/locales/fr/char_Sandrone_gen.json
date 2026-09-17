@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
         "1": "Invoque la Facilitatrice automatisée généraliste interactive et omnitâche, ou <strong>Fagio</strong>, qui passe en mode <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Décodage</tooltip></strong> : déchaîne une attaque de tir dévastatrice sur les ennemis en avant et tire périodiquement des rayons condensés, infligeant des <cryo>DGT Cryo de zone</cryo>.",
-        "2": "<strong>Radiance « Astroconduction »</strong> : Les rayons condensés infligent à la place des <cryo>DGT Cryo de zone</cryo> considérés comme des DGT de réaction d'Astroconduction.",
+        "2": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Radiance astrale</strong></tooltip> : Les rayons condensés infligent à la place des <cryo>DGT Cryo de zone</cryo> considérés comme des DGT de réaction astrale correspondante.",
         "3": "Pendant le mode <strong>Décodage</strong>, la <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>puissance de décodage</tooltip></strong> de Fagio augmente continuellement, tirer des rayons condensés augmentant également sa puissance de décodage.",
         "4": "Une fois sa puissance de décodage à la limite de 100 pts, Fagio passe en mode <strong>Surpuissance</strong>, pendant lequel elle tire sur les ennemis à intervalles plus longs, infligeant des <cryo>DGT Cryo</cryo>, et ne peut plus passer en mode Décodage.",
         "5": "Hors du mode <strong>Décodage</strong>, la <strong>puissance de décodage</strong> de Fagio diminue progressivement. Lorsque Sandrone fait partie de l'équipe mais n'est pas déployée, elle se concentre sur la maintenance de Fagio, ce qui accélère la diminution de sa puissance de décodage à 300 % de sa vitesse d'origine.",
@@ -31,10 +31,10 @@
       "3": "DGT mitraillage (Attaque chargée)",
       "4": "DGT rayon condensé (Attaque chargée)",
       "5": "DGT d'Astroconduction rayon condensé (Attaque chargée)",
-      "6": "DGT (Mode Surpuissance)",
-      "7": "DGT durant la chute",
-      "8": "DGT chute basse/élevée",
-      "9": "",
+      "6": "DGT d'Astrodispersion rayon condensé (Attaque chargée)",
+      "7": "DGT (Mode Surpuissance)",
+      "8": "DGT durant la chute",
+      "9": "DGT chute basse/élevée",
       "10": "",
       "11": "",
       "12": "",
@@ -53,15 +53,15 @@
       "0": "Respectant les règles de conduite féminine parfaite, Sandrone monte à bord de son <strong>Flotéomécha d'assaut tactique du goûteron</strong> et plane vers l'avant pendant 6 s, temps pendant lequel elle peut contrôler la direction de son vol stationnaire. De plus, utiliser un sprint avec un appui simple lui permet de consommer 10 pts d'endurance pour passer dans un élégant vol stationnaire à grande vitesse, afin de se déplacer encore plus vite au prix de 15 pts d'endurance par seconde.",
       "1": "<br/>",
       "2": "Si un ennemi est à proximité lorsqu'elle commence son vol, Sandrone invoque également un canon à résonance prismatique qui déclenche 2 tirs prismatiques sur les ennemis qui ne se sont pas encore refroidis, infligeant des <cryo>DGT Cryo</cryo>.",
-      "3": "<strong>Radiance « Astroconduction »</strong> : Le second tir prismatique inflige à la place des <cryo>DGT Cryo</cryo> considérés comme des DGT de réaction d'Astroconduction.",
+      "3": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Radiance astrale</strong></tooltip> : Le second tir prismatique inflige à la place des <cryo>DGT Cryo</cryo> considérés comme des DGT de réaction astrale correspondante.",
       "4": "<br/>",
       "5": "Lorsqu'elle utilise son Flotéomécha d'assaut tactique du goûteron, Sandrone répare également discrètement Fagio avec élégance, ce qui diminue rapidement la <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>puissance de décodage</tooltip></strong> de cette dernière."
     },
     "skillParams": {
       "0": "DGT tir prismatique",
       "1": "DGT d'Astroconduction tir prismatique",
-      "2": "Temps de recharge",
-      "3": "",
+      "2": "DGT d'Astrodispersion tir prismatique",
+      "3": "Temps de recharge",
       "4": "",
       "5": "",
       "6": "",
@@ -84,15 +84,15 @@
     "name": "Formule phénoménale : CQFD",
     "description": {
       "0": "Suivant l'étiquette élégante d'une dame, Sandrone invoque un grand nombre de canons à résonance prismatique pour déclencher un bombardement étendu vers l'avant avant de tirer sur les ennemis avec un rayon convectif, infligeant des <cryo>DGT Cryo de zone</cryo>.",
-      "1": "<strong>Radiance « Astroconduction »</strong> : Le rayon convectif inflige à la place des <cryo>DGT Cryo de zone</cryo> considérés comme des DGT de réaction d'Astroconduction."
+      "1": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Radiance astrale</strong></tooltip> : Le rayon convectif inflige à la place des <cryo>DGT Cryo de zone</cryo> considérés comme des DGT de réaction astrale correspondante."
     },
     "skillParams": {
       "0": "DGT bombardement",
       "1": "DGT rayon convectif",
       "2": "DGT d'Astroconduction rayon convectif",
-      "3": "Temps de recharge",
-      "4": "Énergie élémentaire",
-      "5": "",
+      "3": "DGT d'Astrodispersion rayon convectif",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
       "6": "",
       "7": "",
       "8": "",
@@ -112,8 +112,8 @@
   "passive1": {
     "name": "Moteur de spéculation éternelle",
     "description": {
-      "0": "<strong>Radiance « Astroconduction »</strong> : Si la <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>puissance de décodage</tooltip></strong> de Fagio dépasse 50 pts lors de l'utilisation de la compétence élémentaire <tooltip ns=char_Sandrone_gen baseKey18=skill><strong>Formule phénoménale : Analyse différentielle</strong></tooltip>, le 2e tir prismatique sur les ennemis proches inflige des DGT d'une valeur équivalant à 400 % des DGT d'origine alors que la puissance de décodage diminue.",
-      "1": "De plus, chaque fois que la <strong>puissance de décodage</strong> diminue de 10 pts, Sandrone obtient un cumul de <strong>tactique affinée</strong> de 60 s, cet effet pouvant être cumulé 10 fois maximum. Lorsque Sandrone utilise son déchaînement élémentaire <tooltip ns=char_Sandrone_gen baseKey18=burst><strong>Formule phénoménale : CQFD</strong></tooltip> tout en étant en <strong>radiance « Astroconduction »</strong>, elle consomme tous les cumuls de tactique affinée pour que son rayon convectif inflige des DGT d'une valeur équivalant à 100 % + nombre de cumuls consommés ×10 % des DGT d'origine."
+      "0": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Radiance astrale</strong></tooltip> : Si la <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>puissance de décodage</tooltip></strong> de Fagio dépasse 50 pts lors de l'utilisation de la compétence élémentaire <tooltip ns=char_Sandrone_gen baseKey18=skill><strong>Formule phénoménale : Analyse différentielle</strong></tooltip>, le 2e tir prismatique sur les ennemis proches inflige des DGT d'une valeur équivalant à 400 % des DGT d'origine alors que la puissance de décodage diminue.",
+      "1": "De plus, chaque fois que la <strong>puissance de décodage</strong> diminue de 10 pts, Sandrone obtient un cumul de <strong>tactique affinée</strong> de 60 s, cet effet pouvant être cumulé 10 fois maximum. Lorsque Sandrone utilise son déchaînement élémentaire <tooltip ns=char_Sandrone_gen baseKey18=burst><strong>Formule phénoménale : CQFD</strong></tooltip> tout en étant en <strong>radiance astrale</strong>, elle consomme tous les cumuls de tactique affinée pour que son rayon convectif inflige des DGT d'une valeur équivalant à 100 % + nombre de cumuls consommés ×10 % des DGT d'origine."
     }
   },
   "passive2": {
@@ -125,9 +125,8 @@
   "passive3": {
     "name": "Lumière du rationalisme",
     "description": {
-      "0": "Lorsqu'un personnage de l'équipe déclenche une réaction de Supraconduction, elle est convertie en réaction d'Astroconduction, dont les DGT de base augmentent selon l'ATQ de Sandrone : chaque tranche de 100 pts d'ATQ augmente les DGT de base de réaction d'Astroconduction de 0,7 %, les DGT pouvant être augmentés d'un maximum de 14 % de cette manière.",
-      "1": "<br/>",
-      "2": "De plus, Sandrone passe en <strong>radiance « Astroconduction »</strong> lorsqu'elle se trouve dans une <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>étendue polaris</strong></tooltip>."
+      "0": "Sandrone passe en <strong>radiance « Astroconduction »</strong> ou en <strong>radiance « Astrodispersion »</strong> pendant 8 s lorsqu'elle est dans une <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>étendue polaris</strong></tooltip> ou lorsqu'un personnage de l'équipe a déclenché une réaction d'Astrodispersion à proximité, respectivement.",
+      "1": "Lorsqu'un personnage de l'équipe déclenche une réaction de Supraconduction ou de Dispersion Cryo, elle est convertie en réaction d'Astroconduction ou d'Astrodispersion, dont les DGT de base augmentent selon l'ATQ de Sandrone : chaque tranche de 100 pts d'ATQ augmente les DGT de base de ces réactions de 0,7 %, les DGT pouvant être augmentés d'un maximum de 14 % de cette manière."
     }
   },
   "passive": {
@@ -139,13 +138,13 @@
   "constellation1": {
     "name": "Demain après l'après-midi doré",
     "description": {
-      "0": "En mode <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Décodage</tooltip></strong>, la vitesse d'augmentation de la <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>puissance de décodage</tooltip></strong> de Fagio diminue de 50 % et les DGT de réaction d'Astroconduction infligés par tous les personnages de l'équipe augmentent de 30 %."
+      "0": "En mode <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Décodage</tooltip></strong>, la vitesse d'augmentation de la <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>puissance de décodage</tooltip></strong> de Fagio diminue de 50 % et les DGT de réaction astrale infligés par tous les personnages de l'équipe augmentent de 30 %."
     }
   },
   "constellation2": {
     "name": "Une héritière regarda dans le miroir",
     "description": {
-      "0": "<strong>Radiance « Astroconduction »</strong> : Les DGT CRIT des rayons condensés de l'attaque chargée augmentent de 40 %, et chaque tir de rayon condensé augmente davantage les DGT CRIT infligés par les rayons condensés tirés pendant ce mode <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Décodage</tooltip></strong> de 20 %, ceci pouvant être cumulé 3 fois."
+      "0": "<strong>Radiance astrale</strong> : Les DGT CRIT des rayons condensés de l'attaque chargée augmentent de 40 %, et chaque tir de rayon condensé augmente davantage les DGT CRIT infligés par les rayons condensés tirés pendant ce mode <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Décodage</tooltip></strong> de 20 %, ceci pouvant être cumulé 3 fois maximum."
     }
   },
   "constellation3": {
@@ -158,7 +157,7 @@
   "constellation4": {
     "name": "Le véritable fondement du monde réside dans la connaissance",
     "description": {
-      "0": "Lorsque Sandrone touche un ennemi avec des DGT de réaction d'Astroconduction, elle invoque également un canon à résonance prismatique supplémentaire pour effectuer une attaque coordonnée qui inflige des <cryo>DGT Cryo</cryo> d'une valeur équivalant à 125 % de son ATQ, ces DGT étant considérés comme des DGT de réaction d'Astroconduction. Cet effet peut être déclenché une fois toutes les 4 s."
+      "0": "Lorsque Sandrone touche un ennemi avec des DGT de réaction d'Astroconduction ou de réaction d'Astrodispersion, elle invoque également un canon à résonance prismatique supplémentaire pour effectuer une attaque coordonnée qui inflige des <cryo>DGT Cryo</cryo> d'une valeur équivalant à 125 % ou 187,5 % de son ATQ, ces DGT étant considérés comme des DGT de réaction astrale correspondante. Cet effet peut être déclenché une fois toutes les 4 s."
     }
   },
   "constellation5": {
@@ -172,8 +171,10 @@
     "name": "Narcisse s'éveille, les yeux rivés sur l'aurore",
     "description": {
       "0": "Lorsque Fagio tire un 3e rayon condensé en mode <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Décodage</tooltip></strong>, le rayon est converti en <strong>rayon condensé groupé</strong> plus puissant et continu qui inflige jusqu'à 4 instances supplémentaires de <cryo>DGT Cryo de zone</cryo> d'une valeur équivalant à 100 % de l'ATQ de Sandrone, en plus de tout rayon original tiré ultérieurement.",
-      "1": "<strong>Radiance « Astroconduction »</strong> : Le <strong>rayon condensé groupé</strong> est converti pour infliger jusqu'à 4 instances supplémentaires de <cryo>DGT Cryo de zone</cryo> d'une valeur équivalant à 80 % de l'ATQ de Sandrone, ces DGT étant considérés comme des DGT de réaction d'Astroconduction.",
-      "2": "De plus, tous les DGT de réaction d'Astroconduction infligés par Sandrone bénéficient d'une <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>élévation</strong></tooltip> de 20 %."
+      "1": "<strong>Radiance astrale</strong> : Le <strong>rayon condensé groupé</strong> est converti pour infliger 4 instances supplémentaires de <cryo>DGT Cryo de zone</cryo> considérés comme des DGT de réaction astrale, dont la valeur dépend de l'ATQ de Sandrone.",
+      "2": "<strong>Radiance « Astroconduction »</strong> : 80 %.",
+      "3": "<strong>Radiance « Astrodispersion »</strong> : 120 %.",
+      "4": "De plus, tous les DGT des réactions astrales infligées par Sandrone bénéficient d'une <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>élévation</strong></tooltip> de 20 %."
     }
   }
 }

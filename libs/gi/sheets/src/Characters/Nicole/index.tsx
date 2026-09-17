@@ -1,5 +1,5 @@
 import { objKeyValMap } from '@genshin-optimizer/common/util'
-import { type CharacterKey, allElementKeys } from '@genshin-optimizer/gi/consts'
+import { allElementKeys, type CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   active,
@@ -20,7 +20,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { any, cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -29,6 +28,7 @@ import {
   shieldElement,
   shieldNodeTalent,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
 
 const key: CharacterKey = 'Nicole'
 const skillParam_gen = allStats.char.skillParam[key]
@@ -363,7 +363,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.3`),
+            name: ct.chg('auto.skillParams.3'),
           }),
         },
         {

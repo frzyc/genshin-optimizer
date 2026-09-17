@@ -10,8 +10,8 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
-import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
+import { headerTemplate, WeaponSheet } from '../../WeaponSheet'
 
 const key: WeaponKey = 'ATeaspoonOfTranscendence'
 
@@ -29,11 +29,20 @@ const stellarconduct_dmg_ = prod(
   ),
   subscript(input.weapon.refinement, stellar_arr, { unit: '%' })
 )
+const stellarswirl_dmg_ = prod(
+  lookup(
+    condPassive,
+    objKeyMap(passiveArr, (stack) => constant(stack)),
+    naught
+  ),
+  subscript(input.weapon.refinement, stellar_arr, { unit: '%' })
+)
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
     atk_,
     stellarconduct_dmg_,
+    stellarswirl_dmg_,
   },
 })
 const sheet: IWeaponSheet = {
@@ -59,6 +68,9 @@ const sheet: IWeaponSheet = {
             fields: [
               {
                 node: stellarconduct_dmg_,
+              },
+              {
+                node: stellarswirl_dmg_,
               },
               {
                 text: stg('duration'),

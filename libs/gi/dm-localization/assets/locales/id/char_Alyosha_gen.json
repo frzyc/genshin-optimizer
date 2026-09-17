@@ -1,0 +1,189 @@
+{
+  "name": "Alyosha",
+  "title": "Swift-Striding Hound",
+  "description": "Seorang \"pemburu profesional\" yang mahir menjelajah hamparan salju Snezhnaya. Di balik sikapnya yang tenang, berkobar sebuah \"idealisme\" yang membara.",
+  "constellationName": "Canis Borzoides",
+  "auto": {
+    "name": "Skirmishing Spear",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan tombak berturut-turut dan memberikan efek <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Hunter's Mark</strong></tooltip> terhadap musuh yang terkena serangan terakhir."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina dan menerjang ke depan, mengakibatkan DMG terhadap musuh di sepanjang jalur."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Thunderbolt Strike",
+    "description": {
+      "0": "Dengan mengikuti naluri pemburu, efek yang dihasilkan akan berbeda berdasarkan Mode Tekan atau Mode Tahan, dan akan memberikan efek <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Hunter's Mark</strong></tooltip> terhadap musuh yang terkena.",
+      "1": "<br/>",
+      "2": "<strong>Mode Tekan</strong>",
+      "3": "Menembak ke depan dan mengakibatkan <electro>Electro DMG Area</electro>.",
+      "4": "<br/>",
+      "5": "<strong>Mode Tahan</strong>",
+      "6": "Memasuki mode membidik dan memilih musuh dalam jangkauan tertentu di arah depan, meningkatkan ketahanan terhadap interupsi Alyosha selama mode ini berlangsung.",
+      "7": "Saat Mode Tahan berakhir, mengakibatkan <electro>Electro DMG</electro> terhadap musuh yang dipilih.",
+      "8": "<br/>",
+      "9": "<i>Pemburu yang ceroboh itu pernah menggapai ujung tombaknya, lalu dia selamat dari pelajaran berdarah karena keberuntungannya dan kini telah memahami prinsip bertahan hidup di padang salju.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Mode Tekan",
+      "1": "DMG Mode Tahan",
+      "2": "Cooldown",
+      "3": "Durasi Hunter's Mark",
+      "4": "Peningkatan ATK Hunter's Precision",
+      "5": "Durasi Hunter's Precision",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Hunter's Advance",
+    "description": {
+      "0": "Memanggil sahabat setianya <strong>Tugarin</strong> untuk bertarung bersama dan mengubah area di depan menjadi <strong>Fulgurite Hunting Field</strong> untuk sementara.",
+      "1": "<br/>",
+      "2": "<strong>Fulgurite Hunting Field</strong>",
+      "3": [
+        "Terus-menerus memprovokasi musuh di sekitarnya untuk menarik serangan musuh.",
+        "Setiap 2 detik, mengakibatkan <electro>Electro DMG Area</electro> terhadap musuh yang memasuki area tersebut."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Tugarin</strong>",
+      "6": [
+        "Jika ada musuh di sekitar, Tugarin akan bergerak cepat untuk mendekati salah satu musuh dan menggigitnya setiap 2 detik, mengakibatkan <strong>Electro DMG</strong>.",
+        "Jika musuh yang diserang sedang berada dalam efek <strong>Hunter's Mark</strong>, maka efek <strong>Hunter's Mark</strong> ini juga akan diaktifkan.",
+        "Tugarin akan memprioritaskan serangan pada musuh yang sedang dalam efek <strong>Hunter's Mark</strong>."
+      ],
+      "7": "<br/>",
+      "8": "<i>Tunggu, tunggu sampai ketidaksabarannya hilang. Maka pada saat itu, burung cerek perut merah itu pun akan terbang melintasi hutan birch putih dan menyambut anak panahnya.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Fulgurite Hunting Field",
+      "1": "DMG Tugarin",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Awakened by the Baying Hounds",
+    "description": {
+      "0": "Saat <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> menyerang, ia juga akan memulihkan HP Karakter aktif party di sekitar sebesar 120% dari ATK Alyosha."
+    }
+  },
+  "passive2": {
+    "name": "Suffer the Winter Wheat Will",
+    "description": {
+      "0": "Meningkatkan DMG yang diakibatkan oleh Elemental Skill dan Elemental Burst Alyosha berdasarkan Energy Recharge Alyosha: Setiap 1% Energy Recharge akan meningkatkan DMG ini sebesar 0,35% hingga maksimum 70%."
+    }
+  },
+  "passive3": {
+    "name": "Into the Fray",
+    "description": {
+      "0": "Alyosha akan memasuki status <strong>Radiance: Stellar-Conduct</strong> saat berada di dalam <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>.",
+      "1": "<strong>Radiance: Stellar-Conduct</strong>: Efek <strong>Hunter's Precision</strong> yang diperoleh saat mengaktifkan <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Hunter's Mark</strong></tooltip> juga akan meningkatkan 20% DMG reaksi Stellar-Conduct yang diakibatkan Karakter yang berada di medan pertempuran."
+    }
+  },
+  "passive": {
+    "name": "Treetop Watch",
+    "description": {
+      "0": "Memperlihatkan lokasi <strong>produk khas Snezhnaya</strong> di sekitar pada peta kecil."
+    }
+  },
+  "constellation1": {
+    "name": "Frostvale Thunderclap",
+    "description": {
+      "0": "Setelah Karakter party di sekitar memicu <electro>reaksi terkait Electro</electro> terhadap musuh, akan memulihkan 15 poin Energy untuk Alyosha. Efek ini dapat terpicu maksimal sekali setiap 18 detik."
+    }
+  },
+  "constellation2": {
+    "name": "Howl From Afar",
+    "description": {
+      "0": "Durasi Elemental Burst <strong>Hunter's Advance</strong> diperpanjang 6 detik.",
+      "1": "Selain itu, sebelum setiap kali <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> menyerang musuh, ia juga akan memberikan efek <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Hunter's Mark</strong></tooltip> terhadap satu target. Efek ini tidak akan mengaktifkan <strong>Hunter's Mark</strong> yang sudah ada."
+    }
+  },
+  "constellation3": {
+    "name": "Friendly Call",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong>Thunderbolt Strike</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Harvest the Spoils",
+    "description": {
+      "0": "Saat <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> menyerang, ia juga akan memulihkan HP anggota party terdekat dengan persentase HP terendah sebesar 60% ATK Alyosha."
+    }
+  },
+  "constellation5": {
+    "name": "When the Nightbird Falls Silent",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong>Hunter's Advance</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Standard Reclaimed",
+    "description": {
+      "0": "Efek <strong>Hunter's Precision</strong> yang diperoleh saat mengaktifkan <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Hunter's Mark</strong></tooltip> kini dapat ditumpuk, hingga 2 lapis. Saat ditumpuk hingga 2 lapis, Elemental Mastery Karakter aktif yang terpengaruh Hunter's Precision akan meningkat 100 poin."
+    }
+  }
+}

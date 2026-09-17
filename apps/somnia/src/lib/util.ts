@@ -1,5 +1,5 @@
 // TODO: This should be in libs somewhere, not in this app
-import * as process from 'process'
+import * as process from 'node:process'
 export const cwd = process.env['NX_WORKSPACE_ROOT'] ?? process.cwd()
 
 export const fieldsJoin = (o: any) => Object.values(o).join('\n')

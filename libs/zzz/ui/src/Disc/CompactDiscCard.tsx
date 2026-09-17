@@ -25,7 +25,7 @@ import type { Theme } from '@mui/system'
 import type { ReactNode } from 'react'
 import { Suspense, useCallback, useContext } from 'react'
 import { ZCard } from '../Components'
-import { StatHighlightContext, getHighlightRGBA, isHighlight } from '../context'
+import { getHighlightRGBA, isHighlight, StatHighlightContext } from '../context'
 import { COMPACT_CARD_HEIGHT_PX, EmptyCompactCard } from '../util'
 import { useSpinner } from './util'
 
@@ -171,7 +171,7 @@ export function CompactDiscCard({
                       justifyContent: 'center',
                       overflow: 'hidden',
                       borderRadius: '50%',
-                      border: `4px solid #1B263B`,
+                      border: '4px solid #1B263B',
                     }}
                   >
                     <Box
@@ -260,7 +260,7 @@ export function CompactDiscCard({
                       },
                     }}
                   >
-                    <StatIcon statKey={disc.mainStatKey}></StatIcon>
+                    <StatIcon statKey={disc.mainStatKey} />
                     <span>
                       {toPercent(
                         getDiscMainStatVal(

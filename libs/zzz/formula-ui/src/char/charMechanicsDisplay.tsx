@@ -10,7 +10,7 @@ import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
 import { ZCard } from '@genshin-optimizer/zzz/ui'
 import { Box, Stack, Typography } from '@mui/material'
 import { type ReactNode, useMemo } from 'react'
-import { useDebugFormulaClick } from '../hooks'
+import { useCharFormulaFields, useZzzCalcContext } from '../hooks'
 import {
   skillSectionFlatIconKey,
   talentSheetElementIcon,
@@ -22,6 +22,7 @@ import {
   allTalentSheetElementKey,
 } from './consts'
 import { charSheets } from './sheets'
+import { injectAllAbilityFieldsIntoSkillDocuments } from './skillDocuments'
 
 const nonSkillSheetKeys = allTalentSheetElementKey.filter(
   (
@@ -95,7 +96,6 @@ function groupDocumentsBySection(documents: Document[]): Document[][] {
 }
 
 function TalentSheetDocuments({ documents }: { documents: Document[] }) {
-  const onClickFormula = useDebugFormulaClick()
   if (!documents.length) return null
   return (
     <DocumentGroupProvider>
@@ -106,7 +106,6 @@ function TalentSheetDocuments({ documents }: { documents: Document[] }) {
             document={document}
             typoVariant="body2"
             collapse={document.type === 'text'}
-            onClickFormula={onClickFormula}
           />
         ))}
       </ZCard>
@@ -153,15 +152,23 @@ export function CharMechanicsGroupedDisplay({
 }: {
   charKey: CharacterKey
 }) {
+  const calc = useZzzCalcContext()
+  const { abilityFieldsBySkill } = useCharFormulaFields(charKey, calc)
+
   const skillSections = useMemo(
     () =>
       allSkillKeys
-        .map((skill) => ({
-          skill,
-          documents: charSheets[charKey][skill]?.documents ?? [],
-        }))
+        .map((skill) => {
+          const staticDocs = charSheets[charKey][skill]?.documents ?? []
+          const documents = injectAllAbilityFieldsIntoSkillDocuments(
+            staticDocs,
+            skill,
+            abilityFieldsBySkill
+          )
+          return { skill, documents }
+        })
         .filter(({ documents }) => documents.length > 0),
-    [charKey]
+    [abilityFieldsBySkill, charKey]
   )
 
   return (

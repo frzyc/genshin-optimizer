@@ -1,0 +1,24 @@
+{
+  "name": "Whitelake Frostfeather",
+  "description": {
+    "0": "Pedang panjang seringan bulu angsa putih yang selalu terjaga kemurniannya tanpa noda."
+  },
+  "passiveName": "Snow Swan's Finale",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat Elemental Skill karakter yang mengenakan mengenai musuh, mendapatkan \"Lake-Hued Lament\": ATK +<cryo>8%</cryo> selama 8 detik, dapat ditumpuk sampai 3 lapis dan terpicu sekali setiap 0,1 detik, durasi setiap lapisnya dihitung secara terpisah. Saat memiliki 3 lapis, CRIT DMG dari reaksi Stellar Glimmer yang diakibatkan Karakter yang mengenakan +<cryo>50%</cryo>, dan saat memicu reaksi Stellar Glimmer atau mengakibatkan DMG reaksi Stellar Glimmer, Karakter yang mengenakan juga akan memulihkan <cryo>4</cryo> poin Energy. Efek pemulihan Energy di atas dapat terpicu sekali setiap 3,5 detik. Efek di atas tetap dapat dipicu saat karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "Saat Elemental Skill karakter yang mengenakan mengenai musuh, mendapatkan efek \"Lake-Hued Lament\": ATK +<cryo>10%</cryo> selama 8 detik. Efek ini dapat ditumpuk sampai 3 lapis dan dapat terpicu sekali setiap 0,1 detik, durasi setiap lapisnya dihitung secara terpisah. Saat memiliki 3 lapis, CRIT DMG dari reaksi Stellar Glimmer yang diakibatkan Karakter yang mengenakan +<cryo>65%</cryo>, dan saat memicu reaksi Stellar Glimmer atau mengakibatkan DMG reaksi Stellar Glimmer, Karakter yang mengenakan juga akan memulihkan <cryo>4,5</cryo> poin Energy untuk Karakter yang mengenakan. Efek pemulihan Energy di atas dapat terpicu sekali setiap 3,5 detik. Efek di atas tetap dapat dipicu saat karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "Saat Elemental Skill karakter yang mengenakan mengenai musuh, mendapatkan \"Lake-Hued Lament\": ATK +<cryo>12%</cryo> selama 8 detik, dapat ditumpuk sampai 3 lapis dan terpicu sekali setiap 0,1 detik, durasi setiap lapisnya dihitung secara terpisah. Saat memiliki 3 lapis, CRIT DMG dari reaksi Stellar Glimmer yang diakibatkan Karakter yang mengenakan +<cryo>80%</cryo>, dan saat memicu reaksi Stellar Glimmer atau mengakibatkan DMG reaksi Stellar Glimmer, Karakter yang mengenakan juga akan memulihkan <cryo>5</cryo> poin Energy. Efek pemulihan Energy di atas dapat terpicu sekali setiap 3,5 detik. Efek di atas tetap dapat dipicu saat karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "Saat Elemental Skill karakter yang mengenakan mengenai musuh, mendapatkan \"Lake-Hued Lament\": ATK +<cryo>14%</cryo> selama 8 detik, dapat ditumpuk sampai 3 lapis dan terpicu sekali setiap 0,1 detik, durasi setiap lapisnya dihitung secara terpisah. Saat memiliki 3 lapis, CRIT DMG dari reaksi Stellar Glimmer yang diakibatkan Karakter yang mengenakan +<cryo>95%</cryo>, dan saat memicu reaksi Stellar Glimmer atau mengakibatkan DMG reaksi Stellar Glimmer, Karakter yang mengenakan juga akan memulihkan <cryo>5,5</cryo> poin Energy. Efek pemulihan Energy di atas dapat terpicu sekali setiap 3,5 detik. Efek di atas tetap dapat dipicu saat karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "Saat Elemental Skill karakter yang mengenakan mengenai musuh, mendapatkan \"Lake-Hued Lament\": ATK +<cryo>16%</cryo> selama 8 detik, dapat ditumpuk sampai 3 lapis dan terpicu sekali setiap 0,1 detik, durasi setiap lapisnya dihitung secara terpisah. Saat memiliki 3 lapis, CRIT DMG dari reaksi Stellar Glimmer yang diakibatkan Karakter yang mengenakan +<cryo>110%</cryo>, dan saat memicu reaksi Stellar Glimmer atau mengakibatkan DMG reaksi Stellar Glimmer, Karakter yang mengenakan juga akan memulihkan <cryo>6</cryo> poin Energy. Efek pemulihan Energy di atas dapat terpicu sekali setiap 3,5 detik. Efek di atas tetap dapat dipicu saat karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

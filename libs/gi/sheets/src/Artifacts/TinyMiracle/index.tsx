@@ -5,8 +5,8 @@ import type { Data } from '@genshin-optimizer/gi/wr'
 import { equal, greaterEq, input, percent, sum } from '@genshin-optimizer/gi/wr'
 import { cond, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
+import type { SetEffectSheet } from '../IArtifactSheet'
 
 const key: ArtifactSetKey = 'TinyMiracle'
 const setHeader = setHeaderTemplate(key)

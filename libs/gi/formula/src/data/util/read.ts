@@ -1,4 +1,7 @@
-import type { Tag as BaseTag } from '@genshin-optimizer/game-opt/engine'
+import type {
+  Tag as BaseTag,
+  EntryType,
+} from '@genshin-optimizer/game-opt/engine'
 import {
   Read as BaseRead,
   reader as baseReader,
@@ -31,7 +34,7 @@ export const fixedTags = {
   amp: [...allAmplifyingReactionKeys, ''],
   cata: [...allCatalyzeReactionKeys, ''],
 } as const
-export type Tag = BaseTag<Sheet, Src, Dst>
+export type Tag = BaseTag<Sheet, Src, Dst, EntryType>
 
 export class Read extends BaseRead<Tag> {
   override toString(): string {
@@ -126,6 +129,9 @@ export class Read extends BaseRead<Tag> {
   get stellarconduct(): Read {
     return super.with('trans', 'stellarconduct')
   }
+  get stellarswirl(): Read {
+    return super.with('trans', 'stellarswirl')
+  }
   get vaporize(): Read {
     return super.with('amp', 'vaporize')
   }
@@ -199,7 +205,7 @@ export function tagStr(tag: Tag, ex?: any): string {
     includedBar = false
   function required(str: string | undefined | null, name: string) {
     if (!str && str !== null) return
-    result += str === null ? `!${name} ` : str + ' '
+    result += str === null ? `!${name} ` : `${str} `
     includedRequired = true
   }
   function optional(str: string | undefined | null, name: string) {
@@ -208,7 +214,7 @@ export function tagStr(tag: Tag, ex?: any): string {
       includedBar = true
       result += '| '
     }
-    result += str === null ? `!${name} ` : str + ' '
+    result += str === null ? `!${name} ` : `${str} `
   }
   required(name && `#${name}`, 'name')
   required(preset, 'preset')
@@ -227,5 +233,5 @@ export function tagStr(tag: Tag, ex?: any): string {
   optional(amp, 'amp')
   optional(cata, 'cata')
   if (ex) result += `[${ex}] `
-  return result + '}'
+  return `${result}}`
 }

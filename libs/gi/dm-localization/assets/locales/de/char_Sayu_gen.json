@@ -129,8 +129,8 @@
   "passive1": {
     "name": "Bessere Wahl",
     "description": {
-      "0": "Stellt der eigenen Figur in der Truppe sowie befreundeten Figuren in der Nähe 300 LP wieder her, wenn Sayu auf dem Schlachtfeld eine Verwirbelung auslöst. Stellt für jeden Punkt von Sayus Elementarkunde zusätzlich 1,2 LP wieder her.",
-      "1": "2 s Abklingzeit."
+      "0": "Stellt der eigenen Figur in der Truppe sowie befreundeten Figuren in der Nähe 300 LP wieder her, wenn Sayu auf dem Schlachtfeld die Reaktion Verwirbelung oder Stellar-Verwirbelung auslöst. Stellt für jeden Punkt von Sayus Elementarkunde zusätzlich 1,2 LP wieder her.",
+      "1": "2 s Abklingzeit."
     }
   },
   "passive2": {
@@ -176,8 +176,8 @@
   "constellation4": {
     "name": "Profischwänzen",
     "description": {
-      "0": "Stellt 1,2 Punkte Elementarenergie wieder her, wenn Sayu auf dem Schlachtfeld eine Verwirbelung auslöst.",
-      "1": "2 s Abklingzeit."
+      "0": "Stellt 1,2 Punkte Elementarenergie wieder her, wenn Sayu auf dem Schlachtfeld die Reaktion Verwirbelung oder Stellar-Verwirbelung auslöst.",
+      "1": "2 s Abklingzeit."
     }
   },
   "constellation5": {

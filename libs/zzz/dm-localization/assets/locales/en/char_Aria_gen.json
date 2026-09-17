@@ -221,7 +221,7 @@
   "ability": {
     "name": "Additional Ability: Collaborative Stage",
     "desc": {
-      "0": "When another character in your squad is a <ct color=#FFFFFF>Stun</ct> or <ct color=#FFFFFF>Support</ct> character, or shares the same Faction:",
+      "0": "When another character in your squad is a <ct color=#FFFFFF>Stun</ct>, <ct color=#FFFFFF>Support</ct>, or <ct color=#FFFFFF>Anomaly</ct> character, or shares the same Faction:",
       "1": "When <ct color=#FFFFFF>Ether Veil</ct> is activated, 4 <ct color=#FFFFFF>Fandom Power</ct> are generated on the field. This can trigger once every 1s.",
       "2": "When any squad member applies <ct color=#FE437E>Corruption</ct> to an enemy, its duration is extended by 3s."
     }

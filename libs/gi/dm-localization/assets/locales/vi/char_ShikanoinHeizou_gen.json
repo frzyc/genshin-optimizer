@@ -115,7 +115,7 @@
   "passive1": {
     "name": "Kinh Nghiệm Phản Biện",
     "description": {
-      "0": "Shikanoin Heizou khi kích hoạt phản ứng khuếch tán sẽ nhận 1 tầng \"Biến Cách\" của <strong>Lục Tâm Quyền</strong>, hiệu quả này mỗi 0.1s tối đa kích hoạt một lần."
+      "0": "Shikanoin Heizou khi kích hoạt phản ứng Khuếch Tán, Tinh-Khuếch Tán sẽ nhận 1 tầng \"Biến Cách\" của <strong>Lục Tâm Quyền</strong>, hiệu quả này mỗi 0.1s tối đa kích hoạt một lần."
     }
   },
   "passive2": {

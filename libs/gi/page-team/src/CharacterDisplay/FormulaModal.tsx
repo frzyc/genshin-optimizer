@@ -124,7 +124,7 @@ function FormulaAccordian({ node }: { node: CalcResult }) {
   const { node: contextNode } = useContext(FormulaDataContext)
   const [expanded, setExpanded] = useState(false)
   const handleChange = useCallback(
-    (e: React.SyntheticEvent, isExpanded: boolean) => setExpanded(isExpanded),
+    (_e: React.SyntheticEvent, isExpanded: boolean) => setExpanded(isExpanded),
     []
   )
   const scrollRef =

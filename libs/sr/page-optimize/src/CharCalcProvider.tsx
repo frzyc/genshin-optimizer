@@ -26,7 +26,7 @@ import {
   withMember,
   withPreset,
 } from '@genshin-optimizer/sr/formula'
-import { TagDisplay, formulaText } from '@genshin-optimizer/sr/formula-ui'
+import { formulaText, TagDisplay } from '@genshin-optimizer/sr/formula-ui'
 import { relicsTagMapNodes } from '@genshin-optimizer/sr/solver'
 import type { ReactNode } from 'react'
 import { useMemo } from 'react'
@@ -58,12 +58,12 @@ export function CharCalcProvider({
         ...charOpt.conditionals.flatMap(
           ({ sheet, src, dst, condKey, condValue }) =>
             withPreset(
-              `preset0`,
+              'preset0',
               conditionalEntries(sheet, src, dst)(condKey, condValue)
             )
         ),
         ...charOpt.bonusStats.flatMap(({ tag, value }) =>
-          withPreset(`preset0`, {
+          withPreset('preset0', {
             tag: { ...tag },
             value: constant(value),
           })

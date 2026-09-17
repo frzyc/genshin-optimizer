@@ -65,7 +65,9 @@
     "hyperbloom": "超開花",
     "quicken": "原激化",
     "aggravate": "超激化",
-    "spread": "草激化"
+    "spread": "草激化",
+    "stellarconduct": "星電導",
+    "stellarswirl": "星拡散"
   },
   "stat": {
     "def": "防御力",
@@ -77,15 +79,15 @@
   "talentLvl": "天賦Lv.{{level}}",
   "talents": {
     "auto": "通常攻撃",
-    "skill": "",
-    "burst": "",
+    "skill": "元素スキル",
+    "burst": "元素爆発",
     "altSprint": "ダッシュの代わりに発動する"
   },
   "unlockPassive1": "突破段階「1」で解放",
   "unlockPassive2": "突破段階「4」で解放",
   "unlockPassive3": "固有天賦",
   "unlockLockedPassive": "前提任務クリア後に開放",
-  "witchPassive": "",
+  "witchPassive": "魔女の課題",
   "moonsign": "月兆",
   "hexerei": "魔導"
 }

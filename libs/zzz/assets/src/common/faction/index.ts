@@ -1,6 +1,7 @@
 import AngelsOfDelusion from './IconCampAngelsOfDelusion.png'
 import BelebogHeavyIndustries from './IconCampBelobogIndustries.png'
 import KrampusComplianceAuthority from './IconCampBlackRoot.png'
+import CovenantOfDayat from './IconCampCovenantOfDayat.png'
 import RoscaeliferExternalStrategyDepartment from './IconCampE.S.D.png'
 import CunningHares from './IconCampGentleHouse.png'
 import HollowSpecialOoperationsSection6 from './IconCampH.S.O-S6.png'
@@ -18,6 +19,7 @@ import VictoriaHousekeepingCo from './IconCampVictoriaHousekeepingCo.png'
 const data = {
   AngelsOfDelusion,
   BelebogHeavyIndustries,
+  CovenantOfDayat,
   CunningHares,
   CriminalInvestigationSpecialResponseTeam,
   HollowSpecialOoperationsSection6,

@@ -9,10 +9,10 @@ import type {
   CustomTarget,
 } from './CustomMultiTarget'
 import {
-  MAX_DESC_LENGTH,
-  MAX_NAME_LENGTH,
   initCustomMultiTarget,
   initCustomTarget,
+  MAX_DESC_LENGTH,
+  MAX_NAME_LENGTH,
   validateCustomMultiTarget,
 } from './CustomMultiTarget'
 import type { GeneratedBuild } from './GeneratedBuildListDataManager'
@@ -43,28 +43,11 @@ import {
   defaultInitialWeaponKey,
   initialWeapon,
 } from './WeaponDataManager'
-export {
-  MAX_DESC_LENGTH,
-  MAX_NAME_LENGTH,
-  allArtifactSetExclusionKeys,
-  cachedArtifact,
-  defLoadoutExportSetting,
-  defaultInitialWeapon,
-  defaultInitialWeaponKey,
-  handleArtSetExclusion,
-  initCharTC,
-  initCustomMultiTarget,
-  initCustomTarget,
-  initialWeapon,
-  maxBuildsToShowList,
-  toBuildTc,
-  validateArtifact,
-  validateCustomMultiTarget,
-}
+
 export type {
+  ArtifactData,
   ArtSetExclusion,
   ArtSetExclusionKey,
-  ArtifactData,
   BonusStats,
   BuildTc,
   BuildTcArtifactSlot,
@@ -83,4 +66,22 @@ export type {
   StatFilters,
   Team,
   TeamCharacter,
+}
+export {
+  allArtifactSetExclusionKeys,
+  cachedArtifact,
+  defaultInitialWeapon,
+  defaultInitialWeaponKey,
+  defLoadoutExportSetting,
+  handleArtSetExclusion,
+  initCharTC,
+  initCustomMultiTarget,
+  initCustomTarget,
+  initialWeapon,
+  MAX_DESC_LENGTH,
+  MAX_NAME_LENGTH,
+  maxBuildsToShowList,
+  toBuildTc,
+  validateArtifact,
+  validateCustomMultiTarget,
 }

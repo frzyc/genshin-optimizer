@@ -6,10 +6,9 @@ export function LoadoutInfoAlert() {
   return (
     <Alert severity="info">
       <Trans t={t} i18nKey={'loadoutSettings.alert'}>
-        <strong>Loadouts</strong> provides character context data, including
-        bonus stats, conditionals, multi-targets, optimization config, and
-        stores builds. A single <strong>Loadout</strong> can be used for many
-        teams.
+        <strong>Loadouts</strong> provide character context data, including
+        bonus stats, conditionals, multi-targets, and optimization config. A
+        single <strong>Loadout</strong> can be used for many teams.
       </Trans>
     </Alert>
   )

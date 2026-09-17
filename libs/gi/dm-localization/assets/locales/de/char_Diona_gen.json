@@ -140,8 +140,8 @@
   "lockedPassive": {
     "name": "Auserwählter Geheimschatz",
     "description": {
-      "0": "Innerhalb von 20 s nach dem Anwenden der Elementarfähigkeit <strong>Eistatzen</strong> führt Diona einen abgestimmten Angriff durchs Abschießen von 3 <strong>Eistatzen</strong> aus, wenn ein Truppenmitglied die Reaktion Supraleiter oder Stellar-Supraleiter auslöst. Die auf diese Weise abgeschossenen <strong>Eistatzen</strong> erzeugen keine Elementarteilchen und generieren auch keinen Schild, wenn sie Gegner treffen. Dieser Effekt hat eine Abklingzeit von 3,5 s.",
-      "1": "Versetzt Diona zudem, wenn sie sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet, in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong>."
+      "0": "Innerhalb von 20 s nach dem Anwenden der Elementarfähigkeit <strong>Eistatzen</strong> führt Diona einen abgestimmten Angriff durchs Abschießen von 3 <strong>Eistatzen</strong> aus, wenn ein Truppenmitglied die Reaktion Stellar-Supraleiter, Supraleiter, Kryo-Verwirbelung oder Stellar-Verwirbelung auslöst. Die auf diese Weise abgeschossenen <strong>Eistatzen</strong> erzeugen keine Elementarteilchen und generieren auch keinen Schild, wenn sie Gegner treffen. Dieser Effekt hat eine Abklingzeit von 3,5 s.",
+      "1": "Versetzt Diona zudem, wenn sie sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet oder ein Truppenmitglied in der Nähe die Reaktion Stellar-Verwirbelung auslöst, innerhalb von 8 s jeweils in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong>/<strong>Leuchten – Stellar-Verwirbelung</strong>."
     }
   },
   "constellation1": {
@@ -194,8 +194,9 @@
       ],
       "2": "<br/>",
       "3": "Erhöht zusätzlich Dionas max. LP um 25 %.",
-      "4": "<br/>",
-      "5": "<strong>Leuchten – Stellar-Supraleiter</strong>: Erhöht zudem den von Figuren im Bereich von <strong>Eisgekühlter Branntwein</strong> durch die Reaktionen Supraleiter und Stellar-Supraleiter verursachten Schaden um 40 %."
+      "4": "<strong>Leuchten – Stellarfunkeln</strong>: Erhöht den von Figuren im Bereich von „Eisgekühlter Branntwein“ verursachten Schaden der entsprechenden Reaktion:",
+      "5": "<strong>Leuchten – Stellar-Supraleiter</strong>: Erhöht den durch die Reaktionen Supraleiter und Stellar-Supraleiter verursachten Schaden um 40 %.",
+      "6": "<strong>Leuchten – Stellar-Verwirbelung</strong>: Erhöht den durch die Reaktionen Kryo-Verwirbelung und Stellar-Verwirbelung verursachten Schaden um 40 %."
     }
   }
 }

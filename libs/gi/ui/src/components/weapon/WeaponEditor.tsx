@@ -43,10 +43,10 @@ import {
 import { useCallback, useContext, useMemo } from 'react'
 import { DataContext } from '../../context'
 import { useTeamData } from '../../hooks'
+import { LocationAutocomplete } from '../character'
 import { DocumentDisplay } from '../DocumentDisplay'
 import { FieldDisplayList, NodeFieldDisplay } from '../FieldDisplay'
 import { RefinementDropdown } from '../RefinementDropdown'
-import { LocationAutocomplete } from '../character'
 import { WeaponLevelSelect } from './WeaponLevelSelect'
 import { WeaponSelectionModal } from './WeaponSelectionModal'
 import {

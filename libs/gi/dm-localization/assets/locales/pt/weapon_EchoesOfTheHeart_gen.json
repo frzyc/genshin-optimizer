@@ -1,0 +1,24 @@
+{
+  "name": "Ecos do Coração",
+  "description": {
+    "0": "Um Catalisador que dizem ser capaz de cristalizar vozes. Dentro dele está selado um juramento, bem como um coração há muito esquecido pela humanidade."
+  },
+  "passiveName": "Eco de um Juramento",
+  "passiveDescription": {
+    "0": {
+      "0": "Nos 12s após desencadear uma reação Elemental, aumenta a Proficiência Elemental do portador em <cryo>60</cryo>. Nos 12s após desencadear uma reação de Brilho Estelar, aumenta o Dano de reações de Brilho Estelar do portador em <cryo>16%</cryo>. Esse efeito pode ser desencadeado mesmo que o portador não seja o personagem ativo."
+    },
+    "1": {
+      "0": "Nos 12s após desencadear uma reação Elemental, aumenta a Proficiência Elemental do portador em <cryo>75</cryo>. Nos 12s após desencadear uma reação de Brilho Estelar, aumenta o Dano de reações de Brilho Estelar do portador em <cryo>20%</cryo>. Esse efeito pode ser desencadeado mesmo que o portador não seja o personagem ativo."
+    },
+    "2": {
+      "0": "Nos 12s após desencadear uma reação Elemental, aumenta a Proficiência Elemental do portador em <cryo>90</cryo>. Nos 12s após desencadear uma reação de Brilho Estelar, aumenta o Dano de reações de Brilho Estelar do portador em <cryo>24%</cryo>. Esse efeito pode ser desencadeado mesmo que o portador não seja o personagem ativo."
+    },
+    "3": {
+      "0": "Nos 12s após desencadear uma reação Elemental, aumenta a Proficiência Elemental do portador em <cryo>105</cryo>. Nos 12s após desencadear uma reação de Brilho Estelar, aumenta o Dano de reações de Brilho Estelar do portador em <cryo>28%</cryo>. Esse efeito pode ser desencadeado mesmo que o portador não seja o personagem ativo."
+    },
+    "4": {
+      "0": "Nos 12s após desencadear uma reação Elemental, aumenta a Proficiência Elemental do portador em <cryo>120</cryo>. Nos 12s após desencadear uma reação de Brilho Estelar, aumenta o Dano de reações de Brilho Estelar do portador em <cryo>32%</cryo>. Esse efeito pode ser desencadeado mesmo que o portador não seja o personagem ativo."
+    }
+  }
+}

@@ -137,8 +137,8 @@
     "name": "Alles Unrecht wird ans Licht kommen",
     "description": {
       "0": "<strong>Leuchten – Stellar-Supraleiter</strong>: Ändert den Effekt des Aufstiegstalents „Tag des Plädoyers der Gerechtigkeit“ zu Folgendem:",
-      "1": "Verleiht Wriothesley, wenn seine LP unter 60 % liegen, „Gebot der Gnade – Offenbarung“ und verstärkt den nächsten heftigen Schlag von <strong>Standardangriff – Flinke Frostfaust</strong> zu „Himmelsglanz – Gefrierende Sprungfaust“: Verbraucht keine Ausdauer und stellt Wriothesley bei Treffern LP in Höhe von 30 % seiner max. LP wieder her. Auf diese Weise können höchstens einmal alle 2 s LP für Wriothesley wiederhergestellt werden.",
-      "2": "Darüber hinaus verursachen der dritte und fünfte Schlag der durch <strong>Eiskalte Bestrafung</strong> verstärkten Sturmfäuste jeweils 60 % / 80 % des ursprünglichen <cryo>Kryo-Schadens</cryo>. „Himmelsglanz – Gefrierende Sprungfaust“ verursacht 100 % des ursprünglichen <cryo>Kryo-Flächenschadens</cryo>. Der oben genannte Schaden gilt als Schaden durch die Reaktion Stellar-Supraleiter. Erhöht den von Wriothesley verursachten Schaden durch die Reaktion Stellar-Supraleiter um 30 %.",
+      "1": "Verleiht Wriothesley, wenn seine LP unter 60 % liegen, „Gebot der Gnade – Offenbarung“ und verstärkt seinen ausgeführten heftigen Schlag von <strong>Standardangriff – Flinke Frostfaust</strong> zu „Himmelsglanz – Gefrierende Sprungfaust“: Verbraucht keine Ausdauer und stellt Wriothesley bei Treffern LP in Höhe von 30 % seiner max. LP wieder her. Auf diese Weise können höchstens einmal alle 2 s LP für Wriothesley wiederhergestellt werden.",
+      "2": "Darüber hinaus verursachen der dritte und fünfte Schlag der durch <strong>Eiskalte Bestrafung</strong> verstärkten Sturmfäuste jeweils 60/80 % des ursprünglichen <cryo>Kryo-Schadens</cryo>. „Himmelsglanz – Gefrierende Sprungfaust“ verursacht 100 % des ursprünglichen <cryo>Kryo-Flächenschadens</cryo>. Der oben genannte Schaden gilt als Schaden durch die Reaktion Stellar-Supraleiter. Erhöht den von Wriothesley verursachten Schaden durch die Reaktion Stellar-Supraleiter um 30 %.",
       "3": "Versetzt Wriothesley zudem, wenn er sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet, in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong>."
     }
   },
@@ -168,8 +168,8 @@
       "5": "<br/>",
       "6": "<strong>Leuchten – Stellar-Supraleiter</strong>:",
       "7": [
-        " Erhöht nach dem Treffen eines Gegners mit „Himmelsglanz – Gefrierende Sprungfaust“ innerhalb von 5 s, wenn das nächste Mal ein durch Eiskalte Bestrafung verstärkter fünfter Schlag von „Sturmfäuste“ angewendet wird, den verursachten Schaden um 50 %.",
-        " Erhöht innerhalb von 5 s, nachdem ein durch Eiskalte Bestrafung verstärkter fünfter Schlag von „Sturmfäuste“ einen Gegner getroffen hat, den Schaden von Himmelsglanz – Gefrierende Sprungfaust um 50 %.",
+        " Erhöht nach dem Treffen eines Gegners mit „Himmelsglanz – Gefrierende Sprungfaust“ 5 s lang, wenn das nächste Mal ein durch Eiskalte Bestrafung verstärkter fünfter Schlag von „Sturmfäuste“ angewendet wird, den verursachten Schaden um 50 %.",
+        " Erhöht, nachdem ein durch Eiskalte Bestrafung verstärkter fünfter Schlag von „Sturmfäuste“ einen Gegner getroffen hat, den Schaden von Himmelsglanz – Gefrierende Sprungfaust 5 s lang um 50 %.",
         " Verlängert, wenn ein Gegner mit „Himmelsglanz – Gefrierende Sprungfaust“ getroffen wird, während Wriothesley sich im Zustand Eiskalte Bestrafung befindet, die Dauer dieses Zustands um 4 s."
       ],
       "8": "<br/>",
@@ -187,10 +187,10 @@
     "upgradedDescription": {
       "0": "Erhöht beim Anwenden von <strong>Schwarzgoldener Wolfsbiss</strong> für jede Stapelung des Effekts „Erlass der Anklage“ des Aufstiegstalents „Stunde der Vergeltung der Sünde“ den verursachten Schaden um 40 %.",
       "1": "<br/>",
-      "2": "Wenn „Erlass der Anklage“ zudem fünf Stapelungen angesammelt hat und Wriothesley:",
+      "2": "Wenn „Erlass der Anklage“ zudem fünf Stapelungen erreicht hat und Wriothesley:",
       "3": [
-        " sich im Zustand <strong>Leuchten –Stellar-Supraleiter</strong> befindet: Verstärkt das Talent „Alles Unrecht wird ans Licht kommen“: Der dritte und fünfte Schlag der durch <strong>Eiskalte Bestrafung</strong> verstärkten Sturmfäuste verursachen jeweils 90 % / 120 % des ursprünglichen <cryo>Kryo-Schadens</cryo>, und „Himmelsglanz – Gefrierende Sprungfaust“ verursacht 150 % des ursprünglichen <cryo>Kryo-Flächenschadens</cryo>. Der oben genannte Schaden wird als Schaden durch die Reaktion Stellar-Supraleiter gewertet.",
-        " sich nicht im Zustand <strong>Leuchten – Stellar-Supraleiter</strong> befindet: Standardangriffe und heftige Schläge verursachen jeweils 125 % / 130 % des ursprünglichen Schadens."
+        " sich im Zustand <strong>Leuchten –Stellar-Supraleiter</strong> befindet: Verstärkt das Talent „Alles Unrecht wird ans Licht kommen“: Der dritte und fünfte Schlag der durch <strong>Eiskalte Bestrafung</strong> verstärkten Sturmfäuste verursachen jeweils 90/120 % des ursprünglichen <cryo>Kryo-Schadens</cryo>, und „Himmelsglanz – Gefrierende Sprungfaust“ verursacht 150 % des ursprünglichen <cryo>Kryo-Flächenschadens</cryo>. Der oben genannte Schaden wird als Schaden durch die Reaktion Stellar-Supraleiter gewertet.",
+        " sich nicht im Zustand <strong>Leuchten – Stellar-Supraleiter</strong> befindet: Standardangriffe und heftige Schläge verursachen jeweils 125/130 % des ursprünglichen Schadens."
       ],
       "4": "<br/>",
       "5": "Das Aufstiegstalent „Stunde der Vergeltung der Sünde“ muss freigeschaltet werden."
@@ -235,7 +235,7 @@
       "1": "<br/>",
       "2": "<strong>Leuchten – Stellar-Supraleiter</strong>: Ändert den oben genannten Effekt zu folgendem:",
       "3": [
-        " Erhöht die KT der durch <strong>Eiskalte Bestrafung</strong> verstärkten Sturmfäuste und von „Himmelsglanz – Gefrierende Sprungfaust“ um 10 % sowie deren KSCH um 80 %. Außerdem können beim fünften Schlag der durch <strong>Eiskalte Bestrafung</strong> verstärkten Sturmfäuste und bei „Himmelsglanz – Gefrierende Sprungfaust“ zusätzlich Eiszapfen generiert werden, die 60 % des ursprünglichen <cryo>Kryo-Schadens</cryo> verursachen. Hierdurch verursachter Schaden gilt als Schaden durch die Reaktion Stellar-Supraleiter."
+        " Erhöht die KT der durch <strong>Eiskalte Bestrafung</strong> verstärkten Sturmfäuste und von „Himmelsglanz – Gefrierende Sprungfaust“ um 10 % sowie deren KSCH um 80 %. Außerdem können beim fünften Schlag der durch <strong>Eiskalte Bestrafung</strong> verstärkten Sturmfäuste und bei „Himmelsglanz – Gefrierende Sprungfaust“ zusätzlich Eiszapfen generiert werden, die 20 % des ursprünglichen <cryo>Kryo-Schadens</cryo> verursachen. Hierdurch verursachter Schaden gilt als Schaden durch die Reaktion Stellar-Supraleiter."
       ],
       "4": "<br/>",
       "5": "Das Aufstiegstalent „Tag des Plädoyers der Gerechtigkeit“ muss freigeschaltet werden."

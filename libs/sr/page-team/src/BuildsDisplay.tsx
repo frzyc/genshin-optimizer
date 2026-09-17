@@ -27,8 +27,8 @@ import type {
 } from '@genshin-optimizer/sr/db'
 import {
   type ICachedLightCone,
-  type TeammateDatum,
   initCharTC,
+  type TeammateDatum,
 } from '@genshin-optimizer/sr/db'
 import {
   useBuild,

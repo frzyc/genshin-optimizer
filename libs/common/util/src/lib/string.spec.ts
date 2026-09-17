@@ -1,4 +1,5 @@
 import { extractJSON, hammingDistance, levenshteinDistance } from './string'
+
 describe('test  @genshin_optimizer/util/string', () => {
   it('test hammingDistance', () => {
     expect(hammingDistance('Pyro DMG Bonus', 'Cryo DMG Bonus')).toEqual(1)

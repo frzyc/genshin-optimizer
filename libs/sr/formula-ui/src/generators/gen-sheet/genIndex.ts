@@ -1,4 +1,4 @@
-import { writeFileSync } from 'fs'
+import { writeFileSync } from 'node:fs'
 import { formatText } from '@genshin-optimizer/common/pipeline'
 import {
   allCharacterKeys,
@@ -8,7 +8,7 @@ import {
 import type { Tree } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
 
-export default async function genIndex(tree: Tree, sheet_type: string) {
+export default async function genIndex(_tree: Tree, sheet_type: string) {
   const file_location = `${workspaceRoot}/libs/sr/formula-ui/src/${sheet_type}/sheets/index.ts`
   switch (sheet_type) {
     case 'char':

@@ -18,6 +18,7 @@ import type { ICachedCharacter } from './CharacterDataManager'
 export interface ICachedWeapon extends IWeapon {
   id: string
 }
+
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
 import { initialCharacter } from './CharacterDataManager'
@@ -230,7 +231,7 @@ export class WeaponDataManager extends DataManager<
     const idtoRemoveArr = Array.from(idsToRemove).filter(
       (id) => this.get(id)?.key !== 'QuantumCatalyst'
     )
-    if (result.keepNotInImport || result.ignoreDups)
+    if (result.keepWepArtiNotInImport || result.ignoreDups)
       result.weapons.notInImport = idtoRemoveArr.length
     else idtoRemoveArr.forEach((k) => this.remove(k))
 

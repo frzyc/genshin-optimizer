@@ -140,8 +140,8 @@
   "lockedPassive": {
     "name": "珍選秘藏",
     "description": {
-      "0": "施放元素戰技<strong>貓爪凍凍</strong>後的20秒內，隊伍中的角色觸發超導、星超導反應時，迪奧娜還會協同發射3枚<strong>凍凍貓貓爪</strong>。依此方式發射的<strong>凍凍貓貓爪</strong>無法產生元素微粒，在命中敵人時也無法產生護盾。該效果每3.5秒至多觸發一次。",
-      "1": "此外，處於<tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>極星輝域</strong></tooltip>中時，迪奧娜將會進入<strong>輝映·星超導</strong>狀態。"
+      "0": "施放元素戰技<strong>貓爪凍凍</strong>後的20秒內，隊伍中的角色觸發星超導、超導、冰元素擴散、星擴散反應時，迪奧娜還會協同發射3枚<strong>凍凍貓貓爪</strong>。依此方式發射的<strong>凍凍貓貓爪</strong>無法產生元素微粒，在命中敵人時也無法產生護盾。該效果每3.5秒至多觸發一次。",
+      "1": "此外，處於<tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>極星輝域</strong></tooltip>中時/隊伍中的角色在附近觸發星擴散反應後的8秒內，迪奧娜將分別進入<strong>輝映·星超導</strong>/<strong>輝映·星擴散</strong>狀態。"
     }
   },
   "constellation1": {
@@ -194,8 +194,9 @@
       ],
       "2": "<br/>",
       "3": "此外，迪奧娜的生命值上限提升25%。",
-      "4": "<br/>",
-      "5": "<strong>輝映·星超導</strong>：處在<strong>最烈特調</strong>領域內的角色造成的超導、星超導反應傷害提升40%。"
+      "4": "<strong>輝映·星爍</strong>：處於最烈特調領域內的角色造成的對應反應的傷害提高：",
+      "5": "<strong>輝映·星超導</strong>：超導、星超導反應傷害提升40%。",
+      "6": "<strong>輝映·星擴散</strong>：冰元素擴散、星擴散反應傷害提升40%。"
     }
   }
 }

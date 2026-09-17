@@ -6,7 +6,8 @@
       "name": "Basic Attack: Dancing Blades",
       "desc": {
         "0": "Press <IconNormal /> to activate:",
-        "1": "Unleashes up to 6 attacks in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
+        "1": "Unleashes up to six consecutive attacks ahead, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "The sixth <ct color=#FFFFFF>Basic Attack</ct> is also treated as a <ct color=#FFFFFF>Dash Attack</ct>, and Anti-Interrupt level is increased while using this skill."
       },
       "params": [
         "1st-Hit ",
@@ -31,10 +32,11 @@
       "desc": {
         "0": "Entering the <ct color=#FFFFFF>Passion</ct> state grants Jane one use of <ct color=#FFFFFF>Basic Attack: Salchow Jump</ct>.",
         "1": "When available, hold <IconNormal /> to activate:",
-        "2": "Launch rapid consecutive attacks forward, followed by a Finishing Move, dealing <ct color=#F0D12B>Physical DMG</ct>.",
-        "3": "Hold the button during the consecutive attacks to extend the skill duration. Release <IconNormal /> to trigger the Finishing Move early.",
-        "4": "Anti-Interrupt level is increased during the consecutive attacks, and Jane takes 40% reduced DMG. Jane is invulnerable during the Finishing Move.",
-        "5": "Using and damaging an enemy with <ct color=#FFFFFF>Basic Attack: Salchow Jump</ct> while in the <ct color=#FFFFFF>Passion</ct> state generates <ct color=#FFFFFF>Passion Stream</ct>."
+        "2": "Launches rapid consecutive attacks forward, followed by a Finishing Move, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "3": "Hold the button during the consecutive attacks to greatly extend the skill duration. Release <IconNormal /> to trigger the Finishing Move early.",
+        "4": "Anti-Interrupt level is increased during the consecutive attacks, and Jane takes 40% reduced DMG. Jane is invulnerable during the Finishing Move, which can also trigger a Perfect Dodge upon activation.",
+        "5": "If a Perfect Dodge is triggered, the Finishing Move restores more <ct color=#FFFFFF>Passion Stream</ct> on hit.",
+        "6": "Using and damaging an enemy with <ct color=#FFFFFF>Basic Attack: Salchow Jump</ct> while in the <ct color=#FFFFFF>Passion</ct> state generates <ct color=#FFFFFF>Passion Stream</ct>."
       },
       "params": [
         "Consecutive Attack ",
@@ -117,7 +119,19 @@
       "desc": {
         "0": "With enough Energy, press <IconSpecialReady /> to activate:",
         "1": "Leaps into the air to launch multiple consecutive kicks forward, then sweeps across, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
-        "2": "Character is invulnerable while using this skill."
+        "2": "Character is invulnerable while using this skill, which also counts as a <ct color=#FFFFFF>Dash Attack</ct>."
+      },
+      "params": [
+        " ",
+        "Energy Cost "
+      ]
+    },
+    "EXSpecialAttackAerialSweepOnslaught": {
+      "name": "EX Special Attack: Aerial Sweep - Onslaught",
+      "desc": {
+        "0": "While in the Passion state and with enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Leaps into the air to launch multiple consecutive kicks forward, then sweeps across, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill, which also counts as a <ct color=#FFFFFF>Dash Attack</ct>."
       },
       "params": [
         " ",
@@ -270,5 +284,15 @@
       }
     }
   },
-  "potential": {}
+  "potential": {
+    "name": "Awakened Potential: Lethal Dance",
+    "desc": [
+      "",
+      "When Jane triggers <ct color=#F0D12B>Assault</ct>, the CRIT DMG of that instance of <ct color=#F0D12B>Assault</ct> is additionally increased by <ct color=#2BAD00>10%</ct>.",
+      "When Jane triggers <ct color=#F0D12B>Assault</ct>, the CRIT DMG of that instance of <ct color=#F0D12B>Assault</ct> is additionally increased by <ct color=#2BAD00>15%</ct>.",
+      "When Jane triggers <ct color=#F0D12B>Assault</ct>, the CRIT DMG of that instance of <ct color=#F0D12B>Assault</ct> is additionally increased by <ct color=#2BAD00>20%</ct>.",
+      "When Jane triggers <ct color=#F0D12B>Assault</ct>, the CRIT DMG of that instance of <ct color=#F0D12B>Assault</ct> is additionally increased by <ct color=#2BAD00>25</ct>%.",
+      "When Jane triggers <ct color=#F0D12B>Assault</ct>, the CRIT DMG of that instance of <ct color=#F0D12B>Assault</ct> is additionally increased by <ct color=#2BAD00>30%</ct>."
+    ]
+  }
 }

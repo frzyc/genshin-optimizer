@@ -16,13 +16,13 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
   dmgNode,
   plungingDmgNodes,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
 
 const key: CharacterKey = 'Durin'
 const skillParam_gen = allStats.char.skillParam[key]
@@ -556,7 +556,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
         {
@@ -594,24 +594,24 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.purityDmg, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.darkDmg1, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
             textSuffix: '(1)',
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.darkDmg2, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
             textSuffix: '(2)',
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.darkDmg3, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
             textSuffix: '(3)',
           }),
         },
@@ -634,48 +634,48 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.purityDmg1, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
             textSuffix: '(1)',
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.purityDmg2, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
             textSuffix: '(2)',
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.purityDmg3, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
             textSuffix: '(3)',
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.darkDmg1, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
             textSuffix: '(1)',
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.darkDmg2, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
             textSuffix: '(2)',
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.darkDmg3, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
             textSuffix: '(3)',
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.whiteDmg, {
-            name: ct.chg(`burst.skillParams.2`),
+            name: ct.chg('burst.skillParams.2'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.decayDmg, {
-            name: ct.chg(`burst.skillParams.3`),
+            name: ct.chg('burst.skillParams.3'),
           }),
         },
         {

@@ -1,4 +1,4 @@
-import { type SkillKey, isSkillKey } from '@genshin-optimizer/zzz/consts'
+import { isSkillKey, type SkillKey } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { abilityBaseName } from '@genshin-optimizer/zzz/formula'
 
@@ -12,19 +12,23 @@ export function skillFromTag(tag: Tag): SkillKey | undefined {
   return isSkillKey(skill) ? skill : undefined
 }
 
-/** Split `AbilityName_0` into ability key + numeric hit index. */
+const AFTERSHOCK_HIT_SUFFIX = /_aftershock\d+$/
+
+/** Split `AbilityName_0` or `AbilityName_aftershock0` into ability key + hit index. */
 export function parseAbilityHitFromName(baseName: string): {
   abilityKey: string
   hitIndex?: string
 } {
-  const underscoreIdx = baseName.lastIndexOf('_')
-  if (underscoreIdx === -1) return { abilityKey: baseName }
+  const withoutAftershock = baseName.replace(AFTERSHOCK_HIT_SUFFIX, '')
 
-  const hitIndex = baseName.slice(underscoreIdx + 1)
-  if (!/^\d+$/.test(hitIndex)) return { abilityKey: baseName }
+  const underscoreIdx = withoutAftershock.lastIndexOf('_')
+  if (underscoreIdx === -1) return { abilityKey: withoutAftershock }
+
+  const hitIndex = withoutAftershock.slice(underscoreIdx + 1)
+  if (!/^\d+$/.test(hitIndex)) return { abilityKey: withoutAftershock }
 
   return {
-    abilityKey: baseName.slice(0, underscoreIdx),
+    abilityKey: withoutAftershock.slice(0, underscoreIdx),
     hitIndex,
   }
 }

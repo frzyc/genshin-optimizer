@@ -1,11 +1,11 @@
 import type { WeaponClaymoreKey } from '@genshin-optimizer/gi/consts'
 import type { WeaponSheet } from '../WeaponSheet'
-
+import Akuoumaru from './Akuoumaru'
 import ATeaspoonOfTranscendence from './ATeaspoonOfTranscendence'
 import AThousandBlazingSuns from './AThousandBlazingSuns'
-import Akuoumaru from './Akuoumaru'
 import BeaconOfTheReedSea from './BeaconOfTheReedSea'
 import BlackcliffSlasher from './BlackcliffSlasher'
+import BladeOfAtonement from './BladeOfAtonement'
 import BloodtaintedGreatsword from './BloodtaintedGreatsword'
 import DebateClub from './DebateClub'
 import EarthShaker from './EarthShaker'
@@ -14,6 +14,7 @@ import FavoniusGreatsword from './FavoniusGreatsword'
 import FerrousShadow from './FerrousShadow'
 import FlameForgedInsight from './FlameForgedInsight'
 import ForestRegalia from './ForestRegalia'
+import ForgedByTheGoldenMelody from './ForgedByTheGoldenMelody'
 import FruitfulHook from './FruitfulHook'
 import GestOfTheMightyWolf from './GestOfTheMightyWolf'
 import KatsuragikiriNagamasa from './KatsuragikiriNagamasa'
@@ -41,15 +42,17 @@ import TidalShadow from './TidalShadow'
 import UltimateOverlordsMegaMagicSword from './UltimateOverlordsMegaMagicSword'
 import Verdict from './Verdict'
 import WasterGreatsword from './WasterGreatsword'
-import WhiteIronGreatsword from './WhiteIronGreatsword'
 import Whiteblind from './Whiteblind'
+import WhiteIronGreatsword from './WhiteIronGreatsword'
 import WolfsGravestone from './WolfsGravestone'
+
 const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   Akuoumaru,
   ATeaspoonOfTranscendence,
   AThousandBlazingSuns,
   BeaconOfTheReedSea,
   BlackcliffSlasher,
+  BladeOfAtonement,
   BloodtaintedGreatsword,
   DebateClub,
   EarthShaker,
@@ -58,6 +61,7 @@ const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   FerrousShadow,
   FlameForgedInsight,
   ForestRegalia,
+  ForgedByTheGoldenMelody,
   FruitfulHook,
   GestOfTheMightyWolf,
   KatsuragikiriNagamasa,

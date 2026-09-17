@@ -1,0 +1,24 @@
+{
+  "name": "Bạch Hồ Đông Vũ",
+  "description": {
+    "0": "Thanh kiếm thanh thoát tựa lông vũ mềm mại của thiên nga tuyết, luôn giữ được vẻ thuần khiết không tì vết."
+  },
+  "passiveName": "Vũ Điệu Cuối Của Thiên Nga Tuyết",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi Kỹ Năng Nguyên Tố của người trang bị đánh trúng kẻ địch, sẽ nhận được \"Sắc Hồ Than Thở\": Tấn Công tăng <cryo>8%</cryo> trong 8s, tối đa cộng dồn 3 tầng, mỗi 0.1s tối đa kích hoạt một lần, thời gian duy trì mỗi tầng sẽ tính riêng. Khi có 3 tầng, sát thương phản ứng Tinh Tú Lấp Lánh của người trang bị sẽ tăng <cryo>50%</cryo> Sát Thương Bạo Kích, đồng thời khi kích hoạt phản ứng Tinh Tú Lấp Lánh hoặc gây sát thương phản ứng Tinh Tú Lấp Lánh, sẽ còn hồi phục <cryo>4</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị. Hiệu quả hồi phục Năng Lượng Nguyên Tố kể trên mỗi 3.5s tối đa kích hoạt một lần. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "1": {
+      "0": "Khi Kỹ Năng Nguyên Tố của người trang bị đánh trúng kẻ địch, sẽ nhận được \"Sắc Hồ Than Thở\": Tấn Công tăng <cryo>10%</cryo> trong 8s, tối đa cộng dồn 3 tầng, mỗi 0.1s tối đa kích hoạt một lần, thời gian duy trì mỗi tầng sẽ tính riêng. Khi có 3 tầng, sát thương phản ứng Tinh Tú Lấp Lánh của người trang bị sẽ tăng <cryo>65%</cryo> Sát Thương Bạo Kích, đồng thời khi kích hoạt phản ứng Tinh Tú Lấp Lánh hoặc gây sát thương phản ứng Tinh Tú Lấp Lánh, sẽ còn hồi phục <cryo>4.5</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị. Hiệu quả hồi phục Năng Lượng Nguyên Tố kể trên mỗi 3.5s tối đa kích hoạt một lần. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "2": {
+      "0": "Khi Kỹ Năng Nguyên Tố của người trang bị đánh trúng kẻ địch, sẽ nhận được \"Sắc Hồ Than Thở\": Tấn Công tăng <cryo>12%</cryo> trong 8s, tối đa cộng dồn 3 tầng, mỗi 0.1s tối đa kích hoạt một lần, thời gian duy trì mỗi tầng sẽ tính riêng. Khi có 3 tầng, sát thương phản ứng Tinh Tú Lấp Lánh của người trang bị sẽ tăng <cryo>80%</cryo> Sát Thương Bạo Kích, đồng thời khi kích hoạt phản ứng Tinh Tú Lấp Lánh hoặc gây sát thương phản ứng Tinh Tú Lấp Lánh, sẽ còn hồi phục <cryo>5</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị. Hiệu quả hồi phục Năng Lượng Nguyên Tố kể trên mỗi 3.5s tối đa kích hoạt một lần. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "3": {
+      "0": "Khi Kỹ Năng Nguyên Tố của người trang bị đánh trúng kẻ địch, sẽ nhận được \"Sắc Hồ Than Thở\": Tấn Công tăng <cryo>14%</cryo> trong 8s, tối đa cộng dồn 3 tầng, mỗi 0.1s tối đa kích hoạt một lần, thời gian duy trì mỗi tầng sẽ tính riêng. Khi có 3 tầng, sát thương phản ứng Tinh Tú Lấp Lánh của người trang bị sẽ tăng <cryo>95%</cryo> Sát Thương Bạo Kích, đồng thời khi kích hoạt phản ứng Tinh Tú Lấp Lánh hoặc gây sát thương phản ứng Tinh Tú Lấp Lánh, sẽ còn hồi phục <cryo>5.5</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị. Hiệu quả hồi phục Năng Lượng Nguyên Tố kể trên mỗi 3.5s tối đa kích hoạt một lần. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "4": {
+      "0": "Khi Kỹ Năng Nguyên Tố của người trang bị đánh trúng kẻ địch, sẽ nhận được \"Sắc Hồ Than Thở\": Tấn Công tăng <cryo>16%</cryo> trong 8s, tối đa cộng dồn 3 tầng, mỗi 0.1s tối đa kích hoạt một lần, thời gian duy trì mỗi tầng sẽ tính riêng. Khi có 3 tầng, sát thương phản ứng Tinh Tú Lấp Lánh của người trang bị sẽ tăng <cryo>110%</cryo> Sát Thương Bạo Kích, đồng thời khi kích hoạt phản ứng Tinh Tú Lấp Lánh hoặc gây sát thương phản ứng Tinh Tú Lấp Lánh, sẽ còn hồi phục <cryo>6</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị. Hiệu quả hồi phục Năng Lượng Nguyên Tố kể trên mỗi 3.5s tối đa kích hoạt một lần. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    }
+  }
+}

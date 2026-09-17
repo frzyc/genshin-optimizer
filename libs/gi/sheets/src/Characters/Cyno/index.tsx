@@ -11,14 +11,13 @@ import {
   naught,
   percent,
   prod,
-  stellarDmg,
+  stellarDmgNode,
   subscript,
   target,
   unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -26,6 +25,7 @@ import {
   dmgNode,
   plungingDmgNodes,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet.d'
 
 const key: CharacterKey = 'Cyno'
 const elementKey: ElementKey = 'electro'
@@ -206,29 +206,37 @@ const c2_electro_dmg_ = greaterEq(
 const c2TeamHitStacksArr = range(1, 5)
 const [condC2TeamHitPath, condC2TeamHit] = cond(key, 'c2TeamHit')
 // TODO: Technically this only applies to certain hits
-const c2TeamHit_stellarconduct_dmg_ = greaterEq(
-  input.constellation,
-  2,
-  equal(
-    condLockRevelation,
-    'on',
+const c2TeamHit_stellarconduct_dmg_disp = infoMut(
+  greaterEq(
+    input.constellation,
+    2,
     equal(
-      condLockStellarRadianceSc,
+      condLockRevelation,
       'on',
       equal(
-        condC1Together,
+        condLockStellarRadianceSc,
         'on',
-        prod(
-          lookup(
-            condC2TeamHit,
-            objKeyMap(c2TeamHitStacksArr, (stack) => constant(stack)),
-            naught
-          ),
-          percent(dm.constellation2.stellarconduct_dmg_)
+        equal(
+          condC1Together,
+          'on',
+          prod(
+            lookup(
+              condC2TeamHit,
+              objKeyMap(c2TeamHitStacksArr, (stack) => constant(stack)),
+              naught
+            ),
+            percent(dm.constellation2.stellarconduct_dmg_)
+          )
         )
       )
     )
-  )
+  ),
+  { path: 'stellarconduct_dmg_', isTeamBuff: true }
+)
+const c2TeamHit_stellarconduct_dmg_ = equal(
+  input.activeCharKey,
+  target.charKey,
+  c2TeamHit_stellarconduct_dmg_disp
 )
 
 const dmgFormulas = {
@@ -308,7 +316,7 @@ const dmgFormulas = {
         equal(
           condLockStellarRadianceSc,
           'on',
-          stellarDmg(
+          stellarDmgNode(
             percent(dm.passive1.boltStellarDmg),
             'atk',
             'stellarconduct',
@@ -368,7 +376,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
         {
@@ -378,7 +386,7 @@ const sheet: TalentSheet = {
       ],
     },
     {
-      text: ct.chg(`auto.fields.plunging`),
+      text: ct.chg('auto.fields.plunging'),
     },
     {
       fields: [
@@ -406,12 +414,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.skillDmg, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.riteDmg, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
@@ -494,7 +502,7 @@ const sheet: TalentSheet = {
         })),
         {
           node: infoMut(dmgFormulas.burst.charged, {
-            name: ct.chg(`burst.skillParams.5`),
+            name: ct.chg('burst.skillParams.5'),
           }),
         },
         {
@@ -512,17 +520,17 @@ const sheet: TalentSheet = {
           ),
         })),
         {
-          text: ct.chg(`burst.skillParams.10`),
+          text: ct.chg('burst.skillParams.10'),
           value: dm.burst.duration,
           unit: 's',
         },
         {
-          text: ct.chg(`burst.skillParams.11`),
+          text: ct.chg('burst.skillParams.11'),
           value: dm.burst.cd,
           unit: 's',
         },
         {
-          text: ct.chg(`burst.skillParams.12`),
+          text: ct.chg('burst.skillParams.12'),
           value: dm.burst.enerCost,
         },
       ],
@@ -592,7 +600,7 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              text: st('elementalReaction.gainRadianceSc'),
+              text: st('elementalReaction.stellar.gainRadianceSc'),
             },
           ],
         },
@@ -652,7 +660,7 @@ const sheet: TalentSheet = {
         name: st('hits', { count: stack }),
         fields: [
           {
-            node: c2TeamHit_stellarconduct_dmg_,
+            node: c2TeamHit_stellarconduct_dmg_disp,
           },
         ],
       })),

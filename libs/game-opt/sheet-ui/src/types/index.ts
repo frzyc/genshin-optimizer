@@ -1,6 +1,6 @@
 export * from './conditional'
 export * from './document'
 export * from './field'
+export * from './formulaText'
 export * from './header'
 export * from './sheet'
-export * from './formulaText'

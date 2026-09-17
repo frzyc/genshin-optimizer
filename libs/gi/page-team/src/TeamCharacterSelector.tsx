@@ -7,9 +7,9 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
-import { useDBMeta, useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useDBMeta, useTeam } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
-import { CharIconSide, CharacterName, TeamIcon } from '@genshin-optimizer/gi/ui'
+import { CharacterName, CharIconSide, TeamIcon } from '@genshin-optimizer/gi/ui'
 import BorderColorIcon from '@mui/icons-material/BorderColor'
 import CloseIcon from '@mui/icons-material/Close'
 import GroupsIcon from '@mui/icons-material/Groups'
@@ -73,11 +73,11 @@ export default function TeamCharacterSelector({
           // color for team setting
           backrgba,
           ...elementArray.map((ele, i) => {
-            if (!ele) return `rgba(0,0,0,0)`
+            if (!ele) return 'rgba(0,0,0,0)'
 
             const hex = theme.palette[ele].main as string
             const color = hexToColor(hex)
-            if (!color) return `rgba(0,0,0,0)`
+            if (!color) return 'rgba(0,0,0,0)'
             return colorToRgbaString(color, selectedIndex === i ? 0.5 : 0.15)
           }),
         ]

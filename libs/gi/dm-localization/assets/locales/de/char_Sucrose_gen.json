@@ -110,7 +110,7 @@
   "passive1": {
     "name": "Katalysatorenkonversion",
     "description": {
-      "0": "Erhöht die Elementarkunde aller Figuren in der Truppe des jeweiligen Elements (außer sich selbst) 8 s lang um 50 Punkte, wenn Saccharose eine Verwirbelung auslöst."
+      "0": "Erhöht die Elementarkunde aller Figuren in der Truppe des jeweiligen Elements (außer sich selbst) 8 s lang um 50 Punkte, wenn Saccharose die Reaktion Verwirbelung oder Stellar-Verwirbelung auslöst."
     }
   },
   "passive2": {

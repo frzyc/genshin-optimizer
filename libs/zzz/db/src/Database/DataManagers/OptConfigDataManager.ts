@@ -9,11 +9,11 @@ import {
 } from '@genshin-optimizer/common/util'
 import type { AttributeKey, SpecialityKey } from '@genshin-optimizer/zzz/consts'
 import {
-  type DiscMainStatKey,
-  type DiscSetKey,
   allAttributeKeys,
   allDiscSetKeys,
   allSpecialityKeys,
+  type DiscMainStatKey,
+  type DiscSetKey,
   discMaxLevel,
   discSlotToMainStatKeys,
   wengineMaxLevel,

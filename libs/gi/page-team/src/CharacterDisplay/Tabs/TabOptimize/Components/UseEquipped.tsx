@@ -31,10 +31,10 @@ import {
   CharacterCard,
   CharacterCardPico,
   CharacterRarityToggle,
+  characterFilterConfigs,
   ElementToggle,
   SillyContext,
   WeaponToggle,
-  characterFilterConfigs,
 } from '@genshin-optimizer/gi/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import SettingsIcon from '@mui/icons-material/Settings'

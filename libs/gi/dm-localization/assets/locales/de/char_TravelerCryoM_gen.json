@@ -1,0 +1,187 @@
+{
+  "auto": {
+    "name": "Frostschimmer aus der Ferne",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 5 Schwerthiebe hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und schwingt das Schwert zweimal schnell nach vorn."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH heftiger Schläge",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Eisnebelklinge",
+    "description": {
+      "0": "Schwingt die Waffe nach vorn, sticht zu und setzt starken Eisnebel frei, der Gegnern vor ihr <cryo>Kryo-Schaden</cryo> zufügt sowie an ihrer Seite einen frostdurchbohrenden Stern beschwört.",
+      "1": "<br/>",
+      "2": "<strong>Frostdurchbohrender Stern</strong>",
+      "3": [
+        " Folgt der eigenen Figur in der Truppe und schießt in regelmäßigen Abständen Kryo-Kristalle auf Gegner in der Nähe, die diesen <cryo>Kryo-Schaden</cryo> zufügen."
+      ],
+      "4": "<strong>Leuchten – Stellar-Supraleiter</strong>: Der frostdurchbohrende Stern schießt Kryo-Kristalle nicht mehr in regelmäßigen Abständen, sondern feuert, wenn {F#die}{M#der} Reisende einen Gegner mit einem Standardangriff, heftigen Schlag oder Angriff aus dem Fall trifft, als ein abgestimmter Angriff einen Kryo-Kristall ab, 0,2 s Abklingzeit.",
+      "5": [
+        " Sammelt für {F#die Reisende}{M#den Reisenden}, wenn ein Gegner von einem Kryo-Kristall getroffen wird, eine Stapelung <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Kälteglanz</strong></tooltip> an. Dieser Effekt ist bis zu 8-fach stapelbar.",
+        " Entfernt, wenn {F#sie}{M#er} sich nicht im Kampf befindet, den <strong>Kälteglanz</strong> nach 30 s."
+      ],
+      "6": "<br/>",
+      "7": "<i>Du hast mit Paimon zusammen beobachtet, wie sich Raureif bildet.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Kryo-Kristall-SCH",
+      "2": "SCH durch Frostdurchbohrender Stern",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Frostspeer",
+    "description": {
+      "0": "Formt mithilfe von Kryo-Kraft einen Speer, schleudert diesen auf Gegner und fügt diesen mehrfach <cryo>Kryo-Schaden</cryo> zu.",
+      "1": "Beim Anwenden verbraucht {F#die}{M#der} Reisende alle Stapelungen <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Kälteglanz</strong></tooltip>, um den durch diese Spezialfähigkeit verursachten Schaden zu erhöhen. Erhöht bei 8 verbrauchten Stapelungen <strong>Kälteglanz</strong> zudem die Anzahl der Schadenstreffer des Speers.",
+      "2": "<br/>",
+      "3": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Leuchten – Stellarfunkeln</strong></tooltip>: Durch die diesmalige Spezialfähigkeit verursachter Schaden wird als <cryo>Kryo-Schaden</cryo> der entsprechenden Stellarfunkeln-Reaktion gewertet.",
+      "4": "<br/>",
+      "5": "<i>Du hast mit Paimon zusammen die Schärfe des Eises gespürt.</i>"
+    },
+    "skillParams": {
+      "0": "Speer-SCH Phase 1",
+      "1": "SCH-Bonus von Kälteglanz",
+      "2": "SCH durch Stellar-Supraleiter-Speer Phase 1",
+      "3": "SCH-Bonus von Stellar-Supraleiter-Kälteglanz",
+      "4": "SCH durch Stellar-Verwirbelungs-Speer Phase 1",
+      "5": "SCH-Bonus für Stellar-Verwirbelungs-Kälteglanz",
+      "6": "Angriffszahl",
+      "7": "Zusätzliche Angriffszahl bei vollem Kälteglanz",
+      "8": "Abklingzeit",
+      "9": "Elementarenergie",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Selbstschärfender Frost",
+    "description": {
+      "0": "<strong>Leuchten – Stellar-Supraleiter</strong>: Wandelt während der Wirkungsdauer von <strong>Frostdurchbohrender Stern</strong> den durch Standardangriffe, heftige Schläge und Angriffe aus dem Fall {F#der}{M#des} Reisenden verursachten Schaden in <cryo>Kryo-Schaden</cryo> um, der nicht durch andere Elemente überdeckt werden kann. Erhöht zudem den verursachten Schaden um 80 % des ANG {F#der}{M#des} Reisenden."
+    }
+  },
+  "passive2": {
+    "name": "Klares Eis",
+    "description": {
+      "0": "Erhöht die Elementarkunde {F#der}{M#des} Reisenden um 8 % {F#ihres}{M#seines} ANG. Auf diese Weise kann die Elementarkunde {F#der}{M#des} Reisenden um maximal 160 Punkte erhöht werden."
+    }
+  },
+  "passive3": {
+    "name": "Sternensegnung – Wandelnder Eisspiegel",
+    "description": {
+      "0": "Versetzt {F#die Reisende}{M#den Reisenden}, wenn {F#sie}{M#er} sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet oder ein Truppenmitglied in der Nähe die Reaktion Stellar-Verwirbelung auslöst, innerhalb von 8 s in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong>/<strong>Leuchten – Stellar-Verwirbelung</strong>.",
+      "1": "Wandelt, wenn ein Truppenmitglied die Reaktion Supraleiter/Kryo-Verwirbelung auslöst, diese stattdessen in die Reaktion Stellar-Supraleiter/Stellar-Verwirbelung um und erhöht den Basis-Schaden der oben genannten Reaktionen von Truppenmitgliedern basierend auf dem ANG {F#der}{M#des} Reisenden: Erhöht den Basis-SCH der oben genannten Reaktionen pro 100 Punkte um 0,35 %. Auf diese Weise kann der Schaden um bis zu 7 % erhöht werden."
+    }
+  },
+  "lockedPassive": {
+    "name": "Eis aus der Fremde",
+    "description": {
+      "0": "Verleiht {F#der}{M#dem} Reisenden Kraft aus der Vergangenheit und für jedes Element, mit dem {F#sie}{M#er} im Einklang gestanden hat, zusätzliche <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>Verstärkungseffekte</strong></tooltip>.",
+      "1": "<br/>",
+      "2": "Verleiht {F#der}{M#dem} Reisenden zudem, wenn Truppenmitglieder in der Nähe Schaden durch Stellar-Supraleiter- oder Stellar-Verwirbelungs-Reaktionen verursachen, eine Stapelung „Gefrorene Klinge“. Auf diese Weise kann alle 2 s maximal 1 Stapelung „Gefrorene Klinge“ erhalten werden, maximal 3-fach stapelbar. Verbraucht, wenn bei 3 vorhandenen Stapelungen ein heftiger Schlag ausgeführt wird, alle Stapelungen „Gefrorene Klinge“, und führt den besonderen <strong>heftigen Schlag – Eiskondensation</strong> aus.",
+      "3": "<br/>",
+      "4": "<strong>Heftiger Schlag – Eiskondensation</strong>",
+      "5": [
+        " Verursacht <cryo>Kryo-Schaden</cryo> mit einer Schadenserhöhung von 140 % des ANG {F#der}{M#des} Reisenden und verleiht {F#ihr}{M#ihm} 2 Stapelungen <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Kälteglanz</strong></tooltip>.",
+        " <strong>Heftiger Schlag – Eiskondensation</strong> kann nur einmal alle 15 s ausgeführt werden. Zudem gilt der SCH-Bonus des Aufstiegstalents „Selbstschärfender Frost“ nicht für den <strong>heftigen Schlag – Eiskondensation</strong>."
+      ],
+      "6": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Leuchten – Stellarfunkeln</strong></tooltip>: <strong>Heftiger Schlag – Eiskondensation</strong> verursacht stattdessen <cryo>Kryo-Schaden</cryo>, der als Schaden durch die entsprechende Stellarfunkeln-Reaktion gilt."
+    }
+  },
+  "constellation1": {
+    "name": "Düsterer Frost",
+    "description": {
+      "0": "Stellt {F#der}{M#dem} Reisenden, wenn {F#sie}{M#er} Schaden durch eine Stellarfunkeln-Reaktion verursacht, 5 Punkte Elementarenergie wieder her, 0,5 s Abklingzeit."
+    }
+  },
+  "constellation2": {
+    "name": "Frostfall-Nachhall",
+    "description": {
+      "0": "Erhöht, wenn ein durch die Elementarfähigkeit <strong><tooltip ns=char_TravelerCryoM_gen baseKey18=skill>Eisnebelklinge</tooltip></strong> abgefeuerter <strong>Kryo-Kristall</strong> einen Gegner trifft, die Elementarkunde der aktuellen Figur 5 s lang um 60 Punkte.",
+      "1": "Erhöht, wenn die von oben genanntem Effekt beeinflusste Figur eine Stellarreaktion ausgelöst oder mit einer Stellarfunkeln-Reaktion Schaden verursacht hat, innerhalb der Wirkungsdauer die Elementarkunde stattdessen um 120 Punkte."
+    }
+  },
+  "constellation3": {
+    "name": "Durchschneidendes Eis",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_TravelerCryoM_gen baseKey18=burst>Frostspeer</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Unbeugsames Eis",
+    "description": {
+      "0": "Verlängert die Dauer des durch die Elementarfähigkeit <strong><tooltip ns=char_TravelerCryoM_gen baseKey18=skill>Eisnebelklinge</tooltip></strong> generierten <strong>Frostdurchbohrender Stern</strong> um 25 %."
+    }
+  },
+  "constellation5": {
+    "name": "Eiskalter Nebel",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_TravelerCryoM_gen baseKey18=skill>Eisnebelklinge</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Unerbittlicher Frost",
+    "description": {
+      "0": "Erhöht beim Anwenden der Spezialfähigkeit <strong><tooltip ns=char_TravelerCryoM_gen baseKey18=burst>Frostspeer</tooltip></strong> für jede Stapelung <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Kälteglanz</strong></tooltip> den von anderen Truppenmitgliedern durch eine Stellarfunkeln-Reaktion verursachten Schaden 15 s lang um 5 %, maximal um 40 %."
+    }
+  }
+}

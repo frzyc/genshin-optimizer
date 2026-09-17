@@ -58,13 +58,16 @@
     "buttons": {
       "open": "Open",
       "detectDups": "Detect Updates/Dupes",
-      "delNotInImport": "Delete items not in import"
+      "delWepArtiNotInImport": "Delete weapons/artifacts not in import",
+      "delCharNotInImport": "Delete characters not in import"
     },
     "tooltip": {
       "detectdup": "Find upgrades/duplicates in the GO inventory and merge the import into GO.",
       "ignoreDup": "Do not detect upgrades/duplicates. The import will be added on top of existing GO inventory.",
-      "delNotInImport": "Assume the import is your full inventory. Items in the GO Inventory that don't exist in the import will be deleted.",
-      "keepNotInImport": "Assume the import is a partial inventory. Nothing will be deleted."
+      "delWepArtiNotInImport": "Assume the import is your full inventory of weapons and artifacts. Weapons and artifacts in the GO Inventory that don't exist in the import will be deleted.",
+      "keepWepArtiNotInImport": "Assume the import is a partial inventory of weapons and artifacts. Nothing will be deleted.",
+      "delCharNotInImport": "Assume the import is your full inventory of characters. Characters in the GO Inventory that don't exist in the import will be deleted.",
+      "keepCharNotInImport": "Assume the import is a partial inventory of characters. Nothing will be deleted."
     }
   }
 }

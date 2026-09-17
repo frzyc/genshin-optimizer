@@ -65,7 +65,9 @@
     "hyperbloom": "Superflorescimento",
     "quicken": "Aceleração",
     "aggravate": "Intensificação",
-    "spread": "Propagação"
+    "spread": "Propagação",
+    "stellarconduct": "Supercondutor Estelar",
+    "stellarswirl": "Redemoinho Estelar"
   },
   "stat": {
     "def": "DEF",
@@ -77,15 +79,15 @@
   "talentLvl": "Talento Nv.{{level}}",
   "talents": {
     "auto": "Ataque Normal",
-    "skill": "",
-    "burst": "",
+    "skill": "Habilidade Elemental",
+    "burst": "Supremo",
     "altSprint": "Arrancada Alternativa"
   },
   "unlockPassive1": "Desbloqueia quando nível de Ascensão do personagem alcançar Nv.1",
   "unlockPassive2": "Desbloqueia quando nível de Ascensão do personagem alcançar Nv.4",
   "unlockPassive3": "Talento Passivo",
   "unlockLockedPassive": "Desbloqueia após concluir tarefas de pré-requisito",
-  "witchPassive": "",
+  "witchPassive": "Tarefa da Bruxa",
   "moonsign": "Presságio Lunar",
   "hexerei": "Mágico"
 }

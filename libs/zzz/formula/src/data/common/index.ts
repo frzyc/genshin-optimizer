@@ -32,9 +32,7 @@ const data: TagMapNodeEntries = [
   // convert sheet:<char> to sheet:agg for accumulation
   // sheet:<wengine> is reread in src/util.ts:wengineTagMapNodeEntries()
   // sheet:<disc> is reread in src/util.ts:discTagMapNodeEntries()
-  reader
-    .sheet('agg')
-    .reread(reader.sheet('char')),
+  reader.sheet('agg').reread(reader.sheet('char')),
 
   // For stats with a flat and percent variant
   // initial x += base x * initial x%
@@ -96,8 +94,6 @@ const data: TagMapNodeEntries = [
   ),
 
   // Default conditionals to 0
-  reader
-    .with('qt', 'cond')
-    .add(0),
+  reader.with('qt', 'cond').add(0),
 ]
 export default data

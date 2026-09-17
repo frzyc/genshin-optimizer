@@ -2,8 +2,8 @@ import { zodBoolean } from '@genshin-optimizer/common/database'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import { allTrailblazerKeys } from '@genshin-optimizer/sr/consts'
 import { z } from 'zod'
-import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+import { DataManager } from '../DataManager'
 
 // Schema with defaults - single source of truth
 const charMetaSchema = z.object({

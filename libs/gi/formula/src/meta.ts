@@ -187,6 +187,13 @@ export const conditionals = {
       type: 'bool',
     },
   },
+  HeartOfTheFurnace: {
+    someBoolConditional: {
+      sheet: 'HeartOfTheFurnace',
+      name: 'someBoolConditional',
+      type: 'bool',
+    },
+  },
   HuskOfOpulentDreams: {
     someBoolConditional: {
       sheet: 'HuskOfOpulentDreams',
@@ -358,6 +365,13 @@ export const conditionals = {
   RetracingBolide: {
     someBoolConditional: {
       sheet: 'RetracingBolide',
+      name: 'someBoolConditional',
+      type: 'bool',
+    },
+  },
+  ScarletProof: {
+    someBoolConditional: {
+      sheet: 'ScarletProof',
       name: 'someBoolConditional',
       type: 'bool',
     },
@@ -553,6 +567,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Aloy',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Alyosha: {
+    normal1: {
+      sheet: 'Alyosha',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Alyosha',
         move: 'normal',
         name: 'normal1',
       },
@@ -2080,6 +2108,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Noelle',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Odette: {
+    normal1: {
+      sheet: 'Odette',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Odette',
         move: 'normal',
         name: 'normal1',
       },

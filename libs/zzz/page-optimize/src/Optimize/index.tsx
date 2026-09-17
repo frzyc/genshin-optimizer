@@ -4,12 +4,12 @@ import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { BuildResult, Progress } from '@genshin-optimizer/game-opt/solver'
 import { Solver } from '@genshin-optimizer/game-opt/solver'
 import {
-  type DiscSlotKey,
   allDiscSlotKeys,
+  type DiscSlotKey,
 } from '@genshin-optimizer/zzz/consts'
 import {
-  type ICachedDisc,
   getTeamFrame0,
+  type ICachedDisc,
   targetTag,
 } from '@genshin-optimizer/zzz/db'
 import {

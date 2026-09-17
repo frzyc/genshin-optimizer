@@ -1,5 +1,5 @@
 import { cmpGE, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
-import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import { isStunned } from '../../common/enemy'
 import {
@@ -148,9 +148,7 @@ const sheet = register(
         3,
         isStunned.ifOn(prod(exSpecial_debuff, percent(dm.ability.chain_dmg_)))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm1_special_dazeInc_',

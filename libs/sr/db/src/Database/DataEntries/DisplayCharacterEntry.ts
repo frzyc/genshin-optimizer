@@ -9,8 +9,8 @@ import {
   allRarityKeys,
 } from '@genshin-optimizer/sr/consts'
 import { z } from 'zod'
-import { DataEntry } from '../DataEntry'
 import type { SroDatabase } from '../Database'
+import { DataEntry } from '../DataEntry'
 
 export const characterSortKeys = [
   'new',

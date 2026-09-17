@@ -115,7 +115,7 @@
   "passive1": {
     "name": "Çelişkili Eğitim",
     "description": {
-      "0": "Shikanoin Heizou savaş alanındayken Girdap tepkimesi etkinleştirirse <strong>Nabız Kesen Vuruş</strong> için 1 Bakış Açısı biriktirir. Bu etki 0,1 saniyede bir tetiklenebilir."
+      "0": "Shikanoin Heizou savaş alanındayken Girdap veya Yıldız Girdabı tepkimesi tetiklerse <strong>Nabız Kesen Vuruş</strong> için 1 Bakış Açısı biriktirir. Bu etki 0,1 saniyede bir tetiklenebilir."
     }
   },
   "passive2": {

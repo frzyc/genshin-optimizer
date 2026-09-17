@@ -6,13 +6,13 @@ import {
   allTravelerKeys,
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
 import { Chip, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { CharIconSide } from '.'
 import { SillyContext } from '../../context'
+import { CharIconSide } from '.'
 
 export function LocationFilterMultiAutocomplete({
   locations,

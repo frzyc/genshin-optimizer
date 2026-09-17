@@ -7,17 +7,13 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/pando/engine'
-import {
-  type AbilityKey,
-  type StatBoostKey,
-} from '@genshin-optimizer/sr/consts'
-import {
-  type CharacterDatum,
-  type SkillTreeNodeBonusStat,
+import type { AbilityKey, StatBoostKey } from '@genshin-optimizer/sr/consts'
+import type {
+  CharacterDatum,
+  SkillTreeNodeBonusStat,
 } from '@genshin-optimizer/sr/stats'
 import type { DmgTag, FormulaArg, Stat } from '../util'
 import {
-  type TagMapNodeEntries,
   customBreakDmg,
   customDmg,
   customHeal,
@@ -28,6 +24,7 @@ import {
   ownBuff,
   percent,
   registerBuff,
+  type TagMapNodeEntries,
 } from '../util'
 
 type AbilityScalingType = Exclude<

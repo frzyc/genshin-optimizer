@@ -149,7 +149,7 @@
     },
     "upgradedDescription": {
       "0": "Fügt mit Standardangriffen und heftigen Schlägen von Qiqi getroffenen Gegnern mit einer Wahrscheinlichkeit von 50 % einen Leidbefreiungs-Talisman hinzu, der 6 s hält. 30 s Abklingzeit.",
-      "1": "<strong>Leuchten – Stellar-Supraleiter</strong>: Erhöht die Auslösewahrscheinlichkeit dieses Effekts auf 100 % und verringert die Abklingzeit auf 15 s."
+      "1": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Leuchten – Stellarfunkeln</strong></tooltip>: Erhöht die Auslösewahrscheinlichkeit dieses Effekts auf 100 % und verringert die Abklingzeit auf 15 s."
     }
   },
   "passive3": {
@@ -162,8 +162,10 @@
     "name": "Sieben Heilige Schätze",
     "description": {
       "0": "Verkürzt die Abklingzeit der Elementarfähigkeit <strong>Adeptenkunst – Frostbringer</strong> auf 15 s.",
-      "1": "<strong>Leuchten – Stellar-Supraleiter</strong>: Erhöht während der Dauer von Frostbringer den durch die Reaktionen Supraleiter und Stellar-Supraleiter verursachten Schaden der eigenen Truppenmitglieder um 50 %.",
-      "2": "Versetzt Qiqi zudem, wenn sie sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet, in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong>."
+      "1": "<strong>Leuchten – Stellarfunkeln</strong>: Erhöht während der Dauer von Frostbringer durch eigene Truppenmitglieder verursachten, entsprechenden Schaden:",
+      "2": "<strong>Leuchten – Stellar-Supraleiter</strong>: Erhöht den durch die Reaktionen Supraleiter und Stellar-Supraleiter verursachten Schaden um 50 %.",
+      "3": "<strong>Leuchten – Stellar-Verwirbelung</strong>: Erhöht den durch die Reaktionen Kryo-Verwirbelung und Stellar-Verwirbelung verursachten Schaden um 50 %.",
+      "4": "Versetzt zudem Qiqi, wenn sie sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet oder ein Truppenmitglied in der Nähe die Reaktion Stellar-Verwirbelung auslöst, innerhalb von 8 s in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong>/<strong>Leuchten – Stellar-Verwirbelung</strong>."
     }
   },
   "constellation1": {
@@ -173,7 +175,7 @@
     },
     "upgradedDescription": {
       "0": "Stellt Qiqi, wenn der Frostbringer einen mit einem Leidbefreiungs-Talisman markierten Gegner trifft, 2 Punkte Elementarenergie wieder her.",
-      "1": "<strong>Leuchten – Stellar-Supraleiter</strong>: Stellt, wenn der Frostbringer einen Gegner mit Angriffen oder abgestimmten Angriffen trifft, Qiqi ebenfalls 6 Punkte Elementarenergie wieder her, 6 s Abklingzeit."
+      "1": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Leuchten – Stellarfunkeln</strong></tooltip>: Stellt, wenn der Frostbringer einen Gegner mit Angriffen oder abgestimmten Angriffen trifft, Qiqi ebenfalls 6 Punkte Elementarenergie wieder her, 6 s Abklingzeit."
     }
   },
   "constellation2": {
@@ -183,7 +185,7 @@
     },
     "upgradedDescription": {
       "0": "Erhöht den von <cryo>Kryo</cryo>-Effekten betroffenen Gegnern mit Qiqis Standardangriffen und heftigen Schlägen zugefügten Schaden um 15 %.",
-      "1": "<strong>Leuchten – Stellar-Supraleiter</strong>: Erhöht Qiqis ANG um 50 %."
+      "1": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Leuchten – Stellarfunkeln</strong></tooltip>: Erhöht Qiqis ANG um 50 %."
     }
   },
   "constellation3": {
@@ -219,7 +221,7 @@
     "upgradedDescription": {
       "0": "Belebt beim Anwenden von <strong>Adeptenkunst – Befreiung vom Leid</strong> alle ohnmächtigen Truppenmitglieder in der Nähe wieder und stellt ihre LP auf 50 % wieder her.",
       "1": "Dieser Effekt hat 15 min Abklingzeit.",
-      "2": "Verleiht Qiqi nach dem Anwenden von <strong>Adeptenkunst – Befreiung vom Leid</strong> zudem 4 Stapelungen <strong>Hauch eines Mysteriums</strong>. Verbraucht, wenn das eigene aktuelle Truppenmitglied (außer Qiqi selbst) Schaden der Reaktion Stellar-Supraleiter verursacht, 1 Stapelungen <strong>Hauch eines Mysteriums</strong> und erhöht diesen Schaden um 600 % von Qiqis ANG. <strong>Hauch eines Mysteriums</strong> hält maximal 12 s an. Beim Anwenden von <strong>Adeptenkunst – Befreiung vom Leid</strong> werden die Stapelungen aktualisiert."
+      "2": "Verleiht Qiqi nach dem Anwenden von <strong>Adeptenkunst – Befreiung vom Leid</strong> zudem 4 Stapelungen <strong>Hauch eines Mysteriums</strong>. Verbraucht, wenn das eigene aktuelle Truppenmitglied (außer Qiqi selbst) mithilfe eines Talents oder einer Fähigkeit direkt Schaden durch die Reaktion Stellar-Supraleiter oder Stellar-Verwirbelung verursacht, 1 Stapelung <strong>Hauch eines Mysteriums</strong> und erhöht diesen Schaden um 600 % von Qiqis ANG. <strong>Hauch eines Mysteriums</strong> hält maximal 12 s an. Beim Anwenden von <strong>Adeptenkunst – Befreiung vom Leid</strong> werden die Stapelungen aktualisiert."
     }
   }
 }

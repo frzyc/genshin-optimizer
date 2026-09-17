@@ -62,11 +62,11 @@ export function TeamCardCompact({
       <Box
         sx={(theme) => {
           const rgbas = elementArray.map((ele) => {
-            if (!ele) return `rgba(0,0,0,0)`
+            if (!ele) return 'rgba(0,0,0,0)'
 
             const hex = theme.palette[ele].main as string
             const color = hexToColor(hex)
-            if (!color) return `rgba(0,0,0,0)`
+            if (!color) return 'rgba(0,0,0,0)'
             return `rgba(${color.r},${color.g},${color.b},0.25)`
           })
           return {

@@ -1,0 +1,191 @@
+{
+  "name": "Odette",
+  "title": "Neige tourbillonnante",
+  "description": "Célèbre ballerine de Snezhnaya, elle s'épanouit sur le paysage gelé avec une beauté aussi tranchante que le givre.",
+  "constellationName": "Cygnus Olor",
+  "auto": {
+    "name": "Variante du cygne des neiges",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher une taillade éblouissante vers l'avant."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Danse lente : Transe nocturne fantôme",
+    "description": {
+      "0": "Avec des pas de danse lents et gracieux, Odette inflige des <cryo>DGT Cryo de zone</cryo> et invoque sa <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>doublure de danse solo</strong></tooltip>.",
+      "1": "Si une <strong>doublure de danse solo</strong> invoquée par Odette est sur le terrain, elle est invoquée à nouveau et sa durée est réinitialisée.",
+      "2": "<br/>",
+      "3": "<strong>Doublure de danse solo</strong>",
+      "4": "Alterne entre la danse de type <strong>Plume</strong> et celle de type <strong>Aile</strong>, attaquant de façon intermittente les ennemis proches avec des mouvements élégants et légers afin de leur infliger des <cryo>DGT Cryo de zone</cryo>.",
+      "5": "De plus, la compétence élémentaire <strong>Danse lente : Transe nocturne fantôme</strong> d'Odette est remplacée par la compétence élémentaire spéciale <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Danse lente : Final de l'aube</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip> pendant 6 s lorsque Odette a utilisé sa compétence élémentaire <strong>Danse lente : Transe nocturne fantôme</strong>. Cette nouvelle danse en duo inflige des <cryo>DGT Cryo de zone</cryo> de façon continue aux ennemis proches, puis une instance supplémentaire de <cryo>DGT Cryo de zone</cryo> considérés comme des DGT de réaction d'Astroconduction ou d'Astrodispersion est infligée à la fin de la danse en duo."
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT continus (final de l'aube)",
+      "2": "DGT d'Astroconduction/Astrodispersion (final de l'aube)",
+      "3": "DGT danse « Plume »",
+      "4": "DGT d'Astroconduction/Astrodispersion (danse « Plume »)",
+      "5": "DGT danse « Aile »",
+      "6": "DGT d'Astroconduction/Astrodispersion (danse « Aile »)",
+      "7": "TdR de final de l'aube",
+      "8": "Durée de doublure de danse solo",
+      "9": "Temps de recharge",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Danse rapide : Rêve de plumes noires",
+    "description": {
+      "0": "Avec des pas de danse rapides et vifs, Odette inflige plusieurs fois des <cryo>DGT Cryo de zone</cryo>, invoque sa <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>doublure de danse solo</strong></tooltip> et obtient l'effet <strong>Rêve du cygne des neiges</strong> : augmente les DGT des réactions astrales infligées par Odette.",
+      "1": "De plus, la compétence élémentaire <strong>Danse lente : Transe nocturne fantôme</strong> d'Odette est remplacée par la compétence élémentaire spéciale <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Danse lente : Final de l'aube</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip> pendant 6 s lorsque Odette a utilisé son déchaînement élémentaire <strong>Danse rapide : Rêve de plumes noires</strong>.",
+      "2": "<br/>",
+      "3": "Si une doublure de danse solo invoquée par Odette est sur le terrain, elle est appelée à ses côtés et sa durée est réinitialisée."
+    },
+    "skillParams": {
+      "0": "DGT entaille",
+      "1": "DGT entaille finale",
+      "2": "Bonus de DGT de réaction astrale (rêve du cygne des neiges)",
+      "3": "Durée de rêve du cygne des neiges",
+      "4": "Durée de doublure de danse solo",
+      "5": "Temps de recharge",
+      "6": "Énergie élémentaire",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Printemps de l'élue",
+    "description": {
+      "0": "Lorsque Odette invoque sa <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>doublure de danse solo</strong></tooltip>, elle obtient également 4 cumuls de <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>splendeur merveilleuse</strong></tooltip>."
+    }
+  },
+  "passive2": {
+    "name": "Pathétique de Pateticheskaya",
+    "description": {
+      "0": "Chaque tranche de 100 pts d'ATQ d'Odette au-delà de 1 000 pts augmente ses DGT de réaction astrale d'une valeur équivalant à 1,5 % des DGT d'origine, les DGT pouvant être augmentés d'un maximum de 30 % supplémentaires de cette manière."
+    }
+  },
+  "passive3": {
+    "name": "Jubilé stellaire : Danse du matin argenté",
+    "description": {
+      "0": "Odette passe en <strong>radiance « Astroconduction »</strong> ou en <strong>radiance « Astrodispersion »</strong> pendant 8 s lorsqu'elle est dans une <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>étendue polaris</strong></tooltip> ou lorsqu'un personnage de l'équipe a déclenché une réaction d'Astrodispersion à proximité, respectivement.",
+      "1": "Lorsqu'un personnage de l'équipe déclenche une réaction de Supraconduction ou de Dispersion Cryo, elle est convertie en réaction d'Astroconduction ou d'Astrodispersion, dont les DGT de base augmentent selon l'ATQ d'Odette : chaque tranche de 100 pts d'ATQ augmente les DGT de base de ces réactions de 0,7 %, les DGT pouvant être augmentés d'un maximum de 14 % de cette manière."
+    }
+  },
+  "passive": {
+    "name": "Écho du rêve d'hiver",
+    "description": {
+      "0": "Affiche l'emplacement des <strong>produits de Snezhnaya</strong> sur la mini-carte.",
+      "1": "Pratiquer la danse pendant le temps libre pourrait même déclencher d'autres effets..."
+    }
+  },
+  "constellation1": {
+    "name": "« En ce matin sans danse, elle contemple son double »",
+    "description": {
+      "0": "Après avoir utilisé sa compétence élémentaire spéciale <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Danse lente : Final de l'aube</strong></tooltip>, Odette inflige, à la fin de la danse en duo, une instance supplémentaire de <cryo>DGT Cryo de zone</cryo> dont le type et la valeur dépendent aux ennemis proches :",
+      "1": [
+        " <strong>Radiance « Astroconduction »</strong> ou sans radiance : Ces DGT sont considérés comme des DGT de réaction d'Astroconduction d'une valeur équivalant à 300 % de l'ATQ d'Odette.",
+        " <strong>Radiance « Astrodispersion »</strong> : Ces DGT sont considérés comme des DGT de réaction d'Astrodispersion d'une valeur équivalant à 450 % de l'ATQ d'Odette."
+      ],
+      "2": "<br/>",
+      "3": "De plus, l'aptitude d'élévation « Printemps de l'élue » est renforcée : Odette obtient 2 cumuls supplémentaires de <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>splendeur merveilleuse</strong></tooltip> lorsqu'elle invoque sa <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>doublure de danse solo</strong></tooltip> et la cadence à laquelle Odette perd sa <strong>splendeur merveilleuse</strong> lorsqu'elle fait partie de l'équipe mais n'est pas déployée passe à 2 cumuls par seconde."
+    }
+  },
+  "constellation2": {
+    "name": "« Je dois voir de mes yeux le rêve du cygne des neiges, pensa-t-elle »",
+    "description": {
+      "0": "L'aptitude d'élévation « Printemps de l'élue » est renforcée : chaque cumul de <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>splendeur merveilleuse</strong></tooltip> augmente également l'ATQ du personnage de 7 %.",
+      "1": "De plus, si Odette est en <tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>radiance astrale</strong></tooltip> alors que sa <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>doublure de danse solo</strong></tooltip> est sur le terrain, les RÉS élémentaires des ennemis à proximité de la <strong>doublure de danse solo</strong> diminuent également de 20 % :",
+      "2": [
+        " <strong>Radiance « Astroconduction »</strong> : <cryo>Cryo</cryo> et <electro>Électro</electro>.",
+        " <strong>Radiance « Astrodispersion »</strong> : <cryo>Cryo</cryo> et <anemo>Anémo</anemo>."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "« Je dois poursuivre le vent hurlant et continuer à progresser par moi-même »",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Odette_gen baseKey18=skill>Danse lente : Transe nocturne fantôme</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "« Je monte, tandis que je tombe dans le ciel brumeux et brûlant »",
+    "description": {
+      "0": "Le déchaînement élémentaire <strong>Danse rapide : Rêve de plumes noires</strong> est renforcé : lorsque Odette obtient l'effet <strong>rêve du cygne des neiges</strong>, les DGT des réactions astrales des autres personnages de l'équipe à proximité augmentent également d'une valeur équivalant à 50 % de l'effet du <strong>rêve du cygne des neiges</strong>.",
+      "1": "<br/>",
+      "2": "De plus, lorsqu'un personnage de l'équipe inflige des DGT de réaction astrale à un ennemi, Odette effectue également une attaque coordonnée sur ce dernier, infligeant des <cryo>DGT Cryo de zone</cryo> dont le type et la valeur dépendent, cet effet pouvant être déclenché une fois toutes les 3,5 s :",
+      "3": [
+        " <strong>Radiance « Astroconduction »</strong> ou sans radiance : Ces DGT sont considérés comme des DGT de réaction d'Astroconduction d'une valeur équivalant à 66 % de l'ATQ d'Odette.",
+        " <strong>Radiance « Astrodispersion »</strong> : Ces DGT sont considérés comme des DGT de réaction d'Astrodispersion d'une valeur équivalant à 99 % de l'ATQ d'Odette."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "« Voici, car j'ai dit adieu aux souffrances terrestres »",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Odette_gen baseKey18=burst>Danse rapide : Rêve de plumes noires</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "« Tendez la main pour toucher le visage éternel du ciel »",
+    "description": {
+      "0": "L'aptitude d'élévation « Printemps de l'élue » est renforcée : lorsque Odette accorde de la <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>splendeur merveilleuse</strong></tooltip> à tous les membres de l'équipe à proximité, sa propre splendeur merveilleuse ne diminue plus.",
+      "1": "De plus, les DGT de réaction astrale des personnages sous l'effet d'une <strong>splendeur merveilleuse</strong> bénéficient d'une <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>élévation</strong></tooltip> de 25 %, tandis que les DGT de réaction astrale d'Odette bénéficient d'une élévation supplémentaire de 20 %."
+    }
+  }
+}

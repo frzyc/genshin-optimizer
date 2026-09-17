@@ -70,7 +70,7 @@ export function CustomNumberInput({
   )
 
   const parseFunc = useCallback(
-    (val: string) => (float ? parseFloat(val) : parseInt(val)),
+    (val: string) => (float ? Number.parseFloat(val) : Number.parseInt(val)),
     [float]
   )
   const onValidate = useCallback(() => {
