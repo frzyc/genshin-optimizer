@@ -39,6 +39,44 @@ const dm = {
     AssistFollowUpFrostlightReflection:
       data_gen.skillParams['assist']['AssistFollowUpFrostlightReflection'],
   },
+  core: {
+    crit_step: data_gen.coreParams[0],
+    hpStep: data_gen.coreParams[1][0],
+    initialFrostbitePointGain: data_gen.coreParams[2][0],
+    investigationCooldown: data_gen.coreParams[3][0],
+    maxFrostbitePoints: data_gen.coreParams[4][0],
+    frostbitePointGain: data_gen.coreParams[5][0],
+    frostbiteGainCooldown: data_gen.coreParams[6][0],
+    hp_: data_gen.coreParams[7][0],
+    veilDuration: data_gen.coreParams[8][0],
+    atk: data_gen.coreParams[9],
+    duration: data_gen.coreParams[10][0],
+  },
+  ability: {
+    dmg_: data_gen.abilityParams[0],
+    hpThreshold: data_gen.abilityParams[1],
+    hpStep: data_gen.abilityParams[2],
+    dmg_step: data_gen.abilityParams[3],
+    maxDmg_: data_gen.abilityParams[4],
+    maxHp: data_gen.abilityParams[5],
+  },
+  m1: {
+    resIgn_: data_gen.mindscapeParams[0][0],
+    duration: data_gen.mindscapeParams[0][1],
+  },
+  m2: {
+    atk_: data_gen.mindscapeParams[1][0],
+    team_atk_: data_gen.mindscapeParams[1][1],
+    duration: data_gen.mindscapeParams[1][2],
+  },
+  m4: {
+    decibels: data_gen.mindscapeParams[3][0],
+    ultChainBasicCrit_dmg_: data_gen.mindscapeParams[3][1],
+  },
+  m6: {
+    critIncrease_: data_gen.mindscapeParams[5][0],
+    finalVerdictChargeIncrease_: data_gen.mindscapeParams[5][1],
+  },
 } as const
 
 export default dm

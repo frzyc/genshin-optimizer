@@ -27,7 +27,7 @@ export const buffs = {
     name: 'ability_electric_anom_mv_mult_',
     tag: {
       et: 'display',
-      qt: 'dmg',
+      qt: 'combat',
       q: 'anom_mv_mult_',
       sheet: 'Anton',
       attribute: 'electric',

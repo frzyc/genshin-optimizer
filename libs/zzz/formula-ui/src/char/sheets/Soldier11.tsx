@@ -23,7 +23,16 @@ const sheet = createBaseSheet(key, {
   ability: [
     {
       type: 'fields',
-      fields: [fieldForBuff(buff.ability_fire_dmg_)],
+      fields: [
+        fieldForBuff(buff.ability_fire_dmg_),
+        fieldForBuff(buff.ability_crit_dmg_),
+      ],
+    },
+  ],
+  potential: [
+    {
+      type: 'fields',
+      fields: [fieldForBuff(buff.ability_crit_dmg_)],
     },
   ],
   m2: [

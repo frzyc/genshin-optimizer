@@ -75,7 +75,7 @@ export function dmgDazeAndAnom(
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries[] {
   if (!dmgTag.attribute) dmgTag.attribute = 'physical'
-  if (!dmgTag.skillType) dmgTag.skillType = `${abilityScalingType}Skill`
+  if (!dmgTag.skillType1) dmgTag.skillType1 = `${abilityScalingType}Skill`
   const dmgMulti = sum(
     percent(skillParam.DamagePercentage),
     prod(
@@ -131,7 +131,7 @@ export function dmgDazeAndAnomMerge(
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries[] {
   if (!dmgTag.attribute) dmgTag.attribute = 'physical'
-  if (!dmgTag.skillType) dmgTag.skillType = `${abilityScalingType}Skill`
+  if (!dmgTag.skillType1) dmgTag.skillType1 = `${abilityScalingType}Skill`
   const dmgMulti = sum(
     ...skillParam.map((sp) => percent(sp.DamagePercentage)),
     prod(
@@ -249,7 +249,7 @@ export function registerAllDmgDazeAndAnom(
                 {
                   attribute: allStats.char[key].attribute,
                   damageType1: inferDamageType(key, abilityName),
-                  skillType: `${sKey}Skill`,
+                  skillType1: `${sKey}Skill`,
                 },
                 allStats.char[key].specialty === 'rupture'
                   ? 'sheerForce'
@@ -485,7 +485,12 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
           prod(
             percent(anomalyMultipliers[data_gen.attribute]),
             own.final.atk,
-            cmpEq(own.dmg.anom_mv_mult_, 0, percent(1), own.dmg.anom_mv_mult_)
+            cmpEq(
+              own.final.anom_mv_mult_,
+              0,
+              percent(1),
+              own.final.anom_mv_mult_
+            )
           )
         )
       : []),
@@ -543,9 +548,14 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
           prod(
             percent(anomalyMultipliers[data_gen.attribute]),
             own.final.atk,
-            cmpEq(own.dmg.anom_mv_mult_, 0, percent(1), own.dmg.anom_mv_mult_)
+            cmpEq(
+              own.final.anom_mv_mult_,
+              0,
+              percent(1),
+              own.final.anom_mv_mult_
+            )
           ),
-          { cond: cmpEq(own.dmg.anom_mv_mult_, 0, '', 'infer') }
+          { cond: cmpEq(own.final.anom_mv_mult_, 0, '', 'infer') }
         )
       : []),
     ...customAnomalyBuildup(

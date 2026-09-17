@@ -1,5 +1,6 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
+  abloom: { sheet: 'Burnice', name: 'abloom', type: 'bool' },
   additional_burn: { sheet: 'Burnice', name: 'additional_burn', type: 'bool' },
   exSpecial_active: {
     sheet: 'Burnice',

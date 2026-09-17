@@ -32,6 +32,12 @@ const sheet = createBaseSheet(key, {
       ],
     },
   ],
+  potential: [
+    {
+      type: 'fields',
+      fields: [fieldForBuff(buff.ability_aftershock_dmg_)],
+    },
+  ],
   m2: [
     {
       type: 'conditional',

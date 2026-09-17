@@ -24,6 +24,9 @@ const dm = {
       data_gen.skillParams['special'][
         'EXSpecialAttackSuperchargedObstructionRemoval'
       ],
+    Pulse: data_gen.skillParams['special']['Pulse'],
+    SpecialAttackObstructionRemovalCycle:
+      data_gen.skillParams['special']['SpecialAttackObstructionRemovalCycle'],
   },
   chain: {
     ChainAttackCollaborativeConstruction:
@@ -47,6 +50,10 @@ const dm = {
   ability: {
     shock_dmg_: data_gen.abilityParams[0],
     stacks: data_gen.abilityParams[1],
+  },
+  potential: {
+    electric_dmg_: data_gen.potentialParams[0],
+    duration: data_gen.potentialParams[1][2],
   },
   m1: {
     energy: data_gen.mindscapeParams[0][0],

@@ -1,0 +1,8 @@
+{
+  "finalVerdictCond": "Charge Time",
+  "etherVeilWellspringCond": "Ether Veil: Wellspring is active",
+  "abilityCond": "Zhao is within any Ether Veil",
+  "m2Cond": "Zhao recovers HP",
+  "m6CoreBuff": "Core Passive: Ideal Colleague CRIT Rate Buff Multiplier",
+  "m6ChargeIncrease": "Basic Attack: Final Verdict Charging DMG Bonus Multiplier"
+}

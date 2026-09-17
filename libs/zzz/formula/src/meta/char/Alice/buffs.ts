@@ -5,7 +5,7 @@ export const buffs = {
     name: 'core_anom_mv_mult_',
     tag: {
       et: 'display',
-      qt: 'dmg',
+      qt: 'combat',
       q: 'anom_mv_mult_',
       sheet: 'Alice',
       attribute: 'physical',

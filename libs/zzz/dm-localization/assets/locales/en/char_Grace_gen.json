@@ -229,6 +229,7 @@
     "name": "Awakened Potential: Overclocked Engineering Engine",
     "desc": [
       "",
+      "",
       "When consuming <ct color=#FFFFFF>Zap</ct>, gain <ct color=#FFFFFF>Enhanced Zap</ct>, increasing <ct color=#2EB6FF>Electric DMG</ct> by <ct color=#2BAD00>10%</ct> for 25s. Repeated triggers reset the duration.",
       "When consuming <ct color=#FFFFFF>Zap</ct>, gain <ct color=#FFFFFF>Enhanced Zap</ct>, increasing <ct color=#2EB6FF>Electric DMG</ct> by <ct color=#2BAD00>15%</ct> for 25s. Repeated triggers reset the duration.",
       "When consuming <ct color=#FFFFFF>Zap</ct>, gain <ct color=#FFFFFF>Enhanced Zap</ct>, increasing <ct color=#2EB6FF>Electric DMG</ct> by <ct color=#2BAD00>20%</ct> for 25s. Repeated triggers reset the duration.",
