@@ -1,18 +1,8 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  boolConditional: { sheet: 'Roxy', name: 'boolConditional', type: 'bool' },
-  listConditional: {
-    sheet: 'Roxy',
-    name: 'listConditional',
-    type: 'list',
-    list: ['val1', 'val2'],
-  },
-  numConditional: {
-    sheet: 'Roxy',
-    name: 'numConditional',
-    type: 'num',
-    int_only: true,
-    min: 0,
-    max: 2,
-  },
+  chillHits: { sheet: 'Roxy', name: 'chillHits', type: 'bool' },
+  contamination: { sheet: 'Roxy', name: 'contamination', type: 'bool' },
+  enemyHit: { sheet: 'Roxy', name: 'enemyHit', type: 'bool' },
+  exSpecialUsed: { sheet: 'Roxy', name: 'exSpecialUsed', type: 'bool' },
+  kindlyHits: { sheet: 'Roxy', name: 'kindlyHits', type: 'bool' },
 } as const

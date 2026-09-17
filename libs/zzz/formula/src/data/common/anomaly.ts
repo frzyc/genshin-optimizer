@@ -9,7 +9,7 @@ import {
   teamBuff,
 } from '../util'
 
-const { frostbite, windswept } = allBoolConditionals('anomaly')
+export const { frostbite, windswept } = allBoolConditionals('anomaly')
 export const { anomTimePassed } = allNumConditionals('anomaly', true, 0, 30)
 
 export default register(
