@@ -41,6 +41,10 @@ const dm = {
     chain_dmg_: data_gen.abilityParams[0],
     stacks: data_gen.abilityParams[1],
   },
+  potential: {
+    laceration_dmg_: data_gen.potentialParams[0],
+    crit_dmg_: data_gen.potentialParams[1],
+  },
   m1: {
     dazeInc_: data_gen.mindscapeParams[0][0],
   },
