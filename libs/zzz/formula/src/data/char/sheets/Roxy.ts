@@ -163,7 +163,7 @@ const sheet = register(
   ),
   registerBuff(
     'core_laceration_dmg_',
-    teamBuff.combat.crit_dmg_.add(
+    teamBuff.combat.laceration_dmg_.add(
       contamination.ifOn(
         cmpEq(
           target.char.specialty,
