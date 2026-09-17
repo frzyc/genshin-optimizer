@@ -88,7 +88,7 @@ const dm = {
   },
   m1: {
     gashBuildupRate_: data_gen.mindscapeParams[0][0],
-    maim_mult_: data_gen.mindscapeParams[0][1]
+    maim_mult_: data_gen.mindscapeParams[0][1],
   },
   m2: {
     duration: data_gen.mindscapeParams[1][0],
@@ -99,7 +99,7 @@ const dm = {
   },
   m6: {
     maim: data_gen.mindscapeParams[5][0],
-  }
+  },
 } as const
 
 export default dm

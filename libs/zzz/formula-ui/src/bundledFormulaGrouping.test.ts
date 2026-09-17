@@ -72,10 +72,12 @@ describe('partitionBundlableTags', () => {
       anbyTag('HitA_0', 'dazeBuildup'),
       anbyTag('HitA_0', 'standardDmg'),
       anbyTag('HitA_0', 'sheerDmg'),
+      anbyTag('HitA_0', 'sharpDmg'),
     ]
     expect(partTagKeys(partitionBundlableTags(tags))).toEqual([
       'HitA_0:standardDmg',
       'HitA_0:sheerDmg',
+      'HitA_0:sharpDmg',
       'HitA_0:dazeBuildup',
       'HitA_0:anomBuildup',
     ])
