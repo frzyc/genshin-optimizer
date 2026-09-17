@@ -1,7 +1,8 @@
 {
   "rarity": "A",
   "type": "support",
-  "atk_base": 42,
+  "base_statkey": "atk",
+  "base_statvalue": 42,
   "second_statkey": "enerRegen_",
   "second_statvalue": 0.2,
   "phase": [

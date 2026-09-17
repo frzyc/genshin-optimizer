@@ -124,6 +124,9 @@ export const allWengineSubStatKeys = [
 ] as const
 export type WengineSubStatKey = (typeof allWengineSubStatKeys)[number]
 
+export const allWengineBaseStatKeys = ['atk', 'def'] as const
+export type WengineBaseStatKey = (typeof allWengineBaseStatKeys)[number]
+
 export const allPhaseKeys = [1, 2, 3, 4, 5] as const
 export type PhaseKey = (typeof allPhaseKeys)[number]
 

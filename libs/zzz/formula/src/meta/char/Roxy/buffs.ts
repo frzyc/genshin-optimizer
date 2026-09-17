@@ -39,7 +39,7 @@ export const buffs = {
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'crit_dmg_',
+      q: 'laceration_dmg_',
       sheet: 'Roxy',
       name: 'core_laceration_dmg_',
     },

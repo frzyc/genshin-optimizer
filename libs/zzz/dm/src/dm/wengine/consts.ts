@@ -135,3 +135,8 @@ export const subStatMap = {
   'Anomaly Mastery': 'anomMas_',
   'PEN Ratio': 'pen_',
 } as const
+
+export const baseStatMap = {
+  'Base ATK': 'atk',
+  'Base DEF': 'def',
+} as const

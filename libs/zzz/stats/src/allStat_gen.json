@@ -30151,7 +30151,8 @@
     "LunarPleniluna": {
       "rarity": "B",
       "type": "attack",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "atk_",
       "second_statvalue": 0.08,
       "phase": [
@@ -30185,7 +30186,8 @@
     "LunarDecrescent": {
       "rarity": "B",
       "type": "attack",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "atk_",
       "second_statvalue": 0.08,
       "phase": [
@@ -30224,7 +30226,8 @@
     "LunarNoviluna": {
       "rarity": "B",
       "type": "attack",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "crit_",
       "second_statvalue": 0.064,
       "phase": [
@@ -30263,7 +30266,8 @@
     "ReverbMarkI": {
       "rarity": "B",
       "type": "support",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "atk_",
       "second_statvalue": 0.08,
       "phase": [
@@ -30307,7 +30311,8 @@
     "ReverbMarkII": {
       "rarity": "B",
       "type": "support",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.16,
       "phase": [
@@ -30351,7 +30356,8 @@
     "ReverbMarkIII": {
       "rarity": "B",
       "type": "support",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "hp_",
       "second_statvalue": 0.08,
       "phase": [
@@ -30395,7 +30401,8 @@
     "VortexRevolver": {
       "rarity": "B",
       "type": "stun",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "atk_",
       "second_statvalue": 0.08,
       "phase": [
@@ -30429,7 +30436,8 @@
     "VortexArrow": {
       "rarity": "B",
       "type": "stun",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "impact_",
       "second_statvalue": 0.048,
       "phase": [
@@ -30463,7 +30471,8 @@
     "VortexHatchet": {
       "rarity": "B",
       "type": "stun",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.16,
       "phase": [
@@ -30507,7 +30516,8 @@
     "MagneticStormAlpha": {
       "rarity": "B",
       "type": "anomaly",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "atk_",
       "second_statvalue": 0.08,
       "phase": [
@@ -30551,7 +30561,8 @@
     "MagneticStormBravo": {
       "rarity": "B",
       "type": "anomaly",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "anomProf",
       "second_statvalue": 24,
       "phase": [
@@ -30595,7 +30606,8 @@
     "MagneticStormCharlie": {
       "rarity": "B",
       "type": "anomaly",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "pen_",
       "second_statvalue": 0.064,
       "phase": [
@@ -30634,7 +30646,8 @@
     "IdentityBase": {
       "rarity": "B",
       "type": "defense",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "def_",
       "second_statvalue": 0.128,
       "phase": [
@@ -30673,7 +30686,8 @@
     "IdentityInflection": {
       "rarity": "B",
       "type": "defense",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "def_",
       "second_statvalue": 0.128,
       "phase": [
@@ -30712,7 +30726,8 @@
     "CinderCobalt": {
       "rarity": "B",
       "type": "rupture",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "hp_",
       "second_statvalue": 0.08,
       "phase": [
@@ -30756,7 +30771,8 @@
     "LunarSemiluna": {
       "rarity": "B",
       "type": "armorer",
-      "atk_base": 19,
+      "base_statkey": "def",
+      "base_statvalue": 19,
       "second_statkey": "def_",
       "second_statvalue": 0.128,
       "phase": [
@@ -30795,7 +30811,8 @@
     "StreetSuperstar": {
       "rarity": "A",
       "type": "attack",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -30839,7 +30856,8 @@
     "SliceOfTime": {
       "rarity": "A",
       "type": "support",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "pen_",
       "second_statvalue": 0.08,
       "phase": [
@@ -30898,7 +30916,8 @@
     "RainforestGourmet": {
       "rarity": "A",
       "type": "anomaly",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "anomProf",
       "second_statvalue": 30,
       "phase": [
@@ -30947,7 +30966,8 @@
     "StarlightEngine": {
       "rarity": "A",
       "type": "attack",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -30986,7 +31006,8 @@
     "SteamOven": {
       "rarity": "A",
       "type": "stun",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.2,
       "phase": [
@@ -31035,7 +31056,8 @@
     "PreciousFossilizedCore": {
       "rarity": "A",
       "type": "stun",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "impact_",
       "second_statvalue": 0.06,
       "phase": [
@@ -31084,7 +31106,8 @@
     "OriginalTransmorpher": {
       "rarity": "A",
       "type": "defense",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "hp_",
       "second_statvalue": 0.1,
       "phase": [
@@ -31128,7 +31151,8 @@
     "WeepingGemini": {
       "rarity": "A",
       "type": "anomaly",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -31167,7 +31191,8 @@
     "ElectroLipGloss": {
       "rarity": "A",
       "type": "anomaly",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "anomProf",
       "second_statvalue": 30,
       "phase": [
@@ -31206,7 +31231,8 @@
     "BunnyBand": {
       "rarity": "A",
       "type": "defense",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "def_",
       "second_statvalue": 0.16,
       "phase": [
@@ -31245,7 +31271,8 @@
     "SpringEmbrace": {
       "rarity": "A",
       "type": "defense",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -31289,7 +31316,8 @@
     "PuzzleSphere": {
       "rarity": "A",
       "type": "rupture",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -31338,7 +31366,8 @@
     "GildedBlossom": {
       "rarity": "A",
       "type": "attack",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -31377,7 +31406,8 @@
     "RadiowaveJourney": {
       "rarity": "A",
       "type": "rupture",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "hp_",
       "second_statvalue": 0.1,
       "phase": [
@@ -31426,7 +31456,8 @@
     "MarcatoDesire": {
       "rarity": "A",
       "type": "attack",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "crit_",
       "second_statvalue": 0.08,
       "phase": [
@@ -31470,7 +31501,8 @@
     "ReelProjector": {
       "rarity": "A",
       "type": "defense",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "impact_",
       "second_statvalue": 0.06,
       "phase": [
@@ -31514,7 +31546,8 @@
     "CattyLuck": {
       "rarity": "A",
       "type": "armorer",
-      "atk_base": 24,
+      "base_statkey": "def",
+      "base_statvalue": 24,
       "second_statkey": "def_",
       "second_statvalue": 0.16,
       "phase": [
@@ -31558,7 +31591,8 @@
     "BoisterousEchoes": {
       "rarity": "A",
       "type": "anomaly",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "anomProf",
       "second_statvalue": 30,
       "phase": [
@@ -31602,7 +31636,8 @@
     "CauldronOfClarity": {
       "rarity": "A",
       "type": "rupture",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "hp_",
       "second_statvalue": 0.1,
       "phase": [
@@ -31666,7 +31701,8 @@
     "TheSimmeringPot": {
       "rarity": "A",
       "type": "stun",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "impact_",
       "second_statvalue": 0.06,
       "phase": [
@@ -31710,7 +31746,8 @@
     "BloodmarrowCoffer": {
       "rarity": "A",
       "type": "armorer",
-      "atk_base": 24,
+      "base_statkey": "def",
+      "base_statvalue": 24,
       "second_statkey": "crit_",
       "second_statvalue": 0.08,
       "phase": [
@@ -31764,7 +31801,8 @@
     "DemaraBatteryMarkII": {
       "rarity": "A",
       "type": "stun",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "impact_",
       "second_statvalue": 0.06,
       "phase": [
@@ -31808,7 +31846,8 @@
     "TheVault": {
       "rarity": "A",
       "type": "support",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.2,
       "phase": [
@@ -31852,7 +31891,8 @@
     "Housekeeper": {
       "rarity": "A",
       "type": "attack",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -31901,7 +31941,8 @@
     "StarlightEngineReplica": {
       "rarity": "A",
       "type": "attack",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -31945,7 +31986,8 @@
     "DrillRigRedAxis": {
       "rarity": "A",
       "type": "attack",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.2,
       "phase": [
@@ -31989,7 +32031,8 @@
     "BigCylinder": {
       "rarity": "A",
       "type": "defense",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "def_",
       "second_statvalue": 0.16,
       "phase": [
@@ -32033,7 +32076,8 @@
     "BashfulDemon": {
       "rarity": "A",
       "type": "support",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -32082,7 +32126,8 @@
     "KaboomTheCannon": {
       "rarity": "A",
       "type": "support",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.2,
       "phase": [
@@ -32131,7 +32176,8 @@
     "PeacekeeperSpecialized": {
       "rarity": "A",
       "type": "defense",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -32170,7 +32216,8 @@
     "RoaringRide": {
       "rarity": "A",
       "type": "anomaly",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -32224,7 +32271,8 @@
     "BoxCutter": {
       "rarity": "A",
       "type": "stun",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "impact_",
       "second_statvalue": 0.06,
       "phase": [
@@ -32268,7 +32316,8 @@
     "TremorTrigramVessel": {
       "rarity": "A",
       "type": "defense",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -32312,7 +32361,8 @@
     "GrillOWisp": {
       "rarity": "A",
       "type": "rupture",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "hp_",
       "second_statvalue": 0.1,
       "phase": [
@@ -32356,7 +32406,8 @@
     "CannonRotor": {
       "rarity": "A",
       "type": "attack",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "crit_",
       "second_statvalue": 0.08,
       "phase": [
@@ -32400,7 +32451,8 @@
     "UnfetteredGameBall": {
       "rarity": "A",
       "type": "support",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.2,
       "phase": [
@@ -32439,7 +32491,8 @@
     "SixShooter": {
       "rarity": "A",
       "type": "stun",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "impact_",
       "second_statvalue": 0.06,
       "phase": [
@@ -32488,7 +32541,8 @@
     "SteelCushion": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 46,
+      "base_statkey": "atk",
+      "base_statvalue": 46,
       "second_statkey": "crit_",
       "second_statvalue": 0.096,
       "phase": [
@@ -32527,7 +32581,8 @@
     "TheBrimstone": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 46,
+      "base_statkey": "atk",
+      "base_statvalue": 46,
       "second_statkey": "atk_",
       "second_statvalue": 0.12,
       "phase": [
@@ -32576,7 +32631,8 @@
     "KrakensCradle": {
       "rarity": "S",
       "type": "rupture",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "hp_",
       "second_statvalue": 0.12,
       "phase": [
@@ -32635,7 +32691,8 @@
     "TusksOfFury": {
       "rarity": "S",
       "type": "defense",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "impact_",
       "second_statvalue": 0.072,
       "phase": [
@@ -32684,7 +32741,8 @@
     "HailstormShrine": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 50,
+      "base_statkey": "atk",
+      "base_statvalue": 50,
       "second_statkey": "crit_",
       "second_statvalue": 0.096,
       "phase": [
@@ -32733,7 +32791,8 @@
     "HellfireGears": {
       "rarity": "S",
       "type": "stun",
-      "atk_base": 46,
+      "base_statkey": "atk",
+      "base_statvalue": 46,
       "second_statkey": "impact_",
       "second_statvalue": 0.072,
       "phase": [
@@ -32782,7 +32841,8 @@
     "TheRestrained": {
       "rarity": "S",
       "type": "stun",
-      "atk_base": 46,
+      "base_statkey": "atk",
+      "base_statvalue": 46,
       "second_statkey": "impact_",
       "second_statvalue": 0.072,
       "phase": [
@@ -32826,7 +32886,8 @@
     "BlazingLaurel": {
       "rarity": "S",
       "type": "stun",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "impact_",
       "second_statvalue": 0.072,
       "phase": [
@@ -32880,7 +32941,8 @@
     "FlamemakerShaker": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "atk_",
       "second_statvalue": 0.12,
       "phase": [
@@ -32949,7 +33011,8 @@
     "FusionCompiler": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 46,
+      "base_statkey": "atk",
+      "base_statvalue": 46,
       "second_statkey": "pen_",
       "second_statvalue": 0.096,
       "phase": [
@@ -32998,7 +33061,8 @@
     "DeepSeaVisitor": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_",
       "second_statvalue": 0.096,
       "phase": [
@@ -33052,7 +33116,8 @@
     "ZanshinHerbCase": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_dmg_",
       "second_statvalue": 0.192,
       "phase": [
@@ -33101,7 +33166,8 @@
     "WeepingCradle": {
       "rarity": "S",
       "type": "support",
-      "atk_base": 46,
+      "base_statkey": "atk",
+      "base_statvalue": 46,
       "second_statkey": "pen_",
       "second_statvalue": 0.096,
       "phase": [
@@ -33160,7 +33226,8 @@
     "Timeweaver": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "atk_",
       "second_statvalue": 0.12,
       "phase": [
@@ -33214,7 +33281,8 @@
     "RiotSuppressorMarkVI": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_dmg_",
       "second_statvalue": 0.192,
       "phase": [
@@ -33263,7 +33331,8 @@
     "IceJadeTeapot": {
       "rarity": "S",
       "type": "stun",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "impact_",
       "second_statvalue": 0.072,
       "phase": [
@@ -33327,7 +33396,8 @@
     "SharpenedStinger": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "anomProf",
       "second_statvalue": 36,
       "phase": [
@@ -33391,7 +33461,8 @@
     "MyriadEclipse": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_",
       "second_statvalue": 0.096,
       "phase": [
@@ -33435,7 +33506,8 @@
     "BellicoseBlaze": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.24,
       "phase": [
@@ -33489,7 +33561,8 @@
     "ElegantVanity": {
       "rarity": "S",
       "type": "support",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "atk_",
       "second_statvalue": 0.12,
       "phase": [
@@ -33548,7 +33621,8 @@
     "HeartstringNocturne": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_",
       "second_statvalue": 0.096,
       "phase": [
@@ -33602,7 +33676,8 @@
     "FlightOfFancy": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "anomProf",
       "second_statvalue": 36,
       "phase": [
@@ -33656,7 +33731,8 @@
     "HalfSugarBunny": {
       "rarity": "S",
       "type": "defense",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "hp_",
       "second_statvalue": 0.12,
       "phase": [
@@ -33710,7 +33786,8 @@
     "SpectralGaze": {
       "rarity": "S",
       "type": "stun",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_",
       "second_statvalue": 0.096,
       "phase": [
@@ -33774,7 +33851,8 @@
     "QingmingBirdcage": {
       "rarity": "S",
       "type": "rupture",
-      "atk_base": 50,
+      "base_statkey": "atk",
+      "base_statvalue": 50,
       "second_statkey": "hp_",
       "second_statvalue": 0.12,
       "phase": [
@@ -33838,7 +33916,8 @@
     "SeveredInnocence": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_dmg_",
       "second_statvalue": 0.192,
       "phase": [
@@ -33902,7 +33981,8 @@
     "RoaringFurnace": {
       "rarity": "S",
       "type": "stun",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "atk_",
       "second_statvalue": 0.12,
       "phase": [
@@ -33951,7 +34031,8 @@
     "PracticedPerfection": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "atk_",
       "second_statvalue": 0.12,
       "phase": [
@@ -34005,7 +34086,8 @@
     "Metanukimorphosis": {
       "rarity": "S",
       "type": "support",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.24,
       "phase": [
@@ -34054,7 +34136,8 @@
     "CloudcleaveRadiance": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 50,
+      "base_statkey": "atk",
+      "base_statvalue": 50,
       "second_statkey": "crit_dmg_",
       "second_statvalue": 0.192,
       "phase": [
@@ -34103,7 +34186,8 @@
     "DreamlitHearth": {
       "rarity": "S",
       "type": "support",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "hp_",
       "second_statvalue": 0.12,
       "phase": [
@@ -34152,7 +34236,8 @@
     "CordisGermina": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_",
       "second_statvalue": 0.096,
       "phase": [
@@ -34216,7 +34301,8 @@
     "WrathfulVajra": {
       "rarity": "S",
       "type": "rupture",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "hp_",
       "second_statvalue": 0.12,
       "phase": [
@@ -34265,7 +34351,8 @@
     "YesterdayCalls": {
       "rarity": "S",
       "type": "stun",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_",
       "second_statvalue": 0.096,
       "phase": [
@@ -34329,7 +34416,8 @@
     "Thoughtbop": {
       "rarity": "S",
       "type": "support",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.24,
       "phase": [
@@ -34388,7 +34476,8 @@
     "AngelInTheShell": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "anomMas_",
       "second_statvalue": 0.12,
       "phase": [
@@ -34437,7 +34526,8 @@
     "NeonFantasies": {
       "rarity": "S",
       "type": "stun",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "anomMas_",
       "second_statvalue": 0.12,
       "phase": [
@@ -34496,7 +34586,8 @@
     "SerpentineSeeker": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.24,
       "phase": [
@@ -34560,7 +34651,8 @@
     "StarlightRiderFaceplate": {
       "rarity": "S",
       "type": "rupture",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "hp_",
       "second_statvalue": 0.12,
       "phase": [
@@ -34609,7 +34701,8 @@
     "FrostfallSickle": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "anomMas_",
       "second_statvalue": 0.12,
       "phase": [
@@ -34663,7 +34756,8 @@
     "SolExuvia": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "atk_",
       "second_statvalue": 0.12,
       "phase": [
@@ -34707,7 +34801,8 @@
     "JoyauDore": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.24,
       "phase": [
@@ -34766,7 +34861,8 @@
     "ChiefSidekick": {
       "rarity": "S",
       "type": "stun",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_",
       "second_statvalue": 0.096,
       "phase": [
@@ -34825,7 +34921,8 @@
     "OdeOfResurrectedWings": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 50,
+      "base_statkey": "atk",
+      "base_statvalue": 50,
       "second_statkey": "atk_",
       "second_statvalue": 0.144,
       "phase": [
@@ -34874,7 +34971,8 @@
     "KnightsExtolment": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_dmg_",
       "second_statvalue": 0.192,
       "phase": [
@@ -34938,7 +35036,8 @@
     "CrimsonThirst": {
       "rarity": "S",
       "type": "armorer",
-      "atk_base": 29,
+      "base_statkey": "def",
+      "base_statvalue": 29,
       "second_statkey": "def_",
       "second_statvalue": 0.192,
       "phase": [
@@ -34987,7 +35086,8 @@
     "CrimsonMoonCasket": {
       "rarity": "S",
       "type": "stun",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.24,
       "phase": [

@@ -1,7 +1,8 @@
 {
   "rarity": "A",
   "type": "armorer",
-  "atk_base": 24,
+  "base_statkey": "def",
+  "base_statvalue": 24,
   "second_statkey": "def_",
   "second_statvalue": 0.16,
   "phase": [
