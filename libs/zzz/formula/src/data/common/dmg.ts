@@ -1,6 +1,7 @@
 import {
   lookup,
   max,
+  min,
   prod,
   subscript,
   sum,
@@ -100,7 +101,7 @@ const data: TagMapNodeEntries = [
         prod(
           sum(
             own.common.cappedCrit_,
-            max(sum(own.final.crit_, percent(-1)), percent(0))
+            min(max(sum(own.final.crit_, percent(-1)), percent(0)), percent(1))
           ),
           own.final.laceration_dmg_
         )
