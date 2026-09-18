@@ -4673,7 +4673,24 @@
           3.6
         ]
       ],
-      "potentialParams": []
+      "potentialParams": [
+        [
+          0,
+          0.04,
+          0.06,
+          0.08,
+          0.1,
+          0.12
+        ],
+        [
+          0,
+          0.11,
+          0.17,
+          0.23,
+          0.29,
+          0.35
+        ]
+      ]
     },
     "Anton": {
       "id": "1111",
@@ -28945,13 +28962,1197 @@
         ]
       ],
       "potentialParams": []
+    },
+    "Claret": {
+      "id": "1611",
+      "rarity": "S",
+      "attribute": "electric",
+      "specialty": "armorer",
+      "faction": "RoscaeliferExternalStrategyDepartment",
+      "stats": {
+        "atk_base": 101,
+        "atk_growth": 5.8479,
+        "def_base": 35,
+        "def_growth": 4.8155,
+        "hp_base": 454,
+        "hp_growth": 61.6711,
+        "anomMas": 80,
+        "anomProf": 79,
+        "impact": 93,
+        "enerRegen": 0
+      },
+      "promotionStats": [
+        {
+          "hp": 0,
+          "atk": 0,
+          "def": 0
+        },
+        {
+          "hp": 312,
+          "atk": 36,
+          "def": 24
+        },
+        {
+          "hp": 624,
+          "atk": 72,
+          "def": 49
+        },
+        {
+          "hp": 936,
+          "atk": 108,
+          "def": 73
+        },
+        {
+          "hp": 1248,
+          "atk": 144,
+          "def": 97
+        },
+        {
+          "hp": 1559,
+          "atk": 180,
+          "def": 122
+        }
+      ],
+      "coreStats": [
+        {
+          "crit_": 0.048
+        },
+        {
+          "crit_": 0.096
+        },
+        {
+          "crit_": 0.144
+        },
+        {
+          "crit_": 0.192
+        },
+        {
+          "crit_": 0.24
+        },
+        {
+          "crit_": 0.288
+        }
+      ],
+      "skillParams": {
+        "basic": {
+          "BasicAttackBloodforgingFourForms": [
+            {
+              "DamagePercentage": 0.544,
+              "DamagePercentageGrowth": 0.05,
+              "StunRatio": 0.347,
+              "StunRatioGrowth": 0.016,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 954.25,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 31.5
+            },
+            {
+              "DamagePercentage": 0.672,
+              "DamagePercentageGrowth": 0.062,
+              "StunRatio": 0.429,
+              "StunRatioGrowth": 0.02,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 1179.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 38.99
+            },
+            {
+              "DamagePercentage": 0.952,
+              "DamagePercentageGrowth": 0.087,
+              "StunRatio": 0.609,
+              "StunRatioGrowth": 0.028,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 1674.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 55.29
+            },
+            {
+              "DamagePercentage": 2.895,
+              "DamagePercentageGrowth": 0.264,
+              "StunRatio": 1.788,
+              "StunRatioGrowth": 0.082,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 4917,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 162.53
+            }
+          ],
+          "BasicAttackBloodbloomOathStarforging": [
+            {
+              "DamagePercentage": 1.077,
+              "DamagePercentageGrowth": 0.098,
+              "StunRatio": 0.55,
+              "StunRatioGrowth": 0.025,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 1512.5,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 49.96
+            },
+            {
+              "DamagePercentage": 2.874,
+              "DamagePercentageGrowth": 0.262,
+              "StunRatio": 1.467,
+              "StunRatioGrowth": 0.067,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 4034.25,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 133.33
+            },
+            {
+              "DamagePercentage": 4.521,
+              "DamagePercentageGrowth": 0.411,
+              "StunRatio": 1.87,
+              "StunRatioGrowth": 0.085,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 5142.5,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 170
+            },
+            {
+              "DamagePercentage": 1.773,
+              "DamagePercentageGrowth": 0.162,
+              "StunRatio": 0.734,
+              "StunRatioGrowth": 0.034,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 2018.5,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 66.66
+            }
+          ],
+          "BasicAttackBloodbloomOathSubduingAxe": [
+            {
+              "DamagePercentage": 3.28,
+              "DamagePercentageGrowth": 0.299,
+              "StunRatio": 1.357,
+              "StunRatioGrowth": 0.062,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 3731.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 123.33
+            }
+          ]
+        },
+        "dodge": {
+          "DodgeNightVision": [],
+          "DashAttackTempering": [
+            {
+              "DamagePercentage": 0.529,
+              "DamagePercentageGrowth": 0.049,
+              "StunRatio": 0.431,
+              "StunRatioGrowth": 0.02,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 1185.25,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 39.15
+            }
+          ],
+          "DodgeCounterReturningEdge": [
+            {
+              "DamagePercentage": 2.725,
+              "DamagePercentageGrowth": 0.248,
+              "StunRatio": 1.962,
+              "StunRatioGrowth": 0.09,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 2370.5,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 78.33
+            }
+          ],
+          "DodgeCounterBloodbloomOathReturningEdge": [
+            {
+              "DamagePercentage": 3.3,
+              "DamagePercentageGrowth": 0.3,
+              "StunRatio": 1.907,
+              "StunRatioGrowth": 0.087,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 2219.25,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 73.33
+            }
+          ]
+        },
+        "special": {
+          "SpecialAttackPorcelumesFirstCall": [
+            {
+              "DamagePercentage": 0.901,
+              "DamagePercentageGrowth": 0.082,
+              "StunRatio": 0.367,
+              "StunRatioGrowth": 0.017,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 1009.25,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 33.34
+            }
+          ],
+          "EXSpecialAttackBloodbloomOathSecretForgingTechniques": [
+            {
+              "DamagePercentage": 6.248,
+              "DamagePercentageGrowth": 0.568,
+              "StunRatio": 2.585,
+              "StunRatioGrowth": 0.118,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 7108.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 234.96
+            }
+          ],
+          "SpecialAttackBloodbloomOathCleavingGoldAndIron": [
+            {
+              "DamagePercentage": 0.766,
+              "DamagePercentageGrowth": 0.07,
+              "StunRatio": 0.312,
+              "StunRatioGrowth": 0.015,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 1716,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            },
+            {
+              "DamagePercentage": 0.877,
+              "DamagePercentageGrowth": 0.08,
+              "StunRatio": 0.358,
+              "StunRatioGrowth": 0.017,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 1966.25,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            },
+            {
+              "DamagePercentage": 8.127,
+              "DamagePercentageGrowth": 0.739,
+              "StunRatio": 0,
+              "StunRatioGrowth": 0,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            }
+          ],
+          "SpecialAttackBloodbloomOathBloodBurialAssault": [
+            {
+              "DamagePercentage": 3.128,
+              "DamagePercentageGrowth": 0.285,
+              "StunRatio": 2.549,
+              "StunRatioGrowth": 0.116,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 7009.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            }
+          ]
+        },
+        "chain": {
+          "ChainAttackBloodbloomOathResonantBloodPact": [
+            {
+              "DamagePercentage": 10.58,
+              "DamagePercentageGrowth": 0.962,
+              "StunRatio": 2.769,
+              "StunRatioGrowth": 0.126,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 27731,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 451.16
+            }
+          ],
+          "UltimateBloodbloomOathTrialAfterTrial": [
+            {
+              "DamagePercentage": 22.52,
+              "DamagePercentageGrowth": 2.048,
+              "StunRatio": 3.538,
+              "StunRatioGrowth": 0.161,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 321.63
+            }
+          ]
+        },
+        "assist": {
+          "QuickAssistReturnOfTheDireMoon": [
+            {
+              "DamagePercentage": 0.529,
+              "DamagePercentageGrowth": 0.049,
+              "StunRatio": 0.431,
+              "StunRatioGrowth": 0.02,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 1185.25,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 39.16
+            }
+          ],
+          "QuickAssistBloodbloomOathReturnOfTheDireMoon": [
+            {
+              "DamagePercentage": 1.158,
+              "DamagePercentageGrowth": 0.106,
+              "StunRatio": 0.404,
+              "StunRatioGrowth": 0.019,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 1111,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 36.66
+            }
+          ],
+          "DefensiveAssistUnyieldingHeartOfTheFurnace": [
+            {
+              "DamagePercentage": 0,
+              "DamagePercentageGrowth": 0,
+              "StunRatio": 2.713,
+              "StunRatioGrowth": 0.124,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            },
+            {
+              "DamagePercentage": 0,
+              "DamagePercentageGrowth": 0,
+              "StunRatio": 3.428,
+              "StunRatioGrowth": 0.156,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            },
+            {
+              "DamagePercentage": 0,
+              "DamagePercentageGrowth": 0,
+              "StunRatio": 1.668,
+              "StunRatioGrowth": 0.076,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            }
+          ],
+          "AssistFollowUpBloodbloomOathPureforgedEdge": [
+            {
+              "DamagePercentage": 4.462,
+              "DamagePercentageGrowth": 0.406,
+              "StunRatio": 3.158,
+              "StunRatioGrowth": 0.144,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 11310.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 308.72
+            }
+          ],
+          "CounterAssistGiveNotAnInchOfSteel": [
+            {
+              "DamagePercentage": 11.53,
+              "DamagePercentageGrowth": 1.049,
+              "StunRatio": 7.149,
+              "StunRatioGrowth": 0.325,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 25269.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 696.19
+            }
+          ],
+          "AssistFollowUpBloodbloomOathHammerIntoShape": [
+            {
+              "DamagePercentage": 8.563,
+              "DamagePercentageGrowth": 0.779,
+              "StunRatio": 5.264,
+              "StunRatioGrowth": 0.24,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 21873.5,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 539.63
+            }
+          ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackBloodforgingFourForms": [],
+          "BasicAttackBloodbloomOathStarforging": [],
+          "BasicAttackBloodbloomOathSubduingAxe": []
+        },
+        "dodge": {
+          "DodgeNightVision": [],
+          "DashAttackTempering": [],
+          "DodgeCounterReturningEdge": [],
+          "DodgeCounterBloodbloomOathReturningEdge": []
+        },
+        "special": {
+          "SpecialAttackPorcelumesFirstCall": [],
+          "EXSpecialAttackBloodbloomOathSecretForgingTechniques": [],
+          "SpecialAttackBloodbloomOathCleavingGoldAndIron": [],
+          "SpecialAttackBloodbloomOathBloodBurialAssault": []
+        },
+        "chain": {
+          "ChainAttackBloodbloomOathResonantBloodPact": [],
+          "UltimateBloodbloomOathTrialAfterTrial": []
+        },
+        "assist": {
+          "QuickAssistReturnOfTheDireMoon": [],
+          "QuickAssistBloodbloomOathReturnOfTheDireMoon": [],
+          "DefensiveAssistUnyieldingHeartOfTheFurnace": [],
+          "AssistFollowUpBloodbloomOathPureforgedEdge": [],
+          "CounterAssistGiveNotAnInchOfSteel": [],
+          "AssistFollowUpBloodbloomOathHammerIntoShape": []
+        }
+      },
+      "coreParams": [
+        [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01
+        ],
+        [
+          0.0035,
+          0.0035,
+          0.0035,
+          0.0035,
+          0.0035,
+          0.0035,
+          0.0035
+        ],
+        [
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60
+        ],
+        [
+          180,
+          180,
+          180,
+          180,
+          180,
+          180,
+          180
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          0.15,
+          0.175,
+          0.2,
+          0.225,
+          0.25,
+          0.275,
+          0.3
+        ],
+        [
+          0.2,
+          0.25,
+          0.3,
+          0.35,
+          0.4,
+          0.45,
+          0.5
+        ],
+        [
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15
+        ]
+      ],
+      "abilityParams": [
+        300,
+        18,
+        0.25,
+        40
+      ],
+      "mindscapeParams": [
+        [
+          0.2,
+          1.3
+        ],
+        [
+          2,
+          0.18
+        ],
+        [
+          2
+        ],
+        [
+          0.2
+        ],
+        [
+          2
+        ],
+        [
+          1
+        ]
+      ],
+      "potentialParams": []
+    },
+    "Roxy": {
+      "id": "1621",
+      "rarity": "S",
+      "attribute": "wind",
+      "specialty": "stun",
+      "faction": "RoscaeliferExternalStrategyDepartment",
+      "stats": {
+        "atk_base": 107,
+        "atk_growth": 6.2762,
+        "def_base": 51,
+        "def_growth": 6.9259,
+        "hp_base": 683,
+        "hp_growth": 92.7143,
+        "anomMas": 110,
+        "anomProf": 63,
+        "impact": 100,
+        "enerRegen": 1.2
+      },
+      "promotionStats": [
+        {
+          "hp": 0,
+          "atk": 0,
+          "def": 0
+        },
+        {
+          "hp": 453,
+          "atk": 38,
+          "def": 36
+        },
+        {
+          "hp": 906,
+          "atk": 76,
+          "def": 73
+        },
+        {
+          "hp": 1359,
+          "atk": 113,
+          "def": 109
+        },
+        {
+          "hp": 1812,
+          "atk": 151,
+          "def": 146
+        },
+        {
+          "hp": 2265,
+          "atk": 189,
+          "def": 182
+        }
+      ],
+      "coreStats": [
+        {
+          "atk": 0,
+          "crit_": 0.048
+        },
+        {
+          "atk": 25,
+          "crit_": 0.048
+        },
+        {
+          "atk": 25,
+          "crit_": 0.096
+        },
+        {
+          "atk": 50,
+          "crit_": 0.096
+        },
+        {
+          "atk": 50,
+          "crit_": 0.144
+        },
+        {
+          "atk": 75,
+          "crit_": 0.144
+        }
+      ],
+      "skillParams": {
+        "basic": {
+          "BasicAttackDoStayAWhile": [
+            {
+              "DamagePercentage": 0.524,
+              "DamagePercentageGrowth": 0.048,
+              "StunRatio": 0.593,
+              "StunRatioGrowth": 0.027,
+              "SpRecovery": 265.2,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 2026.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 27.23
+            },
+            {
+              "DamagePercentage": 1.079,
+              "DamagePercentageGrowth": 0.099,
+              "StunRatio": 1.021,
+              "StunRatioGrowth": 0.047,
+              "SpRecovery": 442.2,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 3379.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 52.29
+            },
+            {
+              "DamagePercentage": 1.724,
+              "DamagePercentageGrowth": 0.157,
+              "StunRatio": 1.443,
+              "StunRatioGrowth": 0.066,
+              "SpRecovery": 609.5,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 4655.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 79.97
+            },
+            {
+              "DamagePercentage": 1.925,
+              "DamagePercentageGrowth": 0.175,
+              "StunRatio": 1.719,
+              "StunRatioGrowth": 0.079,
+              "SpRecovery": 585.4,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 4471.5,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 85.79
+            }
+          ]
+        },
+        "dodge": {
+          "DodgeExcuseMe": [],
+          "DashAttackForgiveMyRudeness": [
+            {
+              "DamagePercentage": 0.356,
+              "DamagePercentageGrowth": 0.033,
+              "StunRatio": 0.301,
+              "StunRatioGrowth": 0.014,
+              "SpRecovery": 153,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 1168.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 19.72
+            }
+          ],
+          "DodgeCounterReturnedCourtesy": [
+            {
+              "DamagePercentage": 3.92,
+              "DamagePercentageGrowth": 0.357,
+              "StunRatio": 2.805,
+              "StunRatioGrowth": 0.128,
+              "SpRecovery": 558,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 4262.5,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 155
+            }
+          ]
+        },
+        "special": {
+          "SpecialAttackMuchObliged": [
+            {
+              "DamagePercentage": 0.509,
+              "DamagePercentageGrowth": 0.047,
+              "StunRatio": 0.646,
+              "StunRatioGrowth": 0.03,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 1674.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 28.24
+            }
+          ],
+          "SpecialAttackForgiveMeForNotSeeingYouOff": [
+            {
+              "DamagePercentage": 2.5,
+              "DamagePercentageGrowth": 0.228,
+              "StunRatio": 0.706,
+              "StunRatioGrowth": 0.033,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 64.09
+            }
+          ],
+          "EXSpecialAttackDontCatchAChill": [
+            {
+              "DamagePercentage": 0.137,
+              "DamagePercentageGrowth": 0.013,
+              "StunRatio": 0.116,
+              "StunRatioGrowth": 0.006,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 288.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 10.5
+            },
+            {
+              "DamagePercentage": 13.04,
+              "DamagePercentageGrowth": 1.186,
+              "StunRatio": 4.63,
+              "StunRatioGrowth": 0.211,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 8434.25,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 615.83
+            }
+          ],
+          "EXSpecialAttackKindlyRestInPeace": [
+            {
+              "DamagePercentage": 0.319,
+              "DamagePercentageGrowth": 0.029,
+              "StunRatio": 0.27,
+              "StunRatioGrowth": 0.013,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 673.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 24.5
+            },
+            {
+              "DamagePercentage": 0.261,
+              "DamagePercentageGrowth": 0.024,
+              "StunRatio": 0,
+              "StunRatioGrowth": 0,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            }
+          ],
+          "EyeOfTheStorm": [
+            {
+              "DamagePercentage": 0.521,
+              "DamagePercentageGrowth": 0.048,
+              "StunRatio": 0,
+              "StunRatioGrowth": 0,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            },
+            {
+              "DamagePercentage": 0.521,
+              "DamagePercentageGrowth": 0.048,
+              "StunRatio": 0.177,
+              "StunRatioGrowth": 0.009,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            },
+            {
+              "DamagePercentage": 2.084,
+              "DamagePercentageGrowth": 0.19,
+              "StunRatio": 0.706,
+              "StunRatioGrowth": 0.033,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            }
+          ]
+        },
+        "chain": {
+          "ChainAttackGaleBurialGreatHammer": [
+            {
+              "DamagePercentage": 9.022,
+              "DamagePercentageGrowth": 0.821,
+              "StunRatio": 3.245,
+              "StunRatioGrowth": 0.148,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 26400,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 494.46
+            }
+          ],
+          "UltimateRequiemForTheNightBurial": [
+            {
+              "DamagePercentage": 21.315,
+              "DamagePercentageGrowth": 1.938,
+              "StunRatio": 10.543,
+              "StunRatioGrowth": 0.48,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 311.66
+            }
+          ]
+        },
+        "assist": {
+          "AssistMoreOvertime": [
+            {
+              "DamagePercentage": 0.39,
+              "DamagePercentageGrowth": 0.036,
+              "StunRatio": 0.66,
+              "StunRatioGrowth": 0.03,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 1650,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 60
+            },
+            {
+              "DamagePercentage": 6.116,
+              "DamagePercentageGrowth": 0.556,
+              "StunRatio": 4.587,
+              "StunRatioGrowth": 0.209,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 14407.25,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 443.67
+            }
+          ],
+          "QuickAssistAtYourService": [
+            {
+              "DamagePercentage": 1.008,
+              "DamagePercentageGrowth": 0.092,
+              "StunRatio": 0.853,
+              "StunRatioGrowth": 0.039,
+              "SpRecovery": 279,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 2131.25,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 77.5
+            }
+          ],
+          "DefensiveAssistAllowMeToAssist": [
+            {
+              "DamagePercentage": 0,
+              "DamagePercentageGrowth": 0,
+              "StunRatio": 2.713,
+              "StunRatioGrowth": 0.124,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            },
+            {
+              "DamagePercentage": 0,
+              "DamagePercentageGrowth": 0,
+              "StunRatio": 3.428,
+              "StunRatioGrowth": 0.156,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            },
+            {
+              "DamagePercentage": 0,
+              "DamagePercentageGrowth": 0,
+              "StunRatio": 1.668,
+              "StunRatioGrowth": 0.076,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            }
+          ],
+          "AssistFollowUpMidnightCode": [
+            {
+              "DamagePercentage": 6.116,
+              "DamagePercentageGrowth": 0.556,
+              "StunRatio": 4.587,
+              "StunRatioGrowth": 0.209,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 14407.25,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 443.67
+            }
+          ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackDoStayAWhile": []
+        },
+        "dodge": {
+          "DodgeExcuseMe": [],
+          "DashAttackForgiveMyRudeness": [],
+          "DodgeCounterReturnedCourtesy": []
+        },
+        "special": {
+          "SpecialAttackMuchObliged": [],
+          "SpecialAttackForgiveMeForNotSeeingYouOff": [],
+          "EXSpecialAttackDontCatchAChill": [],
+          "EXSpecialAttackKindlyRestInPeace": [],
+          "EyeOfTheStorm": []
+        },
+        "chain": {
+          "ChainAttackGaleBurialGreatHammer": [],
+          "UltimateRequiemForTheNightBurial": []
+        },
+        "assist": {
+          "AssistMoreOvertime": [],
+          "QuickAssistAtYourService": [],
+          "DefensiveAssistAllowMeToAssist": [],
+          "AssistFollowUpMidnightCode": []
+        }
+      },
+      "coreParams": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25
+        ],
+        [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        [
+          1.2,
+          1.2,
+          1.2,
+          1.2,
+          1.2,
+          1.2,
+          1.2
+        ],
+        [
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01
+        ],
+        [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        [
+          480,
+          560,
+          640,
+          720,
+          800,
+          880,
+          960
+        ],
+        [
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4
+        ],
+        [
+          40,
+          46,
+          52,
+          58,
+          64,
+          70,
+          76.8
+        ],
+        [
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01
+        ],
+        [
+          0.004,
+          0.004,
+          0.004,
+          0.004,
+          0.004,
+          0.004,
+          0.004
+        ],
+        [
+          0.22,
+          0.25,
+          0.28,
+          0.31,
+          0.34,
+          0.37,
+          0.4
+        ],
+        [
+          0.002,
+          0.002,
+          0.002,
+          0.002,
+          0.002,
+          0.002,
+          0.002
+        ],
+        [
+          0.1,
+          0.115,
+          0.13,
+          0.145,
+          0.16,
+          0.175,
+          0.2
+        ],
+        [
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50
+        ]
+      ],
+      "abilityParams": [
+        0.08,
+        0.012,
+        0.8,
+        0.3,
+        2,
+        0.08,
+        40,
+        180,
+        20,
+        0.3,
+        50
+      ],
+      "mindscapeParams": [
+        [
+          0.15,
+          50,
+          0.4
+        ],
+        [
+          0.05,
+          1,
+          3,
+          0.2,
+          0.6,
+          0.3
+        ],
+        [
+          2
+        ],
+        [
+          1,
+          2,
+          0.2,
+          0.1
+        ],
+        [
+          2
+        ],
+        [
+          0.15,
+          3,
+          2,
+          2.5,
+          0.2
+        ]
+      ],
+      "potentialParams": []
     }
   },
   "wengine": {
     "LunarPleniluna": {
       "rarity": "B",
       "type": "attack",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "atk_",
       "second_statvalue": 0.08,
       "phase": [
@@ -28985,7 +30186,8 @@
     "LunarDecrescent": {
       "rarity": "B",
       "type": "attack",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "atk_",
       "second_statvalue": 0.08,
       "phase": [
@@ -29024,7 +30226,8 @@
     "LunarNoviluna": {
       "rarity": "B",
       "type": "attack",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "crit_",
       "second_statvalue": 0.064,
       "phase": [
@@ -29063,7 +30266,8 @@
     "ReverbMarkI": {
       "rarity": "B",
       "type": "support",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "atk_",
       "second_statvalue": 0.08,
       "phase": [
@@ -29107,7 +30311,8 @@
     "ReverbMarkII": {
       "rarity": "B",
       "type": "support",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.16,
       "phase": [
@@ -29151,7 +30356,8 @@
     "ReverbMarkIII": {
       "rarity": "B",
       "type": "support",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "hp_",
       "second_statvalue": 0.08,
       "phase": [
@@ -29195,7 +30401,8 @@
     "VortexRevolver": {
       "rarity": "B",
       "type": "stun",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "atk_",
       "second_statvalue": 0.08,
       "phase": [
@@ -29229,7 +30436,8 @@
     "VortexArrow": {
       "rarity": "B",
       "type": "stun",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "impact_",
       "second_statvalue": 0.048,
       "phase": [
@@ -29263,7 +30471,8 @@
     "VortexHatchet": {
       "rarity": "B",
       "type": "stun",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.16,
       "phase": [
@@ -29307,7 +30516,8 @@
     "MagneticStormAlpha": {
       "rarity": "B",
       "type": "anomaly",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "atk_",
       "second_statvalue": 0.08,
       "phase": [
@@ -29351,7 +30561,8 @@
     "MagneticStormBravo": {
       "rarity": "B",
       "type": "anomaly",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "anomProf",
       "second_statvalue": 24,
       "phase": [
@@ -29395,7 +30606,8 @@
     "MagneticStormCharlie": {
       "rarity": "B",
       "type": "anomaly",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "pen_",
       "second_statvalue": 0.064,
       "phase": [
@@ -29434,7 +30646,8 @@
     "IdentityBase": {
       "rarity": "B",
       "type": "defense",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "def_",
       "second_statvalue": 0.128,
       "phase": [
@@ -29473,7 +30686,8 @@
     "IdentityInflection": {
       "rarity": "B",
       "type": "defense",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "def_",
       "second_statvalue": 0.128,
       "phase": [
@@ -29512,7 +30726,8 @@
     "CinderCobalt": {
       "rarity": "B",
       "type": "rupture",
-      "atk_base": 32,
+      "base_statkey": "atk",
+      "base_statvalue": 32,
       "second_statkey": "hp_",
       "second_statvalue": 0.08,
       "phase": [
@@ -29553,10 +30768,51 @@
         }
       ]
     },
+    "LunarSemiluna": {
+      "rarity": "B",
+      "type": "armorer",
+      "base_statkey": "def",
+      "base_statvalue": 19,
+      "second_statkey": "def_",
+      "second_statvalue": 0.128,
+      "phase": [
+        {
+          "params": [
+            0.18,
+            10
+          ]
+        },
+        {
+          "params": [
+            0.21,
+            10
+          ]
+        },
+        {
+          "params": [
+            0.24,
+            10
+          ]
+        },
+        {
+          "params": [
+            0.27,
+            10
+          ]
+        },
+        {
+          "params": [
+            0.3,
+            10
+          ]
+        }
+      ]
+    },
     "StreetSuperstar": {
       "rarity": "A",
       "type": "attack",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -29600,7 +30856,8 @@
     "SliceOfTime": {
       "rarity": "A",
       "type": "support",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "pen_",
       "second_statvalue": 0.08,
       "phase": [
@@ -29659,7 +30916,8 @@
     "RainforestGourmet": {
       "rarity": "A",
       "type": "anomaly",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "anomProf",
       "second_statvalue": 30,
       "phase": [
@@ -29708,7 +30966,8 @@
     "StarlightEngine": {
       "rarity": "A",
       "type": "attack",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -29747,7 +31006,8 @@
     "SteamOven": {
       "rarity": "A",
       "type": "stun",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.2,
       "phase": [
@@ -29796,7 +31056,8 @@
     "PreciousFossilizedCore": {
       "rarity": "A",
       "type": "stun",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "impact_",
       "second_statvalue": 0.06,
       "phase": [
@@ -29845,7 +31106,8 @@
     "OriginalTransmorpher": {
       "rarity": "A",
       "type": "defense",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "hp_",
       "second_statvalue": 0.1,
       "phase": [
@@ -29889,7 +31151,8 @@
     "WeepingGemini": {
       "rarity": "A",
       "type": "anomaly",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -29928,7 +31191,8 @@
     "ElectroLipGloss": {
       "rarity": "A",
       "type": "anomaly",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "anomProf",
       "second_statvalue": 30,
       "phase": [
@@ -29967,7 +31231,8 @@
     "BunnyBand": {
       "rarity": "A",
       "type": "defense",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "def_",
       "second_statvalue": 0.16,
       "phase": [
@@ -30006,7 +31271,8 @@
     "SpringEmbrace": {
       "rarity": "A",
       "type": "defense",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -30050,7 +31316,8 @@
     "PuzzleSphere": {
       "rarity": "A",
       "type": "rupture",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -30099,7 +31366,8 @@
     "GildedBlossom": {
       "rarity": "A",
       "type": "attack",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -30138,7 +31406,8 @@
     "RadiowaveJourney": {
       "rarity": "A",
       "type": "rupture",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "hp_",
       "second_statvalue": 0.1,
       "phase": [
@@ -30187,7 +31456,8 @@
     "MarcatoDesire": {
       "rarity": "A",
       "type": "attack",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "crit_",
       "second_statvalue": 0.08,
       "phase": [
@@ -30231,7 +31501,8 @@
     "ReelProjector": {
       "rarity": "A",
       "type": "defense",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "impact_",
       "second_statvalue": 0.06,
       "phase": [
@@ -30272,10 +31543,56 @@
         }
       ]
     },
+    "CattyLuck": {
+      "rarity": "A",
+      "type": "armorer",
+      "base_statkey": "def",
+      "base_statvalue": 24,
+      "second_statkey": "def_",
+      "second_statvalue": 0.16,
+      "phase": [
+        {
+          "params": [
+            0.08,
+            0.08,
+            40
+          ]
+        },
+        {
+          "params": [
+            0.09,
+            0.09,
+            40
+          ]
+        },
+        {
+          "params": [
+            0.1,
+            0.1,
+            40
+          ]
+        },
+        {
+          "params": [
+            0.11,
+            0.11,
+            40
+          ]
+        },
+        {
+          "params": [
+            0.12,
+            0.12,
+            40
+          ]
+        }
+      ]
+    },
     "BoisterousEchoes": {
       "rarity": "A",
       "type": "anomaly",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "anomProf",
       "second_statvalue": 30,
       "phase": [
@@ -30319,7 +31636,8 @@
     "CauldronOfClarity": {
       "rarity": "A",
       "type": "rupture",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "hp_",
       "second_statvalue": 0.1,
       "phase": [
@@ -30383,7 +31701,8 @@
     "TheSimmeringPot": {
       "rarity": "A",
       "type": "stun",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "impact_",
       "second_statvalue": 0.06,
       "phase": [
@@ -30424,10 +31743,66 @@
         }
       ]
     },
+    "BloodmarrowCoffer": {
+      "rarity": "A",
+      "type": "armorer",
+      "base_statkey": "def",
+      "base_statvalue": 24,
+      "second_statkey": "crit_",
+      "second_statvalue": 0.08,
+      "phase": [
+        {
+          "params": [
+            1,
+            0.01,
+            1,
+            0.0048,
+            0.24
+          ]
+        },
+        {
+          "params": [
+            1,
+            0.01,
+            1,
+            0.0056,
+            0.28
+          ]
+        },
+        {
+          "params": [
+            1,
+            0.01,
+            1,
+            0.0064,
+            0.32
+          ]
+        },
+        {
+          "params": [
+            1,
+            0.01,
+            1,
+            0.0072,
+            0.36
+          ]
+        },
+        {
+          "params": [
+            1,
+            0.01,
+            1,
+            0.008,
+            0.4
+          ]
+        }
+      ]
+    },
     "DemaraBatteryMarkII": {
       "rarity": "A",
       "type": "stun",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "impact_",
       "second_statvalue": 0.06,
       "phase": [
@@ -30471,7 +31846,8 @@
     "TheVault": {
       "rarity": "A",
       "type": "support",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.2,
       "phase": [
@@ -30515,7 +31891,8 @@
     "Housekeeper": {
       "rarity": "A",
       "type": "attack",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -30564,7 +31941,8 @@
     "StarlightEngineReplica": {
       "rarity": "A",
       "type": "attack",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -30608,7 +31986,8 @@
     "DrillRigRedAxis": {
       "rarity": "A",
       "type": "attack",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.2,
       "phase": [
@@ -30652,7 +32031,8 @@
     "BigCylinder": {
       "rarity": "A",
       "type": "defense",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "def_",
       "second_statvalue": 0.16,
       "phase": [
@@ -30696,7 +32076,8 @@
     "BashfulDemon": {
       "rarity": "A",
       "type": "support",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -30745,7 +32126,8 @@
     "KaboomTheCannon": {
       "rarity": "A",
       "type": "support",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.2,
       "phase": [
@@ -30794,7 +32176,8 @@
     "PeacekeeperSpecialized": {
       "rarity": "A",
       "type": "defense",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -30833,7 +32216,8 @@
     "RoaringRide": {
       "rarity": "A",
       "type": "anomaly",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -30887,7 +32271,8 @@
     "BoxCutter": {
       "rarity": "A",
       "type": "stun",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "impact_",
       "second_statvalue": 0.06,
       "phase": [
@@ -30931,7 +32316,8 @@
     "TremorTrigramVessel": {
       "rarity": "A",
       "type": "defense",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "atk_",
       "second_statvalue": 0.1,
       "phase": [
@@ -30975,7 +32361,8 @@
     "GrillOWisp": {
       "rarity": "A",
       "type": "rupture",
-      "atk_base": 42,
+      "base_statkey": "atk",
+      "base_statvalue": 42,
       "second_statkey": "hp_",
       "second_statvalue": 0.1,
       "phase": [
@@ -31019,7 +32406,8 @@
     "CannonRotor": {
       "rarity": "A",
       "type": "attack",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "crit_",
       "second_statvalue": 0.08,
       "phase": [
@@ -31063,7 +32451,8 @@
     "UnfetteredGameBall": {
       "rarity": "A",
       "type": "support",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.2,
       "phase": [
@@ -31102,7 +32491,8 @@
     "SixShooter": {
       "rarity": "A",
       "type": "stun",
-      "atk_base": 40,
+      "base_statkey": "atk",
+      "base_statvalue": 40,
       "second_statkey": "impact_",
       "second_statvalue": 0.06,
       "phase": [
@@ -31151,7 +32541,8 @@
     "SteelCushion": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 46,
+      "base_statkey": "atk",
+      "base_statvalue": 46,
       "second_statkey": "crit_",
       "second_statvalue": 0.096,
       "phase": [
@@ -31190,7 +32581,8 @@
     "TheBrimstone": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 46,
+      "base_statkey": "atk",
+      "base_statvalue": 46,
       "second_statkey": "atk_",
       "second_statvalue": 0.12,
       "phase": [
@@ -31239,7 +32631,8 @@
     "KrakensCradle": {
       "rarity": "S",
       "type": "rupture",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "hp_",
       "second_statvalue": 0.12,
       "phase": [
@@ -31298,7 +32691,8 @@
     "TusksOfFury": {
       "rarity": "S",
       "type": "defense",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "impact_",
       "second_statvalue": 0.072,
       "phase": [
@@ -31347,7 +32741,8 @@
     "HailstormShrine": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 50,
+      "base_statkey": "atk",
+      "base_statvalue": 50,
       "second_statkey": "crit_",
       "second_statvalue": 0.096,
       "phase": [
@@ -31396,7 +32791,8 @@
     "HellfireGears": {
       "rarity": "S",
       "type": "stun",
-      "atk_base": 46,
+      "base_statkey": "atk",
+      "base_statvalue": 46,
       "second_statkey": "impact_",
       "second_statvalue": 0.072,
       "phase": [
@@ -31445,7 +32841,8 @@
     "TheRestrained": {
       "rarity": "S",
       "type": "stun",
-      "atk_base": 46,
+      "base_statkey": "atk",
+      "base_statvalue": 46,
       "second_statkey": "impact_",
       "second_statvalue": 0.072,
       "phase": [
@@ -31489,7 +32886,8 @@
     "BlazingLaurel": {
       "rarity": "S",
       "type": "stun",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "impact_",
       "second_statvalue": 0.072,
       "phase": [
@@ -31543,7 +32941,8 @@
     "FlamemakerShaker": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "atk_",
       "second_statvalue": 0.12,
       "phase": [
@@ -31612,7 +33011,8 @@
     "FusionCompiler": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 46,
+      "base_statkey": "atk",
+      "base_statvalue": 46,
       "second_statkey": "pen_",
       "second_statvalue": 0.096,
       "phase": [
@@ -31661,7 +33061,8 @@
     "DeepSeaVisitor": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_",
       "second_statvalue": 0.096,
       "phase": [
@@ -31715,7 +33116,8 @@
     "ZanshinHerbCase": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_dmg_",
       "second_statvalue": 0.192,
       "phase": [
@@ -31764,7 +33166,8 @@
     "WeepingCradle": {
       "rarity": "S",
       "type": "support",
-      "atk_base": 46,
+      "base_statkey": "atk",
+      "base_statvalue": 46,
       "second_statkey": "pen_",
       "second_statvalue": 0.096,
       "phase": [
@@ -31823,7 +33226,8 @@
     "Timeweaver": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "atk_",
       "second_statvalue": 0.12,
       "phase": [
@@ -31877,7 +33281,8 @@
     "RiotSuppressorMarkVI": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_dmg_",
       "second_statvalue": 0.192,
       "phase": [
@@ -31926,7 +33331,8 @@
     "IceJadeTeapot": {
       "rarity": "S",
       "type": "stun",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "impact_",
       "second_statvalue": 0.072,
       "phase": [
@@ -31990,7 +33396,8 @@
     "SharpenedStinger": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "anomProf",
       "second_statvalue": 36,
       "phase": [
@@ -32054,7 +33461,8 @@
     "MyriadEclipse": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_",
       "second_statvalue": 0.096,
       "phase": [
@@ -32098,7 +33506,8 @@
     "BellicoseBlaze": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.24,
       "phase": [
@@ -32152,7 +33561,8 @@
     "ElegantVanity": {
       "rarity": "S",
       "type": "support",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "atk_",
       "second_statvalue": 0.12,
       "phase": [
@@ -32211,7 +33621,8 @@
     "HeartstringNocturne": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_",
       "second_statvalue": 0.096,
       "phase": [
@@ -32265,7 +33676,8 @@
     "FlightOfFancy": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "anomProf",
       "second_statvalue": 36,
       "phase": [
@@ -32319,7 +33731,8 @@
     "HalfSugarBunny": {
       "rarity": "S",
       "type": "defense",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "hp_",
       "second_statvalue": 0.12,
       "phase": [
@@ -32373,7 +33786,8 @@
     "SpectralGaze": {
       "rarity": "S",
       "type": "stun",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_",
       "second_statvalue": 0.096,
       "phase": [
@@ -32437,7 +33851,8 @@
     "QingmingBirdcage": {
       "rarity": "S",
       "type": "rupture",
-      "atk_base": 50,
+      "base_statkey": "atk",
+      "base_statvalue": 50,
       "second_statkey": "hp_",
       "second_statvalue": 0.12,
       "phase": [
@@ -32501,7 +33916,8 @@
     "SeveredInnocence": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_dmg_",
       "second_statvalue": 0.192,
       "phase": [
@@ -32565,7 +33981,8 @@
     "RoaringFurnace": {
       "rarity": "S",
       "type": "stun",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "atk_",
       "second_statvalue": 0.12,
       "phase": [
@@ -32614,7 +34031,8 @@
     "PracticedPerfection": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "atk_",
       "second_statvalue": 0.12,
       "phase": [
@@ -32668,7 +34086,8 @@
     "Metanukimorphosis": {
       "rarity": "S",
       "type": "support",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.24,
       "phase": [
@@ -32717,7 +34136,8 @@
     "CloudcleaveRadiance": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 50,
+      "base_statkey": "atk",
+      "base_statvalue": 50,
       "second_statkey": "crit_dmg_",
       "second_statvalue": 0.192,
       "phase": [
@@ -32766,7 +34186,8 @@
     "DreamlitHearth": {
       "rarity": "S",
       "type": "support",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "hp_",
       "second_statvalue": 0.12,
       "phase": [
@@ -32815,7 +34236,8 @@
     "CordisGermina": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_",
       "second_statvalue": 0.096,
       "phase": [
@@ -32879,7 +34301,8 @@
     "WrathfulVajra": {
       "rarity": "S",
       "type": "rupture",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "hp_",
       "second_statvalue": 0.12,
       "phase": [
@@ -32928,7 +34351,8 @@
     "YesterdayCalls": {
       "rarity": "S",
       "type": "stun",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_",
       "second_statvalue": 0.096,
       "phase": [
@@ -32992,7 +34416,8 @@
     "Thoughtbop": {
       "rarity": "S",
       "type": "support",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.24,
       "phase": [
@@ -33051,7 +34476,8 @@
     "AngelInTheShell": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "anomMas_",
       "second_statvalue": 0.12,
       "phase": [
@@ -33100,7 +34526,8 @@
     "NeonFantasies": {
       "rarity": "S",
       "type": "stun",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "anomMas_",
       "second_statvalue": 0.12,
       "phase": [
@@ -33159,7 +34586,8 @@
     "SerpentineSeeker": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.24,
       "phase": [
@@ -33223,7 +34651,8 @@
     "StarlightRiderFaceplate": {
       "rarity": "S",
       "type": "rupture",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "hp_",
       "second_statvalue": 0.12,
       "phase": [
@@ -33272,7 +34701,8 @@
     "FrostfallSickle": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "anomMas_",
       "second_statvalue": 0.12,
       "phase": [
@@ -33326,7 +34756,8 @@
     "SolExuvia": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "atk_",
       "second_statvalue": 0.12,
       "phase": [
@@ -33370,7 +34801,8 @@
     "JoyauDore": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "enerRegen_",
       "second_statvalue": 0.24,
       "phase": [
@@ -33429,7 +34861,8 @@
     "ChiefSidekick": {
       "rarity": "S",
       "type": "stun",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_",
       "second_statvalue": 0.096,
       "phase": [
@@ -33488,7 +34921,8 @@
     "OdeOfResurrectedWings": {
       "rarity": "S",
       "type": "anomaly",
-      "atk_base": 50,
+      "base_statkey": "atk",
+      "base_statvalue": 50,
       "second_statkey": "atk_",
       "second_statvalue": 0.144,
       "phase": [
@@ -33537,7 +34971,8 @@
     "KnightsExtolment": {
       "rarity": "S",
       "type": "attack",
-      "atk_base": 48,
+      "base_statkey": "atk",
+      "base_statvalue": 48,
       "second_statkey": "crit_dmg_",
       "second_statvalue": 0.192,
       "phase": [
@@ -33594,6 +35029,111 @@
             1,
             2,
             0.32
+          ]
+        }
+      ]
+    },
+    "CrimsonThirst": {
+      "rarity": "S",
+      "type": "armorer",
+      "base_statkey": "def",
+      "base_statvalue": 29,
+      "second_statkey": "def_",
+      "second_statvalue": 0.192,
+      "phase": [
+        {
+          "params": [
+            0.25,
+            0.15,
+            0.1,
+            40
+          ]
+        },
+        {
+          "params": [
+            0.275,
+            0.175,
+            0.115,
+            40
+          ]
+        },
+        {
+          "params": [
+            0.3,
+            0.2,
+            0.13,
+            40
+          ]
+        },
+        {
+          "params": [
+            0.325,
+            0.225,
+            0.145,
+            40
+          ]
+        },
+        {
+          "params": [
+            0.35,
+            0.25,
+            0.16,
+            40
+          ]
+        }
+      ]
+    },
+    "CrimsonMoonCasket": {
+      "rarity": "S",
+      "type": "stun",
+      "base_statkey": "atk",
+      "base_statvalue": 48,
+      "second_statkey": "enerRegen_",
+      "second_statvalue": 0.24,
+      "phase": [
+        {
+          "params": [
+            0.24,
+            0.15,
+            0.16,
+            0.2,
+            50
+          ]
+        },
+        {
+          "params": [
+            0.26,
+            0.173,
+            0.184,
+            0.23,
+            50
+          ]
+        },
+        {
+          "params": [
+            0.28,
+            0.195,
+            0.208,
+            0.26,
+            50
+          ]
+        },
+        {
+          "params": [
+            0.3,
+            0.218,
+            0.232,
+            0.29,
+            50
+          ]
+        },
+        {
+          "params": [
+            0.32,
+            0.24,
+            0.256,
+            0.32,
+            50
           ]
         }
       ]

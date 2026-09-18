@@ -3,12 +3,13 @@ import type { Tag } from './data/util'
 export const abilityDims = [
   'standardDmg',
   'sheerDmg',
+  'sharpDmg',
   'dazeBuildup',
   'anomBuildup',
 ] as const
 export type AbilityDim = (typeof abilityDims)[number]
 
-export const dmgAbilityDims = ['standardDmg', 'sheerDmg'] as const
+export const dmgAbilityDims = ['standardDmg', 'sheerDmg', 'sharpDmg'] as const
 export type DmgAbilityDim = (typeof dmgAbilityDims)[number]
 
 export function isAbilityDim(q: string | null | undefined): q is AbilityDim {
@@ -18,7 +19,7 @@ export function isAbilityDim(q: string | null | undefined): q is AbilityDim {
 export function isDmgAbilityDim(
   q: string | null | undefined
 ): q is DmgAbilityDim {
-  return q === 'standardDmg' || q === 'sheerDmg'
+  return q === 'standardDmg' || q === 'sheerDmg' || q === 'sharpDmg'
 }
 
 /** Base ability hit name without `:standardDmg` meta suffix. */

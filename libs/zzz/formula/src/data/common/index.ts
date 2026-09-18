@@ -1,3 +1,4 @@
+import { isIn } from '@genshin-optimizer/common/util'
 import { cmpEq, max, min, prod, sum } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
 import {
@@ -57,9 +58,8 @@ const data: TagMapNodeEntries = [
   // initial x += base X; assuming base exists for that stat
   // Except sheer force because we gotta calculate that all funky
   ...nonFlatAndPercentStats
-    .filter(
-      (s): s is keyof typeof ownBuff.base =>
-        s in ownBuff.base && s !== 'sheerForce'
+    .filter((s): s is keyof typeof ownBuff.base =>
+      isIn(Object.keys(ownBuff.base), s)
     )
     .map((s) => ownBuff.initial[s].add(ownBuff.base[s], true)),
   // final x += initial X + combat X

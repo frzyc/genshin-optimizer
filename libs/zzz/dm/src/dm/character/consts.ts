@@ -67,6 +67,8 @@ export const characterIdMap = {
   '1571': 'Norma',
   '1581': 'Remielle',
   '1591': 'Sigrid',
+  '1611': 'Claret',
+  '1621': 'Roxy',
 } as const
 
 export const attributeMap: Record<number, AttributeKey> = {
@@ -85,6 +87,7 @@ export const specialityMap: Record<number, SpecialityKey> = {
   4: 'support',
   5: 'defense',
   6: 'rupture',
+  7: 'armorer',
 } as const
 export const factionMap: Record<number, FactionKey> = {
   0: 'RandomPlay',

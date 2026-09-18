@@ -1,6 +1,7 @@
 import {
   lookup,
   max,
+  min,
   prod,
   subscript,
   sum,
@@ -83,8 +84,36 @@ const data: TagMapNodeEntries = [
     })
   ),
 
+  // Sharp dmg Laceration Multiplier
+  ownBuff.dmg.laceration_mult_.add(
+    lookup(own.common.critMode, {
+      crit: sum(
+        percent(1),
+        own.final.laceration_dmg_,
+        prod(
+          max(sum(own.final.crit_, percent(-1)), percent(0)),
+          own.final.laceration_dmg_
+        )
+      ),
+      nonCrit: percent(1),
+      avg: sum(
+        percent(1),
+        prod(
+          sum(
+            own.common.cappedCrit_,
+            min(max(sum(own.final.crit_, percent(-1)), percent(0)), percent(1))
+          ),
+          own.final.laceration_dmg_
+        )
+      ),
+    })
+  ),
+
   // Sheer dmg Sheer Multiplier
   ownBuff.dmg.sheer_mult_.add(sum(percent(1), own.final.sheer_dmg_)),
+
+  // Sharp dmg Sharp Multiplier
+  ownBuff.dmg.sharp_mult_.add(sum(percent(1), own.final.sharp_dmg_)),
 
   // Anomaly Base DMG Multiplier
   ownBuff.dmg.anom_base_mult_.add(sum(percent(1), own.final.anom_base_)),

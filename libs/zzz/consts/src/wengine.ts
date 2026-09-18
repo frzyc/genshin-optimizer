@@ -7,15 +7,19 @@ export const allWengineKeys = [
   'BellicoseBlaze',
   'BigCylinder',
   'BlazingLaurel',
+  'BloodmarrowCoffer',
   'BoisterousEchoes',
   'BoxCutter',
   'BunnyBand',
   'CannonRotor',
+  'CattyLuck',
   'CauldronOfClarity',
   'ChiefSidekick',
   'CinderCobalt',
   'CloudcleaveRadiance',
   'CordisGermina',
+  'CrimsonMoonCasket',
+  'CrimsonThirst',
   'DeepSeaVisitor',
   'DemaraBatteryMarkII',
   'DreamlitHearth',
@@ -43,6 +47,7 @@ export const allWengineKeys = [
   'LunarDecrescent',
   'LunarNoviluna',
   'LunarPleniluna',
+  'LunarSemiluna',
   'MagneticStormAlpha',
   'MagneticStormBravo',
   'MagneticStormCharlie',
@@ -118,6 +123,9 @@ export const allWengineSubStatKeys = [
   'anomMas_',
 ] as const
 export type WengineSubStatKey = (typeof allWengineSubStatKeys)[number]
+
+export const allWengineBaseStatKeys = ['atk', 'def'] as const
+export type WengineBaseStatKey = (typeof allWengineBaseStatKeys)[number]
 
 export const allPhaseKeys = [1, 2, 3, 4, 5] as const
 export type PhaseKey = (typeof allPhaseKeys)[number]

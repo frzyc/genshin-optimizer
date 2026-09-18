@@ -128,10 +128,11 @@ const sheet = register(
     teamBuff.combat.common_dmg_.add(
       cmpGE(
         sum(
+          team.common.count.withSpecialty('anomaly'),
           team.common.count.physical,
           team.common.count.withFaction('SonsOfCalydon')
         ),
-        2,
+        4,
         cmpGE(
           min(
             power,

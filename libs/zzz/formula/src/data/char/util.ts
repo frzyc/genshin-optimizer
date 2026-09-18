@@ -31,6 +31,7 @@ import {
   customDaze,
   customDmg,
   customHeal,
+  customSharpDmg,
   customSheerDmg,
   customShield,
   damageTypes,
@@ -102,7 +103,9 @@ export function dmgDazeAndAnom(
   return [
     stat === 'sheerForce'
       ? customSheerDmg(name, dmgTag, dmg, arg)
-      : customDmg(name, dmgTag, dmg, arg),
+      : stat === 'def'
+        ? customSharpDmg(name, dmgTag, dmg, arg)
+        : customDmg(name, dmgTag, dmg, arg),
     customDaze(name, dmgTag, daze, arg),
     customAnomalyBuildup(name, dmgTag, anom, arg),
     // Apply buffs one time, since all of these custom instances will share a name
@@ -154,7 +157,9 @@ export function dmgDazeAndAnomMerge(
   return [
     stat === 'sheerForce'
       ? customSheerDmg(name, dmgTag, dmgBase, arg)
-      : customDmg(name, dmgTag, dmgBase, arg),
+      : stat === 'def'
+        ? customSharpDmg(name, dmgTag, dmgBase, arg)
+        : customDmg(name, dmgTag, dmgBase, arg),
     customDaze(name, dmgTag, dazeBase, arg),
     customAnomalyBuildup(
       name,
@@ -253,7 +258,9 @@ export function registerAllDmgDazeAndAnom(
                 },
                 allStats.char[key].specialty === 'rupture'
                   ? 'sheerForce'
-                  : 'atk',
+                  : allStats.char[key].specialty === 'armorer'
+                    ? 'def'
+                    : 'atk',
                 sKey
               )
           )
@@ -279,6 +286,8 @@ function inferDamageType(key: CharacterKey, abilityName: string): DamageType {
       return 'basic'
     if (key === 'Remielle' && abilityName === 'AssistFlowerFeatherDance')
       return 'entrySkill'
+    if (key === 'Roxy' && abilityName === 'EyeOfTheStorm') return 'exSpecial'
+    if (key === 'Roxy' && abilityName === 'AssistMoreOvertime') return 'basic'
     if (key === 'Yanagi' && abilityName === 'StanceJougen') return 'basic'
     if (key === 'Yanagi' && abilityName === 'StanceKagen') return 'basic'
     if (key === 'Yidhari' && abilityName === 'FrostsCrushingWeight')
@@ -562,6 +571,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ownBuff.listing.formulas.add(listingItem(own.final.sheerForce)),
     ownBuff.listing.formulas.add(listingItem(own.final.crit_)),
     ownBuff.listing.formulas.add(listingItem(own.final.crit_dmg_)),
+    ownBuff.listing.formulas.add(listingItem(own.final.laceration_dmg_)),
     ownBuff.listing.formulas.add(listingItem(own.final.pen_)),
     ownBuff.listing.formulas.add(listingItem(own.final.pen)),
     ownBuff.listing.formulas.add(listingItem(own.final.enerRegen)),

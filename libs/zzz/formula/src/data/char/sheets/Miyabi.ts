@@ -49,9 +49,10 @@ const ability_check = (node: NumNode | number) =>
   cmpGE(
     sum(
       team.common.count.withSpecialty('support'),
+      team.common.count.withSpecialty('anomaly'),
       team.common.count.withFaction('HollowSpecialOoperationsSection6')
     ),
-    2,
+    3,
     node
   )
 const ability_dmg_ = ownBuff.combat.common_dmg_.add(

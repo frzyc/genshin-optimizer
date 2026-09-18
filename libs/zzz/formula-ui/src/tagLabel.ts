@@ -10,6 +10,7 @@ import { statKeyFromListingTag } from './optTarget'
 const formulaBaseQs = new Set([
   'standardDmgBase',
   'sheerDmgBase',
+  'sharpDmgBase',
   'anomalyDmgBase',
   'shieldBase',
   'dazeBuildupBase',

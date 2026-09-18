@@ -10,6 +10,32 @@ const buff = Koleda.buffs
 const formula = Koleda.formulas
 
 const sheet = createBaseSheet(key, {
+  perSkillAbility: {
+    basic: {
+      BasicAttackSmashNBash: [
+        {
+          type: 'conditional',
+          conditional: {
+            label: ch('furnaceFire'),
+            metadata: cond.furnaceFire,
+            fields: [
+              fieldForBuff(buff.basic_common_dmg_),
+              fieldForBuff(buff.basic_dmg_),
+              fieldForBuff(buff.basic_dazeInc_),
+            ],
+          },
+        },
+      ],
+    },
+    special: {
+      EXSpecialAttackBoilingFurnace: [
+        {
+          type: 'fields',
+          fields: [fieldForBuff(buff.exSpecial_dazeInc_)],
+        },
+      ],
+    },
+  },
   core: [
     {
       type: 'fields',
@@ -30,6 +56,15 @@ const sheet = createBaseSheet(key, {
         metadata: cond.exSpecial_debuff,
         fields: [fieldForBuff(buff.ability_chain_dmg_)],
       },
+    },
+  ],
+  potential: [
+    {
+      type: 'fields',
+      fields: [
+        fieldForBuff(buff.potential_laceration_dmg_),
+        fieldForBuff(buff.potential_crit_dmg_),
+      ],
     },
   ],
   m1: [

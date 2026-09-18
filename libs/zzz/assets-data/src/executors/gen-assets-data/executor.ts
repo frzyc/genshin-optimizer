@@ -60,15 +60,16 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
     }),
 
     chars: objMap(charactersDetailedJSONData, ({ icon }) => {
-      // get the last 2 digits of the icon name. this will likely break if ZZZ go over 2 digits.
-      const strKey = icon.slice(-2)
+      const strKey = icon.match(/\d+$/)?.[0]
       if (!strKey) throw Error(`Failed to parse character icon name: ${icon}`)
+      // Override for Claret
+      const interknot = strKey === '1611' ? '69' : strKey
       return {
         full: `IconRole${strKey}.png`,
         circle: `IconRoleCircle${strKey}.png`,
         trap: `IconRoleGeneral${strKey}.png`,
         select: `IconRoleSelect${strKey}.png`,
-        interknot: `IconInterKnotRole00${strKey}.png`,
+        interknot: `IconInterKnotRole00${interknot}.png`,
       }
     }),
     wengines: objMap(wengineDetailedJSONData, ({ icon }) => {

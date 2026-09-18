@@ -53,6 +53,7 @@ const sheet = register(
       'exSpecial',
       cmpGE(
         sum(
+          team.common.count.withSpecialty('support'),
           team.common.count.physical,
           team.common.count.withFaction('CunningHares')
         ),

@@ -1,5 +1,52 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
+  basic_dmg_: {
+    sheet: 'Koleda',
+    name: 'basic_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'dmg_',
+      sheet: 'Koleda',
+      damageType1: 'basic',
+      name: 'basic_dmg_',
+    },
+  },
+  basic_dazeInc_: {
+    sheet: 'Koleda',
+    name: 'basic_dazeInc_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'dazeInc_',
+      sheet: 'Koleda',
+      damageType1: 'basic',
+      name: 'basic_dazeInc_',
+    },
+  },
+  basic_common_dmg_: {
+    sheet: 'Koleda',
+    name: 'basic_common_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'common_dmg_',
+      sheet: 'Koleda',
+      name: 'basic_common_dmg_',
+    },
+  },
+  exSpecial_dazeInc_: {
+    sheet: 'Koleda',
+    name: 'exSpecial_dazeInc_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'dazeInc_',
+      sheet: 'Koleda',
+      damageType1: 'exSpecial',
+      name: 'exSpecial_dazeInc_',
+    },
+  },
   core_exSpecial_dazeInc_: {
     sheet: 'Koleda',
     name: 'core_exSpecial_dazeInc_',
@@ -33,6 +80,28 @@ export const buffs = {
       sheet: 'Koleda',
       damageType1: 'chain',
       name: 'ability_chain_dmg_',
+    },
+  },
+  potential_laceration_dmg_: {
+    sheet: 'Koleda',
+    name: 'potential_laceration_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'laceration_dmg_',
+      sheet: 'Koleda',
+      name: 'potential_laceration_dmg_',
+    },
+  },
+  potential_crit_dmg_: {
+    sheet: 'Koleda',
+    name: 'potential_crit_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'crit_dmg_',
+      sheet: 'Koleda',
+      name: 'potential_crit_dmg_',
     },
   },
   m1_special_dazeInc_: {

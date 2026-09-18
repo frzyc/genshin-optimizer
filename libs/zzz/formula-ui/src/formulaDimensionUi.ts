@@ -14,6 +14,7 @@ export type FormulaDimension = (typeof formulaDimensions)[number]
 export const dimensionByAbilityDim = {
   standardDmg: 'dmg',
   sheerDmg: 'dmg',
+  sharpDmg: 'dmg',
   dazeBuildup: 'daze',
   anomBuildup: 'anomBuildup',
 } as const satisfies Record<AbilityDim, FormulaDimension>
@@ -43,6 +44,7 @@ export function resolveAbilityDim(
 export const ABILITY_DIM_LABEL: Record<AbilityDim, string> = {
   standardDmg: 'DMG',
   sheerDmg: 'DMG',
+  sharpDmg: 'DMG',
   dazeBuildup: 'Daze',
   anomBuildup: 'Anom',
 }

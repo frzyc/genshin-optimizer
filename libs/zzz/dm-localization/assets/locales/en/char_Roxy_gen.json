@@ -1,0 +1,334 @@
+{
+  "name": "Roxy",
+  "fullName": "Roxy Ifrita Pryce",
+  "basic": {
+    "BasicAttackDoStayAWhile": {
+      "name": "Basic Attack: Do Stay a While",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Performs up to 4 strikes forward, dealing <ct color=#A6C5FD>Wind DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeExcuseMe": {
+      "name": "Dodge: Excuse Me",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "Performs a quick dodge to the side."
+      },
+      "params": []
+    },
+    "DashAttackForgiveMyRudeness": {
+      "name": "Dash Attack: Forgive My Rudeness",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Strikes forward, dealing <ct color=#A6C5FD>Wind DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterReturnedCourtesy": {
+      "name": "Dodge Counter: Returned Courtesy",
+      "desc": {
+        "0": "Press <IconNormal /> during a Perfect Dodge to activate:",
+        "1": "Strikes enemies in front, dealing <ct color=#A6C5FD>Wind DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackMuchObliged": {
+      "name": "Special Attack: Much Obliged",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Performs a forward strike, dealing <ct color=#A6C5FD>Wind DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "SpecialAttackForgiveMeForNotSeeingYouOff": {
+      "name": "Special Attack: Forgive Me for Not Seeing You Off",
+      "desc": {
+        "0": "After activating <ct color=#FFFFFF>EX Special Attack: Kindly Rest in Peace</ct>, this attack is automatically activated when the total number of <tooltip ns=tooltips_gen baseKey18=1000040>Eye of the Storm</tooltip> on the field and Roxy's <tooltip ns=tooltips_gen baseKey18=1000039>Wind Energy</tooltip> reaches at least 3:",
+        "1": "Throws her hammer at enemies on the field, dealing <ct color=#A6C5FD>Wind DMG</ct>.",
+        "2": "<ct color=#FFFFFF>Eyes of the Storm</ct> hit by this attack are detonated, up to 3 <ct color=#FFFFFF>Eyes of the Storm</ct> at a time. Based on the number detonated, a corresponding number of Miniature Windstorms are generated, dealing <ct color=#A6C5FD>Wind DMG</ct>.",
+        "3": "If 3 <ct color=#FFFFFF>Eyes of the Storm</ct> are detonated at once, a Giant Windstorm is generated instead, dealing <ct color=#A6C5FD>Wind DMG</ct>.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackDontCatchAChill": {
+      "name": "EX Special Attack: Don't Catch a Chill",
+      "desc": {
+        "0": "With enough energy, press or hold <IconSpecialReady /> to activate:",
+        "1": "Slides forward, dealing <ct color=#A6C5FD>Wind DMG</ct>.",
+        "2": "While sliding, press and hold <IconSpecialReady /> to have Roxy enter the <ct color=#FFFFFF>Whirlwind</ct> state:",
+        "3": "While in the <ct color=#FFFFFF>Whirlwind</ct> state, Roxy generates a tornado. Drag the joystick to control its direction. During this, Energy is continuously consumed, dealing <ct color=#A6C5FD>Wind DMG</ct> to enemies along its path. When Energy is depleted, or when <IconSpecialReady /> is released while the joystick is not being moved, Roxy exits the <ct color=#FFFFFF>Whirlwind</ct> state.",
+        "4": "When the slide ends or when exiting the <ct color=#FFFFFF>Whirlwind</ct> state, automatically follows up with <ct color=#ffffff>EX Special Attack: Kindly Rest in Peace</ct>.",
+        "5": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Energy Cost to Use ",
+        "Energy Cost ",
+        "Whirlwind Per Second ",
+        "Energy Cost Per Second "
+      ]
+    },
+    "EXSpecialAttackKindlyRestInPeace": {
+      "name": "EX Special Attack: Kindly Rest in Peace",
+      "desc": {
+        "0": "Automatically activates after <ct color=#FFFFFF>EX Special Attack: Don't Catch a Chill</ct> ends:",
+        "1": "Consumes all <tooltip ns=tooltips_gen baseKey18=1000039>Wind Energy</tooltip> to fire a wind cannon forward, dealing <ct color=#A6C5FD>Wind DMG</ct>.",
+        "2": "After the attack, for each point of <ct color=#FFFFFF>Wind Energy</ct> consumed, deals an additional instance of <ct color=#A6C5FD>Wind DMG</ct> and generates 1 <tooltip ns=tooltips_gen baseKey18=1000040>Eye of the Storm</tooltip> at the current position.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Additional Explosion "
+      ]
+    },
+    "EyeOfTheStorm": {
+      "name": "Eye of the Storm",
+      "desc": {
+        "0": "Generated after <ct color=#FFFFFF>EX Special Attack: Kindly Rest in Peace</ct> consumes <tooltip ns=tooltips_gen baseKey18=1000039>Wind Energy</tooltip>, and automatically detonates after 30s.",
+        "1": "Up to 9 <tooltip ns=tooltips_gen baseKey18=1000040>Eye of the Storm</tooltip> can exist at the same time. If this limit is exceeded, the earliest generated <ct color=#FFFFFF>Eye of the Storm</ct> will automatically detonate.",
+        "2": "Detonates when hit by <ct color=#FFFFFF>Special Attack: Forgive Me for Not Seeing You Off</ct>. If fewer than 3 are hit at the same time, 1 Miniature Windstorm is generated at the location of each <ct color=#FFFFFF>Eye of the Storm</ct>, tracking enemies and dealing <ct color=#A6C5FD>Wind DMG</ct> for 1s.",
+        "3": "If 3 are hit at the same time, 1 Giant Windstorm is generated instead, dealing <ct color=#A6C5FD>Wind DMG</ct> for 1s.",
+        "4": "When detonated by any means, an <ct color=#FFFFFF>Eye of the Storm</ct> releases a blast, dealing 1 instance of <ct color=#A6C5FD>Wind DMG</ct> to nearby enemies."
+      },
+      "params": [
+        "Detonation ",
+        "Miniature Windstorm per Second ",
+        "Giant Windstorm per Second "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackGaleBurialGreatHammer": {
+      "name": "Chain Attack: Gale-Burial Great Hammer",
+      "desc": {
+        "0": "When a <ct color=#ffffff>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleashes a powerful strike at enemies in front, dealing massive <ct color=#A6C5FD>Wind DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateRequiemForTheNightBurial": {
+      "name": "Ultimate: Requiem for the Night-Burial",
+      "desc": {
+        "0": "When Decibel Rating is at Maximum, press <IconUltimateReady /> to activate:",
+        "1": "Unleashes a powerful strike at enemies in front in a large area, dealing massive <ct color=#A6C5FD>Wind DMG</ct>.",
+        "2": "After the skill ends, gains 1 <tooltip ns=tooltips_gen baseKey18=1000039>Wind Energy</tooltip>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "AssistMoreOvertime": {
+      "name": "Assist: More Overtime?",
+      "desc": {
+        "0": "After activating a <ct color=#FFFFFF>Defensive Assist</ct>, press <IconSwitch /> again to activate:",
+        "1": "Roxy stays on the field and strikes enemies ahead, dealing <ct color=#A6C5FD>Wind DMG</ct>.",
+        "2": "This skill is treated as activating a <ct color=#FFFFFF>Basic Attack</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "QuickAssistAtYourService": {
+      "name": "Quick Assist: At Your Service",
+      "desc": {
+        "0": "When the on-field character is launched, press <IconSwitch /> to activate:",
+        "1": "Strikes enemies in front, dealing <ct color=#A6C5FD>Wind DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistAllowMeToAssist": {
+      "name": "Defensive Assist: Allow Me to Assist",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "This skill excels at parrying enemy attacks and reduces the consumption of <ct color=#FFFFFF>Assist Points</ct> when the character is under intense attacks.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpMidnightCode": {
+      "name": "Assist Follow-Up: Midnight Code",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#ffffff>Defensive Assist</ct> to activate:",
+        "1": "Strikes enemies ahead, dealing <ct color=#A6C5FD>Wind DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Warm Night's Embrace",
+    "desc": [
+      {
+        "0": "Gain 1 point of <tooltip ns=tooltips_gen baseKey18=1000039>Wind Energy</tooltip> for every 25 Energy consumed, up to a maximum of 3 <ct color=#FFFFFF>Wind Energy</ct>.",
+        "1": "When Roxy's initial <ct color=#FFFFFF>Energy Regen</ct> exceeds 1.2, for every 0.01 above this value, ATK increases by 5, up to a maximum increase of <ct color=#2BAD00>480</ct>, and Impact increases by 0.4, up to a maximum increase of <ct color=#2BAD00>40</ct>.",
+        "2": "After <ct color=#FFFFFF>Special Attack: Forgive Me for Not Seeing You Off</ct> hits an enemy affected by <ct color=#FFFFFF>Windswept</ct>, it triggers <tooltip ns=tooltips_gen baseKey18=1000038>Cleanse</tooltip>, reverting <ct color=#FFFFFF>Contamination</ct> back to its original state.",
+        "3": "When any squad member triggers <ct color=#FFFFFF>Contamination</ct> or <ct color=#FFFFFF>Cleanse</ct>, Roxy provides all squad members with a buff based on the attribute of the <ct color=#FFFFFF>Contamination</ct> or <ct color=#FFFFFF>Cleanse</ct> effect: for every 1% CRIT Rate Roxy has, when non-<ct color=#FFFFFF>Armorer</ct> characters deal DMG of the corresponding attribute or Wind DMG, their CRIT DMG increases by 0.4%, up to <ct color=#2BAD00>22%</ct>. When <ct color=#FFFFFF>Armorer</ct> characters deal DMG of the corresponding attribute or Wind DMG, their Laceration DMG increases by 0.2%, up to <ct color=#2BAD00>10%</ct>. Each attribute's buff lasts 50s, and repeated triggers reset the duration.",
+        "4": "When <ct color=#FFFFFF>Windswept</ct> is applied again to an enemy already in the <ct color=#FFFFFF>Windswept</ct> state, all squad members can also gain this buff based on the <ct color=#FFFFFF>Contamination</ct> attribute of the overwritten <ct color=#FFFFFF>Windswept</ct> state and Wind attribute."
+      },
+      {
+        "0": "Gain 1 point of <tooltip ns=tooltips_gen baseKey18=1000039>Wind Energy</tooltip> for every 25 Energy consumed, up to a maximum of 3 <ct color=#FFFFFF>Wind Energy</ct>.",
+        "1": "When Roxy's initial <ct color=#FFFFFF>Energy Regen</ct> exceeds 1.2, for every 0.01 above this value, ATK increases by 5, up to a maximum increase of <ct color=#2BAD00>560</ct>, and Impact increases by 0.4, up to a maximum increase of <ct color=#2BAD00>46</ct>.",
+        "2": "After <ct color=#FFFFFF>Special Attack: Forgive Me for Not Seeing You Off</ct> hits an enemy affected by <ct color=#FFFFFF>Windswept</ct>, it triggers <tooltip ns=tooltips_gen baseKey18=1000038>Cleanse</tooltip>, reverting <ct color=#FFFFFF>Contamination</ct> back to its original state.",
+        "3": "When any squad member triggers <ct color=#FFFFFF>Contamination</ct> or <ct color=#FFFFFF>Cleanse</ct>, Roxy provides all squad members with a buff based on the attribute of the <ct color=#FFFFFF>Contamination</ct> or <ct color=#FFFFFF>Cleanse</ct> effect: for every 1% CRIT Rate Roxy has, when non-<ct color=#FFFFFF>Armorer</ct> characters deal DMG of the corresponding attribute or Wind DMG, their CRIT DMG increases by 0.4%, up to <ct color=#2BAD00>25%</ct>. When <ct color=#FFFFFF>Armorer</ct> characters deal DMG of the corresponding attribute or Wind DMG, their Laceration DMG increases by 0.2%, up to <ct color=#2BAD00>11.5%</ct>. Each attribute's buff lasts 50s, and repeated triggers reset the duration.",
+        "4": "When <ct color=#FFFFFF>Windswept</ct> is applied again to an enemy already in the <ct color=#FFFFFF>Windswept</ct> state, all squad members can also gain this buff based on the <ct color=#FFFFFF>Contamination</ct> attribute of the overwritten <ct color=#FFFFFF>Windswept</ct> state and Wind attribute."
+      },
+      {
+        "0": "Gain 1 point of <tooltip ns=tooltips_gen baseKey18=1000039>Wind Energy</tooltip> for every 25 Energy consumed, up to a maximum of 3 <ct color=#FFFFFF>Wind Energy</ct>.",
+        "1": "When Roxy's initial <ct color=#FFFFFF>Energy Regen</ct> exceeds 1.2, for every 0.01 above this value, ATK increases by 5, up to a maximum increase of <ct color=#2BAD00>640</ct>, and Impact increases by 0.4, up to a maximum increase of <ct color=#2BAD00>52</ct>.",
+        "2": "After <ct color=#FFFFFF>Special Attack: Forgive Me for Not Seeing You Off</ct> hits an enemy affected by <ct color=#FFFFFF>Windswept</ct>, it triggers <tooltip ns=tooltips_gen baseKey18=1000038>Cleanse</tooltip>, reverting <ct color=#FFFFFF>Contamination</ct> back to its original state.",
+        "3": "When any squad member triggers <ct color=#FFFFFF>Contamination</ct> or <ct color=#FFFFFF>Cleanse</ct>, Roxy provides all squad members with a buff based on the attribute of the <ct color=#FFFFFF>Contamination</ct> or <ct color=#FFFFFF>Cleanse</ct> effect: for every 1% CRIT Rate Roxy has, when non-<ct color=#FFFFFF>Armorer</ct> characters deal DMG of the corresponding attribute or Wind DMG, their CRIT DMG increases by 0.4%, up to <ct color=#2BAD00>28%</ct>. When <ct color=#FFFFFF>Armorer</ct> characters deal DMG of the corresponding attribute or Wind DMG, their Laceration DMG increases by 0.2%, up to <ct color=#2BAD00>13%</ct>. Each attribute's buff lasts 50s, and repeated triggers reset the duration.",
+        "4": "When <ct color=#FFFFFF>Windswept</ct> is applied again to an enemy already in the <ct color=#FFFFFF>Windswept</ct> state, all squad members can also gain this buff based on the <ct color=#FFFFFF>Contamination</ct> attribute of the overwritten <ct color=#FFFFFF>Windswept</ct> state and Wind attribute."
+      },
+      {
+        "0": "Gain 1 point of <tooltip ns=tooltips_gen baseKey18=1000039>Wind Energy</tooltip> for every 25 Energy consumed, up to a maximum of 3 <ct color=#FFFFFF>Wind Energy</ct>.",
+        "1": "When Roxy's initial <ct color=#FFFFFF>Energy Regen</ct> exceeds 1.2, for every 0.01 above this value, ATK increases by 5, up to a maximum increase of <ct color=#2BAD00>720</ct>, and Impact increases by 0.4, up to a maximum increase of <ct color=#2BAD00>58</ct>.",
+        "2": "After <ct color=#FFFFFF>Special Attack: Forgive Me for Not Seeing You Off</ct> hits an enemy affected by <ct color=#FFFFFF>Windswept</ct>, it triggers <tooltip ns=tooltips_gen baseKey18=1000038>Cleanse</tooltip>, reverting <ct color=#FFFFFF>Contamination</ct> back to its original state.",
+        "3": "When any squad member triggers <ct color=#FFFFFF>Contamination</ct> or <ct color=#FFFFFF>Cleanse</ct>, Roxy provides all squad members with a buff based on the attribute of the <ct color=#FFFFFF>Contamination</ct> or <ct color=#FFFFFF>Cleanse</ct> effect: for every 1% CRIT Rate Roxy has, when non-<ct color=#FFFFFF>Armorer</ct> characters deal DMG of the corresponding attribute or Wind DMG, their CRIT DMG increases by 0.4%, up to <ct color=#2BAD00>31%</ct>. When <ct color=#FFFFFF>Armorer</ct> characters deal DMG of the corresponding attribute or Wind DMG, their Laceration DMG increases by 0.2%, up to <ct color=#2BAD00>14.5%</ct>. Each attribute's buff lasts 50s, and repeated triggers reset the duration.",
+        "4": "When <ct color=#FFFFFF>Windswept</ct> is applied again to an enemy already in the <ct color=#FFFFFF>Windswept</ct> state, all squad members can also gain this buff based on the <ct color=#FFFFFF>Contamination</ct> attribute of the overwritten <ct color=#FFFFFF>Windswept</ct> state and Wind attribute."
+      },
+      {
+        "0": "Gain 1 point of <tooltip ns=tooltips_gen baseKey18=1000039>Wind Energy</tooltip> for every 25 Energy consumed, up to a maximum of 3 <ct color=#FFFFFF>Wind Energy</ct>.",
+        "1": "When Roxy's initial <ct color=#FFFFFF>Energy Regen</ct> exceeds 1.2, for every 0.01 above this value, ATK increases by 5, up to a maximum increase of <ct color=#2BAD00>800</ct>, and Impact increases by 0.4, up to a maximum increase of <ct color=#2BAD00>64</ct>.",
+        "2": "After <ct color=#FFFFFF>Special Attack: Forgive Me for Not Seeing You Off</ct> hits an enemy affected by <ct color=#FFFFFF>Windswept</ct>, it triggers <tooltip ns=tooltips_gen baseKey18=1000038>Cleanse</tooltip>, reverting <ct color=#FFFFFF>Contamination</ct> back to its original state.",
+        "3": "When any squad member triggers <ct color=#FFFFFF>Contamination</ct> or <ct color=#FFFFFF>Cleanse</ct>, Roxy provides all squad members with a buff based on the attribute of the <ct color=#FFFFFF>Contamination</ct> or <ct color=#FFFFFF>Cleanse</ct> effect: for every 1% CRIT Rate Roxy has, when non-<ct color=#FFFFFF>Armorer</ct> characters deal DMG of the corresponding attribute or Wind DMG, their CRIT DMG increases by 0.4%, up to <ct color=#2BAD00>34%</ct>. When <ct color=#FFFFFF>Armorer</ct> characters deal DMG of the corresponding attribute or Wind DMG, their Laceration DMG increases by 0.2%, up to <ct color=#2BAD00>16%</ct>. Each attribute's buff lasts 50s, and repeated triggers reset the duration.",
+        "4": "When <ct color=#FFFFFF>Windswept</ct> is applied again to an enemy already in the <ct color=#FFFFFF>Windswept</ct> state, all squad members can also gain this buff based on the <ct color=#FFFFFF>Contamination</ct> attribute of the overwritten <ct color=#FFFFFF>Windswept</ct> state and Wind attribute."
+      },
+      {
+        "0": "Gain 1 point of <tooltip ns=tooltips_gen baseKey18=1000039>Wind Energy</tooltip> for every 25 Energy consumed, up to a maximum of 3 <ct color=#FFFFFF>Wind Energy</ct>.",
+        "1": "When Roxy's initial <ct color=#FFFFFF>Energy Regen</ct> exceeds 1.2, for every 0.01 above this value, ATK increases by 5, up to a maximum increase of <ct color=#2BAD00>880</ct>, and Impact increases by 0.4, up to a maximum increase of <ct color=#2BAD00>70</ct>.",
+        "2": "After <ct color=#FFFFFF>Special Attack: Forgive Me for Not Seeing You Off</ct> hits an enemy affected by <ct color=#FFFFFF>Windswept</ct>, it triggers <tooltip ns=tooltips_gen baseKey18=1000038>Cleanse</tooltip>, reverting <ct color=#FFFFFF>Contamination</ct> back to its original state.",
+        "3": "When any squad member triggers <ct color=#FFFFFF>Contamination</ct> or <ct color=#FFFFFF>Cleanse</ct>, Roxy provides all squad members with a buff based on the attribute of the <ct color=#FFFFFF>Contamination</ct> or <ct color=#FFFFFF>Cleanse</ct> effect: for every 1% CRIT Rate Roxy has, when non-<ct color=#FFFFFF>Armorer</ct> characters deal DMG of the corresponding attribute or Wind DMG, their CRIT DMG increases by 0.4%, up to <ct color=#2BAD00>37%</ct>. When <ct color=#FFFFFF>Armorer</ct> characters deal DMG of the corresponding attribute or Wind DMG, their Laceration DMG increases by 0.2%, up to <ct color=#2BAD00>17.5%</ct>. Each attribute's buff lasts 50s, and repeated triggers reset the duration.",
+        "4": "When <ct color=#FFFFFF>Windswept</ct> is applied again to an enemy already in the <ct color=#FFFFFF>Windswept</ct> state, all squad members can also gain this buff based on the <ct color=#FFFFFF>Contamination</ct> attribute of the overwritten <ct color=#FFFFFF>Windswept</ct> state and Wind attribute."
+      },
+      {
+        "0": "Gain 1 point of <tooltip ns=tooltips_gen baseKey18=1000039>Wind Energy</tooltip> for every 25 Energy consumed, up to a maximum of 3 <ct color=#FFFFFF>Wind Energy</ct>.",
+        "1": "When Roxy's initial <ct color=#FFFFFF>Energy Regen</ct> exceeds 1.2, for every 0.01 above this value, ATK increases by 5, up to a maximum increase of <ct color=#2BAD00>960</ct>, and Impact increases by 0.4, up to a maximum increase of <ct color=#2BAD00>76.8</ct>.",
+        "2": "After <ct color=#FFFFFF>Special Attack: Forgive Me for Not Seeing You Off</ct> hits an enemy affected by <ct color=#FFFFFF>Windswept</ct>, it triggers <tooltip ns=tooltips_gen baseKey18=1000038>Cleanse</tooltip>, reverting <ct color=#FFFFFF>Contamination</ct> back to its original state.",
+        "3": "When any squad member triggers <ct color=#FFFFFF>Contamination</ct> or <ct color=#FFFFFF>Cleanse</ct>, Roxy provides all squad members with a buff based on the attribute of the <ct color=#FFFFFF>Contamination</ct> or <ct color=#FFFFFF>Cleanse</ct> effect: for every 1% CRIT Rate Roxy has, when non-<ct color=#FFFFFF>Armorer</ct> characters deal DMG of the corresponding attribute or Wind DMG, their CRIT DMG increases by 0.4%, up to <ct color=#2BAD00>40%</ct>. When <ct color=#FFFFFF>Armorer</ct> characters deal DMG of the corresponding attribute or Wind DMG, their Laceration DMG increases by 0.2%, up to <ct color=#2BAD00>20%</ct>. Each attribute's buff lasts 50s, and repeated triggers reset the duration.",
+        "4": "When <ct color=#FFFFFF>Windswept</ct> is applied again to an enemy already in the <ct color=#FFFFFF>Windswept</ct> state, all squad members can also gain this buff based on the <ct color=#FFFFFF>Contamination</ct> attribute of the overwritten <ct color=#FFFFFF>Windswept</ct> state and Wind attribute."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Porcelloy Heart",
+    "desc": {
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Attack</ct>, <ct color=#FFFFFF>Rupture</ct>, or <ct color=#FFFFFF>Armorer</ct> character:",
+      "1": "Roxy's DMG increases by 8%. This effect increases with character level, increasing by 1.2% per level, up to 80%.",
+      "2": "When any squad member's attack hits an enemy, it increases their Stun DMG Multiplier by 30%. When an enemy becomes Stunned, its Stun duration is extended by 2s. This Stun duration increase does not stack with similar effects. The effect is removed once the Stun ends.",
+      "3": "While an enemy is in the <ct color=#FFFFFF>Windswept</ct> state applied by a squad member, the <ct color=#A6C5FD>direct Wind DMG</ct> they take and the direct DMG they take of the attribute that triggered <ct color=#FFFFFF>Contamination</ct> are increased by 8%.",
+      "4": "Upon entering the battlefield, restores 40 Energy. In Investigation Zone Mode, this effect can trigger once every 180s.",
+      "5": "<ct color=#FFFFFF>Windswept</ct> applied by all squad members lasts 20s longer.",
+      "6": "When using an <ct color=#ffffff>EX Special Attack</ct>, Roxy's Anomaly Buildup Rate increases by 30% for 50s. Repeated triggers reset the duration."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Versatile Attendant",
+      "desc": "When <ct color=#ffffff>EX Special Attack: Kindly Rest in Peace</ct> hits, it reduces the enemy's All-Attribute RES by 15% for 50s. Repeated triggers reset the duration. CRIT DMG increases by 40%.",
+      "flavor": {
+        "0": "Roxy always manages to keep everything perfectly in order, from the head of the household's daily needs to her frequent whims.",
+        "1": "\"If you insist on going, please take this guide with you. Yes, I knew you would make this decision, milady.\"",
+        "2": "\"You've changed your mind? That's fine. Here's another guide, just for this sort of situation.\""
+      }
+    },
+    "2": {
+      "name": "Clocking Out Myth",
+      "desc": {
+        "0": "<ct color=#ffffff>EX Special Attack: Don't Catch a Chill</ct> deals 5% more Daze.",
+        "1": "For each <ct color=#ffffff>Eye of the Storm</ct> detonated, gain 1 stack of <ct color=#ffffff>Windflow</ct>, up to 3 stacks.",
+        "2": "During <ct color=#ffffff>EX Special Attack: Don't Catch a Chill</ct>, if Roxy switches out after entering the <ct color=#ffffff>Whirlwind</ct> state, she consumes all <ct color=#ffffff>Windflow</ct>. Each stack consumed sustains the <ct color=#ffffff>Whirlwind</ct> state for 0.2s, during which no Energy is consumed, up to a maximum of 0.6s.",
+        "3": "When <ct color=#ffffff>EX Special Attack: Don't Catch a Chill</ct> hits an enemy, that enemy's Stun DMG Multiplier increases by 30% until the target recovers from Stun."
+      },
+      "flavor": {
+        "0": "Roxy's pale complexion and ever-present dark circles speak to how much effort she pours into the workshop.",
+        "1": "She is all too familiar with Vyrium at four in the morning, despite having no nocturnal habits.",
+        "2": "To her, clocking out feels as distant as a myth.",
+        "3": "\"Ah... dawn again... It feels like getting off work will never become a reality.\""
+      }
+    },
+    "3": {
+      "name": "Tales of Insomnia",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "Roxy is used to making thorough plans, but whenever Claret is involved, those plans struggle to keep up with the changes. Countless schedule adjustments, countless revisions...",
+        "1": "Even the perfect assistant eventually starts to lose her patience until she reaches a certain breaking point — and snaps.",
+        "2": "From then on, Vyrium gains a terrifying figure who roams the streets late at night.",
+        "3": "\"I just want to go home... and get a good night's sleep—!\""
+      }
+    },
+    "4": {
+      "name": "R.I.P.",
+      "desc": "When a <ct color=#ffffff>Defensive Assist</ct> successfully parries an enemy attack, Roxy gains 1 Energy, up to once per skill. When <ct color=#ffffff>Dodge Counter: Returned Courtesy</ct> hits an enemy, it grants 2 Energy, up to once per skill. <ct color=#ffffff>Ultimate: Requiem for the Night-Burial</ct> deals 20% more DMG and 10% more Daze.",
+      "flavor": {
+        "0": "Whenever Roxy brings out her weapon, her enemies are always left baffled: Who uses a coffin as a weapon?",
+        "1": "Their confusion never lasts long, though.",
+        "2": "Once they see the girl casually swing it around, tearing through the air with a heavy howl, they quickly understand: that thing definitely wasn't made for sleeping in.",
+        "3": "\"It's still daytime, but I'm afraid... it's time to say goodnight.\""
+      }
+    },
+    "5": {
+      "name": "Second Heartbeat",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "Roxy can barely remember the adventure she had as a child, and the pain of losing her heart has long since faded.",
+        "1": "But she will never forget how the girl known as a genius once cried until her proud eyes were red, calling Roxy's name over and over.",
+        "2": "Her tears fell upon Roxy's cold chest, almost hot enough to burn a hole through her heart.",
+        "3": "\"Because of this Porcelloy Heart... I do get a little anemic sometimes, but with milady around, there's nothing to worry about.\""
+      }
+    },
+    "6": {
+      "name": "Eternity and the Clockwork Doll",
+      "desc": {
+        "0": "The DMG dealt by attacks ignores 15% of the target's <ct color=#A6C5FD>Wind RES</ct>.",
+        "1": "When <ct color=#ffffff>Special Attack: Forgive Me for Not Seeing You Off</ct> detonates <ct color=#ffffff>Eyes of the Storm</ct> to generate a Giant Windstorm, the primary target is inflicted with <ct color=#ffffff>Afterecho</ct>. A Giant Windstorm is generated at the target's location every 3s, for a total of 2 additional Giant Windstorms. Repeated triggers stack the number of additional Giant Windstorm instances generated and refresh the duration of <ct color=#ffffff>Afterecho</ct>. The DMG dealt by the Giant Windstorm increases to 250% of its original value, and the Daze it inflicts increases by 20%."
+      },
+      "flavor": {
+        "0": "Some believe Roxy only remains by the head of the household's side to sustain her Porcelloy Heart: Flint Workshop used their bloodline to secure a capable assistant.",
+        "1": "Roxy has heard such claims so often that she no longer even bothers refuting them. The other person concerned, however, can't help but worry over it.",
+        "2": "One day, during a brief lull in her busy schedule, she casually brought the matter up with her assistant, only to be met with a helpless sigh.",
+        "3": "\"No, I've never thought of it that way. Just being alive is already more than enough. I've always been grateful to you, milady.\"",
+        "4": "\"Besides... if I may be so bold, aren't you the one bound by bloodline here, milady?\"",
+        "5": "\"So this is what's been making you restless lately... Rather than some pointless rumor, I'd say that oversized Porcelloy order you boasted to the CCD about not long ago is far more worth worrying about.\""
+      }
+    }
+  },
+  "potential": {}
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Crimson Thirst",
+  "desc": {
+    "0": "For as long as anyone can remember, tales and rumors about the Flint family have never ceased, enough to fill an entire anthology of rumors. Blood, Porcelloy, long-buried history, inherited miracles... None of these dangerous secrets have ever been fully laid bare, yet they have always held the public's fascination. Curiously, the family head has never come forward to offer any explanation. Some say her ambitions reach too far for her to waste time on gossip. Some say she possessed a steady mind even in her youth and chose to let the rumors gather momentum. And some claim there were never any rumors about Flint to begin with, only truths passed down through the world. Rumors drift like fog, obscuring what is real and what is not. But toward that young family head, people feel nothing beyond reverence and fear.",
+    "1": "\"Roxy, the ruby in this W-Engine looks pretty valuable. If we sold it...\" \"Milady, forgive me for saying so, but I'm afraid it wouldn't even cover the losses from a single meeting between you and Lady Lindverne.\"",
+    "2": "—The family head struggling with a budget shortfall and her capable assistant"
+  },
+  "desc2": "Equip to increase Armorer Agents' combat capabilities",
+  "desc3": "Beneath the crimson moon, the bloodline endures.",
+  "phase": "Bloodthirst",
+  "phaseDescs": [
+    "The equipper's CRIT Rate increases by <ct color=#2BAD00>25%</ct>, and <ct color=#2EB6FF>Electric DMG</ct> increases by <ct color=#2BAD00>15%</ct>. When the equipper uses an <ct color=#FFFFFF>EX Special Attack</ct> or triggers <ct color=#FFFFFF>Maim</ct>, <ct color=#2EB6FF>Electric Sharp DMG</ct> dealt increases by <ct color=#2BAD00>10%</ct> for 40s. Repeated triggers reset the duration.",
+    "The equipper's CRIT Rate increases by <ct color=#2BAD00>27.5%</ct>, and <ct color=#2EB6FF>Electric DMG</ct> increases by <ct color=#2BAD00>17.5%</ct>. When the equipper uses an <ct color=#FFFFFF>EX Special Attack</ct> or triggers <ct color=#FFFFFF>Maim</ct>, <ct color=#2EB6FF>Electric Sharp DMG</ct> dealt increases by <ct color=#2BAD00>11.5%</ct> for 40s. Repeated triggers reset the duration.",
+    "The equipper's CRIT Rate increases by <ct color=#2BAD00>30%</ct>, and <ct color=#2EB6FF>Electric DMG</ct> increases by <ct color=#2BAD00>20%</ct>. When the equipper uses an <ct color=#FFFFFF>EX Special Attack</ct> or triggers <ct color=#FFFFFF>Maim</ct>, <ct color=#2EB6FF>Electric Sharp DMG</ct> dealt increases by <ct color=#2BAD00>13%</ct> for 40s. Repeated triggers reset the duration.",
+    "The equipper's CRIT Rate increases by <ct color=#2BAD00>32.5%</ct>, and <ct color=#2EB6FF>Electric DMG</ct> increases by <ct color=#2BAD00>22.5%</ct>. When the equipper uses an <ct color=#FFFFFF>EX Special Attack</ct> or triggers <ct color=#FFFFFF>Maim</ct>, <ct color=#2EB6FF>Electric Sharp DMG</ct> dealt increases by <ct color=#2BAD00>14.5%</ct> for 40s. Repeated triggers reset the duration.",
+    "The equipper's CRIT Rate increases by <ct color=#2BAD00>35%</ct>, and <ct color=#2EB6FF>Electric DMG</ct> increases by <ct color=#2BAD00>25%</ct>. When the equipper uses an <ct color=#FFFFFF>EX Special Attack</ct> or triggers <ct color=#FFFFFF>Maim</ct>, <ct color=#2EB6FF>Electric Sharp DMG</ct> dealt increases by <ct color=#2BAD00>16%</ct> for 40s. Repeated triggers reset the duration."
+  ]
+}
