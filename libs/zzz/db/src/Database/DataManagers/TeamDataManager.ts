@@ -35,8 +35,8 @@ import { z } from 'zod'
 import type { ZzzDatabase } from '../..'
 import { DataManager } from '../DataManager'
 
-export type critModeKey = 'avg' | 'crit' | 'nonCrit'
-export const critModeKeys = ['avg', 'crit', 'nonCrit'] as const
+export type critModeKey = 'avg' | 'crit' | 'nonCrit' | 'doubleCrit'
+export const critModeKeys = ['avg', 'crit', 'nonCrit', 'doubleCrit'] as const
 
 export type SpecificDmgTypeKey = Exclude<
   DamageType,
