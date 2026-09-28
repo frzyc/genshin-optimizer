@@ -2,6 +2,7 @@ import type { TriggerString } from '@genshin-optimizer/common/database'
 import { deepClone, objKeyMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import { allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
+import { allStats } from '@genshin-optimizer/zzz/stats'
 import type { ICharacter } from '@genshin-optimizer/zzz/zood'
 import { parseCharacter } from '@genshin-optimizer/zzz/zood'
 import type { ICachedCharacter } from '../../Interfaces'
@@ -179,5 +180,6 @@ export function initialCharacterData(key: CharacterKey): ICachedCharacter {
     assist: 1,
     equippedDiscs: objKeyMap(allDiscSlotKeys, () => ''),
     equippedWengine: '',
+    specialty: allStats.char[key].specialty,
   }
 }

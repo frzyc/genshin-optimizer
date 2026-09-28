@@ -86,6 +86,7 @@ export function charTagMapNodeEntries(data: TempICharacter): TagMapNodeEntries {
     // Default char
     ownBuff.base.crit_.add(0.05),
     ownBuff.base.crit_dmg_.add(0.5),
+    ownBuff.base.laceration_dmg_.add(1.5),
   ]
 }
 

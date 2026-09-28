@@ -19,6 +19,7 @@ export const otherStatKeys = [
   'enerRegen',
   'anom_crit_', // Anomaly CRIT Rate
   'anom_crit_dmg_', // Anomaly CRIT DMG
+  'laceration_dmg_', // Laceration DMG
   'dazeInc_', // Daze Increase
   'sheerForce',
   'sheer_dmg_',
@@ -47,6 +48,7 @@ export const baseStatKeys = [
   'impact',
   'crit_',
   'crit_dmg_',
+  'laceration_dmg_',
   'pen_',
   'anomProf',
   'anomMas',
@@ -133,7 +135,9 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   defIgn_: 'DEF Ignore',
   crit_: 'CRIT Rate',
   crit_dmg_: 'CRIT DMG',
+  laceration_dmg_: 'Laceration DMG',
   sheer_dmg_: 'Sheer DMG',
+  sharp_dmg_: 'Sharp DMG',
   enerRegen_: 'Energy Regen',
   enerRegen: 'Energy Regen',
   base_enerRegen: 'Base Energy Regen',
@@ -188,6 +192,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   // Formula display stuff
   crit_mult_: 'CRIT Multiplier',
   anomaly_crit_mult_: 'Anomaly CRIT Multiplier',
+  laceration_mult_: 'Laceration Multiplier',
   dmg_mult_: 'DMG Multiplier',
   def_mult_: 'DEF Multiplier',
   res_mult_: 'Resistance Multiplier',
@@ -204,6 +209,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   res_: 'Resistance',
   resRed_: 'Resistance Reduction',
   sheer_mult_: 'Sheer DMG Multiplier',
+  sharp_mult_: 'Sharp DMG Multiplier',
   mv_mult_: 'DMG Multiplier Increase',
   buff_mult_: 'Buff Multiplier',
   anom_base_mult_: 'Anomaly Base DMG Multiplier',

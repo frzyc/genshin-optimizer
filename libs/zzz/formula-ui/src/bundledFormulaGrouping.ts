@@ -41,11 +41,13 @@ export function resolveBundleDmgQ(
 ): DmgAbilityDim | undefined {
   if (byQ.has('standardDmg')) return 'standardDmg'
   if (byQ.has('sheerDmg')) return 'sheerDmg'
+  if (byQ.has('sharpDmg')) return 'sharpDmg'
   return undefined
 }
 
 function isCompleteAbilityBundle(byQ: Map<string, Tag>): boolean {
-  if (byQ.has('standardDmg') && byQ.has('sheerDmg')) return false
+  if (byQ.has('standardDmg') && byQ.has('sheerDmg') && byQ.has('sharpDmg'))
+    return false
   const dmgQ = resolveBundleDmgQ(byQ)
   return !!dmgQ && byQ.has('dazeBuildup') && byQ.has('anomBuildup')
 }
