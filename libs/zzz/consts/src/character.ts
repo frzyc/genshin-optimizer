@@ -11,6 +11,7 @@ export const allCharacterKeys = [
   'Burnice',
   'Caesar',
   'Cissia',
+  'Claret',
   'Corin',
   'Dialyn',
   'Ellen',
@@ -40,6 +41,7 @@ export const allCharacterKeys = [
   'Qingyi',
   'Remielle',
   'Rina',
+  'Roxy',
   'Seed',
   'Seth',
   'Sigrid',
@@ -71,6 +73,7 @@ export const allSpecialityKeys = [
   'support',
   'defense',
   'rupture',
+  'armorer',
 ] as const
 export type SpecialityKey = (typeof allSpecialityKeys)[number]
 

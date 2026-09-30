@@ -1,6 +1,7 @@
 import { objMap } from '@genshin-optimizer/common/util'
 import type {
   SpecialityKey,
+  WengineBaseStatKey,
   WengineKey,
   WengineRarityKey,
   WengineSubStatKey,
@@ -11,7 +12,8 @@ import { extractParamsFromString } from './util'
 export type WengineDatum = {
   rarity: WengineRarityKey
   type: SpecialityKey
-  atk_base: number
+  base_statkey: WengineBaseStatKey
+  base_statvalue: number
   second_statkey: WengineSubStatKey
   second_statvalue: number
   phase: PhaseData[]
@@ -24,10 +26,19 @@ export type WenginesData = Record<WengineKey, WengineDatum>
 export function getWenginesData(): WenginesData {
   return objMap(
     wengineDetailedJSONData,
-    ({ rarity, type, atk_base, second_statkey, second_statvalue, phase }) => ({
+    ({
       rarity,
       type,
-      atk_base,
+      base_statkey,
+      base_statvalue,
+      second_statkey,
+      second_statvalue,
+      phase,
+    }) => ({
+      rarity,
+      type,
+      base_statkey,
+      base_statvalue,
       second_statkey,
       second_statvalue,
       phase: phase.map(({ desc }) => ({

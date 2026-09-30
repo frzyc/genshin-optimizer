@@ -2,6 +2,7 @@
 const DIM_LABEL: Record<string, string> = {
   standardDmg: 'DMG',
   sheerDmg: 'DMG',
+  sharpDmg: 'DMG',
   dazeBuildup: 'Daze',
   anomBuildup: 'Anom',
   anomalyDmg: 'Anom',

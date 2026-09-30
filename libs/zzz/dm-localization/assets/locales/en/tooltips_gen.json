@@ -156,6 +156,26 @@
     "name": "Phase Flow",
     "desc": "While in the <ct color=#FFFFFF>Phase Flow</ct> state, Remielle acts autonomously to assist in combat. During this, some attacks can also apply <ct color=#FFA9DD>Lumiflux Buildup</ct> to the target. While in the <ct color=#FFFFFF>Phase Flow</ct> state, Floating Radiance is consumed over time. When <ct color=#FFFFFF>Floating Radiance</ct> is fully depleted, she exits the <ct color=#FFFFFF>Phase Flow</ct> state. Before exiting the <ct color=#FFFFFF>Phase Flow</ct> state, she cannot be actively switched in except through <ct color=#FFFFFF>Chain Attacks</ct>."
   },
+  "1000036": {
+    "name": "Crimson Inscription",
+    "desc": "Transforms her weapon into a Blood Axe, replacing Claret's attacks with Bloodbloom Oath skills and increasing her CRIT Rate and Gash Buildup Rate."
+  },
+  "1000037": {
+    "name": "Remnant Edge",
+    "desc": "When any squad member triggers Maim, Armorer Agents enter Remnant Edge, during which Laceration DMG increases."
+  },
+  "1000038": {
+    "name": "Cleanse",
+    "desc": "Reverts the enemy's <ct color=#FFFFFF>Windswept</ct> state to an uncontaminated <ct color=#FFFFFF>Windswept</ct> state."
+  },
+  "1000039": {
+    "name": "Wind Energy",
+    "desc": "For every set amount of Energy consumed, gain 1 point of <ct color=#FFFFFF>Wind Energy</ct>. <ct color=#FFFFFF>EX Special Attack: Kindly Rest in Peace</ct> consumes all <ct color=#FFFFFF>Wind Energy</ct> to generate the corresponding number of Eye of the Storm."
+  },
+  "1000040": {
+    "name": "Eye of the Storm",
+    "desc": "<ct color=#FFFFFF>EX Special Attack: Kindly Rest in Peace</ct> consumes all Wind Energy, leaving the corresponding number of <ct color=#FFFFFF>Eyes of the Storm</ct> on the field. When hit by <ct color=#FFFFFF>Special Attack: Forgive Me for Not Seeing You Off</ct>, they detonate to generate Miniature Windstorms or Giant Windstorms."
+  },
   "2000001": {
     "name": "Corruptive Barrier",
     "desc": {
@@ -183,6 +203,14 @@
       "0": "· When an <ct color=#FFAF2C>×-shape golden light</ct> prompt appears on an enemy attack, <ct color=#FFAF2C>tap twice</ct> in quick succession on <IconSwitch /> to trigger a Chain Parry. Both Agents will parry the attack together and <ct color=#FFAF2C>accumulate a large amount of Daze</ct>;",
       "1": "· After successfully triggering a Chain Parry, tap <IconNormal /> to launch a Chain Assault."
     }
+  },
+  "2000005": {
+    "name": "Rift Assault",
+    "desc": "After Kusarikku slips into a spatial fissure, it unleashes a series of powerful attacks. Use <ct color=#FFAF2C>Defensive Assists</ct> to counter them and rapidly reduce its Corruptive Barrier. Repeatedly countering them successfully can allow you to seize the initiative in battle."
+  },
+  "2000006": {
+    "name": "Counter Assist",
+    "desc": "When an enemy uses a <ct color=#FFAF2C>Control Skill</ct> to attack, if a specific Agent is in your squad, a <ct color=#FFAF2C>golden flash</ct> prompt will appear. Press <IconSwitch /> within a short window to switch to that specific Agent and trigger <ct color=#FFAF2C>Counter Assist</ct>. Then press <IconNormal /> to engage in a tug-of-war with the enemy. Succeed, and you'll break free from the enemy's <ct color=#FFAF2C>Control Skill</ct>."
   },
   "4000001": {
     "name": "Basic Technique",
@@ -234,95 +262,95 @@
   },
   "4000013": {
     "name": "Core",
-    "desc": "Agent's [Core Skill] Lv.+<ct color=#2BAD00>1</ct>."
+    "desc": "Increases the Agent's Core Skill level by <ct color=#2BAD00>1</ct>."
   },
   "4000014": {
     "name": "Skill",
-    "desc": "All of the Agent's skill Lv. except Core Skill +<ct color=#2BAD00>1</ct>."
+    "desc": "Increases the level of all the Agent's skills except Core Skill by <ct color=#2BAD00>1</ct>."
   },
   "4000015": {
     "name": "Shield",
-    "desc": "After being out of combat for <ct color=#2BAD00>10</ct>s, gain a shield equal to <ct color=#2BAD00>3%</ct> of Max HP. Can trigger at most once every <ct color=#2BAD00>30</ct>s."
+    "desc": "After this Agent remains out of combat for <ct color=#2BAD00>10</ct>s, they gain a shield equal to <ct color=#2BAD00>3%</ct> of their Max HP. This effect can be triggered once every <ct color=#2BAD00>30</ct>s."
   },
   "4000016": {
-    "name": "Corrosion Resistance",
-    "desc": "Each time Corruption is triggered, DMG taken is reduced by <ct color=#2BAD00>10%</ct> for <ct color=#2BAD00>15</ct>s."
+    "name": "Corruption Resistance",
+    "desc": "Each time when receiving Corruption, this Agent takes <ct color=#2BAD00>10%</ct> less DMG for <ct color=#2BAD00>15</ct>s."
   },
   "4000017": {
     "name": "Dodge",
-    "desc": "[Dodge] count +1, <ct color=#FFFFFF>[Perfect Dodge]</ct> is easier to trigger when <ct color=#FFFFFF>[Dodging]</ct>."
+    "desc": "Gain 1 additional Dodge use. <ct color=#FFFFFF>Dodge</ct> is more likely to trigger a <ct color=#FFFFFF>Perfect Dodge</ct>."
   },
   "4000018": {
     "name": "Charge Up",
-    "desc": "When HP is above <ct color=#2BAD00>80%</ct>, deal an additional <ct color=#2BAD00>10%</ct> DMG and <ct color=#2BAD00>20%</ct> Anomaly Buildup."
+    "desc": "While this Agent's HP is above <ct color=#2BAD00>80%</ct>, they deal <ct color=#2BAD00>10%</ct> more DMG and inflict <ct color=#2BAD00>20%</ct> more Anomaly Buildup."
   },
   "4000019": {
     "name": "Curtain",
-    "desc": "While in [Ether Veil], hitting an enemy increases their Stun DMG Multiplier by <ct color=#2BAD00>15%</ct> for <ct color=#2BAD00>15</ct>s. Repeated triggers reset the duration."
+    "desc": "While Ether Veil is active, hitting an enemy increases their Stun DMG Multiplier by <ct color=#2BAD00>15%</ct> for <ct color=#2BAD00>15</ct>s. Repeated triggers reset the duration."
   },
   "4000020": {
     "name": "Skill",
-    "desc": "All of the Agent's skill Lv. except Core Skill +<ct color=#2BAD00>2</ct>."
+    "desc": "Increases the level of all the Agent's skills except Core Skill by <ct color=#2BAD00>2</ct>."
   },
   "4000021": {
     "name": "Shield",
-    "desc": "After being out of combat for <ct color=#2BAD00>10</ct>s, gain a shield equal to <ct color=#2BAD00>6%</ct> of Max HP. Can trigger at most once every <ct color=#2BAD00>30</ct>s."
+    "desc": "After this Agent remains out of combat for <ct color=#2BAD00>10</ct>s, they gain a shield equal to <ct color=#2BAD00>6%</ct> of their Max HP. This effect can be triggered once every <ct color=#2BAD00>30</ct>s."
   },
   "4000022": {
-    "name": "Corrosion Resistance",
-    "desc": "Each time Corruption is triggered, DMG taken is reduced by <ct color=#2BAD00>10%</ct> for <ct color=#2BAD00>30</ct>s."
+    "name": "Corruption Resistance",
+    "desc": "Each time when receiving Corruption, this Agent takes <ct color=#2BAD00>10%</ct> less DMG for <ct color=#2BAD00>30</ct>s."
   },
   "4000023": {
     "name": "Charge Up",
-    "desc": "When HP is above <ct color=#2BAD00>50%</ct>, deal an additional <ct color=#2BAD00>10%</ct> DMG and <ct color=#2BAD00>20%</ct> Anomaly Buildup."
+    "desc": "While this Agent's HP is above <ct color=#2BAD00>50%</ct>, they deal <ct color=#2BAD00>10%</ct> more DMG and inflict <ct color=#2BAD00>20%</ct> more Anomaly Buildup."
   },
   "4000024": {
     "name": "Swift",
-    "desc": "After triggering [Perfect Dodge], CRIT Rate increases by <ct color=#2BAD00>8%</ct> for <ct color=#2BAD00>10</ct>s. Repeated triggers refresh the duration."
+    "desc": "After triggering a Perfect Dodge, this Agent's CRIT Rate increases by <ct color=#2BAD00>8%</ct> for <ct color=#2BAD00>10</ct>s. Repeated triggers reset the duration."
   },
   "4000025": {
     "name": "Basic Attack",
-    "desc": "[Basic Attack] Upon hitting an enemy, increases own ATK by <ct color=#2BAD00>4%</ct> for <ct color=#2BAD00>10</ct>s, stacking up to <ct color=#2BAD00>3</ct> times."
+    "desc": "When a Basic Attack hits an enemy, this Agent's ATK increases by <ct color=#2BAD00>4%</ct> for <ct color=#2BAD00>10</ct>s. This effect can stack up to <ct color=#2BAD00>3</ct> times."
   },
   "4000026": {
     "name": "Abloom",
-    "desc": "After triggering [Abloom], the Agent's Anomaly DMG increases by <ct color=#2BAD00>6%</ct> for <ct color=#2BAD00>12</ct>s, stacking up to <ct color=#2BAD00>2</ct> times."
+    "desc": "After triggering Abloom, this Agent's Anomaly DMG increases by <ct color=#2BAD00>6%</ct> for <ct color=#2BAD00>12</ct>s. This effect can stack up to <ct color=#2BAD00>2</ct> times."
   },
   "4000027": {
     "name": "Disorder",
-    "desc": "After triggering [Disorder], gain an effect that ignores <ct color=#2BAD00>6%</ct> of the target's All-Attribute RES for <ct color=#2BAD00>12</ct>s. Repeated triggers reset the duration."
+    "desc": "After triggering Disorder, this Agent's DMG ignores <ct color=#2BAD00>6%</ct> of the target's All-Attribute RES for <ct color=#2BAD00>12</ct>s. Repeated triggers reset the duration."
   },
   "4000028": {
     "name": "Follow-up Attack",
-    "desc": "[Aftershock] On hit, causes your DMG to ignore <ct color=#2BAD00>8%</ct> of the target's defense for <ct color=#2BAD00>10</ct>s; repeated triggers reset the duration."
+    "desc": "When Aftershock hits an enemy, this Agent's DMG ignores <ct color=#2BAD00>8%</ct> of the target's DEF for <ct color=#2BAD00>10</ct>s. Repeated triggers reset the duration."
   },
   "4000029": {
     "name": "Pierce",
-    "desc": "After using [EX Special Attack], Sheer DMG increases by <ct color=#2BAD00>3%</ct> for <ct color=#2BAD00>15</ct>s, stacking up to <ct color=#2BAD00>2</ct> times."
+    "desc": "After performing an EX Special Attack, this Agent's Sheer DMG increases by <ct color=#2BAD00>3%</ct> for <ct color=#2BAD00>15</ct>s. This effect can stack up to <ct color=#2BAD00>2</ct> times."
   },
   "4000030": {
     "name": "Chain Attack",
-    "desc": "When a [Chain Attack] is unleashed, increases own CRIT DMG by <ct color=#2BAD00>16%</ct> for <ct color=#2BAD00>12</ct>s. Gaining the effect again refreshes the duration."
+    "desc": "When an Agent performs a Chain Attack, their CRIT DMG increases by <ct color=#2BAD00>16%</ct> for <ct color=#2BAD00>12</ct>s. Gaining this effect again resets its duration."
   },
   "4000031": {
     "name": "Blood Rage",
-    "desc": "When losing HP, the Agent's CRIT DMG increases by <ct color=#2BAD00>16%</ct> for <ct color=#2BAD00>8</ct>s. Gaining this effect again refreshes its duration."
+    "desc": "When this Agent loses HP, their CRIT DMG increases by <ct color=#2BAD00>16%</ct> for <ct color=#2BAD00>8</ct>s. Gaining this effect again resets its duration."
   },
   "4000032": {
     "name": "Vortex",
-    "desc": "When [Vortex] is triggered, the Agent's Anomaly DMG increases by <ct color=#2BAD00>12%</ct> for <ct color=#2BAD00>15</ct>s. Gaining it again resets the duration."
+    "desc": "When triggering a Vortex, this Agent's Anomaly DMG increases by <ct color=#2BAD00>12%</ct> for <ct color=#2BAD00>15</ct>s. Gaining this effect again resets its duration."
   },
   "4000033": {
     "name": "Energy Generation",
-    "desc": "Using an [Ultimate] generates <ct color=#2BAD00>20</ct> Energy for the Agent."
+    "desc": "Performing an Ultimate restores <ct color=#2BAD00>20</ct> Energy for this Agent."
   },
   "4000034": {
     "name": "Stun",
-    "desc": "When an enemy is Dazed, restore <ct color=#2BAD00>300</ct> Decibel. This effect can trigger once every <ct color=#2BAD00>30</ct> seconds."
+    "desc": "Stunning an enemy restores <ct color=#2BAD00>300</ct> Decibels. This effect can trigger once every <ct color=#2BAD00>30</ct>s."
   },
   "4000035": {
     "name": "Strong Shield",
-    "desc": "Shielded Agents gain <ct color=#2BAD00>10% CRIT Rate</ct>."
+    "desc": "While an Agent has a shield, their CRIT Rate increases by <ct color=#2BAD00>10%</ct>."
   },
   "10000081": {
     "name": "Windbloom",
