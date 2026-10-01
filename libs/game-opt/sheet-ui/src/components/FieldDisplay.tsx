@@ -165,6 +165,7 @@ export function MultiTagFieldDisplay({
   rowSx,
   onMouseEnter,
   onMouseLeave,
+  getRead,
 }: {
   field: MultiTagField
   component?: ElementType
@@ -172,6 +173,8 @@ export function MultiTagFieldDisplay({
   rowSx?: SxProps<Theme>
   onMouseEnter?: () => void
   onMouseLeave?: () => void
+  /** Resolve a listing `Read` instead of `read(fieldRef)`. */
+  getRead?: (tag: Tag) => Read | BaseRead
 }) {
   const calc = useContext(CalcContext)
   const compareCalc = useContext(CompareCalcContext)
@@ -191,7 +194,7 @@ export function MultiTagFieldDisplay({
     () =>
       taggedCalc
         ? fieldRefs.map(({ label, ref: fieldRef }) => {
-            const fieldRead = read(fieldRef)
+            const fieldRead = getRead ? getRead(fieldRef) : read(fieldRef)
             const valueCalcRes = taggedCalc.compute(fieldRead)
             const compareCalcValue = taggedCompareCalc
               ? taggedCompareCalc.compute(fieldRead).val
@@ -205,7 +208,7 @@ export function MultiTagFieldDisplay({
             }
           })
         : [],
-    [fieldRefs, taggedCalc, taggedCompareCalc]
+    [fieldRefs, getRead, taggedCalc, taggedCompareCalc]
   )
 
   if (!calc) return null

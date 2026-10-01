@@ -10,7 +10,7 @@ import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
 import { ZCard } from '@genshin-optimizer/zzz/ui'
 import { Box, Stack, Typography } from '@mui/material'
 import { type ReactNode, useMemo } from 'react'
-import { useCharFormulaFields, useZzzCalcContext } from '../hooks'
+import { useCharCatalogRows, useZzzCalcContext } from '../hooks'
 import {
   skillSectionFlatIconKey,
   talentSheetElementIcon,
@@ -153,7 +153,7 @@ export function CharMechanicsGroupedDisplay({
   charKey: CharacterKey
 }) {
   const calc = useZzzCalcContext()
-  const { abilityFieldsBySkill } = useCharFormulaFields(charKey, calc)
+  const { abilityFieldsBySkill } = useCharCatalogRows(charKey, calc)
 
   const skillSections = useMemo(
     () =>

@@ -19,7 +19,7 @@ const testDatabaseJson = {
       teammates: [{ characterKey: 'Anby' }],
       frames: [
         {
-          tag: { q: 'atk', qt: 'final' },
+          ref: { sheet: 'stat', name: 'atk', dim: 'final' },
           multiplier: 1,
           critMode: 'avg',
           bonusStats: [],
@@ -68,5 +68,111 @@ describe('Database import/export round trip', () => {
     const secondJson = JSON.stringify(normalizeForComparison(secondExport))
 
     expect(secondJson).toBe(firstJson)
+  })
+})
+
+describe('Database migrate v4 FormulaRef', () => {
+  it('converts v3 frames[].tag bags to frames[].ref', () => {
+    const dbStorage = createTestDBStorage('zzz')
+    const database = new ZzzDatabase(1, dbStorage)
+    database.importZOOD(
+      {
+        format: 'ZOD',
+        dbVersion: 3,
+        source: zzzSource,
+        version: 1,
+        characters: [
+          { key: 'Anby', level: 1, ascension: 0, core: 0, skill: {} },
+        ],
+        discs: [],
+        wengines: [],
+        charMetas: [],
+        generatedBuildList: [],
+        optConfigs: [],
+        teams: [
+          {
+            id: 'Anby',
+            teammates: [{ characterKey: 'Anby' }],
+            frames: [
+              {
+                tag: {
+                  sheet: 'Anby',
+                  name: 'standardDmgInst',
+                  q: 'standardDmg',
+                  damageType1: 'basic',
+                },
+                multiplier: 1,
+                critMode: 'avg',
+                bonusStats: [],
+                conditionals: [],
+                enemyStats: [],
+              },
+            ],
+            enemyLvl: 80,
+            enemyDef: 953,
+            enemyStunMultiplier: 150,
+          },
+        ],
+      } as never,
+      false,
+      false
+    )
+    expect(database.teams.get('Anby')?.frames[0]?.ref).toEqual({
+      sheet: 'Anby',
+      name: 'standardDmgInst',
+      dim: 'standardDmg',
+      damageType1: 'basic',
+    })
+    expect(
+      (database.teams.get('Anby')?.frames[0] as { tag?: unknown } | undefined)
+        ?.tag
+    ).toBeUndefined()
+  })
+
+  it('converts v3 stat bags to sheet:stat refs', () => {
+    const dbStorage = createTestDBStorage('zzz')
+    const database = new ZzzDatabase(1, dbStorage)
+    database.importZOOD(
+      {
+        format: 'ZOD',
+        dbVersion: 3,
+        source: zzzSource,
+        version: 1,
+        characters: [
+          { key: 'Anby', level: 1, ascension: 0, core: 0, skill: {} },
+        ],
+        discs: [],
+        wengines: [],
+        charMetas: [],
+        generatedBuildList: [],
+        optConfigs: [],
+        teams: [
+          {
+            id: 'Anby',
+            teammates: [{ characterKey: 'Anby' }],
+            frames: [
+              {
+                tag: { q: 'atk', qt: 'final' },
+                multiplier: 1,
+                critMode: 'avg',
+                bonusStats: [],
+                conditionals: [],
+                enemyStats: [],
+              },
+            ],
+            enemyLvl: 80,
+            enemyDef: 953,
+            enemyStunMultiplier: 150,
+          },
+        ],
+      } as never,
+      false,
+      false
+    )
+    expect(database.teams.get('Anby')?.frames[0]?.ref).toEqual({
+      sheet: 'stat',
+      name: 'atk',
+      dim: 'final',
+    })
   })
 })
