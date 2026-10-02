@@ -60,6 +60,7 @@ export const allNonstackBuffs = [
   ...allElementKeys.map((ele) => `mortalHymn${ele}` as const),
   'angelos',
   'heartofthefurnace',
+  'breezeborne',
 ] as const
 export type NonStackBuff = (typeof allNonstackBuffs)[number]
 export const allMoves = [

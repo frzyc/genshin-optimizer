@@ -122,6 +122,8 @@ import TravelerPyroM from './TravelerPyroM'
 import Varesa from './Varesa'
 import Varka from './Varka'
 import Venti from './Venti'
+import Vesna from './Vesna'
+import Vodyanitsa from './Vodyanitsa'
 import Wanderer from './Wanderer'
 import Wriothesley from './Wriothesley'
 import Xiangling from './Xiangling'
@@ -257,6 +259,8 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Varesa,
   Varka,
   Venti,
+  Vesna,
+  Vodyanitsa,
   Wanderer,
   Wriothesley,
   Xiangling,
