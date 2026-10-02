@@ -173,9 +173,27 @@ function SillyCoverArea({
   return (
     <Box sx={{ display: 'flex', position: 'relative' }}>
       <Box src={src} component="img" width="100%" height="auto" />
-      <Box sx={{ width: '100%', height: '100%' }}>
+      <Box sx={{ position: 'absolute', width: '100%', height: '100%' }}>
+        <Typography
+          variant="h6"
+          sx={{
+            position: 'absolute',
+            width: '100%',
+            left: '50%',
+            bottom: -20,
+            transform: 'translate(-50%, -50%)',
+            opacity: 0.75,
+            textAlign: 'center',
+          }}
+        >
+          <StarsDisplay stars={getCharStat(characterKey).rarity} colored />
+        </Typography>
         <Box
           sx={{
+            position: 'absolute',
+            left: '50%',
+            bottom: 12,
+            transform: 'translate(-50%, -50%)',
             opacity: 0.85,
             width: '100%',
             display: 'flex',
@@ -185,16 +203,6 @@ function SillyCoverArea({
         >
           <CharChip />
         </Box>
-        <Typography
-          variant="h6"
-          sx={{
-            width: '100%',
-            opacity: 0.75,
-            textAlign: 'center',
-          }}
-        >
-          <StarsDisplay stars={getCharStat(characterKey).rarity} colored />
-        </Typography>
         <FavoriteButton />
         <LevelBadge level={level} ascension={ascension} />
       </Box>
