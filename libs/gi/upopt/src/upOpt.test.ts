@@ -1,11 +1,12 @@
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
+import type { DynStat } from '@genshin-optimizer/gi/solver'
 import { getMainStatValue, getSubstatValue } from '@genshin-optimizer/gi/util'
 import { dynRead, prod, sum } from '@genshin-optimizer/gi/wr'
 
 import { substatWeights } from './consts'
-import { deduplicate } from './deduplicate'
+import { cmpNodes, deduplicate } from './deduplicate'
 import { expandRollsLevel } from './expandRolls'
 import {
   expandSubstatLevel,
@@ -22,6 +23,7 @@ import {
   elixirDefinition,
   expandNode,
   expandNodes,
+  freshArtifact,
   levelUpArtifact,
 } from './upOpt'
 import type { MarkovNode, SubstatLevelNode } from './upOpt.types'
@@ -72,6 +74,49 @@ function checkExpandedEvalCorrectness(
   const baseEval = evaluateGaussian(obj, g)
   expect(mean).toBeCloseTo(baseEval.f_mu[0])
   expect(sig2).toBeCloseTo(baseEval.f_cov[0][0])
+}
+
+/**
+ * Order-independent identity for a node: everything `deduplicate()` treats as
+ * distinguishing, with `base` canonicalized since key insertion order differs
+ * between the memoized and reference construction paths. Deliberately written
+ * independently of `deduplicate`'s own internal key, so these comparisons don't end up
+ * validating the implementation against itself.
+ */
+function canonicalNodeKey(n: SubstatLevelNode): string {
+  return JSON.stringify([
+    n.rarity,
+    n.rollsLeft,
+    n.reshape ?? null,
+    n.subkeys,
+    Object.entries(n.base).sort(([a], [b]) => a.localeCompare(b)),
+    n.subDistr.subs,
+    n.subDistr.mu,
+    n.subDistr.cov,
+  ])
+}
+
+/**
+ * Compares two weighted node lists as distributions: same set of distinct nodes,
+ * same total probability on each. Node order carries no meaning -- `deduplicate` groups by
+ * hash and hands back its producer's order -- so this is the real contract.
+ */
+function expectSameDistribution(
+  got: { p: number; n: SubstatLevelNode }[],
+  want: { p: number; n: MarkovNode }[]
+) {
+  const tally = (nodes: { p: number; n: MarkovNode }[]) => {
+    const m = new Map<string, number>()
+    nodes.forEach(({ p, n }) => {
+      const k = canonicalNodeKey(n as SubstatLevelNode)
+      m.set(k, (m.get(k) ?? 0) + p)
+    })
+    return m
+  }
+  const g = tally(got)
+  const w = tally(want)
+  expect([...g.keys()].sort()).toEqual([...w.keys()].sort())
+  g.forEach((p, k) => expect(p).toBeCloseTo(w.get(k)!, 12))
 }
 
 describe('upOpt components', () => {
@@ -398,6 +443,153 @@ describe('upOpt components', () => {
       deduplicate(obj, valuesLevel),
       substatNode.subDistr
     )
+  })
+
+  describe('deduplicate groups exactly what cmpNodes calls equal', () => {
+    // `deduplicate` merges by hashing an internal node key; `cmpNodes` is the independent
+    // specification of that equivalence. A key that under-distinguishes silently merges
+    // unrelated nodes and corrupts probabilities, so check the two agree across all three
+    // node types on real trees rather than trusting the key by inspection.
+    const objLinear = makeObjective([nodeLinear], [4000])
+    const noBuild = {
+      flower: undefined,
+      plume: undefined,
+      sands: undefined,
+      goblet: undefined,
+      circlet: undefined,
+    }
+    const fresh = () =>
+      freshArtifact(
+        { sets: ['GladiatorsFinale'], p3sub: 0.2, rarity: 5 },
+        noBuild
+      )
+    // Each builds a fresh tree: `deduplicate` mutates its input, so fixtures can't be shared.
+    const levels: Record<string, () => { p: number; n: MarkovNode }[]> = {
+      substat: fresh,
+      rolls: () => expandNodes(deduplicate(objLinear, fresh())),
+      // Trimmed to keep the O(n log n) cmpNodes oracle quick.
+      values: () =>
+        expandNodes(
+          deduplicate(
+            objLinear,
+            expandNodes(deduplicate(objLinear, fresh()))
+          ).slice(0, 300)
+        ),
+    }
+
+    /** Number of distinct nodes under `cmpNodes`, via its own sort. */
+    function distinctByCmp(nodes: { p: number; n: MarkovNode }[]) {
+      const sorted = [...nodes].sort((a, b) => -cmpNodes(a.n, b.n))
+      return sorted.filter(
+        (cur, i) => i === 0 || cmpNodes(sorted[i - 1].n, cur.n) !== 0
+      ).length
+    }
+
+    // The tree fixtures above contain no reshape nodes and no zero-probability nodes, so
+    // they can't see a key that ignores `reshape` or a merge loop that forgets to drop
+    // p <= 0. Pin down each distinguishing field directly instead.
+    test('nodes differing in exactly one field are not merged', () => {
+      const ref = {
+        base: { atk: 100 } as DynStat,
+        rarity: 5 as const,
+        subkeys: [
+          { key: 'atk' as SubstatKey, baseRolls: 1 },
+          { key: 'atk_' as SubstatKey, baseRolls: 1 },
+        ],
+        rollsLeft: 5,
+      }
+      const reshape = { affixes: ['atk'] as SubstatKey[], mintotal: 2 }
+      const variants: Record<string, () => MarkovNode> = {
+        rollsLeft: () => makeSubstatNode({ ...ref, rollsLeft: 4 }),
+        rarity: () => makeSubstatNode({ ...ref, rarity: 4 }),
+        'reshape present': () => makeSubstatNode({ ...ref, reshape }),
+        'reshape affixes': () =>
+          makeSubstatNode({
+            ...ref,
+            reshape: { ...reshape, affixes: ['atk_'] },
+          }),
+        'reshape mintotal': () =>
+          makeSubstatNode({ ...ref, reshape: { ...reshape, mintotal: 1 } }),
+        'subkeys length': () =>
+          makeSubstatNode({ ...ref, subkeys: ref.subkeys.slice(0, 1) }),
+        'subkeys baseRolls': () =>
+          makeSubstatNode({
+            ...ref,
+            subkeys: [{ key: 'atk', baseRolls: 2 }, ref.subkeys[1]],
+          }),
+        'base value': () => makeSubstatNode({ ...ref, base: { atk: 101 } }),
+        'base extra key': () =>
+          makeSubstatNode({ ...ref, base: { atk: 100, def: 1 } }),
+      }
+
+      // Control: two builds of the same node really do merge.
+      expect(
+        deduplicate(objLinear, [
+          { p: 0.5, n: makeSubstatNode(ref) },
+          { p: 0.5, n: makeSubstatNode(ref) },
+        ])
+      ).toHaveLength(1)
+
+      Object.entries(variants).forEach(([field, makeVariant]) => {
+        const pair = [
+          { p: 0.5, n: makeSubstatNode(ref) },
+          { p: 0.5, n: makeVariant() },
+        ]
+        // The oracle must agree that these are distinct, or the test proves nothing.
+        expect(`${field}: ${cmpNodes(pair[0].n, pair[1].n)}`).not.toBe(
+          `${field}: 0`
+        )
+        expect(`${field}: ${deduplicate(objLinear, pair).length}`).toBe(
+          `${field}: 2`
+        )
+      })
+    })
+
+    test('drops nodes with zero or negative probability', () => {
+      const mk = (atk: number) =>
+        makeSubstatNode({
+          base: { atk },
+          rarity: 5,
+          subkeys: [{ key: 'atk', baseRolls: 1 }],
+          rollsLeft: 5,
+        })
+      const out = deduplicate(objLinear, [
+        { p: 0.5, n: mk(100) },
+        { p: 0, n: mk(200) },
+        { p: -1, n: mk(300) },
+        { p: 0.5, n: mk(400) },
+      ])
+      const bases = out.map(({ n }) => (n as SubstatLevelNode).base['atk'])
+      expect(bases).toEqual([100, 400])
+    })
+
+    Object.entries(levels).forEach(([level, makeInput]) => {
+      test(`${level} level`, () => {
+        const input = makeInput()
+        // Merging is `prev.p += cur.p` on the input's own node objects, so total the input
+        // before `deduplicate` mutates it.
+        const before = input.reduce((a, { p }) => (p > 0 ? a + p : a), 0)
+        const output = deduplicate(objLinear, input)
+        expect(output.length).toBeGreaterThan(0)
+
+        // No wrong merges: one output node per cmpNodes-equivalence class of the input.
+        expect(output.length).toBe(
+          distinctByCmp(input.filter(({ p }) => p > 0))
+        )
+        // No missed merges: no two output nodes are cmpNodes-equal.
+        expect(distinctByCmp(output)).toBe(output.length)
+        // Nothing gained or lost.
+        expect(output.reduce((a, { p }) => a + p, 0)).toBeCloseTo(before, 10)
+
+        // Idempotent, down to object identity and order.
+        const again = deduplicate(objLinear, [...output])
+        expect(again.length).toBe(output.length)
+        again.forEach(({ p, n }, i) => {
+          expect(n).toBe(output[i].n)
+          expect(p).toBe(output[i].p)
+        })
+      })
+    })
   })
 
   test('substatProbs 4th sub', () => {
@@ -756,28 +948,15 @@ describe('upOpt makeSubstatNode(s)', () => {
         },
       ]
 
-      // Merged probabilities are summed pre-scaling in the cache but post-scaling in the
-      // reference pipeline, so p can differ by float rounding; everything else is exact.
-      function expectNodesClose(
-        got: { p: number; n: SubstatLevelNode }[],
-        want: { p: number; n: MarkovNode }[]
-      ) {
-        expect(got.length).toBe(want.length)
-        got.forEach(({ p, n }, i) => {
-          expect(p).toBeCloseTo(want[i].p, 12)
-          expect(n).toEqual(want[i].n)
-        })
-      }
-
       test('simplified cache matches dedup(elixirDefinition)', () => {
         const cache: ElixirSimplifiedCache = new Map()
         queries.forEach((q) => {
           const expected = deduplicate(obj, elixirDefinition(q, emptyBuild))
-          expectNodesClose(
+          expectSameDistribution(
             elixirDefinitionMemoSimplified(q, emptyBuild, obj, cache),
             expected
           )
-          expectNodesClose(
+          expectSameDistribution(
             elixirDefinitionMemoSimplified(q, emptyBuild, obj, cache),
             expected
           )
@@ -791,7 +970,7 @@ describe('upOpt makeSubstatNode(s)', () => {
           obj,
           elixirDefinitionMemoSimplified(q, emptyBuild, obj, cache)
         )
-        expectNodesClose(
+        expectSameDistribution(
           elixirDefinitionMemoSimplified(q, emptyBuild, obj, cache),
           deduplicate(obj, elixirDefinition(q, emptyBuild))
         )
