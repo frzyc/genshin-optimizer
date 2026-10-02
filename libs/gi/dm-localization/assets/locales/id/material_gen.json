@@ -266,8 +266,11 @@
   "FervorCoupon": {
     "name": "Fervor Coupon"
   },
-  "PrimeIceCount": {
+  "PrimeIceResource": {
     "name": "Prime Ice Count"
+  },
+  "VictoryEmblem": {
+    "name": "Victory Emblem"
   },
   "Primogem": {
     "name": "Primogem"
@@ -335,6 +338,9 @@
   "PrismaticCrystal": {
     "name": "Prismatic Crystal"
   },
+  "CelebrationChronalNexus": {
+    "name": "Celebration Chronal Nexus"
+  },
   "PyroSigil": {
     "name": "Pyro Sigil"
   },
@@ -391,6 +397,12 @@
   },
   "CollectiveOfPlentyReputationEXP": {
     "name": "EXP Reputasi \"Berlimpah Jaya\""
+  },
+  "PredictionScore": {
+    "name": "Skor Prediksi"
+  },
+  "FestiveCheer": {
+    "name": "Festive Cheer"
   },
   "ExpeditionInsights": {
     "name": "Expedition Insights"
@@ -1187,6 +1199,12 @@
   "Sandrone": {
     "name": "Sandrone"
   },
+  "Vodyanitsa": {
+    "name": "Vodyanitsa"
+  },
+  "Vesna": {
+    "name": "Vesna"
+  },
   "Alyosha": {
     "name": "Alyosha"
   },
@@ -1288,6 +1306,12 @@
   },
   "SandronesStellaFortuna": {
     "name": "Sandrone's Stella Fortuna"
+  },
+  "VodyanitsasStellaFortuna": {
+    "name": "Vodyanitsa's Stella Fortuna"
+  },
+  "VesnasStellaFortuna": {
+    "name": "Vesna's Stella Fortuna"
   },
   "AlyoshasStellaFortuna": {
     "name": "Alyosha's Stella Fortuna"
@@ -9410,6 +9434,15 @@
   "RecipeSweetScoops": {
     "name": "Resep: Sweet Scoops"
   },
+  "RecipeRoyalGrilledFish": {
+    "name": "Resep: Royal Grilled Fish"
+  },
+  "RecipeCelestialTeaCrisp": {
+    "name": "Resep: Celestial Tea Crisp"
+  },
+  "RecipeMors": {
+    "name": "Resep: Mors"
+  },
   "CraftedItems": {
     "name": "Hasil Craft"
   },
@@ -10300,6 +10333,9 @@
   },
   "SeveredTailOfTheSkyRoamer": {
     "name": "Severed Tail of the Sky-Roamer"
+  },
+  "VagabondsCrackedArmor": {
+    "name": "Vagabond's Cracked Armor"
   },
   "TileOfDecarabiansTower": {
     "name": "Tile of Decarabian's Tower"
@@ -14243,8 +14279,8 @@
   "IzmaylovGuardsJournal": {
     "name": "Jurnal Penjaga Izmaylov"
   },
-  "YettobeCompletedNewHighTableMelody": {
-    "name": "\"Melodi High Table\" yang Belum Selesai"
+  "YettobeCompletedNewHighTableRules": {
+    "name": "\"Hukum Baru High Table\" yang Belum Selesai"
   },
   "SandronesTeaPartyInvitationLetter": {
     "name": "Surat Undangan Pesta Teh Sandrone"
@@ -14297,6 +14333,12 @@
   "IncompleteDataBlock": {
     "name": "Blok Data Tak Lengkap"
   },
+  "EnvoysMedal": {
+    "name": "Lencana Duta Khusus"
+  },
+  "Gobblefin": {
+    "name": "Gobblefin"
+  },
   "MoongazersEngravingI": {
     "name": "Ukiran Penatap Bulan (I)"
   },
@@ -14308,6 +14350,9 @@
   },
   "SnezhnayaVestnik": {
     "name": "Snezhnaya Vestnik"
+  },
+  "LetterFromXiangling": {
+    "name": "Surat dari Xiangling"
   },
   "ChampionsTrophyOfTheFirstAdventurersTournament": {
     "name": "Trofi Juara \"Gebyar Kompetisi Petualang\" Perdana"
@@ -14336,14 +14381,14 @@
   "ScarfWarmRed": {
     "name": "Syal: Merah Hangat"
   },
-  "ScarfDreamStar": {
-    "name": "Syal: Bintang Mimpi"
+  "ScarfNoveltyBrace": {
+    "name": "Syal: Penjepit Unik"
   },
   "ScarfPlaid": {
     "name": "Syal: Kotak-Kotak"
   },
-  "ScarfNoveltyBrace": {
-    "name": "Syal: Penjepit Unik"
+  "ScarfDreamStar": {
+    "name": "Syal: Bintang Mimpi"
   },
   "StalkerHood": {
     "name": "Tudung Penguntit"
@@ -14372,6 +14417,9 @@
   "StardustTrailRadiantGlow": {
     "name": "Stardust Trail: Radiant Glow"
   },
+  "VodyanitsasSpecialNotebook": {
+    "name": "Buku Catatan Spesial Vodyanitsa"
+  },
   "RemnantIncenseGuideSnowgrave": {
     "name": "Remnant Incense Guide - Snowgrave"
   },
@@ -14381,8 +14429,11 @@
   "RemnantIncenseGuideEverfrozenEarth": {
     "name": "Remnant Incense Guide - Everfrozen Earth"
   },
+  "HappyQuackyPhonographDucky": {
+    "name": "Gramofon Bebek Kwek-Kwek"
+  },
   "SpiritSeekerPreviewCommemorativePhoto": {
-    "name": "Pratinjau Foto Peringatan \"Spirit Seeker\""
+    "name": "Foto Peringatan Pratayang \"Spirit Seeker\""
   },
   "BranchesOfNastyasHead": {
     "name": "Dedaunan di Kepala Nastya"
@@ -14399,11 +14450,17 @@
   "ExitDoorLeverForACertainBasementRoom": {
     "name": "Tuas Pintu Keluar Suatu Ruangan Bawah Tanah"
   },
+  "DruzhnaSpecialDispatchOrder": {
+    "name": "Surat Perintah Penugasan Khusus Druzhna"
+  },
   "KresnikEnergy": {
     "name": "Kresnik Energy"
   },
   "PeculiarReagentSample": {
     "name": "Sampel Reagen Aneh"
+  },
+  "TheSigilGivenByLanYan": {
+    "name": "Sigil Pemberian Lan Yan"
   },
   "StardustTrailRadiantGlowSigil": {
     "name": "Stardust Trail: Radiant Glow Sigil"
@@ -14432,6 +14489,9 @@
   "SpecialIceCreamContainer": {
     "name": "Special Ice Cream Container"
   },
+  "VesnasDivineSenseCompass": {
+    "name": "\"Kompas Indra Dewa\" Vesna"
+  },
   "PictureOfNastyaWithHerMom": {
     "name": "Foto Nastya bersama Ibunya"
   },
@@ -14455,6 +14515,24 @@
   },
   "DocumentWithYellowedPages": {
     "name": "Dokumen dengan Halaman Menguning"
+  },
+  "RequestToExpandVIPRoom": {
+    "name": "Surat Permohonan Perluasan Ruang VIP"
+  },
+  "HighLevelAccessCard": {
+    "name": "Kartu Akses Tingkat Tinggi"
+  },
+  "ConstructAppearanceFlutterwing": {
+    "name": "Tampilan Construct: Sayap Kupu"
+  },
+  "VodyanitsasSpecialHandwrittenTicket": {
+    "name": "Tiket Tulis Tangan Spesial dari Vodyanitsa"
+  },
+  "VodyanitsasGift": {
+    "name": "Vodyanitsa's Gift"
+  },
+  "OkurovTownSewerSystemDesignPlan": {
+    "name": "Rancangan Sistem Saluran Pembuangan Kota Okurov"
   },
   "TearsAmongTheStars": {
     "name": "Air Mata di Lautan Bintang"
@@ -14600,8 +14678,8 @@
   "FlockingweedSeed": {
     "name": "Flockingweed Seed"
   },
-  "GoldenFernSeed": {
-    "name": "Golden Fern Seed"
+  "GoldenFernSpore": {
+    "name": "Golden Fern Spore"
   },
   "RedBeetSeed": {
     "name": "Red Beet Seed"
@@ -14867,6 +14945,45 @@
   "RegularIceCream": {
     "name": "Regular Ice Cream"
   },
+  "SuspiciousRoyalGrilledFish": {
+    "name": "Suspicious Royal Grilled Fish"
+  },
+  "RoyalGrilledFish": {
+    "name": "Royal Grilled Fish"
+  },
+  "DeliciousRoyalGrilledFish": {
+    "name": "Delicious Royal Grilled Fish"
+  },
+  "SuspiciousCelestialTeaCrisp": {
+    "name": "Suspicious Celestial Tea Crisp"
+  },
+  "CelestialTeaCrisp": {
+    "name": "Celestial Tea Crisp"
+  },
+  "DeliciousCelestialTeaCrisp": {
+    "name": "Delicious Celestial Tea Crisp"
+  },
+  "SuspiciousMors": {
+    "name": "Suspicious Mors"
+  },
+  "Mors": {
+    "name": "Mors"
+  },
+  "DeliciousMors": {
+    "name": "Delicious Mors"
+  },
+  "IridescentAria": {
+    "name": "Iridescent Aria"
+  },
+  "HoarfrostSoup": {
+    "name": "Hoarfrost Soup"
+  },
+  "VesnaThemedIceCream": {
+    "name": "Vesna-Themed Ice Cream"
+  },
+  "VodyanitsaThemedIceCream": {
+    "name": "Vodyanitsa-Themed Ice Cream"
+  },
   "WingsOfFirstFlight": {
     "name": "Wings of First Flight"
   },
@@ -14920,6 +15037,9 @@
   },
   "WingsOfLeisurelyMoments": {
     "name": "Wings of Leisurely Moments"
+  },
+  "WingsOfStarryWinterfrost": {
+    "name": "Wings of Starry Winterfrost"
   },
   "RadiantSpincrystal1": {
     "name": "Radiant Spincrystal 1"
@@ -15575,6 +15695,18 @@
   "RadiantSpincrystal200": {
     "name": "Radiant Spincrystal 200"
   },
+  "RadiantSpincrystalALetterFromTheWindI": {
+    "name": "Radiant Spincrystal \"A Letter from the Wind: I\""
+  },
+  "RadiantSpincrystalALetterFromTheWindII": {
+    "name": "Radiant Spincrystal \"A Letter from the Wind: II\""
+  },
+  "RadiantSpincrystalALetterFromTheWindIII": {
+    "name": "Radiant Spincrystal \"A Letter from the Wind: III\""
+  },
+  "RadiantSpincrystalALetterFromTheWindIV": {
+    "name": "Radiant Spincrystal \"A Letter from the Wind: IV\""
+  },
   "LanternFiber": {
     "name": "Lantern Fiber"
   },
@@ -15682,6 +15814,9 @@
   },
   "RefinedHeart": {
     "name": "Refined Heart"
+  },
+  "TeaScentedTassel": {
+    "name": "Tea-Scented Tassel"
   },
   "FalconsDance": {
     "name": "Falcon's Dance"
@@ -16706,6 +16841,18 @@
   "TravelNotesFrostfarer": {
     "name": "Catatan Perjalanan: Pengelanaan Beku"
   },
+  "VesnaRevelry": {
+    "name": "Vesna: Revelry"
+  },
+  "VodyanitsaWhirlpool": {
+    "name": "Vodyanitsa: Whirlpool"
+  },
+  "SnezhnayaFrostfall": {
+    "name": "Snezhnaya: Buih Es"
+  },
+  "TravelNotesMoontrace": {
+    "name": "Catatan Perjalanan: Menyusuri Rembulan"
+  },
   "EchoDandelionKnight": {
     "name": "Echo: Dandelion Knight"
   },
@@ -17155,6 +17302,15 @@
   },
   "CryoTreasureCompass": {
     "name": "Cryo Treasure Compass"
+  },
+  "ConductorOfTheYaho": {
+    "name": "Conductor of the \"Ya-ho\""
+  },
+  "AMiniTrolleyProblem": {
+    "name": "A Mini Trolley Problem"
+  },
+  "PrimaDonnasSong": {
+    "name": "Prima Donna's Song"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Panduan: Anemoculus Resonance Stone"
@@ -17870,6 +18026,27 @@
   "KeepingWatchByLanternLight": {
     "name": "Lentera Penjaga Cahaya"
   },
+  "ReadyAndRelaxed": {
+    "name": "Pose Bersiap yang Santai"
+  },
+  "ChoreTime": {
+    "name": "Waktunya Mengurus Rumah"
+  },
+  "SavoringTheMeal": {
+    "name": "Menikmati Kuliner"
+  },
+  "ValiantBattleStance": {
+    "name": "Pose Gagah"
+  },
+  "ACelebratoryToast": {
+    "name": "Sulang Perayaan"
+  },
+  "PleaseDigIn": {
+    "name": "Silakan Dimakan"
+  },
+  "EagerlyWaiting": {
+    "name": "Menunggu dengan Penuh Harap"
+  },
   "FantasticalMarvel": {
     "name": "Fantastical Marvel"
   },
@@ -18515,6 +18692,21 @@
   "TemporalWindsEulogy": {
     "name": "Temporal Wind's Eulogy"
   },
+  "RadianceOverBlossomsAndPeaks": {
+    "name": "Radiance Over Blossoms and Peaks"
+  },
+  "SurgeOfLightning": {
+    "name": "Surge of Lightning"
+  },
+  "SevenfoldTransmutation": {
+    "name": "Sevenfold Transmutation"
+  },
+  "BookOfBlindingLight": {
+    "name": "Book of Blinding Light"
+  },
+  "ElkWithFangedAntlers": {
+    "name": "Elk With Fanged Antlers"
+  },
   "MagicGuide": {
     "name": "Magic Guide"
   },
@@ -18863,6 +19055,9 @@
   "GladiatorsFinale": {
     "name": "Gladiator's Finale"
   },
+  "RecollectionOfDaysPast": {
+    "name": "Recollection of Days Past"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf"
   },
@@ -19102,6 +19297,9 @@
   },
   "ElementalTransfigurationThunderbloomBlessing": {
     "name": "Elemental Transfiguration: Thunderbloom Blessing"
+  },
+  "ElementalTransfigurationOverloadBlessing": {
+    "name": "Elemental Transfiguration: Overload Blessing"
   },
   "ElementalResonanceWovenIce": {
     "name": "Resonansi Elemental: Woven Ice"
@@ -19373,6 +19571,9 @@
   "FeastingInASharedToast": {
     "name": "Feasting in a Shared Toast"
   },
+  "ReturnOfTheThreeMoons": {
+    "name": "Return of the Three Moons"
+  },
   "Origin": {
     "name": "Origin"
   },
@@ -19636,6 +19837,9 @@
   },
   "UnbreakableDurandarte": {
     "name": "Unbreakable: Durandarte"
+  },
+  "ExaiphanesBlade": {
+    "name": "Exaiphanes Blade"
   },
   "AdventurerCamp": {
     "name": "Kemah Petualang"
@@ -20242,6 +20446,12 @@
   },
   "ChirpingAboutAsBirdsDo": {
     "name": "Saling Berkicau Seperti Burung-Burung"
+  },
+  "MoonlitSplendorAlongEveryWay": {
+    "name": "Keindahan Cahaya Bulan di Setiap Jalan"
+  },
+  "BrightProspectsBrighterProfits": {
+    "name": "Prospek Cerah Cuan Berlimpah"
   },
   "EfflorescentIllumination": {
     "name": "Iluminasi Berbunga"
@@ -21296,8 +21506,8 @@
   "TeaTimeEtiquette": {
     "name": "Etika Minum Teh"
   },
-  "BalancedBoughs": {
-    "name": "Ranting Seimbang"
+  "FaintSwayingGold": {
+    "name": "Kuning Samar yang Gemulai"
   },
   "SteadyCompanionThroughDreams": {
     "name": "Mimpi Selalu Menyertai"
@@ -21466,6 +21676,9 @@
   },
   "TheLoveOneSeeks": {
     "name": "Cinta Siapakah yang Dicari"
+  },
+  "PureIntention": {
+    "name": "Niat Murni"
   },
   "StrawHut": {
     "name": "Pondok Jerami"
@@ -21709,6 +21922,15 @@
   },
   "NashaStallUnendingSearch": {
     "name": "Kios Nasha: \"Pencarian Tanpa Henti\""
+  },
+  "MarketStallFreshFlavors": {
+    "name": "Kios Pasar: Cita Rasa Segar"
+  },
+  "MarketStallInAHurry": {
+    "name": "Kios Pasar: Menghemat Waktu"
+  },
+  "MarketStallTimeToUnwind": {
+    "name": "Kios Pasar: Waktunya Bersantai"
   },
   "HilichurlOutpostHut": {
     "name": "Pondok Pos Hilichurl"
@@ -24034,5 +24256,8 @@
   },
   "DancingBeneathSilverWhiteWings": {
     "name": "Menari di Bawah Sayap Putih Perak"
+  },
+  "WhereFishSwimAndWatersSing": {
+    "name": "Tempat Ikan Berenang dan Air Bernyanyi"
   }
 }

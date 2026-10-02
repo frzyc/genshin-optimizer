@@ -1,0 +1,176 @@
+{
+  "name": "Vodyanitsa",
+  "title": "U Ca Vương Vấn",
+  "description": "Nữ giọng cao hàng đầu của Đoàn Kịch Korolevskiy, một thủy yêu đơn độc.",
+  "constellationName": "Cung Kim Kỳ",
+  "auto": {
+    "name": "Ngân Nga Sắc Nước",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Ngân nga khúc ca thủy yêu cổ xưa, thực hiện tối đa 4 lần tấn công, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định để ném bóng nước về phía trước, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro>."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro> khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát thương lần 1",
+      "1": "Sát thương lần 2",
+      "2": "Sát thương lần 3",
+      "3": "Sát thương lần 4",
+      "4": "Sát thương Trọng Kích",
+      "5": "Thể lực Trọng Kích tiêu hao",
+      "6": "Sát thương khi đáp",
+      "7": "Sát thương khi đáp từ độ cao thấp/cao",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Lời Hát Kể - Bình Minh Vang Vọng",
+    "description": {
+      "0": "Thể hiện dáng vẻ vốn có của thủy yêu, gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro>, đồng thời nhận hiệu quả <strong>Khúc Ca Xa Xưa</strong>: Trong thời gian duy trì, Vodyanitsa sẽ triệu hồi <strong>Tù Và Gọi Xuân</strong> cổ xưa, di chuyển nhanh đến gần một kẻ địch theo chu kỳ và thực hiện tấn công, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro>.",
+      "1": "Hai loại tấn công kể trên khi đánh trúng sẽ giảm Kháng Nguyên Tố <hydro>Thủy</hydro> và <cryo>Băng</cryo> của kẻ địch. Ngoài ra, trong thời gian duy trì hiệu quả <strong>Khúc Ca Xa Xưa</strong>, sẽ tăng khả năng Kháng Gián Đoạn của nhân vật ra trận hiện tại trong đội bản thân, đồng thời hồi phục HP theo chu kỳ cho nhân vật đó, lượng hồi phục dựa trên Giới Hạn HP của Vodyanitsa."
+    },
+    "skillParams": {
+      "0": "Sát thương kỹ năng",
+      "1": "Thời gian duy trì",
+      "2": "Giãn cách tấn công Tù Và Gọi Xuân",
+      "3": "Sát thương Tù Và Gọi Xuân",
+      "4": "Lượng trị liệu Khúc Ca Xa Xưa",
+      "5": "Giãn cách trị liệu Khúc Ca Xa Xưa",
+      "6": "Giảm Kháng Nguyên Tố Thủy/Băng",
+      "7": "Thời gian Giảm Kháng",
+      "8": "CD",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Khúc Hát Kết - Cùng Người Chìm Đắm",
+    "description": {
+      "0": "Cất lên khúc ca thủy yêu dẫn dụ người nghe đắm chìm, gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro>.",
+      "1": "Khi trong trạng thái <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Khúc Ca Xa Xưa</tooltip></strong>, sát thương gây ra sẽ còn tăng thêm."
+    },
+    "skillParams": {
+      "0": "Sát thương kỹ năng",
+      "1": "Khúc Ca Xa Xưa tăng sát thương",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Người Dệt Thơ Cuối Cùng",
+    "description": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố <strong>Lời Hát Kể - Bình Minh Vang Vọng</strong>, sẽ khiến Cụm Gió Tinh Huy trong trận chuyển hóa thành Cụm Gió Phiêu Du, đồng thời nhân vật trong đội ở gần khi kích hoạt phản ứng Tinh-Khuếch Tán trong thời gian duy trì hiệu quả <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Khúc Ca Xa Xưa</tooltip></strong>, sẽ tạo ra Cụm Gió Phiêu Du thay cho Cụm Gió Tinh Huy.",
+      "1": "Khi tạo ra hoặc kích nổ Cụm Gió Phiêu Du, sẽ còn khiến kẻ địch ở gần giảm 35% <anemo>Kháng Nguyên Tố Phong</anemo> trong 6s.",
+      "2": "Ngoài ra, trong thời gian duy trì <strong>Khúc Ca Xa Xưa</strong>, nhân vật trong đội ở gần khi vào trạng thái <strong>Tỏa Sáng: Tinh-Khuếch Tán</strong>, thời gian duy trì <strong>Tỏa Sáng: Tinh-Khuếch Tán</strong> sẽ kéo dài 4s."
+    }
+  },
+  "passive2": {
+    "name": "Bi Ca Mười Hai Dây",
+    "description": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố <strong>Lời Hát Kể - Bình Minh Vang Vọng</strong>, Vodyanitsa sẽ còn nhận được 25 tầng <tooltip ns=tooltips_gen baseKey18=11400001 values=[]><strong>Hát Dẫn</strong></tooltip> và 10 tầng <tooltip ns=tooltips_gen baseKey18=11400002 values=[]><strong>Hợp Xướng</strong></tooltip>.",
+      "1": "Hai hiệu quả nêu trên lần lượt duy trì 30s, đồng thời khi thi triển Kỹ Năng Nguyên Tố sẽ làm mới số tầng."
+    }
+  },
+  "passive3": {
+    "name": "Dư Âm Trên Hồ Băng",
+    "description": {
+      "0": "Khi không trong trạng thái chiến đấu, nhấn giữ Kỹ Năng Nguyên Tố, Vodyanitsa sẽ thể hiện diện mạo thật của thủy yêu, tiêu hao Thể Lực để bơi trong tối đa 10s. Vì là thủy yêu, nên đương nhiên cũng có thể di chuyển trên mặt nước. Khi thi triển lại Kỹ Năng Nguyên Tố, kết thúc thời gian duy trì hoặc tiêu hao hết Thể Lực, Vodyanitsa sẽ ngừng duy trì dáng vẻ thủy yêu.",
+      "1": "Ngoài ra, tốc độ bơi của Vodyanitsa sẽ tăng lên, nhưng Thể Lực cũng sẽ tiêu hao nhanh hơn."
+    }
+  },
+  "passive": {
+    "name": "Khúc Thủy Yêu Lôi Cuốn",
+    "description": {
+      "0": "Là nữ giọng cao hàng đầu của Đoàn Kịch Korolevskiy, khi Vodyanitsa diễn tấu nhạc cụ, cô ấy sẽ tự mình cất tiếng hát."
+    }
+  },
+  "constellation1": {
+    "name": "Bọt Nước Dưới Ánh Đèn",
+    "description": {
+      "0": "Khi Vodyanitsa kích hoạt hiệu quả trị liệu của <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Khúc Ca Xa Xưa</tooltip></strong>, sẽ tăng Tấn Công cho tất cả nhân vật trong đội ở gần, mức tăng tương đương 0.8% Giới Hạn HP của Vodyanitsa, duy trì 5s."
+    }
+  },
+  "constellation2": {
+    "name": "Dư Âm Xuyên Gió Tuyết",
+    "description": {
+      "0": "Khi <strong>Tù Và Gọi Xuân</strong> trong Kỹ Năng Nguyên Tố <strong>Lời Hát Kể - Bình Minh Vang Vọng</strong> tấn công kẻ địch, Vodyanitsa sẽ nhận hiệu quả \"Âm Đôi Đen Và Trắng\", giúp nhân vật ra trận hiện tại trong đội tăng 50% Sát Thương Bạo Kích cho Sát Thương Nguyên Tố <hydro>Thủy</hydro> và <cryo>Băng</cryo>, duy trì 5s.",
+      "1": "Nếu trong trận có Cụm Gió Phiêu Du, hoặc trong vòng 5s sau khi Cụm Gió Phiêu Du phát nổ, sẽ đổi thành giúp nhân vật ra trận hiện tại trong đội tăng 60% Sát Thương Bạo Kích cho sát thương phản ứng Tinh-Khuếch Tán, duy trì 5s.",
+      "2": "Ngoài ra, Kỹ Năng Nguyên Tố <strong>Lời Hát Kể - Bình Minh Vang Vọng</strong> sẽ được cường hóa: Thời gian duy trì hiệu quả <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Khúc Ca Xa Xưa</tooltip></strong> kéo dài 9s."
+    }
+  },
+  "constellation3": {
+    "name": "Tiếng Vang Vọng Sớm Xuân",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Lời Hát Kể - Bình Minh Vang Vọng</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Lời Thì Thầm Sóng Biếc",
+    "description": {
+      "0": "Khi Vodyanitsa kích hoạt hiệu quả trị liệu của <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Khúc Ca Xa Xưa</tooltip></strong>, sẽ dựa trên HP của nhân vật được trị liệu để kích hoạt hiệu quả khác nhau. Nếu HP của nhân vật được trị liệu:",
+      "1": [
+        "Dưới 40%: Lượng trị liệu lần này tăng 50%.",
+        "Không dưới 40%: Giới Hạn HP của Vodyanitsa tăng 20% trong 6s. Hiệu quả này tối đa cộng dồn 3 tầng, mỗi tầng tính giờ riêng."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Cùng Chìm Xuống Hồ Sâu",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=burst>Khúc Hát Kết - Cùng Người Chìm Đắm</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Khúc Hoan Ca Bất Tận",
+    "description": {
+      "0": "Hiệu quả Cung Mệnh <strong>Dư Âm Xuyên Gió Tuyết</strong> được cường hóa: \"Âm Đôi Đen Và Trắng\" đổi thành có hiệu lực với tất cả nhân vật trong đội ở gần.",
+      "1": "Ngoài ra, trong thời gian duy trì hiệu quả <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Khúc Ca Xa Xưa</tooltip></strong>, sát thương phản ứng Tinh-Khuếch Tán gây ra bởi nhân vật trong đội ở gần sẽ <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Thăng Tiến</strong></tooltip> 25%, Sát Thương Nguyên Tố <hydro>Thủy</hydro> và <cryo>Băng</cryo> gây ra tăng 60%."
+    }
+  }
+}

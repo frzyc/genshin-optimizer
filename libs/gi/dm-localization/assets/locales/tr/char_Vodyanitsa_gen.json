@@ -1,0 +1,176 @@
+{
+  "name": "Vodyanitsa",
+  "title": "Derinliklerde Yankılanan Ezgi",
+  "description": "Korolevskiy Topluluğunun primadonnası ve soyundan ayrı düşmüş bir Su İfriti.",
+  "constellationName": "Küçük Altın Balık",
+  "auto": {
+    "name": "Su Aryası",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Su İfritlerinin kadim bir şarkısını söyleyerek düşmana <hydro>Su Hasarı</hydro> veren en fazla 4 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak ileri doğru bir su topu fırlatır ve <hydro>Su Hasarı</hydro> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken yere doğru dalışa geçer ve yoluna çıkan tüm düşmanlara hasar verir. Yere vurduğunda <hydro>Su Alan Hasarı</hydro> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Hasarı",
+      "5": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Resitatif: Gürleyen Şafak",
+    "description": {
+      "0": "Gerçek Su İfriti formuna bürünerek <hydro>Su Alan Hasarı</hydro> verir ve <strong>Geçmiş Çağların Şarkısı</strong> etkisini kazanır: Bu etki aktifken Vodyanitsa kadim <strong>Baharı Müjdeleyen Çalgıyı</strong> çağırır. Çalgı, belirli aralıklarla bir düşmana hızlıca yaklaşıp saldırır ve <hydro>Su Hasarı</hydro> verir.",
+      "1": "Yukarıdaki iki tür saldırı, isabet alan düşmanların <hydro>Su Direnci</hydro> ile <cryo>Buz Direncini</cryo> azaltır. Ayrıca <strong>Geçmiş Çağların Şarkısı</strong> etkisi aktifken grubun aktif karakteri müdahaleye karşı direnç kazanır ve belirli aralıklarla Vodyanitsa'nın Maks. Canına bağlı olarak Can yeniler."
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Süre",
+      "2": "Baharı Müjdeleyen Çalgı Saldırı Aralığı",
+      "3": "Baharı Müjdeleyen Çalgı Hasarı",
+      "4": "Geçmiş Çağların Şarkısı İyileştirmesi",
+      "5": "Geçmiş Çağların Şarkısı İyileştirme Aralığı",
+      "6": "Su/Buz Direnci Azaltma",
+      "7": "Direnç Azaltma Süresi",
+      "8": "Beceri Bekleme Süresi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Koda: Batacağız Birlikte",
+    "description": {
+      "0": "Dinleyenleri sonlarına götüren bir Su İfriti şarkısı söyleyerek düşmanlara <hydro>Su Alan Hasarı</hydro> verir.",
+      "1": "<strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Geçmiş Çağların Şarkısı</tooltip></strong> durumundayken verilen Hasar daha da artar."
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Geçmiş Çağların Şarkısı Hasar Bonusu",
+      "2": "BS",
+      "3": "Enerji Maliyeti",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Son Djeguako Şarkıcı",
+    "description": {
+      "0": "<strong>Resitatif: Gürleyen Şafak</strong> Element Becerisi kullanıldığında alanda mevcut olan tüm Yıldız Burgaçları, Başıboş Burgaca dönüşür. Ayrıca <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Geçmiş Çağların Şarkısı</tooltip></strong> etkisi aktifken yakındaki grup üyeleri Yıldız Girdabı tepkimeleri tetiklerse Yıldız Burgacı yerine Başıboş Burgaç oluşur.",
+      "1": "Bir Başıboş Burgaç oluşturmak veya patlatmak, 6 saniyeliğine yakındaki düşmanların <anemo>Rüzgar Direncini</anemo> %35 azaltır.",
+      "2": "Ayrıca <strong>Geçmiş Çağların Şarkısı</strong> etkinken <strong>Işıltı: Yıldız Girdabı</strong> durumuna giren yakındaki grup üyelerinin <strong>Işıltı: Yıldız Girdabı</strong> durumu 4sn uzar."
+    }
+  },
+  "passive2": {
+    "name": "Fandyr Ağıdı",
+    "description": {
+      "0": "<strong>Resitatif: Gürleyen Şafak</strong> Element Becerisi kullanıldığında Vodyanitsa ayrıca 25 kademe <tooltip ns=tooltips_gen baseKey18=11400001 values=[]><strong>Ana Vokal</strong></tooltip> ve 10 kademe <tooltip ns=tooltips_gen baseKey18=11400002 values=[]><strong>Koro</strong></tooltip> kazanır.",
+      "1": "Bu iki etki de 30sn sürer ve Element Becerisi kullanıldığında kademe sayısı yenilenir."
+    }
+  },
+  "passive3": {
+    "name": "Donuk Gölün Üzerinde Yankılar",
+    "description": {
+      "0": "Savaşta değilken Element Becerisine basılı tutulduğunda Vodyanitsa gerçek Su İfriti suretine bürünür ve en fazla 10 saniye boyunca Dayanıklılık tüketerek yüzer. Ayrıca Su İfriti olduğu için su yüzeyinde hareket edebilir. Element Becerisi tekrar kullanıldığında, süresi sona erdiğinde veya Dayanıklılığı kalmadığında Vodyanitsa Su İfriti suretinden çıkar.",
+      "1": "Ayrıca Vodyanitsa daha hızlı yüzebilir fakat bunun karşılığında daha hızlı Dayanıklılık tüketir."
+    }
+  },
+  "passive": {
+    "name": "Kalpsiz Siren Şarkısı",
+    "description": {
+      "0": "Korolevskiy Topluluğunun primadonnası Vodyanitsa, enstrüman çalmak yerine kendi sesiyle şarkı söyler."
+    }
+  },
+  "constellation1": {
+    "name": "İhtişamlı Sular",
+    "description": {
+      "0": "Vodyanitsa, <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Geçmiş Çağların Şarkısı</tooltip></strong> etkisinin iyileştirmesini her tetiklediğinde 5 saniyeliğine yakındaki grup üyelerinin Saldırısı, Vodyanitsa'nın Maks. Canının %0,8'i kadar artar."
+    }
+  },
+  "constellation2": {
+    "name": "Karları Delen Yankılar",
+    "description": {
+      "0": "<strong>Resitatif: Gürleyen Şafak</strong> Element Becerisiyle çağrılan <strong>Baharı Müjdeleyen Çalgı</strong> bir düşmana saldırdığında Vodyanitsa \"Siyah ve Beyaz İki Ses\" etkisini kazanır. Bu etki, 5 saniyeliğine mevcut aktif grup üyesinin <hydro>Su Hasarı</hydro> ve <cryo>Buz Hasarı</cryo> ile verdiği Kritik Hasarı %50 artırır.",
+      "1": "Alanda bir Başıboş Burgaç varken veya bir Başıboş Burgaç patladıktan sonraki 5sn boyunca etki değişir: 5 saniyeliğine mevcut aktif grup üyesinin Yıldız Girdabı Tepkimesi Hasarı ile verdiği Kritik Hasar %60 artar.",
+      "2": "Ayrıca <strong>Resitatif: Gürleyen Şafak</strong> Element Becerisi gelişir: <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Geçmiş Çağların Şarkısı</tooltip></strong> etkisinin süresi 9sn uzar."
+    }
+  },
+  "constellation3": {
+    "name": "Bir Bahar Sabahı İşitilen Şarkı",
+    "description": {
+      "0": "<strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Resitatif: Gürleyen Şafak</tooltip></strong> Element Becerisinin seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Sakin Sularda Melankolik Bir Ses",
+    "description": {
+      "0": "Vodyanitsa, <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Geçmiş Çağların Şarkısı</tooltip></strong> etkisinin iyileştirmesini tetiklediğinde iyileştirilen karakterin Can oranına bağlı olarak ek bir etki daha tetikler:",
+      "1": [
+        "Karakterin Canı %40'ın altındaysa iyileştirme %50 artar.",
+        "Karakterin Canı %40 veya üzerindeyse 6 saniyeliğine Vodyanitsa'nın Maks. Canı %20 artar. 3 kademeye kadar birikir ve her kademenin süresi birbirinden bağımsızdır."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Birlikte Derinlere Doğru",
+    "description": {
+      "0": "<strong><tooltip ns=char_Vodyanitsa_gen baseKey18=burst>Koda: Batacağız Birlikte</tooltip></strong> Element Patlamasının seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Asla Bitmeyen Bir Şenlik Şarkısı",
+    "description": {
+      "0": "<strong>Karları Delen Yankılar</strong> Takımyıldızı gelişir: \"Siyah ve Beyaz İki Ses\" etkisi artık yakındaki tüm grup üyelerine uygulanır.",
+      "1": "Ayrıca <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Geçmiş Çağların Şarkısı</tooltip></strong> etkisi aktifken yakındaki grup üyelerinin verdiği Yıldız Girdabı Tepkimesi Hasarı %25 <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>yükselir</strong></tooltip>, verilen <hydro>Su Hasarı</hydro> ve <cryo>Buz Hasarı</cryo> ise %60 artar."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Silver Light",
+  "description": {
+    "0": "A longsword left behind by Wind Reader, one of the Three Hermits of Guizang in Liyue. Legend has it that it was forged out of sacred silver descended from the heavens, and that it once cleaved flowing sea water into two."
+  },
+  "passiveName": "Radiance on the Water",
+  "passiveDescription": {
+    "0": {
+      "0": "Increases Elemental Mastery by <cryo>52</cryo> for 12s after Elemental Skill use. Max 2 stacks, and each stack's duration is independent of the others."
+    },
+    "1": {
+      "0": "Increases Elemental Mastery by <cryo>65</cryo> for 12s after Elemental Skill use. Max 2 stacks, and each stack's duration is independent of the others."
+    },
+    "2": {
+      "0": "Increases Elemental Mastery by <cryo>78</cryo> for 12s after Elemental Skill use. Max 2 stacks, and each stack's duration is independent of the others."
+    },
+    "3": {
+      "0": "Increases Elemental Mastery by <cryo>91</cryo> for 12s after Elemental Skill use. Max 2 stacks, and each stack's duration is independent of the others."
+    },
+    "4": {
+      "0": "Increases Elemental Mastery by <cryo>104</cryo> for 12s after Elemental Skill use. Max 2 stacks, and each stack's duration is independent of the others."
+    }
+  }
+}

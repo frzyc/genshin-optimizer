@@ -1,0 +1,189 @@
+{
+  "name": "Vesna",
+  "title": "คมดาบแห่งงานเลี้ยงเหมันต์",
+  "description": "ผู้บัญชาการ \"กองทัพพันธสัญญาเหมันต์\" และคมดาบของ Tsaritsa",
+  "constellationName": "Amentum Vernum",
+  "auto": {
+    "name": "Vila Blade Dance",
+    "fields": {
+      "normal": {
+        "0": "<strong>โจมตีปกติ</strong>",
+        "1": "โจมตีต่อเนื่องมากสุด 6 ครั้ง"
+      },
+      "charged": {
+        "0": "<strong>ชาร์จโจมตี</strong>",
+        "1": "ใช้พลังกายส่วนหนึ่ง เพื่อเหยียบย่ำศัตรูที่อยู่ข้างหน้า"
+      },
+      "plunging": {
+        "0": "<strong>โจมตีพุ่งลงจากอากาศ</strong>",
+        "1": "กระโจนจากกลางอากาศลงมายังพื้นดิน เพื่อโจมตีศัตรูที่อยู่ในเส้นทางการโจมตี โดยจะสร้างความเสียหายวงกว้างเมื่อลงถึงพื้น"
+      }
+    },
+    "skillParams": {
+      "0": "ความเสียหายขั้น 1",
+      "1": "ความเสียหายขั้น 2",
+      "2": "ความเสียหายขั้น 3",
+      "3": "ความเสียหายขั้น 4",
+      "4": "ความเสียหายขั้น 5",
+      "5": "ความเสียหายขั้น 6",
+      "6": "ความเสียหายชาร์จโจมตี",
+      "7": "ชาร์จโจมตีใช้พลังกาย",
+      "8": "ความเสียหายพุ่งลง",
+      "9": "ความเสียหายพุ่งถึงพื้นจากที่ต่ำ/สูง",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "The Art of Victory",
+    "description": {
+      "0": "ปลุกดาบวิญญาณที่สืบทอดมาจากเผ่าวีลา เพื่อสร้าง<anemo>ความเสียหายลมวงกว้าง</anemo> จากนั้นเปลี่ยนเป็นโหมด <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Armed for Action</tooltip></strong> และได้รับ <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>\"Sword Essence\"</tooltip></strong> 2 ชั้น",
+      "1": "<br/>",
+      "2": "<strong>Armed for Action</strong>",
+      "3": "เมื่อ Vesna ทำการโจมตีปกติ ชาร์จโจมตี และโจมตีพุ่งลงจากอากาศ จะเปลี่ยนเป็นการสร้าง<anemo>ความเสียหายลม</anemo>ที่ไม่สามารถซ้อนทับด้วยธาตุอื่นได้ และอัญเชิญขนนกวาโยออกมาช่วยโจมตีศัตรู เพื่อสร้าง<anemo>ความเสียหายลม</anemo>เพิ่มเติม; ทุกครั้งที่อัญเชิญขนนกวาโยออกมา จะฟื้นฟู <strong>Sword Essence</strong> จำนวนหนึ่งให้แก่ Vesna",
+      "4": "Vesna สามารถใช้ <strong>Sword Essence</strong> เพื่อปล่อยสกิลธาตุพิเศษ <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Windborne Sword</tooltip></strong> ซึ่งจะสร้าง<anemo>ความเสียหายลม</anemo>แก่ศัตรู",
+      "5": "หลังจากการปล่อยสกิลธาตุพิเศษ <strong>Windborne Sword</strong> แต่ละครั้ง ในช่วงเวลาต่อเนื่องของโหมด <strong>Armed for Action</strong> ครั้งนี้ ระดับของ Windborne Sword จะเพิ่มขึ้น ทำให้สร้าง<anemo>ความเสียหายลม</anemo>ได้มากขึ้น; ระดับขั้นเริ่มต้นของ <strong>Windborne Sword</strong> คือขั้น 1 และเพิ่มได้สูงสุดถึงขั้น 3; เมื่อปล่อย <strong>Windborne Sword</strong> ที่เพิ่มระดับถึงขั้น 2 หรือขั้น 3 แล้ว จะเรียก<strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>ดาบวิญญาณ</tooltip></strong>ออกมา เพื่อสร้าง<anemo>ความเสียหายลม</anemo>แก่ศัตรูด้วย",
+      "6": "เมื่อระยะเวลาต่อเนื่องสิ้นสุดลง หรือหลังจากปล่อย <strong>Windborne Sword</strong> ขั้นสูงสุดครบ 3 ครั้ง Vesna จะออกจากโหมดดังกล่าว และลบล้าง <strong>Sword Essence</strong> ทั้งหมด",
+      "7": "นอกจากนี้ ขณะอยู่ในโหมดดังกล่าว ความสามารถในการต้านทานการหยุดชะงักของ Vesna จะเพิ่มขึ้น",
+      "8": "<strong>เจิดจรัส: กระจายดารา</strong>: <strong>ดาบวิญญาณ</strong>จะเปลี่ยนเป็นสร้าง<anemo>ความเสียหายลม</anemo> ที่ถือเป็นความเสียหายจากปฏิกิริยากระจายดารา"
+    },
+    "skillParams": {
+      "0": "ความเสียหายสกิล",
+      "1": "ความเสียหาย Windborne Sword ขั้น 1",
+      "2": "ความเสียหาย Windborne Sword ขั้น 2",
+      "3": "ความเสียหายดาบวิญญาณ Windborne Sword ขั้น 2",
+      "4": "ความเสียหายดาบวิญญาณ Windborne Sword ขั้น 3",
+      "5": "ความเสียหายครั้งสุดท้ายจากดาบวิญญาณขั้น 3 ของ Windborne Sword",
+      "6": "ความเสียหายกระจายดาราจากดาบวิญญาณขั้น 2 ของ Windborne Sword",
+      "7": "ความเสียหายกระจายดาราจากดาบวิญญาณขั้น 3 ของ Windborne Sword",
+      "8": "ความเสียหายกระจายดาราครั้งสุดท้าย จากดาบวิญญาณขั้น 3 ของ Windborne Sword",
+      "9": "ความเสียหายขนนกวาโย",
+      "10": "ระยะเวลาของ Armed for Action",
+      "11": "คูลดาวน์",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "For the Tsaritsa!",
+    "description": {
+      "0": "อัญเชิญ<strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>ดาบวิญญาณ</tooltip></strong>จำนวนมากออกมา สร้าง<anemo>ความเสียหายลมวงกว้าง</anemo> และได้รับ <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>\"Sword Essence\"</tooltip></strong> 1 ชั้น"
+    },
+    "skillParams": {
+      "0": "ความเสียหายดาบวิญญาณ",
+      "1": "ความเสียหายกระจายดารา ดาบวิญญาณ",
+      "2": "คูลดาวน์",
+      "3": "พลังงานธาตุ",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "sprint": {
+    "name": "",
+    "description": {}
+  },
+  "passive1": {
+    "name": "Rite of Spring's Procession",
+    "description": {
+      "0": "หลังจาก Vesna ปล่อยสกิลธาตุพิเศษ <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Windborne Sword</tooltip></strong> หรือท่าไม้ตาย <strong><tooltip ns=char_Vesna_gen baseKey18=burst>For the Tsaritsa!</tooltip></strong> ยังจะได้รับ <strong>\"Disciplinary Action\"</strong> 1 ชั้น เป็นเวลา 20 วินาที ซ้อนทับได้มากสุด 6 ชั้น ซึ่งแต่ละชั้นจะคิดช่วงเวลาต่อเนื่องแยกกัน",
+      "1": "เมื่อมี <strong>Disciplinary Action</strong> <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>ดาบวิญญาณ</tooltip></strong>ที่ Vesna อัญเชิญมา จะสร้างความเสียหายเป็น 100% ของความเสียหายเดิม + จำนวนชั้นของ Disciplinary Action ×10%; เมื่อปล่อยสกิลธาตุ <strong>The Art of Victory</strong> หรือออกจากการต่อสู้ จะลบล้าง <strong>Disciplinary Action</strong> ที่ Vesna มีอยู่"
+    }
+  },
+  "passive2": {
+    "name": "Truth Prevails",
+    "description": {
+      "0": "<strong>เจิดจรัส: กระจายดารา</strong>: Vesna จะได้รับเอฟเฟกต์ที่เกี่ยวข้อง ตามประเภทธาตุของตัวละครในทีม เมื่อในทีมปัจจุบันมี:",
+      "1": [
+        "ตัวละคร<cryo>ธาตุน้ำแข็ง</cryo>หรือ<anemo>ธาตุลม</anemo> ทุก 1 ตัว: พลังโจมตีของ Vesna เพิ่มขึ้น 6%;",
+        "ตัวละครธาตุอื่นนอกเหนือจากธาตุข้างต้นทุก 1 ตัว: ความชำนาญธาตุของ Vesna เพิ่มขึ้น 25 หน่วย"
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Stellar Jubilee: Splendid Prelude",
+    "description": {
+      "0": "เมื่อตัวละครในทีมทำให้เกิดปฏิกิริยากระจายน้ำแข็ง จะเปลี่ยนเป็นการทำให้เกิดปฏิกิริยากระจายดาราแทน และจะเพิ่มความเสียหายพื้นฐานของปฏิกิริยากระจายดาราที่ตัวละครในทีมสร้างขึ้น ตามพลังโจมตีของ Vesna: พลังโจมตีทุก 100 หน่วย จะเพิ่มความเสียหายพื้นฐานของปฏิกิริยากระจายดารา 0.7% โดยสามารถเพิ่มความเสียหายด้วยวิธีนี้ได้สูงสุด 14%",
+      "1": "ภายใน 8 วินาที หลังจากตัวละครในทีมที่อยู่ใกล้เคียงทำให้เกิดปฏิกิริยากระจายดารา Vesna จะเข้าสู่สถานะ <strong>เจิดจรัส: กระจายดารา</strong>"
+    }
+  },
+  "passive": {
+    "name": "The Grand Circuit",
+    "description": {
+      "0": "เมื่อไม่ได้อยู่ในสถานะต่อสู้ Vesna สามารถกดวิ่งหรือกระโดดค้างไว้ เพื่อเข้าสู่สถานะ <strong>\"Coursing\"</strong>",
+      "1": "<br/>",
+      "2": "<strong>Coursing</strong>",
+      "3": "ใช้พลังกายอย่างต่อเนื่อง เพื่อรักษาสถานะลอยตัว; เมื่อวิ่ง หรือกดกระโดดเพื่อเพิ่มระดับความสูง จะใช้พลังกายเพิ่มเติม ซึ่งรวมถึงการกดกระโดดค้างไว้เพื่อเข้าสู่สถานะ <strong>Coursing</strong> ด้วย ในสถานะ <strong>Coursing</strong> แต่ละครั้ง จะสามารถเพิ่มระดับความสูงได้มากสุด 3 ครั้ง",
+      "4": "<br/>",
+      "5": "นอกจากนี้ เมื่ออยู่ในพื้นที่ Snezhnaya (ยกเว้น Nod-Krai) หากไม่ได้อยู่ในสถานะต่อสู้ เมื่อตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้นของทีมอยู่กลางอากาศ หากสลับตัว Vesna ออกมา Vesna จะเข้าสู่สถานะ <strong>Coursing</strong> ทันที และฟื้นฟูพลังกาย 50 หน่วย; เอฟเฟกต์นี้จะเกิดขึ้นได้มากสุดหนึ่งครั้ง ในทุก 10 วินาที และจะไร้ผลเมื่ออยู่ในดันเจี้ยน, Trounce Domain และ Spiral Abyss"
+    }
+  },
+  "constellation1": {
+    "name": "Winter's Farewell Feast",
+    "description": {
+      "0": "เมื่ออยู่ในโหมด <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Armed for Action</tooltip></strong> Vesna จะสามารถปล่อย <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Windborne Sword</tooltip></strong> ขั้นสูงสุดได้มากสุด 4 ครั้ง จากเดิม 3 ครั้ง และทุกครั้งที่เข้าสู่โหมด <strong>Armed for Action</strong> การปล่อย <strong>Windborne Sword</strong> ขั้นสูงสุดในครั้งแรกจะไม่ใช้ <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>\"Sword Essence\"</tooltip></strong>",
+      "1": "นอกจากนี้ ความเสียหายจากปฏิกิริยากระจายดาราที่ Vesna สร้างในโหมด <strong>Armed for Action</strong> จะเพิ่มขึ้น 20%"
+    }
+  },
+  "constellation2": {
+    "name": "Kolo of Spring's Arrival",
+    "description": {
+      "0": "พรสวรรค์เพิ่มเติม <strong><tooltip ns=char_Vesna_gen baseKey18=passive1>\"Rite of Spring's Procession\"</tooltip></strong> ได้รับการเสริมพลัง: เมื่อ Vesna เข้าสู่โหมด <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Armed for Action</tooltip></strong> จะได้รับ <strong>Disciplinary Action</strong> ที่มีจำนวนชั้นสูงสุด; เมื่อมี <strong>Disciplinary Action</strong> จำนวนชั้นสูงสุด พลังโจมตีของ Vesna จะเพิ่มขึ้น 40%",
+      "1": "เอฟเฟกต์ดังกล่าว ต้องปลดล็อกพรสวรรค์เพิ่มเติม \"Rite of Spring's Procession\" ก่อน"
+    }
+  },
+  "constellation3": {
+    "name": "Winter's Last Offering",
+    "description": {
+      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <strong><tooltip ns=char_Vesna_gen baseKey18=skill>The Art of Victory</tooltip></strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
+    }
+  },
+  "constellation4": {
+    "name": "Glory to Our Forebears",
+    "description": {
+      "0": "พรสวรรค์เพิ่มเติม <strong><tooltip ns=char_Vesna_gen baseKey18=passive2>\"Truth Prevails\"</tooltip></strong> ได้รับการเสริมพลัง: เอฟเฟกต์การเพิ่มพลังโจมตีและความชำนาญธาตุจะเปลี่ยนเป็น 3 เท่าของค่าเดิม"
+    }
+  },
+  "constellation5": {
+    "name": "The Nobleborn's Charge",
+    "description": {
+      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong><tooltip ns=char_Vesna_gen baseKey18=burst>For the Tsaritsa!</tooltip></strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
+    }
+  },
+  "constellation6": {
+    "name": "Unwavering Ardor",
+    "description": {
+      "0": "ภายใน 5 วินาที หลังจากปล่อย <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Windborne Sword</tooltip></strong> ขั้นสูงสุด Vesna จะสามารถกดโจมตีปกติหรือสกิลธาตุ เพื่อปล่อย <strong>Windborne Sword: Transpose</strong> ซึ่งเป็นวิชาลับของเผ่าวีลา: สร้าง<anemo>ความเสียหายลม</anemo> 150% ของพลังโจมตีของ Vesna และอัญเชิญ <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>ดาบวิญญาณ</tooltip></strong> ออกมา ซึ่งจะสร้าง<anemo>ความเสียหายลม</anemo>เพิ่มเติม 200% ของพลังโจมตีของ Vesna หาก Vesna อยู่ในโหมด <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Armed for Action</tooltip></strong> จะเรียกขนนกวาโยออกมาเพิ่มเติมเพื่อร่วมโจมตีศัตรู",
+      "1": "นอกจากนี้ ความเสียหายปฏิกิริยากระจายดาราที่ Vesna สร้างจะได้รับการ<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>ยกระดับ</strong></tooltip>ขึ้น 20%"
+    }
+  }
+}

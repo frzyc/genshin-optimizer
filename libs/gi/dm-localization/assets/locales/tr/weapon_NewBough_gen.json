@@ -1,0 +1,29 @@
+{
+  "name": "Yeni Dal",
+  "description": {
+    "0": "Bir zamanlar savaşın seyrini değiştirdiği söylenen, kutsal ağaçtan yapılma bir kılıç."
+  },
+  "passiveName": "Yabani Büyüme",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakter, Element Becerisi kullandıktan sonraki 12sn içinde bir saldırısını düşmana isabet ettirdiğinde \"Yeşil\" etkisini kazanır: 6 saniyeliğine Saldırısı <cryo>%4</cryo>, Element Ustalığı <cryo>20</cryo> artar. Bu etki her saniyede bir tetiklenebilir ve 3 kademeye kadar birikebilir. Bu etki, kuşanan karakter alanda olmasa da tetiklenebilir.",
+      "1": "Işıltı: Yıldız Parıltısı: \"Yeşil\" etkisi değişir: Kuşanan karakterin Saldırısını <cryo>%6</cryo>, verdiği Yıldız Parıltısı Tepkimesi Hasarını <cryo>%8</cryo> artırır."
+    },
+    "1": {
+      "0": "Kuşanan karakter, Element Becerisi kullandıktan sonraki 12sn içinde bir saldırısını düşmana isabet ettirdiğinde \"Yeşil\" etkisini kazanır: 6 saniyeliğine Saldırısı <cryo>%5</cryo>, Element Ustalığı <cryo>25</cryo> artar. Bu etki her saniyede bir tetiklenebilir ve 3 kademeye kadar birikebilir. Bu etki, kuşanan karakter alanda olmasa da tetiklenebilir.",
+      "1": "Işıltı: Yıldız Parıltısı: \"Yeşil\" etkisi değişir: Kuşanan karakterin Saldırısını <cryo>%7,5</cryo>, verdiği Yıldız Parıltısı Tepkimesi Hasarını <cryo>%10</cryo> artırır."
+    },
+    "2": {
+      "0": "Kuşanan karakter, Element Becerisi kullandıktan sonraki 12sn içinde bir saldırısını düşmana isabet ettirdiğinde \"Yeşil\" etkisini kazanır: 6 saniyeliğine Saldırısı <cryo>%6</cryo>, Element Ustalığı <cryo>30</cryo> artar. Bu etki her saniyede bir tetiklenebilir ve 3 kademeye kadar birikebilir. Bu etki, kuşanan karakter alanda olmasa da tetiklenebilir.",
+      "1": "Işıltı: Yıldız Parıltısı: \"Yeşil\" etkisi değişir: Kuşanan karakterin Saldırısını <cryo>%9</cryo>, verdiği Yıldız Parıltısı Tepkimesi Hasarını <cryo>%12</cryo> artırır."
+    },
+    "3": {
+      "0": "Kuşanan karakter, Element Becerisi kullandıktan sonraki 12sn içinde bir saldırısını düşmana isabet ettirdiğinde \"Yeşil\" etkisini kazanır: 6 saniyeliğine Saldırısı <cryo>%7</cryo>, Element Ustalığı <cryo>35</cryo> artar. Bu etki her saniyede bir tetiklenebilir ve 3 kademeye kadar birikebilir. Bu etki, kuşanan karakter alanda olmasa da tetiklenebilir.",
+      "1": "Işıltı: Yıldız Parıltısı: \"Yeşil\" etkisi değişir: Kuşanan karakterin Saldırısını <cryo>%10,5</cryo>, verdiği Yıldız Parıltısı Tepkimesi Hasarını <cryo>%14</cryo> artırır."
+    },
+    "4": {
+      "0": "Kuşanan karakter, Element Becerisi kullandıktan sonraki 12sn içinde bir saldırısını düşmana isabet ettirdiğinde \"Yeşil\" etkisini kazanır: 6 saniyeliğine Saldırısı <cryo>%8</cryo>, Element Ustalığı <cryo>40</cryo> artar. Bu etki her saniyede bir tetiklenebilir ve 3 kademeye kadar birikebilir. Bu etki, kuşanan karakter alanda olmasa da tetiklenebilir.",
+      "1": "Işıltı: Yıldız Parıltısı: \"Yeşil\" etkisi değişir: Kuşanan karakterin Saldırısını <cryo>%12</cryo>, verdiği Yıldız Parıltısı Tepkimesi Hasarını <cryo>%16</cryo> artırır."
+    }
+  }
+}

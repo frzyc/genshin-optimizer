@@ -1,0 +1,176 @@
+{
+  "name": "Vodyanitsa",
+  "title": "Canção de Sereia que Perdura",
+  "description": "Prima Donna da Companhia Korolevskiy e uma Sereia que deixou seu bando.",
+  "constellationName": "Piscicula Aurea",
+  "auto": {
+    "name": "Ária das Águas",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Canta uma canção antiga das sereias, realizando até 4 ataques, infligindo <hydro>Dano Hydro</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para disparar uma bola d'água <hydro>Dano Hydro</hydro>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Inflige <hydro>Dano Hydro em uma AdE</hydro> durante o impacto com o chão."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano de Ataque Carregado",
+      "5": "Consumo de Stamina de Ataque Carregado",
+      "6": "Dano Durante a Queda",
+      "7": "Dano de Queda de Baixa/Alta Altitude",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Recitativo: Alvorada Sonora",
+    "description": {
+      "0": "Revela sua verdadeira forma de Sereia, causando <hydro>Dano Hydro em uma AdE</hydro> e obtendo o efeito <strong>Canção de Outrora</strong>: enquanto esse efeito estiver ativo, Vodyanitsa invocará o antigo <strong>Berrante da Primavera</strong>, que periodicamente avançará com rapidez em direção a um inimigo para atacá-lo, causando <hydro>Dano Hydro</hydro>.",
+      "1": "Os dois tipos de ataque mencionados acima também reduzem a <hydro>RES Hydro</hydro> e a <cryo>RES Cryo</cryo> dos inimigos atingidos. Além disso, enquanto o efeito <strong>Canção de Outrora</strong> estiver ativo, o personagem ativo da equipe terá sua Resistência contra Interrupção aumentada e recuperará Vida periodicamente com base na Vida Máxima de Vodyanitsa."
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Duração",
+      "2": "Intervalo de Ataque do Berrante da Primavera",
+      "3": "Dano do Berrante da Primavera",
+      "4": "Cura da Canção de Outrora",
+      "5": "Intervalo de Cura de Canção de Outrora",
+      "6": "Redução de RES Hydro/Cryo",
+      "7": "Duração da Redução de RES",
+      "8": "Recarga da Habilidade",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Finalização: Afundando Contigo",
+    "description": {
+      "0": "Entoa a canção das sereias, que atrai quem a escuta para as profundezas, causando <hydro>Dano Hydro em AdE</hydro>.",
+      "1": "Quando estiver no estado <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Canção de Outrora</tooltip></strong>, aumenta ainda mais o Dano causado."
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Bônus de Dano da Canção de Outrora",
+      "2": "Tempo de Recarga",
+      "3": "Energia Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Último Poeta",
+    "description": {
+      "0": "Ao lançar a Habilidade Elemental <strong>Recitativo: Alvorada Sonora</strong>, faz o Vórtice do Vento Estelar ativo mudar para Vórtice Flutuante, e para personagens próximos da equipe que estejam sob a duração do efeito <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Canção de Outrora</tooltip></strong>, ao desencadearem Redemoinho Estelar, passarão a criar um Vórtice Flutuante que substitui o Vórtice do Vento Estelar.",
+      "1": "Ao criar ou explodir um Vórtice Flutuante, reduz a <anemo>RES Anemo</anemo> dos inimigos próximos em 35% por 6s.",
+      "2": "Além disso, na duração de <strong>Canção de Outrora</strong>, quando um personagem próximo entrar em <strong>Brilho Reluzente: Redemoinho Estelar</strong>, a duração de <strong>Brilho Reluzente: Redemoinho Estelar</strong> é prolongada em 4s."
+    }
+  },
+  "passive2": {
+    "name": "Lágrimas das Doze Cordas",
+    "description": {
+      "0": "Ao lançar a Habilidade Elemental <strong>Recitativo: Alvorada Sonora</strong>, Vodyanitsa obtém 25 acúmulos de <tooltip ns=tooltips_gen baseKey18=11400001 values=[]><strong>Primeira Cantora</strong></tooltip> e 10 acúmulos de <tooltip ns=tooltips_gen baseKey18=11400002 values=[]><strong>Concerto</strong></tooltip>.",
+      "1": "Esses efeitos duram 30s cada, e são redefinidos ao lançar a Habilidade Elemental novamente."
+    }
+  },
+  "passive3": {
+    "name": "Ecos do Lago Congelado",
+    "description": {
+      "0": "Quando não está em combate, ao manter pressionada a Habilidade Elemental, Vodyanitsa revela sua forma de Sereia e consumindo Stamina, nada até 10s. É óbvio que ela pode nadar na água, já que é uma Sereia. Ao lançar a Habilidade Elemental novamente, quando a Duração acabar ou a Stamina acabar, Vodyanitsa não manterá mais sua forma de Sereia.",
+      "1": "Além disso, aumenta a velocidade de nado de Vodyanitsa, mas também aumenta a velocidade de consumo de Stamina."
+    }
+  },
+  "passive": {
+    "name": "Música Desalmada da Sereia",
+    "description": {
+      "0": "Como a prima donna da Companhia Korolevskiy, quando Vodyanitsa toca um instrumento, mudará para ela mesma cantar."
+    }
+  },
+  "constellation1": {
+    "name": "Águas Esplendorosas",
+    "description": {
+      "0": "Sempre que Vodyanitsa aciona o efeito de cura de <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Canção de Outrora</tooltip></strong>, o ATQ de todos os membros da equipe próximos também é aumentado em 0,8% da Vida Máx. dela por 5s."
+    }
+  },
+  "constellation2": {
+    "name": "Ecos Perfuradores da Neve",
+    "description": {
+      "0": "Quando atacar o inimigo com <strong>Berrante da Primavera</strong> da Habilidade Elemental <strong>Recitativo: Alvorada Sonora</strong>, Vodyanitsa obtém o efeito \"Notas da Escuridão e Claridade\", aumentando o Dano CRIT <hydro>Hydro</hydro> e <cryo>Cryo</cryo> em 50% para o personagem ativo por 5s.",
+      "1": "Se houver um Vórtice Flutuante ativo, ou se dentro dos 5s após o Vórtice Flutuante explodir, ao invés disso, aumentará o Dano CRIT de Redemoinho Estelar do personagem ativo em 60% por 5s.",
+      "2": "Além disso, a Habilidade Elemental <strong>Recitativo: Alvorada Sonora</strong> é fortalecida: a duração do efeito <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Canção de Outrora</tooltip></strong> é estendida em 9s."
+    }
+  },
+  "constellation3": {
+    "name": "Canção de uma Manhã Primaveril",
+    "description": {
+      "0": "Aumenta o nível da Habilidade Elemental <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Recitativo: Alvorada Sonora</tooltip></strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Voz Melancólica Sobre Águas Serenas",
+    "description": {
+      "0": "Quando Vodyanitsa aciona o efeito de cura de <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Canção de Outrora</tooltip></strong>, ela também aciona vários outros efeitos dependendo do nível de Vida do personagem sendo curado.",
+      "1": [
+        " Se a Vida do personagem for inferior a 40%: a cura é aumentada em 50%;",
+        " Se a Vida do personagem for 40% ou superior: a Vida Máx. de Vodyanitsa é aumentada em 20% por 6s. Máximo de 3 acúmulos, com a duração de cada acúmulo sendo contada separadamente."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Juntos Mergulhamos nas Profundezas",
+    "description": {
+      "0": "Aumenta o nível do Supremo <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=burst>Finalização: Afundando Contigo</tooltip></strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Canção Eterna do Júbilo",
+    "description": {
+      "0": "O efeito da Constelação <strong>Ecos Perfuradores da Neve</strong> é fortalecido: Notas da Escuridão e Claridade agora afeta todos os membros próximos da equipe.",
+      "1": "Além disso, na duração do efeito <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Canção de Outrora</tooltip></strong>, <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Eleva</strong></tooltip> o Dano de Redemoinho Estelar causado pelos personagens próximos em 25%, aumenta o <hydro>Dano Hydro</hydro> e <cryo>Dano Cryo</cryo> causado em 60%."
+    }
+  }
+}

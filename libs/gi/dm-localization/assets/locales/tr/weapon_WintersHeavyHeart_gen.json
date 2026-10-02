@@ -1,0 +1,29 @@
+{
+  "name": "Kışın Ağır Kalbi",
+  "description": {
+    "0": "En saf buz ve kardan yapılmış bir tören yadigarı. Efsaneye göre beş yüz yıl öncesine dek, Snegovik lordları nesiller boyu taç giyme törenlerinde bu yadigarı kullanırmış."
+  },
+  "passiveName": "Buzun Sırları",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakter \"Gümüşi Kan Yemini\" etkisini kazanır: Gruptaki her Buz karakteri için kuşanan karakterin Element Ustalığı <cryo>24</cryo> artar; gruptaki her Elektrik karakteri içinse Saldırısı <cryo>%4,8</cryo> artar. Bu güçlendirmeleri en fazla 4 Buz veya Elektrik karakteri sağlayabilir.",
+      "1": "Işıltı: Yıldız Parıltısı: Gümüşi Kan Yemini etkisi değişir: Gruptaki her Buz veya Elektrik karakteri için kuşanan karakterin Element Ustalığı <cryo>20</cryo>, verdiği Yıldız Parıltısı Tepkimesi Hasarı ise <cryo>%6</cryo> artar."
+    },
+    "1": {
+      "0": "Kuşanan karakter \"Gümüşi Kan Yemini\" etkisini kazanır: Gruptaki her Buz karakteri için kuşanan karakterin Element Ustalığı <cryo>30</cryo> artar; gruptaki her Elektrik karakteri içinse Saldırısı <cryo>%6</cryo> artar. Bu güçlendirmeleri en fazla 4 Buz veya Elektrik karakteri sağlayabilir.",
+      "1": "Işıltı: Yıldız Parıltısı: Gümüşi Kan Yemini etkisi değişir: Gruptaki her Buz veya Elektrik karakteri için kuşanan karakterin Element Ustalığı <cryo>25</cryo>, verdiği Yıldız Parıltısı Tepkimesi Hasarı ise <cryo>%7,5</cryo> artar."
+    },
+    "2": {
+      "0": "Kuşanan karakter \"Gümüşi Kan Yemini\" etkisini kazanır: Gruptaki her Buz karakteri için kuşanan karakterin Element Ustalığı <cryo>36</cryo> artar; gruptaki her Elektrik karakteri içinse Saldırısı <cryo>%7,2</cryo> artar. Bu güçlendirmeleri en fazla 4 Buz veya Elektrik karakteri sağlayabilir.",
+      "1": "Işıltı: Yıldız Parıltısı: Gümüşi Kan Yemini etkisi değişir: Gruptaki her Buz veya Elektrik karakteri için kuşanan karakterin Element Ustalığı <cryo>30</cryo>, verdiği Yıldız Parıltısı Tepkimesi Hasarı ise <cryo>%9</cryo> artar."
+    },
+    "3": {
+      "0": "Kuşanan karakter \"Gümüşi Kan Yemini\" etkisini kazanır: Gruptaki her Buz karakteri için kuşanan karakterin Element Ustalığı <cryo>42</cryo> artar; gruptaki her Elektrik karakteri içinse Saldırısı <cryo>%8,4</cryo> artar. Bu güçlendirmeleri en fazla 4 Buz veya Elektrik karakteri sağlayabilir.",
+      "1": "Işıltı: Yıldız Parıltısı: Gümüşi Kan Yemini etkisi değişir: Gruptaki her Buz veya Elektrik karakteri için kuşanan karakterin Element Ustalığı <cryo>35</cryo>, verdiği Yıldız Parıltısı Tepkimesi Hasarı ise <cryo>%10,5</cryo> artar."
+    },
+    "4": {
+      "0": "Kuşanan karakter \"Gümüşi Kan Yemini\" etkisini kazanır: Gruptaki her Buz karakteri için kuşanan karakterin Element Ustalığı <cryo>48</cryo> artar; gruptaki her Elektrik karakteri içinse Saldırısı <cryo>%9,6</cryo> artar. Bu güçlendirmeleri en fazla 4 Buz veya Elektrik karakteri sağlayabilir.",
+      "1": "Işıltı: Yıldız Parıltısı: Gümüşi Kan Yemini etkisi değişir: Gruptaki her Buz veya Elektrik karakteri için kuşanan karakterin Element Ustalığı <cryo>40</cryo>, verdiği Yıldız Parıltısı Tepkimesi Hasarı ise <cryo>%12</cryo> artar."
+    }
+  }
+}

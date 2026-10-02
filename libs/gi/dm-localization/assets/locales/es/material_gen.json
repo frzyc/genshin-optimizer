@@ -266,8 +266,11 @@
   "FervorCoupon": {
     "name": "Cupón ferviente"
   },
-  "PrimeIceCount": {
+  "PrimeIceResource": {
     "name": "Recurso de hielo supremo"
+  },
+  "VictoryEmblem": {
+    "name": "Emblema de la victoria"
   },
   "Primogem": {
     "name": "Protogema"
@@ -335,6 +338,9 @@
   "PrismaticCrystal": {
     "name": "Cristal resplandeciente"
   },
+  "CelebrationChronalNexus": {
+    "name": "Crononúcleo de gala"
+  },
   "PyroSigil": {
     "name": "Insignia Pyro"
   },
@@ -391,6 +397,12 @@
   },
   "CollectiveOfPlentyReputationEXP": {
     "name": "EXP de reputación: Comunidad de la Feracidad"
+  },
+  "PredictionScore": {
+    "name": "Pts. de predicción"
+  },
+  "FestiveCheer": {
+    "name": "Ambiente festivo"
   },
   "ExpeditionInsights": {
     "name": "EXP de recorrido"
@@ -1187,6 +1199,12 @@
   "Sandrone": {
     "name": "Sandrone"
   },
+  "Vodyanitsa": {
+    "name": "Vodyanitsa"
+  },
+  "Vesna": {
+    "name": "Vesna"
+  },
   "Alyosha": {
     "name": "Aliosha"
   },
@@ -1288,6 +1306,12 @@
   },
   "SandronesStellaFortuna": {
     "name": "Stella Fortuna de Sandrone"
+  },
+  "VodyanitsasStellaFortuna": {
+    "name": "Stella Fortuna de Vodyanitsa"
+  },
+  "VesnasStellaFortuna": {
+    "name": "Stella Fortuna de Vesna"
   },
   "AlyoshasStellaFortuna": {
     "name": "Stella Fortuna de Aliosha"
@@ -9410,6 +9434,15 @@
   "RecipeSweetScoops": {
     "name": "Receta: bolas de helado dulcealegría"
   },
+  "RecipeRoyalGrilledFish": {
+    "name": "Receta: pescado asado de la corte"
+  },
+  "RecipeCelestialTeaCrisp": {
+    "name": "Receta: pastel de té adéptico"
+  },
+  "RecipeMors": {
+    "name": "Receta: mors"
+  },
   "CraftedItems": {
     "name": "Objeto sintetizado"
   },
@@ -10300,6 +10333,9 @@
   },
   "SeveredTailOfTheSkyRoamer": {
     "name": "Cola cercenada del surcacielos"
+  },
+  "VagabondsCrackedArmor": {
+    "name": "Hombrera agrietada de la errabunda"
   },
   "TileOfDecarabiansTower": {
     "name": "Fragmento de azulejo de Decarabian"
@@ -14243,7 +14279,7 @@
   "IzmaylovGuardsJournal": {
     "name": "Diario de guardia de Izmáilov"
   },
-  "YettobeCompletedNewHighTableMelody": {
+  "YettobeCompletedNewHighTableRules": {
     "name": "«Nuevas reglas de la Alta Mesa» incompletas"
   },
   "SandronesTeaPartyInvitationLetter": {
@@ -14297,6 +14333,12 @@
   "IncompleteDataBlock": {
     "name": "Bloque de datos incompleto"
   },
+  "EnvoysMedal": {
+    "name": "Medalla de enviad{F#a}{M#o} especial"
+  },
+  "Gobblefin": {
+    "name": "Ballena tragona"
+  },
   "MoongazersEngravingI": {
     "name": "Tallado de los Vigías Lunares (I)"
   },
@@ -14308,6 +14350,9 @@
   },
   "SnezhnayaVestnik": {
     "name": "«El Véstnik» de Snezhnaya"
+  },
+  "LetterFromXiangling": {
+    "name": "Carta de Xiangling"
   },
   "ChampionsTrophyOfTheFirstAdventurersTournament": {
     "name": "Trofeo del primer Torneo de Aventureros"
@@ -14336,14 +14381,14 @@
   "ScarfWarmRed": {
     "name": "Bufanda: Rojo cálido"
   },
-  "ScarfDreamStar": {
-    "name": "Bufanda: Estrella de ensueño"
+  "ScarfNoveltyBrace": {
+    "name": "Bufanda: Collarín chistoso"
   },
   "ScarfPlaid": {
     "name": "Bufanda: Cuadros"
   },
-  "ScarfNoveltyBrace": {
-    "name": "Bufanda: Collarín chistoso"
+  "ScarfDreamStar": {
+    "name": "Bufanda: Estrella de ensueño"
   },
   "StalkerHood": {
     "name": "Gorro acechador"
@@ -14372,6 +14417,9 @@
   "StardustTrailRadiantGlow": {
     "name": "Estela astral: Luminiscencia"
   },
+  "VodyanitsasSpecialNotebook": {
+    "name": "Cuaderno especial de Vodyanitsa"
+  },
   "RemnantIncenseGuideSnowgrave": {
     "name": "Fragancia residual del cementerio nevado"
   },
@@ -14380,6 +14428,9 @@
   },
   "RemnantIncenseGuideEverfrozenEarth": {
     "name": "Fragancia residual sobre las tierras heladas"
+  },
+  "HappyQuackyPhonographDucky": {
+    "name": "Pato gramófono cua-cua-cua"
   },
   "SpiritSeekerPreviewCommemorativePhoto": {
     "name": "Imagen grupal del ensayo de «La búsqueda del espíritu»"
@@ -14399,11 +14450,17 @@
   "ExitDoorLeverForACertainBasementRoom": {
     "name": "Palanca de la puerta de salida de una habitación del sótano"
   },
+  "DruzhnaSpecialDispatchOrder": {
+    "name": "Orden de despliegue especial de la Druzhna"
+  },
   "KresnikEnergy": {
     "name": "Energía Kresnik"
   },
   "PeculiarReagentSample": {
     "name": "Muestra de reactivo extraño"
+  },
+  "TheSigilGivenByLanYan": {
+    "name": "Talismán fulu obsequiado por Lan Yan"
   },
   "StardustTrailRadiantGlowSigil": {
     "name": "Estela astral: Marca luminiscente"
@@ -14432,6 +14489,9 @@
   "SpecialIceCreamContainer": {
     "name": "Caja para helados especial"
   },
+  "VesnasDivineSenseCompass": {
+    "name": "Brújula del sentido divino de Vesna"
+  },
   "PictureOfNastyaWithHerMom": {
     "name": "Imagen de Nastya con su madre"
   },
@@ -14455,6 +14515,24 @@
   },
   "DocumentWithYellowedPages": {
     "name": "Documento con páginas amarillentas"
+  },
+  "RequestToExpandVIPRoom": {
+    "name": "Solicitud de ampliación de la sala VIP"
+  },
+  "HighLevelAccessCard": {
+    "name": "Tarjeta de acceso de alto rango"
+  },
+  "ConstructAppearanceFlutterwing": {
+    "name": "Apariencia de creación: Mariposa del viento"
+  },
+  "VodyanitsasSpecialHandwrittenTicket": {
+    "name": "Entradas especiales escritas a mano por Vodyanitsa"
+  },
+  "VodyanitsasGift": {
+    "name": "Regalo de Vodyanitsa"
+  },
+  "OkurovTownSewerSystemDesignPlan": {
+    "name": "Plan de diseño del alcantarillado de Okurov"
   },
   "TearsAmongTheStars": {
     "name": "Lágrima estelar"
@@ -14600,8 +14678,8 @@
   "FlockingweedSeed": {
     "name": "Semilla de hierbalana"
   },
-  "GoldenFernSeed": {
-    "name": "Semilla de helecho áureo"
+  "GoldenFernSpore": {
+    "name": "Espora de helecho áureo"
   },
   "RedBeetSeed": {
     "name": "Semillas de remolacha roja"
@@ -14867,6 +14945,45 @@
   "RegularIceCream": {
     "name": "Helado normal"
   },
+  "SuspiciousRoyalGrilledFish": {
+    "name": "Pescado asado de la corte extraño"
+  },
+  "RoyalGrilledFish": {
+    "name": "Pescado asado de la corte"
+  },
+  "DeliciousRoyalGrilledFish": {
+    "name": "Pescado asado de la corte delicioso"
+  },
+  "SuspiciousCelestialTeaCrisp": {
+    "name": "Pastel de té adéptico extraño"
+  },
+  "CelestialTeaCrisp": {
+    "name": "Pastel de té adéptico"
+  },
+  "DeliciousCelestialTeaCrisp": {
+    "name": "Pastel de té adéptico delicioso"
+  },
+  "SuspiciousMors": {
+    "name": "Mors extraño"
+  },
+  "Mors": {
+    "name": "Mors"
+  },
+  "DeliciousMors": {
+    "name": "Mors delicioso"
+  },
+  "IridescentAria": {
+    "name": "Aria iridiscente"
+  },
+  "HoarfrostSoup": {
+    "name": "Sopa florescarcha"
+  },
+  "VesnaThemedIceCream": {
+    "name": "Helado de Vesna"
+  },
+  "VodyanitsaThemedIceCream": {
+    "name": "Helado de Vodyanitsa"
+  },
   "WingsOfFirstFlight": {
     "name": "Alas de principiante"
   },
@@ -14920,6 +15037,9 @@
   },
   "WingsOfLeisurelyMoments": {
     "name": "Alas del Encuentro Ocioso"
+  },
+  "WingsOfStarryWinterfrost": {
+    "name": "Alas de la Escarcha Estelar"
   },
   "RadiantSpincrystal1": {
     "name": "Girocristal radiante (1)"
@@ -15575,6 +15695,18 @@
   "RadiantSpincrystal200": {
     "name": "Girocristal radiante (200)"
   },
+  "RadiantSpincrystalALetterFromTheWindI": {
+    "name": "Girocristal radiante: «A Letter from the Wind» (I)"
+  },
+  "RadiantSpincrystalALetterFromTheWindII": {
+    "name": "Girocristal radiante: «A Letter from the Wind» (II)"
+  },
+  "RadiantSpincrystalALetterFromTheWindIII": {
+    "name": "Girocristal radiante: «A Letter from the Wind» (III)"
+  },
+  "RadiantSpincrystalALetterFromTheWindIV": {
+    "name": "Girocristal radiante: «A Letter from the Wind» (IV)"
+  },
   "LanternFiber": {
     "name": "Celulosa para linterna"
   },
@@ -15682,6 +15814,9 @@
   },
   "RefinedHeart": {
     "name": "Corazón templado"
+  },
+  "TeaScentedTassel": {
+    "name": "Borla con aroma a té"
   },
   "FalconsDance": {
     "name": "Danza del halcón"
@@ -16698,13 +16833,25 @@
     "name": "Logro - Nieves recorridas"
   },
   "SnezhnayaFleetingGlimpses": {
-    "name": "Snezhnaya: Sombra de lanzadera"
+    "name": "Snezhnaya - Sombra de lanzadera"
   },
   "AchievementEnigmaticCore": {
     "name": "Logro - Núcleo encubierto"
   },
   "TravelNotesFrostfarer": {
     "name": "PB - Travesía glacial"
+  },
+  "VesnaRevelry": {
+    "name": "Vesna - Deleite"
+  },
+  "VodyanitsaWhirlpool": {
+    "name": "Vodyanitsa - Remolino"
+  },
+  "SnezhnayaFrostfall": {
+    "name": "Snezhnaya - Gotas heladas"
+  },
+  "TravelNotesMoontrace": {
+    "name": "PB - En pos de la luna"
   },
   "EchoDandelionKnight": {
     "name": "Estela: Caballera de Dandelion"
@@ -17155,6 +17302,15 @@
   },
   "CryoTreasureCompass": {
     "name": "Brújula buscatesoros Cryo"
+  },
+  "ConductorOfTheYaho": {
+    "name": "Maquinista del “Yaju”"
+  },
+  "AMiniTrolleyProblem": {
+    "name": "Dilema del minitrén"
+  },
+  "PrimaDonnasSong": {
+    "name": "Canto de la soprano principal"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instrucciones: Roca de resonancia de anemóculus"
@@ -17870,6 +18026,27 @@
   "KeepingWatchByLanternLight": {
     "name": "Lampareros en vigilia"
   },
+  "ReadyAndRelaxed": {
+    "name": "Preparación relajada"
+  },
+  "ChoreTime": {
+    "name": "Hora de limpiar"
+  },
+  "SavoringTheMeal": {
+    "name": "Disfrutando de la comida"
+  },
+  "ValiantBattleStance": {
+    "name": "Pose heroica"
+  },
+  "ACelebratoryToast": {
+    "name": "Brindis de celebración"
+  },
+  "PleaseDigIn": {
+    "name": "Que aproveche"
+  },
+  "EagerlyWaiting": {
+    "name": "Espera expectante"
+  },
   "FantasticalMarvel": {
     "name": "Maravilla festiva"
   },
@@ -18515,6 +18692,21 @@
   "TemporalWindsEulogy": {
     "name": "Alabanza del viento del tiempo"
   },
+  "RadianceOverBlossomsAndPeaks": {
+    "name": "Un haz que ilumina las flores y las montañas"
+  },
+  "SurgeOfLightning": {
+    "name": "Surgimiento atronador"
+  },
+  "SevenfoldTransmutation": {
+    "name": "Transmutación séptuple"
+  },
+  "BookOfBlindingLight": {
+    "name": "Libro de la luz albar"
+  },
+  "ElkWithFangedAntlers": {
+    "name": "Alce astadevorador"
+  },
   "MagicGuide": {
     "name": "Guía Mágica"
   },
@@ -18863,6 +19055,9 @@
   "GladiatorsFinale": {
     "name": "Final del Gladiador"
   },
+  "RecollectionOfDaysPast": {
+    "name": "Remembranza Fugaz de Antaño"
+  },
   "LiyueHarborWharf": {
     "name": "Puerto de Liyue"
   },
@@ -19102,6 +19297,9 @@
   },
   "ElementalTransfigurationThunderbloomBlessing": {
     "name": "Transmutación elemental: Bendición de Herbotrueno"
+  },
+  "ElementalTransfigurationOverloadBlessing": {
+    "name": "Transmutación elemental: Bendición de Sobrecarga"
   },
   "ElementalResonanceWovenIce": {
     "name": "Consonancia elemental: Hielo entrelazado"
@@ -19373,6 +19571,9 @@
   "FeastingInASharedToast": {
     "name": "Brindis de la reunión"
   },
+  "ReturnOfTheThreeMoons": {
+    "name": "El retorno de las tres lunas"
+  },
   "Origin": {
     "name": "Origen"
   },
@@ -19636,6 +19837,9 @@
   },
   "UnbreakableDurandarte": {
     "name": "Durandal, la Indestructible"
+  },
+  "ExaiphanesBlade": {
+    "name": "Hoja de Exáifanes"
   },
   "AdventurerCamp": {
     "name": "Campamento del aventurero"
@@ -20242,6 +20446,12 @@
   },
   "ChirpingAboutAsBirdsDo": {
     "name": "Cantos de aves enfrentados"
+  },
+  "MoonlitSplendorAlongEveryWay": {
+    "name": "Luna bañante"
+  },
+  "BrightProspectsBrighterProfits": {
+    "name": "Fortuna brillante"
   },
   "EfflorescentIllumination": {
     "name": "Luminiscencia floral"
@@ -21296,8 +21506,8 @@
   "TeaTimeEtiquette": {
     "name": "Etiqueta del té"
   },
-  "BalancedBoughs": {
-    "name": "Ramas en equilibrio"
+  "FaintSwayingGold": {
+    "name": "Zarandeo amarillento"
   },
   "SteadyCompanionThroughDreams": {
     "name": "Sueños velados"
@@ -21466,6 +21676,9 @@
   },
   "TheLoveOneSeeks": {
     "name": "El amor deseado"
+  },
+  "PureIntention": {
+    "name": "Deseo puro"
   },
   "StrawHut": {
     "name": "Cabaña de paja"
@@ -21709,6 +21922,15 @@
   },
   "NashaStallUnendingSearch": {
     "name": "Puesto callejero de Nasha: Búsqueda de tráfico"
+  },
+  "MarketStallFreshFlavors": {
+    "name": "Puesto callejero: Sabores frescos"
+  },
+  "MarketStallInAHurry": {
+    "name": "Puesto callejero: Ahorro de tiempo"
+  },
+  "MarketStallTimeToUnwind": {
+    "name": "Puesto callejero: Momento de relax"
   },
   "HilichurlOutpostHut": {
     "name": "Cabaña de avanzadilla Hilichurl"
@@ -24034,5 +24256,8 @@
   },
   "DancingBeneathSilverWhiteWings": {
     "name": "Danza bajo alas plateadas"
+  },
+  "WhereFishSwimAndWatersSing": {
+    "name": "Donde nadan los peces y cantan las aguas"
   }
 }

@@ -1,0 +1,176 @@
+{
+  "name": "Vodyanitsa",
+  "title": "Chant envoûtant de la sirène",
+  "description": "Première soprano de la Troupe Korolevskiy et diableautine séparée des siens.",
+  "constellationName": "Piscicula Aurea",
+  "auto": {
+    "name": "Arietta de psyshkhwe",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Chante un chant ancestral des diableautins et enchaîne jusqu'à 4 attaques qui infligent des <hydro>DGT Hydro</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour lancer une boule d'eau en avant, infligeant des <hydro>DGT Hydro</hydro>."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs, infligeant des DGT aux ennemis en chemin et des <hydro>DGT Hydro de zone</hydro> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Rechitativ : Aube sonore",
+    "description": {
+      "0": "Vodyanitsa révèle sa véritable forme de diableautine, infligeant des <hydro>DGT Hydro de zone</hydro> et obtenant l'effet <strong>Chant d'antan</strong> : pendant sa durée, Vodyanitsa invoque un ancien <strong>cor du printemps</strong> qui se rapproche rapidement d'un ennemi proche de façon intermittente afin de l'attaquer et de lui infliger des <hydro>DGT Hydro</hydro>.",
+      "1": "La <hydro>RÉS Hydro</hydro> et la <cryo>RÉS Cryo</cryo> des ennemis touchés par ces types d'attaque diminue. De plus, pendant la durée du <strong>chant d'antan</strong>, la RÉS à l'interruption de vos personnages déployés augmente et ils récupèrent périodiquement des PV selon les PV max de Vodyanitsa."
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Durée",
+      "2": "Intervalle d'attaques de cor du printemps",
+      "3": "DGT cor du printemps",
+      "4": "Soin de chant d'antan",
+      "5": "Intervalle de soin de chant d'antan",
+      "6": "Baisse RÉS élémentaire Hydro/Cryo",
+      "7": "Durée de baisse de RÉS",
+      "8": "Temps de recharge",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Koda : Coule avec toi",
+    "description": {
+      "0": "Entonne un chant des diableautins qui attire ses auditeurs vers leur perte, infligeant des <hydro>DGT Hydro de zone</hydro>.",
+      "1": "De plus, les DGT infligés pendant le <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>chant d'antan</tooltip></strong> augmentent davantage."
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Bonus DGT chant d'antan",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "La dernière compositrice de djeguako",
+    "description": {
+      "0": "Utiliser la compétence élémentaire <strong>Rechitativ : Aube sonore</strong> convertit les vortex stellaires sur le terrain en vortex errants et permet aux personnages de l'équipe à proximité de créer des vortex errants à la place des vortex stellaires lorsqu'ils déclenchent des réactions d'Astrodispersion pendant la durée d'un <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>chant d'antan</tooltip></strong>.",
+      "1": "Lorsqu'un vortex errant est créé ou explose, les <anemo>DGT Anémo</anemo> des ennemis proches diminuent également de 35 % pendant 6 s.",
+      "2": "De plus, lorsqu'un personnage de l'équipe à proximité passe en <strong>radiance « Astrodispersion »</strong> pendant la durée d'un <strong>chant d'antan</strong>, la durée de la <strong>radiance « Astrodispersion »</strong> augmente de 4 s."
+    }
+  },
+  "passive2": {
+    "name": "Chant funèbre du fandyr",
+    "description": {
+      "0": "Utiliser la compétence élémentaire <strong>Rechitativ : Aube sonore</strong> accorde 25 cumuls de <tooltip ns=tooltips_gen baseKey18=11400001 values=[]><strong>chant principal</strong></tooltip> et 10 cumuls de <tooltip ns=tooltips_gen baseKey18=11400002 values=[]><strong>chœur</strong></tooltip> à Vodyanitsa.",
+      "1": "Ces effets durent 30 s et les cumuls sont actualisés en utilisant à nouveau la compétence élémentaire."
+    }
+  },
+  "passive3": {
+    "name": "Échos sur le lac gelé",
+    "description": {
+      "0": "Hors combat, utiliser sa compétence élémentaire avec un appui long permet à Vodyanitsa de révéler sa véritable forme de diableautine et de nager pendant 10 s en consommant de l'endurance. Étant une diableautine, Vodyanitsa peut également se déplacer sur la surface de l'eau. Vodyanitsa reprend son apparence normale en utilisant à nouveau sa compétence élémentaire, à la fin de la durée ou une fois son endurance épuisée.",
+      "1": "De plus, Vodyanitsa nage plus vite, mais consomme son endurance plus rapidement."
+    }
+  },
+  "passive": {
+    "name": "Chant de sirène sans cœur",
+    "description": {
+      "0": "Vodyanitsa, première soprano de la Troupe Korolevskiy, chantera de sa propre voix au lieu de jouer d'un instrument de musique."
+    }
+  },
+  "constellation1": {
+    "name": "Eaux dans toute leur splendeur",
+    "description": {
+      "0": "Chaque fois que Vodyanitsa déclenche l'effet de soin d'un <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>chant d'antan</tooltip></strong>, l'ATQ de tous les personnages de l'équipe à proximité augmente d'une valeur équivalant à 0,8 % de ses PV max pendant 5 s."
+    }
+  },
+  "constellation2": {
+    "name": "Échos qui percent la neige",
+    "description": {
+      "0": "Lorsque le <strong>cor du printemps</strong> de la compétence élémentaire <strong>Rechitativ : Aube sonore</strong> attaque un ennemi, Vodyanitsa obtient l'effet Deux voix en noir et blanc : augmente les DGT CRIT des <hydro>DGT Hydro</hydro> et des <cryo>DGT Cryo</cryo> du personnage déployé de 50 % pendant 5 s.",
+      "1": "Si un vortex errant est présent sur le terrain et pendant les 5 s suivant l'explosion d'un vortex errant, cet effet est converti pour augmenter les DGT CRIT des DGT de réaction d'Astrodispersion du personnage déployé de 60 % pendant 5 s.",
+      "2": "De plus, la compétence élémentaire <strong>Rechitativ : Aube sonore</strong> est renforcée : la durée du <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>chant d'antan</tooltip></strong> augmente de 9 s."
+    }
+  },
+  "constellation3": {
+    "name": "Chant persistant un matin de printemps",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Rechitativ : Aube sonore</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Voix mélancolique sur les eaux calmes",
+    "description": {
+      "0": "Lorsque Vodyanitsa déclenche l'effet de soin d'un <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>chant d'antan</tooltip></strong>, différents effets sont appliqués selon les PV du personnage soigné :",
+      "1": [
+        " S'il a moins de 40 % de PV, le soin augmente de 50 %.",
+        " S'il a 40 % de PV ou plus, les PV max de Vodyanitsa augmentent de 20 % pendant 6 s. Cet effet peut être cumulé 3 fois maximum, la durée de chaque cumul étant calculée de façon indépendante."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Ensemble, au fond des profondeurs",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=burst>Koda : Coule avec toi</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Chant de réjouissances sans fin",
+    "description": {
+      "0": "La constellation <strong>Échos qui percent la neige</strong> est renforcée : l'effet Deux voix en noir et blanc est converti pour s'appliquer à tous les personnages de l'équipe à proximité.",
+      "1": "De plus, pendant un <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>chant d'antan</tooltip></strong>, les DGT de réaction d'Astrodispersion des personnages de l'équipe à proximité bénéficient d'une <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>élévation</strong></tooltip> de 25 % et leurs <hydro>DGT Hydro</hydro> et <cryo>DGT Cryo</cryo> augmentent de 60 %."
+    }
+  }
+}

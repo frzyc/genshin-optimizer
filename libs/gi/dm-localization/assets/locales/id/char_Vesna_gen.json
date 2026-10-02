@@ -1,0 +1,189 @@
+{
+  "name": "Vesna",
+  "title": "Snow Banquet's Sharp Blade",
+  "description": "Komandan tertinggi Druzhna, sang mata pedang Tsaritsa.",
+  "constellationName": "Amentum Vernum",
+  "auto": {
+    "name": "Vila Blade Dance",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 6 serangan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menginjak musuh di depan."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Tahap 6",
+      "6": "DMG Charged Attack",
+      "7": "Konsumsi Stamina Charged Attack",
+      "8": "DMG Selama Plunging",
+      "9": "DMG Plunging Attack Rendah/Tinggi",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "The Art of Victory",
+    "description": {
+      "0": "Memanggil Spirit Blade yang diwariskan dari generasi-generasi Vila sebelumnya, mengakibatkan <anemo>Anemo DMG Area</anemo>, kemudian beralih ke mode <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Armed for Action</tooltip></strong> dan mendapatkan 2 tumpukan <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>Sword Essence</tooltip></strong>.",
+      "1": "<br/>",
+      "2": "<strong>Armed for Action</strong>",
+      "3": "Saat Vesna melancarkan Normal Attack, Charged Attack, dan Plunging Attack, serangannya akan berubah menjadi <anemo>Anemo DMG</anemo> yang tidak bisa ditimpa Elemental Infusion lainnya. Vesna juga akan memanggil sebuah bulu angin untuk melakukan serangan terkoordinasi pada musuh, mengakibatkan <anemo>Anemo DMG</anemo> tambahan. Setiap kali bulu angin ini dipanggil, Vesna akan memulihkan sejumlah <strong>Sword Essence</strong>.",
+      "4": "Vesna dapat mengonsumsi <strong>Sword Essence</strong> untuk melancarkan Elemental Skill Khusus <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Windborne Sword</tooltip></strong> dan mengakibatkan <anemo>Anemo DMG</anemo> pada musuh.",
+      "5": "Setelah setiap kali Elemental Skill Khusus <strong>Windborne Sword</strong> dilancarkan, selama satu kali durasi <strong>Armed for Action</strong>, level Windborne Sword akan meningkat dan mengakibatkan <anemo>Anemo DMG</anemo> yang lebih kuat. Level awal <strong>Windborne Sword</strong> adalah Level 1 dan dapat meningkat hingga Level 3. Menggunakan <strong>Windborne Sword</strong> di Lv. 2 dan Lv. 3 juga akan memanggil <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Spirit Blade</tooltip></strong> yang mengakibatkan <anemo>Anemo DMG</anemo> terhadap musuh.",
+      "6": "Vesna akan keluar dari mode ini saat durasinya berakhir atau setelah dia melancarkan <strong>Windborne Sword</strong> dengan level tertinggi sebanyak tiga kali, dan semua <strong>Sword Essence</strong> yang tersisa akan dihapus.",
+      "7": "Selain itu, dalam mode ini, ketahanan Vesna terhadap interupsi akan meningkat.",
+      "8": "<strong>Radiance: Stellar Swirl</strong>: DMG <strong>Spirit Blade</strong> dikonversi menjadi <anemo>Anemo DMG</anemo> yang dianggap sebagai DMG reaksi Stellar Swirl."
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Windborne Sword Lv. 1",
+      "2": "DMG Windborne Sword Lv. 2",
+      "3": "DMG Spirit Blade dari Windborne Sword Lv. 2",
+      "4": "DMG Spirit Blade dari Windborne Sword Lv. 3",
+      "5": "DMG Serangan Terakhir Spirit Blade dari Windborne Sword Lv. 3",
+      "6": "DMG Stellar Swirl Spirit Blade dari Windborne Sword Lv. 2",
+      "7": "DMG Stellar Swirl Spirit Blade dari Windborne Sword Lv. 3",
+      "8": "DMG Stellar Swirl Serangan Terakhir Spirit Blade dari Windborne Sword Lv. 3",
+      "9": "DMG Bulu Angin",
+      "10": "Durasi Armed for Action",
+      "11": "Cooldown",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "For the Tsaritsa!",
+    "description": {
+      "0": "Memanggil beberapa <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Spirit Blade</tooltip></strong> sekaligus dan mengakibatkan <anemo>Anemo DMG Area</anemo>, serta mendapatkan satu lapis <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>Sword Essence</tooltip></strong>."
+    },
+    "skillParams": {
+      "0": "DMG Spirit Blade",
+      "1": "DMG Stellar Swirl Spirit Blade",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "sprint": {
+    "name": "",
+    "description": {}
+  },
+  "passive1": {
+    "name": "Rite of Spring's Procession",
+    "description": {
+      "0": "Setelah Vesna melancarkan Elemental Skill Khusus <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Windborne Sword</tooltip></strong> atau Elemental Burst <strong><tooltip ns=char_Vesna_gen baseKey18=burst>For the Tsaritsa!</tooltip></strong>, Vesna juga akan mendapatkan 1 lapis <strong>Disciplinary Action</strong> yang berlangsung selama 20 detik dan dapat ditumpuk sampai 6 lapis. Durasi setiap lapisnya dihitung terpisah.",
+      "1": "Saat Vesna memiliki <strong>Disciplinary Action</strong>, <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Spirit Blade</tooltip></strong> yang dipanggil olehnya akan mengakibatkan DMG sebesar 100% + (jumlah lapisan Disciplinary Action ×10%) dari DMG awalnya. Melancarkan Elemental Skill <strong>The Art of Victory</strong> atau meninggalkan medan pertempuran akan menghapus semua <strong>Disciplinary Action</strong> yang dimiliki Vesna."
+    }
+  },
+  "passive2": {
+    "name": "Truth Prevails",
+    "description": {
+      "0": "<strong>Radiance: Stellar Swirl</strong>: Vesna akan mendapatkan efek yang sesuai berdasarkan jenis elemen Karakter dalam party. ",
+      "1": [
+        "Untuk setiap 1 Karakter dengan jenis elemen <cryo>Cryo</cryo> atau <anemo>Anemo</anemo> dalam party: ATK Vesna meningkat 6%;",
+        "Untuk setiap 1 Karakter dengan jenis elemen selain yang disebutkan di atas dalam party: Elemental Mastery Vesna meningkat 25 poin."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Stellar Jubilee: Splendid Prelude",
+    "description": {
+      "0": "Saat Karakter di dalam party memicu reaksi Cryo Swirl, reaksi ini akan diubah menjadi reaksi Stellar Swirl. DMG dasar reaksi Stellar Swirl Karakter di dalam party meningkat berdasarkan ATK Vesna: Untuk setiap 100 poin ATK, DMG dasar reaksi Stellar Swirl meningkat 0,7% dan dapat ditingkatkan hingga 14% dengan cara ini.",
+      "1": "Setelah Karakter di dalam party memicu reaksi Stellar Swirl di dekatnya, Vesna akan memasuki status <strong>Radiance: Stellar Swirl</strong> selama 8 detik."
+    }
+  },
+  "passive": {
+    "name": "The Grand Circuit",
+    "description": {
+      "0": "Saat tidak dalam kondisi bertempur, Vesna dapat memasuki status <strong>Coursing</strong> dengan cara menahan tombol Lari atau Lompat.",
+      "1": "<br/>",
+      "2": "<strong>Coursing</strong>",
+      "3": "Terus menghabiskan Stamina untuk mempertahankan kondisi melayang. Saat menekan tombol Lari atau Lompat untuk menaikkan ketinggian, Stamina-nya juga akan berkurang lebih banyak. Termasuk saat memasuki status <strong>Coursing</strong> dengan menahan tombol Lompat, Vesna dapat meningkatkan ketinggiannya hingga 3 kali di setiap status <strong>Coursing</strong>.",
+      "4": "<br/>",
+      "5": "Selain itu, saat berada di wilayah Snezhnaya (kecuali Nod-Krai) dan tidak dalam kondisi bertempur, ketika Karakter aktif dalam party sedang berada di udara, mengganti Karakter ke Vesna akan membuatnya langsung memasuki status <strong>Coursing</strong> serta memulihkan 50 poin Stamina. Efek ini dapat terpicu sekali setiap 10 detik. Efek ini tidak aktif dalam Domain, Domain Trounce, atau Spiral Abyss"
+    }
+  },
+  "constellation1": {
+    "name": "Winter's Farewell Feast",
+    "description": {
+      "0": "Dalam mode <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Armed for Action</tooltip></strong>, Vesna dapat melancarkan <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Windborne Sword</tooltip></strong> dengan level tertinggi hingga empat kali, bukan tiga kali. Dan setiap kali memasuki mode <strong>Armed for Action</strong>, melancarkan <strong>Windborne Sword</strong> dengan level tertinggi untuk pertama kalinya tidak mengonsumsi <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>Sword Essence</tooltip></strong>.",
+      "1": "Selain itu, DMG reaksi Stellar Swirl yang diakibatkan Vesna dalam mode <strong>Armed for Action</strong> meningkat 20%."
+    }
+  },
+  "constellation2": {
+    "name": "Kolo of Spring's Arrival",
+    "description": {
+      "0": "Talenta Ascension <strong><tooltip ns=char_Vesna_gen baseKey18=passive1>Rite of Spring's Procession</tooltip></strong> diperkuat: saat memasuki mode <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Armed for Action</tooltip></strong>, Vesna akan mendapatkan <strong>Disciplinary Action</strong> dengan jumlah lapisan maksimum. Saat memiliki jumlah lapisan <strong>Disciplinary Action</strong> maksimum, ATK Vesna akan meningkat 40%.",
+      "1": "Harus membuka Talenta Ascension \"Rite of Spring's Procession\" terlebih dahulu untuk memicu efek di atas."
+    }
+  },
+  "constellation3": {
+    "name": "Winter's Last Offering",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Vesna_gen baseKey18=skill>The Art of Victory</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Glory to Our Forebears",
+    "description": {
+      "0": "Talenta Ascension <strong><tooltip ns=char_Vesna_gen baseKey18=passive2>Truth Prevails</tooltip></strong> diperkuat: efek peningkatan ATK dan Elemental Mastery menjadi tiga kali lipat dari nilai awalnya."
+    }
+  },
+  "constellation5": {
+    "name": "The Nobleborn's Charge",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong><tooltip ns=char_Vesna_gen baseKey18=burst>For the Tsaritsa!</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Unwavering Ardor",
+    "description": {
+      "0": "Selama 5 detik setelah melancarkan <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Windborne Sword</tooltip></strong> level tertinggi, Vesna dapat menekan Normal Attack atau Elemental Skill untuk melancarkan <strong>Windborne Sword: Transpose</strong> yang merupakan ilmu rahasia turun-temurun ras Vila: Mengakibatkan <anemo>Anemo DMG</anemo> sebesar 150% ATK Vesna dan memanggil <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Spirit Blade</tooltip></strong> yang mengakibatkan <anemo>Anemo DMG</anemo> tambahan sebesar 200% ATK Vesna. Jika Vesna berada dalam mode <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Armed for Action</tooltip></strong>, ia juga akan memanggil bulu angin untuk melancarkan serangan terkoordinasi terhadap musuh.",
+      "1": "Selain itu, DMG reaksi Stellar Swirl yang diakibatkan Vesna <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>bertumbuh</strong></tooltip> 20%."
+    }
+  }
+}

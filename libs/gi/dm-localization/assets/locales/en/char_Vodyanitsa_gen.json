@@ -1,0 +1,242 @@
+{
+  "name": "Vodyanitsa",
+  "title": "Lingering Siren-Song",
+  "description": "Prima Donna of the Korolevskiy Troupe and a Water Imp who has parted from her kin.",
+  "constellationName": "Piscicula Aurea",
+  "auto": {
+    "name": "Psyshkhwe Arietta",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Sings an ancient song of the Water Imps, unleashing up to 4 strikes. This deals <hydro>Hydro DMG</hydro> to the opponent."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to hurl a water ball forward, dealing <hydro>Hydro DMG</hydro>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges towards the ground from mid-air, damaging all opponents along the path. Deals <hydro>AoE Hydro DMG</hydro> upon impact with the ground."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "Charged Attack DMG",
+      "5": "Charged Attack Stamina Cost",
+      "6": "Plunge DMG",
+      "7": "Low/High Plunge DMG",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%",
+      "3": "{{3, percent(fixed: 1)}}%",
+      "4": "{{4, percent(fixed: 1)}}%",
+      "5": "{{5, fixed(fixed: 1)}}",
+      "6": "{{6, percent(fixed: 1)}}%",
+      "7": "{{7, percent}}%/{{8, percent}}%",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Rechitativ: Sonorous Dawn",
+    "description": {
+      "0": "Reveals her true Water Imp form, dealing <hydro>AoE Hydro DMG</hydro> and gaining the <strong>Song of Ages Past</strong> effect: While this effect is active, Vodyanitsa summons the ancient <strong>Horn of Spring's Call</strong>, periodically moving closer to an opponent in a swift movement to attack them, dealing <hydro>Hydro DMG</hydro>.",
+      "1": "The above two types of attacks will also decrease the <hydro>Hydro RES</hydro> and <cryo>Cryo RES</cryo> of opponents hit. Additionally, while the <strong>Song of Ages Past</strong> effect is active, the party's active character gains increased resistance to interruption and periodically regenerates HP based on Vodyanitsa's Max HP."
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Duration",
+      "2": "Horn of Spring's Call Attack Interval",
+      "3": "Horn of Spring's Call DMG",
+      "4": "Song of Ages Past Healing",
+      "5": "Song of Ages Past Healing Interval",
+      "6": "Hydro/Cryo RES Reduction",
+      "7": "RES Reduction Duration",
+      "8": "Skill CD",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 2)}}% Max HP",
+      "1": "{{1, fixed(fixed: 1)}}s",
+      "2": "{{2, fixed(fixed: 1)}}s",
+      "3": "{{3, percent(fixed: 2)}}% Max HP",
+      "4": "{{4}} + {{5, percent(fixed: 2)}}% Max HP",
+      "5": "{{6, fixed(fixed: 1)}}s",
+      "6": "{{7, percent(fixed: 1)}}%",
+      "7": "{{8, fixed(fixed: 1)}}s",
+      "8": "{{9, fixed(fixed: 1)}}s",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Koda: Sink With Thee",
+    "description": {
+      "0": "Leads a song of the Water Imps which lures its listeners to their doom. This deals <hydro>AoE Hydro DMG</hydro> to the opponent.",
+      "1": "When in the <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Song of Ages Past</tooltip></strong> state, DMG dealt is further increased."
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Song of Ages Past DMG Bonus",
+      "2": "CD",
+      "3": "Energy Cost",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}% Max HP",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, fixed(fixed: 1)}}s",
+      "3": "{{3}}",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "The Last Djeguako Songstress",
+    "description": {
+      "0": "When the Elemental Skill <strong>Rechitativ: Sonorous Dawn</strong> is used, any Stellar Vortex on the field will turn into a Wandering Vortex instead. While the <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Song of Ages Past</tooltip></strong> effect is active, nearby party members' Stellar Swirl reactions will generate Wandering Vortex instead.",
+      "1": "Generating or detonating a Wandering Vortex will also reduce nearby opponents' <anemo>Anemo RES</anemo> by 35% for 6s. ",
+      "2": "Additionally, nearby party members who enter the <strong>Radiance: Stellar Swirl</strong> state while <strong>Song of Ages Past</strong> is in effect will have the <strong>Radiance: Stellar Swirl</strong> state extended by 4s."
+    }
+  },
+  "passive2": {
+    "name": "Dirge of the Fandyr",
+    "description": {
+      "0": "When the Elemental Skill <strong>Rechitativ: Sonorous Dawn</strong> is used, Vodyanitsa will also gain 25 stacks of <tooltip ns=tooltips_gen baseKey18=11400001 values=[]><strong>Lead Vocal</strong></tooltip> as well as 10 stacks of <tooltip ns=tooltips_gen baseKey18=11400002 values=[]><strong>Chorus</strong></tooltip>.",
+      "1": "The two effects above last 30s each, and the stack count is refreshed when the Elemental Skill is used."
+    }
+  },
+  "passive3": {
+    "name": "Echoes Over the Frozen Lake",
+    "description": {
+      "0": "Holding the Elemental Skill outside of combat will cause Vodyanitsa to embody her true Water Imp form and swim for up to 10s at the cost of Stamina. Naturally, as a Water Imp, she can also move across the water's surface. Vodyanitsa will exit her Water Imp form when the Elemental Skill is used again, when the duration ends, or when all Stamina is depleted.",
+      "1": "Additionally, while Vodyanitsa can swim faster, her Stamina consumption rate is also increased."
+    }
+  },
+  "passive": {
+    "name": "Heartless Siren Song",
+    "description": {
+      "0": "As the Prima Donna of the Korolevskiy Troupe, Vodyanitsa sings in person in place of playing an instrument."
+    }
+  },
+  "constellation1": {
+    "name": "Waters in Full Splendor",
+    "description": {
+      "0": "Each time Vodyanitsa triggers the healing effect of <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Song of Ages Past</tooltip></strong>, it also increases the ATK of all nearby party members by 0.8% of her Max HP for 5s."
+    }
+  },
+  "constellation2": {
+    "name": "Echoes That Pierce the Snow",
+    "description": {
+      "0": "When the <strong>Horn of Spring's Call</strong> from the Elemental Skill <strong>Rechitativ: Sonorous Dawn</strong> attacks the opponent, Vodyanitsa gains the \"Two Voices in Black and White\" effect which increases the CRIT DMG from <hydro>Hydro DMG</hydro> and <cryo>Cryo DMG</cryo> dealt by the currently active party member by 50% for 5s.",
+      "1": "If there is a Wandering Vortex present on the field or in the 5s after a Wandering Vortex explodes, the effect changes to: increases the CRIT DMG from Stellar Swirl reaction DMG caused by the currently active party member by 60% for 5s.",
+      "2": "Additionally, the Elemental Skill <strong>Rechitativ: Sonorous Dawn</strong> is enhanced as follows: the duration of the <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Song of Ages Past</tooltip></strong> effect is extended by 9s."
+    }
+  },
+  "constellation3": {
+    "name": "Song Lingering on a Spring Morning",
+    "description": {
+      "0": "Increases the Level of the Elemental Skill <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Rechitativ: Sonorous Dawn</tooltip></strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Melancholic Voice Upon the Gentle Waters",
+    "description": {
+      "0": "When Vodyanitsa triggers the healing effect of <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Song of Ages Past</tooltip></strong>, an additional effect will be triggered based on the healed character's HP.",
+      "1": [
+        " If the character's HP is below 40%: The healing is increased by 50%; and",
+        " If the character's HP is 40% or above: Vodyanitsa's Max HP is increased by 20% for 6s. Max 3 stacks, and each stack's duration is counted independently."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Together, Down Into the Deep",
+    "description": {
+      "0": "Increases the Level of the Elemental Burst <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=burst>Koda: Sink With Thee</tooltip></strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Neverending Song of Revelry",
+    "description": {
+      "0": "The Constellation <strong>Echoes That Pierce the Snow</strong> is enhanced: \"Two Voices in Black and White\" now applies to all nearby party members.",
+      "1": "Additionally, while the <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Song of Ages Past</tooltip></strong> effect is active, Stellar Swirl reaction DMG dealt by nearby party members is <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>elevated</strong></tooltip> by 25% while <hydro>Hydro DMG</hydro> and <cryo>Cryo DMG</cryo> dealt are increased by 60%."
+    }
+  }
+}

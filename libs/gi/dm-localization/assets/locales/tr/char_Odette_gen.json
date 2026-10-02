@@ -50,7 +50,7 @@
       "2": "<br/>",
       "3": "<strong>Solo Dans Gölgesi</strong>",
       "4": "<strong>Tüy</strong> ve <strong>Kanat</strong> olmak üzere iki dans hareketi arasında geçiş yapar, belirli aralıklarla yakındaki düşmanlara saldırarak <cryo>Buz Alan Hasarı</cryo> verir.",
-      "5": "Ayrıca <strong>Yavaş Tempo: Hayalet Gece Dansçıları</strong> Element Becerisi kullanıldıktan sonra bu Element Becerisi, 6 saniyeliğine <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Yavaş Tempo: Şafakla Gelen Son</strong></tooltip> özel Element Becerisine dönüşür. Bu özel Element Becerisinde bir dans düeti yakındaki düşmanlara zamanla <cryo>Buz Alan Hasarı</cryo> verir. Düet sona erdiğinde Odette bir defa daha <cryo>Buz Alan Hasarı</cryo> verir, bu Hasar Yıldız İletimi veya Yıldız Girdabı Hasarı sayılır."
+      "5": "Ayrıca <strong>Yavaş Tempo: Hayalet Gece Dansçıları</strong> Element Becerisi kullanıldıktan sonra bu Element Becerisi, 6 saniyeliğine <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Yavaş Tempo: Şafakla Gelen Son</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip> özel Element Becerisine dönüşür. Bu özel Element Becerisinde bir dans düeti yakındaki düşmanlara zamanla <cryo>Buz Alan Hasarı</cryo> verir. Düet sona erdiğinde Odette bir defa daha <cryo>Buz Alan Hasarı</cryo> verir, bu Hasar Yıldız İletimi veya Yıldız Girdabı Hasarı sayılır."
     },
     "skillParams": {
       "0": "Beceri Hasarı",
@@ -79,7 +79,7 @@
     "name": "Hızlı Tempo: Mavi Kuşun Son Dansı",
     "description": {
       "0": "Odette, hızlı ve canlı dans adımlarıyla birden fazla defa <cryo>Buz Alan Hasarı</cryo> verir ve <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solo Dans Gölgesini</strong></tooltip> çağırır. Ayrıca verdiği Yıldız Parıltısı Tepkimesi Hasarını artıran <strong>Kar Kuğusunun Rüyası</strong> etkisini kazanır.",
-      "1": "Buna ek olarak, <strong>Hızlı Tempo: Mavi Kuşun Son Dansı</strong> Element Patlaması kullanıldıktan sonra Odette'in <strong>Yavaş Tempo: Hayalet Gece Dansçıları</strong> Element Becerisi, 6 saniyeliğine <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Yavaş Tempo: Şafakla Gelen Son</strong></tooltip> özel Element Becerisine dönüşür.",
+      "1": "Buna ek olarak, <strong>Hızlı Tempo: Mavi Kuşun Son Dansı</strong> Element Patlaması kullanıldıktan sonra Odette'in <strong>Yavaş Tempo: Hayalet Gece Dansçıları</strong> Element Becerisi, 6 saniyeliğine <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Yavaş Tempo: Şafakla Gelen Son</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip> özel Element Becerisine dönüşür.",
       "2": "<br/>",
       "3": "Alanda Odette'in çağırdığı bir Solo Dans Gölgesi varsa süresi yenilenmiş şekilde Odette'in yanına çağrılır."
     },
@@ -128,7 +128,7 @@
   "passive": {
     "name": "Kış Hayallerinin Yankısı",
     "description": {
-      "0": "Mini haritada <strong>Snezhnaya'nın yöresel ürünlerini</strong> gösterir.",
+      "0": "Mini haritada <strong>Snezhnaya'nın Yöresel Ürünlerinin</strong> konumlarını gösterir ve bu etki Gölge Diyarında da geçerlidir.",
       "1": "Boş vakitlerinde dans pratiği yapmak başka etkiler de tetikleyebilir..."
     }
   },

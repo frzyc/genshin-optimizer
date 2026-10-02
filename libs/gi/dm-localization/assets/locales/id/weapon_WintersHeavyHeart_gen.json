@@ -1,0 +1,29 @@
+{
+  "name": "Winter's Heavy Heart",
+  "description": {
+    "0": "Wadah ritual yang terbentuk dari kondensasi salju dan es yang sangat murni. Konon, hingga lima ratus tahun yang lalu, benda ini masih digunakan oleh para penguasa Snegovik dalam upacara penobatan."
+  },
+  "passiveName": "Secrets of Frost",
+  "passiveDescription": {
+    "0": {
+      "0": "Karakter yang mengenakan mendapatkan \"Silver-Tinged Blood Pact\": Untuk setiap Karakter Cryo yang ada di party, Elemental Mastery Karakter yang mengenakan +<cryo>24</cryo> poin. Untuk setiap Karakter Electro yang ada di party, ATK Karakter yang mengenakan +<cryo>4,8%</cryo>. Maksimum dapat menghitung 4 Karakter Cryo atau Electro untuk efek di atas.",
+      "1": "Radiance: Stellar Glimmer: Efek Silver-Tinged Blood Pact berubah menjadi: Untuk setiap Karakter Cryo atau Electro yang ada di party, Elemental Mastery Karakter yang mengenakan +<cryo>20</cryo> poin dan DMG reaksi Stellar Glimmer yang diakibatkan +<cryo>6%</cryo>."
+    },
+    "1": {
+      "0": "Karakter yang mengenakan mendapatkan \"Silver-Tinged Blood Pact\": Untuk setiap Karakter Cryo yang ada di party, Elemental Mastery Karakter yang mengenakan +<cryo>30</cryo> poin. Untuk setiap Karakter Electro yang ada di party, ATK Karakter yang mengenakan +<cryo>6%</cryo>. Maksimum dapat menghitung 4 Karakter Cryo atau Electro untuk efek di atas.",
+      "1": "Radiance: Stellar Glimmer: Efek Silver-Tinged Blood Pact berubah menjadi: Untuk setiap Karakter Cryo atau Electro yang ada di party, Elemental Mastery Karakter yang mengenakan +<cryo>25</cryo> poin dan DMG reaksi Stellar Glimmer yang diakibatkan +<cryo>7,5%</cryo>."
+    },
+    "2": {
+      "0": "Karakter yang mengenakan mendapatkan \"Silver-Tinged Blood Pact\": Untuk setiap Karakter Cryo yang ada di party, Elemental Mastery Karakter yang mengenakan +<cryo>36</cryo> poin. Untuk setiap Karakter Electro yang ada di party, ATK Karakter yang mengenakan +<cryo>7,2%</cryo>. Maksimum dapat menghitung 4 Karakter Cryo atau Electro untuk efek di atas.",
+      "1": "Radiance: Stellar Glimmer: Efek Silver-Tinged Blood Pact berubah menjadi: Untuk setiap Karakter Cryo atau Electro yang ada di party, Elemental Mastery Karakter yang mengenakan +<cryo>30</cryo> poin dan DMG reaksi Stellar Glimmer yang diakibatkan +<cryo>9%</cryo>."
+    },
+    "3": {
+      "0": "Karakter yang mengenakan mendapatkan \"Silver-Tinged Blood Pact\": Untuk setiap Karakter Cryo yang ada di party, Elemental Mastery Karakter yang mengenakan +<cryo>42</cryo> poin. Untuk setiap Karakter Electro yang ada di party, ATK Karakter yang mengenakan +<cryo>8,4%</cryo>. Maksimum dapat menghitung 4 Karakter Cryo atau Electro untuk efek di atas.",
+      "1": "Radiance: Stellar Glimmer: Efek Silver-Tinged Blood Pact berubah menjadi: Untuk setiap Karakter Cryo atau Electro yang ada di party, Elemental Mastery Karakter yang mengenakan +<cryo>35</cryo> poin dan DMG reaksi Stellar Glimmer yang diakibatkan +<cryo>10,5%</cryo>."
+    },
+    "4": {
+      "0": "Karakter yang mengenakan mendapatkan \"Silver-Tinged Blood Pact\": Untuk setiap Karakter Cryo yang ada di party, Elemental Mastery Karakter yang mengenakan +<cryo>48</cryo> poin. Untuk setiap Karakter Electro yang ada di party, ATK Karakter yang mengenakan +<cryo>9,6%</cryo>. Maksimum dapat menghitung 4 Karakter Cryo atau Electro untuk efek di atas.",
+      "1": "Radiance: Stellar Glimmer: Efek Silver-Tinged Blood Pact berubah menjadi: Untuk setiap Karakter Cryo atau Electro yang ada di party, Elemental Mastery Karakter yang mengenakan +<cryo>40</cryo> poin dan DMG reaksi Stellar Glimmer yang diakibatkan +<cryo>12%</cryo>."
+    }
+  }
+}

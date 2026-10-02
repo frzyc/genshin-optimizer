@@ -1,0 +1,176 @@
+{
+  "name": "Vodyanitsa",
+  "title": "La Cantante Sirena",
+  "description": "Soprano principal de la Compañía Korolevski y una nixie separada de los suyos.",
+  "constellationName": "Piscicula Aurea",
+  "auto": {
+    "name": "Arieta psishjwe",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Entona una antigua canción de los nixies para realizar hasta 4 ataques, los cuales infligen <hydro>Daño Hydro</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante y lanza una esfera de agua hacia delante para infligir <hydro>Daño Hydro</hydro>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo <hydro>Daño Hydro en el AdE</hydro> en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Recitativo: Alba sonora",
+    "description": {
+      "0": "Revela su forma original de nixie, inflige <hydro>Daño Hydro en el AdE</hydro> y obtiene el efecto de <strong>canción de otrora</strong>. Mientras este efecto esté activo, Vodyanitsa invocará un antiguo <strong>cuerno del llamado primaveral</strong> que se desplazará rápidamente hacia un enemigo cada cierto tiempo para atacarlo e infligirle <hydro>Daño Hydro</hydro>.",
+      "1": "Las <hydro>RES Hydro</hydro> y <cryo>Cryo</cryo> de los enemigos que sean golpeados por cualquiera de los dos ataques anteriores se verán reducidas. Además, mientras el efecto de <strong>canción de otrora</strong> esté activo, aumentará la <strong>RES a interrupción</strong> de tu personaje en uso del equipo y le restaurará Vida periódicamente en función de la Vida Máx. de Vodyanitsa."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Duración",
+      "2": "Intervalo de ataque de cuerno del llamado primaveral",
+      "3": "Daño de cuerno del llamado primaveral",
+      "4": "Curación de canción de otrora",
+      "5": "Intervalo de curación de canción de otrora",
+      "6": "Reducción de RES Hydro/Cryo",
+      "7": "Duración de reducción de RES",
+      "8": "TdE de habilidad",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Coda: Hundiéndome contigo",
+    "description": {
+      "0": "Entona una canción de los nixies que seduce y hunde para infligir <hydro>Daño Hydro en el AdE</hydro>.",
+      "1": "Si se encuentra en el estado de <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>canción de otrora</tooltip></strong>, el daño infligido aumentará aún más."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Bono de daño de canción de otrora",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "La última cantante djeguako",
+    "description": {
+      "0": "Al usar la Habilidad Elemental, <strong>Recitativo: Alba sonora</strong>, cualquier vórtice brilloestelar que haya en el campo de batalla se transformará en un vórtice errante. Además, cuando un personaje cercano del equipo cause una reacción de Torbellino Estelar mientras el efecto de <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>canción de otrora</tooltip></strong> esté activo, se creará un vórtice errante en lugar de un vórtice brilloestelar.",
+      "1": "Al crear o detonar un vórtice errante, la <anemo>RES Anemo</anemo> de los enemigos cercanos se reducirá en un 35% durante 6 s.",
+      "2": "Además, cuando los personajes cercanos del equipo entren en el estado de <strong>esplendor: Torbellino Estelar</strong> mientras la <strong>canción de otrora</strong> esté activa, la duración de <strong>esplendor: Torbellino Estelar</strong> se prolongará 4 s."
+    }
+  },
+  "passive2": {
+    "name": "Endecha del fandyr",
+    "description": {
+      "0": "Al usar la Habilidad Elemental, <strong>Recitativo: Alba sonora</strong>, Vodyanitsa obtiene 25 cargas de <tooltip ns=tooltips_gen baseKey18=11400001 values=[]><strong>vocalista principal</strong></tooltip> y 10 cargas de <tooltip ns=tooltips_gen baseKey18=11400002 values=[]><strong>coro</strong></tooltip>.",
+      "1": "Cada uno de estos efectos dura 30 s y sus cargas se reiniciarán al usar la Habilidad Elemental."
+    }
+  },
+  "passive3": {
+    "name": "Ecos sobre el Lago Helado",
+    "description": {
+      "0": "Cuando no esté en combate, al mantener pulsada la Habilidad Elemental, Vodyanitsa revelará su forma original de nixie y podrá nadar durante un máximo de 10 s a costa de consumir Aguante. Dado que es una nixie, también podrá desplazarse sobre la superficie del agua. Al volver a usar la Habilidad Elemental, cuando termine su duración o cuando se quede sin Aguante, Vodyanitsa saldrá de su forma original de nixie.",
+      "1": "Además, la velocidad de nado de Vodyanitsa aumenta, pero consume Aguante más rápidamente."
+    }
+  },
+  "passive": {
+    "name": "Canción desalmada de sirena",
+    "description": {
+      "0": "Como soprano principal de la Compañía Korolevski, al tocar un instrumento, en su lugar, Vodyanitsa cantará ella misma."
+    }
+  },
+  "constellation1": {
+    "name": "Aguas esplendorosas",
+    "description": {
+      "0": "Cuando Vodyanitsa active el efecto de curación de <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>canción de otrora</tooltip></strong>, el ATQ de todos los personajes cercanos del equipo aumentará durante 5 s en una cantidad equivalente al 0.8% de la Vida Máx. de Vodyanitsa."
+    }
+  },
+  "constellation2": {
+    "name": "Reverberación perforaventiscas",
+    "description": {
+      "0": "Cuando el <strong>cuerno del llamado primaveral</strong> de la Habilidad Elemental, <strong>Recitativo: Alba sonora</strong>, ataque a un enemigo, Vodyanitsa obtendrá el efecto de “voces en blanco y negro”, el cual aumenta en un 50% durante 5 s el Daño CRIT <hydro>Hydro</hydro> y <cryo>Cryo</cryo> infligido por el personaje en uso del equipo.",
+      "1": "Si en el campo de batalla hay un vórtice errante o si han transcurrido menos de 5 s desde su explosión, en su lugar, el Daño CRIT de las reacciones de Torbellino Estelar del personaje en uso del equipo aumentará en un 60% durante 5 s.",
+      "2": "Además, fortalece la Habilidad Elemental, <strong>Recitativo: Alba sonora</strong>, lo que aumenta en 9 s la duración de <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>canción de otrora</tooltip></strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Canción de la mañana primaveral",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Recitativo: Alba sonora</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Voz melancólica sobre las aguas serenas",
+    "description": {
+      "0": "Cuando Vodyanitsa active el efecto de curación de <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>canción de otrora</tooltip></strong>, producirá diferentes efectos en función de la Vida del personaje curado. Si la Vida de dicho personaje:",
+      "1": [
+        "Es inferior al 40%, la cantidad de Vida curada aumenta en un 50%.",
+        "Es igual o superior al 40%, la Vida Máx. de Vodyanitsa aumenta en un 20% durante 6 s. Este efecto puede acumularse hasta 3 veces y cada acumulación tiene su propia duración individual."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Hundámonos juntos en las profundidades",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=burst>Coda: Hundiéndome contigo</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Canción interminable del júbilo",
+    "description": {
+      "0": "Fortalece el efecto de la constelación <strong>Reverberación perforaventiscas</strong>, de manera que el efecto de “voces en blanco y negro” pasa a afectar a todos los personajes cercanos del equipo.",
+      "1": "Además, mientras el efecto de <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>canción de otrora</tooltip></strong> esté activo, el daño de Torbellino Estelar infligido por los personajes cercanos del equipo <strong><tooltip ns=tooltips_gen baseKey18=11190007 values=[]>ascenderá</tooltip></strong> en un 25%, y el <hydro>Daño Hydro</hydro> y <cryo>Cryo</cryo> que infligen aumentará en un 60%."
+    }
+  }
+}

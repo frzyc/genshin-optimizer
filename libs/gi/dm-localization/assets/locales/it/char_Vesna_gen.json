@@ -1,0 +1,189 @@
+{
+  "name": "Vesna",
+  "title": "Lama tagliente del banchetto nevoso",
+  "description": "Comandante della Druzhna e lama tagliente della Tsaritsa.",
+  "constellationName": "Amentum Vernum",
+  "auto": {
+    "name": "Lama danzante delle Vile",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra fino a 6 colpi consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per travolgere gli avversari di fronte a sé."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da 6º colpo",
+      "6": "DAN da ATT caricato",
+      "7": "Costo vigore ATT caricato",
+      "8": "DAN da ATT in picchiata",
+      "9": "DAN da ATT in picchiata basso/alto",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Arte della vittoria",
+    "description": {
+      "0": "Evoca delle Lame spirituali tramandate attraverso generazioni di Vile per infliggere <anemo>DAN da Anemo ad area</anemo>, dopodiché passa alla modalità <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Pronta all'azione</tooltip></strong> e ottiene 2 accumuli di <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>Essenza della spada</tooltip></strong>.",
+      "1": "<br/>",
+      "2": "<strong>Pronta all'azione</strong>",
+      "3": "I DAN inflitti da Vesna con i suoi attacchi normali, caricati e in picchiata diventano <anemo>DAN da Anemo</anemo> non influenzabili da altre infusioni elementali. Inoltre, evoca una Remigante del vento che attacca il nemico allo stesso tempo, infliggendo <anemo>DAN da Anemo</anemo> aggiuntivi. Ogni volta che la Remigante del vento viene evocata, Vesna rigenera una certa quantità di <strong>Essenza della spada</strong>.",
+      "4": "Vesna può consumare <strong>Essenza della spada</strong> per sprigionare l'abilità elementale speciale <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Spada del vento</tooltip></strong>, che infligge <anemo>DAN da Anemo</anemo> all'avversario.",
+      "5": "Ogni utilizzo dell'abilità elementale speciale <strong>Spada del vento</strong> nella stessa iterazione di <strong>Pronta all'azione</strong> aumenta il livello di <strong>Spada del vento</strong>, partendo dal livello 1 fino al livello 3, per infliggere più <anemo>DAN da Anemo</anemo>. Utilizzare <strong>Spada del vento</strong> al livello 2 e 3 evoca anche delle <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Lame spirituali</tooltip></strong> che infliggono <anemo>DAN da Anemo</anemo>.",
+      "6": "Vesna esce dalla modalità al termine della sua durata o dopo aver utilizzato <strong>Spada del vento</strong> al livello massimo 3 volte, azzerando l'<strong>Essenza della spada</strong> accumulata.",
+      "7": "In questa modalità, la resistenza all'interruzione di Vesna è aumentata.",
+      "8": "Nello stato di <strong>Splendore: Turbinio astrale</strong>, i DAN inflitti tramite le <strong>Lame spirituali</strong> diventano <anemo>DAN da Anemo</anemo> considerati anche come DAN da reazione di Turbinio astrale."
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da Spada del vento liv. 1",
+      "2": "DAN da Spada del vento liv. 2",
+      "3": "DAN da Lama spirituale Spada del vento liv. 2",
+      "4": "DAN da Lama spirituale Spada del vento liv. 3",
+      "5": "DAN da colpo finale Lama spirituale Spada del vento liv. 3",
+      "6": "DAN da Turbinio astrale Lama spirituale Spada del vento liv. 2",
+      "7": "DAN da Turbinio astrale Lama spirituale Spada del vento liv. 3",
+      "8": "DAN da Turbinio astrale colpo finale Lama spirituale Spada del vento liv. 3",
+      "9": "DAN da Remigante del vento",
+      "10": "Durata Pronta all'azione",
+      "11": "TdR",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Per la Tsaritsa!",
+    "description": {
+      "0": "Evoca un gran numero di <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Lame spirituali</tooltip></strong> che infliggono <anemo>DAN da Anemo ad area</anemo>. Ottiene anche un accumulo di <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>Essenza della spada</tooltip></strong>."
+    },
+    "skillParams": {
+      "0": "DAN da Lama spirituale",
+      "1": "DAN da Turbinio astrale Lama spirituale",
+      "2": "TdR",
+      "3": "Costo energia",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "sprint": {
+    "name": "",
+    "description": {}
+  },
+  "passive1": {
+    "name": "Corteo del Rito primaverile",
+    "description": {
+      "0": "Dopo che Vesna ha utilizzato l'abilità elementale speciale <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Spada del vento</tooltip></strong> o il Tripudio elementale <strong><tooltip ns=char_Vesna_gen baseKey18=burst>Per la Tsaritsa!</tooltip></strong>, ottiene anche 1 accumulo di <strong>Azione disciplinare</strong>, che dura 20 s. È possibile avere fino a un massimo di 6 accumuli, ciascuno di durata indipendente.",
+      "1": "Quando sono presenti accumuli di <strong>Azione disciplinare</strong>, le <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Lame spirituali</tooltip></strong> evocate da Vesna infliggono DAN pari a un (100% + 10% × numero di accumuli di Azione disciplinare) dei DAN originali. Tutti gli accumuli attivi di <strong>Azione disciplinare</strong> vengono azzerati quando Vesna utilizza l'abilità elementale <strong>Arte della vittoria</strong> o quando lascia il campo."
+    }
+  },
+  "passive2": {
+    "name": "La verità prevale",
+    "description": {
+      "0": "Nello stato di <strong>Splendore: Turbinio astrale</strong>, Vesna ottiene l'effetto corrispondente in base al tipo elementale dei membri del suo gruppo.",
+      "1": [
+        " Per ogni personaggio di <cryo>Cryo</cryo> o di <anemo>Anemo</anemo> nel suo gruppo, l'ATT di Vesna aumenta di un 6%.",
+        " Per ogni personaggio di qualsiasi altro tipo elementale nel suo gruppo, la maestria elementale di Vesna aumenta di 25."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Giubileo astrale: Preludio splendente",
+    "description": {
+      "0": "Quando i membri del gruppo innescano una reazione di Turbinio di Cryo, questa si trasforma in una reazione di Turbinio astrale, e i DAN base da Turbinio astrale inflitti dai membri del gruppo aumentano in base all'ATT di Vesna. Per ogni 100 di ATT di Vesna, i DAN base da Turbinio astrale aumentano di uno 0,7%, fino a un 14% massimo.",
+      "1": "Dopo che un membro del gruppo ha innescato una reazione di Turbinio astrale nelle vicinanze, Vesna entra nello stato di <strong>Splendore: Turbinio astrale</strong> per 8 s."
+    }
+  },
+  "passive": {
+    "name": "Il grande circuito",
+    "description": {
+      "0": "Tenendo premuto lo Scatto o il Salto quando non è in un combattimento, Vesna entra nello stato di <strong>Pattuglia</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Pattuglia</strong>",
+      "3": "Consuma costantemente vigore per levitare a mezz'aria. Scattare o saltare per salire più in alto consuma vigore aggiuntivo. Includendo la pressione prolungata del Salto che attiva lo stato di <strong>Pattuglia</strong>, Vesna può salire più in alto fino a 3 volte per ogni iterazione del suddetto stato.",
+      "4": "<br/>",
+      "5": "Inoltre, a Snezhnaya (Nod-Krai esclusa), passando il controllo a Vesna mentre il membro attivo del gruppo è a mezz'aria e non in un combattimento, Vesna entra immediatamente nello stato di <strong>Pattuglia</strong> e rigenera 50 punti di vigore. Quest'effetto può attivarsi una volta ogni 10 s. Non ha effetto nei domini, nei Domini della conquista o nell'Abisso a spirale."
+    }
+  },
+  "constellation1": {
+    "name": "Banchetto d'addio dell'inverno",
+    "description": {
+      "0": "In modalità <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Pronta all'azione</tooltip></strong>, Vesna può scatenare <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Spada del vento</tooltip></strong> al livello massimo 4 volte invece di 3, e ogni volta che entra in modalità <strong>Pronta all'azione</strong>, il primo utilizzo al livello massimo di <strong>Spada del vento</strong> non consuma <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>Essenza della spada</tooltip></strong>.",
+      "1": "In più, in modalità <strong>Pronta all'azione</strong>, i DAN da reazione di Turbinio astrale inflitti da Vesna aumentano di un 20%."
+    }
+  },
+  "constellation2": {
+    "name": "Kolo dell'arrivo della primavera",
+    "description": {
+      "0": "Il talento d'ascensione <strong><tooltip ns=char_Vesna_gen baseKey18=passive1>Corteo del Rito primaverile</tooltip></strong> viene potenziato: quando Vesna entra nella modalità <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Pronta all'azione</tooltip></strong>, ottiene il numero massimo di accumuli di <strong>Azione disciplinare</strong>. Quando il conteggio di tali accumuli è al massimo, l'ATT di Vesna aumenta di un 40%.",
+      "1": "È richiesto il talento d'ascensione \"Corteo del Rito primaverile\" per accedere ai suddetti effetti."
+    }
+  },
+  "constellation3": {
+    "name": "Ultima offerta dell'inverno",
+    "description": {
+      "0": "Aumenta di 3 il livello dell'abilità elementale <strong><tooltip ns=char_Vesna_gen baseKey18=skill>Arte della vittoria</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Gloria ai nostri avi",
+    "description": {
+      "0": "Il talento d'ascensione <strong><tooltip ns=char_Vesna_gen baseKey18=passive2>La verità prevale</tooltip></strong> viene potenziato: i bonus ad ATT e maestria elementale aumentano a 3 volte il loro valore originale."
+    }
+  },
+  "constellation5": {
+    "name": "Il dovere di una nobile",
+    "description": {
+      "0": "Aumenta di 3 il livello del Tripudio elementale <strong><tooltip ns=char_Vesna_gen baseKey18=burst>Per la Tsaritsa!</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Ardore incrollabile",
+    "description": {
+      "0": "Entro 5 s dall'utilizzo di <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Spada del vento</tooltip></strong> al suo livello massimo, la pressione dell'attacco normale o dell'abilità elementale scatena l'abilità segreta delle Vile <strong>Spada del vento: Trasposizione</strong>, che infligge <anemo>DAN da Anemo</anemo> pari a un 150% dell'ATT di Vesna ed evoca delle <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Lame spirituali</tooltip></strong> che infliggono un'iterazione aggiuntiva di <anemo>DAN da Anemo</anemo> pari a un 200% dell'ATT di Vesna. Se è nella modalità <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Pronta all'azione</tooltip></strong>, Vesna evoca anche una Remigante del vento che esegue un attacco coordinato contro gli avversari.",
+      "1": "Inoltre, i DAN da reazione di Turbinio astrale di Vesna vengono <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>innalzati</strong></tooltip> di un 20%."
+    }
+  }
+}
