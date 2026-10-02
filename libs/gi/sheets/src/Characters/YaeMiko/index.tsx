@@ -4,6 +4,7 @@ import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
   equal,
+  equalStr,
   greaterEq,
   infoMut,
   input,
@@ -335,6 +336,9 @@ const data = dataObjForCharacterSheet(
         stellarconduct_dmg_: nodeC1_stellarconduct_dmg_,
         eleMas: nodeC2_eleMas,
       },
+    },
+    flags: {
+      radiance: equalStr(condLockStellarRadianceSc, 'on', 'sc'),
     },
   },
   {

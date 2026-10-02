@@ -92,7 +92,7 @@
       "4": "<br/>",
       "5": "<strong>Tugarin</strong>",
       "6": [
-        "Jika ada musuh di sekitar, Tugarin akan bergerak cepat untuk mendekati salah satu musuh dan menggigitnya setiap 2 detik, mengakibatkan <strong>Electro DMG</strong>.",
+        "Jika ada musuh di sekitar, Tugarin akan bergerak cepat untuk mendekati salah satu musuh dan menggigitnya setiap 2 detik, mengakibatkan <electro>Electro DMG</electro>.",
         "Jika musuh yang diserang sedang berada dalam efek <strong>Hunter's Mark</strong>, maka efek <strong>Hunter's Mark</strong> ini juga akan diaktifkan.",
         "Tugarin akan memprioritaskan serangan pada musuh yang sedang dalam efek <strong>Hunter's Mark</strong>."
       ],
@@ -144,7 +144,7 @@
   "passive": {
     "name": "Treetop Watch",
     "description": {
-      "0": "Memperlihatkan lokasi <strong>produk khas Snezhnaya</strong> di sekitar pada peta kecil."
+      "0": "Memperlihatkan lokasi <strong>produk khas Snezhnaya</strong> di sekitar pada peta kecil, juga bisa memberikan efek bantuan yang sama di Alam Bayangan."
     }
   },
   "constellation1": {

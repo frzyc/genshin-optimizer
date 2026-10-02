@@ -6,6 +6,7 @@ import AmosBow from './AmosBow'
 import AquaSimulacra from './AquaSimulacra'
 import AstralVulturesCrimsonPlumage from './AstralVulturesCrimsonPlumage'
 import BlackcliffWarbow from './BlackcliffWarbow'
+import BreezeborneRefrain from './BreezeborneRefrain'
 import ChainBreaker from './ChainBreaker'
 import Cloudforged from './Cloudforged'
 import CompoundBow from './CompoundBow'
@@ -57,6 +58,7 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   AquaSimulacra,
   AstralVulturesCrimsonPlumage,
   BlackcliffWarbow,
+  BreezeborneRefrain,
   ChainBreaker,
   Cloudforged,
   CompoundBow,

@@ -1,0 +1,29 @@
+{
+  "name": "Nueva Rama",
+  "description": {
+    "0": "Una espada forjada con madera sagrada. Se dice que fue la clave para revertir el resultado de cierta batalla."
+  },
+  "passiveName": "Nervadura trepadora",
+  "passiveDescription": {
+    "0": {
+      "0": "Durante 12 s tras usar la Habilidad Elemental, cuando el portador de esta arma golpee a un enemigo con un ataque, obtendrá el efecto de “frondosidad”, el cual aumenta el ATQ en un <cryo>4%</cryo> y la Maestría Elemental en <cryo>20</cryo> pts. Este efecto dura 6 s, puede acumularse hasta 3 veces, solo puede ocurrir una vez por segundo y se puede activar incluso cuando el portador está en tu equipo pero no en uso.",
+      "1": "“Esplendor: Destello Estelar”: el efecto de frondosidad pasa a aumentar el ATQ en un <cryo>6%</cryo> y el daño de Destello Estelar infligido por el portador en un <cryo>8%</cryo>."
+    },
+    "1": {
+      "0": "Durante 12 s tras usar la Habilidad Elemental, cuando el portador de esta arma golpee a un enemigo con un ataque, obtendrá el efecto de “frondosidad”, el cual aumenta el ATQ en un <cryo>5%</cryo> y la Maestría Elemental en <cryo>25</cryo> pts. Este efecto dura 6 s, puede acumularse hasta 3 veces, solo puede ocurrir una vez por segundo y se puede activar incluso cuando el portador está en tu equipo pero no en uso.",
+      "1": "“Esplendor: Destello Estelar”: el efecto de frondosidad pasa a aumentar el ATQ en un <cryo>7.5%</cryo> y el daño de Destello Estelar infligido por el portador en un <cryo>10%</cryo>."
+    },
+    "2": {
+      "0": "Durante 12 s tras usar la Habilidad Elemental, cuando el portador de esta arma golpee a un enemigo con un ataque, obtendrá el efecto de “frondosidad”, el cual aumenta el ATQ en un <cryo>6%</cryo> y la Maestría Elemental en <cryo>30</cryo> pts. Este efecto dura 6 s, puede acumularse hasta 3 veces, solo puede ocurrir una vez por segundo y se puede activar incluso cuando el portador está en tu equipo pero no en uso.",
+      "1": "“Esplendor: Destello Estelar”: el efecto de frondosidad pasa a aumentar el ATQ en un <cryo>9%</cryo> y el daño de Destello Estelar infligido por el portador en un <cryo>12%</cryo>."
+    },
+    "3": {
+      "0": "Durante 12 s tras usar la Habilidad Elemental, cuando el portador de esta arma golpee a un enemigo con un ataque, obtendrá el efecto de “frondosidad”, el cual aumenta el ATQ en un <cryo>7%</cryo> y la Maestría Elemental en <cryo>35</cryo> pts. Este efecto dura 6 s, puede acumularse hasta 3 veces, solo puede ocurrir una vez por segundo y se puede activar incluso cuando el portador está en tu equipo pero no en uso.",
+      "1": "“Esplendor: Destello Estelar”: el efecto de frondosidad pasa a aumentar el ATQ en un <cryo>10.5%</cryo> y el daño de Destello Estelar infligido por el portador en un <cryo>14%</cryo>."
+    },
+    "4": {
+      "0": "Durante 12 s tras usar la Habilidad Elemental, cuando el portador de esta arma golpee a un enemigo con un ataque, obtendrá el efecto de “frondosidad”, el cual aumenta el ATQ en un <cryo>8%</cryo> y la Maestría Elemental en <cryo>40</cryo> pts. Este efecto dura 6 s, puede acumularse hasta 3 veces, solo puede ocurrir una vez por segundo y se puede activar incluso cuando el portador está en tu equipo pero no en uso.",
+      "1": "“Esplendor: Destello Estelar”: el efecto de frondosidad pasa a aumentar el ATQ en un <cryo>12%</cryo> y el daño de Destello Estelar infligido por el portador en un <cryo>16%</cryo>."
+    }
+  }
+}

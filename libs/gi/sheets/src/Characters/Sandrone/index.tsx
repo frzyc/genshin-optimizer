@@ -5,8 +5,10 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
+  compareEq,
   constant,
   equal,
+  equalStr,
   greaterEq,
   infoMut,
   input,
@@ -414,6 +416,14 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       ...c1Decoding_stellar_dmg_obj,
     },
   },
+  flags: {
+    radiance: compareEq(
+      condA0StellarRadiance,
+      'on',
+      'sc',
+      equalStr(condA0StellarRadiance, 'ss', 'ss')
+    ),
+  },
 })
 
 const sheet: TalentSheet = {
@@ -629,7 +639,7 @@ const sheet: TalentSheet = {
           ],
         },
         ss: {
-          name: st('elementalReaction.stellarswirl'),
+          name: st('elementalReaction.team.stellarswirl'),
           fields: [
             {
               text: st('elementalReaction.stellar.gainRadianceSs'),

@@ -43,6 +43,8 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   11434: 'MoonweaversDawn',
   11435: 'HereticsMoltenBlade',
   11436: 'Emberwell',
+  11437: 'NewBough',
+  11438: 'SilverLight',
   11501: 'AquilaFavonia',
   11502: 'SkywardBlade',
   11503: 'FreedomSworn',
@@ -64,6 +66,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   11519: 'LightbearingMoonshard',
   11520: 'WhitelakeFrostfeather',
   11521: 'ExaiphanesBlade',
+  11522: 'BeyondTheChrysalis',
 
   //claymore
   12101: 'WasterGreatsword',
@@ -202,6 +205,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   14434: 'DawningFrost',
   14435: 'ClashOfKings',
   14436: 'EchoesOfTheHeart',
+  14437: 'WintersHeavyHeart',
   14501: 'SkywardAtlas',
   14502: 'LostPrayerToTheSacredWinds',
   // 14503: "Lost Ballade",
@@ -226,6 +230,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   14521: 'ReliquaryOfTruth',
   14522: 'NocturnesCurtainCall',
   14523: 'AngelosHeptades',
+  14524: 'HymnOfTheMaelstrom',
 
   //bow
   15101: 'HuntersBow',
@@ -266,6 +271,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   15434: 'RainbowSerpentsRainBow',
   15435: 'JadeVista',
   15436: 'CovenantOfFrostAndSnow',
+  15437: 'BreezeborneRefrain',
   15501: 'SkywardHarp',
   15502: 'AmosBow',
   15503: 'ElegyForTheEnd',

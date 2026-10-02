@@ -461,6 +461,9 @@ export default function cryo(
     infusion: {
       nonOverridableSelf: a1ScStar_infusion,
     },
+    flags: {
+      radiance: condA0StellarRadiance,
+    },
   })
 
   const talent: TalentSheet = {

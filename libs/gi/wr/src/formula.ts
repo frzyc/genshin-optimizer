@@ -138,6 +138,7 @@ const inputBase = {
   flags: {
     isHexerei: read(),
     isMoonsign: read(),
+    radiance: stringRead('small'),
   },
 
   infusion: {

@@ -1,0 +1,29 @@
+{
+  "name": "Cuore pesante dell'inverno",
+  "description": {
+    "0": "Un manufatto cerimoniale formato dal ghiaccio e dalla neve più puri. Leggenda vuole che generazioni di sovrani Snegovik lo abbiano utilizzato nelle cerimonie d'incoronazione fino a cinquecento anni fa."
+  },
+  "passiveName": "Segreti del gelo",
+  "passiveDescription": {
+    "0": {
+      "0": "Il personaggio che equipaggia l'arma ottiene l'effetto \"Patto di sangue argenteo\", che aumenta la sua maestria elementale di <cryo>24</cryo> per ogni personaggio di Cryo presente nel gruppo, e il suo ATT di un <cryo>4,8%</cryo> per ogni personaggio di Electro presente nel gruppo. Fino a 4 personaggi di Cryo o di Electro possono fornire i potenziamenti sopracitati.",
+      "1": "Nello stato di Splendore: Barlume astrale, l'effetto di \"Patto di sangue argenteo\" viene modificato, aumentando la maestria elementale e i DAN da reazione di Barlume astrale del personaggio che equipaggia l'arma rispettivamente di <cryo>20</cryo> e di un <cryo>6%</cryo> per ogni personaggio di Cryo o di Electro presente nel gruppo."
+    },
+    "1": {
+      "0": "Il personaggio che equipaggia l'arma ottiene l'effetto \"Patto di sangue argenteo\", che aumenta la sua maestria elementale di <cryo>30</cryo> per ogni personaggio di Cryo presente nel gruppo, e il suo ATT di un <cryo>6%</cryo> per ogni personaggio di Electro presente nel gruppo. Fino a 4 personaggi di Cryo o di Electro possono fornire i potenziamenti sopracitati.",
+      "1": "Nello stato di Splendore: Barlume astrale, l'effetto di \"Patto di sangue argenteo\" viene modificato, aumentando la maestria elementale e i DAN da reazione di Barlume astrale del personaggio che equipaggia l'arma rispettivamente di <cryo>25</cryo> e di un <cryo>7,5%</cryo> per ogni personaggio di Cryo o di Electro presente nel gruppo."
+    },
+    "2": {
+      "0": "Il personaggio che equipaggia l'arma ottiene l'effetto \"Patto di sangue argenteo\", che aumenta la sua maestria elementale di <cryo>36</cryo> per ogni personaggio di Cryo presente nel gruppo, e il suo ATT di un <cryo>7,2%</cryo> per ogni personaggio di Electro presente nel gruppo. Fino a 4 personaggi di Cryo o di Electro possono fornire i potenziamenti sopracitati.",
+      "1": "Nello stato di Splendore: Barlume astrale, l'effetto di \"Patto di sangue argenteo\" viene modificato, aumentando la maestria elementale e i DAN da reazione di Barlume astrale del personaggio che equipaggia l'arma rispettivamente di <cryo>30</cryo> e di un <cryo>9%</cryo> per ogni personaggio di Cryo o di Electro presente nel gruppo."
+    },
+    "3": {
+      "0": "Il personaggio che equipaggia l'arma ottiene l'effetto \"Patto di sangue argenteo\", che aumenta la sua maestria elementale di <cryo>42</cryo> per ogni personaggio di Cryo presente nel gruppo, e il suo ATT di un <cryo>8,4%</cryo> per ogni personaggio di Electro presente nel gruppo. Fino a 4 personaggi di Cryo o di Electro possono fornire i potenziamenti sopracitati.",
+      "1": "Nello stato di Splendore: Barlume astrale, l'effetto di \"Patto di sangue argenteo\" viene modificato, aumentando la maestria elementale e i DAN da reazione di Barlume astrale del personaggio che equipaggia l'arma rispettivamente di <cryo>35</cryo> e di un <cryo>10,5%</cryo> per ogni personaggio di Cryo o di Electro presente nel gruppo."
+    },
+    "4": {
+      "0": "Il personaggio che equipaggia l'arma ottiene l'effetto \"Patto di sangue argenteo\", che aumenta la sua maestria elementale di <cryo>48</cryo> per ogni personaggio di Cryo presente nel gruppo, e il suo ATT di un <cryo>9,6%</cryo> per ogni personaggio di Electro presente nel gruppo.Fino a 4 personaggi di Cryo o di Electro possono fornire i potenziamenti sopracitati.",
+      "1": "Nello stato di Splendore: Barlume astrale, l'effetto di \"Patto di sangue argenteo\" viene modificato, aumentando la maestria elementale e i DAN da reazione di Barlume astrale del personaggio che equipaggia l'arma rispettivamente di <cryo>40</cryo> e di un <cryo>12%</cryo> per ogni personaggio di Cryo o di Electro presente nel gruppo."
+    }
+  }
+}

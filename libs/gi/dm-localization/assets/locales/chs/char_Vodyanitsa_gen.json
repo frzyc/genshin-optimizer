@@ -1,0 +1,176 @@
+{
+  "name": "沃雅妮莎",
+  "title": "幽歌萦渊",
+  "description": "科洛列夫茨基剧团的首席女高音，离群的水妖。",
+  "constellationName": "金鳍座",
+  "auto": {
+    "name": "水色咏叹",
+    "fields": {
+      "normal": {
+        "0": "<strong>普通攻击</strong>",
+        "1": "吟咏古老的水妖之歌，进行至多四段的攻击，造成<hydro>水元素伤害</hydro>。"
+      },
+      "charged": {
+        "0": "<strong>重击</strong>",
+        "1": "消耗一定体力，向前方掷出水球，造成<hydro>水元素伤害</hydro>。"
+      },
+      "plunging": {
+        "0": "<strong>下落攻击</strong>",
+        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成<hydro>水元素范围伤害</hydro>。"
+      }
+    },
+    "skillParams": {
+      "0": "一段伤害",
+      "1": "二段伤害",
+      "2": "三段伤害",
+      "3": "四段伤害",
+      "4": "重击伤害",
+      "5": "重击体力消耗",
+      "6": "下坠期间伤害",
+      "7": "低空/高空坠地冲击伤害",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "宣叙·晨声纷流",
+    "description": {
+      "0": "显现出水妖原本的姿态，造成<hydro>水元素范围伤害</hydro>，并获得<strong>遥久之歌</strong>效果：持续期间，沃雅妮莎将召唤出古老的<strong>唤春角笛</strong>，间歇性快速移动至一名敌人附近，对其进行攻击，造成<hydro>水元素伤害</hydro>。",
+      "1": "上述两种攻击命中时将会使敌人的<hydro>水元素抗性</hydro>与<cryo>冰元素抗性</cryo>降低。此外，<strong>遥久之歌</strong>效果持续期间，还会提升队伍中自己的当前场上角色的抗打断能力，并间歇性为其恢复生命值，恢复量受益于沃雅妮莎的生命值上限。"
+    },
+    "skillParams": {
+      "0": "技能伤害",
+      "1": "持续时间",
+      "2": "唤春角笛攻击间隔",
+      "3": "唤春角笛伤害",
+      "4": "遥久之歌治疗量",
+      "5": "遥久之歌治疗间隔",
+      "6": "水元素/冰元素抗性降低",
+      "7": "抗性降低持续时间",
+      "8": "技能冷却时间",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "终奏·伴尔沉沦",
+    "description": {
+      "0": "领唱引诱沉沦的水妖之歌，造成<hydro>水元素范围伤害</hydro>。",
+      "1": "处于<strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>遥久之歌</tooltip></strong>状态下时，造成的伤害还会进一步提升。"
+    },
+    "skillParams": {
+      "0": "技能伤害",
+      "1": "遥久之歌伤害加成",
+      "2": "冷却时间",
+      "3": "元素能量",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "最后的塑诗者",
+    "description": {
+      "0": "施放元素战技<strong>宣叙·晨声纷流</strong>时，将使当前场上的星辉风旋转化为「流荡风旋」，且队伍中附近的角色在<strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>遥久之歌</tooltip></strong>效果持续期间触发星扩散反应时，将取代星辉风旋创造流荡风旋。",
+      "1": "创造或引爆流荡风旋时，还会使附近敌人的<anemo>风元素抗性</anemo>降低35%，持续6秒。",
+      "2": "此外，<strong>遥久之歌</strong>持续期间，队伍中附近的角色进入<strong>辉映·星扩散</strong>状态时，<strong>辉映·星扩散</strong>的持续时间延长4秒。"
+    }
+  },
+  "passive2": {
+    "name": "十二弦的泪歌",
+    "description": {
+      "0": "施放元素战技<strong>宣叙·晨声纷流</strong>时，沃雅妮莎还会获得25层<tooltip ns=tooltips_gen baseKey18=11400001 values=[]><strong>「领唱」</strong></tooltip>与10层<tooltip ns=tooltips_gen baseKey18=11400002 values=[]><strong>「重唱」</strong></tooltip>。",
+      "1": "上述两种效果分别持续30秒，并会在施放元素战技时刷新层数。"
+    }
+  },
+  "passive3": {
+    "name": "余声绕冰湖",
+    "description": {
+      "0": "不处于战斗状态下时，长按元素战技，沃雅妮莎将显现出水妖的本貌，以消耗体力为代价，进行至多10秒的游动；因为是水妖，所以当然也可以在水面上移动。再次施放元素战技、持续时间结束或体力耗尽时，沃雅妮莎将不再维持水妖的本貌。",
+      "1": "此外，沃雅妮莎的游泳速度提升，但消耗体力的速度也更快。"
+    }
+  },
+  "passive": {
+    "name": "无琴的诱音",
+    "description": {
+      "0": "身为科洛列夫茨基剧团首席女高音，沃雅妮莎在演奏乐器时，将改为亲自献唱。"
+    }
+  },
+  "constellation1": {
+    "name": "聚光灯下的水华",
+    "description": {
+      "0": "沃雅妮莎触发<strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>遥久之歌</tooltip></strong>的治疗效果时，还会使队伍中附近的所有角色攻击力提升，提升值相当于沃雅妮莎生命值上限的0.8%，持续5秒。"
+    }
+  },
+  "constellation2": {
+    "name": "穿彻风雪的余响",
+    "description": {
+      "0": "元素战技<strong>宣叙·晨声纷流</strong>中的<strong>唤春角笛</strong>攻击敌人时，沃雅妮莎将获得「黑与白的双音」效果，使队伍中自己的当前场上角色造成的<hydro>水元素伤害</hydro>与<cryo>冰元素伤害</cryo>的暴击伤害提升50%，持续5秒。",
+      "1": "若当前场上存在流荡风旋，或处于流荡风旋引爆后的5秒内，则改为使队伍中自己的当前场上角色造成的星扩散反应伤害的暴击伤害提升60%，持续5秒。",
+      "2": "此外，元素战技<strong>宣叙·晨声纷流</strong>获得强化：<strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>遥久之歌</tooltip></strong>效果的持续时间延长9秒。"
+    }
+  },
+  "constellation3": {
+    "name": "空音犹响的春晨",
+    "description": {
+      "0": "元素战技<strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>宣叙·晨声纷流</tooltip></strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
+    }
+  },
+  "constellation4": {
+    "name": "柔波摇漾的低诉",
+    "description": {
+      "0": "沃雅妮莎触发<strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>遥久之歌</tooltip></strong>的治疗效果时，将基于受治疗角色的生命值，触发不同效果。若受治疗角色的生命值：",
+      "1": [
+        "低于40%：本次治疗量提升50%；",
+        "不低于40%：沃雅妮莎的生命值上限提升20%，持续6秒，该效果至多叠加3层，每层独立计算持续时间。"
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "沉往深湖的共沦",
+    "description": {
+      "0": "元素爆发<strong><tooltip ns=char_Vodyanitsa_gen baseKey18=burst>终奏·伴尔沉沦</tooltip></strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
+    }
+  },
+  "constellation6": {
+    "name": "永不落幕的盛歌",
+    "description": {
+      "0": "命之座<strong>「穿彻风雪的余响」</strong>的效果获得强化：「黑与白的双音」改为对队伍中附近的所有角色生效。",
+      "1": "此外，<strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>遥久之歌</tooltip></strong>效果持续期间，队伍中附近的角色造成的星扩散反应伤害<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>擢升</strong></tooltip>25%，造成的<hydro>水元素伤害</hydro>与<cryo>冰元素伤害</cryo>提升60%。"
+    }
+  }
+}

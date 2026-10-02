@@ -1,0 +1,24 @@
+{
+  "name": "Rüzgarın Ezgisi",
+  "description": {
+    "0": "Saf ve kusursuz mücevherden yapılmış koyu yeşil bir yay kirişi. Her gerildiğinde muhakkak sıcak bir bahar esintisi çağırır."
+  },
+  "passiveName": "Engereğin Şarkısı",
+  "passiveDescription": {
+    "0": {
+      "0": "Enerji Yüklemesi <cryo>%20</cryo> artar. Kuşanan karakter, Element Becerisiyle veya Element Patlamasıyla düşmana vurduğunda bir kademe \"Saflığın İlahisi\" kazanır. Bu etki 0,03 saniyede bir tetiklenebilir ve 3 kademeye kadar birikebilir. 3 kademe biriktiğinde tüm \"Saflığın İlahisi\" etkileri kaldırılarak kuşanan karaktere \"Engereğin Yalanı\" etkisi verilir. Bu etki 12sn boyunca yakındaki grup üyelerine <cryo>%24</cryo> Yıldız Parıltısı Tepkimesi Hasarı artışı verir ve bu süre zarfında \"Saflığın İlahisi\" kademesi kazanılamaz. Bahsi geçen etkiler, kuşanan karakter alanda olmasa da tetiklenebilir."
+    },
+    "1": {
+      "0": "Enerji Yüklemesi <cryo>%25</cryo> artar. Kuşanan karakter, Element Becerisiyle veya Element Patlamasıyla düşmana vurduğunda bir kademe \"Saflığın İlahisi\" kazanır. Bu etki 0,03 saniyede bir tetiklenebilir ve 3 kademeye kadar birikebilir. 3 kademe biriktiğinde tüm \"Saflığın İlahisi\" etkileri kaldırılarak kuşanan karaktere \"Engereğin Yalanı\" etkisi verilir. Bu etki 12sn boyunca yakındaki grup üyelerine <cryo>%30</cryo> Yıldız Parıltısı Tepkimesi Hasarı artışı verir ve bu süre zarfında \"Saflığın İlahisi\" kademesi kazanılamaz. Bahsi geçen etkiler, kuşanan karakter alanda olmasa da tetiklenebilir."
+    },
+    "2": {
+      "0": "Enerji Yüklemesi <cryo>%30</cryo> artar. Kuşanan karakter, Element Becerisiyle veya Element Patlamasıyla düşmana vurduğunda bir kademe \"Saflığın İlahisi\" kazanır. Bu etki 0,03 saniyede bir tetiklenebilir ve 3 kademeye kadar birikebilir. 3 kademe biriktiğinde tüm \"Saflığın İlahisi\" etkileri kaldırılarak kuşanan karaktere \"Engereğin Yalanı\" etkisi verilir. Bu etki 12sn boyunca yakındaki grup üyelerine <cryo>%36</cryo> Yıldız Parıltısı Tepkimesi Hasarı artışı verir ve bu süre zarfında \"Saflığın İlahisi\" kademesi kazanılamaz. Bahsi geçen etkiler, kuşanan karakter alanda olmasa da tetiklenebilir."
+    },
+    "3": {
+      "0": "Enerji Yüklemesi <cryo>%35</cryo> artar. Kuşanan karakter, Element Becerisiyle veya Element Patlamasıyla düşmana vurduğunda bir kademe \"Saflığın İlahisi\" kazanır. Bu etki 0,03 saniyede bir tetiklenebilir ve 3 kademeye kadar birikebilir. 3 kademe biriktiğinde tüm \"Saflığın İlahisi\" etkileri kaldırılarak kuşanan karaktere \"Engereğin Yalanı\" etkisi verilir. Bu etki 12sn boyunca yakındaki grup üyelerine <cryo>%42</cryo> Yıldız Parıltısı Tepkimesi Hasarı artışı verir ve bu süre zarfında \"Saflığın İlahisi\" kademesi kazanılamaz. Bahsi geçen etkiler, kuşanan karakter alanda olmasa da tetiklenebilir."
+    },
+    "4": {
+      "0": "Enerji Yüklemesi <cryo>%40</cryo> artar. Kuşanan karakter, Element Becerisiyle veya Element Patlamasıyla düşmana vurduğunda bir kademe \"Saflığın İlahisi\" kazanır. Bu etki 0,03 saniyede bir tetiklenebilir ve 3 kademeye kadar birikebilir. 3 kademe biriktiğinde tüm \"Saflığın İlahisi\" etkileri kaldırılarak kuşanan karaktere \"Engereğin Yalanı\" etkisi verilir. Bu etki 12sn boyunca yakındaki grup üyelerine <cryo>%48</cryo> Yıldız Parıltısı Tepkimesi Hasarı artışı verir ve bu süre zarfında \"Saflığın İlahisi\" kademesi kazanılamaz. Bahsi geçen etkiler, kuşanan karakter alanda olmasa da tetiklenebilir."
+    }
+  }
+}

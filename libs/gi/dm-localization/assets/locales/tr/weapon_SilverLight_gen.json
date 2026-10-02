@@ -1,0 +1,24 @@
+{
+  "name": "Gümüş Işık",
+  "description": {
+    "0": "Liyue'deki Guizang'ın Üç Keşişinden biri olan Rüzgar Okuyucu'dan kalan bir uzun kılıç. Efsaneye göre gökten inen kutsal gümüşten dövülmüştür ve bir zamanlar akan denizi ikiye ayırmıştır."
+  },
+  "passiveName": "Sudaki Işıltı",
+  "passiveDescription": {
+    "0": {
+      "0": "Element Becerisini kullandıktan sonra 12 saniyeliğine Element Ustalığını <cryo>52</cryo> artırır. 2 kademeye kadar birikir ve her kademenin süresi birbirinden bağımsızdır."
+    },
+    "1": {
+      "0": "Element Becerisini kullandıktan sonra 12 saniyeliğine Element Ustalığını <cryo>65</cryo> artırır. 2 kademeye kadar birikir ve her kademenin süresi birbirinden bağımsızdır."
+    },
+    "2": {
+      "0": "Element Becerisini kullandıktan sonra 12 saniyeliğine Element Ustalığını <cryo>78</cryo> artırır. 2 kademeye kadar birikir ve her kademenin süresi birbirinden bağımsızdır."
+    },
+    "3": {
+      "0": "Element Becerisini kullandıktan sonra 12 saniyeliğine Element Ustalığını <cryo>91</cryo> artırır. 2 kademeye kadar birikir ve her kademenin süresi birbirinden bağımsızdır."
+    },
+    "4": {
+      "0": "Element Becerisini kullandıktan sonra 12 saniyeliğine Element Ustalığını <cryo>104</cryo> artırır. 2 kademeye kadar birikir ve her kademenin süresi birbirinden bağımsızdır."
+    }
+  }
+}

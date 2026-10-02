@@ -1,0 +1,24 @@
+{
+  "name": "Refrain dans le vent",
+  "description": {
+    "0": "Une corde d'arc vert foncé, taillée dans une pierre précieuse pure et sans défaut. Elle évoque immanquablement une douce brise printanière dès qu'on la tire."
+  },
+  "passiveName": "Ballade de la vipère",
+  "passiveDescription": {
+    "0": {
+      "0": "La recharge d'énergie augmente de <cryo>20 %</cryo>. Lorsque le personnage équipé de l'arme touche un ennemi avec une compétence élémentaire ou un déchaînement élémentaire, il obtient l'effet Hymne de pureté, cet effet pouvant être cumulé 3 fois maximum et déclenché une fois toutes les 0,03 s. Avec 3 cumuls, tout l'hymne de pureté est annulé pour accorder l'effet Mensonge de vipère : augmente les DGT de réaction astrale de tous les personnages de l'équipe à proximité de <cryo>24 %</cryo> pendant 12 s, durée pendant laquelle il est impossible d'obtenir à nouveau de l'hymne de pureté. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "La recharge d'énergie augmente de <cryo>25 %</cryo>. Lorsque le personnage équipé de l'arme touche un ennemi avec une compétence élémentaire ou un déchaînement élémentaire, il obtient l'effet Hymne de pureté, cet effet pouvant être cumulé 3 fois maximum et déclenché une fois toutes les 0,03 s. Avec 3 cumuls, tout l'hymne de pureté est annulé pour accorder l'effet Mensonge de vipère : augmente les DGT de réaction astrale de tous les personnages de l'équipe à proximité de <cryo>30 %</cryo> pendant 12 s, durée pendant laquelle il est impossible d'obtenir à nouveau de l'hymne de pureté. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "La recharge d'énergie augmente de <cryo>30 %</cryo>. Lorsque le personnage équipé de l'arme touche un ennemi avec une compétence élémentaire ou un déchaînement élémentaire, il obtient l'effet Hymne de pureté, cet effet pouvant être cumulé 3 fois maximum et déclenché une fois toutes les 0,03 s. Avec 3 cumuls, tout l'hymne de pureté est annulé pour accorder l'effet Mensonge de vipère : augmente les DGT de réaction astrale de tous les personnages de l'équipe à proximité de <cryo>36 %</cryo> pendant 12 s, durée pendant laquelle il est impossible d'obtenir à nouveau de l'hymne de pureté. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "La recharge d'énergie augmente de <cryo>35 %</cryo>. Lorsque le personnage équipé de l'arme touche un ennemi avec une compétence élémentaire ou un déchaînement élémentaire, il obtient l'effet Hymne de pureté, cet effet pouvant être cumulé 3 fois maximum et déclenché une fois toutes les 0,03 s. Avec 3 cumuls, tout l'hymne de pureté est annulé pour accorder l'effet Mensonge de vipère : augmente les DGT de réaction astrale de tous les personnages de l'équipe à proximité de <cryo>42 %</cryo> pendant 12 s, durée pendant laquelle il est impossible d'obtenir à nouveau de l'hymne de pureté. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "La recharge d'énergie augmente de <cryo>40 %</cryo>. Lorsque le personnage équipé de l'arme touche un ennemi avec une compétence élémentaire ou un déchaînement élémentaire, il obtient l'effet Hymne de pureté, cet effet pouvant être cumulé 3 fois maximum et déclenché une fois toutes les 0,03 s. Avec 3 cumuls, tout l'hymne de pureté est annulé pour accorder l'effet Mensonge de vipère : augmente les DGT de réaction astrale de tous les personnages de l'équipe à proximité de <cryo>48 %</cryo> pendant 12 s, durée pendant laquelle il est impossible d'obtenir à nouveau de l'hymne de pureté. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

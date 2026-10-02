@@ -1,0 +1,29 @@
+{
+  "name": "Nouvelle branche",
+  "description": {
+    "0": "Une épée en bois sacré, qui aurait marqué le tournant décisif d'une bataille."
+  },
+  "passiveName": "Croissance sauvage",
+  "passiveDescription": {
+    "0": {
+      "0": "Lorsque le personnage équipé de l'arme touche un ennemi avec une attaque dans les 12 s suivant l'utilisation d'une compétence élémentaire, il obtient l'effet Verdoyant : augmente l'ATQ de <cryo>4 %</cryo> et la maîtrise élémentaire de <cryo>20</cryo> pts pendant 6 s, cet effet pouvant être cumulé 3 fois maximum et déclenché une fois toutes les secondes. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+      "1": "Radiance astrale : l'effet Verdoyant est converti pour augmenter l'ATQ de <cryo>6 %</cryo> et les DGT de réaction astrale infligés par le personnage équipé de l'arme de <cryo>8 %</cryo>."
+    },
+    "1": {
+      "0": "Lorsque le personnage équipé de l'arme touche un ennemi avec une attaque dans les 12 s suivant l'utilisation d'une compétence élémentaire, il obtient l'effet Verdoyant : augmente l'ATQ de <cryo>5 %</cryo> et la maîtrise élémentaire de <cryo>25</cryo> pts pendant 6 s, cet effet pouvant être cumulé 3 fois maximum et déclenché une fois toutes les secondes. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+      "1": "Radiance astrale : l'effet Verdoyant est converti pour augmenter l'ATQ de <cryo>7,5 %</cryo> et les DGT de réaction astrale infligés par le personnage équipé de l'arme de <cryo>10 %</cryo>."
+    },
+    "2": {
+      "0": "Lorsque le personnage équipé de l'arme touche un ennemi avec une attaque dans les 12 s suivant l'utilisation d'une compétence élémentaire, il obtient l'effet Verdoyant : augmente l'ATQ de <cryo>6 %</cryo> et la maîtrise élémentaire de <cryo>30</cryo> pts pendant 6 s, cet effet pouvant être cumulé 3 fois maximum et déclenché une fois toutes les secondes. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+      "1": "Radiance astrale : l'effet Verdoyant est converti pour augmenter l'ATQ de <cryo>9 %</cryo> et les DGT de réaction astrale infligés par le personnage équipé de l'arme de <cryo>12 %</cryo>."
+    },
+    "3": {
+      "0": "Lorsque le personnage équipé de l'arme touche un ennemi avec une attaque dans les 12 s suivant l'utilisation d'une compétence élémentaire, il obtient l'effet Verdoyant : augmente l'ATQ de <cryo>7 %</cryo> et la maîtrise élémentaire de <cryo>35</cryo> pts pendant 6 s, cet effet pouvant être cumulé 3 fois maximum et déclenché une fois toutes les secondes. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+      "1": "Radiance astrale : l'effet Verdoyant est converti pour augmenter l'ATQ de <cryo>10,5 %</cryo> et les DGT de réaction astrale infligés par le personnage équipé de l'arme de <cryo>14 %</cryo>."
+    },
+    "4": {
+      "0": "Lorsque le personnage équipé de l'arme touche un ennemi avec une attaque dans les 12 s suivant l'utilisation d'une compétence élémentaire, il obtient l'effet Verdoyant : augmente l'ATQ de <cryo>8 %</cryo> et la maîtrise élémentaire de <cryo>40</cryo> pts pendant 6 s, cet effet pouvant être cumulé 3 fois maximum et déclenché une fois toutes les secondes. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+      "1": "Radiance astrale : l'effet Verdoyant est converti pour augmenter l'ATQ de <cryo>12 %</cryo> et les DGT de réaction astrale infligés par le personnage équipé de l'arme de <cryo>16 %</cryo>."
+    }
+  }
+}
