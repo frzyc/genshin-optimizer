@@ -4,10 +4,15 @@ import type {
   MainStatKey,
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
-import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
+import {
+  allArtifactSlotKeys,
+  allSubstatKeys,
+  artSlotMainKeys,
+} from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { DynStat } from '@genshin-optimizer/gi/solver'
 import { getRollsRemaining } from '@genshin-optimizer/gi/util'
+import { allMainStatProbs } from './consts'
 import { deduplicate } from './deduplicate'
 import { makeSubstatNode } from './expandSubstat'
 import type { Objective } from './markov-tree/markov.types'
@@ -61,6 +66,19 @@ function mainStatCacheKey(mainStatKey: MainStatKey) {
  */
 function rebase(n: SubstatLevelNode, base: DynStat): SubstatLevelNode {
   return { ...n, base, subDistr: { ...n.subDistr, base } }
+}
+
+function insertSetKey(
+  n: SubstatLevelNode,
+  setKey: ArtifactSetKey | ''
+): SubstatLevelNode {
+  const base = { ...n.base }
+  if (setKey !== '') base[setKey] = (base[setKey] ?? 0) + 1
+  return {
+    ...n,
+    base,
+    subDistr: { ...n.subDistr, base },
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -130,4 +148,93 @@ export function elixirDefinitionMemoSimplified(
       n: rebase(n, base),
     })),
   ]
+}
+
+/**
+ * Memoized variant of `freshArtifact()`. Assumes we're generating 5* artifacts, so the only variable is the set key.
+ * For a fixed number of initial rolls, the substat crawl produces
+ * the same node list down to the base stats; only the set key varies per query.
+ * Entries are simplified against a specific objective, so all calls sharing a
+ * cache MUST use the same objective; clear (or replace) the cache when it changes.
+ */
+export type FreshArtifactQuery = {
+  sets: ArtifactSetKey[]
+  p3sub: number
+}
+export type FreshArtifactCache = Map<string, WeightedNode[]>
+
+/**
+ * FreshArtifactCache depends on the current build because the `base` stats of each node are baked in at
+ * the time of construction. The cache key is concatenates artifact ids, so we assume that the db is immutable
+ * and that the artifact ids are unique.
+ */
+function buildCacheKey(currentBuild: Build): string {
+  return allArtifactSlotKeys
+    .map((slotKey) => currentBuild[slotKey]?.id ?? '')
+    .join('|')
+}
+
+function getFreshTemplates(
+  currentBuild: Build,
+  obj: Objective,
+  lines: 3 | 4,
+  cache: FreshArtifactCache
+): WeightedNode[] {
+  const cacheKey = `${lines};${buildCacheKey(currentBuild)}`
+  const hit = cache.get(cacheKey)
+  if (hit) return hit
+
+  const out: WeightedNode[] = []
+  allArtifactSlotKeys.forEach((slotKey) => {
+    const pSlot = 1 / 5
+    artSlotMainKeys[slotKey].forEach((mainStatKey) => {
+      const pMain = allMainStatProbs[slotKey][mainStatKey] ?? 0
+      const base = toStats(currentBuild, {
+        slotKey,
+        rarity,
+        mainStatKey,
+        setKey: '',
+      })
+
+      const subsToConsider = allSubstatKeys.filter((s) => s !== mainStatKey)
+      crawlSubstats([], subsToConsider).forEach(({ p, subs }) => {
+        const rollsLeft =
+          lines === 4
+            ? getRollsRemaining(0, rarity)
+            : getRollsRemaining(0, rarity) - 1
+        const nodeInfo = {
+          base,
+          rarity,
+          subkeys: subs.map((key) => ({ key, baseRolls: 1 })),
+          rollsLeft,
+        }
+        const n = makeSubstatNode(nodeInfo)
+        out.push({ p: p * pMain * pSlot, n })
+      })
+    })
+  })
+  const templates = deduplicate(obj, out) as WeightedNode[]
+  cache.set(cacheKey, templates)
+  return templates
+}
+
+export function freshArtifactMemoized(
+  info: FreshArtifactQuery,
+  currentBuild: Build,
+  obj: Objective,
+  cache: FreshArtifactCache
+): WeightedNode[] {
+  const t3 = getFreshTemplates(currentBuild, obj, 3, cache)
+  const t4 = getFreshTemplates(currentBuild, obj, 4, cache)
+  const pSet = 1 / info.sets.length
+  return info.sets.flatMap((setKey) => [
+    ...t3.map(({ p, n }) => ({
+      p: p * info.p3sub * pSet,
+      n: insertSetKey(n, setKey),
+    })),
+    ...t4.map(({ p, n }) => ({
+      p: p * (1 - info.p3sub) * pSet,
+      n: insertSetKey(n, setKey),
+    })),
+  ])
 }
