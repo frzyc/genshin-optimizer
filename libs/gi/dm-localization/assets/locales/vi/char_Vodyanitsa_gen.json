@@ -137,8 +137,8 @@
   "constellation2": {
     "name": "Dư Âm Xuyên Gió Tuyết",
     "description": {
-      "0": "Khi <strong>Tù Và Gọi Xuân</strong> trong Kỹ Năng Nguyên Tố <strong>Lời Hát Kể - Bình Minh Vang Vọng</strong> tấn công kẻ địch, Vodyanitsa sẽ nhận hiệu quả \"Âm Đôi Đen Và Trắng\", giúp nhân vật ra trận hiện tại trong đội tăng 50% Sát Thương Bạo Kích cho Sát Thương Nguyên Tố <hydro>Thủy</hydro> và <cryo>Băng</cryo>, duy trì 5s.",
-      "1": "Nếu trong trận có Cụm Gió Phiêu Du, hoặc trong vòng 5s sau khi Cụm Gió Phiêu Du phát nổ, sẽ đổi thành giúp nhân vật ra trận hiện tại trong đội tăng 60% Sát Thương Bạo Kích cho sát thương phản ứng Tinh-Khuếch Tán, duy trì 5s.",
+      "0": "Khi <strong>Tù Và Gọi Xuân</strong> trong Kỹ Năng Nguyên Tố <strong>Lời Hát Kể - Bình Minh Vang Vọng</strong> tấn công kẻ địch, Vodyanitsa sẽ nhận hiệu quả \"Âm Đôi Đen Và Trắng\", giúp nhân vật ra trận hiện tại trong đội bản thân tăng 50% Sát Thương Bạo Kích cho Sát Thương Nguyên Tố <hydro>Thủy</hydro> và <cryo>Băng</cryo>, duy trì 5s.",
+      "1": "Nếu trong trận có Cụm Gió Phiêu Du, hoặc trong vòng 5s sau khi Cụm Gió Phiêu Du phát nổ, sẽ đổi thành giúp nhân vật ra trận hiện tại trong đội bản thân tăng 60% Sát Thương Bạo Kích cho sát thương phản ứng Tinh-Khuếch Tán, duy trì 5s.",
       "2": "Ngoài ra, Kỹ Năng Nguyên Tố <strong>Lời Hát Kể - Bình Minh Vang Vọng</strong> sẽ được cường hóa: Thời gian duy trì hiệu quả <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Khúc Ca Xa Xưa</tooltip></strong> kéo dài 9s."
     }
   },

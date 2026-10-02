@@ -137,8 +137,8 @@
   "constellation2": {
     "name": "Échos qui percent la neige",
     "description": {
-      "0": "Lorsque le <strong>cor du printemps</strong> de la compétence élémentaire <strong>Rechitativ : Aube sonore</strong> attaque un ennemi, Vodyanitsa obtient l'effet Deux voix en noir et blanc : augmente les DGT CRIT des <hydro>DGT Hydro</hydro> et des <cryo>DGT Cryo</cryo> du personnage déployé de 50 % pendant 5 s.",
-      "1": "Si un vortex errant est présent sur le terrain et pendant les 5 s suivant l'explosion d'un vortex errant, cet effet est converti pour augmenter les DGT CRIT des DGT de réaction d'Astrodispersion du personnage déployé de 60 % pendant 5 s.",
+      "0": "Lorsque le <strong>cor du printemps</strong> de la compétence élémentaire <strong>Rechitativ : Aube sonore</strong> attaque un ennemi, Vodyanitsa obtient l'effet Deux voix en noir et blanc : augmente les DGT CRIT des <hydro>DGT Hydro</hydro> et des <cryo>DGT Cryo</cryo> de votre personnage déployé de 50 % pendant 5 s.",
+      "1": "Si un vortex errant est présent sur le terrain et pendant les 5 s suivant l'explosion d'un vortex errant, cet effet est converti pour augmenter les DGT CRIT des DGT de réaction d'Astrodispersion de votre personnage déployé de 60 % pendant 5 s.",
       "2": "De plus, la compétence élémentaire <strong>Rechitativ : Aube sonore</strong> est renforcée : la durée du <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>chant d'antan</tooltip></strong> augmente de 9 s."
     }
   },

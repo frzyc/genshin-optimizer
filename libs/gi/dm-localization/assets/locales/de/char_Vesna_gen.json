@@ -120,10 +120,10 @@
   "passive2": {
     "name": "Ratgeber – Siegeswind des Winters",
     "description": {
-      "0": "<strong>Leuchten – Stellar-Verwirbelung</strong>: Verleiht Vesna Effekte abhängig von den Elementartypen der Truppenmitglieder.",
+      "0": "<strong>Leuchten – Stellar-Verwirbelung</strong>: Verleiht Vesna Effekte abhängig von den Elementartypen der Truppenmitglieder:",
       "1": [
         " Erhöht für jede <cryo>Kryo</cryo>- oder <anemo>Anemo</anemo>-Figur in der aktuellen Truppe Vesnas ANG um 6 %.",
-        " Erhöht für jede Figur eines anderen Elementartyps in der aktuellen Truppe Vesnas Elementarkunde um 25 Punkte."
+        " Erhöht für jede Figur eines nicht oben genannten Elementartyps in der aktuellen Truppe Vesnas Elementarkunde um 25 Punkte."
       ]
     }
   },

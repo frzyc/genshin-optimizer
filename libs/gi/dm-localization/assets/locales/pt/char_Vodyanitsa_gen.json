@@ -138,7 +138,7 @@
     "name": "Ecos Perfuradores da Neve",
     "description": {
       "0": "Quando atacar o inimigo com <strong>Berrante da Primavera</strong> da Habilidade Elemental <strong>Recitativo: Alvorada Sonora</strong>, Vodyanitsa obtém o efeito \"Notas da Escuridão e Claridade\", aumentando o Dano CRIT <hydro>Hydro</hydro> e <cryo>Cryo</cryo> em 50% para o personagem ativo por 5s.",
-      "1": "Se houver um Vórtice Flutuante ativo, ou se dentro dos 5s após o Vórtice Flutuante explodir, ao invés disso, aumentará o Dano CRIT de Redemoinho Estelar do personagem ativo em 60% por 5s.",
+      "1": "Se houver um Vórtice Flutuante em campo, ou se ainda não tiverem se passado 5s após o Vórtice Flutuante explodir, ao invés disso, aumentará o Dano CRIT de Redemoinho Estelar do personagem ativo em 60% por 5s.",
       "2": "Além disso, a Habilidade Elemental <strong>Recitativo: Alvorada Sonora</strong> é fortalecida: a duração do efeito <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Canção de Outrora</tooltip></strong> é estendida em 9s."
     }
   },

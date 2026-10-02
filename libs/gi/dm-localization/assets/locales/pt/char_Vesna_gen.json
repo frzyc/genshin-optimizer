@@ -50,8 +50,8 @@
       "2": "<strong>Pronto para a Ação</strong>",
       "3": "Quando Vesna realizar um Ataque Normal, Carregado ou Imersivo, converterá para causar <anemo>Dano Anemo</anemo> que não pode ser substituído, e invoca uma Pena da Tempestade, causando <anemo>Dano Anemo</anemo> adicional. Cada vez que invocar uma Pena da Tempestade, regenera uma certa quantidade de <strong>Espírito da Espada</strong> para Vesna",
       "4": "Vesna pode consumir <strong>Espírito da Espada</strong> para lançar a Habilidade Elemental especial <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Espada do Vento</tooltip></strong>, causando <anemo>Dano Anemo</anemo> contra os inimigos.",
-      "5": "Depois de cada vez que lançar a Habilidade Elemental especial <strong>Espada do Vento</strong>, aumenta a área de <strong>Pronto para a Ação</strong> em sua duração, causando ainda mais <anemo>Dano Anemo</anemo>. A área inicial de <strong>Espada do Vento</strong> é de nível 1, podendo ser elevada até nível 3. Depois de lançar a <strong>Espada do Vento</strong> elevada, invoca a <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Espada Espiritual</tooltip></strong>, causando <anemo>Dano Anemo</anemo> contra os inimigos.",
-      "6": "Quando a duração acabar, ou depois de lançar <strong>Espada do Vento</strong> com área aumentada três vezes, Vesna sairá desse modo e removerá todos os acúmulos de <strong>Espírito da Espada</strong>.",
+      "5": "Depois de cada vez que lançar a Habilidade Elemental especial <strong>Espada do Vento</strong>, aumenta o nível de <strong>Pronto para a Ação</strong> em sua duração, causando ainda mais <anemo>Dano Anemo</anemo>. O nível inicial de <strong>Espada do Vento</strong> é de nível 1, podendo ser elevado até nível 3. Depois de lançar a <strong>Espada do Vento</strong> elevada, invoca a <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Espada Espiritual</tooltip></strong>, causando <anemo>Dano Anemo</anemo> contra os inimigos.",
+      "6": "Quando a duração acabar, ou depois de lançar <strong>Espada do Vento</strong> com nível aumentado três vezes, Vesna sairá desse modo e removerá todos os acúmulos de <strong>Espírito da Espada</strong>.",
       "7": "Além disso, quando está nesse modo, aumenta a RES contra Interrupção de Vesna.",
       "8": "<strong>Brilho Reluzente: Redemoinho Estelar</strong>: <strong>Espada Espiritual</strong> será convertida para causar <anemo>Dano Anemo</anemo> que é considerado Dano de Redemoinho Estelar."
     },
@@ -140,14 +140,14 @@
       "0": "Quando não estiver em combate, Vesna pode entrar no estado <strong>Patrulha</strong> ao manter pressionado para correr ou saltar.",
       "1": "<br/>",
       "2": "<strong>Patrulha</strong>",
-      "3": "Consome Stamina continuamente para manter esse estado flutuante. Ao correr ou pressionar para saltar, eleva a altura que flutua e aumenta o consumo de Stamina. Incluindo o salto que desencadeia <strong>Patrulha</strong>, Vesna pode flutuar mais alto até 3 vezes por <strong>Patrulha</strong>.",
-      "4": "Além disso, quando estiver em regiões de Snezhnaya (exceto Nod-Krai) e não estiver em combate, quando um personagem da equipe estiver no ar, trocar para Vesna fará ela entrar imediatamente no estado <strong>Patrulha</strong>, e regenerará 50 de Stamina. Esse efeito pode ser desencadeado uma vez a cada 10s, e não pode ser ativado em domínios, Domínios Dizimados e Abismo do Espiral."
+      "3": "Consome Stamina continuamente para manter esse estado flutuante. Ao correr ou pressionar para saltar mais alto, aumenta o consumo de Stamina. Incluindo o salto ao manter o botão de salto pressionado para entrar em <strong>Patrulha</strong>, Vesna pode saltar mais alto até 3 vezes por <strong>Patrulha</strong>.",
+      "4": "Além disso, quando estiver em regiões de Snezhnaya (exceto Nod-Krai) e não estiver em combate, quando o personagem ativo da equipe estiver no ar, trocar para Vesna fará ela entrar imediatamente no estado <strong>Patrulha</strong>, e regenerará 50 de Stamina. Esse efeito pode ser desencadeado uma vez a cada 10s, e não pode ser ativado em domínios, Domínios Dizimados e Abismo do Espiral."
     }
   },
   "constellation1": {
     "name": "Banquete da Despedida do Inverno",
     "description": {
-      "0": "No modo <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Pronto para a Ação</tooltip></strong>, Vesna pode lançar a <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Espada do Vento</tooltip></strong> de maior área até 4 vezes ao invés de 3, e cada vez que entrar no modo <strong>Pronto para a Ação</strong>, a primeira <strong>Espada do Vento</strong> de maior área lançada não consumirá <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>Espírito da Espada</tooltip></strong>.",
+      "0": "No modo <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Pronto para a Ação</tooltip></strong>, Vesna pode lançar a <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Espada do Vento</tooltip></strong> de maior nível até 4 vezes ao invés de 3, e cada vez que entrar no modo <strong>Pronto para a Ação</strong>, a primeira <strong>Espada do Vento</strong> de maior nível lançada não consumirá <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>Espírito da Espada</tooltip></strong>.",
       "1": "Além disso, aumenta o Dano de Redemoinho Estelar causado por Vesna em 20% enquanto estiver em <strong>Pronto para a Ação</strong>."
     }
   },

@@ -68,7 +68,7 @@
     "name": "Rechitativ: Sonorous Dawn",
     "description": {
       "0": "Reveals her true Water Imp form, dealing <hydro>AoE Hydro DMG</hydro> and gaining the <strong>Song of Ages Past</strong> effect: While this effect is active, Vodyanitsa summons the ancient <strong>Horn of Spring's Call</strong>, periodically moving closer to an opponent in a swift movement to attack them, dealing <hydro>Hydro DMG</hydro>.",
-      "1": "The above two types of attacks will also decrease the <hydro>Hydro RES</hydro> and <cryo>Cryo RES</cryo> of opponents hit. Additionally, while the <strong>Song of Ages Past</strong> effect is active, the party's active character gains increased resistance to interruption and periodically regenerates HP based on Vodyanitsa's Max HP."
+      "1": "The above two types of attacks will also decrease the <hydro>Hydro RES</hydro> and <cryo>Cryo RES</cryo> of opponents hit. Additionally, while the <strong>Song of Ages Past</strong> effect is active, your active character gains increased resistance to interruption and periodically regenerates HP based on Vodyanitsa's Max HP."
     },
     "skillParams": {
       "0": "Skill DMG",
@@ -203,8 +203,8 @@
   "constellation2": {
     "name": "Echoes That Pierce the Snow",
     "description": {
-      "0": "When the <strong>Horn of Spring's Call</strong> from the Elemental Skill <strong>Rechitativ: Sonorous Dawn</strong> attacks the opponent, Vodyanitsa gains the \"Two Voices in Black and White\" effect which increases the CRIT DMG from <hydro>Hydro DMG</hydro> and <cryo>Cryo DMG</cryo> dealt by the currently active party member by 50% for 5s.",
-      "1": "If there is a Wandering Vortex present on the field or in the 5s after a Wandering Vortex explodes, the effect changes to: increases the CRIT DMG from Stellar Swirl reaction DMG caused by the currently active party member by 60% for 5s.",
+      "0": "When the <strong>Horn of Spring's Call</strong> from the Elemental Skill <strong>Rechitativ: Sonorous Dawn</strong> attacks the opponent, Vodyanitsa gains the \"Two Voices in Black and White\" effect which increases the CRIT DMG from <hydro>Hydro DMG</hydro> and <cryo>Cryo DMG</cryo> dealt by your own currently active party member by 50% for 5s.",
+      "1": "If there is a Wandering Vortex present on the field or in the 5s after a Wandering Vortex explodes, the effect changes to: increases the CRIT DMG from Stellar Swirl reaction DMG caused by your own currently active party member by 60% for 5s.",
       "2": "Additionally, the Elemental Skill <strong>Rechitativ: Sonorous Dawn</strong> is enhanced as follows: the duration of the <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Song of Ages Past</tooltip></strong> effect is extended by 9s."
     }
   },

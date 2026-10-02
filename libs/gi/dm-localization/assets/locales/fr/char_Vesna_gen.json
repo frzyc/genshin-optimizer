@@ -15,7 +15,7 @@
         "1": "Consomme de l'endurance pour piétiner les adversaires en avant."
       },
       "plunging": {
-        "0": "<strong>Attaque descendante</strong>",
+        "0": "<strong>Attaque plongeante</strong>",
         "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact."
       }
     },
@@ -182,7 +182,7 @@
   "constellation6": {
     "name": "Ardeur inébranlable",
     "description": {
-      "0": "Pendant 5 s après avoir utilisé <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Épée du vent</tooltip></strong> à la limite max, Vesna peut utiliser une attaque normale ou une compétence élémentaire avec un appui simple pour déclencher une <strong>épée du vent « Transposition »</strong>, une technique secrète des vila qui permet d'infliger des <anemo>DGT Anémo</anemo> d'une valeur équivalant à 150 % de l'ATQ de Vesna et d'invoquer une <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>lame éthérée</tooltip></strong> infligeant des <anemo>DGT Anémo</anemo> supplémentaires d'une valeur équivalant à 200 % de l'ATQ de Vesna. Pendant l'état <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Armée pour l'action</tooltip></strong>, Vesna invoque en plus une penne de tempête pour une attaque coordonnée de l'ennemi.",
+      "0": "Pendant 5 s après avoir utilisé <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Épée du vent</tooltip></strong> à la limite max, Vesna peut utiliser une attaque normale ou une compétence élémentaire avec un appui simple pour déclencher une <strong>épée du vent « Transposition »</strong>, une technique secrète des vila qui permet d'infliger des <anemo>DGT Anémo</anemo> d'une valeur équivalant à 150 % de l'ATQ de Vesna et d'invoquer des <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>lames éthérées</tooltip></strong> infligeant des <anemo>DGT Anémo</anemo> supplémentaires d'une valeur équivalant à 200 % de l'ATQ de Vesna. Pendant l'état <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Armée pour l'action</tooltip></strong>, Vesna invoque en plus une penne de tempête pour une attaque coordonnée de l'ennemi.",
       "1": "De plus, les DGT de réaction d'Astrodispersion de Vesna bénéficient d'une <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>élévation</strong></tooltip> de 20 %."
     }
   }

@@ -137,8 +137,8 @@
   "constellation2": {
     "name": "Echoes That Pierce the Snow",
     "description": {
-      "0": "Saat <strong>Horn of Spring's Call</strong> dari Elemental Skill <strong>Rechitativ: Sonorous Dawn</strong> menyerang musuh, maka Vodyanitsa akan mendapatkan efek \"Two Voices in Black and White\" yang meningkatkan CRIT DMG untuk <hydro>Hydro DMG</hydro> dan <cryo>Cryo DMG</cryo> yang diakibatkan oleh Karakter aktif dalam party sebesar 50% selama 5 detik.",
-      "1": "Jika terdapat Wandering Vortex di medan pertempuran saat ini, atau selama 5 detik setelah Wandering Vortex meledak, efek ini berubah menjadi: Meningkatkan CRIT DMG reaksi Stellar Swirl yang diakibatkan Karakter aktif dalam party sebesar 60% selama 5 detik.",
+      "0": "Saat <strong>Horn of Spring's Call</strong> dari Elemental Skill <strong>Rechitativ: Sonorous Dawn</strong> menyerang musuh, maka Vodyanitsa akan mendapatkan efek \"Two Voices in Black and White\" yang meningkatkan CRIT DMG untuk <hydro>Hydro DMG</hydro> dan <cryo>Cryo DMG</cryo> yang diakibatkan oleh Karakter aktif sendiri dalam party sebesar 50% selama 5 detik.",
+      "1": "Jika terdapat Wandering Vortex di medan pertempuran saat ini, atau selama 5 detik setelah Wandering Vortex meledak, efek ini berubah menjadi: Meningkatkan CRIT DMG reaksi Stellar Swirl yang diakibatkan Karakter aktif sendiri dalam party sebesar 60% selama 5 detik.",
       "2": "Selain itu, Elemental Skill <strong>Rechitativ: Sonorous Dawn</strong> diperkuat: Durasi efek <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Song of Ages Past</tooltip></strong> diperpanjang selama 9 detik."
     }
   },

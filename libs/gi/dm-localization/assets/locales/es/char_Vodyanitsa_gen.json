@@ -137,8 +137,8 @@
   "constellation2": {
     "name": "Reverberación perforaventiscas",
     "description": {
-      "0": "Cuando el <strong>cuerno del llamado primaveral</strong> de la Habilidad Elemental, <strong>Recitativo: Alba sonora</strong>, ataque a un enemigo, Vodyanitsa obtendrá el efecto de “voces en blanco y negro”, el cual aumenta en un 50% durante 5 s el Daño CRIT <hydro>Hydro</hydro> y <cryo>Cryo</cryo> infligido por el personaje en uso del equipo.",
-      "1": "Si en el campo de batalla hay un vórtice errante o si han transcurrido menos de 5 s desde su explosión, en su lugar, el Daño CRIT de las reacciones de Torbellino Estelar del personaje en uso del equipo aumentará en un 60% durante 5 s.",
+      "0": "Cuando el <strong>cuerno del llamado primaveral</strong> de la Habilidad Elemental, <strong>Recitativo: Alba sonora</strong>, ataque a un enemigo, Vodyanitsa obtendrá el efecto de “voces en blanco y negro”, el cual aumenta en un 50% durante 5 s el Daño CRIT <hydro>Hydro</hydro> y <cryo>Cryo</cryo> infligido por tu personaje en uso del equipo.",
+      "1": "Si en el campo de batalla hay un vórtice errante o si han transcurrido menos de 5 s desde su explosión, en su lugar, el Daño CRIT de las reacciones de Torbellino Estelar de tu personaje en uso del equipo aumentará en un 60% durante 5 s.",
       "2": "Además, fortalece la Habilidad Elemental, <strong>Recitativo: Alba sonora</strong>, lo que aumenta en 9 s la duración de <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>canción de otrora</tooltip></strong>."
     }
   },

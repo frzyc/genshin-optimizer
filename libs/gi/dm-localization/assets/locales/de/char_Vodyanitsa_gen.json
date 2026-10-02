@@ -46,7 +46,7 @@
     "name": "Rezitierung – Morgenstimmen im Strom",
     "description": {
       "0": "Nimmt die wahre Gestalt des Wasser-Unholds an und verursacht <hydro>Hydro-Flächenschaden</hydro>. Verleiht zudem den Effekt <strong>Lied der Ferne</strong>: Vodyanitsa beschwört während der Wirkungsdauer das uralte <strong>Frühlingshorn</strong> herbei, das sich in bestimmten Abständen schnell zu einem Gegner bewegt, um ihn anzugreifen und ihm <hydro>Hydro-SCH</hydro> zuzufügen.",
-      "1": "Verringert den <hydro>Hydro-WDS</hydro> sowie <cryo>Kryo-WDS</cryo> von Gegnern, die von obigen beiden Angriffen getroffen wurden. Erhöht während der Dauer des Effekts <strong>Lied der Ferne</strong> zudem den Unterbrechungs-WDS des aktuellen Truppenmitglieds und stellt diesem in regelmäßigen Abständen LP wieder her. Die Menge der wiederhergestellten LP hängt von Vodyanitsas max. LP ab."
+      "1": "Verringert den <hydro>Hydro-WDS</hydro> sowie <cryo>Kryo-WDS</cryo> von Gegnern, die von obigen beiden Angriffen getroffen wurden. Erhöht während der Dauer des Effekts <strong>Lied der Ferne</strong> zudem den Unterbrechungs-WDS des eigenen aktuellen Truppenmitglieds und stellt diesem in regelmäßigen Abständen LP wieder her. Die Menge der wiederhergestellten LP hängt von Vodyanitsas max. LP ab."
     },
     "skillParams": {
       "0": "Fähigkeits-SCH",
@@ -137,8 +137,8 @@
   "constellation2": {
     "name": "Sturm und Schnee durchdringender Nachhall",
     "description": {
-      "0": "Verleiht Vodyanitsa, wenn sie mit dem <strong>Frühlingshorn</strong> aus <strong>Rezitierung – Morgenstimmen im Strom</strong> einen Gegner angreift, den Effekt „Zwei Stimmen in Schwarz und Weiß“, der den kritischen Schaden durch <hydro>Hydro-SCH</hydro> und <cryo>Kryo-SCH</cryo> des aktuellen Truppenmitglieds 5 s lang um 50 % erhöht.",
-      "1": "Erhöht, wenn sich auf dem Feld ein fließender Wirbelwind befindet oder innerhalb der letzten 5 s ein solcher explodiert ist, stattdessen den kritischen Schaden durch die Reaktion Stellar-Verwirbelung des aktuellen Truppenmitglieds 5 s lang um 60 %.",
+      "0": "Verleiht Vodyanitsa, wenn sie mit dem <strong>Frühlingshorn</strong> aus <strong>Rezitierung – Morgenstimmen im Strom</strong> einen Gegner angreift, den Effekt „Zwei Stimmen in Schwarz und Weiß“, der den kritischen Schaden durch <hydro>Hydro-SCH</hydro> und <cryo>Kryo-SCH</cryo> des eigenen, aktuellen Truppenmitglieds 5 s lang um 50 % erhöht.",
+      "1": "Erhöht, wenn sich auf dem Feld ein fließender Wirbelwind befindet oder innerhalb der letzten 5 s ein solcher explodiert ist, stattdessen den kritischen Schaden durch die Reaktion Stellar-Verwirbelung des eigenen, aktuellen Truppenmitglieds 5 s lang um 60 %.",
       "2": "Verstärkt zudem die Elementarfähigkeit <strong>Rezitierung – Morgenstimmen im Strom</strong>: Verlängert die Dauer des Effekts <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Lied der Ferne</tooltip></strong> um 9 s."
     }
   },

@@ -46,7 +46,7 @@
     "name": "Resitatif: Gürleyen Şafak",
     "description": {
       "0": "Gerçek Su İfriti formuna bürünerek <hydro>Su Alan Hasarı</hydro> verir ve <strong>Geçmiş Çağların Şarkısı</strong> etkisini kazanır: Bu etki aktifken Vodyanitsa kadim <strong>Baharı Müjdeleyen Çalgıyı</strong> çağırır. Çalgı, belirli aralıklarla bir düşmana hızlıca yaklaşıp saldırır ve <hydro>Su Hasarı</hydro> verir.",
-      "1": "Yukarıdaki iki tür saldırı, isabet alan düşmanların <hydro>Su Direnci</hydro> ile <cryo>Buz Direncini</cryo> azaltır. Ayrıca <strong>Geçmiş Çağların Şarkısı</strong> etkisi aktifken grubun aktif karakteri müdahaleye karşı direnç kazanır ve belirli aralıklarla Vodyanitsa'nın Maks. Canına bağlı olarak Can yeniler."
+      "1": "Yukarıdaki iki tür saldırı, isabet alan düşmanların <hydro>Su Direnci</hydro> ile <cryo>Buz Direncini</cryo> azaltır. Ayrıca <strong>Geçmiş Çağların Şarkısı</strong> etkisi aktifken, senin aktif karakterin müdahaleye karşı direnç kazanır ve belirli aralıklarla Vodyanitsa'nın Maks. Canına bağlı olarak Can yeniler."
     },
     "skillParams": {
       "0": "Beceri Hasarı",
@@ -137,8 +137,8 @@
   "constellation2": {
     "name": "Karları Delen Yankılar",
     "description": {
-      "0": "<strong>Resitatif: Gürleyen Şafak</strong> Element Becerisiyle çağrılan <strong>Baharı Müjdeleyen Çalgı</strong> bir düşmana saldırdığında Vodyanitsa \"Siyah ve Beyaz İki Ses\" etkisini kazanır. Bu etki, 5 saniyeliğine mevcut aktif grup üyesinin <hydro>Su Hasarı</hydro> ve <cryo>Buz Hasarı</cryo> ile verdiği Kritik Hasarı %50 artırır.",
-      "1": "Alanda bir Başıboş Burgaç varken veya bir Başıboş Burgaç patladıktan sonraki 5sn boyunca etki değişir: 5 saniyeliğine mevcut aktif grup üyesinin Yıldız Girdabı Tepkimesi Hasarı ile verdiği Kritik Hasar %60 artar.",
+      "0": "<strong>Resitatif: Gürleyen Şafak</strong> Element Becerisiyle çağrılan <strong>Baharı Müjdeleyen Çalgı</strong> bir düşmana saldırdığında Vodyanitsa \"Siyah ve Beyaz İki Ses\" etkisini kazanır. Bu etki, 5 saniyeliğine grubundaki mevcut aktif üyenin <hydro>Su Hasarı</hydro> ve <cryo>Buz Hasarı</cryo> ile verdiği Kritik Hasarı %50 artırır.",
+      "1": "Alanda bir Başıboş Burgaç varken veya bir Başıboş Burgaç patladıktan sonraki 5sn boyunca etki değişir: 5 saniyeliğine grubundaki mevcut aktif üyenin Yıldız Girdabı Tepkimesi Hasarı ile verdiği Kritik Hasar %60 artar.",
       "2": "Ayrıca <strong>Resitatif: Gürleyen Şafak</strong> Element Becerisi gelişir: <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Geçmiş Çağların Şarkısı</tooltip></strong> etkisinin süresi 9sn uzar."
     }
   },
