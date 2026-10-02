@@ -51,7 +51,7 @@ const stellar_dmg_obj = objKeyValMap(allStellarReactionKeys, (k) => [
   unequal(
     input.flags.radiance,
     undefined,
-    subscript(input.weapon.refinement, stellar_dmg_arr)
+    prod(stacks, subscript(input.weapon.refinement, stellar_dmg_arr))
   ),
 ])
 

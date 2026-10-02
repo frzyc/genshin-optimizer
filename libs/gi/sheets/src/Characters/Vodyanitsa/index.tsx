@@ -163,7 +163,7 @@ const [a4LeadVocal_hydro_dmgIncDisp, a4LeadVocal_hydro_dmgInc] = activeCharBuff(
 const [a4LeadVocal_cryo_dmgIncDisp, a4LeadVocal_cryo_dmgInc] = activeCharBuff(
   target.charKey,
   { ...a4LeadVocal_hydro_dmgIncDisp },
-  { path: 'hydro_dmgInc' }
+  { path: 'cryo_dmgInc' }
 )
 const [a4LeadVocal_stellarswirl_dmgIncDisp, a4LeadVocal_stellarswirl_dmgInc] =
   activeCharBuff(
@@ -215,7 +215,7 @@ const [a4Chorus_hydro_dmgIncDisp, a4Chorus_hydro_dmgInc] = inactiveCharBuff(
 )
 const [a4Chorus_cryo_dmgIncDisp, a4Chorus_cryo_dmgInc] = inactiveCharBuff(
   { ...a4Chorus_hydro_dmgIncDisp },
-  { path: 'hydro_dmgInc' }
+  { path: 'cryo_dmgInc' }
 )
 const [a4Chorus_stellarswirl_dmgIncDisp, a4Chorus_stellarswirl_dmgInc] =
   inactiveCharBuff(
@@ -254,7 +254,7 @@ const [c2State_hydro_critDMG_disp, c2State_hydro_critDMG_] = activeCharBuff(
   greaterEq(
     input.constellation,
     2,
-    equal(condC2State, 'voices', dm.constellation2.hydrocryo_critDMG_)
+    equal(condC2State, 'voice', dm.constellation2.hydrocryo_critDMG_)
   ),
   { path: 'hydro_critDMG_' },
   greaterEq(input.constellation, 6, 1)
@@ -264,7 +264,7 @@ const [c2State_cryo_critDMG_disp, c2State_cryo_critDMG_] = activeCharBuff(
   greaterEq(
     input.constellation,
     2,
-    equal(condC2State, 'voices', dm.constellation2.hydrocryo_critDMG_)
+    equal(condC2State, 'voice', dm.constellation2.hydrocryo_critDMG_)
   ),
   { path: 'cryo_critDMG_' },
   greaterEq(input.constellation, 6, 1)
