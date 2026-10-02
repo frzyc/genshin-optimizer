@@ -176,7 +176,15 @@
     "skill": "Skill enhanced",
     "burst": "Burst enhanced",
     "passive1": "Ascension Talent 1 enhanced",
-    "passive2": "Ascension Talent 4 enhanced"
+    "passive2": "Ascension Talent 4 enhanced",
+    "constellation": {
+      "1": "Constellation 1 enhanced",
+      "2": "Constellation 2 enhanced",
+      "3": "Constellation 3 enhanced",
+      "4": "Constellation 4 enhanced",
+      "5": "Constellation 5 enhanced",
+      "6": "Constellation 6 enhanced"
+    }
   },
   "swirlReaction": {
     "hydro": "After triggering a <hydro>Hydro</hydro> Swirl reaction",
@@ -220,7 +228,8 @@
       "lunarbloom": "After a party member triggers a <lunarbloom>Lunar-Bloom</lunarbloom> Reaction",
       "overload": "After a party member triggers an <overloaded>Overloaded</overloaded> Reaction",
       "vaporize": "After a party member triggers an <vaporize>Vaporize</vaporize> Reaction",
-      "melt": "After a party member triggers a <vaporize>Melt</vaporize> Reaction"
+      "melt": "After a party member triggers a <vaporize>Melt</vaporize> Reaction",
+      "stellarswirl": "After a party member triggers a  <stellarswirl>Stellar Swirl</stellarswirl> Reaction"
     },
     "nightsoul": {
       "hydro": "After triggering a <hydro>Hydro-related</hydro> Elemental Reaction while in Nightsoul's Blessing",
