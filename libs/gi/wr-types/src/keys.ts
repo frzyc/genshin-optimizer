@@ -36,6 +36,8 @@ export const allNonstackBuffs = [
   'scroll4nsgeo',
   'scroll4nsdendro',
   'millenialatk',
+  'millenialelemas',
+  'millenialncpdmg',
   'patrol',
   'key',
   'crane',
