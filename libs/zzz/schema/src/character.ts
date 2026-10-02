@@ -2,6 +2,7 @@ import { zodBoundedNumber, zodEnum } from '@genshin-optimizer/common/database'
 import { clamp } from '@genshin-optimizer/common/util'
 import {
   allCharacterKeys,
+  allSpecialityKeys,
   coreByLevel,
   type MilestoneKey,
   skillByLevel,
@@ -22,6 +23,7 @@ export const characterSchema = z
     special: z.number().catch(1),
     assist: z.number().catch(1),
     potential: zodBoundedNumber(0, 6, 0),
+    specialty: zodEnum(allSpecialityKeys),
   })
   .transform((data) => {
     const { sanitizedLevel: level, milestone: promotion } =

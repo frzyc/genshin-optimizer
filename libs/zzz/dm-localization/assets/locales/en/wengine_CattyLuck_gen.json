@@ -1,0 +1,18 @@
+{
+  "name": "Catty Luck",
+  "desc": {
+    "0": "A specially modified W-Engine that's become hugely popular on Inter-Knot. Some functionality was sacrificed for the sake of its appearance, but that hasn't stopped it from becoming a massive hit.",
+    "1": "Even its designer never expected it to be this successful. In an interview, he explained, \"In the ever-changing Hollows, the anxiety brought on by uncertainty can easily overwhelm a person's will. For people trapped in desperate situations, even a small sign of good fortune can be enough to give them hope.\"",
+    "2": "\"Of course, maybe people just like cats.\" He added with a laugh at the end of the interview."
+  },
+  "desc2": "Equip to increase Armorer Agents' combat capabilities",
+  "desc3": "Meow your way to good luck!",
+  "phase": "Lucky Pawpad",
+  "phaseDescs": [
+    "DEF increases by <ct color=#2BAD00>8%</ct>. When using <ct color=#FFFFFF>EX Special Attack</ct>, DEF increases by an additional <ct color=#2BAD00>8%</ct> for 40s. Repeated triggers reset the duration.",
+    "DEF increases by <ct color=#2BAD00>9%</ct>. When using <ct color=#FFFFFF>EX Special Attack</ct>, DEF increases by an additional <ct color=#2BAD00>9%</ct> for 40s. Repeated triggers reset the duration.",
+    "DEF increases by <ct color=#2BAD00>10%</ct>. When using <ct color=#FFFFFF>EX Special Attack</ct>, DEF increases by an additional <ct color=#2BAD00>10%</ct> for 40s. Repeated triggers reset the duration.",
+    "DEF increases by <ct color=#2BAD00>11%</ct>. When using <ct color=#FFFFFF>EX Special Attack</ct>, DEF increases by an additional <ct color=#2BAD00>11%</ct> for 40s. Repeated triggers reset the duration.",
+    "DEF increases by <ct color=#2BAD00>12%</ct>. When using <ct color=#FFFFFF>EX Special Attack</ct>, DEF increases by an additional <ct color=#2BAD00>12%</ct> for 40s. Repeated triggers reset the duration."
+  ]
+}

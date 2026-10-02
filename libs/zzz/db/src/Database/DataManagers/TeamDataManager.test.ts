@@ -1,7 +1,7 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
+import { isGenericDmgInstName, toTag } from '@genshin-optimizer/zzz/formula'
 import { ZzzDatabase } from '../Database'
-import { isGenericDmgInstTarget, targetTag } from './TeamDataManager'
 
 describe('TeamDataManager', () => {
   let database: ZzzDatabase
@@ -19,7 +19,7 @@ describe('TeamDataManager', () => {
       teammates: [{ characterKey: mainKey }],
       frames: [
         {
-          tag: { q: 'INVALID', qt: 'final' as const },
+          ref: { sheet: 'stat', name: 'INVALID', dim: 'final' },
           enemyStats: [],
         },
       ],
@@ -28,7 +28,7 @@ describe('TeamDataManager', () => {
       enemyStunMultiplier: 1,
     }
     const result = teams['validate'](invalid, mainKey)
-    expect(result?.frames[0]?.tag).toBeUndefined()
+    expect(result?.frames[0]?.ref).toBeUndefined()
   })
 
   it('should reject more than 3 teammates', () => {
@@ -59,43 +59,15 @@ describe('TeamDataManager', () => {
 
   it('strips damage types from ability opt targets on validate', () => {
     const team = {
-      teammates: [{ characterKey: 'Trigger' as const }],
-      frames: [
-        {
-          tag: {
-            sheet: 'Trigger',
-            name: 'BasicAttackHarmonizingShot_0',
-            q: 'standardDmg',
-            damageType1: 'basic',
-            damageType2: 'aftershock',
-          },
-          enemyStats: [],
-        },
-      ],
-      enemyLvl: 60,
-      enemyDef: 0,
-      enemyStunMultiplier: 1,
-    }
-    const result = teams['validate'](team, 'Trigger')
-    expect(result?.frames[0]?.tag).toEqual({
-      sheet: 'Trigger',
-      name: 'BasicAttackHarmonizingShot_0',
-      q: 'standardDmg',
-    })
-    expect(targetTag(result!.frames[0]!.tag!).damageType2).toBe('aftershock')
-  })
-
-  it('keeps damage types on generic inst opt targets', () => {
-    const team = {
       teammates: [{ characterKey: 'Anby' as const }],
       frames: [
         {
-          tag: {
+          ref: {
             sheet: 'Anby',
-            name: 'standardDmgInst',
-            q: 'standardDmg',
-            damageType1: 'basic',
-            damageType2: 'aftershock',
+            name: 'BasicAttackTurboVolt_0',
+            dim: 'standardDmg',
+            damageType1: 'basic' as const,
+            damageType2: 'aftershock' as const,
           },
           enemyStats: [],
         },
@@ -105,30 +77,106 @@ describe('TeamDataManager', () => {
       enemyStunMultiplier: 1,
     }
     const result = teams['validate'](team, 'Anby')
-    expect(result?.frames[0]?.tag).toEqual({
+    expect(result?.frames[0]?.ref).toEqual({
+      sheet: 'Anby',
+      name: 'BasicAttackTurboVolt_0',
+      dim: 'standardDmg',
+    })
+    expect(toTag(result!.frames[0]!.ref!)!.damageType1).toBe('basic')
+  })
+
+  it('keeps damage types on generic inst opt targets', () => {
+    const team = {
+      teammates: [{ characterKey: 'Anby' as const }],
+      frames: [
+        {
+          ref: {
+            sheet: 'Anby',
+            name: 'standardDmgInst',
+            dim: 'standardDmg',
+            damageType1: 'basic' as const,
+            damageType2: 'aftershock' as const,
+          },
+          enemyStats: [],
+        },
+      ],
+      enemyLvl: 60,
+      enemyDef: 0,
+      enemyStunMultiplier: 1,
+    }
+    const result = teams['validate'](team, 'Anby')
+    expect(result?.frames[0]?.ref).toEqual({
       sheet: 'Anby',
       name: 'standardDmgInst',
-      q: 'standardDmg',
+      dim: 'standardDmg',
       damageType1: 'basic',
       damageType2: 'aftershock',
     })
-    expect(isGenericDmgInstTarget(result?.frames[0]?.tag?.name)).toBe(true)
+    expect(isGenericDmgInstName(result?.frames[0]?.ref?.name)).toBe(true)
   })
 
-  it('resolves distinct formula names for normal vs aftershock sibling abilities', () => {
-    const normal = {
-      sheet: 'Soldier0Anby',
-      name: 'UltimateVoidstrike_0',
-      q: 'standardDmg',
+  it('clears unknown named formulas', () => {
+    const team = {
+      teammates: [{ characterKey: 'Anby' as const }],
+      frames: [
+        {
+          ref: {
+            sheet: 'Anby',
+            name: 'NotARealFormula_0',
+            dim: 'standardDmg',
+          },
+          enemyStats: [],
+        },
+      ],
+      enemyLvl: 60,
+      enemyDef: 0,
+      enemyStunMultiplier: 1,
     }
-    const aftershock = {
-      sheet: 'Soldier0Anby',
-      name: 'UltimateVoidstrike_aftershock0',
-      q: 'standardDmg',
-    }
+    const result = teams['validate'](team, 'Anby')
+    expect(result?.frames[0]?.ref).toBeUndefined()
+  })
 
-    expect(targetTag(normal).name).toBe('UltimateVoidstrike_0')
-    expect(targetTag(aftershock).name).toBe('UltimateVoidstrike_aftershock0')
-    expect(targetTag(aftershock).damageType2).toBe('aftershock')
+  it('clears missing dim on a known name', () => {
+    const team = {
+      teammates: [{ characterKey: 'Anby' as const }],
+      frames: [
+        {
+          ref: {
+            sheet: 'Anby',
+            name: 'BasicAttackTurboVolt_0',
+            dim: 'sheerDmg',
+          },
+          enemyStats: [],
+        },
+      ],
+      enemyLvl: 60,
+      enemyDef: 0,
+      enemyStunMultiplier: 1,
+    }
+    const result = teams['validate'](team, 'Anby')
+    expect(result?.frames[0]?.ref).toBeUndefined()
+  })
+
+  it('setFrame0 rejects invalid opt targets', () => {
+    teams.set(mainKey, {
+      teammates: [{ characterKey: mainKey }],
+      frames: [
+        {
+          ref: { sheet: 'stat', name: 'atk', dim: 'final' },
+          enemyStats: [],
+        },
+      ],
+      enemyLvl: 60,
+      enemyDef: 0,
+      enemyStunMultiplier: 1,
+    })
+    teams.setFrame0(mainKey, {
+      ref: { sheet: 'stat', name: 'INVALID', dim: 'final' },
+    })
+    expect(teams.get(mainKey)?.frames[0]?.ref).toEqual({
+      sheet: 'stat',
+      name: 'atk',
+      dim: 'final',
+    })
   })
 })

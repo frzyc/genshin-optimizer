@@ -52,8 +52,11 @@ const GeneratedBuildsDisplay = memo(function GeneratedBuildsDisplay() {
   const character = useCharacterContext()!
   const team = useTeam(character.key)!
   const baseValue = useEquippedOptTargetValue()
-  const { tag: target } = getTeamFrame0(team)
-  const valueLabel = useMemo(() => optTargetShortValueLabel(target), [target])
+  const { ref } = getTeamFrame0(team)
+  const valueLabel = useMemo(
+    () => optTargetShortValueLabel(ref?.dim, ref?.name),
+    [ref]
+  )
   return (
     <Stack spacing={1}>
       {generatedBuildList?.builds.map((build, i) => (

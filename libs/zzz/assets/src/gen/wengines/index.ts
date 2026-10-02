@@ -4,15 +4,19 @@ import BashfulDemon from './BashfulDemon'
 import BellicoseBlaze from './BellicoseBlaze'
 import BigCylinder from './BigCylinder'
 import BlazingLaurel from './BlazingLaurel'
+import BloodmarrowCoffer from './BloodmarrowCoffer'
 import BoisterousEchoes from './BoisterousEchoes'
 import BoxCutter from './BoxCutter'
 import BunnyBand from './BunnyBand'
 import CannonRotor from './CannonRotor'
+import CattyLuck from './CattyLuck'
 import CauldronOfClarity from './CauldronOfClarity'
 import ChiefSidekick from './ChiefSidekick'
 import CinderCobalt from './CinderCobalt'
 import CloudcleaveRadiance from './CloudcleaveRadiance'
 import CordisGermina from './CordisGermina'
+import CrimsonMoonCasket from './CrimsonMoonCasket'
+import CrimsonThirst from './CrimsonThirst'
 import DeepSeaVisitor from './DeepSeaVisitor'
 import DemaraBatteryMarkII from './DemaraBatteryMarkII'
 import DreamlitHearth from './DreamlitHearth'
@@ -40,6 +44,7 @@ import KrakensCradle from './KrakensCradle'
 import LunarDecrescent from './LunarDecrescent'
 import LunarNoviluna from './LunarNoviluna'
 import LunarPleniluna from './LunarPleniluna'
+import LunarSemiluna from './LunarSemiluna'
 import MagneticStormAlpha from './MagneticStormAlpha'
 import MagneticStormBravo from './MagneticStormBravo'
 import MagneticStormCharlie from './MagneticStormCharlie'
@@ -101,15 +106,19 @@ const data = {
   BellicoseBlaze,
   BigCylinder,
   BlazingLaurel,
+  BloodmarrowCoffer,
   BoisterousEchoes,
   BoxCutter,
   BunnyBand,
   CannonRotor,
+  CattyLuck,
   CauldronOfClarity,
   ChiefSidekick,
   CinderCobalt,
   CloudcleaveRadiance,
   CordisGermina,
+  CrimsonMoonCasket,
+  CrimsonThirst,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
   DreamlitHearth,
@@ -137,6 +146,7 @@ const data = {
   LunarDecrescent,
   LunarNoviluna,
   LunarPleniluna,
+  LunarSemiluna,
   MagneticStormAlpha,
   MagneticStormBravo,
   MagneticStormCharlie,

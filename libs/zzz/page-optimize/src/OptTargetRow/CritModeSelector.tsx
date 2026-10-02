@@ -13,6 +13,7 @@ const modeMap: Record<critModeKey, string> = {
   avg: 'Average',
   crit: 'Crit Hit',
   nonCrit: 'Non-Crit Hit',
+  doubleCrit: 'Double Crit Hit',
 }
 export function CritModeSelector() {
   const { database } = useDatabaseContext()
@@ -26,18 +27,22 @@ export function CritModeSelector() {
       }
       sx={{ px: 1.5, flexShrink: 0 }}
     >
-      {critModeKeys.map((k) => (
-        <MenuItem
-          key={k}
-          selected={critMode === k}
-          disabled={critMode === k}
-          onClick={() =>
-            database.teams.setFrame0(character.key, { critMode: k })
-          }
-        >
-          {modeMap[k]}
-        </MenuItem>
-      ))}
+      {critModeKeys
+        .filter((k) =>
+          character.specialty === 'armorer' ? true : k !== 'doubleCrit'
+        )
+        .map((k) => (
+          <MenuItem
+            key={k}
+            selected={critMode === k}
+            disabled={critMode === k}
+            onClick={() =>
+              database.teams.setFrame0(character.key, { critMode: k })
+            }
+          >
+            {modeMap[k]}
+          </MenuItem>
+        ))}
     </DropdownButton>
   )
 }
