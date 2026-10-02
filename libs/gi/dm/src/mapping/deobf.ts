@@ -13,4 +13,11 @@ export const deobfPropMappings = {
   numberArray: 'LOFMEPDPLBL',
   // AvatarSkillDepotExcelConfigData, correlates to string property in 2-length array in first object
   unlockCondition: 'OCCGDAJPCNP',
+  // AvatarCurveExcelConfigData, correlates to 1.0 in first object
+  // AvatarPromoteExcelConfigData
+  // EquipAffixExcelConfigData
+  // ReliquaryLevelExcelConfigData inside artifactMainstat.ts
+  // WeaponCurveExcelConfigData
+  // WeaponPromoteExcelConfigData
+  value: 'GGKIEIJLCJJ',
 } as const

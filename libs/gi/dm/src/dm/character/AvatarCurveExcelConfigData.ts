@@ -1,28 +1,29 @@
+import { deobfPropMappings } from '../../mapping'
 import { readDMJSON } from '../../util'
 
 //exp curve
-type AvatarCurveExcelConfigData = {
+type AvatarCurveExcelConfigDataObf = {
   level: number //2,
   curveInfos: [
     {
       type: 'GROW_CURVE_HP_S4'
       arith: 'ARITH_MULTI'
-      value: number //1.0829999446868896
+      [deobfPropMappings.value]: number //1.0829999446868896
     },
     {
       type: 'GROW_CURVE_ATTACK_S4'
       arith: 'ARITH_MULTI'
-      value: number //1.0829999446868896
+      [deobfPropMappings.value]: number //1.0829999446868896
     },
     {
       type: 'GROW_CURVE_HP_S5'
       arith: 'ARITH_MULTI'
-      value: number //1.0829999446868896
+      [deobfPropMappings.value]: number //1.0829999446868896
     },
     {
       type: 'GROW_CURVE_ATTACK_S5'
       arith: 'ARITH_MULTI'
-      value: number //1.0829999446868896
+      [deobfPropMappings.value]: number //1.0829999446868896
     },
   ]
 }
@@ -35,7 +36,7 @@ export type CharacterGrowCurveKey =
 
 const avatarCurveExcelConfigDataSrc = JSON.parse(
   readDMJSON('ExcelBinOutput/AvatarCurveExcelConfigData.json')
-) as AvatarCurveExcelConfigData[]
+) as AvatarCurveExcelConfigDataObf[]
 
 export type CharacterExpCurveData = {
   GROW_CURVE_HP_S4: {
@@ -54,7 +55,7 @@ export type CharacterExpCurveData = {
 
 const avatarCurveExcelConfigData = {} as CharacterExpCurveData
 avatarCurveExcelConfigDataSrc.forEach(({ level, curveInfos }) =>
-  curveInfos.forEach(({ type, value }) => {
+  curveInfos.forEach(({ type, [deobfPropMappings.value]: value }) => {
     if (!avatarCurveExcelConfigData[type]) avatarCurveExcelConfigData[type] = {} // TODO: [0]
     avatarCurveExcelConfigData[type][level] = value
   })
