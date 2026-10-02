@@ -13,7 +13,6 @@ import type {
 } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import type {
-  ArtCharDatabase,
   ICachedArtifact,
   ICachedCharacter,
   ICachedWeapon,
@@ -129,7 +128,6 @@ export interface CharInfo extends ICharacter {
  */
 export function dataObjForCharacterNew(
   {
-    key,
     level,
     constellation,
     ascension,
@@ -143,7 +141,6 @@ export function dataObjForCharacterNew(
     hitMode: globalHitMode,
     reaction,
   }: CharInfo,
-  database: ArtCharDatabase,
   sheetData?: Data
 ): Data {
   const result: Data = {
