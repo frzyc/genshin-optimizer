@@ -12,7 +12,6 @@ import type {
   INumConditionalData,
 } from '@genshin-optimizer/game-opt/engine'
 import { CalcContext, TagContext } from '@genshin-optimizer/game-opt/formula-ui'
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import type { SliderProps } from '@mui/material'
@@ -45,6 +44,7 @@ export function ConditionalsDisplay({
 }) {
   const { srcDisplay, dstDisplay } = useContext(SrcDstDisplayContext)
   const setConditional = useContext(SetConditionalContext)
+  const tag = useContext(TagContext)
   const {
     metadata: { sheet, name },
     targeted,
@@ -67,11 +67,30 @@ export function ConditionalsDisplay({
     [filteredConditionals]
   )
 
-  const [src, setSrc] = useState<string>(Object.keys(srcDisplay)[0])
+  // Src is implied by TagContext (main kit or per-teammate card) — no picker.
+  const src =
+    (typeof tag?.src === 'string' && tag.src in srcDisplay
+      ? tag.src
+      : undefined) ?? Object.keys(srcDisplay)[0]
+
   // Set to first dst if targeted, else null
   const [dst, setDst] = useState<string | null>(
     targeted ? Object.keys(dstDisplay)[0] : null
   )
+  // Hide the empty adder when every dst for this src is already used.
+  // "All" (dst=null) is not counted — it kept a duplicate empty row after a
+  // named target was already set.
+  const canAddTargeted = useMemo(() => {
+    if (!targeted || !src) return false
+    const dstKeys = Object.keys(dstDisplay)
+    if (!dstKeys.length) return false
+    return dstKeys.some((d) => !hasExisting(src, d))
+  }, [targeted, src, dstDisplay, hasExisting])
+  const showEmptyConditional = targeted
+    ? canAddTargeted
+    : !filteredConditionals.length
+  // Only offer a dst dropdown when there is more than one concrete target.
+  const canPickDst = targeted && Object.keys(dstDisplay).length > 1
   return (
     <Stack spacing={1}>
       {filteredConditionals.map(({ src, dst, condKey, condValue }) => (
@@ -85,15 +104,13 @@ export function ConditionalsDisplay({
           bgt={bgt}
         />
       ))}
-      {/* // empty default conditional UI */}
-      {(targeted || !filteredConditionals.length) && (
+      {showEmptyConditional && (
         <ConditionalDisplay
           conditional={conditional}
           bgt={bgt}
           src={src}
-          setSrc={setSrc}
           dst={dst}
-          setDst={setDst}
+          setDst={canPickDst ? setDst : undefined}
           value={0}
           setValue={(v) => setConditional(sheet, name, src, dst, v)}
           disabled={hasExisting(src, dst)}
@@ -106,7 +123,6 @@ export function ConditionalsDisplay({
 const ConditionalDisplay = memo(function ConditionalDisplay({
   conditional,
   src,
-  setSrc,
   dst,
   setDst,
   value,
@@ -116,7 +132,6 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
 }: {
   conditional: Conditional
   src: string
-  setSrc?: (src: string) => void
   dst: string | null
   setDst?: (dst: string | null) => void
   value: number
@@ -124,8 +139,8 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
   bgt?: CardBackgroundColor
   disabled?: boolean
 }) {
-  const { header, fields, targeted } = conditional
-  const { srcDisplay, dstDisplay } = useContext(SrcDstDisplayContext)
+  const { header, fields } = conditional
+  const { dstDisplay } = useContext(SrcDstDisplayContext)
   const tag = useContext(TagContext)
   const newTag = useMemo(
     () => ({
@@ -139,15 +154,9 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
   return (
     <CardThemed bgt={bgt}>
       {!!header && <HeaderDisplay header={header} />}
-      {targeted && (
-        <CondSrcDst
-          src={src}
-          srcDisplay={srcDisplay}
-          setSrc={setSrc}
-          dst={dst}
-          dstDisplay={dstDisplay}
-          setDst={setDst}
-        />
+      {/* Src is fixed by sheet context; only dst is selectable when targeted. */}
+      {setDst && (
+        <CondDst dst={dst} dstDisplay={dstDisplay} setDst={setDst} />
       )}
       <ConditionalSelector
         disabled={disabled}
@@ -332,85 +341,21 @@ function CondSlider(props: Omit<SliderProps, 'onChange'>) {
   )
 }
 
-function CondSrcDst<S extends string, D extends string>({
-  src,
-  srcDisplay,
-  setSrc,
+function CondDst<D extends string>({
   dst,
   dstDisplay,
   setDst,
 }: {
-  src: S
-  srcDisplay: Record<S, ReactNode>
-  setSrc?: (src: S) => void
   dst: D | null
   dstDisplay: Record<D, ReactNode>
-  setDst?: (dst: D | null) => void
+  setDst: (dst: D | null) => void
 }) {
-  if (!Object.keys(srcDisplay).length || !Object.keys(dstDisplay).length)
-    return null
+  if (!Object.keys(dstDisplay).length) return null
   return (
-    <Box display="flex" alignItems="center" justifyContent="space-between">
-      <SrcDisplay target={src} targetMap={srcDisplay} setTarget={setSrc} />
-      <ArrowRightAltIcon />
-      <DstDisplay target={dst} targetMap={dstDisplay} setTarget={setDst} />
+    <Box display="flex" alignItems="center" justifyContent="flex-end">
+      <DstDropDown target={dst} targetMap={dstDisplay} onChange={setDst} />
     </Box>
   )
-}
-
-function SrcDisplay<T extends string>({
-  target,
-  targetMap,
-  setTarget,
-}: {
-  target: T
-  targetMap: Record<T, ReactNode>
-  setTarget?: (t: T) => void
-}) {
-  if (setTarget)
-    return (
-      <SrcDropDown target={target} targetMap={targetMap} onChange={setTarget} />
-    )
-  return targetMap[target]
-}
-
-function SrcDropDown<K extends string>({
-  target,
-  targetMap,
-  onChange,
-}: {
-  target: K
-  targetMap: Record<K, ReactNode>
-  onChange: (target: K) => void
-}) {
-  const onlyOption = Object.keys(targetMap).length === 1
-  // TODO: Translate
-  return (
-    <DropdownButton title={targetMap[target]} disabled={onlyOption}>
-      {Object.entries(targetMap).map(([key, display]) => (
-        <MenuItem key={key} onClick={() => onChange(key as K)}>
-          {display}
-        </MenuItem>
-      ))}
-    </DropdownButton>
-  )
-}
-
-function DstDisplay<T extends string>({
-  target,
-  targetMap,
-  setTarget,
-}: {
-  target: T | null
-  targetMap: Record<T, ReactNode>
-  setTarget?: (t: T | null) => void
-}) {
-  if (setTarget)
-    return (
-      <DstDropDown target={target} targetMap={targetMap} onChange={setTarget} />
-    )
-  if (target) return targetMap[target]
-  return 'All'
 }
 
 function DstDropDown<K extends string>({
@@ -422,13 +367,9 @@ function DstDropDown<K extends string>({
   targetMap: Record<K, ReactNode>
   onChange: (target: K | null) => void
 }) {
-  const onlyOption = Object.keys(targetMap).length === 1
   // TODO: Translate
   return (
-    <DropdownButton
-      title={target ? targetMap[target] : 'All'}
-      disabled={onlyOption}
-    >
+    <DropdownButton title={target ? targetMap[target] : 'All'}>
       <MenuItem key="all" onClick={() => onChange(null)}>
         All
       </MenuItem>

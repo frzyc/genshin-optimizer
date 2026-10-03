@@ -55,6 +55,17 @@ export const buffs = {
       name: 'core_dmg_',
     },
   },
+  core_vanguard_dmg_: {
+    sheet: 'Seed',
+    name: 'core_vanguard_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'common_dmg_',
+      sheet: 'Seed',
+      name: 'core_vanguard_dmg_',
+    },
+  },
   ability_basic_dmg_: {
     sheet: 'Seed',
     name: 'ability_basic_dmg_',

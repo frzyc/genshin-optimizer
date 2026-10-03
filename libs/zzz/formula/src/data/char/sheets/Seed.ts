@@ -2,6 +2,7 @@ import type { NumNode } from '@genshin-optimizer/pando/engine'
 import {
   cmpEq,
   cmpGE,
+  cmpNE,
   prod,
   subscript,
   sum,
@@ -44,11 +45,13 @@ const { energy_consumed } = allNumConditionals(
   dm.m2.max_energy_consumed - dm.m2.energy_consumed
 )
 
+// Vanguard = Attack teammate, not Seed. Old check used team.initial.atk.max,
+// so Seed (also Attack) could be the max and block every ally from the buff.
 const directStrikeCheck = (node: NumNode | number) =>
   cmpGE(
     sum(
-      cmpEq(team.initial.atk.max, target.initial.atk, 1),
-      cmpEq(target.char.specialty, 'attack', 1)
+      cmpEq(target.char.specialty, 'attack', 1),
+      cmpNE(target.char.key, char.key, 1)
     ),
     2,
     node
@@ -184,13 +187,18 @@ const sheet = register(
       )
     )
   ),
+  // Besiege DMG%: Seed (own) and Vanguard (notOwn), matching kit + M2 defIgn split.
   registerBuff(
     'core_dmg_',
     ownBuff.combat.common_dmg_.add(
       besiege(percent(subscript(char.core, dm.core.dmg_)))
-    ),
-    undefined,
-    true
+    )
+  ),
+  registerBuff(
+    'core_vanguard_dmg_',
+    notOwnBuff.combat.common_dmg_.add(
+      besiege(directStrikeCheck(percent(subscript(char.core, dm.core.dmg_))))
+    )
   ),
   registerBuff(
     'ability_basic_dmg_',

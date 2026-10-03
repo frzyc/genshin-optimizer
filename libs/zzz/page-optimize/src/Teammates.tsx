@@ -179,7 +179,10 @@ function TeammateBuffs({
   )
 
   return (
-    <TeammateConditionalProvider teammateKey={teammateKey}>
+    <TeammateConditionalProvider
+      teammateKey={teammateKey}
+      mainCharacterKey={mainCharacterKey}
+    >
       <TagContext.Provider value={tag}>
         <TeammateBuffsContent
           teammateKey={teammateKey}
@@ -249,27 +252,43 @@ function TeammateBuffsContent({
 
 function TeammateConditionalProvider({
   teammateKey,
+  mainCharacterKey,
   children,
 }: {
   teammateKey: CharacterKey
+  mainCharacterKey: CharacterKey
   children: ReactNode
 }) {
-  // Route sheet conditionals through this teammate as `src` (main unit stays `dst` via TagContext).
+  // Src is fixed by TagContext (this teammate); clear main-dst leftovers and
+  // store dst=null so ownBuff + notOwnBuff both see the toggle. Coalesce still
+  // shows legacy All/main rows as checked.
   const parentSetConditional = useContext(SetConditionalContext)
   const parentConditionals = useContext(ConditionalValuesContext)
   const parentSrcDstDisplay = useContext(SrcDstDisplayContext)
   const setConditional = useCallback<SetConditionalFunc>(
-    (sheet, condKey, _src, dst, condValue) =>
-      parentSetConditional?.(sheet, condKey, teammateKey, dst, condValue),
-    [parentSetConditional, teammateKey]
+    (sheet, condKey, _src, _dst, condValue) => {
+      parentSetConditional?.(sheet, condKey, teammateKey, mainCharacterKey, 0)
+      parentSetConditional?.(sheet, condKey, teammateKey, null, condValue)
+    },
+    [parentSetConditional, teammateKey, mainCharacterKey]
   )
   const teammateConditionals = useMemo(
-    () => parentConditionals.filter(({ src }) => src === teammateKey),
-    [parentConditionals, teammateKey]
+    () =>
+      coalesceTeammateConditionals(
+        parentConditionals,
+        teammateKey,
+        mainCharacterKey
+      ),
+    [parentConditionals, teammateKey, mainCharacterKey]
   )
   const srcDstDisplay = useMemo(
-    () => mergeTeammateSrcDstDisplay(parentSrcDstDisplay, teammateKey),
-    [parentSrcDstDisplay, teammateKey]
+    () =>
+      mergeTeammateSrcDstDisplay(
+        parentSrcDstDisplay,
+        teammateKey,
+        mainCharacterKey
+      ),
+    [parentSrcDstDisplay, teammateKey, mainCharacterKey]
   )
 
   return (
@@ -347,17 +366,55 @@ function teammateCalcTag(
   }
 }
 
+function coalesceTeammateConditionals(
+  conditionals: readonly {
+    sheet: string
+    src: string
+    dst: string | null
+    condKey: string
+    condValue: number
+  }[],
+  teammateKey: CharacterKey,
+  mainCharacterKey: CharacterKey
+) {
+  // Include legacy dst=null ("All") so an already-on buff still shows as checked.
+  // Prefer an explicit main dst when both exist; always display as main.
+  const byCond = new Map<
+    string,
+    {
+      sheet: string
+      src: string
+      dst: string | null
+      condKey: string
+      condValue: number
+    }
+  >()
+  for (const conditional of conditionals) {
+    if (conditional.src !== teammateKey) continue
+    if (conditional.dst !== mainCharacterKey && conditional.dst !== null)
+      continue
+    const key = `${conditional.sheet}:${conditional.condKey}`
+    const existing = byCond.get(key)
+    if (!existing || conditional.dst === mainCharacterKey) {
+      byCond.set(key, { ...conditional, dst: mainCharacterKey })
+    }
+  }
+  return [...byCond.values()]
+}
+
 function mergeTeammateSrcDstDisplay(
   parent: SrcDstDisplayContextObj,
-  teammateKey: CharacterKey
+  teammateKey: CharacterKey,
+  mainCharacterKey: CharacterKey
 ): SrcDstDisplayContextObj {
-  // Keep parent dst labels (main unit) for targeted conditional UI.
+  // Teammate card: src = this teammate, dst = main only (no All / other ally).
   return {
     srcDisplay: {
-      ...parent.srcDisplay,
       [teammateKey]: <CharacterName characterKey={teammateKey} />,
     },
-    dstDisplay: parent.dstDisplay,
+    dstDisplay: {
+      [mainCharacterKey]: parent.dstDisplay[mainCharacterKey],
+    },
   }
 }
 
