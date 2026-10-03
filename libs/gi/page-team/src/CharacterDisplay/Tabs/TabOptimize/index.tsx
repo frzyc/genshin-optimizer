@@ -409,14 +409,15 @@ export default function TabBuild() {
         if (plotBaseNumNodeInfo?.unit === '%')
           solverBuilds.forEach(
             (dataEntry) =>
-              dataEntry && (dataEntry.plot = (dataEntry.plot ?? 0) * 100)
+              dataEntry &&
+              (dataEntry.plotValue = (dataEntry.plotValue ?? 0) * 100)
           )
         setChartData({
           valueNode: targetNode,
           plotNode: plotBaseNumNode,
           data: solverBuilds
             .filter(notEmpty)
-            .map(({ value, plot, artifactIds }) => ({
+            .map(({ value, plotValue, artifactIds }) => ({
               artifactIds: objKeyMap(allArtifactSlotKeys, (slotKey) =>
                 artifactIds.find(
                   (aId) => database.arts.get(aId)?.slotKey === slotKey
@@ -424,7 +425,7 @@ export default function TabBuild() {
               ),
               weaponId,
               value,
-              plot,
+              plotValue,
             })),
         })
       }

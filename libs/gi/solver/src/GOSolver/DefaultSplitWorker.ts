@@ -14,7 +14,7 @@ export class DefaultSplitWorker implements SplitWorker {
     this.arts = arts
   }
 
-  setThreshold(_newThreshold: number): void {}
+  setThreshold(_newThreshold: number, _plotThreshold?: number): void {}
   add(
     filter: RequestFilter,
     splittedBy: (typeof this.stack)[number]['splittedBy']
