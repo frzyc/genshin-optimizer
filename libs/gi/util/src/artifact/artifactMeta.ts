@@ -34,7 +34,7 @@ export function getArtifactMeta(flex: IArtifact): {
   artifactMeta: ArtifactMeta
   errors: string[]
 } {
-  const { rarity, mainStatKey, level } = flex
+  const { rarity, mainStatKey, level, totalRolls } = flex
   const mainStatVal = getMainStatDisplayValue(mainStatKey, rarity, level)
 
   const errors: string[] = []
@@ -105,9 +105,13 @@ export function getArtifactMeta(flex: IArtifact): {
     total: number
   ) => {
     if (rolls.length === allPossibleRolls.length) {
+      const [searchLower, searchUpper] = totalRolls !== undefined
+        ? [totalRolls, totalRolls]
+        : [lowerBound, upperBound]
+
       if (
-        total <= upperBound &&
-        total >= lowerBound &&
+        total <= searchUpper &&
+        total >= searchLower &&
         highestScore < currentScore
       ) {
         highestScore = currentScore
@@ -136,18 +140,18 @@ export function getArtifactMeta(flex: IArtifact): {
 
   tryAllSubstats([], Number.POSITIVE_INFINITY, totalUnambiguousRolls)
 
-  const totalRolls = substats.reduce(
+  const artifactRolls = substats.reduce(
     (accu, { rolls }) => accu + rolls.length,
     0
   )
 
-  if (totalRolls > upperBound)
+  if (artifactRolls > upperBound)
     errors.push(
-      `${rarity}-star artifact (level ${level}) should have no more than ${upperBound} rolls. It currently has ${totalRolls} rolls.`
+      `${rarity}-star artifact (level ${level}) should have no more than ${upperBound} rolls. It currently has ${artifactRolls} rolls.`
     )
-  else if (totalRolls < lowerBound)
+  else if (artifactRolls < lowerBound)
     errors.push(
-      `${rarity}-star artifact (level ${level}) should have at least ${lowerBound} rolls. It currently has ${totalRolls} rolls.`
+      `${rarity}-star artifact (level ${level}) should have at least ${lowerBound} rolls. It currently has ${artifactRolls} rolls.`
     )
 
   if (substats.length < 4 || flex.substats.some(({ key }) => !key)) {
