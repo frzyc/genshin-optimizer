@@ -11,12 +11,18 @@ type UnactivatedSubstatMessage = {
 }
 type OverwriteMessage = { type: 'overwrite'; artifact: IArtifact }
 type UpdateMessage = { type: 'update'; artifact: Partial<IArtifact> }
+type InitialValueMessage = {
+  type: 'initialValue'
+  index: number
+  value: number | undefined
+}
 export type ArtifactReducerMessage =
   | ResetMessage
   | SubstatMessage
   | OverwriteMessage
   | UpdateMessage
   | UnactivatedSubstatMessage
+  | InitialValueMessage
 
 function activeSubstatCount(artifact: IArtifact): number {
   return artifact.substats.filter(({ key }) => key).length
@@ -145,6 +151,15 @@ export function artifactReducer(
           state.substats[3] = { key: '', value: 0 }
         }
 
+        return { ...state! }
+      }
+      case 'initialValue': {
+        const { index, value } = action
+        const substat = state!.substats[index]
+        state!.substats[index] =
+          value === undefined
+            ? { key: substat.key, value: substat.value }
+            : { ...substat, initialValue: value }
         return { ...state! }
       }
       case 'overwrite':
