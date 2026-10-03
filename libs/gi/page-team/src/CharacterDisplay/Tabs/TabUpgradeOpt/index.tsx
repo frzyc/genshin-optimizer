@@ -28,6 +28,7 @@ import {
   useDBMeta,
   useLoadoutArtifacts,
   useOptConfig,
+  useTeammateArtifactIds,
 } from '@genshin-optimizer/gi/db-ui'
 import {
   type FilterOption,
@@ -144,6 +145,7 @@ export default function TabUpopt() {
     upOptDefineSubstats,
   } = optConfig
   const teamData = useTeamData()
+  const teammateArtifactIds = useTeammateArtifactIds()
   const { target: data } = teamData?.[characterKey as CharacterKey] ?? {}
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
@@ -169,6 +171,7 @@ export default function TabUpopt() {
       upOptLevelHigh,
       upOptReshape,
       useExcludedArts,
+      useTeammateBuild,
     } = optConfig
     const filterFunc = filterFunction(filterOption, artifactFilterConfigs())
 
@@ -177,7 +180,16 @@ export default function TabUpopt() {
       database.arts.values
         .filter((art) => {
           const reshapeCandidate = upOptReshape && canReshape(art)
+          if (!useTeammateBuild && teammateArtifactIds.includes(art.id))
+            return false
           if (!useExcludedArts && artExclusion.includes(art.id)) return false
+          const locKey = charKeyToLocCharKey(characterKey)
+          if (
+            art.location &&
+            art.location !== locKey &&
+            excludedLocations.includes(art.location)
+          )
+            return false
           if (!reshapeCandidate) {
             if (art.level < upOptLevelLow) return false
             if (art.level > upOptLevelHigh) return false
@@ -188,19 +200,18 @@ export default function TabUpopt() {
           if (mainStats?.length && !mainStats.includes(art.mainStatKey))
             return false
 
-          const locKey = charKeyToLocCharKey(characterKey)
-          if (
-            art.location &&
-            art.location !== locKey &&
-            excludedLocations.includes(art.location)
-          )
-            return false
-
           return true
         })
         .filter(filterFunc)
     )
-  }, [optConfig, artsDirty, database, characterKey, filterOption])
+  }, [
+    optConfig,
+    artsDirty,
+    database,
+    characterKey,
+    filterOption,
+    teammateArtifactIds,
+  ])
   const filteredArtIdMap = useMemo(
     () =>
       objKeyMap(
