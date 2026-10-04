@@ -379,15 +379,25 @@ export default function TabUpopt() {
     const defineConfig = {
       enabled: upOptDefine && upOptDefineSubstats.length >= 2,
       setSlotMainStatKeys: objKeyMap(allArtifactSlotKeys, (slotKey) => {
+        const filterOptionSlotEnabled = filterOption.slotKeys?.length
+          ? filterOption.slotKeys.includes(slotKey)
+          : true
+        if (!filterOptionSlotEnabled) return { setKeys: [], mainStats: [] }
+
         const mainStats =
           slotKey === 'flower' ||
           slotKey === 'plume' ||
           mainStatKeys[slotKey].length === 0
             ? artSlotMainKeys[slotKey]
             : mainStatKeys[slotKey]
-        const setKeys = allArtifactSetKeys.filter((setKey) =>
-          respectSexExclusion({ slotKey, setKey })
+        const filterOptionSetKeys = new Set(
+          filterOption.artSetKeys?.length
+            ? filterOption.artSetKeys
+            : allArtifactSetKeys
         )
+        const setKeys = allArtifactSetKeys
+          .filter((setKey) => respectSexExclusion({ slotKey, setKey }))
+          .filter((setKey) => filterOptionSetKeys.has(setKey))
         return {
           setKeys,
           mainStats,
@@ -427,6 +437,7 @@ export default function TabUpopt() {
     activeCharKey,
     characterKey,
     filteredArts,
+    filterOption,
     equippedArts,
   ])
 
