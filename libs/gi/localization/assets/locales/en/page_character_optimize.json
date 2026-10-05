@@ -39,7 +39,10 @@
   "upOptDefine": {
     "label": "Define",
     "tooltip": "Evaluate hypothetical artifacts created by defining (Sanctifying Elixirs). Candidates are generated for the selected sets, slots, main stats, and every pair of the selected substats below.",
-    "substats": "Substats to consider for defining:"
+    "substats": "Substats to consider for defining:",
+    "sets": "Sets being considered:",
+    "setsEmpty": "No sets are being considered. Enable Define with at least 2 substats, and pick an optimization target.",
+    "setsArbitrary": "No available set affects the optimization target in these slots, so an arbitrary set (highlighted above) was picked just so results show up."
   },
   "upOptChart": {
     "est": " (est.)",
