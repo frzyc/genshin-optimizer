@@ -105,9 +105,10 @@ export function getArtifactMeta(flex: IArtifact): {
     total: number
   ) => {
     if (rolls.length === allPossibleRolls.length) {
-      const [searchLower, searchUpper] = totalRolls !== undefined
-        ? [totalRolls, totalRolls]
-        : [lowerBound, upperBound]
+      const [searchLower, searchUpper] =
+        totalRolls !== undefined
+          ? [totalRolls, totalRolls]
+          : [lowerBound, upperBound]
 
       if (
         total <= searchUpper &&
