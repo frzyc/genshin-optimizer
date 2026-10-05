@@ -1,6 +1,11 @@
+import { solveLPBland } from './solveLPBland.js'
+
 // Matrix convention is row-major, indexed A_{ij} = A[i][j]
 type Pivot = { i: number; j: number }
-const zero = 1e-8 // Small number equivalent to 0 for numerical instability
+export const zero = 1e-8 // Small number equivalent to 0 for numerical instability
+
+// Degenerate pivots leave the objective untouched, so a long enough run of them means we are cycling.
+const maxDegeneratePivots = 16
 
 /** Checks that all constraints are satisfied (Ax <= b) */
 export function isFeasible(Ab: number[][], x: number[]): boolean {
@@ -20,8 +25,8 @@ export function isFeasible(Ab: number[][], x: number[]): boolean {
  * Implemented according to the Simplex Method (Sec 4) of:
  *   Ferguson, https://www.math.ucla.edu/~tom/LP.pdf
  *
- * Does not implement any cycle detection, though that *shouldnt* be a problem for GO's use
- *   case. This algorithm will always return a feasible solution, though it may be suboptimal.
+ * The pivot rules here can cycle on degenerate problems. When that is detected, the problem is
+ *   handed to `solveLPBland`, whose rule is slower but provably terminates.
  *
  * @param c        Objective vector
  * @param Ab       Constraints matrix with thresholds. Inputted in block form [A, b]
@@ -45,8 +50,14 @@ export function solveLP(c: number[], Ab: number[][]) {
     pivotInplace(tableau, piv)
   }
 
+  let degenerate = 0
   while (tableau[rows - 1].some((t, j) => j < cols - 1 && t < -zero)) {
     const piv = findPiv1(tableau)
+    // The objective improves on every pivot except those in a row whose threshold is 0
+    //   (Ferguson p24), so an unbroken run of those means this is a cycle rather than progress.
+    if (Math.abs(tableau[piv.i][cols - 1]) <= zero) {
+      if (++degenerate > maxDegeneratePivots) return solveLPBland(c, Ab)
+    } else degenerate = 0
     pivotHistory.push(piv)
     pivotInplace(tableau, piv)
   }
@@ -57,7 +68,7 @@ export function solveLP(c: number[], Ab: number[][]) {
 }
 
 /** Standard `pivot` operation on LPs */
-function pivotInplace(A: number[][], { i, j }: Pivot) {
+export function pivotInplace(A: number[][], { i, j }: Pivot) {
   const Aij = A[i][j]
   for (let h = 0; h < A.length; h++) {
     if (h === i) continue
