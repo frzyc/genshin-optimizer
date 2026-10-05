@@ -73,10 +73,10 @@ const atk_more = equal(input.activeCharKey, target.charKey, atk_moreDisp)
 const data = dataObjForWeaponSheet(key, {
   premod: {
     heal_,
+    hp_: sum(hp_base, hp_more),
   },
   teamBuff: {
     premod: {
-      hp_: sum(hp_base, hp_more),
       atk_: sum(atk_base, atk_more),
     },
   },
