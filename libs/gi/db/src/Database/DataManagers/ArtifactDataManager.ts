@@ -484,9 +484,14 @@ export function cachedArtifact(
     total: number
   ) => {
     if (rolls.length === allPossibleRolls.length) {
+      const [searchLower, searchUpper] =
+        totalRolls !== undefined
+          ? [totalRolls, totalRolls]
+          : [lowerBound, upperBound]
+
       if (
-        total <= upperBound &&
-        total >= lowerBound &&
+        total <= searchUpper &&
+        total >= searchLower &&
         highestScore < currentScore
       ) {
         highestScore = currentScore
