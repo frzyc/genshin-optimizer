@@ -72,7 +72,7 @@
       "2": "<br/>",
       "3": "<strong>Solo Dance Double</strong>",
       "4": "Alternates between the <strong>Plume</strong> and <strong>Wing</strong> dance moves, periodically attacking nearby opponents and dealing to them <cryo>AoE Cryo DMG</cryo>.",
-      "5": "Additionally, for 6s after unleashing the Elemental Skill <strong>Adagio: Phantom Night Dancers</strong>, Odette's Elemental Skill <strong>Adagio: Phantom Night Dancers</strong> will become the special Elemental Skill <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Coda at Dawn's Tolling</strong></tooltip> instead, where a dance duet deals <cryo>AoE Cryo DMG</cryo> to nearby opponents over time. Then, when the duet ends, she deals another instance of <cryo>AoE Cryo DMG</cryo> that is considered Stellar-Conduct or Stellar Swirl DMG."
+      "5": "Additionally, for 6s after unleashing the Elemental Skill <strong>Adagio: Phantom Night Dancers</strong>, Odette's Elemental Skill <strong>Adagio: Phantom Night Dancers</strong> will become the special Elemental Skill <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Coda at Dawn's Tolling</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip> instead, where a dance duet deals <cryo>AoE Cryo DMG</cryo> to nearby opponents over time. Then, when the duet ends, she deals another instance of <cryo>AoE Cryo DMG</cryo> that is considered Stellar-Conduct or Stellar Swirl DMG."
     },
     "skillParams": {
       "0": "Skill DMG",
@@ -123,7 +123,7 @@
     "name": "Presto: Bluebird Finale",
     "description": {
       "0": "With quick, lively dance steps, Odette deals multiple instances of <cryo>AoE Cryo DMG</cryo>, and summons her <strong><tooltip ns=tooltips_gen baseKey18=11500001 values=[]>Solo Dance Double</strong></tooltip>. She also gains <strong>Snow Swan's Dream</strong>, which increases the Stellar Glimmer reaction DMG Odette deals.",
-      "1": "Additionally, for 6s after unleashing the Elemental Burst <strong>Presto: Bluebird Finale</strong>, Odette's Elemental Skill <strong>Adagio: Phantom Night Dancers</strong> will be replaced with the special Elemental Skill <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Coda at Dawn's Tolling</strong></tooltip> instead.",
+      "1": "Additionally, for 6s after unleashing the Elemental Burst <strong>Presto: Bluebird Finale</strong>, Odette's Elemental Skill <strong>Adagio: Phantom Night Dancers</strong> will be replaced with the special Elemental Skill <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Coda at Dawn's Tolling</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip> instead.",
       "2": "<br/>",
       "3": "If there is a Solo Dance Double summoned by Odette on the field, it will be summoned to her side with its duration refreshed."
     },
@@ -194,7 +194,7 @@
   "passive": {
     "name": "Echo of Winter Daydreams",
     "description": {
-      "0": "Shows the locations of <strong>Snezhnaya's Local Specialties</strong> on the mini-map.",
+      "0": "Shows the locations of <strong>Snezhnaya's Local Specialties</strong> on the mini-map, and this effect also applies in the Shadow Realm.",
       "1": "Practicing dance in one's spare time might even trigger other effects..."
     }
   },

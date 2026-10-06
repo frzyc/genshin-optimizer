@@ -168,7 +168,7 @@
   "constellation4": {
     "name": "Enduring Ice",
     "description": {
-      "0": "Durasi <strong>Frostpierce Star</strong> dari Elemental Skill <strong><tooltip ns=char_TravelerCryoF_gen baseKey18=skill>Ice Fog Piercer</tooltip></strong> meningkat 25%."
+      "0": "Durasi <strong>Frostpierce Star</strong> dari Elemental Skill <strong><tooltip ns=char_TravelerCryoF_gen baseKey18=skill>Ice Fog Piercer</tooltip></strong> bertambah 25%."
     }
   },
   "constellation5": {

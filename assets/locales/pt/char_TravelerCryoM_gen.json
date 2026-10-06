@@ -135,11 +135,11 @@
     "description": {
       "0": "Retira sua nova força e poder de suas viagens passadas. Cada instância de Ressonância Elemental que ocorreu agora fornece um <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>efeito de fortalecimento</strong></tooltip> adicional.",
       "1": "<br/>",
-      "2": "Além disso, quando um membro próximo da equipe causar Dano de Supercondutor Estelar ou Redemoinho Estelar, {F#a}{M#o} Viajante ganha 1 acúmulo de Lâmina Gelada. 1 acúmulo de Lâmina Gelada pode ser obtido a cada 2s dessa forma. Máximo de 3 acúmulos. Quando {F#a}{M#o} lançar um Ataque Carregado com 3 acúmulos de Lâmina Gelada, todos os acúmulos são consumidos para mudar o ataque para o especial <strong>Ataque Carregado: Concentração de Gelo</strong>.",
+      "2": "Além disso, quando um membro próximo da equipe causar Dano de Supercondutor Estelar ou Redemoinho Estelar, {F#a}{M#o} Viajante ganha 1 acúmulo de Lâmina Gelada. 1 acúmulo de Lâmina Gelada pode ser obtido a cada 2s dessa forma. Máximo de 3 acúmulos. Quando {F#a}{M#o} Viajante lançar um Ataque Carregado com 3 acúmulos de Lâmina Gelada, todos os acúmulos são consumidos para mudar o ataque para o especial <strong>Ataque Carregado: Concentração de Gelo</strong>.",
       "3": "<br/>",
       "4": "<strong>Ataque Carregado: Concentração de Gelo</strong>",
       "5": [
-        " O <cryo>Dano Cryo</cryo> causado é aumentado em 140% do ATQ d{F#a}{M#o} Viajante, e {F#a}{M#o} ganha 2 acúmulos de <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Brilho Gélido</strong></tooltip>.",
+        " O <cryo>Dano Cryo</cryo> causado é aumentado em 140% do ATQ d{F#a}{M#o} Viajante, e {F#a}{M#o} Viajante ganha 2 acúmulos de <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Brilho Gélido</strong></tooltip>.",
         " <strong>Ataque Carregado: Concentração de Gelo</strong> pode ser lançado uma vez a cada 15s. Além disso, o bônus de Dano do Talento de Ascensão \"Gelo Eternamente Afiado\" não é aplicado ao <strong>Ataque Carregado: Concentração de Gelo</strong>."
       ],
       "6": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Brilho Reluzente: Brilho Estelar</strong></tooltip>: Dano do <strong>Ataque Carregado: Concentração de Gelo</strong> é alterado para <cryo>Dano Cryo</cryo> do tipo de Brilho Estelar correspondente."

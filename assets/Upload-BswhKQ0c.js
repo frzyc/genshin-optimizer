@@ -1,0 +1,1 @@
+import{n as e}from"./prop-types-C98rxrTl.js";import{Da as t,Lr as n,rn as r}from"./src-C68SIDZa.js";var i=e((e=>{var i=n();Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0;var a=i(r()),o=t();e.default=(0,a.default)((0,o.jsx)(`path`,{d:`M5 20h14v-2H5v2zm0-10h4v6h6v-6h4l-7-7-7 7z`}),`Upload`)}));export{i as t};

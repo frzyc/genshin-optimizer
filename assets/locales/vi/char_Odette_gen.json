@@ -128,7 +128,7 @@
   "passive": {
     "name": "Giấc Mộng Mùa Đông Trong Tiếng Vọng",
     "description": {
-      "0": "Hiển thị <strong>đặc sản khu vực Snezhnaya</strong> trên bản đồ nhỏ.",
+      "0": "Hiển thị <strong>đặc sản khu vực Snezhnaya</strong> trên bản đồ nhỏ. Trong Ảnh Vực cũng có thể cung cấp sự trợ giúp tương tự.",
       "1": "Luyện tập vũ đạo trong lúc rảnh rỗi, biết đâu sẽ còn kích hoạt thêm hiệu quả khác..."
     }
   },

@@ -1,0 +1,49 @@
+{
+  "name": "Oltre la crisalide",
+  "description": {
+    "0": "Una spada lunga traboccante di luce e colori, leggera come una farfalla. Un tempo venne impiegata da una certa persona per rimuovere una serie di vincoli."
+  },
+  "passiveName": "Danza di ali libere",
+  "passiveDescription": {
+    "0": {
+      "0": "Ogni volta che il personaggio che equipaggia l'arma usa la sua abilità elementale o il suo Tripudio elementale, ottiene uno tra i tre effetti seguenti in sequenza.",
+      "1": "Venti devoti: aumenta di un <cryo>56%</cryo> per 10 s i DAN da CRIT del personaggio che equipaggia l'arma.",
+      "2": "Venti sprezzanti: aumenta di un <cryo>36%</cryo> per 10 s i DAN da reazione di Turbinio astrale del personaggio che equipaggia l'arma.",
+      "3": "Venti abbondanti: ripristina di <cryo>5</cryo> l'energia elementale del personaggio che equipaggia l'arma. È possibile ripristinare in questo modo un massimo di <cryo>5</cryo> di energia elementale ogni 4 s.",
+      "4": "<br/>",
+      "5": "Quando il personaggio che equipaggia l'arma lascia il campo, i sopracitati effetti vengono rimossi e la sequenza si ripristina."
+    },
+    "1": {
+      "0": "Ogni volta che il personaggio che equipaggia l'arma usa la sua abilità elementale o il suo Tripudio elementale, ottiene uno tra i tre effetti seguenti in sequenza.",
+      "1": "Venti devoti: aumenta di un <cryo>72%</cryo> per 10 s i DAN da CRIT del personaggio che equipaggia l'arma.",
+      "2": "Venti sprezzanti: aumenta di un <cryo>45%</cryo> per 10 s i DAN da reazione di Turbinio astrale del personaggio che equipaggia l'arma.",
+      "3": "Venti abbondanti: ripristina di <cryo>5,5</cryo> l'energia elementale del personaggio che equipaggia l'arma. È possibile ripristinare in questo modo un massimo di <cryo>5,5</cryo> di energia elementale ogni 4 s.",
+      "4": "<br/>",
+      "5": "Quando il personaggio che equipaggia l'arma lascia il campo, i sopracitati effetti vengono rimossi e la sequenza si ripristina."
+    },
+    "2": {
+      "0": "Ogni volta che il personaggio che equipaggia l'arma usa la sua abilità elementale o il suo Tripudio elementale, ottiene uno tra i tre effetti seguenti in sequenza.",
+      "1": "Venti devoti: aumenta di un <cryo>88%</cryo> per 10 s i DAN da CRIT del personaggio che equipaggia l'arma.",
+      "2": "Venti sprezzanti: aumenta di un <cryo>54%</cryo> per 10 s i DAN da reazione di Turbinio astrale del personaggio che equipaggia l'arma.",
+      "3": "Venti abbondanti: ripristina di <cryo>6</cryo> l'energia elementale del personaggio che equipaggia l'arma. È possibile ripristinare in questo modo un massimo di <cryo>6</cryo> di energia elementale ogni 4 s.",
+      "4": "<br/>",
+      "5": "Quando il personaggio che equipaggia l'arma lascia il campo, i sopracitati effetti vengono rimossi e la sequenza si ripristina."
+    },
+    "3": {
+      "0": "Ogni volta che il personaggio che equipaggia l'arma usa la sua abilità elementale o il suo Tripudio elementale, ottiene uno tra i tre effetti seguenti in sequenza.",
+      "1": "Venti devoti: aumenta di un <cryo>104%</cryo> per 10 s i DAN da CRIT del personaggio che equipaggia l'arma.",
+      "2": "Venti sprezzanti: aumenta di un <cryo>63%</cryo> per 10 s i DAN da reazione di Turbinio astrale del personaggio che equipaggia l'arma.",
+      "3": "Venti abbondanti: ripristina di <cryo>6,5</cryo> l'energia elementale del personaggio che equipaggia l'arma. È possibile ripristinare in questo modo un massimo di <cryo>6,5</cryo> di energia elementale ogni 4 s.",
+      "4": "<br/>",
+      "5": "Quando il personaggio che equipaggia l'arma lascia il campo, i sopracitati effetti vengono rimossi e la sequenza si ripristina."
+    },
+    "4": {
+      "0": "Ogni volta che il personaggio che equipaggia l'arma usa la sua abilità elementale o il suo Tripudio elementale, ottiene uno tra i tre effetti seguenti in sequenza.",
+      "1": "Venti devoti: aumenta di un <cryo>120%</cryo> per 10 s i DAN da CRIT del personaggio che equipaggia l'arma.",
+      "2": "Venti sprezzanti: aumenta di un <cryo>72%</cryo> per 10 s i DAN da reazione di Turbinio astrale del personaggio che equipaggia l'arma.",
+      "3": "Venti abbondanti: ripristina di <cryo>7</cryo> l'energia elementale del personaggio che equipaggia l'arma. È possibile ripristinare in questo modo un massimo di <cryo>7</cryo> di energia elementale ogni 4 s.",
+      "4": "<br/>",
+      "5": "Quando il personaggio che equipaggia l'arma lascia il campo, i sopracitati effetti vengono rimossi e la sequenza si ripristina."
+    }
+  }
+}

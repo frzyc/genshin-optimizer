@@ -1,0 +1,39 @@
+{
+  "name": "Inno del gorgo",
+  "description": {
+    "0": "Una splendida lampada realizzata in calcedonio blu, il suo aspetto è come un tesoro uscito da una fiaba. Si narra che un canto di lode, dimenticato da tutti, giaccia sigillato al suo interno."
+  },
+  "passiveName": "Rondò onirico",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta il bonus di guarigione di un <cryo>4%</cryo>.",
+      "1": "Quando apporta effetti di guarigione, il personaggio che equipaggia l'arma ottiene l'effetto \"Vino del Vatsamonga\", che aumenta i suoi PS max di un <cryo>4%</cryo> e l'ATT del membro attivo del gruppo di uno <cryo>0,4%</cryo> per ogni 1.000 PS max del personaggio che equipaggia l'arma al di sopra di 40.000. In questo modo, l'ATT può aumentare fino a un <cryo>8%</cryo> massimo. L'effetto dura 10 s, e può accumularsi per un massimo di 3 volte.",
+      "2": "Quando un membro vicino del gruppo innesca una reazione di Congelamento o di Turbinio astrale, i suddetti bonus ai PS max e all'ATT aumentano di un ulteriore 75% per i 5 s successivi.",
+      "3": "I suddetti effetti possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "1": {
+      "0": "Aumenta il bonus di guarigione di un <cryo>5%</cryo>.",
+      "1": "Quando apporta effetti di guarigione, il personaggio che equipaggia l'arma ottiene l'effetto \"Vino del Vatsamonga\", che aumenta i suoi PS max di un <cryo>5%</cryo> e l'ATT del membro attivo del gruppo di uno <cryo>0,5%</cryo> per ogni 1.000 PS max del personaggio che equipaggia l'arma al di sopra di 40.000. In questo modo, l'ATT può aumentare fino a un <cryo>10%</cryo> massimo. L'effetto dura 10 s, e può accumularsi per un massimo di 3 volte.",
+      "2": "Quando un membro vicino del gruppo innesca una reazione di Congelamento o di Turbinio astrale, i suddetti bonus ai PS max e all'ATT aumentano di un ulteriore 75% per i 5 s successivi.",
+      "3": "I suddetti effetti possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "2": {
+      "0": "Aumenta il bonus di guarigione di un <cryo>6%</cryo>.",
+      "1": "Quando apporta effetti di guarigione, il personaggio che equipaggia l'arma ottiene l'effetto \"Vino del Vatsamonga\", che aumenta i suoi PS max di un <cryo>6%</cryo> e l'ATT del membro attivo del gruppo di uno <cryo>0,6%</cryo> per ogni 1.000 PS max del personaggio che equipaggia l'arma al di sopra di 40.000. In questo modo, l'ATT può aumentare fino a un <cryo>12%</cryo> massimo. L'effetto dura 10 s, e può accumularsi per un massimo di 3 volte.",
+      "2": "Quando un membro vicino del gruppo innesca una reazione di Congelamento o di Turbinio astrale, i suddetti bonus ai PS max e all'ATT aumentano di un ulteriore 75% per i 5 s successivi.",
+      "3": "I suddetti effetti possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "3": {
+      "0": "Aumenta il bonus di guarigione di un <cryo>7%</cryo>.",
+      "1": "Quando apporta effetti di guarigione, il personaggio che equipaggia l'arma ottiene l'effetto \"Vino del Vatsamonga\", che aumenta i suoi PS max di un <cryo>7%</cryo> e l'ATT del membro attivo del gruppo di uno <cryo>0,7%</cryo> per ogni 1.000 PS max del personaggio che equipaggia l'arma al di sopra di 40.000. In questo modo, l'ATT può aumentare fino a un <cryo>14%</cryo> massimo. L'effetto dura 10 s, e può accumularsi per un massimo di 3 volte.",
+      "2": "Quando un membro vicino del gruppo innesca una reazione di Congelamento o di Turbinio astrale, i suddetti bonus ai PS max e all'ATT aumentano di un ulteriore 75% per i 5 s successivi.",
+      "3": "I suddetti effetti possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "4": {
+      "0": "Aumenta il bonus di guarigione di un <cryo>8%</cryo>.",
+      "1": "Quando apporta effetti di guarigione, il personaggio che equipaggia l'arma ottiene l'effetto \"Vino del Vatsamonga\", che aumenta i suoi PS max di un <cryo>8%</cryo> e l'ATT del membro attivo del gruppo di uno <cryo>0,8%</cryo> per ogni 1.000 PS max del personaggio che equipaggia l'arma al di sopra di 40.000. In questo modo, l'ATT può aumentare fino a un <cryo>16%</cryo> massimo. L'effetto dura 10 s, e può accumularsi per un massimo di 3 volte.",
+      "2": "Quando un membro vicino del gruppo innesca una reazione di Congelamento o di Turbinio astrale, i suddetti bonus ai PS max e all'ATT aumentano di un ulteriore 75% per i 5 s successivi.",
+      "3": "I suddetti effetti possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    }
+  }
+}

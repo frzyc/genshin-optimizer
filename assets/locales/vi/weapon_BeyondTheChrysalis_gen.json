@@ -1,0 +1,44 @@
+{
+  "name": "Cánh Bướm Biến Hóa",
+  "description": {
+    "0": "Thanh kiếm với ánh sáng rực rỡ, từng có người dùng nó để phá vỡ xiềng xích, gió kiếm nhẹ nhàng như bươm bướm nhảy múa."
+  },
+  "passiveName": "Vũ Điệu Phá Kén Tự Do",
+  "passiveDescription": {
+    "0": {
+      "0": "Người trang bị mỗi lần thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ, sẽ căn cứ theo thứ tự dưới đây để lần lượt nhận một trong ba hiệu quả sau:",
+      "1": "Ngọn Gió Trung Thành: Người trang bị tăng <cryo>56%</cryo> Sát Thương Bạo Kích trong 10s.",
+      "2": "Ngọn Gió Phản Bội: Người trang bị tăng <cryo>36%</cryo> sát thương phản ứng Tinh-Khuếch Tán trong 10s.",
+      "3": "Ngọn Gió Bội Thu: Người trang bị hồi phục <cryo>5</cryo> điểm Năng Lượng Nguyên Tố, mỗi 4s tối đa hồi phục <cryo>5</cryo> điểm Năng Lượng Nguyên Tố theo cách này.",
+      "4": "Khi người trang bị rời trận, sẽ xóa hiệu quả trên và đặt lại thứ tự của chúng."
+    },
+    "1": {
+      "0": "Người trang bị mỗi lần thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ, sẽ căn cứ theo thứ tự dưới đây để lần lượt nhận một trong ba hiệu quả sau:",
+      "1": "Ngọn Gió Trung Thành: Người trang bị tăng <cryo>72%</cryo> Sát Thương Bạo Kích trong 10s.",
+      "2": "Ngọn Gió Phản Bội: Người trang bị tăng <cryo>45%</cryo> sát thương phản ứng Tinh-Khuếch Tán trong 10s.",
+      "3": "Ngọn Gió Bội Thu: Người trang bị hồi phục <cryo>5.5</cryo> điểm Năng Lượng Nguyên Tố, mỗi 4s tối đa hồi phục <cryo>5.5</cryo> điểm Năng Lượng Nguyên Tố theo cách này.",
+      "4": "Khi người trang bị rời trận, sẽ xóa hiệu quả trên và đặt lại thứ tự của chúng."
+    },
+    "2": {
+      "0": "Người trang bị mỗi lần thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ, sẽ căn cứ theo thứ tự dưới đây để lần lượt nhận một trong ba hiệu quả sau:",
+      "1": "Ngọn Gió Trung Thành: Người trang bị tăng <cryo>88%</cryo> Sát Thương Bạo Kích trong 10s.",
+      "2": "Ngọn Gió Phản Bội: Người trang bị tăng <cryo>54%</cryo> sát thương phản ứng Tinh-Khuếch Tán trong 10s.",
+      "3": "Ngọn Gió Bội Thu: Người trang bị hồi phục <cryo>6</cryo> điểm Năng Lượng Nguyên Tố, mỗi 4s tối đa hồi phục <cryo>6</cryo> điểm Năng Lượng Nguyên Tố theo cách này.",
+      "4": "Khi người trang bị rời trận, sẽ xóa hiệu quả trên và đặt lại thứ tự của chúng."
+    },
+    "3": {
+      "0": "Người trang bị mỗi lần thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ, sẽ căn cứ theo thứ tự dưới đây để lần lượt nhận một trong ba hiệu quả sau:",
+      "1": "Ngọn Gió Trung Thành: Người trang bị tăng <cryo>104%</cryo> Sát Thương Bạo Kích trong 10s.",
+      "2": "Ngọn Gió Phản Bội: Người trang bị tăng <cryo>63%</cryo> sát thương phản ứng Tinh-Khuếch Tán trong 10s.",
+      "3": "Ngọn Gió Bội Thu: Người trang bị hồi phục <cryo>6.5</cryo> điểm Năng Lượng Nguyên Tố, mỗi 4s tối đa hồi phục <cryo>6.5</cryo> điểm Năng Lượng Nguyên Tố theo cách này.",
+      "4": "Khi người trang bị rời trận, sẽ xóa hiệu quả trên và đặt lại thứ tự của chúng."
+    },
+    "4": {
+      "0": "Người trang bị mỗi lần thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ, sẽ căn cứ theo thứ tự dưới đây để lần lượt nhận một trong ba hiệu quả sau:",
+      "1": "Ngọn Gió Trung Thành: Người trang bị tăng <cryo>120%</cryo> Sát Thương Bạo Kích trong 10s.",
+      "2": "Ngọn Gió Phản Bội: Người trang bị tăng <cryo>72%</cryo> sát thương phản ứng Tinh-Khuếch Tán trong 10s.",
+      "3": "Ngọn Gió Bội Thu: Người trang bị hồi phục <cryo>7</cryo> điểm Năng Lượng Nguyên Tố, mỗi 4s tối đa hồi phục <cryo>7</cryo> điểm Năng Lượng Nguyên Tố theo cách này.",
+      "4": "Khi người trang bị rời trận, sẽ xóa hiệu quả trên và đặt lại thứ tự của chúng."
+    }
+  }
+}

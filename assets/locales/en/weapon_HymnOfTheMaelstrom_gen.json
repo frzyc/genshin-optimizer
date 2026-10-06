@@ -1,0 +1,39 @@
+{
+  "name": "Hymn of the Maelstrom",
+  "description": {
+    "0": "An exquisite lamp crafted out of blue chalcedony which looks like a treasure right out of a fairy tale. It is said that a song of praise, forgotten by all, slumbers sealed inside this lamp."
+  },
+  "passiveName": "Rondo of Slumber",
+  "passiveDescription": {
+    "0": {
+      "0": "Increases Healing Bonus by <cryo>4%</cryo>.",
+      "1": "When performing healing, the equipping character gains the \"Vatsamonga's Vatic Vintage\" effect, which increases Max HP by <cryo>4%</cryo> as well as increases the currently active party member's ATK by <cryo>0.4%</cryo> for every 1,000 Max HP the equipping character has over 40,000. A maximum of <cryo>8%</cryo> ATK can be gained in this way. This effect lasts 10s, max 3 stacks.",
+      "2": "When a nearby party member triggers a Frozen or Stellar Swirl reaction, the aforementioned Max HP and ATK boosts will be further increased by 75% for the next 5s.",
+      "3": "The aforementioned effects can still trigger even when the equipping character is not on the field."
+    },
+    "1": {
+      "0": "Increases Healing Bonus by <cryo>5%</cryo>.",
+      "1": "When performing healing, the equipping character gains the \"Vatsamonga's Vatic Vintage\" effect, which increases Max HP by <cryo>5%</cryo> as well as increases the currently active party member's ATK by <cryo>0.5%</cryo> for every 1,000 Max HP the equipping character has over 40,000. A maximum of <cryo>10%</cryo> ATK can be gained in this way. This effect lasts 10s, max 3 stacks.",
+      "2": "When a nearby party member triggers a Frozen or Stellar Swirl reaction, the aforementioned Max HP and ATK boosts will be further increased by 75% for the next 5s.",
+      "3": "The aforementioned effects can still trigger even when the equipping character is not on the field."
+    },
+    "2": {
+      "0": "Increases Healing Bonus by <cryo>6%</cryo>.",
+      "1": "When performing healing, the equipping character gains the \"Vatsamonga's Vatic Vintage\" effect, which increases Max HP by <cryo>6%</cryo> as well as increases the currently active party member's ATK by <cryo>0.6%</cryo> for every 1,000 Max HP the equipping character has over 40,000. A maximum of <cryo>12%</cryo> ATK can be gained in this way. This effect lasts 10s, max 3 stacks.",
+      "2": "When a nearby party member triggers a Frozen or Stellar Swirl reaction, the aforementioned Max HP and ATK boosts will be further increased by 75% for the next 5s.",
+      "3": "The aforementioned effects can still trigger even when the equipping character is not on the field."
+    },
+    "3": {
+      "0": "Increases Healing Bonus by <cryo>7%</cryo>.",
+      "1": "When performing healing, the equipping character gains the \"Vatsamonga's Vatic Vintage\" effect, which increases Max HP by <cryo>7%</cryo> as well as increases the currently active party member's ATK by <cryo>0.7%</cryo> for every 1,000 Max HP the equipping character has over 40,000. A maximum of <cryo>14%</cryo> ATK can be gained in this way. This effect lasts 10s, max 3 stacks.",
+      "2": "When a nearby party member triggers a Frozen or Stellar Swirl reaction, the aforementioned Max HP and ATK boosts will be further increased by 75% for the next 5s.",
+      "3": "The aforementioned effects can still trigger even when the equipping character is not on the field."
+    },
+    "4": {
+      "0": "Increases Healing Bonus by <cryo>8%</cryo>.",
+      "1": "When performing healing, the equipping character gains the \"Vatsamonga's Vatic Vintage\" effect, which increases Max HP by <cryo>8%</cryo> as well as increases the currently active party member's ATK by <cryo>0.8%</cryo> for every 1,000 Max HP the equipping character has over 40,000. A maximum of <cryo>16%</cryo> ATK can be gained in this way. This effect lasts 10s, max 3 stacks.",
+      "2": "When a nearby party member triggers a Frozen or Stellar Swirl reaction, the aforementioned Max HP and ATK boosts will be further increased by 75% for the next 5s.",
+      "3": "The aforementioned effects can still trigger even when the equipping character is not on the field."
+    }
+  }
+}

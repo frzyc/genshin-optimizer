@@ -129,7 +129,7 @@
   "passive1": {
     "name": "Bessere Wahl",
     "description": {
-      "0": "Stellt der eigenen Figur in der Truppe sowie befreundeten Figuren in der Nähe 300 LP wieder her, wenn Sayu auf dem Schlachtfeld die Reaktion Verwirbelung oder Stellar-Verwirbelung auslöst. Stellt für jeden Punkt von Sayus Elementarkunde zusätzlich 1,2 LP wieder her.",
+      "0": "Stellt den eigenen Figuren in der Truppe sowie befreundeten Figuren in der Nähe 300 LP wieder her, wenn Sayu auf dem Schlachtfeld die Reaktion Verwirbelung oder Stellar-Verwirbelung auslöst. Stellt für jeden Punkt von Sayus Elementarkunde zusätzlich 1,2 LP wieder her.",
       "1": "2 s Abklingzeit."
     }
   },

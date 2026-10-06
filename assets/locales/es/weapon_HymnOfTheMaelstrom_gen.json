@@ -1,0 +1,39 @@
+{
+  "name": "Himno del Vórtice",
+  "description": {
+    "0": "Una delicada lámpara forjada con calcedonia azul, y que parece un tesoro sacado de un cuento de hadas. Se dice que guarda un himno que ya ha caído por completo en el olvido."
+  },
+  "passiveName": "Rondó del letargo",
+  "passiveDescription": {
+    "0": {
+      "0": "El Bono de Curación aumenta en un <cryo>4%</cryo>.",
+      "1": "Al realizar una curación, el portador de esta arma obtiene el efecto de “vino oracular del Vatsamonga”, el cual aumenta su Vida Máx. en un <cryo>4%</cryo>, y hace que el ATQ de tu personaje en uso del equipo aumente en un <cryo>0.4%</cryo> por cada 1000 pts. de Vida Máx. que el portador tenga por encima de los 40 000 pts., hasta un máximo de un <cryo>8%</cryo>. Este efecto dura 10 s y puede acumularse hasta 3 veces.",
+      "2": "Después de que un personaje cercano del equipo cause una reacción de Congelado o Torbellino Estelar, el aumento de Vida Máx. y de ATQ del efecto anterior se incrementará en un 75% adicional durante 5 s.",
+      "3": "Estos efectos se pueden activar incluso cuando el portador está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "El Bono de Curación aumenta en un <cryo>5%</cryo>.",
+      "1": "Al realizar una curación, el portador de esta arma obtiene el efecto de “vino oracular del Vatsamonga”, el cual aumenta su Vida Máx. en un <cryo>5%</cryo>, y hace que el ATQ de tu personaje en uso del equipo aumente en un <cryo>0.5%</cryo> por cada 1000 pts. de Vida Máx. que el portador tenga por encima de los 40 000 pts., hasta un máximo de un <cryo>10%</cryo>. Este efecto dura 10 s y puede acumularse hasta 3 veces.",
+      "2": "Después de que un personaje cercano del equipo cause una reacción de Congelado o Torbellino Estelar, el aumento de Vida Máx. y de ATQ del efecto anterior se incrementará en un 75% adicional durante 5 s.",
+      "3": "Estos efectos se pueden activar incluso cuando el portador está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "El Bono de Curación aumenta en un <cryo>6%</cryo>.",
+      "1": "Al realizar una curación, el portador de esta arma obtiene el efecto de “vino oracular del Vatsamonga”, el cual aumenta su Vida Máx. en un <cryo>6%</cryo>, y hace que el ATQ de tu personaje en uso del equipo aumente en un <cryo>0.6%</cryo> por cada 1000 pts. de Vida Máx. que el portador tenga por encima de los 40 000 pts., hasta un máximo de un <cryo>12%</cryo>. Este efecto dura 10 s y puede acumularse hasta 3 veces.",
+      "2": "Después de que un personaje cercano del equipo cause una reacción de Congelado o Torbellino Estelar, el aumento de Vida Máx. y de ATQ del efecto anterior se incrementará en un 75% adicional durante 5 s.",
+      "3": "Estos efectos se pueden activar incluso cuando el portador está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "El Bono de Curación aumenta en un <cryo>7%</cryo>.",
+      "1": "Al realizar una curación, el portador de esta arma obtiene el efecto de “vino oracular del Vatsamonga”, el cual aumenta su Vida Máx. en un <cryo>7%</cryo>, y hace que el ATQ de tu personaje en uso del equipo aumente en un <cryo>0.7%</cryo> por cada 1000 pts. de Vida Máx. que el portador tenga por encima de los 40 000 pts., hasta un máximo de un <cryo>14%</cryo>. Este efecto dura 10 s y puede acumularse hasta 3 veces.",
+      "2": "Después de que un personaje cercano del equipo cause una reacción de Congelado o Torbellino Estelar, el aumento de Vida Máx. y de ATQ del efecto anterior se incrementará en un 75% adicional durante 5 s.",
+      "3": "Estos efectos se pueden activar incluso cuando el portador está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "El Bono de Curación aumenta en un <cryo>8%</cryo>.",
+      "1": "Al realizar una curación, el portador de esta arma obtiene el efecto de “vino oracular del Vatsamonga”, el cual aumenta su Vida Máx. en un <cryo>8%</cryo>, y hace que el ATQ de tu personaje en uso del equipo aumente en un <cryo>0.8%</cryo> por cada 1000 pts. de Vida Máx. que el portador tenga por encima de los 40 000 pts., hasta un máximo de un <cryo>16%</cryo>. Este efecto dura 10 s y puede acumularse hasta 3 veces.",
+      "2": "Después de que un personaje cercano del equipo cause una reacción de Congelado o Torbellino Estelar, el aumento de Vida Máx. y de ATQ del efecto anterior se incrementará en un 75% adicional durante 5 s.",
+      "3": "Estos efectos se pueden activar incluso cuando el portador está en tu equipo pero no en uso."
+    }
+  }
+}

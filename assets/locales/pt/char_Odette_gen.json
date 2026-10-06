@@ -50,7 +50,7 @@
       "2": "<br/>",
       "3": "<strong>Sombra Dançarina</strong>",
       "4": "Alterna entre os passos de dança <strong>Pluma</strong> e <strong>Asa</strong>, atacando os inimigos próximos periodicamente com passos de dança graciosos, causando <cryo>Dano Cryo em AdE</cryo>.",
-      "5": "Além disso, nos 6s após lançar a Habilidade Elemental <strong>Dança Lenta: Transe da Noite Fantasma</strong>, a Habilidade Elemental <strong>Dança Lenta: Transe da Noite Fantasma</strong> de Odette será substituída pela Habilidade Elemental especial <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Dança Lenta: Final da Alvorada</tooltip></strong><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip>, fazendo uma valsa contra os inimigos próximos, causando continuamente <cryo>Dano Cryo em AdE</cryo>, e quando a valsa acabar, causa uma instância de <cryo>Dano Cryo em AdE</cryo> que é considerado Dano de Supercondutor Estelar ou Redemoinho Estelar."
+      "5": "Além disso, nos 6s após lançar a Habilidade Elemental <strong>Dança Lenta: Transe da Noite Fantasma</strong>, a Habilidade Elemental <strong>Dança Lenta: Transe da Noite Fantasma</strong> de Odette será substituída pela Habilidade Elemental especial <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Dança Lenta: Final da Alvorada</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip>, fazendo uma valsa contra os inimigos próximos, causando continuamente <cryo>Dano Cryo em AdE</cryo>, e quando a valsa acabar, causa uma instância de <cryo>Dano Cryo em AdE</cryo> que é considerado Dano de Supercondutor Estelar ou Redemoinho Estelar."
     },
     "skillParams": {
       "0": "Dano de Habilidade",
@@ -128,8 +128,8 @@
   "passive": {
     "name": "Eco de um Sonho de Inverno",
     "description": {
-      "0": "Mostra a localização de <strong>Especialidades de Snezhnaya</strong> próximas no mapa.",
-      "1": "Ao praticar sua dança no tempo livre, talvez possa ter algum outro efeito..."
+      "0": "Exibe a localização das <strong>Especialidades Locais de Snezhnaya</strong> no minimapa. Esse efeito também se aplica ao Reino das Sombras.",
+      "1": "Praticar dança nas horas vagas pode até ativar outros efeitos..."
     }
   },
   "constellation1": {
