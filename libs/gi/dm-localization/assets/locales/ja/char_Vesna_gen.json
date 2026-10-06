@@ -1,0 +1,187 @@
+{
+  "name": "ヴェスナ",
+  "title": "雪の宴に咲く刃",
+  "description": "「冬契軍」司令官、女皇の刃。",
+  "constellationName": "セリョーシュカ座",
+  "auto": {
+    "name": "風巡りの剣舞",
+    "fields": {
+      "normal": {
+        "0": "<strong>通常攻撃</strong>",
+        "1": "最大6段の連続攻撃を行う。"
+      },
+      "charged": {
+        "0": "<strong>重撃</strong>",
+        "1": "一定のスタミナを消費し、前方の敵を踏みつけて攻撃する。"
+      },
+      "plunging": {
+        "0": "<strong>落下攻撃</strong>",
+        "1": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。"
+      }
+    },
+    "skillParams": {
+      "0": "1段ダメージ",
+      "1": "2段ダメージ",
+      "2": "3段ダメージ",
+      "3": "4段ダメージ",
+      "4": "5段ダメージ",
+      "5": "6段ダメージ",
+      "6": "重撃ダメージ",
+      "7": "重撃スタミナ消費",
+      "8": "落下期間のダメージ",
+      "9": "低空/高空落下攻撃ダメージ",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "操典「勝利への道筋」",
+    "description": {
+      "0": "風の精一族に伝わる霊剣を呼び出し、<anemo>風元素範囲ダメージ</anemo>を与え、<strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>風巡りの臨戦</tooltip></strong>モードに切り替わり、<strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>「剣気」</tooltip></strong>を2層獲得する。",
+      "1": "<br/>",
+      "2": "<strong>風巡りの臨戦</strong>",
+      "3": "ヴェスナが通常攻撃・重撃・落下攻撃を行う際、元素付与によって他の元素に変化しない<anemo>風元素ダメージ</anemo>に変わり、風羽を呼び出して敵に追加攻撃を行い、追加の<anemo>風元素ダメージ</anemo>を与える。風羽を呼び出すたびに、ヴェスナの<strong>「剣気」</strong>が一定量回復する。",
+      "4": "ヴェスナは<strong>「剣気」</strong>を消費し、特殊元素スキル<strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>飛翔の剣</tooltip></strong>を発動して敵に<anemo>風元素ダメージ</anemo>を与えることができる。",
+      "5": "<strong>「風巡りの臨戦」</strong>モードの継続期間中、特殊元素スキル<strong>飛翔の剣</strong>を発動するたびに「飛翔の剣」のランクが上がり、より大きな<anemo>風元素ダメージ</anemo>を与えるようになる。<strong>飛翔の剣</strong>の初期ランクはランク1で、最大ランク3まで上がる。ランクが上がった<strong>飛翔の剣</strong>を発動する際、さらに<strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>霊剣</tooltip></strong>を呼び出し、敵に<anemo>風元素ダメージ</anemo>を与える。",
+      "6": "継続時間終了時、または最高ランクの<strong>飛翔の剣</strong>を3回発動した後、ヴェスナはこのモードを終了し、すべての<strong>剣気</strong>がクリアされる。",
+      "7": "さらに、このモード中、ヴェスナの中断耐性がアップする。",
+      "8": "<strong>輝映・星拡散</strong>：<strong>霊剣</strong>は星拡散反応ダメージとみなされる<anemo>風元素ダメージ</anemo>を与えるようになる。"
+    },
+    "skillParams": {
+      "0": "スキルダメージ",
+      "1": "飛翔の剣ランク1のダメージ",
+      "2": "飛翔の剣ランク2のダメージ",
+      "3": "飛翔の剣ランク2の霊剣のダメージ",
+      "4": "飛翔の剣ランク3の霊剣のダメージ",
+      "5": "飛翔の剣ランク3の霊剣の最終攻撃によるダメージ",
+      "6": "飛翔の剣ランク2の霊剣の星拡散ダメージ",
+      "7": "飛翔の剣ランク3の霊剣の星拡散ダメージ",
+      "8": "飛翔の剣ランク3の霊剣の最終攻撃による星拡散ダメージ",
+      "9": "風羽のダメージ",
+      "10": "風巡りの臨戦の継続時間",
+      "11": "クールタイム",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "女皇陛下に敬礼を",
+    "description": {
+      "0": "数多くの<strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>霊剣</tooltip></strong>を呼び出し、<anemo>風元素範囲ダメージ</anemo>を与え、<strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>「剣気」</tooltip></strong>を1層獲得する。"
+    },
+    "skillParams": {
+      "0": "霊剣のダメージ",
+      "1": "霊剣の星拡散ダメージ",
+      "2": "クールタイム",
+      "3": "元素エネルギー",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "sprint": {
+    "name": "",
+    "description": {}
+  },
+  "passive1": {
+    "name": "儀典「春の行列」",
+    "description": {
+      "0": "ヴェスナが特殊元素スキル<strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>飛翔の剣</tooltip></strong>を発動または元素爆発<strong><tooltip ns=char_Vesna_gen baseKey18=burst>女皇陛下に敬礼を</tooltip></strong>発動後、<strong>「粛正」</strong>を1層獲得する、継続時間20秒、最大6層まで重ね掛けでき、継続時間は層ごとに独立してカウントされる。",
+      "1": "<strong>「粛正」</strong>を持っている時、ヴェスナが呼び出した<strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>霊剣</tooltip></strong>は本来の100%+「粛正」の層数×10%分のダメージを与える。元素スキル<strong>操典「勝利への道筋」</strong>を発動または退場時、<strong>「粛正」</strong>はクリアされる。"
+    }
+  },
+  "passive2": {
+    "name": "法典「冬の凱旋」",
+    "description": {
+      "0": "<strong>輝映・星拡散</strong>：チーム内キャラクターの元素タイプに応じて、ヴェスナは対応する効果を獲得する。",
+      "1": "・<cryo>氷元素</cryo>または<anemo>風元素</anemo>のキャラクター1人につき、ヴェスナの攻撃力+6%。",
+      "2": "・上記以外の元素タイプのキャラクター1人につき、ヴェスナの元素熟知+25。"
+    }
+  },
+  "passive3": {
+    "name": "星光の祝福・花舞うプロローグ",
+    "description": {
+      "0": "チーム内のキャラクターが氷元素拡散反応を起こすと、氷元素拡散反応は星拡散反応へと変わり、ヴェスナの攻撃力に基づいて、チームのキャラクターが与える星拡散反応の基礎ダメージがアップする。攻撃力100につき、星拡散反応の基礎ダメージ+0.7%。この方法でアップできるダメージは最大14%まで。",
+      "1": "チーム内のキャラクターが付近で星拡散反応を起こした後の8秒間、ヴェスナは<strong>輝映・星拡散</strong>状態に入る。"
+    }
+  },
+  "passive": {
+    "name": "宝石の巡遊",
+    "description": {
+      "0": "非戦闘状態の時、ヴェスナはダッシュまたはジャンプを長押しすると<strong>「巡遊」</strong>状態に入る。",
+      "1": "<br/>",
+      "2": "<strong>巡遊</strong>",
+      "3": "継続的にスタミナを消費し、浮遊状態を維持する。ダッシュまたはジャンプの一回押しで高度を上昇させる際は、追加でスタミナを消費する。ジャンプ長押しで<strong>巡遊</strong>状態に入る場合を含め、一度の<strong>巡遊</strong>中に高度を上昇できるのは最大三回まで。",
+      "4": "<br/>",
+      "5": "また、スネージナヤ地域（ナド・クライを除く）において、非戦闘状態の時にチームのフィールド上キャラクターが空中にいる場合、ヴェスナに切り替えると、ヴェスナは直接<strong>巡遊</strong>状態に入り、スタミナを50回復する。この効果は10秒ごとに1回のみ発動できる。また、この効果は秘境、征討領域、深境螺旋では発動しない。"
+    }
+  },
+  "constellation1": {
+    "name": "冬を見送る盛宴",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>風巡りの臨戦</tooltip></strong>モード中、ヴェスナは最高ランクの<strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>飛翔の剣</tooltip></strong>を3回ではなく、最大4回まで発動できるようになる。また、<strong>風巡りの臨戦</strong>モードに入った後、初めて最高ランクの<strong>飛翔の剣</strong>を発動する時、<strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>「剣気」</tooltip></strong>を消費しない。",
+      "1": "さらに、ヴェスナが<strong>風巡りの臨戦</strong>モード中に与える星拡散反応ダメージ+20%。"
+    }
+  },
+  "constellation2": {
+    "name": "春を迎える輪舞",
+    "description": {
+      "0": "固有天賦<strong><tooltip ns=char_Vesna_gen baseKey18=passive1>「儀典『春の行列』」</tooltip></strong>が強化され、ヴェスナが<strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>風巡りの臨戦</tooltip></strong>モードに入った時、最大層数の<strong>「粛正」</strong>を獲得する。最大層数の<strong>「粛正」</strong>を持っている時、ヴェスナの攻撃力+40%。",
+      "1": "上記の効果は固有天賦「儀典『春の行列』」を解放する必要がある。"
+    }
+  },
+  "constellation3": {
+    "name": "かがり火の進物",
+    "description": {
+      "0": "元素スキル<strong><tooltip ns=char_Vesna_gen baseKey18=skill>操典「勝利への道筋」</tooltip></strong>のスキルLv.+3。",
+      "1": "最大Lv.15まで。"
+    }
+  },
+  "constellation4": {
+    "name": "先人たちの栄光",
+    "description": {
+      "0": "固有天賦<strong><tooltip ns=char_Vesna_gen baseKey18=passive2>「法典『冬の凱旋』」</tooltip></strong>が強化され、攻撃力アップと元素熟知アップの効果が本来の3倍になる。"
+    }
+  },
+  "constellation5": {
+    "name": "貴き血筋の責務",
+    "description": {
+      "0": "元素爆発<strong><tooltip ns=char_Vesna_gen baseKey18=burst>女皇陛下に敬礼を</tooltip></strong>のスキルLv.+3。",
+      "1": "最大Lv.15まで。"
+    }
+  },
+  "constellation6": {
+    "name": "揺るぎなき忠誠",
+    "description": {
+      "0": "最高ランクの<strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>飛翔の剣</tooltip></strong>の発動後5秒以内に、ヴェスナは通常攻撃または元素スキルを一回押しすることで、風の精一族の秘伝である<strong>飛翔の剣・変</strong>を発動し、ヴェスナの攻撃力150%分の<anemo>風元素ダメージ</anemo>を与え、<strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>霊剣</tooltip></strong>を呼び出し、さらにヴェスナの攻撃力200%分の<anemo>風元素ダメージ</anemo>を追加で与える。ヴェスナが<strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>風巡りの臨戦</tooltip></strong>モードに入っている場合、風羽を追加で呼び出して敵に追加攻撃を行う。",
+      "1": "また、ヴェスナが与える星拡散反応ダメージが20%<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>向上</strong></tooltip>する。"
+    }
+  }
+}

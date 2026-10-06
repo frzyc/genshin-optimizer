@@ -471,9 +471,62 @@
     }
   },
   "11400001": {
-    "name": "Pelo Poder do Espírito da Lâmina",
+    "name": "Primeira Cantora",
     "description": {
-      "0": "Sobre \"Pelo Poder do Espírito da Lâmina\""
+      "0": "Quando o Ataque Normal, Carregado, Imersivo, a Habilidade Elemental ou o Supremo do personagem ativo causam <hydro>Dano Hydro</hydro> ou <cryo>Dano Cryo</cryo>, consome 1 acúmulo de Primeira Cantora para elevar o Dano causado. Se houver um Vórtice Flutuante ativo, ou se ocorrer nos 5s após a explosão do Vórtice Flutuante, muda para que ao personagem causar Dano de Redemoinho Estelar, desencadeie os efeitos acima.",
+      "1": "Com base na parcela da Vida Máxima de Vodyanitsa que exceder 40000, cada 1.000 pontos de Vida Máxima aumentam o Dano de Redemoinho Estelar dos efeitos acima em 260 e aumentam o <hydro>Dano Hydro</hydro> e o <cryo>Dano Cryo</cryo> em 140. É possível aumentar o Dano de Redemoinho Estelar em até 6500, e o <hydro>Dano Hydro</hydro> e <cryo>Dano Cryo</cryo> em 3500 dessa forma."
+    }
+  },
+  "11400002": {
+    "name": "Concerto",
+    "description": {
+      "0": "Esse efeito é igual ao de Primeira Cantora quando desencadeado pelo personagem que não é o ativo ou por outros personagens próximos da equipe (menos o personagem ativo)."
+    }
+  },
+  "11430001": {
+    "name": "Pronto para a Ação",
+    "description": {
+      "0": "Depois de lançar a Habilidade Elemental <strong>Livro de Estratégias: Caminho da Vitória</strong>, Vesna troca para esse modo. Dura 15s e possui as seguintes propriedades:",
+      "1": [
+        " Aumenta a RES contra Interrupção de Vesna.",
+        " Quando Vesna realizar um Ataque Normal, Carregado ou Imersivo, converte para causar<anemo>Dano Anemo</anemo> que não pode ser substituído, e invoca uma Pena da Tempestade para atacar coordenadamente os inimigos, causando <anemo>Dano Anemo</anemo> adicional. Cada vez que invocar uma Pena da Tempestade, regenera uma certa quantidade de <strong>Espírito da Espada</strong>.",
+        " Vesna pode consumir <strong>Espírito da Espada</strong> para, ao lançar a Habilidade Elemental especial <strong>Espada do Vento</strong>, causar <anemo>Dano Anemo</anemo>.",
+        " Quando a duração acabar, ou lançar três vezes a <strong>Espada do Vento</strong> de maior área, Vesna sairá desse modo e removerá todos os acúmulos de <strong>Espírito da Espada</strong>."
+      ]
+    }
+  },
+  "11430002": {
+    "name": "Espírito da Espada",
+    "description": {
+      "0": "Energia utilizada no modo <strong>Pronto para a Ação</strong> lançado pela Habilidade Elemental especial <strong>Espada do Vento</strong>.",
+      "1": "Vesna pode acumular Espírito da Espada das seguintes maneiras:",
+      "2": [
+        " Quando estiver no modo <strong>Pronto para a Ação</strong>, ao realizar um Ataque Normal, Carregado, Imersivo ou lançar <strong>Espada do Vento: Transmutação</strong> da Constelação <strong>Paixão Inabalável</strong>."
+      ],
+      "3": "Ao lançar a Habilidade Elemental <strong>Livro de Estratégias: Caminho da Vitória</strong>.",
+      "4": "Ao lançar o Supremo <strong>Etiqueta Refinada: Pela Vossa Majestade, a Tsaritsa</strong>."
+    }
+  },
+  "11430003": {
+    "name": "Espada do Vento",
+    "description": {
+      "0": "Quando está no modo <strong>Pronto para a Ação</strong>, Vesna pode consumir <strong>Espírito da Espada</strong> para, ao lançar a Habilidade Elemental especial, causar <anemo>Dano Anemo</anemo>.",
+      "1": "Cada vez que lançar a Habilidade Elemental especial <strong>Espada do Vento</strong>, aumenta a área de <strong>Pronto para a Ação</strong> em sua duração. A área de <strong>Espada do Vento</strong> inicia no nível 1 e pode ser elevada até o nível 3.",
+      "2": "Depois de lançar a área elevada de <strong>Espada do Vento</strong>, invoca uma <strong>Espada Espiritual</strong> para causar <anemo>Dano Anemo</anemo> contra os inimigos."
+    }
+  },
+  "11430004": {
+    "name": "Espada Espiritual",
+    "description": {
+      "0": "Arma espiritual invocada por Vesna. Faz ataques coordenados com ela, causando <anemo>Dano Anemo</anemo>.",
+      "1": "Vesna pode invocar a Espada Espiritual das seguintes formas:",
+      "2": [
+        " Ao lançar a área elevada da Habilidade Elemental especial <strong>Espada do Vento</strong>.",
+        " Ao lançar o Supremo <strong>Etiqueta Refinada: Pela Vossa Majestade, a Tsaritsa</strong>.",
+        " Ao lançar a <strong>Espada do Vento: Transmutação</strong> da Constelação <strong>Paixão Inabalável</strong>."
+      ],
+      "3": "<br/>",
+      "4": "<strong>Brilho Reluzente: Redemoinho Estelar</strong>: a <strong>Espada Espiritual</strong> é convertida para causar <anemo>Dano Anemo</anemo> que é considerado Dano de Redemoinho Estelar."
     }
   },
   "11480001": {

@@ -477,9 +477,62 @@
     }
   },
   "11400001": {
+    "name": "Voce solista",
+    "description": {
+      "0": "Quando il personaggio attualmente attivo del gruppo infligge <hydro>DAN da Hydro</hydro> o <cryo>DAN da Cryo</cryo> con un attacco normale, caricato, in picchiata, un'abilità elementale o un Tripudio elementale, viene consumato 1 accumulo di \"Voce solista\", che aumenta i DAN inflitti. Tuttavia, se un Vortice errante è presente sul campo di battaglia o se sono trascorsi meno di 5 s dall'esplosione del suddetto Vortice, tale effetto si attiva solo quando il personaggio infligge DAN da reazione di Turbinio astrale.",
+      "1": "Ogni 1.000 PS max che Vodyanitsa possiede al di sopra di 40000 aumenta di 260 i DAN da reazione di Turbinio astrale dell'effetto sopracitato, e di 140 i <hydro>DAN da Hydro</hydro> e i <cryo>DAN da Cryo</cryo> inflitti. I DAN da reazione di Turbinio astrale inflitti possono essere aumentati in questo modo fino a 6500, mentre i <hydro>DAN da Hydro</hydro> e i <cryo>DAN da Cryo</cryo> fino a 3500."
+    }
+  },
+  "11400002": {
+    "name": "Coro",
+    "description": {
+      "0": "Un effetto innescato da membri fuori campo o da altri membri vicini del gruppo (diversi da quello attivo). Gli effetti sono gli stessi di \"Voce solista\"."
+    }
+  },
+  "11430001": {
+    "name": "Pronta all'azione",
+    "description": {
+      "0": "Vesna passa a questa modalità dopo aver utilizzato l'abilità elementale <strong>Arte della vittoria</strong>. In questa modalità, che dura fino a 15 s:",
+      "1": [
+        " la resistenza all'interruzione di Vesna aumenta;",
+        " i DAN inflitti da Vesna con i suoi attacchi normali, caricati e in picchiata diventano <anemo>DAN da Anemo</anemo> non influenzabili da altre infusioni elementali. Vesna evoca inoltre una Remigante del vento che attacca il nemico contemporaneamente, infliggendo <anemo>DAN da Anemo</anemo> aggiuntivi. Ogni volta che questa viene evocata, Vesna rigenera una certa quantità di <strong>Essenza della spada</strong>;",
+        " Vesna può consumare <strong>Essenza della spada</strong> per sprigionare l'abilità elementale speciale <strong>Spada del vento</strong>, che infligge <anemo>DAN da Anemo</anemo> ai suoi avversari;",
+        " Vesna esce dalla modalità al termine della sua durata o dopo aver utilizzato <strong>Spada del vento</strong> al livello massimo 3 volte. All'uscita, tutta l'<strong>Essenza della spada</strong> residua accumulata viene azzerata."
+      ]
+    }
+  },
+  "11430002": {
+    "name": "Essenza della spada",
+    "description": {
+      "0": "L'energia necessaria per utilizzare l'abilità elementale speciale <strong>Spada del vento</strong> nella modalità <strong>Pronta all'azione</strong>.",
+      "1": "Vesna può accumulare Essenza della spada:",
+      "2": [
+        " sferrando un attacco normale, caricato o in picchiata nella modalità <strong>Pronta all'azione</strong>, o utilizzando <strong>Spada del vento: Trasposizione</strong> del livello costellazione <strong>Ardore incrollabile</strong>;",
+        " scatenando l'abilità elementale <strong>Arte della vittoria</strong>;",
+        " sprigionando il Tripudio elementale <strong>Per la Tsaritsa!</strong>."
+      ]
+    }
+  },
+  "11430003": {
+    "name": "Spada del vento",
+    "description": {
+      "0": "In modalità <strong>Pronta all'azione</strong>, Vesna può consumare l'<strong>Essenza della spada</strong> per utilizzare la sua abilità elementale speciale e infliggere <anemo>DAN da Anemo</anemo>.",
+      "1": "Ogni utilizzo dell'abilità elementale speciale <strong>Spada del vento</strong> nella stessa iterazione di <strong>Pronta all'azione</strong> aumenta il livello di <strong>Spada del vento</strong>, partendo dal livello 1 fino al livello 3 massimo.",
+      "2": "Utilizzare <strong>Spada del vento</strong> ai livelli 2 e 3 evoca anche una <strong>Lama spirituale</strong> che infligge <anemo>DAN da Anemo</anemo>."
+    }
+  },
+  "11430004": {
     "name": "Lama spirituale",
     "description": {
-      "0": "A proposito della \"Lama spirituale\""
+      "0": "Un'arma dai poteri speciali che Vesna può evocare. Attacca l'avversario insieme alla sua evocatrice infliggendo <anemo>DAN da Anemo</anemo>.",
+      "1": "Vesna può evocare le Lame spirituali:",
+      "2": [
+        " scatenando l'abilità elementale speciale <strong>Spada del vento</strong> ai livelli 2 e 3;",
+        " sprigionando il Tripudio elementale <strong>Per la Tsaritsa!</strong>;",
+        " utilizzando <strong>Spada del vento: Trasposizione</strong> del livello costellazione <strong>Ardore incrollabile</strong>."
+      ],
+      "3": "<br/>",
+      "4": "Nello stato di <strong>Splendore: Turbinio astrale</strong>, i DAN inflitti dalle <strong>Lame spirituali</strong> diventano <anemo>DAN da Anemo</anemo> considerati come DAN da reazione Turbinio astrale."
     }
   },
   "11480001": {

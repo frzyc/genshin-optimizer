@@ -1,0 +1,189 @@
+{
+  "name": "베스나",
+  "title": "눈꽃 연회의 검",
+  "description": "「겨울군」 사령관이자 여왕의 검",
+  "constellationName": "꽃차례자리",
+  "auto": {
+    "name": "바람 검무",
+    "fields": {
+      "normal": {
+        "0": "<strong>일반 공격</strong>",
+        "1": "최대 6번 공격한다."
+      },
+      "charged": {
+        "0": "<strong>강공격</strong>",
+        "1": "일정 스태미나를 소모해 전방의 적을 짓밟는다."
+      },
+      "plunging": {
+        "0": "<strong>낙하 공격</strong>",
+        "1": "공중에서 땅을 내려찍어 경로상의 적을 공격하고 착지 시 범위 피해를 준다"
+      }
+    },
+    "skillParams": {
+      "0": "1단 공격 피해",
+      "1": "2단 공격 피해",
+      "2": "3단 공격 피해",
+      "3": "4단 공격 피해",
+      "4": "5단 공격 피해",
+      "5": "6단 공격 피해",
+      "6": "강공격 피해",
+      "7": "강공격 스태미나 소모",
+      "8": "낙하 기간 피해",
+      "9": "저공/고공 추락 충격 피해",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "교범·승리의 길",
+    "description": {
+      "0": "바람 요정 일족에게 전승되어 온 영검을 소환해 <anemo>바람 원소 범위 피해</anemo>를 주고, <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>바람 무장</tooltip></strong> 모드로 전환해, <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>「검기」</tooltip></strong>를 2스택 획득한다.",
+      "1": "<br/>",
+      "2": "<strong>바람 무장</strong>",
+      "3": "베스나가 일반 공격, 강공격 및 낙하 공격 시 주는 피해가 다른 원소 부여 효과로 대체되지 않는 <anemo>바람 원소 피해</anemo>로 전환된다. 또한 바람깃을 소환해 협동 공격을 통해 적에게 추가로 <anemo>바람 원소 피해</anemo>를 준다. 바람깃을 소환할 때마다 베스나가 일정량의 <strong>검기</strong>를 회복한다.",
+      "4": "베스나는 <strong>검기</strong>를 소모해 특수한 원소전투 스킬 <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>바람검</tooltip></strong>을 발동하여 적에게 <anemo>바람 원소 피해</anemo>를 줄 수 있다.",
+      "5": "특수 원소전투 스킬 <strong>바람검</strong>을 발동할 때마다 이번 <strong>바람 무장</strong> 모드 지속 시간 동안 단계가 상승하여 더 높은 <anemo>바람 원소 피해</anemo>를 준다. <strong>바람검</strong>의 시작 단계는 1단계이며, 최대 3단계까지 상승한다. 단계가 상승한 <strong>바람검</strong> 발동 시, <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>영검</tooltip></strong>을 소환해 적에게 <anemo>바람 원소 피해</anemo>를 준다.",
+      "6": "지속 시간이 종료되거나 최고 단계의 <strong>바람검</strong> 3회 발동 후, 베스나는 해당 모드를 종료하고 모든 <strong>검기</strong>가 제거된다.",
+      "7": "또한, 해당 모드에서 베스나의 경직 저항력이 상승한다.",
+      "8": "<strong>섬광·별 확산</strong>: <strong>영검</strong>이 별 확산 반응 피해로 간주되는 <anemo>바람 원소 피해</anemo>를 주는 것으로 전환된다"
+    },
+    "skillParams": {
+      "0": "스킬 피해",
+      "1": "바람검 1단계 피해",
+      "2": "바람검 2단계 피해",
+      "3": "바람검 2단계 영검 피해",
+      "4": "바람검 3단계 영검 피해",
+      "5": "바람검 3단계 영검 마지막 피해",
+      "6": "바람검 2단계 영검 별 확산 피해",
+      "7": "바람검 3단계 영검 별 확산 피해",
+      "8": "바람검 3단계 영검 마지막 별 확산 피해",
+      "9": "바람깃 피해",
+      "10": "바람 무장 지속 시간",
+      "11": "재사용 대기시간",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "경례·여왕 폐하를 위하여",
+    "description": {
+      "0": "수많은 <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>영검</tooltip></strong>을 소환하여 <anemo>바람 원소 범위 피해</anemo>를 주고, <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>「검기」</tooltip></strong>를 1스택 획득한다"
+    },
+    "skillParams": {
+      "0": "영검 피해",
+      "1": "영검 별 확산 피해",
+      "2": "재사용 대기시간",
+      "3": "원소 에너지",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "sprint": {
+    "name": "",
+    "description": {}
+  },
+  "passive1": {
+    "name": "의전·봄의 행진",
+    "description": {
+      "0": "베스나가 특수 원소전투 스킬 <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>바람검</tooltip></strong> 또는 원소폭발 <strong><tooltip ns=char_Vesna_gen baseKey18=burst>경례·여왕 폐하를 위하여</tooltip></strong> 발동 후, <strong>「엄숙」</strong>을 1스택 획득한다. 지속 시간: 20초, 최대 중첩수: 6스택, 스택마다 지속 시간은 독립적으로 계산된다.",
+      "1": "<strong>엄숙</strong> 보유 시, 베스나가 소환한 <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>영검</tooltip></strong>은 기존의 100% + 엄숙 스택 수 x 10%에 해당하는 피해를 준다. 원소전투 스킬 <strong>교범·승리의 길</strong> 발동 또는 퇴장 시, 베스나가 보유한 <strong>엄숙</strong>이 제거된다"
+    }
+  },
+  "passive2": {
+    "name": "규정·겨울의 꽃바람",
+    "description": {
+      "0": "<strong>섬광·별 확산</strong>: 파티 내 캐릭터의 원소 타입에 따라 베스나가 상응하는 효과를 획득한다. 현재 파티 내:",
+      "1": [
+        "원소 타입이 <cryo>얼음 원소</cryo> 또는 <anemo>바람 원소</anemo>인 캐릭터가 1명 있을 때마다: 베스나의 공격력 6% 증가.",
+        "상술한 원소 타입이 아닌 캐릭터가 1명 있을 때마다: 베스나의 원소 마스터리 25pt 증가"
+      ]
+    }
+  },
+  "passive3": {
+    "name": "별빛 축복·봄의 확산",
+    "description": {
+      "0": "파티 내 캐릭터가 얼음 원소 확산 반응 발동 시, 별 확산 반응 발동으로 전환되며, 베스나의 공격력을 기반으로 파티 내 캐릭터가 주는 별 확산 반응의 기본 피해가 증가한다: 공격력 100pt마다 별 확산 반응의 기본 피해가 0.7% 증가하며, 해당 방식으로 피해가 최대 14% 증가한다.",
+      "1": "파티 내 캐릭터가 주변에서 별 확산 반응 발동 후 8초 동안, 베스나가 <strong>섬광·별 확산</strong> 상태에 진입한다"
+    }
+  },
+  "passive": {
+    "name": "화려한 순찰",
+    "description": {
+      "0": "비전투 상태에서 베스나는 대시 또는 점프를 홀드하여 <strong>「순찰 비행」</strong> 상태에 진입할 수 있다.",
+      "1": "<br/>",
+      "2": "<strong>순찰 비행</strong>",
+      "3": "스태미나를 지속적으로 소모하여 부유 상태를 유지한다. 대시하거나 점프를 짧게 눌러 고도를 높일 경우, 스태미나가 추가로 소모된다. 점프를 홀드해 <strong>순찰 비행</strong> 상태에 진입하는 것을 포함하여, 각 <strong>순찰 비행</strong>마다 고도를 최대 3회 높일 수 있다.",
+      "4": "<br/>",
+      "5": "또한, 스네즈나야 지역(노드크라이 제외)에서 비전투 상태일 때, 현재 필드 위 캐릭터가 공중에 있다면, 베스나로 교체 시 베스나가 즉시 <strong>순찰 비행</strong> 상태에 진입하고 스태미나를 50pt 회복한다. 해당 효과는 10초마다 최대 1회 발동되지만, 비경, 영역 토벌, 나선 비경에서는 적용되지 않는다"
+    }
+  },
+  "constellation1": {
+    "name": "겨울의 송별",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>바람 무장</tooltip></strong> 모드에서 베스나는 최고 단계의 <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>바람검</tooltip></strong>을 3회가 아닌 최대 4회까지 발동할 수 있으며, 매번 <strong>바람 무장</strong> 모드에 진입할 때마다 처음 발동하는 최고 단계 <strong>바람검</strong>이 <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>「검기」</tooltip></strong>를 소모하지 않는다.",
+      "1": "또한, 베스나가 <strong>바람 무장</strong> 모드에서 주는 별 확산 반응 피해가 20% 증가한다"
+    }
+  },
+  "constellation2": {
+    "name": "봄맞이 왈츠",
+    "description": {
+      "0": "돌파 특성 <strong><tooltip ns=char_Vesna_gen baseKey18=passive1>「의전·봄의 행진」</tooltip></strong> 강화: 베스나가 <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>바람 무장</tooltip></strong> 모드 진입 시 최대 스택의 <strong>엄숙</strong>을 획득하며, 최대 스택의 <strong>엄숙</strong> 보유 시 베스나의 공격력이 40% 증가한다.",
+      "1": "해당 효과는 돌파 특성 「의전·봄의 행진」을 해금해야 한다"
+    }
+  },
+  "constellation3": {
+    "name": "화염의 제사",
+    "description": {
+      "0": "원소전투 스킬 <strong><tooltip ns=char_Vesna_gen baseKey18=skill>교범·승리의 길</tooltip></strong>의 스킬 레벨+3",
+      "1": "최대 Lv.15까지 상승"
+    }
+  },
+  "constellation4": {
+    "name": "선대의 영광",
+    "description": {
+      "0": "돌파 특성 <strong><tooltip ns=char_Vesna_gen baseKey18=passive2>「규정·겨울의 꽃바람」</tooltip></strong> 강화: 공격력 증가 및 원소 마스터리 증가 효과가 기존의 3배로 변경된다"
+    }
+  },
+  "constellation5": {
+    "name": "귀족의 의무",
+    "description": {
+      "0": "원소폭발 <strong><tooltip ns=char_Vesna_gen baseKey18=burst>경례·여왕 폐하를 위하여</tooltip></strong>의 스킬 레벨+3",
+      "1": "최대 Lv.15까지 상승"
+    }
+  },
+  "constellation6": {
+    "name": "변치 않는 충심",
+    "description": {
+      "0": "최고 단계의 <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>바람검</tooltip></strong> 발동 후 5초 동안 일반 공격 또는 원소전투 스킬을 짧게 터치하면 베스나가 바람 요정 일족의 비기인 <strong>바람검·변이</strong>를 발동할 수 있다: 베스나 공격력의 150%에 해당하는 <anemo>바람 원소 피해</anemo>를 주고, <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>영검</tooltip></strong>을 소환해 추가로 베스나 공격력의 200%에 해당하는 <anemo>바람 원소 피해</anemo>를 준다. 만약 베스나가 <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>바람 무장</tooltip></strong> 모드인 경우, 바람깃을 추가로 소환해 적에게 협동 공격을 진행한다.",
+      "1": "또한, 베스나가 주는 별 확산 반응 피해가 20% <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>승격</strong></tooltip>된다"
+    }
+  }
+}

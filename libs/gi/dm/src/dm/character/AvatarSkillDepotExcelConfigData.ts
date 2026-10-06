@@ -65,9 +65,9 @@ export type AvatarSkillDepotExcelConfigData = {
     {}
   ],*/
   lockedProudSkillOpens: {
-    numberArray: number[]
-    unlockCondition: string
-    proudSkillGroupId: number
+    numberArray?: number[]
+    unlockCondition?: string
+    proudSkillGroupId?: number
   }[]
   skillDepotAbilityGroup: string //""
 }

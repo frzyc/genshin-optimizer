@@ -1,0 +1,176 @@
+{
+  "name": "Vodyanitsa",
+  "title": "Lingering Siren-Song",
+  "description": "Prima Donna Rombongan Teater Korolevskiy, sang Imp Air yang terpisahkan dari sesamanya.",
+  "constellationName": "Piscicula Aurea",
+  "auto": {
+    "name": "Psyshkhwe Arietta",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Menyanyikan lagu Imp Air kuno untuk melancarkan hingga 4 serangan yang mengakibatkan <hydro>Hydro DMG</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melemparkan bola air ke depan dan mengakibatkan <hydro>Hydro DMG</hydro>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan <hydro>Hydro DMG Area</hydro> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Rechitativ: Sonorous Dawn",
+    "description": {
+      "0": "Menampakkan wujud asli Imp Air-nya dan mengakibatkan <hydro>Hydro DMG Area</hydro> serta mendapatkan efek <strong>Song of Ages Past</strong>: Selama efek ini berlangsung, Vodyanitsa akan memanggil <strong>Horn of Spring's Call</strong> kuno yang akan secara berkala bergerak cepat untuk mendekati salah satu musuh dan menyerangnya, mengakibatkan <hydro>Hydro DMG</hydro>.",
+      "1": "Saat kedua serangan yang disebutkan di atas mengenai musuh, <hydro>Hydro RES</hydro> dan <cryo>Cryo RES</cryo> musuh akan berkurang. Selain itu, selama efek <strong>Song of Ages Past</strong> berlangsung, ketahanan Karakter aktif sendiri dalam party terhadap interupsi juga akan meningkat, dan HP-nya akan dipulihkan secara berkala. Jumlah pemulihan ini didasarkan pada Max HP Vodyanitsa."
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Durasi",
+      "2": "Jeda Serangan Horn of Spring's Call",
+      "3": "DMG Horn of Spring's Call",
+      "4": "Pemulihan HP Song of Ages Past",
+      "5": "Jeda Pemulihan HP Song of Ages Past",
+      "6": "Pengurangan Hydro dan Cryo RES",
+      "7": "Durasi Pengurangan RES",
+      "8": "Cooldown Skill",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Koda: Sink With Thee",
+    "description": {
+      "0": "Memimpin lagu kuno para Imp Air yang memikat para pendengarnya menuju ajal dan mengakibatkan <hydro>Hydro DMG Area</hydro>.",
+      "1": "Saat berada dalam status <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Song of Ages Past</tooltip></strong>, DMG yang diakibatkan akan semakin meningkat."
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Bonus DMG Song of Ages Past",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "The Last Djeguako Songstress",
+    "description": {
+      "0": "Saat melancarkan Elemental Skill <strong>Rechitativ: Sonorous Dawn</strong>, Stellar Vortex yang ada di medan pertempuran saat ini akan dikonversi menjadi Wandering Vortex, dan Karakter party di sekitar yang memicu reaksi Stellar Swirl selama efek <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Song of Ages Past</tooltip></strong> berlangsung akan menciptakan Wandering Vortex sebagai ganti Stellar Vortex.",
+      "1": "Saat menciptakan atau meledakkan Wandering Vortex, <anemo>Anemo RES</anemo> musuh di sekitarnya juga akan berkurang 35% selama 6 detik.",
+      "2": "Selain itu, selama <strong>Song of Ages Past</strong> berlangsung, saat Karakter party di sekitar memasuki status <strong>Radiance: Stellar Swirl</strong>, durasi status <strong>Radiance: Stellar Swirl</strong> tersebut akan diperpanjang 4 detik."
+    }
+  },
+  "passive2": {
+    "name": "Dirge of the Fandyr",
+    "description": {
+      "0": "Saat melancarkan Elemental Skill <strong>Rechitativ: Sonorous Dawn</strong>, Vodyanitsa juga akan mendapatkan 25 lapis <tooltip ns=tooltips_gen baseKey18=11400001 values=[]><strong>Lead Vocal</strong></tooltip> dan 10 lapis <tooltip ns=tooltips_gen baseKey18=11400002 values=[]><strong>Chorus</strong></tooltip>.",
+      "1": "Kedua efek di atas masing-masing bertahan selama 30 detik, dan lapisannya akan diperbarui saat melancarkan Elemental Skill."
+    }
+  },
+  "passive3": {
+    "name": "Echoes Over the Frozen Lake",
+    "description": {
+      "0": "Saat tidak dalam kondisi bertempur dan menahan Elemental Skill, Vodyanitsa akan menampakkan wujud aslinya sebagai Imp Air dan berenang hingga 10 detik dengan terus mengonsumsi Stamina. Karena merupakan Imp Air, tentu saja ia juga dapat bergerak di atas permukaan air. Vodyanitsa akan keluar dari wujud Imp Air-nya saat melancarkan Elemental Skill sekali lagi, saat durasinya berakhir, atau saat Stamina-nya habis.",
+      "1": "Selain itu, Vodyanitsa dapat berenang lebih cepat, tetapi konsumsi Stamina-nya juga menjadi lebih cepat."
+    }
+  },
+  "passive": {
+    "name": "Heartless Siren Song",
+    "description": {
+      "0": "Sebagai prima donna Rombongan Teater Korolevskiy, Vodyanitsa akan bernyanyi dengan suaranya sendiri alih-alih memainkan alat musik."
+    }
+  },
+  "constellation1": {
+    "name": "Waters in Full Splendor",
+    "description": {
+      "0": "Saat Vodyanitsa memicu efek pemulihan HP dari <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Song of Ages Past</tooltip></strong>, ATK semua Karakter party di sekitar juga meningkat sebesar 0,8% dari Max HP Vodyanitsa selama 5 detik."
+    }
+  },
+  "constellation2": {
+    "name": "Echoes That Pierce the Snow",
+    "description": {
+      "0": "Saat <strong>Horn of Spring's Call</strong> dari Elemental Skill <strong>Rechitativ: Sonorous Dawn</strong> menyerang musuh, maka Vodyanitsa akan mendapatkan efek \"Two Voices in Black and White\" yang meningkatkan CRIT DMG untuk <hydro>Hydro DMG</hydro> dan <cryo>Cryo DMG</cryo> yang diakibatkan oleh Karakter aktif sendiri dalam party sebesar 50% selama 5 detik.",
+      "1": "Jika terdapat Wandering Vortex di medan pertempuran saat ini, atau selama 5 detik setelah Wandering Vortex meledak, efek ini berubah menjadi: Meningkatkan CRIT DMG reaksi Stellar Swirl yang diakibatkan Karakter aktif sendiri dalam party sebesar 60% selama 5 detik.",
+      "2": "Selain itu, Elemental Skill <strong>Rechitativ: Sonorous Dawn</strong> diperkuat: Durasi efek <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Song of Ages Past</tooltip></strong> diperpanjang selama 9 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Song Lingering on a Spring Morning",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Rechitativ: Sonorous Dawn</tooltip> </strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Melancholic Voice Upon the Gentle Waters",
+    "description": {
+      "0": "Saat Vodyanitsa memicu efek pemulihan HP dari <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Song of Ages Past</tooltip></strong>, ia akan memicu efek berbeda berdasarkan HP Karakter yang dipulihkan. Jika HP Karakter yang dipulihkan:",
+      "1": [
+        "Kurang dari 40%: Jumlah pemulihan HP kali ini meningkat 50%.",
+        "Tidak kurang dari 40%: Max HP Vodyanitsa meningkat 20% selama 6 detik, efek ini dapat ditumpuk sampai 3 lapis dan durasi setiap lapisnya dihitung terpisah."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Together, Down Into the Deep",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=burst>Koda: Sink With Thee</tooltip> </strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Neverending Song of Revelry",
+    "description": {
+      "0": "Efek Konstelasi <strong>Echoes That Pierce the Snow</strong> diperkuat: Efek \"Two Voices in Black and White\" berubah menjadi: Efeknya kini berlaku untuk seluruh Karakter dalam party di sekitar.",
+      "1": "Selain itu, selama efek <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Song of Ages Past</tooltip></strong> berlangsung, DMG reaksi Stellar Swirl yang diakibatkan Karakter party di sekitar <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>bertumbuh</strong></tooltip> 25%, dan <hydro>Hydro DMG</hydro> serta <cryo>Cryo DMG</cryo> yang diakibatkan meningkat 60%."
+    }
+  }
+}

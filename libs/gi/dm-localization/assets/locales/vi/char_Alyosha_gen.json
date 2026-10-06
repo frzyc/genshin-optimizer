@@ -92,7 +92,7 @@
       "4": "<br/>",
       "5": "<strong>Tugarin</strong>",
       "6": [
-        "Nếu xung quanh có kẻ địch, mỗi 2s, Tugarin sẽ nhanh chóng di chuyển đến một kẻ địch ở gần và cắn xé mục tiêu, gây <strong>Sát Thương Nguyên Tố Lôi</strong>.",
+        "Nếu xung quanh có kẻ địch, mỗi 2s, Tugarin sẽ nhanh chóng di chuyển đến một kẻ địch ở gần và cắn xé mục tiêu, gây <electro>Sát Thương Nguyên Tố Lôi</electro>.",
         "Nếu kẻ địch trúng đòn đang bị áp dụng hiệu quả <strong>Dấu Ấn Săn Bắn</strong>, thì sẽ còn kích hoạt <strong>Dấu Ấn Săn Bắn</strong>.",
         "Tugarin sẽ ưu tiên tấn công kẻ địch đang bị áp dụng <strong>Dấu Ấn Săn Bắn</strong>."
       ],
@@ -144,7 +144,7 @@
   "passive": {
     "name": "Quan Sát Từ Ngọn Cây",
     "description": {
-      "0": "Hiển thị <strong>đặc sản khu vực Snezhnaya</strong> trên bản đồ nhỏ."
+      "0": "Hiển thị <strong>đặc sản khu vực Snezhnaya</strong> trên bản đồ nhỏ. Trong Ảnh Vực cũng có thể cung cấp sự trợ giúp tương tự."
     }
   },
   "constellation1": {

@@ -474,9 +474,62 @@
     }
   },
   "11400001": {
+    "name": "Ana Vokal",
+    "description": {
+      "0": "Grubun mevcut aktif karakteri Normal Saldırı, Yüklü Saldırı, Havadan Saldırı, Element Becerisi veya Element Patlamasıyla <hydro>Su Hasarı</hydro> ya da <cryo>Buz Hasarı</cryo> verdiğinde 1 kademe \"Ana Vokal\" tüketilir ve verilen Hasar artar. Ancak alanda bir Başıboş Burgaç varken veya bir Başıboş Burgaç patladıktan sonraki 5sn boyunca bu etki yalnızca karakter Yıldız Girdabı Tepkimesi Hasarı verdiğinde tetiklenir.",
+      "1": "Vodyanitsa'nın 40000 üzerinde sahip olduğu her 1000 Maks. Can, yukarıdaki etkideki Yıldız Girdabı Tepkimesi Hasarını 260 artırır; verilen <hydro>Su Hasarını</hydro> ve <cryo>Buz Hasarını</cryo> ise 140 artırır. Verilen Yıldız Girdabı Tepkimesi Hasarı bu şekilde en fazla 6500, <hydro>Su Hasarı</hydro> ve <cryo>Buz Hasarı</cryo> ise en fazla 3500 artırılabilir."
+    }
+  },
+  "11400002": {
+    "name": "Koro",
+    "description": {
+      "0": "Alanda olmayan grup üyeleri veya mevcut aktif grup üyesi dışında yakındaki başka bir grup üyesi tarafından tetiklenir. Etkileri \"Ana Vokal\" ile aynıdır."
+    }
+  },
+  "11430001": {
+    "name": "Eyleme Hazır",
+    "description": {
+      "0": "Vesna, <strong>Zafer Sanatı</strong> Element Becerisini kullandıktan sonra bu moda geçer. 15 saniyeye kadar sürebilen bu moddayken:",
+      "1": [
+        "Vesna'nın müdahaleye karşı direnci artar.",
+        "Vesna'nın Normal, Yüklü ve Havadan Saldırılarıyla verdiği Hasar, başka bir Element Tesiriyle değiştirilemeyecek şekilde <anemo>Rüzgar Hasarı</anemo> olur. Ayrıca düşmanlara onunla aynı anda saldıran ve ek <anemo>Rüzgar Hasarı</anemo> veren bir Rüzgar Tüyü çağırır. Rüzgar Tüyü her çağrıldığında Vesna bir miktar <strong>Kılıç Özü</strong> yeniler.",
+        "Vesna, <strong>Kılıç Özü</strong> tüketerek düşmanlara <anemo>Rüzgar Hasarı</anemo> veren <strong>Yel Kılıcı</strong> özel Element Becerisini kullanabilir.",
+        "Vesna, modun süresi bittiğinde veya <strong>Yel Kılıcı</strong> özel Element Becerisini en yüksek seviyede 3 defa kullandığında bu moddan çıkar. Moddan çıkmak, kalan tüm <strong>Kılıç Özünü</strong> sıfırlar."
+      ]
+    }
+  },
+  "11430002": {
+    "name": "Kılıç Özü",
+    "description": {
+      "0": "<strong>Eyleme Hazır</strong> modundayken <strong>Yel Kılıcı</strong> özel Element Becerisini kullanmak için gereken enerji.",
+      "1": "Vesna, aşağıdaki yöntemlerle Kılıç Özü kazanabilir:",
+      "2": [
+        "<strong>Eyleme Hazır</strong> modundayken Normal, Yüklü veya Havadan Saldırı yaparak ya da <strong>Sarsılmaz Sadakat</strong> Takımyıldızındaki <strong>Yel Kılıcı: Dönüşüm</strong> etkisini kullanarak.",
+        "<strong>Zafer Sanatı</strong> Element Becerisini kullanarak.",
+        "<strong>Çariçe İçin!</strong> Element Patlamasını kullanarak."
+      ]
+    }
+  },
+  "11430003": {
+    "name": "Yel Kılıcı",
+    "description": {
+      "0": "Vesna, <strong>Eyleme Hazır</strong> modundayken <strong>Kılıç Özü</strong> tüketerek <anemo>Rüzgar Hasarı</anemo> veren özel Element Becerisini kullanabilir.",
+      "1": "Aynı <strong>Eyleme Hazır</strong> modunda <strong>Yel Kılıcı</strong> özel Element Becerisini her kullandığında <strong>Yel Kılıcının</strong> seviyesi yükselir, Sv. 1 ile başlayıp en fazla Sv. 3 olabilir.",
+      "2": "Sv. 2 ve Sv. 3 <strong>Yel Kılıcı</strong> kullanmak ayrıca <anemo>Rüzgar Hasarı</anemo> veren bir <strong>Ruh Kılıcı</strong> çağırır."
+    }
+  },
+  "11430004": {
     "name": "Ruh Kılıcı",
     "description": {
-      "0": "\"Ruh Kılıcı\" Hakkında"
+      "0": "Vesna'nın çağırabildiği, özel güçlere sahip bir silah. Düşmana Vesna ile beraber saldırarak <anemo>Rüzgar Hasarı</anemo> verir.",
+      "1": "Vesna, Ruh Kılıçlarını aşağıdaki yöntemlerle çağırabilir:",
+      "2": [
+        "Sv. 2 ve Sv. 3 <strong>Yel Kılıcı</strong> özel Element Becerisini kullanarak.",
+        "<strong>Çariçe İçin!</strong> Element Patlamasını kullanarak.",
+        "<strong>Sarsılmaz Sadakat</strong> Takımyıldızındaki <strong>Yel Kılıcı: Dönüşüm</strong> etkisini kullanarak."
+      ],
+      "3": "<br/>",
+      "4": "<strong>Işıltı: Yıldız Girdabı</strong>: <strong>Ruh Kılıçları</strong> tarafından verilen Hasar, Yıldız Girdabı Tepkimesi Hasarı sayılan <anemo>Rüzgar Hasarına</anemo> dönüşür."
     }
   },
   "11480001": {

@@ -1,0 +1,24 @@
+{
+  "name": "Silver Light",
+  "description": {
+    "0": "Pedang panjang yang ditinggalkan oleh Pembaca Angin, salah satu dari Tiga Pertapa Guizang di Liyue. Konon ditempa dari mithril yang turun dari langit, dan pernah membelah air laut yang mengalir menjadi dua."
+  },
+  "passiveName": "Radiance on the Water",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah melancarkan Elemental Skill, Elemental Mastery +<cryo>52</cryo> poin selama 12 detik. Efek ini dapat ditumpuk sampai 2 lapis, durasi setiap lapis dihitung terpisah."
+    },
+    "1": {
+      "0": "Setelah melancarkan Elemental Skill, Elemental Mastery +<cryo>65</cryo> poin selama 12 detik. Efek ini dapat ditumpuk sampai 2 lapis, durasi setiap lapis dihitung terpisah."
+    },
+    "2": {
+      "0": "Setelah melancarkan Elemental Skill, Elemental Mastery +<cryo>78</cryo> poin selama 12 detik. Efek ini dapat ditumpuk sampai 2 lapis, durasi setiap lapis dihitung terpisah."
+    },
+    "3": {
+      "0": "Setelah melancarkan Elemental Skill, Elemental Mastery +<cryo>91</cryo> poin selama 12 detik. Efek ini dapat ditumpuk sampai 2 lapis, durasi setiap lapis dihitung terpisah."
+    },
+    "4": {
+      "0": "Setelah melancarkan Elemental Skill, Elemental Mastery +<cryo>104</cryo> poin selama 12 detik. Efek ini dapat ditumpuk sampai 2 lapis, durasi setiap lapis dihitung terpisah."
+    }
+  }
+}
