@@ -206,20 +206,8 @@ const dmgFormulas = {
   plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     skillDmg: dmgNode('atk', dm.skill.skillDmg, 'skill'),
-    sword1Dmg: dmgNode(
-      'atk',
-      dm.skill.sword1Dmg,
-      'skill',
-      undefined,
-      a1Stacks_spiritMult_
-    ),
-    sword2Dmg: dmgNode(
-      'atk',
-      dm.skill.sword2Dmg,
-      'skill',
-      undefined,
-      a1Stacks_spiritMult_
-    ),
+    sword1Dmg: dmgNode('atk', dm.skill.sword1Dmg, 'skill'),
+    sword2Dmg: dmgNode('atk', dm.skill.sword2Dmg, 'skill'),
     sword2SpiritDmg: equal(
       condA0StellarRadiance,
       undefined,
