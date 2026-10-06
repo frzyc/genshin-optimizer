@@ -1,0 +1,29 @@
+{
+  "name": "Coração Congelado",
+  "description": {
+    "0": "Um objeto ritualístico feito de gelo e neve puros. Dizem que até quinhentos anos atrás, eram usados em coroações dos reis Snegoviks."
+  },
+  "passiveName": "Legado Secreto da Geada",
+  "passiveDescription": {
+    "0": {
+      "0": "O portador obtém Acordo de Sangue Prateado Contaminado: aumenta a Proficiência Elemental do portador em <cryo>24</cryo> para cada personagem Cryo da equipe. Aumenta o ATQ do portador em <cryo>4.8%</cryo> para cada personagem Electro da equipe. É possível que até 4 personagens Cryo ou Electro forneçam esse efeito.",
+      "1": "Brilho Reluzente: Brilho Estelar: o efeito Acordo de Sangue Prateado Contaminado é alterado para: aumenta a Proficiência Elemental do portador em <cryo>20</cryo> para cada personagem Cryo ou Electro da equipe, e aumenta o Dano de reações de Brilho Estelar em <cryo>6%</cryo>."
+    },
+    "1": {
+      "0": "O portador obtém Acordo de Sangue Prateado Contaminado: aumenta a Proficiência Elemental do portador em <cryo>30</cryo> para cada personagem Cryo da equipe. Aumenta o ATQ do portador em <cryo>6%</cryo> para cada personagem Electro da equipe. É possível que até 4 personagens Cryo ou Electro forneçam esse efeito.",
+      "1": "Brilho Reluzente: Brilho Estelar: o efeito Acordo de Sangue Prateado Contaminado é alterado para: aumenta a Proficiência Elemental do portador em <cryo>25</cryo> para cada personagem Cryo ou Electro da equipe, e aumenta o Dano de reações de Brilho Estelar em <cryo>7.5%</cryo>."
+    },
+    "2": {
+      "0": "O portador obtém Acordo de Sangue Prateado Contaminado: aumenta a Proficiência Elemental do portador em <cryo>36</cryo> para cada personagem Cryo da equipe. Aumenta o ATQ do portador em <cryo>7.2%</cryo> para cada personagem Electro da equipe. É possível que até 4 personagens Cryo ou Electro forneçam esse efeito.",
+      "1": "Brilho Reluzente: Brilho Estelar: o efeito Acordo de Sangue Prateado Contaminado é alterado para: aumenta a Proficiência Elemental do portador em <cryo>30</cryo> para cada personagem Cryo ou Electro da equipe, e aumenta o Dano de reações de Brilho Estelar em <cryo>9%</cryo>."
+    },
+    "3": {
+      "0": "O portador obtém Acordo de Sangue Prateado Contaminado: aumenta a Proficiência Elemental do portador em <cryo>42</cryo> para cada personagem Cryo da equipe. Aumenta o ATQ do portador em <cryo>8.4%</cryo> para cada personagem Electro da equipe. É possível que até 4 personagens Cryo ou Electro forneçam esse efeito.",
+      "1": "Brilho Reluzente: Brilho Estelar: o efeito Acordo de Sangue Prateado Contaminado é alterado para: aumenta a Proficiência Elemental do portador em <cryo>35</cryo> para cada personagem Cryo ou Electro da equipe, e aumenta o Dano de reações de Brilho Estelar em <cryo>10.5%</cryo>."
+    },
+    "4": {
+      "0": "O portador obtém Acordo de Sangue Prateado Contaminado: aumenta a Proficiência Elemental do portador em <cryo>48</cryo> para cada personagem Cryo da equipe. Aumenta o ATQ do portador em <cryo>9.6%</cryo> para cada personagem Electro da equipe. É possível que até 4 personagens Cryo ou Electro forneçam esse efeito.",
+      "1": "Brilho Reluzente: Brilho Estelar: o efeito Acordo de Sangue Prateado Contaminado é alterado para: aumenta a Proficiência Elemental do portador em <cryo>40</cryo> para cada personagem Cryo ou Electro da equipe, e aumenta o Dano de reações de Brilho Estelar em <cryo>12%</cryo>."
+    }
+  }
+}

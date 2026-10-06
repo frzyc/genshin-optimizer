@@ -1,0 +1,8 @@
+{
+  "skillArmedCond": "While in the <strong>Armed for Action</strong> state",
+  "a1StacksCond": "<strong>Disciplinary Action</strong> stacks",
+  "spiritMult_": "<strong>Spirit Blade</strong> DMG Mult.",
+  "transposeDmg": "Windborne Sword: Transpose DMG",
+  "transposeSwordDmg": "Windborne Sword: Transpose Spirit Blade DMG",
+  "transposeSwordStellarswirlDmg": "Windborne Sword: Transpose Spirit Blade Stellar Swirl DMG"
+}

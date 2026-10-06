@@ -1,0 +1,24 @@
+{
+  "name": "Luce argentea",
+  "description": {
+    "0": "Una spada lunga appartenuta a Lettore del vento, uno dei Tre Eremiti di Guizang di Liyue. Leggenda narra che fu forgiata con l'argento sacro disceso dai cieli, e che un tempo fu in grado di fendere in due le acque del mare."
+  },
+  "passiveName": "Acque fulgide",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta la maestria elementale di <cryo>52</cryo> per 12 s dopo l'utilizzo dell'abilità elementale. Massimo 2 accumuli, la durata di ciascun accumulo è indipendente."
+    },
+    "1": {
+      "0": "Aumenta la maestria elementale di <cryo>65</cryo> per 12 s dopo l'utilizzo dell'abilità elementale. Massimo 2 accumuli, la durata di ciascun accumulo è indipendente."
+    },
+    "2": {
+      "0": "Aumenta la maestria elementale di <cryo>78</cryo> per 12 s dopo l'utilizzo dell'abilità elementale. Massimo 2 accumuli, la durata di ciascun accumulo è indipendente."
+    },
+    "3": {
+      "0": "Aumenta la maestria elementale di <cryo>91</cryo> per 12 s dopo l'utilizzo dell'abilità elementale. Massimo 2 accumuli, la durata di ciascun accumulo è indipendente."
+    },
+    "4": {
+      "0": "Aumenta la maestria elementale di <cryo>104</cryo> per 12 s dopo l'utilizzo dell'abilità elementale. Massimo 2 accumuli, la durata di ciascun accumulo è indipendente."
+    }
+  }
+}

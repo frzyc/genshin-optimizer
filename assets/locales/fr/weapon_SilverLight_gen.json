@@ -1,0 +1,24 @@
+{
+  "name": "Lumière argentée",
+  "description": {
+    "0": "Une longue épée laissée par Sonde-Brises, l'un des trois ermites de Guizang à Liyue. La légende raconte qu'elle fut forgée d'argent sacré descendu des cieux et qu'elle fendit jadis l'eau de mer en mouvement."
+  },
+  "passiveName": "Éclat sur l'eau",
+  "passiveDescription": {
+    "0": {
+      "0": "Utiliser une compétence élémentaire augmente la maîtrise élémentaire de <cryo>52</cryo> pts pendant 12 s. Cet effet peut être cumulé 2 fois, la durée de chaque cumul étant calculée de façon indépendante."
+    },
+    "1": {
+      "0": "Utiliser une compétence élémentaire augmente la maîtrise élémentaire de <cryo>65</cryo> pts pendant 12 s. Cet effet peut être cumulé 2 fois, la durée de chaque cumul étant calculée de façon indépendante."
+    },
+    "2": {
+      "0": "Utiliser une compétence élémentaire augmente la maîtrise élémentaire de <cryo>78</cryo> pts pendant 12 s. Cet effet peut être cumulé 2 fois, la durée de chaque cumul étant calculée de façon indépendante."
+    },
+    "3": {
+      "0": "Utiliser une compétence élémentaire augmente la maîtrise élémentaire de <cryo>91</cryo> pts pendant 12 s. Cet effet peut être cumulé 2 fois, la durée de chaque cumul étant calculée de façon indépendante."
+    },
+    "4": {
+      "0": "Utiliser une compétence élémentaire augmente la maîtrise élémentaire de <cryo>104</cryo> pts pendant 12 s. Cet effet peut être cumulé 2 fois, la durée de chaque cumul étant calculée de façon indépendante."
+    }
+  }
+}

@@ -136,7 +136,7 @@
       "4": "<br/>",
       "5": "<strong>Tugarin</strong>",
       "6": [
-        " If there are any opponents nearby, Tugarin will quickly move close to an opponent and maul them every 2s, dealing <strong>Electro DMG</strong>.",
+        " If there are any opponents nearby, Tugarin will quickly move close to an opponent and maul them every 2s, dealing <electro>Electro DMG</electro>.",
         " If an opponent affected by the <strong>Hunter's Mark</strong> effect is hit, the <strong>Hunter's Mark</strong> will also be activated.",
         " Where there are multiple opponents, Tugarin will attack those affected by the <strong>Hunter's Mark</strong> effect first."
       ],
@@ -210,7 +210,7 @@
   "passive": {
     "name": "Treetop Watch",
     "description": {
-      "0": "Displays the location of nearby <strong>resources unique to Snezhnaya</strong> on the mini-map."
+      "0": "Displays the location of nearby <strong>resources unique to Snezhnaya</strong> on the mini-map, and this effect also applies in the Shadow Realm."
     }
   },
   "constellation1": {

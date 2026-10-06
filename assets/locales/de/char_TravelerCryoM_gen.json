@@ -41,7 +41,7 @@
   "skill": {
     "name": "Eisnebelklinge",
     "description": {
-      "0": "Schwingt die Waffe nach vorn, sticht zu und setzt starken Eisnebel frei, der Gegnern vor ihr <cryo>Kryo-Schaden</cryo> zufügt sowie an ihrer Seite einen frostdurchbohrenden Stern beschwört.",
+      "0": "Schwingt die Waffe nach vorn, sticht zu und setzt starken Eisnebel frei, der Gegnern vor {M#ihm}{F#ihr} <cryo>Kryo-Schaden</cryo> zufügt sowie an {F#ihrer}{M#seiner} Seite einen frostdurchbohrenden Stern beschwört.",
       "1": "<br/>",
       "2": "<strong>Frostdurchbohrender Stern</strong>",
       "3": [
@@ -58,7 +58,7 @@
     "skillParams": {
       "0": "Fähigkeits-SCH",
       "1": "Kryo-Kristall-SCH",
-      "2": "SCH durch Frostdurchbohrender Stern",
+      "2": "Dauer von Frostdurchbohrender Stern",
       "3": "Abklingzeit",
       "4": "",
       "5": "",
@@ -89,11 +89,11 @@
       "5": "<i>Du hast mit Paimon zusammen die Schärfe des Eises gespürt.</i>"
     },
     "skillParams": {
-      "0": "Speer-SCH Phase 1",
+      "0": "Speer-SCH pro Schlag",
       "1": "SCH-Bonus von Kälteglanz",
-      "2": "SCH durch Stellar-Supraleiter-Speer Phase 1",
+      "2": "Speer-SCH durch Stellar-Supraleiter pro Schlag",
       "3": "SCH-Bonus von Stellar-Supraleiter-Kälteglanz",
-      "4": "SCH durch Stellar-Verwirbelungs-Speer Phase 1",
+      "4": "Speer-SCH durch Stellar-Verwirbelung pro Schlag",
       "5": "SCH-Bonus für Stellar-Verwirbelungs-Kälteglanz",
       "6": "Angriffszahl",
       "7": "Zusätzliche Angriffszahl bei vollem Kälteglanz",
@@ -126,12 +126,12 @@
   "passive3": {
     "name": "Sternensegnung – Wandelnder Eisspiegel",
     "description": {
-      "0": "Versetzt {F#die Reisende}{M#den Reisenden}, wenn {F#sie}{M#er} sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet oder ein Truppenmitglied in der Nähe die Reaktion Stellar-Verwirbelung auslöst, innerhalb von 8 s in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong>/<strong>Leuchten – Stellar-Verwirbelung</strong>.",
-      "1": "Wandelt, wenn ein Truppenmitglied die Reaktion Supraleiter/Kryo-Verwirbelung auslöst, diese stattdessen in die Reaktion Stellar-Supraleiter/Stellar-Verwirbelung um und erhöht den Basis-Schaden der oben genannten Reaktionen von Truppenmitgliedern basierend auf dem ANG {F#der}{M#des} Reisenden: Erhöht den Basis-SCH der oben genannten Reaktionen pro 100 Punkte um 0,35 %. Auf diese Weise kann der Schaden um bis zu 7 % erhöht werden."
+      "0": "Versetzt {F#die Reisende}{M#den Reisenden}, wenn {F#sie}{M#er} sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet, in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong> oder versetzt {F#sie}{M#ihn}, nachdem ein Truppenmitglied in der Nähe die Reaktion Stellar-Verwirbelung ausgelöst hat, 8 s lang in den Zustand <strong>Leuchten – Stellar-Verwirbelung</strong>.",
+      "1": "Wandelt, wenn ein Truppenmitglied die Reaktion Supraleiter/Kryo-Verwirbelung auslöst, diese stattdessen in die Reaktion Stellar-Supraleiter/Stellar-Verwirbelung um und erhöht den Basis-Schaden der oben genannten Reaktionen von Truppenmitgliedern basierend auf dem ANG {F#der}{M#des} Reisenden: Erhöht den Basis-SCH der oben genannten Reaktionen pro 100 Punkte ANG um 0,35 %. Auf diese Weise kann der Schaden um bis zu 7 % erhöht werden."
     }
   },
   "lockedPassive": {
-    "name": "Eis aus der Fremde",
+    "name": "Eis der Fremde",
     "description": {
       "0": "Verleiht {F#der}{M#dem} Reisenden Kraft aus der Vergangenheit und für jedes Element, mit dem {F#sie}{M#er} im Einklang gestanden hat, zusätzliche <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>Verstärkungseffekte</strong></tooltip>.",
       "1": "<br/>",
@@ -155,7 +155,7 @@
     "name": "Frostfall-Nachhall",
     "description": {
       "0": "Erhöht, wenn ein durch die Elementarfähigkeit <strong><tooltip ns=char_TravelerCryoM_gen baseKey18=skill>Eisnebelklinge</tooltip></strong> abgefeuerter <strong>Kryo-Kristall</strong> einen Gegner trifft, die Elementarkunde der aktuellen Figur 5 s lang um 60 Punkte.",
-      "1": "Erhöht, wenn die von oben genanntem Effekt beeinflusste Figur eine Stellarreaktion ausgelöst oder mit einer Stellarfunkeln-Reaktion Schaden verursacht hat, innerhalb der Wirkungsdauer die Elementarkunde stattdessen um 120 Punkte."
+      "1": "Erhöht, wenn die von oben genanntem Effekt beeinflusste Figur eine Stellarfunkeln-Reaktion ausgelöst oder mit einer Stellarfunkeln-Reaktion Schaden verursacht hat, innerhalb der Wirkungsdauer die Elementarkunde stattdessen um 120 Punkte."
     }
   },
   "constellation3": {
@@ -181,7 +181,7 @@
   "constellation6": {
     "name": "Unerbittlicher Frost",
     "description": {
-      "0": "Erhöht beim Anwenden der Spezialfähigkeit <strong><tooltip ns=char_TravelerCryoM_gen baseKey18=burst>Frostspeer</tooltip></strong> für jede Stapelung <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Kälteglanz</strong></tooltip> den von anderen Truppenmitgliedern durch eine Stellarfunkeln-Reaktion verursachten Schaden 15 s lang um 5 %, maximal um 40 %."
+      "0": "Erhöht beim Anwenden der Spezialfähigkeit <strong><tooltip ns=char_TravelerCryoM_gen baseKey18=burst>Frostspeer</tooltip></strong> für jede verbrauchte Stapelung <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Kälteglanz</strong></tooltip> den von anderen Truppenmitgliedern durch eine Stellarfunkeln-Reaktion verursachten Schaden 15 s lang um 5 %, maximal um 40 %."
     }
   }
 }

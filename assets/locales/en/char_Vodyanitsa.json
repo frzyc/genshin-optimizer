@@ -1,0 +1,13 @@
+{
+  "skillSongCond": "In the <strong>Song of Ages Past</strong> state",
+  "a1Cond": "After generating or detonating a Wandering Vortex",
+  "a4LeadVocalCond": "Consuming a stack of <strong>Lead Vocal</strong>",
+  "a4ChorusCond": "Consuming a stack of <strong>Chorus</strong>",
+  "c1Cond": "After triggering the healing effect of <strong>Song of Ages Past</strong>",
+  "c2Cond": "Two Voices in Black and White state",
+  "c2VoiceCond": "After hitting an opponent with the <strong>Horn of Spring's Call</strong>",
+  "c2VortexCond": "After hitting an opponent with the <strong>Horn of Spring's Call</strong> and a Wandering Vortex is present or recently exploded",
+  "c4HealMult_": "Song of Ages Past Healing Mult.",
+  "c4AboveCond_one": "HP greater than or equal to 40% ({{count}} stack)",
+  "c4AboveCond_other": "HP greater than or equal to 40% ({{count}} stacks)"
+}

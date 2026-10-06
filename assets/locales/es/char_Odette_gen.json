@@ -128,7 +128,7 @@
   "passive": {
     "name": "Eco del sueño invernal",
     "description": {
-      "0": "Muestra la ubicación de los <strong>objetos típicos de Snezhnaya</strong> cercanos en el minimapa.",
+      "0": "Muestra la ubicación de los <strong>objetos típicos de Snezhnaya</strong> cercanos en el minimapa. También proporcionará la misma ayuda en el Dominio de las Sombras.",
       "1": "Practicar danza en el tiempo libre podría activar otros efectos..."
     }
   },

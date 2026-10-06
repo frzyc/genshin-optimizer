@@ -45,7 +45,7 @@
   "skill": {
     "name": "Lauernder Donner",
     "description": {
-      "0": "Folge dem Instinkt des Jägers. Erzeugt je nach Drücken oder Gedrückthalten unterschiedliche Effekte und belegt einen getroffenen Gegner mit dem Effekt <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Mal der Jäger</strong></tooltip>.",
+      "0": "Folge dem Instinkt des Jägers. Erzeugt je nach Drücken oder Gedrückthalten unterschiedliche Effekte und belegt getroffene Gegner mit dem Effekt <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Mal der Jäger</strong></tooltip>.",
       "1": "<br/>",
       "2": "<strong>Drücken</strong>",
       "3": "Schießt nach vorn und verursacht <electro>Elektro-Flächenschaden</electro>.",
@@ -61,7 +61,7 @@
       "1": "SCH bei Gedrückthalten",
       "2": "Abklingzeit",
       "3": "Dauer von „Mal der Jäger“",
-      "4": "ANG-Bonus für „Genauigkeit der Jäger“",
+      "4": "ANG-Bonus durch „Genauigkeit der Jäger“",
       "5": "Dauer von „Genauigkeit der Jäger“",
       "6": "",
       "7": "",
@@ -92,7 +92,7 @@
       "4": "<br/>",
       "5": "<strong>Tugarin</strong>",
       "6": [
-        " Bewegt sich, wenn sich in der Umgebung Gegner befinden, alle 2 s schnell in die Nähe eines Gegners, greift diesen mit Bissangriffen an und fügt ihm <strong>Elektro-Schaden</strong> zu.",
+        " Bewegt sich, wenn sich in der Umgebung Gegner befinden, alle 2 s schnell in die Nähe eines Gegners, greift diesen mit Bissangriffen an und fügt ihm <electro>Elektro-Schaden</electro> zu.",
         " Aktiviert zudem, wenn der getroffene Gegner vom Effekt <strong>Mal der Jäger</strong> betroffen ist, den Effekt <strong>Mal der Jäger</strong>.",
         " Greift bevorzugt vom Effekt <strong>Mal der Jäger</strong> beeinflusste Gegner an."
       ],
@@ -138,13 +138,13 @@
     "name": "Sternenreise ins Gefahrengebiet",
     "description": {
       "0": "Versetzt Alyosha, wenn er sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet, in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong>.",
-      "1": "<strong>Leuchten – Stellar-Supraleiter</strong>: Verleiht beim Aktivieren von <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Mal der Jäger</strong></tooltip> den Effekt <strong>Genauigkeit der Jäger</strong> und erhöht zudem, wenn sich die Figur auf dem Feld befindet, den Schaden durch die Reaktion Stellar-Supraleiter um 25 %."
+      "1": "<strong>Leuchten – Stellar-Supraleiter</strong>: Der beim Aktivieren von <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Mal der Jäger</strong></tooltip> erhaltene Effekt <strong>Genauigkeit der Jäger</strong> wird den Schaden der Reaktion Stellar-Supraleiter durch Figuren auf dem Feld um 20 % erhöhen."
     }
   },
   "passive": {
     "name": "Baumwache",
     "description": {
-      "0": "Zeigt alle <strong>Besonderheiten Snezhnayas</strong> in der Nähe auf der Minikarte an."
+      "0": "Zeigt alle <strong>Besonderheiten Snezhnayas</strong> in der Nähe auf der Minikarte an. Dieser Effekt gilt auch im Schattenreich."
     }
   },
   "constellation1": {
@@ -183,7 +183,7 @@
   "constellation6": {
     "name": "Rückeroberung des Banners",
     "description": {
-      "0": "Verleiht, wenn <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Mal der Jäger</strong></tooltip> aktiviert wird, <strong>Genauigkeit der Jäger</strong>. Dieser Effekt ist bis zu 2-fach stapelbar. Erhöht bei 2 Stapeln zudem die Elementarkunde der von diesem Effekt beeinflussten aktuellen Figur um 100 Punkte."
+      "0": "Der Effekt <strong>Genauigkeit der Jäger</strong>, der bei Aktivierung vom <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Mal der Jäger</strong></tooltip> erhalten wird, ist nun bis zu 2-fach stapelbar. Erhöht bei 2 Stapelungen zudem die Elementarkunde der von diesem Effekt beeinflussten aktuellen Figur um 100 Punkte."
     }
   }
 }

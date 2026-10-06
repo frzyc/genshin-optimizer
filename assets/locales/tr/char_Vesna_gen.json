@@ -1,0 +1,189 @@
+{
+  "name": "Vesna",
+  "title": "Karlı Ziyafetin Keskin Kılıcı",
+  "description": "Druzhna'nın Komutanı ve Çariçe'nin keskin kılıcı.",
+  "constellationName": "Bahar Sürgünü",
+  "auto": {
+    "name": "Vila Kılıç Dansı",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 6 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcar ve önündeki düşmanları ezer."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "6 Vuruş Hasarı",
+      "6": "Yüklü Saldırı Hasarı",
+      "7": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "8": "Havadan Saldırı Hasarı",
+      "9": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Zafer Sanatı",
+    "description": {
+      "0": "Vilalar arasında nesiller boyu aktarılan Ruh Kılıçlarını çağırarak <anemo>Rüzgar Alan Hasarı</anemo> verir, ardından <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Eyleme Hazır</tooltip></strong> moduna geçip 2 kademe <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>Kılıç Özü</tooltip></strong> kazanır.",
+      "1": "<br/>",
+      "2": "<strong>Eyleme Hazır</strong>",
+      "3": "Vesna'nın Normal, Yüklü ve Havadan Saldırıları, başka element tesiriyle değiştirilemeyecek şekilde <anemo>Rüzgar Hasarı</anemo> verir. Vesna ayrıca düşmana aynı anda saldıran ve ek <anemo>Rüzgar Hasarı</anemo> veren bir Rüzgar Tüyü çağırır. Rüzgar Tüyü her çağrıldığında Vesna bir miktar <strong>Kılıç Özü</strong> yeniler.",
+      "4": "Vesna, <strong>Kılıç Özü</strong> tüketerek düşmana <anemo>Rüzgar Hasarı</anemo> veren <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Yel Kılıcı</tooltip></strong> özel Element Becerisini kullanabilir.",
+      "5": "Aynı <strong>Eyleme Hazır</strong> durumu içinde <strong>Yel Kılıcı</strong> özel Element Becerisi her kullanıldığında <strong>Yel Kılıcı</strong> seviyesi artar. Yel Kılıcı, Sv. 1'den başlayıp en fazla Sv. 3'e kadar yükselebilir ve her seviyede verdiği <anemo>Rüzgar Hasarı</anemo> artar. Sv. 2 ve Sv. 3 bir <strong>Yel Kılıcı</strong> kullanmak ayrıca <anemo>Rüzgar Hasarı</anemo> veren <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Ruh Kılıçları</tooltip></strong> çağırır.",
+      "6": "Vesna, modun süresi bittiğinde veya en üst seviyede üç defa <strong>Yel Kılıcı</strong> kullandığında bu moddan çıkar. Moddan çıktığında kalan tüm <strong>Kılıç Özü</strong> silinir.",
+      "7": "Ayrıca bu moddayken Vesna'nın müdahaleye karşı direnci artar.",
+      "8": "<strong>Işıltı: Yıldız Girdabı</strong>: <strong>Ruh Kılıçları</strong> ile verilen Hasar, aynı zamanda Yıldız Girdabı Tepkimesi Hasarı sayılan <anemo>Rüzgar Hasarına</anemo> dönüşür."
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Yel Kılıcı Sv. 1 Hasarı",
+      "2": "Yel Kılıcı Sv. 2 Hasarı",
+      "3": "Yel Kılıcı Sv. 2 Ruh Kılıcı Hasarı",
+      "4": "Yel Kılıcı Sv. 3 Ruh Kılıcı Hasarı",
+      "5": "Yel Kılıcı Sv. 3 Ruh Kılıcı Son Vuruş Hasarı",
+      "6": "Yel Kılıcı Sv. 2 Ruh Kılıcı Yıldız Girdabı Hasarı",
+      "7": "Yel Kılıcı Sv. 3 Ruh Kılıcı Yıldız Girdabı Hasarı",
+      "8": "Yel Kılıcı Sv. 3 Ruh Kılıcı Son Vuruş Yıldız Girdabı Hasarı",
+      "9": "Rüzgar Tüyü Hasarı",
+      "10": "Eyleme Hazır Süresi",
+      "11": "BS",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Çariçe İçin!",
+    "description": {
+      "0": "Birden fazla <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Ruh Kılıcı</tooltip></strong> çağırarak <anemo>Rüzgar Alan Hasarı</anemo> verir. Ayrıca bir kademe <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>Kılıç Özü</tooltip></strong> kazanır."
+    },
+    "skillParams": {
+      "0": "Ruh Kılıcı Hasarı",
+      "1": "Ruh Kılıcı Yıldız Girdabı Hasarı",
+      "2": "BS",
+      "3": "Enerji Maliyeti",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "sprint": {
+    "name": "",
+    "description": {}
+  },
+  "passive1": {
+    "name": "Baharın Gelişi Ayini",
+    "description": {
+      "0": "Vesna, <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Yel Kılıcı</tooltip></strong> özel Element Becerisini veya <strong><tooltip ns=char_Vesna_gen baseKey18=burst>Çariçe İçin!</tooltip></strong> Element Patlamasını kullandığında 1 kademe <strong>Disiplin Cezası</strong> kazanır. Bu etki 20sn sürer ve 6 kademeye kadar birikir. Her kademenin süresi birbirinden bağımsızdır.",
+      "1": "Aktif <strong>Disiplin Cezası</strong> kademeleri varken Vesna'nın çağırdığı <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Ruh Kılıçları</tooltip></strong>, orijinal Hasarın %100'ü + Disiplin Cezası kademe sayısının %10'u kadar Hasar verir. Vesna <strong>Zafer Sanatı</strong> Element Becerisini kullandığında veya alandan ayrıldığında tüm aktif <strong>Disiplin Cezası</strong> kademeleri kaldırılır."
+    }
+  },
+  "passive2": {
+    "name": "Hakikatin Üstünlüğü",
+    "description": {
+      "0": "<strong>Işıltı: Yıldız Girdabı</strong>: Vesna, grup üyelerinin Element Türüne göre aşağıdaki etkileri kazanır:",
+      "1": [
+        "Mevcut grubundaki her <cryo>Buz</cryo> veya <anemo>Rüzgar</anemo> karakteri için Vesna'nın Saldırısı %6 artar.",
+        "Mevcut grubundaki diğer Element Türlerinden her karakter için Vesna'nın Element Ustalığı 25 artar."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Yıldız Takdisi: Muhteşem Giriş",
+    "description": {
+      "0": "Grup üyeleri Buz Girdabı tepkimesi tetiklediğinde Yıldız Girdabı tepkimesine dönüşür ve bu Yıldız Girdabı için grup üyelerinin Temel Hasarı, Vesna'nın Saldırısına göre artar. Vesna'nın sahip olduğu her 100 Saldırı, Temel Yıldız Girdabı Hasarını %0,7 artırır. Bu şekilde en fazla %14 Hasar artışı elde edilebilir.",
+      "1": "Bir grup üyesi yakında bir Yıldız Girdabı tepkimesi tetiklediğinde Vesna 8 saniyeliğine <strong>Işıltı: Yıldız Girdabı</strong> durumuna girer."
+    }
+  },
+  "passive": {
+    "name": "Büyük Tur",
+    "description": {
+      "0": "Vesna savaş durumunda değilken Depara veya Sıçramaya basılı tutulduğunda <strong>Kovalama</strong> durumuna girer.",
+      "1": "<br/>",
+      "2": "<strong>Kovalama</strong>",
+      "3": "Devamlı Dayanıklılık tüketerek havada süzülür. Depar atmak veya yükselmek için Sıçramaya basmak fazladan Dayanıklılık tüketir. Vesna <strong>Kovalama</strong> durumundayken <strong>Kovalama</strong> durumunu tetikleyen Sıçrama dahil en fazla 3 defa havada yükselebilir.",
+      "4": "<br/>",
+      "5": "Ayrıca Snezhnaya'dayken (Nod-Krai hariç) eğer mevcut aktif grup üyesi havadayken ve savaşta değilken Vesna'ya geçilirse Vesna anında <strong>Kovalama</strong> durumuna girer ve 50 Dayanıklılık yeniler. Bu etki 10 saniyede bir tetiklenebilir. Zindanlarda, Ezici Zindanlarda veya Hiçlik Sarmalında tetiklenemez."
+    }
+  },
+  "constellation1": {
+    "name": "Kışa Veda Şöleni",
+    "description": {
+      "0": "Vesna, <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Eyleme Hazır</tooltip></strong> modundayken 3 yerine 4 defa en yüksek seviyede <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Yel Kılıcı</tooltip></strong> kullanabilir. Ayrıca <strong>Eyleme Hazır</strong> moduna her girdiğinde en yüksek seviyede ilk <strong>Yel Kılıcı</strong> kullanımında <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>Kılıç Özü</tooltip></strong> harcamaz.",
+      "1": "Buna ek olarak Vesna, <strong>Eyleme Hazır</strong> modundayken %20 daha fazla Yıldız Girdabı Tepkimesi Hasarı verir."
+    }
+  },
+  "constellation2": {
+    "name": "İlkbahar Kolo Dansı",
+    "description": {
+      "0": "<strong><tooltip ns=char_Vesna_gen baseKey18=passive1>Baharın Gelişi Ayini</tooltip></strong> Yükseltme Yeteneği gelişir: Vesna, <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Eyleme Hazır</tooltip></strong> moduna girdiğinde maksimum sayıda <strong>Disiplin Cezası</strong> kademesi kazanır. Vesna maksimum sayıda <strong>Disiplin Cezası</strong> kademesine sahipken Saldırısı %40 artar.",
+      "1": "\"Baharın Gelişi Ayini\" Yükseltme Yeteneğinin açılmış olması gerekir."
+    }
+  },
+  "constellation3": {
+    "name": "Kışın Son Adağı",
+    "description": {
+      "0": "<strong><tooltip ns=char_Vesna_gen baseKey18=skill>Zafer Sanatı</tooltip></strong> Element Becerisinin seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Atalarımızın Şanı",
+    "description": {
+      "0": "<strong><tooltip ns=char_Vesna_gen baseKey18=passive2>Hakikatin Üstünlüğü</tooltip></strong> Yükseltme Yeteneği gelişir: Saldırı ve Element Ustalığı bonusları, orijinal değerlerin 3 katına çıkar."
+    }
+  },
+  "constellation5": {
+    "name": "Soylunun Görevi",
+    "description": {
+      "0": "<strong><tooltip ns=char_Vesna_gen baseKey18=burst>Çariçe İçin!</tooltip></strong> Element Patlamasının seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Sarsılmaz Sadakat",
+    "description": {
+      "0": "Vesna en yüksek seviyede <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Yel Kılıcı</tooltip></strong> kullandıktan sonraki 5sn içinde Normal Saldırıya veya Element Becerisine dokunduğunda, gizli Vila yeteneği <strong>Yel Kılıcı: Dönüşüm</strong> kullanır ve Saldırısının %150'si kadar <anemo>Rüzgar Hasarı</anemo> vererek <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Ruh Kılıçları</tooltip></strong> çağırır. Bu Ruh Kılıçları bir defa Vesna'nın Saldırısının %200'ü kadar <anemo>Rüzgar Hasarı</anemo> verir. Eğer Vesna <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Eyleme Hazır</tooltip></strong> modundaysa düşmana Ortak Saldırılar yapması için ayrıca bir Rüzgar Tüyü çağırır.",
+      "1": "Buna ek olarak Vesna'nın verdiği Yıldız Girdabı Tepkimesi Hasarı %20 <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>yükselir</strong></tooltip>."
+    }
+  }
+}

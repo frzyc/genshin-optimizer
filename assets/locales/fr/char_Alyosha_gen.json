@@ -92,9 +92,9 @@
       "4": "<br/>",
       "5": "<strong>Tugarin</strong>",
       "6": [
-        " Si des ennemis sont à proximité, Tugarin se rapproche rapidement de l'un d'eux toutes les 2 s afin de le mordre et d'infliger des <strong>DGT Électro</strong>.",
+        " Si des ennemis sont à proximité, Tugarin se rapproche rapidement de l'un d'eux toutes les 2 s afin de le mordre et d'infliger des <electro>DGT Électro</electro>.",
         " Toucher un ennemi affecté par une <strong>marque de broussailleur</strong> active la <strong>marque de broussailleur</strong>.",
-        " Tugari attaque en priorité les ennemis affectés par une <strong>marque de broussailleur</strong>."
+        " Tugarin attaque en priorité les ennemis affectés par une <strong>marque de broussailleur</strong>."
       ],
       "7": "<br/>",
       "8": "<i>Patientez. Continuez de patienter jusqu'à ce que l'impatience s'estompe. C'est alors que le pluvier à ventre roux traversera le bosquet de bouleaux et se présentera devant votre flèche.</i>"
@@ -144,7 +144,7 @@
   "passive": {
     "name": "Observation des cimes",
     "description": {
-      "0": "Affiche l'emplacement des <strong>produits de Snezhnaya</strong> sur la mini-carte."
+      "0": "Affiche l'emplacement des <strong>produits de Snezhnaya</strong> sur la mini-carte, cet effet s'appliquant également dans les royaumes de pénombre."
     }
   },
   "constellation1": {

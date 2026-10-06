@@ -76,10 +76,10 @@
     }
   },
   "burst": {
-    "name": "Danse rapide : Rêve de plumes noires",
+    "name": "Danse rapide : Rêve de plumes sombres",
     "description": {
       "0": "Avec des pas de danse rapides et vifs, Odette inflige plusieurs fois des <cryo>DGT Cryo de zone</cryo>, invoque sa <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>doublure de danse solo</strong></tooltip> et obtient l'effet <strong>Rêve du cygne des neiges</strong> : augmente les DGT des réactions astrales infligées par Odette.",
-      "1": "De plus, la compétence élémentaire <strong>Danse lente : Transe nocturne fantôme</strong> d'Odette est remplacée par la compétence élémentaire spéciale <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Danse lente : Final de l'aube</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip> pendant 6 s lorsque Odette a utilisé son déchaînement élémentaire <strong>Danse rapide : Rêve de plumes noires</strong>.",
+      "1": "De plus, la compétence élémentaire <strong>Danse lente : Transe nocturne fantôme</strong> d'Odette est remplacée par la compétence élémentaire spéciale <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Danse lente : Final de l'aube</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip> pendant 6 s lorsque Odette a utilisé son déchaînement élémentaire <strong>Danse rapide : Rêve de plumes sombres</strong>.",
       "2": "<br/>",
       "3": "Si une doublure de danse solo invoquée par Odette est sur le terrain, elle est appelée à ses côtés et sa durée est réinitialisée."
     },
@@ -128,7 +128,7 @@
   "passive": {
     "name": "Écho du rêve d'hiver",
     "description": {
-      "0": "Affiche l'emplacement des <strong>produits de Snezhnaya</strong> sur la mini-carte.",
+      "0": "Affiche l'emplacement des <strong>produits de Snezhnaya</strong> sur la mini-carte, cet effet s'appliquant également dans les royaumes de pénombre.",
       "1": "Pratiquer la danse pendant le temps libre pourrait même déclencher d'autres effets..."
     }
   },
@@ -165,7 +165,7 @@
   "constellation4": {
     "name": "« Je monte, tandis que je tombe dans le ciel brumeux et brûlant »",
     "description": {
-      "0": "Le déchaînement élémentaire <strong>Danse rapide : Rêve de plumes noires</strong> est renforcé : lorsque Odette obtient l'effet <strong>rêve du cygne des neiges</strong>, les DGT des réactions astrales des autres personnages de l'équipe à proximité augmentent également d'une valeur équivalant à 50 % de l'effet du <strong>rêve du cygne des neiges</strong>.",
+      "0": "Le déchaînement élémentaire <strong>Danse rapide : Rêve de plumes sombres</strong> est renforcé : lorsque Odette obtient l'effet <strong>rêve du cygne des neiges</strong>, les DGT des réactions astrales des autres personnages de l'équipe à proximité augmentent également d'une valeur équivalant à 50 % de l'effet du <strong>rêve du cygne des neiges</strong>.",
       "1": "<br/>",
       "2": "De plus, lorsqu'un personnage de l'équipe inflige des DGT de réaction astrale à un ennemi, Odette effectue également une attaque coordonnée sur ce dernier, infligeant des <cryo>DGT Cryo de zone</cryo> dont le type et la valeur dépendent, cet effet pouvant être déclenché une fois toutes les 3,5 s :",
       "3": [
@@ -177,7 +177,7 @@
   "constellation5": {
     "name": "« Voici, car j'ai dit adieu aux souffrances terrestres »",
     "description": {
-      "0": "Niveau d'aptitude <strong><tooltip ns=char_Odette_gen baseKey18=burst>Danse rapide : Rêve de plumes noires</tooltip></strong> +3.",
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Odette_gen baseKey18=burst>Danse rapide : Rêve de plumes sombres</tooltip></strong> +3.",
       "1": "Niveau max : 15"
     }
   },

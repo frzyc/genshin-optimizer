@@ -1,0 +1,176 @@
+{
+  "name": "Vodyanitsa",
+  "title": "Canto persistente della sirena",
+  "description": "Primadonna della Compagnia Korolevskiy e Folletto dell'acqua separatosi dai suoi simili.",
+  "constellationName": "Piscicula Aurea",
+  "auto": {
+    "name": "Arietta del Psyshkhwe",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Intona un antico canto dei Folletti dell'acqua, sferrando fino a 4 colpi che infliggono <hydro>DAN da Hydro</hydro> agli avversari."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una certa quantità di vigore per scagliare una sfera d'acqua in avanti, infliggendo <hydro>DAN da Hydro</hydro>."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Si lancia verso il suolo da mezz'aria, danneggiando tutti gli avversari lungo la traiettoria. Infligge <hydro>DAN da Hydro ad area</hydro> all'impatto col suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato",
+      "5": "Costo vigore attacco caricato",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Recitativo: Alba altisonante",
+    "description": {
+      "0": "Rivela la sua vera forma di Folletto dell'acqua, infliggendo <hydro>DAN da Hydro ad area</hydro> e ottenendo l'effetto <strong>Canzone di ere passate</strong>: mentre quest'ultimo è attivo, Vodyanitsa evoca l'antico <strong>Richiamo della Cornucopia</strong>, che si avvicina periodicamente a un avversario per attaccarlo a gran velocità, infliggendo <hydro>DAN da Hydro</hydro>.",
+      "1": "Gli avversari che subiscono i due tipi di DAN sopracitati subiscono anche una riduzione delle RES a <hydro>Hydro</hydro> e a <cryo>Cryo</cryo>. Inoltre, mentre l'effetto <strong>Canzone di ere passate</strong> è presente, il tuo personaggio attivo del gruppo ottiene una maggiore resistenza all'interruzione e riceve effetti di guarigione periodici in base ai PS max di Vodyanitsa."
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Durata",
+      "2": "Intervallo attacco Richiamo della Cornucopia",
+      "3": "DAN da Richiamo della Cornucopia",
+      "4": "Guarigione da Canzone di ere passate",
+      "5": "Intervallo di guarigione Canzone di ere passate",
+      "6": "Riduzione RES a Cryo/Hydro",
+      "7": "Durata riduzione RES",
+      "8": "TdR abilità",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Coda: Giù negli abissi con te",
+    "description": {
+      "0": "Intona un canto dei Folletti dell'acqua che condanna chiunque lo ascolti. Infligge <hydro>DAN da Hydro ad area</hydro> agli avversari.",
+      "1": "Nello stato <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Canzone di ere passate</tooltip></strong>, i DAN inflitti aumentano ulteriormente."
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Bonus DAN Canzone di ere passate",
+      "2": "TdR",
+      "3": "Costo energia",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "L'ultima cantastorie Djeguako",
+    "description": {
+      "0": "Quando si utilizza l'abilità elementale <strong>Recitativo: Alba altisonante</strong>, qualsiasi Vortice astrale presente in campo si trasforma in un Vortice errante. Inoltre, se i membri vicini del gruppo innescano una reazione di Turbinio astrale mentre l'effetto <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Canzone di ere passate</tooltip></strong> è attivo, si genera un Vortice errante anziché un Vortice astrale.",
+      "1": "In aggiunta, generare o far esplodere un Vortice errante riduce la <anemo>RES ad Anemo</anemo> degli avversari nelle vicinanze di un 35% per 6 s.",
+      "2": "In più, se durante l'effetto di <strong>Canzone di ere passate</strong> i membri del gruppo vicini entrano nello stato di <strong>Splendore: Turbinio astrale</strong>, la durata di quest'ultimo viene estesa di 4 s."
+    }
+  },
+  "passive2": {
+    "name": "Marcia funebre del Fandyr",
+    "description": {
+      "0": "Quando si utilizza l'abilità elementale <strong>Recitativo: Alba altisonante</strong>, Vodyanitsa ottiene anche 25 accumuli di <tooltip ns=tooltips_gen baseKey18=11400001 values=[]><strong>Voce solista</strong></tooltip> e 10 accumuli di <tooltip ns=tooltips_gen baseKey18=11400002 values=[]><strong>Coro</strong></tooltip>.",
+      "1": "I due effetti suddetti durano 30 s ciascuno e il conteggio degli accumuli si ripristina quando si utilizza l'abilità elementale."
+    }
+  },
+  "passive3": {
+    "name": "Echi sul lago ghiacciato",
+    "description": {
+      "0": "Quando Vodyanitsa è fuori da un combattimento, la pressione prolungata dell'abilità elementale le permette di assumere la sua vera forma di Folletto dell'acqua e di nuotare per un massimo di 10 s consumando vigore. Data la sua natura, può anche spostarsi sulla superficie dell'acqua. Vodyanitsa esce da questa forma utilizzando di nuovo l'abilità elementale, quando la durata dello stato termina o quando il vigore si esaurisce.",
+      "1": "Inoltre, per quanto Vodyanitsa possa nuotare più velocemente, il costo di vigore è maggiore."
+    }
+  },
+  "passive": {
+    "name": "Canzone della sirena crudele",
+    "description": {
+      "0": "In quanto Primadonna della Compagnia Korolevskiy, Vodyanitsa canta invece di suonare uno strumento musicale."
+    }
+  },
+  "constellation1": {
+    "name": "Gloria assoluta delle acque",
+    "description": {
+      "0": "Ogni volta che Vodyanitsa innesca un effetto di guarigione di <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Canzone di ere passate</tooltip></strong>, aumenta anche l'ATT di tutti i membri del gruppo vicini di uno 0,8% dei suoi PS max per 5 s."
+    }
+  },
+  "constellation2": {
+    "name": "Echi che perforano la neve",
+    "description": {
+      "0": "Quando il <strong>Richiamo della Cornucopia</strong> dell'abilità elementale <strong>Recitativo: Alba altisonante</strong> attacca un avversario, Vodyanitsa ottiene l'effetto \"Due voci in bianco e nero\", che aumenta di un 50% per 5 s i DAN da CRIT dei <hydro>DAN da Hydro</hydro> e dei <cryo>DAN da Cryo</cryo> inflitti dal membro attivo del tuo gruppo.",
+      "1": "Se sul campo è presente un Vortice errante, o se sono trascorsi meno di 5 s dall'esplosione di un Vortice errante, l'effetto cambia aumentando di un 60% per 5 s i DAN da CRIT dei DAN da reazione di Turbinio astrale causati dal membro attivo del tuo gruppo.",
+      "2": "Inoltre, l'abilità elementale <strong>Recitativo: Alba altisonante</strong> viene potenziata, estendendo di 9 s la durata dell'effetto <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Canzone di ere passate</tooltip></strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Canto che indugia in un mattino di primavera",
+    "description": {
+      "0": "Aumenta di 3 il livello dell'abilità elementale <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Recitativo: Alba altisonante</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Voce malinconica sulle acque placide",
+    "description": {
+      "0": "Quando Vodyanitsa attiva l'effetto di guarigione di <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Canzone di ere passate</tooltip></strong>, innesca un effetto aggiuntivo a seconda dei PS del personaggio curato.",
+      "1": [
+        " Se i PS del personaggio sono inferiori a un 40%, la guarigione aumenta di un 50%.",
+        " Se i PS del personaggio sono superiori o uguali a un 40%, i PS max di Vodyanitsa aumentano di un 20% per 6 s. Massimo 3 accumuli. La durata di ogni accumulo viene calcolata in maniera indipendente."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Insieme, nelle profondità",
+    "description": {
+      "0": "Aumenta di 3 il livello del Tripudio elementale <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=burst>Coda: Giù negli abissi con te</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Canto infinito di baldoria",
+    "description": {
+      "0": "Il livello costellazione <strong>Echi che perforano la neve</strong> viene potenziato: \"Due voci in bianco e nero\" ora si applica a tutti i membri vicini del gruppo.",
+      "1": "Inoltre, mentre l'effetto <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Canzone di ere passate</tooltip></strong> è attivo, i DAN da reazione di Turbinio astrale inflitti dai membri vicini del gruppo vengono <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>innalzati</strong></tooltip> di un 25%, mentre i <hydro>DAN da Hydro</hydro> e i <cryo>DAN da Cryo</cryo> inflitti aumentano di un 60%."
+    }
+  }
+}
