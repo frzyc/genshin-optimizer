@@ -476,9 +476,63 @@
     }
   },
   "11400001": {
-    "name": "Poderío de espada espiritual",
+    "name": "Vocalista principal",
     "description": {
-      "0": "Sobre “Poderío de espada espiritual”"
+      "0": "Cuando tu personaje en uso del equipo inflija <hydro>Daño Hydro</hydro> o <cryo>Daño Cryo</cryo> con su Ataque Normal, Cargado o Descendente, o con su Habilidad Elemental o Definitiva, se consumirá una carga de “vocalista principal” para aumentar el daño infligido. Si en el campo de batalla hay un vórtice errante o si han transcurrido menos de 5 s desde su explosión, el efecto anterior solo se activará cuando el personaje inflija daño de Torbellino Estelar.",
+      "1": "Por cada 1000 pts. de Vida Máx. que Vodyanitsa tenga por encima de los 40000 pts., el daño de Torbellino Estelar del efecto anterior aumentará en 260 pts., y el <hydro>Daño Hydro</hydro> y <cryo>Cryo</cryo> aumentará en 140 pts. Como máximo, solo es posible aumentar el daño de Torbellino Estelar en 6500 pts. y el <hydro>Daño Hydro</hydro> y <cryo>Cryo</cryo> en 3500 pts. de esta manera."
+    }
+  },
+  "11400002": {
+    "name": "Coro",
+    "description": {
+      "0": "Lo puede activar un personaje que está en el equipo pero no en uso o los demás personajes cercanos del equipo (a excepción de tu personaje en uso del equipo). Su efecto es el mismo que el de “vocalista principal”."
+    }
+  },
+  "11430001": {
+    "name": "Armamento persiguevientos",
+    "description": {
+      "0": "Vesna entrará en este modo tras usar su Habilidad Elemental, <strong>El arte de la victoria</strong>. Este modo dura un máximo de 15 s y posee las siguientes características:",
+      "1": [
+        "La RES a interrupción de Vesna se verá aumentada.",
+        "Los Ataques Normales, Cargados y Descendentes de Vesna pasarán a infligir <anemo>Daño Anemo</anemo>, el cual no puede sustituirse imbuyéndose de otro elemento. Además, invocará cefiroalas que realizan ataques coordinados contra los enemigos e infligen <anemo>Daño Anemo</anemo> adicional. Cada vez que invoque las cefiroalas, Vesna recuperará cierta cantidad de <strong>energía filofeérica</strong>.",
+        "Vesna podrá consumir <strong>energía filofeérica</strong> para usar su Habilidad Elemental especial <strong>Filo surcavientos</strong> e infligir <anemo>Daño Anemo</anemo> a sus enemigos.",
+        "Cuando termine la duración de armamento persiguevientos o después de usar tres veces <strong>Filo surcavientos</strong> al nivel máximo, Vesna saldrá de dicho modo y perderá todas las cargas de <strong>energía filofeérica</strong>."
+      ]
+    }
+  },
+  "11430002": {
+    "name": "Energía filofeérica",
+    "description": {
+      "0": "La energía requerida para usar la Habilidad Elemental especial <strong>Filo surcavientos</strong> durante el modo de <strong>armamento persiguevientos</strong>.",
+      "1": "Vesna puede acumular energía filofeérica a través de los siguientes métodos:",
+      "2": [
+        "Realizando Ataques Normales, Cargados o Descendentes en el modo de <strong>armamento persiguevientos</strong> o usando <strong>Filo surcavientos: Transposición</strong> de la constelación <strong>Entusiasmo inquebrantable</strong>.",
+        "Usando su Habilidad Elemental, <strong>El arte de la victoria</strong>.",
+        "Usando su Habilidad Definitiva, <strong>¡Por su majestad la Zarina!</strong>"
+      ]
+    }
+  },
+  "11430003": {
+    "name": "Filo surcavientos",
+    "description": {
+      "0": "En el modo <strong>armamento persiguevientos</strong>, Vesna puede consumir <strong>energía filofeérica</strong> para usar esta Habilidad Elemental especial e infligir <anemo>Daño Anemo</anemo>.",
+      "1": "Cada vez que utilice la Habilidad Elemental especial <strong>Filo surcavientos</strong>, el nivel de la misma aumentará mientras el actual modo de <strong>armamento persiguevientos</strong> esté activo. El <strong>Filo surcavientos</strong> empezará en niv. 1 y podrá ascender como máximo hasta niv. 3.",
+      "2": "Al usar un <strong>Filo surcavientos</strong> que haya ascendido de nivel, también se invocarán <strong>filos feéricos</strong> que infligirán <anemo>Daño Anemo</anemo> a los enemigos."
+    }
+  },
+  "11430004": {
+    "name": "Filo feérico",
+    "description": {
+      "0": "Un arma espiritual que puede convocar Vesna y que atacará a los enemigos junto a ella para infligirles <anemo>Daño Anemo</anemo>.",
+      "1": "Vesna podrá convocar filos feéricos a través de los siguientes métodos:",
+      "2": [
+        "Usando su Habilidad Elemental especial <strong>Filo surcavientos</strong> ascendida.",
+        "Usando su Habilidad Definitiva, <strong>¡Por su majestad la Zarina!</strong>",
+        "Usando <strong>Filo surcavientos: Transposición</strong> de la constelación <strong>Entusiasmo inquebrantable</strong>."
+      ],
+      "3": "<br/>",
+      "4": "<strong>Esplendor: Torbellino Estelar</strong>",
+      "5": "Los <strong>filos feéricos</strong> pasarán a infligir <anemo>Daño Anemo</anemo> considerado como daño de Torbellino Estelar."
     }
   },
   "11480001": {

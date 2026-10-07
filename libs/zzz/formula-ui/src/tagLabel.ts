@@ -9,6 +9,7 @@ import { statKeyFromListingTag } from './listingStatLabels'
 const formulaBaseQs = new Set([
   'standardDmgBase',
   'sheerDmgBase',
+  'sharpDmgBase',
   'anomalyDmgBase',
   'shieldBase',
   'dazeBuildupBase',

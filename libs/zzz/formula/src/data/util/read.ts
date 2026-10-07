@@ -192,6 +192,12 @@ export class Read extends BaseRead<Tag> {
       super.with('damageType2', 'evasiveAssist'),
     ]
   }
+  get counterAssist(): Read[] {
+    return [
+      super.with('damageType1', 'counterAssist'),
+      super.with('damageType2', 'counterAssist'),
+    ]
+  }
   get assistFollowUp(): Read[] {
     return [
       super.with('damageType1', 'assistFollowUp'),
@@ -238,6 +244,18 @@ export class Read extends BaseRead<Tag> {
     return [
       super.with('damageType1', 'vortex'),
       super.with('damageType2', 'vortex'),
+    ]
+  }
+  get sharp(): Read[] {
+    return [
+      super.with('damageType1', 'sharp'),
+      super.with('damageType2', 'sharp'),
+    ]
+  }
+  get maim(): Read[] {
+    return [
+      super.with('damageType1', 'maim'),
+      super.with('damageType2', 'maim'),
     ]
   }
 

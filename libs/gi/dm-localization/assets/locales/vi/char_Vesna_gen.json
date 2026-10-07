@@ -1,0 +1,189 @@
+{
+  "name": "Vesna",
+  "title": "Mũi Kiếm Màn Tuyết",
+  "description": "Tư lệnh Druzhna, lưỡi kiếm sắc bén của Nữ Hoàng.",
+  "constellationName": "Cung Hoa Tự",
+  "auto": {
+    "name": "Kiếm Vũ Lướt Gió",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 6 lần đánh liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định để giẫm đạp kẻ địch phía trước."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát thương lần 1",
+      "1": "Sát thương lần 2",
+      "2": "Sát thương lần 3",
+      "3": "Sát thương lần 4",
+      "4": "Sát thương lần 5",
+      "5": "Sát thương lần 6",
+      "6": "Sát thương Trọng Kích",
+      "7": "Thể lực Trọng Kích tiêu hao",
+      "8": "Sát thương khi đáp",
+      "9": "Sát thương khi đáp từ độ cao thấp/cao",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Sách Lược - Nghệ Thuật Chiến Thắng",
+    "description": {
+      "0": "Triệu hồi Linh Kiếm kế thừa từ tộc Vila, gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>, chuyển sang chế độ <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Vũ Trang Lướt Gió</tooltip></strong>, đồng thời nhận 2 tầng <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>Kiếm Khí</tooltip></strong>.",
+      "1": "<br/>",
+      "2": "<strong>Vũ Trang Lướt Gió</strong>",
+      "3": "Khi Vesna thực hiện Tấn Công Thường, Trọng Kích và Tấn Công Khi Đáp, sẽ chuyển sang gây <anemo>Sát Thương Nguyên Tố Phong</anemo> không thể bị thay thế, đồng thời triệu hồi Phong Linh hỗ trợ tấn công kẻ địch, gây thêm <anemo>Sát Thương Nguyên Tố Phong</anemo>. Mỗi lần triệu hồi Phong Linh, đều sẽ hồi phục một lượng <strong>Kiếm Khí</strong> nhất định cho Vesna.",
+      "4": "Vesna có thể tiêu hao <strong>Kiếm Khí</strong> để thi triển Kỹ Năng Nguyên Tố đặc biệt <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Tường Phong Kiếm</tooltip></strong>, gây <anemo>Sát Thương Nguyên Tố Phong</anemo> cho kẻ địch.",
+      "5": "Sau mỗi lần thi triển Kỹ Năng Nguyên Tố đặc biệt <strong>Tường Phong Kiếm</strong>, trong thời gian duy trì chế độ <strong>Vũ Trang Lướt Gió</strong> lần này, cảnh giới của nó đều sẽ tăng lên, gây ra <anemo>Sát Thương Nguyên Tố Phong</anemo> cao hơn. Cảnh giới ban đầu của <strong>Tường Phong Kiếm</strong> là Bậc 1, tối đa tăng đến Bậc 3. Khi thi triển <strong>Tường Phong Kiếm</strong> đã gia tăng cảnh giới, sẽ còn triệu hồi <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Linh Kiếm</tooltip></strong> để gây <anemo>Sát Thương Nguyên Tố Phong</anemo> cho kẻ địch.",
+      "6": "Khi kết thúc thời gian duy trì, hoặc sau khi thi triển 3 lần <strong>Tường Phong Kiếm</strong> cảnh giới cao nhất, Vesna sẽ thoát khỏi chế độ này và xóa toàn bộ <strong>Kiếm Khí</strong>.",
+      "7": "Ngoài ra, trong trạng thái này, Vesna sẽ tăng khả năng Kháng Gián Đoạn.",
+      "8": "<strong>Tỏa Sáng: Tinh-Khuếch Tán</strong>: <strong>Linh Kiếm</strong> chuyển sang gây <anemo>Sát Thương Nguyên Tố Phong</anemo> được xem là sát thương phản ứng Tinh-Khuếch Tán."
+    },
+    "skillParams": {
+      "0": "Sát thương kỹ năng",
+      "1": "Sát thương Tường Phong Kiếm Bậc 1",
+      "2": "Sát thương Tường Phong Kiếm Bậc 2",
+      "3": "Sát thương Linh Kiếm Tường Phong Kiếm Bậc 2",
+      "4": "Sát thương Linh Kiếm Tường Phong Kiếm Bậc 3",
+      "5": "Sát thương đòn cuối Linh Kiếm Tường Phong Kiếm Bậc 3",
+      "6": "Sát thương Tinh-Khuếch Tán Linh Kiếm Tường Phong Kiếm Bậc 2",
+      "7": "Sát thương Tinh-Khuếch Tán Linh Kiếm Tường Phong Kiếm Bậc 3",
+      "8": "Sát thương Tinh-Khuếch Tán đòn cuối Linh Kiếm Tường Phong Kiếm Bậc 3",
+      "9": "Sát thương Phong Linh",
+      "10": "Vũ Trang Lướt Gió duy trì",
+      "11": "CD",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Kính Lễ - Vì Nữ Hoàng Bệ Hạ",
+    "description": {
+      "0": "Triệu hồi lượng lớn <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Linh Kiếm</tooltip></strong>, gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo> và nhận 1 tầng <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>Kiếm Khí</tooltip></strong>."
+    },
+    "skillParams": {
+      "0": "Sát thương Linh Kiếm",
+      "1": "Sát thương Tinh-Khuếch Tán Linh Kiếm",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "sprint": {
+    "name": "",
+    "description": {}
+  },
+  "passive1": {
+    "name": "Nghi Thức - Diễu Hành Mùa Xuân",
+    "description": {
+      "0": "Sau khi Vesna thi triển Kỹ Năng Nguyên Tố đặc biệt <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Tường Phong Kiếm</tooltip></strong> hoặc Kỹ Năng Nộ <strong><tooltip ns=char_Vesna_gen baseKey18=burst>Kính Lễ - Vì Nữ Hoàng Bệ Hạ</tooltip></strong>, sẽ còn nhận được 1 tầng <strong>Chỉnh Đốn</strong> duy trì 20s, tối đa cộng dồn 6 tầng, thời gian duy trì mỗi tầng tính riêng.",
+      "1": "Khi có <strong>Chỉnh Đốn</strong>, <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Linh Kiếm</tooltip></strong> do Vesna triệu hồi sẽ gây sát thương bằng \"100% + (số tầng Chỉnh Đốn)×10%\" mức gốc. Khi thi triển Kỹ Năng Nguyên Tố <strong>Sách Lược - Nghệ Thuật Chiến Thắng</strong> hoặc rời trận, sẽ xóa <strong>Chỉnh Đốn</strong> mà Vesna đang có."
+    }
+  },
+  "passive2": {
+    "name": "Nguyên Tắc - Gió Ấm Mùa Đông",
+    "description": {
+      "0": "<strong>Tỏa Sáng: Tinh-Khuếch Tán</strong>: Dựa trên Loại Nguyên Tố của nhân vật trong đội, Vesna sẽ nhận hiệu quả tương ứng. Trong đội hiện tại:",
+      "1": [
+        "Với mỗi 1 nhân vật có Loại Nguyên Tố là <cryo>Băng</cryo> hoặc <anemo>Phong</anemo>: Tấn Công của Vesna tăng 6%.",
+        "Với mỗi 1 nhân vật không thuộc các Loại Nguyên Tố trên: Tinh Thông Nguyên Tố của Vesna tăng 25 điểm."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Chúc Phúc Tinh Tú - Khúc Dạo Đầu Hoa Lệ",
+    "description": {
+      "0": "Khi nhân vật trong đội kích hoạt phản ứng Khuếch Tán Nguyên Tố Băng, sẽ chuyển thành phản ứng Tinh-Khuếch Tán, đồng thời tăng sát thương cơ bản của phản ứng Tinh-Khuếch Tán do nhân vật trong đội gây ra dựa trên Tấn Công của Vesna: Mỗi 100 điểm Tấn Công sẽ tăng 0.7% sát thương cơ bản của phản ứng Tinh-Khuếch Tán, tối đa tăng 14% sát thương theo cách này.",
+      "1": "Trong 8s sau khi nhân vật trong đội kích hoạt phản ứng Tinh-Khuếch Tán ở gần, Vesna sẽ vào trạng thái <strong>Tỏa Sáng: Tinh-Khuếch Tán</strong>."
+    }
+  },
+  "passive": {
+    "name": "Khí Phách Tuần Hành",
+    "description": {
+      "0": "Khi không trong trạng thái chiến đấu, Vesna có thể thông qua nhấn giữ Xung Kích hoặc Nhảy để vào trạng thái <strong>Tuần Du</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Tuần Du</strong>",
+      "3": "Liên tục tiêu hao Thể Lực, duy trì trạng thái lơ lửng. Khi tiến hành Xung Kích hoặc nhấn Nhảy để nâng độ cao, sẽ tiêu hao thêm Thể Lực. Bao gồm cả việc nhấn giữ Nhảy để vào trạng thái <strong>Tuần Du</strong>, mỗi lần <strong>Tuần Du</strong> tối đa nâng độ cao 3 lần.",
+      "4": "<br/>",
+      "5": "Ngoài ra, tại khu vực Snezhnaya (ngoại trừ Nod-Krai), khi không trong trạng thái chiến đấu, nếu nhân vật ra trận hiện tại trong đội đang ở trên không, khi chuyển sang Vesna ra trận, Vesna sẽ trực tiếp vào trạng thái <strong>Tuần Du</strong> và hồi phục 50 điểm Thể Lực. Hiệu quả này mỗi 10s tối đa kích hoạt một lần, đồng thời vô hiệu trong Bí Cảnh, Vùng Đất Thảo Phạt, La Hoàn Thâm Cảnh."
+    }
+  },
+  "constellation1": {
+    "name": "Bữa Tiệc Tiễn Đông",
+    "description": {
+      "0": "Trong chế độ <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Vũ Trang Lướt Gió</tooltip></strong>, Vesna có thể thi triển tối đa 4 lần <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Tường Phong Kiếm</tooltip></strong> cảnh giới cao nhất thay vì 3 lần, đồng thời sau mỗi lần vào chế độ <strong>Vũ Trang Lướt Gió</strong>, lần đầu thi triển <strong>Tường Phong Kiếm</strong> cảnh giới cao nhất sẽ không tiêu hao <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>Kiếm Khí</tooltip></strong>.",
+      "1": "Ngoài ra, sát thương phản ứng Tinh-Khuếch Tán do Vesna gây ra trong chế độ <strong>Vũ Trang Lướt Gió</strong> sẽ tăng 20%."
+    }
+  },
+  "constellation2": {
+    "name": "Vũ Điệu Đón Xuân",
+    "description": {
+      "0": "Thiên Phú Đột Phá <strong><tooltip ns=char_Vesna_gen baseKey18=passive1>Nghi Thức - Diễu Hành Mùa Xuân</tooltip></strong> được cường hóa: Khi Vesna tiến vào chế độ <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Vũ Trang Lướt Gió</tooltip></strong>, sẽ nhận số tầng <strong>Chỉnh Đốn</strong> tối đa. Khi sở hữu số tầng <strong>Chỉnh Đốn</strong> tối đa, Tấn Công của Vesna tăng 40%.",
+      "1": "Hiệu quả nêu trên cần mở khóa thiên phú \"Nghi Thức - Diễu Hành Mùa Xuân\"."
+    }
+  },
+  "constellation3": {
+    "name": "Cháy Bỏng Dâng Hiến",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Vesna_gen baseKey18=skill>Sách Lược - Nghệ Thuật Chiến Thắng</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Vinh Quang Tiền Nhân",
+    "description": {
+      "0": "Thiên Phú Đột Phá <strong><tooltip ns=char_Vesna_gen baseKey18=passive2>Nguyên Tắc - Gió Ấm Mùa Đông</tooltip></strong> được cường hóa: Hiệu quả tăng Tấn Công và Tinh Thông Nguyên Tố sẽ gấp ba lần so với ban đầu."
+    }
+  },
+  "constellation5": {
+    "name": "Trọng Trách Quý Tộc",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Vesna_gen baseKey18=burst>Kính Lễ - Vì Nữ Hoàng Bệ Hạ</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Tấm Lòng Sắt Son",
+    "description": {
+      "0": "Trong 5s sau khi thi triển <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Tường Phong Kiếm</tooltip></strong> cảnh giới cao nhất, Vesna có thể nhấn Tấn Công Thường hoặc Kỹ Năng Nguyên Tố để thi triển <strong>Tường Phong Kiếm - Biến Đổi</strong> bí truyền của tộc Vila: Gây <anemo>Sát Thương Nguyên Tố Phong</anemo> bằng 150% Tấn Công của Vesna, đồng thời triệu hồi <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Linh Kiếm</tooltip></strong>, gây thêm <anemo>Sát Thương Nguyên Tố Phong</anemo> bằng 200% Tấn Công của Vesna. Nếu Vesna đang trong chế độ <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Vũ Trang Lướt Gió</tooltip></strong>, sẽ còn triệu hồi thêm Phong Linh hỗ trợ tấn công kẻ địch.",
+      "1": "Ngoài ra, sát thương phản ứng Tinh-Khuếch Tán do Vesna gây ra sẽ <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Thăng Tiến</strong></tooltip> 20%."
+    }
+  }
+}

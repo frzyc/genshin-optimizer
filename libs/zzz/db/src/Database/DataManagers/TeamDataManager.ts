@@ -36,8 +36,8 @@ import { z } from 'zod'
 import type { ZzzDatabase } from '../..'
 import { DataManager } from '../DataManager'
 
-export type critModeKey = 'avg' | 'crit' | 'nonCrit'
-export const critModeKeys = ['avg', 'crit', 'nonCrit'] as const
+export type critModeKey = 'avg' | 'crit' | 'nonCrit' | 'doubleCrit'
+export const critModeKeys = ['avg', 'crit', 'nonCrit', 'doubleCrit'] as const
 
 export type { FormulaRef, SpecificDmgTypeKey }
 
@@ -56,6 +56,7 @@ export const bonusStatKeys: Array<keyof typeof own.final> = [
   'enerRegen_',
   'crit_',
   'crit_dmg_',
+  'laceration_dmg_',
   'anomProf',
   'impact',
   'impact_',
@@ -68,6 +69,7 @@ export const bonusStatKeys: Array<keyof typeof own.final> = [
   'resIgn_',
   'sheerForce',
   'sheer_dmg_',
+  'sharp_dmg_',
 ] as const
 export type BonusStatKey = (typeof bonusStatKeys)[number]
 
@@ -109,6 +111,7 @@ export const bonusStatDamageTypes: BonusStatDamageType[] = [
   'defensiveAssist',
   'evasiveAssist',
   'assistFollowUp',
+  'counterAssist',
   'anomaly',
   'disorder',
   'abloom',
@@ -369,7 +372,12 @@ export class TeamDataManager extends DataManager<
 
         let { attribute, damageType1, damageType2 } = tag
 
-        if (q !== 'dmg_' && q !== 'sheer_dmg_' && q !== 'resIgn_')
+        if (
+          q !== 'dmg_' &&
+          q !== 'sheer_dmg_' &&
+          q !== 'resIgn_' &&
+          q !== 'sharp_dmg_'
+        )
           attribute = undefined
         if (attribute)
           attribute = validateValue(attribute, allAttributeKeys) as

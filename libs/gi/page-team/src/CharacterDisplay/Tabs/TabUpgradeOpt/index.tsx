@@ -1,5 +1,11 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import { CardThemed, InfoTooltip, SqBadge } from '@genshin-optimizer/common/ui'
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import {
+  CardThemed,
+  ImgIcon,
+  InfoTooltip,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import {
   bulkCatTotal,
   clamp,
@@ -9,6 +15,7 @@ import {
   objPathValue,
   range,
 } from '@genshin-optimizer/common/util'
+import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
@@ -28,17 +35,20 @@ import {
   useDBMeta,
   useLoadoutArtifacts,
   useOptConfig,
+  useTeammateArtifactIds,
 } from '@genshin-optimizer/gi/db-ui'
 import {
   type FilterOption,
   initialFilterOption,
 } from '@genshin-optimizer/gi/schema'
-import { StatIcon } from '@genshin-optimizer/gi/svgicons'
+import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
   AddArtInfo,
   ArtifactEditor,
   ArtifactSetMultiAutocomplete,
+  ArtifactSetName,
+  ArtifactSetTooltip,
   ArtifactSlotToggle,
   DataContext,
   getTeamData,
@@ -144,6 +154,7 @@ export default function TabUpopt() {
     upOptDefineSubstats,
   } = optConfig
   const teamData = useTeamData()
+  const teammateArtifactIds = useTeammateArtifactIds()
   const { target: data } = teamData?.[characterKey as CharacterKey] ?? {}
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
@@ -169,6 +180,7 @@ export default function TabUpopt() {
       upOptLevelHigh,
       upOptReshape,
       useExcludedArts,
+      useTeammateBuild,
     } = optConfig
     const filterFunc = filterFunction(filterOption, artifactFilterConfigs())
 
@@ -177,7 +189,16 @@ export default function TabUpopt() {
       database.arts.values
         .filter((art) => {
           const reshapeCandidate = upOptReshape && canReshape(art)
+          if (!useTeammateBuild && teammateArtifactIds.includes(art.id))
+            return false
           if (!useExcludedArts && artExclusion.includes(art.id)) return false
+          const locKey = charKeyToLocCharKey(characterKey)
+          if (
+            art.location &&
+            art.location !== locKey &&
+            excludedLocations.includes(art.location)
+          )
+            return false
           if (!reshapeCandidate) {
             if (art.level < upOptLevelLow) return false
             if (art.level > upOptLevelHigh) return false
@@ -188,19 +209,18 @@ export default function TabUpopt() {
           if (mainStats?.length && !mainStats.includes(art.mainStatKey))
             return false
 
-          const locKey = charKeyToLocCharKey(characterKey)
-          if (
-            art.location &&
-            art.location !== locKey &&
-            excludedLocations.includes(art.location)
-          )
-            return false
-
           return true
         })
         .filter(filterFunc)
     )
-  }, [optConfig, artsDirty, database, characterKey, filterOption])
+  }, [
+    optConfig,
+    artsDirty,
+    database,
+    characterKey,
+    filterOption,
+    teammateArtifactIds,
+  ])
   const filteredArtIdMap = useMemo(
     () =>
       objKeyMap(
@@ -379,15 +399,25 @@ export default function TabUpopt() {
     const defineConfig = {
       enabled: upOptDefine && upOptDefineSubstats.length >= 2,
       setSlotMainStatKeys: objKeyMap(allArtifactSlotKeys, (slotKey) => {
+        const filterOptionSlotEnabled = filterOption.slotKeys?.length
+          ? filterOption.slotKeys.includes(slotKey)
+          : true
+        if (!filterOptionSlotEnabled) return { setKeys: [], mainStats: [] }
+
         const mainStats =
           slotKey === 'flower' ||
           slotKey === 'plume' ||
           mainStatKeys[slotKey].length === 0
             ? artSlotMainKeys[slotKey]
             : mainStatKeys[slotKey]
-        const setKeys = allArtifactSetKeys.filter((setKey) =>
-          respectSexExclusion({ slotKey, setKey })
+        const filterOptionSetKeys = new Set(
+          filterOption.artSetKeys?.length
+            ? filterOption.artSetKeys
+            : allArtifactSetKeys
         )
+        const setKeys = allArtifactSetKeys
+          .filter((setKey) => respectSexExclusion({ slotKey, setKey }))
+          .filter((setKey) => filterOptionSetKeys.has(setKey))
         return {
           setKeys,
           mainStats,
@@ -427,8 +457,44 @@ export default function TabUpopt() {
     activeCharKey,
     characterKey,
     filteredArts,
+    filterOption,
     equippedArts,
   ])
+
+  /**
+   * Sets Define is actually generating candidates for, mapped to the slots they
+   * apply to. Sets are dropped when excluded by set exclusion, or when they have
+   * no effect on the optimization target. `arbitrary` marks the sets that were
+   * only picked because no set mattered for their slot.
+   */
+  const { defineSets, defineFallbackSlots } = useMemo(() => {
+    const setToSlots: Partial<Record<ArtifactSetKey, ArtifactSlotKey[]>> = {}
+    allArtifactSlotKeys.forEach((slotKey) =>
+      upOptCalc?.defineSetKeys[slotKey]?.forEach((setKey) => {
+        const slots = setToSlots[setKey] ?? (setToSlots[setKey] = [])
+        slots.push(slotKey)
+      })
+    )
+    const defineFallbackSlots = upOptCalc?.defineFallbackSlots ?? []
+    const arbitrarySets = new Set(
+      defineFallbackSlots.flatMap(
+        (slotKey) => upOptCalc?.defineSetKeys[slotKey] ?? []
+      )
+    )
+    const defineSets = (
+      Object.entries(setToSlots) as [ArtifactSetKey, ArtifactSlotKey[]][]
+    )
+      .sort(
+        ([k1, slots1], [k2, slots2]) =>
+          slots2.length - slots1.length || k1.localeCompare(k2)
+      )
+      .map(([setKey, slotKeys]) => ({
+        setKey,
+        slotKeys,
+        arbitrary: arbitrarySets.has(setKey),
+      }))
+    return { defineSets, defineFallbackSlots }
+  }, [upOptCalc])
 
   // Paging logic
   const [pageIdex, setpageIdex] = useState(0)
@@ -713,6 +779,75 @@ export default function TabUpopt() {
                               )
                             })}
                           </Grid>
+                        </Box>
+                        <Box>
+                          <Typography variant="body2" color="text.secondary">
+                            {t('upOptDefine.sets')}
+                            <SqBadge color="info" sx={{ ml: 1 }}>
+                              {defineSets.length}
+                            </SqBadge>
+                          </Typography>
+                          {defineSets.length ? (
+                            <Box
+                              display="flex"
+                              flexWrap="wrap"
+                              gap={0.5}
+                              sx={{ mt: 0.5 }}
+                            >
+                              {defineSets.map(
+                                ({ setKey, slotKeys, arbitrary }) => (
+                                  <ArtifactSetTooltip
+                                    key={setKey}
+                                    setKey={setKey}
+                                  >
+                                    <SqBadge
+                                      color={arbitrary ? 'warning' : 'primary'}
+                                    >
+                                      <Typography>
+                                        <ImgIcon
+                                          size={1.5}
+                                          src={artifactDefIcon(setKey)}
+                                        />{' '}
+                                        <ArtifactSetName setKey={setKey} />
+                                        {slotKeys.length <
+                                          allArtifactSlotKeys.length && (
+                                          <>
+                                            {' '}
+                                            {slotKeys.map((slotKey) => (
+                                              <SlotIcon
+                                                key={slotKey}
+                                                slotKey={slotKey}
+                                                iconProps={iconInlineProps}
+                                              />
+                                            ))}
+                                          </>
+                                        )}
+                                      </Typography>
+                                    </SqBadge>
+                                  </ArtifactSetTooltip>
+                                )
+                              )}
+                            </Box>
+                          ) : (
+                            <Typography
+                              variant="caption"
+                              color="text.secondary"
+                            >
+                              {t('upOptDefine.setsEmpty')}
+                            </Typography>
+                          )}
+                          {!!defineFallbackSlots.length && (
+                            <Alert severity="warning" sx={{ mt: 1 }}>
+                              {t('upOptDefine.setsArbitrary')}{' '}
+                              {defineFallbackSlots.map((slotKey) => (
+                                <SlotIcon
+                                  key={slotKey}
+                                  slotKey={slotKey}
+                                  iconProps={iconInlineProps}
+                                />
+                              ))}
+                            </Alert>
+                          )}
                         </Box>
                       </Stack>
                     </CardContent>

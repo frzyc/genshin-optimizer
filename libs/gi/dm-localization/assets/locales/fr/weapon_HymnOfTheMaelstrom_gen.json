@@ -1,0 +1,39 @@
+{
+  "name": "Hymne dans le maelström",
+  "description": {
+    "0": "Une lampe exquise, façonnée en calcédoine bleue, qui semble tout droit sortie d'un conte de fées. On raconte qu'un chant de louange oublié de tous est scellé à l'intérieur de cette lampe."
+  },
+  "passiveName": "Rondo du sommeil",
+  "passiveDescription": {
+    "0": {
+      "0": "Le bonus de soins augmente de <cryo>4 %</cryo>.",
+      "1": "En effectuant des soins, le personnage équipé de l'arme obtient l'effet Vintage vatique de Vatsamonga : les PV max augmentent de <cryo>4 %</cryo> et chaque tranche de 1 000 PV max du personnage équipé de l'arme au-dessus de 40 000 augmente l'ATQ de votre personnage déployé de l'équipe de <cryo>0,4 %</cryo>, l'ATQ pouvant être augmentée d'un maximum de <cryo>8 %</cryo> de cette manière. Cet effet dure 10 s et peut être cumulé 3 fois maximum.",
+      "2": "Lorsqu'un personnage de l'équipe à proximité déclenche une réaction de Gel ou d'Astrodispersion, les bonus de PV max et d'ATQ de cet effet augmentent de 75 % supplémentaires pendant 5 s.",
+      "3": "Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "Le bonus de soins augmente de <cryo>5 %</cryo>.",
+      "1": "En effectuant des soins, le personnage équipé de l'arme obtient l'effet Vintage vatique de Vatsamonga : les PV max augmentent de <cryo>5 %</cryo> et chaque tranche de 1 000 PV max du personnage équipé de l'arme au-dessus de 40 000 augmente l'ATQ de votre personnage déployé de l'équipe de <cryo>0,5 %</cryo>, l'ATQ pouvant être augmentée d'un maximum de <cryo>10 %</cryo> de cette manière. Cet effet dure 10 s et peut être cumulé 3 fois maximum.",
+      "2": "Lorsqu'un personnage de l'équipe à proximité déclenche une réaction de Gel ou d'Astrodispersion, les bonus de PV max et d'ATQ de cet effet augmentent de 75 % supplémentaires pendant 5 s.",
+      "3": "Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "Le bonus de soins augmente de <cryo>6 %</cryo>.",
+      "1": "En effectuant des soins, le personnage équipé de l'arme obtient l'effet Vintage vatique de Vatsamonga : les PV max augmentent de <cryo>6 %</cryo> et chaque tranche de 1 000 PV max du personnage équipé de l'arme au-dessus de 40 000 augmente l'ATQ du personnage déployé de l'équipe de <cryo>0,6 %</cryo>, l'ATQ pouvant être augmentée d'un maximum de <cryo>12 %</cryo> de cette manière. Cet effet dure 10 s et peut être cumulé 3 fois maximum.",
+      "2": "Lorsqu'un personnage de l'équipe à proximité déclenche une réaction de Gel ou d'Astrodispersion, les bonus de PV max et d'ATQ de cet effet augmentent de 75 % supplémentaires pendant 5 s.",
+      "3": "Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "Le bonus de soins augmente de <cryo>7 %</cryo>.",
+      "1": "En effectuant des soins, le personnage équipé de l'arme obtient l'effet Vintage vatique de Vatsamonga : les PV max augmentent de <cryo>7 %</cryo> et chaque tranche de 1 000 PV max du personnage équipé de l'arme au-dessus de 40 000 augmente l'ATQ de votre personnage déployé de l'équipe de <cryo>0,7 %</cryo>, l'ATQ pouvant être augmentée d'un maximum de <cryo>14 %</cryo> de cette manière. Cet effet dure 10 s et peut être cumulé 3 fois maximum.",
+      "2": "Lorsqu'un personnage de l'équipe à proximité déclenche une réaction de Gel ou d'Astrodispersion, les bonus de PV max et d'ATQ de cet effet augmentent de 75 % supplémentaires pendant 5 s.",
+      "3": "Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "Le bonus de soins augmente de <cryo>8 %</cryo>.",
+      "1": "En effectuant des soins, le personnage équipé de l'arme obtient l'effet Vintage vatique de Vatsamonga : les PV max augmentent de <cryo>8 %</cryo> et chaque tranche de 1 000 PV max du personnage équipé de l'arme au-dessus de 40 000 augmente l'ATQ de votre personnage déployé de l'équipe de <cryo>0,8 %</cryo>, l'ATQ pouvant être augmentée d'un maximum de <cryo>16 %</cryo> de cette manière. Cet effet dure 10 s et peut être cumulé 3 fois maximum.",
+      "2": "Lorsqu'un personnage de l'équipe à proximité déclenche une réaction de Gel ou d'Astrodispersion, les bonus de PV max et d'ATQ de cet effet augmentent de 75 % supplémentaires pendant 5 s.",
+      "3": "Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

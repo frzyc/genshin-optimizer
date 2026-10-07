@@ -5,6 +5,7 @@ import Aino from './splash_aino.png'
 import Albedo from './splash_albedo.png'
 import Alhaitham from './splash_alhaitham.png'
 import Aloy from './splash_aloy.png'
+import Alyosha from './splash_alyosha.png'
 import Amber from './splash_amber.png'
 import Arlecchino from './splash_arlecchino.png'
 import KamisatoAyaka from './splash_ayaka.png'
@@ -63,7 +64,9 @@ import KukiShinobu from './splash_kuki.png'
 import LanYan from './splash_lanyan.png'
 import Lauma from './splash_lauma.png'
 import Layla from './splash_layla.png'
+import Linnea from './splash_linnea.png'
 import Lisa from './splash_lisa.png'
+import Lohen from './splash_lohen.png'
 import TravelerF from './splash_lumine.png'
 import Lynette from './splash_lynette.png'
 import Lyney from './splash_lyney.png'
@@ -75,14 +78,18 @@ import Nahida from './splash_nahida.png'
 import Navia from './splash_navia.png'
 import Nefer from './splash_nefer.png'
 import Neuvillette from './splash_neuvillette.png'
+import Nicole from './splash_nicole.png'
 import Nilou from './splash_nilou.png'
 import Ningguang from './splash_ningguang.png'
 import Noelle from './splash_noelle.png'
+import Odette from './splash_odette.png'
 import Ororon from './splash_ororon.png'
+import Prune from './splash_prune.png'
 import Qiqi from './splash_qiqi.png'
 import RaidenShogun from './splash_raiden.png'
 import Razor from './splash_razor.png'
 import Rosaria from './splash_rosaria.png'
+import Sandrone from './splash_sandrone.png'
 import KujouSara from './splash_sara.png'
 import Sayu from './splash_sayu.png'
 import Sethos from './splash_sethos.png'
@@ -96,6 +103,8 @@ import Tighnari from './splash_tighnari.png'
 import Varesa from './splash_varesa.png'
 import Varka from './splash_varka.png'
 import Venti from './splash_venti.png'
+import Vesna from './splash_vesna.png'
+import Vodyanitsa from './splash_vodyanitsa.png'
 import Wanderer from './splash_wanderer.png'
 import Wriothesley from './splash_wriothesley.png'
 import Xiangling from './splash_xiangling.png'
@@ -119,6 +128,7 @@ const charCards = {
   Albedo,
   Alhaitham,
   Aloy,
+  Alyosha,
   Amber,
   Arlecchino,
   AratakiItto,
@@ -176,7 +186,9 @@ const charCards = {
   LanYan,
   Lauma,
   Layla,
+  Linnea,
   Lisa,
+  Lohen,
   Lynette,
   Lyney,
   Mavuika,
@@ -187,14 +199,18 @@ const charCards = {
   Navia,
   Nefer,
   Neuvillette,
+  Nicole,
   Nilou,
   Ningguang,
   Noelle,
+  Odette,
   Ororon,
+  Prune,
   Qiqi,
   RaidenShogun,
   Razor,
   Rosaria,
+  Sandrone,
   SangonomiyaKokomi,
   Sayu,
   Sethos,
@@ -211,6 +227,8 @@ const charCards = {
   Varesa,
   Varka,
   Venti,
+  Vesna,
+  Vodyanitsa,
   Wanderer,
   Wriothesley,
   Xiangling,

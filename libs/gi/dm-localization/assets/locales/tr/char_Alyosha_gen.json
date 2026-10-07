@@ -92,7 +92,7 @@
       "4": "<br/>",
       "5": "<strong>Tugarin</strong>",
       "6": [
-        "Yakında herhangi bir düşman varsa Tugarin, her 2 saniyede bir hızlıca bir düşmana yaklaşıp saldırarak <strong>Elektrik Hasarı</strong> verir.",
+        "Yakında herhangi bir düşman varsa Tugarin, her 2 saniyede bir hızlıca bir düşmana yaklaşıp saldırarak <electro>Elektrik Hasarı</electro> verir.",
         "<strong>Avcının İşareti</strong> etkisine sahip bir düşman isabet alırsa <strong>Avcının İşareti</strong> de etkinleşir.",
         "Birden fazla düşmanın olduğu durumlarda Tugarin ilk olarak <strong>Avcının İşareti</strong> etkisine sahip olanlara saldırır."
       ],
@@ -144,7 +144,7 @@
   "passive": {
     "name": "Ağaç Tepesi Nöbeti",
     "description": {
-      "0": "Yakınlardaki <strong>Snezhnaya'ya özgü kaynakların</strong> yerini mini haritada gösterir."
+      "0": "Yakınlardaki <strong>Snezhnaya'ya özgü kaynakların</strong> yerini mini haritada gösterir ve bu etki Gölge Diyarında da geçerlidir."
     }
   },
   "constellation1": {

@@ -1,7 +1,9 @@
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
+  compareEq,
   equal,
+  equalStr,
   greaterEq,
   infoMut,
   input,
@@ -96,7 +98,7 @@ const dm = {
   },
   constellation6: {
     duration: skillParam_gen.constellation6[0],
-    stellarconduct_dmgInc: skillParam_gen.constellation6[1],
+    stellar_dmgInc: skillParam_gen.constellation6[1],
     stacks: skillParam_gen.constellation6[2],
   },
 } as const
@@ -171,15 +173,17 @@ const nodeC6Stellarconduct_dmgIncDisp = greaterEq(
     equal(
       condC6,
       'on',
-      prod(percent(dm.constellation6.stellarconduct_dmgInc), input.total.atk)
+      prod(percent(dm.constellation6.stellar_dmgInc), input.total.atk)
     )
   )
 )
+const nodeC6Stellarswirl_dmgIncDisp = { ...nodeC6Stellarconduct_dmgIncDisp }
 const nodeC6Stellarconduct_dmgInc = equal(
   input.activeCharKey,
   target.charKey,
   unequal(input.activeCharKey, key, nodeC6Stellarconduct_dmgIncDisp)
 )
+const nodeC6Stellarswirl_dmgInc = { ...nodeC6Stellarconduct_dmgInc }
 
 const dmgFormulas = {
   normal: Object.fromEntries(
@@ -246,6 +250,7 @@ const dmgFormulas = {
   },
   constellation6: {
     nodeC6Stellarconduct_dmgIncDisp,
+    nodeC6Stellarswirl_dmgIncDisp,
   },
 }
 
@@ -267,7 +272,16 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       swirl_dmg_: nodeLkSwirl_dmg_,
       stellarswirl_dmg_: nodeLkStellarswirl_dmg_,
       stellarconduct_dmgInc: nodeC6Stellarconduct_dmgInc,
+      stellarswirl_dmgInc: nodeC6Stellarswirl_dmgInc,
     },
+  },
+  flags: {
+    radiance: compareEq(
+      condLockStellarRadiance,
+      'on',
+      'sc',
+      equalStr(condLockStellarRadiance, 'ss', 'ss')
+    ),
   },
 })
 
@@ -569,6 +583,12 @@ const sheet: TalentSheet = {
             {
               node: infoMut(nodeC6Stellarconduct_dmgIncDisp, {
                 path: 'stellarconduct_dmgInc',
+                isTeamBuff: true,
+              }),
+            },
+            {
+              node: infoMut(nodeC6Stellarswirl_dmgIncDisp, {
+                path: 'stellarswirl_dmgInc',
                 isTeamBuff: true,
               }),
             },

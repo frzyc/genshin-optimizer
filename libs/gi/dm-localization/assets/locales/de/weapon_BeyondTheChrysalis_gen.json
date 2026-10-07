@@ -1,0 +1,44 @@
+{
+  "name": "Schmetterlingswandel",
+  "description": {
+    "0": "Ein Langschwert, das in schillernden Farben erstrahlt – einst nutzte es jemand, um Fesseln zu durchbrechen. Der Schwertwind war leicht wie ein anmutiger Schmetterlings­tanz."
+  },
+  "passiveName": "Tanz der Freiheit nach dem Schlüpfen",
+  "passiveDescription": {
+    "0": {
+      "0": "Verleiht dem Träger nach jeder Anwendung einer Elementarfähigkeit oder Spezialfähigkeit der Reihe nach einen der folgenden drei Effekte:",
+      "1": "Wind der Treue: Erhöht den kritischen Schaden des Trägers 10 s lang um <cryo>56 %</cryo>.",
+      "2": "Wind des Verrats: Erhöht den durch die Reaktion Stellar-Verwirbelung des Trägers verursachten Schaden 10 s lang um <cryo>36 %</cryo>.",
+      "3": "Wind der Ernte: Stellt dem Träger <cryo>5</cryo> Punkte Elementarenergie wieder her. Auf diese Weise können alle 4 s bis zu <cryo>5</cryo> Punkte Elementarenergie wiederhergestellt werden.",
+      "4": "Entfernt obige Effekte beim Auswechseln der Figur und setzt die Reihenfolge wieder zurück."
+    },
+    "1": {
+      "0": "Verleiht dem Träger nach jeder Anwendung einer Elementarfähigkeit oder Spezialfähigkeit der Reihe nach einen der folgenden drei Effekte:",
+      "1": "Wind der Treue: Erhöht den kritischen Schaden des Trägers 10 s lang um <cryo>72 %</cryo>.",
+      "2": "Wind des Verrats: Erhöht den durch die Reaktion Stellar-Verwirbelung des Trägers verursachten Schaden 10 s lang um <cryo>45 %</cryo>.",
+      "3": "Wind der Ernte: Stellt dem Träger <cryo>5,5</cryo> Punkte Elementarenergie wieder her. Auf diese Weise können alle 4 s bis zu <cryo>5,5</cryo> Punkte Elementarenergie wiederhergestellt werden.",
+      "4": "Entfernt obige Effekte beim Auswechseln der Figur und setzt die Reihenfolge wieder zurück."
+    },
+    "2": {
+      "0": "Verleiht dem Träger nach jeder Anwendung einer Elementarfähigkeit oder Spezialfähigkeit der Reihe nach einen der folgenden drei Effekte:",
+      "1": "Wind der Treue: Erhöht den kritischen Schaden des Trägers 10 s lang um <cryo>88 %</cryo>.",
+      "2": "Wind des Verrats: Erhöht den durch die Reaktion Stellar-Verwirbelung des Trägers verursachten Schaden 10 s lang um <cryo>54 %</cryo>.",
+      "3": "Wind der Ernte: Stellt dem Träger <cryo>6</cryo> Punkte Elementarenergie wieder her. Auf diese Weise können alle 4 s bis zu <cryo>6</cryo> Punkte Elementarenergie wiederhergestellt werden.",
+      "4": "Entfernt obige Effekte beim Auswechseln der Figur und setzt die Reihenfolge wieder zurück."
+    },
+    "3": {
+      "0": "Verleiht dem Träger nach jeder Anwendung einer Elementarfähigkeit oder Spezialfähigkeit der Reihe nach einen der folgenden drei Effekte:",
+      "1": "Wind der Treue: Erhöht den kritischen Schaden des Trägers 10 s lang um <cryo>104 %</cryo>.",
+      "2": "Wind des Verrats: Erhöht den durch die Reaktion Stellar-Verwirbelung des Trägers verursachten Schaden 10 s lang um <cryo>63 %</cryo>.",
+      "3": "Wind der Ernte: Stellt dem Träger <cryo>6,5</cryo> Punkte Elementarenergie wieder her. Auf diese Weise können alle 4 s bis zu <cryo>6,5</cryo> Punkte Elementarenergie wiederhergestellt werden.",
+      "4": "Entfernt obige Effekte beim Auswechseln der Figur und setzt die Reihenfolge wieder zurück."
+    },
+    "4": {
+      "0": "Verleiht dem Träger nach jeder Anwendung einer Elementarfähigkeit oder Spezialfähigkeit der Reihe nach einen der folgenden drei Effekte:",
+      "1": "Wind der Treue: Erhöht den kritischen Schaden des Trägers 10 s lang um <cryo>120 %</cryo>.",
+      "2": "Wind des Verrats: Erhöht den durch die Reaktion Stellar-Verwirbelung des Trägers verursachten Schaden 10 s lang um <cryo>72 %</cryo>.",
+      "3": "Wind der Ernte: Stellt dem Träger <cryo>7</cryo> Punkte Elementarenergie wieder her. Auf diese Weise können alle 4 s bis zu <cryo>7</cryo> Punkte Elementarenergie wiederhergestellt werden.",
+      "4": "Entfernt obige Effekte beim Auswechseln der Figur und setzt die Reihenfolge wieder zurück."
+    }
+  }
+}

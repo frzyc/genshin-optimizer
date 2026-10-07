@@ -152,6 +152,14 @@
       "icon": "UI_EquipIcon_Sword_GlintstoneSword",
       "awakenIcon": "UI_EquipIcon_Sword_GlintstoneSword_Awaken"
     },
+    "NewBough": {
+      "icon": "UI_EquipIcon_Sword_SpikedStake",
+      "awakenIcon": "UI_EquipIcon_Sword_SpikedStake_Awaken"
+    },
+    "SilverLight": {
+      "icon": "UI_EquipIcon_Sword_Fajian",
+      "awakenIcon": "UI_EquipIcon_Sword_Fajian_Awaken"
+    },
     "AquilaFavonia": {
       "icon": "UI_EquipIcon_Sword_Falcon",
       "awakenIcon": "UI_EquipIcon_Sword_Falcon_Awaken"
@@ -223,6 +231,10 @@
     "ExaiphanesBlade": {
       "icon": "UI_EquipIcon_Sword_WeaponQuestSnezhnaya",
       "awakenIcon": "UI_EquipIcon_Sword_WeaponQuestSnezhnaya"
+    },
+    "BeyondTheChrysalis": {
+      "icon": "UI_EquipIcon_Sword_Samosvist",
+      "awakenIcon": "UI_EquipIcon_Sword_Samosvist_Awaken"
     },
     "WasterGreatsword": {
       "icon": "UI_EquipIcon_Claymore_Aniki",
@@ -712,6 +724,10 @@
       "icon": "UI_EquipIcon_Catalyst_GlintstoneCatalyst",
       "awakenIcon": "UI_EquipIcon_Catalyst_GlintstoneCatalyst_Awaken"
     },
+    "WintersHeavyHeart": {
+      "icon": "UI_EquipIcon_Catalyst_FrostScepter",
+      "awakenIcon": "UI_EquipIcon_Catalyst_FrostScepter_Awaken"
+    },
     "SkywardAtlas": {
       "icon": "UI_EquipIcon_Catalyst_Dvalin",
       "awakenIcon": "UI_EquipIcon_Catalyst_Dvalin_Awaken"
@@ -787,6 +803,10 @@
     "AngelosHeptades": {
       "icon": "UI_EquipIcon_Catalyst_FairyGarden",
       "awakenIcon": "UI_EquipIcon_Catalyst_FairyGarden_Awaken"
+    },
+    "HymnOfTheMaelstrom": {
+      "icon": "UI_EquipIcon_Catalyst_Bludnye",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Bludnye_Awaken"
     },
     "HuntersBow": {
       "icon": "UI_EquipIcon_Bow_Hunters",
@@ -935,6 +955,10 @@
     "CovenantOfFrostAndSnow": {
       "icon": "UI_EquipIcon_Bow_GlintstoneBow",
       "awakenIcon": "UI_EquipIcon_Bow_GlintstoneBow_Awaken"
+    },
+    "BreezeborneRefrain": {
+      "icon": "UI_EquipIcon_Bow_Windtalker",
+      "awakenIcon": "UI_EquipIcon_Bow_Windtalker_Awaken"
     },
     "SkywardHarp": {
       "icon": "UI_EquipIcon_Bow_Dvalin",
@@ -3437,6 +3461,42 @@
       "constellation4": "UI_Talent_S_MarionetteNew_03",
       "constellation5": "UI_Talent_U_MarionetteNew_02",
       "constellation6": "UI_Talent_S_MarionetteNew_04"
+    },
+    "Vodyanitsa": {
+      "icon": "UI_AvatarIcon_Vodyanitsa",
+      "iconSide": "UI_AvatarIcon_Side_Vodyanitsa",
+      "banner": "UI_NameCardPic_Vodyanitsa_P",
+      "bar": "UI_NameCardPic_Vodyanitsa_Alpha",
+      "skill": "Skill_S_Vodyanitsa_01",
+      "burst": "Skill_E_Vodyanitsa_01_HD",
+      "passive1": "UI_Talent_S_Vodyanitsa_06",
+      "passive2": "UI_Talent_S_Vodyanitsa_05",
+      "passive3": "UI_Talent_S_Vodyanitsa_07",
+      "passive": "UI_Talent_S_Vodyanitsa_08",
+      "constellation1": "UI_Talent_S_Vodyanitsa_01",
+      "constellation2": "UI_Talent_S_Vodyanitsa_02",
+      "constellation3": "UI_Talent_U_Vodyanitsa_01",
+      "constellation4": "UI_Talent_S_Vodyanitsa_03",
+      "constellation5": "UI_Talent_U_Vodyanitsa_02",
+      "constellation6": "UI_Talent_S_Vodyanitsa_04"
+    },
+    "Vesna": {
+      "icon": "UI_AvatarIcon_Vesna",
+      "iconSide": "UI_AvatarIcon_Side_Vesna",
+      "banner": "UI_NameCardPic_Vesna_P",
+      "bar": "UI_NameCardPic_Vesna_Alpha",
+      "skill": "Skill_S_Vesna_01",
+      "burst": "Skill_E_Vesna_01_HD",
+      "passive1": "UI_Talent_S_Vesna_05",
+      "passive2": "UI_Talent_S_Vesna_06",
+      "passive3": "UI_Talent_S_Vesna_08",
+      "passive": "UI_Talent_S_Vesna_07",
+      "constellation1": "UI_Talent_S_Vesna_01",
+      "constellation2": "UI_Talent_S_Vesna_02",
+      "constellation3": "UI_Talent_U_Vesna_01",
+      "constellation4": "UI_Talent_S_Vesna_03",
+      "constellation5": "UI_Talent_U_Vesna_02",
+      "constellation6": "UI_Talent_S_Vesna_04"
     },
     "Alyosha": {
       "icon": "UI_AvatarIcon_Alyosha",

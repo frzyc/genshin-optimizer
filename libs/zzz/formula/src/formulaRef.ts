@@ -54,6 +54,7 @@ export const specificDmgTypeKeys: SpecificDmgTypeKey[] = [
   'defensiveAssist',
   'evasiveAssist',
   'assistFollowUp',
+  'counterAssist',
 ]
 
 function isSpecificDmgTypeKey(key: string): key is SpecificDmgTypeKey {

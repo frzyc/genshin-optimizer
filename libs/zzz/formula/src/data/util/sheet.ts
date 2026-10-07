@@ -123,6 +123,7 @@ function registerFormula(
   q:
     | 'standardDmg'
     | 'sheerDmg'
+    | 'sharpDmg'
     | 'heal'
     | 'shield'
     | 'anomalyDmg'
@@ -198,6 +199,34 @@ export function customSheerDmg(
     'sheerDmg',
     tag(cond, dmgTag),
     ownBuff.formula.sheerDmgBase.add(base),
+    ...extra
+  )
+}
+
+/**
+ * Creates an array of TagMapNodeEntries representing a sharp damage instance split by their multipliers, and registers their formulas
+ * @param name Base name to be used as the key
+ * @param dmgTag Tag object containing damageType1, damageType2 and attribute
+ * @param base Node representing the full sharp damage value
+ * @param arg `{ team: true }` to use `teamBuff` instead of `ownBuff`, and also show the formula in teammates' listing.
+ *
+ * `{ cond: <node> }` to hide these instances behind a conditional check.
+ * @param extra Buffs that should only apply to this sharp damage instance
+ * @returns Array of TagMapNodeEntries representing the sharp damage instance
+ */
+export function customSharpDmg(
+  name: string,
+  dmgTag: DmgTag,
+  base: NumNode,
+  { team, cond = 'infer' }: FormulaArg = {},
+  ...extra: TagMapNodeEntries
+): TagMapNodeEntries {
+  return registerFormula(
+    name,
+    team,
+    'sharpDmg',
+    tag(cond, dmgTag),
+    ownBuff.formula.sharpDmgBase.add(base),
     ...extra
   )
 }

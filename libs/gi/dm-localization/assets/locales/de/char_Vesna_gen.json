@@ -1,0 +1,189 @@
+{
+  "name": "Vesna",
+  "title": "Scharfe Klinge des Schneebanketts",
+  "description": "Die Kommandantin der Druzhna, Klinge der Zarin.",
+  "constellationName": "Amentum Vernum",
+  "auto": {
+    "name": "Tanz der Windklinge",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 6 Angriffe hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und führt einen Stampfangriff auf Gegner vorne aus."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH Phase 6",
+      "6": "SCH heftiger Schläge",
+      "7": "Ausdauerverbrauch heftiger Schläge",
+      "8": "SCH beim Fallen",
+      "9": "SCH beim Fallen aus niedriger/großer Höhe",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Kodex – Der Weg zum Sieg",
+    "description": {
+      "0": "Beschwört ein von den Vila über Generationen hinweg weitergegebenes Geisterschwert herauf, verursacht <anemo>Anemo-Flächenschaden</anemo>, wechselt in den Modus <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Einsatzbereit</tooltip></strong> und verleiht zwei Stapelungen <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>Schwertaura</tooltip></strong>.",
+      "1": "<br/>",
+      "2": "<strong>Einsatzbereit</strong>",
+      "3": "Wandelt, wenn Vesna Standardangriffe, heftige Schläge oder Angriffe aus dem Fall ausführt, diese in <anemo>Anemo-SCH</anemo> um, der nicht von anderen Elementen überdeckt werden kann. Ruft zudem eine „Feder im Wind“ herbei, die einen abgestimmten Angriff auf Gegner ausführt und zusätzlichen <anemo>Anemo-SCH</anemo> verursacht. Stellt Vesna jedes Mal, wenn eine „Feder im Wind“ herbeigerufen wird, eine gewisse Menge <strong>Schwertaura</strong> wieder her.",
+      "4": "Vesna kann <strong>Schwertaura</strong> verbrauchen, um die besondere Elementarfähigkeit <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Flugwind-Klinge</tooltip></strong> anzuwenden und Gegnern <anemo>Anemo-SCH</anemo> zuzufügen.",
+      "5": "Erhöht nach jeder Anwendung der besonderen Elementarfähigkeit <strong>Flugwind-Klinge</strong> während des aktuellen Modus <strong>Einsatzbereit</strong> ihre Stufe, was den <anemo>Anemo-SCH</anemo> erhöht. Die Anfangsstufe der <strong>Flugwind-Klinge</strong> beträgt Stufe 1 und kann bis auf Stufe 3 gesteigert werden. Ruft beim Anwenden der <strong>Flugwind-Klinge</strong> mit erhöhter Stufe außerdem ein <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Geisterschwert</tooltip></strong> herbei, das Gegnern <anemo>Anemo-SCH</anemo> zufügt.",
+      "6": "Wenn die Dauer endet oder die <strong>Flugwind-Klinge</strong> auf der höchsten Stufe dreimal angewendet wurde, verlässt Vesna diesen Modus und alle Stapelungen <strong>Schwertaura</strong> werden entfernt.",
+      "7": "Erhöht in diesem Modus zudem Vesnas Unterbrechungs-WDS.",
+      "8": "<strong>Leuchten – Stellar-Verwirbelung</strong>: Wandelt den durch das <strong>Geisterschwert</strong> verursachten Schaden in <anemo>Anemo-SCH</anemo> um, der als Schaden durch die Reaktion Stellar-Verwirbelung gewertet wird."
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "SCH durch Flugwind-Klinge Stufe 1",
+      "2": "SCH durch Flugwind-Klinge Stufe 2",
+      "3": "SCH durch Geisterschwert von Flugwind-Klinge Stufe 2",
+      "4": "SCH durch Geisterschwert von Flugwind-Klinge Stufe 3",
+      "5": "SCH durch letzten Schlag des Geisterschwerts von Flugwind-Klinge Stufe 3",
+      "6": "SCH durch Geisterschwert-Stellar-Verwirbelung von Flugwind-Klinge Stufe 2",
+      "7": "SCH durch Geisterschwert-Stellar-Verwirbelung von Flugwind-Klinge Stufe 3",
+      "8": "SCH durch Stellar-Verwirbelung beim letzten Schlag des Geisterschwerts von Flugwind-Klinge Stufe 3",
+      "9": "SCH durch Feder im Wind",
+      "10": "Dauer von Einsatzbereit",
+      "11": "Abklingzeit",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Ehrerbietung – Gewidmet Ihrer Majestät der Zarin",
+    "description": {
+      "0": "Ruft mehrere <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Geisterschwerter</tooltip></strong> herbei, verursacht <anemo>Anemo-Flächenschaden</anemo> und verleiht eine Stapelung <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>Schwertaura</tooltip></strong>."
+    },
+    "skillParams": {
+      "0": "Geisterschwert-SCH",
+      "1": "SCH durch Geisterschwert-Stellar-Verwirbelung",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "sprint": {
+    "name": "",
+    "description": {}
+  },
+  "passive1": {
+    "name": "Zeremonie – Frühlingsprozession",
+    "description": {
+      "0": "Verleiht Vesna, nachdem sie die besondere Elementarfähigkeit <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Flugwind-Klinge</tooltip></strong> oder die Spezialfähigkeit <strong><tooltip ns=char_Vesna_gen baseKey18=burst>Ehrerbietung – Gewidmet Ihrer Majestät der Zarin</tooltip></strong> angewendet hat, 20 s lang eine Stapelung <strong>Abrechnung</strong>, max. 6-fach stapelbar. Die Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet.",
+      "1": "Wenn sie über <strong>Abrechnung</strong> verfügt, verursacht das von Vesna herbeigerufene <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Geisterschwert</tooltip></strong> Schaden in Höhe von 100 % + (die Anzahl der Stapelungen von Abrechnung ×10 %) des ursprünglichen Schadens. Beim Anwenden der Elementarfähigkeit <strong>Kodex – Der Weg zum Sieg</strong> oder beim Auswechseln der Figur werden alle Stapelungen <strong>Abrechnung</strong> von Vesna entfernt."
+    }
+  },
+  "passive2": {
+    "name": "Ratgeber – Siegeswind des Winters",
+    "description": {
+      "0": "<strong>Leuchten – Stellar-Verwirbelung</strong>: Verleiht Vesna Effekte abhängig von den Elementartypen der Truppenmitglieder:",
+      "1": [
+        " Erhöht für jede <cryo>Kryo</cryo>- oder <anemo>Anemo</anemo>-Figur in der aktuellen Truppe Vesnas ANG um 6 %.",
+        " Erhöht für jede Figur eines nicht oben genannten Elementartyps in der aktuellen Truppe Vesnas Elementarkunde um 25 Punkte."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Sternensegnung – Präludium der Streuung",
+    "description": {
+      "0": "Wandelt, wenn ein Truppenmitglied die Reaktion Kryo-Verwirbelung auslöst, diese stattdessen in die Reaktion Stellar-Verwirbelung um und erhöht den Basis-Schaden der Stellar-Verwirbelung von Truppenmitgliedern basierend auf Vesnas ANG: Erhöht den Basis-SCH der Reaktion Stellar-Verwirbelung pro 100 Punkte ANG um 0,7 %. Auf diese Weise kann der Schaden um bis zu 14 % erhöht werden.",
+      "1": "Versetzt Vesna, nachdem ein Truppenmitglied in der Nähe die Reaktion Stellar-Verwirbelung ausgelöst hat, 8 s lang in den Zustand <strong>Leuchten – Stellar-Verwirbelung</strong>."
+    }
+  },
+  "passive": {
+    "name": "Schatzseelen-Patrouille",
+    "description": {
+      "0": "Außerhalb des Kampfes kann Vesna durch Gedrückthalten von Rennen oder Springen in den Zustand <strong>Parade</strong> eintreten.",
+      "1": "<br/>",
+      "2": "<strong>Parade</strong>",
+      "3": "Verbraucht fortlaufend Ausdauer und hält den Schwebezustand aufrecht. Beim Rennen oder Drücken von Springen zum Erhöhen der Höhe wird zusätzliche Ausdauer verbraucht. Einschließlich des zum Eintritt in den Zustand <strong>Parade</strong> genutzten Sprungs durch Gedrückthalten kann die Höhe pro <strong>Parade</strong> insgesamt dreimal erhöht werden.",
+      "4": "<br/>",
+      "5": "Zusätzlich gilt: Befindet sich das aktuelle Truppenmitglied in Snezhnaya (außer in Nod-Krai) außerhalb des Kampfes im Flug und wird zu Vesna gewechselt, tritt Vesna direkt in den Zustand <strong>Parade</strong> ein und stellt 50 Punkte Ausdauer wieder her, 10 s Abklingzeit. Dieser Effekt gilt nicht in Sphären, Gebietssäuberungen oder im Gewundenen Abgrund."
+    }
+  },
+  "constellation1": {
+    "name": "Bankett zum Winterabschied",
+    "description": {
+      "0": "Ermöglicht Vesna im Modus <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Einsatzbereit</tooltip></strong> eine viermalige Anwendung der <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Flugwind-Klinge</tooltip></strong> auf höchster Stufe statt einer dreimaligen. Die erste Anwendung der <strong>Flugwind-Klinge</strong> auf höchster Stufe nach jedem Eintritt in den Modus <strong>Einsatzbereit</strong> verbraucht keine <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>Schwertaura</tooltip></strong>.",
+      "1": "Außerdem erhöht sich der durch Vesna im Modus <strong>Einsatzbereit</strong> verursachte Schaden durch die Reaktion Stellar-Verwirbelung um 20 %."
+    }
+  },
+  "constellation2": {
+    "name": "Reigen zum Frühlingsempfang",
+    "description": {
+      "0": "Verstärkt das Aufstiegstalent <strong><tooltip ns=char_Vesna_gen baseKey18=passive1>Zeremonie – Frühlingsprozession</tooltip></strong>: Verleiht Vesna, wenn sie in den Modus <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Einsatzbereit</tooltip></strong> eintritt, die maximale Anzahl an Stapelungen <strong>Abrechnung</strong>. Erhöht bei maximaler Anzahl an Stapelungen <strong>Abrechnung</strong> Vesnas ANG um 40 %.",
+      "1": "Für obigen Effekt muss zuerst das Aufstiegstalent „Zeremonie – Frühlingsprozession“ freigeschaltet werden."
+    }
+  },
+  "constellation3": {
+    "name": "Opfergabe der Flammen",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Vesna_gen baseKey18=skill>Kodex – Der Weg zum Sieg</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Auszeichnung der Vorgänger",
+    "description": {
+      "0": "Verstärkt das Aufstiegstalent <strong><tooltip ns=char_Vesna_gen baseKey18=passive2>Ratgeber – Siegeswind des Winters</tooltip></strong>: Erhöht den ANG und die Elementarkunde stattdessen um das Dreifache des ursprünglichen Werts."
+    }
+  },
+  "constellation5": {
+    "name": "Die Pflichten der Edlen",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_Vesna_gen baseKey18=burst>Ehrerbietung – Gewidmet Ihrer Majestät der Zarin</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Unerschütterliche Hingabe",
+    "description": {
+      "0": "Innerhalb von 5 s nach Anwendung der <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Flugwind-Klinge</tooltip></strong> auf höchster Stufe kann Vesna durch Drücken des Standardangriffs oder der Elementarfähigkeit die geheime Vila-Schwertkunst „<strong>Flugwind-Klinge – Wandlung</strong>“ anwenden: Verursacht <anemo>Anemo-SCH</anemo> in Höhe von 150 % von Vesnas ANG und beschwört das <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>Geisterschwert</tooltip></strong> herbei, das zusätzlich <anemo>Anemo-SCH</anemo> in Höhe von 200 % von Vesnas ANG verursacht. Beschwört, wenn sich Vesna im Modus <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Einsatzbereit</tooltip></strong> befindet, zusätzlich eine Feder im Wind herbei, die Gegner mit abgestimmten Angriffen attackiert.",
+      "1": "<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Steigert</strong></tooltip> zudem den durch Vesnas Reaktion Stellar-Verwirbelung verursachten Schaden um 20 %."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Giai Điệu Gió Thoảng",
+  "description": {
+    "0": "Cung màu xanh được làm từ đá quý thuần khiết. Khi được giương lên, nó có thể tạo ra làn gió ấm áp như mùa xuân."
+  },
+  "passiveName": "Ca Dao Rắn Độc",
+  "passiveDescription": {
+    "0": {
+      "0": "Hiệu Quả Nạp Nguyên Tố tăng <cryo>20%</cryo>. Khi Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của người trang bị đánh trúng kẻ địch, sẽ nhận một tầng \"Thánh Ca Kẻ Thuần Khiết\", hiệu quả này tối đa cộng dồn 3 tầng, mỗi 0.03s tối đa nhận một tầng. Khi cộng dồn đến 3 tầng, sẽ xóa sạch Thánh Ca Kẻ Thuần Khiết và nhận \"Kịch Độc Của Lưỡi Rắn\": Khiến tất cả nhân vật trong đội ở gần tăng <cryo>24%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh trong 12s, trong thời gian duy trì không thể nhận lại Thánh Ca Kẻ Thuần Khiết. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "1": {
+      "0": "Hiệu Quả Nạp Nguyên Tố tăng <cryo>25%</cryo>. Khi Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của người trang bị đánh trúng kẻ địch, sẽ nhận một tầng \"Thánh Ca Kẻ Thuần Khiết\", hiệu quả này tối đa cộng dồn 3 tầng, mỗi 0.03s tối đa nhận một tầng. Khi cộng dồn đến 3 tầng, sẽ xóa sạch Thánh Ca Kẻ Thuần Khiết và nhận \"Kịch Độc Của Lưỡi Rắn\": Khiến tất cả nhân vật trong đội ở gần tăng <cryo>30%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh trong 12s, trong thời gian duy trì không thể nhận lại Thánh Ca Kẻ Thuần Khiết. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "2": {
+      "0": "Hiệu Quả Nạp Nguyên Tố tăng <cryo>30%</cryo>. Khi Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của người trang bị đánh trúng kẻ địch, sẽ nhận một tầng \"Thánh Ca Kẻ Thuần Khiết\", hiệu quả này tối đa cộng dồn 3 tầng, mỗi 0.03s tối đa nhận một tầng. Khi cộng dồn đến 3 tầng, sẽ xóa sạch Thánh Ca Kẻ Thuần Khiết và nhận \"Kịch Độc Của Lưỡi Rắn\": Khiến tất cả nhân vật trong đội ở gần tăng <cryo>36%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh trong 12s, trong thời gian duy trì không thể nhận lại Thánh Ca Kẻ Thuần Khiết. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "3": {
+      "0": "Hiệu Quả Nạp Nguyên Tố tăng <cryo>35%</cryo>. Khi Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của người trang bị đánh trúng kẻ địch, sẽ nhận một tầng \"Thánh Ca Kẻ Thuần Khiết\", hiệu quả này tối đa cộng dồn 3 tầng, mỗi 0.03s tối đa nhận một tầng. Khi cộng dồn đến 3 tầng, sẽ xóa sạch Thánh Ca Kẻ Thuần Khiết và nhận \"Kịch Độc Của Lưỡi Rắn\": Khiến tất cả nhân vật trong đội ở gần tăng <cryo>42%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh trong 12s, trong thời gian duy trì không thể nhận lại Thánh Ca Kẻ Thuần Khiết. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "4": {
+      "0": "Hiệu Quả Nạp Nguyên Tố tăng <cryo>40%</cryo>. Khi Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của người trang bị đánh trúng kẻ địch, sẽ nhận một tầng \"Thánh Ca Kẻ Thuần Khiết\", hiệu quả này tối đa cộng dồn 3 tầng, mỗi 0.03s tối đa nhận một tầng. Khi cộng dồn đến 3 tầng, sẽ xóa sạch Thánh Ca Kẻ Thuần Khiết và nhận \"Kịch Độc Của Lưỡi Rắn\": Khiến tất cả nhân vật trong đội ở gần tăng <cryo>48%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh trong 12s, trong thời gian duy trì không thể nhận lại Thánh Ca Kẻ Thuần Khiết. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    }
+  }
+}

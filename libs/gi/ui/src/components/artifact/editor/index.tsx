@@ -273,6 +273,12 @@ export function ArtifactEditor({
     },
     [artifactDispatch]
   )
+  const setInitialSubstatValue = useCallback(
+    (index: number, value?: number) => {
+      artifactDispatch({ type: 'initialValue', index, value })
+    },
+    [artifactDispatch]
+  )
   const isValid = !errors.length
   const canClearArtifact = (): boolean =>
     window.confirm(t('editor.clearPrompt') as string)
@@ -713,6 +719,7 @@ export function ArtifactEditor({
                   index={index}
                   artifact={cArtifact}
                   setSubstat={setSubstat}
+                  setInitialSubstatValue={setInitialSubstatValue}
                   onChange={handleChange}
                   isUnactivatedSubstat={isUnactivatedSubstat}
                 />

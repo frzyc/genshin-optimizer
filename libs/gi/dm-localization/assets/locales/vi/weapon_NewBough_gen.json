@@ -1,0 +1,29 @@
+{
+  "name": "Cành Mới",
+  "description": {
+    "0": "Thanh bảo kiếm làm từ gỗ thánh, nghe nói từng là mấu chốt để xoay chuyển thắng bại trong một trận chiến."
+  },
+  "passiveName": "Mạch Lá Sinh Sôi",
+  "passiveDescription": {
+    "0": {
+      "0": "Trong 12s sau khi thi triển Kỹ Năng Nguyên Tố, khi người trang bị tấn công trúng địch, sẽ nhận được \"Rậm Rạp\": Tấn Công tăng <cryo>4%</cryo>, Tinh Thông Nguyên Tố tăng <cryo>20</cryo> điểm. Hiệu quả này duy trì 6s, tối đa cộng dồn 3 tầng, mỗi 1s tối đa kích hoạt một lần. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên.",
+      "1": "Tỏa Sáng: Tinh Tú Lấp Lánh: Hiệu quả Rậm Rạp chuyển sang tăng <cryo>6%</cryo> Tấn Công, đồng thời người trang bị tăng <cryo>8%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh."
+    },
+    "1": {
+      "0": "Trong 12s sau khi thi triển Kỹ Năng Nguyên Tố, khi người trang bị tấn công trúng địch, sẽ nhận được \"Rậm Rạp\": Tấn Công tăng <cryo>5%</cryo>, Tinh Thông Nguyên Tố tăng <cryo>25</cryo> điểm. Hiệu quả này duy trì 6s, tối đa cộng dồn 3 tầng, mỗi 1s tối đa kích hoạt một lần. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên.",
+      "1": "Tỏa Sáng: Tinh Tú Lấp Lánh: Hiệu quả Rậm Rạp chuyển sang tăng <cryo>7.5%</cryo> Tấn Công, đồng thời người trang bị tăng <cryo>10%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh."
+    },
+    "2": {
+      "0": "Trong 12s sau khi thi triển Kỹ Năng Nguyên Tố, khi người trang bị tấn công trúng địch, sẽ nhận được \"Rậm Rạp\": Tấn Công tăng <cryo>6%</cryo>, Tinh Thông Nguyên Tố tăng <cryo>30</cryo> điểm. Hiệu quả này duy trì 6s, tối đa cộng dồn 3 tầng, mỗi 1s tối đa kích hoạt một lần. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên.",
+      "1": "Tỏa Sáng: Tinh Tú Lấp Lánh: Hiệu quả Rậm Rạp chuyển sang tăng <cryo>9%</cryo> Tấn Công, đồng thời người trang bị tăng <cryo>12%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh."
+    },
+    "3": {
+      "0": "Trong 12s sau khi thi triển Kỹ Năng Nguyên Tố, khi người trang bị tấn công trúng địch, sẽ nhận được \"Rậm Rạp\": Tấn Công tăng <cryo>7%</cryo>, Tinh Thông Nguyên Tố tăng <cryo>35</cryo> điểm. Hiệu quả này duy trì 6s, tối đa cộng dồn 3 tầng, mỗi 1s tối đa kích hoạt một lần. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên.",
+      "1": "Tỏa Sáng: Tinh Tú Lấp Lánh: Hiệu quả Rậm Rạp chuyển sang tăng <cryo>10.5%</cryo> Tấn Công, đồng thời người trang bị tăng <cryo>14%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh."
+    },
+    "4": {
+      "0": "Trong 12s sau khi thi triển Kỹ Năng Nguyên Tố, khi người trang bị tấn công trúng địch, sẽ nhận được \"Rậm Rạp\": Tấn Công tăng <cryo>8%</cryo>, Tinh Thông Nguyên Tố tăng <cryo>40</cryo> điểm. Hiệu quả này duy trì 6s, tối đa cộng dồn 3 tầng, mỗi 1s tối đa kích hoạt một lần. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên.",
+      "1": "Tỏa Sáng: Tinh Tú Lấp Lánh: Hiệu quả Rậm Rạp chuyển sang tăng <cryo>12%</cryo> Tấn Công, đồng thời người trang bị tăng <cryo>16%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh."
+    }
+  }
+}

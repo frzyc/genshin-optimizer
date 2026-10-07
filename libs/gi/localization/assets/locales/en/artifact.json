@@ -22,7 +22,8 @@
       "eff": "RV: <1></1>",
       "noSubstat": "Empty",
       "substatFormat": "Substat {{value}}",
-      "nextRolls": "Next rolls:"
+      "nextRolls": "Next rolls:",
+      "initialRoll": "Initial roll"
     },
     "preview": "Artifact Preview",
     "dupArt": "Duplicate artifact detected",

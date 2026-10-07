@@ -1,0 +1,176 @@
+{
+  "name": "Vodyanitsa",
+  "title": "Nachhallendes Sirenenlied",
+  "description": "Die Primadonna der Korolevskiy-Theaterkompanie, eine Wasser-Unholdin, die sich von ihresgleichen entfernt hat.",
+  "constellationName": "Piscicula Aurea",
+  "auto": {
+    "name": "Wasserarie",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Singt das uralte Lied des Wasser-Unholds und führt bis zu 4 aufeinanderfolgende Angriffe aus, die <hydro>Hydro-Schaden</hydro> verursachen."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und schleudert eine Wasserkugel nach vorn, die <hydro>Hydro-Schaden</hydro> verursacht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <hydro>Hydro-Flächenschaden</hydro>."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge",
+      "5": "Ausdauerverbrauch heftiger Schläge",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Rezitierung – Morgenstimmen im Strom",
+    "description": {
+      "0": "Nimmt die wahre Gestalt des Wasser-Unholds an und verursacht <hydro>Hydro-Flächenschaden</hydro>. Verleiht zudem den Effekt <strong>Lied der Ferne</strong>: Vodyanitsa beschwört während der Wirkungsdauer das uralte <strong>Frühlingshorn</strong> herbei, das sich in bestimmten Abständen schnell zu einem Gegner bewegt, um ihn anzugreifen und ihm <hydro>Hydro-SCH</hydro> zuzufügen.",
+      "1": "Verringert den <hydro>Hydro-WDS</hydro> sowie <cryo>Kryo-WDS</cryo> von Gegnern, die von obigen beiden Angriffen getroffen wurden. Erhöht während der Dauer des Effekts <strong>Lied der Ferne</strong> zudem den Unterbrechungs-WDS des eigenen aktuellen Truppenmitglieds und stellt diesem in regelmäßigen Abständen LP wieder her. Die Menge der wiederhergestellten LP hängt von Vodyanitsas max. LP ab."
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Dauer",
+      "2": "Angriffsintervall von Frühlingshorn",
+      "3": "Frühlingshorn-SCH",
+      "4": "Heilung durch „Lied der Ferne“",
+      "5": "Heilungsintervall von „Lied der Ferne“",
+      "6": "Verringerung des Hydro-/Kryo-WDS",
+      "7": "Dauer des verringerten WDS",
+      "8": "Abklingzeit der Fähigkeit",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Koda – Mit dir versinken",
+    "description": {
+      "0": "Der Gesang lockt mit dem Lied des Wasser-Unholds in den Untergang und verursacht <hydro>Hydro-Flächenschaden</hydro>.",
+      "1": "Erhöht im Zustand <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Lied der Ferne</tooltip></strong> den verursachten Schaden zusätzlich."
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "SCH-Bonus für „Lied der Ferne“",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Die letzte Djeguako-Sängerin",
+    "description": {
+      "0": "Wandelt beim Anwenden der Elementarfähigkeit <strong>Rezitierung – Morgenstimmen im Strom</strong> alle aktuell vorhandenen Sternenglanz-Wirbelwinde in „Fließende Wirbelwinde“ um. Truppenmitglieder in der Nähe generieren zudem während der Dauer des Effekts <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Lied der Ferne</tooltip></strong> beim Auslösen einer Stellar-Verwirbelung statt eines Sternenglanz-Wirbelwinds einen fließenden Wirbelwind.",
+      "1": "Verringert zudem, wenn ein fließender Wirbelwind generiert oder zur Explosion gebracht wird, den <anemo>Anemo-WDS</anemo> von Gegnern in der Nähe 6 s lang um 35 %.",
+      "2": "Verlängert zudem, wenn Truppenmitglieder in der Nähe während der Wirkungsdauer von <strong>Lied der Ferne</strong> in den Zustand <strong>Leuchten – Stellar-Verwirbelung</strong> eintreten, die Dauer dieses Zustands um 4 s."
+    }
+  },
+  "passive2": {
+    "name": "Trauerlied des Fandyr",
+    "description": {
+      "0": "Verleiht Vodyanitsa beim Anwenden der Elementarfähigkeit <strong>Rezitierung – Morgenstimmen im Strom</strong> zudem 25 Stapelungen <tooltip ns=tooltips_gen baseKey18=11400001 values=[]><strong>Leitgesang</strong></tooltip> sowie 10 Stapelungen <tooltip ns=tooltips_gen baseKey18=11400002 values=[]><strong>Chor</strong></tooltip>.",
+      "1": "Die beiden obigen Effekte dauern jeweils 30 s und ihre Stapelungen werden beim Anwenden der Elementarfähigkeit aktualisiert."
+    }
+  },
+  "passive3": {
+    "name": "Nachhall am gefrorenen See",
+    "description": {
+      "0": "Verwandelt Vodyanitsa, wenn sie sich nicht im Kampf befindet, beim Gedrückthalten der Elementarfähigkeit in ihre wahre Gestalt als Wasser-Unhold und kann so durch Verbrauch von Ausdauer bis zu 10 s lang schwimmen. Als Wasser-Unhold kann sie sich natürlich auch auf Wasseroberflächen bewegen. Beim erneuten Anwenden der Elementarfähigkeit, nach Ablauf der Dauer oder bei Aufbrauch der Ausdauer hält Vodyanitsa nicht länger ihre wahre Gestalt als Wasser-Unhold aufrecht.",
+      "1": "Erhöht Vodyanitsas Schwimmgeschwindigkeit, dabei wird jedoch auch ihre Ausdauer schneller verbraucht."
+    }
+  },
+  "passive": {
+    "name": "Verlockende Stimme ohne Saiten",
+    "description": {
+      "0": "Als Primadonna der Korolevskiy-Theaterkompanie singt Vodyanitsa beim Spielen eines Instruments persönlich, anstatt es zu spielen."
+    }
+  },
+  "constellation1": {
+    "name": "Wasser im Rampenlicht",
+    "description": {
+      "0": "Erhöht, wenn Vodyanitsa den Heilungseffekt von <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Lied der Ferne</tooltip></strong> auslöst, zudem den ANG aller Truppenmitglieder in der Nähe 5 s lang um 0,8 % von Vodyanitsas max. LP."
+    }
+  },
+  "constellation2": {
+    "name": "Sturm und Schnee durchdringender Nachhall",
+    "description": {
+      "0": "Verleiht Vodyanitsa, wenn sie mit dem <strong>Frühlingshorn</strong> aus <strong>Rezitierung – Morgenstimmen im Strom</strong> einen Gegner angreift, den Effekt „Zwei Stimmen in Schwarz und Weiß“, der den kritischen Schaden durch <hydro>Hydro-SCH</hydro> und <cryo>Kryo-SCH</cryo> des eigenen, aktuellen Truppenmitglieds 5 s lang um 50 % erhöht.",
+      "1": "Erhöht, wenn sich auf dem Feld ein fließender Wirbelwind befindet oder innerhalb der letzten 5 s ein solcher explodiert ist, stattdessen den kritischen Schaden durch die Reaktion Stellar-Verwirbelung des eigenen, aktuellen Truppenmitglieds 5 s lang um 60 %.",
+      "2": "Verstärkt zudem die Elementarfähigkeit <strong>Rezitierung – Morgenstimmen im Strom</strong>: Verlängert die Dauer des Effekts <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Lied der Ferne</tooltip></strong> um 9 s."
+    }
+  },
+  "constellation3": {
+    "name": "Lied an einem Frühlingsmorgen",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Rezitierung – Morgenstimmen im Strom</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Melancholische Stimme auf Wellen",
+    "description": {
+      "0": "Löst, wenn Vodyanitsa den Heilungseffekt von <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Lied der Ferne</tooltip></strong> auslöst, abhängig von den LP der zu heilenden Figur unterschiedliche Effekte aus. Wenn die LP der zu heilenden Figur:",
+      "1": [
+        " bei unter 40 % liegen: Erhöht den Heilungswert dieser Heilung um 50 %.",
+        " nicht bei unter 40 % liegen: Erhöht Vodyanitsas max. LP 6 s lang um 20 %, 3-fach stapelbar. Die Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Zusammen in der Tiefe versinken",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=burst>Koda – Mit dir versinken</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Niemals endendes Festlied",
+    "description": {
+      "0": "Verstärkt den Effekt des Sternbilds <strong>Sturm und Schnee durchdringender Nachhall</strong>: „Zwei Stimmen in Schwarz und Weiß“ wird nun auf alle Truppenmitglieder in der Nähe angewendet.",
+      "1": "<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Steigert</strong></tooltip> zudem während der Wirkungsdauer von <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Lied der Ferne</tooltip></strong> den von Truppenmitgliedern in der Nähe durch die Reaktion Stellar-Verwirbelung verursachten Schaden um 25 % und erhöht den von ihnen verursachten <hydro>Hydro-SCH</hydro> und <cryo>Kryo-SCH</cryo> um 60 %."
+    }
+  }
+}

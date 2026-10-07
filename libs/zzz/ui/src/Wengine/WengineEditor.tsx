@@ -223,13 +223,15 @@ export function WengineEditor({
                             fontWeight: 'bold',
                           }}
                         >
-                          <StatDisplay statKey={'atk'} />
+                          <StatDisplay statKey={wengineStat['base_statkey']} />
                         </Typography>
                         <Typography
                           variant="subtitle1"
                           sx={{ fontWeight: 'bold' }}
                         >
-                          {wengineStats?.['atk_base'].toFixed()}
+                          {wengineStats?.[
+                            wengineStat['base_statkey']
+                          ].toFixed()}
                         </Typography>
                       </Box>
 

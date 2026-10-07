@@ -1,0 +1,24 @@
+{
+  "name": "Ritornello della brezza",
+  "description": {
+    "0": "Un arco verde scuro realizzato a partire da una gemma pura e impeccabile. Evoca una calda brezza primaverile ogni volta che la sua corda viene tesa."
+  },
+  "passiveName": "Ballata della vipera",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta la ricarica d'energia di un <cryo>20%</cryo>. Quando il personaggio che equipaggia l'arma colpisce un avversario con la sua abilità elementale o il suo Tripudio elementale, ottiene un accumulo di \"Inno immacolato\". L'effetto può attivarsi una volta ogni 0,03 s, e può accumularsi per un massimo di 3 volte. Al raggiungimento dei 3 accumuli, tutte le iterazioni di \"Inno immacolato\" vengono rimosse e sostituite da \"Inganno viperino\", che conferisce ai membri vicini del gruppo un aumento dei DAN da reazione di Barlume astrale di un <cryo>24%</cryo> per 12 s, durante i quali non è possibile ottenere accumuli di \"Inno immacolato\". Gli effetti sopracitati possono attivarsi anche se il personaggio che equipaggia l'arma non è in campo."
+    },
+    "1": {
+      "0": "Aumenta la ricarica d'energia di un <cryo>25%</cryo>. Quando il personaggio che equipaggia l'arma colpisce un avversario con la sua abilità elementale o il suo Tripudio elementale, ottiene un accumulo di \"Inno immacolato\". L'effetto può attivarsi una volta ogni 0,03 s, e può accumularsi per un massimo di 3 volte. Al raggiungimento dei 3 accumuli, tutte le iterazioni di \"Inno immacolato\" vengono rimosse e sostituite da \"Inganno viperino\", che conferisce ai membri vicini del gruppo un aumento dei DAN da reazione di Barlume astrale di un <cryo>30%</cryo> per 12 s, durante i quali non è possibile ottenere accumuli di \"Inno immacolato\". Gli effetti sopracitati possono attivarsi anche se il personaggio che equipaggia l'arma non è in campo."
+    },
+    "2": {
+      "0": "Aumenta la ricarica d'energia di un <cryo>30%</cryo>. Quando il personaggio che equipaggia l'arma colpisce un avversario con la sua abilità elementale o il suo Tripudio elementale, ottiene un accumulo di \"Inno immacolato\". L'effetto può attivarsi una volta ogni 0,03 s, e può accumularsi per un massimo di 3 volte. Al raggiungimento dei 3 accumuli, tutte le iterazioni di \"Inno immacolato\" vengono rimosse e sostituite da \"Inganno viperino\", che conferisce ai membri vicini del gruppo un aumento dei DAN da reazione di Barlume astrale di un <cryo>36%</cryo> per 12 s, durante i quali non è possibile ottenere accumuli di \"Inno immacolato\". Gli effetti sopracitati possono attivarsi anche se il personaggio che equipaggia l'arma non è in campo."
+    },
+    "3": {
+      "0": "Aumenta la ricarica d'energia di un <cryo>35%</cryo>. Quando il personaggio che equipaggia l'arma colpisce un avversario con la sua abilità elementale o il suo Tripudio elementale, ottiene un accumulo di \"Inno immacolato\". L'effetto può attivarsi una volta ogni 0,03 s, e può accumularsi per un massimo di 3 volte. Al raggiungimento dei 3 accumuli, tutte le iterazioni di \"Inno immacolato\" vengono rimosse e sostituite da \"Inganno viperino\", che conferisce ai membri vicini del gruppo un aumento dei DAN da reazione di Barlume astrale di un <cryo>42%</cryo> per 12 s, durante i quali non è possibile ottenere accumuli di \"Inno immacolato\". Gli effetti sopracitati possono attivarsi anche se il personaggio che equipaggia l'arma non è in campo."
+    },
+    "4": {
+      "0": "Aumenta la ricarica d'energia di un <cryo>40%</cryo>. Quando il personaggio che equipaggia l'arma colpisce un avversario con la sua abilità elementale o il suo Tripudio elementale, ottiene un accumulo di \"Inno immacolato\". L'effetto può attivarsi una volta ogni 0,03 s, e può accumularsi per un massimo di 3 volte. Al raggiungimento dei 3 accumuli, tutte le iterazioni di \"Inno immacolato\" vengono rimosse e sostituite da \"Inganno viperino\", che conferisce ai membri vicini del gruppo un aumento dei DAN da reazione di Barlume astrale di un <cryo>48%</cryo> per 12 s, durante i quali non è possibile ottenere accumuli di \"Inno immacolato\". Gli effetti sopracitati possono attivarsi anche se il personaggio che equipaggia l'arma non è in campo."
+    }
+  }
+}

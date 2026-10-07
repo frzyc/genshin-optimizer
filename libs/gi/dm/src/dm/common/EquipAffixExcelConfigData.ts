@@ -1,9 +1,47 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import { layeredAssignment, nameToKey } from '@genshin-optimizer/common/util'
-import type { PropTypeKey, WeaponId } from '../../mapping'
+import {
+  deobfPropMappings,
+  type PropTypeKey,
+  type WeaponId,
+} from '../../mapping'
 import { TextMapEN } from '../../TextMapUtil'
 import { readDMJSON } from '../../util'
 
+type EquipAffixExcelConfigDataObf = {
+  affixId: number //1125034,
+  id: WeaponId //112503,
+  level?: number //4,
+  nameTextMapHash: number //2433755451,
+  descTextMapHash: number //3899169753,
+  openConfig: string //"Weapon_Claymore_Widsith",
+  addProps: Array<
+    | {
+        propType: PropTypeKey //"FIGHT_PROP_ATTACK_PERCENT",
+        [deobfPropMappings.value]: number //0.3199999928474426
+      }
+    | Record<string, never>
+  >
+  // [
+  //   {
+  //     "propType": "FIGHT_PROP_ATTACK_PERCENT",
+  //     "value": 0.3199999928474426
+  //   },
+  //   {},
+  //   {}
+  // ],
+  paramList: number[]
+  // [
+  //   0.3199999928474426,
+  //   0.30000001192092896,
+  //   12.0,
+  //   0.23999999463558197,
+  //   0.4000000059604645,
+  //   20.0,
+  //   0.0,
+  //   0.0
+  // ]
+}
 type EquipAffixExcelConfigData = {
   affixId: number //1125034,
   id: WeaponId //112503,
@@ -40,13 +78,22 @@ type EquipAffixExcelConfigData = {
 }
 const equipAffixExcelConfigDataSrc = JSON.parse(
   readDMJSON('ExcelBinOutput/EquipAffixExcelConfigData.json')
-) as EquipAffixExcelConfigData[]
+) as EquipAffixExcelConfigDataObf[]
 
 const equipAffixExcelConfigData = {} as Record<
   string, // Affix ID
   EquipAffixExcelConfigData[]
 >
-equipAffixExcelConfigDataSrc.forEach((data) => {
+equipAffixExcelConfigDataSrc.forEach((dataObf) => {
+  const data: EquipAffixExcelConfigData = {
+    ...dataObf,
+    addProps: dataObf.addProps.map(
+      ({ [deobfPropMappings.value]: value, ...propRest }) => ({
+        ...propRest,
+        value,
+      })
+    ) as EquipAffixExcelConfigData['addProps'],
+  }
   const { id, level = 0 } = data
   if (!equipAffixExcelConfigData[id]) equipAffixExcelConfigData[id] = []
   layeredAssignment(equipAffixExcelConfigData, [id, level], data)
