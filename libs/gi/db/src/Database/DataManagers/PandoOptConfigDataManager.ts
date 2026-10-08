@@ -90,7 +90,7 @@ const pandoOptConfigSchema = z.object({
   setFilter4: zodFilteredArray(allArtifactSetKeys, []) as z.ZodType<
     ArtifactSetKey[]
   >,
-  allowRainbow: zodBoolean(true),
+  allowRainbow: zodBoolean(),
   useEquipped: zodBoolean(),
 
   optWeapon: zodBoolean(),
