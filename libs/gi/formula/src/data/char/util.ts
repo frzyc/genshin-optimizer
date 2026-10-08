@@ -205,7 +205,7 @@ export function entriesForChar(
     ),
     // WR `baseStats` (e.g. Lauma/Nefer innate EM). Skip def to match dataUtil.
     ...Object.entries(innateStats ?? {})
-      .filter(([stat, value]) => stat !== 'def' && value)
+      .filter(([stat, value]) => (stat as string) !== 'def' && value)
       .map(([stat, value]) =>
         (baseStats.has(stat)
           ? ownBuff.base[stat as 'atk' | 'def' | 'hp']

@@ -220,11 +220,14 @@ function artifactCandidate(art: ICachedArtifact): Candidate<string> {
   const { id, mainStatKey, mainStatVal, setKey, substats } = art
   return {
     id,
-    [mainStatKey]: mainStatVal,
+    [mainStatKey]: toDecimal(mainStatVal, mainStatKey),
     ...Object.fromEntries(
       substats
         .filter((sub): sub is typeof sub & { key: SubstatKey } => !!sub.key)
-        .map(({ key, accurateValue, value }) => [key, accurateValue || value])
+        .map(({ key, accurateValue, value }) => [
+          key,
+          toDecimal(accurateValue || value, key),
+        ])
     ),
     [setKey]: 1,
   } as Candidate<string>

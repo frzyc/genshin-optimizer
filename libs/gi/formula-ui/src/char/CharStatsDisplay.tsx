@@ -59,6 +59,15 @@ type DisplayedDim = {
   read: Read<Tag>
 }
 
+/** WR `total.enerRech_` includes 100% base; Pando `final.enerRech_` is bonus-only. */
+function isTotalEnerRechTag(tag: Tag) {
+  return tag.qt === 'final' && tag.q === 'enerRech_'
+}
+
+function totalEnerRechValue(value: number) {
+  return value + 1
+}
+
 const CatalogFieldRow = memo(function CatalogFieldRow({
   row,
 }: {
@@ -94,6 +103,12 @@ const CatalogFieldRow = memo(function CatalogFieldRow({
     [readByJoinId]
   )
 
+  const valueAdjust = useCallback(
+    (tag: EngineTag, value: number) =>
+      isTotalEnerRechTag(tag as Tag) ? totalEnerRechValue(value) : value,
+    []
+  )
+
   if (!displayed.length) return null
 
   const title = <TagDisplay tag={displayed[0]!.tag} plain />
@@ -107,6 +122,7 @@ const CatalogFieldRow = memo(function CatalogFieldRow({
           title,
         }}
         calcRead={read}
+        valueAdjust={isTotalEnerRechTag(tag) ? totalEnerRechValue : undefined}
         showZero
         component={ListItem}
       />
@@ -123,6 +139,7 @@ const CatalogFieldRow = memo(function CatalogFieldRow({
         })),
       }}
       getRead={getRead}
+      valueAdjust={valueAdjust}
       showZero
       component={ListItem}
     />

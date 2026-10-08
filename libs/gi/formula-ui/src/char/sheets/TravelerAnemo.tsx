@@ -1,13 +1,17 @@
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import type {
+  CharacterKey,
+  CharacterSheetKey,
+} from '@genshin-optimizer/gi/consts'
 import { conditionals, formulas } from '@genshin-optimizer/gi/formula'
 import { stg } from '../../util'
 import { charConditionalDocument } from '../charUiSheets'
 import type { TalentSheetElementKey } from '../consts'
 import { charTemplates } from '../util'
 
-const key: CharacterKey = 'TravelerAnemo'
-const ct = charTemplates(key)
+const sheetKey: CharacterSheetKey = 'TravelerAnemoF'
+const charKey: CharacterKey = 'TravelerAnemo'
+const ct = charTemplates(sheetKey)
 const formula = formulas.TravelerAnemo
 const cond = conditionals.TravelerAnemo
 
@@ -108,13 +112,13 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
-    charConditionalDocument(key, cond.skillAbsorption),
-    charConditionalDocument(key, cond.anemoBurstAbsorption),
-    charConditionalDocument(key, cond.anemoC6Hit),
-    charConditionalDocument(key, cond.bonusCanned),
-    charConditionalDocument(key, cond.bonusSkirk1),
-    charConditionalDocument(key, cond.bonusSkirk2),
-    charConditionalDocument(key, cond.bonusSkirk3),
+    charConditionalDocument(charKey, cond.skillAbsorption),
+    charConditionalDocument(charKey, cond.anemoBurstAbsorption),
+    charConditionalDocument(charKey, cond.anemoC6Hit),
+    charConditionalDocument(charKey, cond.bonusCanned),
+    charConditionalDocument(charKey, cond.bonusSkirk1),
+    charConditionalDocument(charKey, cond.bonusSkirk2),
+    charConditionalDocument(charKey, cond.bonusSkirk3),
   ]),
   burst: ct.talentTem('burst', [
     {
@@ -140,7 +144,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
-    charConditionalDocument(key, cond.lockedPassive),
+    charConditionalDocument(charKey, cond.lockedPassive),
   ]),
   passive1: ct.talentTem('passive1'),
   passive2: ct.talentTem('passive2'),

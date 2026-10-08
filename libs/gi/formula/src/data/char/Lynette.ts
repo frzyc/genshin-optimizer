@@ -87,7 +87,11 @@ const { a1AfterBurst, c6AfterThrust } = allBoolConditionals(info.key)
 const { burstAbsorb } = allListConditionals(info.key, [...absorbableEle])
 
 const a1AfterBurst_atk_ = a1AfterBurst.ifOn(
-  cmpGE(ascension, 1, percent(subscript(own.common.eleCount, dm.passive1.atk_)))
+  cmpGE(
+    ascension,
+    1,
+    percent(subscript(own.common.eleCount, [...dm.passive1.atk_]))
+  )
 )
 const a4BurstAbsorb_burst_dmg_ = cmpGE(
   ascension,

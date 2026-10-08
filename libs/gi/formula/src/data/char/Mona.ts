@@ -281,6 +281,6 @@ export default register(
   customParam('burst_bubbleDuration', dm.burst.bubbleDuration),
   customParam('burst_cd', dm.burst.cd),
   customParam('burst_enerCost', dm.burst.enerCost),
-  customParam('sprint_active_stam', dm.sprint.active_stam),
-  customParam('sprint_drain_stam', dm.sprint.drain_stam)
+  customParam('sprint_active_stam', dm.sprint.active_stam ?? 0),
+  customParam('sprint_drain_stam', dm.sprint.drain_stam ?? 0)
 )

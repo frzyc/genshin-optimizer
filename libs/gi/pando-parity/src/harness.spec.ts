@@ -1,5 +1,6 @@
 import {
   artSetPieces,
+  artStatsFromDisplay,
   buildPando,
   buildWrSolo,
   hitModeToCritMode,
@@ -46,6 +47,15 @@ describe('parity helpers', () => {
     expect(mapWrEnerRech(1.2)).toBeCloseTo(0.2)
     expect(mapWrFinal('enerRech_', 1)).toBeCloseTo(0)
     expect(mapWrFinal('atk', 100)).toBe(100)
+  })
+
+  test('artStatsFromDisplay converts DB display percents to decimals', () => {
+    expect(artStatsFromDisplay([{ key: 'enerRech_', display: 51.8 }])).toEqual([
+      { key: 'enerRech_', value: 0.518 },
+    ])
+    expect(artStatsFromDisplay([{ key: 'eleMas', display: 42 }])).toEqual([
+      { key: 'eleMas', value: 42 },
+    ])
   })
 
   test('hitModeToCritMode', () => {

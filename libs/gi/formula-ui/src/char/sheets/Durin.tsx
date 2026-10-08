@@ -172,9 +172,9 @@ const sheet: UISheet<TalentSheetElementKey> = {
         {
           title: stg('energyCost'),
           fieldRef: formula.burst_enerCost.tag,
-        }
+        },
       ],
-    }
+    },
   ]),
   passive1: ct.talentTem('passive1', [
     charConditionalDocument(key, cond.a1WhiteDendro, { teamBuff: true }),

@@ -1,5 +1,5 @@
 import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
-import { notEmpty } from '@genshin-optimizer/common/util'
+import { notEmpty, toDecimal } from '@genshin-optimizer/common/util'
 import type { Calculator } from '@genshin-optimizer/game-opt/engine'
 import { CalcContext } from '@genshin-optimizer/game-opt/formula-ui'
 import type {
@@ -316,12 +316,15 @@ function memberAndEquipmentEntries(
     .map((art) => ({
       set: art.setKey,
       stats: [
-        { key: art.mainStatKey, value: art.mainStatVal },
+        {
+          key: art.mainStatKey,
+          value: toDecimal(art.mainStatVal, art.mainStatKey),
+        },
         ...art.substats
           .filter((s): s is typeof s & { key: SubstatKey } => !!s.key)
           .map((s) => ({
             key: s.key,
-            value: s.accurateValue || s.value,
+            value: toDecimal(s.accurateValue || s.value, s.key),
           })),
       ],
     }))

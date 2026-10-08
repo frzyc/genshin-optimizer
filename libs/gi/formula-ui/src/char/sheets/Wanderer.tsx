@@ -97,9 +97,9 @@ const sheet: UISheet<TalentSheetElementKey> = {
         {
           title: ct.chg('skill.skillParams.0'),
           fieldRef: formula.skill.tag,
-        }
+        },
       ],
-    }
+    },
   ]),
   burst: ct.talentTem('burst', [
     {
@@ -151,7 +151,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
   constellation6: ct.talentTem('constellation6', [
     {
       type: 'fields',
-      fields: [formula.c6_0, formula.c6_1, formula.c6_2],
+      fields: [formula.c6_0, formula.c6_1, formula.c6_2].map(({ tag }, i) => ({
+        title: ct.chg(`auto.skillParams.${i}`),
+        fieldRef: tag,
+      })),
     },
   ]),
 }

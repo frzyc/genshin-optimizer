@@ -1,13 +1,17 @@
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import type {
+  CharacterKey,
+  CharacterSheetKey,
+} from '@genshin-optimizer/gi/consts'
 import { conditionals, formulas } from '@genshin-optimizer/gi/formula'
 import { stg } from '../../util'
 import { charConditionalDocument } from '../charUiSheets'
 import type { TalentSheetElementKey } from '../consts'
 import { charTemplates } from '../util'
 
-const key: CharacterKey = 'TravelerElectro'
-const ct = charTemplates(key)
+const sheetKey: CharacterSheetKey = 'TravelerElectroF'
+const charKey: CharacterKey = 'TravelerElectro'
+const ct = charTemplates(sheetKey)
 const formula = formulas.TravelerElectro
 const cond = conditionals.TravelerElectro
 
@@ -85,21 +89,21 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
-    charConditionalDocument(key, cond.bonusCanned),
-    charConditionalDocument(key, cond.bonusSkirk1),
-    charConditionalDocument(key, cond.bonusSkirk2),
-    charConditionalDocument(key, cond.bonusSkirk3),
-    charConditionalDocument(key, cond.electroC2Thunder),
-    charConditionalDocument(key, cond.electroSkillAmulet),
+    charConditionalDocument(charKey, cond.bonusCanned),
+    charConditionalDocument(charKey, cond.bonusSkirk1),
+    charConditionalDocument(charKey, cond.bonusSkirk2),
+    charConditionalDocument(charKey, cond.bonusSkirk3),
+    charConditionalDocument(charKey, cond.electroC2Thunder),
+    charConditionalDocument(charKey, cond.electroSkillAmulet),
     {
       type: 'fields',
       fields: [
         {
           title: ct.chg('skill.skillParams.0'),
           fieldRef: formula.skill.tag,
-        }
+        },
       ],
-    }
+    },
   ]),
   burst: ct.talentTem('burst', [
     {
@@ -127,7 +131,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
   passive3: ct.talentTem('passive3'),
   constellation1: ct.talentTem('constellation1'),
   constellation2: ct.talentTem('constellation2', [
-    charConditionalDocument(key, cond.lockedPassive, { teamBuff: true }),
+    charConditionalDocument(charKey, cond.lockedPassive, { teamBuff: true }),
   ]),
   constellation3: ct.talentTem('constellation3'),
   constellation4: ct.talentTem('constellation4'),

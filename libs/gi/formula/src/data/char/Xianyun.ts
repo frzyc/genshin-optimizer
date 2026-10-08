@@ -116,7 +116,7 @@ const a1_plunging_critRate_ = cmpGE(
   cmpGE(
     a1Stacks,
     1,
-    percent(subscript(sum(a1Stacks, -1), dm.passive1.critRate))
+    percent(subscript(sum(a1Stacks, -1), [...dm.passive1.critRate]))
   )
 )
 const a4IncRatio = cmpGE(
@@ -142,7 +142,7 @@ const c6Wave_critDMG_ = cmpGE(
     c6SkyladderUses,
     1,
     percent(
-      subscript(sum(c6SkyladderUses, -1), dm.constellation6.skill_critDMG_)
+      subscript(sum(c6SkyladderUses, -1), [...dm.constellation6.skill_critDMG_])
     )
   )
 )

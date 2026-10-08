@@ -184,6 +184,7 @@ export function MultiTagFieldDisplay({
   onMouseEnter,
   onMouseLeave,
   getRead,
+  valueAdjust,
 }: {
   field: MultiTagField
   component?: ElementType
@@ -193,6 +194,7 @@ export function MultiTagFieldDisplay({
   onMouseLeave?: () => void
   /** Resolve a listing `Read` instead of `read(fieldRef)`. */
   getRead?: (tag: Tag) => Read | BaseRead
+  valueAdjust?: (tag: Tag, value: number) => number
 }) {
   const calc = useContext(CalcContext)
   const compareCalc = useContext(CompareCalcContext)
@@ -292,10 +294,17 @@ export function MultiTagFieldDisplay({
         }}
       >
         {computed.map(
-          ({ label, fieldRead, valueCalcRes, compareCalcValue }) => {
-            const calcValue = valueCalcRes.val
-            if (!showZero && !calcValue && !compareCalcValue) return null
-            const tag = fieldRead.tag
+          ({ label, fieldRef, fieldRead, valueCalcRes, compareCalcValue }) => {
+            const rawValue = valueCalcRes.val as number
+            const calcValue = valueAdjust
+              ? valueAdjust(fieldRef, rawValue)
+              : rawValue
+            const compareValue =
+              compareCalcValue !== undefined && valueAdjust
+                ? valueAdjust(fieldRef, compareCalcValue as number)
+                : compareCalcValue
+            if (!showZero && !calcValue && !compareValue) return null
+            const tag = fieldRead.tag ?? fieldRef
             const unit = getUnitStr(tag['name'] || tag['q'] || '')
             return (
               <Box
@@ -318,7 +327,7 @@ export function MultiTagFieldDisplay({
                 )}
                 <CompareValueDisplay
                   calcValue={calcValue}
-                  compareCalcValue={compareCalcValue}
+                  compareCalcValue={compareValue}
                   unit={unit}
                 />
                 <FormulaHelpIcon
@@ -340,6 +349,7 @@ export function TagFieldDisplay({
   emphasize,
   showZero = process.env['NODE_ENV'] === 'development',
   calcRead: calcReadOverride,
+  valueAdjust,
   rowSx,
   onMouseEnter,
   onMouseLeave,
@@ -352,6 +362,8 @@ export function TagFieldDisplay({
   showZero?: boolean
   /** Use when `listFormulas` returns a full `Read`. */
   calcRead?: Read
+  /** Adjust displayed value; formula tooltip still uses raw `calcRead`. */
+  valueAdjust?: (value: number) => number
   rowSx?: SxProps<Theme>
   onMouseEnter?: () => void
   onMouseLeave?: () => void
@@ -377,18 +389,23 @@ export function TagFieldDisplay({
   const { multi, icon, title, subtitle, unit: unitOverride } = field
   const multiDisplay = multi && <span>{multi}&#215;</span>
 
-  const calcValue = valueCalcRes.val
+  const calcValue = valueAdjust
+    ? valueAdjust(valueCalcRes.val as number)
+    : valueCalcRes.val
+  const compareValue =
+    compareCalcValue !== undefined && valueAdjust
+      ? valueAdjust(compareCalcValue as number)
+      : compareCalcValue
 
-  if (!showZero && !calcValue && !compareCalcValue) return null
+  if (!showZero && !calcValue && !compareValue) return null
 
-  const unit =
-    unitOverride ??
-    getUnitStr(fieldRead.tag['q'] || fieldRead.tag['name'] || '')
+  const unitTag = fieldRead.tag ?? field.fieldRef
+  const unit = unitOverride ?? getUnitStr(unitTag['q'] || unitTag['name'] || '')
 
   const fieldVal = (
     <CompareValueDisplay
       calcValue={calcValue}
-      compareCalcValue={compareCalcValue}
+      compareCalcValue={compareValue}
       unit={unit}
     />
   )

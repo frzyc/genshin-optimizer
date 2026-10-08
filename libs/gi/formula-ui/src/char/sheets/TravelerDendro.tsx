@@ -1,13 +1,17 @@
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import type {
+  CharacterKey,
+  CharacterSheetKey,
+} from '@genshin-optimizer/gi/consts'
 import { conditionals, formulas } from '@genshin-optimizer/gi/formula'
 import { stg } from '../../util'
 import { charConditionalDocument } from '../charUiSheets'
 import type { TalentSheetElementKey } from '../consts'
 import { charTemplates } from '../util'
 
-const key: CharacterKey = 'TravelerDendro'
-const ct = charTemplates(key)
+const sheetKey: CharacterSheetKey = 'TravelerDendroF'
+const charKey: CharacterKey = 'TravelerDendro'
+const ct = charTemplates(sheetKey)
 const formula = formulas.TravelerDendro
 const cond = conditionals.TravelerDendro
 
@@ -85,20 +89,20 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
-    charConditionalDocument(key, cond.bonusCanned),
-    charConditionalDocument(key, cond.bonusSkirk1),
-    charConditionalDocument(key, cond.bonusSkirk2),
-    charConditionalDocument(key, cond.bonusSkirk3),
-    charConditionalDocument(key, cond.lockedPassive),
+    charConditionalDocument(charKey, cond.bonusCanned),
+    charConditionalDocument(charKey, cond.bonusSkirk1),
+    charConditionalDocument(charKey, cond.bonusSkirk2),
+    charConditionalDocument(charKey, cond.bonusSkirk3),
+    charConditionalDocument(charKey, cond.lockedPassive),
     {
       type: 'fields',
       fields: [
         {
           title: ct.chg('skill.skillParams.0'),
           fieldRef: formula.skill.tag,
-        }
+        },
       ],
-    }
+    },
   ]),
   burst: ct.talentTem('burst', [
     {
@@ -122,7 +126,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
     },
   ]),
   passive1: ct.talentTem('passive1', [
-    charConditionalDocument(key, cond.a1Stacks, { teamBuff: true }),
+    charConditionalDocument(charKey, cond.a1Stacks, { teamBuff: true }),
   ]),
   passive2: ct.talentTem('passive2'),
   passive3: ct.talentTem('passive3'),
@@ -132,8 +136,8 @@ const sheet: UISheet<TalentSheetElementKey> = {
   constellation4: ct.talentTem('constellation4'),
   constellation5: ct.talentTem('constellation5'),
   constellation6: ct.talentTem('constellation6', [
-    charConditionalDocument(key, cond.c6BurstEffect, { teamBuff: true }),
-    charConditionalDocument(key, cond.c6BurstEle, { teamBuff: true }),
+    charConditionalDocument(charKey, cond.c6BurstEffect, { teamBuff: true }),
+    charConditionalDocument(charKey, cond.c6BurstEle, { teamBuff: true }),
   ]),
 }
 

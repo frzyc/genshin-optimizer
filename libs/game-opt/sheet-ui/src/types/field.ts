@@ -26,7 +26,7 @@ export type TextField = {
   icon?: ReactNode
   fieldValue: ReactNode
   toFixed?: number
-  unit?: string
+  unit?: ReactNode
 }
 
 export type Field = TagField | TextField | MultiTagField

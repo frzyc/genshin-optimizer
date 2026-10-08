@@ -50,9 +50,9 @@ function buildTagFieldMap() {
 
   for (const [sheetKey, catalog] of Object.entries(formulaCatalog)) {
     if (sheetKey === STAT_SHEET) continue
-    const charFormulas = (formulas as Record<string, Record<string, { tag: Tag }>>)[
-      sheetKey
-    ]
+    const charFormulas = (
+      formulas as Record<string, Record<string, { tag: Tag }>>
+    )[sheetKey]
     if (!charFormulas) continue
 
     for (const entry of Object.values(catalog)) {

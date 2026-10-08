@@ -1,13 +1,17 @@
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import type {
+  CharacterKey,
+  CharacterSheetKey,
+} from '@genshin-optimizer/gi/consts'
 import { conditionals, formulas } from '@genshin-optimizer/gi/formula'
 import { stg } from '../../util'
 import { charConditionalDocument } from '../charUiSheets'
 import type { TalentSheetElementKey } from '../consts'
 import { charTemplates } from '../util'
 
-const key: CharacterKey = 'TravelerHydro'
-const ct = charTemplates(key)
+const sheetKey: CharacterSheetKey = 'TravelerHydroF'
+const charKey: CharacterKey = 'TravelerHydro'
+const ct = charTemplates(sheetKey)
 const formula = formulas.TravelerHydro
 const cond = conditionals.TravelerHydro
 
@@ -90,13 +94,13 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
-    charConditionalDocument(key, cond.suffusion),
-    charConditionalDocument(key, cond.bonusCanned),
-    charConditionalDocument(key, cond.bonusSkirk1),
-    charConditionalDocument(key, cond.bonusSkirk2),
-    charConditionalDocument(key, cond.bonusSkirk3),
-    charConditionalDocument(key, cond.lockedPassive),
-    charConditionalDocument(key, cond.lockedPassiveHp),
+    charConditionalDocument(charKey, cond.suffusion),
+    charConditionalDocument(charKey, cond.bonusCanned),
+    charConditionalDocument(charKey, cond.bonusSkirk1),
+    charConditionalDocument(charKey, cond.bonusSkirk2),
+    charConditionalDocument(charKey, cond.bonusSkirk3),
+    charConditionalDocument(charKey, cond.lockedPassive),
+    charConditionalDocument(charKey, cond.lockedPassiveHp),
   ]),
   burst: ct.talentTem('burst', [
     {
@@ -135,7 +139,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
     },
   ]),
   passive2: ct.talentTem('passive2', [
-    charConditionalDocument(key, cond.a4HpConsumedPercent),
+    charConditionalDocument(charKey, cond.a4HpConsumedPercent),
   ]),
   passive3: ct.talentTem('passive3'),
   constellation1: ct.talentTem('constellation1'),

@@ -171,7 +171,7 @@ export default register(
     )
   ),
   dmg('c4', info, 'atk', dm.skill.hold1_2, 'skill', {
-    baseMulti: dm.constellation4.dmg,
+    baseMulti: percent(dm.constellation4.dmg),
     cond: cmpGE(constellation, 4, 'infer', ''),
   }),
 

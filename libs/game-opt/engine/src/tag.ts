@@ -51,7 +51,7 @@ export const createAllListConditionals =
   <T extends string, Tag_ extends Tag>(nullTag: Tag_) =>
   (sheet: Sheet<Tag>, list: T[], ignored?: CondIgnored) =>
     allConditionals(nullTag, sheet, ignored, { type: 'list', list }, (r) => ({
-      map: (table: Record<T, number>, def = 0) =>
+      map: (table: Record<T, number | NumNode>, def: number | NumNode = 0) =>
         subscript(r, [def, ...list.map((v) => table[v] ?? def)]),
       value: r,
     }))

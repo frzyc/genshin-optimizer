@@ -1,3 +1,4 @@
+import { toDecimal } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
   CharacterKey,
@@ -5,7 +6,11 @@ import type {
   SubstatKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
-import type { ICachedCharacter, ICachedWeapon } from '@genshin-optimizer/gi/db'
+import type {
+  ICachedArtifact,
+  ICachedCharacter,
+  ICachedWeapon,
+} from '@genshin-optimizer/gi/db'
 import {
   artifactsData,
   type Calculator,
@@ -36,6 +41,7 @@ import type { Data, NumNode } from '@genshin-optimizer/gi/wr'
 import {
   common,
   constant,
+  dataObjForArtifact,
   dataObjForCharacter,
   dataObjForWeapon,
   input,
@@ -95,6 +101,65 @@ export type ParityMember = {
   char: ParityChar
   weapon: ParityWeapon
   arts?: readonly ParityArt[]
+  /**
+   * WR uses `dataObjForArtifact` (raw main stat from level/rarity).
+   * Pando uses `pandoArtsFromCached` (display `mainStatVal` / substat → decimal),
+   * matching `CharCalcProvider`.
+   */
+  cachedArts?: readonly ICachedArtifact[]
+}
+
+/** `ICachedArtifact` / UI stores display percents; parity `arts` stats use decimals. */
+export function artStatsFromDisplay(
+  stats: readonly { key: MainStatKey | SubstatKey; display: number }[]
+): ParityArt['stats'] {
+  return stats.map(({ key, display }) => ({
+    key,
+    value: toDecimal(display, key),
+  }))
+}
+
+export function parityArtFromDisplay(
+  set: ArtifactSetKey,
+  stats: readonly { key: MainStatKey | SubstatKey; display: number }[]
+): ParityArt {
+  return { set, stats: artStatsFromDisplay(stats) }
+}
+
+/** gi-frontend `CharCalcProvider` artifact stat wiring for Pando `artifactsData`. */
+export function pandoArtsFromCached(
+  cached: readonly ICachedArtifact[]
+): ParityArt[] {
+  return cached.map((art) => ({
+    set: art.setKey,
+    stats: [
+      {
+        key: art.mainStatKey,
+        value: toDecimal(art.mainStatVal, art.mainStatKey),
+      },
+      ...art.substats
+        .filter((s): s is typeof s & { key: SubstatKey } => !!s.key)
+        .map((s) => ({
+          key: s.key,
+          value: toDecimal(s.accurateValue || s.value, s.key),
+        })),
+    ],
+  }))
+}
+
+function wrArtLayers(member: ParityMember): Data {
+  const layers: Data[] = [
+    ...(member.cachedArts?.map((art) => dataObjForArtifact(art)) ?? []),
+    wrArtsData(member.arts),
+  ].filter((layer) => Object.keys(layer).length)
+  return layers.length ? mergeData(layers) : {}
+}
+
+function pandoArtPieces(member: ParityMember): ParityArt[] {
+  return [
+    ...(member.arts ?? []),
+    ...pandoArtsFromCached(member.cachedArts ?? []),
+  ]
 }
 
 /** `count` dummy pieces of `set` (empty stats = set-bonus-only probe). */
@@ -370,7 +435,7 @@ export function buildWrSolo(fixture: ParityFixture) {
   const data: Data[] = [
     dataObjForWeapon(weapon),
     charObj,
-    wrArtsData(member.arts),
+    wrArtLayers(member),
     conditionalLayer,
     ...(tallyLayer ? [tallyLayer] : []),
     mergeData([characterSheet.data, weaponSheetsData, allArtifactData]),
@@ -397,7 +462,7 @@ export function buildPando(
         String(i) as Member,
         ...charData(member.char as never),
         ...weaponData(member.weapon as never),
-        ...artifactsData([...(member.arts ?? [])])
+        ...artifactsData(pandoArtPieces(member))
       )
     ),
     ...(fixture.pandoConditionals ?? []).map(

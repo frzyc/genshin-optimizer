@@ -80,7 +80,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
       fields: [
         {
           title: ct.chg('skill.skillParams.3'),
-          unit: st('percentCurrentHP'),
+          subtitle: st('percentCurrentHP'),
           fieldRef: formula.skill_cost.tag,
         },
         {

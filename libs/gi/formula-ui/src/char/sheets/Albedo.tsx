@@ -99,9 +99,9 @@ const sheet: UISheet<TalentSheetElementKey> = {
         {
           title: ct.chg('skill.skillParams.0'),
           fieldRef: formula.skill.tag,
-        }
+        },
       ],
-    }
+    },
   ]),
   burst: ct.talentTem('burst', [
     {
@@ -133,9 +133,9 @@ const sheet: UISheet<TalentSheetElementKey> = {
         {
           title: stg('energyCost'),
           fieldRef: formula.burst_enerCost.tag,
-        }
+        },
       ],
-    }
+    },
   ]),
   passive1: ct.talentTem('passive1', [
     charConditionalDocument(key, cond.p1EnemyHp),
