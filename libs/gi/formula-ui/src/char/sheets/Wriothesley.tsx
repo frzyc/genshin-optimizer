@@ -133,6 +133,30 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ct.chg('burst.skillParams.0'),
+          multi: 5,
+          fieldRef: formula.burst.tag,
+        },
+        {
+          title: ct.chg('burst.skillParams.2'),
+          unit: 's',
+          fieldRef: formula.burst_cd.tag,
+        },
+        {
+          title: ct.chg('burst.skillParams.3'),
+          unit: 's',
+          fieldRef: formula.burst_bladeCd.tag,
+        },
+        {
+          title: stg('energyCost'),
+          fieldRef: formula.burst_enerCost.tag,
+        }
+      ],
+    }
   ]),
   passive1: ct.talentTem('passive1'),
   passive2: ct.talentTem('passive2', [

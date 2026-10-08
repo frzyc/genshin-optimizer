@@ -65,7 +65,7 @@ function dmgFormulaPathToCandidates(path: string): string[] {
       return [`plunging_${field}`]
     case 'skill':
       if (field === 'press') return ['skill', `skill_${field}`]
-      if (field === 'dmg') return ['skill_plunging_dmg', `skill_${field}`]
+      if (field === 'dmg') return ['skill', `skill_${field}`]
       if (field === 'low') return ['skill_plunging_low', `skill_${field}`]
       if (field === 'high') return ['skill_plunging_high', `skill_${field}`]
       return [`skill_${field}`]

@@ -123,6 +123,58 @@ const sheet: UISheet<TalentSheetElementKey> = {
       ],
     },
     charConditionalDocument(key, cond.burstForm, { teamBuff: true }),
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ct.chg('burst.skillParams.0'),
+          subtitle: '(1)',
+          fieldRef: formula.burst_purityDmg1.tag,
+        },
+        {
+          title: ct.chg('burst.skillParams.0'),
+          subtitle: '(2)',
+          fieldRef: formula.burst_purityDmg2.tag,
+        },
+        {
+          title: ct.chg('burst.skillParams.0'),
+          subtitle: '(3)',
+          fieldRef: formula.burst_purityDmg3.tag,
+        },
+        {
+          title: ct.chg('burst.skillParams.1'),
+          subtitle: '(1)',
+          fieldRef: formula.burst_darkDmg1.tag,
+        },
+        {
+          title: ct.chg('burst.skillParams.1'),
+          subtitle: '(2)',
+          fieldRef: formula.burst_darkDmg2.tag,
+        },
+        {
+          title: ct.chg('burst.skillParams.1'),
+          subtitle: '(3)',
+          fieldRef: formula.burst_darkDmg3.tag,
+        },
+        {
+          title: ct.chg('burst.skillParams.2'),
+          fieldRef: formula.burst_whiteDmg.tag,
+        },
+        {
+          title: ct.chg('burst.skillParams.3'),
+          fieldRef: formula.burst_decayDmg.tag,
+        },
+        {
+          title: stg('cd'),
+          unit: 's',
+          fieldRef: formula.burst_cd.tag,
+        },
+        {
+          title: stg('energyCost'),
+          fieldRef: formula.burst_enerCost.tag,
+        }
+      ],
+    }
   ]),
   passive1: ct.talentTem('passive1', [
     charConditionalDocument(key, cond.a1WhiteDendro, { teamBuff: true }),

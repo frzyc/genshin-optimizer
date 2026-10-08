@@ -105,6 +105,28 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ct.chg('burst.skillParams.0'),
+          fieldRef: formula.burst.tag,
+        },
+        {
+          title: ct.chg('burst.skillParams.3'),
+          unit: 's',
+          fieldRef: formula.burst_duration.tag,
+        },
+        {
+          title: ct.chg('burst.skillParams.4'),
+          fieldRef: formula.burst_cd.tag,
+        },
+        {
+          title: ct.chg('burst.skillParams.5'),
+          fieldRef: formula.burst_enerCost.tag,
+        }
+      ],
+    }
   ]),
   passive1: ct.talentTem('passive1', [
     charConditionalDocument(key, cond.Ascension1, {

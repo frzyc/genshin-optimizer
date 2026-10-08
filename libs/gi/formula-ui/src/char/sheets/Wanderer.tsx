@@ -91,6 +91,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
     charConditionalDocument(key, cond.skillCryoContact, {
       label: ct.ch('p1.cryoCondName'),
     }),
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ct.chg('skill.skillParams.0'),
+          fieldRef: formula.skill.tag,
+        }
+      ],
+    }
   ]),
   burst: ct.talentTem('burst', [
     {

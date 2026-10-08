@@ -6,8 +6,13 @@ import {
 import type { Tag } from '@genshin-optimizer/gi/formula'
 import {
   createTagMap,
+  formulaCatalog,
+  formulas,
+  isParamOnlyEntry,
+  STAT_SHEET,
   stripCalcContextTag,
 } from '@genshin-optimizer/gi/formula'
+import { catalogListingDisplayTitle } from '../tagLabel'
 import { uiSheets } from './sheets'
 
 function buildTagFieldMap() {
@@ -40,6 +45,31 @@ function buildTagFieldMap() {
       })
     )
   )
+
+  const authored = createTagMap<TagField>(tagValue)
+
+  for (const [sheetKey, catalog] of Object.entries(formulaCatalog)) {
+    if (sheetKey === STAT_SHEET) continue
+    const charFormulas = (formulas as Record<string, Record<string, { tag: Tag }>>)[
+      sheetKey
+    ]
+    if (!charFormulas) continue
+
+    for (const entry of Object.values(catalog)) {
+      if (isParamOnlyEntry(entry)) continue
+      const formulaObj = charFormulas[entry.name]
+      if (!formulaObj?.tag) continue
+      const tag = formulaObj.tag
+      if (authored.subset(stripCalcContextTag(tag)).length) continue
+      tagValue.push({
+        tag,
+        value: {
+          title: catalogListingDisplayTitle(entry.name),
+          fieldRef: tag,
+        },
+      })
+    }
+  }
 
   return createTagMap<TagField>(tagValue)
 }

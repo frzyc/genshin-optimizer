@@ -114,14 +114,24 @@ export function formulaText(
     }
     case 'res': {
       const [preRes] = ops
+      const resTerms = getString(ops, details.prod.prec).map((x, i) => (
+        <Fragment key={i}>{x}</Fragment>
+      ))
       if (preRes.val >= 0.75) {
-        formula = <span>1 / (1 + 4 * {getString(ops, details.prod.prec)})</span>
+        formula = <span>1 / (1 + 4 * {resTerms})</span>
         prec = details.prod.prec
       } else if (preRes.val >= 0) {
-        formula = <span>1 - {getString(ops, details.sum.prec)}</span>
+        formula = (
+          <span>
+            1 -{' '}
+            {getString(ops, details.sum.prec).map((x, i) => (
+              <Fragment key={i}>{x}</Fragment>
+            ))}
+          </span>
+        )
         prec = details.sum.prec
       } else {
-        formula = <span>1 - {getString(ops, details.prod.prec)} / 2</span>
+        formula = <span>1 - {resTerms} / 2</span>
         prec = details.sum.prec
       }
       break

@@ -140,6 +140,28 @@ const sheet: UISheet<TalentSheetElementKey> = {
       ],
     },
     charConditionalDocument(key, cond.burstPaleHymn, { teamBuff: true }),
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ct.chg('burst.skillParams.0'),
+          fieldRef: formula.burst_stacksGained.tag,
+        },
+        {
+          title: ct.chg('burst.skillParams.1'),
+          fieldRef: formula.burst_moonToPale.tag,
+        },
+        {
+          title: stg('cd'),
+          unit: 's',
+          fieldRef: formula.burst_cd.tag,
+        },
+        {
+          title: stg('energyCost'),
+          fieldRef: formula.burst_enerCost.tag,
+        }
+      ],
+    }
   ]),
   passive1: ct.talentTem('passive1', [
     charConditionalDocument(key, cond.a1AfterSkill, { teamBuff: true }),

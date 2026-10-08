@@ -243,7 +243,7 @@ export function CharCalcMockCountProvider({
   )
 }
 
-function GiSheetUiProviders({
+export function GiSheetUiProviders({
   children,
   formulaTextCache,
 }: {

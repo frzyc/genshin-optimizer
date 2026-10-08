@@ -102,6 +102,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
       ],
     },
     charConditionalDocument(key, cond.skillTier),
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ct.chg('skill.skillParams.0'),
+          fieldRef: formula.skill.tag,
+        }
+      ],
+    }
   ]),
   burst: ct.talentTem('burst', [
     {

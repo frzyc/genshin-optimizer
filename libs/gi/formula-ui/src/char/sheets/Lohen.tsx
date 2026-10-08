@@ -110,6 +110,20 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: stg('cd'),
+          unit: 's',
+          fieldRef: formula.burst_cd.tag,
+        },
+        {
+          title: stg('energyCost'),
+          fieldRef: formula.burst_enerCost.tag,
+        }
+      ],
+    }
   ]),
   passive1: ct.talentTem('passive1'),
   passive2: ct.talentTem('passive2', [

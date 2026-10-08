@@ -112,6 +112,33 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ct.chg('burst.skillParams.0'),
+          fieldRef: formula.burst.tag,
+        },
+        {
+          title: ct.chg('burst.skillParams.2'),
+          fieldRef: formula.burst_snackHeal.tag,
+        },
+        {
+          title: stg('duration'),
+          unit: 's',
+          fieldRef: formula.burst_duration.tag,
+        },
+        {
+          title: stg('cd'),
+          unit: 's',
+          fieldRef: formula.burst_cd.tag,
+        },
+        {
+          title: stg('energyCost'),
+          fieldRef: formula.burst_enerCost.tag,
+        }
+      ],
+    }
   ]),
   passive1: ct.talentTem('passive1'),
   passive2: ct.talentTem('passive2', [

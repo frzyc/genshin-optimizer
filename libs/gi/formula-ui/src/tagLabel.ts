@@ -19,9 +19,66 @@ for (const [ele, { name }] of Object.entries(elementalData)) {
   extraStatLabels[`${ele}_resMulti_`] = `Enemy ${name} DMG RES Multiplier`
 }
 
+const chargedListingLabels: Record<string, string> = {
+  charged_cyclic: 'Cyclic Charged Attack DMG',
+  charged_final: 'Final Charged Attack DMG',
+  charged_spin: 'Spinning Charged Attack DMG',
+  charged_spinning: 'Spinning Charged Attack DMG',
+  charged_aimed: 'Aimed Shot',
+  charged_aimedCharged: 'Fully-Charged Aimed Shot',
+  charged_fullyAimed: 'Fully-Charged Aimed Shot',
+  charged_stam: 'Charged Attack Stamina Cost',
+  charged_duration: 'Charged Attack Duration',
+}
+
+const plungingListingLabels: Record<string, string> = {
+  plunging_dmg: 'Plunging Attack DMG',
+  plunging_low: 'Low Plunge DMG',
+  plunging_high: 'High Plunge DMG',
+}
+
+/** Fallback English title for Pando formula listing `name`s without a sheet row. */
+export function formulaListingLabel(name: string): string | undefined {
+  const normal = /^normal_(\d+)$/.exec(name)
+  if (normal) return `Hit ${Number(normal[1]) + 1}`
+
+  const chargedNum = /^charged_(\d+)$/.exec(name)
+  if (chargedNum) return `Charged Attack Hit ${chargedNum[1]}`
+
+  const charged = chargedListingLabels[name]
+  if (charged) return charged
+
+  const plunging = plungingListingLabels[name]
+  if (plunging) return plunging
+
+  if (name === 'skill') return 'Elemental Skill'
+  if (name === 'burst') return 'Elemental Burst'
+
+  if (name.endsWith('_cd')) return 'CD'
+  if (name.endsWith('_duration')) return 'Duration'
+  if (name.endsWith('_enerCost')) return 'Energy Cost'
+  if (name.endsWith('_stam') || name.endsWith('_stamina')) {
+    return 'Stamina Cost'
+  }
+
+  return undefined
+}
+
+/** Last-resort English title for catalog listing `name`s (optimize panel / tooltips). */
+export function humanizeListingName(name: string): string {
+  return name
+    .replace(/_/g, ' ')
+    .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
+    .replace(/\b\w/g, (c) => c.toUpperCase())
+}
+
+export function catalogListingDisplayTitle(name: string): string {
+  return formulaListingLabel(name) ?? humanizeListingName(name)
+}
+
 /** Resolve a `getTagLabel` key to the English title shown in formula text. */
 export function tagLabelStr(key: string): string | undefined {
-  return KeyMap.getStr(key) ?? extraStatLabels[key]
+  return KeyMap.getStr(key) ?? extraStatLabels[key] ?? formulaListingLabel(key)
 }
 
 /** Stat highlight / KeyMap key for listing stat rows (not named formula hits). */

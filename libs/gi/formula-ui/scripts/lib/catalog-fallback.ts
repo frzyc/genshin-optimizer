@@ -57,7 +57,7 @@ function paramUnit(name: string): string | undefined {
   return undefined
 }
 
-function paramTitleExpr(name: string): string {
+export function paramTitleExpr(name: string): string {
   const lower = name.toLowerCase()
   if (name === 'plunging_dmg') return "stg('plunging.dmg')"
   if (name === 'plunging_low') return "stg('plunging.low')"

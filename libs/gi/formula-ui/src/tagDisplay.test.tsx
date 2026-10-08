@@ -24,7 +24,35 @@ import { talentSheetElement, talentSheetElementIcon } from './char/util'
 import { TagLabel } from './components/TagLabel'
 import { FullTagDisplay, TagDisplay } from './components/TagDisplay'
 import { formulaText } from './formulaText'
-import { getTagLabel, tagTitleColor, warnUnresolvedTagLabel } from './tagLabel'
+import {
+  catalogListingDisplayTitle,
+  formulaListingLabel,
+  getTagLabel,
+  tagLabelStr,
+  tagTitleColor,
+  warnUnresolvedTagLabel,
+} from './tagLabel'
+
+describe('catalogListingDisplayTitle', () => {
+  it('humanizes custom listing names without a dedicated label', () => {
+    expect(catalogListingDisplayTitle('burst_blossom')).toBe('Burst Blossom')
+    expect(catalogListingDisplayTitle('freezeBombDmg')).toBe('Freeze Bomb Dmg')
+  })
+})
+
+describe('formulaListingLabel', () => {
+  it('labels common auto hit and charged listing names', () => {
+    expect(formulaListingLabel('normal_0')).toBe('Hit 1')
+    expect(formulaListingLabel('normal_2')).toBe('Hit 3')
+    expect(formulaListingLabel('charged_cyclic')).toBe(
+      'Cyclic Charged Attack DMG'
+    )
+    expect(formulaListingLabel('charged_final')).toBe(
+      'Final Charged Attack DMG'
+    )
+    expect(tagLabelStr('normal_0')).toBe('Hit 1')
+  })
+})
 
 describe('getTagLabel', () => {
   it('uses listing name for heal/param, not formula.base', () => {

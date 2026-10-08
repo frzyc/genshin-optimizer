@@ -93,6 +93,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
     charConditionalDocument(key, cond.lockHomework, { teamBuff: true }),
     charConditionalDocument(key, cond.lockCreateSolar, { teamBuff: true }),
     charConditionalDocument(key, cond.lockCreateSilver, { teamBuff: true }),
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ct.chg('skill.skillParams.0'),
+          fieldRef: formula.skill.tag,
+        }
+      ],
+    }
   ]),
   burst: ct.talentTem('burst', [
     {
@@ -105,6 +114,28 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ct.chg('burst.skillParams.0'),
+          fieldRef: formula.burst.tag,
+        },
+        {
+          title: ct.chg('burst.skillParams.1'),
+          fieldRef: formula.burst_blossom.tag,
+        },
+        {
+          title: stg('cd'),
+          unit: 's',
+          fieldRef: formula.burst_cd.tag,
+        },
+        {
+          title: stg('energyCost'),
+          fieldRef: formula.burst_enerCost.tag,
+        }
+      ],
+    }
   ]),
   passive1: ct.talentTem('passive1', [
     charConditionalDocument(key, cond.p1EnemyHp),

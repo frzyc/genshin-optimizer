@@ -88,6 +88,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'text',
       text: ct.ch('p1.desc'),
     },
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ct.chg('skill.skillParams.0'),
+          fieldRef: formula.skill.tag,
+        }
+      ],
+    }
   ]),
   burst: ct.talentTem('burst', [
     {

@@ -104,6 +104,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
+          title: ct.chg('skill.skillParams.0'),
+          fieldRef: formula.skill.tag,
+        },
+        {
           title: ct.chg('skill.skillParams.1'),
           fieldValue: '',
           unit: 's',

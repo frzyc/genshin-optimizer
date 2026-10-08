@@ -91,6 +91,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
     charConditionalDocument(key, cond.bonusSkirk3),
     charConditionalDocument(key, cond.geoC1BurstArea),
     charConditionalDocument(key, cond.lockedPassiveHit),
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ct.chg('skill.skillParams.0'),
+          fieldRef: formula.skill.tag,
+        }
+      ],
+    }
   ]),
   burst: ct.talentTem('burst', [
     {
@@ -103,6 +112,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ct.chg('burst.skillParams.0'),
+          fieldRef: formula.burst.tag,
+        }
+      ],
+    }
   ]),
   passive1: ct.talentTem('passive1'),
   passive2: ct.talentTem('passive2'),
