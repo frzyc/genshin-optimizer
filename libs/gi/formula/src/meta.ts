@@ -35205,6 +35205,7 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Vodyanitsa',
         move: 'normal',
+        ele: 'hydro',
         name: 'normal1',
       },
     },

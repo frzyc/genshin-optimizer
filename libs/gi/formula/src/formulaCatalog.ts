@@ -41646,6 +41646,43 @@ export const formulaCatalog = {
       category: 'burst',
     },
   },
+  Vesna: {
+    normal1: {
+      sheet: 'Vesna',
+      name: 'normal1',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Vesna',
+          move: 'normal',
+          name: 'normal1',
+        },
+      },
+      exposeInProd: true,
+      category: 'auto',
+    },
+  },
+  Vodyanitsa: {
+    normal1: {
+      sheet: 'Vodyanitsa',
+      name: 'normal1',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Vodyanitsa',
+          move: 'normal',
+          ele: 'hydro',
+          name: 'normal1',
+        },
+      },
+      exposeInProd: true,
+      category: 'auto',
+    },
+  },
   Wanderer: {
     normal_0: {
       sheet: 'Wanderer',
