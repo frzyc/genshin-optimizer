@@ -161,7 +161,28 @@ const sheet: UISheet<TalentSheetElementKey> = {
   constellation3: ct.talentTem('constellation3'),
   constellation4: ct.talentTem('constellation4'),
   constellation5: ct.talentTem('constellation5'),
-  constellation6: ct.talentTem('constellation6'),
+  constellation6: ct.talentTem('constellation6', [
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: stg('critRate_'),
+          fieldRef: formula.c6AfterHeal_burst_critRate_.tag,
+          unit: '%',
+        },
+        {
+          title: stg('critDMG_'),
+          fieldRef: formula.c6AfterHeal_burst_critDMG_.tag,
+          unit: '%',
+        },
+        {
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
+        },
+      ],
+    },
+  ]),
 }
 
 export default sheet

@@ -1,7 +1,7 @@
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { conditionals, formulas } from '@genshin-optimizer/gi/formula'
-import { stg } from '../../util'
+import { st, stg } from '../../util'
 import { charConditionalDocument } from '../charUiSheets'
 import type { TalentSheetElementKey } from '../consts'
 import { charTemplates } from '../util'
@@ -108,7 +108,17 @@ const sheet: UISheet<TalentSheetElementKey> = {
   passive2: ct.talentTem('passive2'),
   passive3: ct.talentTem('passive3'),
   constellation1: ct.talentTem('constellation1'),
-  constellation2: ct.talentTem('constellation2'),
+  constellation2: ct.talentTem('constellation2', [
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: st('dmg'),
+          fieldRef: formula.c2.tag,
+        },
+      ],
+    },
+  ]),
   constellation3: ct.talentTem('constellation3'),
   constellation4: ct.talentTem('constellation4', [
     charConditionalDocument(key, cond.c4BurstActive, { teamBuff: true }),

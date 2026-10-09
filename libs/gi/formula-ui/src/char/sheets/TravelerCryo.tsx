@@ -148,6 +148,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
           variant: 'cryo',
           fieldValue: '',
         },
+        {
+          title: stg('eleMas'),
+          fieldRef: formula.a4_eleMas.tag,
+        },
       ],
     },
   ]),

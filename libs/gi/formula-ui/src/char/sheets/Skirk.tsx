@@ -164,7 +164,17 @@ const sheet: UISheet<TalentSheetElementKey> = {
     charConditionalDocument(key, cond.a4DeathStacks),
   ]),
   passive3: ct.talentTem('passive3'),
-  constellation1: ct.talentTem('constellation1'),
+  constellation1: ct.talentTem('constellation1', [
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: stg('dmg'),
+          fieldRef: formula.c1.tag,
+        },
+      ],
+    },
+  ]),
   constellation2: ct.talentTem('constellation2', [
     charConditionalDocument(key, cond.c2AfterBurst, {
       fields: [

@@ -157,6 +157,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
+          title: st('dmg'),
+          fieldRef: formula.c2.tag,
+        },
+        {
           title: stg('duration'),
           fieldValue: '',
           unit: 's',

@@ -118,6 +118,8 @@ export const CHAR_UI_AUDIT_KEYS = [
   'Varesa',
   'Varka',
   'Venti',
+  'Vesna',
+  'Vodyanitsa',
   'Wanderer',
   'Wriothesley',
   'Xiangling',

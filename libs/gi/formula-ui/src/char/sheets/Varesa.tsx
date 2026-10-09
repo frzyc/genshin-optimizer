@@ -84,6 +84,23 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'text',
       text: ct.chg('auto.fields.fpPlunging'),
     },
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: stg('plunging.dmg'),
+          fieldRef: formula.plunging_fpdmg.tag,
+        },
+        {
+          title: stg('plunging.low'),
+          fieldRef: formula.plunging_fplow.tag,
+        },
+        {
+          title: stg('plunging.high'),
+          fieldRef: formula.plunging_fphigh.tag,
+        },
+      ],
+    },
   ]),
   skill: ct.talentTem('skill', [
     {

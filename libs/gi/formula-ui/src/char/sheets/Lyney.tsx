@@ -80,6 +80,33 @@ const sheet: UISheet<TalentSheetElementKey> = {
       text: ct.chg('auto.fields.grinMalkin'),
     },
     {
+      type: 'fields',
+      fields: [
+        {
+          title: ct.chg('auto.skillParams.10'),
+          fieldRef: formula.charged_hatHp.tag,
+        },
+        {
+          title: ct.chg('auto.skillParams.11'),
+          unit: 's',
+          fieldRef: formula.charged_hatDuration.tag,
+        },
+        {
+          title: ct.chg('auto.skillParams.12'),
+          fieldRef: formula.charged_pyrotechnic.tag,
+        },
+        {
+          title: ct.chg('auto.skillParams.13'),
+          fieldRef: formula.charged_spiritbreath.tag,
+        },
+        {
+          title: ct.chg('auto.skillParams.14'),
+          unit: 's',
+          fieldRef: formula.charged_thornInterval.tag,
+        },
+      ],
+    },
+    {
       type: 'text',
       text: ct.chg('auto.fields.arkhe'),
     },

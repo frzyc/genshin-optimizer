@@ -134,6 +134,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
           title: st('elementalReaction.stellar.gainRadianceSc'),
           fieldValue: '',
         },
+        {
+          title: stg('healing'),
+          fieldRef: formula.c4_heal.tag,
+        },
       ],
     },
   ]),
