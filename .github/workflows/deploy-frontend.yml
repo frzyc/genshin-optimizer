@@ -5,10 +5,12 @@ on:
   workflow_run:
     workflows:
       - Build GO (WR) PR
+      - Build GI (Pando) PR
       - Build SRO PR
       - Build ZO PR
       - Build ZO Release
       - New Beta GO Release
+      - New Beta GI Release
       - New Beta SRO Release
       - New Beta ZO Release
       - New ZO Release
