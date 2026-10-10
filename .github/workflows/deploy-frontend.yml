@@ -119,7 +119,7 @@ jobs:
           body: |
             [${{ steps.vars.outputs.frontend_name }}] [${{ steps.output-date2.outputs.date }}] - ${{ steps.export-url.outputs.url }}
       - name: Create GitHub Deployment
-        if: ${{ github.event.workflow_run.event == 'pull_request' && steps.vars.outputs.deployment_name != 'beta' && steps.vars.outputs.deployment_name != '' }}
+        if: ${{ steps.vars.outputs.deployment_name == 'beta' || (github.event.workflow_run.event == 'pull_request' && steps.vars.outputs.deployment_name != '' && steps.vars.outputs.deployment_name != 'beta') }}
         uses: actions/github-script@v7
         env:
           PREVIEW_URL: ${{ steps.export-url.outputs.preview_url }}
@@ -128,30 +128,41 @@ jobs:
           DEPLOYMENT_NAME: ${{ steps.vars.outputs.deployment_name }}
         with:
           script: |
-            const prNumber = process.env.DEPLOYMENT_NAME;
-            if (!/^\d+$/.test(prNumber)) {
-              core.info('Skipping GitHub Deployment: deployment_name is not a PR number.');
-              return;
-            }
-
-            const pullRequests = context.payload.workflow_run.pull_requests ?? [];
-            if (pullRequests.length === 0) {
-              core.info(
-                'Skipping GitHub Deployment: pull request metadata unavailable (often fork PRs).'
-              );
-              return;
-            }
-            const headRepo = pullRequests[0].head?.repo?.full_name;
-            const thisRepo = `${context.repo.owner}/${context.repo.repo}`;
-            if (headRepo !== thisRepo) {
-              core.info(`Skipping GitHub Deployment: head repo ${headRepo} is not ${thisRepo}.`);
-              return;
-            }
-
+            const deploymentName = process.env.DEPLOYMENT_NAME;
             const frontendName = process.env.FRONTEND_NAME;
             const previewUrl = process.env.PREVIEW_URL;
             const ref = process.env.DEPLOY_REF;
-            const environment = `preview/pr-${prNumber}/${frontendName}`;
+            const logUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+
+            let environment;
+            let description;
+            let transientEnvironment;
+
+            if (deploymentName === 'beta') {
+              environment = `beta/${frontendName}`;
+              description = `Beta ${frontendName}`;
+              transientEnvironment = false;
+            } else if (/^\d+$/.test(deploymentName)) {
+              const pullRequests = context.payload.workflow_run.pull_requests ?? [];
+              if (pullRequests.length === 0) {
+                core.info(
+                  'Skipping GitHub Deployment: pull request metadata unavailable (often fork PRs).'
+                );
+                return;
+              }
+              const headRepo = pullRequests[0].head?.repo?.full_name;
+              const thisRepo = `${context.repo.owner}/${context.repo.repo}`;
+              if (headRepo !== thisRepo) {
+                core.info(`Skipping GitHub Deployment: head repo ${headRepo} is not ${thisRepo}.`);
+                return;
+              }
+              environment = `preview/pr-${deploymentName}/${frontendName}`;
+              description = `${frontendName} preview for PR #${deploymentName}`;
+              transientEnvironment = true;
+            } else {
+              core.info('Skipping GitHub Deployment: unrecognized deployment_name.');
+              return;
+            }
 
             const deployment = await github.rest.repos.createDeployment({
               owner: context.repo.owner,
@@ -161,8 +172,8 @@ jobs:
               auto_merge: false,
               required_contexts: [],
               production_environment: false,
-              transient_environment: true,
-              description: `${frontendName} preview for PR #${prNumber}`,
+              transient_environment: transientEnvironment,
+              description,
             });
 
             await github.rest.repos.createDeploymentStatus({
@@ -171,6 +182,6 @@ jobs:
               deployment_id: deployment.data.id,
               state: 'success',
               environment_url: previewUrl,
-              log_url: `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+              log_url: logUrl,
               description: 'Deployed to GitHub Pages (may take a few minutes to become available)',
             });
