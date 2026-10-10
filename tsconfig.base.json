@@ -118,6 +118,18 @@
       "@genshin-optimizer/gi/page-weapons": [
         "./libs/gi/page-weapons/src/index.tsx"
       ],
+      "@genshin-optimizer/gi/pando-page-optimize": [
+        "./libs/gi/pando-page-optimize/src/index.tsx"
+      ],
+      "@genshin-optimizer/gi/pando-page-settings": [
+        "./libs/gi/pando-page-settings/src/index.tsx"
+      ],
+      "@genshin-optimizer/gi/pando-parity": [
+        "./libs/gi/pando-parity/src/index.ts"
+      ],
+      "@genshin-optimizer/gi/pando-solver": [
+        "./libs/gi/pando-solver/src/index.ts"
+      ],
       "@genshin-optimizer/gi/prisma-schema": [
         "./libs/gi/prisma-schema/src/index.ts"
       ],

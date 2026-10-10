@@ -1,64 +1,183 @@
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { cmpGE } from '@genshin-optimizer/pando/engine'
 import {
-  allBoolConditionals,
-  allListConditionals,
+  cmpGE,
+  cmpNE,
+  prod,
+  subscript,
+  sum,
+} from '@genshin-optimizer/pando/engine'
+import { destIsActive } from '../common/conds'
+import {
   allNumConditionals,
-  enemyDebuff,
+  customDmg,
+  customParam,
   own,
   ownBuff,
+  percent,
   register,
-  team,
   teamBuff,
 } from '../util'
-import { dataGenToCharInfo, dmg, entriesForChar } from './util'
+import { dataGenToCharInfo, dmg, entriesForChar, talentSubscript } from './util'
 
 const key: CharacterKey = 'Yelan'
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
 
-// TODO: Fill data-mine values here
-const _dm = {
+let a = 0,
+  s = 0,
+  b = 0
+const dm = {
   normal: {
-    dmg1: skillParam_gen.auto[0],
+    hitArr: [
+      skillParam_gen.auto[a++], // 1
+      skillParam_gen.auto[a++], // 2
+      skillParam_gen.auto[a++], // 3
+      skillParam_gen.auto[a++], // 4x3
+    ],
   },
-  charged: {},
-  plunging: {},
-  skill: {},
-  burst: {},
-} as const
+  charged: {
+    aimed: skillParam_gen.auto[a++],
+    aimedCharged: skillParam_gen.auto[a++],
+    barb: skillParam_gen.auto[a++],
+  },
+  plunging: {
+    dmg: skillParam_gen.auto[a++],
+    low: skillParam_gen.auto[a++],
+    high: skillParam_gen.auto[a++],
+  },
+  skill: {
+    dmg: skillParam_gen.skill[s++],
+    resetChance: skillParam_gen.skill[s++][0],
+    maxDuration: skillParam_gen.skill[s++][0],
+    cd: skillParam_gen.skill[s++][0],
+  },
+  burst: {
+    pressDmg: skillParam_gen.burst[b++],
+    throwDmg: skillParam_gen.burst[b++],
+    duration: skillParam_gen.burst[b++][0],
+    cd: skillParam_gen.burst[b++][0],
+    enerCost: skillParam_gen.burst[b++][0],
+  },
+  passive1: {
+    hp_Arr: [0, ...skillParam_gen.passive1.map(([a]) => a)],
+  },
+  passive2: {
+    baseDmg_: skillParam_gen.passive2[0][0],
+    stackDmg_: skillParam_gen.passive2[1][0],
+    maxDmg_: skillParam_gen.passive2[2][0],
+    maxStacks: 14,
+  },
+  constellation1: {
+    addlCharge: skillParam_gen.constellation1[0],
+  },
+  constellation2: {
+    arrowDmg_: skillParam_gen.constellation2[0],
+    cd: skillParam_gen.constellation2[1],
+  },
+  constellation4: {
+    bonusHp_: skillParam_gen.constellation4[0],
+    duration: skillParam_gen.constellation4[1],
+    maxHp_: skillParam_gen.constellation4[2],
+    maxStacks: 4,
+  },
+  constellation6: {
+    charges: skillParam_gen.constellation6[0],
+    duration: skillParam_gen.constellation6[1],
+    dmg_: skillParam_gen.constellation6[2],
+  },
+}
 
 const info = dataGenToCharInfo(data_gen)
 const {
-  final: _final,
-  char: { ascension: _ascension, constellation },
+  final,
+  char: { auto, ascension, constellation },
 } = own
-// TODO: Conditionals
-const { _someBoolConditional } = allBoolConditionals(info.key)
-const { _someListConditional } = allListConditionals(info.key, [])
-const { _someNumConditional } = allNumConditionals(info.key)
+const { a4Stacks } = allNumConditionals(
+  info.key,
+  true,
+  0,
+  dm.passive2.maxStacks
+)
+const { c4Stacks } = allNumConditionals(
+  info.key,
+  true,
+  0,
+  dm.constellation4.maxStacks
+)
 
-const _count = team.common.count
+const a1_hp_ = cmpGE(
+  ascension,
+  1,
+  subscript(own.common.eleCount, dm.passive1.hp_Arr)
+)
+const a4Dmg_ = cmpGE(
+  ascension,
+  4,
+  cmpGE(
+    a4Stacks,
+    1,
+    sum(
+      percent(dm.passive2.baseDmg_),
+      prod(a4Stacks, percent(dm.passive2.stackDmg_))
+    )
+  )
+)
+const c4_hp_ = cmpGE(
+  constellation,
+  4,
+  prod(c4Stacks, percent(dm.constellation4.bonusHp_))
+)
 
 export default register(
   info.key,
   entriesForChar(info, data_gen),
-  // TODO: Double check these
+  // C3 Beware, Ye Who Wander (burst); C5 Deeper Yonder (skill)
   ownBuff.char.burst.add(cmpGE(constellation, 3, 3)),
   ownBuff.char.skill.add(cmpGE(constellation, 5, 3)),
 
-  // TODO:
-  // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
-  ownBuff.premod.atk.add(1),
-  // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
-  teamBuff.premod.atk.add(1),
-  // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
-  enemyDebuff.common.defRed_.add(1),
-  //
-  // <buff value> uses `own.*`, `team.*`, `target.*` (target of team buff), and `enemy.*`
+  ownBuff.premod.hp_.add(a1_hp_),
+  // WR teamBuff.premod.all_dmg_ dest-gated to active.
+  teamBuff.premod.dmg_.add(cmpNE(destIsActive, 0, a4Dmg_)),
+  teamBuff.premod.hp_.add(c4_hp_),
 
-  // Formulas
-  // TODO: Add dmg/heal/shield formulas using `dmg`, `customDmg`, `shield`, `customShield`, `fixedShield`, or `customHeal`
-  dmg('normal1', info, 'atk', _dm.normal.dmg1, 'normal')
+  dm.normal.hitArr.flatMap((arr, i) =>
+    dmg(`normal_${i}`, info, 'atk', arr, 'normal')
+  ),
+  dmg('charged_aimed', info, 'atk', dm.charged.aimed, 'charged', {
+    ele: 'physical',
+  }),
+  dmg('charged_aimedCharged', info, 'atk', dm.charged.aimedCharged, 'charged', {
+    ele: 'hydro',
+  }),
+  dmg('charged_barb', info, 'hp', dm.charged.barb, 'charged', { ele: 'hydro' }),
+  Object.entries(dm.plunging).flatMap(([k, v]) =>
+    dmg(`plunging_${k}`, info, 'atk', v, 'plunging')
+  ),
+  dmg('skill', info, 'hp', dm.skill.dmg, 'skill'),
+  dmg('burst_press', info, 'hp', dm.burst.pressDmg, 'burst'),
+  dmg('burst_throw', info, 'hp', dm.burst.throwDmg, 'burst'),
+  customDmg(
+    'c2',
+    'hydro',
+    'burst',
+    prod(percent(dm.constellation2.arrowDmg_), final.hp),
+    { cond: cmpGE(constellation, 2, 'infer', '') }
+  ),
+  customDmg(
+    'c6',
+    'hydro',
+    'charged',
+    prod(
+      percent(talentSubscript(auto, dm.charged.barb)),
+      percent(dm.constellation6.dmg_),
+      final.hp
+    ),
+    { cond: cmpGE(constellation, 6, 'infer', '') }
+  ),
+
+  customParam('skill_cd', dm.skill.cd),
+  customParam('burst_duration', dm.burst.duration),
+  customParam('burst_cd', dm.burst.cd),
+  customParam('burst_enerCost', dm.burst.enerCost)
 )

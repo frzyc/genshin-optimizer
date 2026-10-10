@@ -1,31 +1,33 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { cmpGE, prod, subscript } from '@genshin-optimizer/pando/engine'
 import {
   allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
+  customDmg,
   own,
+  ownBuff,
+  percent,
   register,
 } from '../util'
 import { entriesForWeapon } from './util'
 
 const key: WeaponKey = 'SkywardBlade'
+const atkSrc_ = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 
 const {
-  weapon: { refinement: _refinement },
+  weapon: { refinement },
 } = own
-// TODO: Conditionals
-const { _someBoolConditional } = allBoolConditionals(key)
-const { _someListConditional } = allListConditionals(key, [])
-const { _someNumConditional } = allNumConditionals(key)
+const { SkyPiercingMight } = allBoolConditionals(key)
 
 export default register(
   key,
-  entriesForWeapon(key)
-
-  // TODO:
-  // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
-  // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
-  // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
-  //
-  // TODO: Add refinement bonus
+  entriesForWeapon(key),
+  ownBuff.premod.moveSPD_.add(SkyPiercingMight.ifOn(percent(0.1))),
+  ownBuff.premod.atkSPD_.add(SkyPiercingMight.ifOn(percent(0.1))),
+  customDmg(
+    'dmg',
+    'physical',
+    'elemental',
+    prod(percent(subscript(refinement, atkSrc_)), own.premod.atk),
+    { cond: cmpGE(SkyPiercingMight.ifOn(1), 1, 'infer', '') }
+  )
 )

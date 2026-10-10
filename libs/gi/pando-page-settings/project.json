@@ -1,0 +1,8 @@
+{
+  "name": "gi-pando-page-settings",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/gi/pando-page-settings/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {}
+}

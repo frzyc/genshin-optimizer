@@ -54,11 +54,11 @@ export default register(
 
   // TODO:
   // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
-  ownBuff.premod.atk.add(1),
+  // TODO: ownBuff.premod.atk.add(1),
   // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
-  teamBuff.premod.atk.add(1),
+  // TODO: teamBuff.premod.atk.add(1),
   // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
-  enemyDebuff.common.defRed_.add(1),
+  // TODO: enemyDebuff.common.defRed_.add(1),
   //
   // <buff value> uses `own.*`, `team.*`, `target.*` (target of team buff), and `enemy.*`
 

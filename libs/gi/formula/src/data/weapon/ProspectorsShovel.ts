@@ -1,31 +1,31 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  own,
-  register,
-} from '../util'
+import { cmpGE, subscript } from '@genshin-optimizer/pando/engine'
+import { own, ownBuff, percent, register, team } from '../util'
 import { entriesForWeapon } from './util'
 
 const key: WeaponKey = 'ProspectorsShovel'
+const electrocharged_dmg_arr = [-1, 0.48, 0.6, 0.72, 0.84, 0.96]
+const lunarcharged_dmg_arr = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
+const gleam_lunarcharged_dmg_arr = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 
 const {
-  weapon: { refinement: _refinement },
+  weapon: { refinement },
 } = own
-// TODO: Conditionals
-const { _someBoolConditional } = allBoolConditionals(key)
-const { _someListConditional } = allListConditionals(key, [])
-const { _someNumConditional } = allNumConditionals(key)
 
 export default register(
   key,
-  entriesForWeapon(key)
-
-  // TODO:
-  // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
-  // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
-  // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
-  //
-  // TODO: Add refinement bonus
+  entriesForWeapon(key),
+  ownBuff.premod.dmg_.electrocharged.add(
+    percent(subscript(refinement, electrocharged_dmg_arr))
+  ),
+  ownBuff.premod.dmg_.lunarcharged.add(
+    percent(subscript(refinement, lunarcharged_dmg_arr))
+  ),
+  ownBuff.premod.dmg_.lunarcharged.add(
+    cmpGE(
+      team.common.moonsign,
+      2,
+      percent(subscript(refinement, gleam_lunarcharged_dmg_arr))
+    )
+  )
 )

@@ -1,4 +1,4 @@
-export type Unit = '' | '%' | 's'
+export type Unit = '' | '%' | 's' | '/s'
 /**
  * Print out a number in percent with fixed decimal places
  */

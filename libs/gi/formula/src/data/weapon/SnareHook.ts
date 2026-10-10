@@ -1,31 +1,21 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  own,
-  register,
-} from '../util'
+import { cmpGE, subscript } from '@genshin-optimizer/pando/engine'
+import { own, ownBuff, register, team } from '../util'
 import { entriesForWeapon } from './util'
 
 const key: WeaponKey = 'SnareHook'
+const eleMasarr = [-1, 60, 75, 90, 105, 120]
+const gleam_eleMasarr = [-1, 60, 75, 90, 105, 120]
 
 const {
-  weapon: { refinement: _refinement },
+  weapon: { refinement },
 } = own
-// TODO: Conditionals
-const { _someBoolConditional } = allBoolConditionals(key)
-const { _someListConditional } = allListConditionals(key, [])
-const { _someNumConditional } = allNumConditionals(key)
 
 export default register(
   key,
-  entriesForWeapon(key)
-
-  // TODO:
-  // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
-  // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
-  // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
-  //
-  // TODO: Add refinement bonus
+  entriesForWeapon(key),
+  ownBuff.premod.eleMas.add(subscript(refinement, eleMasarr)),
+  ownBuff.premod.eleMas.add(
+    cmpGE(team.common.moonsign, 2, subscript(refinement, gleam_eleMasarr))
+  )
 )

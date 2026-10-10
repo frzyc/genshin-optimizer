@@ -1,31 +1,25 @@
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  own,
-  register,
-} from '../util'
+import { allElementKeys, type WeaponKey } from '@genshin-optimizer/gi/consts'
+import { cmpEq, prod, subscript } from '@genshin-optimizer/pando/engine'
+import { allNumConditionals, own, ownBuff, percent, register } from '../util'
 import { entriesForWeapon } from './util'
 
 const key: WeaponKey = 'KagurasVerity'
+const dmg_ = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 
 const {
-  weapon: { refinement: _refinement },
+  weapon: { refinement },
 } = own
-// TODO: Conditionals
-const { _someBoolConditional } = allBoolConditionals(key)
-const { _someListConditional } = allListConditionals(key, [])
-const { _someNumConditional } = allNumConditionals(key)
+const { KaguraDance } = allNumConditionals(key, true, 0, 3)
+
+const dmgInc = percent(subscript(refinement, dmg_))
+const stacked_dmg_ = prod(KaguraDance, dmgInc)
 
 export default register(
   key,
-  entriesForWeapon(key)
-
-  // TODO:
-  // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
-  // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
-  // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
-  //
-  // TODO: Add refinement bonus
+  entriesForWeapon(key),
+  ownBuff.premod.dmg_.skill.add(stacked_dmg_),
+  ownBuff.premod.dmg_.stellarconduct.add(stacked_dmg_),
+  allElementKeys.map((ele) =>
+    ownBuff.premod.dmg_[ele].add(cmpEq(KaguraDance, 3, dmgInc))
+  )
 )

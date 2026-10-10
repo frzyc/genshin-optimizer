@@ -11,6 +11,12 @@
         "outputPath": "libs/gi/formula/src/meta.ts"
       }
     },
+    "extract-dm": {
+      "executor": "@genshin-optimizer/gi/formula:extract-dm"
+    },
+    "audit-sheets": {
+      "executor": "@genshin-optimizer/gi/formula:audit-sheets"
+    },
     "publish": {
       "executor": "nx:run-commands",
       "options": {

@@ -18,7 +18,7 @@ const {
   final,
   weapon: { refinement },
 } = own
-const { afterSkillStacks } = allNumConditionals(key, true, 0, 3)
+const { afterSkillStacks } = allNumConditionals(key, true, 0, 3, 'dst')
 const selfElemas = prod(
   afterSkillStacks,
   percent(subscript(refinement, selfEmSrc)),
@@ -34,5 +34,5 @@ export default register(
   key,
   entriesForWeapon(key),
   ownBuff.final.eleMas.add(selfElemas),
-  teamBuff.final.eleMas.add(teamEleMas)
+  teamBuff.final.eleMas.addOnce('key', teamEleMas)
 )

@@ -4,8 +4,11 @@ import type {
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
-
 import type { ReactNode } from 'react'
+
+export { getTagLabel } from './tagLabel'
+export { tagToTagField } from './tagToTagField'
+
 export const st = (
   strKey: string,
   values?: Record<string, string | number>
