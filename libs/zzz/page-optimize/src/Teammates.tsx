@@ -390,6 +390,8 @@ function coalesceTeammateConditionals(
     }
   >()
   for (const conditional of conditionals) {
+    // Setter clears main with condValue 0 (kept in DB); don't let that beat dst=null.
+    if (!conditional.condValue) continue
     if (conditional.src !== teammateKey) continue
     if (conditional.dst !== mainCharacterKey && conditional.dst !== null)
       continue
