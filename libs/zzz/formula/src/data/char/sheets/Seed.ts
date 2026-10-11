@@ -49,9 +49,8 @@ const { energy_consumed } = allNumConditionals(
 )
 
 // Kit: Attack teammate with the highest initial ATK is Vanguard.
-// Compare member slots to each other (not target.initial.atk vs member*.initial.atk):
-// those use different read paths and disagree on flat initial ATK. Seed is excluded by
-// sheet `key` so her ATK cannot claim Vanguard and zero every ally's notOwnBuff.
+// Rank Attack non-Seed member slots by initial ATK, then apply when target matches
+// that slot's key. Sheet `key` excludes Seed so she cannot claim Vanguard.
 type MemberRead = typeof member0
 const atkBeatsOrTiesAttackTeammate = (a: MemberRead, b: MemberRead) =>
   // Non-Attack / Seed / same unit → ok (1). Else need a.initial.atk >= b.initial.atk.

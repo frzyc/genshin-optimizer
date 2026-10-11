@@ -1,4 +1,7 @@
-import { compileTagMapValues } from '@genshin-optimizer/pando/engine'
+import {
+  compileTagMapValues,
+  setDebugMode,
+} from '@genshin-optimizer/pando/engine'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
 import { describe, expect, it } from 'vitest'
 import { charTagMapNodeEntries, teamData, withMember } from '../../..'
@@ -7,11 +10,12 @@ import { data, keys, values } from '../..'
 import {
   conditionalEntries,
   convert,
+  ownBuff,
   ownTag,
-  userBuff,
   type TagMapNodeEntries,
 } from '../../util'
 
+setDebugMode(true)
 Object.assign(values, compileTagMapValues(keys, data))
 
 const dm = mappedStats.char.Seed
@@ -51,10 +55,8 @@ function calcWith(
       withMember(
         key,
         ...charTagMapNodeEntries(baseChar(key)),
-        // userBuff (sheet:custom) is visible on member* reads used by Vanguard checks;
-        // raw ownBuff.initial.atk.add is not.
         ...(bonusInitialAtk[key]
-          ? [userBuff.initial.atk.add(bonusInitialAtk[key]!)]
+          ? [ownBuff.initial.atk.add(bonusInitialAtk[key]!)]
           : [])
       )
     ),
