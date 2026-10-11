@@ -35,7 +35,7 @@ const PageHome = lazy(
 )
 const PageArtifacts = lazy(
   () =>
-    import('@genshin-optimizer/gi/page-artifacts') as unknown as Promise<{
+    import('../pages/artifacts') as unknown as Promise<{
       default: ComponentType<any>
     }>
 )
