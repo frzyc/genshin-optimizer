@@ -7,7 +7,6 @@ import {
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import {
   Article,
-  Description,
   GitHub,
   Handshake,
   InsertLink,
@@ -38,11 +37,6 @@ const genshin_optimizer_links = [
     title: () => 'Github',
     icon: <GitHub />,
     url: process.env['NX_URL_GITHUB_GO'],
-  },
-  {
-    title: (t: TFunction) => t('quickLinksCard.buttons.patchNotes.title'),
-    icon: <Description />,
-    url: `${process.env['NX_URL_GITHUB_GO']}/releases`,
   },
   {
     title: (t: TFunction) => t('quickLinksCard.buttons.tyGuide.title'),

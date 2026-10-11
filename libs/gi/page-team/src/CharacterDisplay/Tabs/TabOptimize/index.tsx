@@ -1,4 +1,3 @@
-import { AdResponsive } from '@genshin-optimizer/common/ad'
 import {
   useDataManagerEntries,
   useDataManagerValues,
@@ -49,7 +48,6 @@ import {
   BuildDisplayItem,
   CharacterName,
   DataContext,
-  GOAdWrapper,
   GraphContext,
   getTeamData,
   HitModeToggle,
@@ -677,7 +675,6 @@ export default function TabBuild() {
 
           {/*Minimum Final Stat Filter */}
           <StatFilterCard disabled={generatingBuilds} />
-          <AdResponsive dataAdSlot="7724855772" bgt="light" Ad={GOAdWrapper} />
         </Grid>
       </Grid>
       {/* Footer */}
