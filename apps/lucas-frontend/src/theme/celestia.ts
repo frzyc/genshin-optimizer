@@ -21,6 +21,13 @@ export const celestia = {
   hairlineStrong: '#363445',
   fieldOutline: '#2B2A36',
   fieldOutlineHover: '#4A4859',
+  toggleOn: '#22222D',
+  toggleOnHover: '#2C2B38',
+  toggleOff: '#1A1A22',
+  toggleOffHover: '#202029',
+  chipOn: '#34333F',
+  chipOff: '#25242F',
+  goldHover: '#E8C886',
   ornament: '#5A4C33',
   gold: '#D9B26A',
   goldLight: '#F1D9A0',
@@ -161,36 +168,52 @@ const components = {
       root: { fontWeight: 600, border: 0 },
     },
   },
-  // Segmented control: a dark track with pill segments and small gaps, no divider lines.
+  // Toggle groups: one continuous bar split by thin dark lines. Selected segments get light
+  // text and a gold underline, like the active navbar item; idle ones are dimmed.
   // `&&` doubles the class specificity so these win over SolidToggleButtonGroup's own colors;
   // !important beats MUI's first/middle/last segment rules that reset borders, margins and radii.
   MuiToggleButtonGroup: {
     styleOverrides: {
       root: {
-        backgroundColor: celestia.stoneDark,
-        padding: 3,
-        gap: 3,
-        borderRadius: radius + 2,
+        borderRadius: radius,
+        overflow: 'hidden',
         '&& .MuiToggleButtonGroup-grouped': {
           border: '0 !important',
           margin: '0 !important',
-          borderRadius: `${radius}px !important`,
+          borderRadius: '0 !important',
+        },
+        '&& .MuiToggleButtonGroup-groupedHorizontal:not(:first-of-type)': {
+          borderLeft: `1px solid ${celestia.night} !important`,
+        },
+        '&& .MuiToggleButtonGroup-groupedVertical:not(:first-of-type)': {
+          borderTop: `1px solid ${celestia.night} !important`,
         },
         '&& .MuiToggleButtonGroup-grouped:not(.Mui-selected)': {
-          backgroundColor: 'transparent',
+          backgroundColor: celestia.toggleOff,
           color: celestia.faint,
         },
         '&& .MuiToggleButtonGroup-grouped:not(.Mui-selected):hover': {
-          backgroundColor: 'rgba(255, 255, 255, 0.04)',
+          backgroundColor: celestia.toggleOffHover,
           color: celestia.muted,
         },
         [`&& .MuiToggleButtonGroup-grouped.Mui-selected${notElementButton}`]: {
-          backgroundColor: celestia.selected,
+          backgroundColor: celestia.toggleOn,
           color: '#FFFFFF',
+          boxShadow: `inset 0 -2px 0 ${celestia.gold}`,
         },
         [`&& .MuiToggleButtonGroup-grouped.Mui-selected${notElementButton}:hover`]:
           {
-            backgroundColor: '#33323F',
+            backgroundColor: celestia.toggleOnHover,
+            boxShadow: `inset 0 -2px 0 ${celestia.goldHover}`,
+          },
+        // count chips inside the segments
+        '&& .MuiToggleButtonGroup-grouped .MuiChip-root': {
+          backgroundColor: celestia.chipOff,
+          color: 'inherit',
+        },
+        [`&& .MuiToggleButtonGroup-grouped.Mui-selected${notElementButton} .MuiChip-root`]:
+          {
+            backgroundColor: celestia.chipOn,
           },
       },
     },
