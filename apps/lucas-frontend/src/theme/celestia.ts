@@ -19,8 +19,8 @@ export const celestia = {
   hairline: '#25242F',
   hairlineSoft: '#1C1B24',
   hairlineStrong: '#363445',
-  fieldOutline: '#3A3848',
-  fieldOutlineHover: '#4D4B5E',
+  fieldOutline: '#2B2A36',
+  fieldOutlineHover: '#4A4859',
   ornament: '#5A4C33',
   gold: '#D9B26A',
   goldLight: '#F1D9A0',
@@ -158,24 +158,30 @@ const components = {
   },
   MuiToggleButton: {
     styleOverrides: {
-      root: { fontWeight: 600, borderColor: celestia.night },
+      root: { fontWeight: 600, border: 0 },
     },
   },
+  // Segmented control: a dark track with pill segments and small gaps, no divider lines.
+  // `&&` doubles the class specificity so these win over SolidToggleButtonGroup's own colors;
+  // !important beats MUI's first/middle/last segment rules that reset borders, margins and radii.
   MuiToggleButtonGroup: {
     styleOverrides: {
-      // `&&` doubles the class specificity so these win over SolidToggleButtonGroup's own colors.
       root: {
-        // Dark gaps between segments. !important because MUI resets some segment borders to
-        // `border-left: ...` shorthands whose color falls back to the (white) text color.
+        backgroundColor: celestia.stoneDark,
+        padding: 3,
+        gap: 3,
+        borderRadius: radius + 2,
         '&& .MuiToggleButtonGroup-grouped': {
-          borderColor: `${celestia.night} !important`,
+          border: '0 !important',
+          margin: '0 !important',
+          borderRadius: `${radius}px !important`,
         },
         '&& .MuiToggleButtonGroup-grouped:not(.Mui-selected)': {
-          backgroundColor: celestia.stone,
+          backgroundColor: 'transparent',
           color: celestia.faint,
         },
         '&& .MuiToggleButtonGroup-grouped:not(.Mui-selected):hover': {
-          backgroundColor: celestia.stoneHover,
+          backgroundColor: 'rgba(255, 255, 255, 0.04)',
           color: celestia.muted,
         },
         [`&& .MuiToggleButtonGroup-grouped.Mui-selected${notElementButton}`]: {
