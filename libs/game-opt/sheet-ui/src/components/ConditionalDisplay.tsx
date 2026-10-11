@@ -155,9 +155,7 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
     <CardThemed bgt={bgt}>
       {!!header && <HeaderDisplay header={header} />}
       {/* Src is fixed by sheet context; only dst is selectable when targeted. */}
-      {setDst && (
-        <CondDst dst={dst} dstDisplay={dstDisplay} setDst={setDst} />
-      )}
+      {setDst && <CondDst dst={dst} dstDisplay={dstDisplay} setDst={setDst} />}
       <ConditionalSelector
         disabled={disabled}
         conditional={conditional}
