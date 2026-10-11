@@ -19,6 +19,8 @@ export const celestia = {
   hairline: '#25242F',
   hairlineSoft: '#1C1B24',
   hairlineStrong: '#363445',
+  fieldOutline: '#3A3848',
+  fieldOutlineHover: '#4D4B5E',
   ornament: '#5A4C33',
   gold: '#D9B26A',
   goldLight: '#F1D9A0',
@@ -93,6 +95,11 @@ const components = {
         backgroundColor: alpha(celestia.gold, 0.35),
         color: celestia.text,
       },
+      // Some upstream fields hardcode a light outline via sx; force the soft field outline instead.
+      '.MuiOutlinedInput-root:not(.Mui-focused):not(.Mui-error) .MuiOutlinedInput-notchedOutline':
+        { borderColor: `${celestia.fieldOutline} !important` },
+      '.MuiOutlinedInput-root:not(.Mui-focused):not(.Mui-error):hover .MuiOutlinedInput-notchedOutline':
+        { borderColor: `${celestia.fieldOutlineHover} !important` },
     },
   },
   MuiPaper: {
@@ -106,21 +113,13 @@ const components = {
           return {
             ...neutralFill,
             color: celestia.text,
-            boxShadow: `inset 0 0 0 1px ${celestia.hairlineStrong}`,
-            '&:hover': {
-              backgroundColor: celestia.selected,
-              boxShadow: `inset 0 0 0 1px ${celestia.hairlineStrong}`,
-            },
+            '&:hover': { backgroundColor: celestia.selected },
           }
         const pc = paletteColor(theme.palette, ownerState.color ?? 'primary')
         if (!pc) return {}
         return {
           ...tonal(pc.main),
-          boxShadow: `inset 0 0 0 1px ${alpha(pc.main, 0.32)}`,
-          '&:hover': {
-            backgroundColor: alpha(pc.main, 0.26),
-            boxShadow: `inset 0 0 0 1px ${alpha(pc.main, 0.45)}`,
-          },
+          '&:hover': { backgroundColor: alpha(pc.main, 0.26) },
         }
       },
       outlined: { borderColor: celestia.hairline },
@@ -166,9 +165,10 @@ const components = {
     styleOverrides: {
       // `&&` doubles the class specificity so these win over SolidToggleButtonGroup's own colors.
       root: {
-        // dark gaps between segments instead of light separator lines
+        // Dark gaps between segments. !important because MUI resets some segment borders to
+        // `border-left: ...` shorthands whose color falls back to the (white) text color.
         '&& .MuiToggleButtonGroup-grouped': {
-          borderColor: celestia.night,
+          borderColor: `${celestia.night} !important`,
         },
         '&& .MuiToggleButtonGroup-grouped:not(.Mui-selected)': {
           backgroundColor: celestia.stone,
@@ -189,19 +189,39 @@ const components = {
       },
     },
   },
+  // Fields: faint fill plus a soft outline (between the old white line and nothing); gold on focus.
   MuiOutlinedInput: {
     styleOverrides: {
       root: {
-        backgroundColor: 'transparent',
+        backgroundColor: 'rgba(255, 255, 255, 0.03)',
+        transition: 'background-color 0.2s',
+        '&:hover': { backgroundColor: 'rgba(255, 255, 255, 0.05)' },
         '& .MuiOutlinedInput-notchedOutline': {
-          borderColor: celestia.hairline,
+          borderColor: celestia.fieldOutline,
         },
         '&:hover .MuiOutlinedInput-notchedOutline': {
-          borderColor: celestia.hairlineStrong,
+          borderColor: celestia.fieldOutlineHover,
         },
         '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
           borderColor: celestia.gold,
         },
+      },
+    },
+  },
+  MuiAlert: {
+    styleOverrides: {
+      filled: ({ ownerState, theme }: any) => {
+        const pc = paletteColor(
+          theme.palette,
+          ownerState.color ?? ownerState.severity
+        )
+        if (!pc) return {}
+        const text = lighten(pc.main, 0.35)
+        return {
+          ...tonal(pc.main),
+          '& .MuiAlert-icon': { color: text },
+          '& a': { color: text },
+        }
       },
     },
   },
