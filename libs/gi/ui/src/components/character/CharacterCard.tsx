@@ -94,9 +94,10 @@ export function CharacterCard({
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          border: '1px solid rgba(200,200,200,0.3)',
+          border: '1px solid',
+          borderColor: 'divider',
           ':hover': {
-            border: '1px solid rgba(200,200,200,0.8)',
+            borderColor: 'primary.main',
           },
         }}
       >

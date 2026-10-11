@@ -75,7 +75,8 @@ export function TeamCard({
       bgt={bgt}
       sx={{
         height: '100%',
-        border: '1px rgba(200,200,200,0.4) solid',
+        border: '1px solid',
+        borderColor: 'divider',
       }}
     >
       <Box
@@ -155,9 +156,10 @@ export function TeamCard({
                 key={`${i}_${teamCharId}`}
                 className="team-teammate"
                 sx={{
-                  border: '1px rgba(200,200,200,0.3) solid',
+                  border: '1px solid',
+                  borderColor: 'divider',
                   '&:hover': {
-                    border: '1px rgba(200,200,200,0.8) solid',
+                    borderColor: 'primary.main',
                   },
                 }}
               >

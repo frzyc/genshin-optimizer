@@ -170,7 +170,8 @@ export default function TeamCharacterSelector({
           label={t('teamSettings.tab.team')}
           onClick={() => navigate(`/teams/${teamId}/`)}
           sx={{
-            border: '1px solid rgba(255,255,255,0.3)',
+            border: '1px solid',
+            borderColor: 'divider',
           }}
         />
         {loadoutData.map((loadoutDatum, ind) => {
