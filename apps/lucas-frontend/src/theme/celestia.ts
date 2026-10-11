@@ -23,8 +23,8 @@ export const celestia = {
   fieldOutlineHover: '#4A4859',
   toggleOn: '#22222D',
   toggleOnHover: '#2C2B38',
-  toggleOff: '#1A1A22',
-  toggleOffHover: '#202029',
+  toggleOff: '#0F0F14',
+  toggleOffHover: '#17171E',
   chipOn: '#34333F',
   chipOff: '#25242F',
   ornament: '#5A4C33',
@@ -167,8 +167,8 @@ const components = {
       root: { fontWeight: 600, border: 0 },
     },
   },
-  // Toggle groups: one continuous bar split by thin dark lines. Selected segments get a lighter
-  // fill and white text, idle ones are dimmed; the gold underline only shows on hover.
+  // Toggle groups: one continuous bar with no dividers. Selected segments get a lighter fill and
+  // white text, idle ones darken as a whole; the gold underline only shows on hover.
   // `&&` doubles the class specificity so these win over SolidToggleButtonGroup's own colors;
   // !important beats MUI's first/middle/last segment rules that reset borders, margins and radii.
   MuiToggleButtonGroup: {
@@ -176,25 +176,31 @@ const components = {
       root: {
         borderRadius: radius,
         overflow: 'hidden',
+        // fills the sub-pixel seams between segments, which would otherwise show the card behind
+        backgroundColor: celestia.toggleOn,
         '&& .MuiToggleButtonGroup-grouped': {
           border: '0 !important',
           margin: '0 !important',
           borderRadius: '0 !important',
         },
+        // overlap neighbours by 1px so no seam shows between two idle segments either
         '&& .MuiToggleButtonGroup-groupedHorizontal:not(:first-of-type)': {
-          borderLeft: `1px solid ${celestia.night} !important`,
+          marginLeft: '-1px !important',
         },
         '&& .MuiToggleButtonGroup-groupedVertical:not(:first-of-type)': {
-          borderTop: `1px solid ${celestia.night} !important`,
+          marginTop: '-1px !important',
         },
+        // idle segments darken as a whole: darker fill and dimmed content (text, icons, chips)
         '&& .MuiToggleButtonGroup-grouped:not(.Mui-selected)': {
           backgroundColor: celestia.toggleOff,
           color: celestia.faint,
+          '& > *': { opacity: 0.55 },
         },
         '&& .MuiToggleButtonGroup-grouped:not(.Mui-selected):hover': {
           backgroundColor: celestia.toggleOffHover,
           color: celestia.muted,
           boxShadow: `inset 0 -2px 0 ${celestia.gold}`,
+          '& > *': { opacity: 0.8 },
         },
         [`&& .MuiToggleButtonGroup-grouped.Mui-selected${notElementButton}`]: {
           backgroundColor: celestia.toggleOn,
