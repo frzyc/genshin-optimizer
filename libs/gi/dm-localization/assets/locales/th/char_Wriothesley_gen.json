@@ -137,7 +137,7 @@
     "name": "There Shall Be an Unveiling for Injustice",
     "description": {
       "0": "<strong>เจิดจรัส: นำไฟฟ้าดารา</strong>: เอฟเฟกต์ของพรสวรรค์เพิ่มเติม \"There Shall Be a Plea for Justice\" จะเปลี่ยนเป็น:",
-      "1": "เมื่อพลังชีวิตของ Wriothesley ต่ำกว่า 60% จะได้รับ \"Gracious Rebuke: Unveiling\" ทำให้การชาร์จโจมตีของ<strong>โจมตีปกติ - Forceful Fists of Frost</strong> ในครั้งต่อไปได้รับการเสริมพลังเป็น Luster: Vaulting Fist : การโจมตีดังกล่าวจะไม่ใช้พลังกาย และหลังจากโดนเป้าหมาย จะฟื้นฟูพลังชีวิตให้กับ Wriothesley เท่ากับ 30% ของพลังชีวิตสูงสุดของ Wriothesley โดยจะฟื้นฟูพลังชีวิตให้กับ Wriothesley ด้วยวิธีนี้ได้มากสุดหนึ่งครั้งทุก 2 วินาที",
+      "1": "เมื่อพลังชีวิตของ Wriothesley ต่ำกว่า 60% จะได้รับ \"Gracious Rebuke: Unveiling\" ทำให้การชาร์จโจมตีของ<strong>โจมตีปกติ - Forceful Fists of Frost</strong> ของ Wriothesley ได้รับการเสริมพลังเป็น Luster: Vaulting Fist : การโจมตีดังกล่าวจะไม่ใช้พลังกาย และหลังจากโดนเป้าหมาย จะฟื้นฟูพลังชีวิตให้กับ Wriothesley เท่ากับ 30% ของพลังชีวิตสูงสุดของ Wriothesley โดยจะฟื้นฟูพลังชีวิตให้กับ Wriothesley ด้วยวิธีนี้ได้มากสุดหนึ่งครั้งทุก 2 วินาที",
       "2": "นอกจากนี้ การโจมตีครั้งที่ 3 และครั้งที่ 5 ของ Repelling Fist ที่ถูกเสริมพลังโดย <strong>Chilling Penalty</strong> จะสร้าง<cryo>ความเสียหายน้ำแข็ง</cryo> 60%/80% ของความเสียหายเดิมตามลำดับ และ Luster: Vaulting Fist จะสร้าง<cryo>ความเสียหายน้ำแข็งวงกว้าง</cryo> 100% ของความเสียหายเดิม ความเสียหายดังกล่าวจะถูกนับเป็นความเสียหายปฏิกิริยานำไฟฟ้าดารา; Wriothesley จะสร้างความเสียหายปฏิกิริยานำไฟฟ้าดาราเพิ่มขึ้น 30%",
       "3": "นอกจากนี้ เมื่ออยู่ใน<tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>เขตแดนดาราฉาย</strong></tooltip> Wriothesley จะเข้าสู่สถานะ <strong>เจิดจรัส: นำไฟฟ้าดารา</strong>"
     }
@@ -235,7 +235,7 @@
       "1": "<br/>",
       "2": "<strong>เจิดจรัส: นำไฟฟ้าดารา</strong>: เอฟเฟกต์ข้างต้นจะเปลี่ยนเป็น:",
       "3": [
-        "อัตราคริของ Repelling Fist และ Luster: Vaulting Fist ที่ได้รับการเสริมพลังด้วย <strong>Chilling Penalty</strong> เพิ่มขึ้น 10% ความแรงคริเพิ่มขึ้น 80% และการโจมตีครั้งที่ 5 ของ Repelling Fist และ Luster: Vaulting Fist ที่ได้รับการเสริมพลังด้วย <strong>Chilling Penalty</strong> จะสร้างแท่งน้ำแข็งเพิ่มเติม ซึ่งจะสร้าง<cryo>ความเสียหายน้ำแข็ง</cryo> 60% ของความเสียหายเดิม โดยความเสียหายดังกล่าวจะถือเป็นความเสียหายปฏิกิริยานำไฟฟ้าดารา"
+        "อัตราคริของ Repelling Fist และ Luster: Vaulting Fist ที่ได้รับการเสริมพลังด้วย <strong>Chilling Penalty</strong> เพิ่มขึ้น 10% ความแรงคริเพิ่มขึ้น 80% และการโจมตีครั้งที่ 5 ของ Repelling Fist และ Luster: Vaulting Fist ที่ได้รับการเสริมพลังด้วย <strong>Chilling Penalty</strong> จะสร้างแท่งน้ำแข็งเพิ่มเติม ซึ่งจะสร้าง<cryo>ความเสียหายน้ำแข็ง</cryo> 20% ของความเสียหายเดิม โดยความเสียหายดังกล่าวจะถือเป็นความเสียหายปฏิกิริยานำไฟฟ้าดารา"
       ],
       "4": "<br/>",
       "5": "ต้องปลดล็อกพรสวรรค์เพิ่มเติม \"There Shall Be a Plea for Justice\" ก่อน"

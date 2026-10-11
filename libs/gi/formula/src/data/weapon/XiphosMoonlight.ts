@@ -1,31 +1,23 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  own,
-  register,
-} from '../util'
+import { prod, subscript } from '@genshin-optimizer/pando/engine'
+import { notOwnBuff, own, ownBuff, percent, register } from '../util'
 import { entriesForWeapon } from './util'
 
 const key: WeaponKey = 'XiphosMoonlight'
+const enerRech_arr = [-1, 0.00036, 0.00045, 0.00054, 0.00063, 0.00072]
 
 const {
-  weapon: { refinement: _refinement },
+  weapon: { refinement },
 } = own
-// TODO: Conditionals
-const { _someBoolConditional } = allBoolConditionals(key)
-const { _someListConditional } = allListConditionals(key, [])
-const { _someNumConditional } = allNumConditionals(key)
+const selfEnerRech_ = prod(
+  percent(subscript(refinement, enerRech_arr)),
+  own.premod.eleMas
+)
 
 export default register(
   key,
-  entriesForWeapon(key)
-
-  // TODO:
-  // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
-  // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
-  // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
-  //
-  // TODO: Add refinement bonus
+  entriesForWeapon(key),
+  ownBuff.final.enerRech_.add(selfEnerRech_),
+  // WR unequal(charKey, target.charKey): teammates always, unlike Evenstar/Makhaira.
+  notOwnBuff.final.enerRech_.add(prod(percent(0.3), selfEnerRech_))
 )

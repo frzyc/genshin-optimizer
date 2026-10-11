@@ -1,0 +1,17 @@
+{
+  "name": "[Lunar] Semiluna",
+  "desc": {
+    "0": "A W-Engine improved upon the first three generations of the \"Lunar\" series, offering advantages in output power, noise reduction, and energy capacity.",
+    "1": "Unfortunately, each individual metric is slightly weaker than its predecessors, making it a precisely balanced \"jack-of-all-trades\" product that inspires both love and hate."
+  },
+  "desc2": "Equip to increase Armorer Agents' combat capabilities",
+  "desc3": "A cost-effective choice for newcomers exploring Hollows.",
+  "phase": "Crescent Moon",
+  "phaseDescs": [
+    "When using an <ct color=#FFFFFF>EX Special Attack</ct>, Basic Attack DMG increases by <ct color=#2BAD00>18%</ct> for 10s. Repeated triggers reset the duration.",
+    "When using an <ct color=#FFFFFF>EX Special Attack</ct>, Basic Attack DMG increases by <ct color=#2BAD00>21%</ct> for 10s. Repeated triggers reset the duration.",
+    "When using an <ct color=#FFFFFF>EX Special Attack</ct>, Basic Attack DMG increases by <ct color=#2BAD00>24%</ct> for 10s. Repeated triggers reset the duration.",
+    "When using an <ct color=#FFFFFF>EX Special Attack</ct>, Basic Attack DMG increases by <ct color=#2BAD00>27%</ct> for 10s. Repeated triggers reset the duration.",
+    "When using an <ct color=#FFFFFF>EX Special Attack</ct>, Basic Attack DMG increases by <ct color=#2BAD00>30%</ct> for 10s. Repeated triggers reset the duration."
+  ]
+}

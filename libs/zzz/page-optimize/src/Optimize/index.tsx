@@ -7,11 +7,7 @@ import {
   allDiscSlotKeys,
   type DiscSlotKey,
 } from '@genshin-optimizer/zzz/consts'
-import {
-  getTeamFrame0,
-  type ICachedDisc,
-  targetTag,
-} from '@genshin-optimizer/zzz/db'
+import { getTeamFrame0, type ICachedDisc } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
   OptConfigProvider,
@@ -19,6 +15,7 @@ import {
   useDatabaseContext,
   useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
+import { toTag } from '@genshin-optimizer/zzz/formula'
 import { useZzzCalcContext } from '@genshin-optimizer/zzz/formula-ui'
 import { createOptimizeConfig } from '@genshin-optimizer/zzz/solver'
 import { getCharStat, getWengineStat } from '@genshin-optimizer/zzz/stats'
@@ -53,7 +50,8 @@ export default function Optimize() {
   const mate = team.teammates.find((t) => t.characterKey === characterKey)
   const optConfigId = mate?.optConfigId
 
-  if (!optConfigId) {
+  useEffect(() => {
+    if (optConfigId) return
     const newOptConfigId = database.optConfigs.new({
       wEngineTypes: [getCharStat(characterKey).specialty],
     })
@@ -62,8 +60,9 @@ export default function Optimize() {
       characterKey,
       newOptConfigId
     )
-    return null
-  }
+  }, [optConfigId, characterKey, database.optConfigs, database.teams])
+
+  if (!optConfigId) return null
   return (
     <OptConfigProvider optConfigId={optConfigId}>
       <OptimizeWrapper />
@@ -77,7 +76,7 @@ function OptimizeWrapper() {
   const calc = useZzzCalcContext()
   const { key: characterKey } = useCharacterContext()!
   const team = useTeam(characterKey)!
-  const { tag: target } = getTeamFrame0(team)
+  const { ref } = getTeamFrame0(team)
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<Progress | undefined>(undefined)
   const { optConfig, optConfigId } = useContext(OptConfigContext)
@@ -164,11 +163,13 @@ function OptimizeWrapper() {
 
   const currentSolver = useRef<Solver<string> | null>(null)
   const cfg = useMemo(() => {
-    if (!calc || !target) return
+    if (!calc || !ref) return
+    const resolvedTag = toTag(ref)
+    if (!resolvedTag) return
     return createOptimizeConfig({
       characterKey,
       calc,
-      frames: [{ tag: targetTag(target), multiplier: 1 }],
+      frames: [{ tag: resolvedTag, multiplier: 1 }],
       statFilters: (optConfig.statFilters ?? []).filter((s) => !s.disabled),
       setFilter2: optConfig.setFilter2,
       setFilter4: optConfig.setFilter4,
@@ -181,7 +182,7 @@ function OptimizeWrapper() {
     })
   }, [
     calc,
-    target,
+    ref,
     optConfig.statFilters,
     optConfig.setFilter2,
     optConfig.setFilter4,

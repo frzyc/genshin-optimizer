@@ -65,7 +65,9 @@
     "hyperbloom": "Iperfioritura",
     "quicken": "Vivificazione",
     "aggravate": "Accentuazione",
-    "spread": "Propagazione"
+    "spread": "Propagazione",
+    "stellarconduct": "Astroconduzione",
+    "stellarswirl": "Turbinio astrale"
   },
   "stat": {
     "def": "DIF",
@@ -77,15 +79,15 @@
   "talentLvl": "Liv. talento {{level}}",
   "talents": {
     "auto": "Attacco normale",
-    "skill": "",
-    "burst": "",
+    "skill": "Abilità elementale",
+    "burst": "Tripudio elementale",
     "altSprint": "Scatto alternativo"
   },
   "unlockPassive1": "Si sblocca dopo aver raggiunto la fase d'ascensione 1",
   "unlockPassive2": "Si sblocca dopo aver raggiunto la fase d'ascensione 4",
   "unlockPassive3": "Talento passivo",
   "unlockLockedPassive": "Si sblocca dopo aver completato le missioni preliminari",
-  "witchPassive": "",
+  "witchPassive": "Compiti della strega",
   "moonsign": "Presagio lunare",
   "hexerei": "Hexerei"
 }

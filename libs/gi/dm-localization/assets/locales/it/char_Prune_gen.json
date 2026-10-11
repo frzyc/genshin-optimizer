@@ -45,11 +45,11 @@
   "skill": {
     "name": "Din-din-dan! Scampanio Scacciastreghe",
     "description": {
-      "0": "Scatena la potenza del vento al fine di sconfiggere la strega malvagia e salvare Descartes! Prune colpisce la Campana Ammaliastreghe con il suo Martello Scacciamali, infliggendo <anemo>DAN da Anemo</anemo>.",
-      "1": "Se Prune innesca un Turbinio su un avversario usando questo attacco, <strong>Din-din-dan! Scampanio Scacciastreghe</strong> viene sostituito da <strong>Don don! Castigo della strega!</strong> per i successivi 6 s.",
+      "0": "Determinata a sconfiggere la strega \"malvagia\" e a salvare il suo amato Descartes, Prune sprigiona il potere del vento! Colpisce la Campana Ammaliastreghe usando il suo Martello Scacciamali, infliggendo <anemo>DAN da Anemo</anemo>.",
+      "1": "Se Prune innesca una reazione di Turbinio o di Turbinio astrale su un avversario usando questo attacco, <strong>Din-din-dan! Scampanio Scacciastreghe</strong> viene sostituito da <strong>Don don! Castigo della strega!</strong> per i successivi 6 s.",
       "2": "<br/>",
       "3": "<strong>Don don! Castigo della strega!</strong>",
-      "4": "Il martello di Prune viene avvolto dall'elemento coinvolto nella precedente reazione di Turbinio, sottoponendo il <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Martello Scacciamali</strong></tooltip> a una Conversione elementale. Attivando l'abilità con una pressione, Prune compie un balzo in alto e dà un calcio in avanti al Martello Scacciamali, infliggendo DAN elementali del tipo corrispondente agli avversari di fronte a lei."
+      "4": "Avvolge il <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Martello Scacciamali</strong></tooltip> nell'elemento coinvolto nella precedente reazione di Turbinio o di Turbinio astrale. Dopo aver attivato l'abilità con una pressione, Prune sferra un calcio a mezz'aria contro il Martello Scacciamali, infliggendo agli avversari di fronte a lei DAN del tipo elementale corrispondente."
     },
     "skillParams": {
       "0": "DAN da Din-din-dan! Scampanio Scacciastreghe",
@@ -108,7 +108,7 @@
   "passive1": {
     "name": "Verdetto e punizione",
     "description": {
-      "0": "Durante il Tripudio elementale <strong><tooltip ns=char_Prune_gen baseKey18=burst>La campana rintocca! La caccia è aperta!</tooltip></strong>, dopo aver inflitto DAN tramite la Campana Ammaliastreghe in modalità Caccia, se tali DAN innescano un Turbinio su un avversario, viene evocato anche un <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Martello Scacciamali</strong></tooltip> che infligge DAN pari a un 150% dell'ATT di Prune del tipo corrispondente alla Conversione elementale del Turbinio. Tali DAN sono considerati DAN da Tripudio elementale."
+      "0": "Durante il Tripudio elementale <strong><tooltip ns=char_Prune_gen baseKey18=burst>La campana rintocca! La caccia è aperta!</tooltip></strong>, dopo aver inflitto DAN tramite la Campana Ammaliastreghe in modalità Caccia, se tali DAN innescano una reazione di Turbinio o di Turbinio astrale su un avversario, viene evocato anche un <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Martello Scacciamali</strong></tooltip> che infligge DAN pari a un 150% dell'ATT di Prune del tipo corrispondente alla Conversione elementale del Turbinio o del Turbinio astrale. Tali DAN sono considerati DAN da Tripudio elementale."
     }
   },
   "passive2": {
@@ -129,7 +129,7 @@
       "0": "Dopo aver completato <strong>Compiti della strega: Sulle controversie</strong>, Prune acquisisce l'attributo <strong>Hexerei</strong>. Quando il gruppo include almeno 2 personaggi con attributo Hexerei, questi ultimi ottengono l'effetto di potenziamento <strong>Hexerei: Rito segreto</strong>.",
       "1": "<br/>",
       "2": "<strong>Hexerei: Rito segreto</strong>",
-      "3": "Dopo che un personaggio con attributo Hexerei nel gruppo sotto l'effetto di Adunanza del rintocco ha innescato una reazione elementale su un nemico, l'ATT di Prune aumenta di un 60% per 5 s. Se la reazione elementale innescata è una reazione di Turbinio, l'ATT del personaggio che l'ha innescata aumenta di un ulteriore 30% per 5 s."
+      "3": "Dopo che un personaggio con attributo Hexerei nel gruppo sotto l'effetto di Adunanza del rintocco ha innescato una reazione elementale su un nemico, l'ATT di Prune aumenta di un 60% per 5 s. Se la reazione elementale innescata è una reazione di Turbinio o di Turbinio astrale, l'ATT del personaggio che l'ha innescata aumenta di un ulteriore 30% per 5 s."
     }
   },
   "constellation1": {

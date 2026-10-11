@@ -1,0 +1,24 @@
+{
+  "name": "Covenant of Frost and Snow",
+  "description": {
+    "0": "A longbow crafted to preserve order. Its cold radiance perfectly emanates the ideals of absolute fairness and justice."
+  },
+  "passiveName": "The Law's Equilibrium",
+  "passiveDescription": {
+    "0": {
+      "0": "For 12s after the equipping character uses an Elemental Skill, their Elemental Mastery is increased by <cryo>120</cryo>."
+    },
+    "1": {
+      "0": "For 12s after the equipping character uses an Elemental Skill, their Elemental Mastery is increased by <cryo>150</cryo>."
+    },
+    "2": {
+      "0": "For 12s after the equipping character uses an Elemental Skill, their Elemental Mastery is increased by <cryo>180</cryo>."
+    },
+    "3": {
+      "0": "For 12s after the equipping character uses an Elemental Skill, their Elemental Mastery is increased by <cryo>210</cryo>."
+    },
+    "4": {
+      "0": "For 12s after the equipping character uses an Elemental Skill, their Elemental Mastery is increased by <cryo>240</cryo>."
+    }
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "auto": {
+    "name": "Giá Rét Dị Bang",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, vung ra hai nhát kiếm về phía trước trong chớp mắt."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát thương lần 1",
+      "1": "Sát thương lần 2",
+      "2": "Sát thương lần 3",
+      "3": "Sát thương lần 4",
+      "4": "Sát thương lần 5",
+      "5": "Sát thương Trọng Kích",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Sát thương khi đáp",
+      "8": "Sát thương khi đáp từ độ cao thấp/cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Băng Sương Kiếm",
+    "description": {
+      "0": "Vung vũ khí đâm về phía trước, giải phóng sương băng cực hàn, gây <cryo>Sát Thương Nguyên Tố Băng</cryo> về phía trước đồng thời ngưng tụ Hàn Tinh Lạnh Lẽo bên cạnh.",
+      "1": "<br/>",
+      "2": "<strong>Hàn Tinh Lạnh Lẽo</strong>",
+      "3": " ·Đi theo nhân vật trong đội bản thân, đồng thời phóng Tinh Thể Băng tấn công kẻ địch xung quanh theo chu kỳ, gây <cryo>Sát Thương Nguyên Tố Băng</cryo>.",
+      "4": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Hàn Tinh Lạnh Lẽo sẽ không phóng Tinh Thể Băng theo chu kỳ nữa, mà khi đòn Tấn Công Thường, Trọng Kích hoặc Tấn Công Khi Đáp của Nhà Lữ Hành đánh trúng kẻ địch, sẽ phóng ra một Tinh Thể Băng để phối hợp tấn công kẻ địch, mỗi 0.2s tối đa kích hoạt một lần.",
+      "5": [
+        "Khi Tinh Thể Băng đánh trúng kẻ địch, Nhà Lữ Hành sẽ tích lũy 1 tầng <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Giá Rét Huy Hoàng</strong></tooltip>. Hiệu quả này tối đa cộng dồn 8 tầng.",
+        "Khi không trong trạng thái chiến đấu, <strong>Giá Rét Huy Hoàng</strong> sẽ bị xóa sau 30s."
+      ],
+      "6": "<br/>",
+      "7": "<i>Đã từng cùng Paimon quan sát sự ngưng tụ của sương giá.</i>"
+    },
+    "skillParams": {
+      "0": "Sát thương kỹ năng",
+      "1": "Sát thương Tinh Thể Băng",
+      "2": "Hàn Tinh Lạnh Lẽo duy trì",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Băng Tụ Sắc Bén",
+    "description": {
+      "0": "Ngưng tụ sức mạnh Nguyên Tố Băng thành ngọn giáo và ném về phía kẻ địch, gây nhiều lần <cryo>Sát Thương Nguyên Tố Băng</cryo>.",
+      "1": "Khi thi triển, Nhà Lữ Hành sẽ tiêu hao tất cả số tầng <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Giá Rét Huy Hoàng</strong></tooltip> để tăng sát thương Kỹ Năng Nộ lần này. Nếu tiêu hao 8 tầng <strong>Giá Rét Huy Hoàng</strong>, thì sẽ còn tăng số lần gây sát thương của ngọn giáo.",
+      "2": "<br/>",
+      "3": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Tỏa Sáng: Tinh Tú Lấp Lánh</strong></tooltip>: Kỹ Năng Nộ lần này chuyển sang gây <cryo>Sát Thương Nguyên Tố Băng</cryo> được xem là sát thương phản ứng Tinh Tú Lấp Lánh tương ứng.",
+      "4": "<br/>",
+      "5": "<i>Đã từng cùng Paimon cảm nhận sự sắc bén của nhũ băng.</i>"
+    },
+    "skillParams": {
+      "0": "Sát thương từng lần của ngọn giáo",
+      "1": "Giá Rét Huy Hoàng tăng sát thương",
+      "2": "Sát thương từng lần của ngọn giáo Tinh-Siêu Dẫn",
+      "3": "Tinh-Siêu Dẫn Giá Rét Huy Hoàng tăng sát thương",
+      "4": "Sát thương từng lần của ngọn giáo Tinh-Khuếch Tán",
+      "5": "Tinh-Khuếch Tán Giá Rét Huy Hoàng tăng sát thương",
+      "6": "Số lần tấn công",
+      "7": "Số lần tấn công thêm khi đầy Giá Rét Huy Hoàng",
+      "8": "CD",
+      "9": "Năng Lượng Nguyên Tố",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Băng Lạnh Sắc Nhọn",
+    "description": {
+      "0": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Trong thời gian <strong>Hàn Tinh Lạnh Lẽo</strong> tồn tại, Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp của Nhà Lữ Hành sẽ chuyển sang gây <cryo>Sát Thương Nguyên Tố Băng</cryo> không thể bị thay thế, đồng thời tăng sát thương gây ra tương đương 80% Tấn Công của Nhà Lữ Hành."
+    }
+  },
+  "passive2": {
+    "name": "Băng Giá Chói Sáng",
+    "description": {
+      "0": "Tăng Tinh Thông Nguyên Tố của Nhà Lữ Hành, mức tăng tương đương 8% Tấn Công của Nhà Lữ Hành. Tối đa tăng 160 Tinh Thông Nguyên Tố theo cách này."
+    }
+  },
+  "passive3": {
+    "name": "Chúc Phúc Tinh Tú - Gương Băng Biến Ảo",
+    "description": {
+      "0": "Khi ở trong <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Vùng Trục Sao</strong></tooltip>/Trong 8s sau khi nhân vật trong đội kích hoạt phản ứng Tinh-Khuếch Tán ở gần, Nhà Lữ Hành sẽ lần lượt vào trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>/<strong>Tỏa Sáng: Tinh-Khuếch Tán</strong>.",
+      "1": "Khi nhân vật trong đội kích hoạt phản ứng Siêu Dẫn/Khuếch Tán Nguyên Tố Băng, sẽ chuyển thành phản ứng Tinh-Siêu Dẫn/Tinh-Khuếch Tán, đồng thời tăng sát thương cơ bản của các phản ứng kể trên do nhân vật trong đội gây ra dựa trên Tấn Công của Nhà Lữ Hành: Mỗi 100 điểm Tấn Công sẽ tăng 0.35% sát thương cơ bản của các phản ứng kể trên, tối đa tăng 7% sát thương theo cách này."
+    }
+  },
+  "lockedPassive": {
+    "name": "Tầng Băng Dị Bang",
+    "description": {
+      "0": "Đúc kết sức mạnh mới từ những chuyến hành trình đã qua. Khi cộng hưởng với mỗi loại nguyên tố, sẽ nhận được <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>hiệu quả cường hóa</strong></tooltip> thêm.",
+      "1": "<br/>",
+      "2": "Ngoài ra, khi nhân vật trong đội ở gần gây sát thương phản ứng Tinh-Siêu Dẫn hoặc Tinh-Khuếch Tán, Nhà Lữ Hành sẽ nhận được một tầng \"Lưỡi Đao Ngưng Băng\", mỗi 2s tối đa nhận một tầng Lưỡi Đao Ngưng Băng theo cách này, nhiều nhất cộng dồn 3 tầng. Khi có 3 tầng Lưỡi Đao Ngưng Băng và thực hiện Trọng Kích, sẽ tiêu hao toàn bộ Lưỡi Đao Ngưng Băng và chuyển sang thực hiện <strong>Trọng Kích - Băng Kết</strong> đặc biệt.",
+      "3": "<br/>",
+      "4": "<strong>Trọng Kích - Băng Kết</strong>",
+      "5": [
+        "Gây <cryo>Sát Thương Nguyên Tố Băng</cryo> cao hơn, sát thương tăng thêm tương đương 140% Tấn Công của Nhà Lữ Hành, đồng thời giúp Nhà Lữ Hành nhận 2 tầng <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Giá Rét Huy Hoàng</strong></tooltip>.",
+        "Mỗi 15s tối đa thực hiện một lần <strong>Trọng Kích - Băng Kết</strong>. Ngoài ra, hiệu quả tăng sát thương của Thiên Phú Đột Phá \"Băng Lạnh Sắc Nhọn\" sẽ không hiệu lực với <strong>Trọng Kích - Băng Kết</strong>."
+      ],
+      "6": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Tỏa Sáng: Tinh Tú Lấp Lánh</strong></tooltip>: <strong>Trọng Kích - Băng Kết</strong> chuyển sang gây <cryo>Sát Thương Nguyên Tố Băng</cryo> được xem là sát thương phản ứng Tinh Tú Lấp Lánh tương ứng."
+    }
+  },
+  "constellation1": {
+    "name": "Băng Ngưng Ảm Đạm",
+    "description": {
+      "0": "Khi Nhà Lữ Hành gây sát thương phản ứng Tinh Tú Lấp Lánh, sẽ hồi 5 điểm Năng Lượng Nguyên Tố cho bản thân. Hiệu quả này mỗi 0.5s tối đa kích hoạt 1 lần."
+    }
+  },
+  "constellation2": {
+    "name": "Băng Rơi Ngân Vang",
+    "description": {
+      "0": "Sau khi <strong>Tinh Thể Băng</strong> phóng ra từ Kỹ Năng Nguyên Tố <strong><tooltip ns=char_TravelerCryoF_gen baseKey18=skill>Băng Sương Kiếm</tooltip></strong> đánh trúng kẻ địch, nhân vật trong trận hiện tại sẽ tăng 60 điểm Tinh Thông Nguyên Tố trong 5s.",
+      "1": "Ngoài ra, nếu nhân vật chịu ảnh hưởng bởi hiệu quả trên kích hoạt phản ứng Tinh Tú Lấp Lánh hoặc gây sát thương Tinh Tú Lấp Lánh, thì trong thời gian duy trì, hiệu quả nêu trên sẽ chuyển sang tăng 120 điểm Tinh Thông Nguyên Tố."
+    }
+  },
+  "constellation3": {
+    "name": "Băng Sắc Cắt Vàng",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_TravelerCryoF_gen baseKey18=burst>Băng Tụ Sắc Bén</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Băng Cứng Không Tan",
+    "description": {
+      "0": "Thời gian duy trì <strong>Hàn Tinh Lạnh Lẽo</strong> sinh ra từ Kỹ Năng Nguyên Tố <strong><tooltip ns=char_TravelerCryoF_gen baseKey18=skill>Băng Sương Kiếm</tooltip></strong> sẽ kéo dài thêm 25%."
+    }
+  },
+  "constellation5": {
+    "name": "Băng Sương Buốt Giá",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_TravelerCryoF_gen baseKey18=skill>Băng Sương Kiếm</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Băng Sáng Tàn Sát",
+    "description": {
+      "0": "Khi thi triển Kỹ Năng Nộ <strong><tooltip ns=char_TravelerCryoF_gen baseKey18=burst>Băng Tụ Sắc Bén</tooltip></strong>, mỗi tiêu hao 1 tầng <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Giá Rét Huy Hoàng</strong></tooltip>, sát thương phản ứng Tinh Tú Lấp Lánh do nhân vật khác trong đội gây ra sẽ tăng 5%, tối đa tăng 40% theo cách này, duy trì 15s."
+    }
+  }
+}

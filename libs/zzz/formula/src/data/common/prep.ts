@@ -18,6 +18,13 @@ const data: TagMapNodeEntries = [
   ownBuff.formula.sheerDmg.reread(ownBuff.dmg.shared),
   ownBuff.formula.sheerDmg.add(own.dmg.sheer_mult_),
 
+  ownBuff.formula.sharpDmg.add(own.formula.sharpDmgBase),
+  ownBuff.formula.sharpDmg.add(own.dmg.laceration_mult_),
+  // Reread to flatten the formula
+  ownBuff.formula.sharpDmg.reread(ownBuff.dmg.shared),
+  ownBuff.formula.sharpDmg.add(own.dmg.def_mult_),
+  ownBuff.formula.sharpDmg.add(own.dmg.sharp_mult_),
+
   ownBuff.formula.anomalyDmg.add(
     sum(
       prod(own.formula.anomalyDmgBase, own.dmg.anom_base_mult_),

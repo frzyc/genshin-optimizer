@@ -50,6 +50,7 @@ export function CompactWengineCard({
     wengine.phase,
     wengine.modification
   )
+  const mainStatKey = wengineStat['base_statkey']
   const substatKey = wengineStat['second_statkey']
 
   return (
@@ -129,8 +130,8 @@ export function CompactWengineCard({
                     },
                   }}
                 >
-                  <StatIcon statKey={'atk'} />
-                  <span>{wengineStats['atk_base'].toFixed()}</span>
+                  <StatIcon statKey={mainStatKey} />
+                  <span>{wengineStats[mainStatKey].toFixed()}</span>
                 </Typography>
                 <Typography
                   sx={{

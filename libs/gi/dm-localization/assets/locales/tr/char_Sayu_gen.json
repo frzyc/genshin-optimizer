@@ -129,8 +129,8 @@
   "passive1": {
     "name": "Liyakatli",
     "description": {
-      "0": "Sayu aktifken Girdap tepkimesini tetiklerse tüm karakterlerin ve yakındaki müttefiklerin için 300 Can yeniler. Ayrıca sahip olduğu her Element Ustalığı puanı başına 1,2 Can verir.",
-      "1": "Bu etki 2 saniyede bir uygulanabilir."
+      "0": "Sayu aktifken Girdap veya Yıldız Girdabı tepkimesini tetiklerse tüm karakterlerin ve yakındaki müttefiklerin için 300 Can yeniler. Ayrıca sahip olduğu her Element Ustalığı puanı başına 1,2 Can verir.",
+      "1": "Bu etki 2 saniyede bir tetiklenebilir."
     }
   },
   "passive2": {
@@ -176,8 +176,8 @@
   "constellation4": {
     "name": "Yeni Bir Kaytarma Yöntemi",
     "description": {
-      "0": "Sayu bir Girdap tepkimesi tetiklediğinde 1,2 Enerji yeniler.",
-      "1": "Bu etki 2 saniyede bir uygulanabilir."
+      "0": "Sayu alandayken bir Girdap veya Yıldız Girdabı tepkimesi tetiklediğinde 1,2 Enerji yeniler.",
+      "1": "Bu etki 2 saniyede bir tetiklenebilir."
     }
   },
   "constellation5": {

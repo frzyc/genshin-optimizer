@@ -1,0 +1,24 @@
+{
+  "name": "Eco del Corazón",
+  "description": {
+    "0": "Un catalizador que se usa para congelar el sonido. Parece que aún conserva un juramento de lealtad, así como un corazón olvidado por la gente."
+  },
+  "passiveName": "Eco del juramento",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras causar una Reacción Elemental, la Maestría Elemental del portador de esta arma aumenta en <cryo>60</cryo> pts. durante 12 s. Tras causar una reacción de Destello Estelar, el daño de Destello Estelar del portador aumenta en un <cryo>16%</cryo> durante 12 s. Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Tras causar una Reacción Elemental, la Maestría Elemental del portador de esta arma aumenta en <cryo>75</cryo> pts. durante 12 s. Tras causar una reacción de Destello Estelar, el daño de Destello Estelar del portador aumenta en un <cryo>20%</cryo> durante 12 s. Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Tras causar una Reacción Elemental, la Maestría Elemental del portador de esta arma aumenta en <cryo>90</cryo> pts. durante 12 s. Tras causar una reacción de Destello Estelar, el daño de Destello Estelar del portador aumenta en un <cryo>24%</cryo> durante 12 s. Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Tras causar una Reacción Elemental, la Maestría Elemental del portador de esta arma aumenta en <cryo>105</cryo> pts. durante 12 s. Tras causar una reacción de Destello Estelar, el daño de Destello Estelar del portador aumenta en un <cryo>28%</cryo> durante 12 s. Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Tras causar una Reacción Elemental, la Maestría Elemental del portador de esta arma aumenta en <cryo>120</cryo> pts. durante 12 s. Tras causar una reacción de Destello Estelar, el daño de Destello Estelar del portador aumenta en un <cryo>32%</cryo> durante 12 s. Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    }
+  }
+}

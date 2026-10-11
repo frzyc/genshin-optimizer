@@ -140,8 +140,8 @@
   "lockedPassive": {
     "name": "Seçkin Hazineler",
     "description": {
-      "0": "<strong>Buz Patisi</strong> Element Becerisi kullanıldıktan sonraki 20sn içinde grup üyeleri Süper İletim veya Yıldız İletimi tepkimelerini tetiklediğinde Diona da ayrıca üç adet <strong>Buz Patisi</strong> fırlatır. Bu şekilde fırlatılan <strong>Buz Patileri</strong> Element Parçacıkları üretemez ve düşmanlara isabet ettiğinde kalkan oluşturmaz. Bu etki her 3,5 saniyede bir gerçekleşebilir.",
-      "1": "Ayrıca Diona bir <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Kutup Yıldızı Alanı</strong></tooltip> içindeyken <strong>Işıltı: Yıldız İletimi</strong> durumuna girer."
+      "0": "<strong>Buz Patisi</strong> Element Becerisi kullanıldıktan sonraki 20sn içinde grup üyeleri Yıldız İletimi, Süper İletim, Buz Girdabı veya Yıldız Girdabı tepkimelerini tetiklediğinde Diona da ayrıca üç adet <strong>Buz Patisi</strong> fırlatır. Bu şekilde fırlatılan <strong>Buz Patileri</strong> Element Parçacıkları üretemez ve düşmanlara isabet ettiğinde kalkan oluşturmaz. Bu etki her 3,5 saniyede bir gerçekleşebilir.",
+      "1": "Ayrıca Diona bir <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Kutup Yıldızı Alanı</strong></tooltip> içindeyken <strong>Işıltı: Yıldız İletimi</strong> durumuna, yakındaki bir grup üyesi bir Yıldız Girdabı tepkimesi tetiklediğinde ise 8 saniyeliğine <strong>Işıltı: Yıldız Girdabı</strong> durumuna girer."
     }
   },
   "constellation1": {
@@ -194,8 +194,9 @@
       ],
       "2": "<br/>",
       "3": "Ayrıca Diona'nın Maks. Canı %25 artar.",
-      "4": "<br/>",
-      "5": "<strong>Işıltı: Yıldız İletimi</strong>: <strong>Özel Karışım</strong> alanındaki karakterlerin verdiği Süper İletim ve Yıldız İletimi Tepkime Hasarı %40 artar."
+      "4": "<strong>Işıltı: Yıldız Parıltısı</strong>: Özel Karışım alanındaki karakterlerin aşağıdaki tepkimelerle verdiği Hasar artar:",
+      "5": "<strong>Işıltı: Yıldız İletimi</strong>: Süper İletim ve Yıldız İletimi Tepkimesi Hasarı %40 artar.",
+      "6": "<strong>Işıltı: Yıldız Girdabı</strong>: Buz Girdabı ve Yıldız Girdabı Tepkimesi Hasarı %40 artar."
     }
   }
 }

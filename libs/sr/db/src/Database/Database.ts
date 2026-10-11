@@ -1,5 +1,6 @@
 import type { DBStorage } from '@genshin-optimizer/common/database'
 import { Database, SandboxStorage } from '@genshin-optimizer/common/database'
+import { compressToB64Gzip } from '@genshin-optimizer/common/util'
 import type { GenderKey } from '@genshin-optimizer/sr/consts'
 import type { ISrObjectDescription } from '@genshin-optimizer/sr/srod'
 import type { ISroDatabase } from '../Interfaces'
@@ -207,13 +208,16 @@ export class SroDatabase extends Database {
     this.saveStorage()
     other.saveStorage()
   }
-  toExtraLocalDB() {
+  override toExtraLocalDB() {
     const key = `sro_extraDatabase_${this.storage.getDBIndex()}`
     const other = new SandboxStorage(undefined, 'sro')
     const oldstorage = this.storage
     this.storage = other
     this.saveStorage()
     this.storage = oldstorage
-    localStorage.setItem(key, JSON.stringify(Object.fromEntries(other.entries)))
+    localStorage.setItem(
+      key,
+      compressToB64Gzip(Object.fromEntries(other.entries))
+    )
   }
 }

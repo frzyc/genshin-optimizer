@@ -150,7 +150,7 @@
     },
     "upgradedDescription": {
       "0": "Les attaques normales et chargées de Qiqi ont 50 % de chances de marquer l'ennemi touché d'un talisman de fortune pendant 6 s. Cet effet peut être déclenché une fois toutes les 30 s.",
-      "1": "<strong>Radiance « Astroconduction »</strong> : L'effet a maintenant 100 % de chances de se déclencher et le TdR passe à 15 s."
+      "1": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Radiance astrale</strong></tooltip> : L'effet a maintenant 100 % de chances de se déclencher et le TdR passe à 15 s."
     }
   },
   "passive3": {
@@ -163,8 +163,10 @@
     "name": "Sept trésors sacrés",
     "description": {
       "0": "Diminue le TdR de la compétence élémentaire <strong>Arcane d'Adepte : Héraut de givre</strong> à 15 s.",
-      "1": "<strong>Radiance « Astroconduction »</strong> : Les DGT des réactions de Supraconduction et d'Astroconduction déclenchées par vos personnages dans l'équipe augmentent de 50 % pendant la durée du héraut de givre.",
-      "2": "De plus, Qiqi passe en <strong>radiance « Astroconduction »</strong> lorsqu'elle est dans une <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>étendue polaris</strong></tooltip>."
+      "1": "<strong>Radiance astrale</strong> : Les DGT des réactions correspondantes de vos personnages dans l'équipe augmentent pendant la durée du héraut de givre :",
+      "2": "<strong>Radiance « Astroconduction »</strong> : Les DGT de réaction de Supraconduction et les DGT de réaction d'Astroconduction augmentent de 50 %.",
+      "3": "<strong>Radiance « Astrodispersion »</strong> : Les DGT de réaction de Dispersion Cryo et les DGT de réaction d'Astrodispersion augmentent de 50 %.",
+      "4": "De plus, Qiqi passe en <strong>radiance « Astroconduction »</strong> ou en <strong>radiance « Astrodispersion »</strong> lorsqu'elle est dans une <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>étendue polaris</strong></tooltip>, ou pendant 8 s lorsqu'un personnage de l'équipe a déclenché une réaction d'Astrodispersion à proximité, respectivement."
     }
   },
   "constellation1": {
@@ -174,7 +176,7 @@
     },
     "upgradedDescription": {
       "0": "Qiqi récupère 2 pts d'énergie élémentaire à chaque fois que son héraut de givre touche un ennemi marqué par un talisman de fortune.",
-      "1": "<strong>Radiance « Astroconduction »</strong> : Qiqi récupère également 6 pts d'énergie élémentaire lorsque l'attaque ou une attaque coordonnée du héraut de givre touche un ennemi, ceci pouvant être déclenché une fois toutes les 6 s."
+      "1": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Radiance astrale</strong></tooltip> : Qiqi récupère également 6 pts d'énergie élémentaire lorsque l'attaque ou une attaque coordonnée du héraut de givre touche un ennemi, ceci pouvant être déclenché une fois toutes les 6 s."
     }
   },
   "constellation2": {
@@ -184,7 +186,7 @@
     },
     "upgradedDescription": {
       "0": "Les attaques normales et chargées de Qiqi infligent 15 % de DGT supplémentaires contre les ennemis affectés par l'<cryo>élément Cryo</cryo>.",
-      "1": "<strong>Radiance « Astroconduction »</strong> : L'ATQ de Qiqi augmente de 50 %."
+      "1": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Radiance astrale</strong></tooltip> : L'ATQ de Qiqi augmente de 50 %."
     }
   },
   "constellation3": {
@@ -220,7 +222,7 @@
     "upgradedDescription": {
       "0": "L'activation d'<strong>Arcane d'Adepte : Talisman sacré</strong> réanime tous les personnages de l'équipe à proximité et restaure 50 % de leurs PV.",
       "1": "Cet effet peut être déclenché une fois toutes les 15 min.",
-      "2": "De plus, après l'utilisation d'<strong>Arcane d'Adepte : Talisman sacré</strong>, Qiqi obtient également 4 cumuls de l'effet <strong>Aperçu de mystère</strong>, et les DGT augmentent d'une valeur équivalant à 600 % de l'ATQ de Qiqi au prix d'un cumul d'<strong>Aperçu de mystère</strong> lorsque votre personnage déployé (hormis Qiqi) inflige des DGT de réaction d'Astroconduction. L'effet <strong>Aperçu de mystère</strong> dure un maximum de 12 s et utiliser <strong>Arcane d'Adepte : Talisman sacré</strong> réinitialise ses cumuls."
+      "2": "De plus, après l'utilisation d'<strong>Arcane d'Adepte : Talisman sacré</strong>, Qiqi obtient également 4 cumuls de l'effet <strong>Aperçu de mystère</strong>, et les DGT augmentent d'une valeur équivalant à 600 % de l'ATQ de Qiqi au prix d'un cumul d'<strong>Aperçu de mystère</strong> lorsque votre personnage déployé (hormis Qiqi) inflige directement des DGT de réaction d'Astroconduction ou des DGT de réaction d'Astrodispersion avec une aptitude ou une compétence. L'effet <strong>Aperçu de mystère</strong> dure un maximum de 12 s et utiliser <strong>Arcane d'Adepte : Talisman sacré</strong> réinitialise ses cumuls."
     }
   }
 }

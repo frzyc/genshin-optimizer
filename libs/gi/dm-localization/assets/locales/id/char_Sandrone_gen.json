@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Charged Attack</strong>",
         "1": "Memanggil Facilitatrice Automatisee Generaliste Interactive et Omnitache, atau <strong> \"Fagio\"</strong>, dan mengalihkannya ke mode <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Decoding</tooltip></strong>: Melancarkan tembakan beruntun ke musuh di depan, serta menembakkan sinar terkondensasi secara berkala, mengakibatkan <cryo>Cryo DMG Area</cryo>.",
-        "2": "<strong>Radiance: Stellar-Conduct</strong>: DMG dari sinar terkondensasinya berubah menjadi <cryo>Cryo DMG Area</cryo> yang dianggap sebagai DMG reaksi Stellar-Conduct.",
+        "2": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Radiance: Stellar Glimmer</strong></tooltip>: DMG dari sinar terkondensasinya berubah menjadi <cryo>Cryo DMG Area</cryo> yang dianggap sebagai DMG reaksi Stellar Glimmer yang sesuai.",
         "3": "Dalam mode <strong>Decoding</strong>, jumlah <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Decoding Power</tooltip></strong> Fagio akan terus bertambah. Decoding Power juga akan bertambah saat Fagio menembakkan sinar terkondensasinya.",
         "4": "Saat Decoding Power mencapai batas maksimum (100 poin), Fagio akan beralih ke mode <strong>Power Overdrive</strong>. Dalam mode ini, ia akan menembak musuh dengan jeda yang lebih panjang, mengakibatkan <cryo>Cryo DMG</cryo>, dan menjadi tidak bisa beralih ke mode Decoding.",
         "5": "Saat tidak berada dalam mode <strong>Decoding</strong>, <strong>Decoding Power</strong> Fagio akan terus berkurang secara perlahan. Saat Sandrone ada di dalam party namun sedang tidak berada di medan pertempuran, dia akan fokus memperbaiki Fagio dan mempercepat kecepatan pengurangan Decoding Power menjadi 300% dari kecepatan semulanya.",
@@ -31,10 +31,10 @@
       "3": "DMG Tembakan Beruntun Charged Attack",
       "4": "DMG Sinar Terkondensasi Charged Attack",
       "5": "DMG Stellar-Conduct Sinar Terkondensasi dari Charged Attack",
-      "6": "DMG Saat Power Overdrive",
-      "7": "DMG Selama Plunging",
-      "8": "DMG Plunging Attack Rendah/Tinggi",
-      "9": "",
+      "6": "DMG Stellar Swirl dari Sinar Terkondensasi Charged Attack",
+      "7": "DMG Saat Power Overdrive",
+      "8": "DMG Selama Plunging",
+      "9": "DMG Plunging Attack Min./Maks.",
       "10": "",
       "11": "",
       "12": "",
@@ -53,15 +53,15 @@
       "0": "Dengan gerakannya yang elegan bak seorang wanita sejati, Sandrone akan duduk di atas <strong>Tea Party Tactical Assault Hovermech</strong> miliknya dan terus melayang maju selama 6 detik. Selama durasi ini, Sandrone juga dapat mengontrol arah terbangnya. Menekan tombol Lari akan mengonsumsi 10 Stamina untuk memasuki mode melayang berkecepatan tinggi yang anggun, tapi mengonsumsi 15 poin Stamina per detik untuk melayang dengan lebih cepat.",
       "1": "<br/>",
       "2": "Jika ada musuh di sekitar Sandrone saat ia mulai melayang, maka Sandrone juga akan memanggil sebuah Prismatic Resonance Cannon untuk menembakkan dua Prism Shot ke musuh yang tidak bisa diam, mengakibatkan <cryo>Cryo DMG</cryo>.",
-      "3": "<strong>Radiance: Stellar-Conduct</strong>: DMG Prism Shot kedua akan berubah menjadi <cryo>Cryo DMG</cryo> yang dianggap sebagai DMG reaksi Stellar-Conduct.",
+      "3": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Radiance: Stellar Glimmer</strong>:</tooltip> DMG Prism Shot kedua akan berubah menjadi <cryo>Cryo DMG</cryo> yang dianggap sebagai DMG reaksi Stellar Glimmer yang sesuai.",
       "4": "<br/>",
       "5": "Saat sedang menaiki Tea Party Tactical Assault Hovermech, Sandrone juga akan dengan anggunnya memperbaiki Fagio secara diam-diam, sehingga <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Decoding Power</tooltip></strong> Fagio akan berkurang dengan cepat."
     },
     "skillParams": {
       "0": "DMG Prism Shot",
       "1": "DMG Stellar-Conduct Prism Shot",
-      "2": "Cooldown",
-      "3": "",
+      "2": "DMG Stellar Swirl dari Prism Shot",
+      "3": "Cooldown",
       "4": "",
       "5": "",
       "6": "",
@@ -84,16 +84,15 @@
     "name": "Formule Phenomenale: Q.E.D.",
     "description": {
       "0": "Masih sambil menjunjung tinggi etiket seorang wanita sejati, Sandrone memanggil sejumlah besar Prismatic Resonance Cannon untuk melakukan bombardir luas ke hadapannya, lalu menembakkan Convective Inhibition Ray bersuhu negatif untuk menghantam musuh dan mengakibatkan <cryo>Cryo DMG Area</cryo>.",
-      "1": "<br/>",
-      "2": "<strong>Radiance: Stellar-Conduct</strong>: DMG Convective Inhibition Ray akan berubah menjadi <cryo>Cryo DMG Area</cryo> yang dianggap sebagai DMG reaksi Stellar-Conduct."
+      "1": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Radiance: Stellar Glimmer</strong></tooltip>: DMG Convective Inhibition Ray akan berubah menjadi <cryo>Cryo DMG Area</cryo> yang dianggap sebagai DMG reaksi Stellar Glimmer yang sesuai."
     },
     "skillParams": {
       "0": "DMG Bombardir",
       "1": "DMG Convective Inhibition Ray",
       "2": "DMG Stellar-Conduct Convective Inhibition Ray",
-      "3": "Cooldown",
-      "4": "Konsumsi Energy",
-      "5": "",
+      "3": "DMG Stellar Swirl dari Convective Inhibition Ray",
+      "4": "Cooldown",
+      "5": "Konsumsi Energy",
       "6": "",
       "7": "",
       "8": "",
@@ -113,8 +112,8 @@
   "passive1": {
     "name": "Eternal Speculation Engine",
     "description": {
-      "0": "<strong>Radiance: Stellar-Conduct</strong>: Saat melancarkan Elemental Skill <tooltip ns=char_Sandrone_gen baseKey18=skill><strong>Formule Phenomenale: Differential Analysis</strong></tooltip>, jika <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Decoding Power</tooltip> </strong>Fagio melebihi 50 poin, maka Prism Shot kedua yang ditembakkan ke musuh di sekitar akan mengakibatkan 400% DMG dari DMG aslinya seiring berkurangnya Decoding Power Fagio.",
-      "1": "Selain itu, setiap kali <strong>Decoding Power</strong> Fagio berkurang 10 poin, ia akan memperoleh 1 lapis efek <strong>Refined Tactics</strong> yang bertahan selama 60 detik. Efek ini dapat ditumpuk sampai 10 lapis. Saat Sandrone melancarkan Elemental Burst <tooltip ns=char_Sandrone_gen baseKey18=burst><strong>Formule Phenomenale: Q.E.D</strong></tooltip> dalam status <strong>Radiance: Stellar-Conduct</strong>, semua lapisan Refined Tactics akan terhapus dan membuat Convective Inhibition Ray mengakibatkan DMG sebesar 100% + (jumlah lapisan yang dihapus ×10%) dari DMG aslinya."
+      "0": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Radiance: Stellar Glimmer</strong></tooltip>: Saat melancarkan Elemental Skill <tooltip ns=char_Sandrone_gen baseKey18=skill><strong>Formule Phenomenale: Differential Analysis</strong></tooltip>, jika <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Decoding Power</tooltip> </strong>Fagio melebihi 50 poin, maka Prism Shot kedua yang ditembakkan ke musuh di sekitar akan mengakibatkan 400% DMG dari DMG aslinya seiring berkurangnya Decoding Power Fagio.",
+      "1": "Selain itu, setiap kali <strong>Decoding Power</strong> Fagio berkurang 10 poin, ia akan memperoleh 1 lapis efek <strong>Refined Tactics</strong> yang bertahan selama 60 detik. Efek ini dapat ditumpuk sampai 10 lapis. Saat Sandrone melancarkan Elemental Burst <tooltip ns=char_Sandrone_gen baseKey18=burst><strong>Formule Phenomenale: Q.E.D</strong></tooltip> dalam status <strong>Radiance: Stellar Glimmer</strong>, semua lapisan Refined Tactics akan terhapus dan membuat Convective Inhibition Ray mengakibatkan DMG sebesar 100% + (jumlah lapisan yang dihapus ×10%) dari DMG aslinya."
     }
   },
   "passive2": {
@@ -126,8 +125,8 @@
   "passive3": {
     "name": "Light of Rationalisme",
     "description": {
-      "0": "Saat Karakter di dalam party memicu reaksi Superconduct, reaksi ini akan diubah menjadi reaksi Stellar-Conduct. DMG dasar reaksi Stellar-Conduct Karakter di dalam party meningkat berdasarkan ATK Sandrone: Untuk setiap 100 poin ATK, DMG dasarnya meningkat 0,7%, dapat meningkat hingga maksimum 14% dengan cara ini.",
-      "1": "Selain itu, saat Sandrone berada dalam area <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>, ia akan memasuki status <strong>Radiance: Stellar-Conduct</strong>."
+      "0": "Sandrone akan memasuki status <strong>Radiance: Stellar-Conduct</strong> saat berada di dalam <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip> atau <strong>Radiance: Stellar Swirl</strong> selama 8 detik setelah Karakter dalam party di sekitar memicu reaksi Stellar Swirl.",
+      "1": "Ketika Karakter dalam party memicu reaksi Superconduct/Cryo Swirl, reaksi ini akan berubah menjadi reaksi Stellar-Conduct/Stellar Swirl dan DMG dasar dari reaksi yang disebutkan di atas akan meningkat berdasarkan ATK Sandrone: Setiap 100 poin ATK akan meningkatkan DMG dasar yang disebutkan di atas sebesar 0,7%. Peningkatan DMG maksimum yang bisa didapatkan dengan cara ini adalah 14%."
     }
   },
   "passive": {
@@ -139,13 +138,13 @@
   "constellation1": {
     "name": "Morrow After the Golden Dusk",
     "description": {
-      "0": "Saat berada dalam mode <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Decoding</tooltip></strong>, kecepatan meningkatnya <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Decoding Power</tooltip></strong> Fagio berkurang 50%, dan DMG reaksi Stellar-Conduct yang diakibatkan oleh seluruh Karakter dalam party meningkat 30%."
+      "0": "Saat berada dalam mode <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Decoding</tooltip></strong>, kecepatan meningkatnya <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Decoding Power</tooltip></strong> Fagio berkurang 50%, dan DMG reaksi Stellar Glimmer yang diakibatkan oleh seluruh Karakter dalam party meningkat 30%."
     }
   },
   "constellation2": {
     "name": "An Heiress Gazed Into the Looking-Glass",
     "description": {
-      "0": "<strong>Radiance: Stellar-Conduct</strong>: CRIT DMG sinar terkondensasi dari Charged Attack meningkat 40%. Dan setiap kali sinar terkondensasi ini ditembakkan, CRIT DMG yang diakibatkan semua sinar terkondensasi yang ditembakkan selama mode <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Decoding</tooltip></strong> kali ini akan meningkat lagi sebesar 20%. Efek ini dapat ditumpuk sampai 3 lapis."
+      "0": "<strong>Radiance: Stellar Glimmer</strong>: CRIT DMG sinar terkondensasi dari Charged Attack meningkat 40%. Dan setiap kali sinar terkondensasi ini ditembakkan, CRIT DMG yang diakibatkan semua sinar terkondensasi yang ditembakkan selama mode <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Decoding</tooltip></strong> kali ini akan meningkat lagi sebesar 20%. Efek ini dapat ditumpuk sampai 3 lapis."
     }
   },
   "constellation3": {
@@ -158,7 +157,7 @@
   "constellation4": {
     "name": "In Knowledge Lies the World's True Ground",
     "description": {
-      "0": "Saat DMG reaksi Stellar-Conduct Sandrone mengenai musuh, ia akan memanggil 1 Prismatic Resonance Cannon tambahan untuk melancarkan serangan terkoordinasi yang mengakibatkan <cryo>Cryo DMG</cryo> sebesar 125% ATK Sandrone kepada musuh. DMG ini dianggap sebagai DMG reaksi Stellar-Conduct dan efek ini dapat terpicu sekali setiap 4 detik."
+      "0": "Saat DMG reaksi Stellar-Conduct/Stellar Swirl Sandrone mengenai musuh, ia akan memanggil 1 Prismatic Resonance Cannon tambahan untuk melancarkan serangan terkoordinasi yang mengakibatkan <cryo>Cryo DMG</cryo> sebesar 125%/187,5% ATK Sandrone kepada musuh. DMG ini dianggap sebagai DMG reaksi Stellar Glimmer yang sesuai. Efek ini dapat terpicu sekali setiap 4 detik."
     }
   },
   "constellation5": {
@@ -172,8 +171,10 @@
     "name": "Narcissus Wakes, Her Eyes Upon the Dawn",
     "description": {
       "0": "Dalam mode <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Decoding</tooltip></strong>, saat Fagio menembakkan sinar terkondensasi untuk ketiga kalinya, serangan ini akan berubah menjadi <strong>Condensed Cluster Beam</strong> yang terus-menerus dan lebih kuat. Serangan ini akan mengakibatkan hingga 4 kali <cryo>Cryo DMG Area</cryo> tambahan sebesar 100% ATK Sandrone di luar sinar terkondensasi dasar yang terus ditembakkan.",
-      "1": "<strong>Radiance: Stellar-Conduct</strong>: Tembakan <strong>Condensed Cluster Beam</strong> berubah menjadi: mengakibatkan hingga 4 kali <cryo>Cryo DMG Area</cryo> tambahan sebesar 80% ATK Sandrone, dan DMG ini dianggap sebagai DMG reaksi Stellar-Conduct.",
-      "2": "Selain itu, semua DMG reaksi Stellar-Conduct yang diakibatkan oleh Sandrone <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>bertumbuh</strong></tooltip> sebesar 20%."
+      "1": "<strong>Radiance: Stellar Glimmer</strong>: Tembakan <strong>Condensed Cluster Beam</strong> berubah menjadi: mengakibatkan hingga 4 kali <cryo>Cryo DMG Area</cryo> tambahan yang akan dianggap sebagai DMG reaksi Stellar Glimmer yang sesuai, dan akan didasarkan pada ATK Sandrone sebesar:",
+      "2": "<strong>Radiance: Stellar-Conduct</strong>: 80%;",
+      "3": "<strong>Radiance: Stellar Swirl</strong>: 120%.",
+      "4": "Selain itu, semua DMG reaksi Stellar Glimmer yang diakibatkan oleh Sandrone <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>bertumbuh</strong></tooltip> sebesar 20%."
     }
   }
 }

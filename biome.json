@@ -82,9 +82,7 @@
           "options": {
             "patterns": [
               {
-                "group": [
-                  "../**/src/**"
-                ],
+                "group": ["../**/src/**"],
                 "message": "Cross-module imports are not allowed, use imports at the library level like `import {} from '@genshin-optimizer/gi/stats"
               }
             ]

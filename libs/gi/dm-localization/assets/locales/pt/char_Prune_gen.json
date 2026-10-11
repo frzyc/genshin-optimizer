@@ -46,10 +46,10 @@
     "name": "Ding-ding! Tilintar Caçador de Magia!",
     "description": {
       "0": "Lance o poder do vento para derrotar as bruxas maléficas e salvar Descartes! Prune usa o Martelo do Juramento Livrador para golpear o Sino Chama-Bruxa, causando <anemo>Dano Anemo</anemo>.",
-      "1": "Se esse ataque de Prune causar uma reação de Redemoinho no inimigo, <strong>Ding-ding! Tilintar Caçador de Magia!</strong> será substituído por <strong>Ting-Ting! Retribuição das Bruxas!</strong> pelos próximos 6s.",
+      "1": "Se esse ataque de Prune causar uma reação de Redemoinho ou Redemoinho Estelar no inimigo, <strong>Ding-ding! Tilintar Caçador de Magia!</strong> será substituído por <strong>Ting-Ting! Retribuição das Bruxas!</strong> pelos próximos 6s.",
       "2": "<br/>",
       "3": "<strong>Ting-Ting! Retribuição das Bruxas!</strong>",
-      "4": "Envolve o martelo com o Tipo Elemental do Redemoinho, e faz o <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Martelo do Juramento Livrador</strong></tooltip> passar por uma Conversão Elemental. Ao pressionar para lançar, Prune salta em frente com seu Martelo do Juramento Livrador, causando Dano Elemental correspondente contra os inimigos em frente."
+      "4": "Envolve o martelo com o Tipo Elemental do Redemoinho ou Redemoinho Estelar, e faz o <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Martelo do Juramento Livrador</strong></tooltip> passar por uma Conversão Elemental. Ao pressionar para lançar, Prune salta em frente com seu Martelo do Juramento Livrador, causando Dano Elemental correspondente contra os inimigos em frente."
     },
     "skillParams": {
       "0": "Dano de Ding-ding! Tilintar Caçador de Magia!",
@@ -108,7 +108,7 @@
   "passive1": {
     "name": "Veredito e Punição",
     "description": {
-      "0": "Quando causar Dano contra o inimigo no Modo Caçador do Sino Chama-Bruxa do Supremo <strong><tooltip ns=char_Prune_gen baseKey18=burst>O Sino Toca! A Caçada Chegou!</tooltip></strong>, se esse Dano desencadear Redemoinho, invoca um <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Martelo do Juramento Livrador</strong></tooltip> que passou por Conversão Elemental do tipo de Redemoinho para golpear o inimigo em frente, causando 150% do ATQ de Prune como Dano Elemental correspondente. Esse Dano é considerado Dano de Supremo."
+      "0": "Quando causar Dano contra o inimigo no Modo Caçador do Sino Chama-Bruxa do Supremo <strong><tooltip ns=char_Prune_gen baseKey18=burst>O Sino Toca! A Caçada Chegou!</tooltip></strong>, se esse Dano desencadear Redemoinho ou Redemoinho Estelar, invoca um <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Martelo do Juramento Livrador</strong></tooltip> que passou por Conversão Elemental do tipo de Redemoinho ou Redemoinho Estelar para golpear o inimigo em frente, causando 150% do ATQ de Prune como Dano Elemental correspondente. Esse Dano é considerado Dano de Supremo."
     }
   },
   "passive2": {
@@ -129,7 +129,7 @@
       "0": "Depois de completar <strong>Tarefa da Bruxa: Questão de Refutação</strong>, Prune se tornará uma personagem <strong>Mágica</strong>. Quando a equipe possuir pelo menos 2 personagens Mágicos, obtém o efeito <strong>Mágico: Ritual Secreto</strong>, fortalecendo esses personagens.",
       "1": "<br/>",
       "2": "<strong>Mágico: Ritual Secreto</strong>",
-      "3": "Depois que personagens Mágicos afetados pelo efeito Dança dos Sinos causarem qualquer Reação Elemental em um inimigo, aumenta o ATQ de Prune em 60% por 5s. Se esse personagem desencadear Redemoinho, o aumento de ATQ terá um aumento adicional de 30% por 5s."
+      "3": "Depois que personagens Mágicos afetados pelo efeito Dança dos Sinos causarem qualquer Reação Elemental em um inimigo, aumenta o ATQ de Prune em 60% por 5s. Se esse personagem desencadear Redemoinho ou Redemoinho Estelar, o aumento de ATQ terá um aumento adicional de 30% por 5s."
     }
   },
   "constellation1": {

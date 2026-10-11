@@ -10,6 +10,7 @@ import Billy from './maps/Billy'
 import Burnice from './maps/Burnice'
 import Caesar from './maps/Caesar'
 import Cissia from './maps/Cissia'
+import Claret from './maps/Claret'
 import Corin from './maps/Corin'
 import Dialyn from './maps/Dialyn'
 import Ellen from './maps/Ellen'
@@ -39,6 +40,7 @@ import Pyrois from './maps/Pyrois'
 import Qingyi from './maps/Qingyi'
 import Remielle from './maps/Remielle'
 import Rina from './maps/Rina'
+import Roxy from './maps/Roxy'
 import Seed from './maps/Seed'
 import Seth from './maps/Seth'
 import Sigrid from './maps/Sigrid'
@@ -70,6 +72,7 @@ const maps = {
   Burnice,
   Caesar,
   Cissia,
+  Claret,
   Corin,
   Dialyn,
   Ellen,
@@ -99,6 +102,7 @@ const maps = {
   Qingyi,
   Remielle,
   Rina,
+  Roxy,
   Seed,
   Seth,
   Sigrid,

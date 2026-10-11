@@ -8,7 +8,7 @@ import {
   infoMut,
   input,
   lookup,
-  lunarDmg,
+  lunarDmgNode,
   min,
   naught,
   one,
@@ -277,7 +277,7 @@ const dmgFormulas = {
       'skill'
     ),
     stride1Dmg: dmgNode('def', dm.skill.stride1Dmg, 'skill', strideAddl),
-    stride2Dmg: lunarDmg(
+    stride2Dmg: lunarDmgNode(
       subscript(input.total.skillIndex, dm.skill.stride2Dmg, { unit: '%' }),
       'def',
       'lunarcrystallize',
@@ -286,7 +286,7 @@ const dmgFormulas = {
     shift4GleamDmg: greaterEq(
       tally.moonsign,
       2,
-      lunarDmg(
+      lunarDmgNode(
         subscript(input.total.skillIndex, dm.skill.shift4GleamDmg, {
           unit: '%',
         }),
@@ -299,7 +299,7 @@ const dmgFormulas = {
   },
   burst: {
     skill1Dmg: dmgNode('def', dm.burst.skill1Dmg, 'burst'),
-    skill2Dmg: lunarDmg(
+    skill2Dmg: lunarDmgNode(
       subscript(input.total.burstIndex, dm.burst.skill2Dmg, { unit: '%' }),
       'def',
       'lunarcrystallize'

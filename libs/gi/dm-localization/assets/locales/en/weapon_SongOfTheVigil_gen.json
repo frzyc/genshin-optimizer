@@ -1,0 +1,24 @@
+{
+  "name": "Song of the Vigil",
+  "description": {
+    "0": "A long spear that once stood guard over all. Today, it has found a new purpose with children and their games of make-believe."
+  },
+  "passiveName": "Cadence of Days Gone By",
+  "passiveDescription": {
+    "0": {
+      "0": "Triggering an Elemental Reaction regenerates <cryo>4</cryo> Elemental Energy for the equipping character. This effect can trigger once every 9s. On the other hand, triggering a Stellar Glimmer reaction increases their ATK by <cryo>20%</cryo> for 12s. The aforementioned effects can trigger even when the character is not on the field."
+    },
+    "1": {
+      "0": "Triggering an Elemental Reaction regenerates <cryo>5</cryo> Elemental Energy for the equipping character. This effect can trigger once every 9s. On the other hand, triggering a Stellar Glimmer reaction increases their ATK by <cryo>25%</cryo> for 12s. The aforementioned effects can trigger even when the character is not on the field."
+    },
+    "2": {
+      "0": "Triggering an Elemental Reaction regenerates <cryo>6</cryo> Elemental Energy for the equipping character. This effect can trigger once every 9s. On the other hand, triggering a Stellar Glimmer reaction increases their ATK by <cryo>30%</cryo> for 12s. The aforementioned effects can trigger even when the character is not on the field."
+    },
+    "3": {
+      "0": "Triggering an Elemental Reaction regenerates <cryo>7</cryo> Elemental Energy for the equipping character. This effect can trigger once every 9s. On the other hand, triggering a Stellar Glimmer reaction increases their ATK by <cryo>35%</cryo> for 12s. The aforementioned effects can trigger even when the character is not on the field."
+    },
+    "4": {
+      "0": "Triggering an Elemental Reaction regenerates <cryo>8</cryo> Elemental Energy for the equipping character. This effect can trigger once every 9s. On the other hand, triggering a Stellar Glimmer reaction increases their ATK by <cryo>40%</cryo> for 12s. The aforementioned effects can trigger even when the character is not on the field."
+    }
+  }
+}

@@ -6,7 +6,7 @@ import {
   greaterEq,
   infoMut,
   input,
-  lunarDmg,
+  lunarDmgNode,
   min,
   percent,
   prod,
@@ -236,26 +236,26 @@ const dmgFormulas = {
   },
   burst: {
     skillDmg: dmgNode('atk', dm.burst.skillDmg, 'burst'),
-    middleLunarDmg: lunarDmg(
+    middleLunarDmg: lunarDmgNode(
       subscript(input.total.burstIndex, dm.burst.middlePhaseLunarDmg, {
         unit: '%',
       }),
       'atk',
       'lunarcharged'
     ),
-    finalLunarDmg: lunarDmg(
+    finalLunarDmg: lunarDmgNode(
       subscript(input.total.burstIndex, dm.burst.finalPhaseLunarDmg, {
         unit: '%',
       }),
       'atk',
       'lunarcharged'
     ),
-    thunderDmg: lunarDmg(
+    thunderDmg: lunarDmgNode(
       subscript(input.total.burstIndex, dm.burst.thunderDmg, { unit: '%' }),
       'atk',
       'lunarcharged'
     ),
-    thunderAddlDmg: lunarDmg(
+    thunderAddlDmg: lunarDmgNode(
       subscript(input.total.burstIndex, dm.burst.thunderAddlDmg, { unit: '%' }),
       'atk',
       'lunarcharged'
@@ -271,7 +271,7 @@ const dmgFormulas = {
     dmg: greaterEq(
       input.constellation,
       2,
-      lunarDmg(percent(dm.constellation2.dmg), 'atk', 'lunarcharged')
+      lunarDmgNode(percent(dm.constellation2.dmg), 'atk', 'lunarcharged')
     ),
   },
   constellation4: {

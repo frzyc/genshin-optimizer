@@ -1,0 +1,29 @@
+{
+  "setName": "Ocağın Kalbi",
+  "setEffects": {
+    "2": "+%18 Saldırı.",
+    "4": "Kuşanan karakter bir Yıldız Parıltısı tepkimesi tetiklediğinde veya Yıldız Parıltısı Tepkimesi Hasarı verdiğinde 12 saniyeliğine Saldırısı %12 artar. Ayrıca yakındaki tüm grup üyelerinin verdiği Yıldız Parıltısı Tepkimesi Hasarı da %50 artar. Bu etkiler kuşanan karakter savaş alanında olmasa da tetiklenebilir. Birden fazla Yadigar Setinden gelen aynı isimdeki Hasar bonusları birikmez."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Dökümcünün Tahminleri",
+      "desc": "Ocağın kalbindeki sıcaklığın aksine, insan kalbinin başkasına karşı hissettiği sıcaklığın veya soğukluğunun derecelerle ölçülemeyeceğinin farkındaydı."
+    },
+    "plume": {
+      "name": "Dökümcünün Gözlemi",
+      "desc": "Ocağın kalbindeki renklerin aksine, çeşitli dünyevi meselelerin sonucunun yalnızca yakından gözlemle tahmin edilemeyeceğinin farkındaydı."
+    },
+    "sands": {
+      "name": "Dökümcünün Hesabı",
+      "desc": "Ocağın kalbindeki ısının aksine, gücün işleyişinin yalnızca bir kolu çekerek veya bir düğmeye basarak kontrol edilemeyeceğinin farkındaydı."
+    },
+    "goblet": {
+      "name": "Dökümcünün Alicenaplığı",
+      "desc": "Yakıt sağlandığı sürece yanmaya devam edecek ocağın kalbindeki alevin aksine, arkadaşlığın çok daha geçici olduğunun farkındaydı."
+    },
+    "circlet": {
+      "name": "Dökümcünün Mirası",
+      "desc": "Ocağın kalbindeki alevin aksine, bir hayalin peşinden koşma azminin sonradan gelenlere aktarılamayacağının farkındaydı."
+    }
+  }
+}

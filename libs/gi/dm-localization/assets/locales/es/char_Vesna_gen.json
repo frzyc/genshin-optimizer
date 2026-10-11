@@ -1,0 +1,191 @@
+{
+  "name": "Vesna",
+  "title": "La Espadachina Banqueteníveo",
+  "description": "La comandante de la Druzhna, el filo de la Zarina.",
+  "constellationName": "Amentum Vernum",
+  "auto": {
+    "name": "Filodanza vila",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 6 ataques consecutivos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para pisotear a los enemigos que tenga enfrente."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Daño de 6.º golpe",
+      "6": "Daño de ATQ Cargado",
+      "7": "Coste de Aguante de ATQ Cargado",
+      "8": "Daño de Caída",
+      "9": "Daño de impacto de caída baja/alta",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "El arte de la victoria",
+    "description": {
+      "0": "Convoca el poder de los filos feéricos transmitido de generación en generación por los vila para infligir <anemo>Daño Anemo en el AdE</anemo>, cambiar al modo de <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>armamento persiguevientos</tooltip></strong> y obtener dos cargas de <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>energía filofeérica</tooltip></strong>.",
+      "1": "<br/>",
+      "2": "<strong>Armamento persiguevientos</strong>",
+      "3": "Los Ataques Normales, Cargados y Descendentes de Vesna pasan a infligir <anemo>Daño Anemo</anemo>, el cual no puede sustituirse imbuyéndose de otro elemento. Además, invoca cefiroalas que realizan ataques coordinados contra los enemigos e infligen <anemo>Daño Anemo</anemo> adicional. Cada vez que invoque las cefiroalas, Vesna recuperará cierta cantidad de <strong>energía filofeérica</strong>.",
+      "4": "Vesna puede consumir la <strong>energía filofeérica</strong> para usar su Habilidad Elemental especial <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Filo surcavientos</tooltip></strong> e infligir <anemo>Daño Anemo</anemo> a los enemigos.",
+      "5": "Cada vez que se use <strong>Filo surcavientos</strong>, el nivel de dicha habilidad aumentará mientras el actual modo de <strong>armamento persiguevientos</strong> esté activo, con lo que infligirá más <anemo>Daño Anemo</anemo>. El <strong>Filo surcavientos</strong> empezará en niv. 1 y podrá ascender como máximo hasta niv. 3. Al usar un <strong>Filo surcavientos</strong> que haya ascendido de nivel, también se invocarán <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>filos feéricos</tooltip></strong> que infligirán <anemo>Daño Anemo</anemo> a los enemigos.",
+      "6": "Cuando termine la duración del modo armamento persiguevientos o después de usar tres veces <strong>Filo surcavientos</strong> al nivel máximo, Vesna saldrá de dicho modo y perderá todas las cargas de <strong>energía filofeérica</strong>.",
+      "7": "Mientras se encuentre en este modo, la RES a interrupción de Vesna también aumentará.",
+      "8": "<strong>Esplendor: Torbellino Estelar</strong>",
+      "9": "Los <strong>filos feéricos</strong> pasarán a infligir <anemo>Daño Anemo</anemo> considerado como daño de Torbellino Estelar."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de Filo surcavientos niv. 1",
+      "2": "Daño de Filo surcavientos niv. 2",
+      "3": "Daño de filos feéricos de Filo surcavientos niv. 2",
+      "4": "Daño de filos feéricos de Filo surcavientos niv. 3",
+      "5": "Daño del último golpe de filos feéricos de Filo surcavientos niv. 3",
+      "6": "Daño de Torbellino Estelar de filos feéricos de Filo surcavientos niv. 2",
+      "7": "Daño de Torbellino Estelar de filos feéricos de Filo surcavientos niv. 3",
+      "8": "Daño de Torbellino Estelar del último golpe de filos feéricos de Filo surcavientos niv. 3",
+      "9": "Daño de cefiroalas",
+      "10": "Duración de armamento persiguevientos",
+      "11": "TdE",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "¡Por su majestad la Zarina!",
+    "description": {
+      "0": "Invoca múltiples <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>filos feéricos</tooltip></strong> que infligen <anemo>Daño Anemo en el AdE</anemo> y obtiene una carga de <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>energía filofeérica</tooltip></strong>."
+    },
+    "skillParams": {
+      "0": "Daño de filos feéricos",
+      "1": "Daño de Torbellino Estelar de filos feéricos",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "sprint": {
+    "name": "",
+    "description": {}
+  },
+  "passive1": {
+    "name": "Rito del desfile primaveral",
+    "description": {
+      "0": "Cuando Vesna use su Habilidad Elemental especial <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Filo surcavientos</tooltip></strong> o su Habilidad Definitiva, <strong><tooltip ns=char_Vesna_gen baseKey18=burst>¡Por su majestad la Zarina!</tooltip></strong>, obtendrá una carga de <strong>medidas disciplinarias</strong> durante 20 s. Este efecto puede acumularse hasta 6 veces y cada carga tiene su propia duración individual.",
+      "1": "Cuando tenga cargas de <strong>medidas disciplinarias</strong>, los <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>filos feéricos</tooltip></strong> invocados por Vesna infligirán un 10% de daño adicional por cada carga de medidas disciplinarias, además del 100% de su daño original. Al usar su Habilidad Elemental, <strong>El arte de la victoria</strong>, o al retirarse de combate, Vesna perderá todas las cargas de <strong>medidas disciplinarias</strong> que tenga."
+    }
+  },
+  "passive2": {
+    "name": "Prevalecimiento de la verdad",
+    "description": {
+      "0": "<strong>Esplendor: Torbellino Estelar</strong>",
+      "1": "Vesna obtiene la bonificación correspondiente según el tipo elemental de los personajes del equipo:",
+      "2": [
+        "Por cada personaje <cryo>Cryo</cryo> o <anemo>Anemo</anemo>, el ATQ de Vesna aumentará en un 6%.",
+        "Por cada personaje de otro tipo elemental, la Maestría Elemental de Vesna aumentará en 25 pts."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Bendición fulgorestelar: Preludio del esplendor",
+    "description": {
+      "0": "Cuando un personaje del equipo cause una reacción de Torbellino Cryo, esta se transformará en una reacción de Torbellino Estelar. El daño base de las reacciones de Torbellino Estelar de los personajes del equipo aumentará en un 0.7% por cada 100 pts. de ATQ que tenga Vesna. Como máximo, dicho daño puede aumentar en un 14% de esta manera.",
+      "1": "Además, después de que un personaje del equipo cause una reacción de Torbellino Estelar en las cercanías, Vesna entrará en el estado de <strong>esplendor: Torbellino Estelar</strong> durante 8 s."
+    }
+  },
+  "passive": {
+    "name": "Patrulla extraordinaria",
+    "description": {
+      "0": "Cuando no se encuentre en combate, Vesna podrá entrar en el estado de <strong>patrulla</strong> al esprintar o saltar manteniendo pulsado.",
+      "1": "<br/>",
+      "2": "<strong>Patrulla</strong>",
+      "3": "Consume Aguante de forma continua para flotar en el aire. Al esprintar o pulsar una vez para saltar y elevarse a más altura, se consumirá una cantidad de Aguante adicional. Vesna podrá elevarse un máximo de 3 veces en el aire, lo que incluye la primera vez que se mantenga pulsado el salto para entrar al estado de <strong>patrulla</strong>.",
+      "4": "<br/>",
+      "5": "Además, cuando se encuentre en Snezhnaya (excluyendo Nod Krai) y no esté en combate, si el personaje en uso del equipo está en el aire, al cambiar a Vesna, esta entrará directamente en el estado de <strong>patrulla</strong> y recuperará 50 pts. de Aguante. Este efecto solo puede ocurrir una vez cada 10 s y no se activará en dominios, Dominios de la cruzada o en la Espiral del Abismo."
+    }
+  },
+  "constellation1": {
+    "name": "Banquete de despedida del invierno",
+    "description": {
+      "0": "En el modo de <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>armamento persiguevientos</tooltip></strong>, Vesna podrá usar <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Filo surcavientos</tooltip></strong> a nivel máximo hasta 4 veces en lugar de 3, y cada vez que entre en dicho modo, la primera vez que use <strong>Filo surcavientos</strong> a nivel máximo, este no consumirá <strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>energía filofeérica</tooltip></strong>.",
+      "1": "Además, cuando se encuentre en el modo de <strong>armamento persiguevientos</strong>, el daño de Torbellino Estelar de Vesna aumentará en un 20%."
+    }
+  },
+  "constellation2": {
+    "name": "Kolo de bienvenida a la primavera",
+    "description": {
+      "0": "Fortalece el talento de ascensión <strong><tooltip ns=char_Vesna_gen baseKey18=passive1>Rito del desfile primaveral</tooltip></strong>, de manera que cuando Vesna entre al modo de <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>armamento persiguevientos</tooltip></strong>, obtendrá el máximo de cargas de <strong>medidas disciplinarias</strong>. Cuando posea el máximo de cargas de <strong>medidas disciplinarias</strong>, el ATQ de Vesna aumentará en un 40%.",
+      "1": "Para que se activen estos efectos, es necesario desbloquear el talento de ascensión “Rito del desfile primaveral”."
+    }
+  },
+  "constellation3": {
+    "name": "Última ofrenda invernal",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Vesna_gen baseKey18=skill>El arte de la victoria</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Gloria a nuestros ancestros",
+    "description": {
+      "0": "Fortalece el talento de ascensión <strong><tooltip ns=char_Vesna_gen baseKey18=passive2>Prevalecimiento de la verdad</tooltip></strong>, lo que triplica los efectos de aumento de ATQ y Maestría Elemental originales."
+    }
+  },
+  "constellation5": {
+    "name": "El deber de una noble",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <tooltip ns=char_Vesna_gen baseKey18=burst><strong>¡Por su majestad la Zarina!</strong></tooltip> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Entusiasmo inquebrantable",
+    "description": {
+      "0": "Durante 5 s después de usar <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Filo surcavientos</tooltip></strong> al nivel máximo, Vesna podrá pulsar una vez el Ataque Normal o la Habilidad Elemental para utilizar la técnica secreta de los vila, <strong>Filo surcavientos: Transposición</strong>, que infligirá <anemo>Daño Anemo</anemo> equivalente al 150% del ATQ de Vesna e invocará <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>filos feéricos</tooltip></strong> que infligirán <anemo>Daño Anemo</anemo> adicional equivalente al 200% de su ATQ. Si Vesna se encuentra en el modo de <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>armamento persiguevientos</tooltip></strong>, también invocará cefiroalas que realizarán un ataque coordinado contra los enemigos.",
+      "1": "Además, el daño de Torbellino Estelar infligido por Vesna <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>asciende</strong></tooltip> en un 20%."
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Hymn of the Maelstrom",
+  "description": {
+    "0": "Lentera indah yang terbuat dari kalsedon biru yang serupa dengan harta karun dari dongeng, konon menyimpan sebuah nyanyian pujaan yang telah terlupakan oleh semua orang."
+  },
+  "passiveName": "Rondo of Slumber",
+  "passiveDescription": {
+    "0": {
+      "0": "Bonus Pemulihan +<cryo>4%</cryo>.",
+      "1": "Saat melakukan pemulihan HP, Karakter yang mengenakan mendapatkan efek \"Vatsamonga's Vatic Vintage\": Max HP +<cryo>4%</cryo>, dan meningkatkan ATK Karakter aktif sendiri dalam party sebesar <cryo>0,4%</cryo> untuk setiap 1.000 poin Max HP di atas 40.000 milik Karakter yang mengenakan. Maksimum bisa meningkatkan <cryo>8%</cryo> ATK melalui cara ini. Efek ini bertahan 10 detik dan dapat ditumpuk sampai 3 lapis.",
+      "2": "Setelah Karakter party di sekitar memicu reaksi Frozen atau Stellar Swirl, efek peningkatan Max HP dan ATK di atas meningkat lagi sebesar 75% selama 5 detik.",
+      "3": "Efek di atas tetap terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "Bonus Pemulihan +<cryo>5%</cryo>.",
+      "1": "Saat melakukan pemulihan HP, Karakter yang mengenakan mendapatkan efek \"Vatsamonga's Vatic Vintage\": Max HP +<cryo>5%</cryo>, dan meningkatkan ATK Karakter aktif sendiri dalam party sebesar <cryo>0,5%</cryo> untuk setiap 1.000 poin Max HP di atas 40.000 milik Karakter yang mengenakan. Maksimum bisa meningkatkan <cryo>10%</cryo> ATK melalui cara ini. Efek ini bertahan 10 detik dan dapat ditumpuk sampai 3 lapis.",
+      "2": "Setelah Karakter party di sekitar memicu reaksi Frozen atau Stellar Swirl, efek peningkatan Max HP dan ATK di atas meningkat lagi sebesar 75% selama 5 detik.",
+      "3": "Efek di atas tetap terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "Bonus Pemulihan +<cryo>6%</cryo>.",
+      "1": "Saat melakukan pemulihan HP, Karakter yang mengenakan mendapatkan efek \"Vatsamonga's Vatic Vintage\": Max HP +<cryo>6%</cryo>, dan meningkatkan ATK Karakter aktif sendiri dalam party sebesar <cryo>0,6%</cryo> untuk setiap 1.000 poin Max HP di atas 40.000 milik Karakter yang mengenakan. Maksimum bisa meningkatkan <cryo>12%</cryo> ATK melalui cara ini. Efek ini bertahan 10 detik dan dapat ditumpuk sampai 3 lapis.",
+      "2": "Setelah Karakter party di sekitar memicu reaksi Frozen atau Stellar Swirl, efek peningkatan Max HP dan ATK di atas meningkat lagi sebesar 75% selama 5 detik.",
+      "3": "Efek di atas tetap terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "Bonus Pemulihan +<cryo>7%</cryo>.",
+      "1": "Saat melakukan pemulihan HP, Karakter yang mengenakan mendapatkan efek \"Vatsamonga's Vatic Vintage\": Max HP +<cryo>7%</cryo>, dan meningkatkan ATK Karakter aktif sendiri dalam party sebesar <cryo>0,7%</cryo> untuk setiap 1.000 poin Max HP di atas 40.000 milik Karakter yang mengenakan. Maksimum bisa meningkatkan <cryo>14%</cryo> ATK melalui cara ini. Efek ini bertahan 10 detik dan dapat ditumpuk sampai 3 lapis.",
+      "2": "Setelah Karakter party di sekitar memicu reaksi Frozen atau Stellar Swirl, efek peningkatan Max HP dan ATK di atas meningkat lagi sebesar 75% selama 5 detik.",
+      "3": "Efek di atas tetap terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "Bonus Pemulihan +<cryo>8%</cryo>.",
+      "1": "Saat melakukan pemulihan HP, Karakter yang mengenakan mendapatkan efek \"Vatsamonga's Vatic Vintage\": Max HP +<cryo>8%</cryo>, dan meningkatkan ATK Karakter aktif sendiri dalam party sebesar <cryo>0,8%</cryo> untuk setiap 1.000 poin Max HP di atas 40.000 milik Karakter yang mengenakan. Maksimum bisa meningkatkan <cryo>16%</cryo> ATK melalui cara ini. Efek ini bertahan 10 detik dan dapat ditumpuk sampai 3 lapis.",
+      "2": "Setelah Karakter party di sekitar memicu reaksi Frozen atau Stellar Swirl, efek peningkatan Max HP dan ATK di atas meningkat lagi sebesar 75% selama 5 detik.",
+      "3": "Efek di atas tetap terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

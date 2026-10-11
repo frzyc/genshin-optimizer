@@ -40,7 +40,7 @@ export default function anemo(
   const [, ch] = trans('char', condCharKey)
   const ct = charTemplates(key)
 
-  const skillParam_gen = allStats.char.skillParam.TravelerAnemoF
+  const skillParam_gen = allStats.char.skillParam[key]
   let s = 0,
     b = 0
   const dm = {

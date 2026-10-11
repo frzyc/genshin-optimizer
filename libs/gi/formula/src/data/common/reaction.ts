@@ -308,6 +308,12 @@ const transInfo: Record<TransformativeReactionKey, TransInfo> = {
     triggeredBy: ['electro', 'cryo'],
     variants: ['electro', 'cryo'],
   },
+  stellarswirl: {
+    multi: 0.75,
+    canCrit: true,
+    triggeredBy: ['anemo', 'cryo'],
+    variants: ['anemo', 'cryo'],
+  },
 }
 const transTriggerByEle = Object.fromEntries(
   allElementWithPhyKeys.map((ele) => [ele, new Set()])

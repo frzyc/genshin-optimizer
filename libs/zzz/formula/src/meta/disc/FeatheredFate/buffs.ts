@@ -6,7 +6,7 @@ export const buffs = {
     tag: {
       et: 'display',
       qt: 'initial',
-      q: 'def_',
+      q: 'anomProf',
       sheet: 'FeatheredFate',
       name: 'set2',
     },

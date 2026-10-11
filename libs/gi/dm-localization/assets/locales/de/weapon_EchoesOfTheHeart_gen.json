@@ -1,0 +1,24 @@
+{
+  "name": "Echo des Herzens",
+  "description": {
+    "0": "Ein Katalysator, der Klänge einzufangen vermag, scheint auch einen Schwur der Treue zu versiegeln – sowie ein Herz, das von allen vergessen wurde."
+  },
+  "passiveName": "Echo des Schwurs",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht innerhalb von 12 s nach dem Auslösen einer Elementarreaktion die Elementarkunde des Trägers um <cryo>60</cryo> Punkte. Erhöht innerhalb von 12 s nach dem Auslösen einer Stellarfunkeln-Reaktion den durch den Träger mithilfe der Stellarfunkeln-Reaktion verursachten Schaden um <cryo>16 %</cryo>. Die oben genannten Effekte können auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "1": {
+      "0": "Erhöht innerhalb von 12 s nach dem Auslösen einer Elementarreaktion die Elementarkunde des Trägers um <cryo>75</cryo> Punkte. Erhöht innerhalb von 12 s nach dem Auslösen einer Stellarfunkeln-Reaktion den durch den Träger mithilfe der Stellarfunkeln-Reaktion verursachten Schaden um <cryo>20 %</cryo>. Die oben genannten Effekte können auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "2": {
+      "0": "Erhöht innerhalb von 12 s nach dem Auslösen einer Elementarreaktion die Elementarkunde des Trägers um <cryo>90</cryo> Punkte. Erhöht innerhalb von 12 s nach dem Auslösen einer Stellarfunkeln-Reaktion den durch den Träger mithilfe der Stellarfunkeln-Reaktion verursachten Schaden um <cryo>24 %</cryo>. Die oben genannten Effekte können auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "3": {
+      "0": "Erhöht innerhalb von 12 s nach dem Auslösen einer Elementarreaktion die Elementarkunde des Trägers um <cryo>105</cryo> Punkte. Erhöht innerhalb von 12 s nach dem Auslösen einer Stellarfunkeln-Reaktion den durch den Träger mithilfe der Stellarfunkeln-Reaktion verursachten Schaden um <cryo>28 %</cryo>. Die oben genannten Effekte können auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "4": {
+      "0": "Erhöht innerhalb von 12 s nach dem Auslösen einer Elementarreaktion die Elementarkunde des Trägers um <cryo>120</cryo> Punkte. Erhöht innerhalb von 12 s nach dem Auslösen einer Stellarfunkeln-Reaktion den durch den Träger mithilfe der Stellarfunkeln-Reaktion verursachten Schaden um <cryo>32 %</cryo>. Die oben genannten Effekte können auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    }
+  }
+}

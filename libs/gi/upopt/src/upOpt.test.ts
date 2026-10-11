@@ -25,6 +25,8 @@ import {
   levelUpArtifact,
 } from './upOpt'
 import type { MarkovNode, SubstatLevelNode } from './upOpt.types'
+import type { ElixirDefineQuery, ElixirSimplifiedCache } from './upOptMemoize'
+import { elixirDefinitionMemoSimplified } from './upOptMemoize'
 
 const emptyBuild = {
   flower: undefined,
@@ -547,10 +549,12 @@ describe('upOpt makeSubstatNode(s)', () => {
   describe('reshape', () => {
     test('reshape/4line basic', () => {
       const [reshaped] = dustReshape(
-        lvl20 as ICachedArtifact,
-        emptyBuild,
-        ['atk_', 'critRate_'],
-        2
+        {
+          art: lvl20 as ICachedArtifact,
+          affixes: ['atk_', 'critRate_'],
+          mintotal: 2,
+        },
+        emptyBuild
       )
 
       // Basic checks / ensure decimal form
@@ -564,10 +568,12 @@ describe('upOpt makeSubstatNode(s)', () => {
     test('reshape/3line value tests', () => {
       const lvl20_3liner = { ...lvl20, totalRolls: 8 }
       const [reshaped] = dustReshape(
-        lvl20_3liner as ICachedArtifact,
-        emptyBuild,
-        ['atk_', 'critRate_'],
-        2
+        {
+          art: lvl20_3liner as ICachedArtifact,
+          affixes: ['atk_', 'critRate_'],
+          mintotal: 2,
+        },
+        emptyBuild
       )
       expect(reshaped.n.rollsLeft).toBe(4)
       const Eon = reshapeStats[4]
@@ -589,37 +595,33 @@ describe('upOpt makeSubstatNode(s)', () => {
       const expectedCR = 0.039 + 0.85 * vcr_ * Eon // 0.0782646875
       expect(evaluateGaussian(obj3, g).f_mu[0]).toBeCloseTo(expectedCR)
     })
-  })
-  test('reshape/dust ignores artifacts with missing initial rolls', () => {
-    const reshapeNoInitialThrow = () =>
-      dustReshape(
-        {
-          setKey: 'GladiatorsFinale',
-          slotKey: 'flower',
-          level: 20,
-          rarity: 5,
-          mainStatKey: 'hp',
-          location: '',
-          lock: false,
-          totalRolls: 9,
-          substats: [
-            { key: 'atk_', value: 46.6, initialValue: 5.8 },
-            { key: 'critRate_', value: 31.1 },
-            { key: 'critDMG_', value: 62.2, initialValue: 7.8 },
-            { key: 'enerRech_', value: 25.9, initialValue: 6.5 },
-          ],
-        },
-        {
-          flower: undefined,
-          plume: undefined,
-          sands: undefined,
-          goblet: undefined,
-          circlet: undefined,
-        },
-        ['atk_', 'critRate_'],
-        2
-      )
-    expect(reshapeNoInitialThrow).toThrow()
+    test('reshape/dust ignores artifacts with missing initial rolls', () => {
+      const reshapeNoInitialThrow = () =>
+        dustReshape(
+          {
+            art: {
+              setKey: 'GladiatorsFinale',
+              slotKey: 'flower',
+              level: 20,
+              rarity: 5,
+              mainStatKey: 'hp',
+              location: '',
+              lock: false,
+              totalRolls: 9,
+              substats: [
+                { key: 'atk_', value: 46.6, initialValue: 5.8 },
+                { key: 'critRate_', value: 31.1 },
+                { key: 'critDMG_', value: 62.2, initialValue: 7.8 },
+                { key: 'enerRech_', value: 25.9, initialValue: 6.5 },
+              ],
+            },
+            affixes: ['atk_', 'critRate_'],
+            mintotal: 2,
+          },
+          emptyBuild
+        )
+      expect(reshapeNoInitialThrow).toThrow()
+    })
   })
   describe('define', () => {
     const p4 = 0.34
@@ -702,6 +704,98 @@ describe('upOpt makeSubstatNode(s)', () => {
       )
       expect(def[0].n.base).toEqual({ hp: 4780 })
       expect(def.reduce((ptot, { p }) => ptot + p, 0)).toBeCloseTo(1, 8)
+    })
+    describe('memoization', () => {
+      const queries: ElixirDefineQuery[] = [
+        {
+          setKey: 'GladiatorsFinale',
+          slotKey: 'flower',
+          mainStatKey: 'hp',
+          affixes: ['atk', 'atk_'],
+          prob_4line: p4,
+        },
+        {
+          setKey: 'GladiatorsFinale',
+          slotKey: 'flower',
+          mainStatKey: 'hp',
+          affixes: ['atk_', 'def'],
+          prob_4line: p4,
+        },
+        // Unsorted affixes + main stat that is not a substat.
+        {
+          setKey: 'ShimenawasReminiscence',
+          slotKey: 'goblet',
+          mainStatKey: 'pyro_dmg_',
+          affixes: ['critRate_', 'atk_'],
+          prob_4line: p4,
+        },
+        // Same main/affixes as the first query but different set/slot (cache hit, new base).
+        {
+          setKey: 'EmblemOfSeveredFate',
+          slotKey: 'sands',
+          mainStatKey: 'hp',
+          affixes: ['atk', 'atk_'],
+          prob_4line: p4,
+        },
+        // Substat main stat; same weight signature as e.g. an hp_ main (weight-table hit).
+        {
+          setKey: 'GladiatorsFinale',
+          slotKey: 'sands',
+          mainStatKey: 'atk_',
+          affixes: ['critRate_', 'critDMG_'],
+          prob_4line: p4,
+        },
+        // Different non-substat main with the same affixes as the pyro_dmg_ query;
+        // hits the shared '' main-stat bucket in the node caches.
+        {
+          setKey: 'ShimenawasReminiscence',
+          slotKey: 'goblet',
+          mainStatKey: 'physical_dmg_',
+          affixes: ['atk_', 'critRate_'],
+          prob_4line: p4,
+        },
+      ]
+
+      // Merged probabilities are summed pre-scaling in the cache but post-scaling in the
+      // reference pipeline, so p can differ by float rounding; everything else is exact.
+      function expectNodesClose(
+        got: { p: number; n: SubstatLevelNode }[],
+        want: { p: number; n: MarkovNode }[]
+      ) {
+        expect(got.length).toBe(want.length)
+        got.forEach(({ p, n }, i) => {
+          expect(p).toBeCloseTo(want[i].p, 12)
+          expect(n).toEqual(want[i].n)
+        })
+      }
+
+      test('simplified cache matches dedup(elixirDefinition)', () => {
+        const cache: ElixirSimplifiedCache = new Map()
+        queries.forEach((q) => {
+          const expected = deduplicate(obj, elixirDefinition(q, emptyBuild))
+          expectNodesClose(
+            elixirDefinitionMemoSimplified(q, emptyBuild, obj, cache),
+            expected
+          )
+          expectNodesClose(
+            elixirDefinitionMemoSimplified(q, emptyBuild, obj, cache),
+            expected
+          )
+        })
+      })
+
+      test('downstream dedup does not corrupt the simplified cache', () => {
+        const cache: ElixirSimplifiedCache = new Map()
+        const q = queries[0]
+        deduplicate(
+          obj,
+          elixirDefinitionMemoSimplified(q, emptyBuild, obj, cache)
+        )
+        expectNodesClose(
+          elixirDefinitionMemoSimplified(q, emptyBuild, obj, cache),
+          deduplicate(obj, elixirDefinition(q, emptyBuild))
+        )
+      })
     })
   })
 })

@@ -1,4 +1,4 @@
-import type { Tag } from '@genshin-optimizer/zzz/formula'
+import { formulaCatalog } from '@genshin-optimizer/zzz/formula'
 import { describe, expect, it } from 'vitest'
 import { parseAbilityFromTag, parseAbilityHitFromName } from './abilityTag'
 
@@ -23,28 +23,12 @@ describe('parseAbilityHitFromName', () => {
 })
 
 describe('parseAbilityFromTag', () => {
-  const triggerAftershockHit: Tag = {
-    et: 'own',
-    qt: 'formula',
-    q: 'standardDmg',
-    sheet: 'Trigger',
-    name: 'BasicAttackHarmonizingShot_0',
-    skillType: 'basicSkill',
-    damageType2: 'aftershock',
-  }
-
-  const s0AnbyAftershockHit: Tag = {
-    et: 'own',
-    qt: 'formula',
-    q: 'standardDmg',
-    sheet: 'Soldier0Anby',
-    name: 'UltimateVoidstrike_aftershock0',
-    skillType: 'chainSkill',
-    damageType2: 'aftershock',
-  }
-
   it('parses aftershock-only hits that use damageType2 on a standard name', () => {
-    expect(parseAbilityFromTag(triggerAftershockHit)).toEqual({
+    expect(
+      parseAbilityFromTag(
+        formulaCatalog.Trigger.BasicAttackHarmonizingShot_0.dims.standardDmg
+      )
+    ).toEqual({
       skill: 'basic',
       abilityKey: 'BasicAttackHarmonizingShot',
       hitIndex: '0',
@@ -52,7 +36,12 @@ describe('parseAbilityFromTag', () => {
   })
 
   it('parses sibling aftershock hits that use a distinct meta name', () => {
-    expect(parseAbilityFromTag(s0AnbyAftershockHit)).toEqual({
+    expect(
+      parseAbilityFromTag(
+        formulaCatalog.Soldier0Anby.UltimateVoidstrike_aftershock0.dims
+          .standardDmg
+      )
+    ).toEqual({
       skill: 'chain',
       abilityKey: 'UltimateVoidstrike',
     })

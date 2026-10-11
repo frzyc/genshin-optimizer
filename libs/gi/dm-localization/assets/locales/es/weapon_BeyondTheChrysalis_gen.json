@@ -1,0 +1,44 @@
+{
+  "name": "Allende la Crisálida",
+  "description": {
+    "0": "Una espada larga que emite un brillo iridiscente. Dicen que alguien la usó para romper las cadenas que lo ataban, y que el viento que levanta su filo es tan ligero como el revoloteo de una mariposa."
+  },
+  "passiveName": "Danza rompecrisálidas",
+  "passiveDescription": {
+    "0": {
+      "0": "Cada vez que el portador de esta arma use su Habilidad Elemental o Definitiva, obtendrá uno de los siguientes tres efectos en este orden:",
+      "1": "Viento de la lealtad: el Daño CRIT del portador aumenta en un <cryo>56%</cryo> durante 10 s.",
+      "2": "Viento de la rebeldía: el daño de Torbellino Estelar del portador aumenta en un <cryo>36%</cryo> durante 10 s.",
+      "3": "Viento de la abundancia: el portador recupera <cryo>5</cryo> pts. de Energía Elemental. Como máximo, se pueden recuperar <cryo>5</cryo> pts. de Energía Elemental de esta forma cada 4 s.",
+      "4": "Cuando el portador se retire de combate, se eliminarán los anteriores efectos y su orden se reiniciará."
+    },
+    "1": {
+      "0": "Cada vez que el portador de esta arma use su Habilidad Elemental o Definitiva, obtendrá uno de los siguientes tres efectos en este orden:",
+      "1": "Viento de la lealtad: el Daño CRIT del portador aumenta en un <cryo>72%</cryo> durante 10 s.",
+      "2": "Viento de la rebeldía: el daño de Torbellino Estelar del portador aumenta en un <cryo>45%</cryo> durante 10 s.",
+      "3": "Viento de la abundancia: el portador recupera <cryo>5.5</cryo> pts. de Energía Elemental. Como máximo, se pueden recuperar <cryo>5.5</cryo> pts. de Energía Elemental de esta forma cada 4 s.",
+      "4": "Cuando el portador se retire de combate, se eliminarán los anteriores efectos y su orden se reiniciará."
+    },
+    "2": {
+      "0": "Cada vez que el portador de esta arma use su Habilidad Elemental o Definitiva, obtendrá uno de los siguientes tres efectos en este orden:",
+      "1": "Viento de la lealtad: el Daño CRIT del portador aumenta en un <cryo>88%</cryo> durante 10 s.",
+      "2": "Viento de la rebeldía: el daño de Torbellino Estelar del portador aumenta en un <cryo>54%</cryo> durante 10 s.",
+      "3": "Viento de la abundancia: el portador recupera <cryo>6</cryo> pts. de Energía Elemental. Como máximo, se pueden recuperar <cryo>6</cryo> pts. de Energía Elemental de esta forma cada 4 s.",
+      "4": "Cuando el portador se retire de combate, se eliminarán los anteriores efectos y su orden se reiniciará."
+    },
+    "3": {
+      "0": "Cada vez que el portador de esta arma use su Habilidad Elemental o Definitiva, obtendrá uno de los siguientes tres efectos en este orden:",
+      "1": "Viento de la lealtad: el Daño CRIT del portador aumenta en un <cryo>104%</cryo> durante 10 s.",
+      "2": "Viento de la rebeldía: el daño de Torbellino Estelar del portador aumenta en un <cryo>63%</cryo> durante 10 s.",
+      "3": "Viento de la abundancia: el portador recupera <cryo>6.5</cryo> pts. de Energía Elemental. Como máximo, se pueden recuperar <cryo>6.5</cryo> pts. de Energía Elemental de esta forma cada 4 s.",
+      "4": "Cuando el portador se retire de combate, se eliminarán los anteriores efectos y su orden se reiniciará."
+    },
+    "4": {
+      "0": "Cada vez que el portador de esta arma use su Habilidad Elemental o Definitiva, obtendrá uno de los siguientes tres efectos en este orden:",
+      "1": "Viento de la lealtad: el Daño CRIT del portador aumenta en un <cryo>120%</cryo> durante 10 s.",
+      "2": "Viento de la rebeldía: el daño de Torbellino Estelar del portador aumenta en un <cryo>72%</cryo> durante 10 s.",
+      "3": "Viento de la abundancia: el portador recupera <cryo>7</cryo> pts. de Energía Elemental. Como máximo, se pueden recuperar <cryo>7</cryo> pts. de Energía Elemental de esta forma cada 4 s.",
+      "4": "Cuando el portador se retire de combate, se eliminarán los anteriores efectos y su orden se reiniciará."
+    }
+  }
+}

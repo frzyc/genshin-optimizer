@@ -1,0 +1,24 @@
+{
+  "name": "Plume hivernale du lac blanc",
+  "description": {
+    "0": "Une légère épée longue comme les plumes d'un cygne des neiges, et qui demeure en tout temps pure et immaculée."
+  },
+  "passiveName": "Final du cygne des neiges",
+  "passiveDescription": {
+    "0": {
+      "0": "Lorsque le personnage équipé de l'arme touche un ennemi avec une compétence élémentaire, il obtient l'effet Lamentation lacustre : augmente l'ATQ de <cryo>8 %</cryo> pendant 8 s. Cet effet peut être cumulé 3 fois maximum et déclenché une fois toutes les 0,1 s, la durée de chaque cumul étant calculée de façon indépendante. Avec 3 cumuls, les DGT CRIT des réactions astrales déclenchées par le personnage équipé de l'arme augmentent de <cryo>50 %</cryo> et il récupère <cryo>4</cryo> pts d'énergie élémentaire lorsqu'il déclenche une réaction astrale ou inflige des DGT avec une réaction astrale, cette récupération d'énergie élémentaire pouvant être déclenchée une fois toutes les 3,5 s. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "Lorsque le personnage équipé de l'arme touche un ennemi avec une compétence élémentaire, il obtient l'effet Lamentation lacustre : augmente l'ATQ de <cryo>10 %</cryo> pendant 8 s. Cet effet peut être cumulé 3 fois maximum et déclenché une fois toutes les 0,1 s, la durée de chaque cumul étant calculée de façon indépendante. Avec 3 cumuls, les DGT CRIT des réactions astrales déclenchées par le personnage équipé de l'arme augmentent de <cryo>65 %</cryo> et il récupère <cryo>4,5</cryo> pts d'énergie élémentaire lorsqu'il déclenche une réaction astrale ou inflige des DGT avec une réaction astrale, cette récupération d'énergie élémentaire pouvant être déclenchée une fois toutes les 3,5 s. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "Lorsque le personnage équipé de l'arme touche un ennemi avec une compétence élémentaire, il obtient l'effet Lamentation lacustre : augmente l'ATQ de <cryo>12 %</cryo> pendant 8 s. Cet effet peut être cumulé 3 fois maximum et déclenché une fois toutes les 0,1 s, la durée de chaque cumul étant calculée de façon indépendante. Avec 3 cumuls, les DGT CRIT des réactions astrales déclenchées par le personnage équipé de l'arme augmentent de <cryo>80 %</cryo> et il récupère <cryo>5</cryo> pts d'énergie élémentaire lorsqu'il déclenche une réaction astrale ou inflige des DGT avec une réaction astrale, cette récupération d'énergie élémentaire pouvant être déclenchée une fois toutes les 3,5 s. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "Lorsque le personnage équipé de l'arme touche un ennemi avec une compétence élémentaire, il obtient l'effet Lamentation lacustre : augmente l'ATQ de <cryo>14 %</cryo> pendant 8 s. Cet effet peut être cumulé 3 fois maximum et déclenché une fois toutes les 0,1 s, la durée de chaque cumul étant calculée de façon indépendante. Avec 3 cumuls, les DGT CRIT des réactions astrales déclenchées par le personnage équipé de l'arme augmentent de <cryo>95 %</cryo> et il récupère <cryo>5,5</cryo> pts d'énergie élémentaire lorsqu'il déclenche une réaction astrale ou inflige des DGT avec une réaction astrale, cette récupération d'énergie élémentaire pouvant être déclenchée une fois toutes les 3,5 s. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "Lorsque le personnage équipé de l'arme touche un ennemi avec une compétence élémentaire, il obtient l'effet Lamentation lacustre : augmente l'ATQ de <cryo>16 %</cryo> pendant 8 s. Cet effet peut être cumulé 3 fois maximum et déclenché une fois toutes les 0,1 s, la durée de chaque cumul étant calculée de façon indépendante. Avec 3 cumuls, les DGT CRIT des réactions astrales déclenchées par le personnage équipé de l'arme augmentent de <cryo>110 %</cryo> et il récupère <cryo>6</cryo> pts d'énergie élémentaire lorsqu'il déclenche une réaction astrale ou inflige des DGT avec une réaction astrale, cette récupération d'énergie élémentaire pouvant être déclenchée une fois toutes les 3,5 s. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

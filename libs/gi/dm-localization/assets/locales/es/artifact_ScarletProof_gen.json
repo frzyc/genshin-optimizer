@@ -1,0 +1,29 @@
+{
+  "setName": "Testimonio Escarlata",
+  "setEffects": {
+    "2": "ATQ +18%.",
+    "4": "Durante 10 s después de que el portador de este conjunto de artefactos cause una reacción de Torbellino Estelar, su Prob. CRIT aumentará en un 16% y su daño de Torbellino Estelar aumentará en un 40%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Agradecimiento por tu Devoción",
+      "desc": "Un adorno floral de un color rojo intenso. Simboliza una gloria tan ardiente como el fuego."
+    },
+    "plume": {
+      "name": "Gloria a tus Hazañas",
+      "desc": "Una pluma de escribir de un color rojo intenso. Le fue entregada a la sangre más joven."
+    },
+    "sands": {
+      "name": "Tiempo Concedido a Ti",
+      "desc": "Un reloj de bolsillo de un color rojo intenso. Registra el tiempo límite de una conversación."
+    },
+    "goblet": {
+      "name": "Libación de tu Sangre y tus Lágrimas",
+      "desc": "Una licorera de un color rojo intenso. Mejor que no sepas qué es lo que solía contener."
+    },
+    "circlet": {
+      "name": "Homenaje a tu Fe",
+      "desc": "Un casco de un color rojo intenso. Ojalá haya protegido a alguien."
+    }
+  }
+}

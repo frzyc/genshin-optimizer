@@ -2,7 +2,7 @@
   "setName": "Sombra Verde Esmeralda",
   "setEffects": {
     "2": "Bono de Daño Anemo +15%.",
-    "4": "Aumenta el daño de Torbellino en un 60%. Dependiendo del tipo elemental que tenga, disminuye la RES Elemental correspondiente del enemigo en un 40% durante 10 s."
+    "4": "El daño de la reacción de Torbellino aumenta en un 60%, y el de Torbellino Estelar aumenta en un 20%. Dependiendo del tipo elemental del Torbellino, la RES Elemental correspondiente del enemigo se reduce en un 40% durante 10 s. Al causar una reacción de Torbellino Estelar contra un enemigo, su RES Cryo también se reduce en un 40%. Las reducciones del mismo tipo de RES Elemental no se pueden acumular."
   },
   "pieces": {
     "flower": {

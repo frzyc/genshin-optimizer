@@ -6,9 +6,11 @@ import AmosBow from './AmosBow'
 import AquaSimulacra from './AquaSimulacra'
 import AstralVulturesCrimsonPlumage from './AstralVulturesCrimsonPlumage'
 import BlackcliffWarbow from './BlackcliffWarbow'
+import BreezeborneRefrain from './BreezeborneRefrain'
 import ChainBreaker from './ChainBreaker'
 import Cloudforged from './Cloudforged'
 import CompoundBow from './CompoundBow'
+import CovenantOfFrostAndSnow from './CovenantOfFrostAndSnow'
 import ElegyForTheEnd from './ElegyForTheEnd'
 import EndOfTheLine from './EndOfTheLine'
 import FadingTwilight from './FadingTwilight'
@@ -19,6 +21,7 @@ import Hamayumi from './Hamayumi'
 import HuntersBow from './HuntersBow'
 import HuntersPath from './HuntersPath'
 import IbisPiercer from './IbisPiercer'
+import JadeVista from './JadeVista'
 import KingsSquire from './KingsSquire'
 import Messenger from './Messenger'
 import MitternachtsWaltz from './MitternachtsWaltz'
@@ -55,9 +58,11 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   AquaSimulacra,
   AstralVulturesCrimsonPlumage,
   BlackcliffWarbow,
+  BreezeborneRefrain,
   ChainBreaker,
   Cloudforged,
   CompoundBow,
+  CovenantOfFrostAndSnow,
   ElegyForTheEnd,
   EndOfTheLine,
   FadingTwilight,
@@ -68,6 +73,7 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   HuntersBow,
   HuntersPath,
   IbisPiercer,
+  JadeVista,
   KingsSquire,
   Messenger,
   MitternachtsWaltz,

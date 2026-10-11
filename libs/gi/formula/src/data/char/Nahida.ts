@@ -9,11 +9,11 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/pando/engine'
+import { isActive } from '../common/conds'
 import {
   allBoolConditionals,
   allNumConditionals,
   allStatics,
-  customDmg,
   enemyDebuff,
   own,
   ownBuff,
@@ -22,7 +22,13 @@ import {
   team,
   teamBuff,
 } from '../util'
-import { dataGenToCharInfo, dmg, entriesForChar } from './util'
+import {
+  dataGenToCharInfo,
+  dmg,
+  entriesForChar,
+  splitScaleDmg,
+  talentSubscript,
+} from './util'
 
 const key: CharacterKey = 'Nahida'
 const data_gen = allStats.char.data[key]
@@ -101,10 +107,11 @@ const dm = {
 const info = dataGenToCharInfo(data_gen)
 const {
   final,
-  char: { skill, burst, ascension, constellation },
+  char: { burst, ascension, constellation },
 } = own
-const { a1ActiveInBurst, c2Bloom, c2QSA, partyInBurst, isActive } =
-  allBoolConditionals(info.key)
+const { a1ActiveInBurst, c2Bloom, c2QSA, partyInBurst } = allBoolConditionals(
+  info.key
+)
 const { c4Count } = allNumConditionals(info.key, true, 0, 4)
 const { c2_critRate_, c2_critDMG_, c2qsa_defRed_ } = allStatics(info.key)
 
@@ -119,8 +126,8 @@ const burst_karma_dmg_ = partyInBurst.ifOn(
       cmpEq(
         pyroLevel,
         1,
-        subscript(burst, dm.burst.dmg_1),
-        subscript(burst, dm.burst.dmg_2)
+        talentSubscript(burst, dm.burst.dmg_1),
+        talentSubscript(burst, dm.burst.dmg_2)
       )
     )
   )
@@ -135,8 +142,8 @@ const _burst_skillIntervalDec = partyInBurst.ifOn(
       cmpEq(
         electroLevel,
         1,
-        subscript(burst, dm.burst.intervalDec_1),
-        subscript(burst, dm.burst.intervalDec_2)
+        talentSubscript(burst, dm.burst.intervalDec_1),
+        talentSubscript(burst, dm.burst.intervalDec_2)
       )
     )
   )
@@ -151,8 +158,8 @@ const _burst_durationInc = partyInBurst.ifOn(
       cmpEq(
         hydroLevel,
         1,
-        subscript(burst, dm.burst.durationInc1),
-        subscript(burst, dm.burst.durationInc2)
+        talentSubscript(burst, dm.burst.durationInc1),
+        talentSubscript(burst, dm.burst.durationInc2)
       )
     )
   )
@@ -236,14 +243,12 @@ const t = register(
   (['press', 'hold'] as const).flatMap((k) =>
     dmg(`skill_${k}`, info, 'atk', dm.skill[`${k}Dmg`], 'skill')
   ),
-  customDmg(
+  splitScaleDmg(
     'karma_dmg',
-    info.ele,
+    info,
+    ['atk', 'eleMas'],
+    [dm.skill.karmaAtkDmg, dm.skill.karmaEleMasDmg],
     'skill',
-    sum(
-      prod(percent(subscript(skill, dm.skill.karmaAtkDmg)), final.atk),
-      prod(percent(subscript(skill, dm.skill.karmaEleMasDmg)), final.eleMas)
-    ),
     undefined,
     ownBuff.premod.dmg_.add(sum(a4Karma_dmg_, burst_karma_dmg_)),
     ownBuff.premod.critRate_.add(a4Karma_critRate_)

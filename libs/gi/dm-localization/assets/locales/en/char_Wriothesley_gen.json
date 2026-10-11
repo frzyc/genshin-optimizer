@@ -203,7 +203,7 @@
     "name": "There Shall Be an Unveiling for Injustice",
     "description": {
       "0": "<strong>Radiance: Stellar-Conduct</strong>: The Ascension Talent \"There Shall Be a Plea for Justice\" is changed to the following:",
-      "1": "When Wriothesley's HP is less than 60%, he will obtain a \"Gracious Rebuke: Unveiling.\" This enhances the next Charged Attack of his <strong>Normal Attack: Forceful Fists of Frost</strong> into Luster: Vaulting Fist, which will not consume Stamina and restores 30% Max HP to Wriothesley upon hit. Wriothesley can gain HP in this way once every 2s.",
+      "1": "When Wriothesley's HP is less than 60%, he will obtain a \"Gracious Rebuke: Unveiling.\" This turns the Charged Attack of his <strong>Normal Attack: Forceful Fists of Frost</strong> into the enhanced Luster: Vaulting Fist, which will not consume Stamina and restores 30% Max HP to Wriothesley upon hit. Wriothesley can gain HP in this way once every 2s.",
       "2": "Additionally, the third and fifth strikes of Repelling Fist enhanced by <strong>Chilling Penalty</strong> will deal 60% and 80% of their original <cryo>Cryo DMG</cryo> respectively, while Luster: Vaulting Fist will deal 100% of its original <cryo>AoE Cryo DMG</cryo>. The aforementioned DMG is considered as Stellar-Conduct DMG, and Wriothesley deals 30% increased Stellar-Conduct DMG.",
       "3": "Additionally, when inside a <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>, Wriothesley will enter the <strong>Radiance: Stellar-Conduct</strong> state."
     }
@@ -297,11 +297,11 @@
       "1": "You must first unlock the Ascension Talent \"There Shall Be a Plea for Justice.\""
     },
     "upgradedDescription": {
-      "0": "The CRIT Rate of Rebuke: Vaulting Fist will be increased by 10%, and its CRIT DMG by 80%. When unleashed, it will also create an additional icicle that deals 100% of Rebuke: Vaulting Fist's original DMG as <cryo>Cryo DMG</cryo>. DMG dealt this way is regarded as Charged Attack DMG.",
+      "0": "The CRIT Rate of Rebuke: Vaulting Fist will be increased by 10%, and its CRIT DMG by 80%. When unleashed, it will also create an additional icicle that deals 100% of Rebuke: Vaulting Fist's Base DMG as <cryo>Cryo DMG</cryo>. DMG dealt this way is regarded as Charged Attack DMG.",
       "1": "<br/>",
       "2": "<strong>Radiance: Stellar-Conduct</strong>: The aforementioned effect is changed to:",
       "3": [
-        " The Repelling Fist enhanced by <strong>Chilling Penalty</strong>, as well as Luster: Vaulting Fist, gain a 10% CRIT Rate and 80% CRIT DMG boost. In addition, the fifth attack of Repelling Fists enhanced by <strong>Chilling Penalty</strong>, as well as Luster: Vaulting Fist, will each generate an additional icicle that deals <cryo>Cryo DMG</cryo> at 60% of its original DMG. This DMG will be considered Stellar-Conduct DMG."
+        " The Repelling Fist enhanced by <strong>Chilling Penalty</strong>, as well as Luster: Vaulting Fist, gain a 10% CRIT Rate and 80% CRIT DMG boost. In addition, the fifth attack of Repelling Fists enhanced by <strong>Chilling Penalty</strong>, as well as Luster: Vaulting Fist, will each generate an additional icicle that deals <cryo>Cryo DMG</cryo> at 20% of its original DMG. This DMG will be considered Stellar-Conduct DMG."
       ],
       "4": "<br/>",
       "5": "You must first unlock the Ascension Talent \"There Shall Be a Plea for Justice.\""

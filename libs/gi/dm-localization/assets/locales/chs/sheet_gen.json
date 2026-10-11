@@ -65,7 +65,9 @@
     "hyperbloom": "超绽放",
     "quicken": "原激化",
     "aggravate": "超激化",
-    "spread": "蔓激化"
+    "spread": "蔓激化",
+    "stellarconduct": "星超导",
+    "stellarswirl": "星扩散"
   },
   "stat": {
     "def": "防御力",
@@ -77,15 +79,15 @@
   "talentLvl": "天赋等级{{level}}",
   "talents": {
     "auto": "普通攻击",
-    "skill": "",
-    "burst": "",
+    "skill": "元素战技",
+    "burst": "元素爆发",
     "altSprint": "替代冲刺"
   },
   "unlockPassive1": "角色突破等级1解锁",
   "unlockPassive2": "角色突破等级4解锁",
   "unlockPassive3": "固有天赋",
   "unlockLockedPassive": "完成前置任务后解锁",
-  "witchPassive": "",
+  "witchPassive": "魔女的课业",
   "moonsign": "月兆",
   "hexerei": "魔导"
 }

@@ -6,7 +6,7 @@ import {
   greaterEq,
   infoMut,
   input,
-  lunarDmg,
+  lunarDmgNode,
   min,
   percent,
   prod,
@@ -174,7 +174,7 @@ const dmgFormulas = {
     dmg: greaterEq(
       input.asc,
       1,
-      lunarDmg(percent(dm.passive1.dmg), 'atk', 'lunarcharged')
+      lunarDmgNode(percent(dm.passive1.dmg), 'atk', 'lunarcharged')
     ),
   },
   passive2: {
@@ -187,14 +187,14 @@ const dmgFormulas = {
     dmg: greaterEq(
       input.constellation,
       2,
-      lunarDmg(percent(dm.constellation2.dmg), 'atk', 'lunarcharged')
+      lunarDmgNode(percent(dm.constellation2.dmg), 'atk', 'lunarcharged')
     ),
   },
   constellation6: {
     dmg: greaterEq(
       input.constellation,
       6,
-      lunarDmg(percent(dm.constellation6.dmg), 'atk', 'lunarcharged')
+      lunarDmgNode(percent(dm.constellation6.dmg), 'atk', 'lunarcharged')
     ),
   },
 }

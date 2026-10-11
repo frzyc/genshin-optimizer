@@ -4,5 +4,14 @@
   "bonusSkirk1": "After completing step 2 of Special Training in Skirk's Story Quest",
   "bonusSkirk2": "After completing step 6 of Special Training in Skirk's Story Quest",
   "bonusSkirk3": "After completing step 9 of Special Training in Skirk's Story Quest",
-  "lockedPassiveCond": "After completing the Archon Quest \"True Moon\""
+  "lockedPassiveCond": "After completing the Archon Quest \"True Moon\"",
+  "resonance": {
+    "anemo": "Resonated with <anemo>Anemo</anemo>",
+    "geo": "Resonated with <geo>Geo</geo>",
+    "electro": "Resonated with <electro>Electro</electro>",
+    "dendro": "Resonated with <dendro>Dendro</dendro>",
+    "hydro": "Resonated with <hydro>Hydro</hydro>",
+    "pyro": "Resonated with <pyro>Pyro</pyro>",
+    "cryo": "Resonated with <cryo>Cryo</cryo>"
+  }
 }

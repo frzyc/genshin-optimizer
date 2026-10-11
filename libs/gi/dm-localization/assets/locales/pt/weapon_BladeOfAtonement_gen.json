@@ -1,0 +1,24 @@
+{
+  "name": "Lâmina da Redenção",
+  "description": {
+    "0": "Um Espadão passado de geração em geração dos Luchkins. Dizem que só um guerreiro corajoso é capaz de empunhá-lo."
+  },
+  "passiveName": "Arrependimento e Redenção",
+  "passiveDescription": {
+    "0": {
+      "0": "Nos 12s após desencadear uma Reação Elemental, aumenta a Proficiência Elemental do portador em <cryo>64</cryo>. Nos 12s após desencadear uma reação de Brilho Estelar, aumenta o ATQ do portador em <cryo>16%</cryo>. Esse efeito pode ser desencadeado mesmo quando o portador não for o personagem ativo."
+    },
+    "1": {
+      "0": "Nos 12s após desencadear uma Reação Elemental, aumenta a Proficiência Elemental do portador em <cryo>80</cryo>. Nos 12s após desencadear uma reação de Brilho Estelar, aumenta o ATQ do portador em <cryo>20%</cryo>. Esses efeitos podem ser desencadeados, mesmo quando o portador não é o personagem ativo."
+    },
+    "2": {
+      "0": "Nos 12s após desencadear uma Reação Elemental, aumenta a Proficiência Elemental do portador em <cryo>96</cryo>. Nos 12s após desencadear uma reação de Brilho Estelar, aumenta o ATQ do portador em <cryo>24%</cryo>. Esses efeitos podem ser desencadeados, mesmo quando o portador não é o personagem ativo."
+    },
+    "3": {
+      "0": "Nos 12s após desencadear uma Reação Elemental, aumenta a Proficiência Elemental do portador em <cryo>112</cryo>. Nos 12s após desencadear uma reação de Brilho Estelar, aumenta o ATQ do portador em <cryo>28%</cryo>. Esse efeito pode ser desencadeado mesmo quando o portador não for o personagem ativo."
+    },
+    "4": {
+      "0": "Nos 12s após desencadear uma Reação Elemental, aumenta a Proficiência Elemental do portador em <cryo>128</cryo>. Nos 12s após desencadear uma reação de Brilho Estelar, aumenta o ATQ do portador em <cryo>32%</cryo>. Esse efeito pode ser desencadeado mesmo quando o portador não for o personagem ativo."
+    }
+  }
+}

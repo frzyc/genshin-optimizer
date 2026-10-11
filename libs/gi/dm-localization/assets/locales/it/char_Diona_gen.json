@@ -140,8 +140,8 @@
   "lockedPassive": {
     "name": "Collezione preziosa",
     "description": {
-      "0": "Entro 20 s dall'utilizzo dell'abilità elementale <strong>Zampe glaciali</strong>, Diona scaglia tre <strong>Zampe glaciali</strong> aggiuntive quando i membri del gruppo innescano reazioni di Superconduzione o Astroconduzione. Le <strong>Zampe glaciali</strong> scagliate in questo modo non generano particelle elementali e non creano scudi dopo aver colpito gli avversari. Quest'effetto può verificarsi una volta ogni 3,5 s.",
-      "1": "Inoltre, quando si trova all'interno di un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo astropolare</strong></tooltip>, Diona entra nello stato di <strong>Splendore: Astroconduzione</strong>."
+      "0": "Entro 20 s dall'utilizzo dell'abilità elementale <strong>Zampe glaciali</strong>, Diona scaglia tre <strong>Zampe glaciali</strong> aggiuntive quando i membri del gruppo innescano reazioni di Astroconduzione, Superconduzione, Turbinio di Cryo o Turbinio astrale. Le <strong>Zampe glaciali</strong> scagliate in questo modo non generano particelle elementali e non creano scudi dopo aver colpito gli avversari. Quest'effetto può verificarsi una volta ogni 3,5 s.",
+      "1": "Inoltre, Diona entra nello stato di <strong>Splendore: Astroconduzione</strong> quando si trova all'interno di un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo astropolare</strong></tooltip> o nello stato di <strong>Splendore: Turbinio astrale</strong> per 8 s dopo che un membro vicino del gruppo ha innescato una reazione di Turbinio astrale."
     }
   },
   "constellation1": {
@@ -194,8 +194,11 @@
       ],
       "2": "<br/>",
       "3": "Inoltre, i PS max di Diona aumentano di un 25%.",
-      "4": "<br/>",
-      "5": "Nello stato di <strong>Splendore: Astroconduzione</strong>, <strong>Miscela d'autore</strong> aumenta di un 40% i DAN delle reazioni di Superconduzione e Astroconduzione inflitti dai personaggi presenti nel suo raggio d'azione."
+      "4": "Nello stato di <strong>Splendore: Barlume astrale</strong>, Miscela d'autore aumenta i DAN delle seguenti reazioni innescate dai personaggi presenti nel suo raggio d'azione.",
+      "5": [
+        " <strong>Splendore: Astroconduzione</strong>: i DAN da reazione di Superconduzione e Astroconduzione aumentano di un 40%.",
+        " <strong>Splendore: Turbinio astrale</strong>: i DAN da reazione di Turbinio di Cryo e Turbinio astrale aumentano di un 40%."
+      ]
     }
   }
 }

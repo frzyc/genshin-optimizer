@@ -8,9 +8,11 @@ import BalladOfTheBoundlessBlue from './BalladOfTheBoundlessBlue'
 import BlackcliffAgate from './BlackcliffAgate'
 import BlackmarrowLantern from './BlackmarrowLantern'
 import CashflowSupervision from './CashflowSupervision'
+import ClashOfKings from './ClashOfKings'
 import CranesEchoingCall from './CranesEchoingCall'
 import DawningFrost from './DawningFrost'
 import DodocoTales from './DodocoTales'
+import EchoesOfTheHeart from './EchoesOfTheHeart'
 import EmeraldOrb from './EmeraldOrb'
 import EtherlightSpindlelute from './EtherlightSpindlelute'
 import EverlastingMoonglow from './EverlastingMoonglow'
@@ -20,6 +22,7 @@ import FlowingPurity from './FlowingPurity'
 import Frostbearer from './Frostbearer'
 import FruitOfFulfillment from './FruitOfFulfillment'
 import HakushinRing from './HakushinRing'
+import HymnOfTheMaelstrom from './HymnOfTheMaelstrom'
 import JadefallsSplendor from './JadefallsSplendor'
 import KagurasVerity from './KagurasVerity'
 import LostPrayerToTheSacredWinds from './LostPrayerToTheSacredWinds'
@@ -52,6 +55,7 @@ import VividNotions from './VividNotions'
 import WanderingEvenstar from './WanderingEvenstar'
 import WaveridingWhirl from './WaveridingWhirl'
 import WineAndSong from './WineAndSong'
+import WintersHeavyHeart from './WintersHeavyHeart'
 
 const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   AThousandFloatingDreams,
@@ -62,9 +66,11 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   BlackcliffAgate,
   BlackmarrowLantern,
   CashflowSupervision,
+  ClashOfKings,
   CranesEchoingCall,
   DawningFrost,
   DodocoTales,
+  EchoesOfTheHeart,
   EmeraldOrb,
   EtherlightSpindlelute,
   EverlastingMoonglow,
@@ -74,6 +80,7 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   Frostbearer,
   FruitOfFulfillment,
   HakushinRing,
+  HymnOfTheMaelstrom,
   JadefallsSplendor,
   KagurasVerity,
   LostPrayerToTheSacredWinds,
@@ -106,5 +113,6 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   WanderingEvenstar,
   WaveridingWhirl,
   WineAndSong,
+  WintersHeavyHeart,
 } as const
 export default catalyst

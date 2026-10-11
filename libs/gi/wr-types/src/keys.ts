@@ -36,6 +36,8 @@ export const allNonstackBuffs = [
   'scroll4nsgeo',
   'scroll4nsdendro',
   'millenialatk',
+  'millenialelemas',
+  'millenialncpdmg',
   'patrol',
   'key',
   'crane',
@@ -59,6 +61,8 @@ export const allNonstackBuffs = [
   ...allElementKeys.map((ele) => `lightGuidance${ele}` as const),
   ...allElementKeys.map((ele) => `mortalHymn${ele}` as const),
   'angelos',
+  'heartofthefurnace',
+  'breezeborne',
 ] as const
 export type NonStackBuff = (typeof allNonstackBuffs)[number]
 export const allMoves = [
@@ -105,6 +109,7 @@ export const allTransformative = [
   'lunarbloom',
   'lunarcrystallize',
   'stellarconduct',
+  'stellarswirl',
 ] as const
 export const allAmplifying = ['vaporize', 'melt'] as const
 export const allAdditive = ['spread', 'aggravate'] as const

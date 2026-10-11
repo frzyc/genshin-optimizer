@@ -137,7 +137,7 @@
     "name": "As Injustiças Sempre São Reveladas",
     "description": {
       "0": "<strong>Brilho Reluzente: Supercondutor Estelar</strong>: o efeito do Talento de Ascensão \"Haverá Arguição Pela Justiça\" será convertido para:",
-      "1": "Quando a Vida de Wriothesley for inferior a 60%, obterá Ordem da Graça: Claridade, fortalecendo o próximo Ataque Carregado de <strong>Ataque Normal: Punho Gelado Destruidor</strong> para Brilho Celestial: Soco do Salto Gelado: não consome Stamina, e regenera Vida para Wriothesley após atingir. A quantidade de Vida regenerada é baseada em 30% da Vida Máxima de Wriothesley, e é possível regenerar Vida para ele uma vez a cada 2s dessa forma.",
+      "1": "Quando a Vida de Wriothesley for inferior a 60%, obterá Ordem da Graça: Claridade, fortalecendo o Ataque Carregado de <strong>Ataque Normal: Punho Gelado Destruidor</strong> para Brilho Celestial: Soco do Salto Gelado: não consome Stamina, e regenera Vida para Wriothesley após atingir. A quantidade de Vida regenerada é baseada em 30% da Vida Máxima de Wriothesley, e é possível regenerar Vida para ele uma vez a cada 2s dessa forma.",
       "2": "Além disso, o terceiro e quinto golpe de Soco Repulsor de <strong>Julgamento do Gelo Feroz</strong> fortalecidos causarão 60%/80% do <cryo>Dano Cryo</cryo> original, e Brilho Celestial: Soco do Salto Gelado causará 100% do <cryo>Dano Cryo em AdE</cryo> original. Esses Danos acima são considerados Dano de Supercondutor Estelar. Aumenta o Dano de Supercondutor Estelar causado por Wriothesley em 30%.",
       "3": "Além disso, quando estiver no <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo da Estrela Polar</strong></tooltip>, Wriothesley entrará no estado <strong>Brilho Reluzente: Supercondutor Estelar</strong>"
     }
@@ -234,7 +234,7 @@
       "1": "<br/>",
       "2": "<strong>Brilho Reluzente: Supercondutor Estelar</strong>: o efeito acima muda para:",
       "3": [
-        " Aumenta a Taxa CRIT em 10% e o Dano CRIT em 80% para os Socos Repulsores e Brilho Celestial: Soco do Salto Gelado de <strong>Julgamento do Gelo Feroz</strong> fortalecido, e gera uma Estalactite Cryo adicional no quinto golpe dos Socos Repulsores e Brilho Celestial: Soco do Salto Gelado, causando 60% de <cryo>Dano Cryo</cryo> do Dano original. Esse Dano é considerado Dano de Supercondutor Estelar."
+        " Aumenta a Taxa CRIT em 10% e o Dano CRIT em 80% para os Socos Repulsores e Brilho Celestial: Soco do Salto Gelado de <strong>Julgamento do Gelo Feroz</strong> fortalecido, e gera uma Estalactite Cryo adicional no quinto golpe dos Socos Repulsores e Brilho Celestial: Soco do Salto Gelado, causando 20% de <cryo>Dano Cryo</cryo> do Dano original. Esse Dano é considerado Dano de Supercondutor Estelar."
       ],
       "4": "<br/>",
       "5": "É necessário ter desbloqueado o Talento de Ascensão \"Haverá Arguição Pela Justiça\"."

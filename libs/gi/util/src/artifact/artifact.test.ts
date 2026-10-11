@@ -1,6 +1,12 @@
+import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import { artSubstatRollData } from '@genshin-optimizer/gi/consts'
+import type { IArtifact } from '@genshin-optimizer/gi/good'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { getSubstatEfficiency, getSubstatRolls } from './artifact'
+import {
+  getArtifactEfficiency,
+  getSubstatEfficiency,
+  getSubstatRolls,
+} from './artifact'
 
 const artifactSubstatRoll = allStats.art.subRoll
 describe('Substat Rolls/efficiency', () => {
@@ -96,6 +102,90 @@ describe('Substat Rolls/efficiency', () => {
       )
       expect(getSubstatEfficiency('def_', [-1])).toEqual(0)
       expect(getSubstatEfficiency('', [-1])).toEqual(0)
+    })
+  })
+
+  describe('getArtifactEfficiency()', () => {
+    const baseArtifact: IArtifact = {
+      setKey: 'GladiatorsFinale',
+      rarity: 5,
+      level: 0,
+      slotKey: 'flower',
+      mainStatKey: 'hp',
+      location: '',
+      lock: false,
+      substats: [],
+    }
+    const usefulFilter = new Set<SubstatKey>([
+      'critRate_',
+      'critDMG_',
+      'atk_',
+      'enerRech_',
+    ])
+
+    test('should not count substats that are excluded by the filter', () => {
+      // +0 artifact whose 4 known substats are all excluded by the filter.
+      // The unactivated 4th line has a known key, so no upgrade can roll into
+      // a useful stat: max efficiency should be 0.
+      // https://github.com/frzyc/genshin-optimizer/issues/3152
+      const artifact: IArtifact = {
+        ...baseArtifact,
+        substats: [
+          { key: 'def_', value: 0 },
+          { key: 'def', value: 0 },
+          { key: 'hp_', value: 0 },
+          { key: '', value: 0 },
+        ],
+        unactivatedSubstats: [{ key: 'eleMas', value: 21 }],
+      }
+      const { currentEfficiency, maxEfficiency } = getArtifactEfficiency(
+        artifact,
+        usefulFilter
+      )
+      expect(currentEfficiency).toBe(0)
+      expect(maxEfficiency).toBe(0)
+    })
+
+    test('should count an unactivated substat towards max efficiency when selected by the filter', () => {
+      const artifact: IArtifact = {
+        ...baseArtifact,
+        substats: [
+          { key: 'critRate_', value: 3.9 },
+          { key: 'critDMG_', value: 7.8 },
+          { key: 'atk_', value: 5.8 },
+          { key: '', value: 0 },
+        ],
+        unactivatedSubstats: [{ key: 'eleMas', value: 23 }],
+      }
+      const filter = new Set<SubstatKey>([...usefulFilter, 'eleMas'])
+      const { currentEfficiency, maxEfficiency } = getArtifactEfficiency(
+        artifact,
+        filter
+      )
+      // 3 current max rolls + the unactivated EM line (1 max roll) + the 4
+      // remaining upgrades at max roll value.
+      expect(currentEfficiency).toBeCloseTo(3)
+      expect(maxEfficiency).toBeCloseTo(8)
+    })
+
+    test('should count potential rolls into empty slots for a 3-liner', () => {
+      const artifact: IArtifact = {
+        ...baseArtifact,
+        substats: [
+          { key: 'critRate_', value: 3.9 },
+          { key: 'critDMG_', value: 7.8 },
+          { key: 'atk_', value: 5.8 },
+          { key: '', value: 0 },
+        ],
+      }
+      const { currentEfficiency, maxEfficiency } = getArtifactEfficiency(
+        artifact,
+        usefulFilter
+      )
+      // 3 current max rolls + 1 roll to unlock the 4th line + the 4 remaining
+      // upgrades at max roll value.
+      expect(currentEfficiency).toBeCloseTo(3)
+      expect(maxEfficiency).toBeCloseTo(8)
     })
   })
 })

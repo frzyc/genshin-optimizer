@@ -8,7 +8,8 @@ import {
   ModalWrapper,
   TextFieldLazy,
 } from '@genshin-optimizer/common/ui'
-import { range } from '@genshin-optimizer/common/util'
+import { range, shouldShowDevComponents } from '@genshin-optimizer/common/util'
+import { addDevData } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
 import { Delete, Download, ImportExport, Upload } from '@mui/icons-material'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
@@ -107,6 +108,17 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
     database.swapStorage(mainDB)
     setDatabase(index, database)
   }, [index, setDatabase, mainDB, current, database])
+
+  const onAddDevData = useCallback(() => {
+    if (
+      !window.confirm(
+        `Add ${1000} 5-star artifacts (Lv.20) and all 5-star weapons (max level) to "${name}"?`
+      )
+    )
+      return
+    const { artsAdded, weaponsAdded } = addDevData(database)
+    alert(`Added ${artsAdded} artifacts and ${weaponsAdded} weapons.`)
+  }, [database, name])
 
   return (
     <CardThemed
@@ -227,6 +239,18 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
                   {t('DatabaseCard.button.delete')}
                 </Button>
               </Grid>
+              {shouldShowDevComponents && (
+                <Grid item xs={2}>
+                  <Button
+                    fullWidth
+                    color="warning"
+                    disabled={readOnly}
+                    onClick={onAddDevData}
+                  >
+                    Add Dev Data
+                  </Button>
+                </Grid>
+              )}
             </Grid>
             {!!lastEdit && (
               <Typography noWrap align="center" style={{ paddingTop: '1.5em' }}>

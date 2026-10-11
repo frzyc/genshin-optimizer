@@ -5,6 +5,7 @@ import Aino from './portrait_aino.png'
 import Albedo from './portrait_albedo.png'
 import Alhaitham from './portrait_alhaitham.png'
 import Aloy from './portrait_aloy.png'
+import Alyosha from './portrait_alyosha.png'
 import Amber from './portrait_amber.png'
 import Arlecchino from './portrait_arlecchino.png'
 import KamisatoAyaka from './portrait_ayaka.png'
@@ -62,7 +63,9 @@ import KukiShinobu from './portrait_kuki.png'
 import LanYan from './portrait_lanyan.png'
 import Lauma from './portrait_lauma.png'
 import Layla from './portrait_layla.png'
+import Linnea from './portrait_linnea.png'
 import Lisa from './portrait_lisa.png'
+import Lohen from './portrait_lohen.png'
 import TravelerF from './portrait_lumine.png'
 import Lynette from './portrait_lynette.png'
 import Lyney from './portrait_lyney.png'
@@ -74,14 +77,18 @@ import Nahida from './portrait_nahida.png'
 import Navia from './portrait_navia.png'
 import Nefer from './portrait_nefer.png'
 import Neuvillette from './portrait_neuvillette.png'
+import Nicole from './portrait_nicole.png'
 import Nilou from './portrait_nilou.png'
 import Ningguang from './portrait_ningguang.png'
 import Noelle from './portrait_noelle.png'
+import Odette from './portrait_odette.png'
 import Ororon from './portrait_ororon.png'
+import Prune from './portrait_prune.png'
 import Qiqi from './portrait_qiqi.png'
 import RaidenShogun from './portrait_raiden.png'
 import Razor from './portrait_razor.png'
 import Rosaria from './portrait_rosaria.png'
+import Sandrone from './portrait_sandrone.png'
 import KujouSara from './portrait_sara.png'
 import Sayu from './portrait_sayu.png'
 import Sethos from './portrait_sethos.png'
@@ -95,6 +102,8 @@ import Tighnari from './portrait_tightnari.png'
 import Varesa from './portrait_varesa.png'
 import Varka from './portrait_varka.png'
 import Venti from './portrait_venti.png'
+import Vesna from './portrait_vesna.png'
+import Vodyanitsa from './portrait_vodyanitsa.png'
 import Wanderer from './portrait_wanderer.png'
 import Wriothesley from './portrait_wriothesley.png'
 import Xiangling from './portrait_xiangling.png'
@@ -119,6 +128,7 @@ const data = {
   Albedo,
   Alhaitham,
   Aloy,
+  Alyosha,
   Amber,
   Arlecchino,
   AratakiItto,
@@ -176,7 +186,9 @@ const data = {
   LanYan,
   Lauma,
   Layla,
+  Linnea,
   Lisa,
+  Lohen,
   Lynette,
   Lyney,
   Mavuika,
@@ -187,14 +199,18 @@ const data = {
   Navia,
   Nefer,
   Neuvillette,
+  Nicole,
   Nilou,
   Ningguang,
   Noelle,
+  Odette,
   Ororon,
+  Prune,
   Qiqi,
   RaidenShogun,
   Razor,
   Rosaria,
+  Sandrone,
   SangonomiyaKokomi,
   Sayu,
   Sethos,
@@ -211,6 +227,8 @@ const data = {
   Varesa,
   Varka,
   Venti,
+  Vesna,
+  Vodyanitsa,
   Wanderer,
   Wriothesley,
   Xiangling,

@@ -14,6 +14,7 @@
   "IdentityBase": "[Identity] Base",
   "IdentityInflection": "[Identity] Inflection",
   "CinderCobalt": "[Cinder] Cobalt",
+  "LunarSemiluna": "[Lunar] Semiluna",
   "StreetSuperstar": "Street Superstar",
   "SliceOfTime": "Slice of Time",
   "RainforestGourmet": "Rainforest Gourmet",
@@ -30,9 +31,11 @@
   "RadiowaveJourney": "Radiowave Journey",
   "MarcatoDesire": "Marcato Desire",
   "ReelProjector": "Reel Projector",
+  "CattyLuck": "Catty Luck",
   "BoisterousEchoes": "Boisterous Echoes",
   "CauldronOfClarity": "Cauldron of Clarity",
   "TheSimmeringPot": "The Simmering Pot",
+  "BloodmarrowCoffer": "Bloodmarrow Coffer",
   "DemaraBatteryMarkII": "Demara Battery Mark II",
   "TheVault": "The Vault",
   "Housekeeper": "Housekeeper",
@@ -93,5 +96,7 @@
   "JoyauDore": "Joyau Dore",
   "ChiefSidekick": "Chief Sidekick",
   "OdeOfResurrectedWings": "Ode of Resurrected Wings",
-  "KnightsExtolment": "Knight's Extolment"
+  "KnightsExtolment": "Knight's Extolment",
+  "CrimsonThirst": "Crimson Thirst",
+  "CrimsonMoonCasket": "Crimson Moon Casket"
 }

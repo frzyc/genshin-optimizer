@@ -17,6 +17,7 @@ import EngulfingLightning from './EngulfingLightning'
 import FavoniusLance from './FavoniusLance'
 import FootprintOfTheRainbow from './FootprintOfTheRainbow'
 import FracturedHalo from './FracturedHalo'
+import Frostbreath from './Frostbreath'
 import Halberd from './Halberd'
 import IronPoint from './IronPoint'
 import KitainCrossSpear from './KitainCrossSpear'
@@ -33,6 +34,7 @@ import RightfulReward from './RightfulReward'
 import RoyalSpear from './RoyalSpear'
 import SacrificersStaff from './SacrificersStaff'
 import SkywardSpine from './SkywardSpine'
+import SongOfTheVigil from './SongOfTheVigil'
 import StaffOfHoma from './StaffOfHoma'
 import StaffOfTheScarletSands from './StaffOfTheScarletSands'
 import SymphonistOfScents from './SymphonistOfScents'
@@ -60,6 +62,7 @@ const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   FavoniusLance,
   FootprintOfTheRainbow,
   FracturedHalo,
+  Frostbreath,
   Halberd,
   IronPoint,
   KitainCrossSpear,
@@ -76,6 +79,7 @@ const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   RoyalSpear,
   SacrificersStaff,
   SkywardSpine,
+  SongOfTheVigil,
   StaffOfHoma,
   StaffOfTheScarletSands,
   SymphonistOfScents,

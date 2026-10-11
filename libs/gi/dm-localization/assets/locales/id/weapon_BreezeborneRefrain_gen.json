@@ -1,0 +1,24 @@
+{
+  "name": "Breezeborne Refrain",
+  "description": {
+    "0": "Tali busur berwarna hijau zamrud yang terbuat dari permata murni tak bercacat. Ketika direntangkan, tali busur ini selalu membangkitkan angin lembut yang menghangatkan bak musim semi."
+  },
+  "passiveName": "Viper's Ballad",
+  "passiveDescription": {
+    "0": {
+      "0": "Energy Recharge +<cryo>20%</cryo>. Saat Elemental Skill atau Elemental Burst Karakter yang mengenakan mengenai musuh, mendapatkan 1 lapis efek \"Hymn of the Pure\". Efek ini dapat ditumpuk sampai 3 lapis, maksimum 1 lapis setiap 0,03 detik. Saat mencapai 3 lapis, semua lapisannya akan dihapus dan memperoleh efek \"Thus Lied the Viper\": DMG reaksi Stellar Glimmer yang diakibatkan seluruh Karakter sekitar dalam party +<cryo>24%</cryo> selama 12 detik. Selama durasi tersebut, Hymn of the Pure tidak dapat diperoleh lagi. Efek di atas tetap dapat dipicu meski Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "Energy Recharge +<cryo>25%</cryo>. Saat Elemental Skill atau Elemental Burst Karakter yang mengenakan mengenai musuh, mendapatkan 1 lapis \"Hymn of the Pure\". Efek ini dapat ditumpuk sampai 3 lapis, maksimum 1 lapis setiap 0,03 detik. Saat mencapai 3 lapis, semua lapisannya akan dihapus dan memperoleh efek \"Thus Lied the Viper\": DMG reaksi Stellar Glimmer yang diakibatkan seluruh Karakter sekitar dalam party +<cryo>30%</cryo> selama 12 detik. Selama durasi tersebut, Hymn of the Pure tidak dapat diperoleh lagi. Efek di atas tetap dapat dipicu meski Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "Energy Recharge +<cryo>30%</cryo>. Saat Elemental Skill atau Elemental Burst Karakter yang mengenakan mengenai musuh, mendapatkan 1 lapis \"Hymn of the Pure\". Efek ini dapat ditumpuk sampai 3 lapis, maksimum 1 lapis setiap 0,03 detik. Saat mencapai 3 lapis, semua lapisannya akan dihapus dan memperoleh efek \"Thus Lied the Viper\": DMG reaksi Stellar Glimmer yang diakibatkan seluruh Karakter sekitar dalam party +<cryo>36%</cryo> selama 12 detik. Selama durasi tersebut, Hymn of the Pure tidak dapat diperoleh lagi. Efek di atas tetap dapat dipicu meski Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "Energy Recharge +<cryo>35%</cryo>. Saat Elemental Skill atau Elemental Burst Karakter yang mengenakan mengenai musuh, mendapatkan 1 lapis \"Hymn of the Pure\". Efek ini dapat ditumpuk sampai 3 lapis, maksimum 1 lapis setiap 0,03 detik. Saat mencapai 3 lapis, semua lapisannya akan dihapus dan memperoleh efek \"Thus Lied the Viper\": DMG reaksi Stellar Glimmer yang diakibatkan seluruh Karakter sekitar dalam party +<cryo>42%</cryo> selama 12 detik. Selama durasi tersebut, Hymn of the Pure tidak dapat diperoleh lagi. Efek di atas tetap dapat dipicu meski Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "Energy Recharge +<cryo>40%</cryo>. Saat Elemental Skill atau Elemental Burst Karakter yang mengenakan mengenai musuh, mendapatkan 1 lapis \"Hymn of the Pure\". Efek ini dapat ditumpuk sampai 3 lapis, maksimum 1 lapis setiap 0,03 detik. Saat mencapai 3 lapis, semua lapisannya akan dihapus dan memperoleh efek \"Thus Lied the Viper\": DMG reaksi Stellar Glimmer yang diakibatkan seluruh Karakter sekitar dalam party +<cryo>48%</cryo> selama 12 detik. Selama durasi tersebut, Hymn of the Pure tidak dapat diperoleh lagi. Efek di atas tetap dapat dipicu meski Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

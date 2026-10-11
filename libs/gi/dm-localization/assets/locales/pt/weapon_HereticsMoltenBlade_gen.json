@@ -1,0 +1,24 @@
+{
+  "name": "Lâmina Derretida do Herege",
+  "description": {
+    "0": "Era a arma que ele sacou novamente ao encontrar pela primeira vez aquele Deus das Chamas abençoado por todos — uma arma que havia muito tempo não utilizava."
+  },
+  "passiveName": "Bênção da Luz Solitária",
+  "passiveDescription": {
+    "0": {
+      "0": "Depois que o portador lança a Habilidade Elemental, obtém Brilho da Primeira Luz: registra a distância percorrida pelo portador. A cada segundo, com base na distância percorrida no último segundo, o portador ganha um Bônus de ATQ mínimo de <cryo>18%</cryo> e máximo de <cryo>36%</cryo>. Esse efeito dura 14s, pode ser desencadeado uma vez a cada 14s e será removido quando o portador deixar de ser o personagem ativo."
+    },
+    "1": {
+      "0": "Depois que o portador lança a Habilidade Elemental, obtém Brilho da Primeira Luz: registra a distância percorrida pelo portador. A cada segundo, com base na distância percorrida no último segundo, o portador ganha um Bônus de ATQ mínimo de <cryo>22.5%</cryo> e máximo de <cryo>45%</cryo>. Esse efeito dura 14s, pode ser desencadeado uma vez a cada 14s e será removido quando o portador deixar de ser o personagem ativo."
+    },
+    "2": {
+      "0": "Depois que o portador lança a Habilidade Elemental, obtém Brilho da Primeira Luz: registra a distância percorrida pelo portador. A cada segundo, com base na distância percorrida no último segundo, o portador ganha um Bônus de ATQ mínimo de <cryo>27%</cryo> e máximo de <cryo>54%</cryo>. Esse efeito dura 14s, pode ser desencadeado uma vez a cada 14s e será removido quando o portador deixar de ser o personagem ativo."
+    },
+    "3": {
+      "0": "Depois que o portador lança a Habilidade Elemental, obtém Brilho da Primeira Luz: registra a distância percorrida pelo portador. A cada segundo, com base na distância percorrida no último segundo, o portador ganha um Bônus de ATQ mínimo de <cryo>31.5%</cryo> e máximo de <cryo>63%</cryo>. Esse efeito dura 14s, pode ser desencadeado uma vez a cada 14s e será removido quando o portador deixar de ser o personagem ativo."
+    },
+    "4": {
+      "0": "Depois que o portador lança a Habilidade Elemental, obtém Brilho da Primeira Luz: registra a distância percorrida pelo portador. A cada segundo, com base na distância percorrida no último segundo, o portador ganha um Bônus de ATQ mínimo de <cryo>36%</cryo> e máximo de <cryo>72%</cryo>. Esse efeito dura 14s, pode ser desencadeado uma vez a cada 14s e será removido quando o portador deixar de ser o personagem ativo."
+    }
+  }
+}

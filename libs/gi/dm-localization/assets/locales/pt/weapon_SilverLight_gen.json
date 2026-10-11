@@ -1,0 +1,24 @@
+{
+  "name": "Lâmpada Prateada",
+  "description": {
+    "0": "Uma espada antiga deixada pelo Leitor do Vento, um dos Três Eremitas de Guizang de Liyue. Lendas dizem que foi forjada da prata sagrada que caiu dos céus, e que chegou a cortar a água do mar em duas."
+  },
+  "passiveName": "Crepúsculo Sobre as Águas",
+  "passiveDescription": {
+    "0": {
+      "0": "Nos 12s após lançar a Habilidade Elemental, aumenta a Proficiência Elemental em <cryo>52</cryo>. Esse efeito pode ser acumulado até 2 vezes, e a duração de cada acúmulo é contada separadamente."
+    },
+    "1": {
+      "0": "Nos 12s após lançar a Habilidade Elemental, aumenta a Proficiência Elemental em <cryo>65</cryo>. Esse efeito pode ser acumulado até 2 vezes, e a duração de cada acúmulo é contada separadamente."
+    },
+    "2": {
+      "0": "Nos 12s após lançar a Habilidade Elemental, aumenta a Proficiência Elemental em <cryo>78</cryo>. Esse efeito pode ser acumulado até 2 vezes, e a duração de cada acúmulo é contada separadamente."
+    },
+    "3": {
+      "0": "Nos 12s após lançar a Habilidade Elemental, aumenta a Proficiência Elemental em <cryo>91</cryo>. Esse efeito pode ser acumulado até 2 vezes, e a duração de cada acúmulo é contada separadamente."
+    },
+    "4": {
+      "0": "Nos 12s após lançar a Habilidade Elemental, aumenta a Proficiência Elemental em <cryo>104</cryo>. Esse efeito pode ser acumulado até 2 vezes, e a duração de cada acúmulo é contada separadamente."
+    }
+  }
+}

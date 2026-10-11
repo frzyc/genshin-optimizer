@@ -4,6 +4,7 @@ import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
   equal,
+  equalStr,
   greaterEq,
   infoMut,
   input,
@@ -12,7 +13,7 @@ import {
   one,
   percent,
   prod,
-  stellarDmg,
+  stellarDmgNode,
   subscript,
   sum,
   threshold,
@@ -383,7 +384,7 @@ const dmgFormulas = {
         equal(
           condLockStellarRadianceSc,
           'on',
-          stellarDmg(
+          stellarDmgNode(
             subscript(input.total.autoIndex, dm.normal.hitArr[2], {
               unit: '%',
             }),
@@ -414,7 +415,7 @@ const dmgFormulas = {
         equal(
           condLockStellarRadianceSc,
           'on',
-          stellarDmg(
+          stellarDmgNode(
             prod(
               subscript(input.total.autoIndex, dm.normal.hitArr[4], {
                 unit: '%',
@@ -449,7 +450,7 @@ const dmgFormulas = {
         equal(
           condLockStellarRadianceSc,
           'on',
-          stellarDmg(
+          stellarDmgNode(
             subscript(input.total.autoIndex, dm.charged.dmg, { unit: '%' }),
             'atk',
             'stellarconduct',
@@ -481,7 +482,7 @@ const dmgFormulas = {
           equal(
             condLockStellarRadianceSc,
             'on',
-            stellarDmg(
+            stellarDmgNode(
               prod(
                 subscript(input.total.autoIndex, dm.normal.hitArr[4], {
                   unit: '%',
@@ -525,7 +526,7 @@ const dmgFormulas = {
           equal(
             condLockStellarRadianceSc,
             'on',
-            stellarDmg(
+            stellarDmgNode(
               subscript(input.total.autoIndex, dm.charged.dmg, { unit: '%' }),
               'atk',
               'stellarconduct',
@@ -558,6 +559,9 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     atk_: a4EdictStacks_atk_,
     burst_dmg_: c2EdictStacks_burst_dmg_,
     stellarconduct_dmg_: a1Stellarconduct_dmg_,
+  },
+  flags: {
+    radiance: equalStr(condLockStellarRadianceSc, 'on', 'sc'),
   },
 })
 
@@ -880,7 +884,7 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              text: st('elementalReaction.gainRadianceSc'),
+              text: st('elementalReaction.stellar.gainRadianceSc'),
             },
           ],
         },

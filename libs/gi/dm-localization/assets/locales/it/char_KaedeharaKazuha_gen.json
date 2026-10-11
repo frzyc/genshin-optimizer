@@ -135,7 +135,7 @@
   "passive2": {
     "name": "Poesia di Fuubutsu",
     "description": {
-      "0": "Innescando una reazione di Turbinio, Kaedehara Kazuha fornirà per 8 s a tutti i membri del gruppo uno 0,04% di bonus DAN elementali all'elemento assorbito dalla reazione per ogni suo punto di maestria elementale. Possono coesistere più bonus di diversi elementi ottenuti in questo modo."
+      "0": "Innescando una reazione di Turbinio o di Turbinio astrale, Kaedehara Kazuha fornisce per 8 s a tutti i membri del gruppo uno 0,04% di bonus DAN elementali all'elemento assorbito dalla reazione per ogni suo punto di maestria elementale. Possono coesistere più bonus di diversi elementi ottenuti in questo modo."
     }
   },
   "passive3": {

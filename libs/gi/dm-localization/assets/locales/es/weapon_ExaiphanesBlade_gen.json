@@ -1,0 +1,24 @@
+{
+  "name": "Hoja de Exáifanes",
+  "description": {
+    "0": "Una espada larga que alguna vez brilló con la gloriosa luz de la Estrella Albina. Al caer en manos de alguien que ha emprendido un viaje, se ha convertido en un resplandor completamente nuevo que no pertenece a ninguna época pasada."
+  },
+  "passiveName": "Senda del viajero",
+  "passiveDescription": {
+    "0": {
+      "0": "Cuando {F#la Viajera}{M#el Viajero} lleva esta arma equipada, tras golpear a un enemigo, su ATQ aumenta en un <cryo>16%</cryo> durante <cryo>8</cryo> s y recupera <cryo>3</cryo> pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada <cryo>5</cryo> s y se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Cuando {F#la Viajera}{M#el Viajero} lleva esta arma equipada, su Daño CRIT aumenta en un 6% por cada elemento con el que haya resonado. Además, cuando {F#la Viajera}{M#el Viajero} golpea a un enemigo con un ataque, su ATQ aumenta en un <cryo>20%</cryo> durante 8 s y recupera <cryo>3</cryo> pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 5 s y se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Cuando {F#la Viajera}{M#el Viajero} lleva esta arma equipada, su Daño CRIT aumenta en un 6% por cada elemento con el que haya resonado. Además, cuando {F#la Viajera}{M#el Viajero} golpea a un enemigo con un ataque, su ATQ aumenta en un <cryo>24%</cryo> durante 8 s y recupera <cryo>5</cryo> pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 5 s y se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Cuando {F#la Viajera}{M#el Viajero} lleva esta arma equipada, su Daño CRIT aumenta en un 6% por cada elemento con el que haya resonado. Además, cuando {F#la Viajera}{M#el Viajero} golpea a un enemigo con un ataque, su ATQ aumenta en un <cryo>32%</cryo> durante 8 s y recupera <cryo>5</cryo> pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 5 s y se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Cuando {F#la Viajera}{M#el Viajero} lleva esta arma equipada, su Daño CRIT aumenta en un 6% por cada elemento con el que haya resonado. Además, cuando {F#la Viajera}{M#el Viajero} golpea a un enemigo con un ataque, su ATQ aumenta en un <cryo>40%</cryo> durante 8 s y recupera <cryo>5</cryo> pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 5 s y se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    }
+  }
+}

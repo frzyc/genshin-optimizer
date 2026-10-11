@@ -1,0 +1,29 @@
+{
+  "name": "New Bough",
+  "description": {
+    "0": "Pedang suci yang dibuat dari kayu suci yang konon pernah menjadi kunci membalikkan keadaan dalam sebuah pertempuran."
+  },
+  "passiveName": "Wildgrowth",
+  "passiveDescription": {
+    "0": {
+      "0": "Selama 12 detik setelah melancarkan Elemental Skill, saat serangan Karakter yang mengenakan mengenai musuh, ia akan mendapatkan efek Verdant: ATK +<cryo>4%</cryo>, Elemental Mastery +<cryo>20</cryo> poin. Efek ini berlangsung selama 6 detik, dapat ditumpuk sampai 3 lapis, dan dapat dipicu sekali per detik. Efek di atas tetap dapat dipicu saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran.",
+      "1": "Radiance: Stellar Glimmer: Efek Verdant berubah menjadi: ATK +<cryo>6%</cryo>, dan DMG reaksi Stellar Glimmer yang diakibatkan Karakter yang mengenakan +<cryo>8%</cryo>."
+    },
+    "1": {
+      "0": "Selama 12 detik setelah melancarkan Elemental Skill, saat serangan Karakter yang mengenakan mengenai musuh, ia akan mendapatkan efek Verdant: ATK +<cryo>5%</cryo>, Elemental Mastery +<cryo>25</cryo> poin. Efek ini berlangsung selama 6 detik, dapat ditumpuk sampai 3 lapis, dan dapat dipicu sekali per detik. Efek di atas tetap dapat dipicu saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran.",
+      "1": "Radiance: Stellar Glimmer: Efek Verdant berubah menjadi: ATK +<cryo>7,5%</cryo>, dan DMG reaksi Stellar Glimmer yang diakibatkan Karakter yang mengenakan +<cryo>10%</cryo>."
+    },
+    "2": {
+      "0": "Selama 12 detik setelah melancarkan Elemental Skill, saat serangan Karakter yang mengenakan mengenai musuh, ia akan mendapatkan efek Verdant: ATK +<cryo>6%</cryo>, Elemental Mastery +<cryo>30</cryo> poin. Efek ini berlangsung selama 6 detik, dapat ditumpuk sampai 3 lapis, dan dapat dipicu sekali per detik. Efek di atas tetap dapat dipicu saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran.",
+      "1": "Radiance: Stellar Glimmer: Efek Verdant berubah menjadi: ATK +<cryo>9%</cryo>, dan DMG reaksi Stellar Glimmer yang diakibatkan Karakter yang mengenakan +<cryo>12%</cryo>."
+    },
+    "3": {
+      "0": "Selama 12 detik setelah melancarkan Elemental Skill, saat serangan Karakter yang mengenakan mengenai musuh, ia akan mendapatkan efek Verdant: ATK +<cryo>7%</cryo>, Elemental Mastery +<cryo>35</cryo> poin. Efek ini berlangsung selama 6 detik, dapat ditumpuk sampai 3 lapis, dan dapat dipicu sekali per detik. Efek di atas tetap dapat dipicu saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran.",
+      "1": "Radiance: Stellar Glimmer: Efek Verdant berubah menjadi: ATK +<cryo>10,5%</cryo>, dan DMG reaksi Stellar Glimmer yang diakibatkan Karakter yang mengenakan +<cryo>14%</cryo>."
+    },
+    "4": {
+      "0": "Selama 12 detik setelah melancarkan Elemental Skill, saat serangan Karakter yang mengenakan mengenai musuh, ia akan mendapatkan efek Verdant: ATK +<cryo>8%</cryo>, Elemental Mastery +<cryo>40</cryo> poin. Efek ini berlangsung selama 6 detik, dapat ditumpuk sampai 3 lapis, dan dapat dipicu sekali per detik. Efek di atas tetap dapat dipicu saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran.",
+      "1": "Radiance: Stellar Glimmer: Efek Verdant berubah menjadi: ATK +<cryo>12%</cryo>, dan DMG reaksi Stellar Glimmer yang diakibatkan Karakter yang mengenakan +<cryo>16%</cryo>."
+    }
+  }
+}

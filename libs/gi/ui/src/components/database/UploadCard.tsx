@@ -43,7 +43,8 @@ export function UploadCard({
   const [data, setdata] = useState('')
   const [filename, setfilename] = useState('')
   const [errorMsg, setErrorMsg] = useState('') // TODO localize error msg
-  const [keepNotInImport, setKeepNotInImport] = useState(false)
+  const [keepWepArtiNotInImport, setKeepWepArtiNotInImport] = useState(false)
+  const [keepCharNotInImport, setKeepCharNotInImport] = useState(true)
   const [ignoreDups, setIgnoreDups] = useState(false)
   const { importResult, importedDatabase } =
     useMemo(() => {
@@ -70,7 +71,8 @@ export function UploadCard({
         )
         const importResult = importedDatabase.importGOOD(
           parsed,
-          keepNotInImport,
+          keepWepArtiNotInImport,
+          keepCharNotInImport,
           ignoreDups
         )
         if (!importResult) {
@@ -82,7 +84,14 @@ export function UploadCard({
       }
       setErrorMsg('uploadCard.error.unknown')
       return undefined
-    }, [data, database, keepNotInImport, ignoreDups, index]) ?? {}
+    }, [
+      data,
+      database,
+      keepWepArtiNotInImport,
+      keepCharNotInImport,
+      ignoreDups,
+      index,
+    ]) ?? {}
   const reset = () => {
     setdata('')
     setfilename('')
@@ -173,9 +182,9 @@ export function UploadCard({
           <Tooltip
             title={
               <Typography>
-                {keepNotInImport
-                  ? t('uploadCard.tooltip.keepNotInImport')
-                  : t('uploadCard.tooltip.delNotInImport')}
+                {keepWepArtiNotInImport
+                  ? t('uploadCard.tooltip.keepWepArtiNotInImport')
+                  : t('uploadCard.tooltip.delWepArtiNotInImport')}
               </Typography>
             }
             placement="top"
@@ -185,13 +194,44 @@ export function UploadCard({
               <Button
                 fullWidth
                 disabled={!data}
-                color={keepNotInImport ? 'primary' : 'success'}
-                onClick={() => setKeepNotInImport(!keepNotInImport)}
+                color={keepWepArtiNotInImport ? 'primary' : 'success'}
+                onClick={() =>
+                  setKeepWepArtiNotInImport(!keepWepArtiNotInImport)
+                }
                 startIcon={
-                  keepNotInImport ? <CheckBoxOutlineBlank /> : <CheckBox />
+                  keepWepArtiNotInImport ? (
+                    <CheckBoxOutlineBlank />
+                  ) : (
+                    <CheckBox />
+                  )
                 }
               >
-                {t('uploadCard.buttons.delNotInImport')}
+                {t('uploadCard.buttons.delWepArtiNotInImport')}
+              </Button>
+            </Box>
+          </Tooltip>
+          <Tooltip
+            title={
+              <Typography>
+                {keepCharNotInImport
+                  ? t('uploadCard.tooltip.keepCharNotInImport')
+                  : t('uploadCard.tooltip.delCharNotInImport')}
+              </Typography>
+            }
+            placement="top"
+            arrow
+          >
+            <Box sx={{ flexGrow: 1, flexBasis: '10em' }}>
+              <Button
+                fullWidth
+                disabled={!data}
+                color={keepCharNotInImport ? 'primary' : 'success'}
+                onClick={() => setKeepCharNotInImport(!keepCharNotInImport)}
+                startIcon={
+                  keepCharNotInImport ? <CheckBoxOutlineBlank /> : <CheckBox />
+                }
+              >
+                {t('uploadCard.buttons.delCharNotInImport')}
               </Button>
             </Box>
           </Tooltip>

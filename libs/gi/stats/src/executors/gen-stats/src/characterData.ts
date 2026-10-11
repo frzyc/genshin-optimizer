@@ -76,7 +76,7 @@ export default function characterData() {
       const { infoBirthDay, infoBirthMonth, avatarAssocType } =
         fetterInfoExcelConfigData[charid]
       const skillDepot = avatarSkillDepotExcelConfigData[skillDepotId]
-      const burstInfo = avatarSkillExcelConfigData[skillDepot.energySkill]
+      const burstInfo = avatarSkillExcelConfigData[skillDepot.energySkill!]
       const ascensions = ascensionData[avatarPromoteId]
 
       const ascensionBonus: CharacterDataGen['ascensionBonus'] = {}

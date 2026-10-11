@@ -4,13 +4,15 @@
     "outDir": "../../../dist/out-tsc",
     "types": [
       "node",
-
+      "object-overrides",
+      "css",
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ]
   },
   "exclude": [
     "vitest.config.ts",
+    "vitest.config.mts",
     "src/**/*.spec.ts",
     "src/**/*.test.ts",
     "src/**/*.spec.tsx",

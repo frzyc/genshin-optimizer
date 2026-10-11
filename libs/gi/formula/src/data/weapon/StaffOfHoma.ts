@@ -1,31 +1,23 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  own,
-  register,
-} from '../util'
+import { prod, subscript } from '@genshin-optimizer/pando/engine'
+import { allBoolConditionals, own, ownBuff, percent, register } from '../util'
 import { entriesForWeapon } from './util'
 
 const key: WeaponKey = 'StaffOfHoma'
+const atkInc = [-1, 0.008, 0.01, 0.012, 0.014, 0.016]
+const lowHpAtkInc = [-1, 0.01, 0.012, 0.014, 0.016, 0.018]
 
 const {
-  weapon: { refinement: _refinement },
+  premod: { hp },
+  weapon: { refinement },
 } = own
-// TODO: Conditionals
-const { _someBoolConditional } = allBoolConditionals(key)
-const { _someListConditional } = allListConditionals(key, [])
-const { _someNumConditional } = allNumConditionals(key)
+const { RecklessCinnabar } = allBoolConditionals(key)
 
 export default register(
   key,
-  entriesForWeapon(key)
-
-  // TODO:
-  // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
-  // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
-  // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
-  //
-  // TODO: Add refinement bonus
+  entriesForWeapon(key),
+  ownBuff.final.atk.add(prod(percent(subscript(refinement, atkInc)), hp)),
+  ownBuff.final.atk.add(
+    RecklessCinnabar.ifOn(prod(percent(subscript(refinement, lowHpAtkInc)), hp))
+  )
 )

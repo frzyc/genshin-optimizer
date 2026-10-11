@@ -1,7 +1,8 @@
 {
   "rarity": "B",
   "type": "attack",
-  "atk_base": 32,
+  "base_statkey": "atk",
+  "base_statvalue": 32,
   "second_statkey": "crit_",
   "second_statvalue": 0.064,
   "phase": [

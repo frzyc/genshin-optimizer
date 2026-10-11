@@ -1,0 +1,24 @@
+{
+  "name": "Juramento de la Escarcha",
+  "description": {
+    "0": "Un arco largo forjado para cumplir con el propósito de mantener el orden. Su brillo es tan gélido como la más justa e imparcial de las leyes."
+  },
+  "passiveName": "Contrapeso de la ley",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras usar su Habilidad Elemental, la Maestría Elemental del portador de esta arma aumenta en <cryo>120</cryo> pts. durante 12 s."
+    },
+    "1": {
+      "0": "Tras usar su Habilidad Elemental, la Maestría Elemental del portador de esta arma aumenta en <cryo>150</cryo> pts. durante 12 s."
+    },
+    "2": {
+      "0": "Tras usar su Habilidad Elemental, la Maestría Elemental del portador de esta arma aumenta en <cryo>180</cryo> pts. durante 12 s."
+    },
+    "3": {
+      "0": "Tras usar su Habilidad Elemental, la Maestría Elemental del portador de esta arma aumenta en <cryo>210</cryo> pts. durante 12 s."
+    },
+    "4": {
+      "0": "Tras usar su Habilidad Elemental, la Maestría Elemental del portador de esta arma aumenta en <cryo>240</cryo> pts. durante 12 s."
+    }
+  }
+}

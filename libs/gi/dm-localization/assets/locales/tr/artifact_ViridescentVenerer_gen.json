@@ -2,7 +2,7 @@
   "setName": "Yeşil Gölge",
   "setEffects": {
     "2": "+%15 Rüzgar Hasarı Bonusu.",
-    "4": "Girdap Hasarını %60 artırır. Girdapta kullanılan elemente karşı 10 saniyeliğine düşmanın Element Direncini %40 azaltır."
+    "4": "Girdap Tepkimesi Hasarını %60, Yıldız Girdabı Tepkimesi Hasarını ise %20 artırır. 10sn boyunca Girdaptaki elemente karşı düşmanın Element Direncini %40 azaltır. Düşman üzerinde bir Yıldız Girdabı tetiklediğinde ayrıca düşmanın Buz Direnci %40 azalır. Direnç azaltma, aynı element türleri için birikmez."
   },
   "pieces": {
     "flower": {

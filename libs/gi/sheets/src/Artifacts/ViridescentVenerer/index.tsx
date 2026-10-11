@@ -19,6 +19,11 @@ const setHeader = setHeaderTemplate(key)
 
 const anemo_dmg_ = greaterEq(input.artSet.ViridescentVenerer, 2, percent(0.15))
 const swirl_dmg_ = greaterEq(input.artSet.ViridescentVenerer, 4, percent(0.6))
+const stellarswirl_dmg_ = greaterEq(
+  input.artSet.ViridescentVenerer,
+  4,
+  percent(0.2)
+)
 
 const condSwirlPaths = objKeyMap(absorbableEle, (e) => [key, `swirl${e}`])
 const condSwirls = objKeyMap(absorbableEle, (e) =>
@@ -38,6 +43,7 @@ const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     anemo_dmg_,
     swirl_dmg_,
+    stellarswirl_dmg_,
   },
   teamBuff: {
     premod: objMap(condSwirlNodes, (nodes) => nodes[0]), // First node is active node
@@ -58,7 +64,7 @@ const sheet: SetEffectSheet = {
     document: [
       {
         header: setHeader(4),
-        fields: [{ node: swirl_dmg_ }],
+        fields: [{ node: swirl_dmg_ }, { node: stellarswirl_dmg_ }],
       },
       {
         header: setHeader(4),

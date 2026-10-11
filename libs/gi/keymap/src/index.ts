@@ -5,14 +5,17 @@ import {
   allEleResKeys,
   KeyMap,
 } from './KeyMap'
+import elementalData from './ElementalData'
 import type {
   AdditiveReactionsKey,
   AmplifyingReactionsKey,
   CrittableTransformativeReactionsKey,
+  HitMoveKey,
 } from './StatConstants'
 import {
   crittableTransformativeReactions,
   crystallizeLevelMultipliers,
+  hitMoves,
   transformativeReactionLevelMultipliers,
   transformativeReactions,
 } from './StatConstants'
@@ -22,6 +25,7 @@ export type {
   AmplifyingReactionsKey,
   CrittableTransformativeReactionsKey,
   EleEnemyResKey,
+  HitMoveKey,
   StatKey,
   Unit,
 }
@@ -31,6 +35,8 @@ export {
   allEleResKeys,
   crittableTransformativeReactions,
   crystallizeLevelMultipliers,
+  elementalData,
+  hitMoves,
   KeyMap,
   transformativeReactionLevelMultipliers,
   transformativeReactions,

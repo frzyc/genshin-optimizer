@@ -1,0 +1,24 @@
+{
+  "name": "Sabre da Ponta Estelar",
+  "description": {
+    "0": "Uma espada longa que outrora brilhava com o resplandecente brilho da Estrela Azul. Na mão do viajante, ela se torna uma luz inteiramente nova, sem qualquer vínculo com eras passadas."
+  },
+  "passiveName": "Caminho da Viagem",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando {F#a}{M#o} Viajante equipar e atingir o inimigo, aumenta o ATQ em <cryo>16%</cryo> por <cryo>8</cryo>s e regenera <cryo>3</cryo> de Energia Elemental para {F#a}{M#o} Viajante. Esse efeito pode ser desencadeado uma vez a cada <cryo>5</cryo>s. Pode ser ativado mesmo quando o personagem não está em campo."
+    },
+    "1": {
+      "0": "Quando {F#a}{M#o} Viajante equipar, seu Dano CRIT aumenta em 6% para cada Elemento com o qual {F#ela}{M#ele} ressoou. Além disso, quando o ataque d{F#a}{M#o} Viajante atinge um inimigo, aumenta seu ATQ em <cryo>20%</cryo> por 8s, e regenera <cryo>3</cryo> de Energia Elemental para {F#a}{M#o} Viajante. Esse efeito pode ser desencadeado uma vez a cada 5s. Pode ser ativado mesmo quando o personagem não está em campo."
+    },
+    "2": {
+      "0": "Quando {F#a}{M#o} Viajante equipar, seu Dano CRIT aumenta em 6% para cada Elemento com o qual {F#ela}{M#ele} ressoou. Além disso, quando o ataque d{F#a}{M#o} Viajante atinge um inimigo, aumenta seu ATQ em <cryo>24%</cryo> por 8s, e regenera <cryo>5</cryo> de Energia Elemental para {F#a}{M#o} Viajante. Esse efeito pode ser desencadeado uma vez a cada 5s. Isso pode ser ativado mesmo quando o personagem não está em campo."
+    },
+    "3": {
+      "0": "Quando {F#a}{M#o} Viajante equipar, seu Dano CRIT aumenta em 6% para cada Elemento com o qual {F#ela}{M#ele} ressoou. Além disso, quando o ataque d{F#a}{M#o} Viajante atinge um inimigo, aumenta seu ATQ em <cryo>32%</cryo> por 8s, e regenera <cryo>5</cryo> de Energia Elemental para {F#a}{M#o} Viajante. Esse efeito pode ser desencadeado uma vez a cada 5s. Isso pode ser ativado mesmo quando o personagem não está em campo."
+    },
+    "4": {
+      "0": "Quando {F#a}{M#o} Viajante equipar, seu Dano CRIT aumenta em 6% para cada Elemento com o qual {F#ela}{M#ele} ressoou. Além disso, quando o ataque d{F#a}{M#o} Viajante atinge um inimigo, aumenta seu ATQ em <cryo>40%</cryo> por 8s, e regenera <cryo>5</cryo> de Energia Elemental para {F#a}{M#o} Viajante. Esse efeito pode ser desencadeado uma vez a cada 5s. Isso pode ser ativado mesmo quando o personagem não está em campo."
+    }
+  }
+}

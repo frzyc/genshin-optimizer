@@ -1,0 +1,24 @@
+{
+  "name": "Thanh Kiếm Exaiphanes",
+  "description": {
+    "0": "Thanh kiếm từng tỏa ra ánh vinh quang của Sao Nhạt. Trong tay người bước lên hành trình, nó đã trở thành ánh sáng hoàn toàn mới không thuộc về bất kỳ thời đại cũ nào."
+  },
+  "passiveName": "Con Đường Lữ Hành",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi Nhà Lữ Hành trang bị, sau khi đánh trúng kẻ địch, Tấn Công tăng <cryo>16%</cryo> trong <cryo>8</cryo>s, đồng thời Nhà Lữ Hành sẽ hồi phục <cryo>3</cryo> điểm Năng Lượng Nguyên Tố. Hiệu quả này mỗi <cryo>5</cryo>s tối đa kích hoạt một lần. Nhân vật không ra trận cũng có thể kích hoạt."
+    },
+    "1": {
+      "0": "Khi Nhà Lữ Hành trang bị, với mỗi loại nguyên tố đã cộng hưởng, Nhà Lữ Hành sẽ tăng 6% Sát Thương Bạo Kích. Ngoài ra, sau khi Nhà Lữ Hành đánh trúng kẻ địch, Tấn Công tăng <cryo>20%</cryo> trong 8s, đồng thời Nhà Lữ Hành sẽ hồi phục <cryo>3</cryo> điểm Năng Lượng Nguyên Tố. Hiệu quả này mỗi 5s tối đa kích hoạt một lần. Nhân vật không ra trận cũng có thể kích hoạt."
+    },
+    "2": {
+      "0": "Khi Nhà Lữ Hành trang bị, với mỗi loại nguyên tố đã cộng hưởng, Nhà Lữ Hành sẽ tăng 6% Sát Thương Bạo Kích. Ngoài ra, sau khi Nhà Lữ Hành đánh trúng kẻ địch, Tấn Công tăng <cryo>24%</cryo> trong 8s, đồng thời Nhà Lữ Hành sẽ hồi phục <cryo>5</cryo> điểm Năng Lượng Nguyên Tố. Hiệu quả này mỗi 5s tối đa kích hoạt một lần. Nhân vật không ra trận cũng có thể kích hoạt."
+    },
+    "3": {
+      "0": "Khi Nhà Lữ Hành trang bị, với mỗi loại nguyên tố đã cộng hưởng, Nhà Lữ Hành sẽ tăng 6% Sát Thương Bạo Kích. Ngoài ra, sau khi Nhà Lữ Hành đánh trúng kẻ địch, Tấn Công tăng <cryo>32%</cryo> trong 8s, đồng thời Nhà Lữ Hành sẽ hồi phục <cryo>5</cryo> điểm Năng Lượng Nguyên Tố. Hiệu quả này mỗi 5s tối đa kích hoạt một lần. Nhân vật không ra trận cũng có thể kích hoạt."
+    },
+    "4": {
+      "0": "Khi Nhà Lữ Hành trang bị, với mỗi loại nguyên tố đã cộng hưởng, Nhà Lữ Hành sẽ tăng 6% Sát Thương Bạo Kích. Ngoài ra, sau khi Nhà Lữ Hành đánh trúng kẻ địch, Tấn Công tăng <cryo>40%</cryo> trong 8s, đồng thời Nhà Lữ Hành sẽ hồi phục <cryo>5</cryo> điểm Năng Lượng Nguyên Tố. Hiệu quả này mỗi 5s tối đa kích hoạt một lần. Nhân vật không ra trận cũng có thể kích hoạt."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Ngân Cang",
+  "description": {
+    "0": "Thanh trường kiếm do Vạn Tượng Phong Giác Linh Quan - một nhân vật trong Quy Tàng Tam Ẩn Liyue để lại. Theo truyền thuyết, nó được rèn bởi loại bạc bí ẩn từ trên trời rơi xuống, và từng một kiếm chém đứt dòng nước biển chảy xiết."
+  },
+  "passiveName": "Ánh Nước Rạng Rỡ",
+  "passiveDescription": {
+    "0": {
+      "0": "Trong 12s sau khi thi triển Kỹ Năng Nguyên Tố, Tinh Thông Nguyên Tố tăng <cryo>52</cryo> điểm. Hiệu quả này tối đa cộng dồn 2 tầng, thời gian duy trì mỗi tầng tính riêng."
+    },
+    "1": {
+      "0": "Trong 12s sau khi thi triển Kỹ Năng Nguyên Tố, Tinh Thông Nguyên Tố tăng <cryo>65</cryo> điểm. Hiệu quả này tối đa cộng dồn 2 tầng, thời gian duy trì mỗi tầng tính riêng."
+    },
+    "2": {
+      "0": "Trong 12s sau khi thi triển Kỹ Năng Nguyên Tố, Tinh Thông Nguyên Tố tăng <cryo>78</cryo> điểm. Hiệu quả này tối đa cộng dồn 2 tầng, thời gian duy trì mỗi tầng tính riêng."
+    },
+    "3": {
+      "0": "Trong 12s sau khi thi triển Kỹ Năng Nguyên Tố, Tinh Thông Nguyên Tố tăng <cryo>91</cryo> điểm. Hiệu quả này tối đa cộng dồn 2 tầng, thời gian duy trì mỗi tầng tính riêng."
+    },
+    "4": {
+      "0": "Trong 12s sau khi thi triển Kỹ Năng Nguyên Tố, Tinh Thông Nguyên Tố tăng <cryo>104</cryo> điểm. Hiệu quả này tối đa cộng dồn 2 tầng, thời gian duy trì mỗi tầng tính riêng."
+    }
+  }
+}

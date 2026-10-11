@@ -7,6 +7,7 @@ import type {
   CharacterKey,
   ElementKey,
   MainStatKey,
+  StellarReactionKey,
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
 import {
@@ -16,7 +17,12 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { CharacterGrowCurveKey } from '@genshin-optimizer/gi/dm'
 import { allStats, getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
-import type { Data, DisplaySub, NumNode } from '@genshin-optimizer/gi/wr'
+import type {
+  Data,
+  DisplaySub,
+  NumNode,
+  StellarVariants,
+} from '@genshin-optimizer/gi/wr'
 import {
   active,
   compareEq,
@@ -40,6 +46,7 @@ import {
   percent,
   prod,
   reactions,
+  stellarDmgNode,
   stringPrio,
   subscript,
   sum,
@@ -247,6 +254,27 @@ export function plungingDmgNodes(
   )
   verifyObjKeys(nodes, allPlungingDmgKeys)
   return nodes
+}
+
+export function stellarTalentDmgNode<Variant extends StellarReactionKey>(
+  base: MainStatKey | SubstatKey,
+  lvlMultiplier: number[],
+  talentType: 'auto' | 'skill' | 'burst',
+  variant: Variant,
+  eleVariant: StellarVariants[Variant],
+  additional: Data = {},
+  specialMultiplier?: NumNode
+): NumNode {
+  return stellarDmgNode(
+    subscript(input.total[`${talentType}Index`], lvlMultiplier, {
+      unit: '%',
+    }),
+    base,
+    variant,
+    eleVariant,
+    additional,
+    specialMultiplier
+  )
 }
 
 /** Note: `additional` applies only to this formula */

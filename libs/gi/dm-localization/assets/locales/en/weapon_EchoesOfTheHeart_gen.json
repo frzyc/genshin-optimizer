@@ -1,0 +1,24 @@
+{
+  "name": "Echoes of the Heart",
+  "description": {
+    "0": "A Catalyst said to crystallize voice. Within it lies a sealed oath of loyalty, as well as a heart long since forgotten by mankind."
+  },
+  "passiveName": "Echo of a Vow",
+  "passiveDescription": {
+    "0": {
+      "0": "Triggering an Elemental Reaction increases the equipping character's Elemental Mastery by <cryo>60</cryo> for 12s, while triggering a Stellar Glimmer reaction increases their Stellar Glimmer reaction DMG dealt by <cryo>16%</cryo> for 12s. The aforementioned effects can trigger even when the character is not on the field."
+    },
+    "1": {
+      "0": "Triggering an Elemental Reaction increases the equipping character's Elemental Mastery by <cryo>75</cryo> for 12s, while triggering a Stellar Glimmer reaction increases their Stellar Glimmer reaction DMG dealt by <cryo>20%</cryo> for 12s. The aforementioned effects can trigger even when the character is not on the field."
+    },
+    "2": {
+      "0": "Triggering an Elemental Reaction increases the equipping character's Elemental Mastery by <cryo>90</cryo> for 12s, while triggering a Stellar Glimmer reaction increases their Stellar Glimmer reaction DMG dealt by <cryo>24%</cryo> for 12s. The aforementioned effects can trigger even when the character is not on the field."
+    },
+    "3": {
+      "0": "Triggering an Elemental Reaction increases the equipping character's Elemental Mastery by <cryo>105</cryo> for 12s, while triggering a Stellar Glimmer reaction increases their Stellar Glimmer reaction DMG dealt by <cryo>28%</cryo> for 12s. The aforementioned effects can trigger even when the character is not on the field."
+    },
+    "4": {
+      "0": "Triggering an Elemental Reaction increases the equipping character's Elemental Mastery by <cryo>120</cryo> for 12s, while triggering a Stellar Glimmer reaction increases their Stellar Glimmer reaction DMG dealt by <cryo>32%</cryo> for 12s. The aforementioned effects can trigger even when the character is not on the field."
+    }
+  }
+}

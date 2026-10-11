@@ -46,10 +46,10 @@
     "name": "“¡Tilín!”: Tañido cazaconjuros",
     "description": {
       "0": "¡Desata el poder del viento para derrotar a la malvada bruja y salvar a Descartes! Prune golpea su Cascabel Cautivabrujas con el Martillo del Juramento Cazahecatombes e inflige <anemo>Daño Anemo</anemo>.",
-      "1": "Si Prune causa una reacción de Torbellino contra un enemigo con dicho ataque, <strong>“¡Tilín!”: Tañido cazaconjuros</strong> se remplazará por <strong>“¡Clang-clang!”: Retribución juzgabrujas</strong> durante los siguientes 6 s.",
+      "1": "Si Prune causa una reacción de Torbellino o Torbellino Estelar contra un enemigo con dicho ataque, <strong>“¡Tilín!”: Tañido cazaconjuros</strong> se remplazará por <strong>“¡Clang-clang!”: Retribución juzgabrujas</strong> durante los siguientes 6 s.",
       "2": "<br/>",
       "3": "<strong>“¡Clang-clang!”: Retribución juzgabrujas</strong>",
-      "4": "Envuelve el <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Martillo del Juramento Cazahecatombes</strong></tooltip> con el elemento que haya formado parte de la reacción de Torbellino anterior y hace que sufra un cambio elemental, de modo que, al pulsar una vez, Prune saltará y pateará su martillo hacia delante, lo que infligirá daño del tipo elemental correspondiente a los enemigos que tenga enfrente."
+      "4": "Envuelve el <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Martillo del Juramento Cazahecatombes</strong></tooltip> con el elemento que haya formado parte de la reacción de Torbellino o Torbellino Estelar anterior y hace que sufra un cambio elemental, de modo que, al pulsar una vez, Prune saltará y pateará su martillo hacia delante, lo que infligirá daño del tipo elemental correspondiente a los enemigos que tenga enfrente."
     },
     "skillParams": {
       "0": "Daño de “¡Tilín!”: Tañido cazaconjuros",
@@ -108,7 +108,7 @@
   "passive1": {
     "name": "Juicio y condena",
     "description": {
-      "0": "Durante la Habilidad Definitiva, <tooltip ns=char_Prune_gen baseKey18=burst><strong>“¡Ding-ding!”: ¡A la caza de la bruja!</strong></tooltip>, cuando el Cascabel Cautivabrujas inflija daño a un enemigo en el modo rastreapresas, si dicho daño causa una reacción de Torbellino, Prune invocará frente al enemigo un <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Martillo del Juramento Cazahecatombes</strong></tooltip> que haya sufrido el cambio elemental correspondiente para atacarlo e infligir daño del elemento correspondiente en una cantidad equivalente al 150% del ATQ de Prune. Este daño se considera daño de Habilidad Definitiva."
+      "0": "Durante la Habilidad Definitiva, <tooltip ns=char_Prune_gen baseKey18=burst><strong>“¡Ding-ding!”: ¡A la caza de la bruja!</strong></tooltip>, cuando el Cascabel Cautivabrujas inflija daño a un enemigo en el modo rastreapresas, si dicho daño causa una reacción de Torbellino o Torbellino Estelar, Prune invocará frente al enemigo un <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Martillo del Juramento Cazahecatombes</strong></tooltip> que haya sufrido el cambio elemental correspondiente debido a dichas reacciones para atacarlo e infligir daño del elemento correspondiente en una cantidad equivalente al 150% del ATQ de Prune. Este daño se considera daño de Habilidad Definitiva."
     }
   },
   "passive2": {
@@ -129,7 +129,7 @@
       "0": "Tras completar la misión <strong>«Lecciones del Aquelarre: De lo que se refuta»</strong>, Prune se convertirá en un personaje <strong>taumatúrgico</strong>. Cuando en el equipo haya al menos 2 personajes taumatúrgicos, estos obtendrán el efecto de <strong>taumaturgia: rito secreto</strong>, el cual les otorgará ciertos fortalecimientos.",
       "1": "<br/>",
       "2": "<strong>Taumaturgia: rito secreto</strong>",
-      "3": "Cuando un personaje taumatúrgico del equipo cause una Reacción Elemental contra un enemigo mientras esté bajo el efecto de inspiración tintineante, el ATQ de Prune aumentará en un 60% durante 5 s. Si la reacción causada es de Torbellino, el ATQ de dicho personaje aumentará en un 30% adicional durante 5 s."
+      "3": "Cuando un personaje taumatúrgico del equipo cause una Reacción Elemental contra un enemigo mientras esté bajo el efecto de inspiración tintineante, el ATQ de Prune aumentará en un 60% durante 5 s. Si la reacción causada es de Torbellino o Torbellino Estelar, el ATQ de dicho personaje aumentará en un 30% adicional durante 5 s."
     }
   },
   "constellation1": {

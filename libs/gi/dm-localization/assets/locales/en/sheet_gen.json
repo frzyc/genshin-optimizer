@@ -65,7 +65,9 @@
     "hyperbloom": "Hyperbloom",
     "quicken": "Quicken",
     "aggravate": "Aggravate",
-    "spread": "Spread"
+    "spread": "Spread",
+    "stellarconduct": "Stellar-Conduct",
+    "stellarswirl": "Stellar Swirl"
   },
   "stat": {
     "def": "DEF",
@@ -77,15 +79,15 @@
   "talentLvl": "Talent Lv. {{level}}",
   "talents": {
     "auto": "Normal Attack",
-    "skill": "",
-    "burst": "",
+    "skill": "Elemental Skill",
+    "burst": "Elemental Burst",
     "altSprint": "Alternate Sprint"
   },
   "unlockPassive1": "Unlocks at Character Ascension Phase 1",
   "unlockPassive2": "Unlocks at Character Ascension Phase 4",
   "unlockPassive3": "Passive Talent",
   "unlockLockedPassive": "Unlocks after completing the prerequisite quests",
-  "witchPassive": "",
+  "witchPassive": "Witch's Homework",
   "moonsign": "Moonsign",
   "hexerei": "Hexerei"
 }

@@ -5,16 +5,16 @@ import type {
 } from '@genshin-optimizer/gi/consts'
 import type { Data, NumNode } from '../type'
 import { transMulti1 } from './multi'
-import { specialReactionDmg } from './special'
+import { specialReactionDmgNode } from './special'
 
-export function lunarDmg(
+export function lunarDmgNode(
   multiplier: NumNode,
   base: 'reaction' | MainStatKey | SubstatKey,
   variant: LunarReactionKey,
   additional: Data = {},
   specialMultiplier?: NumNode
 ) {
-  return specialReactionDmg(
+  return specialReactionDmgNode(
     multiplier,
     base,
     variant,

@@ -115,7 +115,7 @@
   "passive1": {
     "name": "Paradoxical Practice",
     "description": {
-      "0": "เมื่อ Shikanoin Heizou ทำให้เกิดปฏิกิริยาการกระจาย จะได้รับเอฟเฟกต์ Declension ของ <strong>Heartstopper Strike</strong> 1 ชั้น โดยที่ทุก 0.1 วินาที เอฟเฟกต์นี้จะสามารถเกิดขึ้นได้มากสุด 1 ครั้ง"
+      "0": "เมื่อ Shikanoin Heizou ทำให้เกิดปฏิกิริยาการกระจายหรือกระจายดาราบนสนาม จะได้รับเอฟเฟกต์ Declension ของ <strong>Heartstopper Strike</strong> 1 ชั้น โดยที่ทุก 0.1 วินาที เอฟเฟกต์นี้จะสามารถเกิดขึ้นได้มากสุดหนึ่งครั้ง"
     }
   },
   "passive2": {

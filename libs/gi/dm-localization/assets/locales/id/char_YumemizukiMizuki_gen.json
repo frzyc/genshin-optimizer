@@ -49,9 +49,9 @@
       "1": "<br/>",
       "2": "<strong>Dreamdrifter</strong>",
       "3": [
-        "Saat berada dalam status Dreamdrifter, Yumemizuki Mizuki akan terus melayang dan mengakibatkan <anemo>Anemo DMG Area</anemo> secara berkala terhadap musuh di sekitar.",
+        "Saat berada dalam status Dreamdrifter, Yumemizuki Mizuki akan terus melayang ke arah depan dan mengakibatkan <anemo>Anemo DMG Area</anemo> secara berkala terhadap musuh di sekitar.",
         "Selama durasi ini, Yumemizuki Mizuki dapat mengontrol arah melayangnya, dan jarak pengambilan <strong>Yumemi Style Special Snacks</strong> dari Elemental Burst <strong>Anraku Secret Spring Therapy</strong> akan meningkat.",
-        "Meningkatkan DMG Swirl yang dipicu oleh anggota party di sekitar berdasarkan Elemental Mastery Yumemizuki Mizuki.",
+        "Meningkatkan DMG reaksi Swirl dan Stellar Swirl yang dipicu oleh anggota party di sekitar berdasarkan Elemental Mastery Yumemizuki Mizuki.",
         "Status Dreamdrifter akan berakhir saat Yumemizuki Mizuki meninggalkan medan pertempuran atau melancarkan Elemental Skill-nya sekali lagi."
       ],
       "4": "<br/>",
@@ -61,9 +61,9 @@
       "0": "DMG Skill",
       "1": "DMG Serangan Terus-Menerus",
       "2": "Durasi Dreamdrifter",
-      "3": "Peningkatan Persentase DMG Swirl untuk Setiap Poin Elemental Mastery",
-      "4": "Cooldown",
-      "5": "",
+      "3": "Peningkatan DMG Swirl dari Elemental Mastery",
+      "4": "Peningkatan DMG Stellar Swirl dari Elemental Mastery",
+      "5": "Cooldown",
       "6": "",
       "7": "",
       "8": "",
@@ -116,7 +116,7 @@
   "passive1": {
     "name": "Bright Moon's Restless Voice",
     "description": {
-      "0": "Setiap kali Yumemizuki Mizuki memicu reaksi Swirl saat dalam status Dreamdrifter, maka durasi Dreamdrifter akan bertambah 2,5 detik. Efek ini dapat terpicu sekali setiap 0,3 detik, dan dapat terpicu sebanyak 2 kali dalam satu kali status Dreamdrifter."
+      "0": "Setiap kali Yumemizuki Mizuki memicu reaksi Swirl atau Stellar Swirl saat dalam status Dreamdrifter, maka durasi Dreamdrifter akan bertambah 2,5 detik. Efek ini dapat terpicu sekali setiap 0,3 detik, dan dapat terpicu sebanyak 2 kali dalam satu kali status Dreamdrifter."
     }
   },
   "passive2": {
@@ -134,17 +134,21 @@
   "lockedPassive": {
     "name": "Vast Be the Dream",
     "description": {
-      "0": "Setelah Yumemizuki Mizuki memicu reaksi Swirl saat berada dalam status Dreamdrifter, <anemo>Anemo DMG Area</anemo> selanjutnya yang diakibatkan terhadap musuh di sekitar secara berkala selama durasi Dreamdrifter kali ini akan meningkat sebesar 1.000% Elemental Mastery Yumemizuki Mizuki. Efek di atas dapat terpicu sekali setiap 2,5 detik.",
-      "1": "Selain itu, saat berada dalam status Dreamdrifter, Elemental Mastery Karakter party di sekitar meningkat sebesar 10% dari Elemental Mastery Yumemizuki Mizuki sendiri."
+      "0": "Setelah Yumemizuki Mizuki memicu reaksi Swirl atau Stellar Swirl saat berada dalam status Dreamdrifter, <anemo>Anemo DMG Area</anemo> selanjutnya yang diakibatkan terhadap musuh di sekitar secara berkala selama durasi Dreamdrifter kali ini akan meningkat sebesar 1.000% dari Elemental Mastery Yumemizuki Mizuki. Efek di atas dapat terpicu sekali setiap 2,5 detik.",
+      "1": "<strong>Radiance: Stellar Swirl</strong>: Setelah Yumemizuki Mizuki mengakibatkan <anemo>Anemo DMG Area</anemo> yang diperkuat seperti penjelasan di atas, juga akan mengakibatkan satu kali <anemo>Anemo DMG</anemo> tambahan sebesar 1.000% dari Elemental Mastery Yumemizuki Mizuki, DMG ini dianggap sebagai DMG yang diakibatkan reaksi Stellar Swirl.",
+      "2": "<br/>",
+      "3": "Selain itu, saat berada dalam status Dreamdrifter, Elemental Mastery Karakter party di sekitar meningkat sebesar 10% dari Elemental Mastery Yumemizuki Mizuki sendiri.",
+      "4": "Yumemizuki Mizuki juga akan memasuki status <strong>Radiance: Stellar Swirl</strong> selama 8 detik setelah Karakter dalam party di sekitar memicu reaksi Stellar Swirl."
     }
   },
   "constellation1": {
     "name": "In Mist-Like Waters",
     "description": {
-      "0": "Saat Yumemizuki Mizuki berada dalam status Dreamdrifter, ia akan memberikan efek \"Twenty-Three Nights' Awaiting\" pada musuh di sekitar setiap 3,5 detik dan bertahan selama 3 detik. Saat musuh yang berada dalam status \"Twenty-Three Nights' Awaiting\" terkena Anemo DMG dan memicu reaksi Swirl, maka efek ini terhapus dan membuat DMG reaksi Swirl pada musuh yang bersangkutan kali ini meningkat sebesar 1.100% dari Elemental Mastery Yumemizuki Mizuki."
+      "0": "Saat Yumemizuki Mizuki berada dalam status Dreamdrifter, ia akan memberikan efek \"Twenty-Three Nights' Awaiting\" pada musuh di sekitar setiap 3,5 detik dan bertahan selama 3 detik. Saat musuh yang berada dalam status \"Twenty-Three Nights' Awaiting\" terkena Anemo DMG dan memicu reaksi Swirl/Stellar Swirl, maka efek ini terhapus dan membuat DMG reaksi Swirl atau Stellar Swirl pada musuh yang bersangkutan kali ini masing-masing meningkat sebesar 1.100%/550% dari Elemental Mastery Yumemizuki Mizuki."
     },
     "upgradedDescription": {
-      "0": "Saat Yumemizuki Mizuki berada dalam status Dreamdrifter, ia akan memberikan efek \"Twenty-Three Nights' Awaiting\" pada musuh di sekitar setiap 3,5 detik dan efek ini bertahan selama 3 detik. Saat musuh yang berada dalam status \"Twenty-Three Nights' Awaiting\" terkena Anemo DMG dan memicu reaksi Swirl, maka efek Twenty-Three Nights' Awaiting akan terhapus dan membuat DMG reaksi Swirl pada musuh yang bersangkutan kali ini meningkat sebesar 1.100% dari Elemental Mastery Yumemizuki Mizuki. Selain itu, Yumemizuki Mizuki juga akan melancarkan satu serangan tambahan terhadap musuh ini yang mengakibatkan <anemo>Anemo DMG</anemo> sebesar 1.000% Elemental Mastery-nya."
+      "0": "Saat Yumemizuki Mizuki berada dalam status Dreamdrifter, ia akan memberikan efek \"Twenty-Three Nights' Awaiting\" pada musuh di sekitar setiap 3,5 detik dan efek ini bertahan selama 3 detik. Saat musuh yang berada dalam status \"Twenty-Three Nights' Awaiting\" terkena Anemo DMG dan memicu reaksi Swirl atau Stellar Swirl, maka efek Twenty-Three Nights' Awaiting akan terhapus dan membuat DMG reaksi Swirl/Stellar Swirl pada musuh yang bersangkutan kali ini masing-masing meningkat sebesar 1.100%/550% dari Elemental Mastery Yumemizuki Mizuki. Selain itu, Yumemizuki Mizuki juga akan melancarkan satu serangan tambahan terhadap musuh ini yang mengakibatkan <anemo>Anemo DMG</anemo> sebesar 1.000% Elemental Mastery-nya.",
+      "1": "<strong>Radiance: Stellar Swirl</strong>: DMG tambahan yang disebutkan di atas berubah menjadi <anemo>Anemo DMG</anemo> sebesar 400% Elemental Mastery Yumemizuki Mizuki. DMG ini dianggap sebagai DMG Stellar Swirl."
     }
   },
   "constellation2": {
@@ -183,10 +187,10 @@
   "constellation6": {
     "name": "The Heart Lingers Long",
     "description": {
-      "0": "Saat Yumemizuki Mizuki berada dalam status Dreamdrifter, DMG reaksi Swirl yang dipicu oleh anggota party di sekitar dapat mengakibatkan CRIT, dengan nilai CRIT Rate tetap sebesar 30% dan CRIT DMG tetap sebesar 100%."
+      "0": "Saat Yumemizuki Mizuki berada dalam status Dreamdrifter, DMG reaksi Swirl yang dipicu oleh Karakter party di sekitar dapat mengakibatkan CRIT, dengan nilai CRIT Rate tetap sebesar 30% dan CRIT DMG tetap sebesar 100%, serta meningkatkan 10% CRIT Rate dan 20% CRIT DMG Stellar Swirl yang diakibatkan oleh Karakter tersebut."
     },
     "upgradedDescription": {
-      "0": "Saat Yumemizuki Mizuki berada dalam status Dreamdrifter, DMG reaksi Swirl yang dipicu oleh anggota party di sekitar dapat mengakibatkan CRIT, dengan nilai CRIT Rate tetap sebesar 30% dan CRIT DMG tetap sebesar 100%.",
+      "0": "Saat Yumemizuki Mizuki berada dalam status Dreamdrifter, DMG reaksi Swirl yang dipicu oleh anggota party di sekitar dapat mengakibatkan CRIT, dengan nilai CRIT Rate tetap sebesar 30% dan CRIT DMG tetap sebesar 100%. Selain itu, CRIT Rate DMG reaksi Stellar Swirl yang diakibatkan oleh Karakter yang bersangkutan meningkat sebesar 10% dan CRIT DMG-nya meningkat sebesar 20%.",
       "1": "Untuk setiap Elemental Mastery Yumemizuki Mizuki yang melebihi 500 poin, akan meningkatkan CRIT Rate Yumemizuki Mizuki sebesar 0,04% dan CRIT DMG-nya sebesar 0,16%. Maksimum bisa meningkatkan hingga 20% CRIT Rate dan 80% CRIT DMG Yumemizuki Mizuki dengan cara ini."
     }
   }

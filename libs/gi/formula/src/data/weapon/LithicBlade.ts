@@ -1,31 +1,23 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  own,
-  register,
-} from '../util'
+import { prod, subscript } from '@genshin-optimizer/pando/engine'
+import { own, ownBuff, percent, register, team } from '../util'
 import { entriesForWeapon } from './util'
 
 const key: WeaponKey = 'LithicBlade'
+const atkInc = [-1, 0.07, 0.08, 0.09, 0.1, 0.11]
+const critInc = [-1, 0.03, 0.04, 0.05, 0.06, 0.07]
 
 const {
-  weapon: { refinement: _refinement },
+  weapon: { refinement },
 } = own
-// TODO: Conditionals
-const { _someBoolConditional } = allBoolConditionals(key)
-const { _someListConditional } = allListConditionals(key, [])
-const { _someNumConditional } = allNumConditionals(key)
 
 export default register(
   key,
-  entriesForWeapon(key)
-
-  // TODO:
-  // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
-  // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
-  // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
-  //
-  // TODO: Add refinement bonus
+  entriesForWeapon(key),
+  ownBuff.premod.atk_.add(
+    prod(percent(subscript(refinement, atkInc)), team.common.count.liyue)
+  ),
+  ownBuff.premod.critRate_.add(
+    prod(percent(subscript(refinement, critInc)), team.common.count.liyue)
+  )
 )

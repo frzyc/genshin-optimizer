@@ -5,12 +5,15 @@ import AmenomaKageuchi from './AmenomaKageuchi'
 import AquilaFavonia from './AquilaFavonia'
 import AthameArtis from './AthameArtis'
 import Azurelight from './Azurelight'
+import BeyondTheChrysalis from './BeyondTheChrysalis'
 import BlackcliffLongsword from './BlackcliffLongsword'
 import CalamityOfEshu from './CalamityOfEshu'
 import CinnabarSpindle from './CinnabarSpindle'
 import CoolSteel from './CoolSteel'
 import DarkIronSword from './DarkIronSword'
 import DullBlade from './DullBlade'
+import Emberwell from './Emberwell'
+import ExaiphanesBlade from './ExaiphanesBlade'
 import FavoniusSword from './FavoniusSword'
 import FesteringDesire from './FesteringDesire'
 import FilletBlade from './FilletBlade'
@@ -20,6 +23,7 @@ import FluteOfEzpitzal from './FluteOfEzpitzal'
 import FreedomSworn from './FreedomSworn'
 import HaranGeppakuFutsu from './HaranGeppakuFutsu'
 import HarbingerOfDawn from './HarbingerOfDawn'
+import HereticsMoltenBlade from './HereticsMoltenBlade'
 import IronSting from './IronSting'
 import KagotsurubeIsshin from './KagotsurubeIsshin'
 import KeyOfKhajNisut from './KeyOfKhajNisut'
@@ -28,6 +32,7 @@ import LightOfFoliarIncision from './LightOfFoliarIncision'
 import LionsRoar from './LionsRoar'
 import MistsplitterReforged from './MistsplitterReforged'
 import MoonweaversDawn from './MoonweaversDawn'
+import NewBough from './NewBough'
 import PeakPatrolSong from './PeakPatrolSong'
 import PrimordialJadeCutter from './PrimordialJadeCutter'
 import PrototypeRancour from './PrototypeRancour'
@@ -35,6 +40,7 @@ import RoyalLongsword from './RoyalLongsword'
 import SacrificialSword from './SacrificialSword'
 import SapwoodBlade from './SapwoodBlade'
 import SerenitysCall from './SerenitysCall'
+import SilverLight from './SilverLight'
 import SilverSword from './SilverSword'
 import SkyriderSword from './SkyriderSword'
 import SkywardBlade from './SkywardBlade'
@@ -50,6 +56,7 @@ import TheFlute from './TheFlute'
 import ToukabouShigure from './ToukabouShigure'
 import TravelersHandySword from './TravelersHandySword'
 import UrakuMisugiri from './UrakuMisugiri'
+import WhitelakeFrostfeather from './WhitelakeFrostfeather'
 import WolfFang from './WolfFang'
 import XiphosMoonlight from './XiphosMoonlight'
 
@@ -59,12 +66,15 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   AquilaFavonia,
   AthameArtis,
   Azurelight,
+  BeyondTheChrysalis,
   BlackcliffLongsword,
   CalamityOfEshu,
   CinnabarSpindle,
   CoolSteel,
   DarkIronSword,
   DullBlade,
+  Emberwell,
+  ExaiphanesBlade,
   FavoniusSword,
   FesteringDesire,
   FilletBlade,
@@ -74,6 +84,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   FreedomSworn,
   HaranGeppakuFutsu,
   HarbingerOfDawn,
+  HereticsMoltenBlade,
   IronSting,
   KagotsurubeIsshin,
   KeyOfKhajNisut,
@@ -82,6 +93,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   LionsRoar,
   MistsplitterReforged,
   MoonweaversDawn,
+  NewBough,
   PeakPatrolSong,
   PrimordialJadeCutter,
   PrototypeRancour,
@@ -89,6 +101,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   SacrificialSword,
   SapwoodBlade,
   SerenitysCall,
+  SilverLight,
   SilverSword,
   SkyriderSword,
   SkywardBlade,
@@ -104,6 +117,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   ToukabouShigure,
   TravelersHandySword,
   UrakuMisugiri,
+  WhitelakeFrostfeather,
   WolfFang,
   XiphosMoonlight,
 } as const

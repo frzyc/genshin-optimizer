@@ -1,0 +1,24 @@
+{
+  "name": "Frostbreath",
+  "description": {
+    "0": "A spear of solid ice imbued with an icy chill. It is said that it once belonged to the Belyi Tsar who ruled Snezhnaya in the distant past."
+  },
+  "passiveName": "A Cast Real Far",
+  "passiveDescription": {
+    "0": {
+      "0": "Triggering a Cryo or Hydro-related elemental reaction increases the equipping character's ATK by <cryo>20%</cryo> for the next 15s, as well as regenerates <cryo>6</cryo> Elemental Energy for other members of their party. This effect can trigger once every 16s."
+    },
+    "1": {
+      "0": "Triggering a Cryo or Hydro-related elemental reaction increases the equipping character's ATK by <cryo>25%</cryo> for the next 15s, as well as regenerates <cryo>7.5</cryo> Elemental Energy for other members of their party. This effect can trigger once every 16s."
+    },
+    "2": {
+      "0": "Triggering a Cryo or Hydro-related elemental reaction increases the equipping character's ATK by <cryo>30%</cryo> for the next 15s, as well as regenerates <cryo>9</cryo> Elemental Energy for other members of their party. This effect can trigger once every 16s."
+    },
+    "3": {
+      "0": "Triggering a Cryo or Hydro-related elemental reaction increases the equipping character's ATK by <cryo>35%</cryo> for the next 15s, as well as regenerates <cryo>10.5</cryo> Elemental Energy for other members of their party. This effect can trigger once every 16s."
+    },
+    "4": {
+      "0": "Triggering a Cryo or Hydro-related elemental reaction increases the equipping character's ATK by <cryo>40%</cryo> for the next 15s, as well as regenerates <cryo>12</cryo> Elemental Energy for other members of their party. This effect can trigger once every 16s."
+    }
+  }
+}

@@ -29,7 +29,7 @@ import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
-import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
+import type { GeneratedBuild, OptConfig } from '@genshin-optimizer/gi/db'
 import { maxBuildsToShowList } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
@@ -189,39 +189,52 @@ export default function TabBuild() {
   const deferredBuildSetting = useDeferredValue(buildSetting)
   const teammateArtifactIds = useTeammateArtifactIds()
   const allArts = useDataManagerValues(database.arts)
-  const filteredArts = useMemo(() => {
-    const {
-      mainStatKeys,
-      excludedLocations,
-      artExclusion,
-      levelLow,
-      levelHigh,
-      useExcludedArts,
-      useTeammateBuild,
-    } = deferredBuildSetting
+  /**
+   * Filter the artifacts down to the pool the optimizer is allowed to use for
+   * the given opt config. The opt config is passed in as an argument (instead
+   * of being read from `buildSetting`) so that callers can filter with the
+   * latest settings, even while the rendered `filteredArts` is still deferred.
+   */
+  const getFilteredArts = useCallback(
+    (optConfig: OptConfig) => {
+      const {
+        mainStatKeys,
+        excludedLocations,
+        artExclusion,
+        levelLow,
+        levelHigh,
+        useExcludedArts,
+        useTeammateBuild,
+      } = optConfig
 
-    return allArts.filter((art) => {
-      if (!useExcludedArts && artExclusion.includes(art.id)) return false
-      if (!useTeammateBuild && teammateArtifactIds.includes(art.id))
-        return false
-      if (art.level < levelLow) return false
-      if (art.level > levelHigh) return false
-      const mainStats = mainStatKeys[art.slotKey]
-      if (mainStats?.length && !mainStats.includes(art.mainStatKey))
-        return false
+      return allArts.filter((art) => {
+        if (!useExcludedArts && artExclusion.includes(art.id)) return false
+        if (!useTeammateBuild && teammateArtifactIds.includes(art.id))
+          return false
+        if (art.level < levelLow) return false
+        if (art.level > levelHigh) return false
+        const mainStats = mainStatKeys[art.slotKey]
+        if (mainStats?.length && !mainStats.includes(art.mainStatKey))
+          return false
 
-      const locKey = charKeyToLocCharKey(characterKey)
+        const locKey = charKeyToLocCharKey(characterKey)
 
-      if (
-        art.location &&
-        art.location !== locKey &&
-        excludedLocations.includes(art.location)
-      )
-        return false
+        if (
+          art.location &&
+          art.location !== locKey &&
+          excludedLocations.includes(art.location)
+        )
+          return false
 
-      return true
-    })
-  }, [deferredBuildSetting, allArts, teammateArtifactIds, characterKey])
+        return true
+      })
+    },
+    [allArts, teammateArtifactIds, characterKey]
+  )
+  const filteredArts = useMemo(
+    () => getFilteredArts(deferredBuildSetting),
+    [getFilteredArts, deferredBuildSetting]
+  )
 
   const filteredArtIdMap = useMemo(
     () =>
@@ -308,8 +321,11 @@ export default function TabBuild() {
     if (!characterKey || !optimizationTarget) return
     if (notificationRef.current) Notification?.requestPermission()
 
+    // Filter with the latest settings rather than the deferred `filteredArts`,
+    // so that a build started right after a settings change does not use an
+    // outdated artifact pool. (#1120)
     const split = compactArtifacts(
-      filteredArts,
+      getFilteredArts(buildSetting),
       mainStatAssumptionLevel,
       allowPartial
     )
@@ -484,7 +500,7 @@ export default function TabBuild() {
   }, [
     buildSetting,
     characterKey,
-    filteredArts,
+    getFilteredArts,
     database,
     teamId,
     teamCharId,

@@ -115,7 +115,7 @@
   "passive1": {
     "name": "Pratica paradossale",
     "description": {
-      "0": "Quando Shikanoin Heizou attiva la reazione di Turbinio mentre è sul campo di battaglia, ottiene 1 accumulo di Deterioramento per <strong>Colpo cardiaco</strong>. Quest'effetto può attivarsi una volta ogni 0,1 s."
+      "0": "Quando Shikanoin Heizou attiva la reazione di Turbinio o di Turbinio astrale mentre è sul campo di battaglia, ottiene 1 accumulo di Deterioramento per <strong>Colpo cardiaco</strong>. Quest'effetto può attivarsi una volta ogni 0,1 s."
     }
   },
   "passive2": {

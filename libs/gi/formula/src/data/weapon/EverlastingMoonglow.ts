@@ -1,31 +1,19 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  own,
-  register,
-} from '../util'
+import { prod, subscript } from '@genshin-optimizer/pando/engine'
+import { own, ownBuff, percent, register } from '../util'
 import { entriesForWeapon } from './util'
 
 const key: WeaponKey = 'EverlastingMoonglow'
+const hp_conv = [-1, 0.01, 0.015, 0.02, 0.025, 0.03]
 
 const {
-  weapon: { refinement: _refinement },
+  weapon: { refinement },
 } = own
-// TODO: Conditionals
-const { _someBoolConditional } = allBoolConditionals(key)
-const { _someListConditional } = allListConditionals(key, [])
-const { _someNumConditional } = allNumConditionals(key)
 
 export default register(
   key,
-  entriesForWeapon(key)
-
-  // TODO:
-  // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
-  // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
-  // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
-  //
-  // TODO: Add refinement bonus
+  entriesForWeapon(key),
+  ownBuff.formula.base.normal.add(
+    prod(percent(subscript(refinement, hp_conv)), own.premod.hp)
+  )
 )

@@ -1,4 +1,5 @@
 import type { Preset, Read } from '@genshin-optimizer/game-opt/engine'
+import { stackListingNulls } from '@genshin-optimizer/game-opt/engine'
 import { cmpEq, cmpNE } from '@genshin-optimizer/pando/engine'
 import {
   type CharacterKey,
@@ -86,6 +87,7 @@ export function charTagMapNodeEntries(data: TempICharacter): TagMapNodeEntries {
     // Default char
     ownBuff.base.crit_.add(0.05),
     ownBuff.base.crit_dmg_.add(0.5),
+    ownBuff.base.laceration_dmg_.add(1.5),
   ]
 }
 
@@ -228,15 +230,22 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     ),
     // Non-stacking
     members.flatMap((src, i) => {
-      const { stackIn, stackTmp } = reader.withAll('qt', [])
+      const stackIn = reader.withTag({ qt: 'stackIn', ...stackListingNulls })
+      const stackTmp = reader.withTag({ qt: 'stackTmp', ...stackListingNulls })
       // Make sure not to use `sheet:agg` here to match `stackOut` on the `reader.addOnce` side
-      const own = reader.withTag({ src, et: 'own' })
+      const own = reader.withTag({ src, et: 'own', ...stackListingNulls })
       // Use `i + 1` for priority so that `0` means no buff
       return [
         own.with('qt', 'stackTmp').add(cmpNE(stackIn, 0, i + 1)),
         own
           .with('qt', 'stackOut')
-          .add(cmpEq(stackTmp.max.with('et', 'team'), i + 1, stackIn)),
+          .add(
+            cmpEq(
+              stackTmp.max.withTag({ et: 'team', ...stackListingNulls }),
+              i + 1,
+              stackIn
+            )
+          ),
       ]
     }),
 

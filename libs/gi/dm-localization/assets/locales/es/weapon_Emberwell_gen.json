@@ -1,0 +1,24 @@
+{
+  "name": "Fuente de Ignición",
+  "description": {
+    "0": "Una espada larga cuyo filo es una gema y que, según dicen, fue forjada en pos de la justicia. Al desenvainarla, emite el resplandor de unas llamas azules."
+  },
+  "passiveName": "Chispa ardiente de las llanuras nevadas",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras causar una Reacción Elemental, el ATQ del portador de esta arma aumenta en un <cryo>16%</cryo> durante 12 s. Tras causar una reacción de Destello Estelar, el daño de Destello Estelar del portador aumenta en un <cryo>16%</cryo> durante 12 s. Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Tras causar una Reacción Elemental, el ATQ del portador de esta arma aumenta en un <cryo>20%</cryo> durante 12 s. Tras causar una reacción de Destello Estelar, el daño de Destello Estelar del portador aumenta en un <cryo>20%</cryo> durante 12 s. Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Tras causar una Reacción Elemental, el ATQ del portador de esta arma aumenta en un <cryo>24%</cryo> durante 12 s. Tras causar una reacción de Destello Estelar, el daño de Destello Estelar del portador aumenta en un <cryo>24%</cryo> durante 12 s. Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Tras causar una Reacción Elemental, el ATQ del portador de esta arma aumenta en un <cryo>28%</cryo> durante 12 s. Tras causar una reacción de Destello Estelar, el daño de Destello Estelar del portador aumenta en un <cryo>28%</cryo> durante 12 s. Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Tras causar una Reacción Elemental, el ATQ del portador de esta arma aumenta en un <cryo>32%</cryo> durante 12 s. Tras causar una reacción de Destello Estelar, el daño de Destello Estelar del portador aumenta en un <cryo>32%</cryo> durante 12 s. Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    }
+  }
+}

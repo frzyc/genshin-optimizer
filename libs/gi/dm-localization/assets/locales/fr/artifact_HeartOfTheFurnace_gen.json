@@ -1,0 +1,29 @@
+{
+  "setName": "Cœur de la fournaise",
+  "setEffects": {
+    "2": "Augmente l'ATQ de 18 %.",
+    "4": "Pendant 12 s après que le personnage équipé de l'artéfact a déclenché une réaction astrale ou infligé des DGT de réaction astrale, son ATQ augmente de 12 % et les DGT de réaction astrale infligés par tous les personnages de l'équipe à proximité augmentent de 50 %. L'effet ci-dessus peut être déclenché même si le personnage n'est pas déployé, et les effets d'augmentation des DGT accordés par les sets d'artéfacts du même nom ne se cumulent pas."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Conjecture du fondeur",
+      "desc": "Il savait que, contrairement à la température au cœur de la fournaise, la chaleur ou la froideur d'un cœur humain envers un autre ne pouvait être mesurée précisément en degrés."
+    },
+    "plume": {
+      "name": "Observation du fondeur",
+      "desc": "Il savait que, contrairement aux couleurs au cœur de la fournaise, l'issue des différentes affaires du monde ne pouvait être prédite par une simple observation attentive."
+    },
+    "sands": {
+      "name": "Calcul du fondeur",
+      "desc": "Il savait que, contrairement à la chaleur au cœur de la fournaise, le fonctionnement du pouvoir ne pouvait être contrôlé par la simple traction d'un levier ou la pression d'un bouton."
+    },
+    "goblet": {
+      "name": "Magnanimité du fondeur",
+      "desc": "Il savait que, contrairement à la flamme au cœur de la fournaise, qui continuerait de brûler indéfiniment tant qu'elle serait alimentée en combustible, l'amitié était bien plus éphémère."
+    },
+    "circlet": {
+      "name": "Héritage du fondeur",
+      "desc": "Il savait que, contrairement à la flamme au cœur de la fournaise, la détermination à poursuivre un rêve ne pouvait jamais être simplement transmise à ceux qui viendraient après."
+    }
+  }
+}

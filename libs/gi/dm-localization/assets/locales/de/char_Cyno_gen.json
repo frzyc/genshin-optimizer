@@ -54,7 +54,7 @@
     "upgradedDescription": {
       "0": "Führt blitzschnell einen Stoß aus, der den Gegnern in der Bahn <electro>Elektro-Schaden</electro> zufügt.",
       "1": "<br/>",
-      "2": "Wenn Cyno sich im Modus „Paktverschworener Pfadklärer“ befindet, führt er stattdessen den <strong>Bestattungsritus</strong> aus, der donnernd <electro>Elektro-Flächenschaden</electro> verursacht. Verlängert, wenn Cyno durch die Spezialfähigkeit <strong>Heiliger Ritus – Schnelligkeit des Wolfs</strong> in den Modus „Paktverschworener Pfadklärer“ eintritt, beim Anwenden von <strong>Bestattungsritus</strong> zudem die Dauer des aktuellen Modus „Paktverschworener Pfadklärer“.",
+      "2": "Wenn Cyno sich im Zustand „Paktverschworener Pfadklärer“ befindet, führt er stattdessen den <strong>Bestattungsritus</strong> aus, der donnernd <electro>Elektro-Flächenschaden</electro> verursacht. Verlängert, wenn Cyno durch die Spezialfähigkeit <strong>Heiliger Ritus – Schnelligkeit des Wolfs</strong> in den Modus „Paktverschworener Pfadklärer“ eintritt, beim Anwenden von <strong>Bestattungsritus</strong> zudem die Dauer des aktuellen Modus „Paktverschworener Pfadklärer“.",
       "3": "<br/>",
       "4": "<i>„Dieser Prozess lässt keinen Einspruch zu. Wir alle ... sind schon lange darin gefangen.“</i>"
     },
@@ -146,7 +146,7 @@
       "1": [
         " Standardangriff im Modus „Paktverschworener Pfadklärer“: um 150 % seiner Elementarkunde.",
         " Staubblitze des Aufstiegstalents „Urteil der Federn“: um 250 % seiner Elementarkunde.",
-        " „Staubblitze – Sternbegleiter“ des Aufstiegstalents „Urteil der Federn“: 600 % der Elementarkunde."
+        " „Staubblitze – Sternbegleiter“ des Aufstiegstalents „Urteil der Federn“: um 600 % der Elementarkunde."
       ]
     }
   },
@@ -159,7 +159,7 @@
   "lockedPassive": {
     "name": "Stern des Aufbruchs",
     "description": {
-      "0": "Versetzt Cyno, wenn er sich nicht im Modus „Paktverschworener Pfadklärer“ befindet und doch die Elementarfähigkeit <strong>Geheimer Ritus – Abgründiger Seelenwanderer</strong> anwendet, 6 s lang in den Zustand „Paktverschworener Pfadklärer“.",
+      "0": "Versetzt Cyno, wenn er sich nicht im Modus „Paktverschworener Pfadklärer“ befindet und die Elementarfähigkeit <strong>Geheimer Ritus – Abgründiger Seelenwanderer</strong> anwendet, 6 s lang in den Zustand „Paktverschworener Pfadklärer“.",
       "1": "Versetzt Cyno zudem, wenn er sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet, in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong>."
     }
   },
@@ -179,7 +179,7 @@
   "constellation2": {
     "name": "Zeremonienritus – Heimkehrende Seelen",
     "description": {
-      "0": "Erhöht 4 s lang nach dem Treffen von Gegnern mit Cynos Standardangriffen Cynos <electro>Elektro-SCH</electro> um 10 %. 0,1 s Abklingzeit. 5-fach stapelbar."
+      "0": "Erhöht 4 s lang nach dem Treffen von Gegnern mit Cynos Standardangriffen Cynos <electro>Elektro-SCH-Bonus</electro> um 10 %. 0,1 s Abklingzeit. 5-fach stapelbar."
     },
     "upgradedDescription": {
       "0": "Erhöht 4 s lang nach dem Treffen von Gegnern mit Cynos Standardangriffen Cynos <electro>Elektro-SCH-Bonus</electro> um 10 %. 0,1 s Abklingzeit. 5-fach stapelbar.",
@@ -197,13 +197,13 @@
   "constellation4": {
     "name": "Austeritätsritus – Beschützender Verbotswächter",
     "description": {
-      "0": "Befindet sich Cyno im Zustand „Paktverschworener Pfadklärer“ der Spezialfähigkeit <strong>Heiliger Ritus – Schnelligkeit des Wolfs</strong>, stellt er nach Auslösen der Reaktionen wie „Unter Strom“, „Mond unter Strom“, „Supraleiter“, „Stellar-Supraleiter“, „Überladen“, „Urwuchs“, „Suprawuchs“, „Supraspross“ oder „Elektro-Verwirbelung“ allen Truppenmitgliedern in der Nähe (außer Cyno) 3 Punkte Elementarenergie wieder her.",
+      "0": "Befindet sich Cyno im Zustand „Paktverschworener Pfadklärer“ der Spezialfähigkeit <strong>Heiliger Ritus – Schnelligkeit des Wolfs</strong>, stellt er nach Auslösen der Reaktionen wie „Unter Strom“, „Mond unter Strom“, „Supraleiter“, „Stellar-Supraleiter“, „Überladen“, „Urwuchs“, „Suprawuchs“, „Supraspross“ oder „Elektro-Verwirbelung“ allen Truppenmitgliedern in der Nähe (außer Cyno selbst) 3 Punkte Elementarenergie wieder her.",
       "1": "5-mal während der Wirkungsdauer der Spezialfähigkeit <strong>Heiliger Ritus – Schnelligkeit des Wolfs</strong> auslösbar."
     },
     "upgradedDescription": {
-      "0": "Befindet sich Cyno im Modus „Paktverschworener Pfadklärer“ der Spezialfähigkeit <strong>Heiliger Ritus – Schnelligkeit des Wolfs</strong>, stellt er nach Auslösen der Reaktionen wie „Unter Strom“, „Mond unter Strom“, „Supraleiter“, „Stellar-Supraleiter“, „Überladen“, „Urwuchs“, „Suprawuchs“, „Supraspross“ oder „Elektro-Verwirbelung“ allen Truppenmitgliedern in der Nähe (außer Cyno) 3 Punkte Elementarenergie wieder her. 5-mal während der Wirkungsdauer der Spezialfähigkeit <strong>Heiliger Ritus – Schnelligkeit des Wolfs</strong> auslösbar.",
+      "0": "Befindet sich Cyno im Zustand „Paktverschworener Pfadklärer“ der Spezialfähigkeit <strong>Heiliger Ritus – Schnelligkeit des Wolfs</strong>, stellt er nach Auslösen der Reaktionen wie „Unter Strom“, „Mond unter Strom“, „Supraleiter“, „Stellar-Supraleiter“, „Überladen“, „Urwuchs“, „Suprawuchs“, „Supraspross“ oder „Elektro-Verwirbelung“ allen Truppenmitgliedern in der Nähe (außer Cyno selbst) 3 Punkte Elementarenergie wieder her. 5-mal während der Wirkungsdauer der Spezialfähigkeit <strong>Heiliger Ritus – Schnelligkeit des Wolfs</strong> auslösbar.",
       "1": "<br/>",
-      "2": "Wenn andere Figuren (außer Cyno), die von <strong>Gemeinsam mit der Sonne aufgehen</strong> betroffen sind, die oben genannte Reaktion auslösen, werden Cyno 20 Punkte Elementarenergie wiederhergestellt, 18 s Abklingzeit."
+      "2": "Wenn andere Figuren (außer Cyno selbst), die von <strong>Gemeinsam mit der Sonne aufgehen</strong> betroffen sind, die oben genannte Reaktion auslösen, werden Cyno 20 Punkte Elementarenergie wiederhergestellt, 18 s Abklingzeit."
     }
   },
   "constellation5": {

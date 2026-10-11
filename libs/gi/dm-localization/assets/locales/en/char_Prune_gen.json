@@ -67,11 +67,11 @@
   "skill": {
     "name": "Ring-A-Ding-Ding! Hexhunter Chime",
     "description": {
-      "0": "Unleash the wind's might to defeat the evil witch and save Descartes! Prune strikes the Witchlure Bell with her Banehunter Oathhammer, dealing <anemo>Anemo DMG</anemo>.",
-      "1": "If Prune triggers Swirl on an opponent using this attack, <strong>Ring-A-Ding-Ding! Hexhunter Chime</strong> will be changed to <strong>Clang Clang! Witch-tribution Comes!</strong> for the next 6s.",
+      "0": "Determined to take down the \"evil\" witch and save her beloved Descartes, Prune unleashes the power of the wind! She strikes at the Witchlure Bell using her Banehunter Oathhammer, dealing <anemo>Anemo DMG</anemo>.",
+      "1": "If Prune triggers a Swirl or Stellar Swirl reaction in the opponent with this attack, her <strong>Ring-A-Ding-Ding! Hexhunter Chime</strong> is changed to <strong>Clang Clang! Witch-tribution Comes!</strong> for the next 6s.",
       "2": "<br/>",
       "3": "<strong>Clang Clang! Witch-tribution Comes!</strong>",
-      "4": "Prune's hammer is now enshrouded by the element involved in the previous Swirl reaction, causing <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Banehunter Oathhammer</strong></tooltip> to undergo Elemental Conversion. When activated with a Press, Prune will leap up and kick the Banehunter Oathhammer forward, dealing Elemental DMG of the corresponding type to opponents in front of her."
+      "4": "Ensconces the <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Banehunter Oathhammer</strong></tooltip> in the element involved in the earlier Swirl or Stellar Swirl reaction. After tapping to unleash, Prune will launch a midair kick at the Banehunter Oathhammer, dealing DMG to opponents in front of her of the corresponding elemental type."
     },
     "skillParams": {
       "0": "Ring-A-Ding-Ding! Hexhunter Chime DMG",
@@ -174,7 +174,7 @@
   "passive1": {
     "name": "Verdict and Punishment",
     "description": {
-      "0": "During the Elemental Burst <strong><tooltip ns=char_Prune_gen baseKey18=burst>The Bell Tolls! The Hunt Is On!</tooltip></strong>, after the Witchlure Bell in Hunter-Seeker mode deals DMG to an opponent, if this DMG triggers Swirl on an opponent, it will also summon a <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Banehunter Oathhammer</strong></tooltip> that will deal 150% of Prune's ATK as DMG to them, with the DMG Type matching the Elemental Conversion from the Swirl. This DMG is considered Elemental Burst DMG."
+      "0": "During the Elemental Burst <strong><tooltip ns=char_Prune_gen baseKey18=burst>The Bell Tolls! The Hunt Is On!</tooltip></strong>, after the Witchlure Bell in Hunter-Seeker mode deals DMG to an opponent, if this DMG triggers Swirl or Stellar Swirl in an opponent, it will also summon a <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Banehunter Oathhammer</strong></tooltip> that will deal 150% of Prune's ATK as DMG to them, with the DMG Type matching the Elemental Conversion from the Swirl or Stellar Swirl. This DMG is considered Elemental Burst DMG."
     }
   },
   "passive2": {
@@ -195,7 +195,7 @@
       "0": "After completing <strong>Witch's Homework: Of What Is Contested</strong>, Prune becomes a <strong>Hexerei</strong> character. When the party includes at least 2 Hexerei characters, you gain the <strong>Hexerei: Secret Rite</strong> effect, which enhances Hexerei characters.",
       "1": "<br/>",
       "2": "<strong>Hexerei: Secret Rite</strong>",
-      "3": "After a Hexerei character in the party affected by the Tolling Rally effect triggers an Elemental Reaction on an opponent, Prune's ATK is increased by 60% for 5s. If the Elemental Reaction triggered is a Swirl Reaction, the triggering character's ATK will additionally be increased by 30% for 5s."
+      "3": "After a Hexerei character in the party affected by the Tolling Rally effect triggers an Elemental Reaction on an opponent, Prune's ATK is increased by 60% for 5s. If the Elemental Reaction triggered is a Swirl or Stellar Swirl reaction, the triggering character's ATK will additionally be increased by 30% for 5s."
     }
   },
   "constellation1": {

@@ -1,0 +1,24 @@
+{
+  "name": "Jade Vista",
+  "description": {
+    "0": "Busur besar yang sangat kuat, bahkan di malam yang paling gelap dan kelam sekalipun akan tetap memancarkan cahaya berwarna mimpi."
+  },
+  "passiveName": "A Candle Woven From the Night",
+  "passiveDescription": {
+    "0": {
+      "0": "Untuk setiap Karakter lain dalam party selain Karakter yang mengenakan: ·Jika jenis elemen sama dengan Karakter yang mengenakan: Elemental Mastery Karakter yang mengenakan +<cryo>64</cryo>. ·Jika jenis elemen berbeda dengan Karakter yang mengenakan: ATK Karakter yang mengenakan +<cryo>12%</cryo>. Kedua efek di atas dapat ditumpuk sampai 3 kali, efek dengan jenis elemen yang sama berlaku terlebih dahulu."
+    },
+    "1": {
+      "0": "Untuk setiap Karakter lain dalam party selain Karakter yang mengenakan: ·Jika jenis elemen sama dengan Karakter yang mengenakan: Elemental Mastery Karakter yang mengenakan +<cryo>80</cryo>. ·Jika jenis elemen berbeda dengan Karakter yang mengenakan: ATK Karakter yang mengenakan +<cryo>15%</cryo>. Kedua efek di atas dapat ditumpuk sampai 3 kali, efek dengan jenis elemen yang sama berlaku terlebih dahulu."
+    },
+    "2": {
+      "0": "Untuk setiap Karakter lain dalam party selain Karakter yang mengenakan: ·Jika jenis elemen sama dengan Karakter yang mengenakan: Elemental Mastery Karakter yang mengenakan +<cryo>96</cryo>. ·Jika jenis elemen berbeda dengan Karakter yang mengenakan: ATK Karakter yang mengenakan +<cryo>18%</cryo>. Kedua efek di atas dapat ditumpuk sampai 3 kali, efek dengan jenis elemen yang sama berlaku terlebih dahulu."
+    },
+    "3": {
+      "0": "Untuk setiap Karakter lain dalam party selain Karakter yang mengenakan: ·Jika jenis elemen sama dengan Karakter yang mengenakan: Elemental Mastery Karakter yang mengenakan +<cryo>112</cryo>. ·Jika jenis elemen berbeda dengan Karakter yang mengenakan: ATK Karakter yang mengenakan +<cryo>21%</cryo>. Kedua efek di atas dapat ditumpuk sampai 3 kali, efek dengan jenis elemen yang sama berlaku terlebih dahulu."
+    },
+    "4": {
+      "0": "Untuk setiap Karakter lain dalam party selain Karakter yang mengenakan: ·Jika jenis elemen sama dengan Karakter yang mengenakan: Elemental Mastery Karakter yang mengenakan +<cryo>128</cryo>. ·Jika jenis elemen berbeda dengan Karakter yang mengenakan: ATK Karakter yang mengenakan +<cryo>24%</cryo>. Kedua efek di atas dapat ditumpuk sampai 3 kali, efek dengan jenis elemen yang sama berlaku terlebih dahulu."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Balada de la Custodia",
+  "description": {
+    "0": "Una lanza que en el pasado velaba por mucha gente, y que ahora desempeña un papel muy importante en los juegos de rol infantiles."
+  },
+  "passiveName": "Acorde de antaño",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras causar una Reacción Elemental, el portador de esta arma recupera <cryo>4</cryo> pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 9 s. Tras causar una reacción de Destello Estelar, el ATQ del portador aumenta en un <cryo>20%</cryo> durante 12 s. Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Tras causar una Reacción Elemental, el portador de esta arma recupera <cryo>5</cryo> pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 9 s. Tras causar una reacción de Destello Estelar, el ATQ del portador aumenta en un <cryo>25%</cryo> durante 12 s. Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Tras causar una Reacción Elemental, el portador de esta arma recupera <cryo>6</cryo> pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 9 s. Tras causar una reacción de Destello Estelar, el ATQ del portador aumenta en un <cryo>30%</cryo> durante 12 s. Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Tras causar una Reacción Elemental, el portador de esta arma recupera <cryo>7</cryo> pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 9 s. Tras causar una reacción de Destello Estelar, el ATQ del portador aumenta en un <cryo>35%</cryo> durante 12 s. Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Tras causar una Reacción Elemental, el portador de esta arma recupera <cryo>8</cryo> pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 9 s. Tras causar una reacción de Destello Estelar, el ATQ del portador aumenta en un <cryo>40%</cryo> durante 12 s. Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    }
+  }
+}

@@ -214,7 +214,7 @@ export class CharacterDataManager extends DataManager<
       idsToRemove.delete('Somnia')
 
       const idtoRemoveArr = Array.from(idsToRemove)
-      if (result.keepNotInImport || result.ignoreDups)
+      if (result.keepCharNotInImport || result.ignoreDups)
         result.characters.notInImport = idtoRemoveArr.length
       else idtoRemoveArr.forEach((k) => this.remove(k))
       result.characters.unchanged = []

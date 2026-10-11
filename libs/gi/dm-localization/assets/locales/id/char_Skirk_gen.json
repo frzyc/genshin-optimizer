@@ -117,7 +117,7 @@
   "passive1": {
     "name": "Reason Beyond Reason",
     "description": {
-      "0": "Saat Karakter party di sekitar memicu reaksi Frozen, Superconduct, Stellar-Conduct, Cryo Swirl, atau Cryo Crystallize terhadap musuh, akan tercipta sebuah Void Rift di sekitar musuh tersebut. Efek ini dapat terpicu sekali setiap 2,5 detik, dan Skirk sendiri hanya dapat menciptakan maksimum 3 Void Rift di medan pertempuran dalam waktu bersamaan.",
+      "0": "Saat Karakter party di sekitar memicu reaksi Frozen, Superconduct, Stellar-Conduct, Cryo Swirl, Stellar Swirl, atau Cryo Crystallize terhadap musuh, akan tercipta sebuah Void Rift di sekitar musuh tersebut. Efek ini dapat terpicu sekali setiap 2,5 detik, dan Skirk sendiri hanya dapat menciptakan maksimum 3 Void Rift di medan pertempuran dalam waktu bersamaan.",
       "1": "<br/>",
       "2": "Skirk bisa menyerap Void Rift di sekitarnya dengan cara berikut:",
       "3": [

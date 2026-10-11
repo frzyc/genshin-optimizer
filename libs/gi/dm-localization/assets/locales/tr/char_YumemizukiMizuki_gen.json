@@ -50,8 +50,8 @@
       "2": "<strong>Düşgezen</strong>",
       "3": [
         "Yumemizuki Mizuki, Düşgezen durumundayken sürekli ileri doğru süzülür ve düzenli aralıklarla yakındaki düşmanlara <anemo>Rüzgar Alan Hasarı</anemo> verir.",
-        "Bu süre boyunca Yumemizuki Mizuki süzülme yönünü kontrol edebilir ve Element Patlaması <strong>Anraku Gizli Kaplıca Terapisini</strong> kullandığı zaman <strong>Yumemi Tarzı Özel Atıştırmalıkları</strong> alma mesafesi artar.",
-        "Yakındaki grup üyelerinin Yumemizuki Mizuki'nin Element Ustalığına bağlı olarak verdiği Girdap Hasarını artırır.",
+        "Bu süre boyunca Yumemizuki Mizuki süzülme yönünü kontrol edebilir ve <strong>Anraku Gizli Kaplıca Terapisi</strong> Element Patlamasının oluşturduğu <strong>Yumemi Tarzı Özel Atıştırmalıkları</strong> alma mesafesi artar.",
+        "Yakındaki grup üyelerinin verdiği Girdap Hasarını ve Yıldız Girdabı Tepkimesi Hasarını Yumemizuki Mizuki'nin Element Ustalığına bağlı olarak artırır.",
         "Mizuki savaş alanından ayrıldığında veya Element Becerisini tekrar kullandığında Düşgezen durumu sona erer."
       ],
       "4": "<br/>",
@@ -61,9 +61,9 @@
       "0": "Beceri Hasarı",
       "1": "Sürekli Saldırı Hasarı",
       "2": "Düşgezen Süresi",
-      "3": "Element Ustalığı Temelli Girdap Hasarı Artışı",
-      "4": "BS",
-      "5": "",
+      "3": "Element Ustalığına Göre Girdap Hasarı Artışı",
+      "4": "Element Ustalığına Göre Yıldız Girdabı Hasarı Artışı",
+      "5": "BS",
       "6": "",
       "7": "",
       "8": "",
@@ -116,7 +116,7 @@
   "passive1": {
     "name": "Parlak Ayın Huzursuz Sesi",
     "description": {
-      "0": "Yumemizuki Mizuki Düşgezen durumundayken Girdap tetiklerse Düşgezenin süresi 2,5sn artar. Bu etki her 0,3 saniyede bir defa ve her Düşgezen durumunda en fazla 2 defa tetiklenebilir."
+      "0": "Yumemizuki Mizuki Düşgezen durumundayken bir Girdap veya Yıldız Girdabı tepkimesi tetiklerse Düşgezenin süresi 2,5sn artar. Bu etki her 0,3 saniyede bir defa ve her Düşgezen durumunda en fazla 2 defa tetiklenebilir."
     }
   },
   "passive2": {
@@ -134,17 +134,21 @@
   "lockedPassive": {
     "name": "Engin Olsun Düşler",
     "description": {
-      "0": "Yumemizuki Mizuki Düşgezen durumundayken bir Girdap Tepkimesi tetiklediğinde, aynı durumun bir sonraki döngüsünde yakındaki düşmanlara verdiği <anemo>Rüzgar Alan Hasarı</anemo> kendi Element Ustalığının %1.000'i kadar artar. Bu etki her 2,5 saniyede bir tetiklenebilir.",
-      "1": "Ayrıca, Yumemizuki Mizuki Düşgezen durumundayken, yakındaki grup karakterlerinin Element Ustalığı, Yumemizuki Mizuki'nin Element Ustalığının %10'u kadar artar."
+      "0": "Yumemizuki Mizuki Düşgezen durumundayken bir Girdap veya Yıldız Girdabı tepkimesi tetiklediğinde, aynı durumun bir sonraki döngüsünde yakındaki düşmanlara verdiği <anemo>Rüzgar Alan Hasarı</anemo> kendi Element Ustalığının %1.000'i kadar artar. Bu etki her 2,5 saniyede bir tetiklenebilir.",
+      "1": "<strong>Işıltı: Yıldız Girdabı</strong>: Yumemizuki Mizuki, bir düşmana yukarıdaki gelişmiş <anemo>Rüzgar Alan Hasarını</anemo> verdiğinde ayrıca Element Ustalığının %1000'i kadar ek <anemo>Rüzgar Hasarı</anemo> verir. Bu Hasar, Yıldız Girdabı Tepkimesi Hasarı sayılır.",
+      "2": "<br/>",
+      "3": "Yumemizuki Mizuki Düşgezen durumundayken, yakındaki grup karakterlerinin Element Ustalığı, Yumemizuki Mizuki'nin Element Ustalığının %10'u kadar artar.",
+      "4": "Ayrıca Yumemizuki Mizuki, yakındaki bir grup üyesi bir Yıldız Girdabı tepkimesi tetiklediğinde 8 saniyeliğine <strong>Işıltı: Yıldız Girdabı</strong> durumuna girer."
     }
   },
   "constellation1": {
     "name": "Sisli Sularda",
     "description": {
-      "0": "Yumemizuki Mizuki, Düşgezen durumundayken sürekli olarak yakındaki düşmanlara 3,5 saniyede bir \"Yirmi Üç Gecenin Beklentisi\" etkisini uygular ve 3sn sürer. Bu etki aktifken, bir düşman Rüzgar Hasarıyla tetiklenen Girdap tepkimelerinden etkilenirse etki kaldırılır ve Girdabın verdiği Hasar, Mizuki'nin Element Ustalığının %1.100'ü kadar artar."
+      "0": "Yumemizuki Mizuki, Düşgezen durumundayken sürekli olarak yakındaki düşmanlara 3,5 saniyede bir \"Yirmi Üç Gecenin Beklentisi\" etkisini uygular, bu etki 3sn sürer. Bu etki aktifken bir düşman üzerinde Rüzgar Hasarı ile bir Girdap veya Yıldız Girdabı tepkimesi tetiklenirse etki kaldırılır ve bu Girdabın/Yıldız Girdabının düşmana verdiği Hasar, Mizuki'nin Element Ustalığının %1.100'ü/%550'si kadar artar."
     },
     "upgradedDescription": {
-      "0": "Yumemizuki Mizuki, Düşgezen durumundayken sürekli olarak yakındaki düşmanlara her 3,5 saniyede bir \"Yirmi Üç Gecenin Beklentisi\" etkisini uygular ve 3sn sürer. Bu etki aktifken, bir düşman Rüzgar Hasarıyla tetiklenen Girdap tepkimelerinden etkilenirse etki kaldırılır ve Girdabın bu düşmana verdiği Hasar, Mizuki'nin Element Ustalığının %1.100'ü kadar artar. Ayrıca, aynı düşmana ek bir saldırı yaparak Yumemizuki Mizuki'nin Element Ustalığının %1.000'i kadar <anemo>Rüzgar Hasarı</anemo> verir."
+      "0": "Yumemizuki Mizuki, Düşgezen durumundayken sürekli olarak yakındaki düşmanlara her 3,5 saniyede bir \"Yirmi Üç Gecenin Beklentisi\" etkisini uygular ve 3sn sürer. Bu etki aktifken bir düşman üzerinde Rüzgar Hasarı tarafından bir Girdap veya Yıldız Girdabı tepkimesi tetiklenirse etki kaldırılır ve bu Girdabın/Yıldız Girdabının bu düşmana verdiği Hasar, Mizuki'nin Element Ustalığının %1.100'ü/%550'si kadar artar. Yumemizuki Mizuki ayrıca aynı düşmana ek bir saldırı yaparak Element Ustalığının %1.000'i kadar <anemo>Rüzgar Hasarı</anemo> verir.",
+      "1": "<strong>Işıltı: Yıldız Girdabı</strong>: Yukarıda bahsedilen ek Hasar, Yumemizuki Mizuki'nin Element Ustalığının %400'ü kadar <anemo>Rüzgar Hasarı</anemo> olarak değişir. Bu Hasar, Yıldız Girdabı Tepkimesi Hasarı sayılır."
     }
   },
   "constellation2": {
@@ -183,11 +187,11 @@
   "constellation6": {
     "name": "Kalp Özlem Dolar",
     "description": {
-      "0": "Yumemizuki Mizuki Düşgezen durumundayken yakındaki grup üyelerinin verdiği Girdap Hasarı Kritik Vuruş yapabilir. Kritik Oranı %30, Kritik Hasarı ise %100 olarak sabittir."
+      "0": "Yumemizuki Mizuki Düşgezen durumundayken, yakındaki grup üyelerinin verdiği Girdap Tepkimesi Hasarı Kritik Vuruş yapabilir, Kritik Oranı %30 ve Kritik Hasar %100 olarak sabittir. Bu karakterlerin verdiği herhangi bir Yıldız Girdabı Tepkimesi Hasarının da Kritik Oranı %10, Kritik Hasarı %20 artar."
     },
     "upgradedDescription": {
-      "0": "Yumemizuki Mizuki Düşgezen durumundayken yakındaki grup üyelerinin verdiği Girdap Hasarı Kritik Vuruş yapabilir. Kritik Oranı %30, Kritik Hasarı ise %100 olarak sabittir.",
-      "1": "Yumemizuki Mizuki'nin 500'ü aşan her Element Ustalığı puanı, Kritik Oranını %0,04 ve Kritik Hasarını %0,16 artırır. Yumemizuki Mizuki'nin Kritik Oranı ve Kritik Hasarı bu şekilde sırasıyla en fazla %20 ve %80 artırılabilir."
+      "0": "Yumemizuki Mizuki Düşgezen durumundayken yakındaki grup üyelerinin verdiği Girdap Hasarı Kritik Vuruş yapabilir. Kritik Oranı %30, Kritik Hasarı ise %100 olarak sabittir. Bu grup üyelerinin verdiği herhangi bir Yıldız Girdabı Hasarının Kritik Oranı %10, Kritik Hasarı ise %20 artar.",
+      "1": "Yumemizuki Mizuki'nin 500'ün üzerindeki her Element Ustalığı puanı Kritik Oranını %0,04 ve Kritik Hasarını %0,16 artırır. Yumemizuki Mizuki'nin Kritik Oranı ve Kritik Hasarı bu şekilde sırasıyla en fazla %20 ve %80 artırılabilir."
     }
   }
 }

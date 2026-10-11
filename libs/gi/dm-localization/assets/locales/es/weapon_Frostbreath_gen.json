@@ -1,0 +1,24 @@
+{
+  "name": "Hálito Glacial",
+  "description": {
+    "0": "Una lanza de hielo firme envuelta en un frío punzante. Dicen que, en un pasado remoto, perteneció al Zar Belyi que gobernaba Snezhnaya."
+  },
+  "passiveName": "Lanzamiento lejano",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras causar una Reacción Elemental Cryo o Hydro, el ATQ del portador de esta arma aumenta en un <cryo>20%</cryo> durante 15 s y tus demás personajes del equipo regeneran <cryo>6</cryo> pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 16 s."
+    },
+    "1": {
+      "0": "Tras causar una Reacción Elemental Cryo o Hydro, el ATQ del portador de esta arma aumenta en un <cryo>25%</cryo> durante 15 s y tus demás personajes del equipo regeneran <cryo>7.5</cryo> pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 16 s."
+    },
+    "2": {
+      "0": "Tras causar una Reacción Elemental Cryo o Hydro, el ATQ del portador de esta arma aumenta en un <cryo>30%</cryo> durante 15 s y tus demás personajes del equipo regeneran <cryo>9</cryo> pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 16 s."
+    },
+    "3": {
+      "0": "Tras causar una Reacción Elemental Cryo o Hydro, el ATQ del portador de esta arma aumenta en un <cryo>35%</cryo> durante 15 s y tus demás personajes del equipo regeneran <cryo>10.5</cryo> pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 16 s."
+    },
+    "4": {
+      "0": "Tras causar una Reacción Elemental Cryo o Hydro, el ATQ del portador de esta arma aumenta en un <cryo>40%</cryo> durante 15 s y regenera <cryo>12</cryo> pts. de Energía Elemental para tus demás personajes del equipo. Este efecto solo se puede activar una vez cada 16 s."
+    }
+  }
+}

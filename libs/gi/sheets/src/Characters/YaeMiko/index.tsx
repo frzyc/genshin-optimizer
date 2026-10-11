@@ -4,6 +4,7 @@ import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
   equal,
+  equalStr,
   greaterEq,
   infoMut,
   input,
@@ -12,7 +13,7 @@ import {
   naught,
   percent,
   prod,
-  stellarDmg,
+  stellarDmgNode,
   target,
   unequal,
 } from '@genshin-optimizer/gi/wr'
@@ -230,7 +231,7 @@ const dmgFormulas = {
         equal(
           condLockStellarRadianceSc,
           'on',
-          stellarDmg(
+          stellarDmgNode(
             percent(dm.passive1.stellarDmg),
             'atk',
             'stellarconduct',
@@ -304,7 +305,7 @@ const dmgFormulas = {
       equal(
         condLockStellarRadianceSc,
         'on',
-        stellarDmg(
+        stellarDmgNode(
           percent(dm.lockedPassive.stellarDmg),
           'atk',
           'stellarconduct',
@@ -335,6 +336,9 @@ const data = dataObjForCharacterSheet(
         stellarconduct_dmg_: nodeC1_stellarconduct_dmg_,
         eleMas: nodeC2_eleMas,
       },
+    },
+    flags: {
+      radiance: equalStr(condLockStellarRadianceSc, 'on', 'sc'),
     },
   },
   {
@@ -583,7 +587,7 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              text: st('elementalReaction.gainRadianceSc'),
+              text: st('elementalReaction.stellar.gainRadianceSc'),
             },
           ],
         },

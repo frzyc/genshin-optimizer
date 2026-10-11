@@ -206,8 +206,8 @@
   "lockedPassive": {
     "name": "Choice Treasures",
     "description": {
-      "0": "Within 20s after using the Elemental Skill <strong>Icy Paws</strong>, Diona will also fire off three <strong>Icy Paws</strong> when party members trigger Superconduct or Stellar-Conduct reactions. <strong>Icy Paws</strong> fired this way cannot generate Elemental Particles, nor will they generate a shield upon hitting opponents. This effect can occur once every 3.5s.",
-      "1": "Additionally, when inside a <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>, Diona will enter the <strong>Radiance: Stellar-Conduct</strong> state."
+      "0": "Within 20s after using the Elemental Skill <strong>Icy Paws</strong>, Diona will also fire off three <strong>Icy Paws</strong> when party members trigger Stellar-Conduct, Superconduct, Cryo Swirl, or Stellar Swirl reactions. <strong>Icy Paws</strong> fired this way cannot generate Elemental Particles, nor will they generate a shield upon hitting opponents. This effect can occur once every 3.5s.",
+      "1": "Additionally, Diona will also enter the <strong>Radiance: Stellar-Conduct</strong> state when she is inside a <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>, or the <strong>Radiance: Stellar Swirl</strong> state for 8s after a nearby party member triggers a Stellar Swirl reaction."
     }
   },
   "constellation1": {
@@ -259,9 +259,10 @@
         " Elemental Mastery is increased by 200 when HP is above 50%."
       ],
       "2": "<br/>",
-      "3": "Additionally, Diona's Max HP is increased by 25%.",
-      "4": "<br/>",
-      "5": "<strong>Radiance: Stellar-Conduct</strong>: Characters within <strong>Signature Mix</strong>'s radius deal 40% increased Superconduct and Stellar-Conduct Reaction DMG."
+      "3": "Additionally, Diona's Max HP is increased by 25%. ",
+      "4": "<strong>Radiance: Stellar Glimmer</strong>: Characters within the Signature Mix field deal increased DMG for the following reactions: ",
+      "5": "<strong>Radiance: Stellar-Conduct</strong>: Superconduct, Stellar-Conduct reaction DMG increased by 40%.",
+      "6": "<strong>Radiance: Stellar Swirl</strong>: Cryo Swirl, Stellar Swirl reaction DMG increased by 40%."
     }
   }
 }

@@ -115,7 +115,7 @@
   "passive1": {
     "name": "Pratique paradoxale",
     "description": {
-      "0": "Lorsque Shikanoin Heizou déclenche une réaction de Dispersion sur le champ de bataille, il obtient 1 cumul de détection pour <strong>Poing d'arrêt cardiaque</strong>. Cet effet peut être déclenché une fois toutes les 0,1 s."
+      "0": "Lorsque Shikanoin Heizou déclenche une réaction de Dispersion ou d'Astrodispersion sur le champ de bataille, il obtient 1 cumul de détection pour <strong>Poing d'arrêt cardiaque</strong>. Cet effet peut être déclenché une fois toutes les 0,1 s."
     }
   },
   "passive2": {

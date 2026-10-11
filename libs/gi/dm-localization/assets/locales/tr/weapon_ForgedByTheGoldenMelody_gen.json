@@ -1,0 +1,29 @@
+{
+  "name": "Altın Melodiyle Dövülen",
+  "description": {
+    "0": "Altınla süslenmiş bir büyük kılıç. Efsaneye göre uzak geçmişte ulu bir Harmostun en sevdiği silahmış."
+  },
+  "passiveName": "Gece ve Gündüz Karşıtlığı",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakter her 10 saniyede bir ilgili türde \"Armonik Parça\" çalarak şu sırada güçlendirme kazanır: <cryo>+%18</cryo> Saldırı > <cryo>+120</cryo> Element Ustalığı > <cryo>+%28</cryo> Yıldız Parıltısı Tepkimesi Hasarı. Her bir Armonik Parça 10 saniye sürer. Bu etki, kuşanan karakter alanda olmasa da tetiklenebilir.",
+      "1": "Ayrıca bir Yıldız Parıltısı tepkimesi tetiklemek, bu tepkime tetiklendiğinde etkin olan Armonik Parça ile aynı etkileri kazandıran ve 12 saniye süren ek bir \"Armonik Parça: Kontrpuan\" etkisi verir. Bu etki orijinal Armonik Parça etkisiyle birikir ve 12 saniyede bir tetiklenebilir."
+    },
+    "1": {
+      "0": "Kuşanan karakter her 10 saniyede bir ilgili türde \"Armonik Parça\" çalarak şu sırada güçlendirme kazanır: <cryo>+%22,5</cryo> Saldırı > <cryo>+150</cryo> Element Ustalığı > <cryo>+%35</cryo> Yıldız Parıltısı Tepkimesi Hasarı. Her bir Armonik Parça 10 saniye sürer. Bu etki, kuşanan karakter alanda olmasa da tetiklenebilir.",
+      "1": "Ayrıca bir Yıldız Parıltısı tepkimesi tetiklemek, bu tepkime tetiklendiğinde etkin olan Armonik Parça ile aynı etkileri kazandıran ve 12 saniye süren ek bir \"Armonik Parça: Kontrpuan\" etkisi verir. Bu etki orijinal Armonik Parça etkisiyle birikir ve 12 saniyede bir tetiklenebilir."
+    },
+    "2": {
+      "0": "Kuşanan karakter her 10 saniyede bir ilgili türde \"Armonik Parça\" çalarak şu sırada güçlendirme kazanır: <cryo>+%27</cryo> Saldırı > <cryo>+180</cryo> Element Ustalığı > <cryo>+%42</cryo> Yıldız Parıltısı Tepkimesi Hasarı. Her bir Armonik Parça 10 saniye sürer. Bu etki, kuşanan karakter alanda olmasa da tetiklenebilir.",
+      "1": "Ayrıca bir Yıldız Parıltısı tepkimesi tetiklemek, bu tepkime tetiklendiğinde etkin olan Armonik Parça ile aynı etkileri kazandıran ve 12 saniye süren ek bir \"Armonik Parça: Kontrpuan\" etkisi verir. Bu etki orijinal Armonik Parça etkisiyle birikir ve 12 saniyede bir tetiklenebilir."
+    },
+    "3": {
+      "0": "Kuşanan karakter her 10 saniyede bir ilgili türde \"Armonik Parça\" çalarak şu sırada güçlendirme kazanır: <cryo>+%31,5</cryo> Saldırı > <cryo>+210</cryo> Element Ustalığı > <cryo>+%49</cryo> Yıldız Parıltısı Tepkimesi Hasarı. Her bir Armonik Parça 10 saniye sürer. Bu etki, kuşanan karakter alanda olmasa da tetiklenebilir.",
+      "1": "Ayrıca bir Yıldız Parıltısı tepkimesi tetiklemek, bu tepkime tetiklendiğinde etkin olan Armonik Parça ile aynı etkileri kazandıran ve 12 saniye süren ek bir \"Armonik Parça: Kontrpuan\" etkisi verir. Bu etki orijinal Armonik Parça etkisiyle birikir ve 12 saniyede bir tetiklenebilir."
+    },
+    "4": {
+      "0": "Kuşanan karakter her 10 saniyede bir ilgili türde \"Armonik Parça\" çalarak şu sırada güçlendirme kazanır: <cryo>+%36</cryo> Saldırı > <cryo>+240</cryo> Element Ustalığı > <cryo>+%56</cryo> Yıldız Parıltısı Tepkimesi Hasarı. Her bir Armonik Parça 10 saniye sürer. Bu etki, kuşanan karakter alanda olmasa da tetiklenebilir.",
+      "1": "Ayrıca bir Yıldız Parıltısı tepkimesi tetiklemek, bu tepkime tetiklendiğinde etkin olan Armonik Parça ile aynı etkileri kazandıran ve 12 saniye süren ek bir \"Armonik Parça: Kontrpuan\" etkisi verir. Bu etki orijinal Armonik Parça etkisiyle birikir ve 12 saniyede bir tetiklenebilir."
+    }
+  }
+}

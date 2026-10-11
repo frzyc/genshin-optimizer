@@ -1,31 +1,20 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  own,
-  register,
-} from '../util'
+import { subscript } from '@genshin-optimizer/pando/engine'
+import { allBoolConditionals, own, ownBuff, percent, register } from '../util'
 import { entriesForWeapon } from './util'
 
 const key: WeaponKey = 'TheAlleyFlash'
+const bonusInc = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 
 const {
-  weapon: { refinement: _refinement },
+  weapon: { refinement },
 } = own
-// TODO: Conditionals
-const { _someBoolConditional } = allBoolConditionals(key)
-const { _someListConditional } = allListConditionals(key, [])
-const { _someNumConditional } = allNumConditionals(key)
+const { ItinerantHero } = allBoolConditionals(key)
 
 export default register(
   key,
-  entriesForWeapon(key)
-
-  // TODO:
-  // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
-  // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
-  // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
-  //
-  // TODO: Add refinement bonus
+  entriesForWeapon(key),
+  ownBuff.premod.dmg_.add(
+    ItinerantHero.ifOn(percent(subscript(refinement, bonusInc)))
+  )
 )

@@ -45,11 +45,11 @@
   "skill": {
     "name": "Ding Ding! Büyü Avı Zili",
     "description": {
-      "0": "Rüzgarın kudretini serbest bırakarak kötü cadıyı yen ve Descartes'ı kurtar! Prune, Bela Kovan Ant Çekiciyle Cadıkapan Çanına vurarak <anemo>Rüzgar Hasarı</anemo> verir.",
-      "1": "Prune bu saldırıyı kullanarak düşmanın üzerinde Girdap Tepkimesi tetiklediğinde <strong>Ding Ding! Büyü Avı Zili</strong> 6 saniyeliğine <strong>Çın Çın! Cadıyı Cezalandırma Zamanı!</strong> ile değiştirilir.",
+      "0": "\"Kötü\" cadıyı alt etmeye ve sevgili Descartes'ı kurtarmaya kararlı olan Prune, rüzgarın gücünü açığa çıkarır! Bela Kovan Ant Çekiciyle Cadıkapan Çanına vurarak <anemo>Rüzgar Hasarı</anemo> verir.",
+      "1": "Prune bu saldırıyla düşmanın üzerinde bir Girdap veya Yıldız Girdabı tepkimesi tetiklerse, <strong>Ding Ding! Büyü Avı Zili</strong> 6 saniyeliğine <strong>Çın Çın! Cadıyı Cezalandırma Zamanı!</strong> olarak değişir.",
       "2": "<br/>",
       "3": "<strong>Çın Çın! Cadıyı Cezalandırma Zamanı!</strong>",
-      "4": "Prune'un çekici, önceki Girdap tepkimesindeki elementin tesirine girer ve <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Bela Kovan Ant Çekici</strong></tooltip> Element Dönüşümü geçirir. Bu beceri Dokunarak etkinleştirildiğinde Prune yukarı sıçrayarak Bela Kovan Ant Çekicini ileriye tekmeler ve önündeki düşmanlara ilgili türde Element Hasarı verir."
+      "4": "<tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Bela Kovan Ant Çekicini</strong></tooltip> daha önceki Girdap veya Yıldız Girdabı tepkimesine dahil olan elementle kaplar. Dokunup saldırıyı başlattıktan sonra Prune, Bela Kovan Ant Çekicine havada bir tekme atar ve önündeki düşmanlara ilgili Element Türünde Hasar verir."
     },
     "skillParams": {
       "0": "Ding Ding! Büyü Avı Zili Hasarı",
@@ -108,7 +108,7 @@
   "passive1": {
     "name": "Yargı ve Ceza",
     "description": {
-      "0": "<strong><tooltip ns=char_Prune_gen baseKey18=burst>Çanlar Çalıyor! Av Başladı!</tooltip></strong> Element Patlaması sırasında, Avcı-Arayıcı modundaki Cadıkapan Çanı bir düşmana Hasar verdikten sonra bu Hasar düşman üzerinde Girdap tepkimesi tetiklerse o düşmana Prune'un Saldırısının %150'si kadar Hasar veren bir <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Bela Kovan Ant Çekici</strong></tooltip> çağrılır. Hasarın türü, Girdap tepkimesinde gerçekleşen Element Dönüşümüyle aynı olur. Bu Hasar, Element Patlaması Hasarı sayılır."
+      "0": "<strong><tooltip ns=char_Prune_gen baseKey18=burst>Çanlar Çalıyor! Av Başladı!</tooltip></strong> Element Patlaması sırasında, Avcı-Arayıcı modundaki Cadıkapan Çanı bir düşmana Hasar verdikten sonra bu Hasar düşman üzerinde Girdap veya Yıldız Girdabı tepkimesi tetiklerse o düşmana Prune'un Saldırısının %150'si kadar Hasar veren bir <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Bela Kovan Ant Çekici</strong></tooltip> çağrılır. Hasarın türü, Girdap veya Yıldız Girdabı tepkimesinde gerçekleşen Element Dönüşümüyle aynı olur. Bu Hasar, Element Patlaması Hasarı sayılır."
     }
   },
   "passive2": {
@@ -129,7 +129,7 @@
       "0": "<strong>Cadının Ödevi: Çekişmeli Konular</strong> tamamlandıktan sonra Prune bir <strong>Cadılık</strong> karakteri olur. Grupta en az 2 Cadılık karakteri olduğunda, Cadılık karakterlerini güçlendiren <strong>Cadılık: Saklı Ayin</strong> etkisi kazanırsın.",
       "1": "<br/>",
       "2": "<strong>Cadılık: Saklı Ayin</strong>",
-      "3": "Grupta İlham Yankısı etkisindeki bir Cadılık karakteri bir düşman üzerinde Element Tepkimesi tetiklediğinde 5 saniyeliğine Prune'un Saldırısı %60 artar. Eğer tetiklenen Element Tepkimesi bir Girdap tepkimesiyse 5 saniyeliğine tetikleyen karakterin Saldırısı da %30 artar."
+      "3": "Grupta İlham Yankısı etkisindeki bir Cadılık karakteri bir düşman üzerinde Element Tepkimesi tetiklediğinde 5 saniyeliğine Prune'un Saldırısı %60 artar. Eğer tetiklenen Element Tepkimesi bir Girdap veya Yıldız Girdabı tepkimesiyse 5 saniyeliğine tetikleyen karakterin Saldırısı da %30 artar."
     }
   },
   "constellation1": {

@@ -110,7 +110,7 @@
   "passive1": {
     "name": "Thay Thế Xúc Tác",
     "description": {
-      "0": "Khi Sucrose kích hoạt phản ứng khuếch tán sẽ tăng 50 tinh thông nguyên tố của tất cả nhân vật trong đội có loại nguyên tố tương ứng (không bao gồm bản thân Sucrose), duy trì 8s."
+      "0": "Khi Sucrose kích hoạt phản ứng Khuếch Tán, Tinh-Khuếch Tán, sẽ tăng 50 Tinh Thông Nguyên Tố cho tất cả nhân vật trong đội có loại nguyên tố tương ứng (không bao gồm bản thân Sucrose), duy trì 8s."
     }
   },
   "passive2": {

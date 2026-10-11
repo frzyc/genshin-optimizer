@@ -11,7 +11,7 @@ import {
   infoMut,
   input,
   lookup,
-  lunarDmg,
+  lunarDmgNode,
   min,
   naught,
   percent,
@@ -268,12 +268,12 @@ const dmgFormulas = {
   plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     pummelerDmg: dmgNode('def', dm.skill.pummelerDmg, 'skill'),
-    hammerDmg: lunarDmg(
+    hammerDmg: lunarDmgNode(
       subscript(input.total.skillIndex, dm.skill.hammerDmg, { unit: '%' }),
       'def',
       'lunarcrystallize'
     ),
-    crushDmg: lunarDmg(
+    crushDmg: lunarDmgNode(
       subscript(input.total.skillIndex, dm.skill.crushDmg, { unit: '%' }),
       'def',
       'lunarcrystallize',

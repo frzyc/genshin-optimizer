@@ -1,6 +1,6 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { equal, equalStr, input, subscript } from '@genshin-optimizer/gi/wr'
+import { equalStr, input, subscript } from '@genshin-optimizer/gi/wr'
 import { cond, nonStackBuff, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
@@ -24,13 +24,21 @@ const [atk_, atk_inactive] = nonStackBuff(
   'atk_',
   subscript(input.weapon.refinement, atk_Src)
 )
-const normal_dmg_ = equal(
-  'on',
-  condPassive,
+const [normal_dmg_, normal_dmg_inactive] = nonStackBuff(
+  'millenialncpdmg',
+  'normal_dmg_',
   subscript(input.weapon.refinement, autoSrc)
 )
-const charged_dmg_ = { ...normal_dmg_ }
-const plunging_dmg_ = { ...normal_dmg_ }
+const [charged_dmg_, charged_dmg_inactive] = nonStackBuff(
+  'millenialncpdmg',
+  'charged_dmg_',
+  subscript(input.weapon.refinement, autoSrc)
+)
+const [plunging_dmg_, plunging_dmg_inactive] = nonStackBuff(
+  'millenialncpdmg',
+  'plunging_dmg_',
+  subscript(input.weapon.refinement, autoSrc)
+)
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
@@ -45,6 +53,7 @@ const data = dataObjForWeaponSheet(key, {
     },
     nonStacking: {
       millenialatk: nonstackWrite,
+      millenialncpdmg: nonstackWrite,
     },
   },
 })
@@ -67,10 +76,19 @@ const sheet: IWeaponSheet = {
               node: normal_dmg_,
             },
             {
+              node: normal_dmg_inactive,
+            },
+            {
               node: charged_dmg_,
             },
             {
+              node: charged_dmg_inactive,
+            },
+            {
               node: plunging_dmg_,
+            },
+            {
+              node: plunging_dmg_inactive,
             },
             {
               node: atk_,

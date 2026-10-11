@@ -31,6 +31,8 @@ declare module '@mui/material/styles' {
     lunarbloom: Palette['primary']
     lunarcrystallize: Palette['primary']
     stellarconduct: Palette['primary']
+    stellarcryo: Palette['primary']
+    stellarswirl: Palette['primary']
   }
 
   interface PaletteOptions {
@@ -62,6 +64,8 @@ declare module '@mui/material/styles' {
     lunarbloom?: PaletteOptions['primary']
     lunarcrystallize?: PaletteOptions['primary']
     stellarconduct?: PaletteOptions['primary']
+    stellarcryo?: PaletteOptions['primary']
+    stellarswirl?: PaletteOptions['primary']
   }
 }
 
@@ -95,6 +99,8 @@ declare module '@mui/material/Button' {
     lunarbloom: true
     lunarcrystallize: true
     stellarconduct: true
+    stellarcryo: true
+    stellarswirl: true
   }
 }
 
@@ -128,6 +134,8 @@ declare module '@mui/material/Chip' {
     lunarbloom: true
     lunarcrystallize: true
     stellarconduct: true
+    stellarcryo: true
+    stellarswirl: true
   }
 }
 
@@ -177,6 +185,8 @@ declare module '@mui/material/SvgIcon' {
     lunarbloom: true
     lunarcrystallize: true
     stellarconduct: true
+    stellarcryo: true
+    stellarswirl: true
   }
 }
 
@@ -291,6 +301,14 @@ export const theme = createTheme({
     stellarconduct: commonTheme.palette.augmentColor({
       color: { main: '#e4d1ff', contrastText: '#222' },
       name: 'stellarconduct',
+    }),
+    stellarcryo: commonTheme.palette.augmentColor({
+      color: { main: '#abf7ff', contrastText: '#222' },
+      name: 'stellarconduct_cryo',
+    }),
+    stellarswirl: commonTheme.palette.augmentColor({
+      color: { main: '#a1facc', contrastText: '#222' },
+      name: 'stellarswirl',
     }),
   },
 })

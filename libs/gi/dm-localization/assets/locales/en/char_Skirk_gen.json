@@ -183,7 +183,7 @@
   "passive1": {
     "name": "Reason Beyond Reason",
     "description": {
-      "0": "When nearby party members trigger Frozen, Superconduct, Stellar-Conduct, Cryo Swirl, or Cryo Crystallize reactions against opponents, a Void Rift will be created near this opponent. This effect can be triggered once every 2.5s. 3 Void Rifts created by Skirk herself can exist on the field at once.",
+      "0": "When nearby party members trigger Frozen, Superconduct, Stellar-Conduct, Cryo Swirl, Stellar Swirl, or Cryo Crystallize reactions against opponents, a Void Rift will be created near this opponent. This effect can be triggered once every 2.5s. 3 Void Rifts created by Skirk herself can exist on the field at once.",
       "1": "<br/>",
       "2": "Skirk can use the following methods to absorb nearby Void Rifts:",
       "3": [

@@ -118,7 +118,7 @@
   "passive2": {
     "name": "Vanguarda do Vento",
     "description": {
-      "0": "Quando um membro próximo da equipe desencadeia Redemoinho, Varka obterá 1 acúmulo de <strong>Juramento da Presa Cerúlea</strong>, aumentando o Dano de seu Ataque Normal, Ataque Carregado, Ataque Carregado especial <strong>Devoração Cerúlea</strong> e de sua Habilidade Elemental especial <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Ascensão dos Quatro Ventos</strong></tooltip> em 7.5% por 8s. Esse efeito pode ser acumulado até 4 vezes, e cada personagem pode fazer Varka obter 1 acúmulo de <strong>Juramento da Presa Cerúlea</strong> por segundo."
+      "0": "Quando um membro próximo da equipe desencadeia Redemoinho ou Redemoinho Estelar, Varka obterá 1 acúmulo de <strong>Juramento da Presa Cerúlea</strong>, aumentando o Dano de seu Ataque Normal, Ataque Carregado, Ataque Carregado especial <strong>Devoração Cerúlea</strong> e de sua Habilidade Elemental especial <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Ascensão dos Quatro Ventos</strong></tooltip> em 7.5% por 8s. Esse efeito pode ser acumulado até 4 vezes, e cada personagem pode fazer Varka obter 1 acúmulo de <strong>Juramento da Presa Cerúlea</strong> por segundo."
     }
   },
   "passive3": {
@@ -160,7 +160,7 @@
   "constellation4": {
     "name": "\"Que ninguém tome a liberdade de nossa canção.\"",
     "description": {
-      "0": "Quando Varka desencadear Redemoinho, faz com que todos os membros próximos da equipe obtenham 20% de <anemo>bônus de Dano Anemo</anemo> e o bônus de Dano Elemental correspondente participante da reação por 10s."
+      "0": "Quando Varka desencadear Redemoinho ou Redemoinho Estelar, faz com que todos os membros próximos da equipe obtenham 20% de <anemo>bônus de Dano Anemo</anemo> e o bônus de Dano Elemental correspondente participante da reação por 10s."
     }
   },
   "constellation5": {

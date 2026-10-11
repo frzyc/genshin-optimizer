@@ -1,0 +1,24 @@
+{
+  "name": "Dư Âm Tấm Lòng",
+  "description": {
+    "0": "Pháp khí dùng để ngưng đọng âm thanh, dường như vẫn đang lưu giữ một lời thề về lòng trung thành, cùng một trái tim đã bị người đời lãng quên."
+  },
+  "passiveName": "Tiếng Vọng Lời Thề",
+  "passiveDescription": {
+    "0": {
+      "0": "Kích hoạt phản ứng nguyên tố sẽ tăng <cryo>60</cryo> điểm Tinh Thông Nguyên Tố cho người trang bị trong 12s; Kích hoạt phản ứng Tinh Tú Lấp Lánh, người trang bị sẽ tăng <cryo>16%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh trong 12s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "1": {
+      "0": "Kích hoạt phản ứng nguyên tố sẽ tăng <cryo>75</cryo> điểm Tinh Thông Nguyên Tố cho người trang bị trong 12s; Kích hoạt phản ứng Tinh Tú Lấp Lánh, người trang bị sẽ tăng <cryo>20%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh trong 12s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "2": {
+      "0": "Kích hoạt phản ứng nguyên tố sẽ tăng <cryo>90</cryo> điểm Tinh Thông Nguyên Tố cho người trang bị trong 12s; Kích hoạt phản ứng Tinh Tú Lấp Lánh, người trang bị sẽ tăng <cryo>24%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh trong 12s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "3": {
+      "0": "Kích hoạt phản ứng nguyên tố sẽ tăng <cryo>105</cryo> điểm Tinh Thông Nguyên Tố cho người trang bị trong 12s; Kích hoạt phản ứng Tinh Tú Lấp Lánh, người trang bị sẽ tăng <cryo>28%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh trong 12s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "4": {
+      "0": "Kích hoạt phản ứng nguyên tố sẽ tăng <cryo>120</cryo> điểm Tinh Thông Nguyên Tố cho người trang bị trong 12s; Kích hoạt phản ứng Tinh Tú Lấp Lánh, người trang bị sẽ tăng <cryo>32%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh trong 12s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    }
+  }
+}

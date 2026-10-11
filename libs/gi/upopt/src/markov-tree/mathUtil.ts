@@ -130,8 +130,50 @@ export function rollCountProb(n1234: number[], reshape?: ReshapeInfo) {
   return p_total_equal_min * p_rolls
 }
 
-const rollMuVarCache: Record<string, { mu: number[]; cov: number[][] }> = {}
+/**
+ * Given a list of indices, [i0, i2, ..., ik], return a list of swaps (i, j) that will
+ * place a[0] at i0, a[1] at i1, ..., a[k] at ik.
+ */
+function ixsToSwaps(ixs: number[], nmax: number): number[][] {
+  const tracker = Array.from({ length: nmax }, (_, i) => i)
+
+  const out: number[][] = []
+  ixs.forEach((i, j) => {
+    if (i === tracker[j]) return
+    out.push([i, tracker[j]])
+    swap(tracker, i, j)
+  })
+  return out
+}
+
+function swap<T>(arr: T[], i: number, j: number) {
+  if (i === j) return
+  const tmp = arr[i]
+  arr[i] = arr[j]
+  arr[j] = tmp
+}
+
+/**
+ * Roll-count distribution (mu & cov over the 4 substat slots) of `rollsLeft` upgrade
+ * rolls under reshape guarantees, with the reshaped affixes moved to positions
+ * `reshapeIxs`. Returned arrays are fresh copies, safe to mutate.
+ */
 export function rollCountMuVar(
+  rollsLeft: number,
+  reshapeIxs: number[],
+  reshape: { n: number; min: number }
+): { mu: number[]; cov: number[][] } {
+  const { mu, cov } = _rollCountMuVar(rollsLeft, reshape)
+  ixsToSwaps(reshapeIxs, 4).forEach(([i, j]) => {
+    swap(mu, i, j)
+    swap(cov, i, j)
+    cov.forEach((row) => swap(row, i, j))
+  })
+  return { mu, cov }
+}
+
+const rollMuVarCache: Record<string, { mu: number[]; cov: number[][] }> = {}
+function _rollCountMuVar(
   rollsLeft: number,
   reshape: { n: number; min: number }
 ): { mu: number[]; cov: number[][] } {

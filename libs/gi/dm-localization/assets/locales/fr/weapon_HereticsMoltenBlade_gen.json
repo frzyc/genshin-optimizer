@@ -1,0 +1,24 @@
+{
+  "name": "Lame de lave de l'hérétique",
+  "description": {
+    "0": "Une arme inutilisée depuis longtemps qu'il a ressortie lorsqu'il a aperçu ce dieu des flammes à qui tout le monde avait souhaité du bien la première fois."
+  },
+  "passiveName": "Bénédiction de lumière solitaire",
+  "passiveDescription": {
+    "0": {
+      "0": "Déclencher une compétence élémentaire accorde l'effet Première Lueur au personnage équipé de l'arme : augmente chaque seconde son ATQ d'une valeur comprise entre <cryo>18 %</cryo> et <cryo>36 %</cryo> selon la distance qu'il a parcourue pendant la seconde qui vient de s'écouler. Cet effet dure 14 s, peut être déclenché une fois toutes les 14 s et s'annule lorsque le personnage équipé de l'arme quitte le champ de bataille."
+    },
+    "1": {
+      "0": "Déclencher une compétence élémentaire accorde l'effet Première Lueur au personnage équipé de l'arme : augmente chaque seconde son ATQ d'une valeur comprise entre <cryo>22,5 %</cryo> et <cryo>45 %</cryo> selon la distance qu'il a parcourue pendant la seconde qui vient de s'écouler. Cet effet dure 14 s, peut être déclenché une fois toutes les 14 s et s'annule lorsque le personnage équipé de l'arme quitte le champ de bataille."
+    },
+    "2": {
+      "0": "Déclencher une compétence élémentaire accorde l'effet Première Lueur au personnage équipé de l'arme : augmente chaque seconde son ATQ d'une valeur comprise entre <cryo>27 %</cryo> et <cryo>54 %</cryo> selon la distance qu'il a parcourue pendant la seconde qui vient de s'écouler. Cet effet dure 14 s, peut être déclenché une fois toutes les 14 s et s'annule lorsque le personnage équipé de l'arme quitte le champ de bataille."
+    },
+    "3": {
+      "0": "Déclencher une compétence élémentaire accorde l'effet Première Lueur au personnage équipé de l'arme : augmente chaque seconde son ATQ d'une valeur comprise entre <cryo>31,5 %</cryo> et <cryo>63 %</cryo> selon la distance qu'il a parcourue pendant la seconde qui vient de s'écouler. Cet effet dure 14 s, peut être déclenché une fois toutes les 14 s et s'annule lorsque le personnage équipé de l'arme quitte le champ de bataille."
+    },
+    "4": {
+      "0": "Déclencher une compétence élémentaire accorde l'effet Première Lueur au personnage équipé de l'arme : augmente chaque seconde son ATQ d'une valeur comprise entre <cryo>36 %</cryo> et <cryo>72 %</cryo> selon la distance qu'il a parcourue pendant la seconde qui vient de s'écouler. Cet effet dure 14 s, peut être déclenché une fois toutes les 14 s et s'annule lorsque le personnage équipé de l'arme quitte le champ de bataille."
+    }
+  }
+}
