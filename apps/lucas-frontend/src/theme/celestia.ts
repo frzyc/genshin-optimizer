@@ -21,8 +21,9 @@ export const celestia = {
   faint: '#7E7664',
 } as const
 
-export const displayFont = "'Marcellus SC', 'Times New Roman', serif"
-export const bodyFont = "'Manrope', system-ui, sans-serif"
+// Same family for now; kept apart so brand/navigation can diverge from body text later.
+export const displayFont = "'Outfit', system-ui, sans-serif"
+export const bodyFont = "'Outfit', system-ui, sans-serif"
 
 // The GI theme already expanded every variant with its own fontFamily, so each one is overridden.
 const typographyVariants = [
