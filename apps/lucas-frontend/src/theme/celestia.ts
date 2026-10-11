@@ -27,7 +27,6 @@ export const celestia = {
   toggleOffHover: '#202029',
   chipOn: '#34333F',
   chipOff: '#25242F',
-  goldHover: '#E8C886',
   ornament: '#5A4C33',
   gold: '#D9B26A',
   goldLight: '#F1D9A0',
@@ -168,8 +167,8 @@ const components = {
       root: { fontWeight: 600, border: 0 },
     },
   },
-  // Toggle groups: one continuous bar split by thin dark lines. Selected segments get light
-  // text and a gold underline, like the active navbar item; idle ones are dimmed.
+  // Toggle groups: one continuous bar split by thin dark lines. Selected segments get a lighter
+  // fill and white text, idle ones are dimmed; the gold underline only shows on hover.
   // `&&` doubles the class specificity so these win over SolidToggleButtonGroup's own colors;
   // !important beats MUI's first/middle/last segment rules that reset borders, margins and radii.
   MuiToggleButtonGroup: {
@@ -195,16 +194,16 @@ const components = {
         '&& .MuiToggleButtonGroup-grouped:not(.Mui-selected):hover': {
           backgroundColor: celestia.toggleOffHover,
           color: celestia.muted,
+          boxShadow: `inset 0 -2px 0 ${celestia.gold}`,
         },
         [`&& .MuiToggleButtonGroup-grouped.Mui-selected${notElementButton}`]: {
           backgroundColor: celestia.toggleOn,
           color: '#FFFFFF',
-          boxShadow: `inset 0 -2px 0 ${celestia.gold}`,
         },
         [`&& .MuiToggleButtonGroup-grouped.Mui-selected${notElementButton}:hover`]:
           {
             backgroundColor: celestia.toggleOnHover,
-            boxShadow: `inset 0 -2px 0 ${celestia.goldHover}`,
+            boxShadow: `inset 0 -2px 0 ${celestia.gold}`,
           },
         // count chips inside the segments
         '&& .MuiToggleButtonGroup-grouped .MuiChip-root': {
