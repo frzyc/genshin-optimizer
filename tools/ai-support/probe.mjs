@@ -9,7 +9,8 @@
 //   node tools/ai-support/probe.mjs --url "http://localhost:4200/#/artifacts" \
 //     [--wait-for ".MuiToggleButton-root"] [--before "<js run after load, e.g. close a modal>"] \
 //     [--eval "<js expression>"] [--eval-file f.js] \
-//     [--screenshot out.png] [--width 1600] [--height 1000] [--timeout 60000]
+//     [--screenshot out.png] [--clip "x,y,w,h"] [--scale 2] [--width 1600] [--height 1000] \
+//     [--timeout 60000]
 // Env: PROBE_BROWSER=<path to chrome/edge executable>
 import { spawn } from 'node:child_process'
 import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
@@ -134,7 +135,14 @@ async function main() {
     console.log(JSON.stringify(value, null, 2))
   }
   if (args.screenshot) {
-    const { data } = await send(ws, 'Page.captureScreenshot', { format: 'png' })
+    const [x, y, w, h] = (args.clip ?? '').split(',').map(Number)
+    const clip = args.clip
+      ? { x, y, width: w, height: h, scale: Number(args.scale ?? 2) }
+      : undefined
+    const { data } = await send(ws, 'Page.captureScreenshot', {
+      format: 'png',
+      ...(clip && { clip, captureBeyondViewport: true }),
+    })
     writeFileSync(args.screenshot, Buffer.from(data, 'base64'))
     console.log(`screenshot: ${args.screenshot}`)
   }
