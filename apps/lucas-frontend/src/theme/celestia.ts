@@ -1,37 +1,38 @@
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import { theme as giTheme } from '@genshin-optimizer/gi/theme'
-import { createTheme } from '@mui/material'
+import type { Palette, PaletteColor, ThemeOptions } from '@mui/material'
+import { alpha, createTheme, lighten } from '@mui/material'
 
 /**
- * Celestia design tokens: near-black violet surfaces, gold accents and hairlines.
- * Element/reaction/rarity colors keep coming from the GI theme.
+ * Celestia design tokens: cool near-black surfaces with neutral hairlines; gold is an
+ * accent only (brand, active navigation, focus, sliders). Element/reaction/rarity
+ * colors keep coming from the GI theme.
  */
 export const celestia = {
-  night: '#070609',
-  header: '#0B0A0F',
-  stoneDark: '#0C0A10',
-  stone: '#0F0D14',
-  stoneLight: '#17141F',
-  stoneHover: '#1D1925',
-  cardBorder: '#231E18',
-  hairline: '#352D22',
-  hairlineSoft: '#1A1720',
-  ornament: '#4A3F2C',
-  goldTint: '#1B1710',
-  goldTintStrong: '#2A2214',
+  night: '#09090D',
+  header: '#0D0D12',
+  stoneDark: '#0F0F15',
+  stone: '#14141B',
+  stoneLight: '#1B1B24',
+  stoneHover: '#22222D',
+  selected: '#2A2936',
+  hairline: '#25242F',
+  hairlineSoft: '#1C1B24',
+  hairlineStrong: '#363445',
+  ornament: '#5A4C33',
   gold: '#D9B26A',
   goldLight: '#F1D9A0',
   goldInk: '#17130B',
-  text: '#EFE9DC',
-  muted: '#ADA48F',
-  faint: '#7E7664',
+  text: '#E9E7EF',
+  muted: '#A3A0B3',
+  faint: '#827F96',
 } as const
 
 // Same family for now; kept apart so brand/navigation can diverge from body text later.
 export const displayFont = "'Outfit', system-ui, sans-serif"
 export const bodyFont = "'Outfit', system-ui, sans-serif"
 
-const radius = 2
+const radius = 4
 
 // The GI theme already expanded every variant with its own fontFamily, so each one is overridden.
 const typographyVariants = [
@@ -53,8 +54,24 @@ const typographyVariants = [
 const color = (main: string, name: string, contrastText?: string) =>
   giTheme.palette.augmentColor({ color: { main, contrastText }, name })
 
+/** A palette color that can be tinted, or undefined for "inherit"/"default"/custom strings. */
+function paletteColor(palette: Palette, key: unknown) {
+  const pc = palette[key as keyof Palette] as PaletteColor | undefined
+  return pc && typeof pc === 'object' && 'main' in pc ? pc : undefined
+}
+
+/** Tonal fill: a faint tint of the color with readable colored text, instead of a solid block. */
+const tonal = (main: string, strength = 0.16) => ({
+  backgroundColor: alpha(main, strength),
+  color: lighten(main, 0.35),
+})
+const neutralFill = {
+  backgroundColor: celestia.stoneHover,
+  color: celestia.muted,
+}
+
 // Element filters color their selected button with the element itself; every other
-// toggle group gets the gold selection. Element buttons are told apart by their value.
+// toggle group gets the neutral selection. Element buttons are told apart by their value.
 const notElementButton = allElementWithPhyKeys
   .map((ele) => `:not([value="${ele}"])`)
   .join('')
@@ -65,19 +82,199 @@ const popupPaper = {
   border: `1px solid ${celestia.hairline}`,
 }
 
+const components = {
+  MuiCssBaseline: {
+    styleOverrides: {
+      body: {
+        backgroundColor: celestia.night,
+        scrollbarColor: `${celestia.hairlineStrong} ${celestia.night}`,
+      },
+      '::selection': {
+        backgroundColor: alpha(celestia.gold, 0.35),
+        color: celestia.text,
+      },
+    },
+  },
+  MuiPaper: {
+    styleOverrides: { root: { backgroundImage: 'none' } },
+  },
+  MuiButton: {
+    styleOverrides: {
+      root: { fontWeight: 600 },
+      contained: ({ ownerState, theme }: any) => {
+        if (ownerState.color === 'secondary')
+          return {
+            ...neutralFill,
+            color: celestia.text,
+            boxShadow: `inset 0 0 0 1px ${celestia.hairlineStrong}`,
+            '&:hover': {
+              backgroundColor: celestia.selected,
+              boxShadow: `inset 0 0 0 1px ${celestia.hairlineStrong}`,
+            },
+          }
+        const pc = paletteColor(theme.palette, ownerState.color ?? 'primary')
+        if (!pc) return {}
+        return {
+          ...tonal(pc.main),
+          boxShadow: `inset 0 0 0 1px ${alpha(pc.main, 0.32)}`,
+          '&:hover': {
+            backgroundColor: alpha(pc.main, 0.26),
+            boxShadow: `inset 0 0 0 1px ${alpha(pc.main, 0.45)}`,
+          },
+        }
+      },
+      outlined: { borderColor: celestia.hairline },
+    },
+  },
+  MuiButtonGroup: {
+    styleOverrides: {
+      root: { boxShadow: 'none' },
+      // dark gaps between grouped buttons instead of light separator lines
+      grouped: { borderColor: `${celestia.night} !important` },
+    },
+  },
+  MuiChip: {
+    styleOverrides: {
+      root: ({ ownerState, theme }: any) => {
+        const base = { borderRadius: radius, fontWeight: 600 }
+        if (ownerState.variant === 'outlined')
+          return { ...base, borderColor: celestia.hairline }
+        if (ownerState.color === 'secondary') return { ...base, ...neutralFill }
+        const pc =
+          ownerState.color !== 'default' &&
+          paletteColor(theme.palette, ownerState.color)
+        return pc ? { ...base, ...tonal(pc.main, 0.2) } : base
+      },
+    },
+  },
+  // Custom styled component from common/ui (name: 'SqBadge'): same tonal treatment as chips.
+  SqBadge: {
+    styleOverrides: {
+      root: ({ theme, color = 'primary' }: any) => {
+        if (color === 'secondary') return neutralFill
+        const pc = paletteColor(theme.palette, color)
+        return pc ? tonal(pc.main, 0.2) : {}
+      },
+    },
+  },
+  MuiToggleButton: {
+    styleOverrides: {
+      root: { fontWeight: 600, borderColor: celestia.night },
+    },
+  },
+  MuiToggleButtonGroup: {
+    styleOverrides: {
+      // `&&` doubles the class specificity so these win over SolidToggleButtonGroup's own colors.
+      root: {
+        // dark gaps between segments instead of light separator lines
+        '&& .MuiToggleButtonGroup-grouped': {
+          borderColor: celestia.night,
+        },
+        '&& .MuiToggleButtonGroup-grouped:not(.Mui-selected)': {
+          backgroundColor: celestia.stone,
+          color: celestia.faint,
+        },
+        '&& .MuiToggleButtonGroup-grouped:not(.Mui-selected):hover': {
+          backgroundColor: celestia.stoneHover,
+          color: celestia.muted,
+        },
+        [`&& .MuiToggleButtonGroup-grouped.Mui-selected${notElementButton}`]: {
+          backgroundColor: celestia.selected,
+          color: '#FFFFFF',
+        },
+        [`&& .MuiToggleButtonGroup-grouped.Mui-selected${notElementButton}:hover`]:
+          {
+            backgroundColor: '#33323F',
+          },
+      },
+    },
+  },
+  MuiOutlinedInput: {
+    styleOverrides: {
+      root: {
+        backgroundColor: 'transparent',
+        '& .MuiOutlinedInput-notchedOutline': {
+          borderColor: celestia.hairline,
+        },
+        '&:hover .MuiOutlinedInput-notchedOutline': {
+          borderColor: celestia.hairlineStrong,
+        },
+        '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+          borderColor: celestia.gold,
+        },
+      },
+    },
+  },
+  MuiTabs: {
+    styleOverrides: {
+      indicator: { backgroundColor: celestia.gold, height: 2 },
+    },
+  },
+  MuiTab: {
+    styleOverrides: {
+      root: {
+        fontFamily: displayFont,
+        fontWeight: 600,
+        letterSpacing: '1px',
+        textTransform: 'uppercase',
+        color: celestia.muted,
+        '&.Mui-selected': { color: celestia.goldLight },
+      },
+    },
+  },
+  MuiPopover: {
+    styleOverrides: { paper: popupPaper },
+  },
+  MuiAutocomplete: {
+    styleOverrides: { paper: popupPaper },
+  },
+  MuiMenuItem: {
+    styleOverrides: {
+      root: {
+        '&.Mui-selected': { backgroundColor: celestia.stoneHover },
+        '&.Mui-selected:hover': { backgroundColor: celestia.selected },
+      },
+    },
+  },
+  MuiTooltip: {
+    styleOverrides: {
+      tooltip: {
+        backgroundColor: celestia.header,
+        border: `1px solid ${celestia.hairline}`,
+        color: celestia.text,
+        fontSize: 13,
+      },
+      arrow: { color: celestia.header },
+    },
+  },
+  MuiAccordion: {
+    styleOverrides: {
+      root: {
+        backgroundColor: celestia.stone,
+        '&::before': { display: 'none' },
+      },
+    },
+  },
+  MuiSkeleton: {
+    styleOverrides: {
+      root: { backgroundColor: 'rgba(255, 255, 255, 0.05)' },
+    },
+  },
+} as ThemeOptions['components']
+
 export const theme = createTheme(giTheme, {
   shape: { borderRadius: radius },
   palette: {
     background: { default: celestia.night, paper: celestia.stone },
     text: { primary: celestia.text, secondary: celestia.muted },
-    divider: celestia.hairlineSoft,
+    divider: celestia.hairline,
     common: { black: celestia.header },
     primary: color(celestia.gold, 'primary', celestia.goldInk),
-    secondary: color('#2C2620', 'secondary', celestia.text),
-    info: color('#7AA7D1', 'info'),
-    success: color('#5FB88A', 'success'),
-    warning: color('#E8A33D', 'warning'),
-    error: color('#D9604C', 'error'),
+    secondary: color('#2A2936', 'secondary', celestia.text),
+    info: color('#5BA7E8', 'info'),
+    success: color('#4FC48E', 'success'),
+    warning: color('#F0B44C', 'warning'),
+    error: color('#F0675A', 'error'),
     contentDark: color(celestia.stoneDark, 'contentDark'),
     contentNormal: color(celestia.stone, 'contentNormal'),
     contentLight: color(celestia.stoneLight, 'contentLight'),
@@ -92,157 +289,5 @@ export const theme = createTheme(giTheme, {
       typographyVariants.map((variant) => [variant, { fontFamily: bodyFont }])
     ),
   },
-  components: {
-    MuiCssBaseline: {
-      styleOverrides: {
-        body: {
-          backgroundColor: celestia.night,
-          scrollbarColor: `${celestia.ornament} ${celestia.night}`,
-        },
-        '::selection': {
-          backgroundColor: celestia.gold,
-          color: celestia.goldInk,
-        },
-      },
-    },
-    MuiPaper: {
-      styleOverrides: { root: { backgroundImage: 'none' } },
-    },
-    MuiCard: {
-      styleOverrides: {
-        root: { border: `1px solid ${celestia.cardBorder}` },
-      },
-    },
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          fontWeight: 700,
-          boxShadow: 'none',
-          '&:hover': { boxShadow: 'none' },
-        },
-        outlined: { borderColor: celestia.hairline },
-      },
-    },
-    MuiButtonGroup: {
-      styleOverrides: { root: { boxShadow: 'none' } },
-    },
-    MuiChip: {
-      styleOverrides: {
-        root: { borderRadius: radius, fontWeight: 600 },
-        outlined: { borderColor: celestia.hairline },
-      },
-    },
-    MuiToggleButton: {
-      styleOverrides: {
-        root: {
-          fontWeight: 600,
-          borderColor: celestia.hairline,
-        },
-      },
-    },
-    MuiToggleButtonGroup: {
-      styleOverrides: {
-        // `&&` doubles the class specificity so these win over SolidToggleButtonGroup's own colors.
-        root: {
-          '&& .MuiToggleButtonGroup-grouped': {
-            borderColor: celestia.hairline,
-          },
-          '&& .MuiToggleButtonGroup-grouped:not(.Mui-selected)': {
-            backgroundColor: celestia.stone,
-            color: celestia.faint,
-          },
-          '&& .MuiToggleButtonGroup-grouped:not(.Mui-selected):hover': {
-            backgroundColor: celestia.stoneHover,
-            color: celestia.muted,
-          },
-          [`&& .MuiToggleButtonGroup-grouped.Mui-selected${notElementButton}`]:
-            {
-              backgroundColor: celestia.goldTintStrong,
-              color: celestia.goldLight,
-            },
-          [`&& .MuiToggleButtonGroup-grouped.Mui-selected${notElementButton}:hover`]:
-            {
-              backgroundColor: '#352A18',
-            },
-        },
-      },
-    },
-    MuiOutlinedInput: {
-      styleOverrides: {
-        root: {
-          backgroundColor: celestia.night,
-          '& .MuiOutlinedInput-notchedOutline': {
-            borderColor: celestia.hairline,
-          },
-          '&:hover .MuiOutlinedInput-notchedOutline': {
-            borderColor: celestia.ornament,
-          },
-          '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-            borderColor: celestia.gold,
-          },
-        },
-      },
-    },
-    MuiTabs: {
-      styleOverrides: {
-        indicator: { backgroundColor: celestia.gold, height: 2 },
-      },
-    },
-    MuiTab: {
-      styleOverrides: {
-        root: {
-          fontFamily: displayFont,
-          fontWeight: 600,
-          letterSpacing: '1px',
-          textTransform: 'uppercase',
-          color: celestia.muted,
-          '&.Mui-selected': { color: celestia.goldLight },
-        },
-      },
-    },
-    MuiPopover: {
-      styleOverrides: { paper: popupPaper },
-    },
-    MuiAutocomplete: {
-      styleOverrides: { paper: popupPaper },
-    },
-    MuiMenuItem: {
-      styleOverrides: {
-        root: {
-          '&.Mui-selected': { backgroundColor: celestia.goldTint },
-          '&.Mui-selected:hover': { backgroundColor: celestia.goldTintStrong },
-        },
-      },
-    },
-    MuiTooltip: {
-      styleOverrides: {
-        tooltip: {
-          backgroundColor: celestia.header,
-          border: `1px solid ${celestia.hairline}`,
-          color: celestia.text,
-          fontSize: 13,
-        },
-        arrow: { color: celestia.header },
-      },
-    },
-    MuiDialog: {
-      styleOverrides: {
-        paper: { border: `1px solid ${celestia.hairline}` },
-      },
-    },
-    MuiAccordion: {
-      styleOverrides: {
-        root: {
-          backgroundColor: celestia.stone,
-          border: `1px solid ${celestia.cardBorder}`,
-          '&::before': { display: 'none' },
-        },
-      },
-    },
-    MuiSkeleton: {
-      styleOverrides: {
-        root: { backgroundColor: 'rgba(241, 217, 160, 0.06)' },
-      },
-    },
-  },
+  components,
 })
