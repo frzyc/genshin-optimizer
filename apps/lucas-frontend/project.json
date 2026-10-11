@@ -1,0 +1,19 @@
+{
+  "name": "lucas-frontend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/lucas-frontend/src",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project lucas-frontend --web",
+  "targets": {
+    "build": {
+      "cache": false
+    }
+  },
+  "implicitDependencies": [
+    "common-localization",
+    "gi-localization",
+    "gi-dm-localization",
+    "gi-silly-wisher-names"
+  ]
+}

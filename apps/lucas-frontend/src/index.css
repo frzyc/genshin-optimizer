@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+a {
+  font-family: monospace;
+  color: white;
+}
+
+/* Use Margin to move the google intent ad up so it does not overlap the footer */
+#google-anno-sa {
+  margin-bottom: 20px !important;
+}

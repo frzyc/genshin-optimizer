@@ -6,6 +6,7 @@
   "scripts": {
     "preinstall": "node tools/scripts/check-node.mjs",
     "frontend": "nx serve frontend",
+    "lucas": "nx serve lucas-frontend",
     "somnia": "nx serve somnia",
     "build-all": "nx run-many -t build",
     "mini-ci": "nx affected -t format && nx affected -t typecheck && nx affected -t lint && CI=true nx affected -t test",
