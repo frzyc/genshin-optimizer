@@ -1,6 +1,7 @@
 import { AppBar, Box, Skeleton, Typography } from '@mui/material'
 import { Suspense } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+import { celestia } from '../theme/celestia'
 
 declare const __VERSION__: string
 export default function Footer() {
@@ -16,7 +17,11 @@ function FooterContent() {
     <AppBar
       component="footer"
       position="static"
-      sx={{ bgcolor: 'neutral800.main' }}
+      sx={{
+        bgcolor: celestia.header,
+        backgroundImage: 'none',
+        borderTop: `1px solid ${celestia.hairline}`,
+      }}
       elevation={0}
     >
       <Box
@@ -27,7 +32,7 @@ function FooterContent() {
       >
         <Typography
           variant="caption"
-          sx={{ color: 'neutral400.main', textAlign: 'right' }}
+          sx={{ color: celestia.faint, textAlign: 'right' }}
         >
           <Trans
             t={t}

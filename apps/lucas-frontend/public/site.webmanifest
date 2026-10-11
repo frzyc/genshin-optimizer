@@ -1,19 +1,14 @@
 {
   "name": "Genshin Optimizer",
-  "short_name": "GO",
+  "short_name": "Optimizer",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
   ],
-  "theme_color": "#1b263b",
-  "background_color": "#0C1020",
+  "theme_color": "#070609",
+  "background_color": "#070609",
   "display": "standalone"
 }

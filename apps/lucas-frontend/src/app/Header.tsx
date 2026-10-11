@@ -1,146 +1,117 @@
 import { useDataManagerKeys } from '@genshin-optimizer/common/database-ui'
-import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
-import { Tally } from '@genshin-optimizer/common/ui'
 import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import { useDatabase, useDBMeta } from '@genshin-optimizer/gi/db-ui'
-import { FlowerIcon } from '@genshin-optimizer/gi/svgicons'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
-import ArticleIcon from '@mui/icons-material/Article'
-import BookIcon from '@mui/icons-material/Book'
-import ConstructionIcon from '@mui/icons-material/Construction'
-import GroupsIcon from '@mui/icons-material/Groups'
 import MenuIcon from '@mui/icons-material/Menu'
-import PeopleIcon from '@mui/icons-material/People'
-import SettingsIcon from '@mui/icons-material/Settings'
 import {
   AppBar,
-  Avatar,
   Box,
-  Button,
-  Chip,
   Drawer,
   IconButton,
   Skeleton,
-  Tab,
-  Tabs,
   Toolbar,
-  Tooltip,
-  Typography,
   useMediaQuery,
   useTheme,
 } from '@mui/material'
-import type { ReactElement, ReactNode } from 'react'
-import { Suspense, useContext, useState } from 'react'
+import type { ReactNode } from 'react'
+import { Fragment, Suspense, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useMatch } from 'react-router-dom'
-import go_icon from './go_icon.png'
-import silly_icon from './silly_icon.png'
+import { bodyFont, celestia, displayFont } from '../theme/celestia'
 
-type ITab = {
+type NavItem = {
   i18Key: string
-  icon: ReactNode
   to: string
   value: string
-  textSuffix?: ReactNode
-}
-const artifacts: ITab = {
-  i18Key: 'tabs.artifacts',
-  icon: <FlowerIcon />,
-  to: '/artifacts',
-  value: 'artifacts',
-  textSuffix: <ArtifactChip key="weaponAdd" />,
-}
-const weapons: ITab = {
-  i18Key: 'tabs.weapons',
-  icon: <AnvilIcon />,
-  to: '/weapons',
-  value: 'weapons',
-  textSuffix: <WeaponChip key="weaponAdd" />,
-}
-const archive: ITab = {
-  i18Key: 'tabs.archive',
-  icon: <BookIcon />,
-  to: '/archive',
-  value: 'archive',
-}
-const characters: ITab = {
-  i18Key: 'tabs.characters',
-  icon: <PeopleIcon />,
-  to: '/characters',
-  value: 'characters',
-  textSuffix: <CharacterChip key="charAdd" />,
-}
-const teams: ITab = {
-  i18Key: 'tabs.teams',
-  icon: <GroupsIcon />,
-  to: '/teams',
-  value: 'teams',
-  textSuffix: <TeamChip key="charAdd" />,
-}
-const tools: ITab = {
-  i18Key: 'tabs.tools',
-  icon: <ConstructionIcon />,
-  to: '/tools',
-  value: 'tools',
-}
-const doc: ITab = {
-  i18Key: 'tabs.doc',
-  icon: <ArticleIcon />,
-  to: '/doc',
-  value: 'doc',
-}
-const setting: ITab = {
-  i18Key: 'tabs.setting',
-  icon: <SettingsIcon />,
-  to: '/setting',
-  value: 'setting',
-  textSuffix: <DBChip />,
+  count?: ReactNode
 }
 
-function DBChip() {
-  const { name } = useDBMeta()
-  return <Chip label={name} />
+const navItems: NavItem[] = [
+  {
+    i18Key: 'tabs.artifacts',
+    to: '/artifacts',
+    value: 'artifacts',
+    count: <ArtifactCount />,
+  },
+  {
+    i18Key: 'tabs.weapons',
+    to: '/weapons',
+    value: 'weapons',
+    count: <WeaponCount />,
+  },
+  {
+    i18Key: 'tabs.characters',
+    to: '/characters',
+    value: 'characters',
+    count: <CharacterCount />,
+  },
+  { i18Key: 'tabs.teams', to: '/teams', value: 'teams', count: <TeamCount /> },
+  { i18Key: 'tabs.archive', to: '/archive', value: 'archive' },
+  { i18Key: 'tabs.tools', to: '/tools', value: 'tools' },
+  { i18Key: 'tabs.doc', to: '/doc', value: 'doc' },
+  { i18Key: 'tabs.setting', to: '/setting', value: 'setting' },
+]
+
+function ArtifactCount() {
+  const database = useDatabase()
+  return (
+    <span className="nav-count">
+      {useDataManagerKeys(database.arts).length}
+    </span>
+  )
+}
+function WeaponCount() {
+  const database = useDatabase()
+  return (
+    <span className="nav-count">
+      {useDataManagerKeys(database.weapons).length}
+    </span>
+  )
+}
+function CharacterCount() {
+  const database = useDatabase()
+  return (
+    <span className="nav-count">
+      {useDataManagerKeys(database.chars).length}
+    </span>
+  )
+}
+function TeamCount() {
+  const database = useDatabase()
+  return (
+    <span className="nav-count">
+      {useDataManagerKeys(database.teams).length}
+    </span>
+  )
 }
 
-function ArtifactChip() {
-  const database = useDatabase()
-  return <Tally>{useDataManagerKeys(database.arts).length}</Tally>
-}
-function CharacterChip() {
-  const database = useDatabase()
-  return <Tally>{useDataManagerKeys(database.chars).length}</Tally>
-}
-function TeamChip() {
-  const database = useDatabase()
-  return <Tally>{useDataManagerKeys(database.teams).length}</Tally>
-}
-function WeaponChip() {
-  const database = useDatabase()
-  return <Tally>{useDataManagerKeys(database.weapons).length}</Tally>
-}
+const countSx = (active: boolean) => ({
+  fontFamily: bodyFont,
+  fontSize: 12,
+  fontWeight: active ? 700 : 600,
+  letterSpacing: 0,
+  color: active ? celestia.gold : celestia.faint,
+})
 
 export default function Header({ anchor }: { anchor: string }) {
   return (
-    <Suspense fallback={<Skeleton variant="rectangular" height={56} />}>
+    <Suspense
+      fallback={
+        <Skeleton
+          variant="rectangular"
+          height={103}
+          sx={{ bgcolor: celestia.header }}
+        />
+      }
+    >
       <HeaderContent anchor={anchor} />
     </Suspense>
   )
 }
 
-const maincontent = [
-  artifacts,
-  weapons,
-  characters,
-  teams,
-  archive,
-  tools,
-  doc,
-  setting,
-] as const
 function HeaderContent({ anchor }: { anchor: string }) {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
-
   const {
     params: { currentTab },
   } = useMatch({ path: '/:currentTab', end: false }) ?? {
@@ -150,6 +121,90 @@ function HeaderContent({ anchor }: { anchor: string }) {
     return <MobileHeader anchor={anchor} currentTab={currentTab ?? ''} />
   return <DesktopHeader anchor={anchor} currentTab={currentTab ?? ''} />
 }
+
+function Wordmark({ onClick }: { onClick?: () => void }) {
+  const { t } = useTranslation('ui')
+  const { silly } = useContext(SillyContext)
+  return (
+    <Box
+      component={RouterLink}
+      to="/"
+      onClick={onClick}
+      sx={{
+        display: 'flex',
+        alignItems: 'baseline',
+        gap: 1,
+        fontFamily: displayFont,
+        fontSize: { xs: 17, md: 19 },
+        letterSpacing: '3px',
+        color: celestia.goldLight,
+        textDecoration: 'none',
+        whiteSpace: 'nowrap',
+      }}
+    >
+      {t(silly ? 'sillyPageTitle' : 'pageTitle')}
+      {shouldShowDevComponents && (
+        <Box
+          component="span"
+          sx={{
+            fontFamily: bodyFont,
+            fontSize: 12,
+            letterSpacing: 0,
+            color: celestia.faint,
+          }}
+        >
+          (Dev Mode)
+        </Box>
+      )}
+    </Box>
+  )
+}
+
+function DatabaseButton({ onClick }: { onClick?: () => void }) {
+  const { name } = useDBMeta()
+  return (
+    <Box
+      component={RouterLink}
+      to="/setting"
+      onClick={onClick}
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        height: 34,
+        px: 1.75,
+        border: `1px solid ${celestia.gold}`,
+        color: celestia.goldLight,
+        fontFamily: displayFont,
+        fontSize: 13,
+        letterSpacing: '1.5px',
+        textDecoration: 'none',
+        whiteSpace: 'nowrap',
+        transition: 'background-color 0.2s',
+        '&:hover': { bgcolor: '#1B1710' },
+      }}
+    >
+      {name}
+    </Box>
+  )
+}
+
+function Diamond() {
+  return (
+    <Box
+      component="span"
+      aria-hidden="true"
+      sx={{
+        alignSelf: 'center',
+        flexShrink: 0,
+        width: 5,
+        height: 5,
+        transform: 'rotate(45deg)',
+        bgcolor: celestia.ornament,
+      }}
+    />
+  )
+}
+
 function DesktopHeader({
   anchor,
   currentTab,
@@ -157,104 +212,78 @@ function DesktopHeader({
   anchor: string
   currentTab: string
 }) {
-  const theme = useTheme()
-  const isXL = useMediaQuery(theme.breakpoints.up('xl'))
   const { t } = useTranslation('ui')
-  const { silly } = useContext(SillyContext)
   return (
     <AppBar
       position="static"
-      sx={{ bgcolor: 'neutral900.main' }}
       elevation={0}
       id={anchor}
+      sx={{
+        bgcolor: celestia.header,
+        backgroundImage: 'none',
+        borderBottom: `1px solid ${celestia.hairline}`,
+      }}
     >
-      <Tabs
-        value={currentTab}
-        sx={(theme) => ({
-          '& .MuiTab-root': {
-            p: 1,
-            minWidth: 'auto',
-            minHeight: 'auto',
-          },
-          '& .MuiTab-root:hover': {
-            transition: 'background-color 0.5s ease',
-            backgroundColor: 'rgba(255,255,255,0.1)',
-          },
-          '& .Mui-selected': {
-            backgroundImage: `linear-gradient(to top, ${theme.palette.brand500.main}, ${theme.palette.neutral700.main})`,
-            color: `${theme.palette.neutral100.main} !important`,
-            textShadow:
-              '0.25px 0 0 currentColor, -0.25px 0 0 currentColor, 0 0.25px 0 currentColor, 0 -0.25px 0',
-          },
-        })}
+      <Box
+        sx={{ height: 56, display: 'flex', alignItems: 'center', gap: 2, px: 3.5 }}
       >
-        <Tab
-          value=""
-          component={RouterLink}
-          to="/"
-          label={
-            <Box display="flex" alignItems="center">
-              <Avatar
-                src={silly ? silly_icon : go_icon}
-                variant="rounded"
-                sx={(theme) => ({
-                  height: '24px',
-                  width: '24px',
-                  boxShadow: `0 0 10px 1px ${theme.palette.brand500.main}`,
-                })}
-              />
-              <Typography variant="h6" sx={{ px: 1, fontWeight: 'Normal' }}>
-                {t(silly ? 'sillyPageTitle' : 'pageTitle')}
-              </Typography>
-              {shouldShowDevComponents && (
-                <Typography variant="body1">(Dev Mode)</Typography>
-              )}
-            </Box>
-          }
-        />
-        {maincontent.map(({ i18Key, value, to, icon, textSuffix }) => {
-          const tooltipIcon = isXL ? (
-            icon
-          ) : (
-            <Tooltip arrow title={t(i18Key)}>
-              {icon as JSX.Element}
-            </Tooltip>
-          )
+        <Wordmark />
+        <Box flexGrow={1} />
+        <DatabaseButton />
+      </Box>
+      <Box
+        component="nav"
+        aria-label="Navegação principal"
+        sx={{
+          height: 46,
+          display: 'flex',
+          alignItems: 'stretch',
+          justifyContent: 'center',
+          gap: 0.75,
+          borderTop: `1px solid ${celestia.hairlineSoft}`,
+          overflowX: 'auto',
+        }}
+      >
+        {navItems.map(({ i18Key, to, value, count }, i) => {
+          const active = value === currentTab
           return (
-            <Tab
-              key={value}
-              value={value}
-              component={RouterLink}
-              to={to}
-              icon={tooltipIcon as ReactElement}
-              iconPosition="start"
-              label={
-                isXL || textSuffix ? (
-                  <Box display="flex" gap={0.5} alignItems="center">
-                    {isXL && <Typography>{t(i18Key)}</Typography>}
-                    {textSuffix}
-                  </Box>
-                ) : undefined
-              }
-              sx={{ ml: value === 'setting' ? 'auto' : undefined }}
-            />
+            <Fragment key={value}>
+              {i > 0 && <Diamond />}
+              <Box
+                component={RouterLink}
+                to={to}
+                aria-current={active ? 'page' : undefined}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 1,
+                  px: { md: 1.25, lg: 2 },
+                  fontFamily: displayFont,
+                  fontSize: 14,
+                  letterSpacing: { md: '1px', lg: '2px' },
+                  whiteSpace: 'nowrap',
+                  textDecoration: 'none',
+                  color: active ? celestia.goldLight : celestia.muted,
+                  boxShadow: active ? `inset 0 -2px 0 ${celestia.gold}` : 'none',
+                  transition: 'color 0.2s',
+                  '&:hover': { color: celestia.goldLight },
+                  '& .nav-count': {
+                    ...countSx(active),
+                    display: { md: 'none', lg: 'inline' },
+                  },
+                }}
+              >
+                {t(i18Key)}
+                {count}
+              </Box>
+            </Fragment>
           )
         })}
-      </Tabs>
+      </Box>
     </AppBar>
   )
 }
 
-const mobileContent = [
-  artifacts,
-  weapons,
-  characters,
-  teams,
-  archive,
-  tools,
-  doc,
-  setting,
-] as const
 function MobileHeader({
   anchor,
   currentTab,
@@ -262,139 +291,96 @@ function MobileHeader({
   anchor: string
   currentTab: string
 }) {
-  const [mobileOpen, setMobileOpen] = useState(false)
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen)
-  }
-
+  const [open, setOpen] = useState(false)
   const { t } = useTranslation('ui')
-  const { silly } = useContext(SillyContext)
+  const close = () => setOpen(false)
   return (
     <>
       <AppBar
         position="fixed"
-        sx={{ bgcolor: 'neutral900.main' }}
         elevation={0}
+        sx={{
+          bgcolor: celestia.header,
+          backgroundImage: 'none',
+          borderBottom: `1px solid ${celestia.hairline}`,
+        }}
       >
-        <Drawer
-          anchor="right"
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          PaperProps={{
-            sx: (theme) => ({
-              // backgroundColor: 'neutral700.main',
-              backgroundImage: `linear-gradient(to right, ${theme.palette.neutral700.main}, ${theme.palette.neutral700.main})`,
-            }),
-          }}
-        >
-          <Tabs
-            value={currentTab}
-            orientation="vertical"
-            variant="scrollable"
-            scrollButtons={false}
-            TabIndicatorProps={{
-              sx: {
-                left: 0,
-                width: '4px',
-              },
-            }}
-            sx={(theme) => ({
-              '& .Mui-selected': {
-                backgroundImage: `linear-gradient(to right, ${theme.palette.brand500.main}, ${theme.palette.neutral700.main})`,
-                color: `${theme.palette.neutral100.main} !important`,
-                textShadow:
-                  '0.1px 0 0 currentColor, -0.1px 0 0 currentColor, 0 0.1px 0 currentColor, 0 -0.1px 0',
-              },
-            })}
-          >
-            <Tab
-              value=""
-              component={RouterLink}
-              to={'/'}
-              onClick={handleDrawerToggle}
-              icon={
-                <Avatar
-                  src={silly ? silly_icon : go_icon}
-                  variant="rounded"
-                  sx={(theme) => ({
-                    height: '24px',
-                    width: '24px',
-                    boxShadow: `0 0 10px 1px ${theme.palette.brand500.main}`,
-                  })}
-                />
-              }
-              iconPosition="start"
-              label={
-                <Typography>
-                  {silly ? t('sillyPageTitle') : t('pageTitle')}
-                </Typography>
-              }
-            />
-            {mobileContent.map(({ i18Key, value, to, icon, textSuffix }) => (
-              <Tab
-                key={value}
-                value={value}
-                component={RouterLink}
-                to={to}
-                onClick={handleDrawerToggle}
-                icon={icon as ReactElement}
-                iconPosition="start"
-                label={
-                  <Box display="flex" gap={0.5} alignItems="center">
-                    <Typography>{t(i18Key)}</Typography>
-                    {textSuffix}
-                  </Box>
-                }
-                sx={{ justifyContent: 'flex-start' }}
-              />
-            ))}
-          </Tabs>
-        </Drawer>
-        <Toolbar>
-          <Button
-            variant="text"
-            sx={(theme) => ({
-              color: `${theme.palette.neutral200.main} !important`,
-            })}
-            component={RouterLink}
-            to="/"
-            startIcon={
-              <Avatar
-                src={silly ? silly_icon : go_icon}
-                variant="rounded"
-                sx={(theme) => ({
-                  height: '24px',
-                  width: '24px',
-                  boxShadow: `0 0 10px 1px ${theme.palette.brand500.main}`,
-                })}
-              />
-            }
-          >
-            <Typography variant="h6" noWrap component="div" sx={{ px: 1 }}>
-              {silly ? t('sillyPageTitle') : t('pageTitle')}
-            </Typography>
-            {shouldShowDevComponents ? (
-              <Typography variant="body1">(Dev Mode)</Typography>
-            ) : undefined}
-          </Button>
+        <Toolbar sx={{ gap: 1 }}>
+          <Wordmark />
           <Box flexGrow={1} />
           <IconButton
-            color="inherit"
-            aria-label="open drawer"
+            aria-label="Abrir menu"
             edge="end"
-            onClick={handleDrawerToggle}
-            size="large"
+            onClick={() => setOpen(true)}
+            sx={{ color: celestia.goldLight }}
           >
             <MenuIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
-      {/* add a blank toolbar to keep space and provide a scroll anchor */}
+      <Drawer
+        anchor="right"
+        open={open}
+        onClose={close}
+        ModalProps={{ keepMounted: true }}
+        PaperProps={{
+          sx: {
+            minWidth: 260,
+            bgcolor: celestia.header,
+            backgroundImage: 'none',
+            borderLeft: `1px solid ${celestia.hairline}`,
+          },
+        }}
+      >
+        <Box
+          component="nav"
+          aria-label="Navegação principal"
+          sx={{ display: 'flex', flexDirection: 'column', py: 2 }}
+        >
+          <Box
+            sx={{
+              display: 'flex',
+              px: 3,
+              pb: 2,
+              mb: 1,
+              borderBottom: `1px solid ${celestia.hairlineSoft}`,
+            }}
+          >
+            <DatabaseButton onClick={close} />
+          </Box>
+          {navItems.map(({ i18Key, to, value, count }) => {
+            const active = value === currentTab
+            return (
+              <Box
+                key={value}
+                component={RouterLink}
+                to={to}
+                onClick={close}
+                aria-current={active ? 'page' : undefined}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: 2,
+                  px: 3,
+                  py: 1.5,
+                  fontFamily: displayFont,
+                  fontSize: 15,
+                  letterSpacing: '2px',
+                  textDecoration: 'none',
+                  color: active ? celestia.goldLight : celestia.muted,
+                  boxShadow: active ? `inset 3px 0 0 ${celestia.gold}` : 'none',
+                  '& .nav-count': countSx(active),
+                }}
+              >
+                {t(i18Key)}
+                {count}
+              </Box>
+            )
+          })}
+        </Box>
+      </Drawer>
+      {/* blank toolbar keeps the space under the fixed bar and serves as the scroll anchor */}
       <Toolbar id={anchor} />
     </>
   )

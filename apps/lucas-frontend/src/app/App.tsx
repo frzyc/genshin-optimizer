@@ -2,7 +2,6 @@ import { ScrollTop, useTitle } from '@genshin-optimizer/common/ui'
 import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
 import '@genshin-optimizer/gi/i18n' // import to load translations
-import { theme } from '@genshin-optimizer/gi/theme'
 import {
   SillyContext,
   SnowContext,
@@ -22,6 +21,7 @@ import { lazy, Suspense, useCallback, useMemo } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import './App.scss'
 import { useDatabases } from '@genshin-optimizer/common/database-ui'
+import { theme } from '../theme/celestia'
 import ErrorBoundary from './ErrorBoundary'
 import Footer from './Footer'
 import Header from './Header'
@@ -146,9 +146,7 @@ function Content() {
       flexDirection="column"
       minHeight="100vh"
       position="relative"
-      sx={(theme) => ({
-        background: `radial-gradient(ellipse at top, ${theme.palette.neutral700.main} 0%, ${theme.palette.neutral800.main} 100%)`,
-      })}
+      sx={{ bgcolor: 'background.default' }}
     >
       <Header anchor="back-to-top-anchor" />
       {/* Main content */}
