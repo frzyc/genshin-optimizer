@@ -51,20 +51,21 @@ export function ArtifactLevelSlider({
       <Box sx={{ width: 'max-content', height: 32, display: 'flex' }}>
         {showLevelText ? (
           <>
-            <span
-              style={{
+            <Box
+              component="span"
+              sx={{
                 padding: '0 1em',
                 width: 'max-content',
                 borderRadius: '4px 0 0 4px',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                color: 'rgba(255,255,255,0.9)',
-                backgroundColor: 'rgb(30,120,200)',
+                color: 'secondary.contrastText',
+                bgcolor: 'secondary.main',
               }}
             >
               {t('levelSliderTitle')}
-            </span>
+            </Box>
             <Divider orientation="vertical" flexItem />
           </>
         ) : undefined}
