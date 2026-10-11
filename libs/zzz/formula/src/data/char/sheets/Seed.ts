@@ -13,6 +13,9 @@ import {
   allBoolConditionals,
   allNumConditionals,
   customDmg,
+  member0,
+  member1,
+  member2,
   notOwnBuff,
   own,
   ownBuff,
@@ -45,17 +48,48 @@ const { energy_consumed } = allNumConditionals(
   dm.m2.max_energy_consumed - dm.m2.energy_consumed
 )
 
-// Vanguard = Attack teammate, not Seed. Old check used team.initial.atk.max,
-// so Seed (also Attack) could be the max and block every ally from the buff.
-const directStrikeCheck = (node: NumNode | number) =>
+// Kit: Attack teammate with the highest initial ATK is Vanguard.
+// Compare member slots to each other (not target.initial.atk vs member*.initial.atk):
+// those use different read paths and disagree on flat initial ATK. Seed is excluded by
+// sheet `key` so her ATK cannot claim Vanguard and zero every ally's notOwnBuff.
+type MemberRead = typeof member0
+const atkBeatsOrTiesAttackTeammate = (a: MemberRead, b: MemberRead) =>
+  // Non-Attack / Seed / same unit → ok (1). Else need a.initial.atk >= b.initial.atk.
+  cmpEq(
+    b.char.specialty,
+    'attack',
+    cmpNE(
+      b.char.key,
+      key,
+      cmpNE(
+        b.char.key,
+        a.char.key,
+        cmpGE(a.initial.atk, b.initial.atk, 1, 0),
+        1
+      ),
+      1
+    ),
+    1
+  )
+const isVanguardMember = (m: MemberRead) =>
   cmpGE(
     sum(
-      cmpEq(target.char.specialty, 'attack', 1),
-      cmpNE(target.char.key, char.key, 1)
+      cmpEq(m.char.specialty, 'attack', 1),
+      cmpNE(m.char.key, key, 1),
+      atkBeatsOrTiesAttackTeammate(m, member0),
+      atkBeatsOrTiesAttackTeammate(m, member1),
+      atkBeatsOrTiesAttackTeammate(m, member2)
     ),
-    2,
-    node
+    5,
+    1
   )
+const isTargetVanguard = sum(
+  cmpEq(target.char.key, member0.char.key, isVanguardMember(member0)),
+  cmpEq(target.char.key, member1.char.key, isVanguardMember(member1)),
+  cmpEq(target.char.key, member2.char.key, isVanguardMember(member2))
+)
+const directStrikeCheck = (node: NumNode | number) =>
+  cmpGE(isTargetVanguard, 1, node)
 const besiege = (node: NumNode | number) =>
   directStrike.ifOn(onslaught.ifOn(node))
 const besiegeDisplay = (node: NumNode | number) =>
@@ -244,7 +278,11 @@ const sheet = register(
   registerBuff(
     'm2_vanguard_defIgn_',
     notOwnBuff.combat.defIgn_.add(
-      cmpGE(char.mindscape, 2, besiegeDisplay(percent(dm.m2.besiege_defIgn_)))
+      cmpGE(
+        char.mindscape,
+        2,
+        besiegeDisplay(directStrikeCheck(percent(dm.m2.besiege_defIgn_)))
+      )
     )
   ),
   registerBuff(
