@@ -209,7 +209,7 @@ function Overview() {
         manual conversion.
       </Typography>
       <Typography gutterBottom>
-        As of version 6.0.0, Genshin Optimizer's database export conforms to
+        As of version 6.0.0, Genshin Artifacts's database export conforms to
         this format.
       </Typography>
       <CodeBlock text={goodCode} />

@@ -58,7 +58,7 @@
     "currentDB": "Base de données actuelle"
   },
   "sillyCard": {
-    "desc": "Nous avons emprunté (avec permission) tous les personnages de <strong>Silly Wisher</strong> et les avons intégrés à Genshin Optimizer.",
+    "desc": "Nous avons emprunté (avec permission) tous les personnages de <strong>Silly Wisher</strong> et les avons intégrés à Genshin Artifacts.",
     "toggle": {
       "enabled": "Silly Optimizer activé",
       "disabled": "Silly Optimizer désactivé"

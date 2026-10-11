@@ -1,3 +1,3 @@
 # gi-theme
 
-Contains the main MUI theme for Genshin Optimizer
+Contains the main MUI theme for Genshin Artifacts

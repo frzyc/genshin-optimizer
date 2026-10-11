@@ -162,7 +162,7 @@
     }
   },
   "ui": {
-    "pageTitle": "Genshin Optimizer",
+    "pageTitle": "Genshin Artifacts",
     "tabs": {
       "artifacts": "Artefactos",
       "characters": "Personajes",
@@ -181,7 +181,7 @@
     "ascending": "Ascendente",
     "descending": "Descendente",
     "loading": "Cargando...",
-    "rightsDisclaimer": "Genshin Optimizer no está afiliado ni respaldado por HoYoverse.",
+    "rightsDisclaimer": "Genshin Artifacts no está afiliado ni respaldado por HoYoverse.",
     "appVersion": "$t(pageTitle) Versión: {{version}}",
     "error": "Error",
     "reset": "Restablecer",
@@ -445,7 +445,7 @@
     "c2BurstHeal": "<strong>Encarnación de las nereidas</strong>Bonificación de Curación"
   },
   "page_home": {
-    "intro": "<0>¿Qué es Genshin Optimizer?</0><1>Genshin Optimizer (GO) es una página web de código libre hecha por fans del juego RPG de acción gacha <1><strong>Genshin Impact</strong></1>. Está principalmente dirigido a ayudar a los jugadores con un aspecto complejo del juego: la Optimización de Artefactos. Ya que los artefactos son elementos altamente aleatorizados que contribuyen directamente a cómo de efectivos son tus personajes en el juego, GO tratará de encontrar los mejores artefactos para tus personajes basado en tu inventario de artefactos actual.</1><2>GO puede realizar un seguimiento de tus artefactos, permitiendo filtrar/comparar artefactos con más facilidad, sirviendo como herramienta para ayudar a los usuarios a encontrar buenos artefactos en su inventario para subir de nivel, y malos artefactos para usar como relleno.</2><3>Como GO puede replicar las estadísticas exactas de cualquier personaje, junto con los cálculos de todas sus cifras de daño hasta un 1% de precisión, también puede servir como calculadora de Daño, y como herramienta para teorizar.</3>",
+    "intro": "<0>¿Qué es Genshin Artifacts?</0><1>Genshin Artifacts (GO) es una página web de código libre hecha por fans del juego RPG de acción gacha <1><strong>Genshin Impact</strong></1>. Está principalmente dirigido a ayudar a los jugadores con un aspecto complejo del juego: la Optimización de Artefactos. Ya que los artefactos son elementos altamente aleatorizados que contribuyen directamente a cómo de efectivos son tus personajes en el juego, GO tratará de encontrar los mejores artefactos para tus personajes basado en tu inventario de artefactos actual.</1><2>GO puede realizar un seguimiento de tus artefactos, permitiendo filtrar/comparar artefactos con más facilidad, sirviendo como herramienta para ayudar a los usuarios a encontrar buenos artefactos en su inventario para subir de nivel, y malos artefactos para usar como relleno.</2><3>Como GO puede replicar las estadísticas exactas de cualquier personaje, junto con los cálculos de todas sus cifras de daño hasta un 1% de precisión, también puede servir como calculadora de Daño, y como herramienta para teorizar.</3>",
     "quickLinksCard": {
       "title": "Enlaces Rápidos",
       "buttons": {
@@ -1121,11 +1121,11 @@
   },
   "page_newTab": {
     "title": "🛑 Nueva Pestaña de Optimizador Detectada 🛑",
-    "p1": "Parece que has abierto Genshin Optimizer en otra pestaña 💞. ¡GO no está diseñado para operar en múltiples pestañas 📵! Hacerlo puede resultar en:",
+    "p1": "Parece que has abierto Genshin Artifacts en otra pestaña 💞. ¡GO no está diseñado para operar en múltiples pestañas 📵! Hacerlo puede resultar en:",
     "symptom": {
       "1": "Desincronización de datos entre pestañas 🙃",
       "2": "Corrupción de la base de datos 💔",
-      "3": "Malestar estomacal 🤰 y desarrolladores de Genshin Optimizer frustrados 😡",
+      "3": "Malestar estomacal 🤰 y desarrolladores de Genshin Artifacts frustrados 😡",
       "4": "En casos raros, MUERTE ☠️"
     },
     "p2": "Hemos evitado que esto ocurra mostrándote este mensaje 📝. Ahora tienes la opción de:",

@@ -170,7 +170,7 @@
       "currentDB": "目前資料庫"
     },
     "sillyCard": {
-      "desc": "We <1>stole</1> borrowed (with permission) all the character assets from <strong>Silly Wisher</strong> and gene splice it into Genshin Optimizer.",
+      "desc": "We <1>stole</1> borrowed (with permission) all the character assets from <strong>Silly Wisher</strong> and gene splice it into Genshin Artifacts.",
       "toggle": {
         "enabled": "Silly Optimizer Enabled",
         "disabled": "Silly Optimizer Disabled"
@@ -1505,7 +1505,7 @@
     "passive3": {
       "name": "Insomniac Iteration",
       "description": {
-        "0": "At night (18:00 - 6:00), speeds up Genshin Optimizer build speed by 10%."
+        "0": "At night (18:00 - 6:00), speeds up Genshin Artifacts build speed by 10%."
       }
     },
     "constellation1": {

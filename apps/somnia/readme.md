@@ -1,6 +1,6 @@
 # somnia
 
-A discord bot for Genshin Optimizer
+A discord bot for Genshin Artifacts
 
 Commands:
 

@@ -60,7 +60,7 @@
     "currentDB": "Cơ sở dữ liệu đã chọn"
   },
   "sillyCard": {
-    "desc": "Chúng tôi đã <1>ăn cắp</1> mượn (đã được cho phép) tất cả hình ảnh của <strong>Silly Wisher</strong> và nhét chúng vào Genshin Optimizer.",
+    "desc": "Chúng tôi đã <1>ăn cắp</1> mượn (đã được cho phép) tất cả hình ảnh của <strong>Silly Wisher</strong> và nhét chúng vào Genshin Artifacts.",
     "toggle": {
       "enabled": "Silly Optimizer đang bật",
       "disabled": "Silly Optimizer đang tắt"

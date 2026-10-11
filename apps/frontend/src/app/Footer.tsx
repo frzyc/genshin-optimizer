@@ -27,7 +27,7 @@ function FooterContent() {
       >
         <Typography variant="caption" sx={{ color: 'neutral400.main' }}>
           <Trans t={t} i18nKey="ui:rightsDisclaimer">
-            Genshin Optimizer is not affiliated with or endorsed by HoYoverse.
+            Genshin Artifacts is not affiliated with or endorsed by HoYoverse.
           </Trans>
         </Typography>
         <Typography
@@ -39,7 +39,7 @@ function FooterContent() {
             i18nKey="ui:appVersion"
             values={{ version: __VERSION__ }}
           >
-            Genshin Optimizer Version:
+            Genshin Artifacts Version:
             <a
               href={
                 process.env.NX_URL_GITHUB_GO_CURRENT_VERSION ||

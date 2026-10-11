@@ -9,7 +9,7 @@
 
 A repo hosting a few different optimizer websites for different gacha games.
 
-[Genshin Optimizer](https://frzyc.github.io/genshin-optimizer) is a helper website for the online action-rpg gacha game [Genshin Impact](https://genshin.hoyoverse.com/). It is intended to assist players with optimizing artifacts to max-min their characters, while providing a clean, structured UI, and provide real-time results.
+[Genshin Artifacts](https://frzyc.github.io/genshin-optimizer) is a helper website for the online action-rpg gacha game [Genshin Impact](https://genshin.hoyoverse.com/). It is intended to assist players with optimizing artifacts to max-min their characters, while providing a clean, structured UI, and provide real-time results.
 
 [Zenless Optimizer](https://frzyc.github.io/zenless-optimizer/) is a helper website for the online action-rpg gacha game [Zenless Zone Zero](https://zenless.hoyoverse.com/). It provides basic disc optimization.
 
@@ -27,7 +27,7 @@ If you have knowledge in some(or any) of those techonology mentioned above, or a
 
 Last updated Feb 2025
 
-### Genshin Optimizer site [https://frzyc.github.io/genshin-optimizer/](https://frzyc.github.io/genshin-optimizer/)
+### Genshin Artifacts site [https://frzyc.github.io/genshin-optimizer/](https://frzyc.github.io/genshin-optimizer/)
 
 - New characters and content will continue to be added as Genshin updates
 - ~~Artifact upgrade damage probability calculator - Q1 2024~~
@@ -63,7 +63,7 @@ For a more interactive and detailed view of the project, run `nx graph`.
 
 ### Applications
 
-[`frontend`](/apps/frontend/) - Genshin Optimizer frontend - static website built using React with MUI, using the now deprecated Waverider calculation engine.
+[`frontend`](/apps/frontend/) - Genshin Artifacts frontend - static website built using React with MUI, using the now deprecated Waverider calculation engine.
 
 [`zzz-frontend`](/apps/zzz-frontend/) - Zenless Optimizer frontend - static website built using React with MUI, using a bare-bones calculation engine.
 

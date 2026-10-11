@@ -60,7 +60,7 @@ export default function VidGuideCard() {
                 <iframe
                   width="560"
                   height="349"
-                  title="Genshin Optimizer Guide"
+                  title="Genshin Artifacts Guide"
                   src={`https://www.youtube-nocookie.com/embed/${embed}`}
                   frameBorder={0}
                   allowFullScreen

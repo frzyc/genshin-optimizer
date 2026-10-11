@@ -5,7 +5,7 @@
     "buttons": {
       "tyGuide": {
         "title": "Playlist Panduan Youtube",
-        "tooltip": "Pelajari cara menggunakan Genshin Optimizer"
+        "tooltip": "Pelajari cara menggunakan Genshin Artifacts"
       },
       "scanners": {
         "title": "Scanner Otomatis",
@@ -24,7 +24,7 @@
         "tooltip": "Dokumentasi Deskriptor Objek Terbuka Genshin"
       },
       "patchNotes": {
-        "title": "Genshin Optimizer Patch Notes",
+        "title": "Genshin Artifacts Patch Notes",
         "tooltip": "Semua patch notes untuk GO"
       }
     }

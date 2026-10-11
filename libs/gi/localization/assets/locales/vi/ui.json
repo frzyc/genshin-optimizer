@@ -1,5 +1,5 @@
 {
-  "pageTitle": "Genshin Optimizer",
+  "pageTitle": "Genshin Artifacts",
   "tabs": {
     "artifacts": "Thánh Di Vật",
     "characters": "Nhân Vật",
@@ -22,7 +22,7 @@
   "ascending": "Tăng dần",
   "descending": "Giảm dần",
   "loading": "Đang tải...",
-  "rightsDisclaimer": "Genshin Optimizer không được liên kết hoặc chứng thực bởi HoYoverse",
+  "rightsDisclaimer": "Genshin Artifacts không được liên kết hoặc chứng thực bởi HoYoverse",
   "appVersion": "Phiên bản của $t(pageTitle): {{version}}",
   "error": "Lỗi",
   "reset": "Đặt lại",

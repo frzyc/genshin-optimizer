@@ -60,7 +60,7 @@
     "currentDB": "Base de Dados Atual"
   },
   "sillyCard": {
-    "desc": "Nós <1>roubamos</1> pegamos (com permissão) as ilustrações de personagens do <strong>Silly Wisher</strong> emprestadas e as alteramos geneticamente no Genshin Optimizer.",
+    "desc": "Nós <1>roubamos</1> pegamos (com permissão) as ilustrações de personagens do <strong>Silly Wisher</strong> emprestadas e as alteramos geneticamente no Genshin Artifacts.",
     "toggle": {
       "enabled": "Silly Optimizer Ativado",
       "disabled": "Silly Optimizer Desativado"

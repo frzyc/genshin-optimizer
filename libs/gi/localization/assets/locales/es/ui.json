@@ -1,5 +1,5 @@
 {
-  "pageTitle": "Genshin Optimizer",
+  "pageTitle": "Genshin Artifacts",
   "tabs": {
     "artifacts": "Artefactos",
     "characters": "Personajes",
@@ -18,7 +18,7 @@
   "ascending": "Ascendente",
   "descending": "Descendente",
   "loading": "Cargando...",
-  "rightsDisclaimer": "Genshin Optimizer no está afiliado ni respaldado por HoYoverse.",
+  "rightsDisclaimer": "Genshin Artifacts no está afiliado ni respaldado por HoYoverse.",
   "appVersion": "$t(pageTitle) Versión: {{version}}",
   "error": "Error",
   "reset": "Restablecer",

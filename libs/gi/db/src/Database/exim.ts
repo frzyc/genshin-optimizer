@@ -1,7 +1,7 @@
 import type { IArtifact, ICharacter, IWeapon } from '@genshin-optimizer/gi/good'
 import type { OptConfig } from './DataManagers/OptConfigDataManager'
 
-export const GOSource = 'Genshin Optimizer' as const
+export const GOSource = 'Genshin Artifacts' as const
 
 function newMergeCounter<T>(): MergeResultCounter<T> {
   return {

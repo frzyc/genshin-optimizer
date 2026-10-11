@@ -1,11 +1,11 @@
 {
-  "intro": "Genshin Optimizer (GO) は<strong>究極</strong>の<3><i>原神</i></3>装備最適化ツールです。あなたが所持している聖遺物/武器/キャラクターを管理し、プレイスタイルに基づいて装備を最適化するのに役立ちます。",
+  "intro": "Genshin Artifacts (GO) は<strong>究極</strong>の<3><i>原神</i></3>装備最適化ツールです。あなたが所持している聖遺物/武器/キャラクターを管理し、プレイスタイルに基づいて装備を最適化するのに役立ちます。",
   "quickLinksCard": {
     "title": "クイックリンク",
     "buttons": {
       "tyGuide": {
         "title": "YouTubeのガイド プレイリスト",
-        "tooltip": "Genshin Optimizerの使用方法を学ぶ"
+        "tooltip": "Genshin Artifactsの使用方法を学ぶ"
       },
       "scanners": {
         "title": "自動スキャナー",

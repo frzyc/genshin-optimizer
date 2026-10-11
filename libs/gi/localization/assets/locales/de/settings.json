@@ -49,7 +49,7 @@
     "currentDB": "Aktuelle Datenbank"
   },
   "sillyCard": {
-    "desc": "Wir haben ein paar Charakterportraits von <strong>Silly Wisher</strong> <1>gestohlen</1> ausgeliehen (mit Erlaubnis) und den Genshin Optimizer damit genetisch modifiziert.",
+    "desc": "Wir haben ein paar Charakterportraits von <strong>Silly Wisher</strong> <1>gestohlen</1> ausgeliehen (mit Erlaubnis) und den Genshin Artifacts damit genetisch modifiziert.",
     "toggle": {
       "enabled": "Silly Optimizer An",
       "disabled": "Silly Optimizer Aus"

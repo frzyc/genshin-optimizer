@@ -2,7 +2,7 @@
 
 This library was generated with [Nx](https://nx.dev).
 
-This is a library for the Character cards used by Genshin Optimizer. The cards needs to be manually added because it comes from their drip marketing on twitter.
+This is a library for the Character cards used by Genshin Artifacts. The cards needs to be manually added because it comes from their drip marketing on twitter.
 
 ## Adding new cards
 

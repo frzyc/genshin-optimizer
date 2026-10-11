@@ -5,7 +5,7 @@
     "buttons": {
       "tyGuide": {
         "title": "Youtube Guide Playlist",
-        "tooltip": "Apprendre à utiliser Genshin Optimizer"
+        "tooltip": "Apprendre à utiliser Genshin Artifacts"
       },
       "scanners": {
         "title": "Scanners automatiques",
@@ -24,7 +24,7 @@
         "tooltip": "Documentation sur le descripteur d'objet ouvert Genshin"
       },
       "patchNotes": {
-        "title": "Notes de mise à jour de Genshin Optimizer",
+        "title": "Notes de mise à jour de Genshin Artifacts",
         "tooltip": "Toutes les notes de patch de GO"
       }
     }

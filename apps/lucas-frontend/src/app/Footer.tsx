@@ -39,7 +39,7 @@ function FooterContent() {
             i18nKey="ui:appVersion"
             values={{ version: __VERSION__ }}
           >
-            Genshin Optimizer Version:
+            Genshin Artifacts Version:
             <a
               href={
                 process.env.NX_URL_GITHUB_GO_CURRENT_VERSION ||

@@ -108,7 +108,7 @@ export default function QuickLinksCard() {
         <CardThemed bgt="light">
           <CardContent>
             <Typography marginBottom={1} variant="h6">
-              Genshin Optimizer
+              Genshin Artifacts
             </Typography>
             <Box
               sx={{

@@ -169,7 +169,7 @@
     }
   },
   "ui": {
-    "pageTitle": "Genshin Optimizer",
+    "pageTitle": "Genshin Artifacts",
     "tabs": {
       "artifacts": "Artefak",
       "characters": "Karakter",
@@ -188,7 +188,7 @@
     "ascending": "Urutkan Naik",
     "descending": "Urutkan Menurun",
     "loading": "Memuat...",
-    "rightsDisclaimer": "Genshin Optimizer tidak berafiliasi dengan HoYoverse",
+    "rightsDisclaimer": "Genshin Artifacts tidak berafiliasi dengan HoYoverse",
     "appVersion": "$t(pageTitle) Versi: <1>{{version}}</1>",
     "error": "Error",
     "reset": "Reset",
@@ -505,7 +505,7 @@
       "buttons": {
         "tyGuide": {
           "title": "Playlist Panduan Youtube",
-          "tooltip": "Pelajari cara menggunakan Genshin Optimizer"
+          "tooltip": "Pelajari cara menggunakan Genshin Artifacts"
         },
         "scanners": {
           "title": "Scanner Otomatis",
@@ -524,7 +524,7 @@
           "tooltip": "Dokumentasi Deskriptor Objek Terbuka Genshin"
         },
         "patchNotes": {
-          "title": "Genshin Optimizer Patch Notes",
+          "title": "Genshin Artifacts Patch Notes",
           "tooltip": "Semua patch notes untuk GO"
         }
       }
@@ -1239,11 +1239,11 @@
   },
   "page_newTab": {
     "title": "🛑Tab Optimizer Baru Terdeteksi🛑",
-    "p1": "Sepertinya kamu sudah membuka Genshin Optimizer di tab lain💞.  GO tidak dimaksudkan untuk beroperasi pada banyak tab📵, hal itu dapat mengakibatkan:",
+    "p1": "Sepertinya kamu sudah membuka Genshin Artifacts di tab lain💞.  GO tidak dimaksudkan untuk beroperasi pada banyak tab📵, hal itu dapat mengakibatkan:",
     "symptom": {
       "1": "Data antar tab tidak Sinkron🙃.",
       "2": "Database corruption💔.",
-      "3": "Sakit perut🤰 dan Genshin Optimizer Devs yang frustrasi😡.",
+      "3": "Sakit perut🤰 dan Genshin Artifacts Devs yang frustrasi😡.",
       "4": "Dalam kasus yang jarang terjadi, MATI☠️."
     },
     "p2": "Kami telah mencegah hal ini terjadi dengan menampilkan pesan ini📝 kepadamu. Kamu sekarang memiliki pilihan:",

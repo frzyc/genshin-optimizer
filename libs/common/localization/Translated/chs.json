@@ -178,7 +178,7 @@
     }
   },
   "ui": {
-    "pageTitle": "Genshin Optimizer",
+    "pageTitle": "Genshin Artifacts",
     "tabs": {
       "artifacts": "圣遗物",
       "characters": "角色",
@@ -197,7 +197,7 @@
     "ascending": "升序",
     "descending": "降序",
     "loading": "加载中…",
-    "rightsDisclaimer": "Genshin Optimizer不隶属于米哈游或代表其官方意见。",
+    "rightsDisclaimer": "Genshin Artifacts不隶属于米哈游或代表其官方意见。",
     "appVersion": "$t(pageTitle) 版本: <1>{{version}}</1>",
     "error": "错误",
     "reset": "重置",
@@ -515,7 +515,7 @@
       "buttons": {
         "tyGuide": {
           "title": "Youtube上的使用指南",
-          "tooltip": "了解如何使用Genshin Optimizer"
+          "tooltip": "了解如何使用Genshin Artifacts"
         },
         "scanners": {
           "title": "自动扫描器",
@@ -534,7 +534,7 @@
           "tooltip": "Genshin Open Object Descriptor文档"
         },
         "patchNotes": {
-          "title": "Genshin Optimizer更新日志",
+          "title": "Genshin Artifacts更新日志",
           "tooltip": "所有更新日志"
         }
       }
@@ -1273,7 +1273,7 @@
   },
   "page_newTab": {
     "title": "🛑检测到新的优化器标签页🛑",
-    "p1": "你似乎在另一标签页中打开了Genshin Optimizer💞，GO并没有针对多标签页操作进行设计📵，这可能导致：",
+    "p1": "你似乎在另一标签页中打开了Genshin Artifacts💞，GO并没有针对多标签页操作进行设计📵，这可能导致：",
     "symptom": {
       "1": "不同标签页之间的数据不同步🙃。",
       "2": "数据库损坏💔。",

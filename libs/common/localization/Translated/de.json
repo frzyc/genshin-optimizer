@@ -70,7 +70,7 @@
       "title": "Anleitung zum Bearbeiten/Verwalten von Artefakten",
       "section1": "<0>Aufwertungen</0><1>Die <1>Anzahl der Aufwertungen</1> eines Bonusattributs ist rechts vom Attribut sichtbar und in Form von Balken dargestellt. Je höher die Anzahl der Aufwertungen, desto farbiger werden sowohl das Bonusattribut als auch der Balken dargstellt:<3></3>.</1><2>Attributwertung</2><3>Die Attributwertung (RV vom englischen Begriff \"Roll-Value\") eines Bonusattributs ist eine prozentuale Angabe des aktuellen Werts in Bezug auf den höchstmöglichen 5<1></1> Wert. Unser Beispielartefakt im Bild hat ein LP%-Attribut in Höhe von 5,3%, der maximal erreichbare Wert ist 5,8%. Daraus resultiert die Attributwertung: <3>5,3/5,8 = ~90%.</3></3><4>Aktuelle Wertung vs. Maximales Potential der Wertung</4><5>Ein 5<1></1> Artefakte mit 9 (4 anfänglichen + 5 zusätzlichen) zufälligen Aufwertungen, bei denen jede Aufwertung den höchstmöglichen Wert erhalten hat, besitzt 900% Attributwertung. Die meisten Artefakte werden diese Wertung nicht erreichen. Die <3>Aktuelle Attributwertung</3> gib dabei an, wie nahe das Artefakt aktuell diesem Maximalwert ist. Die <5>Maximale Attributwertung</5> gibt die höchstmögliche Attributwertung an, die erreicht werden kann, wenn alle Aufwertungen den höchstmöglichen Wert haben.</5>",
       "section2": "<0>Artefakt Editor</0><1>Ein vollwertiger Artefakt-Editor für 3<1></1> bis 5<3></3> Artefakte. Wenn Bonusattribute eingetragen werden, werden die Werte jeder einzelnen Aufwertung und die Höhe der Aufwertung berechnet und angezeigt. Zusätzlich wird das überprüft ob das eingegebene Artefakt die korrekte Stufe hat und ob sonstige Eigenschaften stimmen.</1><2>Screenshot einscannen</2><3>Manuelle Eingabe liegt dir nicht? Artefakte können auf einem Bild automatisiert erkannt werden! Ein Klick auf <1>Zeig mir wie!</1> gibt eine Einführung.</3><4>Automatischer Artefaktscanner</4><5>Falls du Genshin auf dem PC spielst kannst du dir ein Programm herunterladen welches automatisch alle deine Artefakt für dich einscannt, importieren kannst du diese Daten dann in <1></1> Einstellungen. <3>Klicke hier</3> für eine Liste aller mit GO kompatiblen Scanner.</5><6>Erkennung von Duplikaten / Aufwertungen</6><7>Wusstest du das GO erkennen kann wenn du ein <1>Artefaktduplikat</1>, welches bereits in deiner Datenbank vorhanden ist, hinzufügst? Es kann auch erkennen ob das Artefakt im Editor die <3>aufgewertete Version</3> eines bereits vorhandenen Artefakts ist. Falls ein Duplikat oder eine Aufwertung erkannt wird, werden dir beide relevanten Artefakte in einer Vorschau angezeigt damit du diese vergleichen kannst(Siehe Bild).</7>",
-      "section3": "<0>Artefakt Inventar</0><1>Hier sind alle Artefakte zu sehen, die zum Genshin Optimizer hinzugefügt wurden. Mit den Filtern kannst du die Auswahl an angezeigten Artefakte weiter verfeinern.</1><2>Beispiel: Schrott-Artefakte finden</2><3>Durch die Verwendung von Filtern und dem anpassen der gewünschten Attributwertung können schnell Artefakte gefunden werden, die zur Aufwertung anderer Artefakte verwendet werden können.</3><4>In diesem Beispiel sind die Filter wie folgt gesetzt: </4><5><0><0>Level zwischen 0 und 8.</0><1>Nicht gesperrte Artefakte im Inventar.</1><2>Ausschluss von LP, VTD und Aufladerate aus der Berechnung der Attributwertung.</2><3>Aufsteigend sortiert nach maximaler Attributwertung.</3></0></5><6>Dies sortiert die Artefakte nach geringster Wertung für die gewählten Bonusattribute.</6>"
+      "section3": "<0>Artefakt Inventar</0><1>Hier sind alle Artefakte zu sehen, die zum Genshin Artifacts hinzugefügt wurden. Mit den Filtern kannst du die Auswahl an angezeigten Artefakte weiter verfeinern.</1><2>Beispiel: Schrott-Artefakte finden</2><3>Durch die Verwendung von Filtern und dem anpassen der gewünschten Attributwertung können schnell Artefakte gefunden werden, die zur Aufwertung anderer Artefakte verwendet werden können.</3><4>In diesem Beispiel sind die Filter wie folgt gesetzt: </4><5><0><0>Level zwischen 0 und 8.</0><1>Nicht gesperrte Artefakte im Inventar.</1><2>Ausschluss von LP, VTD und Aufladerate aus der Berechnung der Attributwertung.</2><3>Aufsteigend sortiert nach maximaler Attributwertung.</3></0></5><6>Dies sortiert die Artefakte nach geringster Wertung für die gewählten Bonusattribute.</6>"
     },
     "sortMap": {
       "level": "Level",
@@ -168,7 +168,7 @@
       "currentDB": "Aktuelle Datenbank"
     },
     "sillyCard": {
-      "desc": "Wir haben ein paar Charakterportraits von <strong>Silly Wisher</strong> <1>gestohlen</1> ausgeliehen (mit Erlaubnis) und den Genshin Optimizer damit genetisch modifiziert.",
+      "desc": "Wir haben ein paar Charakterportraits von <strong>Silly Wisher</strong> <1>gestohlen</1> ausgeliehen (mit Erlaubnis) und den Genshin Artifacts damit genetisch modifiziert.",
       "toggle": {
         "enabled": "Silly Optimizer An",
         "disabled": "Silly Optimizer Aus"
@@ -177,7 +177,7 @@
     "letsnow": "Lass es schneien!"
   },
   "ui": {
-    "pageTitle": "Genshin Optimizer",
+    "pageTitle": "Genshin Artifacts",
     "tabs": {
       "artifacts": "Artefakte",
       "characters": "Figuren",
@@ -199,7 +199,7 @@
     "ascending": "Aufsteigend",
     "descending": "Absteigend",
     "loading": "Laden...",
-    "rightsDisclaimer": "Genshin Optimizer ist kein Teil von HoYoverse und wird nicht davon unterstützt.",
+    "rightsDisclaimer": "Genshin Artifacts ist kein Teil von HoYoverse und wird nicht davon unterstützt.",
     "appVersion": "$t(pageTitle) Version: <1>{{version}}</1>",
     "error": "Fehler",
     "reset": "Zurücksetzen",
@@ -705,7 +705,7 @@
     "symptom": {
       "1": "Desynchronisation von Daten zwischen Tabs🙃",
       "2": "Datenbankkorruption 💔",
-      "3": "Bauchschmerzen🤰 und frustrierte Genshin Optimizer Entwickler😡",
+      "3": "Bauchschmerzen🤰 und frustrierte Genshin Artifacts Entwickler😡",
       "4": "In seltenen Fällen, TOD☠️"
     },
     "p2": "Wir haben dies verhindert, indem wir diese Nachricht angezeigt haben 📝. Du hast nun die Wahl, du kannst nun entweder:",

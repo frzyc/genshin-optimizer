@@ -186,7 +186,7 @@
       "currentDB": "Cơ sở dữ liệu đã chọn"
     },
     "sillyCard": {
-      "desc": "Chúng tôi đã <1>ăn cắp</1> mượn (đã được cho phép) tất cả hình ảnh của <strong>Silly Wisher</strong> và nhét chúng vào Genshin Optimizer.",
+      "desc": "Chúng tôi đã <1>ăn cắp</1> mượn (đã được cho phép) tất cả hình ảnh của <strong>Silly Wisher</strong> và nhét chúng vào Genshin Artifacts.",
       "toggle": {
         "enabled": "Silly Optimizer đang bật",
         "disabled": "Silly Optimizer đang tắt"
@@ -195,7 +195,7 @@
     "letsnow": "Tuyết rơi"
   },
   "ui": {
-    "pageTitle": "Genshin Optimizer",
+    "pageTitle": "Genshin Artifacts",
     "tabs": {
       "artifacts": "Thánh Di Vật",
       "characters": "Nhân Vật",
@@ -218,7 +218,7 @@
     "ascending": "Tăng dần",
     "descending": "Giảm dần",
     "loading": "Đang tải...",
-    "rightsDisclaimer": "Genshin Optimizer không được liên kết hoặc chứng thực bởi HoYoverse",
+    "rightsDisclaimer": "Genshin Artifacts không được liên kết hoặc chứng thực bởi HoYoverse",
     "appVersion": "Phiên bản của $t(pageTitle): {{version}}",
     "error": "Lỗi",
     "reset": "Đặt lại",
@@ -585,7 +585,7 @@
       "buttons": {
         "tyGuide": {
           "title": "Danh sách phát Youtube hướng dẫn",
-          "tooltip": "Học cách dùng Genshin Optimizer"
+          "tooltip": "Học cách dùng Genshin Artifacts"
         },
         "scanners": {
           "title": "Tự động nhập dữ liệu",
@@ -1419,7 +1419,7 @@
   },
   "page_newTab": {
     "title": "🛑 Phát hiện tab GO mới 🛑",
-    "p1": "Hệ thống đã phát hiện bạn vừa mở Genshin Optimizer trong một tab khác 💞. Trang web này không được thiết kế để sử dụng cùng lúc trên các tab khác nhau 📵! Việc này có thể sẽ gây:",
+    "p1": "Hệ thống đã phát hiện bạn vừa mở Genshin Artifacts trong một tab khác 💞. Trang web này không được thiết kế để sử dụng cùng lúc trên các tab khác nhau 📵! Việc này có thể sẽ gây:",
     "symptom": {
       "1": "Dữ liệu không đồng nhất giữa các tab 🙃",
       "2": "Làm hỏng cơ sở dữ liệu 💔",

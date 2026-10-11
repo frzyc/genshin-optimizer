@@ -467,7 +467,7 @@ export default function TabBuild() {
           audio.play()
           if (!tabFocused.current)
             if (Notification?.permission === 'granted')
-              new Notification('Genshin Optimizer', {
+              new Notification('Genshin Artifacts', {
                 body: t('buildCompleted'),
                 icon: './favicon.ico',
               })

@@ -1,6 +1,6 @@
 # lucas-frontend
 
-Personal copy of `apps/frontend` (the Genshin Optimizer shell: App, Header, Footer, routes, `index.html`).
+Personal copy of `apps/frontend` (the Genshin Artifacts shell: App, Header, Footer, routes, `index.html`).
 Customizations to the shell live here so `apps/frontend` stays identical to upstream and merges stay clean.
 Pages and data still come from the shared `libs/gi/*`, so new characters, weapons and images arrive with upstream merges.
 

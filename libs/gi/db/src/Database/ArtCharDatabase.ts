@@ -182,7 +182,7 @@ export class ArtCharDatabase extends Database {
     good = migrateGOOD(good)
     const source = good.source ?? 'Unknown'
     // Some Scanners might carry their own id field, which would conflict with GO dup resolution.
-    if (source !== 'Genshin Optimizer') {
+    if (source !== 'Genshin Artifacts') {
       good.artifacts?.forEach(
         (a) => delete (a as unknown as { id?: string }).id
       )

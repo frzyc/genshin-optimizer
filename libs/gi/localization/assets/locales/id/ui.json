@@ -1,5 +1,5 @@
 {
-  "pageTitle": "Genshin Optimizer",
+  "pageTitle": "Genshin Artifacts",
   "tabs": {
     "artifacts": "Artefak",
     "characters": "Karakter",
@@ -18,7 +18,7 @@
   "ascending": "Urutkan Naik",
   "descending": "Urutkan Menurun",
   "loading": "Memuat...",
-  "rightsDisclaimer": "Genshin Optimizer tidak berafiliasi dengan HoYoverse",
+  "rightsDisclaimer": "Genshin Artifacts tidak berafiliasi dengan HoYoverse",
   "appVersion": "$t(pageTitle) Versi: <1>{{version}}</1>",
   "error": "Error",
   "reset": "Reset",

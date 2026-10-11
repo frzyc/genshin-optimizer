@@ -191,7 +191,7 @@
       "currentDB": "Base de Dados Atual"
     },
     "sillyCard": {
-      "desc": "Nós <1>roubamos</1> pegamos (com permissão) as ilustrações de personagens do <strong>Silly Wisher</strong> emprestadas e as alteramos geneticamente no Genshin Optimizer.",
+      "desc": "Nós <1>roubamos</1> pegamos (com permissão) as ilustrações de personagens do <strong>Silly Wisher</strong> emprestadas e as alteramos geneticamente no Genshin Artifacts.",
       "toggle": {
         "enabled": "Silly Optimizer Ativado",
         "disabled": "Silly Optimizer Desativado"
@@ -200,7 +200,7 @@
     "letsnow": "Deixe nevar"
   },
   "ui": {
-    "pageTitle": "Genshin Optimizer",
+    "pageTitle": "Genshin Artifacts",
     "tabs": {
       "artifacts": "Artefatos",
       "characters": "Personagens",
@@ -223,7 +223,7 @@
     "ascending": "Crescente",
     "descending": "Decrescente",
     "loading": "Carregando...",
-    "rightsDisclaimer": "Genshin Optimizer não é afiliado ou endossado da HoYoverse.",
+    "rightsDisclaimer": "Genshin Artifacts não é afiliado ou endossado da HoYoverse.",
     "appVersion": "$t(pageTitle) Versão: <1>{{version}}</1>",
     "error": "Erro",
     "reset": "Redefinir",
@@ -598,7 +598,7 @@
       "buttons": {
         "tyGuide": {
           "title": "Playlist de Tutoriais no Youtube",
-          "tooltip": "Aprenda a usar o Genshin Optimizer"
+          "tooltip": "Aprenda a usar o Genshin Artifacts"
         },
         "scanners": {
           "title": "Scanners Automáticos",
@@ -1458,7 +1458,7 @@
   },
   "page_newTab": {
     "title": "🛑Detectada Nova Aba do Optimizer🛑",
-    "p1": "Parece que você abriu o Genshin Optimizer em outra aba 💞. O GO não é feito para operar em diversas abas simultaneamente 📵, fazer isso pode resultar em:",
+    "p1": "Parece que você abriu o Genshin Artifacts em outra aba 💞. O GO não é feito para operar em diversas abas simultaneamente 📵, fazer isso pode resultar em:",
     "symptom": {
       "1": "Dessincronização de dados entre abas 🙃",
       "2": "Corrupção da Base de Dados 💔",
@@ -1694,7 +1694,7 @@
     "passive3": {
       "name": "Iteração de Insônie",
       "description": {
-        "0": "À noite (18:00 - 06:00), aumenta a velocidade do seu tempo de build no Genshin Optimizer em 10%."
+        "0": "À noite (18:00 - 06:00), aumenta a velocidade do seu tempo de build no Genshin Artifacts em 10%."
       }
     },
     "constellation1": {

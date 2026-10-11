@@ -5,7 +5,7 @@
     "buttons": {
       "tyGuide": {
         "title": "Youtube上的使用指南",
-        "tooltip": "了解如何使用Genshin Optimizer"
+        "tooltip": "了解如何使用Genshin Artifacts"
       },
       "scanners": {
         "title": "自动扫描器",
@@ -24,7 +24,7 @@
         "tooltip": "Genshin Open Object Descriptor文档"
       },
       "patchNotes": {
-        "title": "Genshin Optimizer更新日志",
+        "title": "Genshin Artifacts更新日志",
         "tooltip": "所有更新日志"
       }
     }

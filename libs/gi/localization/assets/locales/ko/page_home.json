@@ -5,7 +5,7 @@
     "buttons": {
       "tyGuide": {
         "title": "유투브 설명 동영상 리스트",
-        "tooltip": "Genshin Optimizer의 사용법을 알아봅시다"
+        "tooltip": "Genshin Artifacts의 사용법을 알아봅시다"
       },
       "scanners": {
         "title": "자동 스캐너",
@@ -24,7 +24,7 @@
         "tooltip": "Genshin Open Object Descriptor 설명문서"
       },
       "patchNotes": {
-        "title": "Genshin Optimizer 패치 노트",
+        "title": "Genshin Artifacts 패치 노트",
         "tooltip": "GO의 패치 노트가 모여 있습니다"
       }
     }

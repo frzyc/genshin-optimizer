@@ -123,7 +123,7 @@
     }
   },
   "ui": {
-    "pageTitle": "Genshin Optimizer",
+    "pageTitle": "Genshin Artifacts",
     "tabs": {
       "artifacts": "อาร์ติแฟกต์",
       "characters": "ตัวละคร",
@@ -140,7 +140,7 @@
     "ascending": "จากน้อยไปมาก",
     "descending": "จากมากไปน้อย",
     "loading": "กำลังโหลด...",
-    "rightsDisclaimer": "Genshin Optimizer ไม่มีส่วนเกี่ยวข้องหรือรับรองโดย HoYoverse",
+    "rightsDisclaimer": "Genshin Artifacts ไม่มีส่วนเกี่ยวข้องหรือรับรองโดย HoYoverse",
     "appVersion": "$t(pageTitle) เวอร์ชั่น: <1>{{version}}</1>",
     "error": "ผิดพลาด",
     "reset": "รีเซ็ต",

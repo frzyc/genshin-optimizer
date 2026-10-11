@@ -51,14 +51,14 @@ export function UploadExplainationModal({
               <Trans t={t} i18nKey="editor.uploadExp.section1">
                 <Typography gutterBottom>
                   Using screenshots can dramatically decrease the amount of time
-                  you manually input in stats on the Genshin Optimizer.
+                  you manually input in stats on the Genshin Artifacts.
                 </Typography>
                 <Typography variant="h5">
                   Where to snip the screenshot.
                 </Typography>
                 <Typography gutterBottom>
                   In game, Open your bag, and navigate to the artifacts tab.
-                  Select the artifact you want to scan with Genshin Optimizer.{' '}
+                  Select the artifact you want to scan with Genshin Artifacts.{' '}
                   <b>Only artifact from this screen can be scanned.</b>
                 </Typography>
                 <Typography variant="h6">Single artifact</Typography>
@@ -92,7 +92,7 @@ export function UploadExplainationModal({
             <Grid item xs={12} md={7}>
               <Trans t={t} i18nKey="editor.uploadExp.section2">
                 <Typography variant="h5">
-                  Adding Screenshot to Genshin Optimizer
+                  Adding Screenshot to Genshin Artifacts
                 </Typography>
                 <Typography>
                   At this point, you should have the artifact screenshot either

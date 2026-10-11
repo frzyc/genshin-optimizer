@@ -60,7 +60,7 @@
   },
   "buildDropdownDesc": "生成する装備の数を減らすと、候補が多い場合の計算時間を短縮できます。",
   "threadDropdownDesc": "スレッドの数を増やすと計算時間が短縮されますが、CPUの使用率も増加します。",
-  "noArtis": "おおっと！ まだGenshin Optimizerに聖遺物を追加していないようです。<1>聖遺物</1>ページに移動して聖遺物を追加してください。",
+  "noArtis": "おおっと！ まだGenshin Artifactsに聖遺物を追加していないようです。<1>聖遺物</1>ページに移動して聖遺物を追加してください。",
   "targetSelector": {
     "selectOptTarget": "最適化したい項目を選択",
     "selectGraphTarget": "比較したい項目を選択",

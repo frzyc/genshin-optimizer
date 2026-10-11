@@ -86,7 +86,7 @@
   "passive3": {
     "name": "야행성",
     "description": {
-      "0": "밤(18:00 ~ 6:00)에 Genshin Optimizer의 빌드 속도가 10% 증가한다."
+      "0": "밤(18:00 ~ 6:00)에 Genshin Artifacts의 빌드 속도가 10% 증가한다."
     }
   },
   "constellation1": {

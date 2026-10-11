@@ -464,7 +464,7 @@ describe('Database', () => {
       const good: IGOOD = {
         format: 'GOOD',
         version: 1,
-        source: 'Genshin Optimizer',
+        source: 'Genshin Artifacts',
         artifacts: [
           { ...old1, id: oldId1 } as IArtifact,
           { ...old2, id: oldId2 } as IArtifact,
@@ -511,7 +511,7 @@ describe('Database', () => {
       const good: IGOOD = {
         format: 'GOOD',
         version: 1,
-        source: 'Genshin Optimizer',
+        source: 'Genshin Artifacts',
         weapons: [
           { ...old1, id: oldId1 } as IWeapon,
           { ...old2, id: oldId2 } as IWeapon,
@@ -553,7 +553,7 @@ describe('Database', () => {
       const good: IGOOD = {
         format: 'GOOD',
         version: 1,
-        source: 'Genshin Optimizer',
+        source: 'Genshin Artifacts',
         artifacts: [
           { ...new1, id: oldId1 } as IArtifact,
           { ...new2, id: oldId2 } as IArtifact,
@@ -593,7 +593,7 @@ describe('Database', () => {
       const good: IGOOD = {
         format: 'GOOD',
         version: 1,
-        source: 'Genshin Optimizer',
+        source: 'Genshin Artifacts',
         weapons: [
           { ...new1, id: oldId1 } as IWeapon,
           { ...new2, id: oldId2 } as IWeapon,
