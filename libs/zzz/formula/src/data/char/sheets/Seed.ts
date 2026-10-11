@@ -2,7 +2,6 @@ import type { NumNode } from '@genshin-optimizer/pando/engine'
 import {
   cmpEq,
   cmpGE,
-  cmpNE,
   prod,
   subscript,
   sum,
@@ -13,9 +12,6 @@ import {
   allBoolConditionals,
   allNumConditionals,
   customDmg,
-  member0,
-  member1,
-  member2,
   notOwnBuff,
   own,
   ownBuff,
@@ -48,47 +44,15 @@ const { energy_consumed } = allNumConditionals(
   dm.m2.max_energy_consumed - dm.m2.energy_consumed
 )
 
-// Kit: Attack teammate with the highest initial ATK is Vanguard.
-// Rank Attack non-Seed member slots by initial ATK, then apply when target matches
-// that slot's key. Sheet `key` excludes Seed so she cannot claim Vanguard.
-type MemberRead = typeof member0
-const atkBeatsOrTiesAttackTeammate = (a: MemberRead, b: MemberRead) =>
-  // Non-Attack / Seed / same unit → ok (1). Else need a.initial.atk >= b.initial.atk.
-  cmpEq(
-    b.char.specialty,
-    'attack',
-    cmpNE(
-      b.char.key,
-      key,
-      cmpNE(
-        b.char.key,
-        a.char.key,
-        cmpGE(a.initial.atk, b.initial.atk, 1, 0),
-        1
-      ),
-      1
-    ),
-    1
-  )
-const isVanguardMember = (m: MemberRead) =>
+const directStrikeCheck = (node: NumNode | number) =>
   cmpGE(
     sum(
-      cmpEq(m.char.specialty, 'attack', 1),
-      cmpNE(m.char.key, key, 1),
-      atkBeatsOrTiesAttackTeammate(m, member0),
-      atkBeatsOrTiesAttackTeammate(m, member1),
-      atkBeatsOrTiesAttackTeammate(m, member2)
+      cmpEq(team.initial.atk.max, target.initial.atk, 1),
+      cmpEq(target.char.specialty, 'attack', 1)
     ),
-    5,
-    1
+    2,
+    node
   )
-const isTargetVanguard = sum(
-  cmpEq(target.char.key, member0.char.key, isVanguardMember(member0)),
-  cmpEq(target.char.key, member1.char.key, isVanguardMember(member1)),
-  cmpEq(target.char.key, member2.char.key, isVanguardMember(member2))
-)
-const directStrikeCheck = (node: NumNode | number) =>
-  cmpGE(isTargetVanguard, 1, node)
 const besiege = (node: NumNode | number) =>
   directStrike.ifOn(onslaught.ifOn(node))
 const besiegeDisplay = (node: NumNode | number) =>
@@ -220,18 +184,13 @@ const sheet = register(
       )
     )
   ),
-  // Besiege DMG%: Seed (own) and Vanguard (notOwn), matching kit + M2 defIgn split.
   registerBuff(
     'core_dmg_',
     ownBuff.combat.common_dmg_.add(
       besiege(percent(subscript(char.core, dm.core.dmg_)))
-    )
-  ),
-  registerBuff(
-    'core_vanguard_dmg_',
-    notOwnBuff.combat.common_dmg_.add(
-      besiege(directStrikeCheck(percent(subscript(char.core, dm.core.dmg_))))
-    )
+    ),
+    undefined,
+    true
   ),
   registerBuff(
     'ability_basic_dmg_',
@@ -277,11 +236,7 @@ const sheet = register(
   registerBuff(
     'm2_vanguard_defIgn_',
     notOwnBuff.combat.defIgn_.add(
-      cmpGE(
-        char.mindscape,
-        2,
-        besiegeDisplay(directStrikeCheck(percent(dm.m2.besiege_defIgn_)))
-      )
+      cmpGE(char.mindscape, 2, besiegeDisplay(percent(dm.m2.besiege_defIgn_)))
     )
   ),
   registerBuff(

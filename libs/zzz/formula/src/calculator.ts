@@ -30,11 +30,6 @@ export class Calculator extends Base<Tag, never> {
     switch (tag.et) {
       case 'own':
       case 'target':
-      case 'member0':
-      case 'member1':
-      case 'member2':
-      case 'prevMember':
-      case 'nextMember':
         return (ownTag as any)[qt]?.[q]?.accu
       case 'enemy':
         return (enemyTag as any)[qt]?.[q]?.accu
