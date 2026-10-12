@@ -7,7 +7,6 @@ import {
   ownBuff,
   percent,
   registerBuff,
-  teamBuff,
 } from '../../util'
 import {
   cmpSpecialtyAndEquipped,
@@ -52,58 +51,30 @@ const sheet = registerWengine(
   ),
   registerBuff(
     'qingmingCompanionStacks_ult_ether_sheer_dmg_',
-    [
-      teamBuff.combat.dmg_.ether
-        .withTag({ damageType1: 'ult', damageType2: 'sheer' })
-        .add(
-          cmpSpecialtyAndEquipped(
-            key,
-            prod(
-              qingmingCompanionStacks,
-              percent(subscript(phase, dm.ult_exSpecial_sheer_ether_dmg_))
-            )
-          )
-        ),
-      teamBuff.combat.dmg_.ether
-        .withTag({ damageType1: 'sheer', damageType2: 'ult' })
-        .add(
-          cmpSpecialtyAndEquipped(
-            key,
-            prod(
-              qingmingCompanionStacks,
-              percent(subscript(phase, dm.ult_exSpecial_sheer_ether_dmg_))
-            )
-          )
-        ),
-    ],
+    ownBuff.combat.sheer_dmg_.ether.addWithDmgType(
+      'ult',
+      cmpSpecialtyAndEquipped(
+        key,
+        prod(
+          qingmingCompanionStacks,
+          percent(subscript(phase, dm.ult_exSpecial_sheer_ether_dmg_))
+        )
+      )
+    ),
     showSpecialtyAndEquipped(key)
   ),
   registerBuff(
     'qingmingCompanionStacks_exSpecial_ether_sheer_dmg_',
-    [
-      teamBuff.combat.dmg_.ether
-        .withTag({ damageType1: 'exSpecial', damageType2: 'sheer' })
-        .add(
-          cmpSpecialtyAndEquipped(
-            key,
-            prod(
-              qingmingCompanionStacks,
-              percent(subscript(phase, dm.ult_exSpecial_sheer_ether_dmg_))
-            )
-          )
-        ),
-      teamBuff.combat.dmg_.ether
-        .withTag({ damageType1: 'sheer', damageType2: 'exSpecial' })
-        .add(
-          cmpSpecialtyAndEquipped(
-            key,
-            prod(
-              qingmingCompanionStacks,
-              percent(subscript(phase, dm.ult_exSpecial_sheer_ether_dmg_))
-            )
-          )
-        ),
-    ],
+    ownBuff.combat.sheer_dmg_.ether.addWithDmgType(
+      'exSpecial',
+      cmpSpecialtyAndEquipped(
+        key,
+        prod(
+          qingmingCompanionStacks,
+          percent(subscript(phase, dm.ult_exSpecial_sheer_ether_dmg_))
+        )
+      )
+    ),
     showSpecialtyAndEquipped(key)
   )
 )

@@ -2,9 +2,9 @@ import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   DataContext,
-  NodeFieldDisplayText,
   getDisplayHeader,
   getDisplaySections,
+  NodeFieldDisplayText,
   resolveInfo,
 } from '@genshin-optimizer/gi/ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'

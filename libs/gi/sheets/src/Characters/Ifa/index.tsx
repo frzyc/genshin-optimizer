@@ -1,5 +1,5 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
-import { type CharacterKey, absorbableEle } from '@genshin-optimizer/gi/consts'
+import { absorbableEle, type CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
@@ -15,7 +15,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -24,6 +23,7 @@ import {
   healNodeTalent,
   plungingDmgNodes,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
 
 const key: CharacterKey = 'Ifa'
 const skillParam_gen = allStats.char.skillParam[key]
@@ -68,6 +68,7 @@ const dm = {
     maxEssentials: skillParam_gen.passive1[2][0],
     reaction_dmg_perEssential: skillParam_gen.passive1[3][0],
     lunarcharged_dmg_perEssential: 0.002,
+    stellarswirl_dmg_perEssential: skillParam_gen.passive1[4][0],
   },
   passive2: {
     eleMas: skillParam_gen.passive2[0][0],
@@ -117,6 +118,11 @@ const a1Essentials_lunarcharged_dmg_ = greaterEq(
   input.asc,
   1,
   prod(percent(dm.passive1.lunarcharged_dmg_perEssential), a1Essentials)
+)
+const a1Essentials_stellarswirl_dmg_ = greaterEq(
+  input.asc,
+  1,
+  prod(percent(dm.passive1.stellarswirl_dmg_perEssential), a1Essentials)
 )
 
 const [condA4NsBurstPath, condA4NsBurst] = cond(key, 'a4NsBurst')
@@ -191,6 +197,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       swirl_dmg_: a1Essentials_swirl_dmg_,
       electrocharged_dmg_: a1Essentials_electrocharged_dmg_,
       lunarcharged_dmg_: a1Essentials_lunarcharged_dmg_,
+      stellarswirl_dmg_: a1Essentials_stellarswirl_dmg_,
     },
   },
 })
@@ -214,7 +221,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.3`),
+            name: ct.chg('auto.skillParams.3'),
           }),
         },
         {
@@ -252,12 +259,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.tonicDmg, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.tonicHeal, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
@@ -279,12 +286,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.skillDmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         ...absorbableEle.map((ele) => ({
           node: infoMut(dmgFormulas.burst[ele], {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         })),
         {
@@ -322,6 +329,9 @@ const sheet: TalentSheet = {
             },
             {
               node: a1Essentials_lunarcharged_dmg_,
+            },
+            {
+              node: a1Essentials_stellarswirl_dmg_,
             },
           ],
         }))

@@ -1,0 +1,29 @@
+{
+  "setName": "Desilusión Congelada en las Sombras",
+  "setEffects": {
+    "2": "ATQ +18%.",
+    "4": "El daño infligido por la reacción de Superconductor aumenta en un 80%, y el de la reacción de Superconductor Estelar aumenta en un 40%. Cuando el portador de este conjunto de artefactos ataca a un enemigo afectado por Superconductor o Superconductor Estelar, la Prob. CRIT de dicho ataque aumenta en un 16%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Satén Detenido en la Gloria",
+      "desc": "El lazo con forma de flor que ella recibió como regalo de una amiga cuyas manos eran gélidas como el hielo."
+    },
+    "plume": {
+      "name": "Pluma Detenida en la Creación",
+      "desc": "La pluma que ella otorgó a su seguidor, y con la cual una vez escribió sueños absurdos."
+    },
+    "sands": {
+      "name": "Hora Detenida en el Despertar de un Gran Sueño",
+      "desc": "El reloj que ella le obsequió al taciturno alquimista para recordarle todos sus compromisos."
+    },
+    "goblet": {
+      "name": "Celebración Detenida en el Clamor",
+      "desc": "La copa de vino que ella obtuvo de su compañero como parte de la celebración."
+    },
+    "circlet": {
+      "name": "Péndulos Detenidos en la Oscilación",
+      "desc": "El adorno que ella recibió de su único amo como premio."
+    }
+  }
+}

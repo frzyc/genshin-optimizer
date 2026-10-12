@@ -1,0 +1,29 @@
+{
+  "setName": "Phước Lành Trời Cao",
+  "setEffects": {
+    "2": "Hiệu Quả Nạp Nguyên Tố tăng 20%.",
+    "4": "Nếu người trang bị đã hoàn thành Bài Tập Của Ma Nữ, thì sau khi thi triển Kỹ Năng Nguyên Tố sẽ nhận được hiệu quả \"Thiên Quang Chỉ Dẫn\": Căn cứ vào Loại Nguyên Tố của người trang bị, khiến tất cả nhân vật trong đội ở gần nhận 20% buff Sát Thương Nguyên Tố tương ứng, duy trì 20s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên. Hiệu quả tăng sát thương sản sinh từ bộ Thánh Di Vật cùng tên sẽ không thể cộng dồn.\\nKhi đội ngũ có hiệu ứng \"Hexerei - Nghi Thức Bí Mật\": Hiệu quả \"Thiên Quang Chỉ Dẫn\" nâng cấp thành \"Khúc Ca Phàm Trần\": Ngoài Loại Nguyên Tố của người trang bị, sẽ còn căn cứ vào Loại Nguyên Tố của nhân vật ra trận hiện tại trong đội bản thân, khiến tất cả nhân vật trong đội ở gần nhận buff Sát Thương Nguyên Tố tương ứng, đồng thời cả hai loại buff Sát Thương Nguyên Tố kể trên tăng đến 40%. Buff sát thương cho cùng loại nguyên tố sẽ không thể cộng dồn."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Hương Thơm Trời Ban",
+      "desc": "Đóa hoa bất tử mà trời cao ban tặng cho ngự sứ. Sinh mệnh vô tận đã nảy sinh lòng tham."
+    },
+    "plume": {
+      "name": "Cái Chết Trời Ban",
+      "desc": "Lông vũ vãng sinh mà trời cao ban tặng cho ngự sứ. Mọi tội lỗi sẽ được xá miễn tại điểm cuối của vận mệnh."
+    },
+    "sands": {
+      "name": "Mệnh Lệnh Trời Ban",
+      "desc": "Đồng hồ mặt trời đảo ngược mà trời cao ban tặng cho ngự sứ. Sự cấm chế không thể vượt qua đã trở thành vực sâu của phẫn nộ."
+    },
+    "goblet": {
+      "name": "Bổng Lộc Trời Ban",
+      "desc": "Rượu ngọt mà trời cao ban tặng cho ngự sứ. Bữa tiệc vui không ngừng nghỉ đã mở ra cánh cửa của dục vọng."
+    },
+    "circlet": {
+      "name": "Vương Miện Trời Ban",
+      "desc": "Vương miện hoa lệ mà trời cao ban tặng cho ngự sứ. Quyền lực không ai quản chế đã nuôi dưỡng sự kiêu ngạo."
+    }
+  }
+}

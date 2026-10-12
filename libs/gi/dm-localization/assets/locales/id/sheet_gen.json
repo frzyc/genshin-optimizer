@@ -60,12 +60,14 @@
     "superconduct": "Superconduct",
     "vaporize": "Vaporize",
     "melt": "Melt",
-    "bloom": "Bloom",
+    "bloom": "",
     "burgeon": "Burgeon",
     "hyperbloom": "Hyperbloom",
     "quicken": "Quicken",
     "aggravate": "Aggravate",
-    "spread": "Spread"
+    "spread": "Spread",
+    "stellarconduct": "Stellar-Conduct",
+    "stellarswirl": "Stellar Swirl"
   },
   "stat": {
     "def": "DEF",

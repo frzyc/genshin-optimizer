@@ -7,10 +7,10 @@ import {
 } from '@genshin-optimizer/common/database'
 import {
   type AscensionKey,
-  type SuperimposeKey,
   allLightConeKeys,
   allLocationKeys,
   lightConeMaxLevel,
+  type SuperimposeKey,
   validateLevelAsc,
 } from '@genshin-optimizer/sr/consts'
 import { z } from 'zod'

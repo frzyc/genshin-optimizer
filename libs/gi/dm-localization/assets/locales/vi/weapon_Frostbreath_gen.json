@@ -1,0 +1,24 @@
+{
+  "name": "Hàn Khí",
+  "description": {
+    "0": "Trường thương băng cứng vương vấn hàn ý lạnh giá, tương truyền trong quá khứ xa xôi từng được nắm giữ bởi Bạch Sa Hoàng thống trị Snezhnaya."
+  },
+  "passiveName": "Cú Ném Ngàn Tấn",
+  "passiveDescription": {
+    "0": {
+      "0": "Sau khi kích hoạt phản ứng liên quan đến Nguyên Tố Băng hoặc Thủy, người trang bị tăng <cryo>20%</cryo> Tấn Công trong 15s, đồng thời hồi phục <cryo>6</cryo> điểm Năng Lượng Nguyên Tố cho nhân vật khác trong đội bản thân. Hiệu quả này mỗi 16s tối đa kích hoạt một lần."
+    },
+    "1": {
+      "0": "Sau khi kích hoạt phản ứng liên quan đến Nguyên Tố Băng hoặc Thủy, người trang bị tăng <cryo>25%</cryo> Tấn Công trong 15s, đồng thời hồi phục <cryo>7.5</cryo> điểm Năng Lượng Nguyên Tố cho nhân vật khác trong đội bản thân. Hiệu quả này mỗi 16s tối đa kích hoạt một lần."
+    },
+    "2": {
+      "0": "Sau khi kích hoạt phản ứng liên quan đến Nguyên Tố Băng hoặc Thủy, người trang bị tăng <cryo>30%</cryo> Tấn Công trong 15s, đồng thời hồi phục <cryo>9</cryo> điểm Năng Lượng Nguyên Tố cho nhân vật khác trong đội bản thân. Hiệu quả này mỗi 16s tối đa kích hoạt một lần."
+    },
+    "3": {
+      "0": "Sau khi kích hoạt phản ứng liên quan đến Nguyên Tố Băng hoặc Thủy, người trang bị tăng <cryo>35%</cryo> Tấn Công trong 15s, đồng thời hồi phục <cryo>10.5</cryo> điểm Năng Lượng Nguyên Tố cho nhân vật khác trong đội bản thân. Hiệu quả này mỗi 16s tối đa kích hoạt một lần."
+    },
+    "4": {
+      "0": "Sau khi kích hoạt phản ứng liên quan đến Nguyên Tố Băng hoặc Thủy, người trang bị tăng <cryo>40%</cryo> Tấn Công trong 15s, đồng thời hồi phục <cryo>12</cryo> điểm Năng Lượng Nguyên Tố cho nhân vật khác trong đội bản thân. Hiệu quả này mỗi 16s tối đa kích hoạt một lần."
+    }
+  }
+}

@@ -51,7 +51,7 @@ export default function CustomMultiTargetImportBtn({
         onHide()
       }
     } catch (e) {
-      window.alert(t('mTargetImport.failed') + `\n${e}`)
+      window.alert(`${t('mTargetImport.failed')}\n${e}`)
       return
     }
   }

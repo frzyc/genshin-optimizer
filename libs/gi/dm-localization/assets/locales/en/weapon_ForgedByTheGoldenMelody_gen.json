@@ -1,0 +1,29 @@
+{
+  "name": "Forged by the Golden Melody",
+  "description": {
+    "0": "A greatsword decorated in gold. Legend has it that it was the favored weapon of a certain exalted Harmost back in the distant past."
+  },
+  "passiveName": "Day and Night in Counterpoint",
+  "passiveDescription": {
+    "0": {
+      "0": "Every 10s, the equipping character plays a \"Harmonic Movement\" of the corresponding type for a boost in the following order: <cryo>+18%</cryo> ATK > <cryo>+120</cryo> Elemental Mastery > <cryo>+28%</cryo> Stellar Glimmer reaction DMG. Each instance of Harmonic Movement lasts 10s. This effect can trigger even when the equipping character is not on the field.",
+      "1": "Triggering a Stellar Glimmer reaction will also grant an additional 12-second instance of \"Harmonic Movement: Contrapuntal\" with the same effects as the Harmonic Movement active when Stellar Glimmer is triggered. This effect stacks with the original Harmonic Movement effect, and can trigger once every 12s."
+    },
+    "1": {
+      "0": "Every 10s, the equipping character plays a \"Harmonic Movement\" of the corresponding type for a boost in the following order: <cryo>+22.5%</cryo> ATK > <cryo>+150</cryo> Elemental Mastery > <cryo>+35%</cryo> Stellar Glimmer reaction DMG. Each instance of Harmonic Movement lasts 10s. This effect can trigger even when the equipping character is not on the field.",
+      "1": "Triggering a Stellar Glimmer reaction will also grant an additional 12-second instance of \"Harmonic Movement: Contrapuntal\" with the same effects as the Harmonic Movement active when Stellar Glimmer is triggered. This effect stacks with the original Harmonic Movement effect, and can trigger once every 12s."
+    },
+    "2": {
+      "0": "Every 10s, the equipping character plays a \"Harmonic Movement\" of the corresponding type for a boost in the following order: <cryo>+27%</cryo> ATK > <cryo>+180</cryo> Elemental Mastery > <cryo>+42%</cryo> Stellar Glimmer reaction DMG. Each instance of Harmonic Movement lasts 10s. This effect can trigger even when the equipping character is not on the field.",
+      "1": "Triggering a Stellar Glimmer reaction will also grant an additional 12-second instance of \"Harmonic Movement: Contrapuntal\" with the same effects as the Harmonic Movement active when Stellar Glimmer is triggered. This effect stacks with the original Harmonic Movement effect, and can trigger once every 12s."
+    },
+    "3": {
+      "0": "Every 10s, the equipping character plays a \"Harmonic Movement\" of the corresponding type for a boost in the following order: <cryo>+31.5%</cryo> ATK > <cryo>+210</cryo> Elemental Mastery > <cryo>+49%</cryo> Stellar Glimmer reaction DMG. Each instance of Harmonic Movement lasts 10s. This effect can trigger even when the equipping character is not on the field.",
+      "1": "Triggering a Stellar Glimmer reaction will also grant an additional 12-second instance of \"Harmonic Movement: Contrapuntal\" with the same effects as the Harmonic Movement active when Stellar Glimmer is triggered. This effect stacks with the original Harmonic Movement effect, and can trigger once every 12s."
+    },
+    "4": {
+      "0": "Every 10s, the equipping character plays a \"Harmonic Movement\" of the corresponding type for a boost in the following order: <cryo>+36%</cryo> ATK > <cryo>+240</cryo> Elemental Mastery > <cryo>+56%</cryo> Stellar Glimmer reaction DMG. Each instance of Harmonic Movement lasts 10s. This effect can trigger even when the equipping character is not on the field.",
+      "1": "Triggering a Stellar Glimmer reaction will also grant an additional 12-second instance of \"Harmonic Movement: Contrapuntal\" with the same effects as the Harmonic Movement active when Stellar Glimmer is triggered. This effect stacks with the original Harmonic Movement effect, and can trigger once every 12s."
+    }
+  }
+}

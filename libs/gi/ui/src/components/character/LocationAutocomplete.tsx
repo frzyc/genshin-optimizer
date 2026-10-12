@@ -12,7 +12,7 @@ import {
   charKeyToLocCharKey,
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import type { Variant } from '@genshin-optimizer/gi/wr'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import type { AutocompleteProps } from '@mui/material'
@@ -21,6 +21,7 @@ import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { SillyContext } from '../../context'
 import { CharIconSide } from './CharIconSideElement'
+
 type LocationAutocompleteProps = {
   location: LocationKey
   setLocation: (v: LocationKey) => void

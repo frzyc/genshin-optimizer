@@ -1,8 +1,12 @@
-import type { Tag as BaseTag } from '@genshin-optimizer/game-opt/engine'
+import type {
+  Tag as BaseTag,
+  EntryType,
+} from '@genshin-optimizer/game-opt/engine'
 import {
   Read as BaseRead,
   reader as baseReader,
   entryTypes,
+  stackToken as gameOptStackToken,
   presets,
   setReader,
 } from '@genshin-optimizer/game-opt/engine'
@@ -14,8 +18,14 @@ import {
   allRegionKeys,
   allTransformativeReactionKeys,
 } from '@genshin-optimizer/gi/consts'
+import type { NumNode } from '@genshin-optimizer/pando/engine'
 import type { Dst, Sheet, Src } from './listing'
 import { members, sheets } from './listing'
+
+export {
+  stackListingNulls,
+  stackReadTag,
+} from '@genshin-optimizer/game-opt/engine'
 
 export const fixedTags = {
   preset: presets,
@@ -31,7 +41,7 @@ export const fixedTags = {
   amp: [...allAmplifyingReactionKeys, ''],
   cata: [...allCatalyzeReactionKeys, ''],
 } as const
-export type Tag = BaseTag<Sheet, Src, Dst>
+export type Tag = BaseTag<Sheet, Src, Dst, EntryType>
 
 export class Read extends BaseRead<Tag> {
   override toString(): string {
@@ -123,6 +133,12 @@ export class Read extends BaseRead<Tag> {
   get lunarcrystallize(): Read {
     return super.with('trans', 'lunarcrystallize')
   }
+  get stellarconduct(): Read {
+    return super.with('trans', 'stellarconduct')
+  }
+  get stellarswirl(): Read {
+    return super.with('trans', 'stellarswirl')
+  }
   get vaporize(): Read {
     return super.with('amp', 'vaporize')
   }
@@ -170,6 +186,13 @@ export class Read extends BaseRead<Tag> {
 setReader<Tag>(new Read({}, undefined))
 export const reader = baseReader as Read
 
+export function stackToken(sheet: Sheet, value: number | NumNode) {
+  return gameOptStackToken(sheet, value) as {
+    entries: import('./tagMapType').TagMapNodeEntries
+    out: Read
+  }
+}
+
 export function tagStr(tag: Tag, ex?: any): string {
   const {
     name,
@@ -196,7 +219,7 @@ export function tagStr(tag: Tag, ex?: any): string {
     includedBar = false
   function required(str: string | undefined | null, name: string) {
     if (!str && str !== null) return
-    result += str === null ? `!${name} ` : str + ' '
+    result += str === null ? `!${name} ` : `${str} `
     includedRequired = true
   }
   function optional(str: string | undefined | null, name: string) {
@@ -205,7 +228,7 @@ export function tagStr(tag: Tag, ex?: any): string {
       includedBar = true
       result += '| '
     }
-    result += str === null ? `!${name} ` : str + ' '
+    result += str === null ? `!${name} ` : `${str} `
   }
   required(name && `#${name}`, 'name')
   required(preset, 'preset')
@@ -224,5 +247,5 @@ export function tagStr(tag: Tag, ex?: any): string {
   optional(amp, 'amp')
   optional(cata, 'cata')
   if (ex) result += `[${ex}] `
-  return result + '}'
+  return `${result}}`
 }

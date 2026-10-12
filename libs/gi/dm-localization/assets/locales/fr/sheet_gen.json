@@ -60,12 +60,14 @@
     "superconduct": "Supraconduction",
     "vaporize": "Évaporation",
     "melt": "Fonte",
-    "bloom": "Fleurissement",
+    "bloom": "",
     "burgeon": "Bourgeonnement",
     "hyperbloom": "Exubérance",
     "quicken": "Stimulation",
     "aggravate": "Suractivation",
-    "spread": "Propagation"
+    "spread": "Propagation",
+    "stellarconduct": "Astroconduction",
+    "stellarswirl": "Astrodispersion"
   },
   "stat": {
     "def": "DÉF",

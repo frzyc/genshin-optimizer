@@ -73,13 +73,13 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
       return super._compute(n, cache)
     } catch (e) {
       return Object.freeze({
-        val: NaN,
+        val: Number.NaN,
         meta: {
           formula: `${e}`,
           deps: [],
           omitted: [],
 
-          val: NaN,
+          val: Number.NaN,
           x: [],
           br: [],
           comp: 'ERR',
@@ -135,7 +135,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
         if (n.tag) argStrs.push(this.tagStr(n.tag))
         argStrs.push(...args.map((m) => m.comp))
         if (omitted.length) argStrs.push(`<${omitted.length} omitted>`)
-        comp = `${n.op}(` + argStrs.join(', ') + `)`
+        comp = `${n.op}(${argStrs.join(', ')})`
       }
     }
     omitted.push(...args.flatMap((m) => (m.pivot ? [] : m.omitted)))

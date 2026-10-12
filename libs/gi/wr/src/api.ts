@@ -12,12 +12,8 @@ import type {
   MultiOptHitModeKey,
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
-import {
-  allElementWithPhyKeys,
-  allTravelerKeys,
-} from '@genshin-optimizer/gi/consts'
+import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import type {
-  ArtCharDatabase,
   CustomFunction,
   CustomTarget,
   EnclosingOperation,
@@ -152,7 +148,6 @@ export interface CharInfo extends ICharacter {
  */
 export function dataObjForCharacterNew(
   {
-    key,
     level,
     constellation,
     ascension,
@@ -166,7 +161,6 @@ export function dataObjForCharacterNew(
     hitMode: globalHitMode,
     reaction,
   }: CharInfo,
-  database: ArtCharDatabase,
   sheetData?: Data
 ): Data {
   const result: Data = {
@@ -215,20 +209,6 @@ export function dataObjForCharacterNew(
     (x: any) => typeof x === 'string',
     (x: string, keys: string[]) => layeredAssignment(result, keys, constant(x))
   )
-  // Insert elements resonanted with for traveler automatically
-  // using existing conditional system
-  if (key.includes('Traveler')) {
-    const dbTravelerKeys = allTravelerKeys.filter((tk) =>
-      database.chars.get(tk)
-    )
-    dbTravelerKeys.forEach((tk) =>
-      layeredAssignment(
-        result,
-        ['conditional', 'Traveler', tk.toLowerCase()],
-        constant('on')
-      )
-    )
-  }
 
   if (sheetData?.display) {
     sheetData.display['custom'] = {}
@@ -326,7 +306,6 @@ export function mergeData(data: Data[]): Data {
     if (data.length <= 1) return data[0]
     if (data[0].operation) {
       if (path[0] === 'teamBuff') path = path.slice(1)
-      /*eslint prefer-const: ["error", {"destructuring": "all"}]*/
       let { accu, type } =
         (objPathValue(input, path) as ReadNode<number | string> | undefined) ??
         {}

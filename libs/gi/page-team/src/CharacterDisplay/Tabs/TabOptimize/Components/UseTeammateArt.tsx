@@ -15,7 +15,7 @@ import {
   Typography,
 } from '@mui/material'
 import type { ReactNode } from 'react'
-import { Suspense, memo, useContext } from 'react'
+import { memo, Suspense, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 export const UseTeammateArt = memo(function UseTeammateArt({
   totalTally,

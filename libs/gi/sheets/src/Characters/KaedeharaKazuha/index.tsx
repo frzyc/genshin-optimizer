@@ -1,4 +1,5 @@
 import { ColorText } from '@genshin-optimizer/common/ui'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { absorbableEle } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
@@ -17,7 +18,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, condReadNode, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -25,8 +25,7 @@ import {
   dmgNode,
   plungingDmgNodes,
 } from '../dataUtil'
-
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import type { TalentSheet } from '../ICharacterSheet.d'
 
 const key: CharacterKey = 'KaedeharaKazuha'
 const elementKey: ElementKey = 'anemo'
@@ -274,13 +273,13 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg1, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
             textSuffix: '(1)',
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.dmg2, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
             textSuffix: '(2)',
           }),
         },
@@ -319,7 +318,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.press, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
@@ -332,7 +331,7 @@ const sheet: TalentSheet = {
         },
         {
           node: infoMut(dmgFormulas.skill.hold, {
-            name: ct.chg(`skill.skillParams.2`),
+            name: ct.chg('skill.skillParams.2'),
           }),
         },
         {
@@ -406,12 +405,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.dmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.dot, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {
@@ -445,7 +444,7 @@ const sheet: TalentSheet = {
             fields: [
               {
                 node: infoMut(dmgFormulas.burst.absorb, {
-                  name: ct.chg(`burst.skillParams.2`),
+                  name: ct.chg('burst.skillParams.2'),
                 }),
               },
             ],

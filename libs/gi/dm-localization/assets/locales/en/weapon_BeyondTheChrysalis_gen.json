@@ -1,0 +1,44 @@
+{
+  "name": "Beyond the Chrysalis",
+  "description": {
+    "0": "A longsword brimming with light and color, and as weightless as a butterfly when brandished. It was once used by a certain individual to break bonds."
+  },
+  "passiveName": "Dance of Wings Unbound",
+  "passiveDescription": {
+    "0": {
+      "0": "Each time the equipping character uses their Elemental Skill or Elemental Burst, they gain one of the following three effects in sequence:",
+      "1": "Winds of Devotion: Increases the equipping character's CRIT DMG by <cryo>56%</cryo> for 10s;",
+      "2": "Winds of Defiance: Increases Stellar Swirl reaction DMG dealt by the equipping character by <cryo>36%</cryo> for 10s; and",
+      "3": "Winds of Plenty: Regenerates <cryo>5</cryo> Elemental Energy for the equipping character. Up to <cryo>5</cryo> Elemental Energy can be regenerated in this way every 4s.",
+      "4": "The aforementioned effects are removed and the sequence is reset when the equipping character leaves the field."
+    },
+    "1": {
+      "0": "Each time the equipping character uses their Elemental Skill or Elemental Burst, they gain one of the following three effects in sequence:",
+      "1": "Winds of Devotion: Increases the equipping character's CRIT DMG by <cryo>72%</cryo> for 10s;",
+      "2": "Winds of Defiance: Increases Stellar Swirl reaction DMG dealt by the equipping character by <cryo>45%</cryo> for 10s; and",
+      "3": "Winds of Plenty: Regenerates <cryo>5.5</cryo> Elemental Energy for the equipping character. Up to <cryo>5.5</cryo> Elemental Energy can be regenerated in this way every 4s.",
+      "4": "The aforementioned effects are removed and the sequence is reset when the equipping character leaves the field."
+    },
+    "2": {
+      "0": "Each time the equipping character uses their Elemental Skill or Elemental Burst, they gain one of the following three effects in sequence:",
+      "1": "Winds of Devotion: Increases the equipping character's CRIT DMG by <cryo>88%</cryo> for 10s;",
+      "2": "Winds of Defiance: Increases Stellar Swirl reaction DMG dealt by the equipping character by <cryo>54%</cryo> for 10s; and",
+      "3": "Winds of Plenty: Regenerates <cryo>6</cryo> Elemental Energy for the equipping character. Up to <cryo>6</cryo> Elemental Energy can be regenerated in this way every 4s.",
+      "4": "The aforementioned effects are removed and the sequence is reset when the equipping character leaves the field."
+    },
+    "3": {
+      "0": "Each time the equipping character uses their Elemental Skill or Elemental Burst, they gain one of the following three effects in sequence:",
+      "1": "Winds of Devotion: Increases the equipping character's CRIT DMG by <cryo>104%</cryo> for 10s;",
+      "2": "Winds of Defiance: Increases Stellar Swirl reaction DMG dealt by the equipping character by <cryo>63%</cryo> for 10s; and",
+      "3": "Winds of Plenty: Regenerates <cryo>6.5</cryo> Elemental Energy for the equipping character. Up to <cryo>6.5</cryo> Elemental Energy can be regenerated in this way every 4s.",
+      "4": "The aforementioned effects are removed and the sequence is reset when the equipping character leaves the field."
+    },
+    "4": {
+      "0": "Each time the equipping character uses their Elemental Skill or Elemental Burst, they gain one of the following three effects in sequence:",
+      "1": "Winds of Devotion: Increases the equipping character's CRIT DMG by <cryo>120%</cryo> for 10s;",
+      "2": "Winds of Defiance: Increases Stellar Swirl reaction DMG dealt by the equipping character by <cryo>72%</cryo> for 10s; and",
+      "3": "Winds of Plenty: Regenerates <cryo>7</cryo> Elemental Energy for the equipping character. Up to <cryo>7</cryo> Elemental Energy can be regenerated in this way every 4s.",
+      "4": "The aforementioned effects are removed and the sequence is reset when the equipping character leaves the field."
+    }
+  }
+}

@@ -4,7 +4,6 @@
   "sourceRoot": "libs/zzz/formula/src",
   "projectType": "library",
   "tags": [],
-  "// targets": "to see all targets run: nx show project zzz-formula --web",
   "targets": {
     "gen-file": {
       "executor": "@genshin-optimizer/zzz/formula:gen-desc",
@@ -13,10 +12,10 @@
       }
     },
     "test": {
-      "executor": "@nx/vite:test",
+      "executor": "@nx/vitest:test",
       "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "reportsDirectory": "../../../coverage/libs/test"
+        "reportsDirectory": "{projectRoot}/../../../coverage/libs/test"
       }
     }
   }

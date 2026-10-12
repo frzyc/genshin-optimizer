@@ -1,0 +1,44 @@
+{
+  "name": "Kozanın Ötesi",
+  "description": {
+    "0": "Işık ve renkle dolup taşan, savurduğunda bir kelebek kadar hafif hissettiren bir uzun kılıç. Bir zamanlar birisi tarafından zincirleri kırmak için kullanılmıştır."
+  },
+  "passiveName": "Özgür Kanatların Dansı",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakter Element Becerisini veya Element Patlamasını her kullandığında sırayla aşağıdaki üç etkiden birini kazanır:",
+      "1": "Bağlılık Rüzgarları: 10 saniyeliğine kuşanan karakterin Kritik Hasarını <cryo>%56</cryo> artırır.",
+      "2": "İsyan Rüzgarları: 10 saniyeliğine kuşanan karakterin Yıldız Girdabı Tepkimesi Hasarını <cryo>%36</cryo> artırır.",
+      "3": "Bolluk Rüzgarları: Kuşanan karakter için <cryo>5</cryo> Element Enerjisi yeniler. Bu şekilde her 4 saniyede bir en fazla <cryo>5</cryo> Element Enerjisi yenilenebilir.",
+      "4": "Kuşanan karakter alandan ayrıldığında yukarıdaki etkiler kaldırılır ve etkilerin sırası sıfırlanır."
+    },
+    "1": {
+      "0": "Kuşanan karakter Element Becerisini veya Element Patlamasını her kullandığında sırayla aşağıdaki üç etkiden birini kazanır:",
+      "1": "Bağlılık Rüzgarları: 10 saniyeliğine kuşanan karakterin Kritik Hasarını <cryo>%72</cryo> artırır.",
+      "2": "İsyan Rüzgarları: 10 saniyeliğine kuşanan karakterin Yıldız Girdabı Tepkimesi Hasarını <cryo>%45</cryo> artırır.",
+      "3": "Bolluk Rüzgarları: Kuşanan karakter için <cryo>5,5</cryo> Element Enerjisi yeniler. Bu şekilde her 4 saniyede bir en fazla <cryo>5,5</cryo> Element Enerjisi yenilenebilir.",
+      "4": "Kuşanan karakter alandan ayrıldığında yukarıdaki etkiler kaldırılır ve etkilerin sırası sıfırlanır."
+    },
+    "2": {
+      "0": "Kuşanan karakter Element Becerisini veya Element Patlamasını her kullandığında sırayla aşağıdaki üç etkiden birini kazanır:",
+      "1": "Bağlılık Rüzgarları: 10 saniyeliğine kuşanan karakterin Kritik Hasarını <cryo>%88</cryo> artırır.",
+      "2": "İsyan Rüzgarları: 10 saniyeliğine kuşanan karakterin Yıldız Girdabı Tepkimesi Hasarını <cryo>%54</cryo> artırır.",
+      "3": "Bolluk Rüzgarları: Kuşanan karakter için <cryo>6</cryo> Element Enerjisi yeniler. Bu şekilde her 4 saniyede bir en fazla <cryo>6</cryo> Element Enerjisi yenilenebilir.",
+      "4": "Kuşanan karakter alandan ayrıldığında yukarıdaki etkiler kaldırılır ve etkilerin sırası sıfırlanır."
+    },
+    "3": {
+      "0": "Kuşanan karakter Element Becerisini veya Element Patlamasını her kullandığında sırayla aşağıdaki üç etkiden birini kazanır:",
+      "1": "Bağlılık Rüzgarları: 10 saniyeliğine kuşanan karakterin Kritik Hasarını <cryo>%104</cryo> artırır.",
+      "2": "İsyan Rüzgarları: 10 saniyeliğine kuşanan karakterin Yıldız Girdabı Tepkimesi Hasarını <cryo>%63</cryo> artırır.",
+      "3": "Bolluk Rüzgarları: Kuşanan karakter için <cryo>6,5</cryo> Element Enerjisi yeniler. Bu şekilde her 4 saniyede bir en fazla <cryo>6,5</cryo> Element Enerjisi yenilenebilir.",
+      "4": "Kuşanan karakter alandan ayrıldığında yukarıdaki etkiler kaldırılır ve etkilerin sırası sıfırlanır."
+    },
+    "4": {
+      "0": "Kuşanan karakter Element Becerisini veya Element Patlamasını her kullandığında sırayla aşağıdaki üç etkiden birini kazanır:",
+      "1": "Bağlılık Rüzgarları: 10 saniyeliğine kuşanan karakterin Kritik Hasarını <cryo>%120</cryo> artırır.",
+      "2": "İsyan Rüzgarları: 10 saniyeliğine kuşanan karakterin Yıldız Girdabı Tepkimesi Hasarını <cryo>%72</cryo> artırır.",
+      "3": "Bolluk Rüzgarları: Kuşanan karakter için <cryo>7</cryo> Element Enerjisi yeniler. Bu şekilde her 4 saniyede bir en fazla <cryo>7</cryo> Element Enerjisi yenilenebilir.",
+      "4": "Kuşanan karakter alandan ayrıldığında yukarıdaki etkiler kaldırılır ve etkilerin sırası sıfırlanır."
+    }
+  }
+}

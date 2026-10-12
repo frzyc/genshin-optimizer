@@ -4,5 +4,13 @@
   "sourceRoot": "libs/zzz/formula-ui/src",
   "projectType": "library",
   "tags": [],
-  "targets": {}
+  "targets": {
+    "test": {
+      "executor": "@nx/vitest:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "{projectRoot}/../../../coverage/libs/zzz/formula-ui"
+      }
+    }
+  }
 }

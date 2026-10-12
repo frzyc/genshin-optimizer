@@ -240,23 +240,23 @@ export function lookup<P extends OP>(
     op: 'lookup',
     br: [toV(index)],
     ex: Object.fromEntries(Object.keys(table).map((key, i) => [key, i + 1])),
-    x: toVs([defaultV ?? NaN, ...Object.values(table)]),
+    x: toVs([defaultV ?? Number.NaN, ...Object.values(table)]),
   }
 }
 /** table[index] */
 export function subscript<P extends OP>(
   index: Num<P>,
-  table: number[]
+  table: readonly Num<P>[]
 ): Subscript<number, P | 'subscript'>
 export function subscript<P extends OP>(
   index: Num<P>,
-  table: string[]
+  table: readonly string[]
 ): Subscript<string, P | 'subscript'>
 export function subscript<P extends OP>(
   index: Num<P>,
-  table: number[] | string[]
+  table: readonly Num<P>[] | readonly string[]
 ): Subscript<_value, P | 'subscript'> {
-  return { op: 'subscript', ex: table, x, br: [toV(index)] }
+  return { op: 'subscript', ex: table as _value[], x, br: [toV(index)] }
 }
 
 // Tagging

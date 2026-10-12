@@ -1,7 +1,7 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
 import type { Preset } from '@genshin-optimizer/game-opt/engine'
-import { DebugReadContext } from '@genshin-optimizer/game-opt/formula-ui'
+import { useSetDebugTarget } from '@genshin-optimizer/game-opt/formula-ui'
 import type { Frame } from '@genshin-optimizer/sr/db'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import { Read } from '@genshin-optimizer/sr/formula'
@@ -56,7 +56,7 @@ export function ComboEditor() {
 function Combo({ frame, index }: { frame: Frame; index: number }) {
   const { presetIndex, setPresetIndex } = useContext(PresetContext)
   const calc = useSrCalcContext()
-  const { setRead } = useContext(DebugReadContext)
+  const setDebugTarget = useSetDebugTarget()
   const read = useMemo(() => new Read(frame.tag, 'sum'), [frame.tag])
   const value = useMemo(() => {
     try {
@@ -70,10 +70,10 @@ function Combo({ frame, index }: { frame: Frame; index: number }) {
 
   const handleClick = useCallback(
     (event: MouseEvent) => {
-      if (event.altKey) setRead(read)
+      if (event.altKey) setDebugTarget?.(read, frame.tag)
       else setPresetIndex(index)
     },
-    [index, read, setPresetIndex, setRead]
+    [index, read, setPresetIndex, setDebugTarget, frame.tag]
   )
   return (
     <CardThemed

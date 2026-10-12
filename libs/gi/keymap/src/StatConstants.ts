@@ -53,7 +53,7 @@ export const transformativeReactions: Record<
   },
   lunarcharged: {
     name: 'Lunar-Charged',
-    multi: 1.8,
+    multi: 3,
     variants: ['electro'],
     resist: 'electro',
     canCrit: false, // It's a different kind of crit
@@ -109,9 +109,23 @@ export const transformativeReactions: Record<
   },
   lunarcrystallize: {
     name: 'Lunar-Crystallize',
-    multi: 0.96,
+    multi: 1.6,
     variants: ['hydro', 'geo'],
     resist: 'geo',
+    canCrit: true,
+  },
+  stellarconduct: {
+    name: 'Stellar-Conduct',
+    multi: 0,
+    variants: ['electro', 'cryo'],
+    resist: 'electro', // This can be electro or cryo resist depending on trigger element
+    canCrit: true,
+  },
+  stellarswirl: {
+    name: 'Stellar Swirl',
+    multi: 0.75, // 2x or 3x for the vortex
+    variants: ['anemo', 'cryo'],
+    resist: 'anemo', // This can be anemo or cryo resist depending on type
     canCrit: true,
   },
 } as const
@@ -124,6 +138,8 @@ export const crittableTransformativeReactions = [
   'lunarbloom',
   'swirl',
   'lunarcrystallize',
+  'stellarconduct',
+  'stellarswirl',
 ] as const
 export type CrittableTransformativeReactionsKey =
   (typeof crittableTransformativeReactions)[number]

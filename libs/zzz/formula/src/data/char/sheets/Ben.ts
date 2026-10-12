@@ -1,5 +1,5 @@
 import { cmpGE, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
-import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
@@ -140,17 +140,13 @@ const sheet = register(
         3,
         shieldOn.ifOn(percent(dm.ability.crit_))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm1_dmg_red_',
     teamBuff.combat.dmg_red_.add(
       cmpGE(char.mindscape, 1, enemyBlocked.ifOn(percent(dm.m1.dmg_red_)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff('m4_dmg_', m4_dmg_, undefined, undefined, false),
   registerBuff(

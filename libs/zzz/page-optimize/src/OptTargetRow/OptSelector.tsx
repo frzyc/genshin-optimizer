@@ -1,105 +1,95 @@
 import { DropdownButton } from '@genshin-optimizer/common/ui'
-import type { TargetTag } from '@genshin-optimizer/zzz/db'
 import {
-  type CharOpt,
-  type ICachedCharacter,
-  targetTag,
-} from '@genshin-optimizer/zzz/db'
-import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { own } from '@genshin-optimizer/zzz/formula'
+  useCharacterContext,
+  useDatabaseContext,
+} from '@genshin-optimizer/zzz/db-ui'
+import { sameFormula } from '@genshin-optimizer/zzz/formula'
 import {
-  FullTagDisplay,
+  listingReadForRef,
+  OptFormulaSections,
+  OptTargetDebugHelp,
+  OptTargetSelectedLabel,
+  refFromJoinedRow,
+  useCharCatalogRows,
+  useOptCategoryCollapse,
+  useResolvedOptTarget,
   useZzzCalcContext,
 } from '@genshin-optimizer/zzz/formula-ui'
-import { Box, ListItemText, MenuItem } from '@mui/material'
-import { useMemo } from 'react'
+import { Box } from '@mui/material'
+import { OptTargetFieldMenuItem } from './OptTargetFieldMenuItem'
 
-const statTargets = [
-  own.final.atk,
-  own.final.hp,
-  own.final.def,
-  own.final.enerRegen,
-  own.final.anomProf,
-  own.final.anomMas,
-] as const
-
-export function OptSelector({
-  character: { key: characterKey },
-  charOpt: { target },
-}: {
-  charOpt: CharOpt
-  character: ICachedCharacter
-}) {
-  const calc = useZzzCalcContext()
+export function OptSelector() {
+  const character = useCharacterContext()
+  const characterKey = character?.key
   const { database } = useDatabaseContext()
-  const tag = useMemo(() => {
-    if (!target) return undefined
-    return targetTag(target)
-  }, [target])
+  const calc = useZzzCalcContext()
+  const { ref: currentRef, tag } = useResolvedOptTarget()
+  const { rows, statRows, categorySections, otherRows } = useCharCatalogRows(
+    characterKey,
+    calc
+  )
+  const collapse = useOptCategoryCollapse()
+  const calcRead = listingReadForRef(currentRef, rows)
+
+  const selectedTitle =
+    currentRef && tag ? (
+      <OptTargetSelectedLabel formulaRef={currentRef} inline />
+    ) : null
 
   return (
     <DropdownButton
       color={tag ? 'success' : 'warning'}
       title={
         tag ? (
-          <Box sx={{ display: 'flex', gap: 1 }}>
-            {/* TODO: translate */}
-            <strong>Optimization Target: </strong>
-            {<FullTagDisplay tag={tag} />}
+          <Box
+            sx={{
+              display: 'flex',
+              gap: 0.75,
+              alignItems: 'center',
+              minWidth: 0,
+              overflow: 'hidden',
+              textWrap: 'nowrap',
+            }}
+          >
+            <strong>Target:</strong>
+            {selectedTitle}
+            <OptTargetDebugHelp tag={tag} calcRead={calcRead} />
           </Box>
         ) : (
           'Select an Optimization Target'
         )
       }
       variant={tag ? 'outlined' : undefined}
-      sx={{ height: '100%', flexGrow: 1 }}
+      sx={{
+        height: '100%',
+        minWidth: 0,
+        maxWidth: '100%',
+        width: '100%',
+        justifyContent: 'flex-start',
+      }}
     >
-      {calc?.listFormulas(own.listing.formulas).map(({ tag }, i) => {
-        const { name, sheet } = tag
-        if (!name || !sheet) return
-        return (
-          <MenuItem
-            key={`${i}_${tag.sheet}_${tag.name}`}
-            onClick={() =>
-              database.charOpts.set(characterKey, {
-                target: {
-                  sheet,
-                  name,
-                },
-              })
-            }
-          >
-            <ListItemText>
-              <Box sx={{ display: 'flex', gap: 1 }}>
-                <FullTagDisplay tag={tag} />
-              </Box>
-            </ListItemText>
-          </MenuItem>
-        )
-      })}
-      {statTargets.map(({ tag }, i) => {
-        const { q, qt } = tag
-        if (!q || !qt) return
-        return (
-          <MenuItem
-            key={`${i}_${q}_${qt}`}
-            onClick={() =>
-              database.charOpts.set(characterKey, {
-                target: {
-                  q: q as TargetTag['q'],
-                  qt: qt as 'final',
-                },
-              })
-            }
-          >
-            <ListItemText>
-              <Box sx={{ display: 'flex', gap: 1 }}>
-                <FullTagDisplay tag={tag} />
-              </Box>
-            </ListItemText>
-          </MenuItem>
-        )
-      })}
+      {characterKey && (
+        <OptFormulaSections
+          statRows={statRows}
+          otherRows={otherRows}
+          categorySections={categorySections}
+          collapse={collapse}
+          renderRow={(row) => {
+            const formulaRef = refFromJoinedRow(row)
+            if (!formulaRef) return null
+            return (
+              <OptTargetFieldMenuItem
+                key={`${formulaRef.sheet}:${formulaRef.name}`}
+                formulaRef={formulaRef}
+                selected={sameFormula(currentRef, formulaRef)}
+                onSelect={() =>
+                  database.teams.setFrame0(characterKey, { ref: formulaRef })
+                }
+              />
+            )
+          }}
+        />
+      )}
     </DropdownButton>
   )
 }

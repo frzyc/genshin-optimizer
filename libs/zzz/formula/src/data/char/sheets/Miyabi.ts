@@ -6,7 +6,7 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/pando/engine'
-import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
@@ -49,9 +49,10 @@ const ability_check = (node: NumNode | number) =>
   cmpGE(
     sum(
       team.common.count.withSpecialty('support'),
+      team.common.count.withSpecialty('anomaly'),
       team.common.count.withFaction('HollowSpecialOoperationsSection6')
     ),
-    2,
+    3,
     node
   )
 const ability_dmg_ = ownBuff.combat.common_dmg_.add(
@@ -232,9 +233,7 @@ const sheet = register(
   ),
   registerBuff(
     'core_anomBuildup_',
-    teamBuff.combat.anomBuildup_.add(frostburn.ifOn(dm.core.anomBuildup_)),
-    undefined,
-    true
+    teamBuff.combat.anomBuildup_.add(frostburn.ifOn(dm.core.anomBuildup_))
   ),
   registerBuff('ability_dmg_', ability_dmg_, undefined, undefined, false),
   registerBuff(
@@ -249,9 +248,7 @@ const sheet = register(
     'm1_anomBuildup_',
     teamBuff.combat.anomBuildup_.add(
       cmpGE(char.mindscape, 1, level_3_charge_hit.ifOn(dm.m1.anomBuildup_))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff('m2_dmg_', m2_dmg_, undefined, undefined, false),
   registerBuff(

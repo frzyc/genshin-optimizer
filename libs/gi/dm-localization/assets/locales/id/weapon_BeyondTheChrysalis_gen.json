@@ -1,0 +1,44 @@
+{
+  "name": "Beyond the Chrysalis",
+  "description": {
+    "0": "Pedang panjang berkilauan dengan cahaya berwarna-warni. Pernah ada yang menggunakannya untuk membebaskan diri dari belenggu, dengan ayunan pedang yang ringan bagaikan kupu-kupu menari."
+  },
+  "passiveName": "Dance of Wings Unbound",
+  "passiveDescription": {
+    "0": {
+      "0": "Setiap kali Karakter yang mengenakan melancarkan Elemental Skill atau Elemental Burst, akan memperoleh salah satu dari tiga efek berikut secara berurutan:",
+      "1": "Winds of Devotion: CRIT DMG Karakter yang mengenakan +<cryo>56%</cryo> selama 10 detik;",
+      "2": "Winds of Defiance: DMG reaksi Stellar Swirl yang diakibatkan Karakter yang mengenakan +<cryo>36%</cryo> selama 10 detik;",
+      "3": "Winds of Plenty: Memulihkan <cryo>5</cryo> Energy Karakter yang mengenakan, maksimum <cryo>5</cryo> Energy per 4 detik yang dapat dipulihkan dengan cara ini.",
+      "4": "Saat Karakter yang mengenakan keluar dari medan pertempuran, efek di atas akan dihapus dan urutan akan diulang."
+    },
+    "1": {
+      "0": "Setiap kali Karakter yang mengenakan melancarkan Elemental Skill atau Elemental Burst, akan memperoleh salah satu dari tiga efek berikut secara berurutan:",
+      "1": "Winds of Devotion: CRIT DMG Karakter yang mengenakan +<cryo>72%</cryo> selama 10 detik;",
+      "2": "Winds of Defiance: DMG reaksi Stellar Swirl yang diakibatkan Karakter yang mengenakan +<cryo>45%</cryo> selama 10 detik;",
+      "3": "Winds of Plenty: Memulihkan <cryo>5,5</cryo> Energy Karakter yang mengenakan, maksimum <cryo>5,5</cryo> Energy per 4 detik yang dapat dipulihkan dengan cara ini.",
+      "4": "Saat Karakter yang mengenakan keluar dari medan pertempuran, efek di atas akan dihapus dan urutan akan diulang."
+    },
+    "2": {
+      "0": "Setiap kali Karakter yang mengenakan melancarkan Elemental Skill atau Elemental Burst, akan memperoleh salah satu dari tiga efek berikut secara berurutan:",
+      "1": "Winds of Devotion: CRIT DMG Karakter yang mengenakan +<cryo>88%</cryo> selama 10 detik;",
+      "2": "Winds of Defiance: DMG reaksi Stellar Swirl yang diakibatkan Karakter yang mengenakan +<cryo>54%</cryo> selama 10 detik;",
+      "3": "Winds of Plenty: Memulihkan <cryo>6</cryo> Energy Karakter yang mengenakan, maksimum <cryo>6</cryo> Energy per 4 detik yang dapat dipulihkan dengan cara ini.",
+      "4": "Saat Karakter yang mengenakan keluar dari medan pertempuran, efek di atas akan dihapus dan urutan akan diulang."
+    },
+    "3": {
+      "0": "Setiap kali Karakter yang mengenakan melancarkan Elemental Skill atau Elemental Burst, akan memperoleh salah satu dari tiga efek berikut secara berurutan:",
+      "1": "Winds of Devotion: CRIT DMG Karakter yang mengenakan +<cryo>104%</cryo> selama 10 detik;",
+      "2": "Winds of Defiance: DMG reaksi Stellar Swirl yang diakibatkan Karakter yang mengenakan +<cryo>63%</cryo> selama 10 detik;",
+      "3": "Winds of Plenty: Memulihkan <cryo>6,5</cryo> Energy Karakter yang mengenakan, maksimum <cryo>6,5</cryo> Energy per 4 detik yang dapat dipulihkan dengan cara ini.",
+      "4": "Saat Karakter yang mengenakan keluar dari medan pertempuran, efek di atas akan dihapus dan urutan akan diulang."
+    },
+    "4": {
+      "0": "Setiap kali Karakter yang mengenakan melancarkan Elemental Skill atau Elemental Burst, akan memperoleh salah satu dari tiga efek berikut secara berurutan:",
+      "1": "Winds of Devotion: CRIT DMG Karakter yang mengenakan +<cryo>120%</cryo> selama 10 detik;",
+      "2": "Winds of Defiance: DMG reaksi Stellar Swirl yang diakibatkan Karakter yang mengenakan +<cryo>72%</cryo> selama 10 detik;",
+      "3": "Winds of Plenty: Memulihkan <cryo>7</cryo> Energy Karakter yang mengenakan, maksimum <cryo>7</cryo> Energy per 4 detik yang dapat dipulihkan dengan cara ini.",
+      "4": "Saat Karakter yang mengenakan keluar dari medan pertempuran, efek di atas akan dihapus dan urutan akan diulang."
+    }
+  }
+}

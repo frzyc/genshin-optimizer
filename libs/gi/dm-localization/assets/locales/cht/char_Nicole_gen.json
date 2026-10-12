@@ -1,0 +1,178 @@
+{
+  "name": "尼可",
+  "title": "喧寂於心",
+  "description": "無言的「魔女」，棄聲的「天使」。",
+  "constellationName": "金匣座",
+  "auto": {
+    "name": "託喻",
+    "fields": {
+      "normal": {
+        "0": "<strong>普通攻擊</strong>",
+        "1": "以原初的言語降下敕命，進行至多三段的攻擊，造成<pyro>火元素傷害</pyro>。"
+      },
+      "charged": {
+        "0": "<strong>重擊</strong>",
+        "1": "消耗一定體力，短暫詠唱後，對前方區域造成<pyro>火元素範圍傷害</pyro>。"
+      },
+      "plunging": {
+        "0": "<strong>下落攻擊</strong>",
+        "1": "從空中下墜衝擊地面，攻擊下落路徑上的敵人，並在落地時造成<pyro>火元素範圍傷害</pyro>。"
+      }
+    },
+    "skillParams": {
+      "0": "一段傷害",
+      "1": "二段傷害",
+      "2": "三段傷害",
+      "3": "重擊傷害",
+      "4": "重擊體力消耗",
+      "5": "下墜期間傷害",
+      "6": "低空/高空墜地衝擊傷害",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "聖言默示·未現之光",
+    "description": {
+      "0": "重現舊日代行高天神權的片影，為隊伍中附近的所有角色賦予<tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>虛己之賜</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11310002 values=[]></tooltip>效果，提升這些角色的攻擊力，造成<pyro>火元素範圍傷害</pyro>，並展開熾光護盾。",
+      "1": "熾光護盾的傷害吸收量受益於尼可的攻擊力，對<pyro>火元素傷害</pyro>有250%的吸收效果。"
+    },
+    "skillParams": {
+      "0": "技能傷害",
+      "1": "護盾吸收量",
+      "2": "護盾持續時間",
+      "3": "虛己之賜攻擊力加成比例",
+      "4": "虛己之賜攻擊力加成上限",
+      "5": "虛己之賜持續時間",
+      "6": "冷卻時間",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "聖言默示·天路歷程",
+    "description": {
+      "0": "以天光的金縷，紡出「錨定」的命途，造成<pyro>火元素範圍傷害</pyro>，並切換至「默觀頌禱」模式。",
+      "1": "尼可處於該模式下時，隊伍中附近的目前場上角色的攻擊命中敵人時，將會召喚出「奧跡造影」，對敵人發起協同攻擊，依據該角色的元素類型，造成對應的元素範圍傷害。該傷害受益於該角色的攻擊力，並視為由該角色造成的傷害。",
+      "2": "該效果每3秒至多觸發一次，尼可每次切換至「默觀頌禱」模式後，至多觸發4次。",
+      "3": "<br/>",
+      "4": "此外，魔導角色的「奧跡造影」在外觀上似乎會有所不同…"
+    },
+    "skillParams": {
+      "0": "技能傷害",
+      "1": "奧跡造影傷害",
+      "2": "奧跡造影攻擊次數",
+      "3": "默觀頌禱持續時間",
+      "4": "冷卻時間",
+      "5": "元素能量",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "分有",
+    "description": {
+      "0": "施放元素戰技<strong><tooltip ns=char_Nicole_gen baseKey18=skill>聖言默示·未現之光</tooltip></strong>後的20秒內，尼可將持續「觀測」隊伍中自己的目前場上其他角色。受觀測的角色持續處於場上3秒後，其擁有的<tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>虛己之賜</strong></tooltip>效果將會升變為<tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>聖祝之引</strong></tooltip>，使其額外提升300點攻擊力。若受觀測的角色為魔導角色，則<strong>虛己之賜</strong>效果將會直接升變為<strong>聖祝之引</strong>。",
+      "1": "除尼可外，其他角色擁有的<strong>聖祝之引</strong>將在退場時還原為<strong>虛己之賜</strong>。"
+    }
+  },
+  "passive2": {
+    "name": "慕善",
+    "description": {
+      "0": "隊伍中附近的目前場上角色的元素傷害命中敵人後，尼可自己擁有的<tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>虛己之賜</strong></tooltip>將會升變為<tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>聖祝之引</strong></tooltip>，持續8秒。"
+    }
+  },
+  "passive3": {
+    "name": "靜念",
+    "description": {
+      "0": "在提瓦特，不處於戰鬥狀態下時，若已獲得目前區域的尋寶羅盤，則尼可的重擊將會轉而施放「御使之引」：呼喚附近的仙靈指引道路，觸發等同於目前區域尋寶羅盤的效果。",
+      "1": "該效果有5秒的冷卻時間，且在秘境、征討領域、深境螺旋中無效。"
+    }
+  },
+  "lockedPassive": {
+    "name": "魔女的前夜禮·光自暗來",
+    "description": {
+      "0": "完成<strong>魔女的課業·導引之職…？</strong>後，尼可將成為<strong>魔導</strong>角色。隊伍中編入至少2名魔導角色時，將獲得<strong>魔導·秘儀</strong>效果，使魔導角色獲得強化。",
+      "1": "<br/>",
+      "2": "<strong>魔導·秘儀</strong>",
+      "3": "魔導角色的<strong><tooltip ns=char_Nicole_gen baseKey18=burst>奧跡造影</tooltip></strong>造成的傷害提升，提升值相當於尼可攻擊力的300%。"
+    }
+  },
+  "constellation1": {
+    "name": "「不要懼怕，蒙眷愛的人之子呀」",
+    "description": {
+      "0": "隊伍中自己的目前場上角色攻擊命中敵人時，將會額外召喚出特殊的「奧跡造影·合一」，對敵人進行協同攻擊，依據該角色的元素類型，造成對應元素範圍傷害，該傷害相當於該角色攻擊力的600%，並視為由該角色造成的傷害。",
+      "1": "該效果每6秒至多觸發一次。"
+    }
+  },
+  "constellation2": {
+    "name": "「我要教導你，指引你應走的路」",
+    "description": {
+      "0": "元素戰技<strong><tooltip ns=char_Nicole_gen baseKey18=skill>聖言默示·未現之光</tooltip></strong>的效果獲得強化：<tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>虛己之賜</strong></tooltip>還會額外提升300點攻擊力（不計入該效果的攻擊力加成上限），<tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>聖祝之引</strong></tooltip>還會依據角色的元素類型，使附近敵人的對應元素抗性降低25%，同元素類型的元素抗性降低效果不能疊加。",
+      "1": "此外，尼可施放元素戰技<strong>聖言默示·未現之光</strong>時，也會為附近的目前場上角色賦予熾光護盾。"
+    }
+  },
+  "constellation3": {
+    "name": "「為你身邊的燈，為你前方的光」",
+    "description": {
+      "0": "元素戰技<strong><tooltip ns=char_Nicole_gen baseKey18=skill>聖言默示·未現之光</tooltip></strong>的技能等級提高3級。",
+      "1": "至多提升至15級。"
+    }
+  },
+  "constellation4": {
+    "name": "「向左或向右，無論你行往何方」",
+    "description": {
+      "0": "隊伍中附近的角色擁有的<tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>虛己之賜</strong></tooltip>升變為<tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>聖祝之引</strong></tooltip>時，尼可還會為其賦予「先導之佑」效果，持續20秒，每名角色每16秒至多獲得一次該效果。",
+      "1": "擁有「先導之佑」的角色的普通攻擊、重擊、下落攻擊、元素戰技與元素爆發造成的傷害提升，提升值相當於尼可攻擊力的70%。該效果將在生效8次或持續時間結束時解除。",
+      "2": "同時命中多名敵人時，會依據命中敵人的數量消耗生效次數。隊伍中具有「先導之佑」的角色，其生效次數單獨計算。"
+    }
+  },
+  "constellation5": {
+    "name": "「我就要有話對你說，在你身旁」",
+    "description": {
+      "0": "元素爆發<strong><tooltip ns=char_Nicole_gen baseKey18=burst>聖言默示·天路歷程</tooltip></strong>的技能等級提高3級。",
+      "1": "至多提升至15級。"
+    }
+  },
+  "constellation6": {
+    "name": "「這便是正確的道路，莫要彷徨」",
+    "description": {
+      "0": "尼可擁有的<tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>虛己之賜</strong></tooltip>升變為<tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>聖祝之引</strong></tooltip>時，隊伍中附近的所有角色擁有的<strong>虛己之賜</strong>將會一同升變為<strong>聖祝之引</strong>。所有升變後的<strong>聖祝之引</strong>不再會還原為<strong>虛己之賜</strong>。",
+      "1": "此外，擁有<strong>聖祝之引</strong>的角色造成的傷害將無視敵人40%的防禦力。"
+    }
+  }
+}

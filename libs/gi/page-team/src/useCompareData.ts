@@ -3,8 +3,8 @@ import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact, ICachedWeapon } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
 } from '@genshin-optimizer/gi/db-ui'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
 import {

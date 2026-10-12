@@ -1,0 +1,178 @@
+{
+  "name": "Nicole",
+  "title": "Clamor Within",
+  "description": "\"Penyihir\" yang Membisu, \"Malaikat\" Tanpa Suara.",
+  "constellationName": "Reliquiarium",
+  "auto": {
+    "name": "Allegoria",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Memberikan perintah dengan bahasa purba untuk melancarkan hingga 3 serangan dan mengakibatkan <pyro>Pyro DMG</pyro>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk mengakibatkan <pyro>Pyro DMG Area</pyro> ke area di depannya setelah jeda singkat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang tanah dan menyerang musuh di jalur terjangan dan mengakibatkan <pyro>Pyro DMG Area</pyro> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Charged Attack",
+      "4": "Konsumsi Stamina Charged Attack",
+      "5": "DMG Selama Plunging",
+      "6": "DMG Plunging Attack Rendah/Tinggi",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Revelation: Uncreated Light",
+    "description": {
+      "0": "Memanifestasikan bayangan kekuasaan langit masa lalu, memberikan efek <tooltip ns=tooltips_gen baseKey18=11310002 values=[]></tooltip><tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grace of Kenosis</strong></tooltip> kepada seluruh anggota party di sekitar yang akan meningkatkan ATK Karakter-Karakter tersebut, mengakibatkan <pyro>Pyro DMG Area</pyro>, dan menciptakan Shield of Blazing Light.",
+      "1": "Ketahanan DMG Shield of Blazing Light bergantung pada ATK Nicole dan memiliki 250% pertahanan terhadap <pyro>Pyro DMG</pyro>."
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Pertahanan Perisai",
+      "2": "Durasi Perisai",
+      "3": "Rasio Bonus ATK Grace of Kenosis",
+      "4": "Bonus ATK Maksimum Grace of Kenosis",
+      "5": "Durasi Grace of Kenosis",
+      "6": "Cooldown",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Revelation: Ladder of Divine Ascent",
+    "description": {
+      "0": "Menenun jalan takdir yang tertambat dengan benang emas dari langit, Nicole mengakibatkan <pyro>Pyro DMG Area</pyro>, dan beralih ke mode \"Silent Contemplation\".",
+      "1": "Saat Nicole berada dalam mode ini, ketika serangan Karakter aktif di sekitar dalam party mengenai musuh, Arcane Projection akan dipanggil untuk melancarkan serangan terkoordinasi terhadap musuh. Serangan ini akan mengakibatkan Elemental DMG Area yang sesuai berdasarkan jenis elemen Karakter tersebut. DMG ini didasarkan pada ATK Karakter tersebut, dan juga dianggap sebagai DMG yang diakibatkan oleh Karakter tersebut.",
+      "2": "Efek ini dapat terpicu maksimum sekali setiap 3 detik dan dapat terpicu hingga 4 kali setiap kali Nicole beralih ke mode Silent Contemplation.",
+      "3": "<br/>",
+      "4": "Selain itu, Arcane Projection dari Karakter Hexerei sepertinya akan memiliki tampilan visual yang berbeda ...."
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Arcane Projection",
+      "2": "Jumlah Serangan Arcane Projection",
+      "3": "Durasi Silent Contemplation",
+      "4": "Cooldown",
+      "5": "Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Methexis",
+    "description": {
+      "0": "Selama 20 detik setelah melancarkan Elemental Skill <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Revelation: Uncreated Light</tooltip></strong>, Nicole akan terus \"mengobservasi\" Karakter aktif lain dalam party. Setelah Karakter yang diobservasi berada di medan pertempuran selama 3 detik, efek <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grace of Kenosis</strong></tooltip> miliknya akan meningkat menjadi <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Guidance of Theosis</strong></tooltip> dan memberikan tambahan 300 poin ATK. Jika Karakter yang diobservasi adalah Karakter Hexerei, maka efek <strong>Grace of Kenosis</strong> akan langsung ditingkatkan menjadi <strong>Guidance of Theosis</strong>.",
+      "1": "Selain Nicole, <strong>Guidance of Theosis</strong> yang dimiliki Karakter lain akan langsung kembali menjadi <strong>Grace of Kenosis</strong> saat Karakter itu meninggalkan medan pertempuran."
+    }
+  },
+  "passive2": {
+    "name": "Philokalia",
+    "description": {
+      "0": "Saat Elemental DMG anggota party aktif di sekitar mengenai musuh, <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grace of Kenosis</strong></tooltip> yang dimiliki Nicole sendiri akan meningkat menjadi <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Guidance of Theosis</strong></tooltip> selama 8 detik."
+    }
+  },
+  "passive3": {
+    "name": "Nepsis",
+    "description": {
+      "0": "Saat tidak dalam kondisi bertempur dan sudah memperoleh Treasure Compass untuk area yang sedang dijelajahi di Teyvat, Charged Attack Nicole akan dikonversi menjadi \"Emissarial Guidance\": Memanggil Seelie terdekat untuk memberi petunjuk, memicu efek yang sama dengan Treasure Compass untuk area tersebut.",
+      "1": "Efek ini memiliki cooldown selama 5 detik, dan tidak berlaku di Domain, Domain Trounce, dan Spiral Abyss."
+    }
+  },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Light in the Darkness",
+    "description": {
+      "0": "Setelah menyelesaikan <strong>PR Penyihir: Peran Seorang Pemandu ...?</strong>, Nicole akan berubah menjadi Karakter <strong>Hexerei</strong>. Saat ada setidaknya 2 Karakter Hexerei di dalam party, akan mendapatkan efek <strong>Hexerei: Secret Rite</strong> yang memperkuat Karakter Hexerei.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Secret Rite</strong>",
+      "3": "DMG yang diakibatkan <strong><tooltip ns=char_Nicole_gen baseKey18=burst>Arcane Projection</tooltip></strong> milik Karakter Hexerei meningkat sebesar 300% ATK Nicole."
+    }
+  },
+  "constellation1": {
+    "name": "\"Do Not Be Afraid, Child Who Is Loved\"",
+    "description": {
+      "0": "Saat serangan Karakter aktif sendiri di party mengenai musuh, akan memanggil \"Arcane Projection: Unity\" spesial tambahan untuk melancarkan serangan terkoordinasi terhadap musuh. Serangan ini akan mengakibatkan Elemental DMG Area yang sesuai dengan jenis elemen Karakter tersebut dan DMG-nya didasarkan pada 600% ATK Karakter tersebut, dan dianggap sebagai DMG yang diakibatkan oleh Karakter tersebut.",
+      "1": "Efek ini dapat terpicu sekali setiap 6 detik."
+    }
+  },
+  "constellation2": {
+    "name": "\"I Will Guide You and Show You the Path You Should Tread\"",
+    "description": {
+      "0": "Efek Elemental Skill <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Revelation: Uncreated Light</tooltip></strong> diperkuat: <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grace of Kenosis</strong></tooltip> juga akan meningkatkan ATK sebesar 300 poin tambahan (tidak termasuk dalam batas maksimum peningkatan ATK efek ini), <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Guidance of Theosis</strong></tooltip> juga akan mengurangi Elemental RES musuh di sekitar sebesar 25% berdasarkan jenis elemen Karakter, efek pengurangan Elemental RES dari jenis elemen yang sama tidak dapat ditumpuk.",
+      "1": "Selain itu, saat Nicole melancarkan Elemental Skill <strong>Revelation: Uncreated Light</strong>, Karakter aktif di sekitar akan mendapatkan Shield of Blazing Light."
+    }
+  },
+  "constellation3": {
+    "name": "\"A Lamp by Your Side, A Light to Shine the Way\"",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Revelation: Uncreated Light</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Whether Left or Right, No Matter Which Way You Turn\"",
+    "description": {
+      "0": "Saat efek <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grace of Kenosis</strong></tooltip> yang dimiliki Karakter party di sekitar Nicole meningkat menjadi <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Guidance of Theosis</strong></tooltip>, Nicole juga akan memberikan efek \"Pathfinder's Blessing\" kepada mereka selama 20 detik. Setiap Karakter dapat memperoleh efek ini maksimum satu kali setiap 16 detik.",
+      "1": "Saat memiliki Pathfinder's Blessing, DMG yang diakibatkan oleh Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, dan Elemental Burst Karakter akan meningkat sebesar 70% dari ATK Nicole. Efek ini akan berakhir setelah terpicu 8 kali atau saat durasinya berakhir.",
+      "2": "Saat mengenai beberapa musuh sekaligus, jumlah terpicunya efek akan mengikuti jumlah musuh yang terkena. Jumlah terpicunya efek Pathfinder's Blessing untuk setiap Karakter party dihitung secara terpisah."
+    }
+  },
+  "constellation5": {
+    "name": "\"You Will Hear My Voice Beside You\"",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong><tooltip ns=char_Nicole_gen baseKey18=burst>Revelation: Ladder of Divine Ascent</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"This Is the Path, Walk It Without Delay\"",
+    "description": {
+      "0": "Saat <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grace of Kenosis</strong></tooltip> yang dimiliki Nicole meningkat menjadi <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Guidance of Theosis</strong></tooltip>, <strong>Grace of Kenosis</strong> yang dimiliki seluruh anggota party di sekitar juga akan meningkat menjadi <strong>Guidance of Theosis</strong> secara bersamaan. Seluruh <strong>Guidance of Theosis</strong> yang mengalami peningkatan tidak akan berubah kembali menjadi <strong>Grace of Kenosis</strong>.",
+      "1": "Selain itu, Karakter yang memiliki <strong>Guidance of Theosis</strong> akan mengabaikan 40% DEF musuh saat mengakibatkan DMG."
+    }
+  }
+}

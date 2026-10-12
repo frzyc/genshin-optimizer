@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -72,7 +76,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -82,6 +90,12 @@
       "1": "Saat melancarkan skill ini, Yae Miko akan membuka Sesshou Sakura yang ada di dekatnya, menghancurkan wujud luarnya, dan mengubahnya menjadi Tenko Thunderbolt yang turun dari langit, dan mengakibatkan <electro>Electro DMG Area</electro>. Setiap Sesshou Sakura yang dihancurkan dengan cara ini akan menciptakan satu Tenko Thunderbolt.",
       "2": "<br/>",
       "3": "<i>Yae hanya akan mengeluarkan \"wujud\" Sky Kitsune-nya di saat-saat tertentu seperti ini dan mengendalikan petir tersebut. Tidak ada seorang pun yang hidup setelah melihat ekor sang Nona Guuji ... Jadi ingat baik-baik ya, Nona Yae \"tidak\" punya ekor.</i>"
+    },
+    "upgradedDescription": {
+      "0": "Salah satu cerita rakyat Inazuma disebut \"kitsunetsuki\", dan yang paling spesial di antaranya adalah kisah tentang Sky Kitsune yang turun menghanguskan musuh-musuh Kuil Agung Narukami. Memanggil sambaran petir dan mengakibatkan <electro>Electro DMG Area</electro>.",
+      "1": "Saat melancarkan skill ini, Yae Miko akan mengubah Sesshou Sakura yang ada di dekatnya menjadi Tenko Thunderbolt yang turun dari langit, dan mengakibatkan <electro>Electro DMG Area</electro>. Setiap Sesshou Sakura yang ada di sekitar akan berubah menjadi satu Tenko Thunderbolt.",
+      "2": "<br/>",
+      "3": "<i>Yae hanya akan mengeluarkan wujud Sky Kitsune-nya di saat-saat tertentu seperti ini dan mengendalikan petir tersebut. Tidak ada seorang pun yang hidup setelah melihat ekor sang Nona Guuji ... Jadi ingat baik-baik ya, Nona Yae \"tidak\" punya ekor.</i>"
     },
     "skillParams": {
       "0": "DMG Skill",
@@ -99,13 +113,22 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
     "name": "The Shrine's Sacred Shade",
     "description": {
       "0": "Saat melancarkan <strong>Great Secret Art: Tenko Kenshin</strong>, setiap kali menghancurkan sebuah Sesshou Sakura akan me-reset cooldown <strong>Yakan Evocation: Sesshou Sakura</strong> satu kali."
+    },
+    "upgradedDescription": {
+      "0": "Saat melancarkan <strong>Great Secret Art: Tenko Kenshin</strong>, setiap Sesshou Sakura yang diubah akan me-reset CD <strong>Yakan Evocation: Sesshou Sakura</strong> sebanyak satu kali.",
+      "1": "Jika ada setidaknya 3 Sesshou Sakura sekaligus di sekitar, maka melancarkan <strong>Yakan Evocation: Sesshou Sakura</strong> akan membuat Yae Miko melancarkan satu kali sambaran petir tambahan yang mengakibatkan <electro>Electro DMG</electro> sebesar 40% ATK Yae Miko.",
+      "2": "<strong>Radiance: Stellar-Conduct</strong>: Sambaran petir yang dijelaskan di atas akan dikonversi menjadi <electro>Electro DMG</electro> yang dianggap sebagai DMG Stellar-Conduct, dengan DMG sebesar 50% ATK Yae Miko."
     }
   },
   "passive2": {
@@ -120,16 +143,30 @@
       "0": "Memberikan 25% peluang mendapat 1 tambahan Material Talenta acak yang sewilayah saat craft. Level dan material yang dibutuhkannya sama."
     }
   },
+  "lockedPassive": {
+    "name": "Edict of Cleansing",
+    "description": {
+      "0": "Durasi Sesshou Sakura diperpanjang 10 detik. Setelah Karakter party di sekitar memicu reaksi Superconduct atau Stellar-Conduct, sambaran petir Sesshou Sakura berikutnya akan diperkuat: DMG yang diakibatkan meningkat sebesar 80% ATK Yae Miko, efek ini dapat terpicu sekali setiap 2,5 detik.",
+      "1": "<strong>Radiance: Stellar-Conduct</strong>: Setelah sambaran petir yang diperkuat oleh efek di atas mengenai musuh, akan mengakibatkan <electro>Electro DMG</electro> tambahan sebesar 200% ATK Yae Miko. DMG ini dianggap sebagai DMG reaksi Stellar-Conduct.",
+      "2": "Selain itu, saat berada di dalam <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>, Yae Miko akan memasuki status <strong>Radiance: Stellar-Conduct</strong>."
+    }
+  },
   "constellation1": {
     "name": "Yakan Offering",
     "description": {
       "0": "Setiap kali <strong>Great Secret Art: Tenko Kenshin</strong> mengaktifkan Tenko Thunderbolt, Yae Miko akan memulihkan 8 Energy untuk dirinya sendiri."
+    },
+    "upgradedDescription": {
+      "0": "Setiap kali <strong>Great Secret Art: Tenko Kenshin</strong> mengaktifkan Tenko Thunderbolt, Yae Miko akan memulihkan 8 Energy untuk dirinya sendiri. Setelah Yae Miko memicu reaksi Superconduct/Stellar-Conduct atau setelah mengakibatkan DMG reaksi Stellar-Conduct, Karakter party di sekitar akan mendapatkan 50% Electro DMG Bonus dan Stellar-Conduct DMG Bonus selama 10 detik. Memicu reaksi berulang kali akan memperbarui durasi bonus DMG tersebut."
     }
   },
   "constellation2": {
     "name": "Fox's Mooncall",
     "description": {
       "0": "Level awal <strong>Sesshou Sakura</strong> yang tercipta meningkat menjadi level 2. Level tertinggi yang bisa dicapai menjadi level 4 dan jangkauan serangan meningkat 60%."
+    },
+    "upgradedDescription": {
+      "0": "Level awal <strong>Sesshou Sakura</strong> yang tercipta meningkat menjadi level 2. Level tertinggi yang bisa dicapai menjadi level 4 dan jangkauan serangannya meningkat 60%. Selain itu, selama Sesshou Sakura ada di medan pertempuran, Elemental Mastery Yae Miko dan Karakter aktif sendiri meningkat sebesar 60/90/120/200 poin berdasarkan level dari Sesshou Sakura."
     }
   },
   "constellation3": {
@@ -143,6 +180,9 @@
     "name": "Sakura Channeling",
     "description": {
       "0": "Setelah sambaran petir <strong>Sesshou Sakura</strong> mengenai musuh, <electro>Electro DMG Bonus</electro> seluruh anggota party di sekitar meningkat 20% selama 5 detik."
+    },
+    "upgradedDescription": {
+      "0": "Setelah sambaran petir <strong>Sesshou Sakura</strong> mengenai musuh, <electro>Electro DMG Bonus</electro> seluruh anggota party di sekitar meningkat 20% selama 5 detik dan Yae Miko memulihkan 8 Energy. Efek pemulihan Energy ini dapat terpicu sekali setiap 5 detik. Selain itu, DMG Elemental Burst Yae Miko meningkat 100%."
     }
   },
   "constellation5": {
@@ -156,6 +196,9 @@
     "name": "Forbidden Art: Daisesshou",
     "description": {
       "0": "Serangan <strong>Sesshou Sakura</strong> mengabaikan 60% DEF musuh."
+    },
+    "upgradedDescription": {
+      "0": "Serangan <strong>Sesshou Sakura</strong> mengabaikan 60% DEF musuh, CRIT DMG reaksi Stellar-Conduct yang diakibatkan Yae Miko meningkat 200%."
     }
   }
 }

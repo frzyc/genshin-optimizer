@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -61,7 +65,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -92,13 +100,17 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
     "name": "Katalizör Dönüşümü",
     "description": {
-      "0": "Sucrose bir Girdap tepkimesi tetiklediğinde 8 saniyeliğine gruptaki aynı elemente sahip tüm karakterlerin (Sucrose hariç) Element Ustalığı 50 artar."
+      "0": "Sucrose bir Girdap veya Yıldız Girdabı tepkimesi tetiklediğinde 8 saniyeliğine gruptaki aynı elemente sahip tüm karakterlerin (Sucrose hariç) Element Ustalığı 50 artar."
     }
   },
   "passive2": {

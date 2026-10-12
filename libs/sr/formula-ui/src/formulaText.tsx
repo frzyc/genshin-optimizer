@@ -5,6 +5,7 @@ import {
   valueString,
 } from '@genshin-optimizer/common/util'
 import type { CalcMeta } from '@genshin-optimizer/game-opt/engine'
+import type { FormulaText } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CalcResult } from '@genshin-optimizer/pando/engine'
 import type { Tag } from '@genshin-optimizer/sr/formula'
 import { Fragment, type ReactNode } from 'react'
@@ -13,14 +14,6 @@ import { getTagLabel } from './util'
 
 type Output = CalcMeta<Tag, 'floor'>
 
-type FormulaText = {
-  name: ReactNode | undefined
-  formula: ReactNode
-  sheet: string | undefined
-  prec: number
-
-  deps: FormulaText[]
-}
 export function formulaText(
   data: CalcResult<number, Output>,
   cache: Map<CalcResult<number, Output>, FormulaText> = new Map()
@@ -56,11 +49,11 @@ export function formulaText(
   }
 
   let formula: ReactNode,
-    prec = Infinity
+    prec = Number.POSITIVE_INFINITY
   switch (op) {
     case 'const':
       formula = displayVal
-      prec = Infinity
+      prec = Number.POSITIVE_INFINITY
       break
     case 'sum':
     case 'prod':
@@ -97,7 +90,7 @@ export function formulaText(
     }
     case 'floor':
       formula = `\u230A${ops[0].val}\u230B`
-      prec = Infinity
+      prec = Number.POSITIVE_INFINITY
       break
     default:
       assertUnreachable(op)
@@ -126,6 +119,6 @@ export function formulaText(
 const details = {
   sum: { head: '', joiner: ' + ', end: '', prec: 1 },
   prod: { head: '', joiner: ' * ', end: '', prec: 2 },
-  max: { head: 'Max(', joiner: ', ', end: ')', prec: Infinity },
-  min: { head: 'Min(', joiner: ', ', end: ')', prec: Infinity },
+  max: { head: 'Max(', joiner: ', ', end: ')', prec: Number.POSITIVE_INFINITY },
+  min: { head: 'Min(', joiner: ', ', end: ')', prec: Number.POSITIVE_INFINITY },
 } as const

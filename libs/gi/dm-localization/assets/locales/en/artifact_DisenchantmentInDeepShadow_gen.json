@@ -1,0 +1,29 @@
+{
+  "setName": "Disenchantment in Deep Shadow",
+  "setEffects": {
+    "2": "ATK +18%.",
+    "4": "Increases Superconduct Reaction DMG by 80% and Stellar-Conduct Reaction DMG by 40%. When the wielder attacks opponents affected by Superconduct or Stellar-Conduct, this attack's CRIT Rate is increased by 16%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Iridescence That Ceased Amidst Glory",
+      "desc": "It was a flower made of silk, gifted to her by a friend whose hands were as cold as ice."
+    },
+    "plume": {
+      "name": "Sharpness That Ceased Upon Wondrous Creation",
+      "desc": "It was a feathered quill given to her followers, once used to pen the most absurd of dreams."
+    },
+    "sands": {
+      "name": "Moment That Ceased Upon Waking From Grand Dreams",
+      "desc": "It was a fleeting moment she gave a certain silent alchemist to remind him of every item on his schedule."
+    },
+    "goblet": {
+      "name": "Ovations That Ceased Upon Festivity",
+      "desc": "It was a goblet of wine she had accepted in celebration from the hands of a colleague."
+    },
+    "circlet": {
+      "name": "Pendulum That Ceased Amidst a Great Fall",
+      "desc": "It was a delicate trinket awarded to her in praise by the hand of her only master."
+    }
+  }
+}

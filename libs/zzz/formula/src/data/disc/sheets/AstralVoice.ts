@@ -8,6 +8,7 @@ import {
   teamBuff,
 } from '../../util'
 import { entriesForDisc, registerDisc } from '../util'
+
 const key: DiscSetKey = 'AstralVoice'
 const { astral } = allNumConditionals(key, true, 0, 3)
 

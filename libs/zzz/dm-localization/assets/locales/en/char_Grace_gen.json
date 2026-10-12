@@ -83,7 +83,7 @@
       "name": "Pulse",
       "desc": {
         "0": "Activating an <ct color=#FFFFFF>Ultimate</ct> grants 25 stacks of <ct color=#FFFFFF>Pulse</ct> (max 25 stacks). When gaining <ct color=#FFFFFF>Zap</ct>, consumes 1 stack of <ct color=#FFFFFF>Pulse</ct>.",
-        "1": "After consuming <ct color=#FFFFFF>Pulse</ct> to obtain 8 stacks of <ct color=#FFFFFF>Zap</ct>, the next grenade throw includes an additional Pulse Grenade. If it hits an enemy suffering <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, or <ct color=#98EFF0>Ice</ct> Anomaly, it triggers <ct color=#FFFFFF>Abloom</ct>: deals an additional instance of DMG equal to <ct color=#FE437E>560%</ct>/<ct color=#2EB6FF>280%</ct>/<ct color=#FF5521>700%</ct>/<ct color=#F0D12B>50%</ct>/<ct color=#98EFF0>70%</ct> of the original Anomaly's DMG.",
+        "1": "After consuming <ct color=#FFFFFF>Pulse</ct> to obtain 8 stacks of <ct color=#FFFFFF>Zap</ct>, the next grenade throw includes an additional Pulse Grenade. If it hits an enemy suffering <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, <ct color=#98EFF0>Ice</ct>, or <ct color=#A6C5FD>Wind</ct> Anomaly, it triggers <ct color=#FFFFFF>Abloom</ct>: deals an additional instance of DMG equal to <ct color=#FE437E>560%</ct>/<ct color=#2EB6FF>280%</ct>/<ct color=#FF5521>700%</ct>/<ct color=#F0D12B>50%</ct>/<ct color=#98EFF0>70%</ct>/<ct color=#A6C5FD>28%</ct> of the original Anomaly's DMG.",
         "2": "While in the Pulse state, <ct color=#FFFFFF>Special Attack: Obstruction Removal - Cycle</ct> is unlocked."
       },
       "params": []

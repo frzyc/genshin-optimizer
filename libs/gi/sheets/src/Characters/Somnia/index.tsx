@@ -22,13 +22,13 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
   dmgNode,
   plungingDmgNodes,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
 
 const key: CharacterKey = 'Somnia'
 const elementKey: ElementKey = 'electro'
@@ -339,7 +339,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
         {
@@ -350,7 +350,7 @@ const sheet: TalentSheet = {
       ],
     },
     {
-      text: ct.chg(`auto.fields.plunging`),
+      text: ct.chg('auto.fields.plunging'),
     },
     {
       fields: [

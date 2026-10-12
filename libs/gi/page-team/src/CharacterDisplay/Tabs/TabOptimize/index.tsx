@@ -29,13 +29,13 @@ import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
-import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
+import type { GeneratedBuild, OptConfig } from '@genshin-optimizer/gi/db'
 import { maxBuildsToShowList } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useArtifacts,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
   useGeneratedBuildList,
   useOptConfig,
   useTeammateArtifactIds,
@@ -44,7 +44,6 @@ import {
 import type { OptProblemInput } from '@genshin-optimizer/gi/solver'
 import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
 import { compactArtifacts } from '@genshin-optimizer/gi/solver-tc'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
   ArtifactLevelSlider,
   BuildDisplayItem,
@@ -52,10 +51,10 @@ import {
   DataContext,
   GOAdWrapper,
   GraphContext,
+  getTeamData,
   HitModeToggle,
   NoArtWarning,
   ReactionToggle,
-  getTeamData,
   resolveInfo,
   statFilterToNumNode,
   useGlobalError,
@@ -92,10 +91,11 @@ import {
   TextField,
   Typography,
 } from '@mui/material'
+import type React from 'react'
 import type { FormEventHandler, ReactNode } from 'react'
-import React, {
-  Suspense,
+import {
   memo,
+  Suspense,
   useCallback,
   useContext,
   useDeferredValue,
@@ -189,39 +189,52 @@ export default function TabBuild() {
   const deferredBuildSetting = useDeferredValue(buildSetting)
   const teammateArtifactIds = useTeammateArtifactIds()
   const allArts = useDataManagerValues(database.arts)
-  const filteredArts = useMemo(() => {
-    const {
-      mainStatKeys,
-      excludedLocations,
-      artExclusion,
-      levelLow,
-      levelHigh,
-      useExcludedArts,
-      useTeammateBuild,
-    } = deferredBuildSetting
+  /**
+   * Filter the artifacts down to the pool the optimizer is allowed to use for
+   * the given opt config. The opt config is passed in as an argument (instead
+   * of being read from `buildSetting`) so that callers can filter with the
+   * latest settings, even while the rendered `filteredArts` is still deferred.
+   */
+  const getFilteredArts = useCallback(
+    (optConfig: OptConfig) => {
+      const {
+        mainStatKeys,
+        excludedLocations,
+        artExclusion,
+        levelLow,
+        levelHigh,
+        useExcludedArts,
+        useTeammateBuild,
+      } = optConfig
 
-    return allArts.filter((art) => {
-      if (!useExcludedArts && artExclusion.includes(art.id)) return false
-      if (!useTeammateBuild && teammateArtifactIds.includes(art.id))
-        return false
-      if (art.level < levelLow) return false
-      if (art.level > levelHigh) return false
-      const mainStats = mainStatKeys[art.slotKey]
-      if (mainStats?.length && !mainStats.includes(art.mainStatKey))
-        return false
+      return allArts.filter((art) => {
+        if (!useExcludedArts && artExclusion.includes(art.id)) return false
+        if (!useTeammateBuild && teammateArtifactIds.includes(art.id))
+          return false
+        if (art.level < levelLow) return false
+        if (art.level > levelHigh) return false
+        const mainStats = mainStatKeys[art.slotKey]
+        if (mainStats?.length && !mainStats.includes(art.mainStatKey))
+          return false
 
-      const locKey = charKeyToLocCharKey(characterKey)
+        const locKey = charKeyToLocCharKey(characterKey)
 
-      if (
-        art.location &&
-        art.location !== locKey &&
-        excludedLocations.includes(art.location)
-      )
-        return false
+        if (
+          art.location &&
+          art.location !== locKey &&
+          excludedLocations.includes(art.location)
+        )
+          return false
 
-      return true
-    })
-  }, [deferredBuildSetting, allArts, teammateArtifactIds, characterKey])
+        return true
+      })
+    },
+    [allArts, teammateArtifactIds, characterKey]
+  )
+  const filteredArts = useMemo(
+    () => getFilteredArts(deferredBuildSetting),
+    [getFilteredArts, deferredBuildSetting]
+  )
 
   const filteredArtIdMap = useMemo(
     () =>
@@ -308,8 +321,11 @@ export default function TabBuild() {
     if (!characterKey || !optimizationTarget) return
     if (notificationRef.current) Notification?.requestPermission()
 
+    // Filter with the latest settings rather than the deferred `filteredArts`,
+    // so that a build started right after a settings change does not use an
+    // outdated artifact pool. (#1120)
     const split = compactArtifacts(
-      filteredArts,
+      getFilteredArts(buildSetting),
       mainStatAssumptionLevel,
       allowPartial
     )
@@ -328,7 +344,7 @@ export default function TabBuild() {
     if (!teamData) return
     const workerData = uiDataForTeam(teamData.teamData, gender, activeCharKey)[
       characterKey
-    ]?.target.data![0]
+    ]?.target.data[0]
     if (!workerData) return
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
     const unoptimizedOptimizationTargetNode = objPathValue(
@@ -347,12 +363,15 @@ export default function TabBuild() {
       ...valueFilter.map((x) => x.value),
       unoptimizedOptimizationTargetNode,
     ]
-    const minimum = [...valueFilter.map((x) => x.minimum), -Infinity]
+    const minimum = [
+      ...valueFilter.map((x) => x.minimum),
+      Number.NEGATIVE_INFINITY,
+    ]
     const plotBaseNumNode: NumNode =
       plotBase && objPathValue(workerData.display ?? {}, plotBase)
     if (plotBaseNumNode) {
       unoptimizedNodes.push(plotBaseNumNode)
-      minimum.push(-Infinity)
+      minimum.push(Number.NEGATIVE_INFINITY)
     }
 
     const nodes = optimize(
@@ -485,7 +504,7 @@ export default function TabBuild() {
   }, [
     buildSetting,
     characterKey,
-    filteredArts,
+    getFilteredArts,
     database,
     teamId,
     teamCharId,
@@ -1010,19 +1029,18 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
 
   const database = useDatabase()
   const {
-    teamCharId,
     loadoutDatum,
+    teamCharId,
     teamChar: { key: characterKey },
   } = useContext(TeamCharacterContext)
 
   const toTc = () => {
-    const weaponTypeKey = getCharStat(characterKey).weaponType
     const weapon = database.teams.getLoadoutWeapon(loadoutDatum)
-    const buildTcId = database.teamChars.newBuildTcFromBuild(
-      teamCharId,
-      weaponTypeKey,
+    const buildTcId = database.buildTcs.newFromBuild(
+      characterKey,
       weapon,
-      Object.values(build.artifactIds).map((id) => database.arts.get(id))
+      Object.values(build.artifactIds).map((id) => database.arts.get(id)),
+      teamCharId
     )
     if (buildTcId)
       database.buildTcs.set(buildTcId, {
@@ -1090,14 +1108,19 @@ function CopyBuildButton({
   const [showPrompt, onShowPrompt, OnHidePrompt] = useBoolState()
 
   const database = useDatabase()
-  const { teamCharId } = useContext(TeamCharacterContext)
+  const {
+    teamCharId,
+    teamChar: { key: characterKey },
+  } = useContext(TeamCharacterContext)
 
   const toLoadout: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault()
-    database.teamChars.newBuild(teamCharId, {
+    database.builds.new({
+      characterKey,
       name,
       artifactIds,
       weaponId,
+      srcTeamCharId: teamCharId,
     })
 
     setName('')

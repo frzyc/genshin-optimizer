@@ -8,6 +8,7 @@ import ChaosJazz from './ChaosJazz'
 import ChaoticMetal from './ChaoticMetal'
 import DawnsBloom from './DawnsBloom'
 import FangedMetal from './FangedMetal'
+import FeatheredFate from './FeatheredFate'
 import FreedomBlues from './FreedomBlues'
 import HormonePunk from './HormonePunk'
 import InfernoMetal from './InfernoMetal'
@@ -23,9 +24,12 @@ import ShiningAria from './ShiningAria'
 import ShockstarDisco from './ShockstarDisco'
 import SoulRock from './SoulRock'
 import SwingJazz from './SwingJazz'
+import TheSkyAblaze from './TheSkyAblaze'
+import ThornedRose from './ThornedRose'
 import ThunderMetal from './ThunderMetal'
 import WhiteWaterBallad from './WhiteWaterBallad'
 import WoodpeckerElectro from './WoodpeckerElectro'
+import WutheringSalon from './WutheringSalon'
 import YunkuiTales from './YunkuiTales'
 
 export const discUiSheets: Record<DiscSetKey, UISheet<'2' | '4'>> = {
@@ -36,6 +40,7 @@ export const discUiSheets: Record<DiscSetKey, UISheet<'2' | '4'>> = {
   ChaoticMetal,
   DawnsBloom,
   FangedMetal,
+  FeatheredFate,
   FreedomBlues,
   HormonePunk,
   InfernoMetal,
@@ -51,8 +56,11 @@ export const discUiSheets: Record<DiscSetKey, UISheet<'2' | '4'>> = {
   ShockstarDisco,
   SoulRock,
   SwingJazz,
+  TheSkyAblaze,
+  ThornedRose,
   ThunderMetal,
   WhiteWaterBallad,
   WoodpeckerElectro,
+  WutheringSalon,
   YunkuiTales,
 }

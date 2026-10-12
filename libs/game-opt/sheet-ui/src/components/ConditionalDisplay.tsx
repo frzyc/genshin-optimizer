@@ -32,8 +32,6 @@ import {
   SetConditionalContext,
   SrcDstDisplayContext,
 } from '../context'
-import {} from '../context/SetConditionalContext'
-import {} from '../context/SrcDstDisplayContext'
 import type { Conditional } from '../types'
 import { FieldsDisplay } from './FieldDisplay'
 import { HeaderDisplay } from './HeaderDisplay'
@@ -133,7 +131,8 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
     () => ({
       ...tag,
       src,
-      dst,
+      // Disc/char conditionals often store dst=null; keep TagContext dst for reads.
+      dst: dst ?? tag.dst ?? null,
     }),
     [tag, src, dst]
   )

@@ -1,11 +1,12 @@
 import {
   cmpEq,
   cmpGE,
+  min,
   prod,
   subscript,
   sum,
 } from '@genshin-optimizer/pando/engine'
-import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
@@ -134,7 +135,13 @@ const sheet = register(
           2,
           sum(
             prod(-1, sum(percent(1), percent(-dm.m2.polarity_disorder_mv_))),
-            prod(thrusts, percent(dm.m2.add_polarity_disorder_mv_))
+            prod(
+              min(
+                cmpGE(char.mindscape, 6, dm.m6.max_stacks, dm.m2.max_stacks),
+                thrusts
+              ),
+              percent(dm.m2.add_polarity_disorder_mv_)
+            )
           ),
           percent(-0.85)
         )
@@ -155,14 +162,18 @@ const sheet = register(
           2,
           sum(
             prod(-1, sum(percent(1), percent(-dm.m2.polarity_disorder_mv_))),
-            prod(thrusts, percent(dm.m2.add_polarity_disorder_mv_))
+            prod(
+              min(
+                cmpGE(char.mindscape, 6, dm.m6.max_stacks, dm.m2.max_stacks),
+                thrusts
+              ),
+              percent(dm.m2.add_polarity_disorder_mv_)
+            )
           ),
           percent(-0.85)
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'exSpecial_anom_flat_dmg',
@@ -176,9 +187,7 @@ const sheet = register(
           own.final.anomProf
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'ult_anom_flat_dmg',
@@ -192,17 +201,13 @@ const sheet = register(
           own.final.anomProf
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'core_addl_disorder_',
     teamBuff.combat.addl_disorder_.add(
       exSpecial_used.ifOn(percent(subscript(char.core, dm.core.addl_disorder_)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'core_electric_dmg_',
@@ -221,9 +226,7 @@ const sheet = register(
         3,
         basic_hit.ifOn(percent(dm.ability.electric_anomBuildup_))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm1_anomProf',
@@ -242,9 +245,7 @@ const sheet = register(
     'm4_pen_',
     teamBuff.combat.pen_.add(
       cmpGE(char.mindscape, 4, exposed.ifOn(percent(dm.m4.pen_)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm6_exSpecial_dmg_',

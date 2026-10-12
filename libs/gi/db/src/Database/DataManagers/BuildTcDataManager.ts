@@ -14,6 +14,7 @@ import type {
   ArtifactSetKey,
   ArtifactSlotKey,
   AscensionKey,
+  CharacterKey,
   RefinementKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
@@ -22,19 +23,32 @@ import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allAscensionKeys,
+  allCharacterKeys,
   allMainStatKeys,
   allRefinementKeys,
   allSubstatKeys,
   allWeaponKeys,
+  charMaxLevel,
+  defaultCharacterAscension,
+  defaultCharacterLevel,
+  defaultTalentLevel,
+  defaultWeaponAscension,
+  defaultWeaponLevel,
   substatTypeKeys,
+  validateWeaponLevelAsc,
 } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
+import { allStats, getCharStat } from '@genshin-optimizer/gi/stats'
 import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
 import type { ICachedArtifact } from './ArtifactDataManager'
-import type { ICachedWeapon } from './WeaponDataManager'
+import { sortEntriesBySrcTeamCharId } from './buildUtil'
+import {
+  defaultInitialWeaponKey,
+  type ICachedWeapon,
+} from './WeaponDataManager'
 
 const buildTcArtifactSlotSchema = z.object({
   level: z.number().int().min(0).max(20).catch(20),
@@ -96,39 +110,51 @@ const buildTcArtifactSchema = z.object({
 })
 
 const talentSchema = z.object({
-  auto: zodClampedNumber(1, 15, 1),
-  skill: zodClampedNumber(1, 15, 1),
-  burst: zodClampedNumber(1, 15, 1),
+  auto: zodClampedNumber(1, 15, defaultTalentLevel),
+  skill: zodClampedNumber(1, 15, defaultTalentLevel),
+  burst: zodClampedNumber(1, 15, defaultTalentLevel),
 })
 
 const buildTcCharacterSchema = z
   .object({
-    level: zodClampedNumber(1, 90, 1),
+    level: zodClampedNumber(1, charMaxLevel, defaultCharacterLevel),
     ascension: zodNumericLiteralWithDefault(
       allAscensionKeys,
-      0
+      defaultCharacterAscension
     ) as z.ZodType<AscensionKey>,
     constellation: zodClampedNumber(0, 6, 0),
     talent: zodObject(talentSchema.shape).catch({
-      auto: 1,
-      skill: 1,
-      burst: 1,
+      auto: defaultTalentLevel,
+      skill: defaultTalentLevel,
+      burst: defaultTalentLevel,
     }),
   })
   .optional()
 
 const buildTcWeaponSchema = z.object({
   key: zodEnum(allWeaponKeys),
-  level: zodClampedNumber(1, 90, 1),
+  level: zodClampedNumber(1, 90, defaultWeaponLevel),
   ascension: zodNumericLiteralWithDefault(
     allAscensionKeys,
-    0
+    defaultWeaponAscension
   ) as z.ZodType<AscensionKey>,
   refinement: zodNumericLiteralWithDefault(
     allRefinementKeys,
     1
   ) as z.ZodType<RefinementKey>,
 })
+const buildTcWeaponSchemaWithTransform = buildTcWeaponSchema.transform(
+  (data) => {
+    const rarity = allStats.weapon.data[data.key]?.rarity
+    if (!rarity) throw new Error('Invalid weapon key')
+    const { level, ascension } = validateWeaponLevelAsc(
+      data.level,
+      data.ascension,
+      rarity
+    )
+    return { ...data, level, ascension }
+  }
+)
 
 const defaultMaxSubstats = () =>
   objKeyMap(
@@ -144,8 +170,9 @@ const buildTcOptimizationSchema = z.object({
 const buildTcSchema = z.object({
   name: zodString('Build(TC) Name'),
   description: zodString(),
+  characterKey: zodEnum(allCharacterKeys),
   character: buildTcCharacterSchema,
-  weapon: buildTcWeaponSchema,
+  weapon: buildTcWeaponSchemaWithTransform,
   artifact: zodObject(buildTcArtifactSchema.shape).catch({
     slots: objKeyMap(allArtifactSlotKeys, defaultSlot),
     substats: {
@@ -159,6 +186,8 @@ const buildTcSchema = z.object({
     distributedSubstats: 45,
     maxSubstats: defaultMaxSubstats(),
   }),
+  /** Loose reference to the teamChar loadout that created this build. */
+  srcTeamCharId: z.string().optional(),
 })
 
 export type BuildTc = z.infer<typeof buildTcSchema>
@@ -179,11 +208,42 @@ export class BuildTcDataManager extends DataManager<
   }
   override validate(obj: unknown): BuildTc | undefined {
     const result = buildTcSchema.safeParse(obj)
-    return result.success ? result.data : undefined
+    if (!result.success) return undefined
+    return result.data
   }
-  new(data: Partial<BuildTc>) {
+
+  forCharacter(characterKey: CharacterKey): BuildTc[] {
+    return this.values.filter((b) => b.characterKey === characterKey)
+  }
+  entriesForCharacter(
+    characterKey: CharacterKey,
+    srcTeamCharId?: string
+  ): [string, BuildTc][] {
+    return sortEntriesBySrcTeamCharId(
+      this.entries.filter(([, b]) => b.characterKey === characterKey),
+      srcTeamCharId
+    )
+  }
+  newFromBuild(
+    characterKey: CharacterKey,
+    weapon?: ICachedWeapon,
+    arts: Array<ICachedArtifact | undefined> = [],
+    srcTeamCharId?: string
+  ): string | undefined {
+    const buildTc = initCharTC(
+      characterKey,
+      weapon?.key ??
+        defaultInitialWeaponKey(getCharStat(characterKey).weaponType)
+    )
+    toBuildTc(buildTc, weapon, arts)
+    return this.new({
+      ...buildTc,
+      ...(srcTeamCharId ? { srcTeamCharId } : {}),
+    })
+  }
+  new(data: Partial<BuildTc> & Pick<BuildTc, 'characterKey'>) {
     const id = this.generateKey()
-    this.set(id, data)
+    if (!this.set(id, data)) return ''
     return id
   }
   duplicate(buildTcId: string): string {
@@ -193,11 +253,6 @@ export class BuildTcDataManager extends DataManager<
   }
   override remove(key: string, notify?: boolean): BuildTc | undefined {
     const buildTc = super.remove(key, notify)
-    this.database.teamChars.entries.forEach(
-      ([teamCharId, teamChar]) =>
-        teamChar.buildTcIds.includes(key) &&
-        this.database.teamChars.set(teamCharId, {})
-    )
     this.database.teams.entries.forEach(
       ([teamId, team]) =>
         team.loadoutData?.some(
@@ -236,14 +291,18 @@ function initBuildTcOptimizationMaxSubstats(): BuildTc['optimization']['maxSubst
   return defaultMaxSubstats()
 }
 
-export function initCharTC(weaponKey: WeaponKey): BuildTc {
+export function initCharTC(
+  characterKey: CharacterKey,
+  weaponKey: WeaponKey
+): BuildTc {
   return {
     name: 'Build(TC) Name',
     description: '',
+    characterKey,
     weapon: {
       key: weaponKey,
-      level: 1,
-      ascension: 0,
+      level: defaultWeaponLevel,
+      ascension: defaultWeaponAscension,
       refinement: 1,
     },
     artifact: {

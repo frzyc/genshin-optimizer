@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -62,7 +66,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -86,7 +94,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -117,7 +129,7 @@
   "passive": {
     "name": "Cảnh Giác Của Mặt Trăng",
     "description": {
-      "0": "Tại khu vực Nod-Krai, khi nhân vật của bản thân trong đội bị hạ gục, Columbina sẽ hồi sinh nhân vật này và hồi phục HP cho mục tiêu, lượng hồi phục dựa trên Cấp Yêu Thích của Columbina. Hiệu quả này mỗi 100s tối đa kích hoạt một lần. Hiệu quả này vô hiệu trong Bí Cảnh, Vùng Đất Thảo Phạt, La Hoàn Thâm Cảnh.",
+      "0": "Tại khu vực Nod-Krai hoặc Sương Nguyệt, khi nhân vật của bản thân trong đội bị hạ gục, Columbina sẽ hồi sinh nhân vật này và hồi phục HP cho mục tiêu, lượng hồi phục dựa trên Cấp Yêu Thích của Columbina. Hiệu quả này mỗi 100s tối đa kích hoạt một lần. Hiệu quả này vô hiệu trong Bí Cảnh, Vùng Đất Thảo Phạt, La Hoàn Thâm Cảnh.",
       "1": "Ngoài ra, dường như Columbina có tương thích đặc biệt với một số động vật nhỏ bị ảnh hưởng bởi Kuuvahki..."
     }
   },

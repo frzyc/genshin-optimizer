@@ -6,6 +6,7 @@ import type {
   DocumentConditional,
   DocumentSection,
 } from '@genshin-optimizer/gi/sheets'
+import type { SxProps } from '@mui/material'
 import { CardContent } from '@mui/material'
 import { useContext } from 'react'
 import { DataContext } from '../../context'
@@ -19,6 +20,7 @@ type ConditionalDisplayProps = {
   hideDesc?: boolean
   disabled?: boolean
   bgt?: CardBackgroundColor
+  sx?: SxProps
 }
 
 export function ConditionalDisplay({
@@ -27,6 +29,7 @@ export function ConditionalDisplay({
   hideDesc = false,
   disabled = false,
   bgt = 'normal',
+  sx,
 }: ConditionalDisplayProps) {
   const { data } = useContext(DataContext)
   const { teamId } = useContext(TeamCharacterContext)
@@ -45,7 +48,7 @@ export function ConditionalDisplay({
     })
   }
   return (
-    <CardThemed bgt={bgt}>
+    <CardThemed bgt={bgt} sx={sx}>
       {!evalIfFunc(hideHeader, conditional) && (
         <HeaderDisplay header={conditional.header} hideDesc={hideDesc} />
       )}

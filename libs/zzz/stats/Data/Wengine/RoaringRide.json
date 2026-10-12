@@ -1,7 +1,8 @@
 {
   "rarity": "A",
   "type": "anomaly",
-  "atk_base": 42,
+  "base_statkey": "atk",
+  "base_statvalue": 42,
   "second_statkey": "atk_",
   "second_statvalue": 0.1,
   "phase": [

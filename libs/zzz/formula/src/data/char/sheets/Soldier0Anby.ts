@@ -1,5 +1,5 @@
 import { cmpGE, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
-import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
@@ -132,9 +132,7 @@ const sheet = register(
           percent(subscript(char.core, dm.core.aftershock_crit_dmg_scaling_))
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'ability_crit_',
@@ -161,9 +159,7 @@ const sheet = register(
         1,
         markedWithSilverStar.ifOn(dm.ability.aftershock_dmg_)
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm2_crit_',

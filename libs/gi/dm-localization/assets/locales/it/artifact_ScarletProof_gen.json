@@ -1,0 +1,29 @@
+{
+  "setName": "Prova scarlatta",
+  "setEffects": {
+    "2": "ATT +18%.",
+    "4": "Per 10 s dopo aver innescato una reazione di Turbinio astrale, il tasso di CRIT e i DAN da reazione di Turbinio astrale inflitti dal personaggio aumentano rispettivamente di un 16% e di un 40%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Onore alla tua devozione",
+      "desc": "Un ornamento floreale rosso acceso, che simboleggia la gloria ardente."
+    },
+    "plume": {
+      "name": "Gloria alla tua eredità",
+      "desc": "Un calamo rosso acceso, donato al sangue più giovane."
+    },
+    "sands": {
+      "name": "Tempo a te donato",
+      "desc": "Un orologio da taschino rosso acceso, che segna il tempo limite per una conversazione."
+    },
+    "goblet": {
+      "name": "Calice del tuo sangue e dolore",
+      "desc": "Una bottiglia di vino rosso acceso. Che tu possa non scoprire mai cosa c'era dentro."
+    },
+    "circlet": {
+      "name": "Testimonianza della tua fede",
+      "desc": "Un elmo rosso acceso. Si spera che, un tempo, abbia protetto qualcuno."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Celestial Gift",
+  "setEffects": {
+    "2": "Energy Recharge +20%.",
+    "4": "Jika Karakter yang mengenakan sudah menyelesaikan PR Penyihir, maka setelah melancarkan Elemental Skill, akan mendapatkan efek Light's Guidance: Seluruh anggota party di sekitar mendapatkan 20% Elemental DMG Bonus untuk jenis elemen yang sesuai dengan elemen Karakter yang mengenakan selama 20 detik. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun tidak berada di medan pertempuran. Efek Bonus DMG yang dihasilkan dari set Artefak dengan nama yang sama tidak dapat ditumpuk.\\nSaat party memiliki efek Hexerei: Secret Rite, efek Light's Guidance akan ditingkatkan menjadi Mortal Hymn: Selain jenis elemen Karakter yang mengenakan, seluruh Karakter dalam party di sekitar juga akan mendapatkan Elemental DMG Bonus dengan jenis elemen yang sesuai berdasarkan jenis elemen Karakter aktif sendiri dalam party, dan kedua Elemental DMG Bonus yang disebutkan di atas meningkat menjadi 40%. Elemental DMG Bonus dari jenis elemen yang sama tidak dapat ditumpuk."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Heavensent Fragrance",
+      "desc": "Bunga abadi yang diberikan oleh langit kepada utusannya, kehidupan tanpa akhir melahirkan keserakahan."
+    },
+    "plume": {
+      "name": "Heavensent Demise",
+      "desc": "Bulu kematian yang diberikan langit tinggi kepada para utusan. Semua dosa akan diampuni di ujung takdir."
+    },
+    "sands": {
+      "name": "Heavensent Decree",
+      "desc": "Jam waktu terbalik yang diberikan langit tinggi kepada utusan, larangan yang tak dapat dilewati berubah menjadi sumber kemarahan."
+    },
+    "goblet": {
+      "name": "Heavensent Reward",
+      "desc": "Nektar manis yang diberikan langit tinggi kepada pengikut. Pesta yang tak pernah berakhir membuka gerbang keinginan."
+    },
+    "circlet": {
+      "name": "Heavensent Crown",
+      "desc": "Mahkota megah yang diberikan langit tinggi kepada utusan. Kekuatan yang tak dikendalikan oleh manusia menumbuhkan kesombongan."
+    }
+  }
+}

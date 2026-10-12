@@ -413,6 +413,14 @@
     ]
   ],
   "passive3": [],
+  "lockedPassive": [
+    [
+      20
+    ],
+    [
+      3.5
+    ]
+  ],
   "constellation1": [
     15
   ],
@@ -427,7 +435,11 @@
   "constellation5": [],
   "constellation6": [
     0.3,
-    200
+    200,
+    0.25,
+    0.4
   ],
-  "upgradeableSkills": []
+  "upgradeableSkills": [
+    "constellation6"
+  ]
 }

@@ -1,6 +1,6 @@
 import { timeStringMs } from '@genshin-optimizer/common/util'
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
-import { Alert, Grid, LinearProgress, Typography, styled } from '@mui/material'
+import { Alert, Grid, LinearProgress, styled, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { CharacterName } from './Trans'
 
@@ -42,7 +42,7 @@ export function BuildAlert({
   characterKey: CharacterKey
   gender: GenderKey
 }) {
-  const hasTotal = isFinite(total)
+  const hasTotal = Number.isFinite(total)
 
   const generatingBuilds = type !== 'inactive'
   const unskipped = total - skipped
@@ -58,7 +58,9 @@ export function BuildAlert({
   const durationString = (
     <Monospace>
       {timeStringMs(
-        Math.round((finishTime ?? performance.now()) - (startTime ?? NaN))
+        Math.round(
+          (finishTime ?? performance.now()) - (startTime ?? Number.NaN)
+        )
       )}
     </Monospace>
   )

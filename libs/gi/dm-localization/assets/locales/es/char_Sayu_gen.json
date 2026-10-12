@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -77,7 +81,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -111,14 +119,18 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
     "name": "¡Déjame en paz!",
     "description": {
-      "0": "Cuando Sayu causa una reacción de Torbellino mientras está en combate, todos los miembros de tu equipo y los aliados cercanos recuperan 300 pts. de Vida, además de 1.2 pts. de Vida adicionales por cada punto de Maestría Elemental de Sayu.",
-      "1": "Este efecto solo puede ocurrir una vez cada 2 s."
+      "0": "Cuando Sayu causa una reacción de Torbellino o Torbellino Estelar mientras está en combate, todos los miembros de tu equipo y los aliados cercanos recuperan 300 pts. de Vida, además de 1.2 pts. de Vida adicionales por cada punto de Maestría Elemental de Sayu.",
+      "1": "Este efecto solo puede ocurrir una vez cada 2 s."
     }
   },
   "passive2": {
@@ -164,8 +176,8 @@
   "constellation4": {
     "name": "Holgazanería innovadora",
     "description": {
-      "0": "Cuando Sayu causa una reacción de Torbellino, recupera 1.2 pts. de Energía Elemental.",
-      "1": "Esto puede ocurrir una vez cada 2 s."
+      "0": "Cuando Sayu causa una reacción de Torbellino o Torbellino Estelar mientras está en uso, recupera 1.2 pts. de Energía Elemental.",
+      "1": "Esto solo puede ocurrir una vez cada 2 s."
     }
   },
   "constellation5": {

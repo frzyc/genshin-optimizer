@@ -1,0 +1,24 @@
+{
+  "name": "Echi del cuore",
+  "description": {
+    "0": "Un catalizzatore che si dice possa cristallizzare la voce. Al suo interno è custodito un giuramento di lealtà sigillato, insieme a un cuore da tempo dimenticato dall'umanità."
+  },
+  "passiveName": "Eco di un giuramento",
+  "passiveDescription": {
+    "0": {
+      "0": "Innescare una reazione elementale aumenta la maestria elementale del personaggio che equipaggia l'arma di <cryo>60</cryo> per 12 s. Innescare una reazione di Barlume astrale aumenta i DAN inflitti dalle reazioni di Barlume astrale del personaggio di un <cryo>16%</cryo> per 12 s. Gli effetti sopracitati possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "1": {
+      "0": "Innescare una reazione elementale aumenta la maestria elementale del personaggio che equipaggia l'arma di <cryo>75</cryo> per 12 s. Innescare una reazione di Barlume astrale aumenta i DAN inflitti dalle reazioni di Barlume astrale del personaggio di un <cryo>20%</cryo> per 12 s. Gli effetti sopracitati possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "2": {
+      "0": "Innescare una reazione elementale aumenta la maestria elementale del personaggio che equipaggia l'arma di <cryo>90</cryo> per 12 s. Innescare una reazione di Barlume astrale aumenta i DAN inflitti dalle reazioni di Barlume astrale del personaggio di un <cryo>24%</cryo> per 12 s. Gli effetti sopracitati possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "3": {
+      "0": "Innescare una reazione elementale aumenta la maestria elementale del personaggio che equipaggia l'arma di <cryo>105</cryo> per 12 s. Innescare una reazione di Barlume astrale aumenta i DAN inflitti dalle reazioni di Barlume astrale del personaggio di un <cryo>28%</cryo> per 12 s. Gli effetti sopracitati possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "4": {
+      "0": "Innescare una reazione elementale aumenta la maestria elementale del personaggio che equipaggia l'arma di <cryo>120</cryo> per 12 s. Innescare una reazione di Barlume astrale aumenta i DAN inflitti dalle reazioni di Barlume astrale del personaggio di un <cryo>32%</cryo> per 12 s. Gli effetti sopracitati possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    }
+  }
+}

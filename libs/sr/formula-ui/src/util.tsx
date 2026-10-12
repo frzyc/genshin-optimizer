@@ -1,3 +1,4 @@
+import type { TagField } from '@genshin-optimizer/game-opt/sheet-ui'
 import type {
   CharacterGenderedKey,
   LightConeKey,
@@ -8,6 +9,7 @@ import type {
 import type { Tag } from '@genshin-optimizer/sr/formula'
 import { Translate } from '@genshin-optimizer/sr/i18n'
 import type { ReactNode } from 'react'
+import { TagDisplay } from './components'
 export const st = (
   strKey: string,
   values?: Record<string, string | number>
@@ -40,6 +42,13 @@ export function trans(
       <Translate ns={`${typeKey}_${key}`} key18={strKey} values={values} />
     ),
   ]
+}
+
+export function tagToTagField(tag: Tag): TagField {
+  return {
+    title: <TagDisplay tag={tag} />,
+    fieldRef: tag,
+  }
 }
 
 export function getTagLabel(tag: Tag | undefined | null): string {

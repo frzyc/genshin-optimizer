@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -69,7 +73,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -96,7 +104,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -110,7 +122,7 @@
   "passive2": {
     "name": "Diario naturalistico universale",
     "description": {
-      "0": "Linnea aumenta la maestria elementale di alcuni personaggi del tuo gruppo in base a un 5% della sua DIF e a seconda del personaggio attivo attuale. Se il tuo personaggio attivo:",
+      "0": "Linnea aumenta la maestria elementale di determinati personaggi del tuo gruppo in base a un 5% della sua DIF e a seconda del personaggio attivo attuale. Se il tuo personaggio attivo:",
       "1": [
         " è un personaggio con Presagio lunare, la sua maestria elementale aumenta;",
         " non è un personaggio con Presagio lunare, la maestria elementale di Linnea aumenta."

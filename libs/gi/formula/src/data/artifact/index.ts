@@ -7,10 +7,12 @@ import Berserker from './Berserker'
 import BlizzardStrayer from './BlizzardStrayer'
 import BloodstainedChivalry from './BloodstainedChivalry'
 import BraveHeart from './BraveHeart'
+import CelestialGift from './CelestialGift'
 import CrimsonWitchOfFlames from './CrimsonWitchOfFlames'
 import DeepwoodMemories from './DeepwoodMemories'
 import DefendersWill from './DefendersWill'
 import DesertPavilionChronicle from './DesertPavilionChronicle'
+import DisenchantmentInDeepShadow from './DisenchantmentInDeepShadow'
 import EchoesOfAnOffering from './EchoesOfAnOffering'
 import EmblemOfSeveredFate from './EmblemOfSeveredFate'
 import FinaleOfTheDeepGalleries from './FinaleOfTheDeepGalleries'
@@ -21,6 +23,7 @@ import GildedDreams from './GildedDreams'
 import GladiatorsFinale from './GladiatorsFinale'
 import GoldenTroupe from './GoldenTroupe'
 import HeartOfDepth from './HeartOfDepth'
+import HeartOfTheFurnace from './HeartOfTheFurnace'
 import HuskOfOpulentDreams from './HuskOfOpulentDreams'
 import Instructor from './Instructor'
 import Lavawalker from './Lavawalker'
@@ -42,6 +45,7 @@ import PrayersForWisdom from './PrayersForWisdom'
 import PrayersToSpringtime from './PrayersToSpringtime'
 import ResolutionOfSojourner from './ResolutionOfSojourner'
 import RetracingBolide from './RetracingBolide'
+import ScarletProof from './ScarletProof'
 import Scholar from './Scholar'
 import ScrollOfTheHeroOfCinderCity from './ScrollOfTheHeroOfCinderCity'
 import ShimenawasReminiscence from './ShimenawasReminiscence'
@@ -68,10 +72,12 @@ const data: TagMapNodeEntries[] = [
   BlizzardStrayer,
   BloodstainedChivalry,
   BraveHeart,
+  CelestialGift,
   CrimsonWitchOfFlames,
   DeepwoodMemories,
   DefendersWill,
   DesertPavilionChronicle,
+  DisenchantmentInDeepShadow,
   EchoesOfAnOffering,
   EmblemOfSeveredFate,
   FinaleOfTheDeepGalleries,
@@ -82,6 +88,7 @@ const data: TagMapNodeEntries[] = [
   GladiatorsFinale,
   GoldenTroupe,
   HeartOfDepth,
+  HeartOfTheFurnace,
   HuskOfOpulentDreams,
   Instructor,
   Lavawalker,
@@ -103,6 +110,7 @@ const data: TagMapNodeEntries[] = [
   PrayersToSpringtime,
   ResolutionOfSojourner,
   RetracingBolide,
+  ScarletProof,
   Scholar,
   ScrollOfTheHeroOfCinderCity,
   ShimenawasReminiscence,

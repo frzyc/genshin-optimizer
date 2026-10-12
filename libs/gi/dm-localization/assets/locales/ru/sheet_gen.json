@@ -60,12 +60,14 @@
     "superconduct": "Сверхпроводник",
     "vaporize": "Пар",
     "melt": "Таяние",
-    "bloom": "Бутонизация",
+    "bloom": "",
     "burgeon": "Цветение",
     "hyperbloom": "Вегетация",
     "quicken": "Стимуляция",
     "aggravate": "Обострение",
-    "spread": "Разрастание"
+    "spread": "Разрастание",
+    "stellarconduct": "Звёздный проводник",
+    "stellarswirl": "Звёздное рассеивание"
   },
   "stat": {
     "def": "Защита",

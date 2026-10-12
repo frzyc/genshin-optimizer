@@ -6,6 +6,8 @@ const elementalData: Record<string, string> = {
   ice: 'Ice',
   physical: 'Physical',
   ether: 'Ether',
+  wind: 'Wind',
+  lumiflux: 'Lumiflux',
 } as const
 
 export const statMapEngMap = {

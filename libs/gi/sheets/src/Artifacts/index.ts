@@ -2,20 +2,21 @@ import type { ArtifactSetKey, SetNum } from '@genshin-optimizer/gi/consts'
 import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
 import type { UIData } from '@genshin-optimizer/gi/uidata'
 import { input, mergeData } from '@genshin-optimizer/gi/wr'
-import type { ArtifactSheet } from './ArtifactSheet'
-
 import ADayCarvedFromRisingWinds from './ADayCarvedFromRisingWinds'
 import Adventurer from './Adventurer'
 import ArchaicPetra from './ArchaicPetra'
+import type { ArtifactSheet } from './ArtifactSheet'
 import AubadeOfMorningstarAndMoon from './AubadeOfMorningstarAndMoon'
 import Berserker from './Berserker'
 import BlizzardStrayer from './BlizzardStrayer'
 import BloodstainedChivalry from './BloodstainedChivalry'
 import BraveHeart from './BraveHeart'
+import CelestialGift from './CelestialGift'
 import CrimsonWitchOfFlames from './CrimsonWitchOfFlames'
 import DeepwoodMemories from './DeepwoodMemories'
 import DefendersWill from './DefendersWill'
 import DesertPavilionChronicle from './DesertPavilionChronicle'
+import DisenchantmentInDeepShadow from './DisenchantmentInDeepShadow'
 import EchoesOfAnOffering from './EchoesOfAnOffering'
 import EmblemOfSeveredFate from './EmblemOfSeveredFate'
 import FinaleOfTheDeepGalleries from './FinaleOfTheDeepGalleries'
@@ -26,6 +27,7 @@ import GildedDreams from './GildedDreams'
 import GladiatorsFinale from './GladiatorsFinale'
 import GoldenTroupe from './GoldenTroupe'
 import HeartOfDepth from './HeartOfDepth'
+import HeartOfTheFurnace from './HeartOfTheFurnace'
 import HuskOfOpulentDreams from './HuskOfOpulentDreams'
 import Instructor from './Instructor'
 import Lavawalker from './Lavawalker'
@@ -47,6 +49,7 @@ import PrayersForWisdom from './PrayersForWisdom'
 import PrayersToSpringtime from './PrayersToSpringtime'
 import ResolutionOfSojourner from './ResolutionOfSojourner'
 import RetracingBolide from './RetracingBolide'
+import ScarletProof from './ScarletProof'
 import Scholar from './Scholar'
 import ScrollOfTheHeroOfCinderCity from './ScrollOfTheHeroOfCinderCity'
 import ShimenawasReminiscence from './ShimenawasReminiscence'
@@ -73,10 +76,12 @@ export const artifactSheets: Record<ArtifactSetKey, ArtifactSheet> = {
   BlizzardStrayer,
   BloodstainedChivalry,
   BraveHeart,
+  CelestialGift,
   CrimsonWitchOfFlames,
   DeepwoodMemories,
   DefendersWill,
   DesertPavilionChronicle,
+  DisenchantmentInDeepShadow,
   EchoesOfAnOffering,
   EmblemOfSeveredFate,
   FinaleOfTheDeepGalleries,
@@ -87,6 +92,7 @@ export const artifactSheets: Record<ArtifactSetKey, ArtifactSheet> = {
   GladiatorsFinale,
   GoldenTroupe,
   HeartOfDepth,
+  HeartOfTheFurnace,
   HuskOfOpulentDreams,
   Instructor,
   Lavawalker,
@@ -108,6 +114,7 @@ export const artifactSheets: Record<ArtifactSetKey, ArtifactSheet> = {
   PrayersToSpringtime,
   ResolutionOfSojourner,
   RetracingBolide,
+  ScarletProof,
   Scholar,
   ScrollOfTheHeroOfCinderCity,
   ShimenawasReminiscence,
@@ -138,7 +145,7 @@ export function dataSetEffects(data: UIData) {
   allArtifactSetKeys.forEach((setKey) => {
     const sheet = getArtSheet(setKey)
     const setNums = (
-      Object.keys(sheet.setEffects).map((k) => parseInt(k)) as SetNum[]
+      Object.keys(sheet.setEffects).map((k) => Number.parseInt(k)) as SetNum[]
     ).filter((sn) => (data.get(input.artSet[setKey]).value ?? 0) >= sn)
     if (setNums.length) artifactSetEffect[setKey] = setNums
   })

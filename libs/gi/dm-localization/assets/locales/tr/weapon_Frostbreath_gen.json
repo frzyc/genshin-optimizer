@@ -1,0 +1,24 @@
+{
+  "name": "Buznefes",
+  "description": {
+    "0": "Dondurucu soğukla kaplı bir buz mızrağı. Uzak geçmişte Snezhnaya'ya hükmeden Çar Belyi'ye ait olduğu söylenir."
+  },
+  "passiveName": "Uzaklardan Bir Atış",
+  "passiveDescription": {
+    "0": {
+      "0": "Buz veya Su ile ilgili bir Element Tepkimesi tetiklediğinde, 15sn boyunca kuşanan karakterin Saldırısı <cryo>%20</cryo> artar ve gruptaki diğer üyeler için <cryo>6</cryo> Element Enerjisi yenilenir. Bu etki her 16 saniyede bir tetiklenebilir."
+    },
+    "1": {
+      "0": "Buz veya Su ile ilgili bir Element Tepkimesi tetiklediğinde, 15sn boyunca kuşanan karakterin Saldırısı <cryo>%25</cryo> artar ve gruptaki diğer üyeler için <cryo>7,5</cryo> Element Enerjisi yenilenir. Bu etki her 16 saniyede bir tetiklenebilir."
+    },
+    "2": {
+      "0": "Buz veya Su ile ilgili bir Element Tepkimesi tetiklediğinde, 15sn boyunca kuşanan karakterin Saldırısı <cryo>%30</cryo> artar ve gruptaki diğer üyeler için <cryo>9</cryo> Element Enerjisi yenilenir. Bu etki her 16 saniyede bir tetiklenebilir."
+    },
+    "3": {
+      "0": "Buz veya Su ile ilgili bir Element Tepkimesi tetiklediğinde, 15sn boyunca kuşanan karakterin Saldırısı <cryo>%35</cryo> artar ve gruptaki diğer üyeler için <cryo>10,5</cryo> Element Enerjisi yenilenir. Bu etki her 16 saniyede bir tetiklenebilir."
+    },
+    "4": {
+      "0": "Buz veya Su ile ilgili bir Element Tepkimesi tetiklediğinde, 15sn boyunca kuşanan karakterin Saldırısı <cryo>%40</cryo> artar ve gruptaki diğer üyeler için <cryo>12</cryo> Element Enerjisi yenilenir. Bu etki her 16 saniyede bir tetiklenebilir."
+    }
+  }
+}

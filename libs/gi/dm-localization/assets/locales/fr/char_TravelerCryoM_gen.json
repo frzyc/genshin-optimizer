@@ -1,0 +1,187 @@
+{
+  "auto": {
+    "name": "Givre scintillant au loin",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher deux coups d'épée rapides."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Percée du brouillard givrant",
+    "description": {
+      "0": "Poignarde l'adversaire et libère un brouillard glacial, infligeant des <cryo>DGT Cryo</cryo> devant {M#le voyageur}{F#la voyageuse} et formant une étoile perce-givre à ses côtés.",
+      "1": "<br/>",
+      "2": "<strong>Étoile perce-givre</strong>",
+      "3": [
+        " Suit votre personnage dans l'équipe et tire périodiquement des cristaux de glace sur les ennemis proches, infligeant des <cryo>DGT Cryo</cryo>."
+      ],
+      "4": "<strong>Radiance « Astroconduction »</strong> : l'étoile perce-givre ne tire plus périodiquement de cristaux de glace sur les ennemis, mais en tire lors d'une attaque coordonnée lorsque {M#le voyageur}{F#la voyageuse} touche un ennemi avec une attaque normale, chargée ou plongeante, cet effet pouvant être déclenché une fois toutes les 0,2 s.",
+      "5": [
+        " Lorsqu'un cristal de glace touche un ennemi, {M#le voyageur}{F#la voyageuse} obtient 1 cumul de <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>lueur givrée</strong></tooltip>, jusqu'à un maximum de 8 cumuls.",
+        " Hors combat, la <strong>lueur givrée</strong> prend fin après 30 s."
+      ],
+      "6": "<br/>",
+      "7": "<i>Paimon et vous avez observé la formation des cristaux de givre.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT cristal de glace",
+      "2": "Durée d'étoile perce-givre",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Javelot de congélation",
+    "description": {
+      "0": "Utilise l'élément Cryo pour créer un javelot de glace avant de le lancer sur les ennemis pour infliger plusieurs fois des <cryo>DGT Cryo</cryo>.",
+      "1": "Lors de l'utilisation {M#le voyageur}{F#la voyageuse} consomme toute sa <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>lueur givrée</strong></tooltip> pour augmenter les DGT infligés par ce déchaînement élémentaire. Consommer 8 cumuls de <strong>lueur givrée</strong> permet également d'augmenter le nombre d'instances de DGT infligés par le javelot.",
+      "2": "<br/>",
+      "3": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Radiance astrale</strong></tooltip> : convertit les DGT infligés en <cryo>DGT Cryo</cryo> considérés comme des DGT de réaction astrale correspondante.",
+      "4": "<br/>",
+      "5": "<i>Paimon et vous avez ressenti la morsure glacée des stalactites.</i>"
+    },
+    "skillParams": {
+      "0": "DGT javelot de glace",
+      "1": "Bonus de DGT (lueur givrée)",
+      "2": "DGT d'Astroconduction javelot de glace",
+      "3": "Bonus de DGT d'Astroconduction (lueur givrée)",
+      "4": "DGT d'Astrodispersion javelot de glace",
+      "5": "Bonus de DGT d'Astrodispersion (lueur givrée)",
+      "6": "Enchaînement d'attaques",
+      "7": "Enchaînement d'attaques supplémentaires (lueur givrée, cumuls max)",
+      "8": "Temps de recharge",
+      "9": "Énergie élémentaire",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Gelée toujours vive",
+    "description": {
+      "0": "<strong>Radiance « Astroconduction »</strong> : Pendant la durée d'une <strong>étoile perce-givre</strong>, les attaques normales, chargées et plongeantes {M#du voyageur}{F#de la voyageuse} sont converties pour infliger des <cryo>DGT Cryo</cryo> ne pouvant pas être enchantés, et les DGT infligés augmentent d'une valeur équivalant à 80 % de son ATQ."
+    }
+  },
+  "passive2": {
+    "name": "Glace lucide",
+    "description": {
+      "0": "La maîtrise élémentaire {M#du voyageur}{F#de la voyageuse} augmente d'une valeur équivalant à 8 % de son ATQ, la maîtrise élémentaire pouvant être augmentée d'un maximum de 160 pts de cette manière."
+    }
+  },
+  "passive3": {
+    "name": "Jubilé stellaire : Miroir de givre illusoire",
+    "description": {
+      "0": "{M#Le voyageur}{F#La voyageuse} passe en <strong>radiance « Astroconduction »</strong> ou en <strong>radiance « Astrodispersion »</strong> pendant 8 s lorsqu'{M#il}{F#elle} est dans une <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>étendue polaris</strong></tooltip> ou lorsqu'un personnage de l'équipe a déclenché une réaction d'Astrodispersion à proximité, respectivement.",
+      "1": "Lorsqu'un personnage de l'équipe déclenche une réaction de Supraconduction ou de Dispersion Cryo, elle est convertie en réaction d'Astroconduction ou d'Astrodispersion, dont les DGT de base augmentent selon l'ATQ {M#du voyageur}{F#de la voyageuse} : chaque tranche de 100 pts d'ATQ augmente les DGT de base de ces réactions de 0,35 %, les DGT pouvant être augmentés d'un maximum de 7 % de cette manière."
+    }
+  },
+  "lockedPassive": {
+    "name": "Pergélisol d'ailleurs",
+    "description": {
+      "0": "Permet {M#au voyageur}{F#à la voyageuse} de puiser une force nouvelle dans ses périples passés, lui accordant un <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>effet de renforcement</strong></tooltip> supplémentaire pour chaque élément avec lequel {M#il est entré}{F#elle est entrée} en résonance.",
+      "1": "<br/>",
+      "2": "De plus, lorsqu'un personnage de l'équipe à proximité inflige des DGT de réaction d'Astroconduction ou des DGT de réaction d'Astrodispersion, {M#le voyageur}{F#la voyageuse} obtient 1 lame de glace condensée, une lame pouvant être obtenue une fois toutes les 2 s de cette manière jusqu'à un maximum de 3 lames. Avec 3 lames de glace condensée, effectuer une attaque chargée consomme toutes les lames pour déclencher une <strong>attaque chargée « Glace givrante »</strong> spéciale.",
+      "3": "<br/>",
+      "4": "<strong>Attaque chargée « Glace givrante »</strong>",
+      "5": [
+        " Les <cryo>DGT Cryo</cryo> augmentent d'une valeur équivalant à 140 % de l'ATQ {M#du voyageur et il}{F#de la voyageuse et elle} obtient 2 cumuls de <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>lueur givrée</strong></tooltip>.",
+        " Une <strong>attaque chargée « Glace givrante »</strong> peut être déclenchée une fois toutes les 15 s. De plus, le bonus de DGT de l'aptitude d'élévation « Gelée toujours vive » ne s'applique pas à l'<strong>attaque chargée « Glace givrante »</strong>."
+      ],
+      "6": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Radiance astrale</strong></tooltip> : Les DGT infligés par l'<strong>attaque chargée « Glace givrante »</strong> sont convertis pour infliger des <cryo>DGT Cryo</cryo> considérés comme des DGT de réaction astrale correspondante."
+    }
+  },
+  "constellation1": {
+    "name": "Gel sombre",
+    "description": {
+      "0": "{M#Le voyageur}{F#La voyageuse} récupère 5 pts d'énergie élémentaire en infligeant des DGT de réaction astrale, cet effet pouvant être déclenché une fois toutes les 0,5 s."
+    }
+  },
+  "constellation2": {
+    "name": "Réverbération de givre",
+    "description": {
+      "0": "Lorsqu'un <strong>cristal de glace</strong> tiré par la compétence élémentaire <strong><tooltip ns=char_TravelerCryoM_gen baseKey18=skill>Percée du brouillard givrant</tooltip></strong> a touché un ennemi, la maîtrise élémentaire du personnage déployé augmente de 60 pts pendant 5 s.",
+      "1": "De plus, si un personnage affecté par cet effet déclenche une réaction astrale ou inflige des DGT de réaction astrale, l'augmentation passe à 120 pts pendant la durée restante."
+    }
+  },
+  "constellation3": {
+    "name": "Éclat glaciaire",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_TravelerCryoM_gen baseKey18=burst>Javelot de congélation</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Glace persistante",
+    "description": {
+      "0": "La durée de l'<strong>étoile perce-givre</strong> créée par la compétence élémentaire <strong><tooltip ns=char_TravelerCryoM_gen baseKey18=skill>Percée du brouillard givrant</tooltip></strong> augmente de 25 %."
+    }
+  },
+  "constellation5": {
+    "name": "Brouillard glacial",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_TravelerCryoM_gen baseKey18=skill>Percée du brouillard givrant</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Givremort hivernal",
+    "description": {
+      "0": "Chaque cumul de <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>lueur givrée</strong></tooltip> consommé en utilisant le déchaînement élémentaire <strong><tooltip ns=char_TravelerCryoM_gen baseKey18=burst>Javelot de congélation</tooltip></strong> augmente les DGT de réaction astrale des autres personnages de l'équipe de 5 % pendant 15 s, les DGT pouvant être augmentés d'un maximum de 40 % de cette manière."
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import { cmpGE, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
-import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
@@ -111,9 +111,7 @@ const sheet = register(
           )
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'ability_dmgInc_',
@@ -126,17 +124,13 @@ const sheet = register(
         2,
         ability_debuff.ifOn(dm.ability.dmg_)
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm1_resRed_',
     enemyDebuff.common.resRed_.add(
       cmpGE(char.mindscape, 1, radiant_aegis.ifOn(dm.m1.attrRes_))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm2_enerRegen_',

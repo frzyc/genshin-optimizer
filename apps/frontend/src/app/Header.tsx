@@ -2,7 +2,7 @@ import { useDataManagerKeys } from '@genshin-optimizer/common/database-ui'
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
 import { Tally } from '@genshin-optimizer/common/ui'
 import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { FlowerIcon } from '@genshin-optimizer/gi/svgicons'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
 import ArticleIcon from '@mui/icons-material/Article'
@@ -36,6 +36,7 @@ import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useMatch } from 'react-router-dom'
 import go_icon from './go_icon.png'
 import silly_icon from './silly_icon.png'
+
 type ITab = {
   i18Key: string
   icon: ReactNode

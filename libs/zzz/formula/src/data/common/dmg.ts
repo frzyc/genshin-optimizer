@@ -25,6 +25,7 @@ const data: TagMapNodeEntries = [
     ownBuff.dmg.res_mult_,
     ownBuff.dmg.dmg_taken_mult_,
     ownBuff.dmg.stunned_mult_,
+    ownBuff.dmg.direct_dmg_mult_,
   ].map((buff) => ownBuff.dmg.shared.add(buff)),
 
   // DMG Bonus Multiplier
@@ -79,11 +80,40 @@ const data: TagMapNodeEntries = [
       crit: sum(percent(1), own.final.crit_dmg_),
       nonCrit: percent(1),
       avg: sum(percent(1), prod(own.common.cappedCrit_, own.final.crit_dmg_)),
+      doubleCrit: sum(percent(1), own.final.crit_dmg_), // fallback, should not be possible to pick this option
+    })
+  ),
+
+  // Sharp dmg Laceration Multiplier
+  ownBuff.dmg.laceration_mult_.add(
+    lookup(own.common.critMode, {
+      crit: sum(percent(1), own.final.laceration_dmg_),
+      doubleCrit: prod(
+        sum(percent(1), own.final.laceration_dmg_),
+        sum(percent(1), own.final.laceration_dmg_)
+      ),
+      nonCrit: percent(1),
+      avg: prod(
+        sum(
+          percent(1),
+          prod(own.common.cappedCrit_, own.final.laceration_dmg_)
+        ),
+        sum(
+          percent(1),
+          prod(
+            max(sum(own.final.crit_, percent(-1)), percent(0)),
+            own.final.laceration_dmg_
+          )
+        )
+      ),
     })
   ),
 
   // Sheer dmg Sheer Multiplier
   ownBuff.dmg.sheer_mult_.add(sum(percent(1), own.final.sheer_dmg_)),
+
+  // Sharp dmg Sharp Multiplier
+  ownBuff.dmg.sharp_mult_.add(sum(percent(1), own.final.sharp_dmg_)),
 
   // Anomaly Base DMG Multiplier
   ownBuff.dmg.anom_base_mult_.add(sum(percent(1), own.final.anom_base_)),
@@ -97,7 +127,10 @@ const data: TagMapNodeEntries = [
         percent(1),
         prod(own.common.anom_cappedCrit_, own.final.anom_crit_dmg_)
       ),
+      doubleCrit: sum(percent(1), own.final.anom_crit_dmg_), // fallback, should not be possible to pick this option
     })
   ),
+  // Direct DMG Multiplier
+  ownBuff.dmg.direct_dmg_mult_.add(sum(percent(1), own.final.direct_dmg_)),
 ]
 export default data

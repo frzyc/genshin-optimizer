@@ -6,8 +6,8 @@
       "name": "Basic Attack: Kitty Slash",
       "desc": {
         "0": "Press <IconNormal /> to activate:",
-        "1": "Unleashes up to 5 slashes, dealing <ct color=#F0D12B>Physical DMG</ct>.",
-        "2": "On the last hit, there is a 33.33% chance to repeat this hit 3 times."
+        "1": "Unleashes up to five slashes, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "When the final slash lands on a Stunned enemy, it repeats three additional times."
       },
       "params": [
         "1st-Hit ",
@@ -20,9 +20,9 @@
     "BasicAttackCrimsonBlade": {
       "name": "Basic Attack: Crimson Blade",
       "desc": {
-        "0": "Hold <IconNormal /> during the first 3 hits of Nekomata's <ct color=#FFFFFF>Basic Attack</ct> to activate:",
+        "0": "Hold <IconNormal /> during the first three hits of Nekomata's <ct color=#FFFFFF>Basic Attack</ct> to activate:",
         "1": "Slashes enemies in front and passes through them, dealing <ct color=#F0D12B>Physical DMG</ct>.",
-        "2": "Upon activation, there is a 33.33% chance to repeat this attack 3 times."
+        "2": "If this skill hits a Stunned enemy, it repeats three additional times."
       },
       "params": [
         " "
@@ -36,6 +36,15 @@
         "0": "Press <IconEvade /> to activate:",
         "1": "A quick dash dodge.",
         "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DodgeDisappearingTail": {
+      "name": "Dodge: Disappearing Tail",
+      "desc": {
+        "0": "With at least 40 <tooltip ns=tooltips_gen baseKey18=1000024>Purr Energy</tooltip> and after triggering a <ct color=#FFFFFF>Perfect Dodge</ct>, press <IconEvade /> and consume 30 Purr Energy to activate:",
+        "1": "Nekomata enters Vital View and swiftly moves behind the enemy.",
+        "2": "Character is invulnerable while using this skill. This skill does not consume dodge uses."
       },
       "params": []
     },
@@ -59,6 +68,18 @@
       "params": [
         " "
       ]
+    },
+    "DodgeCounterFluffyPiercingClaw": {
+      "name": "Dodge Counter: Fluffy Piercing Claw",
+      "desc": {
+        "0": "Press <IconNormal /> after using <ct color=#FFFFFF>Dodge: Disappearing Tail</ct>, or hold <IconNormal /> with at least 40 <tooltip ns=tooltips_gen baseKey18=1000024>Purr Energy</tooltip> to activate:",
+        "1": "Unleashes a powerful slash at enemies in a large area ahead, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Purr Energy Cost "
+      ]
     }
   },
   "special": {
@@ -67,7 +88,8 @@
       "desc": {
         "0": "Press <IconSpecial /> to activate:",
         "1": "Unleashes a downward strike, dealing <ct color=#F0D12B>Physical DMG</ct>.",
-        "2": "Anti-Interrupt level is increased while using this skill."
+        "2": "Anti-Interrupt level is increased while using this skill.",
+        "3": "This skill's pursuit effect is enhanced."
       },
       "params": [
         " "
@@ -77,8 +99,9 @@
       "name": "EX Special Attack: Super Surprise Attack!",
       "desc": {
         "0": "With enough Energy, press <IconSpecialReady /> to activate:",
-        "1": "Unleashes a powerful falling slash that deals massive <ct color=#F0D12B>Physical DMG</ct>.",
-        "2": "Character is invulnerable while using this skill."
+        "1": "Unleashes a powerful falling slash, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "This skill's pursuit effect is enhanced."
       },
       "params": [
         " ",
@@ -150,20 +173,83 @@
   "core": {
     "name": "Core Passive: Stealthy Paws",
     "desc": [
-      "When Nekomata's <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, her DMG increases by <ct color=#2BAD00>30%</ct> for 6s.",
-      "When Nekomata's <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, her DMG increases by <ct color=#2BAD00>35%</ct> for 6s.",
-      "When Nekomata's <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, her DMG increases by <ct color=#2BAD00>40%</ct> for 6s.",
-      "When Nekomata's <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, her DMG increases by <ct color=#2BAD00>45%</ct> for 6s.",
-      "When Nekomata's <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, her DMG increases by <ct color=#2BAD00>50%</ct> for 6s.",
-      "When Nekomata's <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, her DMG increases by <ct color=#2BAD00>55%</ct> for 6s.",
-      "When Nekomata's <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, her DMG increases by <ct color=#2BAD00>60%</ct> for 6s."
+      {
+        "0": "When Nekomata's <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, her DMG increases by <ct color=#2BAD00>30%</ct> for 40s. Repeated triggers reset the duration.",
+        "1": "Nekomata gains 40 <tooltip ns=tooltips_gen baseKey18=1000024>Purr Energy</tooltip> upon entering the battlefield. In Investigation Zone mode, this effect can trigger once every 180s.",
+        "2": "While Nekomata is in combat, she gains 1 Purr Energy every second, up to a maximum of 60. Different skills restore different amounts of Purr Energy when they hit an enemy.",
+        "3": "When Nekomata has at least 40 Purr Energy and after triggering a <ct color=#FFFFFF>Perfect Dodge</ct>, press <IconEvade /> to consume 30 Purr Energy and activate Dodge: Disappearing Tail. Then press <IconNormal /> to perform Dodge Counter: Fluffy Piercing Claw once without consuming Purr Energy.",
+        "4": "When Nekomata has at least 40 Purr Energy, hold <IconNormal /> to consume 40 Purr Energy and activate Dodge Counter: Fluffy Piercing Claw.",
+        "5": "When using Dodge Counter: Fluffy Piercing Claw, Nekomata enters the <tooltip ns=tooltips_gen baseKey18=1000025>Pawpad Ambush</tooltip> state for 40s. Repeated triggers reset the duration. While Pawpad Ambush is active, all of Nekomata's attacks count as hitting from behind.",
+        "6": "While Pawpad Ambush is active, Nekomata's attacks trigger Super Mean Pawprint, dealing an additional instance of <ct color=#F0D12B>Physical DMG</ct> equal to 30% of her ATK. This effect can trigger once every 1s.",
+        "7": "Nekomata restores 20 additional Purr Energy when using her Ultimate, 10 when using her Chain Attack, and 5 when using her EX Special Attack."
+      },
+      {
+        "0": "When Nekomata's <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, her DMG increases by <ct color=#2BAD00>35%</ct> for 40s. Repeated triggers reset the duration.",
+        "1": "Nekomata gains 40 <tooltip ns=tooltips_gen baseKey18=1000024>Purr Energy</tooltip> upon entering the battlefield. In Investigation Zone mode, this effect can trigger once every 180s.",
+        "2": "While Nekomata is in combat, she gains 1 Purr Energy every second, up to a maximum of 60. Different skills restore different amounts of Purr Energy when they hit an enemy.",
+        "3": "When Nekomata has at least 40 Purr Energy and after triggering a <ct color=#FFFFFF>Perfect Dodge</ct>, press <IconEvade /> to consume 30 Purr Energy and activate Dodge: Disappearing Tail. Then press <IconNormal /> to perform Dodge Counter: Fluffy Piercing Claw once without consuming Purr Energy.",
+        "4": "When Nekomata has at least 40 Purr Energy, hold <IconNormal /> to consume 40 Purr Energy and activate Dodge Counter: Fluffy Piercing Claw.",
+        "5": "When using Dodge Counter: Fluffy Piercing Claw, Nekomata enters the <tooltip ns=tooltips_gen baseKey18=1000025>Pawpad Ambush</tooltip> state for 40s. Repeated triggers reset the duration. While Pawpad Ambush is active, all of Nekomata's attacks count as hitting from behind.",
+        "6": "While Pawpad Ambush is active, Nekomata's attacks trigger Super Mean Pawprint, dealing an additional instance of <ct color=#F0D12B>Physical DMG</ct> equal to 30% of her ATK. This effect can trigger once every 1s.",
+        "7": "Nekomata restores 20 additional Purr Energy when using her Ultimate, 10 when using her Chain Attack, and 5 when using her EX Special Attack."
+      },
+      {
+        "0": "When Nekomata's <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, her DMG increases by <ct color=#2BAD00>40%</ct> for 40s. Repeated triggers reset the duration.",
+        "1": "Nekomata gains 40 <tooltip ns=tooltips_gen baseKey18=1000024>Purr Energy</tooltip> upon entering the battlefield. In Investigation Zone mode, this effect can trigger once every 180s.",
+        "2": "While Nekomata is in combat, she gains 1 Purr Energy every second, up to a maximum of 60. Different skills restore different amounts of Purr Energy when they hit an enemy.",
+        "3": "When Nekomata has at least 40 Purr Energy and after triggering a <ct color=#FFFFFF>Perfect Dodge</ct>, press <IconEvade /> to consume 30 Purr Energy and activate Dodge: Disappearing Tail. Then press <IconNormal /> to perform Dodge Counter: Fluffy Piercing Claw once without consuming Purr Energy.",
+        "4": "When Nekomata has at least 40 Purr Energy, hold <IconNormal /> to consume 40 Purr Energy and activate Dodge Counter: Fluffy Piercing Claw.",
+        "5": "When using Dodge Counter: Fluffy Piercing Claw, Nekomata enters the <tooltip ns=tooltips_gen baseKey18=1000025>Pawpad Ambush</tooltip> state for 40s. Repeated triggers reset the duration. While Pawpad Ambush is active, all of Nekomata's attacks count as hitting from behind.",
+        "6": "While Pawpad Ambush is active, Nekomata's attacks trigger Super Mean Pawprint, dealing an additional instance of <ct color=#F0D12B>Physical DMG</ct> equal to 30% of her ATK. This effect can trigger once every 1s.",
+        "7": "Nekomata restores 20 additional Purr Energy when using her Ultimate, 10 when using her Chain Attack, and 5 when using her EX Special Attack."
+      },
+      {
+        "0": "When Nekomata's <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, her DMG increases by <ct color=#2BAD00>45%</ct> for 40s. Repeated triggers reset the duration.",
+        "1": "Nekomata gains 40 <tooltip ns=tooltips_gen baseKey18=1000024>Purr Energy</tooltip> upon entering the battlefield. In Investigation Zone mode, this effect can trigger once every 180s.",
+        "2": "While Nekomata is in combat, she gains 1 Purr Energy every second, up to a maximum of 60. Different skills restore different amounts of Purr Energy when they hit an enemy.",
+        "3": "When Nekomata has at least 40 Purr Energy and after triggering a <ct color=#FFFFFF>Perfect Dodge</ct>, press <IconEvade /> to consume 30 Purr Energy and activate Dodge: Disappearing Tail. Then press <IconNormal /> to perform Dodge Counter: Fluffy Piercing Claw once without consuming Purr Energy.",
+        "4": "When Nekomata has at least 40 Purr Energy, hold <IconNormal /> to consume 40 Purr Energy and activate Dodge Counter: Fluffy Piercing Claw.",
+        "5": "When using Dodge Counter: Fluffy Piercing Claw, Nekomata enters the <tooltip ns=tooltips_gen baseKey18=1000025>Pawpad Ambush</tooltip> state for 40s. Repeated triggers reset the duration. While Pawpad Ambush is active, all of Nekomata's attacks count as hitting from behind.",
+        "6": "While Pawpad Ambush is active, Nekomata's attacks trigger Super Mean Pawprint, dealing an additional instance of <ct color=#F0D12B>Physical DMG</ct> equal to 30% of her ATK. This effect can trigger once every 1s.",
+        "7": "Nekomata restores 20 additional Purr Energy when using her Ultimate, 10 when using her Chain Attack, and 5 when using her EX Special Attack."
+      },
+      {
+        "0": "When Nekomata's <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, her DMG increases by <ct color=#2BAD00>50%</ct> for 40s. Repeated triggers reset the duration.",
+        "1": "Nekomata gains 40 <tooltip ns=tooltips_gen baseKey18=1000024>Purr Energy</tooltip> upon entering the battlefield. In Investigation Zone mode, this effect can trigger once every 180s.",
+        "2": "While Nekomata is in combat, she gains 1 Purr Energy every second, up to a maximum of 60. Different skills restore different amounts of Purr Energy when they hit an enemy.",
+        "3": "When Nekomata has at least 40 Purr Energy and after triggering a <ct color=#FFFFFF>Perfect Dodge</ct>, press <IconEvade /> to consume 30 Purr Energy and activate Dodge: Disappearing Tail. Then press <IconNormal /> to perform Dodge Counter: Fluffy Piercing Claw once without consuming Purr Energy.",
+        "4": "When Nekomata has at least 40 Purr Energy, hold <IconNormal /> to consume 40 Purr Energy and activate Dodge Counter: Fluffy Piercing Claw.",
+        "5": "When using Dodge Counter: Fluffy Piercing Claw, Nekomata enters the <tooltip ns=tooltips_gen baseKey18=1000025>Pawpad Ambush</tooltip> state for 40s. Repeated triggers reset the duration. While Pawpad Ambush is active, all of Nekomata's attacks count as hitting from behind.",
+        "6": "While Pawpad Ambush is active, Nekomata's attacks trigger Super Mean Pawprint, dealing an additional instance of <ct color=#F0D12B>Physical DMG</ct> equal to 30% of her ATK. This effect can trigger once every 1s.",
+        "7": "Nekomata restores 20 additional Purr Energy when using her Ultimate, 10 when using her Chain Attack, and 5 when using her EX Special Attack."
+      },
+      {
+        "0": "When Nekomata's <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, her DMG increases by <ct color=#2BAD00>55%</ct> for 40s. Repeated triggers reset the duration.",
+        "1": "Nekomata gains 40 <tooltip ns=tooltips_gen baseKey18=1000024>Purr Energy</tooltip> upon entering the battlefield. In Investigation Zone mode, this effect can trigger once every 180s.",
+        "2": "While Nekomata is in combat, she gains 1 Purr Energy every second, up to a maximum of 60. Different skills restore different amounts of Purr Energy when they hit an enemy.",
+        "3": "When Nekomata has at least 40 Purr Energy and after triggering a <ct color=#FFFFFF>Perfect Dodge</ct>, press <IconEvade /> to consume 30 Purr Energy and activate Dodge: Disappearing Tail. Then press <IconNormal /> to perform Dodge Counter: Fluffy Piercing Claw once without consuming Purr Energy.",
+        "4": "When Nekomata has at least 40 Purr Energy, hold <IconNormal /> to consume 40 Purr Energy and activate Dodge Counter: Fluffy Piercing Claw.",
+        "5": "When using Dodge Counter: Fluffy Piercing Claw, Nekomata enters the <tooltip ns=tooltips_gen baseKey18=1000025>Pawpad Ambush</tooltip> state for 40s. Repeated triggers reset the duration. While Pawpad Ambush is active, all of Nekomata's attacks count as hitting from behind.",
+        "6": "While Pawpad Ambush is active, Nekomata's attacks trigger Super Mean Pawprint, dealing an additional instance of <ct color=#F0D12B>Physical DMG</ct> equal to 30% of her ATK. This effect can trigger once every 1s.",
+        "7": "Nekomata restores 20 additional Purr Energy when using her Ultimate, 10 when using her Chain Attack, and 5 when using her EX Special Attack."
+      },
+      {
+        "0": "When Nekomata's <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, her DMG increases by <ct color=#2BAD00>60%</ct> for 40s. Repeated triggers reset the duration.",
+        "1": "Nekomata gains 40 <tooltip ns=tooltips_gen baseKey18=1000024>Purr Energy</tooltip> upon entering the battlefield. In Investigation Zone mode, this effect can trigger once every 180s.",
+        "2": "While Nekomata is in combat, she gains 1 Purr Energy every second, up to a maximum of 60. Different skills restore different amounts of Purr Energy when they hit an enemy.",
+        "3": "When Nekomata has at least 40 Purr Energy and after triggering a <ct color=#FFFFFF>Perfect Dodge</ct>, press <IconEvade /> to consume 30 Purr Energy and activate Dodge: Disappearing Tail. Then press <IconNormal /> to perform Dodge Counter: Fluffy Piercing Claw once without consuming Purr Energy.",
+        "4": "When Nekomata has at least 40 Purr Energy, hold <IconNormal /> to consume 40 Purr Energy and activate Dodge Counter: Fluffy Piercing Claw.",
+        "5": "When using Dodge Counter: Fluffy Piercing Claw, Nekomata enters the <tooltip ns=tooltips_gen baseKey18=1000025>Pawpad Ambush</tooltip> state for 40s. Repeated triggers reset the duration. While Pawpad Ambush is active, all of Nekomata's attacks count as hitting from behind.",
+        "6": "While Pawpad Ambush is active, Nekomata's attacks trigger Super Mean Pawprint, dealing an additional instance of <ct color=#F0D12B>Physical DMG</ct> equal to 30% of her ATK. This effect can trigger once every 1s.",
+        "7": "Nekomata restores 20 additional Purr Energy when using her Ultimate, 10 when using her Chain Attack, and 5 when using her EX Special Attack."
+      }
     ]
   },
   "ability": {
     "name": "Additional Ability: Catwalk",
     "desc": {
-      "0": "When another character in your squad shares the same Attribute or Faction:",
-      "1": "After any character inflicts <ct color=#F0D12B>Assault</ct>, increases the DMG of Nekomata's next <ct color=#FFFFFF>EX Special Attack</ct> by 35%, stacking up to 2 times."
+      "0": "When another character in your squad is a Support character, or shares the same attribute or Faction:",
+      "1": "After Nekomata uses <ct color=#FFFFFF>Dodge: Disappearing Tail</ct>, or after any squad member inflicts <ct color=#F0D12B>Assault</ct> on an enemy, Nekomata's <ct color=#FFFFFF>EX Special Attack</ct> and <ct color=#FFFFFF>Dodge Counter</ct> deal 35% more DMG on hit. This effect stacks up to 2 times and lasts 30s. Repeated triggers reset the duration."
     }
   },
   "mindscapes": {
@@ -212,5 +298,15 @@
       }
     }
   },
-  "potential": {}
+  "potential": {
+    "name": "Awakened Potential: Nightborne Instinct",
+    "desc": [
+      "",
+      "While Nekomata is in the Pawpad Ambush state, her CRIT DMG increases by <ct color=#2BAD00>20%</ct>.",
+      "While Nekomata is in the Pawpad Ambush state, her CRIT DMG increases by <ct color=#2BAD00>30%</ct>.",
+      "While Nekomata is in the Pawpad Ambush state, her CRIT DMG increases by <ct color=#2BAD00>40%</ct>.",
+      "While Nekomata is in the Pawpad Ambush state, her CRIT DMG increases by <ct color=#2BAD00>50%</ct>.",
+      "While Nekomata is in the Pawpad Ambush state, her CRIT DMG increases by <ct color=#2BAD00>60%</ct>."
+    ]
+  }
 }

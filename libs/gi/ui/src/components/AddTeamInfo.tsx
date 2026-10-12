@@ -7,9 +7,8 @@ export function AddTeamInfo() {
     <Alert severity="warning">
       <Trans t={t} i18nKey="noLoadout">
         Looks like you haven't added any loadout/Teams with this character yet.
-        You need to create a loadout+team with this character to{' '}
-        <strong>create builds</strong>, <strong>theorycraft</strong>, or{' '}
-        <strong>optimize</strong>.
+        You need to add this character to a team to <strong>theorycraft</strong>{' '}
+        or <strong>optimize</strong>.
       </Trans>
     </Alert>
   )

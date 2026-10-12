@@ -6,6 +6,7 @@ import type { SpecialityKey } from '@genshin-optimizer/zzz/consts'
 import { allSpecialityKeys } from '@genshin-optimizer/zzz/consts'
 import { Chip, ToggleButton, useMediaQuery, useTheme } from '@mui/material'
 import type { ReactNode } from 'react'
+
 type WengineToggleProps = Omit<
   SolidToggleButtonGroupProps,
   'onChange' | 'value'

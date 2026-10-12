@@ -18,13 +18,13 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, condReadNode, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
   dmgNode,
   plungingDmgNodes,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet.d'
 
 const key: CharacterKey = 'Sucrose'
 const skillParam_gen = allStats.char.skillParam[key]
@@ -167,7 +167,7 @@ const c6LockBase = greaterEq(
   equal(
     condLockHomework,
     'on',
-    equal(target.isHexerei, 1, percent(dm.constellation6.hex_dmg_))
+    equal(target.flags.isHexerei, 1, percent(dm.constellation6.hex_dmg_))
   )
 )
 const c6LockBonus = objKeyMap(
@@ -233,7 +233,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       burst_dmg_: sum(lockAfterSkill_burst_dmg_, lockAfterBurst_burst_dmg_),
     },
   },
-  isHexerei: lockHomework_hexerei,
+  flags: { isHexerei: lockHomework_hexerei },
 })
 
 const sheet: TalentSheet = {
@@ -255,7 +255,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
         {
@@ -293,7 +293,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.press, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
@@ -315,7 +315,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.dot, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {
@@ -354,7 +354,7 @@ const sheet: TalentSheet = {
                 node: infoMut(
                   dmgFormulas.burst[eleKey as keyof typeof dmgFormulas.burst],
                   {
-                    name: ct.chg(`burst.skillParams.1`),
+                    name: ct.chg('burst.skillParams.1'),
                   }
                 ),
               },

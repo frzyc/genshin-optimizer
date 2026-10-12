@@ -1,3 +1,4 @@
+import { entryTypes as baseEt } from '@genshin-optimizer/game-opt/engine'
 import {
   allAttributeKeys,
   allCharacterKeys,
@@ -18,6 +19,7 @@ export const stats = [
   'impact_',
   'crit_',
   'crit_dmg_',
+  'laceration_dmg_',
   'pen_',
   'pen',
   'enerRegen',
@@ -41,9 +43,11 @@ export const stats = [
   'dmg_red_',
   'sheerForce',
   'sheer_dmg_',
+  'sharp_dmg_',
   'flat_dmg',
   'anom_flat_dmg',
   'addl_disorder_',
+  'direct_dmg_',
 ] as const
 
 export const flatAndPercentStats = [
@@ -74,12 +78,17 @@ export const damageTypes = [
   'quickAssist',
   'defensiveAssist',
   'evasiveAssist',
+  'counterAssist',
   'assistFollowUp',
   'anomaly',
   'disorder',
   'aftershock',
   'elemental',
   'sheer',
+  'abloom',
+  'vortex',
+  'sharp',
+  'maim',
 ] as const
 
 export const skillTypes = [
@@ -114,6 +123,15 @@ export const specialties = [...allSpecialityKeys] as const
 
 export const factions = [...allFactionKeys] as const
 
+export const entryTypes = [
+  ...baseEt,
+  'prevMember',
+  'nextMember',
+  'member0',
+  'member1',
+  'member2',
+] as const
+
 export type Stat = (typeof stats)[number]
 export type Attribute = (typeof attributes)[number]
 export type DamageType = (typeof damageTypes)[number]
@@ -124,6 +142,7 @@ export type Src = Member
 export type Dst = Member | null
 export type Specialty = (typeof specialties)[number]
 export type Faction = (typeof factions)[number]
+export type EntryType = (typeof entryTypes)[number]
 
 export function isMember(x: string): x is Member {
   return members.includes(x as Member)

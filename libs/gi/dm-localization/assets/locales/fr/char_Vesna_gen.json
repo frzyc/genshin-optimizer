@@ -1,0 +1,189 @@
+{
+  "name": "Vesna",
+  "title": "Lame du festin nivéen",
+  "description": "Commandante de la Druzhna et lame acérée au service de la Tsarine.",
+  "constellationName": "Amentum Vernum",
+  "auto": {
+    "name": "Danse de lame vila",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 6 attaques."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour piétiner les adversaires en avant."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT 6e coup",
+      "6": "DGT attaque chargée",
+      "7": "Coût d'endurance attaque chargée",
+      "8": "DGT durant la chute",
+      "9": "DGT chute basse/élevée",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "L'art de la victoire",
+    "description": {
+      "0": "Invoque une lame éthérée transmise de génération en génération chez les vila pour infliger des <anemo>DGT Anémo de zone</anemo> et passer dans l'état <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Armée pour l'action</tooltip></strong>, tout en obtenant 2 cumuls d'<strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>énergie d'épée</tooltip></strong>.",
+      "1": "<br/>",
+      "2": "<strong>Armée pour l'action</strong>",
+      "3": "Les attaques normales, chargées et plongeantes de Vesna sont converties pour infliger des <anemo>DGT Anémo</anemo> ne pouvant pas être enchantés et invoquer une penne de tempête pour une attaque coordonnée de l'ennemi, infligeant des <anemo>DGT Anémo</anemo> supplémentaires. De plus, chaque invocation de penne de tempête restaure une certaine quantité d'<strong>énergie d'épée</strong> à Vesna.",
+      "4": "Vesna peut consommer son <strong>énergie d'épée</strong> pour déclencher la compétence élémentaire spéciale <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Épée du vent</tooltip></strong> afin d'infliger des <anemo>DGT Anémo</anemo> aux ennemis.",
+      "5": "Chaque utilisation de la compétence élémentaire spéciale <strong>Épée du vent</strong> pendant un état <strong>Armée pour l'action</strong> repousse sa limite, afin d'infliger encore plus de <anemo>DGT Anémo</anemo>. <strong>Épée du vent</strong> commence au Niv.1 et peut atteindre le Niv.3. Utiliser <strong>Épée du vent</strong> une fois sa limite repoussée invoque également une <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>lame éthérée</tooltip></strong> qui inflige des <anemo>DGT Anémo</anemo> aux ennemis.",
+      "6": "Vesna quitte cet état une fois la durée écoulée ou après avoir utilisé 3 fois <strong>Épée du vent</strong> à la limite max, ce qui annule également tous ses cumuls d'<strong>énergie d'épée</strong>.",
+      "7": "De plus, cet état augmente également la RÉS à l'interruption de Vesna.",
+      "8": "<strong>Radiance « Astrodispersion »</strong> : les <strong>lames éthérées</strong> sont converties pour infliger des <anemo>DGT Anémo</anemo> considérés comme des DGT de réaction d'Astrodispersion."
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT Épée du vent Niv.1",
+      "2": "DGT Épée du vent Niv.2",
+      "3": "DGT lame éthérée (Épée du vent Niv.2)",
+      "4": "DGT lame éthérée (Épée du vent Niv.3)",
+      "5": "DGT finaux lame éthérée (Épée du vent Niv.3)",
+      "6": "DGT d'Astrodispersion de lame éthérée (Épée du vent Niv.2)",
+      "7": "DGT d'Astrodispersion de lame éthérée (Épée du vent Niv.3)",
+      "8": "DGT d'Astrodispersion finaux de lame éthérée (Épée du vent Niv.3)",
+      "9": "DGT penne de tempête",
+      "10": "Durée d'armée pour l'action",
+      "11": "Temps de recharge",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Pour la Tsarine !",
+    "description": {
+      "0": "Invoque de nombreuses <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>lames éthérées</tooltip></strong>, infligeant des <anemo>DGT Anémo de zone</anemo>, et accorde 1 cumul d'<strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>énergie d'épée</tooltip></strong>."
+    },
+    "skillParams": {
+      "0": "DGT lame éthérée",
+      "1": "DGT d'Astrodispersion lame éthérée",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "sprint": {
+    "name": "",
+    "description": {}
+  },
+  "passive1": {
+    "name": "Rite du printemps",
+    "description": {
+      "0": "Lorsque Vesna a utilisé sa compétence élémentaire spéciale <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Épée du vent</tooltip></strong> ou son déchaînement élémentaire <strong><tooltip ns=char_Vesna_gen baseKey18=burst>Pour la Tsarine !</tooltip></strong>, elle obtient 1 cumul d'<strong>action disciplinaire</strong> pendant 20 s. Cet effet peut être cumulé 6 fois maximum, la durée de chaque cumul étant calculée de façon indépendante.",
+      "1": "Avec de l'<strong>action disciplinaire</strong>, les <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>lames éthérées</tooltip></strong> invoquées par Vesna infligent des DGT d'une valeur équivalant à [100 % + 10 % par cumul d'action disciplinaire] des DGT d'origine. Utiliser la compétence élémentaire <strong>L'art de la victoire</strong> ou quitter le terrain annule toute l'<strong>action disciplinaire</strong> de Vesna."
+    }
+  },
+  "passive2": {
+    "name": "La vérité triomphe",
+    "description": {
+      "0": "<strong>Radiance « Astrodispersion »</strong> : Vesna obtient différents effets selon les types élémentaires des personnages de l'équipe.",
+      "1": [
+        " Chaque personnage <cryo>Cryo</cryo> ou <anemo>Anémo</anemo> augmente l'ATQ de Vesna de 6 %.",
+        " Chaque personnage d'un autre élément augmente la maîtrise élémentaire de Vesna de 25 pts."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Jubilé stellaire : Splendide prélude",
+    "description": {
+      "0": "Lorsqu'un personnage de l'équipe déclenche une réaction de Dispersion Cryo, elle est convertie en réaction d'Astrodispersion, dont les DGT de base augmentent selon l'ATQ de Vesna : chaque tranche de 100 pts d'ATQ augmente les DGT de base de réaction d'Astrodispersion de 0,7 %, les DGT pouvant être augmentés d'un maximum de 14 % de cette manière.",
+      "1": "Lorsqu'un personnage de l'équipe déclenche une réaction d'Astrodispersion à proximité, Vesna passe en <strong>radiance « Astrodispersion »</strong> pendant 8 s."
+    }
+  },
+  "passive": {
+    "name": "Le grand circuit",
+    "description": {
+      "0": "Hors combat, Vesna peut utiliser un sprint ou un saut avec un appui long pour passer en <strong>élan aérien</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Élan aérien</strong>",
+      "3": "L'élan aérien consomme continuellement de l'endurance pour flotter dans les airs. Sprinter ou utiliser un saut avec un appui simple pour monter consomme davantage d'endurance. En comptant le saut effectué avec un appui long lors du déclenchement de l'<strong>élan aérien</strong>, chaque <strong>élan aérien</strong> permet à Vesna de monter jusqu'à 3 fois.",
+      "4": "<br/>",
+      "5": "De plus, basculer pour Vesna lorsque le personnage déployé de l'équipe est dans les airs tout en étant hors combat dans une zone de Snezhnaya, hormis Nod-Krai, permet de faire passer Vesna directement en <strong>élan aérien</strong> tout en lui restaurant 50 pts d'endurance, cet effet pouvant être déclenché une fois toutes les 10 s et ne s'appliquant pas dans les donjons, dans les Donjons de la conquête et dans les Profondeurs spiralées."
+    }
+  },
+  "constellation1": {
+    "name": "Fête d'adieu de l'hiver",
+    "description": {
+      "0": "Dans l'état <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Armée pour l'action</tooltip></strong>, Vesna peut déclencher <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Épée du vent</tooltip></strong> à la limite max un maximum de 4 fois au lieu de 3. De plus, la 1e utilisation d'<strong>Épée du vent</strong> à la limite max après chaque activation de l'état <strong>Armée pour l'action</strong> ne consomme pas d'<strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>énergie d'épée</tooltip></strong>.",
+      "1": "Les DGT de réaction d'Astrodispersion de Vesna augmentent de 20 % pendant l'état <strong>Armée pour l'action</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Kolo de l'arrivée du printemps",
+    "description": {
+      "0": "L'aptitude d'élévation <strong><tooltip ns=char_Vesna_gen baseKey18=passive1>Rite du printemps</tooltip></strong> est renforcée : Vesna obtient le maximum de cumuls d'<strong>action disciplinaire</strong> lorsqu'elle passe dans l'état <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Armée pour l'action</tooltip></strong>. Avec le maximum d'<strong>action disciplinaire</strong>, l'ATQ de Vesna augmente de 40 %.",
+      "1": "L'aptitude d'élévation « Rite du printemps » doit être déjà débloquée."
+    }
+  },
+  "constellation3": {
+    "name": "Dernière offre de l'hiver",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Vesna_gen baseKey18=skill>L'art de la victoire</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Gloire à nos ancêtres",
+    "description": {
+      "0": "L'aptitude d'élévation <strong><tooltip ns=char_Vesna_gen baseKey18=passive2>La vérité triomphe</tooltip></strong> est renforcée : les bonus d'ATQ et de maîtrise élémentaire passent à 3 fois leurs valeurs d'origine."
+    }
+  },
+  "constellation5": {
+    "name": "La charge des nobles",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Vesna_gen baseKey18=burst>Pour la Tsarine !</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Ardeur inébranlable",
+    "description": {
+      "0": "Pendant 5 s après avoir utilisé <strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>Épée du vent</tooltip></strong> à la limite max, Vesna peut utiliser une attaque normale ou une compétence élémentaire avec un appui simple pour déclencher une <strong>épée du vent « Transposition »</strong>, une technique secrète des vila qui permet d'infliger des <anemo>DGT Anémo</anemo> d'une valeur équivalant à 150 % de l'ATQ de Vesna et d'invoquer des <strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>lames éthérées</tooltip></strong> infligeant des <anemo>DGT Anémo</anemo> supplémentaires d'une valeur équivalant à 200 % de l'ATQ de Vesna. Pendant l'état <strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>Armée pour l'action</tooltip></strong>, Vesna invoque en plus une penne de tempête pour une attaque coordonnée de l'ennemi.",
+      "1": "De plus, les DGT de réaction d'Astrodispersion de Vesna bénéficient d'une <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>élévation</strong></tooltip> de 20 %."
+    }
+  }
+}

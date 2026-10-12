@@ -1,0 +1,29 @@
+{
+  "setName": "Göklerin Hediyesi",
+  "setEffects": {
+    "2": "+%20 Enerji Yüklemesi.",
+    "4": "Kuşanan karakter Cadının Ödevini tamamladıysa bir Element Becerisi kullandıktan sonra 20 saniyeliğine \"Işığın Rehberliği\" etkisini kazanır: Yakındaki tüm grup üyeleri, kuşanan karakterle aynı Element Türünde %20 Element Hasarı Bonusu kazanır. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir. Aynı isme sahip Yadigar Setlerinin sağladığı Hasar Bonusları birikmez.\\n·Grubunda Cadılık: Saklı Ayin etkisi varsa Işığın Rehberliği gelişerek \"Fanilerin İlahisi\" olur: Yakındaki tüm grup üyeleri, hem kuşanan karakterin hem de mevcut aktif grup üyesinin Element Türünde %40 Element Hasarı Bonusu kazanır. İki karakterin de Element Türü aynıysa bu bonus birikmez."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Göklerden Gönderilen Koku",
+      "desc": "Gökler, elçisine ebedi bir çiçek bahşetti; sonsuz yaşamdan açgözlülük doğdu."
+    },
+    "plume": {
+      "name": "Göklerden Gönderilen Ölüm",
+      "desc": "Gökler, elçisine yeniden doğuş tüyü bahşetti; kaderin bile sonunun geldiği yerde tüm günahlar affedilecekti."
+    },
+    "sands": {
+      "name": "Göklerden Gönderilen Ferman",
+      "desc": "Gökler, elçisine terse akan bir güneş saati bahşetti; çiğnenemez bir yasak, öfkenin pınarına dönüştü."
+    },
+    "goblet": {
+      "name": "Göklerden Gönderilen Ödül",
+      "desc": "Gökler, elçisine tatlı nektar bahşetti; sonu gelmeyen ziyafet, kapılarını tutkuya açtı."
+    },
+    "circlet": {
+      "name": "Göklerden Gönderilen Taç",
+      "desc": "Gökler, elçisine muhteşem bir taç bahşetti; kontrolsüz güçten küstahlık doğdu."
+    }
+  }
+}

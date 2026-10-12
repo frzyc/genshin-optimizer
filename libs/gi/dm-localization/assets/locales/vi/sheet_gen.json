@@ -60,12 +60,14 @@
     "superconduct": "Siêu Dẫn",
     "vaporize": "Bốc Hơi",
     "melt": "Tan Chảy",
-    "bloom": "Sum Suê",
+    "bloom": "",
     "burgeon": "Bung Tỏa",
     "hyperbloom": "Nở Rộ",
     "quicken": "Sinh Trưởng",
     "aggravate": "Tăng Cường",
-    "spread": "Lan Tràn"
+    "spread": "Lan Tràn",
+    "stellarconduct": "Tinh-Siêu Dẫn",
+    "stellarswirl": "Tinh-Khuếch Tán"
   },
   "stat": {
     "def": "Phòng Ngự",

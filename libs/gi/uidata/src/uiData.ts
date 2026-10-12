@@ -264,7 +264,7 @@ export class UIData {
     return first ? this.computeNode(first) : illformedStr
   }
   private _small(nodes: readonly StrNode[]): CalcResult<string | undefined> {
-    let smallest: CalcResult<string | undefined> | undefined = undefined
+    let smallest: CalcResult<string | undefined> | undefined
     for (const node of nodes) {
       const candidate = this.computeNode(node)
       if (
@@ -409,6 +409,8 @@ function accumulateInfo<V>(operands: CalcResult<V>[]): Info {
       case 'hyperbloom':
       case 'lunarbloom':
       case 'lunarcrystallize':
+      case 'stellarconduct':
+      case 'stellarswirl':
       case 'vaporize':
       case 'melt':
       case 'spread':
@@ -549,6 +551,15 @@ export function uiDataForTeam(
   })
 
   const commonData = { activeCharKey: constant(activeCharKey) }
+  if (keys.length) (commonData as any)['active'] = (target[0] as any).target
+  keys
+    .slice(1)
+    .forEach(
+      (_key, index) =>
+        ((commonData as any)[`inactive${index + 1}`] = (
+          target[index + 1] as any
+        ).target)
+    )
   for (const [name, charKey] of Object.entries(selection))
     (commonData as any)[name] = (target[keys.indexOf(charKey)] as any).target
   const totalBuff = buff.map((buff) => mergeData(buff))

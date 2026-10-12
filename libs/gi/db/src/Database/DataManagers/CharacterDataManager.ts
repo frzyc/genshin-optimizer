@@ -10,6 +10,9 @@ import {
   allArtifactSlotKeys,
   allTravelerKeys,
   charKeyToLocCharKey,
+  defaultCharacterAscension,
+  defaultCharacterLevel,
+  defaultTalentLevel,
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IGOOD } from '@genshin-optimizer/gi/good'
 import { parseCharacter } from '@genshin-optimizer/gi/good'
@@ -19,6 +22,7 @@ export interface ICachedCharacter extends ICharacter {
   equippedArtifacts: Record<ArtifactSlotKey, string>
   equippedWeapon: string
 }
+
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
 import { GOSource } from '../exim'
@@ -210,7 +214,7 @@ export class CharacterDataManager extends DataManager<
       idsToRemove.delete('Somnia')
 
       const idtoRemoveArr = Array.from(idsToRemove)
-      if (result.keepNotInImport || result.ignoreDups)
+      if (result.keepCharNotInImport || result.ignoreDups)
         result.characters.notInImport = idtoRemoveArr.length
       else idtoRemoveArr.forEach((k) => this.remove(k))
       result.characters.unchanged = []
@@ -221,14 +225,14 @@ export class CharacterDataManager extends DataManager<
 export function initialCharacter(key: CharacterKey): ICachedCharacter {
   return {
     key,
-    level: 1,
-    ascension: 0,
+    level: defaultCharacterLevel,
+    ascension: defaultCharacterAscension,
     equippedArtifacts: objKeyMap(allArtifactSlotKeys, () => ''),
     equippedWeapon: '',
     talent: {
-      auto: 1,
-      skill: 1,
-      burst: 1,
+      auto: defaultTalentLevel,
+      skill: defaultTalentLevel,
+      burst: defaultTalentLevel,
     },
     constellation: 0,
   }

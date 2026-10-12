@@ -1,0 +1,29 @@
+{
+  "setName": "Disincanto nell'ombra profonda",
+  "setEffects": {
+    "2": "ATT +18%.",
+    "4": "I DAN da reazione di Superconduzione e Astroconduzione aumentano rispettivamente di un 80% e di un 40%. Quando il personaggio che equipaggia il set sferra un attacco a un avversario affetto da Superconduzione o Astroconduzione, il tasso di CRIT di tale attacco aumenta di un 16%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Iridescenza che cessò nella somma gloria",
+      "desc": "Era un fiore fatto di seta, donatole da un'amica le cui mani erano fredde come il ghiaccio."
+    },
+    "plume": {
+      "name": "Acume che cessò coi prodigi della creazione",
+      "desc": "Era una penna piumata donata ai suoi seguaci, usata per scrivere i sogni più inverosimili."
+    },
+    "sands": {
+      "name": "Istante che cessò col risveglio da sogni di gloria",
+      "desc": "Era un attimo fugace concesso a un alchimista silenzioso, per ricordargli ogni voce nel suo programma."
+    },
+    "goblet": {
+      "name": "Lode che cessò con l'arrivo della festa",
+      "desc": "Era un calice di vino che ella accettò in segno di celebrazione dalle mani di un collega."
+    },
+    "circlet": {
+      "name": "Dondolio che cessò nella grande caduta",
+      "desc": "Era un delicato ninnolo conferitole in segno di elogio dal suo unico e solo padrone."
+    }
+  }
+}

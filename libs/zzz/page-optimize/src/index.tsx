@@ -1,60 +1,70 @@
 import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { ImgIcon, useTitle } from '@genshin-optimizer/common/ui'
-import { objKeyMap } from '@genshin-optimizer/common/util'
-import type { DebugReadContextObj } from '@genshin-optimizer/game-opt/formula-ui'
 import {
-  DebugReadContext,
-  DebugReadModal,
+  objKeyMap,
+  shouldShowDevComponents,
+  stableArr,
+} from '@genshin-optimizer/common/util'
+import {
+  DebugReadProvider,
   TagContext,
 } from '@genshin-optimizer/game-opt/formula-ui'
-import type {
-  FormulaTextFunc,
-  FullTagDisplayComponent,
-  SetConditionalFunc,
-  TagDisplayComponent,
-} from '@genshin-optimizer/game-opt/sheet-ui'
+import type { SetConditionalFunc } from '@genshin-optimizer/game-opt/sheet-ui'
 import {
   ConditionalValuesContext,
-  FormulaTextContext,
-  FullTagDisplayContext,
   SetConditionalContext,
   SrcDstDisplayContext,
-  TagDisplayContext,
 } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import { characterAsset } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
+import type {
+  ICachedCharacter,
+  TeamConditional,
+} from '@genshin-optimizer/zzz/db'
 import {
   CharacterContext,
-  useCharOpt,
   useCharacter,
   useDatabaseContext,
+  useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
 import {
-  type Tag,
   getConditional,
   isMember,
   isSheet,
+  type Tag,
 } from '@genshin-optimizer/zzz/formula'
-import {
-  CharCalcProvider,
-  FullTagDisplay,
-  TagDisplay,
-  formulaText,
-} from '@genshin-optimizer/zzz/formula-ui'
+import { CharCalcProvider } from '@genshin-optimizer/zzz/formula-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import {
   CharacterName,
   CharacterSingleSelectionModal,
 } from '@genshin-optimizer/zzz/ui'
 import { Box, Button } from '@mui/material'
-import { Suspense, useCallback, useMemo, useState } from 'react'
+import { Suspense, useCallback, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CharacterOptDisplay } from './CharacterOptDisplay'
-import { OptTargetRow } from './OptTargetRow'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
+import { OptTargetRow } from './OptTargetRow'
+
+function OptimizePageContent({ character }: { character: ICachedCharacter }) {
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 1,
+        flexDirection: 'column',
+        mt: 1,
+      }}
+    >
+      <OptTargetRow />
+      <TeamHeaderHeightContext.Provider value={74}>
+        <CharacterOptDisplay key={character.key} />
+      </TeamHeaderHeightContext.Provider>
+    </Box>
+  )
+}
 
 export default function PageOptimize() {
   const { database } = useDatabaseContext()
@@ -68,18 +78,26 @@ export default function PageOptimize() {
   )
 
   const { t } = useTranslation(['charNames_gen', 'page_character'])
+  // Load tooltip translations
+  useTranslation('tooltips_gen')
   const character = useCharacter(characterKey)
-  if (characterKey && !character) database.chars.getOrCreate(characterKey)
-  const charOpt = useCharOpt(characterKey)
-  if (characterKey && !charOpt) database.charOpts.getOrCreate(characterKey)
+  useEffect(() => {
+    if (characterKey && !character) database.chars.getOrCreate(characterKey)
+  }, [characterKey, character, database.chars])
+  const team = useTeam(characterKey)
+  useEffect(() => {
+    if (characterKey && !team) database.teams.getOrCreate(characterKey)
+  }, [characterKey, team, database.teams])
   useTitle(
     useMemo(() => {
       const charName = characterKey && t(`charNames_gen:${characterKey}`)
-      return charName ? `Optimize - ${charName}` : `Optimize`
+      return charName ? `Optimize - ${charName}` : 'Optimize'
     }, [characterKey, t])
   )
   const srcDstDisplayContextValue = useMemo(() => {
-    const charList = characterKey ? [characterKey] : []
+    const charList =
+      team?.teammates.map((t) => t.characterKey) ?? stableArr<CharacterKey>()
+
     const charDisplay = objKeyMap(charList, (ck) => (
       <CharacterName characterKey={ck} />
     ))
@@ -87,7 +105,7 @@ export default function PageOptimize() {
       srcDisplay: charDisplay,
       dstDisplay: charDisplay,
     }
-  }, [characterKey])
+  }, [team])
 
   const setConditional = useCallback<SetConditionalFunc>(
     (
@@ -102,8 +120,9 @@ export default function PageOptimize() {
       const cond = getConditional(sheet, condKey)
       if (!cond) return
 
-      database.charOpts.setConditional(
+      database.teams.setFrameConditional(
         characterKey,
+        0,
         sheet,
         condKey,
         src,
@@ -111,114 +130,80 @@ export default function PageOptimize() {
         condValue
       )
     },
-    [characterKey, database.charOpts]
+    [characterKey, database.teams]
   )
   const tag = useMemo<Tag>(
     () => ({
       src: characterKey,
       dst: characterKey,
-      preset: `preset0`,
+      preset: 'preset0',
     }),
     [characterKey]
   )
 
-  const [debugRead, setDebugRead] = useState<BaseRead>()
-  const debugObj = useMemo<DebugReadContextObj>(
-    () => ({
-      read: debugRead,
-      setRead: setDebugRead,
-    }),
-    [debugRead]
+  const conditionals = useMemo(
+    () => [...(team?.frames[0]?.conditionals ?? stableArr<TeamConditional>())],
+    [team?.frames]
   )
+
   return (
-    <Providers>
-      <Box>
-        <Suspense fallback={false}>
-          <CharacterSingleSelectionModal
-            show={show}
-            onHide={onHide}
-            onSelect={setCharacterKey}
-          />
-        </Suspense>
-        <Box
+    <Box>
+      <Suspense fallback={false}>
+        <CharacterSingleSelectionModal
+          show={show}
+          onHide={onHide}
+          onSelect={setCharacterKey}
+        />
+      </Suspense>
+      <Box
+        sx={{
+          position: 'sticky',
+          top: 0,
+          zIndex: 100,
+          background: '#0C1020',
+        }}
+      >
+        <Button
+          fullWidth
+          color={getCharStat(characterKey).attribute}
           sx={{
-            position: 'sticky',
-            top: 0,
-            zIndex: 100,
-            background: '#0C1020',
+            justifyContent: 'flex-start',
+            pl: '6px',
           }}
+          onClick={onShow}
         >
-          <Button
-            fullWidth
-            color={getCharStat(characterKey).attribute}
-            sx={{
-              justifyContent: 'flex-start',
-              pl: '6px',
-            }}
-            onClick={onShow}
-          >
-            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-              <ImgIcon size={2} src={characterAsset(characterKey, 'circle')} />
-              {t(`charNames_gen:${characterKey}`)}
-            </Box>
-          </Button>
-        </Box>
-        {character && charOpt && (
-          <CharacterContext.Provider value={character}>
-            <TagContext.Provider value={tag}>
-              <CharCalcProvider
-                character={character}
-                charOpt={charOpt}
-                wengineId={character.equippedWengine}
-                discIds={character.equippedDiscs}
-              >
-                <SrcDstDisplayContext.Provider
-                  value={srcDstDisplayContextValue}
-                >
-                  <ConditionalValuesContext.Provider
-                    value={charOpt.conditionals}
-                  >
-                    <SetConditionalContext.Provider value={setConditional}>
-                      <DebugReadContext.Provider value={debugObj}>
-                        <DebugReadModal />
-                        <Box
-                          sx={{
-                            display: 'flex',
-                            gap: 1,
-                            flexDirection: 'column',
-                            mt: 1,
-                          }}
-                        >
-                          <OptTargetRow
-                            character={character}
-                            charOpt={charOpt}
-                          />
-                          <TeamHeaderHeightContext.Provider value={74}>
-                            <CharacterOptDisplay key={character.key} />
-                          </TeamHeaderHeightContext.Provider>
-                        </Box>
-                      </DebugReadContext.Provider>
-                    </SetConditionalContext.Provider>
-                  </ConditionalValuesContext.Provider>
-                </SrcDstDisplayContext.Provider>
-              </CharCalcProvider>
-            </TagContext.Provider>
-          </CharacterContext.Provider>
-        )}
+          <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+            <ImgIcon size={2} src={characterAsset(characterKey, 'circle')} />
+            {t(`charNames_gen:${characterKey}`)}
+          </Box>
+        </Button>
       </Box>
-    </Providers>
-  )
-}
-function Providers({ children }: { children: React.ReactNode }) {
-  return (
-    <FormulaTextContext.Provider value={formulaText as FormulaTextFunc}>
-      <TagDisplayContext.Provider value={TagDisplay as TagDisplayComponent}>
-        <FullTagDisplayContext.Provider
-          value={FullTagDisplay as FullTagDisplayComponent}
-        >
-          {children}
-        </FullTagDisplayContext.Provider>
-      </TagDisplayContext.Provider>
-    </FormulaTextContext.Provider>
+      {character && team && (
+        <CharacterContext.Provider value={character}>
+          <TagContext.Provider value={tag}>
+            <CharCalcProvider
+              character={character}
+              team={team}
+              wengineId={character.equippedWengine}
+              discIds={character.equippedDiscs}
+            >
+              <SrcDstDisplayContext.Provider value={srcDstDisplayContextValue}>
+                <ConditionalValuesContext.Provider value={conditionals}>
+                  <SetConditionalContext.Provider value={setConditional}>
+                    {shouldShowDevComponents ? (
+                      <DebugReadProvider>
+                        <OptimizePageContent character={character} />
+                      </DebugReadProvider>
+                    ) : (
+                      <OptimizePageContent character={character} />
+                    )}
+                  </SetConditionalContext.Provider>
+                </ConditionalValuesContext.Provider>
+              </SrcDstDisplayContext.Provider>
+            </CharCalcProvider>
+          </TagContext.Provider>
+        </CharacterContext.Provider>
+      )}
+    </Box>
   )
 }

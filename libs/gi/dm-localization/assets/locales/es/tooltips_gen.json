@@ -12,6 +12,13 @@
       "7": "<cryo>Cryo</cryo>: Daño CRIT +20%."
     }
   },
+  "10050002": {
+    "name": "Fulgor gélido",
+    "description": {
+      "0": "Efecto especial que se obtiene cuando los cristales de hielo disparados por la <strong>estrella glacial</strong> creada por {F#la Viajera}{M#el Viajero} golpean a un enemigo, o cuando se realiza un <strong>Ataque Cargado: Criocondensación</strong> tras haber desbloqueado el talento <strong>Hielo extranjero</strong>. Este efecto puede acumularse hasta 8 veces.",
+      "1": "Al usar la Habilidad Definitiva, <strong>Lanza álgida</strong>, {F#la Viajera}{M#el Viajero} consumirá todas las cargas de <strong>fulgor gélido</strong> para aumentar el daño infligido por dicha habilidad. Si se consumen 8 cargas, también aumentará la cantidad de veces que inflige daño la Habilidad Definitiva."
+    }
+  },
   "11120001": {
     "name": "Modo crioalmacenamiento",
     "description": {
@@ -49,7 +56,7 @@
   "11130002": {
     "name": "Fundamentos de rescate",
     "description": {
-      "0": "Máximo: 150 pts. Por cada punto de fundamentos de rescate que tenga Ifá, el daño de las reacciones de Torbellino y Electrocargado de los personajes cercanos del equipo aumenta en un 1.5%, y el de la reacción de Electrocargado Lunar aumenta en un 0.2%. El efecto de fundamentos de rescate se eliminará cuando termine el estado de bendición noctámbula de Ifá."
+      "0": "Máximo: 150 pts. Por cada punto de fundamentos de rescate que tenga Ifá, el daño de las reacciones de Torbellino y Electrocargado de los personajes cercanos del equipo aumenta en un 1.5%, el de la reacción de Electrocargado Lunar aumenta en un 0.2%, y el de Torbellino Estelar aumenta en un 0.24%. El efecto de fundamentos de rescate se eliminará cuando termine el estado de bendición noctámbula de Ifá."
     }
   },
   "11130003": {
@@ -99,7 +106,7 @@
   "11130007": {
     "name": "La razón más allá de la razón",
     "description": {
-      "0": "Cuando un personaje cercano del equipo cause una reacción de Congelado, Superconductor, Torbellino Cryo o Cristalización Cryo contra un enemigo, se creará una fisura del vacío cerca de dicho oponente. Este efecto puede ocurrir, como mucho, una vez cada 2.5 s, y podrán crearse un máximo de 3 fisuras del vacío a la vez.",
+      "0": "Cuando un personaje cercano del equipo cause una reacción de Congelado, Superconductor, Superconductor Estelar, Torbellino Cryo, Torbellino Estelar o Cristalización Cryo contra un enemigo, se creará una fisura del vacío cerca de dicho oponente. Este efecto puede ocurrir, como mucho, una vez cada 2.5 s, y podrán crearse un máximo de 3 fisuras del vacío a la vez.",
       "1": "<br/>",
       "2": "Skirk puede absorber las fisuras del vacío que haya en un área cercana de las siguientes maneras:",
       "3": [
@@ -351,6 +358,40 @@
       "3": "Además, Varka puede consumir los usos de <strong>Alzamiento de los Cuatro Vientos</strong> para ejecutar el Ataque Cargado especial <strong>Devorazul</strong>, el cual no consume Aguante. Este ataque infligirá 2 golpes de daño del elemento correspondiente al mandoble que empuña en la mano derecha, el cual no puede sustituirse imbuyéndose de otro elemento, y 2 golpes de <anemo>Daño Anemo</anemo>."
     }
   },
+  "11290001": {
+    "name": "Maestro estratega",
+    "description": {
+      "0": "Lohen entra en este estado tras usar su Habilidad Elemental, <strong>Estacazo súbito</strong>. El estado de maestro estratega tiene las siguientes características:",
+      "1": [
+        "El daño de los Ataques Normales, Cargados y Descendentes de Lohen se transforma en <cryo>Daño Cryo</cryo>, el cual no puede sustituirse imbuyéndose de otro elemento.",
+        "Cuando Lohen golpea a un enemigo con un Ataque Normal o Cargado, obtiene <strong>exultación</strong>, la cual le sirve para usar su Habilidad Elemental especial <strong>Grabado hasta la médula</strong>. Tras usar un máximo de 3 veces <strong>Grabado hasta la médula</strong> en el estado de <strong>maestro estratega</strong>, Lohen no podrá obtener <strong>exultación</strong>.",
+        "Cuando otros personajes cercanos del equipo infligen daño, otorgan <strong>ansia de victoria</strong> a Lohen, lo que aumenta el daño que inflige con su Habilidad Elemental especial <strong>Grabado hasta la médula</strong>.",
+        "Cuando Lohen se retire de combate, el estado de maestro estratega se anulará. Al salir de dicho estado, también se eliminarán la <strong>exultación</strong> y el <strong>ansia de victoria</strong> que haya acumulado."
+      ]
+    }
+  },
+  "11290002": {
+    "name": "Grabado hasta la médula",
+    "description": {
+      "0": "Una Habilidad Elemental especial que Lohen puede usar cuando alcanza el máximo de <strong>exultación</strong>.",
+      "1": "Tras golpear a un enemigo, consume toda la <strong>exultación</strong> y el <strong>ansia de victoria</strong> para infligir <cryo>Daño Cryo</cryo>. El daño infligido será mayor cuanta más <strong>ansia de victoria</strong> se consuma."
+    }
+  },
+  "11290003": {
+    "name": "Exultación",
+    "description": {
+      "0": "Cuando Lohen golpea a un enemigo con un Ataque Normal o Cargado mientras está en estado de maestro estratega, obtendrá 0.381298 pts. de <strong>exultación</strong>, hasta un máximo de 100 pts.",
+      "1": "Como máximo, solo se puede obtener <strong>exultación</strong> una vez cada 0.1 s. Al alcanzar la cantidad máxima, la Habilidad Elemental de Lohen, <strong>Estacazo súbito</strong>, se remplazará por la Habilidad Elemental especial <strong>Grabado hasta la médula</strong>."
+    }
+  },
+  "11290004": {
+    "name": "Ansia de victoria",
+    "description": {
+      "0": "Un recurso especial que los personajes cercanos del equipo pueden otorgar a Lohen cuando infligen daño mientras él está en estado de maestro estratega. Como máximo, Lohen podrá obtener hasta 100 pts. de ansia de victoria.",
+      "1": "Mientras el estado de maestro estratega esté activo, si el daño infligido por los demás personajes cercanos del equipo es igual o superior al 55.2868% del ATQ Base de Lohen, este obtendrá 0.829302 pts. de <strong>ansia de victoria</strong>. De lo contrario, obtendrá 1 pt.",
+      "2": "Como máximo, cada personaje solo puede otorgar <strong>ansia de victoria</strong> a Lohen una vez cada 0.1 s."
+    }
+  },
   "11300001": {
     "name": "Formas de ataque de Lumi",
     "description": {
@@ -366,6 +407,180 @@
       "9": "<strong>Forma poderosa</strong>",
       "10": "Aunque no sea tan espectacular como las otras formas, sigue siendo bastante poderosa.",
       "11": "Lumi usará sus <strong>aporreadores pum-pum</strong> a intervalos más largos para atacar continuamente a los enemigos cercanos e infligirles <geo>Daño Geo en el AdE</geo> 2 veces con cada ataque."
+    }
+  },
+  "11310001": {
+    "name": "Gracia de la kénosis",
+    "description": {
+      "0": "Tras usar su Habilidad Elemental, <strong>Revelación: Luz no manifiesta</strong>, Nicole otorgará a todos los personajes cercanos del equipo un efecto de aumento de ATQ según el propio ATQ de Nicole.",
+      "1": "Si se cumplen ciertos requisitos especiales, el efecto de <strong>gracia de la kénosis</strong> mejorará a <strong>guía de la teosis</strong>, lo que aumentará aún más el ATQ."
+    }
+  },
+  "11310002": {
+    "name": "Guía de la teosis",
+    "description": {
+      "0": "El efecto mejorado de la <strong>gracia de la kénosis</strong>, que aumenta el ATQ en 300 pts. adicionales.",
+      "1": "Tras desbloquear el talento de ascensión “Méthexis” y alcanzar cualquiera de los siguientes requisitos de observación, la <strong>gracia de la kénosis</strong> mejorará a <strong>guía de la teosis</strong> en el tiempo restante de su duración:",
+      "2": [
+        "Si el personaje observado permanece en el campo de batalla durante más de 3 s.",
+        "Si el personaje observado es un personaje taumatúrgico."
+      ],
+      "3": "<br/>",
+      "4": "Además, tras desbloquear el talento de ascensión “Filocalia”, cuando un personaje en uso cercano del equipo golpee a un enemigo con Daño Elemental, la <strong>gracia de la kénosis</strong> de Nicole se convertirá en <strong>guía de la teosis</strong> durante 8 s.",
+      "5": "<br/>",
+      "6": "A excepción de Nicole, cuando los demás personajes se retiren del combate, su <strong>guía de la teosis</strong> volverá a convertirse en <strong>gracia de la kénosis</strong>."
+    }
+  },
+  "11320001": {
+    "name": "Martillo del Juramento Cazahecatombes",
+    "description": {
+      "0": "¡Un compañero de confianza para cazar brujas! Tras cumplirse ciertas condiciones, podrá sufrir un cambio elemental mediante el cual todo el daño infligido a los enemigos con el Martillo del Juramento Cazahecatombes pasará a ser daño del elemento correspondiente.",
+      "1": "Prune puede invocar de las siguientes formas el Martillo del Juramento Cazahecatombes que ha sufrido un cambio elemental:",
+      "2": [
+        "Durante cierto tiempo después de que Prune cause una reacción de Torbellino o Torbellino Estelar contra un enemigo con la Habilidad Elemental, <strong>“¡Tilín!”: Tañido cazaconjuros</strong>, podrá usar la Habilidad Elemental especial <strong>“¡Clang-clang!”: Retribución juzgabrujas</strong>. Al usar esta habilidad especial, el Martillo del Juramento Cazahecatombes cambiará al otro elemento que participó en la reacción de Torbellino o Torbellino Estelar.",
+        "Tras desbloquear el talento de ascensión “Juicio y condena”, si el Cascabel Cautivabrujas causa una reacción de Torbellino o Torbellino Estelar contra un enemigo en el modo rastreapresas, se invocará un Martillo del Juramento Cazahecatombes que haya sufrido el cambio elemental correspondiente para atacar al enemigo."
+      ]
+    }
+  },
+  "11320002": {
+    "name": "Juicio y condena",
+    "description": {
+      "0": "Durante la Habilidad Definitiva, <strong>“¡Ding-ding!”: ¡A la caza de la bruja!</strong>, cuando el Cascabel Cautivabrujas inflija daño a un enemigo en el modo rastreapresas, si dicho daño causa una reacción de Torbellino, Prune invocará frente al enemigo un <strong>Martillo del Juramento Cazahecatombes</strong> que haya sufrido el cambio elemental correspondiente para atacarlo e infligir daño del elemento correspondiente. Este daño se considera daño de Habilidad Definitiva."
+    }
+  },
+  "11320003": {
+    "name": "Sincronía tintineante",
+    "description": {
+      "0": "Cuando Prune golpee a un enemigo con su <strong>Martillo del Juramento Cazahecatombes</strong> después de que este haya sufrido un cambio elemental, los demás personajes cercanos del equipo obtendrán el efecto de “inspiración tintineante”, el cual aumenta el daño que infligen con sus ataques en función del ATQ de Prune."
+    }
+  },
+  "11330001": {
+    "name": "Decodificación",
+    "description": {
+      "0": "Al realizar un Ataque Cargado, Fagio entrará en este modo.",
+      "1": "Mientras el modo esté activo, Fagio realizará un ataque de ráfaga contra los enemigos que tenga enfrente y disparará un rayo criocondensador de forma periódica que inflige <cryo>Daño Cryo en el AdE</cryo>.",
+      "2": "<strong>Esplendor: Destello Estelar</strong>",
+      "3": "El rayo criocondensador pasará a infligir <cryo>Daño Cryo en el AdE</cryo> considerado como daño de la reacción de Destello Estelar correspondiente."
+    }
+  },
+  "11330002": {
+    "name": "Capacidad de decodificación",
+    "description": {
+      "0": "Cuando Fagio se encuentre en modo de <strong>decodificación</strong>, su <strong>capacidad de decodificación</strong> aumentará sin cesar. Cuando la capacidad alcance el máximo, no podrá mantener el modo de decodificación ni volver a entrar en él."
+    }
+  },
+  "11330003": {
+    "name": "Campo estrellapolar",
+    "description": {
+      "0": "Al causar una reacción de Superconductor Estelar, el área cercana se convertirá en un <strong>campo estrellapolar</strong> durante un breve periodo de tiempo. Al encontrarse dentro de un campo estrellapolar, ciertos personajes entrarán en el estado de <strong>esplendor: Superconductor Estelar</strong>, lo que causará que sus diferentes habilidades obtengan el efecto de fortalecimiento correspondiente."
+    }
+  },
+  "11400001": {
+    "name": "Vocalista principal",
+    "description": {
+      "0": "Cuando tu personaje en uso del equipo inflija <hydro>Daño Hydro</hydro> o <cryo>Daño Cryo</cryo> con su Ataque Normal, Cargado o Descendente, o con su Habilidad Elemental o Definitiva, se consumirá una carga de “vocalista principal” para aumentar el daño infligido. Si en el campo de batalla hay un vórtice errante o si han transcurrido menos de 5 s desde su explosión, el efecto anterior solo se activará cuando el personaje inflija daño de Torbellino Estelar.",
+      "1": "Por cada 1000 pts. de Vida Máx. que Vodyanitsa tenga por encima de los 40000 pts., el daño de Torbellino Estelar del efecto anterior aumentará en 260 pts., y el <hydro>Daño Hydro</hydro> y <cryo>Cryo</cryo> aumentará en 140 pts. Como máximo, solo es posible aumentar el daño de Torbellino Estelar en 6500 pts. y el <hydro>Daño Hydro</hydro> y <cryo>Cryo</cryo> en 3500 pts. de esta manera."
+    }
+  },
+  "11400002": {
+    "name": "Coro",
+    "description": {
+      "0": "Lo puede activar un personaje que está en el equipo pero no en uso o los demás personajes cercanos del equipo (a excepción de tu personaje en uso del equipo). Su efecto es el mismo que el de “vocalista principal”."
+    }
+  },
+  "11430001": {
+    "name": "Armamento persiguevientos",
+    "description": {
+      "0": "Vesna entrará en este modo tras usar su Habilidad Elemental, <strong>El arte de la victoria</strong>. Este modo dura un máximo de 15 s y posee las siguientes características:",
+      "1": [
+        "La RES a interrupción de Vesna se verá aumentada.",
+        "Los Ataques Normales, Cargados y Descendentes de Vesna pasarán a infligir <anemo>Daño Anemo</anemo>, el cual no puede sustituirse imbuyéndose de otro elemento. Además, invocará cefiroalas que realizan ataques coordinados contra los enemigos e infligen <anemo>Daño Anemo</anemo> adicional. Cada vez que invoque las cefiroalas, Vesna recuperará cierta cantidad de <strong>energía filofeérica</strong>.",
+        "Vesna podrá consumir <strong>energía filofeérica</strong> para usar su Habilidad Elemental especial <strong>Filo surcavientos</strong> e infligir <anemo>Daño Anemo</anemo> a sus enemigos.",
+        "Cuando termine la duración de armamento persiguevientos o después de usar tres veces <strong>Filo surcavientos</strong> al nivel máximo, Vesna saldrá de dicho modo y perderá todas las cargas de <strong>energía filofeérica</strong>."
+      ]
+    }
+  },
+  "11430002": {
+    "name": "Energía filofeérica",
+    "description": {
+      "0": "La energía requerida para usar la Habilidad Elemental especial <strong>Filo surcavientos</strong> durante el modo de <strong>armamento persiguevientos</strong>.",
+      "1": "Vesna puede acumular energía filofeérica a través de los siguientes métodos:",
+      "2": [
+        "Realizando Ataques Normales, Cargados o Descendentes en el modo de <strong>armamento persiguevientos</strong> o usando <strong>Filo surcavientos: Transposición</strong> de la constelación <strong>Entusiasmo inquebrantable</strong>.",
+        "Usando su Habilidad Elemental, <strong>El arte de la victoria</strong>.",
+        "Usando su Habilidad Definitiva, <strong>¡Por su majestad la Zarina!</strong>"
+      ]
+    }
+  },
+  "11430003": {
+    "name": "Filo surcavientos",
+    "description": {
+      "0": "En el modo <strong>armamento persiguevientos</strong>, Vesna puede consumir <strong>energía filofeérica</strong> para usar esta Habilidad Elemental especial e infligir <anemo>Daño Anemo</anemo>.",
+      "1": "Cada vez que utilice la Habilidad Elemental especial <strong>Filo surcavientos</strong>, el nivel de la misma aumentará mientras el actual modo de <strong>armamento persiguevientos</strong> esté activo. El <strong>Filo surcavientos</strong> empezará en niv. 1 y podrá ascender como máximo hasta niv. 3.",
+      "2": "Al usar un <strong>Filo surcavientos</strong> que haya ascendido de nivel, también se invocarán <strong>filos feéricos</strong> que infligirán <anemo>Daño Anemo</anemo> a los enemigos."
+    }
+  },
+  "11430004": {
+    "name": "Filo feérico",
+    "description": {
+      "0": "Un arma espiritual que puede convocar Vesna y que atacará a los enemigos junto a ella para infligirles <anemo>Daño Anemo</anemo>.",
+      "1": "Vesna podrá convocar filos feéricos a través de los siguientes métodos:",
+      "2": [
+        "Usando su Habilidad Elemental especial <strong>Filo surcavientos</strong> ascendida.",
+        "Usando su Habilidad Definitiva, <strong>¡Por su majestad la Zarina!</strong>",
+        "Usando <strong>Filo surcavientos: Transposición</strong> de la constelación <strong>Entusiasmo inquebrantable</strong>."
+      ],
+      "3": "<br/>",
+      "4": "<strong>Esplendor: Torbellino Estelar</strong>",
+      "5": "Los <strong>filos feéricos</strong> pasarán a infligir <anemo>Daño Anemo</anemo> considerado como daño de Torbellino Estelar."
+    }
+  },
+  "11480001": {
+    "name": "Marca de caza",
+    "description": {
+      "0": "Efecto especial que Aliosha aplica a los enemigos.",
+      "1": "Cuando vuelva a aplicar este efecto a un enemigo que ya está afectado por una <strong>marca de caza</strong>, esta se activará, lo que eliminará la marca y otorgará a todos los personajes cercanos del equipo el efecto de <strong>precisión de cazador</strong>, el cual aumentará su ATQ mientras estén en uso."
+    }
+  },
+  "11480002": {
+    "name": "Tugarin",
+    "description": {
+      "0": "El compañero sabueso en quien más confía Aliosha. Se puede invocar mediante la Habilidad Definitiva, <strong>Avance depredador</strong>, y cada cierto tiempo se desplazará rápidamente hacia un enemigo cercano para morderle y activar las <strong>marcas de caza</strong> ya existentes."
+    }
+  },
+  "11500001": {
+    "name": "Doble bailarina",
+    "description": {
+      "0": "Una proyección mental que baila junto a Odette. Puede invocarse tanto con la Habilidad Elemental como con la Definitiva.",
+      "1": "Alterna entre dos tipos de pasos de baile, el <strong>plumífero</strong> y el <strong>alado</strong>, para atacar cada cierto tiempo a los enemigos cercanos con unos movimientos gráciles y elegantes que infligen <cryo>Daño Cryo en el AdE</cryo>.",
+      "2": "Como máximo, solo puede haber al mismo tiempo una <strong>doble bailarina</strong> creada por Odette.",
+      "3": "<br/>",
+      "4": "Además, cuando ya haya una <strong>doble bailarina</strong> invocada por Odette en las cercanías, su Habilidad Elemental, <strong>Adagio: Danza nocturna fantasmagórica</strong>, se remplazará por la Habilidad Elemental especial Adagio: Coda del amanecer."
+    }
+  },
+  "11500002": {
+    "name": "Adagio: Coda del amanecer",
+    "description": {
+      "0": "La Habilidad Elemental especial de Odette. Inflige <cryo>Daño Cryo en el AdE</cryo> continuamente a los enemigos cercanos y, al finalizar el dueto, inflige una vez <cryo>Daño Cryo en el AdE</cryo> considerado como daño de Superconductor Estelar. Durante el dueto, Odette puede controlar la dirección de los pasos de baile.",
+      "1": "<strong>Esplendor: Destello Estelar</strong>",
+      "2": "Al finalizar el dueto, pasa a infligir una vez <cryo>Daño Cryo en el AdE</cryo> considerado como daño de la reacción de Destello Estelar correspondiente.",
+      "3": "<br/>",
+      "4": "Además, tras usar la Habilidad Elemental especial <strong>Adagio: Coda del amanecer</strong>, si Odette se encuentra en estado de <strong>esplendor: Destello Estelar</strong> cuando la duración de la <strong>doble bailarina</strong> aún no haya terminado, los dos pasos de baile diferentes de la <strong>doble bailarina</strong> infligirán <cryo>Daño Cryo en el AdE</cryo> adicional considerado como daño de la reacción de Destello Estelar correspondiente."
+    }
+  },
+  "11500003": {
+    "name": "Cadenza",
+    "description": {
+      "0": "Efecto especial que obtiene Odette al invocar a su <strong>doble bailarina</strong> una vez desbloqueado el talento de ascensión “Primavera de la elegida”.",
+      "1": "El daño de Destello Estelar infligido por el personaje aumentará en un 15% por cada carga de <strong>cadenza</strong>. Este efecto durará hasta que la <strong>doble bailarina</strong> se retire de combate o hasta que se invoque de nuevo.",
+      "2": "Cuando Odette esté en tu equipo pero no en uso, perderá 1 carga de <strong>cadenza</strong> por segundo y otorgará a los demás personajes cercanos del equipo la cantidad correspondiente de cargas de <strong>cadenza</strong>."
+    }
+  },
+  "11500004": {
+    "name": "Esplendor: Destello Estelar",
+    "description": {
+      "0": "<strong>Esplendor: Superconductor Estelar</strong> y <strong>esplendor: Torbellino Estelar</strong> se denominan conjuntamente “estado de <strong>esplendor: Destello Estelar</strong>”.",
+      "1": "Un personaje solo puede verse afectado por un tipo de estado de esplendor a la vez, y el de <strong>esplendor: Superconductor Estelar</strong> tendrá prioridad."
     }
   }
 }

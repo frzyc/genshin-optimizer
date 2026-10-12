@@ -1,3 +1,4 @@
+import { isIn } from '@genshin-optimizer/common/util'
 import { cmpEq, max, min, prod, sum } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
 import {
@@ -32,9 +33,7 @@ const data: TagMapNodeEntries = [
   // convert sheet:<char> to sheet:agg for accumulation
   // sheet:<wengine> is reread in src/util.ts:wengineTagMapNodeEntries()
   // sheet:<disc> is reread in src/util.ts:discTagMapNodeEntries()
-  reader
-    .sheet('agg')
-    .reread(reader.sheet('char')),
+  reader.sheet('agg').reread(reader.sheet('char')),
 
   // For stats with a flat and percent variant
   // initial x += base x * initial x%
@@ -59,9 +58,8 @@ const data: TagMapNodeEntries = [
   // initial x += base X; assuming base exists for that stat
   // Except sheer force because we gotta calculate that all funky
   ...nonFlatAndPercentStats
-    .filter(
-      (s): s is keyof typeof ownBuff.base =>
-        s in ownBuff.base && s !== 'sheerForce'
+    .filter((s): s is keyof typeof ownBuff.base =>
+      isIn(Object.keys(ownBuff.base), s)
     )
     .map((s) => ownBuff.initial[s].add(ownBuff.base[s], true)),
   // final x += initial X + combat X
@@ -96,8 +94,6 @@ const data: TagMapNodeEntries = [
   ),
 
   // Default conditionals to 0
-  reader
-    .with('qt', 'cond')
-    .add(0),
+  reader.with('qt', 'cond').add(0),
 ]
 export default data

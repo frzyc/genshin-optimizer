@@ -19,8 +19,8 @@ import {
 } from '@mui/material'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import TeamSelectors from './TeamSelectors'
 import { useTeamContext } from './context'
+import TeamSelectors from './TeamSelectors'
 export default function TeamNameCardHeader() {
   const { t } = useTranslation('page_team')
   const { teamId, team } = useTeamContext()

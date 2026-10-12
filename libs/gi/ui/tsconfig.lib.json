@@ -5,12 +5,13 @@
     "types": [
       "node",
       "object-overrides",
+      "css",
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ]
   },
   "exclude": [
-    "jest.config.ts",
+    "vitest.config.ts",
     "src/**/*.spec.ts",
     "src/**/*.test.ts",
     "src/**/*.spec.tsx",

@@ -31,8 +31,8 @@ export function RVSlide({
   const [sliderLow, setsliderLow] = useState(rvLow)
   const [sliderHigh, setsliderHigh] = useState(rvHigh)
   const setSlider = useCallback(
-    (e: unknown, value: number | number[]) => {
-      if (typeof value == 'number') throw new TypeError()
+    (_e: unknown, value: number | number[]) => {
+      if (typeof value === 'number') throw new TypeError()
       const [l, h] = value
       setsliderLow(l)
       setsliderHigh(h)
@@ -89,7 +89,7 @@ export function RVSlide({
         getAriaLabel={() => `Arifact ${MRV_RV ? 'Max RV' : 'RV'} Range`}
         value={[sliderLow, sliderHigh]}
         onChange={setSlider}
-        onChangeCommitted={(e, value) =>
+        onChangeCommitted={(_e, value) =>
           Array.isArray(value) && setBoth(value[0], value[1])
         }
         valueLabelDisplay="auto"

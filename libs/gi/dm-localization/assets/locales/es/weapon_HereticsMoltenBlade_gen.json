@@ -1,0 +1,24 @@
+{
+  "name": "Filo de la Caza de los Herejes",
+  "description": {
+    "0": "Esta fue el arma que, después de tanto tiempo sin usarla, él volvió a desenvainar al encontrarse por primera vez con el dios de las llamas que había sido bendecido por tantas personas."
+  },
+  "passiveName": "Bendición de la luz solitaria",
+  "passiveDescription": {
+    "0": {
+      "0": "Cuando el portador de esta arma usa su Habilidad Elemental, obtiene el efecto de “destello de la primera luz”. Mientras este efecto esté activo, cada segundo se registrará la distancia recorrida por el portador y se le otorgará entre un <cryo>18%</cryo> y un <cryo>36%</cryo> de Bono de ATQ en función de la distancia que haya recorrido en el segundo anterior. Este efecto dura 14 s, puede activarse una vez cada 14 s y se eliminará cuando el portador de esta arma se retire de combate."
+    },
+    "1": {
+      "0": "Cuando el portador de esta arma usa su Habilidad Elemental, obtiene el efecto de “destello de la primera luz”. Mientras este efecto esté activo, cada segundo se registrará la distancia recorrida por el portador y se le otorgará entre un <cryo>22.5%</cryo> y un <cryo>45%</cryo> de Bono de ATQ en función de la distancia que haya recorrido en el segundo anterior. Este efecto dura 14 s, puede activarse una vez cada 14 s y se eliminará cuando el portador de esta arma se retire de combate."
+    },
+    "2": {
+      "0": "Cuando el portador de esta arma usa su Habilidad Elemental, obtiene el efecto de “destello de la primera luz”. Mientras este efecto esté activo, cada segundo se registrará la distancia recorrida por el portador y se le otorgará entre un <cryo>27%</cryo> y un <cryo>54%</cryo> de Bono de ATQ en función de la distancia que haya recorrido en el segundo anterior. Este efecto dura 14 s, puede activarse una vez cada 14 s y se eliminará cuando el portador de esta arma se retire de combate."
+    },
+    "3": {
+      "0": "Cuando el portador de esta arma usa su Habilidad Elemental, obtiene el efecto de “destello de la primera luz”. Mientras este efecto esté activo, cada segundo se registrará la distancia recorrida por el portador y se le otorgará entre un <cryo>31.5%</cryo> y un <cryo>63%</cryo> de Bono de ATQ en función de la distancia que haya recorrido en el segundo anterior. Este efecto dura 14 s, puede activarse una vez cada 14 s y se eliminará cuando el portador de esta arma se retire de combate."
+    },
+    "4": {
+      "0": "Cuando el portador de esta arma usa su Habilidad Elemental, obtiene el efecto de “destello de la primera luz”. Mientras este efecto esté activo, cada segundo se registrará la distancia recorrida por el portador y se le otorgará entre un <cryo>36%</cryo> y un <cryo>72%</cryo> de Bono de ATQ en función de la distancia que haya recorrido en el segundo anterior. Este efecto dura 14 s, puede activarse una vez cada 14 s y se eliminará cuando el portador de esta arma se retire de combate."
+    }
+  }
+}

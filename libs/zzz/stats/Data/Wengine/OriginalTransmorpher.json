@@ -1,7 +1,8 @@
 {
   "rarity": "A",
   "type": "defense",
-  "atk_base": 40,
+  "base_statkey": "atk",
+  "base_statvalue": 40,
   "second_statkey": "hp_",
   "second_statvalue": 0.1,
   "phase": [

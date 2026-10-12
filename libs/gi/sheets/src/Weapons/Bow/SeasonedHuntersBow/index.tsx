@@ -1,7 +1,7 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import type { IWeaponSheet } from '../../IWeaponSheet'
-import { WeaponSheet } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
+import { WeaponSheet } from '../../WeaponSheet'
 
 const key: WeaponKey = 'SeasonedHuntersBow'
 export const data = dataObjForWeaponSheet(key)

@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     },
     "skillParamsEncoding": {
       "0": "{{0, percent(fixed: 1)}}%",
@@ -54,7 +58,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -92,7 +100,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     },
     "skillParamsEncoding": {
       "0": "{{0, percent(fixed: 1)}}% Max HP+{{1}}",
@@ -110,7 +122,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -144,7 +160,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     },
     "skillParamsEncoding": {
       "0": "{{0, percent}}%",
@@ -162,7 +182,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -186,6 +210,14 @@
     "description": {
       "0": "Decreases swimming Stamina consumption for your own party members by 20%.",
       "1": "Not stackable with Passive Talents that provide the exact same effects."
+    }
+  },
+  "lockedPassive": {
+    "name": "Polaris",
+    "description": {
+      "0": "When holding down on the Elemental Skill <strong>Tidecaller</strong>, 1 stack of power will accumulate every 0.8s, even when not under attack. This increases the DMG dealt at the point of unleashing.",
+      "1": "Additionally, holding down to unleash <strong>Tidecaller</strong> and hitting the opponent also gives extra boosts based on the power accumulated: every stack active decreases Beidou's Elemental Skill CD by 4s, as well as regenerates 8 Elemental Energy for her. This effect can trigger once every 15s.",
+      "2": "Additionally, when inside a <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>, Beidou will enter the <strong>Radiance: Stellar-Conduct</strong> state."
     }
   },
   "constellation1": {
@@ -226,6 +258,11 @@
     "name": "Bane of Evil",
     "description": {
       "0": "During the duration of <strong>Stormbreaker</strong>, the <electro>Electro RES</electro> of surrounding opponents is decreased by 15%."
+    },
+    "upgradedDescription": {
+      "0": "While <strong>Stormbreaker</strong> is active, nearby opponents' <electro>Electro RES</electro> is reduced by 15%.",
+      "1": "<br/>",
+      "2": "<strong>Radiance: Stellar-Conduct</strong>: The <cryo>Cryo RES</cryo> of nearby opponents is decreased by 15%, and the Elemental Mastery of the current active character is increased by 200, while Stormbreaker is active."
     }
   }
 }

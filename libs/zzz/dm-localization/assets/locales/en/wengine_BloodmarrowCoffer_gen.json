@@ -1,0 +1,17 @@
+{
+  "name": "Bloodmarrow Coffer",
+  "desc": {
+    "0": "A high-output energy-storage W-Engine, designed for stronger bursts of instantaneous power.",
+    "1": "The top-liked comment on a W-Engine review ranking claimed that dripping blood into the W-Engine could further enhance its performance. This has been confirmed to be a rumor. Do not imitate."
+  },
+  "desc2": "Equip to increase Armorer Agents' combat capabilities",
+  "desc3": "A special W-Engine developed by the Flint family.",
+  "phase": "Moment of Unsealing",
+  "phaseDescs": [
+    "When the equipper's CRIT Rate exceeds <ct color=#2BAD00>100%</ct>, each 1% of CRIT Rate above 100% increases DMG dealt by <ct color=#2BAD00>0.48%</ct>, up to a maximum increase of <ct color=#2BAD00>24%</ct>.",
+    "When the equipper's CRIT Rate exceeds <ct color=#2BAD00>100%</ct>, each 1% of CRIT Rate above 100% increases DMG dealt by <ct color=#2BAD00>0.56%</ct>, up to a maximum increase of <ct color=#2BAD00>28%</ct>.",
+    "When the equipper's CRIT Rate exceeds <ct color=#2BAD00>100%</ct>, each 1% of CRIT Rate above 100% increases DMG dealt by <ct color=#2BAD00>0.64%</ct>, up to a maximum increase of <ct color=#2BAD00>32%</ct>.",
+    "When the equipper's CRIT Rate exceeds <ct color=#2BAD00>100%</ct>, each 1% of CRIT Rate above 100% increases DMG dealt by <ct color=#2BAD00>0.72%</ct>, up to a maximum increase of <ct color=#2BAD00>36%</ct>.",
+    "When the equipper's CRIT Rate exceeds <ct color=#2BAD00>100%</ct>, each 1% of CRIT Rate above 100% increases DMG dealt by <ct color=#2BAD00>0.8%</ct>, up to a maximum increase of <ct color=#2BAD00>40%</ct>."
+  ]
+}

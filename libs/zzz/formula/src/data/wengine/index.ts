@@ -5,13 +5,19 @@ import BashfulDemon from './sheets/BashfulDemon'
 import BellicoseBlaze from './sheets/BellicoseBlaze'
 import BigCylinder from './sheets/BigCylinder'
 import BlazingLaurel from './sheets/BlazingLaurel'
+import BloodmarrowCoffer from './sheets/BloodmarrowCoffer'
+import BoisterousEchoes from './sheets/BoisterousEchoes'
 import BoxCutter from './sheets/BoxCutter'
 import BunnyBand from './sheets/BunnyBand'
 import CannonRotor from './sheets/CannonRotor'
+import CattyLuck from './sheets/CattyLuck'
 import CauldronOfClarity from './sheets/CauldronOfClarity'
+import ChiefSidekick from './sheets/ChiefSidekick'
 import CinderCobalt from './sheets/CinderCobalt'
 import CloudcleaveRadiance from './sheets/CloudcleaveRadiance'
 import CordisGermina from './sheets/CordisGermina'
+import CrimsonMoonCasket from './sheets/CrimsonMoonCasket'
+import CrimsonThirst from './sheets/CrimsonThirst'
 import DeepSeaVisitor from './sheets/DeepSeaVisitor'
 import DemaraBatteryMarkII from './sheets/DemaraBatteryMarkII'
 import DreamlitHearth from './sheets/DreamlitHearth'
@@ -20,6 +26,7 @@ import ElectroLipGloss from './sheets/ElectroLipGloss'
 import ElegantVanity from './sheets/ElegantVanity'
 import FlamemakerShaker from './sheets/FlamemakerShaker'
 import FlightOfFancy from './sheets/FlightOfFancy'
+import FrostfallSickle from './sheets/FrostfallSickle'
 import FusionCompiler from './sheets/FusionCompiler'
 import GildedBlossom from './sheets/GildedBlossom'
 import GrillOWisp from './sheets/GrillOWisp'
@@ -31,11 +38,14 @@ import Housekeeper from './sheets/Housekeeper'
 import IceJadeTeapot from './sheets/IceJadeTeapot'
 import IdentityBase from './sheets/IdentityBase'
 import IdentityInflection from './sheets/IdentityInflection'
+import JoyauDore from './sheets/JoyauDore'
 import KaboomTheCannon from './sheets/KaboomTheCannon'
+import KnightsExtolment from './sheets/KnightsExtolment'
 import KrakensCradle from './sheets/KrakensCradle'
 import LunarDecrescent from './sheets/LunarDecrescent'
 import LunarNoviluna from './sheets/LunarNoviluna'
 import LunarPleniluna from './sheets/LunarPleniluna'
+import LunarSemiluna from './sheets/LunarSemiluna'
 import MagneticStormAlpha from './sheets/MagneticStormAlpha'
 import MagneticStormBravo from './sheets/MagneticStormBravo'
 import MagneticStormCharlie from './sheets/MagneticStormCharlie'
@@ -43,6 +53,7 @@ import MarcatoDesire from './sheets/MarcatoDesire'
 import Metanukimorphosis from './sheets/Metanukimorphosis'
 import MyriadEclipse from './sheets/MyriadEclipse'
 import NeonFantasies from './sheets/NeonFantasies'
+import OdeOfResurrectedWings from './sheets/OdeOfResurrectedWings'
 import OriginalTransmorpher from './sheets/OriginalTransmorpher'
 import PeacekeeperSpecialized from './sheets/PeacekeeperSpecialized'
 import PracticedPerfection from './sheets/PracticedPerfection'
@@ -63,10 +74,12 @@ import SeveredInnocence from './sheets/SeveredInnocence'
 import SharpenedStinger from './sheets/SharpenedStinger'
 import SixShooter from './sheets/SixShooter'
 import SliceOfTime from './sheets/SliceOfTime'
+import SolExuvia from './sheets/SolExuvia'
 import SpectralGaze from './sheets/SpectralGaze'
 import SpringEmbrace from './sheets/SpringEmbrace'
 import StarlightEngine from './sheets/StarlightEngine'
 import StarlightEngineReplica from './sheets/StarlightEngineReplica'
+import StarlightRiderFaceplate from './sheets/StarlightRiderFaceplate'
 import SteamOven from './sheets/SteamOven'
 import SteelCushion from './sheets/SteelCushion'
 import StreetSuperstar from './sheets/StreetSuperstar'
@@ -94,13 +107,19 @@ const data: TagMapNodeEntries[] = [
   BellicoseBlaze,
   BigCylinder,
   BlazingLaurel,
+  BloodmarrowCoffer,
+  BoisterousEchoes,
   BoxCutter,
   BunnyBand,
   CannonRotor,
+  CattyLuck,
   CauldronOfClarity,
+  ChiefSidekick,
   CinderCobalt,
   CloudcleaveRadiance,
   CordisGermina,
+  CrimsonMoonCasket,
+  CrimsonThirst,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
   DreamlitHearth,
@@ -109,6 +128,7 @@ const data: TagMapNodeEntries[] = [
   ElegantVanity,
   FlamemakerShaker,
   FlightOfFancy,
+  FrostfallSickle,
   FusionCompiler,
   GildedBlossom,
   GrillOWisp,
@@ -120,11 +140,14 @@ const data: TagMapNodeEntries[] = [
   IceJadeTeapot,
   IdentityBase,
   IdentityInflection,
+  JoyauDore,
   KaboomTheCannon,
+  KnightsExtolment,
   KrakensCradle,
   LunarDecrescent,
   LunarNoviluna,
   LunarPleniluna,
+  LunarSemiluna,
   MagneticStormAlpha,
   MagneticStormBravo,
   MagneticStormCharlie,
@@ -132,6 +155,7 @@ const data: TagMapNodeEntries[] = [
   Metanukimorphosis,
   MyriadEclipse,
   NeonFantasies,
+  OdeOfResurrectedWings,
   OriginalTransmorpher,
   PeacekeeperSpecialized,
   PracticedPerfection,
@@ -152,10 +176,12 @@ const data: TagMapNodeEntries[] = [
   SharpenedStinger,
   SixShooter,
   SliceOfTime,
+  SolExuvia,
   SpectralGaze,
   SpringEmbrace,
   StarlightEngine,
   StarlightEngineReplica,
+  StarlightRiderFaceplate,
   SteamOven,
   SteelCushion,
   StreetSuperstar,

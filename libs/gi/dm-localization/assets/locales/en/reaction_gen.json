@@ -1,0 +1,21 @@
+{
+  "superconduct": {
+    "name": "Superconduct",
+    "desc": {
+      "0": "When <strong>Cryo</strong> meets <strong>Electro</strong>, <strong>Superconduct</strong> occurs. Superconduct will deal <strong>AoE Cryo DMG</strong>, and will <strong>decrease the Physical RES of any beings affected by Superconduct</strong> for a time."
+    }
+  },
+  "stellarconduct": {
+    "name": "Stellar-Conduct",
+    "desc": {
+      "0": "When <strong>Cryo</strong> comes in contact with <strong>Electro</strong>, a special <strong>Stellar-Conduct</strong> reaction will be triggered if certain conditions are also met. When this happens, a Starlight Prism is generated, and the surrounding area turns into a wondrous Polestar Field for a short period of time.",
+      "1": "All characters inside the Polestar Field receive a Cryo and Electro DMG Bonus, and when opponents within the field are hit by Cryo or Electro attacks, the field will store the dissipating elemental energies and then completely release them every 4s. This further increases the aforementioned DMG Bonus and also increases the Base Stellar-Conduct DMG coefficient for 4s.",
+      "2": "Additionally, opponents within the Polestar Field will also have their Physical RES lowered."
+    },
+    "fieldName": "Polestar Field",
+    "fieldDesc": {
+      "0": "When Cryo comes in contact with Electro, a special Stellar-Conduct reaction will be triggered if certain conditions are also met.",
+      "1": "This reaction creates a special Polestar Field. The more times opponents are hit by Cryo or Electro DMG within the Polestar Field, the higher the Cryo DMG, Electro DMG, and Stellar-Conduct DMG they take."
+    }
+  }
+}

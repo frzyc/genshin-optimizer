@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from 'fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { DM_PATH, HAKUSHIN_PATH } from './consts'
 
 export function readDMJSON(path: string) {

@@ -2,8 +2,8 @@ import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import type { Data } from '@genshin-optimizer/gi/wr'
 import { greaterEq, input, percent } from '@genshin-optimizer/gi/wr'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
+import type { SetEffectSheet } from '../IArtifactSheet'
 
 const key: ArtifactSetKey = 'ThunderingFury'
 const setHeader = setHeaderTemplate(key)
@@ -15,6 +15,7 @@ const superconduct_dmg_ = { ...overloaded_dmg_ }
 const hyperbloom_dmg_ = { ...overloaded_dmg_ }
 const aggravate_dmg_ = greaterEq(input.artSet.ThunderingFury, 4, percent(0.2))
 const lunarcharged_dmg_ = { ...aggravate_dmg_ }
+const stellarconduct_dmg_ = { ...aggravate_dmg_ }
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
@@ -25,6 +26,7 @@ export const data: Data = dataObjForArtifactSheet(key, {
     superconduct_dmg_,
     hyperbloom_dmg_,
     aggravate_dmg_,
+    stellarconduct_dmg_,
   },
 })
 
@@ -46,6 +48,9 @@ const sheet: SetEffectSheet = {
           },
           {
             node: superconduct_dmg_,
+          },
+          {
+            node: stellarconduct_dmg_,
           },
           {
             node: hyperbloom_dmg_,

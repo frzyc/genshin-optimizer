@@ -7,13 +7,19 @@ export const allWengineKeys = [
   'BellicoseBlaze',
   'BigCylinder',
   'BlazingLaurel',
+  'BloodmarrowCoffer',
+  'BoisterousEchoes',
   'BoxCutter',
   'BunnyBand',
   'CannonRotor',
+  'CattyLuck',
   'CauldronOfClarity',
+  'ChiefSidekick',
   'CinderCobalt',
   'CloudcleaveRadiance',
   'CordisGermina',
+  'CrimsonMoonCasket',
+  'CrimsonThirst',
   'DeepSeaVisitor',
   'DemaraBatteryMarkII',
   'DreamlitHearth',
@@ -22,6 +28,7 @@ export const allWengineKeys = [
   'ElegantVanity',
   'FlamemakerShaker',
   'FlightOfFancy',
+  'FrostfallSickle',
   'FusionCompiler',
   'GildedBlossom',
   'GrillOWisp',
@@ -33,11 +40,14 @@ export const allWengineKeys = [
   'IceJadeTeapot',
   'IdentityBase',
   'IdentityInflection',
+  'JoyauDore',
   'KaboomTheCannon',
+  'KnightsExtolment',
   'KrakensCradle',
   'LunarDecrescent',
   'LunarNoviluna',
   'LunarPleniluna',
+  'LunarSemiluna',
   'MagneticStormAlpha',
   'MagneticStormBravo',
   'MagneticStormCharlie',
@@ -45,6 +55,7 @@ export const allWengineKeys = [
   'Metanukimorphosis',
   'MyriadEclipse',
   'NeonFantasies',
+  'OdeOfResurrectedWings',
   'OriginalTransmorpher',
   'PeacekeeperSpecialized',
   'PracticedPerfection',
@@ -65,10 +76,12 @@ export const allWengineKeys = [
   'SharpenedStinger',
   'SixShooter',
   'SliceOfTime',
+  'SolExuvia',
   'SpectralGaze',
   'SpringEmbrace',
   'StarlightEngine',
   'StarlightEngineReplica',
+  'StarlightRiderFaceplate',
   'SteamOven',
   'SteelCushion',
   'StreetSuperstar',
@@ -110,6 +123,9 @@ export const allWengineSubStatKeys = [
   'anomMas_',
 ] as const
 export type WengineSubStatKey = (typeof allWengineSubStatKeys)[number]
+
+export const allWengineBaseStatKeys = ['atk', 'def'] as const
+export type WengineBaseStatKey = (typeof allWengineBaseStatKeys)[number]
 
 export const allPhaseKeys = [1, 2, 3, 4, 5] as const
 export type PhaseKey = (typeof allPhaseKeys)[number]

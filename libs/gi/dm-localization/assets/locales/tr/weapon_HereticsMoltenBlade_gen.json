@@ -1,0 +1,24 @@
+{
+  "name": "Kafirin Kızgın Kılıcı",
+  "description": {
+    "0": "Herkesin saygı duyduğu Ateş Tanrısı'yla ilk karşılaştığında bu silahı çekti, lakin silahı son kullanışının üzerinden epey vakit geçmişti."
+  },
+  "passiveName": "Yalnız Işığın Kutsaması",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakter Element Becerisini kullandığında \"İlk Işığın Parıltısı\" etkisini kazanır. Bu etki aktifken kuşanan karakterin katettiği mesafeyi kaydeder. Her saniye kuşanan karakter, önceki saniye katettiği mesafeye bağlı olarak <cryo>%18</cryo> ila <cryo>%36</cryo> Saldırı Bonusu kazanır. İlk Işığın Parıltısı 14sn sürer ve her 14 saniyede bir tetiklenebilir. Kuşanan karakter alandan ayrıldığında bu etki kaldırılır."
+    },
+    "1": {
+      "0": "Kuşanan karakter Element Becerisini kullandığında \"İlk Işığın Parıltısı\" etkisini kazanır. Bu etki aktifken kuşanan karakterin katettiği mesafeyi kaydeder. Her saniye kuşanan karakter, önceki saniye katettiği mesafeye bağlı olarak <cryo>%22,5</cryo> ila <cryo>%45</cryo> Saldırı Bonusu kazanır. İlk Işığın Parıltısı 14sn sürer ve her 14 saniyede bir tetiklenebilir. Kuşanan karakter alandan ayrıldığında bu etki kaldırılır."
+    },
+    "2": {
+      "0": "Kuşanan karakter Element Becerisini kullandığında \"İlk Işığın Parıltısı\" etkisini kazanır. Bu etki aktifken kuşanan karakterin katettiği mesafeyi kaydeder. Her saniye kuşanan karakter, önceki saniye katettiği mesafeye bağlı olarak <cryo>%27</cryo> ila <cryo>%54</cryo> Saldırı Bonusu kazanır. İlk Işığın Parıltısı 14sn sürer ve her 14 saniyede bir tetiklenebilir. Kuşanan karakter alandan ayrıldığında bu etki kaldırılır."
+    },
+    "3": {
+      "0": "Kuşanan karakter Element Becerisini kullandığında \"İlk Işığın Parıltısı\" etkisini kazanır. Bu etki aktifken kuşanan karakterin katettiği mesafeyi kaydeder. Her saniye kuşanan karakter, önceki saniye katettiği mesafeye bağlı olarak <cryo>%31,5</cryo> ila <cryo>%63</cryo> Saldırı Bonusu kazanır. İlk Işığın Parıltısı 14sn sürer ve her 14 saniyede bir tetiklenebilir. Kuşanan karakter alandan ayrıldığında bu etki kaldırılır."
+    },
+    "4": {
+      "0": "Kuşanan karakter Element Becerisini kullandığında \"İlk Işığın Parıltısı\" etkisini kazanır. Bu etki aktifken kuşanan karakterin katettiği mesafeyi kaydeder. Her saniye kuşanan karakter, önceki saniye katettiği mesafeye bağlı olarak <cryo>%36</cryo> ila <cryo>%72</cryo> Saldırı Bonusu kazanır. İlk Işığın Parıltısı 14sn sürer ve her 14 saniyede bir tetiklenebilir. Kuşanan karakter alandan ayrıldığında bu etki kaldırılır."
+    }
+  }
+}

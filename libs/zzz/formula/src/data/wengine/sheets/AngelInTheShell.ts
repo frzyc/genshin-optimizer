@@ -57,14 +57,28 @@ const sheet = registerWengine(
       'anomaly',
       cmpSpecialtyAndEquipped(
         key,
-        cmpSpecialtyAndEquipped(
-          key,
-          onFieldOrSpecialUsed.ifOn(
-            cmpEq(
-              own.char.attribute,
-              'ether',
-              percent(subscript(phase, dm.anomaly_dmg_))
-            )
+        onFieldOrSpecialUsed.ifOn(
+          cmpEq(
+            own.char.attribute,
+            'ether',
+            percent(subscript(phase, dm.anomaly_dmg_))
+          )
+        )
+      )
+    ),
+    showSpecialtyAndEquipped(key)
+  ),
+  registerBuff(
+    'cond_disorder_dmg_',
+    ownBuff.combat.buff_.addWithDmgType(
+      'disorder',
+      cmpSpecialtyAndEquipped(
+        key,
+        onFieldOrSpecialUsed.ifOn(
+          cmpEq(
+            own.char.attribute,
+            'ether',
+            percent(subscript(phase, dm.anomaly_dmg_))
           )
         )
       )

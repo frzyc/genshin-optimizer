@@ -1,0 +1,44 @@
+{
+  "name": "Borboleta Transformadora",
+  "description": {
+    "0": "Uma espada longa repleta de luz e cor, e tão leve quanto uma borboleta ao ser empunhada. Foi usada um dia por alguém para romper laços."
+  },
+  "passiveName": "Dança Livre do Casulo",
+  "passiveDescription": {
+    "0": {
+      "0": "Cada vez que o portador lançar sua Habilidade Elemental ou o Supremo, obtém um desses efeitos na seguinte ordem:",
+      "1": "Lealdade do Vento: aumenta o Dano CRIT do portador em <cryo>56%</cryo> por 10s.",
+      "2": "Traição do Vento: aumenta o Dano de Redemoinho Estelar do portador em <cryo>36%</cryo> por 10s.",
+      "3": "Riqueza do Vento: regenera <cryo>5</cryo> de Energia Elemental para o portador. É possível regenerar até <cryo>5</cryo> de Energia Elemental a cada 4s dessa forma.",
+      "4": "Esse efeito será removido e sua ordem será redefinida quando o portador sair de campo."
+    },
+    "1": {
+      "0": "Cada vez que o portador lançar sua Habilidade Elemental ou o Supremo, obtém um desses efeitos na seguinte ordem:",
+      "1": "Lealdade do Vento: aumenta o Dano CRIT do portador em <cryo>72%</cryo> por 10s.",
+      "2": "Traição do Vento: aumenta o Dano de Redemoinho Estelar do portador em <cryo>45%</cryo> por 10s.",
+      "3": "Riqueza do Vento: regenera <cryo>5.5</cryo> de Energia Elemental para o portador. É possível regenerar até <cryo>5.5</cryo> de Energia Elemental a cada 4s dessa forma.",
+      "4": "Esse efeito será removido e sua ordem será redefinida quando o portador sair de campo."
+    },
+    "2": {
+      "0": "Cada vez que o portador lançar sua Habilidade Elemental ou o Supremo, obtém um desses efeitos na seguinte ordem:",
+      "1": "Lealdade do Vento: aumenta o Dano CRIT do portador em <cryo>88%</cryo> por 10s.",
+      "2": "Traição do Vento: aumenta o Dano de Redemoinho Estelar do portador em <cryo>54%</cryo> por 10s.",
+      "3": "Riqueza do Vento: regenera <cryo>6</cryo> de Energia Elemental para o portador. É possível regenerar até <cryo>6</cryo> de Energia Elemental a cada 4s dessa forma.",
+      "4": "Esse efeito será removido e sua ordem será redefinida quando o portador sair de campo."
+    },
+    "3": {
+      "0": "Cada vez que o portador lançar sua Habilidade Elemental ou o Supremo, obtém um desses efeitos na seguinte ordem:",
+      "1": "Lealdade do Vento: aumenta o Dano CRIT do portador em <cryo>104%</cryo> por 10s.",
+      "2": "Traição do Vento: aumenta o Dano de Redemoinho Estelar do portador em <cryo>63%</cryo> por 10s.",
+      "3": "Riqueza do Vento: regenera <cryo>6.5</cryo> de Energia Elemental para o portador. É possível regenerar até <cryo>6.5</cryo> de Energia Elemental a cada 4s dessa forma.",
+      "4": "Esse efeito será removido e sua ordem será redefinida quando o portador sair de campo."
+    },
+    "4": {
+      "0": "Cada vez que o portador lançar sua Habilidade Elemental ou o Supremo, obtém um desses efeitos na seguinte ordem:",
+      "1": "Lealdade do Vento: aumenta o Dano CRIT do portador em <cryo>120%</cryo> por 10s.",
+      "2": "Traição do Vento: aumenta o Dano de Redemoinho Estelar do portador em <cryo>72%</cryo> por 10s.",
+      "3": "Riqueza do Vento: regenera <cryo>7</cryo> de Energia Elemental para o portador. É possível regenerar até <cryo>7</cryo> de Energia Elemental a cada 4s dessa forma.",
+      "4": "Esse efeito será removido e sua ordem será redefinida quando o portador sair de campo."
+    }
+  }
+}

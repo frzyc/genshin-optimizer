@@ -4,8 +4,8 @@ import { allGenderKeys } from '@genshin-optimizer/sr/consts'
 import type { ISrObjectDescription } from '@genshin-optimizer/sr/srod'
 import { z } from 'zod'
 import type { ISroDatabase } from '../../Interfaces'
-import { DataEntry } from '../DataEntry'
 import type { SroDatabase } from '../Database'
+import { DataEntry } from '../DataEntry'
 import type { ImportResult } from '../exim'
 
 // Schema with defaults - single source of truth

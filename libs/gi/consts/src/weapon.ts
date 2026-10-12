@@ -1,3 +1,4 @@
+import { clamp } from '@genshin-optimizer/common/util'
 import { type AscensionKey, type RarityKey, validateLevelAsc } from './common'
 
 export const allWeaponTypeKeys = [
@@ -15,12 +16,15 @@ export const allWeaponSwordKeys = [
   'AquilaFavonia',
   'AthameArtis',
   'Azurelight',
+  'BeyondTheChrysalis',
   'BlackcliffLongsword',
   'CalamityOfEshu',
   'CinnabarSpindle',
   'CoolSteel',
   'DarkIronSword',
   'DullBlade',
+  'Emberwell',
+  'ExaiphanesBlade',
   'FavoniusSword',
   'FesteringDesire',
   'FilletBlade',
@@ -30,6 +34,7 @@ export const allWeaponSwordKeys = [
   'FreedomSworn',
   'HaranGeppakuFutsu',
   'HarbingerOfDawn',
+  'HereticsMoltenBlade',
   'IronSting',
   'KagotsurubeIsshin',
   'KeyOfKhajNisut',
@@ -38,6 +43,7 @@ export const allWeaponSwordKeys = [
   'LionsRoar',
   'MistsplitterReforged',
   'MoonweaversDawn',
+  'NewBough',
   'PeakPatrolSong',
   'PrimordialJadeCutter',
   'PrototypeRancour',
@@ -45,6 +51,7 @@ export const allWeaponSwordKeys = [
   'SacrificialSword',
   'SapwoodBlade',
   'SerenitysCall',
+  'SilverLight',
   'SilverSword',
   'SkyriderSword',
   'SkywardBlade',
@@ -60,6 +67,7 @@ export const allWeaponSwordKeys = [
   'ToukabouShigure',
   'TravelersHandySword',
   'UrakuMisugiri',
+  'WhitelakeFrostfeather',
   'WolfFang',
   'XiphosMoonlight',
 ] as const
@@ -67,9 +75,11 @@ export type WeaponSwordKey = (typeof allWeaponSwordKeys)[number]
 
 export const allWeaponClaymoreKeys = [
   'Akuoumaru',
+  'ATeaspoonOfTranscendence',
   'AThousandBlazingSuns',
   'BeaconOfTheReedSea',
   'BlackcliffSlasher',
+  'BladeOfAtonement',
   'BloodtaintedGreatsword',
   'DebateClub',
   'EarthShaker',
@@ -78,6 +88,7 @@ export const allWeaponClaymoreKeys = [
   'FerrousShadow',
   'FlameForgedInsight',
   'ForestRegalia',
+  'ForgedByTheGoldenMelody',
   'FruitfulHook',
   'GestOfTheMightyWolf',
   'KatsuragikiriNagamasa',
@@ -122,12 +133,14 @@ export const allWeaponPolearmKeys = [
   'CrimsonMoonsSemblance',
   'Deathmatch',
   'DialoguesOfTheDesertSages',
+  'DisasterAndRemorse',
   'DragonsBane',
   'DragonspineSpear',
   'EngulfingLightning',
   'FavoniusLance',
   'FootprintOfTheRainbow',
   'FracturedHalo',
+  'Frostbreath',
   'Halberd',
   'IronPoint',
   'KitainCrossSpear',
@@ -144,6 +157,7 @@ export const allWeaponPolearmKeys = [
   'RoyalSpear',
   'SacrificersStaff',
   'SkywardSpine',
+  'SongOfTheVigil',
   'StaffOfHoma',
   'StaffOfTheScarletSands',
   'SymphonistOfScents',
@@ -161,9 +175,11 @@ export const allWeaponBowKeys = [
   'AquaSimulacra',
   'AstralVulturesCrimsonPlumage',
   'BlackcliffWarbow',
+  'BreezeborneRefrain',
   'ChainBreaker',
   'Cloudforged',
   'CompoundBow',
+  'CovenantOfFrostAndSnow',
   'ElegyForTheEnd',
   'EndOfTheLine',
   'FadingTwilight',
@@ -174,6 +190,7 @@ export const allWeaponBowKeys = [
   'HuntersBow',
   'HuntersPath',
   'IbisPiercer',
+  'JadeVista',
   'KingsSquire',
   'Messenger',
   'MitternachtsWaltz',
@@ -207,6 +224,7 @@ export const allWeaponBowKeys = [
 export type WeaponBowKey = (typeof allWeaponBowKeys)[number]
 
 export const allWeaponCatalystKeys = [
+  'AngelosHeptades',
   'ApprenticesNotes',
   'AshGravenDrinkingHorn',
   'AThousandFloatingDreams',
@@ -214,9 +232,11 @@ export const allWeaponCatalystKeys = [
   'BlackcliffAgate',
   'BlackmarrowLantern',
   'CashflowSupervision',
+  'ClashOfKings',
   'CranesEchoingCall',
   'DawningFrost',
   'DodocoTales',
+  'EchoesOfTheHeart',
   'EmeraldOrb',
   'EtherlightSpindlelute',
   'EverlastingMoonglow',
@@ -226,6 +246,7 @@ export const allWeaponCatalystKeys = [
   'Frostbearer',
   'FruitOfFulfillment',
   'HakushinRing',
+  'HymnOfTheMaelstrom',
   'JadefallsSplendor',
   'KagurasVerity',
   'LostPrayerToTheSacredWinds',
@@ -258,6 +279,7 @@ export const allWeaponCatalystKeys = [
   'WanderingEvenstar',
   'WaveridingWhirl',
   'WineAndSong',
+  'WintersHeavyHeart',
 ] as const
 export type WeaponCatalystKey = (typeof allWeaponCatalystKeys)[number]
 
@@ -306,12 +328,14 @@ export const allWeaponSubstatKeys = [
 ] as const
 export type WeaponSubstatKey = (typeof allWeaponSubstatKeys)[number]
 
-// Weapon global max level constant
-const weaponGlobalMaxLevel = 90
-
 export function validateWeaponLevelAsc(
   level: number,
-  ascension: AscensionKey
+  ascension: AscensionKey,
+  rarity: RarityKey
 ): { level: number; ascension: AscensionKey } {
-  return validateLevelAsc(level, ascension, weaponGlobalMaxLevel)
+  const maxLvl = weaponMaxLevel[rarity]
+  const maxAsc = weaponMaxAscension[rarity]
+  const clampedLevel = clamp(level, 1, maxLvl)
+  const clampedAscension = clamp(ascension, 0, maxAsc) as AscensionKey
+  return validateLevelAsc(clampedLevel, clampedAscension, maxLvl)
 }

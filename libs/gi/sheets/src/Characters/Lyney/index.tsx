@@ -19,7 +19,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -27,6 +26,7 @@ import {
   healNodeTalent,
   plungingDmgNodes,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet.d'
 
 const key: CharacterKey = 'Lyney'
 const skillParam_gen = allStats.char.skillParam[key]
@@ -187,7 +187,9 @@ const dmgFormulas = {
       input.total.hp
     ),
     pyrotechnic: dmgNode('atk', dm.charged.pyrotechnicDmg, 'charged', hat_addl),
-    spiritbreath: dmgNode('atk', dm.charged.thornDmg, 'charged', hit_ele_pyro),
+    spiritbreath: dmgNode('atk', dm.charged.thornDmg, 'charged', {
+      hit: { ele: constant('pyro'), reaction: constant('') },
+    }),
   },
   plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
@@ -283,12 +285,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.aimed, {
-            name: ct.chg(`auto.skillParams.6`),
+            name: ct.chg('auto.skillParams.6'),
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.fullyAimed, {
-            name: ct.chg(`auto.skillParams.7`),
+            name: ct.chg('auto.skillParams.7'),
           }),
         },
         {
@@ -376,7 +378,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.dmg, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
@@ -411,12 +413,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.dmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.fireworkDmg, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {

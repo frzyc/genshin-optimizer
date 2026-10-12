@@ -2,11 +2,11 @@ import type { IDisc } from '@genshin-optimizer/zzz/zood'
 import { validateDisc } from '@genshin-optimizer/zzz/zood'
 import type {
   ICachedDisc,
-  IZZZDatabase,
   IZenlessObjectDescription,
+  IZZZDatabase,
 } from '../../Interfaces'
-import { DataManager } from '../DataManager'
 import type { ZzzDatabase } from '../Database'
+import { DataManager } from '../DataManager'
 import type { ImportResult } from '../exim'
 export class DiscDataManager extends DataManager<
   string,

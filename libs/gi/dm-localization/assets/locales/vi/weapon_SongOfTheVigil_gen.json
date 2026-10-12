@@ -1,0 +1,24 @@
+{
+  "name": "Ca Dao Hy Vọng",
+  "description": {
+    "0": "Trường thương từng bảo vệ chúng sinh, nay lại đóng vai trò quan trọng trong những trò chơi nhập vai của lũ trẻ."
+  },
+  "passiveName": "Hợp Âm Ngày Cũ",
+  "passiveDescription": {
+    "0": {
+      "0": "Sau khi kích hoạt phản ứng nguyên tố, người trang bị sẽ hồi phục <cryo>4</cryo> điểm Năng Lượng Nguyên Tố, hiệu quả này mỗi 9s tối đa kích hoạt một lần; Kích hoạt phản ứng Tinh Tú Lấp Lánh sẽ tăng <cryo>20%</cryo> Tấn Công cho người trang bị trong 12s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "1": {
+      "0": "Sau khi kích hoạt phản ứng nguyên tố, người trang bị sẽ hồi phục <cryo>5</cryo> điểm Năng Lượng Nguyên Tố, hiệu quả này mỗi 9s tối đa kích hoạt một lần; Kích hoạt phản ứng Tinh Tú Lấp Lánh sẽ tăng <cryo>25%</cryo> Tấn Công cho người trang bị trong 12s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "2": {
+      "0": "Sau khi kích hoạt phản ứng nguyên tố, người trang bị sẽ hồi phục <cryo>6</cryo> điểm Năng Lượng Nguyên Tố, hiệu quả này mỗi 9s tối đa kích hoạt một lần; Kích hoạt phản ứng Tinh Tú Lấp Lánh sẽ tăng <cryo>30%</cryo> Tấn Công cho người trang bị trong 12s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "3": {
+      "0": "Sau khi kích hoạt phản ứng nguyên tố, người trang bị sẽ hồi phục <cryo>7</cryo> điểm Năng Lượng Nguyên Tố, hiệu quả này mỗi 9s tối đa kích hoạt một lần; Kích hoạt phản ứng Tinh Tú Lấp Lánh sẽ tăng <cryo>35%</cryo> Tấn Công cho người trang bị trong 12s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "4": {
+      "0": "Sau khi kích hoạt phản ứng nguyên tố, người trang bị sẽ hồi phục <cryo>8</cryo> điểm Năng Lượng Nguyên Tố, hiệu quả này mỗi 9s tối đa kích hoạt một lần; Kích hoạt phản ứng Tinh Tú Lấp Lánh sẽ tăng <cryo>40%</cryo> Tấn Công cho người trang bị trong 12s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    }
+  }
+}

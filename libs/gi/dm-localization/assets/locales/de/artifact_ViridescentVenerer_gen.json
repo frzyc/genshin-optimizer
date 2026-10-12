@@ -2,7 +2,7 @@
   "setName": "Grünlicher Schatten",
   "setEffects": {
     "2": "Erhöht den Anemo-Schaden um 15 %.",
-    "4": "Erhöht den mit Verwirbelungen verursachten Schaden um 60 %. Verringert den dem jeweiligen Element in der Verwirbelung entsprechenden WDS des betroffenen Gegners 10 s lang um 40 %."
+    "4": "Erhöht den durch die Reaktion Verwirbelung verursachten Schaden um 60 % sowie den durch die Reaktion Stellar-Verwirbelung verursachten Schaden um 20 %. Verringert den dem jeweiligen Elementartyp der Verwirbelung entsprechenden WDS des betroffenen Gegners 10 s lang um 40 %. Verringert, wenn eine Stellar-Verwirbelung auf einen Gegner ausgelöst wird, dessen Kryo-WDS um 40 %. WDS-Verringerungen desselben Elementartyps können nicht gestapelt werden."
   },
   "pieces": {
     "flower": {

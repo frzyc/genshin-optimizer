@@ -12,6 +12,13 @@
       "7": "<cryo>Nguyên Tố Băng</cryo>: Sát Thương Bạo Kích tăng 20%."
     }
   },
+  "10050002": {
+    "name": "Giá Rét Huy Hoàng",
+    "description": {
+      "0": "Khi <strong>Hàn Tinh Lạnh Lẽo</strong> ngưng kết bởi Nhà Lữ Hành phóng Tinh Thể Băng trúng kẻ địch, hoặc sau khi mở khóa thiên phú <strong>Tầng Băng Dị Bang</strong> và thực hiện <strong>Trọng Kích - Băng Kết</strong>, sẽ nhận được hiệu quả đặc biệt này. Hiệu quả này tối đa cộng dồn 8 tầng.",
+      "1": "Khi thi triển Kỹ Năng Nộ <strong>Băng Tụ Sắc Bén</strong>, Nhà Lữ Hành sẽ tiêu hao toàn bộ số tầng <strong>Giá Rét Huy Hoàng</strong> để tăng sát thương gây ra bởi Kỹ Năng Nộ lần này. Nếu số tầng tiêu hao là 8, sẽ còn tăng thêm số lần gây sát thương của Kỹ Năng Nộ lần này."
+    }
+  },
   "11120001": {
     "name": "Chế Độ Cấp Đông",
     "description": {
@@ -47,7 +54,7 @@
   "11130002": {
     "name": "Cứu Hộ Thiết Yếu",
     "description": {
-      "0": "Giới hạn 150 điểm. Dựa trên điểm Cứu Hộ Thiết Yếu mà Ifa sở hữu, mỗi 1 điểm sẽ tăng 1.5% sát thương phản ứng Khuếch Tán và Điện Cảm cho nhân vật trong đội ở gần, sát thương phản ứng Nguyệt-Điện Cảm tăng 0.2%. Cứu Hộ Thiết Yếu sẽ bị xóa khi Ifa kết thúc trạng thái Dạ Hồn Chúc Phúc."
+      "0": "Giới hạn 150 điểm. Dựa trên điểm Cứu Hộ Thiết Yếu mà Ifa sở hữu, mỗi 1 điểm sẽ tăng 1.5% sát thương phản ứng Khuếch Tán và Điện Cảm cho nhân vật trong đội ở gần, sát thương phản ứng Nguyệt-Điện Cảm tăng 0.2%, sát thương phản ứng Tinh-Khuếch Tán tăng 0.24%. Cứu Hộ Thiết Yếu sẽ bị xóa khi Ifa kết thúc trạng thái Dạ Hồn Chúc Phúc."
     }
   },
   "11130003": {
@@ -97,7 +104,7 @@
   "11130007": {
     "name": "Lý Luận Vượt Nguyên Lý",
     "description": {
-      "0": "Khi nhân vật trong đội gần đó kích hoạt phản ứng Đóng Băng, Siêu Dẫn, Khuếch Tán Nguyên Tố Băng hoặc Kết Tinh Nguyên Tố Băng lên kẻ địch, sẽ tạo ra một Vết Nứt Hư Không gần kẻ địch. Hiệu quả này mỗi 2.5s tối đa kích hoạt một lần, trong trận chỉ tồn tại tối đa 3 Vết Nứt Hư Không do bản thân Skirk tạo ra.",
+      "0": "Khi nhân vật trong đội gần đó kích hoạt phản ứng Đóng Băng, Siêu Dẫn, Tinh-Siêu Dẫn, Khuếch Tán Nguyên Tố Băng, Tinh-Khuếch Tán hoặc Kết Tinh Nguyên Tố Băng lên kẻ địch, sẽ tạo ra một Vết Nứt Hư Không gần kẻ địch. Hiệu quả này mỗi 2.5s tối đa kích hoạt một lần, trong trận chỉ tồn tại tối đa 3 Vết Nứt Hư Không do bản thân Skirk tạo ra.",
       "1": "<br/>",
       "2": "Skirk có thể thông qua những cách sau để hấp thụ Vết Nứt Hư Không trong phạm vi nhất định gần đó:",
       "3": [
@@ -348,6 +355,40 @@
       "3": "Ngoài ra, Varka có thể tiêu hao số lần khả dụng của <strong>Tứ Phong Trỗi Dậy</strong> để thực hiện Trọng Kích đặc biệt <strong>Trời Xanh Cắn Xé</strong> không tiêu hao thể lực, gây 2 lần sát thương nguyên tố tương ứng không thể bị thay thế từ trọng kiếm tay phải của Varka và 2 lần <anemo>Sát Thương Nguyên Tố Phong</anemo>."
     }
   },
+  "11290001": {
+    "name": "Kỳ Mưu",
+    "description": {
+      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố <strong>Kỳ Binh Quỷ Xuất</strong>, Lohen sẽ chuyển sang trạng thái này. Trạng thái Kỳ Mưu có đặc tính sau:",
+      "1": [
+        "Tấn Công Thường, Trọng Kích và Tấn Công Khi Đáp của Lohen sẽ chuyển sang gây <cryo>Sát Thương Nguyên Tố Băng</cryo> không thể bị thay thế.",
+        "Khi Lohen Tấn Công Thường hoặc Trọng Kích trúng kẻ địch, sẽ tích lũy <strong>Niềm Vui</strong> đặc biệt cho Lohen, dùng để thi triển Kỹ Năng Nguyên Tố đặc biệt <strong>Khắc Cốt Ghi Tâm</strong>. Trong trạng thái <strong>Kỳ Mưu</strong> tối đa thi triển 3 lần <strong>Khắc Cốt Ghi Tâm</strong>, sau đó sẽ không được nhận <strong>Niềm Vui</strong> nữa.",
+        "Khi nhân vật khác trong đội ở gần gây sát thương, sẽ tích lũy <strong>Nỗ Lực Chiến Thắng</strong> đặc biệt cho Lohen, dùng để tăng sát thương Kỹ Năng Nguyên Tố đặc biệt <strong>Khắc Cốt Ghi Tâm</strong>.",
+        "Khi Lohen rời trận, cũng sẽ kết thúc trạng thái Kỳ Mưu. Khi trạng thái Kỳ Mưu kết thúc, <strong>Niềm Vui</strong> và <strong>Nỗ Lực Chiến Thắng</strong> cũng sẽ bị xóa."
+      ]
+    }
+  },
+  "11290002": {
+    "name": "Khắc Cốt Ghi Tâm",
+    "description": {
+      "0": "Sau khi Lohen tích lũy <strong>Niềm Vui</strong> đến giới hạn, sẽ có thể thi triển Kỹ Năng Nguyên Tố đặc biệt này.",
+      "1": "Sau khi trúng kẻ địch sẽ tiêu hao toàn bộ <strong>Niềm Vui</strong> và <strong>Nỗ Lực Chiến Thắng</strong>, gây <cryo>Sát Thương Nguyên Tố Băng</cryo> và đồng thời tăng sát thương lần này dựa trên <strong>Nỗ Lực Chiến Thắng</strong> đã tiêu hao."
+    }
+  },
+  "11290003": {
+    "name": "Niềm Vui",
+    "description": {
+      "0": "Trong trạng thái Kỳ Mưu, khi Lohen Tấn Công Thường hoặc Trọng Kích trúng kẻ địch, sẽ nhận được 0.381298 điểm <strong>Niềm Vui</strong>, giới hạn 100 điểm.",
+      "1": "Mỗi 0.1s tối đa nhận một lần <strong>Niềm Vui</strong>. Sau khi tích lũy <strong>Niềm Vui</strong> đến giới hạn, Kỹ Năng Nguyên Tố <strong>Kỳ Binh Quỷ Xuất</strong> của Lohen sẽ được thay thế bằng Kỹ Năng Nguyên Tố đặc biệt <strong>Khắc Cốt Ghi Tâm</strong>."
+    }
+  },
+  "11290004": {
+    "name": "Nỗ Lực Chiến Thắng",
+    "description": {
+      "0": "Trong trạng thái Kỳ Mưu, khi nhân vật khác trong đội ở gần gây sát thương, sẽ cung cấp tài nguyên đặc biệt này cho Lohen, giới hạn 100 điểm.",
+      "1": "Trong thời gian duy trì trạng thái Kỳ Mưu, khi nhân vật khác trong đội ở gần gây sát thương, nếu sát thương lần này không thấp hơn 55.2868% Tấn Công cơ bản của Lohen, thì sẽ tích lũy 0.829302 <strong>Nỗ Lực Chiến Thắng</strong> cho Lohen. Nếu ngược lại, thì sẽ tích lũy 1 <strong>Nỗ Lực Chiến Thắng</strong> cho Lohen.",
+      "2": "Cùng một nhân vật mỗi 0.1s tối đa tích lũy một lần <strong>Nỗ Lực Chiến Thắng</strong> cho Lohen."
+    }
+  },
   "11300001": {
     "name": "Lumi - Hình Thái Xuất Kích",
     "description": {
@@ -363,6 +404,177 @@
       "9": "<strong>Hình Thái Thông Thường</strong>",
       "10": "Tuy không ghê gớm bằng các hình thái khác, nhưng cũng vẫn rất lợi hại.",
       "11": "Lumi sẽ dùng <strong>Đánh Đập Dồn Dập</strong> với giãn cách dài hơn để liên tục tấn công kẻ địch ở gần, mỗi lần tấn công sẽ gây 2 lần <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo>."
+    }
+  },
+  "11310001": {
+    "name": "Ân Huệ Khiêm Nhường",
+    "description": {
+      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố <strong>Khải Huyền - Ánh Sáng Chưa Hiển Hiện</strong>, Nicole sẽ ban hiệu quả này cho tất cả nhân vật trong đội ở gần: Tăng Tấn Công dựa trên Tấn Công của Nicole.",
+      "1": "Sau khi đạt điều kiện cụ thể, hiệu quả <strong>Ân Huệ Khiêm Nhường</strong> sẽ nâng cấp thành <strong>Chỉ Dẫn Thần Thánh</strong>, tiếp tục tăng thêm Tấn Công."
+    }
+  },
+  "11310002": {
+    "name": "Chỉ Dẫn Thần Thánh",
+    "description": {
+      "0": "Hiệu quả <strong>Ân Huệ Khiêm Nhường</strong> sau khi nâng cấp, sẽ tăng thêm 300 điểm Tấn Công.",
+      "1": "Sau khi mở khóa Thiên Phú Đột Phá \"Sự Sẻ Chia\" và đáp ứng điều kiện \"Quan Sát\" bất kỳ trong đó, <strong>Ân Huệ Khiêm Nhường</strong> sẽ được nâng cấp thành <strong>Chỉ Dẫn Thần Thánh</strong> trong thời gian duy trì còn lại:",
+      "2": [
+        "Nhân vật được Quan Sát liên tục ở trong trận trên 3s.",
+        "Nhân vật được Quan Sát là nhân vật Hexerei."
+      ],
+      "3": "<br/>",
+      "4": "Ngoài ra, sau khi mở khóa Thiên Phú Đột Phá \"Sự Hướng Thiện\", sau khi Sát Thương Nguyên Tố của nhân vật ra trận hiện tại trong đội ở gần đánh trúng kẻ địch, <strong>Ân Huệ Khiêm Nhường</strong> mà bản thân Nicole sở hữu cũng sẽ nâng cấp thành <strong>Chỉ Dẫn Thần Thánh</strong> trong vòng 8s.",
+      "5": "<br/>",
+      "6": "Ngoài Nicole, <strong>Chỉ Dẫn Thần Thánh</strong> mà nhân vật khác sở hữu sẽ khôi phục về trạng thái <strong>Ân Huệ Khiêm Nhường</strong> khi họ rời trận."
+    }
+  },
+  "11320001": {
+    "name": "Búa Săn Tai Ương",
+    "description": {
+      "0": "Bạn đồng hành săn lùng ma nữ rất đáng tin cậy! Có thể phát sinh chuyển hóa nguyên tố trong điều kiện nhất định, tất cả sát thương vốn do Búa Săn Tai Ương gây ra đều sẽ chuyển sang gây sát thương nguyên tố tương ứng lên kẻ địch.",
+      "1": "Prune có thể thông qua những cách thức sau để triệu hồi Búa Săn Tai Ương chuyển hóa nguyên tố:",
+      "2": [
+        "Trong một khoảng thời gian nhất định sau khi Prune thi triển Kỹ Năng Nguyên Tố <strong>Reng Reng - Âm Thanh Săn Ma</strong> và kích hoạt phản ứng Khuếch Tán hoặc Tinh-Khuếch Tán lên kẻ địch, có thể thi triển Kỹ Năng Nguyên Tố đặc biệt <strong>Leng Keng - Trừng Phạt Ác Ma</strong>. Khi thi triển Kỹ Năng Nguyên Tố đặc biệt này, Búa Săn Tai Ương sẽ chuyển sang loại nguyên tố khác đã tham gia phản ứng Khuếch Tán hoặc Tinh-Khuếch Tán trước đó.",
+        "Sau khi mở khóa Thiên Phú Đột Phá \"Phán Quyết Truy Cứu\", nếu Chuông Nhử Phù Thủy ở chế độ Săn Lùng kích hoạt phản ứng Khuếch Tán hoặc Tinh-Khuếch Tán lên kẻ địch, sẽ triệu hồi một Búa Săn Tai Ương chuyển hóa nguyên tố theo phản ứng Khuếch Tán hoặc Tinh-Khuếch Tán lần này để tấn công kẻ địch."
+      ]
+    }
+  },
+  "11320002": {
+    "name": "Phán Quyết Truy Cứu",
+    "description": {
+      "0": "Trong Kỹ Năng Nộ <strong>Chuông Reo - Thời Khắc Săn Ma</strong>, sau khi Chuông Nhử Phù Thủy ở chế độ \"Săn Lùng\" gây sát thương lên kẻ địch, nếu lần sát thương này kích hoạt phản ứng Khuếch Tán, sẽ triệu hồi một <strong>Búa Săn Tai Ương</strong> được chuyển hóa nguyên tố theo phản ứng Khuếch Tán lần này ở trước mặt kẻ địch và đập xuống, gây Sát Thương Nguyên Tố tương ứng. Sát thương này được xem là sát thương Kỹ Năng Nộ."
+    }
+  },
+  "11320003": {
+    "name": "Tiếng Chuông Cộng Hưởng",
+    "description": {
+      "0": "Sau khi Prune dùng <strong>Búa Săn Tai Ương</strong> đã chuyển hóa nguyên tố đánh trúng kẻ địch, nhân vật khác trong đội ở gần sẽ nhận được hiệu quả Tiếng Chuông Khích Lệ: Dựa trên Tấn Công của Prune, tăng sát thương gây ra bởi đòn tấn công."
+    }
+  },
+  "11330001": {
+    "name": "Giải Mã",
+    "description": {
+      "0": "Khi thực hiện Trọng Kích, Fagio sẽ chuyển sang chế độ này.",
+      "1": "Khi trong chế độ này, Fagio sẽ thực hiện bắn phá kẻ địch phía trước và phóng Tia Ngưng Tụ theo chu kỳ, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>.",
+      "2": "<strong>Tỏa Sáng: Tinh Tú Lấp Lánh</strong>: Tia Ngưng Tụ chuyển sang gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> được xem là sát thương phản ứng Tinh Tú Lấp Lánh tương ứng."
+    }
+  },
+  "11330002": {
+    "name": "Công Suất Giải Mã",
+    "description": {
+      "0": "Khi trong chế độ <strong>Giải Mã</strong>, <strong>Công Suất Giải Mã</strong> của Fagio sẽ liên tục tăng lên. Khi Công Suất Giải Mã đạt đến giới hạn, sẽ không thể duy trì hoặc vào lại chế độ Giải Mã."
+    }
+  },
+  "11330003": {
+    "name": "Vùng Trục Sao",
+    "description": {
+      "0": "Khi kích hoạt phản ứng Tinh-Siêu Dẫn, khu vực lân cận sẽ tạm thời chuyển thành <strong>Vùng Trục Sao</strong>. Khi ở trong Vùng Trục Sao, nhân vật chỉ định sẽ tiến vào trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>, khiến các kỹ năng khác nhau lần lượt nhận được hiệu quả cường hóa tương ứng."
+    }
+  },
+  "11400001": {
+    "name": "Hát Dẫn",
+    "description": {
+      "0": "Khi Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của nhân vật ra trận hiện tại trong đội bản thân gây ra Sát Thương Nguyên Tố <hydro>Thủy</hydro> hoặc <cryo>Băng</cryo>, sẽ tiêu hao một tầng \"Hát Dẫn\" để tăng sát thương gây ra. Nếu trong trận có Cụm Gió Phiêu Du, hoặc trong vòng 5s sau khi Cụm Gió Phiêu Du phát nổ, thì sẽ đổi thành khi nhân vật gây sát thương phản ứng Tinh-Khuếch Tán mới có thể kích hoạt hiệu quả trên.",
+      "1": "Dựa trên phần Giới Hạn HP vượt quá 40000 của Vodyanitsa, mỗi 1000 điểm Giới Hạn HP đều sẽ khiến sát thương phản ứng Tinh-Khuếch Tán trong hiệu quả trên tăng 260 điểm, Sát Thương Nguyên Tố <hydro>Thủy</hydro> và <cryo>Băng</cryo> tăng 140 điểm. Thông qua cách này, tối đa khiến sát thương phản ứng Tinh-Khuếch Tán tăng 6500 điểm, Sát Thương Nguyên Tố <hydro>Thủy</hydro> và <cryo>Băng</cryo> tăng 3500 điểm."
+    }
+  },
+  "11400002": {
+    "name": "Hợp Xướng",
+    "description": {
+      "0": "Do nhân vật dự bị trong đội hoặc nhân vật khác trong đội ở gần kích hoạt (không phải nhân vật ra trận hiện tại trong đội bản thân), hiệu quả giống với \"Hát Dẫn\"."
+    }
+  },
+  "11430001": {
+    "name": "Vũ Trang Lướt Gió",
+    "description": {
+      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố <strong>Sách Lược - Nghệ Thuật Chiến Thắng</strong>, Vesna sẽ chuyển sang chế độ này. Chế độ này tối đa duy trì 15s và mang đặc tính sau:",
+      "1": [
+        "Tăng khả năng Kháng Gián Đoạn của Vesna.",
+        "Khi Vesna thực hiện Tấn Công Thường, Trọng Kích và Tấn Công Khi Đáp, sẽ chuyển sang gây <anemo>Sát Thương Nguyên Tố Phong</anemo> không thể bị thay thế, đồng thời triệu hồi Phong Linh hỗ trợ tấn công kẻ địch, gây thêm <anemo>Sát Thương Nguyên Tố Phong</anemo>. Mỗi lần triệu hồi Phong Linh, đều sẽ phục hồi một lượng <strong>Kiếm Khí</strong> nhất định cho Vesna.",
+        "Vesna có thể tiêu hao <strong>Kiếm Khí</strong> để thi triển Kỹ Năng Nguyên Tố đặc biệt <strong>Tường Phong Kiếm</strong>, gây <anemo>Sát Thương Nguyên Tố Phong</anemo> cho kẻ địch.",
+        "Khi kết thúc thời gian duy trì, hoặc sau khi thi triển 3 lần <strong>Tường Phong Kiếm</strong> cảnh giới cao nhất, Vesna sẽ thoát chế độ này và xóa toàn bộ <strong>Kiếm Khí</strong>."
+      ]
+    }
+  },
+  "11430002": {
+    "name": "Kiếm Khí",
+    "description": {
+      "0": "Năng lượng dùng để thi triển Kỹ Năng Nguyên Tố đặc biệt <strong>Tường Phong Kiếm</strong> trong chế độ <strong>Vũ Trang Lướt Gió</strong>.",
+      "1": "Vesna có thể thông qua những cách sau để tích lũy Kiếm Khí:",
+      "2": [
+        "Trong chế độ <strong>Vũ Trang Lướt Gió</strong>, thực hiện Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp, hoặc thi triển <strong>Tường Phong Kiếm - Biến Đổi</strong> trong Cung Mệnh <strong>Tấm Lòng Sắt Son</strong>.",
+        "Thi triển Kỹ Năng Nguyên Tố <strong>Sách Lược - Nghệ Thuật Chiến Thắng</strong>.",
+        "Thi triển Kỹ Năng Nộ <strong>Kính Lễ - Vì Nữ Hoàng Bệ Hạ</strong>."
+      ]
+    }
+  },
+  "11430003": {
+    "name": "Tường Phong Kiếm",
+    "description": {
+      "0": "Trong chế độ <strong>Vũ Trang Lướt Gió</strong>, Vesna có thể tiêu hao <strong>Kiếm Khí</strong> để thi triển Kỹ Năng Nguyên Tố đặc biệt này, gây <anemo>Sát Thương Nguyên Tố Phong</anemo>.",
+      "1": "Sau mỗi lần thi triển Kỹ Năng Nguyên Tố đặc biệt <strong>Tường Phong Kiếm</strong>, trong thời gian duy trì chế độ <strong>Vũ Trang Lướt Gió</strong> lần này, cảnh giới của nó đều sẽ tăng lên. Cảnh giới ban đầu của <strong>Tường Phong Kiếm</strong> là Bậc 1, tối đa tăng đến Bậc 3.",
+      "2": "Khi thi triển <strong>Tường Phong Kiếm</strong> đã gia tăng cảnh giới, sẽ còn triệu hồi <strong>Linh Kiếm</strong> để gây <anemo>Sát Thương Nguyên Tố Phong</anemo> cho kẻ địch."
+    }
+  },
+  "11430004": {
+    "name": "Linh Kiếm",
+    "description": {
+      "0": "Vũ khí linh thể do Vesna triệu hồi, sẽ hỗ trợ Vesna tấn công kẻ địch, gây <anemo>Sát Thương Nguyên Tố Phong</anemo>.",
+      "1": "Vesna có thể thông qua các cách sau để triệu hồi Linh Kiếm:",
+      "2": [
+        "Thi triển Kỹ Năng Nguyên Tố đặc biệt <strong>Tường Phong Kiếm</strong> đã gia tăng cảnh giới.",
+        "Thi triển Kỹ Năng Nộ <strong>Kính Lễ - Vì Nữ Hoàng Bệ Hạ</strong>.",
+        "Thi triển <strong>Tường Phong Kiếm - Biến Đổi</strong> trong Cung Mệnh <strong>Tấm Lòng Sắt Son</strong>."
+      ],
+      "3": "<br/>",
+      "4": "<strong>Tỏa Sáng: Tinh-Khuếch Tán</strong>: <strong>Linh Kiếm</strong> chuyển sang gây <anemo>Sát Thương Nguyên Tố Phong</anemo> được xem là sát thương phản ứng Tinh-Khuếch Tán."
+    }
+  },
+  "11480001": {
+    "name": "Dấu Ấn Săn Bắn",
+    "description": {
+      "0": "Hiệu quả đặc biệt mà Alyosha áp dụng lên kẻ địch.",
+      "1": "Khi tiếp tục áp dụng hiệu quả này lên kẻ địch đã bị ảnh hưởng bởi <strong>Dấu Ấn Săn Bắn</strong>, sẽ chuyển sang kích hoạt <strong>Dấu Ấn Săn Bắn</strong>: Xóa dấu ấn này, khiến tất cả nhân vật trong đội ở gần nhận hiệu quả <strong>Mệnh Lệnh Thợ Săn</strong>: Khi trong trận, sẽ tăng Tấn Công."
+    }
+  },
+  "11480002": {
+    "name": "Tugarin",
+    "description": {
+      "0": "Đồng đội chó săn rất đáng tin cậy của Alyosha, có thể thông qua thi triển Kỹ Năng Nộ <strong>Thợ Săn Tiến Bước</strong> để triệu hồi ra trận. Sẽ di chuyển nhanh đến gần một kẻ địch theo chu kỳ và thực hiện tấn công cắn xé, đồng thời kích hoạt <strong>Dấu Ấn Săn Bắn</strong> đã có."
+    }
+  },
+  "11500001": {
+    "name": "Bóng Hình Độc Diễn",
+    "description": {
+      "0": "Hình chiếu tâm trí cùng khiêu vũ với Odette, có thể triệu hồi ra trận thông qua việc thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ.",
+      "1": "Sẽ trình diễn luân phiên hai vũ điệu <strong>Phất Lông</strong> và <strong>Xoay Cánh</strong>, dùng tư thế múa thanh lịch uyển chuyển để tấn công kẻ địch xung quanh theo chu kỳ, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>.",
+      "2": "Tối đa được tồn tại cùng lúc một <strong>Bóng Hình Độc Diễn</strong> do chính Odette tạo ra.",
+      "3": "<br/>",
+      "4": "Ngoài ra, khi gần đó tồn tại <strong>Bóng Hình Độc Diễn</strong> do bản thân Odette triệu hồi, Kỹ Năng Nguyên Tố <strong>Nhịp Chậm - Điệu Múa Đêm Huyền Ảo</strong> của Odette sẽ được thay thế bằng Kỹ Năng Nguyên Tố đặc biệt <strong>Nhịp Chậm - Đoạn Kết Ánh Bình Minh</strong>."
+    }
+  },
+  "11500002": {
+    "name": "Nhịp Chậm - Đoạn Kết Ánh Bình Minh",
+    "description": {
+      "0": "Kỹ Năng Nguyên Tố đặc biệt của Odette, liên tiếp gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> cho kẻ địch ở gần, và khi kết thúc điệu múa chung, sẽ gây một lần <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> được xem là sát thương phản ứng Tinh-Siêu Dẫn. Khi hợp tấu múa chung, Odette có thể điều khiển phương hướng của vũ điệu.",
+      "1": "<strong>Tỏa Sáng: Tinh Tú Lấp Lánh</strong>: Khi điệu múa chung kết thúc, sẽ chuyển sang gây một lần <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> được xem là sát thương phản ứng Tinh Tú Lấp Lánh tương ứng.",
+      "2": "<br/>",
+      "3": "Ngoài ra, sau khi thi triển Kỹ Năng Nguyên Tố đặc biệt <strong>Nhịp Chậm - Đoạn Kết Ánh Bình Minh</strong>, trong thời gian duy trì còn lại của <strong>Bóng Hình Độc Diễn</strong>, nếu Odette đang trong trạng thái <strong>Tỏa Sáng: Tinh Tú Lấp Lánh</strong>, thì hai loại vũ điệu của <strong>Bóng Hình Độc Diễn</strong> sẽ gây thêm <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> được xem là sát thương phản ứng Tinh Tú Lấp Lánh tương ứng."
+    }
+  },
+  "11500003": {
+    "name": "Lộng Lẫy",
+    "description": {
+      "0": "Hiệu ứng đặc biệt, nhận được khi Odette triệu hồi <strong>Bóng Hình Độc Diễn</strong> sau khi mở khóa Thiên Phú Đột Phá \"Lễ Xuân Của Người Được Chọn\".",
+      "1": "Mỗi tầng <strong>Lộng Lẫy</strong> sẽ tăng 15% sát thương phản ứng Tinh Tú Lấp Lánh nhân vật gây ra, duy trì đến khi <strong>Bóng Hình Độc Diễn</strong> rời trận hoặc triệu hồi lại <strong>Bóng Hình Độc Diễn</strong>.",
+      "2": "Khi Odette dự bị trong đội, mỗi giây Odette sẽ xóa bỏ 1 tầng <strong>Lộng Lẫy</strong>, đồng thời khiến nhân vật khác trong đội ở gần nhận được số tầng <strong>Lộng Lẫy</strong> tương ứng."
+    }
+  },
+  "11500004": {
+    "name": "Tỏa Sáng: Tinh Tú Lấp Lánh",
+    "description": {
+      "0": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong> và <strong>Tỏa Sáng: Tinh-Khuếch Tán</strong> đều được gọi chung là trạng thái <strong>Tỏa Sáng: Tinh Tú Lấp Lánh</strong>",
+      "1": "Nhân vật cùng lúc chỉ có thể chịu ảnh hưởng bởi một trạng thái Tỏa Sáng, đồng thời sẽ ưu tiên chịu ảnh hưởng bởi <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>."
     }
   }
 }

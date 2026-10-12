@@ -60,6 +60,15 @@ export const characterIdMap = {
   '1501': 'Aria',
   '1511': 'NangongYu',
   '1521': 'Cissia',
+  '1531': 'StarlightBilly',
+  '1541': 'Promeia',
+  '1551': 'Pyrois',
+  '1561': 'Velina',
+  '1571': 'Norma',
+  '1581': 'Remielle',
+  '1591': 'Sigrid',
+  '1611': 'Claret',
+  '1621': 'Roxy',
 } as const
 
 export const attributeMap: Record<number, AttributeKey> = {
@@ -68,6 +77,8 @@ export const attributeMap: Record<number, AttributeKey> = {
   202: 'ice',
   203: 'electric',
   205: 'ether',
+  204: 'wind',
+  300: 'lumiflux',
 } as const
 export const specialityMap: Record<number, SpecialityKey> = {
   1: 'attack',
@@ -76,6 +87,7 @@ export const specialityMap: Record<number, SpecialityKey> = {
   4: 'support',
   5: 'defense',
   6: 'rupture',
+  7: 'armorer',
 } as const
 export const factionMap: Record<number, FactionKey> = {
   0: 'RandomPlay',
@@ -92,6 +104,9 @@ export const factionMap: Record<number, FactionKey> = {
   11: 'SpookShack',
   12: 'KrampusComplianceAuthority',
   13: 'AngelsOfDelusion',
+  15: 'Phaethon',
+  16: 'RoscaeliferExternalStrategyDepartment',
+  17: 'CovenantOfDayat',
 }
 
 export const characterRarityMap: Record<number, CharacterRarityKey> = {

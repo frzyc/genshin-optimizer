@@ -1,0 +1,185 @@
+{
+  "name": "洛恩",
+  "title": "恣銳鋒鏃",
+  "description": "西風騎士團遠距離小隊副隊長，行事不拘一格，鍾情於非常規戰術的騎士。",
+  "constellationName": "狡兔座",
+  "auto": {
+    "name": "破誓",
+    "fields": {
+      "normal": {
+        "0": "<strong>普通攻擊</strong>",
+        "1": "進行至多五段的連續攻擊。"
+      },
+      "charged": {
+        "0": "<strong>重擊</strong>",
+        "1": "消耗一定體力，進行向前的突刺攻擊。"
+      },
+      "plunging": {
+        "0": "<strong>下落攻擊</strong>",
+        "1": "從空中下墜衝擊地面，攻擊下落路徑上的敵人，並在落地時造成範圍傷害。"
+      }
+    },
+    "skillParams": {
+      "0": "一段傷害",
+      "1": "二段傷害",
+      "2": "三段傷害",
+      "3": "四段傷害",
+      "4": "五段傷害",
+      "5": "重擊傷害",
+      "6": "重擊體力消耗",
+      "7": "下墜期間傷害",
+      "8": "低空/高空墜地衝擊傷害",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "奇兵詭出",
+    "description": {
+      "0": "尋覓敵人的破綻，切換至<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇謀</strong></tooltip>狀態。在這種狀態下：",
+      "1": [
+        "洛恩可以主動累積<tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>歡悅</strong></tooltip>，從而施放特殊的元素戰技<tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>鏤骨徹心</strong></tooltip>。",
+        "隊伍中附近的其他角色可以為洛恩累積<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>爭勝</strong></tooltip>，來提高<strong>鏤骨徹心</strong>的傷害。"
+      ],
+      "2": "在<strong>奇謀</strong>狀態下至多施放3次<strong>鏤骨徹心</strong>，之後無法獲得<strong>歡悅</strong>。",
+      "3": "<br/>",
+      "4": "<i>「騎士道？哈，那倒的確是絕佳的誘餌。當敵人還幻想著堂堂正正一決勝負時，絕不會想到等待他們的是怎樣的『驚喜』。」</i>"
+    },
+    "skillParams": {
+      "0": "一段傷害",
+      "1": "二段傷害",
+      "2": "三段傷害",
+      "3": "四段傷害",
+      "4": "五段傷害",
+      "5": "重擊傷害",
+      "6": "重擊體力消耗",
+      "7": "下墜期間傷害",
+      "8": "低空/高空墜地衝擊傷害",
+      "9": "奇謀持續時間",
+      "10": "奇襲傷害",
+      "11": "每點爭勝提升原本傷害",
+      "12": "冷卻時間",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "裁罰遂成",
+    "description": {
+      "0": "向前方快速連續斬擊，消耗所有<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>爭勝</strong></tooltip>，造成<cryo>冰元素傷害</cryo>，並依據消耗的<strong>爭勝</strong>，提升本次傷害。施放時，若洛恩處於<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇謀</strong></tooltip>狀態下，則本次<strong>奇謀</strong>狀態的持續時間還會延長1.65秒。",
+      "1": "<br/>",
+      "2": "<i>「這麼快就全說了？我都還沒盡興呢。」</i>"
+    },
+    "skillParams": {
+      "0": "技能傷害",
+      "1": "每點爭勝提升原本傷害",
+      "2": "冷卻時間",
+      "3": "元素能量",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "禁問的訓誡",
+    "description": {
+      "0": "在<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇謀</strong></tooltip>狀態下，隊伍中附近的其他角色透過造成傷害為洛恩累積<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>爭勝</strong></tooltip>時，若本次傷害不低於洛恩基礎攻擊力的3000%，則還會為洛恩額外累積60點<strong>爭勝</strong>。"
+    }
+  },
+  "passive2": {
+    "name": "戲言的傑作",
+    "description": {
+      "0": "在<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇謀</strong></tooltip>狀態下，隊伍中附近的其他角色對敵人觸發<cryo>冰元素相關反應</cryo>後的8秒內，該角色的攻擊力提升15%，洛恩的攻擊力提升15%。"
+    }
+  },
+  "passive3": {
+    "name": "興盡且去來",
+    "description": {
+      "0": "施放元素戰技<strong>奇兵詭出</strong>後，洛恩還會獲得9秒的「乘興」效果：持續期間，元素戰技<strong>奇兵詭出</strong>的技能等級提高1級。",
+      "1": "施放元素戰技時，如果隊伍中其他角色的普通攻擊、元素戰技或元素爆發中，任一技能等級不低於洛恩的元素戰技的技能等級，則本次「乘興」效果的持續時間額外延長6秒。",
+      "2": "每18秒至多獲得一次「乘興」效果。"
+    }
+  },
+  "lockedPassive": {
+    "name": "魔女的前夜禮·不癒之刺",
+    "description": {
+      "0": "完成<strong>魔女的課業·諸敵之題</strong>後，洛恩將成為<strong>魔導</strong>角色。隊伍中編入至少2名魔導角色時，將獲得<strong>魔導·秘儀</strong>效果，使魔導角色獲得強化。",
+      "1": "<br/>",
+      "2": "<strong>魔導·秘儀</strong>",
+      "3": "特殊元素戰技<tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>鏤骨徹心</strong></tooltip>命中敵人或施放元素爆發<strong>裁罰遂成</strong>時，若<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>爭勝</strong></tooltip>至少為上限的50%，則洛恩的普通攻擊與重擊造成的傷害提升40%，持續6秒。"
+    }
+  },
+  "constellation1": {
+    "name": "往昔微風，載滿悲歌",
+    "description": {
+      "0": "洛恩的<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>爭勝</strong></tooltip>上限提升至原來的300%。",
+      "1": "此外，處於<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇謀</strong></tooltip>狀態下時，隊伍中附近的其他角色透過造成傷害為洛恩累積的<strong>爭勝</strong>提升至原來的500%。"
+    }
+  },
+  "constellation2": {
+    "name": "凡飛翔者，皆為標靶",
+    "description": {
+      "0": "處於<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇謀</strong></tooltip>狀態下時，特殊元素戰技<tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>鏤骨徹心</strong></tooltip>命中敵人或施放元素爆發<strong>裁罰遂成</strong>後的4秒內，洛恩將獲得「破邪之刃」效果：在奇謀狀態下，洛恩的下一次普通攻擊或重擊命中敵人時，將會額外追加進行一次攻擊，造成相當於洛恩攻擊力500%的<cryo>冰元素範圍傷害</cryo>，並使隊伍中附近的其他角色的元素精通提升200點，持續8秒，每4秒至多獲得一次「破邪之刃」效果。"
+    }
+  },
+  "constellation3": {
+    "name": "唯有鋒刃，能癒此傷",
+    "description": {
+      "0": "元素戰技<strong><tooltip ns=char_Lohen_gen baseKey18=skill>奇兵詭出</tooltip></strong>的技能等級提高3級。",
+      "1": "至多提升至15級。"
+    }
+  },
+  "constellation4": {
+    "name": "愛若流光，逝如歡歌",
+    "description": {
+      "0": "洛恩在<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇謀</strong></tooltip>狀態下施放元素爆發<strong>裁罰遂成</strong>時，還會將洛恩的<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>爭勝</strong></tooltip>累積至上限，從而使本次元素爆發獲得最高的傷害提升效果。",
+      "1": "<br/>",
+      "2": "此外，洛恩切換至<strong>奇謀</strong>狀態時，若元素能量：",
+      "3": [
+        "未充滿：為洛恩恢復15點元素能量。",
+        "已充滿：接下來的15秒內，施放元素爆發<strong>裁罰遂成</strong>後，為洛恩恢復15點元素能量。"
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "無可窺探，無可質疑",
+    "description": {
+      "0": "元素爆發<strong><tooltip ns=char_Lohen_gen baseKey18=burst>裁罰遂成</tooltip></strong>的技能等級提高3級。",
+      "1": "至多提升至15級。"
+    }
+  },
+  "constellation6": {
+    "name": "身淪魂銷，唯餘歡悅",
+    "description": {
+      "0": "施放特殊元素戰技<tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>鏤骨徹心</strong></tooltip>命中敵人或在<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇謀</strong></tooltip>狀態下施放元素爆發<strong>裁罰遂成</strong>不會消耗<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>爭勝</strong></tooltip>，並會使洛恩的<tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>歡悅</strong></tooltip>恢復至上限，且在下一次施放特殊元素戰技<strong>鏤骨徹心</strong>命中敵人時，使本次<strong>奇謀</strong>狀態的持續時間延長1.25秒，該效果每7秒至多觸發一次。",
+      "1": "此外，上述所有傷害的暴擊傷害都將提升175%，且本次<strong>奇謀</strong>期間，洛恩施放<strong>鏤骨徹心</strong>的最大次數增加2次。"
+    }
+  }
+}

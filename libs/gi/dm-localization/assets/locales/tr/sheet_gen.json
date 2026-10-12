@@ -60,12 +60,14 @@
     "superconduct": "Süper İletim",
     "vaporize": "Buharlaştı",
     "melt": "Eridi",
-    "bloom": "Çiçeklenme",
+    "bloom": "",
     "burgeon": "Filizlenme",
     "hyperbloom": "Aşırı Çiçeklenme",
     "quicken": "Hızlandı",
     "aggravate": "Şiddetlenme",
-    "spread": "Yayılma"
+    "spread": "Yayılma",
+    "stellarconduct": "Yıldız İletimi",
+    "stellarswirl": "Yıldız Girdabı"
   },
   "stat": {
     "def": "Savunma",

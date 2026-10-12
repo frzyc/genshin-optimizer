@@ -1,0 +1,24 @@
+{
+  "name": "Vue de jade",
+  "description": {
+    "0": "Un arc long d'une puissance immense. Il brille de l'éclat des rêves, même au cœur des nuits les plus sombres."
+  },
+  "passiveName": "Bougie tissée de la nuit",
+  "passiveDescription": {
+    "0": {
+      "0": "Pour chaque membre de l'équipe (hormis le personnage équipé de l'arme) : si un membre est du même type élémentaire que le personnage équipé de l'arme, la maîtrise élémentaire de ce dernier augmente de <cryo>64</cryo> pts ; si un membre est d'un type élémentaire différent de celui du personnage équipé de l'arme, l'ATQ de ce dernier augmente de <cryo>12 %</cryo>. Ces deux effets peuvent être cumulés un total de 3 fois en tout, les bonus de maîtrise élémentaire ayant la priorité."
+    },
+    "1": {
+      "0": "Pour chaque membre de l'équipe (hormis le personnage équipé de l'arme) : si un membre est du même type élémentaire que le personnage équipé de l'arme, la maîtrise élémentaire de ce dernier augmente de <cryo>80</cryo> pts ; si un membre est d'un type élémentaire différent de celui du personnage équipé de l'arme, l'ATQ de ce dernier augmente de <cryo>15 %</cryo>. Ces deux effets peuvent être cumulés un total de 3 fois en tout, les bonus de maîtrise élémentaire ayant la priorité."
+    },
+    "2": {
+      "0": "Pour chaque membre de l'équipe (hormis le personnage équipé de l'arme) : si un membre est du même type élémentaire que le personnage équipé de l'arme, la maîtrise élémentaire de ce dernier augmente de <cryo>96</cryo> pts ; si un membre est d'un type élémentaire différent de celui du personnage équipé de l'arme, l'ATQ de ce dernier augmente de <cryo>18 %</cryo>. Ces deux effets peuvent être cumulés un total de 3 fois en tout, les bonus de maîtrise élémentaire ayant la priorité."
+    },
+    "3": {
+      "0": "Pour chaque membre de l'équipe (hormis le personnage équipé de l'arme) : si un membre est du même type élémentaire que le personnage équipé de l'arme, la maîtrise élémentaire de ce dernier augmente de <cryo>112</cryo> pts ; si un membre est d'un type élémentaire différent de celui du personnage équipé de l'arme, l'ATQ de ce dernier augmente de <cryo>21 %</cryo>. Ces deux effets peuvent être cumulés un total de 3 fois en tout, les bonus de maîtrise élémentaire ayant la priorité."
+    },
+    "4": {
+      "0": "Pour chaque membre de l'équipe (hormis le personnage équipé de l'arme) : si un membre est du même type élémentaire que le personnage équipé de l'arme, la maîtrise élémentaire de ce dernier augmente de <cryo>128</cryo> pts ; si un membre est d'un type élémentaire différent de celui du personnage équipé de l'arme, l'ATQ de ce dernier augmente de <cryo>24 %</cryo>. Ces deux effets peuvent être cumulés un total de 3 fois en tout, les bonus de maîtrise élémentaire ayant la priorité."
+    }
+  }
+}

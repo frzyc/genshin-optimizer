@@ -1,15 +1,15 @@
 import { assertUnreachable } from '@genshin-optimizer/common/util'
-import type { RequestFilter } from '../common'
+import type { RequestFilter } from '../common.js'
 import {
   artSetPerm,
   countBuilds,
   filterArts,
   filterFeasiblePerm,
-} from '../common'
-import type { WorkerCommand, WorkerResult } from '../type'
-import { BNBSplitWorker } from './BNBSplitWorker'
-import { ComputeWorker } from './ComputeWorker'
-import { DefaultSplitWorker } from './DefaultSplitWorker'
+} from '../common.js'
+import type { WorkerCommand, WorkerResult } from '../type.js'
+import { BNBSplitWorker } from './BNBSplitWorker/index.js'
+import { ComputeWorker } from './ComputeWorker.js'
+import { DefaultSplitWorker } from './DefaultSplitWorker.js'
 
 declare function postMessage(command: WorkerCommand | WorkerResult): void
 
@@ -52,11 +52,12 @@ async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
       const { exclusion, maxIterateSize } = data,
         arts = computeWorker.arts
       const perms = filterFeasiblePerm(
-        artSetPerm(exclusion, [
-          ...new Set(
+        artSetPerm(
+          exclusion,
+          new Set(
             Object.values(arts.values).flatMap((x) => x.map((x) => x.set!))
-          ),
-        ]),
+          )
+        ),
         arts
       )
       let count = 0

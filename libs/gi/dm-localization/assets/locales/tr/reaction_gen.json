@@ -1,0 +1,21 @@
+{
+  "superconduct": {
+    "name": "Süper İletim",
+    "desc": {
+      "0": "<strong>Buz</strong>, <strong>Elektrik</strong> ile bir araya geldiğinde <strong>Süper İletim</strong> tepkimesi ortaya çıkar. Süper İletim, <strong>Buz Alan Hasarı</strong> verir ve <strong>Süper İletimden etkilenen herhangi bir varlığın Fiziksel Direncini bir süreliğine düşürür</strong>."
+    }
+  },
+  "stellarconduct": {
+    "name": "Yıldız İletimi",
+    "desc": {
+      "0": "<strong>Buz</strong> ile <strong>Elektrik</strong> temas ettiğinde ve belirli koşullar da sağlandığında özel bir <strong>Yıldız İletimi</strong> tepkimesi tetiklenir. Bu gerçekleştiğinde bir Yıldız Işığı Prizması oluşur ve çevredeki alan kısa bir süreliğine muhteşem bir Kutup Yıldızı Alanına dönüşür.",
+      "1": "Kutup Yıldızı Alanı içindeki tüm karakterler Buz ve Elektrik Hasarı Bonusu kazanır ve alan içindeki düşmanlara Buz veya Elektrik saldırıları isabet ettiğinde bu alan, yayılan element enerjilerini depolar ve ardından her 4 saniyede bir tamamen serbest bırakır. Bu durum, söz konusu Hasar Bonusunu daha da artırır ve ayrıca 4 saniyeliğine Temel Yıldız İletimi Hasarı katsayısını yükseltir.",
+      "2": "Ayrıca Kutup Yıldızı Alanı içindeki düşmanların Fiziksel Direnci düşer."
+    },
+    "fieldName": "Kutup Yıldızı Alanı",
+    "fieldDesc": {
+      "0": "Buz, Elektrik ile temas ettiğinde eğer belirli koşullar sağlanırsa özel bir Yıldız İletimi tepkimesi tetiklenir.",
+      "1": "Bu tepkime özel bir Kutup Yıldızı Alanı oluşturur. Kutup Yıldızı Alanı içindeki düşmanlara Buz veya Elektrik Hasarı ne kadar çok defa isabet ederse düşmanların aldıkları Buz Hasarı, Elektrik Hasarı ve Yıldız İletimi Hasarı da o kadar yüksek olur."
+    }
+  }
+}

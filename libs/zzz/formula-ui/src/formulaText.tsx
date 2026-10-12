@@ -11,7 +11,7 @@ import type { Tag } from '@genshin-optimizer/zzz/formula'
 import type { ReactNode } from 'react'
 import { Fragment } from 'react'
 import { TagDisplay } from './components'
-import { getTagLabel } from './util'
+import { statKeyFromListingTag } from './listingStatLabels'
 
 type Output = CalcMeta<Tag, never>
 
@@ -27,7 +27,10 @@ export function formulaText(
   } = data
   const usedTag =
     tag && (objFilter(tag, (_, k) => usedCats.has(k as keyof Tag)) as Tag)
-  const displayVal = valueString(val, getUnitStr(getTagLabel(tag)))
+  const displayVal = valueString(
+    val,
+    getUnitStr(tag ? statKeyFromListingTag(tag) : '')
+  )
 
   const deps = new Set<FormulaText>()
   function getString(
@@ -50,11 +53,11 @@ export function formulaText(
   }
 
   let formula: ReactNode,
-    prec = Infinity
+    prec = Number.POSITIVE_INFINITY
   switch (op) {
     case 'const':
       formula = displayVal
-      prec = Infinity
+      prec = Number.POSITIVE_INFINITY
       break
     case 'sum':
     case 'prod':
@@ -118,6 +121,6 @@ export function formulaText(
 const details = {
   sum: { head: '', joiner: ' + ', end: '', prec: 1 },
   prod: { head: '', joiner: ' * ', end: '', prec: 2 },
-  max: { head: 'Max(', joiner: ', ', end: ')', prec: Infinity },
-  min: { head: 'Min(', joiner: ', ', end: ')', prec: Infinity },
+  max: { head: 'Max(', joiner: ', ', end: ')', prec: Number.POSITIVE_INFINITY },
+  min: { head: 'Min(', joiner: ', ', end: ')', prec: Number.POSITIVE_INFINITY },
 } as const

@@ -1,0 +1,29 @@
+{
+  "name": "Heptades des anges",
+  "description": {
+    "0": "Une boîte dorée, aussi splendide que la lumière des cieux. Selon la légende, elle appartenait jadis à un envoyé divin de la cour éternelle."
+  },
+  "passiveName": "Couronne du dernier héritier",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente l'ATQ de <cryo>12 %</cryo>. Lorsque le personnage équipé de l'arme a créé un bouclier, il obtient l'effet Lumière de l'éclaireur pendant 20 s : chaque tranche de 1 000 pts d'ATQ du personnage équipé de l'arme augmente les DGT de votre personnage déployé de <cryo>10 %</cryo>, jusqu'à un maximum de <cryo>26 %</cryo>. De plus, lorsque le personnage équipé de l'arme crée un bouclier, il obtient l'effet Contentement du guide, ce qui lui restaure <cryo>14</cryo> pts d'énergie, cet effet pouvant être déclenché une fois toutes les 14 s et pouvant également être déclenché lors de l'ouverture de tout type de coffre en dehors des combats. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+      "1": "Hexerei : Rituel secret : Tout personnage héxère faisant partie de votre équipe mais n'étant pas déployé bénéficie d'une augmentation de DGT de 50 % de celle de l'effet Lumière de l'éclaireur."
+    },
+    "1": {
+      "0": "Augmente l'ATQ de <cryo>15 %</cryo>. Lorsque le personnage équipé de l'arme a créé un bouclier, il obtient l'effet Lumière de l'éclaireur pendant 20 s : chaque tranche de 1 000 pts d'ATQ du personnage équipé de l'arme augmente les DGT de votre personnage déployé de <cryo>13 %</cryo>, jusqu'à un maximum de <cryo>34 %</cryo>. De plus, lorsque le personnage équipé de l'arme crée un bouclier, il obtient l'effet Contentement du guide, ce qui lui restaure <cryo>15</cryo> pts d'énergie, cet effet pouvant être déclenché une fois toutes les 14 s et pouvant également être déclenché lors de l'ouverture de tout type de coffre en dehors des combats. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+      "1": "Hexerei : Rituel secret : Tout personnage héxère faisant partie de votre équipe mais n'étant pas déployé bénéficie d'une augmentation de DGT de 50 % de celle de l'effet Lumière de l'éclaireur."
+    },
+    "2": {
+      "0": "Augmente l'ATQ de <cryo>18 %</cryo>. Lorsque le personnage équipé de l'arme a créé un bouclier, il obtient l'effet Lumière de l'éclaireur pendant 20 s : chaque tranche de 1 000 pts d'ATQ du personnage équipé de l'arme augmente les DGT de votre personnage déployé de <cryo>16 %</cryo>, jusqu'à un maximum de <cryo>42 %</cryo>. De plus, lorsque le personnage équipé de l'arme crée un bouclier, il obtient l'effet Contentement du guide, ce qui lui restaure <cryo>16</cryo> pts d'énergie, cet effet pouvant être déclenché une fois toutes les 14 s et pouvant également être déclenché lors de l'ouverture de tout type de coffre en dehors des combats. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+      "1": "Hexerei : Rituel secret : Tout personnage héxère faisant partie de votre équipe mais n'étant pas déployé bénéficie d'une augmentation de DGT de 50 % de celle de l'effet Lumière de l'éclaireur."
+    },
+    "3": {
+      "0": "Augmente l'ATQ de <cryo>21 %</cryo>. Lorsque le personnage équipé de l'arme a créé un bouclier, il obtient l'effet Lumière de l'éclaireur pendant 20 s : chaque tranche de 1 000 pts d'ATQ du personnage équipé de l'arme augmente les DGT de votre personnage déployé de <cryo>19 %</cryo>, jusqu'à un maximum de <cryo>50 %</cryo>. De plus, lorsque le personnage équipé de l'arme crée un bouclier, il obtient l'effet Contentement du guide, ce qui lui restaure <cryo>17</cryo> pts d'énergie, cet effet pouvant être déclenché une fois toutes les 14 s et pouvant également être déclenché lors de l'ouverture de tout type de coffre en dehors des combats. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+      "1": "Hexerei : Rituel secret : Tout personnage héxère faisant partie de votre équipe mais n'étant pas déployé bénéficie d'une augmentation de DGT de 50 % de celle de l'effet Lumière de l'éclaireur."
+    },
+    "4": {
+      "0": "Augmente l'ATQ de <cryo>24 %</cryo>. Lorsque le personnage équipé de l'arme a créé un bouclier, il obtient l'effet Lumière de l'éclaireur pendant 20 s : chaque tranche de 1 000 pts d'ATQ du personnage équipé de l'arme augmente les DGT de votre personnage déployé de <cryo>22 %</cryo>, jusqu'à un maximum de <cryo>58 %</cryo>. De plus, lorsque le personnage équipé de l'arme crée un bouclier, il obtient l'effet Contentement du guide, ce qui lui restaure <cryo>18</cryo> pts d'énergie, cet effet pouvant être déclenché une fois toutes les 14 s et pouvant également être déclenché lors de l'ouverture de tout type de coffre en dehors des combats. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+      "1": "Hexerei : Rituel secret : Tout personnage héxère faisant partie de votre équipe mais n'étant pas déployé bénéficie d'une augmentation de DGT de 50 % de celle de l'effet Lumière de l'éclaireur."
+    }
+  }
+}

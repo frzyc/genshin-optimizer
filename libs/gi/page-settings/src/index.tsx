@@ -1,6 +1,7 @@
+import { LocalStorageUsageCard } from '@genshin-optimizer/common/react-util'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { DatabaseCard } from '@genshin-optimizer/gi/ui'
-import { CardContent, Divider, Typography } from '@mui/material'
+import { CardContent, Divider, Grid, Typography } from '@mui/material'
 import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from 'react-i18next'
 import LanguageCard from './LanguageCard'
@@ -20,9 +21,22 @@ export default function PageSettings() {
       </CardContent>
       <Divider />
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-        <LanguageCard />
-        <SnowToggle />
-        <SillyCard />
+        <Grid container direction="row" spacing={1}>
+          <Grid item xs={6}>
+            <LanguageCard />
+          </Grid>
+          <Grid item xs={6}>
+            <SnowToggle />
+          </Grid>
+        </Grid>
+        <Grid container direction="row" spacing={1}>
+          <Grid item sm={12} md={6}>
+            <SillyCard />
+          </Grid>
+          <Grid item sm={12} md={6}>
+            <LocalStorageUsageCard />
+          </Grid>
+        </Grid>
         <DatabaseCard />
       </CardContent>
     </CardThemed>

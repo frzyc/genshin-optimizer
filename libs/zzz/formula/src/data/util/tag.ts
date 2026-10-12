@@ -93,6 +93,7 @@ const stats: Record<Stat, Desc> = {
   impact_: agg,
   crit_: agg,
   crit_dmg_: agg,
+  laceration_dmg_: agg,
   pen_: agg,
   pen: agg,
   enerRegen: agg,
@@ -115,9 +116,11 @@ const stats: Record<Stat, Desc> = {
   dazeRed_: agg,
   dmg_red_: agg,
   sheer_dmg_: agg,
+  sharp_dmg_: agg,
   flat_dmg: agg,
   anom_flat_dmg: agg,
   addl_disorder_: agg,
+  direct_dmg_: agg,
 } as const
 const finalStats = objFilterKeys(stats, [
   ...flatAndPercentStats,
@@ -135,11 +138,13 @@ export const ownTag = {
     anomProf: agg,
     anomMas: agg,
     enerRegen: agg,
+    laceration_dmg_: agg,
   },
   initial: stats,
   combat: stats,
   final: finalStats,
   char: {
+    key: iso,
     lvl: iso,
     attribute: iso,
     specialty: iso,
@@ -164,6 +169,7 @@ export const ownTag = {
   dmg: {
     shared: fixedProd,
     crit_mult_: fixed,
+    laceration_mult_: fixed,
     dmg_mult_: fixed,
     buff_mult_: fixed,
     def_mult_: fixed,
@@ -173,14 +179,24 @@ export const ownTag = {
     mv_mult_: agg,
     anom_mv_mult_: agg,
     sheer_mult_: fixed,
+    sharp_mult_: fixed,
     anomaly_crit_mult_: fixed,
     anom_base_mult_: fixed,
+    direct_dmg_mult_: fixed,
   },
   formula: {
-    base: agg,
+    standardDmgBase: agg,
+    sheerDmgBase: agg,
+    sharpDmgBase: agg,
+    anomalyDmgBase: agg,
+    shieldBase: agg,
+    dazeBuildupBase: agg,
+    anomBuildupBase: agg,
+    healBase: agg,
     listing: aggStr,
     standardDmg: prepProd,
     sheerDmg: prepProd,
+    sharpDmg: prepProd,
     anomalyDmg: prepProd,
     shield: prep,
     anomMas_mult_: prep,
@@ -229,6 +245,12 @@ export const own = convert(ownTag, { et: 'own', dst: null })
 export const team = convert(ownTag, { et: 'team', dst: null, ...noName })
 export const target = convert(ownTag, { et: 'target', ...noName })
 export const enemy = convert(enemyTag, { et: 'enemy', dst: null, ...noName })
+// Note: If the team does not have a prev/next or member1 or member2, it will fall back to member0.
+export const prevMember = convert(ownTag, { et: 'prevMember', ...noName })
+export const nextMember = convert(ownTag, { et: 'nextMember', ...noName })
+export const member0 = convert(ownTag, { et: 'member0', ...noName })
+export const member1 = convert(ownTag, { et: 'member1', ...noName })
+export const member2 = convert(ownTag, { et: 'member2', ...noName })
 // Avoid reading from two counts at once
 team.common.count = team.common.count.withTag({
   specialty: null,

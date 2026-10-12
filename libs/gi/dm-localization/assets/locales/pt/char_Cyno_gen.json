@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -44,6 +48,13 @@
       "0": "Avança rapidamente, infligindo <electro>Dano Electro</electro> contra os inimigos no caminho.",
       "1": "<br/>",
       "2": "Quando Cyno está sob o estado \"Juramento Desbravador\" de seu Supremo \"Ritual Sagrado: Agilidade Lupina\", lançará <strong>Ritual Mortuário</strong>, usando o poder dos raios para infligir <electro>Dano Electro em AdE</electro> e prolongar a duração de \"Juramento Desbravador\".",
+      "3": "<br/>",
+      "4": "<i>\"Esse julgamento não possui escolha. Não há rejeição ou aceitação... Pois já fomos julgados há muito tempo.\"</i>"
+    },
+    "upgradedDescription": {
+      "0": "Avança rapidamente, infligindo <electro>Dano Electro</electro> contra os inimigos no caminho.",
+      "1": "<br/>",
+      "2": "Quando Cyno está sob o estado Juramento Desbravador, lançará <strong>Ritual Mortuário</strong>, usando o poder dos raios para infligir <electro>Dano Electro em uma AdE</electro>. Se Cyno entrar no estado Juramento Desbravador ao lançar o Supremo <strong>Ritual Sagrado: Agilidade Lupina</strong>, ao lançar <strong>Ritual Mortuário</strong>, prolongará a duração do estado Juramento Desbravador atual.",
       "3": "<br/>",
       "4": "<i>\"Esse julgamento não possui escolha. Não há rejeição ou aceitação... Pois já fomos julgados há muito tempo.\"</i>"
     },
@@ -63,7 +74,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -98,7 +113,11 @@
       "12": "Energia Elemental",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -106,6 +125,11 @@
     "description": {
       "0": "Quando Cyno está com o estado Juramento Desbravador ativado pelo <strong>Ritual Sagrado: Agilidade Lupina</strong>, Cyno entrará periodicamente no estado \"Vidente do Fim\". Se ele lançar <strong>Ritual Secreto: Travessia Abissal</strong> enquanto estiver neste estado, desencadeará o efeito \"Adjudicação\", aumentando o Dano deste Ritual Secreto: Travessia Abissal em 35%, e disparando 3 Raios da Desolação que infligem 100% do ATQ de Cyno como <electro>Dano Electro.</electro>",
       "1": "O Dano do Raio da Desolação é considerado Dano de Habilidade Elemental."
+    },
+    "upgradedDescription": {
+      "0": "Quando Cyno está com o estado Juramento Desbravador ativado, Cyno entrará periodicamente no estado \"Vidente do Fim\". Se ele lançar <strong>Ritual Secreto: Travessia Abissal</strong> enquanto estiver neste estado, desencadeará o efeito \"Adjudicação\", aumentando o Dano deste Ritual Secreto: Travessia Abissal em 35%, e disparando 3 Raios da Desolação que infligem 100% do ATQ de Cyno como <electro>Dano Electro</electro>. O Dano do Raio da Desolação é considerado Dano de Habilidade Elemental.",
+      "1": "<br/>",
+      "2": "<strong>Brilho Reluzente: Supercondutor Estelar</strong>: ao desencadear o efeito Adjudicação, disparará 3 <strong>Raios da Desolação: Companhia Estelar</strong>, causando 200% do ATQ de Cyno como <electro>Dano Electro</electro>. Esse Dano é considerado Dano de Supercondutor Estelar."
     }
   },
   "passive2": {
@@ -116,6 +140,14 @@
         " O Dano de Ataque Normal no estado Juramento Desbravador é aumentado em 150% da Proficiência Elemental.",
         " O Dano do Raio da Desolação do seu Talento de Ascensão \"Julgamento das Plumas\" é aumentado em 250% da Proficiência Elemental."
       ]
+    },
+    "upgradedDescription": {
+      "0": "Os valores de Dano de Cyno aumentam baseados na Proficiência Elemental do seguinte modo:",
+      "1": [
+        " O Dano de Ataque Normal no estado Juramento Desbravador é aumentado em 150% da Proficiência Elemental.",
+        " O Dano do Raio da Desolação do seu Talento de Ascensão \"Julgamento das Plumas\" é aumentado em 250% da Proficiência Elemental.",
+        " Raio da Desolação: Companhia Estelar do Talento de Ascensão \"Julgamento das Plumas\": 600% da Proficiência Elemental."
+      ]
     }
   },
   "passive3": {
@@ -124,17 +156,35 @@
       "0": "Ganha 25% a mais de recompensas quando enviado numa Expedição em Sumeru por 20 horas."
     }
   },
+  "lockedPassive": {
+    "name": "Companheiro Astral Revelador de Caminhos",
+    "description": {
+      "0": "Quando não está no estado Juramento Desbravador, depois de lançar a Habilidade Elemental <strong>Ritual Secreto: Travessia Abissal</strong>, Cyno entrará no estado Juramento Desbravador por 6s.",
+      "1": "Além disso, quando está em <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo da Estrela Polar</strong></tooltip>, Cyno entrará no estado <strong>Brilho Reluzente: Supercondutor Estelar</strong>."
+    }
+  },
   "constellation1": {
     "name": "Decreto: Vigilância Incansável",
     "description": {
       "0": "Ao lançar <strong>Ritual Sagrado: Agilidade Lupina</strong>, aumenta a Vel. de ATQ do Ataque Normal de Cyno em 20% por 10s. Se ao lançar <strong>Ritual Secreto: Travessia Abissal</strong> desencadear o efeito \"Adjudicação\" do Talento de Ascensão \"Julgamento das Plumas\", redefinirá a duração do efeito de aumento da Vel. de ATQ do Ataque Normal.",
       "1": "Você deve desbloquear o Talento de Ascensão \"Julgamento das Plumas\" primeiro."
+    },
+    "upgradedDescription": {
+      "0": "Ao lançar <strong>Ritual Sagrado: Agilidade Lupina</strong>, aumenta a Vel. de ATQ do Ataque Normal de Cyno em 20% por 10s. Se ao lançar <strong>Ritual Secreto: Travessia Abissal</strong> desencadear o efeito \"Adjudicação\" do Talento de Ascensão \"Julgamento das Plumas\", redefinirá a duração do efeito de aumento da Vel. de ATQ do Ataque Normal.",
+      "1": "Você deve desbloquear o Talento de Ascensão \"Julgamento das Plumas\" primeiro.",
+      "2": "<br/>",
+      "3": "<strong>Brilho Reluzente: Supercondutor Estelar</strong>: ao entrar no estado Juramento Desbravador, obtém o efeito adicional <strong>Acompanhado pelo Sol</strong>: aumenta a Proficiência Elemental em 200. Nesse período, quando Cyno for o personagem ativo e trocar para outro personagem, o próximo personagem em campo herdará o efeito <strong>Acompanhado pelo Sol</strong> e sua duração restante."
     }
   },
   "constellation2": {
     "name": "Cerimônia: Retorno das Almas",
     "description": {
       "0": "Quando os Ataques Normais de Cyno acertam os oponentes, seu <electro>Bônus de Dano Electro</electro> irá aumentar em 10% por 4s. Esse efeito pode ser desencadeado uma vez a cada 0.1s. Máximo de 5 acúmulos."
+    },
+    "upgradedDescription": {
+      "0": "Quando os Ataques Normais de Cyno acertam os oponentes, seu <electro>Bônus de Dano Electro</electro> irá aumentar em 10% por 4s. Esse efeito pode ser desencadeado uma vez a cada 0.1s. Máximo de 5 acúmulos.",
+      "1": "<br/>",
+      "2": "Além disso, quando personagens sob efeito de <strong>Acompanhado pelo Sol</strong> atingirem um Ataque Normal ou Carregado no inimigo, aumenta o Dano causado por Supercondutor Estelar desse personagem em 16%. Esse efeito dura até <strong>Acompanhado pelo Sol</strong> acabar, pode ser desencadeado uma vez a cada 0.1s, e pode acumular até 5 vezes."
     }
   },
   "constellation3": {
@@ -147,8 +197,13 @@
   "constellation4": {
     "name": "Austeridade: Defesa Intimidante",
     "description": {
-      "0": "Quando Cyno está no estado Juramento Desbravador de <strong>Ritual Sagrado: Agilidade Lupina</strong>, ao desencadear as reações Eletricamente Carregado, Carga Lunar, Supercondutor, Sobrecarga, Aceleração, Intensificação, Superflorescimento e Redemoinho Electro, regenerará 3 de Energia Elemental para todos os membros próximos da equipe (com exceção do próprio Cyno).",
+      "0": "Quando Cyno está no estado Juramento Desbravador de <strong>Ritual Sagrado: Agilidade Lupina</strong>, ao desencadear as reações Eletricamente Carregado, Carga Lunar, Supercondutor, Supercondutor Estelar, Sobrecarga, Aceleração, Intensificação, Superflorescimento e Redemoinho Electro, regenerará 3 de Energia Elemental para todos os personagens próximos da equipe (com exceção do próprio Cyno).",
       "1": "Esse efeito pode ser desencadeado até 5 vezes por uso de <strong>Ritual Sagrado: Agilidade Lupina</strong>."
+    },
+    "upgradedDescription": {
+      "0": "Quando Cyno está no estado Juramento Desbravador de <strong>Ritual Sagrado: Agilidade Lupina</strong>, ao desencadear as reações Eletricamente Carregado, Carga Lunar, Supercondutor, Supercondutor Estelar, Sobrecarga, Aceleração, Intensificação, Superflorescimento e Redemoinho Electro, regenerará 3 de Energia Elemental para todos os membros próximos da equipe (com exceção do próprio Cyno). Esse efeito pode ser desencadeado até 5 vezes por uso de <strong>Ritual Sagrado: Agilidade Lupina</strong>.",
+      "1": "<br/>",
+      "2": "Quando outros personagens afetados por <strong>Acompanhado pelo Sol</strong> desencadearem as reações acima, regeneram 20 de Energia Elemental para Cyno. Esse efeito pode ser desencadeado uma vez a cada 18s."
     }
   },
   "constellation5": {
@@ -164,6 +219,12 @@
       "0": "Após usar <strong>Ritual Sagrado: Agilidade Lupina</strong> ou desencadear o efeito \"Adjudicação\" do Talento de Ascensão \"Julgamento das Plumas\", Cyno ganha 4 acúmulos do efeito \"Dia do Chacal\". Quando Cyno acerta oponentes com Ataques Normais, será consumido 1 acúmulo de \"Dia do Chacal\" para lançar um Raio da Desolação.",
       "1": "O \"Dia do Chacal\" dura por 8s, e possui no máximo 8 acúmulos. Ele será cancelado quando o estado Juramento Desbravador do \"Ritual Sagrado: Agilidade Lupina\" acabar.",
       "2": "O máximo de 1 Raio da Desolação pode ser lançado a cada 0,4s.",
+      "3": "Você precisa desbloquear o Talento de Ascensão \"Julgamento das Plumas\" primeiro."
+    },
+    "upgradedDescription": {
+      "0": "Após usar <strong>Ritual Sagrado: Agilidade Lupina</strong> ou desencadear o efeito \"Adjudicação\" do Talento de Ascensão \"Julgamento das Plumas\", Cyno ganha 4 acúmulos do efeito \"Dia do Chacal\". Quando Cyno acerta oponentes com Ataques Normais, será consumido 1 acúmulo de \"Dia do Chacal\" para lançar um Raio da Desolação. Se Cyno estiver sob efeito de <strong>Acompanhado pelo Sol</strong>, passará a disparar um <strong>Raio da Desolação: Companhia Estelar</strong>.",
+      "1": "O \"Dia do Chacal\" dura 8s, e cada Juramento Desbravador possui no máximo 8 acúmulos. Ele será cancelado quando o estado Juramento Desbravador do \"Ritual Sagrado: Agilidade Lupina\" acabar.",
+      "2": "O máximo de 1 Raio da Desolação ou Raio da Desolação: Companhia Estelar pode ser lançado a cada 0.4s.",
       "3": "Você precisa desbloquear o Talento de Ascensão \"Julgamento das Plumas\" primeiro."
     }
   }

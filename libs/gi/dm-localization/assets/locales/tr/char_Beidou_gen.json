@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -74,7 +78,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -108,7 +116,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -132,6 +144,14 @@
     "description": {
       "0": "Kendi grup üyelerinin yüzme Dayanıklılık tüketimini %20 azaltır.",
       "1": "Aynı etkiyi veren Pasif Yeteneklerle birikmez."
+    }
+  },
+  "lockedPassive": {
+    "name": "Kutup Yıldızı",
+    "description": {
+      "0": "<strong>Dalga Çağıran</strong> Element Becerisine basılı tutarken saldırı alınmasa dahi her 0,8 saniyede 1 kademe güç birikir. Bu durum, beceri serbest bırakıldığı anda verilen Hasarı artırır.",
+      "1": "Ayrıca <strong>Dalga Çağıran</strong> becerisine basılı tutup serbest bırakarak bir düşmana vurmak, biriken güce bağlı olarak ekstra güçlendirmeler de sağlar: Aktif olan her kademe Beidou'nun Element Becerisi Bekleme Süresini 4sn azaltır ve 8 Element Enerjisi yeniler. Bu etki 15 saniyede bir tetiklenebilir.",
+      "2": "Buna ek olarak Beidou bir <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Kutup Yıldızı Alanı</strong></tooltip> içindeyken <strong>Işıltı: Yıldız İletimi</strong> durumuna girer."
     }
   },
   "constellation1": {
@@ -172,6 +192,11 @@
     "name": "Şer Lanet",
     "description": {
       "0": "<strong>Fırtına Kıran</strong> devrede olduğu sürece çevredeki düşmanların <electro>Elektrik Direnci</electro> %15 azalır."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Fırtına Kıran</strong> etkinken yakındaki düşmanların <electro>Elektrik Direnci</electro> %15 azalır.",
+      "1": "<br/>",
+      "2": "<strong>Işıltı: Yıldız İletimi</strong>: Fırtına Kıran etkinken yakındaki düşmanların <cryo>Buz Direnci</cryo> %15 azalır ve mevcut aktif karakterin Element Ustalığı 200 artar."
     }
   }
 }

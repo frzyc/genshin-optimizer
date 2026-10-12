@@ -53,9 +53,10 @@ const dm = {
     max_stacks: data_gen.mindscapeParams[0][1],
     duration: data_gen.mindscapeParams[0][2],
     decibels_gained: data_gen.mindscapeParams[0][3],
-    song_stacks_gained: data_gen.mindscapeParams[0][4],
-    stack_duration: data_gen.mindscapeParams[0][5],
-    inv_duration: data_gen.mindscapeParams[0][6],
+    investigationCooldown: data_gen.mindscapeParams[0][4],
+    song_stacks_gained: data_gen.mindscapeParams[0][5],
+    stack_duration: data_gen.mindscapeParams[0][6],
+    inv_duration: data_gen.mindscapeParams[0][7],
   },
   m2: {
     atk_: data_gen.mindscapeParams[1][0],

@@ -140,7 +140,7 @@ export const artifactSubstatRollData = Object.fromEntries(
   Object.entries(rollsForRarity).map(([rarity, maxRolls]) => [
     rarity,
     Object.fromEntries(
-      Object.entries(artifactSubstatData[parseInt(rarity)]).map(
+      Object.entries(artifactSubstatData[Number.parseInt(rarity)]).map(
         ([statKey, rolls]) => [
           statKey,
           getRolls(statKey, rolls as number[], maxRolls, rarity),

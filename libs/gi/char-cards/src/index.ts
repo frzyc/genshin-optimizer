@@ -3,6 +3,7 @@ import Aino from './Character_Aino_Card.webp'
 import Albedo from './Character_Albedo_Card.png'
 import Alhaitham from './Character_Alhaitham_Card.jpg'
 import Aloy from './Character_Aloy_Card.png'
+import Alyosha from './Character_Alyosha_Card.webp'
 import Amber from './Character_Amber_Card.jpg'
 import AratakiItto from './Character_Arataki_Itto_Card.jpg'
 import Arlecchino from './Character_Arlecchino_Card.jpg'
@@ -63,6 +64,7 @@ import Lauma from './Character_Lauma_Card.webp'
 import Layla from './Character_Layla_Card.jpeg'
 import Linnea from './Character_Linnea_Card.webp'
 import Lisa from './Character_Lisa_Card.jpg'
+import Lohen from './Character_Lohen_Card.png'
 import Lynette from './Character_Lynette_Card.jpg'
 import Lyney from './Character_Lyney_Card.jpg'
 import Mavuika from './Character_Mavuika_Card.jpg'
@@ -73,14 +75,18 @@ import Nahida from './Character_Nahida_Card.jpeg'
 import Navia from './Character_Navia_Card.jpg'
 import Nefer from './Character_Nefer_Card.webp'
 import Neuvillette from './Character_Neuvillette_Card.jpg'
+import Nicole from './Character_Nicole_Card.png'
 import Nilou from './Character_Nilou_Card.jpg'
 import Ningguang from './Character_Ningguang_Card.jpg'
 import Noelle from './Character_Noelle_Card.jpg'
+import Odette from './Character_Odette_Card.webp'
 import Ororon from './Character_Ororon_Card.jpg'
+import Prune from './Character_Prune_Card.png'
 import Qiqi from './Character_Qiqi_Card.jpg'
 import RaidenShogun from './Character_Raiden_Shogun_Card.png'
 import Razor from './Character_Razor_Card.jpg'
 import Rosaria from './Character_Rosaria_Card.png'
+import Sandrone from './Character_Sandrone_Card.png'
 import SangonomiyaKokomi from './Character_Sangonomiya_Kokomi_Card.jpg'
 import Sayu from './Character_Sayu_Card.png'
 import Sethos from './Character_Sethos_Card.jpg'
@@ -95,6 +101,8 @@ import Thoma from './Character_Thoma_Card.jpg'
 import Tighnari from './Character_Tighnari_Card.jpg'
 import Varesa from './Character_Varesa_Card.jpg'
 import Venti from './Character_Venti_Card.jpg'
+import Vesna from './Character_Vesna_Card.webp'
+import Vodyanitsa from './Character_Vodyanitsa_Card.webp'
 import Wanderer from './Character_Wanderer_Card.jpg'
 import Wriothesley from './Character_Wriothesley_Card.jpg'
 import Xiangling from './Character_Xiangling_Card.jpg'
@@ -120,6 +128,7 @@ const charCards = {
   Albedo,
   Alhaitham,
   Aloy,
+  Alyosha,
   Amber,
   AratakiItto,
   Arlecchino,
@@ -179,6 +188,7 @@ const charCards = {
   Layla,
   Linnea,
   Lisa,
+  Lohen,
   Lyney,
   Lynette,
   Mavuika,
@@ -189,14 +199,18 @@ const charCards = {
   Navia,
   Nefer,
   Neuvillette,
+  Nicole,
   Nilou,
   Ningguang,
   Noelle,
+  Odette,
   Ororon,
+  Prune,
   Qiqi,
   RaidenShogun,
   Razor,
   Rosaria,
+  Sandrone,
   SangonomiyaKokomi,
   Sayu,
   Sethos,
@@ -214,6 +228,8 @@ const charCards = {
   Varesa,
   Varka,
   Venti,
+  Vesna,
+  Vodyanitsa,
   Wanderer,
   Wriothesley,
   Xiangling,
@@ -241,6 +257,7 @@ export function charCard(charKey: CharacterKey, gender: GenderKey) {
     case 'TravelerGeo':
     case 'TravelerHydro':
     case 'TravelerPyro':
+    case 'TravelerCryo':
       return charCards[`Traveler${gender}`]
     default:
       return charCards[charKey]

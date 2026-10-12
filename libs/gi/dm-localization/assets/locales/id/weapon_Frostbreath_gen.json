@@ -1,0 +1,24 @@
+{
+  "name": "Frostbreath",
+  "description": {
+    "0": "Tombak es panjang yang diselimuti hawa dingin ini konon merupakan milik Belyi Tsar dari Snezhnaya di masa jauh yang lampau."
+  },
+  "passiveName": "A Cast Real Far",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah memicu Reaksi Elemental yang berkaitan dengan Cryo atau Hydro, ATK Karakter yang mengenakan +<cryo>20%</cryo> selama 15 detik dan memulihkan <cryo>6</cryo> Energy untuk Karakter lain miliknya dalam party. Efek ini dapat terpicu sekali setiap 16 detik."
+    },
+    "1": {
+      "0": "Setelah memicu Reaksi Elemental yang berkaitan dengan Cryo atau Hydro, ATK Karakter yang mengenakan +<cryo>25%</cryo> selama 15 detik dan memulihkan <cryo>7,5</cryo> Energy untuk Karakter lain milik sendiri dalam party. Efek ini dapat terpicu sekali setiap 16 detik."
+    },
+    "2": {
+      "0": "Setelah memicu Reaksi Elemental yang berkaitan dengan Cryo atau Hydro, ATK Karakter yang mengenakan +<cryo>30%</cryo> selama 15 detik dan memulihkan <cryo>9</cryo> Energy untuk Karakter lain milik sendiri dalam party. Efek ini dapat terpicu sekali setiap 16 detik."
+    },
+    "3": {
+      "0": "Setelah memicu Reaksi Elemental yang berkaitan dengan Cryo atau Hydro, ATK Karakter yang mengenakan +<cryo>35%</cryo> selama 15 detik dan memulihkan <cryo>10,5</cryo> Energy untuk Karakter lain milik sendiri dalam party. Efek ini dapat terpicu sekali setiap 16 detik."
+    },
+    "4": {
+      "0": "Setelah memicu Reaksi Elemental yang berkaitan dengan Cryo atau Hydro, ATK Karakter yang mengenakan +<cryo>40%</cryo> selama 15 detik dan memulihkan <cryo>12</cryo> Energy untuk Karakter lain milik sendiri dalam party. Efek ini dapat terpicu sekali setiap 16 detik."
+    }
+  }
+}

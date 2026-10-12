@@ -1,5 +1,5 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
-import { type WeaponKey } from '@genshin-optimizer/gi/consts'
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
@@ -12,8 +12,8 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
-import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
+import { headerTemplate, WeaponSheet } from '../../WeaponSheet'
 
 const key: WeaponKey = 'UltimateOverlordsMegaMagicSword'
 const data_gen = allStats.weapon.data[key]

@@ -5,7 +5,7 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/pando/engine'
-import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allNumConditionals,
@@ -128,10 +128,11 @@ const sheet = register(
     teamBuff.combat.common_dmg_.add(
       cmpGE(
         sum(
+          team.common.count.withSpecialty('anomaly'),
           team.common.count.physical,
           team.common.count.withFaction('SonsOfCalydon')
         ),
-        2,
+        4,
         cmpGE(
           min(
             power,
@@ -141,9 +142,7 @@ const sheet = register(
           dm.ability.common_dmg_
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm2_physical_dmg_',

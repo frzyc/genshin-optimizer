@@ -12,6 +12,13 @@
       "7": "<cryo>Cryo</cryo>: CRIT DMG meningkat 20%."
     }
   },
+  "10050002": {
+    "name": "Frostglow",
+    "description": {
+      "0": "Efek khusus yang diperoleh Pengembara saat kristal es dari <strong>Frostpierce Star</strong> mengenai musuh atau saat melancarkan <strong>Charged Attack: Freezing Ice</strong> setelah membuka Talenta <strong>Foreign Permafrost</strong>. Efek ini dapat ditumpuk sampai 8 lapis.",
+      "1": "Saat melancarkan Elemental Burst <strong>Frostbound Javelin</strong>, Pengembara akan mengonsumsi semua lapisan <strong>Frostglow</strong> untuk meningkatkan DMG yang diakibatkan oleh Elemental Burst kali ini. Jika mengonsumsi 8 lapis Frostglow, maka jumlah serangan yang diakibatkan oleh Elemental Burst kali ini juga akan bertambah."
+    }
+  },
   "11120001": {
     "name": "Cold Storage Mode",
     "description": {
@@ -47,7 +54,7 @@
   "11130002": {
     "name": "Rescue Essentials",
     "description": {
-      "0": "Maksimum 150 poin. Untuk setiap 1 poin Rescue Essentials yang dimiliki Ifa, DMG reaksi Swirl dan Electro-Charged yang diakibatkan anggota party di sekitar +1,5%, dan DMG yang diakibatkan reaksi Lunar-Charged +0,2%. Poin Rescue Essentials akan hilang setelah status Nightsoul's Blessing Ifa berakhir."
+      "0": "Maksimum 150 poin. Untuk setiap 1 poin Rescue Essentials yang dimiliki Ifa, DMG reaksi Swirl dan Electro-Charged yang diakibatkan anggota party di sekitar +1,5%, DMG yang diakibatkan reaksi Lunar-Charged +0,2%, dan DMG yang diakibatkan reaksi Stellar Swirl +0.24%. Poin Rescue Essentials akan hilang setelah status Nightsoul's Blessing Ifa berakhir."
     }
   },
   "11130003": {
@@ -97,7 +104,7 @@
   "11130007": {
     "name": "Reason Beyond Reason",
     "description": {
-      "0": "Saat Karakter di dalam party memicu reaksi Frozen, Superconduct, Cryo Swirl, atau Cryo Crystallize terhadap musuh di sekitar, akan tercipta sebuah Void Rift di sekitar musuh tersebut. Efek ini dapat terpicu sekali setiap 2,5 detik, dan maksimum 3 Void Rift dapat tercipta di medan pertempuran dalam satu waktu.",
+      "0": "Saat Karakter di dalam party memicu reaksi Frozen, Superconduct, Stellar-Conduct, Cryo Swirl, Stellar Swirl, atau Cryo Crystallize terhadap musuh di sekitar, akan tercipta sebuah Void Rift di sekitar musuh tersebut. Efek ini dapat terpicu sekali setiap 2,5 detik, dan maksimum 3 Void Rift dapat tercipta di medan pertempuran dalam satu waktu.",
       "1": "<br/>",
       "2": "Skirk bisa menyerap Void Rift di sekitarnya dengan cara berikut:",
       "3": [
@@ -347,6 +354,40 @@
       "3": "Selain itu, Varka dapat mengonsumsi jumlah penggunaan <strong>Four Winds' Ascension</strong> untuk melancarkan Charged Attack khusus yang tidak mengonsumsi Stamina, <strong>Azure Devour</strong>, untuk mengakibatkan 2 kali Elemental DMG (tidak bisa ditimpa Elemental Infusion lainnya) dengan jenis elemen yang sesuai dengan pedang claymore di tangan kanannya dan juga 2 kali <anemo>Anemo DMG</anemo>."
     }
   },
+  "11290001": {
+    "name": "Masterstroke",
+    "description": {
+      "0": "Lohen akan berganti ke mode ini setelah melancarkan Elemental Skill <strong>Unforeseen Strike</strong>. Mode Masterstroke memiliki karakteristik sebagai berikut:",
+      "1": [
+        "Normal Attack, Charged Attack, dan Plunging Attack Lohen akan dikonversi menjadi <cryo>Cryo DMG</cryo> yang tidak bisa ditimpa Elemental Infusion lainnya.",
+        "Saat Normal atau Charged Attack Lohen mengenai musuh, akan mengakumulasi <strong>Joy</strong> khusus untuk Lohen, yang dapat digunakan untuk melancarkan Elemental Skill Khusus <strong>Etched Into Bone and Soul</strong>. Setelah melancarkan maksimum 3 kali <strong>Etched Into Bone and Soul</strong> saat dalam mode <strong>Masterstroke</strong>, Lohen tidak bisa lagi mendapatkan <strong>Joy</strong>.",
+        "Saat anggota party lain di sekitar mengakibatkan DMG, Lohen juga akan mengakumulasi <strong>Will to Win</strong> khusus yang dapat meningkatkan DMG yang diakibatkan <strong>Etched Into Bone and Soul</strong>.",
+        "Lohen akan keluar dari mode Masterstroke saat meninggalkan medan pertempuran. Saat mode ini berakhir, semua <strong>Joy</strong> dan <strong>Will to Win</strong> yang dimiliki juga akan hilang."
+      ]
+    }
+  },
+  "11290002": {
+    "name": "Etched Into Bone and Soul",
+    "description": {
+      "0": "Elemental Skill Khusus yang dapat dilancarkan setelah <strong>Joy</strong> Lohen mencapai batas maksimum.",
+      "1": "Setelah mengenai musuh, Lohen akan mengonsumsi semua <strong>Joy</strong> dan <strong>Will to Win</strong> untuk mengakibatkan <cryo>Cryo DMG</cryo> dan meningkatkan DMG kali ini berdasarkan jumlah <strong>Will to Win</strong> yang dikonsumsi."
+    }
+  },
+  "11290003": {
+    "name": "Joy",
+    "description": {
+      "0": "Saat Normal Attack atau Charged Attack Lohen  dalam mode Masterstroke mengenai musuh, ia akan mendapatkan 0.381298 poin <strong>Joy</strong>, hingga maksimum 100 poin.",
+      "1": "<strong>Joy</strong> bisa diperoleh sekali setiap 0,1 detik. Setelah akumulasi <strong>Joy</strong> mencapai batas maksimum, Elemental Skill <strong>Unforeseen Strike</strong> milik Lohen akan berubah menjadi Elemental Skill Khusus, yaitu <strong>Etched Into Bone and Soul</strong>."
+    }
+  },
+  "11290004": {
+    "name": "Will to Win",
+    "description": {
+      "0": "Sumber daya khusus yang akan didapatkan Lohen saat anggota party lain di sekitar mengakibatkan DMG saat Lohen berada dalam mode Masterstroke, maksimum 100 poin.",
+      "1": "Selama durasi Masterstroke, jika anggota party lain di sekitar mengakibatkan DMG dan DMG yang diakibatkan kali ini tidak lebih rendah dari 55.2868% Base ATK Lohen, maka Lohen akan mengakumulasi 0.829302 poin <strong>Will to Win</strong>. Jika tidak, Lohen akan mengakumulasi 1 poin <strong>Will to Win</strong>.",
+      "2": "Satu Karakter dapat mengakumulasi <strong>Will to Win</strong> untuk Lohen satu kali setiap 0,1 detik."
+    }
+  },
   "11300001": {
     "name": "Lumi: Bentuk Serangan",
     "description": {
@@ -362,6 +403,178 @@
       "9": "<strong>Standard Power Form</strong>",
       "10": "Meski bentuk ini tidak sehebat bentuk yang lain, tapi tetap saja, hebat.",
       "11": "Lumi akan menggunakan <strong>Pound-Pound Pummeler</strong> untuk terus menyerang musuh di sekitar dengan jeda yang lebih lama, mengakibatkan 2 kali <geo>Geo DMG Area</geo> untuk setiap serangannya."
+    }
+  },
+  "11310001": {
+    "name": "Grace of Kenosis",
+    "description": {
+      "0": "Setelah melancarkan Elemental Skill <strong>Revelation: Uncreated Light</strong>, Nicole akan memberikan efek berikut kepada seluruh anggota party di sekitar: Meningkatkan ATK berdasarkan ATK Nicole.",
+      "1": "Setelah memenuhi syarat tertentu, efek <strong>Grace of Kenosis</strong> akan meningkat menjadi <strong>Guidance of Theosis</strong> dan akan meningkatkan ATK lebih besar."
+    }
+  },
+  "11310002": {
+    "name": "Guidance of Theosis",
+    "description": {
+      "0": "Efek <strong>Grace of Kenosis</strong> yang telah ditingkatkan. Efek ini akan memberikan peningkatan tambahan sebesar 300 poin ATK.",
+      "1": "Setelah membuka Talenta Ascension \"Methexis\" dan memenuhi salah satu kondisi \"observasi\" berikut, <strong>Grace of Kenosis</strong> akan berubah menjadi <strong>Guidance of Theosis</strong> selama sisa durasinya:",
+      "2": [
+        "Karakter lain yang diobservasi tetap berada di medan pertempuran selama lebih dari 3 detik.",
+        "Karakter lain yang diobservasi adalah Karakter Hexerei."
+      ],
+      "3": "<br/>",
+      "4": "Selain itu, setelah membuka Talenta Ascension \"Philokalia\" dan setelah Elemental DMG Karakter aktif di sekitar party mengenai musuh, <strong>Grace of Kenosis</strong> milik Nicole sendiri juga akan berubah menjadi <strong>Guidance of Theosis</strong> selama 8 detik.",
+      "5": "<br/>",
+      "6": "Selain Nicole, <strong>Guidance of Theosis</strong> yang dimiliki Karakter lain akan kembali menjadi <strong>Grace of Kenosis</strong> saat mereka meninggalkan medan pertempuran."
+    }
+  },
+  "11320001": {
+    "name": "Banehunter Oathhammer",
+    "description": {
+      "0": "Teman baik pemburu penyihir yang pantas dipercaya! Dapat memicu Elemental Conversion saat memenuhi kondisi tertentu, seluruh DMG awal yang diakibatkan Banehunter Oathhammer akan dikonversi menjadi DMG dengan jenis elemen yang sesuai terhadap musuh.",
+      "1": "Prune dapat memanggil Banehunter Oathhammer yang telah memicu Elemental Conversion melalui cara berikut:",
+      "2": [
+        "Dalam beberapa saat setelah Elemental Skill <strong>Ring-A-Ding-Ding! Hexhunter Chime</strong> yang dilancarkan memicu reaksi Swirl atau Stellar Swirl terhadap musuh, Prune dapat melancarkan Elemental Skill Khusus <strong>Clang Clang! Witch-tribution Comes!</strong>. Saat melancarkan Elemental Skill Khusus ini, Banehunter Oathhammer akan dikonversi menjadi jenis elemen lain yang terlibat dalam reaksi Swirl atau Stellar Swirl sebelumnya.",
+        "Setelah membuka Talenta Ascension \"Verdict and Punishment\", jika Witchlure Bell dalam mode Hunter-Seeker memicu reaksi Swirl atau Stellar Swirl terhadap musuh, maka akan memanggil Banehunter Oathhammer yang sudah mengalami Elemental Conversion berdasarkan reaksi Swirl atau Stellar Swirl kali ini untuk menyerang musuh."
+      ]
+    }
+  },
+  "11320002": {
+    "name": "Verdict and Punishment",
+    "description": {
+      "0": "Dalam Elemental Burst<strong> The Bell Tolls! The Hunt is On!</strong>, setelah Witchlure Bell dalam mode Hunter-Seeker mengakibatkan DMG terhadap musuh, jika DMG tersebut memicu reaksi Swirl terhadap musuh, maka akan memanggil <strong>Banehunter Oathhammer</strong> yang telah mengalami Elemental Conversion berdasarkan reaksi Swirl kali ini di depan musuh dan menghantamnya, mengakibatkan Elemental DMG yang sesuai dengan konversi Swirl. DMG ini dianggap sebagai DMG Elemental Burst."
+    }
+  },
+  "11320003": {
+    "name": "Tolling Synchronicity",
+    "description": {
+      "0": "Setelah Prune menggunakan <strong>Banehunter Oathhammer</strong>yang telah mengalami Elemental Conversion untuk mengenai musuh, anggota party lain di sekitar akan mendapatkan efek Tolling Rally: Meningkatkan DMG yang diakibatkan serangannya berdasarkan ATK Prune."
+    }
+  },
+  "11330001": {
+    "name": "Mode Decoding",
+    "description": {
+      "0": "Fagio akan beralih ke mode ini saat melakukan Charged Attack.",
+      "1": "Dalam mode ini, Fagio akan melancarkan tembakan beruntun ke musuh di depannya, serta menembakkan sinar terkondensasi secara berkala, mengakibatkan <cryo>Cryo DMG Area</cryo>.",
+      "2": "<br/>",
+      "3": "<strong>Radiance: Stellar Glimmer</strong>: DMG dari sinar terkondensasinya berubah menjadi <cryo>Cryo DMG Area</cryo> yang dianggap sebagai DMG reaksi Stellar Glimmer."
+    }
+  },
+  "11330002": {
+    "name": "Decoding Power",
+    "description": {
+      "0": "Saat berada dalam mode <strong>Decoding</strong>, <strong>Decoding Power</strong> Fagio akan terus bertambah. Ketika Decoding Power mencapai batas maksimum, Fagio tidak bisa mempertahankan mode ini atau beralih ke mode Decoding lagi."
+    }
+  },
+  "11330003": {
+    "name": "Polestar Field",
+    "description": {
+      "0": "Saat reaksi Stellar-Conduct terpicu, area di sekitar akan berubah menjadi <strong>Polestar Field</strong> untuk sementara. Saat berada di dalam Polestar Field, beberapa Karakter tertentu akan memasuki status <strong>Radiance: Stellar-Conduct</strong> yang memberikan efek penguatan pada skill-nya."
+    }
+  },
+  "11400001": {
+    "name": "Lead Vocal",
+    "description": {
+      "0": "Ketika Karakter aktif sendiri dalam party mengakibatkan <hydro>Hydro DMG</hydro> atau <cryo>Cryo DMG</cryo> melalui Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, atau Elemental Burst, akan mengonsumsi 1 lapis Lead Vocal untuk meningkatkan DMG yang diakibatkan. Jika saat ini terdapat Wandering Vortex, atau dalam kurun waktu 5 detik setelah ledakan Wandering Vortex, efek di atas hanya akan terpicu saat Karakter mengakibatkan DMG reaksi Stellar Swirl.",
+      "1": "Untuk setiap 1.000 poin Max HP Vodyanitsa yang melebihi 40000, DMG Stellar Swirl dari efek di atas akan meningkat 260 poin, <hydro>Hydro DMG</hydro> dan <cryo>Cryo DMG</cryo> akan meningkat 140 poin. Dengan cara ini, DMG Stellar Swirl dapat meningkat hingga 6500 poin, sedangkan <hydro>Hydro DMG</hydro> dan <cryo>Cryo DMG</cryo> dapat meningkat hingga 3500 poin."
+    }
+  },
+  "11400002": {
+    "name": "Chorus",
+    "description": {
+      "0": "Dipicu oleh anggota party yang ada di dalam party namun tidak berada di medan pertempuran atau Karakter lain yang ada di sekitar party (dan bukan Karakter aktif sendiri dalam party). Memiliki efek yang sama dengan Lead Vocal."
+    }
+  },
+  "11430001": {
+    "name": "Armed for Action",
+    "description": {
+      "0": "Vesna akan masuk ke mode ini setelah melancarkan Elemental Skill <strong>The Art of Victory</strong>. Mode ini berlangsung maksimum 15 detik dan memiliki karakteristik berikut:",
+      "1": [
+        "Meningkatkan ketahanan Vesna terhadap interupsi.",
+        "Saat Vesna melancarkan Normal Attack, Charged Attack, dan Plunging Attack, serangannya akan berubah menjadi <anemo>Anemo DMG</anemo> yang tidak bisa ditimpa Elemental Infusion lainnya, dan memanggil bulu angin untuk melancarkan serangan terkoordinasi terhadap musuh dan mengakibatkan <anemo>Anemo DMG</anemo> tambahan. Setiap kali bulu angin dipanggil, Vesna akan memulihkan sejumlah <strong>Sword Essence</strong>.",
+        "Vesna dapat mengonsumsi <strong>Sword Essence</strong> untuk melancarkan Elemental Skill khusus <strong>Windborne Sword</strong> dan mengakibatkan <anemo>Anemo DMG</anemo> terhadap musuh.",
+        "Saat durasi berakhir atau setelah melancarkan <strong>Windborne Sword</strong> dengan level tertinggi sebanyak tiga kali, Vesna akan keluar dari mode ini dan menghapus semua <strong>Sword Essence</strong> yang sudah terkumpul."
+      ]
+    }
+  },
+  "11430002": {
+    "name": "Sword Essence",
+    "description": {
+      "0": "Energi yang dibutuhkan untuk melancarkan Elemental Skill Khusus <strong>Windborne Sword</strong> dalam mode <strong>Armed for Action</strong>.",
+      "1": "Vesna dapat mengumpulkan Sword Essence dengan cara berikut:",
+      "2": [
+        "Melancarkan Normal Attack, Charged Attack, Plunging Attack dalam mode <strong>Armed for Action</strong> atau melancarkan <strong>Windborne Sword: Transpose</strong> dari Konstelasi <strong>Unwavering Ardor</strong>.",
+        "Melancarkan Elemental Skill <strong>The Art of Victory</strong>.",
+        "Melancarkan Elemental Burst <strong>For the Tsaritsa!</strong>."
+      ]
+    }
+  },
+  "11430003": {
+    "name": "Windborne Sword",
+    "description": {
+      "0": "Dalam mode <strong>Armed for Action</strong>, Vesna dapat mengonsumsi <strong>Sword Essence</strong> untuk melancarkan Elemental Skill Khusus ini dan mengakibatkan <anemo>Anemo DMG</anemo>.",
+      "1": "Setiap kali melancarkan Elemental Skill Khusus <strong>Windborne Sword</strong> dalam satu durasi <strong>Armed for Action</strong> yang sama, level <strong>Windborne Sword</strong> akan meningkat. Level awalnya adalah Lv. 1 dan dapat meningkat hingga Lv. 3.",
+      "2": "Melancarkan <strong>Windborne Sword</strong> di Lv. 2 dan Lv. 3 juga akan memanggil <strong>Spirit Blade</strong> yang mengakibatkan <anemo>Anemo DMG</anemo> terhadap musuh."
+    }
+  },
+  "11430004": {
+    "name": "Spirit Blade",
+    "description": {
+      "0": "Sebuah senjata roh yang bisa dipanggil Vesna dan akan menyerang musuh bersamanya, mengakibatkan <anemo>Anemo DMG</anemo>.",
+      "1": "Vesna dapat memanggil Spirit Blade melalui cara berikut:",
+      "2": [
+        "Melancarkan Elemental Skill Khusus <strong>Windborne Sword</strong> dengan level yang sudah ditingkatkan.",
+        "Melancarkan Elemental Burst <strong>For the Tsaritsa!</strong>.",
+        "Melancarkan <strong>Windborne Sword: Transpose</strong> dari Konstelasi <strong>Unwavering Ardor</strong>."
+      ],
+      "3": "<br/>",
+      "4": "<strong>Radiance: Stellar Swirl</strong>: DMG <strong>Spirit Blade</strong> dikonversi menjadi <anemo>Anemo DMG</anemo> yang dianggap sebagai DMG reaksi Stellar Swirl."
+    }
+  },
+  "11480001": {
+    "name": "Hunter's Mark",
+    "description": {
+      "0": "Efek khusus yang bisa diberikan Alyosha terhadap musuh.",
+      "1": "Saat efek ini diberikan lagi kepada musuh yang sudah berada dalam pengaruh efek <strong>Hunter's Mark</strong>, maka <strong>Hunter's Mark</strong> tersebut akan diaktifkan: menghapus Hunter's Mark ini dan membuat semua Karakter party di sekitar mendapatkan efek <strong>Hunter's Precision</strong>: ATK meningkat saat berada di medan pertempuran."
+    }
+  },
+  "11480002": {
+    "name": "Tugarin",
+    "description": {
+      "0": "Rekan anjing pemburu yang sangat dipercaya oleh Alyosha. Dapat dipanggil ke medan pertempuran dengan cara melancarkan Elemental Burst <strong>Hunter's Advance</strong>. Tugarin akan bergerak cepat untuk mendekati salah satu musuh dan menggigitnya secara berkala, serta mengaktifkan <strong>Hunter's Mark</strong> yang sudah ada."
+    }
+  },
+  "11500001": {
+    "name": "Solo Dance Double",
+    "description": {
+      "0": "Bayangan batin yang menari bersama Odette, dapat dipanggil ke medan pertempuran dengan cara melancarkan Elemental Skill atau Elemental Burst.",
+      "1": "Akan menampilkan dua jenis tarian secara bergantian, yaitu <strong>Plume</strong> dan <strong>Wing</strong>, untuk menyerang musuh di sekitar secara berkala dengan gerakan tarian yang anggun dan ringan, mengakibatkan <cryo>Cryo DMG Area</cryo>.",
+      "2": "Hanya bisa ada satu <strong>Solo Dance Double</strong> yang diciptakan oleh Odette sendiri di saat yang sama.",
+      "3": "<br/>",
+      "4": "Selain itu, saat <strong>Solo Dance Double</strong> yang dipanggil oleh Odette sendiri berada di dekatnya, Elemental Skill <strong>Adagio: Phantom Night Dancers<</strong> milik Odette akan berubah menjadi Elemental Skill khusus <strong>Adagio: Coda at Dawn's Tolling</strong>."
+    }
+  },
+  "11500002": {
+    "name": "Adagio: Coda at Dawn's Tolling",
+    "description": {
+      "0": "Elemental Skill khusus milik Odette yang mengakibatkan <cryo>Cryo DMG Area</cryo> secara terus-menerus terhadap musuh di sekitarnya. Saat tarian duetnya berakhir, Odette akan mengakibatkan satu kali <cryo>Cryo DMG Area</cryo> yang dianggap sebagai DMG reaksi Stellar-Conduct. Saat tarian duetnya berlangsung, Odette dapat mengontrol arah langkah tariannya.",
+      "1": "<strong>Radiance: Stellar Glimmer</strong>: Efek yang muncul saat tarian duetnya berakhir akan diganti menjadi mengakibatkan satu kali <cryo>Cryo DMG Area</cryo> yang dianggap sebagai DMG reaksi Stellar Glimmer yang sesuai.",
+      "2": "<br/>",
+      "3": "Selain itu, setelah melancarkan Elemental Skill khusus <strong>Adagio: Coda at Dawn's Tolling</strong>, jika Odette berada dalam status <strong>Radiance: Stellar Glimmer</strong> dan selama <strong>Solo Dance Double</strong> miliknya masih aktif, maka kedua langkah tari <strong>Solo Dance Double</strong> juga akan mengakibatkan <cryo>Cryo DMG Area</cryo> tambahan yang dianggap sebagai DMG reaksi Stellar Glimmer yang sesuai."
+    }
+  },
+  "11500003": {
+    "name": "Marvelous Splendor",
+    "description": {
+      "0": "Efek khusus yang didapatkan Odette saat memanggil <strong>Solo Dance Double</strong> setelah ia membuka Talenta Ascension \"Spring Rite of the Chosen One\".",
+      "1": "Setiap lapisan <strong>Marvelous Splendor</strong> akan meningkatkan DMG reaksi Stellar Glimmer yang diakibatkan Karakter sebesar 15%. Efek ini berlangsung hingga <strong>Solo Dance Double</strong> miliknya keluar dari medan pertempuran atau saat <strong>Solo Dance Double</strong> dipanggil ulang.",
+      "2": "Saat Odette ada di dalam party namun sedang tidak berada di medan pertempuran, Odette akan kehilangan 1 lapis <strong>Marvelous Splendor</strong> setiap detiknya, tapi Karakter lain di sekitar dalam party akan mendapatkan lapisan <strong>Marvelous Splendor</strong> dengan jumlah yang sesuai."
+    }
+  },
+  "11500004": {
+    "name": "Radiance: Stellar Glimmer",
+    "description": {
+      "0": "Baik <strong>Radiance: Stellar-Conduct</strong> maupun <strong>Radiance: Stellar Swirl</strong> terhitung sebagai status <strong>Radiance: Stellar Glimmer</strong>.",
+      "1": "Karakter hanya dapat dipengaruhi oleh satu jenis status Radiance dalam satu waktu, dengan status <strong>Radiance: Stellar-Conduct</strong> yang menjadi prioritasnya."
     }
   }
 }

@@ -2,14 +2,17 @@ import type { AdDims, AdProps } from '@genshin-optimizer/common/ad'
 import {
   getGOAd,
   getGODrakeAd,
+  getGOLootbarAd,
   getZOBannerAd,
   getZORectAd,
 } from '@genshin-optimizer/common/ad'
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { getRandomElementFromArray } from '@genshin-optimizer/common/util'
-import { notEmpty } from '@genshin-optimizer/common/util'
-import { useMemo } from 'react'
+import {
+  getRandomElementFromArray,
+  notEmpty,
+} from '@genshin-optimizer/common/util'
 import type { FunctionComponent, ReactNode } from 'react'
+import { useMemo } from 'react'
 /**
  * A component that aggregates all ads shown on GO
  */
@@ -44,6 +47,7 @@ function getAdComponents(
     getGOAd,
     // getGODevAd,
     getGODrakeAd,
+    getGOLootbarAd,
     getZOBannerAd,
     getZORectAd,
   ]

@@ -5,6 +5,7 @@ import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import { conditionals } from '@genshin-optimizer/sr/formula'
 import { trans } from '../../util'
 import type { TalentSheetElementKey } from '../consts'
+
 /**
  *  TODO: this is a temporary sheet used to test out conditional UI.
  */

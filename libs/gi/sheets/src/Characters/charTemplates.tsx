@@ -36,7 +36,7 @@ const canShowTalentsNodes: Partial<Record<TalentSheetElementKey, NumNode>> = {
 
 export interface ICharacterTemplate {
   chg: (i18key: string) => ReactNode
-  ch: (i18key: string) => ReactNode
+  ch: (i18key: string, values?: Record<string, string | number>) => ReactNode
   talentTem: (
     talentKey: TalentSheetElementKey,
     docSections?: DocumentSection[]

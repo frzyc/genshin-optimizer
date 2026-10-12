@@ -42,6 +42,7 @@ import { CompareBuildWrapper } from '../build/CompareBuildWrapper'
 import { ArtifactCard } from './ArtifactCard'
 import { ArtifactFilterDisplay } from './ArtifactFilterDisplay'
 import { ArtifactEditor } from './editor'
+
 const numToShowMap = { xs: 2 * 3, sm: 2 * 3, md: 3 * 3, lg: 4 * 3, xl: 4 * 3 }
 
 export function ArtifactSwapModal({

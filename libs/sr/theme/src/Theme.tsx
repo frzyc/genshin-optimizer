@@ -1,6 +1,5 @@
-import { createTheme } from '@mui/material'
-
 import { theme as commonTheme } from '@genshin-optimizer/common/ui'
+import { createTheme } from '@mui/material'
 
 declare module '@mui/material/styles' {
   interface Palette {

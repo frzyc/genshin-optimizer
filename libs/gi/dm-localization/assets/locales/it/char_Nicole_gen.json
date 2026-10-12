@@ -1,0 +1,178 @@
+{
+  "name": "Nicole",
+  "title": "Clamore interiore",
+  "description": "La \"maga\" silente, l'\"angelo\" senza voce.",
+  "constellationName": "Reliquiarium",
+  "auto": {
+    "name": "Allegoria",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Proclama un editto nel linguaggio primordiale ed effettua fino a 3 attacchi che infliggono <pyro>DAN da Pyro</pyro>."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per infliggere <pyro>DAN da Pyro ad area</pyro> agli avversari davanti a lei dopo un breve periodo di lancio."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Nicole si scaglia verso il suolo da mezz'aria, danneggiando tutti gli avversari lungo la sua traiettoria e infliggendo <pyro>DAN da Pyro ad area</pyro> all'impatto con il suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da ATT caricato",
+      "4": "Costo vigore ATT caricato",
+      "5": "DAN da ATT in picchiata",
+      "6": "DAN da ATT in picchiata basso/alto",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Rivelazione: Luce increata",
+    "description": {
+      "0": "Ricrea un fugace scorcio di un'epoca remota, quando gli angeli rispondevano all'autorità dei cieli, conferendo l'effetto <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grazia della kenosis</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11310002 values=[]></tooltip> ai membri vicini del gruppo, che ne aumenta l'ATT, infligge <pyro>DAN da Pyro ad area</pyro> e crea uno Scudo di luce ardente.",
+      "1": "L'assorbimento DAN del suddetto Scudo si basa sull'ATT di Nicole e possiede un 250% di efficienza contro i <pyro>DAN da Pyro</pyro>."
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Assorbimento DAN scudo",
+      "2": "Durata scudo",
+      "3": "Rapporto bonus ATT Grazia della kenosis",
+      "4": "Bonus ATT max Grazia della kenosis",
+      "5": "Durata Grazia della kenosis",
+      "6": "TdR",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Rivelazione: Scala della divina ascensione",
+    "description": {
+      "0": "Intrecciando con fili di luce dorata il cammino del destino ancorato, Nicole infligge <pyro>DAN da Pyro ad area</pyro> e passa alla modalità Contemplazione silente.",
+      "1": "Mentre si trova in questa modalità, quando i membri attivi del gruppo nelle vicinanze colpiscono un avversario, evoca una Proiezione arcana per sferrare un attacco coordinato contro l'avversario, infliggendo DAN elementali ad area del tipo elementale corrispondente del personaggio. Tali DAN aumentano in base all'ATT del suddetto personaggio e sono considerati inflitti da quest'ultimo.",
+      "2": "L'effetto può verificarsi una volta ogni 3 s e attivarsi fino a 4 volte dopo che Nicole è passata alla modalità Contemplazione silente.",
+      "3": "<br/>",
+      "4": "Un dettaglio interessante è che le Proiezioni arcane dei personaggi con attributo Hexerei sembrano avere un aspetto diverso dalle altre..."
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da Proiezione arcana",
+      "2": "Conteggio attacchi Proiezione arcana",
+      "3": "Durata Contemplazione silente",
+      "4": "TdR",
+      "5": "Costo energia",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Methexis",
+    "description": {
+      "0": "Per 20 s dopo aver sprigionato l'abilità elementale <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Rivelazione: Luce increata</tooltip></strong>, Nicole \"osserva\" costantemente gli altri membri attivi del gruppo. Dopo che il personaggio osservato è rimasto in campo per 3 s, la sua <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grazia della kenosis</strong></tooltip> si potenzia in <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Guida della theosis</strong></tooltip>, aumentando l'ATT del suddetto personaggio di ulteriori 300. Se il personaggio osservato è un personaggio con attributo Hexerei, <strong>Grazia della kenosis</strong> si potenzia immediatamente in <strong>Guida della theosis</strong>.",
+      "1": "Quando i personaggi diversi da Nicole che possiedono <strong>Guida della theosis</strong> lasciano il campo, il loro effetto regredisce in <strong>Grazia della kenosis</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Philokalia",
+    "description": {
+      "0": "Quando un avversario subisce DAN elementali da parte dei membri attivi del gruppo vicini, l'effetto <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grazia della kenosis</strong></tooltip> attivo su Nicole si potenzia in <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Guida della theosis</strong></tooltip> per 8 s."
+    }
+  },
+  "passive3": {
+    "name": "Nepsis",
+    "description": {
+      "0": "Quando ti trovi a Teyvat e non sei in un combattimento, l'attacco caricato di Nicole si trasforma in \"Guida dell'emissaria\" se hai già ottenuto la Bussola cercatesori della regione attuale. Guida dell'emissaria invoca i Seelie vicini per mostrare la via, attivando un effetto simile a quello della Bussola cercatesori della regione attuale.",
+      "1": "Ha un tempo di ricarica di 5 s e non ha effetto all'interno di Domini, Domini della conquista o nell'Abisso a spirale."
+    }
+  },
+  "lockedPassive": {
+    "name": "Rito della Vigilia della strega: Luce nell'oscurità",
+    "description": {
+      "0": "Dopo aver completato <strong>Compiti della strega: Il ruolo di una guida...?</strong>, Nicole acquisisce l'attributo <strong>Hexerei</strong>. Quando il gruppo include almeno 2 personaggi con attributo Hexerei, questi ultimi ottengono l'effetto di potenziamento <strong>Hexerei: Rito segreto</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Rito segreto</strong>",
+      "3": "Aumenta i DAN inflitti dalle <strong><tooltip ns=char_Nicole_gen baseKey18=burst>Proiezioni arcane</tooltip></strong> dei personaggi con attributo Hexerei di un 300% dell'ATT di Nicole."
+    }
+  },
+  "constellation1": {
+    "name": "\"Non temere, amata creatura\"",
+    "description": {
+      "0": "Quando il personaggio attivo del tuo gruppo colpisce un avversario, viene evocata una speciale \"Proiezione arcana: Unità\" che sferra un attacco coordinato contro l'avversario, infliggendo DAN elementali ad area del tipo elementale corrispondente del personaggio pari a un 600% del suo ATT. Tali DAN vengono considerati inflitti dal suddetto personaggio.",
+      "1": "Questo effetto può attivarsi una volta ogni 6 s."
+    }
+  },
+  "constellation2": {
+    "name": "\"Ti guiderò e ti mostrerò il sentiero da percorrere\"",
+    "description": {
+      "0": "Potenzia gli effetti dell'abilità elementale <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Rivelazione: Luce increata</tooltip></strong>: <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grazia della kenosis</strong></tooltip> aumenta l'ATT di ulteriori 300 (non conteggiati ai fini del limite del bonus ATT di questo effetto), mentre <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Guida della theosis</strong></tooltip> riduce di un 25% la RES elementale degli avversari vicini in base al tipo elementale corrispondente del personaggio. L'effetto non è cumulabile per lo stesso elemento.",
+      "1": "Inoltre, quando Nicole sprigiona la sua abilità elementale <strong>Rivelazione: Luce increata</strong>, anche i membri attivi del gruppo nelle vicinanze ottengono uno Scudo di luce ardente."
+    }
+  },
+  "constellation3": {
+    "name": "\"Una lanterna al tuo fianco, una luce a illuminare la via\"",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Rivelazione: Luce increata</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"A destra o a manca, ovunque tu vada\"",
+    "description": {
+      "0": "Quando l'effetto <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grazia della kenosis</strong></tooltip> dei membri vicini del gruppo viene potenziato in <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Guida della theosis</strong></tooltip>, Nicole conferisce loro l'effetto Benedizione del precursore per 20 s. Ogni personaggio può ottenere questo effetto una volta ogni 16 s.",
+      "1": "I DAN da attacco normale, attacco caricato, attacco in picchiata, abilità elementale e Tripudio elementale dei personaggi con Benedizione del precursore aumentano di un 70% dell'ATT di Nicole. Questo effetto viene rimosso dopo 8 attivazioni o al termine della sua durata.",
+      "2": "Colpendo più avversari contemporaneamente, viene consumata una quantità di iterazioni di Benedizione del precursore pari al totale degli avversari colpiti. Benedizione del precursore viene conteggiato in modo indipendente per ciascun personaggio."
+    }
+  },
+  "constellation5": {
+    "name": "\"Udirai la mia voce accanto a te\"",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Nicole_gen baseKey18=burst>Rivelazione: Scala della divina ascensione</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Questo è il cammino, percorrilo senza indugio\"",
+    "description": {
+      "0": "Quando l'effetto <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grazia della kenosis</strong></tooltip> di Nicole viene potenziato in <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Guida della theosis</strong></tooltip>, anche <strong>Grazia della kenosis</strong> di tutti gli altri membri vicini del gruppo si potenzia in <strong>Guida della theosis</strong>. Una volta potenziato, <strong>Guida della theosis</strong> non regredisce più in <strong>Grazia della kenosis</strong>.",
+      "1": "Inoltre, i DAN inflitti dai personaggi con <strong>Guida della theosis</strong> ignorano un 40% della DIF degli avversari."
+    }
+  }
+}

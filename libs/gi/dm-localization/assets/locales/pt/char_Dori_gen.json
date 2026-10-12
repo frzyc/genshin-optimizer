@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -63,7 +67,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -101,13 +109,17 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
     "name": "Um Olho Para Ouro",
     "description": {
-      "0": "Quando um personagem conectado ao <strong>Gênio da Lâmpada</strong> desencadear uma reação de Eletricamente Carregado, Carga Lunar, Supercondutor, Sobrecarga, Aceleração, Intensificação, Superflorescimento, Redemoinho Electro ou uma reação de Cristalização Electro, o Tempo de Recarga da <strong>Lâmpada da Proteção: Canhão Apaziguador</strong> é reduzido em 1s.",
+      "0": "Quando um personagem conectado ao <strong>Gênio da Lâmpada</strong> desencadear uma reação de Eletricamente Carregado, Carga Lunar, Supercondutor, Supercondutor Estelar, Sobrecarga, Aceleração, Intensificação, Superflorescimento, Redemoinho Electro ou uma reação de Cristalização Electro, o Tempo de Recarga da <strong>Lâmpada da Proteção: Canhão Apaziguador</strong> é reduzido em 1s.",
       "1": "Esse efeito pode ser desencadeado uma vez a cada 3s."
     }
   },

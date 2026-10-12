@@ -1,6 +1,5 @@
 import { BootstrapTooltip } from '@genshin-optimizer/common/ui'
 import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
-import CheckroomIcon from '@mui/icons-material/Checkroom'
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize'
 import InfoIcon from '@mui/icons-material/Info'
 import PersonIcon from '@mui/icons-material/Person'
@@ -21,14 +20,8 @@ export function LoadoutHeaderContent({
 }) {
   const { t } = useTranslation('loadout')
   const database = useDatabase()
-  const {
-    name,
-    description,
-    buildIds,
-    buildTcIds,
-    optConfigId,
-    customMultiTargets,
-  } = database.teamChars.get(teamCharId)!
+  const { name, description, optConfigId, customMultiTargets } =
+    database.teamChars.get(teamCharId)!
   const { optimizationTarget } = useOptConfig(optConfigId)!
 
   return (
@@ -46,28 +39,12 @@ export function LoadoutHeaderContent({
 
         {showSetting && <SettingsIcon sx={{ ml: 'auto' }} />}
       </Box>
-      <Box sx={{ display: 'flex', gap: 1, justifyContent: 'space-between' }}>
-        <Box sx={{ display: 'flex', justifyItems: 'center', gap: 1 }}>
-          <CheckroomIcon />
-          <Typography>
-            {t('loadoutHeader.builds')}
-            <strong>{buildIds.length}</strong>
-          </Typography>
-        </Box>
-        <Box sx={{ display: 'flex', justifyItems: 'center', gap: 1 }}>
-          <CheckroomIcon />
-          <Typography>
-            {t('loadoutHeader.tcBuilds')}
-            <strong>{buildTcIds.length}</strong>
-          </Typography>
-        </Box>
-        <Box sx={{ display: 'flex', justifyItems: 'center', gap: 1 }}>
-          <DashboardCustomizeIcon />
-          <Typography>
-            {t('loadoutHeader.mltTargets')}
-            <strong>{customMultiTargets.length}</strong>
-          </Typography>
-        </Box>
+      <Box sx={{ display: 'flex', gap: 1 }}>
+        <DashboardCustomizeIcon />
+        <Typography>
+          {t('loadoutHeader.mltTargets')}
+          <strong>{customMultiTargets.length}</strong>
+        </Typography>
       </Box>
       {optimizationTarget && (
         <Typography sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>

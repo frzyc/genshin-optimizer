@@ -1,0 +1,39 @@
+{
+  "name": "Yeşim Ufuklar",
+  "description": {
+    "0": "Muazzam kuvvete sahip bir uzun yay. En karanlık gecelerde bile rüyaların ışığıyla parlar."
+  },
+  "passiveName": "Geceden Örülen Mum",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakter hariç her grup üyesi için:",
+      "1": "Kuşanan karakterle aynı Element Türündeyse kuşanan karakterin Element Ustalığı <cryo>64</cryo> artar.",
+      "2": "Kuşanan karakterle aynı Element Türünde değilse kuşanan karakterin Saldırısı <cryo>%12</cryo> artar.",
+      "3": "Yukarıdaki iki etki toplam 3 defaya kadar birikebilir, önce Element Ustalığı güçlendirmeleri uygulanır."
+    },
+    "1": {
+      "0": "Kuşanan karakter hariç her grup üyesi için:",
+      "1": "Kuşanan karakterle aynı Element Türündeyse kuşanan karakterin Element Ustalığı <cryo>80</cryo> artar.",
+      "2": "Kuşanan karakterle aynı Element Türünde değilse kuşanan karakterin Saldırısı <cryo>%15</cryo> artar.",
+      "3": "Yukarıdaki iki etki toplam 3 defaya kadar birikebilir, önce Element Ustalığı güçlendirmeleri uygulanır."
+    },
+    "2": {
+      "0": "Kuşanan karakter hariç her grup üyesi için:",
+      "1": "Kuşanan karakterle aynı Element Türündeyse kuşanan karakterin Element Ustalığı <cryo>96</cryo> artar.",
+      "2": "Kuşanan karakterle aynı Element Türünde değilse kuşanan karakterin Saldırısı <cryo>%18</cryo> artar.",
+      "3": "Yukarıdaki iki etki toplam 3 defaya kadar birikebilir, önce Element Ustalığı güçlendirmeleri uygulanır."
+    },
+    "3": {
+      "0": "Kuşanan karakter hariç her grup üyesi için:",
+      "1": "Kuşanan karakterle aynı Element Türündeyse kuşanan karakterin Element Ustalığı <cryo>112</cryo> artar.",
+      "2": "Kuşanan karakterle aynı Element Türünde değilse kuşanan karakterin Saldırısı <cryo>%21</cryo> artar.",
+      "3": "Yukarıdaki iki etki toplam 3 defaya kadar birikebilir, önce Element Ustalığı güçlendirmeleri uygulanır."
+    },
+    "4": {
+      "0": "Kuşanan karakter hariç her grup üyesi için:",
+      "1": "Kuşanan karakterle aynı Element Türündeyse kuşanan karakterin Element Ustalığı <cryo>128</cryo> artar.",
+      "2": "Kuşanan karakterle aynı Element Türünde değilse kuşanan karakterin Saldırısı <cryo>%24</cryo> artar.",
+      "3": "Yukarıdaki iki etki toplam 3 defaya kadar birikebilir, önce Element Ustalığı güçlendirmeleri uygulanır."
+    }
+  }
+}

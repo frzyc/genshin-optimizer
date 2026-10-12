@@ -1,5 +1,6 @@
 import type { DBStorage } from '@genshin-optimizer/common/database'
 import { Database, SandboxStorage } from '@genshin-optimizer/common/database'
+import { compressToB64Gzip } from '@genshin-optimizer/common/util'
 import type { GenderKey } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
 import { DBMetaEntry } from './DataEntries/DBMetaEntry'
@@ -12,10 +13,13 @@ import { DisplayWeaponEntry } from './DataEntries/DisplayWeaponEntry'
 import { ArtifactDataManager } from './DataManagers/ArtifactDataManager'
 import { BuildDataManager } from './DataManagers/BuildDataManager'
 import { BuildTcDataManager } from './DataManagers/BuildTcDataManager'
-import { CharMetaDataManager } from './DataManagers/CharMetaDataManager'
 import { CharacterDataManager } from './DataManagers/CharacterDataManager'
+import { CharMetaDataManager } from './DataManagers/CharMetaDataManager'
 import { GeneratedBuildListDataManager } from './DataManagers/GeneratedBuildListDataManager'
 import { OptConfigDataManager } from './DataManagers/OptConfigDataManager'
+import { PandoGeneratedBuildListDataManager } from './DataManagers/PandoGeneratedBuildListDataManager'
+import { PandoOptConfigDataManager } from './DataManagers/PandoOptConfigDataManager'
+import { PandoTeamDataManager } from './DataManagers/PandoTeamDataManager'
 import { TeamCharacterDataManager } from './DataManagers/TeamCharacterDataManager'
 import { TeamDataManager } from './DataManagers/TeamDataManager'
 import { WeaponDataManager } from './DataManagers/WeaponDataManager'
@@ -33,6 +37,9 @@ export class ArtCharDatabase extends Database {
   builds: BuildDataManager
   teamChars: TeamCharacterDataManager
   teams: TeamDataManager
+  pandoGeneratedBuildList: PandoGeneratedBuildListDataManager
+  pandoOptConfigs: PandoOptConfigDataManager
+  pandoTeams: PandoTeamDataManager
 
   dbMeta: DBMetaEntry
   displayWeapon: DisplayWeaponEntry
@@ -80,6 +87,10 @@ export class ArtCharDatabase extends Database {
     // Depends on TeamChar
     this.teams = new TeamDataManager(this)
 
+    this.pandoGeneratedBuildList = new PandoGeneratedBuildListDataManager(this)
+    this.pandoOptConfigs = new PandoOptConfigDataManager(this)
+    this.pandoTeams = new PandoTeamDataManager(this)
+
     // Handle DataEntries
     this.dbMeta = new DBMetaEntry(this)
     this.displayWeapon = new DisplayWeaponEntry(this)
@@ -103,6 +114,9 @@ export class ArtCharDatabase extends Database {
     this.builds.followAny(updateLastEdit)
     this.teamChars.followAny(updateLastEdit)
     this.teams.followAny(updateLastEdit)
+    this.pandoGeneratedBuildList.followAny(updateLastEdit)
+    this.pandoOptConfigs.followAny(updateLastEdit)
+    this.pandoTeams.followAny(updateLastEdit)
     this.displayWeapon.follow(updateLastEdit)
     this.displayArtifact.follow(updateLastEdit)
     this.displayCharacter.follow(updateLastEdit)
@@ -123,6 +137,9 @@ export class ArtCharDatabase extends Database {
       this.builds,
       this.teamChars,
       this.teams,
+      this.pandoGeneratedBuildList,
+      this.pandoOptConfigs,
+      this.pandoTeams,
     ] as const
   }
   get dataEntries() {
@@ -158,7 +175,8 @@ export class ArtCharDatabase extends Database {
   }
   importGOOD(
     good: IGOOD & IGO,
-    keepNotInImport: boolean,
+    keepWepArtiNotInImport: boolean,
+    keepCharNotInImport: boolean,
     ignoreDups: boolean
   ): ImportResult {
     good = migrateGOOD(good)
@@ -172,7 +190,8 @@ export class ArtCharDatabase extends Database {
     }
     const result: ImportResult = newImportResult(
       source,
-      keepNotInImport,
+      keepWepArtiNotInImport,
+      keepCharNotInImport,
       ignoreDups
     )
 
@@ -220,13 +239,16 @@ export class ArtCharDatabase extends Database {
     this.saveStorage()
     other.saveStorage()
   }
-  toExtraLocalDB() {
+  override toExtraLocalDB() {
     const key = `extraDatabase_${this.storage.getDBIndex()}`
     const other = new SandboxStorage()
     const oldstorage = this.storage
     this.storage = other
     this.saveStorage()
     this.storage = oldstorage
-    localStorage.setItem(key, JSON.stringify(Object.fromEntries(other.entries)))
+    localStorage.setItem(
+      key,
+      compressToB64Gzip(Object.fromEntries(other.entries))
+    )
   }
 }

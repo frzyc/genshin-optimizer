@@ -94,6 +94,18 @@ export const mapHashData = {
       desc: [838432396 - MediumTextMapOffset, 'paragraph'],
     },
   },
+  reaction: {
+    superconduct: {
+      name: 614154423,
+      desc: [1461828088, 'paragraph'],
+    },
+    stellarconduct: {
+      name: 1657351122,
+      desc: [2338957416, 'paragraph'],
+      fieldName: 952980404,
+      fieldDesc: [2459265094, 'paragraph'],
+    },
+  },
   statKey: {
     hp: 2404061249,
     hp_: 2404061249,

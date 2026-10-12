@@ -14,7 +14,7 @@ import { Box, CardActionArea, Skeleton, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { Suspense, useCallback, useContext } from 'react'
 import { ZCard } from '../Components'
-import { StatHighlightContext, getHighlightRGBA, isHighlight } from '../context'
+import { getHighlightRGBA, isHighlight, StatHighlightContext } from '../context'
 import { COMPACT_CARD_HEIGHT_PX, EmptyCompactCard } from '../util'
 
 export function CompactWengineCard({
@@ -50,6 +50,7 @@ export function CompactWengineCard({
     wengine.phase,
     wengine.modification
   )
+  const mainStatKey = wengineStat['base_statkey']
   const substatKey = wengineStat['second_statkey']
 
   return (
@@ -129,8 +130,8 @@ export function CompactWengineCard({
                     },
                   }}
                 >
-                  <StatIcon statKey={'atk'} />
-                  <span>{wengineStats['atk_base'].toFixed()}</span>
+                  <StatIcon statKey={mainStatKey} />
+                  <span>{wengineStats[mainStatKey].toFixed()}</span>
                 </Typography>
                 <Typography
                   sx={{

@@ -5,10 +5,10 @@ import {
   objKeyValMap,
 } from '@genshin-optimizer/common/util'
 import { parse } from 'json-bigint'
-import { TextMapEN } from '../../TextMapUtil'
 import { PROJROOT_PATH } from '../../consts'
 import type { RelicSetId } from '../../mapping/relic'
 import { relicSetIdMap } from '../../mapping/relic'
+import { TextMapEN } from '../../TextMapUtil'
 import { readDMJSON } from '../../util'
 import type { HashId } from '../common'
 

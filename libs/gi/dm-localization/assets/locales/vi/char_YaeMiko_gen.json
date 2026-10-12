@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -72,7 +76,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -80,6 +88,12 @@
     "description": {
       "0": "Trong dân gian Inazuma có nhắc đến khái niệm \"kitsunetsuki\", hay có thể hiểu là chứng nhận của hồ ly. Trong đó, của \"Thiên Hồ\" là tương đối đặc biệt, có thể dùng lôi đình để giáng xuống người kẻ địch của Đền Narukami. Giáng sấm sét xuống, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>.",
       "1": "Khi thi triển, Yae Miko sẽ giải phóng Sesshou Sakura ở gần đó, phá hủy hình thái của chúng và hóa thành Thiên Hồ Lôi Đình giáng xuống, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>. Mỗi lần phá hủy 1 Sesshou Sakura bằng cách này sẽ giáng xuống 1 tia Thiên Hồ Lôi Đình.",
+      "2": "<br/>",
+      "3": "<i>Vào lúc này, Yae cần để lộ ra chứng nhận thiên hồ để hiệu lệnh lôi đình. Nhưng những kẻ đã nhìn thấy đại nhân Guuji để lộ chiếc đuôi đều đã tan biến không còn lại gì dù chỉ là hạt bụi. Cho nên, hãy nhớ cho kỹ nhé - Yae đại nhân không hề có đuôi.</i>"
+    },
+    "upgradedDescription": {
+      "0": "Trong dân gian Inazuma có nhắc đến khái niệm \"kitsunetsuki\", hay có thể hiểu là chứng nhận của hồ ly. Trong đó, của \"Thiên Hồ\" là tương đối đặc biệt, có thể dùng lôi đình để giáng xuống người kẻ địch của Đền Narukami. Giáng sấm sét xuống, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>.",
+      "1": "Khi thi triển, Yae Miko sẽ dựa vào Sesshou Sakura ở gần đó, hóa thành Thiên Hồ Lôi Đình giáng xuống, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>. Mỗi tồn tại một Sesshou Sakura ở gần, sẽ giáng xuống 1 tia Thiên Hồ Lôi Đình.",
       "2": "<br/>",
       "3": "<i>Vào lúc này, Yae cần để lộ ra chứng nhận thiên hồ để hiệu lệnh lôi đình. Nhưng những kẻ đã nhìn thấy đại nhân Guuji để lộ chiếc đuôi đều đã tan biến không còn lại gì dù chỉ là hạt bụi. Cho nên, hãy nhớ cho kỹ nhé - Yae đại nhân không hề có đuôi.</i>"
     },
@@ -99,13 +113,22 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
     "name": "Bóng Râm Đền Thần",
     "description": {
       "0": "Khi thi triển <strong>Đại Bí Pháp - Tenko Kenshin</strong>, mỗi lần phá hủy một Sesshou Sakura sẽ làm mới một lần CD kỹ năng <strong>Thần Chú Yakan - Sesshou Sakura</strong>."
+    },
+    "upgradedDescription": {
+      "0": "Khi thi triển <strong>Đại Bí Pháp - Tenko Kenshin</strong>, với mỗi Sesshou Sakura dựa vào, sẽ đặt lại một lần CD của <strong>Thần Chú Yakan - Sesshou Sakura</strong>.",
+      "1": "Khi cùng lúc tồn tại tối thiểu 3 Sesshou Sakura ở gần, khi thi triển <strong>Thần Chú Yakan - Sesshou Sakura</strong>, Yae Miko sẽ còn dẫn dụ thêm một luồng sấm sét oanh tạc, gây <electro>Sát Thương Nguyên Tố Lôi</electro> tương đương 40% Tấn Công của Yae Miko.",
+      "2": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Đòn sấm sét tấn công thêm kể trên sẽ chuyển sang gây một lần <electro>Sát Thương Nguyên Tố Lôi</electro> tương đương 50% Tấn Công của Yae Miko và được xem là sát thương phản ứng Tinh-Siêu Dẫn."
     }
   },
   "passive2": {
@@ -120,16 +143,30 @@
       "0": "Khi ghép nguyên liệu thiên phú nhân vật, có tỷ lệ 25% sản sinh thêm 1 nguyên liệu thiên phú ngẫu nhiên khác của cùng khu vực, cấp bậc giống với nguyên liệu khi ghép."
     }
   },
+  "lockedPassive": {
+    "name": "Sắc Lệnh Đền Thờ",
+    "description": {
+      "0": "Thời gian duy trì Sesshou Sakura tăng thêm 10s. Sau khi nhân vật trong đội ở gần kích hoạt phản ứng Siêu Dẫn hoặc Tinh-Siêu Dẫn, lần giáng sấm sét tiếp theo của Sesshou Sakura sẽ được cường hóa: Tăng sát thương gây ra, mức tăng tương đương 80% Tấn Công của Yae Miko. Hiệu quả này mỗi 2.5s tối đa kích hoạt một lần.",
+      "1": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Sau khi đòn sấm sét được cường hóa kể trên đánh trúng kẻ địch, sẽ còn gây thêm một lần <electro>Sát Thương Nguyên Tố Lôi</electro> tương đương 200% Tấn Công của Yae Miko, và được xem là sát thương phản ứng Tinh-Siêu Dẫn.",
+      "2": "Ngoài ra, khi ở trong <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Vùng Trục Sao</strong></tooltip>, Yae Miko sẽ vào trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>."
+    }
+  },
   "constellation1": {
     "name": "Biên Niên Sử Hồ Ly",
     "description": {
       "0": "<strong>Đại Bí Pháp - Tenko Kenshin</strong> mỗi khi kích hoạt 1 lần Thiên Hồ Lôi Đình, đều sẽ hồi 8 điểm năng lượng nguyên tố cho bản thân Yae Miko."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Đại Bí Pháp - Tenko Kenshin</strong> mỗi khi kích hoạt 1 lần Thiên Hồ Lôi Đình, đều sẽ hồi 8 điểm năng lượng nguyên tố cho bản thân Yae Miko. Sau khi Yae Miko kích hoạt phản ứng Siêu Dẫn/Tinh-Siêu Dẫn hoặc gây sát thương phản ứng Tinh-Siêu Dẫn, nhân vật trong đội ở gần sẽ nhận 50% buff Sát Thương Nguyên Tố Lôi và sát thương Tinh-Siêu Dẫn, duy trì 10s. Kích hoạt lại sẽ làm mới thời gian duy trì."
     }
   },
   "constellation2": {
     "name": "Tiếng Gọi Đêm Trăng",
     "description": {
       "0": "Cấp bậc ban đầu của <strong>Sesshou Sakura</strong> khi vừa được tạo ra sẽ tăng ngay đến bậc 2, tối đa có thể tăng đến bậc 4, phạm vi tấn công tăng 60%."
+    },
+    "upgradedDescription": {
+      "0": "Cấp bậc ban đầu của <strong>Sesshou Sakura</strong> khi vừa được tạo ra sẽ tăng ngay đến bậc 2, tối đa có thể tăng đến bậc 4, phạm vi tấn công tăng 60%. Ngoài ra, khi Sesshou Sakura trong trận, sẽ còn căn cứ vào bậc của Sesshou Sakura để khiến Yae Miko và nhân vật ra trận hiện tại trong đội bản thân tăng 60/90/120/200 điểm Tinh Thông Nguyên Tố."
     }
   },
   "constellation3": {
@@ -143,6 +180,9 @@
     "name": "Anh Đào Dẫn Lôi Chương",
     "description": {
       "0": "Sau khi sấm sét của <strong>Sesshou Sakura</strong> đánh trúng kẻ địch, tất cả nhân vật trong đội ở gần sẽ nhận được 20% <electro>Buff Sát Thương Nguyên Tố Lôi</electro>, duy trì 5s."
+    },
+    "upgradedDescription": {
+      "0": "Sau khi sấm sét của <strong>Sesshou Sakura</strong> đánh trúng kẻ địch, tất cả nhân vật trong đội ở gần sẽ nhận được 20% <electro>buff Sát Thương Nguyên Tố Lôi</electro>, duy trì 5s, đồng thời hồi phục 8 điểm Năng Lượng Nguyên Tố cho Yae Miko. Hiệu quả hồi Năng Lượng Nguyên Tố kể trên mỗi 5s tối đa kích hoạt một lần. Ngoài ra, sát thương Kỹ Năng Nộ của Yae Miko sẽ tăng 100%."
     }
   },
   "constellation5": {
@@ -156,6 +196,9 @@
     "name": "Cấm Thuật Daisesshou",
     "description": {
       "0": "<strong>Sesshou Sakura</strong> khi tấn công sẽ bỏ qua 60% phòng ngự của kẻ địch."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Sesshou Sakura</strong> khi tấn công sẽ bỏ qua 60% phòng ngự của kẻ địch. Sát thương phản ứng Tinh-Siêu Dẫn do Yae Miko gây ra sẽ tăng 200% Sát Thương Bạo Kích."
     }
   }
 }

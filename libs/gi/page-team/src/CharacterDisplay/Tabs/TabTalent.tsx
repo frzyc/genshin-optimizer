@@ -8,14 +8,14 @@ import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
 import {
   CharacterContext,
   TeamCharacterContext,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
 } from '@genshin-optimizer/gi/db-ui'
 import { isTalentKey } from '@genshin-optimizer/gi/good'
 import {
   type DocumentSection,
-  type TalentSheetElementKey,
   getCharSheet,
+  type TalentSheetElementKey,
 } from '@genshin-optimizer/gi/sheets'
 import {
   DataContext,
@@ -84,6 +84,7 @@ export default function CharacterTalentPane() {
     () =>
       range(1, maxConstellationCount).map((i) => (
         <SkillDisplayCard
+          key={i}
           talentKey={`constellation${i}` as TalentSheetElementKey}
           subtitle={t('constellationLvl', { level: i })}
           onClickTitle={() =>
@@ -205,11 +206,13 @@ export default function CharacterTalentPane() {
 function ReactionDisplay() {
   const { data } = useContext(DataContext)
   const reaction = data.getDisplay()['reaction'] as Record<string, CalcResult>
+  // Add Nicole projections here, idk where else
+  const nicole = data.getDisplay()['nicole'] as Record<string, CalcResult>
   return (
     <CardThemed bgt="light">
       <CardContent>
         <Grid container spacing={1}>
-          {Object.entries(reaction)
+          {[...Object.entries(reaction), ...Object.entries(nicole)]
             .filter(([_, node]) => !node.isEmpty)
             .map(([key, node]) => {
               return (

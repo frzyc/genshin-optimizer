@@ -12,24 +12,56 @@ import {
   StyledEngineProvider,
   ThemeProvider,
 } from '@mui/material'
-import { Suspense, lazy } from 'react'
+import type { ComponentType } from 'react'
+import { lazy, Suspense } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import Footer from './Footer'
 import Header from './Header'
 import PageHome from './PageHome'
 
-const PageRelics = lazy(() => import('@genshin-optimizer/sr/page-relics'))
+const PageRelics = lazy(
+  () =>
+    import('@genshin-optimizer/sr/page-relics') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
+)
 const PageLightCones = lazy(
-  () => import('@genshin-optimizer/sr/page-lightcones')
+  () =>
+    import('@genshin-optimizer/sr/page-lightcones') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
 )
 const PageCharacters = lazy(
-  () => import('@genshin-optimizer/sr/page-characters')
+  () =>
+    import('@genshin-optimizer/sr/page-characters') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
 )
-const PageTeams = lazy(() => import('@genshin-optimizer/sr/page-teams'))
-const PageTeam = lazy(() => import('@genshin-optimizer/sr/page-team'))
-const PageSettings = lazy(() => import('@genshin-optimizer/sr/page-settings'))
+const PageTeams = lazy(
+  () =>
+    import('@genshin-optimizer/sr/page-teams') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
+)
+const PageTeam = lazy(
+  () =>
+    import('@genshin-optimizer/sr/page-team') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
+)
+const PageSettings = lazy(
+  () =>
+    import('@genshin-optimizer/sr/page-settings') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
+)
 
-const PageOptimize = lazy(() => import('@genshin-optimizer/sr/page-optimize'))
+const PageOptimize = lazy(
+  () =>
+    import('@genshin-optimizer/sr/page-optimize') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
+)
 
 // Enable debug mode for Pando calcs
 setDebugMode(isDev)

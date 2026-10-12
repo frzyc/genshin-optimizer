@@ -1,0 +1,29 @@
+{
+  "setName": "Heart of the Furnace",
+  "setEffects": {
+    "2": "ATK +18%.",
+    "4": "Saat Karakter yang mengenakan memicu reaksi Stellar Glimmer atau mengakibatkan DMG reaksi Stellar Glimmer, maka ATK +12% dan DMG reaksi Stellar Glimmer yang diakibatkan Karakter party di sekitar +50% selama 12 detik. Efek di atas juga dapat terpicu saat Karakter yang mengenakan ada di dalam party namun tidak berada dalam medan pertempuran. Bonus DMG dari Set Artefak dengan nama yang sama tidak dapat ditumpuk."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Foundryman's Conjecture",
+      "desc": "Ia tahu bahwa kehangatan hati manusia tidak seperti suhu perapian yang bisa diukur dan dipahami perubahannya."
+    },
+    "plume": {
+      "name": "Foundryman's Observation",
+      "desc": "Ia tahu bahwa perubahan dunia tidak seperti nyala api tungku yang dapat dipahami melalui pengamatan."
+    },
+    "sands": {
+      "name": "Foundryman's Calculus",
+      "desc": "Ia tahu bahwa cara kerja kekuasaan tidaklah seperti nyala api tungku yang bisa dikendalikan alirannya melalui sebuah tombol."
+    },
+    "goblet": {
+      "name": "Foundryman's Magnanimity",
+      "desc": "Ia tahu bahwa persahabatan tidaklah seperti nyala api tungku yang dapat terus menyala selama bahan bakarnya masih ada."
+    },
+    "circlet": {
+      "name": "Foundryman's Legacy",
+      "desc": "Ia tahu bahwa tekad untuk mengejar sebuah impian tidaklah seperti nyala api tungku yang bisa diteruskan bak obor ke tangan penerusnya."
+    }
+  }
+}

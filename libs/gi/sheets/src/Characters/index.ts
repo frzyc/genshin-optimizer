@@ -5,12 +5,11 @@ import type {
   TravelerKey,
 } from '@genshin-optimizer/gi/consts'
 import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
-import type { CharacterSheet } from './CharacterSheet'
-
 import Aino from './Aino'
 import Albedo from './Albedo'
 import Alhaitham from './Alhaitham'
 import Aloy from './Aloy'
+import Alyosha from './Alyosha'
 import Amber from './Amber'
 import AratakiItto from './AratakiItto'
 import Arlecchino from './Arlecchino'
@@ -19,6 +18,7 @@ import Barbara from './Barbara'
 import Beidou from './Beidou'
 import Bennett from './Bennett'
 import Candace from './Candace'
+import type { CharacterSheet } from './CharacterSheet'
 import Charlotte from './Charlotte'
 import Chasca from './Chasca'
 import Chevreuse from './Chevreuse'
@@ -70,6 +70,7 @@ import Lauma from './Lauma'
 import Layla from './Layla'
 import Linnea from './Linnea'
 import Lisa from './Lisa'
+import Lohen from './Lohen'
 import Lynette from './Lynette'
 import Lyney from './Lyney'
 import Mavuika from './Mavuika'
@@ -80,14 +81,18 @@ import Nahida from './Nahida'
 import Navia from './Navia'
 import Nefer from './Nefer'
 import Neuvillette from './Neuvillette'
+import Nicole from './Nicole'
 import Nilou from './Nilou'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
+import Odette from './Odette'
 import Ororon from './Ororon'
+import Prune from './Prune'
 import Qiqi from './Qiqi'
 import RaidenShogun from './RaidenShogun'
 import Razor from './Razor'
 import Rosaria from './Rosaria'
+import Sandrone from './Sandrone'
 import SangonomiyaKokomi from './SangonomiyaKokomi'
 import Sayu from './Sayu'
 import Sethos from './Sethos'
@@ -102,6 +107,8 @@ import Thoma from './Thoma'
 import Tighnari from './Tighnari'
 import TravelerAnemoF from './TravelerAnemoF'
 import TravelerAnemoM from './TravelerAnemoM'
+import TravelerCryoF from './TravelerCryoF'
+import TravelerCryoM from './TravelerCryoM'
 import TravelerDendroF from './TravelerDendroF'
 import TravelerDendroM from './TravelerDendroM'
 import TravelerElectroF from './TravelerElectroF'
@@ -115,6 +122,8 @@ import TravelerPyroM from './TravelerPyroM'
 import Varesa from './Varesa'
 import Varka from './Varka'
 import Venti from './Venti'
+import Vesna from './Vesna'
+import Vodyanitsa from './Vodyanitsa'
 import Wanderer from './Wanderer'
 import Wriothesley from './Wriothesley'
 import Xiangling from './Xiangling'
@@ -138,6 +147,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Albedo,
   Alhaitham,
   Aloy,
+  Alyosha,
   Amber,
   AratakiItto,
   Arlecchino,
@@ -197,6 +207,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Layla,
   Linnea,
   Lisa,
+  Lohen,
   Lynette,
   Lyney,
   Mavuika,
@@ -207,14 +218,18 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Navia,
   Nefer,
   Neuvillette,
+  Nicole,
   Nilou,
   Ningguang,
   Noelle,
+  Odette,
   Ororon,
+  Prune,
   Qiqi,
   RaidenShogun,
   Razor,
   Rosaria,
+  Sandrone,
   SangonomiyaKokomi,
   Sayu,
   Sethos,
@@ -228,12 +243,14 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Thoma,
   Tighnari,
   TravelerAnemoF,
-  TravelerGeoF,
-  TravelerElectroF,
-  TravelerDendroF,
   TravelerAnemoM,
+  TravelerCryoF,
+  TravelerCryoM,
+  TravelerGeoF,
   TravelerGeoM,
+  TravelerElectroF,
   TravelerElectroM,
+  TravelerDendroF,
   TravelerDendroM,
   TravelerHydroF,
   TravelerHydroM,
@@ -242,6 +259,8 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Varesa,
   Varka,
   Venti,
+  Vesna,
+  Vodyanitsa,
   Wanderer,
   Wriothesley,
   Xiangling,

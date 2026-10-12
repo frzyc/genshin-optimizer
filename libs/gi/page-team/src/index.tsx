@@ -12,21 +12,19 @@ import {
   TeamCharacterContext,
   useBuildTc,
   useCharacter,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
   useTeam,
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
-import type {
-  ChartData,
-  GraphContextObj,
-  dataContextObj,
-} from '@genshin-optimizer/gi/ui'
 import {
   DataContext,
+  type ChartData,
   FormulaDataWrapper,
   GraphContext,
+  type dataContextObj,
+  type GraphContextObj,
   OptTargetWrapper,
   SillyContext,
   useTeamDataNoContext,
@@ -129,6 +127,8 @@ function Page({ teamId }: { teamId: string }) {
     'charNames_gen',
     'page_character',
     'page_team',
+    'tooltips_gen',
+    'sheet_gen',
   ])
 
   useTitle(

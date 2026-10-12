@@ -50,4 +50,5 @@ dumpFile(
   `${PROJROOT_PATH}/src/dm/character/AvatarRankConfig_charMapped_gen.json`,
   avatarRankConfig
 )
+
 export { avatarRankConfig }

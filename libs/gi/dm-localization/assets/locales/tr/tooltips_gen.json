@@ -12,6 +12,13 @@
       "7": "<cryo>Buz</cryo>: Kritik Hasar %20 artar."
     }
   },
+  "10050002": {
+    "name": "Buz Işıltısı",
+    "description": {
+      "0": "Gezgin tarafından oluşturulan bir <strong>Buzdelen Yıldızının</strong> buz kristali bir düşmana isabet ettiğinde veya Gezgin, <strong>Yabancı Buz Tabakası</strong> Yeteneğini açtıktan sonra <strong>Yüklü Saldırı: Donduran Buz</strong> kullandığında özel bir etki tetiklenir. 8 kademeye kadar birikir.",
+      "1": "<strong>Donuk Mızrak</strong> Element Patlamasını kullanmak, Gezginin tüm <strong>Buz Işıltısı</strong> kademelerini tüketir ve mevcut Element Patlamasının verdiği Hasarı artırır. Eğer 8 kademe tüketilirse Element Patlamasında gerçekleştirilen saldırı sayısı da artar."
+    }
+  },
   "11120001": {
     "name": "Soğuk Muhafaza Modu",
     "description": {
@@ -47,7 +54,7 @@
   "11130002": {
     "name": "Kurtarma Kiti",
     "description": {
-      "0": "En fazla 150 puan birikebilir. Ifa'nın sahip olduğu her Kurtarma Kiti puanı, yakındaki grup üyelerinin verdiği Elektrik Yüklü ve Girdap Hasarını %1,5 artırır, Ay Yüklü Hasarını ise %0,2 artırır. Ifa'nın Gece Ruhunun Lütfu durumu sona erdiğinde puanlar sıfırlanır."
+      "0": "En fazla 150 puan birikebilir. Ifa'nın sahip olduğu her Kurtarma Kiti puanı, yakındaki grup üyelerinin verdiği Elektrik Yüklü ve Girdap Hasarını %1,5 artırır, Ay Yüklü Hasarını %0,2 artırır, Yıldız Girdabı Tepkimesi Hasarını ise %0.24 artırır. Ifa'nın Gece Ruhunun Lütfu durumu sona erdiğinde puanlar sıfırlanır."
     }
   },
   "11130003": {
@@ -97,12 +104,12 @@
   "11130007": {
     "name": "Akıl Almaz Mantık",
     "description": {
-      "0": "Yakındaki grup üyeleri düşman üzerinde Donma, Süper İletim, Buz Girdabı veya Buz Kristalleşmesi tepkimelerini tetiklediğinde o düşmanın yakınında bir Boşluk Yarığı oluşur. Bu etki 2,5 saniyede bir tetiklenebilir. Savaş alanında aynı anda Skirk'ün yarattığı en fazla 3 Boşluk Yarığı bulunabilir.",
+      "0": "Yakındaki grup üyeleri düşman üzerinde Donma, Süper İletim, Yıldız İletimi, Buz Girdabı, Yıldız Girdabı veya Buz Kristalleşmesi tepkimelerini tetiklediğinde o düşmanın yakınında bir Boşluk Yarığı oluşur. Bu etki 2,5 saniyede bir tetiklenebilir. Savaş alanında aynı anda Skirk'ün yarattığı en fazla 3 Boşluk Yarığı bulunabilir.",
       "1": "<br/>",
       "2": "Skirk, yakınındaki Boşluk Yarıklarını aşağıdaki yollarla soğurur:",
       "3": [
         "Yedi Aşamalı Parıltı modundayken bir düşmana Yüklü Saldırı ile vurarak.",
-        "Yedi Aşamalı Parıltı modundayken <strong>Yıkım: Tükeniş</strong> Element Patlamasını kullanarak.",
+        "Yedi Aşamalı Parıltı modundayken <strong>Yıkım: Tükeniş</strong> özel Element Patlamasını kullanarak.",
         "<strong>Yıkım: Bükme</strong> Element Becerisine Basılı Tutup hızlı hareket etmeye başlayarak."
       ],
       "4": "<br/>",
@@ -350,6 +357,40 @@
       "3": "Ayrıca Varka, <strong>Dört Rüzgarın Yükselişi</strong> kullanım haklarını harcayarak Dayanıklılık tüketmeyen özel <strong>Gök Yutan</strong> Yüklü Saldırısını gerçekleştirebilir. Bu saldırı, 2 defa Varka'nın sağ eliyle tuttuğu çift elli kılıcın elementine karşılık gelen ve diğer element tesirleriyle değiştirilemeyen Element Hasarı ve 2 defa da <anemo>Rüzgar Hasarı</anemo> verir."
     }
   },
+  "11290001": {
+    "name": "Usta Vuruş",
+    "description": {
+      "0": "Lohen, <strong>Öngörülmez Darbe</strong> Element Becerisini kullandıktan sonra bu moda geçer. Usta Vuruş modu aşağıdaki özelliklere sahiptir:",
+      "1": [
+        "Lohen'in Normal, Yüklü ve Havadan Saldırıları, diğer element tesirleriyle değişmeyecek şekilde <cryo>Buz Hasarı</cryo> verir.",
+        "Lohen bir düşmana Normal Saldırı veya Yüklü Saldırıyla vurduğunda <strong>Haz</strong> kademeleri biriktirir. Bu kademeleri tüketerek <strong>İliğe ve Ruha Kazınmış</strong> özel Element Becerisini kullanabilir. Lohen <strong>Usta Vuruş</strong> modundayken <strong>İliğe ve Ruha Kazınmış</strong> becerisini en fazla 3 defa kullanabilir, sonrasında artık <strong>Haz</strong> biriktiremez.",
+        "Yakındaki grup üyeleri Hasar verdiğinde Lohen için <strong>Kazanma Arzusu</strong> biriktirirler. Kazanma Arzusu kullanılarak <strong>İliğe ve Ruha Kazınmış</strong> Hasarı artırılabilir.",
+        "Lohen savaş alanından çıktığında Usta Vuruş modu sona erer, <strong>Haz</strong> ve <strong>Kazanma Arzusu</strong> sıfırlanır."
+      ]
+    }
+  },
+  "11290002": {
+    "name": "İliğe ve Ruha Kazınmış",
+    "description": {
+      "0": "Lohen'in <strong>Haz</strong> değeri maksimum sınıra ulaştığında kullanabildiği özel Element Becerisi.",
+      "1": "Bir düşmana isabet ettiğinde tüm <strong>Haz</strong> ve <strong>Kazanma Arzusu</strong> kademelerini tüketerek <cryo>Buz Hasarı</cryo> verir. Bu Hasar, tüketilen <strong>Kazanma Arzusu</strong> miktarına göre artar."
+    }
+  },
+  "11290003": {
+    "name": "Haz",
+    "description": {
+      "0": "Lohen Usta Vuruş modundayken Normal veya Yüklü Saldırılarıyla düşmanlara vurduğunda 0.381298 <strong>Haz</strong> birikir. En fazla 100 Haz birikebilir.",
+      "1": "Her 0,1 saniyede bir <strong>Haz</strong> biriktirilebilir. <strong>Haz</strong> maksimum sınıra ulaştığında Lohen'in <strong>Öngörülmez Darbe</strong> Element Becerisi, özel <strong>İliğe ve Ruha Kazınmış</strong> Element Becerisi olarak değişir."
+    }
+  },
+  "11290004": {
+    "name": "Kazanma Arzusu",
+    "description": {
+      "0": "Lohen Usta Vuruş modundayken yakındaki diğer grup üyeleri Hasar verdiğinde biriken özel bir kaynak. Aynı anda en fazla 100 Kazanma Arzusu birikebilir.",
+      "1": "Usta Vuruş modu etkinken yakındaki diğer grup üyeleri Hasar verdiğinde, bu Hasar Lohen'in Temel Saldırısının %55.2868 kadarından daha az değilse Lohen 0.829302 <strong>Kazanma Arzusu</strong> biriktirir. Aksi takdirde 1 <strong>Kazanma Arzusu</strong> birikir.",
+      "2": "Her karakter, Lohen için her 0,1 saniyede bir <strong>Kazanma Arzusu</strong> biriktirebilir."
+    }
+  },
   "11300001": {
     "name": "Lumi: Saldırı Formları",
     "description": {
@@ -365,6 +406,178 @@
       "9": "<strong>Standart Güç Formu</strong>",
       "10": "Diğer formlar kadar gösterişli olmasa da yine de ciddi bir güce sahiptir.",
       "11": "Lumi, yakındaki düşmanlara sürekli olarak saldırmak için daha uzun aralıklarla <strong>Bam Bam Pataklama</strong> kullanır. Her saldırı 2 defa <geo>Toprak Alan Hasarı</geo> verir."
+    }
+  },
+  "11310001": {
+    "name": "Fedakarlık Lütfu",
+    "description": {
+      "0": "<strong>Vahiy: Var Edilmemiş Işık</strong> Element Becerisi kullanıldıktan sonra Nicole yakındaki tüm grup üyelerine şu etkiyi bahşeder: Grup üyelerinin Saldırısı Nicole'un Saldırısına göre artar.",
+      "1": "Belirli koşullar karşılandığında <strong>Fedakarlık Lütfu</strong> etkisi gelişerek <strong>İlahi Rehberlik</strong> haline gelir ve Saldırıyı daha da artırır."
+    }
+  },
+  "11310002": {
+    "name": "İlahi Rehberlik",
+    "description": {
+      "0": "<strong>Fedakarlık Lütfu</strong> etkisini geliştirmek Saldırıyı 300 daha artırır.",
+      "1": "\"İştirak\" Yükseltme Yeteneği açıldıktan sonra aşağıdaki gözlem koşullarından herhangi biri karşılandığında, <strong>Fedakarlık Lütfu</strong> gelişerek kalan süresi boyunca <strong>İlahi Rehberlik</strong> haline gelir:",
+      "2": [
+        "Gözlem altındaki başka bir karakter 3 saniyeden uzun süre alanda kalırsa.",
+        "Gözlem altındaki başka bir karakter bir Cadılık karakteriyse."
+      ],
+      "3": "<br/>",
+      "4": "Ayrıca \"İyilik Sevgisi\" Yükseltme Yeteneği açıldıktan sonra yakındaki aktif bir grup üyesinin verdiği Element Hasarı bir düşmana isabet ettiğinde, Nicole'un kendi <strong>Fedakarlık Lütfu</strong> da 8 saniyeliğine gelişerek <strong>İlahi Rehberlik</strong> halini alır.",
+      "5": "<br/>",
+      "6": "<strong>İlahi Rehberlik</strong> etkisine sahip olan Nicole dışındaki karakterler alandan ayrıldığında etkileri tekrar <strong>Fedakarlık Lütfu</strong> haline döner."
+    }
+  },
+  "11320001": {
+    "name": "Bela Kovan Ant Çekici",
+    "description": {
+      "0": "Cadı avcısının güvenilir yoldaşı! Bela Kovan Ant Çekici doğru koşullar altında Element Dönüşümü geçirerek tüm Hasarını ilgili Element Türünün Hasarına dönüştürür.",
+      "1": "Prune, Element Dönüşümüne uğramış Bela Kovan Ant Çekicini aşağıdaki şekillerde çağırabilir:",
+      "2": [
+        " Prune <strong>Ding Ding! Büyü Avı Zili</strong> Element Becerisi ile bir düşman üzerinde Girdap ya da Yıldız Girdabı Tepkimesi tetiklendikten sonra belirli bir süreliğine <strong>Çın Çın! Cadıyı Cezalandırma Zamanı!</strong> özel Element Becerisini kullanabilir. Bu özel Element Becerisi kullanıldığında Bela Kovan Ant Çekici, söz konusu Girdap ya da Yıldız Girdabı Tepkimesinde yer alan diğer Element Türüne dönüşür.",
+        "\"Yargı ve Ceza\" Yükseltme Yeteneği açıldıktan sonra, Avcı-Arayıcı modundaki Cadıkapan Çanı bir düşman üzerinde Girdap ya da Yıldız Girdabı tetiklediğinde düşmana saldırmak için ilgili Element Dönüşümüne uğramış bir Bela Kovan Ant Çekici çağırır."
+      ]
+    }
+  },
+  "11320002": {
+    "name": "Yargı ve Ceza",
+    "description": {
+      "0": "<strong>Çanlar Çalıyor! Av Başladı!</strong> Element Patlaması sırasında, Avcı-Arayıcı modundaki Cadıkapan Çanı bir düşmana Hasar verdikten sonra bu Hasar düşman üzerinde Girdap tepkimesi tetiklerse Girdap tepkimesinde gerçekleşen Element Dönüşümüyle aynı türde Hasar veren bir <strong>Bela Kovan Ant Çekici</strong> çağrılır. Bu Hasar, Element Patlaması Hasarı sayılır."
+    }
+  },
+  "11320003": {
+    "name": "Eş Zamanlı Çınlama",
+    "description": {
+      "0": "Prune, Element Dönüşümü geçirmiş <strong>Bela Kovan Ant Çekicini</strong> kullanarak bir düşmana vurduğunda, yakındaki diğer grup üyeleri İlham Yankısı etkisini kazanır: Saldırı Hasarı, Prune'un Saldırısına göre artar."
+    }
+  },
+  "11330001": {
+    "name": "Deşifre",
+    "description": {
+      "0": "Yüklü Saldırı kullanıldığında Fagio bu moda geçer.",
+      "1": "Bu moddayken Fagio önündeki düşmanlara bir tarama ateşi saldırısı yapar ve belirli aralıklarla yoğunlaştırılmış ışınlar ateşleyerek <cryo>Buz Alan Hasarı</cryo> verir.",
+      "2": "<strong>Işıltı: Yıldız Parıltısı</strong>: Yoğunlaştırılmış ışınlar bunun yerine ilgili Yıldız Parıltısı Hasarı sayılan <cryo>Buz Alan Hasarı</cryo> verir."
+    }
+  },
+  "11330002": {
+    "name": "Deşifre Gücü",
+    "description": {
+      "0": "<strong>Deşifre</strong> modundayken Fagio'nun <strong>Deşifre Gücü</strong> sürekli artar. Deşifre Gücü maksimuma ulaştığında Fagio, Deşifre modunu sürdüremez veya bu moda yeniden giremez."
+    }
+  },
+  "11330003": {
+    "name": "Kutup Yıldızı Alanı",
+    "description": {
+      "0": "Yıldız İletimi tetiklendiğinde çevredeki alan kısa süreliğine bir <strong>Kutup Yıldızı Alanına</strong> dönüşür ve belirli karakterler bir Kutup Yıldızı Alanı içindeyken çeşitli beceri güçlendirmeleri sağlayan <strong>Işıltı: Yıldız İletimi</strong> durumuna girer."
+    }
+  },
+  "11400001": {
+    "name": "Ana Vokal",
+    "description": {
+      "0": "Grubun mevcut aktif karakteri Normal Saldırı, Yüklü Saldırı, Havadan Saldırı, Element Becerisi veya Element Patlamasıyla <hydro>Su Hasarı</hydro> ya da <cryo>Buz Hasarı</cryo> verdiğinde 1 kademe \"Ana Vokal\" tüketilir ve verilen Hasar artar. Ancak alanda bir Başıboş Burgaç varken veya bir Başıboş Burgaç patladıktan sonraki 5sn boyunca bu etki yalnızca karakter Yıldız Girdabı Tepkimesi Hasarı verdiğinde tetiklenir.",
+      "1": "Vodyanitsa'nın 40000 üzerinde sahip olduğu her 1000 Maks. Can, yukarıdaki etkideki Yıldız Girdabı Tepkimesi Hasarını 260 artırır; verilen <hydro>Su Hasarını</hydro> ve <cryo>Buz Hasarını</cryo> ise 140 artırır. Verilen Yıldız Girdabı Tepkimesi Hasarı bu şekilde en fazla 6500, <hydro>Su Hasarı</hydro> ve <cryo>Buz Hasarı</cryo> ise en fazla 3500 artırılabilir."
+    }
+  },
+  "11400002": {
+    "name": "Koro",
+    "description": {
+      "0": "Alanda olmayan grup üyeleri veya mevcut aktif grup üyesi dışında yakındaki başka bir grup üyesi tarafından tetiklenir. Etkileri \"Ana Vokal\" ile aynıdır."
+    }
+  },
+  "11430001": {
+    "name": "Eyleme Hazır",
+    "description": {
+      "0": "Vesna, <strong>Zafer Sanatı</strong> Element Becerisini kullandıktan sonra bu moda geçer. 15 saniyeye kadar sürebilen bu moddayken:",
+      "1": [
+        "Vesna'nın müdahaleye karşı direnci artar.",
+        "Vesna'nın Normal, Yüklü ve Havadan Saldırılarıyla verdiği Hasar, başka bir Element Tesiriyle değiştirilemeyecek şekilde <anemo>Rüzgar Hasarı</anemo> olur. Ayrıca düşmanlara onunla aynı anda saldıran ve ek <anemo>Rüzgar Hasarı</anemo> veren bir Rüzgar Tüyü çağırır. Rüzgar Tüyü her çağrıldığında Vesna bir miktar <strong>Kılıç Özü</strong> yeniler.",
+        "Vesna, <strong>Kılıç Özü</strong> tüketerek düşmanlara <anemo>Rüzgar Hasarı</anemo> veren <strong>Yel Kılıcı</strong> özel Element Becerisini kullanabilir.",
+        "Vesna, modun süresi bittiğinde veya <strong>Yel Kılıcı</strong> özel Element Becerisini en yüksek seviyede 3 defa kullandığında bu moddan çıkar. Moddan çıkmak, kalan tüm <strong>Kılıç Özünü</strong> sıfırlar."
+      ]
+    }
+  },
+  "11430002": {
+    "name": "Kılıç Özü",
+    "description": {
+      "0": "<strong>Eyleme Hazır</strong> modundayken <strong>Yel Kılıcı</strong> özel Element Becerisini kullanmak için gereken enerji.",
+      "1": "Vesna, aşağıdaki yöntemlerle Kılıç Özü kazanabilir:",
+      "2": [
+        "<strong>Eyleme Hazır</strong> modundayken Normal, Yüklü veya Havadan Saldırı yaparak ya da <strong>Sarsılmaz Sadakat</strong> Takımyıldızındaki <strong>Yel Kılıcı: Dönüşüm</strong> etkisini kullanarak.",
+        "<strong>Zafer Sanatı</strong> Element Becerisini kullanarak.",
+        "<strong>Çariçe İçin!</strong> Element Patlamasını kullanarak."
+      ]
+    }
+  },
+  "11430003": {
+    "name": "Yel Kılıcı",
+    "description": {
+      "0": "Vesna, <strong>Eyleme Hazır</strong> modundayken <strong>Kılıç Özü</strong> tüketerek <anemo>Rüzgar Hasarı</anemo> veren özel Element Becerisini kullanabilir.",
+      "1": "Aynı <strong>Eyleme Hazır</strong> modunda <strong>Yel Kılıcı</strong> özel Element Becerisini her kullandığında <strong>Yel Kılıcının</strong> seviyesi yükselir, Sv. 1 ile başlayıp en fazla Sv. 3 olabilir.",
+      "2": "Sv. 2 ve Sv. 3 <strong>Yel Kılıcı</strong> kullanmak ayrıca <anemo>Rüzgar Hasarı</anemo> veren bir <strong>Ruh Kılıcı</strong> çağırır."
+    }
+  },
+  "11430004": {
+    "name": "Ruh Kılıcı",
+    "description": {
+      "0": "Vesna'nın çağırabildiği, özel güçlere sahip bir silah. Düşmana Vesna ile beraber saldırarak <anemo>Rüzgar Hasarı</anemo> verir.",
+      "1": "Vesna, Ruh Kılıçlarını aşağıdaki yöntemlerle çağırabilir:",
+      "2": [
+        "Sv. 2 ve Sv. 3 <strong>Yel Kılıcı</strong> özel Element Becerisini kullanarak.",
+        "<strong>Çariçe İçin!</strong> Element Patlamasını kullanarak.",
+        "<strong>Sarsılmaz Sadakat</strong> Takımyıldızındaki <strong>Yel Kılıcı: Dönüşüm</strong> etkisini kullanarak."
+      ],
+      "3": "<br/>",
+      "4": "<strong>Işıltı: Yıldız Girdabı</strong>: <strong>Ruh Kılıçları</strong> tarafından verilen Hasar, Yıldız Girdabı Tepkimesi Hasarı sayılan <anemo>Rüzgar Hasarına</anemo> dönüşür."
+    }
+  },
+  "11480001": {
+    "name": "Avcının İşareti",
+    "description": {
+      "0": "Alyosha'nın düşmana uygulayabileceği özel bir etki.",
+      "1": "Bu etki, önceden <strong>Avcının İşareti</strong> etkisi altında olan bir düşmana uygulandığında <strong>Avcının İşareti</strong> etkinleşir ve işaret kalkarak yakındaki tüm grup üyelerine <strong>Avcının Keskinliği</strong> etkisini verip karakterler alandayken Saldırılarını artırır."
+    }
+  },
+  "11480002": {
+    "name": "Tugarin",
+    "description": {
+      "0": "<strong>Avcının İlerleyişi</strong> Element Patlaması ile alana çağrılabilen, Alyosha'nın güvenilir av köpeği ve yoldaşı.",
+      "1": "Düzenli aralıklarla bir düşmana yaklaşıp ona saldırır ve mevcut tüm <strong>Avcının İşaretlerini</strong> etkinleştirir."
+    }
+  },
+  "11500001": {
+    "name": "Solo Dans Gölgesi",
+    "description": {
+      "0": "Odette ile dans düeti yapan psişik gölgesi. Element Becerisini veya Element Patlamasını kullanarak savaş alanına çağırabilir.",
+      "1": "<strong>Tüy</strong> ve <strong>Kanat</strong> dans hareketleri arasında geçiş yaparak belirli aralıklarla yakındaki düşmanlara saldırır ve <cryo>Buz Alan Hasarı</cryo> verir.",
+      "2": "Savaş alanında aynı anda Odette'in çağırdığı yalnızca bir <strong>Solo Dans Gölgesi</strong> bulunabilir.",
+      "3": "<br/>",
+      "4": "Ayrıca yakında Odette'in çağırdığı bir <strong>Dans Gölgesi</strong> varken Odette'in <strong>Yavaş Tempo: Hayalet Gece Dansçıları</strong> Element Becerisi değişerek <strong>Yavaş Tempo: Şafakla Gelen Son</strong> özel Element Becerisi olur."
+    }
+  },
+  "11500002": {
+    "name": "Yavaş Tempo: Şafakla Gelen Son",
+    "description": {
+      "0": "Odette'in özel Element Becerisi. Yakındaki düşmanlara zamanla <cryo>Buz Alan Hasarı</cryo> verir. Sonrasında dans düeti sona erdiğinde bir defa daha <cryo>Buz Alan Hasarı</cryo> verir; bu Hasar, Yıldız İletimi Hasarı sayılır. Dans düeti sırasında Odette, dans adımlarının yönünü kontrol edebilir.",
+      "1": "<strong>Işıltı: Yıldız Parıltısı</strong>: Dans düeti sona erince verilen Hasar, ilgili Yıldız tepkimesi türünün <cryo>Buz Alan Hasarına</cryo> dönüşür.",
+      "2": "<br/>",
+      "3": "Ayrıca Odette, <strong>Yavaş Tempo: Şafakla Gelen Son</strong> özel Element Becerisini kullandığında eğer <strong>Işıltı: Yıldız Parıltısı</strong> durumundaysa ve <strong>Dans Gölgesi</strong> de savaş alanındaysa; <strong>Dans Gölgesinin</strong> iki dans türü, ilgili Yıldız Parıltısı tepkimesi türünde ek <cryo>Buz Alan Hasarı</cryo> verir."
+    }
+  },
+  "11500003": {
+    "name": "Mucizevi İhtişam",
+    "description": {
+      "0": "Odette, \"Seçilmiş Kişinin Bahar Ayini\" Yükseltme Yeteneğini açtıktan sonra <strong>Solo Dans Gölgesini</strong> çağırdığında özel bir etki kazanır.",
+      "1": "Aktif her <strong>Mucizevi İhtişam</strong> kademesi, karakterin Yıldız Parıltısı Hasarını %15 artırır. Bu etki, <strong>Dans Gölgesi</strong> savaş alanından çıkana veya <strong>Solo Dans Gölgesi</strong> yeniden çağrılana kadar sürer.",
+      "2": "Odette alanda değilken her saniye 1 kademe <strong>Mucizevi İhtişam</strong> kaybeder, aynı zamanda yakındaki diğer grup üyeleri de aynı miktarda <strong>Mucizevi İhtişam</strong> kademesi kazanır."
+    }
+  },
+  "11500004": {
+    "name": "Işıltı: Yıldız Parıltısı",
+    "description": {
+      "0": "<strong>Işıltı: Yıldız İletimi</strong> ve <strong>Işıltı: Yıldız Girdabı</strong>, <strong>Işıltı: Yıldız Parıltısı</strong> durumu sayılır.",
+      "1": "Karakterler aynı anda yalnızca bir Işıltı durumunda olabilir. Birden fazla durumun tetiklenebileceği durumlarda önce <strong>Işıltı: Yıldız İletimi</strong> uygulanır."
     }
   }
 }

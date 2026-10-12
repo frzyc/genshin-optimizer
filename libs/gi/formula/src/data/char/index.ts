@@ -3,6 +3,7 @@ import Aino from './Aino'
 import Albedo from './Albedo'
 import Alhaitham from './Alhaitham'
 import Aloy from './Aloy'
+import Alyosha from './Alyosha'
 import Amber from './Amber'
 import AratakiItto from './AratakiItto'
 import Arlecchino from './Arlecchino'
@@ -62,6 +63,7 @@ import Lauma from './Lauma'
 import Layla from './Layla'
 import Linnea from './Linnea'
 import Lisa from './Lisa'
+import Lohen from './Lohen'
 import Lynette from './Lynette'
 import Lyney from './Lyney'
 import Mavuika from './Mavuika'
@@ -72,14 +74,18 @@ import Nahida from './Nahida'
 import Navia from './Navia'
 import Nefer from './Nefer'
 import Neuvillette from './Neuvillette'
+import Nicole from './Nicole'
 import Nilou from './Nilou'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
+import Odette from './Odette'
 import Ororon from './Ororon'
+import Prune from './Prune'
 import Qiqi from './Qiqi'
 import RaidenShogun from './RaidenShogun'
 import Razor from './Razor'
 import Rosaria from './Rosaria'
+import Sandrone from './Sandrone'
 import SangonomiyaKokomi from './SangonomiyaKokomi'
 import Sayu from './Sayu'
 import Sethos from './Sethos'
@@ -93,6 +99,7 @@ import Tartaglia from './Tartaglia'
 import Thoma from './Thoma'
 import Tighnari from './Tighnari'
 import TravelerAnemo from './TravelerAnemo'
+import TravelerCryo from './TravelerCryo'
 import TravelerDendro from './TravelerDendro'
 import TravelerElectro from './TravelerElectro'
 import TravelerGeo from './TravelerGeo'
@@ -101,6 +108,8 @@ import TravelerPyro from './TravelerPyro'
 import Varesa from './Varesa'
 import Varka from './Varka'
 import Venti from './Venti'
+import Vesna from './Vesna'
+import Vodyanitsa from './Vodyanitsa'
 import Wanderer from './Wanderer'
 import Wriothesley from './Wriothesley'
 import Xiangling from './Xiangling'
@@ -124,6 +133,7 @@ const data: TagMapNodeEntries[] = [
   Albedo,
   Alhaitham,
   Aloy,
+  Alyosha,
   Amber,
   AratakiItto,
   Arlecchino,
@@ -183,6 +193,7 @@ const data: TagMapNodeEntries[] = [
   Layla,
   Linnea,
   Lisa,
+  Lohen,
   Lynette,
   Lyney,
   Mavuika,
@@ -193,14 +204,18 @@ const data: TagMapNodeEntries[] = [
   Navia,
   Nefer,
   Neuvillette,
+  Nicole,
   Nilou,
   Ningguang,
   Noelle,
+  Odette,
   Ororon,
+  Prune,
   Qiqi,
   RaidenShogun,
   Razor,
   Rosaria,
+  Sandrone,
   SangonomiyaKokomi,
   Sayu,
   Sethos,
@@ -216,6 +231,8 @@ const data: TagMapNodeEntries[] = [
   Varesa,
   Varka,
   Venti,
+  Vesna,
+  Vodyanitsa,
   Wanderer,
   Wriothesley,
   Xiangling,
@@ -239,5 +256,6 @@ const data: TagMapNodeEntries[] = [
   TravelerDendro,
   TravelerHydro,
   TravelerPyro,
+  TravelerCryo,
 ]
 export default data.flat()

@@ -155,6 +155,30 @@
       "cd_s": "ItemSuitNotesFromtheChained_S.png",
       "cd_a": "ItemSuitNotesFromtheChained_A.png",
       "cd_b": "ItemSuitNotesFromtheChained_B.png"
+    },
+    "WutheringSalon": {
+      "circle": "SuitWutheringSalon.png",
+      "cd_s": "ItemSuitWutheringSalon_S.png",
+      "cd_a": "ItemSuitWutheringSalon_A.png",
+      "cd_b": "ItemSuitWutheringSalon_B.png"
+    },
+    "TheSkyAblaze": {
+      "circle": "SuitTheSkyAblaze.png",
+      "cd_s": "ItemSuitTheSkyAblaze_S.png",
+      "cd_a": "ItemSuitTheSkyAblaze_A.png",
+      "cd_b": "ItemSuitTheSkyAblaze_B.png"
+    },
+    "FeatheredFate": {
+      "circle": "SuitFeatheredFate.png",
+      "cd_s": "ItemSuitFeatheredFate_S.png",
+      "cd_a": "ItemSuitFeatheredFate_A.png",
+      "cd_b": "ItemSuitFeatheredFate_B.png"
+    },
+    "ThornedRose": {
+      "circle": "SuitThornedRose.png",
+      "cd_s": "ItemSuitThornedRose_S.png",
+      "cd_a": "ItemSuitThornedRose_A.png",
+      "cd_b": "ItemSuitThornedRose_B.png"
     }
   },
   "chars": {
@@ -514,6 +538,69 @@
       "trap": "IconRoleGeneral60.png",
       "select": "IconRoleSelect60.png",
       "interknot": "IconInterKnotRole0060.png"
+    },
+    "StarlightBilly": {
+      "full": "IconRole62.png",
+      "circle": "IconRoleCircle62.png",
+      "trap": "IconRoleGeneral62.png",
+      "select": "IconRoleSelect62.png",
+      "interknot": "IconInterKnotRole0062.png"
+    },
+    "Promeia": {
+      "full": "IconRole61.png",
+      "circle": "IconRoleCircle61.png",
+      "trap": "IconRoleGeneral61.png",
+      "select": "IconRoleSelect61.png",
+      "interknot": "IconInterKnotRole0061.png"
+    },
+    "Pyrois": {
+      "full": "IconRole63.png",
+      "circle": "IconRoleCircle63.png",
+      "trap": "IconRoleGeneral63.png",
+      "select": "IconRoleSelect63.png",
+      "interknot": "IconInterKnotRole0063.png"
+    },
+    "Velina": {
+      "full": "IconRole64.png",
+      "circle": "IconRoleCircle64.png",
+      "trap": "IconRoleGeneral64.png",
+      "select": "IconRoleSelect64.png",
+      "interknot": "IconInterKnotRole0064.png"
+    },
+    "Norma": {
+      "full": "IconRole65.png",
+      "circle": "IconRoleCircle65.png",
+      "trap": "IconRoleGeneral65.png",
+      "select": "IconRoleSelect65.png",
+      "interknot": "IconInterKnotRole0065.png"
+    },
+    "Remielle": {
+      "full": "IconRole67.png",
+      "circle": "IconRoleCircle67.png",
+      "trap": "IconRoleGeneral67.png",
+      "select": "IconRoleSelect67.png",
+      "interknot": "IconInterKnotRole0067.png"
+    },
+    "Sigrid": {
+      "full": "IconRole66.png",
+      "circle": "IconRoleCircle66.png",
+      "trap": "IconRoleGeneral66.png",
+      "select": "IconRoleSelect66.png",
+      "interknot": "IconInterKnotRole0066.png"
+    },
+    "Claret": {
+      "full": "IconRole1611.png",
+      "circle": "IconRoleCircle1611.png",
+      "trap": "IconRoleGeneral1611.png",
+      "select": "IconRoleSelect1611.png",
+      "interknot": "IconInterKnotRole0069.png"
+    },
+    "Roxy": {
+      "full": "IconRole68.png",
+      "circle": "IconRoleCircle68.png",
+      "trap": "IconRoleGeneral68.png",
+      "select": "IconRoleSelect68.png",
+      "interknot": "IconInterKnotRole0068.png"
     }
   },
   "wengines": {
@@ -576,6 +663,10 @@
     "CinderCobalt": {
       "icon": "Weapon_B_Common_15.png",
       "big": "Weapon_B_Common_15Big.png"
+    },
+    "LunarSemiluna": {
+      "icon": "Weapon_B_Common_16.png",
+      "big": "Weapon_B_Common_16Big.png"
     },
     "StreetSuperstar": {
       "icon": "Weapon_A_Common_01.png",
@@ -641,6 +732,14 @@
       "icon": "Weapon_A_Common_16.png",
       "big": "Weapon_A_Common_16Big.png"
     },
+    "CattyLuck": {
+      "icon": "Weapon_A_Common_17.png",
+      "big": "Weapon_A_Common_17Big.png"
+    },
+    "BoisterousEchoes": {
+      "icon": "Weapon_A_Common_18.png",
+      "big": "Weapon_A_Common_18Big.png"
+    },
     "CauldronOfClarity": {
       "icon": "Weapon_A_Common_19.png",
       "big": "Weapon_A_Common_19Big.png"
@@ -648,6 +747,10 @@
     "TheSimmeringPot": {
       "icon": "Weapon_A_Common_20.png",
       "big": "Weapon_A_Common_20Big.png"
+    },
+    "BloodmarrowCoffer": {
+      "icon": "Weapon_A_Common_21.png",
+      "big": "Weapon_A_Common_21Big.png"
     },
     "DemaraBatteryMarkII": {
       "icon": "Weapon_A_1011.png",
@@ -864,6 +967,42 @@
     "SerpentineSeeker": {
       "icon": "Weapon_S_1521.png",
       "big": "Weapon_S_1521Big.png"
+    },
+    "StarlightRiderFaceplate": {
+      "icon": "Weapon_S_1531.png",
+      "big": "Weapon_S_1531Big.png"
+    },
+    "FrostfallSickle": {
+      "icon": "Weapon_S_1541.png",
+      "big": "Weapon_S_1541Big.png"
+    },
+    "SolExuvia": {
+      "icon": "Weapon_S_Common_04.png",
+      "big": "Weapon_S_Common_04Big.png"
+    },
+    "JoyauDore": {
+      "icon": "Weapon_S_1561.png",
+      "big": "Weapon_S_1561Big.png"
+    },
+    "ChiefSidekick": {
+      "icon": "Weapon_S_1571.png",
+      "big": "Weapon_S_1571Big.png"
+    },
+    "OdeOfResurrectedWings": {
+      "icon": "Weapon_S_1581.png",
+      "big": "Weapon_S_1581Big.png"
+    },
+    "KnightsExtolment": {
+      "icon": "Weapon_S_1591.png",
+      "big": "Weapon_S_1591Big.png"
+    },
+    "CrimsonThirst": {
+      "icon": "Weapon_S_1611.png",
+      "big": "Weapon_S_1611Big.png"
+    },
+    "CrimsonMoonCasket": {
+      "icon": "Weapon_S_1621.png",
+      "big": "Weapon_S_1621Big.png"
     }
   }
 }

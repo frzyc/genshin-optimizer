@@ -4,8 +4,11 @@ import type {
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
-
 import type { ReactNode } from 'react'
+
+export { getTagLabel } from './tagLabel'
+export { tagToTagField } from './tagToTagField'
+
 export const st = (
   strKey: string,
   values?: Record<string, string | number>
@@ -28,6 +31,7 @@ type CharTransKey =
   | 'TravelerDendro'
   | 'TravelerHydro'
   | 'TravelerPyro'
+  | 'TravelerCryo'
 export function trans(typeKey: 'char', key: CharTransKey): Translated
 export function trans(typeKey: 'weapon', key: WeaponKey): Translated
 export function trans(typeKey: 'artifact', key: ArtifactSetKey): Translated

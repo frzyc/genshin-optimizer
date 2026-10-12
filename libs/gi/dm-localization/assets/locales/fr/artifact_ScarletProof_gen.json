@@ -1,0 +1,29 @@
+{
+  "setName": "Preuve écarlate",
+  "setEffects": {
+    "2": "Augmente l'ATQ de 18 %.",
+    "4": "Augmente le taux CRIT du personnage équipé de l'artéfact de 16 % et ses DGT de réaction d'Astrodispersion de 40 % pendant 10 s lorsqu'il a déclenché une réaction d'Astrodispersion."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Honneur à ton dévouement",
+      "desc": "Un ornement floral d'un rouge éclatant, symbole de gloire flamboyante."
+    },
+    "plume": {
+      "name": "Gloire à ton héritage",
+      "desc": "Une plume d'oie d'un rouge éclatant, offerte aux plus jeunes."
+    },
+    "sands": {
+      "name": "Temps qui t'est offert",
+      "desc": "Une montre de poche d'un rouge éclatant, indiquant le temps alloué à une conversation."
+    },
+    "goblet": {
+      "name": "Calice de ton sang et de ta douleur",
+      "desc": "Une bouteille de vin d'un rouge éclatant. Puissiez-vous ne jamais savoir ce qu'elle renferme..."
+    },
+    "circlet": {
+      "name": "Témoignage de ta foi",
+      "desc": "Un casque d'un rouge éclatant. Espérons qu'il ait, un jour, protégé quelqu'un..."
+    }
+  }
+}

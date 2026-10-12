@@ -1,6 +1,5 @@
-import { createTheme } from '@mui/material'
-
 import { theme as commonTheme } from '@genshin-optimizer/common/ui'
+import { createTheme } from '@mui/material'
 
 declare module '@mui/material/styles' {
   interface Palette {
@@ -31,6 +30,9 @@ declare module '@mui/material/styles' {
     hyperbloom: Palette['primary']
     lunarbloom: Palette['primary']
     lunarcrystallize: Palette['primary']
+    stellarconduct: Palette['primary']
+    stellarcryo: Palette['primary']
+    stellarswirl: Palette['primary']
   }
 
   interface PaletteOptions {
@@ -61,6 +63,9 @@ declare module '@mui/material/styles' {
     hyperbloom?: PaletteOptions['primary']
     lunarbloom?: PaletteOptions['primary']
     lunarcrystallize?: PaletteOptions['primary']
+    stellarconduct?: PaletteOptions['primary']
+    stellarcryo?: PaletteOptions['primary']
+    stellarswirl?: PaletteOptions['primary']
   }
 }
 
@@ -93,6 +98,9 @@ declare module '@mui/material/Button' {
     hyperbloom: true
     lunarbloom: true
     lunarcrystallize: true
+    stellarconduct: true
+    stellarcryo: true
+    stellarswirl: true
   }
 }
 
@@ -125,6 +133,9 @@ declare module '@mui/material/Chip' {
     hyperbloom: true
     lunarbloom: true
     lunarcrystallize: true
+    stellarconduct: true
+    stellarcryo: true
+    stellarswirl: true
   }
 }
 
@@ -173,6 +184,9 @@ declare module '@mui/material/SvgIcon' {
     hyperbloom: true
     lunarbloom: true
     lunarcrystallize: true
+    stellarconduct: true
+    stellarcryo: true
+    stellarswirl: true
   }
 }
 
@@ -283,6 +297,18 @@ export const theme = createTheme({
     lunarcrystallize: commonTheme.palette.augmentColor({
       color: { main: '#fff2baff', contrastText: '#222' },
       name: 'lunarcrystallize',
+    }),
+    stellarconduct: commonTheme.palette.augmentColor({
+      color: { main: '#e4d1ff', contrastText: '#222' },
+      name: 'stellarconduct',
+    }),
+    stellarcryo: commonTheme.palette.augmentColor({
+      color: { main: '#abf7ff', contrastText: '#222' },
+      name: 'stellarconduct_cryo',
+    }),
+    stellarswirl: commonTheme.palette.augmentColor({
+      color: { main: '#a1facc', contrastText: '#222' },
+      name: 'stellarswirl',
     }),
   },
 })

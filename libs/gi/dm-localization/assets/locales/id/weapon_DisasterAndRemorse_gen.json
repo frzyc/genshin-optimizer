@@ -1,0 +1,49 @@
+{
+  "name": "Disaster and Remorse",
+  "description": {
+    "0": "Tombak panjang yang ditempa dari batu putih dan Starsilver. Ujungnya yang tajam selalu diliputi hawa dingin yang menusuk tulang."
+  },
+  "passiveName": "Dolorous Stroke",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah Karakter yang mengenakan melancarkan Elemental Skill, mendapatkan efek Path of Conflict yang berlangsung selama 17 detik dan efek \"Unforgivable\" dan \"Irreparable\" yang masing-masingnya berlangsung selama 3 detik, dapat terpicu sekali setiap 18 detik.",
+      "1": "Unforgivable: DMG Normal Attack dan Charged Attack Karakter yang mengenakan +<cryo>40%.</cryo>",
+      "2": "Irreparable: DMG Elemental Skill dan Elemental Burst Karakter yang mengenakan +<cryo>40%</cryo>.",
+      "3": "Selama durasi Path of Conflict, saat Normal Attack dan Charged Attack Karakter yang mengenakan mengenai musuh, durasi Irreparable akan bertambah 1 detik. Saat Elemental Skill dan Elemental Burst Karakter yang mengenakan mengenai musuh, durasi Unforgivable akan bertambah 1 detik. Efek di atas masing-masing dapat terpicu sekali setiap 0,1 detik. Efek Unforgivable dan Irreparable akan hilang saat durasi Path of Conflict berakhir, atau saat Karakter yang mengenakan meninggalkan medan pertempuran.",
+      "4": "<br/>",
+      "5": "Hexerei: Secret Rite: Seluruh efek peningkatan DMG yang disebutkan di atas meningkat sebesar 75%."
+    },
+    "1": {
+      "0": "Setelah Karakter yang mengenakan melancarkan Elemental Skill, mendapatkan efek Path of Conflict yang berlangsung selama 17 detik dan efek \"Unforgivable\" dan \"Irreparable\" yang masing-masingnya berlangsung selama 3 detik, dapat terpicu sekali setiap 18 detik.",
+      "1": "Unforgivable: DMG Normal Attack dan Charged Attack Karakter yang mengenakan +<cryo>50%.</cryo>",
+      "2": "Irreparable: DMG Elemental Skill dan Elemental Burst Karakter yang mengenakan +<cryo>50%</cryo>.",
+      "3": "Selama durasi Path of Conflict, saat Normal Attack dan Charged Attack Karakter yang mengenakan mengenai musuh, durasi Irreparable akan bertambah 1 detik. Saat Elemental Skill dan Elemental Burst Karakter yang mengenakan mengenai musuh, durasi Unforgivable akan bertambah 1 detik. Efek di atas masing-masing dapat terpicu sekali setiap 0,1 detik. Efek Unforgivable dan Irreparable akan hilang saat durasi Path of Conflict berakhir, atau saat Karakter yang mengenakan meninggalkan medan pertempuran.",
+      "4": "<br/>",
+      "5": "Hexerei: Secret Rite: Seluruh efek peningkatan DMG yang disebutkan di atas meningkat sebesar 75%."
+    },
+    "2": {
+      "0": "Setelah Karakter yang mengenakan melancarkan Elemental Skill, mendapatkan efek Path of Conflict yang berlangsung selama 17 detik dan efek \"Unforgivable\" dan \"Irreparable\" yang masing-masingnya berlangsung selama 3 detik, dapat terpicu sekali setiap 18 detik.",
+      "1": "Unforgivable: DMG Normal Attack dan Charged Attack Karakter yang mengenakan +<cryo>60%.</cryo>",
+      "2": "Irreparable: DMG Elemental Skill dan Elemental Burst Karakter yang mengenakan +<cryo>60%</cryo>.",
+      "3": "Selama durasi Path of Conflict, saat Normal Attack dan Charged Attack Karakter yang mengenakan mengenai musuh, durasi Irreparable akan bertambah 1 detik. Saat Elemental Skill dan Elemental Burst Karakter yang mengenakan mengenai musuh, durasi Unforgivable akan bertambah 1 detik. Efek di atas masing-masing dapat terpicu sekali setiap 0,1 detik. Efek Unforgivable dan Irreparable akan hilang saat durasi Path of Conflict berakhir, atau saat Karakter yang mengenakan meninggalkan medan pertempuran.",
+      "4": "<br/>",
+      "5": "Hexerei: Secret Rite: Seluruh efek peningkatan DMG yang disebutkan di atas meningkat sebesar 75%."
+    },
+    "3": {
+      "0": "Setelah Karakter yang mengenakan melancarkan Elemental Skill, mendapatkan efek Path of Conflict yang berlangsung selama 17 detik dan efek \"Unforgivable\" dan \"Irreparable\" yang masing-masingnya berlangsung selama 3 detik, dapat terpicu sekali setiap 18 detik.",
+      "1": "Unforgivable: DMG Normal Attack dan Charged Attack Karakter yang mengenakan +<cryo>70%.</cryo>",
+      "2": "Irreparable: DMG Elemental Skill dan Elemental Burst Karakter yang mengenakan +<cryo>70%</cryo>.",
+      "3": "Selama durasi Path of Conflict, saat Normal Attack dan Charged Attack Karakter yang mengenakan mengenai musuh, durasi Irreparable akan bertambah 1 detik. Saat Elemental Skill dan Elemental Burst Karakter yang mengenakan mengenai musuh, durasi Unforgivable akan bertambah 1 detik. Efek di atas masing-masing dapat terpicu sekali setiap 0,1 detik. Efek Unforgivable dan Irreparable akan hilang saat durasi Path of Conflict berakhir, atau saat Karakter yang mengenakan meninggalkan medan pertempuran.",
+      "4": "<br/>",
+      "5": "Hexerei: Secret Rite: Seluruh efek peningkatan DMG yang disebutkan di atas meningkat sebesar 75%."
+    },
+    "4": {
+      "0": "Setelah Karakter yang mengenakan melancarkan Elemental Skill, mendapatkan efek Path of Conflict yang berlangsung selama 17 detik dan efek \"Unforgivable\" dan \"Irreparable\" yang masing-masingnya berlangsung selama 3 detik, dapat terpicu sekali setiap 18 detik.",
+      "1": "Unforgivable: DMG Normal Attack dan Charged Attack Karakter yang mengenakan +<cryo>80%.</cryo>",
+      "2": "Irreparable: DMG Elemental Skill dan Elemental Burst Karakter yang mengenakan +<cryo>80%</cryo>.",
+      "3": "Selama durasi Path of Conflict, saat Normal Attack dan Charged Attack Karakter yang mengenakan mengenai musuh, durasi Irreparable akan bertambah 1 detik. Saat Elemental Skill dan Elemental Burst Karakter yang mengenakan mengenai musuh, durasi Unforgivable akan bertambah 1 detik. Efek di atas masing-masing dapat terpicu sekali setiap 0,1 detik. Efek Unforgivable dan Irreparable akan hilang saat durasi Path of Conflict berakhir, atau saat Karakter yang mengenakan meninggalkan medan pertempuran.",
+      "4": "<br/>",
+      "5": "Hexerei: Secret Rite: Seluruh efek peningkatan DMG yang disebutkan di atas meningkat sebesar 75%."
+    }
+  }
+}

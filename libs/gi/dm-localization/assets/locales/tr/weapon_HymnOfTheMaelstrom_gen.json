@@ -1,0 +1,39 @@
+{
+  "name": "Girdap İlahisi",
+  "description": {
+    "0": "Mavi kalsedondan üretilmiş, adeta bir peri masalından çıkmış bir hazineye benzeyen zarif bir lamba. Söylentilere göre bu lambanın içine herkesin unuttuğu bir övgü şarkısı saklanmıştır."
+  },
+  "passiveName": "Uyku Rondosu",
+  "passiveDescription": {
+    "0": {
+      "0": "İyileştirme Bonusunu <cryo>%4</cryo> artırır.",
+      "1": "İyileştirme gerçekleştirirken kuşanan karakter \"Vatsamonga'nın Kehanet Şarabı\" etkisini kazanır: Maks. Can <cryo>%4</cryo> artar; ayrıca kuşanan karakterin 40.000 üzerinde sahip olduğu her 1.000 Maks. Can başına mevcut aktif grup üyesinin Saldırısı <cryo>%0,4</cryo> artar. Bu şekilde en fazla <cryo>%8</cryo> Saldırı artışı kazanılabilir. Bu etki 10sn sürer ve 3 kademeye kadar birikebilir.",
+      "2": "Yakındaki bir grup üyesi bir Donma veya Yıldız Girdabı tepkimesi tetiklediğinde yukarıdaki Maks. Can ve Saldırı artışları, sonraki 5sn için %75 daha artar.",
+      "3": "Bu etkiler kuşanan karakter alanda olmasa da tetiklenebilir."
+    },
+    "1": {
+      "0": "İyileştirme Bonusunu <cryo>%5</cryo> artırır.",
+      "1": "İyileştirme gerçekleştirirken kuşanan karakter \"Vatsamonga'nın Kehanet Şarabı\" etkisini kazanır: Maks. Can <cryo>%5</cryo> artar; ayrıca kuşanan karakterin 40.000 üzerinde sahip olduğu her 1.000 Maks. Can başına mevcut aktif grup üyesinin Saldırısı <cryo>%0,5</cryo> artar. Bu şekilde en fazla <cryo>%10</cryo> Saldırı artışı kazanılabilir. Bu etki 10sn sürer ve 3 kademeye kadar birikebilir.",
+      "2": "Yakındaki bir grup üyesi bir Donma veya Yıldız Girdabı tepkimesi tetiklediğinde yukarıdaki Maks. Can ve Saldırı artışları, sonraki 5sn için %75 daha artar.",
+      "3": "Bu etkiler kuşanan karakter alanda olmasa da tetiklenebilir."
+    },
+    "2": {
+      "0": "İyileştirme Bonusunu <cryo>%6</cryo> artırır.",
+      "1": "İyileştirme gerçekleştirirken kuşanan karakter \"Vatsamonga'nın Kehanet Şarabı\" etkisini kazanır: Maks. Can <cryo>%6</cryo> artar; ayrıca kuşanan karakterin 40.000 üzerinde sahip olduğu her 1.000 Maks. Can başına mevcut aktif grup üyesinin Saldırısı <cryo>%0,6</cryo> artar. Bu şekilde en fazla <cryo>%12</cryo> Saldırı artışı kazanılabilir. Bu etki 10sn sürer ve 3 kademeye kadar birikebilir.",
+      "2": "Yakındaki bir grup üyesi bir Donma veya Yıldız Girdabı tepkimesi tetiklediğinde yukarıdaki Maks. Can ve Saldırı artışları, sonraki 5sn için %75 daha artar.",
+      "3": "Bu etkiler kuşanan karakter alanda olmasa da tetiklenebilir."
+    },
+    "3": {
+      "0": "İyileştirme Bonusunu <cryo>%7</cryo> artırır.",
+      "1": "İyileştirme gerçekleştirirken kuşanan karakter \"Vatsamonga'nın Kehanet Şarabı\" etkisini kazanır: Maks. Can <cryo>%7</cryo> artar; ayrıca kuşanan karakterin 40.000 üzerinde sahip olduğu her 1.000 Maks. Can başına mevcut aktif grup üyesinin Saldırısı <cryo>%0,7</cryo> artar. Bu şekilde en fazla <cryo>%14</cryo> Saldırı artışı kazanılabilir. Bu etki 10sn sürer ve 3 kademeye kadar birikebilir.",
+      "2": "Yakındaki bir grup üyesi bir Donma veya Yıldız Girdabı tepkimesi tetiklediğinde yukarıdaki Maks. Can ve Saldırı artışları, sonraki 5sn için %75 daha artar.",
+      "3": "Bu etkiler kuşanan karakter alanda olmasa da tetiklenebilir."
+    },
+    "4": {
+      "0": "İyileştirme Bonusunu <cryo>%8</cryo> artırır.",
+      "1": "İyileştirme gerçekleştirirken kuşanan karakter \"Vatsamonga'nın Kehanet Şarabı\" etkisini kazanır: Maks. Can <cryo>%8</cryo> artar; ayrıca kuşanan karakterin 40.000 üzerinde sahip olduğu her 1.000 Maks. Can başına mevcut aktif grup üyesinin Saldırısı <cryo>%0,8</cryo> artar. Bu şekilde en fazla <cryo>%16</cryo> Saldırı artışı kazanılabilir. Bu etki 10sn sürer ve 3 kademeye kadar birikebilir.",
+      "2": "Yakındaki bir grup üyesi bir Donma veya Yıldız Girdabı tepkimesi tetiklediğinde yukarıdaki Maks. Can ve Saldırı artışları, sonraki 5sn için %75 daha artar.",
+      "3": "Bu etkiler kuşanan karakter alanda olmasa da tetiklenebilir."
+    }
+  }
+}

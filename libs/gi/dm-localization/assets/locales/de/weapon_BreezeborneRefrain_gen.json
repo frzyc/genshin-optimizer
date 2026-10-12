@@ -1,0 +1,24 @@
+{
+  "name": "Lüftchen und Saitenspiel",
+  "description": {
+    "0": "Eine smaragdgrüne Bogensehne aus makellos reinem Edelstein. Wird sie gespannt, weht stets ein warmes Lüftchen wie im Frühling."
+  },
+  "passiveName": "Klagelied der Viper",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht die Aufladerate um <cryo>20 %</cryo>. Verleiht dem Träger, wenn er mit seiner Elementarfähigkeit oder Spezialfähigkeit einen Gegner trifft, eine Stapelung „Hymne der Reinheit“, bis zu 3-fach stapelbar, 0,03 s Abklingzeit. Entfernt bei 3 vorhandenen Stapelungen „Hymne der Reinheit“ alle Stapelungen und verleiht dem Träger „Todesgift der Schlange“: Erhöht den durch alle Truppenmitglieder in der Nähe mit der Reaktion Stellarfunkeln verursachten Schaden 12 s lang um <cryo>24 %</cryo>. Währenddessen kann „Hymne der Reinheit“ nicht erneut erhalten werden. Obige Effekte können auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+    },
+    "1": {
+      "0": "Erhöht die Aufladerate um <cryo>25 %</cryo>. Verleiht dem Träger, wenn er mit seiner Elementarfähigkeit oder Spezialfähigkeit einen Gegner trifft, eine Stapelung „Hymne der Reinheit“, bis zu 3-fach stapelbar, 0,03 s Abklingzeit. Entfernt bei 3 vorhandenen Stapelungen „Hymne der Reinheit“ alle Stapelungen und verleiht dem Träger „Todesgift der Schlange“: Erhöht den durch alle Truppenmitglieder in der Nähe mit der Reaktion Stellarfunkeln verursachten Schaden 12 s lang um <cryo>30 %</cryo>. Währenddessen kann „Hymne der Reinheit“ nicht erneut erhalten werden. Obige Effekte können auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+    },
+    "2": {
+      "0": "Erhöht die Aufladerate um <cryo>30 %</cryo>. Verleiht dem Träger, wenn er mit seiner Elementarfähigkeit oder Spezialfähigkeit einen Gegner trifft, eine Stapelung „Hymne der Reinheit“, bis zu 3-fach stapelbar, 0,03 s Abklingzeit. Entfernt bei 3 vorhandenen Stapelungen „Hymne der Reinheit“ alle Stapelungen und verleiht dem Träger „Todesgift der Schlange“: Erhöht den durch alle Truppenmitglieder in der Nähe mit der Reaktion Stellarfunkeln verursachten Schaden 12 s lang um <cryo>36 %</cryo>. Währenddessen kann „Hymne der Reinheit“ nicht erneut erhalten werden. Obige Effekte können auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+    },
+    "3": {
+      "0": "Erhöht die Aufladerate um <cryo>35 %</cryo>. Verleiht dem Träger, wenn er mit seiner Elementarfähigkeit oder Spezialfähigkeit einen Gegner trifft, eine Stapelung „Hymne der Reinheit“, bis zu 3-fach stapelbar, 0,03 s Abklingzeit. Entfernt bei 3 vorhandenen Stapelungen „Hymne der Reinheit“ alle Stapelungen und verleiht dem Träger „Todesgift der Schlange“: Erhöht den durch alle Truppenmitglieder in der Nähe mit der Reaktion Stellarfunkeln verursachten Schaden 12 s lang um <cryo>42 %</cryo>. Währenddessen kann „Hymne der Reinheit“ nicht erneut erhalten werden. Obige Effekte können auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+    },
+    "4": {
+      "0": "Erhöht die Aufladerate um <cryo>40 %</cryo>. Verleiht dem Träger, wenn er mit seiner Elementarfähigkeit oder Spezialfähigkeit einen Gegner trifft, eine Stapelung „Hymne der Reinheit“, bis zu 3-fach stapelbar, 0,03 s Abklingzeit. Entfernt bei 3 vorhandenen Stapelungen „Hymne der Reinheit“ alle Stapelungen und verleiht dem Träger „Todesgift der Schlange“: Erhöht den durch alle Truppenmitglieder in der Nähe mit der Reaktion Stellarfunkeln verursachten Schaden 12 s lang um <cryo>48 %</cryo>. Währenddessen kann „Hymne der Reinheit“ nicht erneut erhalten werden. Obige Effekte können auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+    }
+  }
+}

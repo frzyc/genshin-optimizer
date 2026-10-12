@@ -1,0 +1,29 @@
+{
+  "setName": "Gabe des Himmels",
+  "setEffects": {
+    "2": "Erhöht die Aufladerate um 20 %.",
+    "4": "Verleiht dem Träger, nachdem er die Aufgabe der Hexe abgeschlossen und eine Elementarfähigkeit angewendet hat, den Effekt „Führung des Himmelslichts“: Verleiht allen Truppenmitgliedern in der Nähe 20 s lang einen Elementar-SCH-Bonus von 20 % für das Element des Trägers. Dieser Effekt kann auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet. Die SCH-Bonus-Effekte mehrerer gleicher Artefaktsets sind nicht stapelbar.\\n· Stuft den Effekt „Führung des Himmelslichts“ zu „Ode an die Welt“ hoch, wenn die Truppe den Effekt „Hexerei – Geheimes Ritual“ besitzt. Verleiht allen Truppenmitgliedern in der Nähe zusätzlich zum Elementartyp des Trägers einen Elementar-SCH-Bonus für das Element des eigenen aktuellen Truppenmitglieds. Erhöht die beiden oben genannten Elementar-SCH-Boni zudem auf 40 %. Elementar-SCH-Boni desselben Elementartyps können nicht gestapelt werden."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Duft des Himmels",
+      "desc": "Die unvergängliche Blume, die der hohe Himmel dem Gesandten gewährte. Sie weckt durch ihr endloses Leben die Gier."
+    },
+    "plume": {
+      "name": "Untergang des Himmels",
+      "desc": "Die Feder des Todes, die der hohe Himmel dem Gesandten gewährte. Sie tilgt am Ende des Schicksals alle Sünden."
+    },
+    "sands": {
+      "name": "Erlass des Himmels",
+      "desc": "Die Uhr der umgekehrten Zeit, die der hohe Himmel dem Gesandten gewährte. Sie wurde zu einem unüberwindbaren Tabu und damit zum Hort des Zorns."
+    },
+    "goblet": {
+      "name": "Belohnung des Himmels",
+      "desc": "Der süße Nektar, den der hohe Himmel den Gesandten gewährte. Er eröffnet mit einem nie endenden Festmahl die Pforten der Begierde."
+    },
+    "circlet": {
+      "name": "Krone des Himmels",
+      "desc": "Die prächtige Krone, die der hohe Himmel dem Gesandten gewährte. Sie nährt durch unbegrenzte Macht den Hochmut."
+    }
+  }
+}

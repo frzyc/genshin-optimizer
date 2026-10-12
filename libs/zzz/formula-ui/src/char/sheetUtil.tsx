@@ -9,17 +9,16 @@ import { commonDefIcon, mindscapeDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
 import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
-import { formulas, own } from '@genshin-optimizer/zzz/formula'
+import { own } from '@genshin-optimizer/zzz/formula'
 import { getCharStat, mappedStats } from '@genshin-optimizer/zzz/stats'
-import { TagDisplay } from '../components'
-import { st, trans } from '../util'
+import { tagToTagField, trans } from '../util'
 import type { CharUISheet } from './consts'
+import { skillAbilityTextDocument } from './sheetDocuments'
 
-type AddlDocumentsPerSkillAbility = Partial<
-  Record<SkillKey, Partial<Record<string, Document[]>>>
->
 type AddlDocuments = {
-  perSkillAbility?: AddlDocumentsPerSkillAbility
+  perSkillAbility?: Partial<
+    Record<SkillKey, Partial<Record<string, Document[]>>>
+  >
   core?: Document[]
   ability?: Document[]
   potential?: Document[]
@@ -57,20 +56,15 @@ export function createBaseSheet(
   }
 }
 
-// Creates proper field with automatic title for a given buff
 export function fieldForBuff(buff: IFormulaData<Tag>) {
-  return {
-    title: <TagDisplay tag={buff.tag} preventRecursion />,
-    fieldRef: buff.tag,
-  }
+  return tagToTagField(buff.tag)
 }
 
 function createSkillsSheets(
   charKey: CharacterKey,
-  addlDocumentsPerSkillAbility?: AddlDocumentsPerSkillAbility
+  addlDocumentsPerSkillAbility?: AddlDocuments['perSkillAbility']
 ) {
   const dm = mappedStats.char[charKey]
-  const form = formulas[charKey]
   const [chg, _ch] = trans('char', charKey)
   return objKeyMap(
     allSkillKeys,
@@ -78,38 +72,18 @@ function createSkillsSheets(
       title: skill, // TODO: Translate. Though this doesn't seem to be shown anywhere
       img: commonDefIcon(`${skill}Flat`),
       documents: Object.keys(dm[skill]).flatMap((ability): Document[] => [
-        {
-          type: 'text',
+        skillAbilityTextDocument({
+          abilityKey: ability,
           header: {
             icon: <ImgIcon src={commonDefIcon(`${skill}Flat`)} size={1.5} />,
             text: chg(`${skill}.${ability}.name`),
           },
           text: chg(`${skill}.${ability}.desc`),
-        },
-        {
-          type: 'fields',
-          fields: Object.values(form)
-            .filter((f: any) => f.name.split('_')[0] === ability)
-            .map((f: any) => ({
-              title: abilityFormulaNameToTranslated(charKey, skill, f.name), // TODO: Translate
-              fieldRef: f.tag,
-            })),
-        },
+        }),
         ...(addlDocumentsPerSkillAbility?.[skill]?.[ability] ?? []),
       ]),
     })
   )
-}
-
-function abilityFormulaNameToTranslated(
-  charKey: CharacterKey,
-  skill: SkillKey,
-  abilityFormulaName: string
-) {
-  const [ability, hitNumber, type] = abilityFormulaName.split('_')
-  return st(type, {
-    val: `$t(char_${charKey}_gen:${skill}.${ability}.params.${hitNumber.replace(/\D/g, '')})`, // Only grab number for special overrides
-  })
 }
 
 function createCoreAndAbilitySheet(
@@ -184,7 +158,7 @@ function createPotentialSheet(
         type: 'text',
         header: {
           icon: <ImgIcon src={commonDefIcon('coreFlat')} size={1.5} />,
-          text: chg(`potential.name`),
+          text: chg('potential.name'),
         },
         text: (calc) =>
           chg(`potential.desc.${calc.compute(own.char.potential).val}`),

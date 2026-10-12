@@ -8,7 +8,6 @@ import type {
   RelicSetKey,
   RelicSubStatKey,
 } from '@genshin-optimizer/sr/consts'
-import { data, keys, values } from '..'
 import { conditionals } from '../..'
 import { Calculator } from '../../calculator'
 import {
@@ -17,15 +16,16 @@ import {
   teamData,
   withMember,
 } from '../../util'
+import { data, keys, values } from '..'
 import type { Read } from '../util'
 import {
-  type TagMapNodeEntries,
   conditionalEntries,
   convert,
   enemy,
   own,
   ownBuff,
   ownTag,
+  type TagMapNodeEntries,
 } from '../util'
 
 setDebugMode(true)
@@ -149,7 +149,7 @@ function cond(setKey: RelicSetKey, name: string, value: number) {
   return conditionalEntries(setKey, 'Seele', null)(name, value)
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// biome-ignore lint/correctness/noUnusedVariables: helper util for tests
 function printDebug(calc: Calculator, read: Read) {
   console.log(prettify(calc.toDebug().compute(read)))
 }

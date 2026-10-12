@@ -1,4 +1,5 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
+import { defaultOptArtifactLevel } from '@genshin-optimizer/gi/consts'
 import { ArtCharDatabase } from '../ArtCharDatabase'
 
 describe('OptConfigDataManager', () => {
@@ -19,6 +20,13 @@ describe('OptConfigDataManager', () => {
     }
     const result = optConfigs['validate'](invalid, id)
     expect(result?.generatedBuildListId).toBeUndefined()
+  })
+
+  it('should default optimization level range to max artifacts only', () => {
+    const id = optConfigs.new()
+    const cfg = optConfigs.get(id)
+    expect(cfg?.levelLow).toBe(defaultOptArtifactLevel)
+    expect(cfg?.levelHigh).toBe(defaultOptArtifactLevel)
   })
 
   it('should keep valid generatedBuildListId', () => {

@@ -12,7 +12,7 @@ const char: Partial<
   Record<LocationCharacterKey | LocationGenderedCharacterKey, CharData>
 > = {
   Columbina: {
-    constellationName: 2821104034,
+    constellationName: 2821104546,
   },
   Eula: {
     skill: {

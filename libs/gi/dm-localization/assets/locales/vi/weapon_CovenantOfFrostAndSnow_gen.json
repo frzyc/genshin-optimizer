@@ -1,0 +1,24 @@
+{
+  "name": "Thệ Ước Sương Tuyết",
+  "description": {
+    "0": "Cây cung dài được chế tác để duy trì trật tự, tỏa ra ánh sáng sắc lạnh như băng, tựa như luật pháp chí công vô tư nhất."
+  },
+  "passiveName": "Pháp Độ Cân Bằng",
+  "passiveDescription": {
+    "0": {
+      "0": "Sau khi người trang bị thi triển Kỹ Năng Nguyên Tố, Tinh Thông Nguyên Tố tăng <cryo>120</cryo> điểm trong 12s."
+    },
+    "1": {
+      "0": "Sau khi người trang bị thi triển Kỹ Năng Nguyên Tố, Tinh Thông Nguyên Tố tăng <cryo>150</cryo> điểm trong 12s."
+    },
+    "2": {
+      "0": "Sau khi người trang bị thi triển Kỹ Năng Nguyên Tố, Tinh Thông Nguyên Tố tăng <cryo>180</cryo> điểm trong 12s."
+    },
+    "3": {
+      "0": "Sau khi người trang bị thi triển Kỹ Năng Nguyên Tố, Tinh Thông Nguyên Tố tăng <cryo>210</cryo> điểm trong 12s."
+    },
+    "4": {
+      "0": "Sau khi người trang bị thi triển Kỹ Năng Nguyên Tố, Tinh Thông Nguyên Tố tăng <cryo>240</cryo> điểm trong 12s."
+    }
+  }
+}

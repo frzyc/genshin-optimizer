@@ -1,6 +1,7 @@
 import { characterAsset } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { styled } from '@mui/material/styles'
+
 interface ImgIconProps {
   size?: number
 }

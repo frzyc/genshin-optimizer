@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     },
     "skillParamsEncoding": {
       "0": "{{0, percent(fixed: 1)}}%",
@@ -53,7 +57,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -90,7 +98,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     },
     "skillParamsEncoding": {
       "0": "{{0, percent(fixed: 1)}}%",
@@ -108,7 +120,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -116,6 +132,12 @@
     "description": {
       "0": "Legends of \"kitsunetsuki,\" or the manifestation of a kitsune's might, are common in Inazuma's folktales. One that particularly captures the imagination is that of the Sky Kitsune, said to cause lightning to fall down upon the foes of the Grand Narukami Shrine. Summons a lightning strike, dealing <electro>AoE Electro DMG</electro>.",
       "1": "When she uses this skill, Yae Miko will unseal nearby Sesshou Sakura, destroying their outer forms and transforming them into Tenko Thunderbolts that descend from the skies, dealing <electro>AoE Electro DMG</electro>. Each Sesshou Sakura destroyed in this way will create one Tenko Thunderbolt.",
+      "2": "<br/>",
+      "3": "<i>Only at times like these will Yae reveal her Sky Kitsune form and wield lightning itself. None have seen the Lady Guuji's tails and lived to tell the story... so remember, as far as you are concerned, Lady Yae does not have a tail.</i>"
+    },
+    "upgradedDescription": {
+      "0": "Legends of \"kitsunetsuki,\" or the manifestation of a kitsune's might, are common in Inazuma's folktales. One that particularly captures the imagination is that of the Sky Kitsune, said to cause lightning to fall down upon the foes of the Grand Narukami Shrine. Summons a lightning strike, dealing <electro>AoE Electro DMG</electro>.",
+      "1": "When this is cast, Yae Miko will transform nearby Sesshou Sakura into Tenko Thunderbolts that descend from the skies, dealing <electro>AoE Electro DMG</electro>. Each Sesshou Sakura within range transforms into one Tenko Thunderbolt.",
       "2": "<br/>",
       "3": "<i>Only at times like these will Yae reveal her Sky Kitsune form and wield lightning itself. None have seen the Lady Guuji's tails and lived to tell the story... so remember, as far as you are concerned, Lady Yae does not have a tail.</i>"
     },
@@ -135,7 +157,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     },
     "skillParamsEncoding": {
       "0": "{{0, percent}}%",
@@ -153,13 +179,22 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
     "name": "The Shrine's Sacred Shade",
     "description": {
       "0": "When casting <strong>Great Secret Art: Tenko Kenshin</strong>, each Sesshou Sakura destroyed resets the cooldown for 1 charge of <strong>Yakan Evocation: Sesshou Sakura</strong>."
+    },
+    "upgradedDescription": {
+      "0": "When <strong>Great Secret Art: Tenko Kenshin</strong> is unleashed, each Sesshou Sakura involved will reset the cooldown for one instance of <strong>Yakan Evocation: Sesshou Sakura</strong>.",
+      "1": "When there are at least 3 Sesshou Sakura nearby at the same time, unleashing <strong>Yakan Evocation: Sesshou Sakura</strong> will cause Yae Miko to unleash an additional lightning strike which deals <electro>Electro DMG</electro> at 40% of her ATK.",
+      "2": "<strong>Radiance: Stellar-Conduct</strong>: The aforementioned additional lightning strike becomes an instance of <electro>Electro DMG</electro> at 50% of Yae Miko's ATK instead. This DMG will also be considered Stellar-Conduct DMG."
     }
   },
   "passive2": {
@@ -174,16 +209,30 @@
       "0": "Has a 25% chance to get 1 regional Character Talent Material (base material excluded) when crafting. The rarity is that of the base material."
     }
   },
+  "lockedPassive": {
+    "name": "Edict of Cleansing",
+    "description": {
+      "0": "Extends the duration of the Sesshou Sakura by 10s. When a nearby party member triggers a Superconduct or Stellar-Conduct reaction, the next instance of Sesshou Sakura lightning is enhanced as follows: DMG dealt is increased at 80% of Yae Miko's ATK. This effect can trigger once every 2.5s.",
+      "1": "<strong>Radiance: Stellar-Conduct</strong>: An enhanced Sesshou Sakura lightning bolt hit on an opponent will also cause an additional instance of <electro>Electro DMG</electro> at 200% of Yae Miko's ATK. This DMG is considered Stellar-Conduct DMG.",
+      "2": "Additionally, when inside a <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>, Yae Miko will enter the <strong>Radiance: Stellar-Conduct</strong> state."
+    }
+  },
   "constellation1": {
     "name": "Yakan Offering",
     "description": {
       "0": "Each time <strong>Great Secret Art: Tenko Kenshin</strong> activates a Tenko Thunderbolt, Yae Miko will restore 8 Elemental Energy for herself."
+    },
+    "upgradedDescription": {
+      "0": "Each time <strong>Great Secret Art: Tenko Kenshin</strong> activates a Tenko Thunderbolt, Yae Miko restores 8 Elemental Energy to herself. After Yae Miko triggers a Superconduct or Stellar-Conduct reaction, or deals Stellar-Conduct DMG, nearby party members will gain a 50% Electro DMG and Stellar-Conduct DMG Bonus for 10s. Triggering these reactions again will refresh the duration of the DMG bonuses."
     }
   },
   "constellation2": {
     "name": "Fox's Mooncall",
     "description": {
       "0": "<strong>Sesshou Sakura</strong> start at Level 2 when created, their max level is increased to 4, and their attack range is increased by 60%."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Sesshou Sakura</strong> start at Level 2 when created, their max level is increased to 4, and their attack range is increased by 60%. Additionally, when there are Sesshou Sakura in the field, Yae Miko's and your current active character's Elemental Mastery will also be increased by 60/90/120/200 points, depending on the level of the Sesshou Sakura."
     }
   },
   "constellation3": {
@@ -197,6 +246,9 @@
     "name": "Sakura Channeling",
     "description": {
       "0": "When <strong>Sesshou Sakura</strong> lightning hits opponents, the <electro>Electro DMG Bonus</electro> of all nearby party members is increased by 20% for 5s."
+    },
+    "upgradedDescription": {
+      "0": "When <strong>Sesshou Sakura</strong> lightning hits opponents, the <electro>Electro DMG Bonus</electro> of all nearby party members is increased by 20% for 5s, and Yae Miko regenerates 8 Elemental Energy. The aforementioned Elemental Energy recovery effect can trigger once every 5s. Additionally, Yae Miko's Elemental Burst DMG is increased by 100%."
     }
   },
   "constellation5": {
@@ -210,6 +262,9 @@
     "name": "Forbidden Art: Daisesshou",
     "description": {
       "0": "<strong>The Sesshou Sakura's</strong> attacks will ignore 60% of the opponents' DEF."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Sesshou Sakura's</strong> attacks will ignore 60% of the opponents' DEF. The CRIT DMG of Yae Miko's Stellar-Conduct DMG is increased by 200%."
     }
   }
 }

@@ -43,8 +43,7 @@ const sheet = registerWengine(
         prod(ether_exSpecial_basic, percent(subscript(phase, dm.common_dmg_)))
       )
     ),
-    showSpecialtyAndEquipped(key),
-    true
+    showSpecialtyAndEquipped(key)
   ),
   registerBuff(
     'cond_anomProf',

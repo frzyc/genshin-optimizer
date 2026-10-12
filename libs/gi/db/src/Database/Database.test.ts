@@ -48,7 +48,7 @@ describe('Database', () => {
 
     const newDB = new ArtCharDatabase(dbIndex, new SandboxStorage())
     const good = database.exportGOOD()
-    newDB.importGOOD(good, false, false)!
+    newDB.importGOOD(good, false, false, false)!
     expect(
       database.storage.entries.filter(
         ([k]) =>
@@ -83,8 +83,8 @@ describe('Database', () => {
 
     tryStorage(
       (storage) => {
-        storage.char_x = '{ test: "test" }'
-        storage.artifact_x = '{}'
+        storage['char_x'] = '{ test: "test" }'
+        storage['artifact_x'] = '{}'
       },
       (storage) => {
         expect(storage.getItem('char_x')).toBeNull()
@@ -93,9 +93,9 @@ describe('Database', () => {
     for (let i = 2; i < 5; i++) {
       tryStorage(
         (storage) => {
-          storage.db_ver = `${i}`
-          storage.char_x = '{ "test": "test" }'
-          storage.artifact_x = '{}'
+          storage['db_ver'] = `${i}`
+          storage['char_x'] = '{ "test": "test" }'
+          storage['artifact_x'] = '{}'
           expect(storage.getItem('char_x')).not.toBeNull()
         },
         (storage) => {
@@ -106,8 +106,8 @@ describe('Database', () => {
     }
     tryStorage(
       (storage) => {
-        storage.char_x = '{ test: "test" }'
-        storage.artifact_x = '{}'
+        storage['char_x'] = '{ test: "test" }'
+        storage['artifact_x'] = '{}'
         expect(storage.getItem('char_x')).not.toBeNull()
       },
       (storage) => {
@@ -224,7 +224,12 @@ describe('Database', () => {
       artifacts: [art1, art2],
       weapons: [amberWeapon],
     }
-    const importResult = database.importGOOD(good as IGOOD & IGO, false, false)
+    const importResult = database.importGOOD(
+      good as IGOOD & IGO,
+      false,
+      false,
+      false
+    )
     expect(importResult.characters?.new?.length).toEqual(2)
     expect(importResult.artifacts.invalid.length).toEqual(0)
     expect(importResult.artifacts?.new?.length).toEqual(2)
@@ -248,7 +253,7 @@ describe('Database', () => {
     }
 
     // Import the new artifact, with no location. this should respect current equipment
-    database.importGOOD(good as IGOOD & IGO, false, false)
+    database.importGOOD(good as IGOOD & IGO, false, false, false)
     expect(database.chars.get('Amber')?.equippedArtifacts.circlet).toEqual(id)
   })
 
@@ -287,7 +292,12 @@ describe('Database', () => {
       ],
       weapons: [{ ...initialWeapon('CinnabarSpindle'), location: 'Albedo' }],
     }
-    const importResult = database.importGOOD(good1 as IGOOD & IGO, true, false)
+    const importResult = database.importGOOD(
+      good1 as IGOOD & IGO,
+      true,
+      false,
+      false
+    )
     expect(importResult.artifacts.new.length).toEqual(2)
     expect(importResult.weapons.new.length).toEqual(1)
     expect(importResult.characters.new.length).toEqual(0)
@@ -311,8 +321,11 @@ describe('Database', () => {
   test('should merge scanner with dups for weapons', () => {
     const a1 = initialWeapon('Akuoumaru')
     const a2old = initialWeapon('BlackTassel')
+    a2old.level = 1
+    a2old.ascension = 0
     const a2new = initialWeapon('BlackTassel')
     a2new.level = 20
+    a2new.ascension = 0
     const a3 = initialWeapon('CalamityQueller') // in db but not in import
     const a4 = initialWeapon('Deathmatch') // in import but not in db
 
@@ -325,7 +338,12 @@ describe('Database', () => {
       source: 'Scanner',
       weapons: [a1, a2new, a4],
     }
-    const importResult = database.importGOOD(good1 as IGOOD & IGO, true, false)
+    const importResult = database.importGOOD(
+      good1 as IGOOD & IGO,
+      true,
+      false,
+      false
+    )
     expect(importResult.weapons.upgraded.length).toEqual(1)
     expect(importResult.weapons.unchanged.length).toEqual(1)
     expect(importResult.weapons.notInImport).toEqual(1)
@@ -379,7 +397,12 @@ describe('Database', () => {
       source: 'Scanner',
       artifacts: [a1, a2new, a4],
     }
-    const importResult = database.importGOOD(good1 as IGOOD & IGO, true, false)
+    const importResult = database.importGOOD(
+      good1 as IGOOD & IGO,
+      true,
+      false,
+      false
+    )
     expect(importResult.artifacts.upgraded.length).toEqual(1)
     expect(importResult.artifacts.unchanged.length).toEqual(1)
     expect(importResult.artifacts.notInImport).toEqual(1)
@@ -410,7 +433,12 @@ describe('Database', () => {
         },
       ],
     }
-    const importResult = database.importGOOD(good as IGOOD & IGO, false, false)
+    const importResult = database.importGOOD(
+      good as IGOOD & IGO,
+      false,
+      false,
+      false
+    )
     expect(importResult.weapons.new.length).toEqual(1)
     expect(importResult.characters.new.length).toEqual(1)
     expect(database.chars.get('Dori')?.equippedWeapon).toBeTruthy()
@@ -447,7 +475,12 @@ describe('Database', () => {
         ],
       }
 
-      const importResult = database.importGOOD(good as IGOOD & IGO, true, false)
+      const importResult = database.importGOOD(
+        good as IGOOD & IGO,
+        true,
+        false,
+        false
+      )
       expect(importResult.artifacts.notInImport).toEqual(0)
       expect(importResult.artifacts.unchanged.length).toEqual(4)
       expect(database.arts.values.length).toEqual(4)
@@ -489,7 +522,12 @@ describe('Database', () => {
         ],
       }
 
-      const importResult = database.importGOOD(good as IGOOD & IGO, true, false)
+      const importResult = database.importGOOD(
+        good as IGOOD & IGO,
+        true,
+        false,
+        false
+      )
       expect(importResult.weapons.notInImport).toEqual(0)
       expect(importResult.weapons.unchanged.length).toEqual(4)
       expect(database.weapons.values.length).toEqual(4)
@@ -522,7 +560,12 @@ describe('Database', () => {
         ],
       }
 
-      const importResult = database.importGOOD(good as IGOOD & IGO, true, false)
+      const importResult = database.importGOOD(
+        good as IGOOD & IGO,
+        true,
+        false,
+        false
+      )
       expect(importResult.artifacts.notInImport).toEqual(2)
       expect(database.arts.values.length).toEqual(4)
       // Expect imports to overwrite the id of old
@@ -557,7 +600,12 @@ describe('Database', () => {
         ],
       }
 
-      const importResult = database.importGOOD(good as IGOOD & IGO, true, false)
+      const importResult = database.importGOOD(
+        good as IGOOD & IGO,
+        true,
+        false,
+        false
+      )
       expect(importResult.weapons.notInImport).toEqual(2)
       expect(database.weapons.values.length).toEqual(4)
       // Expect imports to overwrite the id of old
@@ -703,7 +751,12 @@ describe('Database', () => {
         { ...initialWeapon('AlleyHunter'), location: 'Albedo' },
       ],
     }
-    const importResult = database.importGOOD(good1 as IGOOD & IGO, true, false)
+    const importResult = database.importGOOD(
+      good1 as IGOOD & IGO,
+      true,
+      false,
+      false
+    )
     expect(importResult.weapons.invalid.length).toEqual(1)
     expect(importResult.characters.new.length).toEqual(0)
     expect(

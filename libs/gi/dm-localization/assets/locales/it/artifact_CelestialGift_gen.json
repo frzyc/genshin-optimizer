@@ -1,0 +1,29 @@
+{
+  "setName": "Dono del cielo",
+  "setEffects": {
+    "2": "Ricarica d'energia +20%.",
+    "4": "Se il personaggio che equipaggia il set ha completato i Compiti della strega, dopo aver utilizzato un'abilità elementale ottiene l'effetto Guida della luce per 20 s, che conferisce un 20% di bonus DAN elementali a tutti i membri vicini del gruppo corrispondente al tipo elementale del personaggio che equipaggia il set. L'effetto può attivarsi anche se il personaggio non è in campo. I bonus DAN forniti da set di manufatti con lo stesso nome non si accumulano.\\n· Se Hexerei: Rito segreto è attivo nel tuo gruppo, Guida della luce si potenzia in Inno mortale, che conferisce un 40% di bonus DAN elementali a tutti i membri vicini del gruppo corrispondente sia al tipo elementale del personaggio che equipaggia il set sia a quello del membro attivo del gruppo attuale. Se entrambi i personaggi hanno lo stesso tipo elementale, i bonus non si accumulano."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fragranza dal cielo",
+      "desc": "Le sfere celesti conferirono alla loro emissaria un fiore che non avvizzisce: da un destino imperituro nacque la cupidigia."
+    },
+    "plume": {
+      "name": "Rovina dal cielo",
+      "desc": "Le sfere celesti conferirono alla loro emissaria una piuma della rinascita: ogni peccato sarebbe stato rimesso al compiersi del destino."
+    },
+    "sands": {
+      "name": "Delibera dal cielo",
+      "desc": "Le sfere celesti conferirono alla loro emissaria una meridiana contrapposta al tempo: un inviolabile divieto fu sorgente d'ira."
+    },
+    "goblet": {
+      "name": "Ricompensa dal cielo",
+      "desc": "Le sfere celesti conferirono alla loro emissaria il dolce nettare: l'eterno banchetto spalancò le porte del desiderio."
+    },
+    "circlet": {
+      "name": "Corona dal cielo",
+      "desc": "Le sfere celesti conferirono alla loro emissaria una splendida corona: dal potere incontrollato scaturì l'arroganza."
+    }
+  }
+}

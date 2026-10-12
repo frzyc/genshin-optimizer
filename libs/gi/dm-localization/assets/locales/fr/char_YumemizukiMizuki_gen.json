@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -47,7 +51,7 @@
       "3": [
         " Lorsque Yumemizuki Mizuki est dans l'état Flotte-rêves, elle flotte de façon continue vers l'avant et inflige des <anemo>DGT Anémo de zone</anemo> de façon régulière aux ennemis proches.",
         " Pendant la durée de l'état, Yumemizuki Mizuki peut contrôler la direction dans laquelle elle flotte et la portée de collecte des <strong>snacks de style yumemi</strong> du déchaînement élémentaire <strong>Thérapie sourcière secrète d'Anraku</strong> augmente.",
-        " Les DGT des réactions de Dispersion déclenchées par les personnages de l'équipe à proximité augmentent selon la maîtrise élémentaire de Yumemizuki Mizuki.",
+        " Les DGT de réaction de Dispersion et les DGT de réaction d'Astrodispersion des personnages de l'équipe à proximité augmentent selon la maîtrise élémentaire de Yumemizuki Mizuki.",
         " L'état Flotte-rêves prend fin lorsque Yumemizuki Mizuki quitte le champ de bataille ou utilise une nouvelle fois la capacité."
       ],
       "4": "<br/>",
@@ -58,8 +62,8 @@
       "1": "DGT attaque continue",
       "2": "Durée de flotte-rêves",
       "3": "Bonus de DGT de Dispersion",
-      "4": "Temps de recharge",
-      "5": "",
+      "4": "Bonus de DGT d'Astrodispersion",
+      "5": "Temps de recharge",
       "6": "",
       "7": "",
       "8": "",
@@ -69,7 +73,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -99,13 +107,17 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
     "name": "Voix tourmentée de la lune brillante",
     "description": {
-      "0": "Lorsque Yumemizuki Mizuki déclenche une réaction de Dispersion alors qu'elle est dans son état Flotte-rêves, la durée de l'état augmente de 2,5 s. Cet effet peut être déclenché une fois toutes les 0,3 seconde et un maximum de 2 fois pendant la durée d'un état Flotte-rêves."
+      "0": "Lorsque Yumemizuki Mizuki déclenche une réaction de Dispersion ou d'Astrodispersion alors qu'elle est dans son état Flotte-rêves, la durée de l'état augmente de 2,5 s. Cet effet peut être déclenché une fois toutes les 0,3 seconde et un maximum de 2 fois pendant la durée d'un état Flotte-rêves."
     }
   },
   "passive2": {
@@ -120,16 +132,34 @@
       "0": "Lorsque Yumemizuki Mizuki fait partie de l'équipe, vos personnages dans l'équipe ont une chance de récupérer 30 % de PV supplémentaires en utilisant de la nourriture sans capacité de résurrection, la chance de déclencher cet effet augmentant selon le Niv. d'affinité du personnage concerné. (Cet effet se déclenche obligatoirement lorsque {M#le voyageur}{F#la voyageuse} utilise de la nourriture de soins.)"
     }
   },
+  "lockedPassive": {
+    "name": "L'immensité d'un rêve",
+    "description": {
+      "0": "Lorsque Yumemizuki Mizuki a déclenché une réaction de Dispersion ou d'Astrodispersion pendant l'état Flotte-rêves, la prochaine instance de <anemo>DGT Anémo de zone</anemo> qu'elle inflige de façon régulière à des ennemis proches pendant cet état augmente d'une valeur équivalant à 1 000 % de sa maîtrise élémentaire. Cet effet peut être déclenché une fois toutes les 2,5 s.",
+      "1": "<strong>Radiance « Astrodispersion »</strong> : Lorsque Yumemizuki Mizuki inflige de tels <anemo>DGT Anémo de zone</anemo> augmentés à un ennemi, elle inflige une instance supplémentaire de <anemo>DGT Anémo</anemo> d'une valeur équivalant à 1 000 % de sa maîtrise élémentaire, ces DGT étant considérés comme des DGT de réaction d'Astrodispersion.",
+      "2": "<br/>",
+      "3": "De plus, la maîtrise élémentaire des personnages de l'équipe à proximité augmente d'une valeur équivalant à 10 % de la maîtrise élémentaire de Yumemizuki Mizuki pendant l'état Flotte-rêves.",
+      "4": "De plus, Yumemizuki Mizuki passe en <strong>radiance « Astrodispersion »</strong> pendant 8 s lorsqu'un personnage de l'équipe a déclenché une réaction d'Astrodispersion à proximité."
+    }
+  },
   "constellation1": {
     "name": "Dans des eaux de brume",
     "description": {
-      "0": "Pendant l'état Flotte-rêves, Yumemizuki Mizuki applique l'effet Attente de 23 nuits toutes les 3,5 s aux ennemis proches, cet effet durant 3 s. Lorsqu'un ennemi affecté par cet effet subit des DGT Anémo et déclenche une réaction de Dispersion, l'effet est annulé pour augmenter les DGT de ladite réaction d'une valeur équivalant à 1 100 % de la maîtrise élémentaire de Yumemizuki Mizuki."
+      "0": "Pendant l'état Flotte-rêves, Yumemizuki Mizuki applique l'effet Attente de 23 nuits toutes les 3,5 s aux ennemis proches, cet effet durant 3 s. Lorsqu'un ennemi affecté par cet effet subit des DGT Anémo et déclenche une réaction de Dispersion ou d'Astrodispersion, l'effet est annulé pour augmenter les DGT de ladite réaction d'une valeur équivalant à 1 100 % ou à 550 % de la maîtrise élémentaire de Yumemizuki Mizuki, respectivement."
+    },
+    "upgradedDescription": {
+      "0": "Pendant l'état Flotte-rêves, Yumemizuki Mizuki applique l'effet Attente de 23 nuits toutes les 3,5 s aux ennemis proches, cet effet durant 3 s. Lorsqu'un ennemi affecté par cet effet subit des DGT Anémo et déclenche une réaction de Dispersion ou d'Astrodispersion, l'effet est annulé pour augmenter les DGT de la réaction concernée d'une valeur équivalant à 1 100 % ou 550 % de la maîtrise élémentaire de Yumemizuki Mizuki, respectivement. Yumemizuki Mizuki effectue également une attaque supplémentaire sur le même ennemi qui inflige des <anemo>DGT Anémo</anemo> d'une valeur équivalant à 1 000 % de sa maîtrise élémentaire.",
+      "1": "<strong>Radiance « Astrodispersion »</strong>: Ces DGT supplémentaires sont convertis en <anemo>DGT Anémo</anemo> d'une valeur équivalant à 400 % de la maîtrise élémentaire de Yumemizuki Mizuki, ces DGT étant considérés comme des DGT de réaction d'Astrodispersion."
     }
   },
   "constellation2": {
     "name": "Un écho rencontré en rêve",
     "description": {
       "0": "En entrant dans l'état Flotte-rêves, chaque point de maîtrise élémentaire de Yumemizuki Mizuki accorde à tous les autres personnages de l'équipe à proximité des bonus de DGT <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> et <electro>Électro</electro> de 0,04 %, ces bonus durant jusqu'à la fin de l'état Flotte-rêves."
+    },
+    "upgradedDescription": {
+      "0": "En entrant dans l'état Flotte-rêves, chaque point de maîtrise élémentaire de Yumemizuki Mizuki accorde à tous les autres personnages de l'équipe à proximité des bonus de DGT <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> et <electro>Électro</electro> de 0,04 %, ces bonus durant jusqu'à la fin de l'état Flotte-rêves.",
+      "1": "De plus, dans l'état Flotte-rêves, la <pyro>RÉS Pyro</pyro>, la <hydro>RÉS Hydro</hydro>, la <cryo>RÉS Cryo</cryo>, la <electro>RÉS Électro</electro> et la <anemo>RÉS Anémo</anemo> des ennemis proches diminuent de 20 %."
     }
   },
   "constellation3": {
@@ -143,6 +173,9 @@
     "name": "Bourgeons réchauffant les sources lucides",
     "description": {
       "0": "Collecter un <strong>snack de style yumemi</strong> du déchaînement élémentaire <strong>Thérapie sourcière secrète d'Anraku</strong> permet à la fois d'infliger des DGT et de soigner et restaure 5 pts d'énergie élémentaire à Yumemizuki Mizuki. L'énergie élémentaire peut être restaurée 4 fois pendant la durée d'une <strong>Thérapie sourcière secrète d'Anraku</strong> de cette manière."
+    },
+    "upgradedDescription": {
+      "0": "Collecter un <strong>snack de style yumemi</strong> du déchaînement élémentaire <strong>Thérapie sourcière secrète d'Anraku</strong> permet à la fois d'infliger des DGT et de soigner, soigne également un autre personnage de l'équipe à proximité ayant peu de PV pour une valeur équivalant à 266 % de la maîtrise élémentaire de Yumemizuki Mizuki et restaure 5 pts d'énergie élémentaire à Yumemizuki Mizuki. L'énergie élémentaire peut être restaurée 4 fois pendant la durée d'une <strong>Thérapie sourcière secrète d'Anraku</strong> de cette manière."
     }
   },
   "constellation5": {
@@ -155,7 +188,11 @@
   "constellation6": {
     "name": "Le cœur s'attardant longtemps",
     "description": {
-      "0": "Lorsque Yumemizuki Mizuki est dans l'état Flotte-rêves, les DGT infligés par les réactions de Dispersion des personnages de l'équipe à proximité peuvent déclencher des coups CRIT dont le taux CRIT est fixé à 30 % et les DGT CRIT à 100 %."
+      "0": "Lorsque Yumemizuki Mizuki est dans l'état Flotte-rêves, les DGT infligés par les réactions de Dispersion des personnages de l'équipe à proximité peuvent déclencher des coups CRIT dont le taux CRIT est fixé à 30 % et les DGT CRIT à 100 %. De plus, le taux CRIT des DGT de réaction d'Astrodispersion infligés par ces personnages augmente de 10 % et leurs DGT CRIT de 20 %."
+    },
+    "upgradedDescription": {
+      "0": "Lorsque Yumemizuki Mizuki est dans l'état Flotte-rêves, les DGT infligés par les réactions de Dispersion des personnages de l'équipe à proximité peuvent déclencher des coups CRIT dont le taux CRIT est fixé à 30 % et les DGT CRIT à 100 %. De plus, le taux CRIT des DGT de réaction d'Astrodispersion de ces personnages augmente de 10 %, tandis que les DGT CRIT augmentent de 20 %.",
+      "1": "Pour chaque pt de maîtrise élémentaire que Yumemizuki Mizuki possède au-delà de 500 pts, son taux CRIT augmente de 0,04 % et ses DGT CRIT de 0,16 %. Le taux CRIT et les DGT CRIT de Yumemizuki Mizuki peuvent être respectivement augmentés d'un maximum de 20 % et de 80 % de cette manière."
     }
   }
 }

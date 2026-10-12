@@ -4,8 +4,8 @@ import { allElementKeys } from '@genshin-optimizer/gi/consts'
 import { equal, input, subscript, sum } from '@genshin-optimizer/gi/wr'
 import { cond, st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
-import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
+import { headerTemplate, WeaponSheet } from '../../WeaponSheet'
 
 const key: WeaponKey = 'KagurasVerity'
 
@@ -23,6 +23,17 @@ const skill_dmg_s = totems.map((i) =>
     { path: 'skill_dmg_' }
   )
 )
+const stellarconduct_dmg_s = totems.map((i) =>
+  equal(
+    condNode,
+    i.toString(),
+    subscript(
+      input.weapon.refinement,
+      dmg_.map((d) => d * i)
+    ),
+    { path: 'stellarconduct_dmg_' }
+  )
+)
 const ele_dmg_s = Object.fromEntries(
   allElementKeys.map((ele) => [
     ele,
@@ -33,6 +44,7 @@ const ele_dmg_s = Object.fromEntries(
 export const data = dataObjForWeaponSheet(key, {
   premod: {
     skill_dmg_: sum(...skill_dmg_s),
+    stellarconduct_dmg_: sum(...stellarconduct_dmg_s),
     ...Object.fromEntries(
       allElementKeys.map((ele) => [`${ele}_dmg_`, ele_dmg_s[ele]])
     ),
@@ -53,6 +65,9 @@ const sheet: IWeaponSheet = {
             fields: [
               {
                 node: skill_dmg_s[i - 1],
+              },
+              {
+                node: stellarconduct_dmg_s[i - 1],
               },
               ...allElementKeys.map((ele) => ({ node: ele_dmg_s[ele] })),
             ],

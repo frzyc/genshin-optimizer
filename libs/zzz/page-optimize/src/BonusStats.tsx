@@ -6,22 +6,28 @@ import {
   NumberInputLazy,
   TextFieldLazy,
 } from '@genshin-optimizer/common/ui'
+import { stableArr } from '@genshin-optimizer/common/util'
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
-import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
-import type { BonusStatKey, BonusStatTag } from '@genshin-optimizer/zzz/db'
+import { allAttributeAnomalyKeys } from '@genshin-optimizer/zzz/consts'
+import type {
+  BonusStatKey,
+  BonusStatTag,
+  TeamBonusStat,
+} from '@genshin-optimizer/zzz/db'
 import {
   bonusStatDamageTypes,
   bonusStatDmgTypeIncStats,
+  bonusStatKeys,
   bonusStatQtKeys,
+  newBonusStatTag,
 } from '@genshin-optimizer/zzz/db'
-import { bonusStatKeys, newBonusStatTag } from '@genshin-optimizer/zzz/db'
 import {
-  useCharOpt,
   useCharacterContext,
   useDatabaseContext,
+  useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
 import type { Attribute, Tag } from '@genshin-optimizer/zzz/formula'
-import { TagDisplay, qtMap } from '@genshin-optimizer/zzz/formula-ui'
+import { qtMap, TagDisplay } from '@genshin-optimizer/zzz/formula-ui'
 import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
 import {
   CheckBox,
@@ -45,7 +51,8 @@ export function BonusStatsSection() {
   const { t } = useTranslation('page_optimize')
   const { database } = useDatabaseContext()
   const { key: characterKey } = useCharacterContext()!
-  const { bonusStats } = useCharOpt(characterKey)!
+  const team = useTeam(characterKey)!
+  const bonusStats = team.frames[0]?.bonusStats ?? stableArr<TeamBonusStat>()
   const charMetaDesc = useDataManagerBase(
     database.charMeta,
     characterKey
@@ -57,17 +64,24 @@ export function BonusStatsSection() {
       isEnabled: boolean,
       index?: number
     ) =>
-      database.charOpts.setBonusStat(
+      database.teams.setFrameBonusStat(
         characterKey,
+        0,
         tag,
         value,
         isEnabled,
         index
       ),
-    [database, characterKey]
+    [database.teams, characterKey]
   )
   const newTarget = (q: BonusStatKey) =>
-    database.charOpts.setBonusStat(characterKey, newBonusStatTag(q), 0, false)
+    database.teams.setFrameBonusStat(
+      characterKey,
+      0,
+      newBonusStatTag(q),
+      0,
+      false
+    )
   const setDescription = useCallback(
     (description: string | undefined) => {
       database.charMeta.set(characterKey, { description })
@@ -159,7 +173,7 @@ function BonusStatDisplay({
           <TagDisplay tag={tag} />
         </Typography>
         <QtDropdown qt={tag.qt} setQt={(qt) => setTag({ ...tag, qt })} />
-        {['dmg_', 'sheer_dmg_', 'resIgn_'].includes(tag.q) && (
+        {['dmg_', 'sheer_dmg_', 'resIgn_', 'sharp_dmg_'].includes(tag.q) && (
           <AttributeDropdown
             tag={tag}
             setAttribute={(ele) => {
@@ -239,7 +253,7 @@ function AttributeDropdown({
       color={tag.attribute!}
     >
       <MenuItem onClick={() => setAttribute(null)}>No Attribute</MenuItem>
-      {allAttributeKeys.map((attr) => (
+      {allAttributeAnomalyKeys.map((attr) => (
         <MenuItem key={attr} onClick={() => setAttribute(attr)}>
           <ColorText color={attr}>
             <AttributeName attribute={attr} />

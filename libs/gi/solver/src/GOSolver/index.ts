@@ -1,1 +1,1 @@
-export * from './GOSolver'
+export * from './GOSolver.js'

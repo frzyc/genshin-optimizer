@@ -1,26 +1,26 @@
-import type { Outstanding, Processed } from './processImg'
+import type { OcrTextLine, Outstanding, Processed } from './processImg'
 import { processEntry } from './processImg'
+
+export type { OcrBox, OcrTextLine, OcrWordBox, Processed } from './processImg'
 
 export type ScanningData = {
   processedNum: number
   outstandingNum: number
   scanningNum: number
 }
-export type { Processed }
-
 const maxProcessingCount = 3,
   maxProcessedCount = 16
 
-type textsFromImageFunc = (
+type linesFromImageFunc = (
   imageData: ImageData,
   options?: object | undefined
-) => Promise<string[]>
+) => Promise<OcrTextLine[]>
 
 export class ScanningQueue {
   private debug: boolean
-  private textsFromImage: textsFromImageFunc
-  constructor(textsFromImage: textsFromImageFunc, debug = false) {
-    this.textsFromImage = textsFromImage
+  private linesFromImage: linesFromImageFunc
+  constructor(linesFromImage: linesFromImageFunc, debug = false) {
+    this.linesFromImage = linesFromImage
     this.debug = debug
   }
   private processed = [] as Processed[]
@@ -40,15 +40,22 @@ export class ScanningQueue {
     )
     numProcessing &&
       this.outstanding.splice(0, numProcessing).map((p) => {
-        const prom = processEntry(p, this.textsFromImage, this.debug)
+        const prom = processEntry(p, this.linesFromImage, this.debug)
         this.scanning.push(prom)
-        prom.then((procesResult) => {
-          const index = this.scanning.indexOf(prom)
-          if (index === -1) return // probably because the queue has been cleared.
-          this.scanning.splice(index, 1)
-          this.processed.push(procesResult)
-          this.processQueue()
-        })
+        prom
+          .then((procesResult) => {
+            const index = this.scanning.indexOf(prom)
+            if (index === -1) return // probably because the queue has been cleared.
+            this.scanning.splice(index, 1)
+            this.processed.push(procesResult)
+            this.processQueue()
+          })
+          .catch(() => {
+            const index = this.scanning.indexOf(prom)
+            if (index === -1) return
+            this.scanning.splice(index, 1)
+            this.processQueue()
+          })
       })
     this.callCB()
   }

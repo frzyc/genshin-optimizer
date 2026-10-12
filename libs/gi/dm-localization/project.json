@@ -7,8 +7,7 @@
     "gen-file": {
       "executor": "@genshin-optimizer/gi/dm-localization:gen-locale",
       "outputs": ["{projectRoot}/assets/locales"]
-    },
-    "test": {}
+    }
   },
   "tags": []
 }

@@ -3,7 +3,7 @@ import type {
   PaletteColor,
   ToggleButtonGroupProps,
 } from '@mui/material'
-import { ToggleButtonGroup, styled } from '@mui/material'
+import { styled, ToggleButtonGroup } from '@mui/material'
 
 export type SolidToggleButtonGroupProps = SolidToggleButtonGroupPropsPartial &
   ToggleButtonGroupProps

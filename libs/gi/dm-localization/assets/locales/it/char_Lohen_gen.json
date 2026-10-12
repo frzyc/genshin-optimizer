@@ -1,0 +1,185 @@
+{
+  "name": "Lohen",
+  "title": "Punta di freccia affilata",
+  "description": "Il vice capitano della compagnia a distanza dei Cavalieri di Favonius, un cavaliere noto per il suo approccio poco ortodosso e la sua predilezione per le tattiche non convenzionali.",
+  "constellationName": "Lepus Miles",
+  "auto": {
+    "name": "Giuramento infranto",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra fino a 5 colpi consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per compiere un affondo."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Colpo imprevisto",
+    "description": {
+      "0": "Mentre cerca i punti deboli degli avversari, Lohen passa alla modalità <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Colpo da maestro</strong></tooltip>. Mentre è in questo stato:",
+      "1": [
+        " Lohen può accumulare attivamente <tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>Gioia</strong></tooltip> e utilizzarla per sprigionare l'abilità elementale speciale <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Nelle ossa e nell'anima</strong></tooltip>;",
+        " i membri vicini del gruppo possono accumulare <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Voglia di vincere</strong></tooltip> per Lohen, aumentando i DAN inflitti da <strong>Nelle ossa e nell'anima</strong>."
+      ],
+      "2": "Lohen può sprigionare <strong>Nelle ossa e nell'anima</strong> fino a 3 volte durante la modalità <strong>Colpo da maestro</strong>, dopo le quali non può più accumulare <strong>Gioia</strong>.",
+      "3": "<br/>",
+      "4": "<i>\"Cavalleria? Ah, quale modo migliore per attirare qualcuno in trappola! Quando un nemico sogna una vittoria onorevole, finisce inevitabilmente per non sospettare della 'piacevole sorpresa' che lo attende.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "Colpo da maestro",
+      "10": "DAN da Nelle ossa e nell'anima",
+      "11": "Aumento DAN con Voglia di vincere",
+      "12": "TdR",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Giudizio manifesto",
+    "description": {
+      "0": "Esegue una rapida serie di colpi in avanti, consumando tutta la <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Voglia di vincere</strong></tooltip> e infliggendo <cryo>DAN da Cryo</cryo> in proporzione alla quantità di <strong>Voglia di vincere</strong> consumata. Se Lohen si trova già in modalità <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Colpo da maestro</strong></tooltip>, la durata della suddetta modalità aumenta di 1,65 s.",
+      "1": "<br/>",
+      "2": "<i>\"Hai ceduto così in fretta? Che disdetta, avevo appena iniziato...\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Aumento DAN con Voglia di vincere",
+      "2": "TdR",
+      "3": "Costo energia",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Facoltà di non rispondere",
+    "description": {
+      "0": "Quando i membri vicini del gruppo accumulano <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Voglia di vincere</strong></tooltip> per Lohen infliggendo DAN mentre è in modalità <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Colpo da maestro</strong></tooltip>, se tali DAN non sono inferiori a un 3.000% dell'ATT di base di Lohen, quest'ultimo riceve 60 punti <strong>Voglia di vincere</strong> aggiuntivi."
+    }
+  },
+  "passive2": {
+    "name": "Capolavoro frivolo",
+    "description": {
+      "0": "Mentre è in modalità <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Colpo da maestro</strong></tooltip>, per 8 s dopo che un altro membro vicino del gruppo ha innescato una <cryo>reazione di Cryo</cryo>, l'ATT di Lohen e quello del suddetto membro aumentano di un 15%."
+    }
+  },
+  "passive3": {
+    "name": "Umore giusto",
+    "description": {
+      "0": "Quando usa la sua abilità elementale <strong>Colpo imprevisto</strong>, Lohen ottiene Buonumore per 9 s, che aumenta di 1 il livello della suddetta abilità.",
+      "1": "Quando sprigiona un'abilità elementale, se il livello di attacco normale, abilità elementale o Tripudio elementale di qualsiasi altro membro del gruppo è maggiore o uguale al livello dell'abilità elementale di Lohen, la durata della suddetta iterazione di Buonumore si estende di ulteriori 6 s.",
+      "2": "Lohen può ottenere Buonumore una volta ogni 18 s."
+    }
+  },
+  "lockedPassive": {
+    "name": "Rito della Vigilia della strega: Rovo infettivo",
+    "description": {
+      "0": "Dopo aver completato <strong>Compiti della strega: Sui diversi nemici</strong>, Lohen acquisisce l'attributo <strong>Hexerei</strong>. Quando il gruppo include almeno 2 personaggi con attributo Hexerei, questi ultimi ottengono l'effetto di potenziamento <strong>Hexerei: Rito segreto</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Rito segreto</strong>",
+      "3": "Quando l'abilità elementale speciale <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Nelle ossa e nell'anima</strong></tooltip> colpisce un avversario o quando viene sprigionato il Tripudio elementale <strong>Giudizio manifesto</strong>, se la <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Voglia di vincere</strong></tooltip> di Lohen è maggiore o uguale a un 50% del suo limite massimo, i suoi DAN da attacco normale e attacco caricato aumentano di un 40% per 6 s."
+    }
+  },
+  "constellation1": {
+    "name": "O brezze, sempre dal dolore afflitte",
+    "description": {
+      "0": "Il limite massimo di <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Voglia di vincere</strong></tooltip> di Lohen aumenta a un 300% del suo valore originale.",
+      "1": "Inoltre, quando gli altri membri vicini del gruppo infliggono DAN mentre Lohen è in modalità <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Colpo da maestro</strong></tooltip>, accumulano un 500% della quantità originale di <strong>Voglia di vincere</strong> per Lohen."
+    }
+  },
+  "constellation2": {
+    "name": "Solcando i cieli, in volo ferisco",
+    "description": {
+      "0": "Quando è in modalità <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Colpo da maestro</strong></tooltip>, dopo aver colpito un avversario con l'abilità elementale speciale <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Nelle ossa e nell'anima</strong></tooltip> o aver sprigionato il Tripudio elementale <strong>Giudizio manifesto</strong>, Lohen ottiene Lama Scacciamali per 4 s: la volta successiva che colpisce un avversario con un attacco normale o caricato mentre è in modalità Colpo da maestro, Lohen sferra un colpo aggiuntivo che infligge <cryo>DAN da Cryo ad area</cryo> pari a un 500% del suo ATT e aumenta la maestria elementale degli altri membri vicini del gruppo di 200 per 8 s. Lama Scacciamali può essere attivata una volta ogni 4 s."
+    }
+  },
+  "constellation3": {
+    "name": "Una piaga che solo la lancia può sanare",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Lohen_gen baseKey18=skill>Colpo imprevisto</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Risplende l'amore, sogghigna la morte",
+    "description": {
+      "0": "Quando Lohen sprigiona il Tripudio elementale <strong>Giudizio manifesto</strong> mentre è in modalità <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Colpo da maestro</strong></tooltip>, la sua <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Voglia di vincere</strong></tooltip> raggiunge il valore massimo, permettendo all'attuale iterazione del Tripudio elementale di ottenere l'aumento di DAN più alto possibile.",
+      "1": "<br/>",
+      "2": "Inoltre, quando Lohen passa alla modalità <strong>Colpo da maestro</strong>, si verificano i seguenti effetti in base alla sua quantità di energia elementale.",
+      "3": [
+        " Quando non è al massimo, l'energia elementale di Lohen si ripristina di 15.",
+        " Quando è al massimo, se nei successivi 15 s Lohen scatena il Tripudio elementale <strong>Giudizio manifesto</strong>, l'energia elementale di Lohen si ripristina di 15."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Non fare domande e non darti pensiero",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Lohen_gen baseKey18=burst>Giudizio manifesto</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Annegare m'è dolce in questo mare",
+    "description": {
+      "0": "Usare l'abilità elementale speciale <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Nelle ossa e nell'anima</strong></tooltip> e colpire con essa un avversario, o sprigionare il Tripudio elementale <strong>Giudizio manifesto</strong> mentre la modalità <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Colpo da maestro</strong></tooltip> è attiva, non consuma <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Voglia di vincere</strong></tooltip>, bensì conferisce a Lohen la quantità massima di <tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>Gioia</strong></tooltip>; se Lohen colpisce un avversario con il successivo uso dell'abilità elementale speciale <strong>Nelle ossa e nell'anima</strong>, la durata dell'attuale iterazione di <strong>Colpo da maestro</strong> si estende di 1,25 s. Quest'effetto può attivarsi una volta ogni 7 s.",
+      "1": "In aggiunta, i DAN da CRIT di tutti i DAN sopra descritti aumentano di un 175%, e il numero di volte che Lohen può sprigionare <strong>Nelle ossa e nell'anima</strong> durante l'attuale iterazione di <strong>Colpo da maestro</strong> aumenta di 2."
+    }
+  }
+}

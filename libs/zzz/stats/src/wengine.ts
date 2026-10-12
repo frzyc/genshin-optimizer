@@ -1,5 +1,5 @@
 import { clamp, transposeArray } from '@genshin-optimizer/common/util'
-import { type WengineKey, allWengineKeys } from '@genshin-optimizer/zzz/consts'
+import { allWengineKeys, type WengineKey } from '@genshin-optimizer/zzz/consts'
 import { allStats } from './allStats'
 
 export function getWengineStat(wKey: WengineKey) {
@@ -20,14 +20,15 @@ export function getWengineStats(
   wenginePhase: number,
   wengineAscension?: number
 ) {
-  const { atk_base, second_statkey, second_statvalue } = getWengineStat(wk)
+  const { base_statkey, base_statvalue, second_statkey, second_statvalue } =
+    getWengineStat(wk)
   const ascension = wengineAscension ?? clamp(Math.floor(level / 10), 0, 5) //TODO: Remove clamp once we can get wengine from characters for optimize
   const stats: Record<string, number> = {
-    atk_base:
-      atk_base * (1 + atk_multiplier[level] / 10000 + 0.8922 * ascension),
+    [base_statkey]:
+      base_statvalue * (1 + atk_multiplier[level] / 10000 + 0.8922 * ascension),
     [second_statkey]: second_statvalue * (1 + 0.3 * ascension),
     wenginePhase,
-    wengineIndex: allWengineKeys.findIndex((k) => k === wk),
+    wengineIndex: allWengineKeys.indexOf(wk),
   }
 
   return stats

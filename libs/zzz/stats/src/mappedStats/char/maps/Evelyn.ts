@@ -55,8 +55,9 @@ const dm = {
   },
   m1: {
     decibels: data_gen.mindscapeParams[0][0],
-    defIgn_: data_gen.mindscapeParams[0][1],
-    duration: data_gen.mindscapeParams[0][2],
+    investigationCooldown: data_gen.mindscapeParams[0][1],
+    defIgn_: data_gen.mindscapeParams[0][2],
+    duration: data_gen.mindscapeParams[0][3],
   },
   m2: {
     atk_: data_gen.mindscapeParams[1][0],

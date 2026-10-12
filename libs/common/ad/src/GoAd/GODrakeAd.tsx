@@ -4,6 +4,7 @@ import type { ReactNode } from 'react'
 import type { AdDims } from '../type'
 import { GO_LINK, isGOURL } from '../urlUtil'
 import drake from './drake.png'
+
 function GODrakeAd({ children }: { children: ReactNode }) {
   return (
     <Box

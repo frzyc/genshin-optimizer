@@ -17,7 +17,7 @@ import type { ArtifactBuildData, ArtifactsBySlot } from './common'
 import { artSetPerm, exclusionToAllowed, pruneAll } from './common'
 
 function* allCombinations(
-  sets: Record<ArtifactSlotKey, ArtifactSetKey[]>
+  sets: Record<ArtifactSlotKey, Iterable<ArtifactSetKey>>
 ): Iterable<Record<ArtifactSlotKey, ArtifactSetKey>> {
   for (const flower of sets.flower)
     for (const circlet of sets.circlet)
@@ -35,12 +35,12 @@ describe('common.ts', () => {
       Berserker: [2, 4],
       rainbow: [2, 4],
     }
-    const artSets: ArtifactSetKey[] = [
+    const artSets: Set<ArtifactSetKey> = new Set([
       'Adventurer',
       'ArchaicPetra',
       'Berserker',
       'BloodstainedChivalry',
-    ]
+    ])
     const perm = [...artSetPerm(filter, artSets)],
       allowedRainbows = exclusionToAllowed(filter.rainbow)
 
@@ -112,7 +112,14 @@ describe('common.ts', () => {
     }
     test('basic', () => {
       const node = sum(1, dynRead('atk'), prod(1500, dynRead('atk_')))
-      const z = pruneAll([node], [-Infinity], arts, 5, {}, { reaffine: true })
+      const z = pruneAll(
+        [node],
+        [Number.NEGATIVE_INFINITY],
+        arts,
+        5,
+        {},
+        { reaffine: true }
+      )
 
       expect(z.nodes[0].operation).toEqual('read')
       expect(Object.keys(z.arts.base).length).toEqual(1)
@@ -126,7 +133,14 @@ describe('common.ts', () => {
         prod(1500, dynRead('atk_')),
         threshold(dynRead('glad'), 2, 0.18, 0)
       )
-      const z = pruneAll([node], [-Infinity], arts, 5, {}, { reaffine: true })
+      const z = pruneAll(
+        [node],
+        [Number.NEGATIVE_INFINITY],
+        arts,
+        5,
+        {},
+        { reaffine: true }
+      )
 
       expect(Object.keys(z.arts.base).length).toEqual(2)
       testFormulasEqual({ nodes: [node], arts }, z)

@@ -46,7 +46,7 @@ export function extractJSON(s: string): object | null {
   if (match) {
     try {
       return JSON.parse(match[0])
-    } catch (error) {
+    } catch (_error) {
       // Or should it return a different value for erroneous JSON?
       return null
     }

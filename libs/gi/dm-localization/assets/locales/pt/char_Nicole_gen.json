@@ -1,0 +1,178 @@
+{
+  "name": "Nicole",
+  "title": "Clamor Interior",
+  "description": "A \"Bruxa\" Silenciosa, O \"Anjo\" Sem Voz",
+  "constellationName": "Reliquiarium",
+  "auto": {
+    "name": "Allegoria",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Proclama o decreto na língua primordial, realizando até 3 golpes que causam <pyro>Dano Pyro</pyro>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para infligir <pyro>Dano Pyro em uma AdE</pyro> após um curto período de canalização."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em direção ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Inflige <pyro>Dano Pyro em uma AdE</pyro> durante o impacto com o chão."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano de Ataque Carregado",
+      "4": "Consumo de Stamina de Ataque Carregado",
+      "5": "Dano Durante a Queda",
+      "6": "Dano de Queda de Baixa/Alta Altitude",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Revelação: Luz Não Criada",
+    "description": {
+      "0": "Recria um vislumbre passageiro de uma era longínqua quando a autoridade dos céus ainda podia ser invocada, concedendo para todos os personagens próximos o efeito <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Graça de Kenosis</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11310002 values=[]></tooltip>, aumentando o ATQ desses personagens, causando <pyro>Dano Pyro em AdE</pyro> e revelando o Escudo da Luz Flamejante.",
+      "1": "A absorção de Dano do Escudo da Luz Flamejante é baseada no ATQ de Nicole, e possui 250% de eficácia contra <pyro>Dano Pyro</pyro>."
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Absorção de Dano do Escudo",
+      "2": "Duração do Escudo",
+      "3": "Proporção do Bônus de ATQ da Graça de Kenosis",
+      "4": "Bônus de ATQ Máximo da Graça de Kenosis",
+      "5": "Duração de Graça de Kenosis",
+      "6": "Tempo de Recarga",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Revelação: Caminho da Jornada Celestial",
+    "description": {
+      "0": "Tece o caminho do destino ancorado com fios dourados de luz, causando <pyro>Dano Pyro em AdE</pyro>, e troca para o modo Contemplação Silenciosa.",
+      "1": "Quando Nicole está nesse modo e quando um ataque do personagem ativo atinge um inimigo, invoca uma Projeção Arcana que realiza um Ataque Coordenado contra o inimigo, causando Dano em AdE do Tipo Elemental correspondente ao do personagem. Esse Dano é baseado no ATQ do personagem, e é considerado Dano causado por esse personagem.",
+      "2": "Esse efeito pode ser desencadeado uma vez a cada 3s, e pode ser desencadeado 4 vezes por modo de Contemplação Silenciosa de Nicole.",
+      "3": "<br/>",
+      "4": "Além disso, personagens Mágicos terão alguma diferença de aparência quando estiverem em Projeção Arcana..."
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano de Projeção Arcana",
+      "2": "Instâncias de Ataque de Projeção Arcana",
+      "3": "Duração de Contemplação Silenciosa",
+      "4": "Tempo de Recarga",
+      "5": "Energia Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Methexis",
+    "description": {
+      "0": "Nos 20s após lançar a Habilidade Elemental <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Revelação: Luz Não Criada</tooltip></strong>, Nicole continuará aplicando \"Observação\" nos outros personagens da equipe que estiverem atualmente em campo. Quando um personagem sob efeito de Observação permanecer em campo por 3s contínuos, o efeito <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Graça de Kenosis</strong></tooltip> que ele possui será elevado para <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Orientação de Theosis</strong></tooltip>, aumentando seu ATQ em 300 adicionais. Se o personagem sob efeito de Observação for um personagem Mágico, o efeito <strong>Graça de Kenosis</strong> será elevado diretamente para <strong>Orientação de Theosis</strong>.",
+      "1": "Com exceção de Nicole, quando outros personagens que possuem <strong>Orientação de Theosis</strong> saírem de campo, esse efeito voltará a ser <strong>Graça de Kenosis</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Philokalia",
+    "description": {
+      "0": "Depois que o personagem ativo próximo atingir o inimigo com Dano Elemental, a <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Graça de Kenosis</strong></tooltip> de Nicole será elevada para <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Orientação de Theosis</strong></tooltip> por 8s."
+    }
+  },
+  "passive3": {
+    "name": "Nepsis",
+    "description": {
+      "0": "Em Teyvat, quando não estiver em combate, se já tiver obtido a Bússola de Tesouros da região atual, o Ataque Carregado de Nicole será convertido para Orientação da Emissária: invoca os Seelies próximos para ajudar a mostrar o caminho, e desencadeia o efeito igual ao da Bússola de Tesouros da região atual.",
+      "1": "Esse efeito possui uma recarga de 5s, e não pode ser ativado em Domínios, Domínios Dizimados e Abismo do Espiral."
+    }
+  },
+  "lockedPassive": {
+    "name": "Presente da Noite da Bruxa: Luz na Escuridão",
+    "description": {
+      "0": "Ao completar <strong>Tarefa da Bruxa: Dever de uma Guia?</strong>, Nicole se tornará uma personagem <strong>Mágica</strong>. Quando a equipe possuir pelo menos 2 personagens Mágicos, obtém o efeito <strong>Mágico: Ritual Secreto</strong>, fortalecendo os personagens Mágicos.",
+      "1": "<br/>",
+      "2": "<strong>Mágico: Ritual Secreto</strong>",
+      "3": "Aumenta o Dano causado de <strong><tooltip ns=char_Nicole_gen baseKey18=burst>Projeção Arcana</tooltip></strong> de personagens mágicos. O aumento de Dano é equivalente a 300% do ATQ de Nicole."
+    }
+  },
+  "constellation1": {
+    "name": "\"Não Tema, Criança Amada\"",
+    "description": {
+      "0": "Quando seu personagem atinge o inimigo com um ataque, invoca uma Projeção Arcana: Unidade especial adicional que realiza um Ataque Coordenado contra o inimigo, e que causa Dano Elemental em AdE contra o inimigo de acordo com o Tipo Elemental do personagem. Esse Dano é equivalente a 600% do ATQ do personagem, e é considerado Dano causado por esse personagem.",
+      "1": "Esse efeito pode ser desencadeado uma vez a cada 6s."
+    }
+  },
+  "constellation2": {
+    "name": "\"Lhe Guiarei e Mostrarei o Caminho a Trilhar\"",
+    "description": {
+      "0": "O efeito da Habilidade Elemental <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Revelação: Luz Não Criada</tooltip></strong> é fortalecido: <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Graça de Kenosis</strong></tooltip> obtém um aumento adicional de 300 de ATQ (não é contabilizado para o limite de bônus de ATQ desse efeito). <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Orientação de Theosis</strong></tooltip> reduz a RES Elemental correspondente do inimigo em 25% de acordo com o Tipo Elemental do personagem. Efeitos de redução de RES Elemental de Tipos Elementais iguais não acumulam.",
+      "1": "Além disso, quando Nicole lança a Habilidade Elemental <strong>Revelação: Luz Não Criada</strong>, concede um Escudo da Luz Flamejante para o personagem ativo próximo."
+    }
+  },
+  "constellation3": {
+    "name": "\"Uma Lanterna ao Lado, Uma Luz a Mostrar o Caminho\"",
+    "description": {
+      "0": "Aumenta o nível da Habilidade Elemental <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Revelação: Luz Não Criada</tooltip></strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Seja a Esquerda ou Direita, Não Importa para Onde se Vire\"",
+    "description": {
+      "0": "Quando um personagem próximo que possui <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Graça de Kenosis</strong></tooltip> é elevado para <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Orientação de Theosis</strong></tooltip>, Nicole concede o efeito \"Bênção do Guia\" para ele por 20s. Cada personagem pode obter esse efeito uma vez a cada 16s.",
+      "1": "Personagens que possuem Bênção do Guia terão um aumento de Dano de seus Ataques Normais, Carregados, Imersivos, Habilidades Elementais e Supremo. O aumento é equivalente a 70% do ATQ de Nicole. Esse efeito será removido depois de ativado 8 vezes, ou quando sua duração acabar.",
+      "2": "Ao atingir múltiplos inimigos, consumirá usos de acordo com a quantidade de inimigos atingidos. Os usos do efeito são contados separadamente para cada personagem da equipe que possui Bênção do Guia."
+    }
+  },
+  "constellation5": {
+    "name": "\"Você Ouvirá Minha Voz ao Seu Lado\"",
+    "description": {
+      "0": "Aumenta o nível de <strong><tooltip ns=char_Nicole_gen baseKey18=burst>Revelação: Caminho da Jornada Celestial</tooltip></strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Este é o Caminho, Percorra-o Imediatamente\"",
+    "description": {
+      "0": "Quando <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Graça de Kenosis</strong></tooltip> que Nicole possui for elevada para <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Orientação de Theosis</strong></tooltip>, todos os personagens próximos que possuem <strong>Graça de Kenosis</strong> serão elevados para <strong>Orientação de Theosis</strong>. Depois de elevado, <strong>Orientação de Theosis</strong> não retornará para <strong>Graça de Kenosis</strong>.",
+      "1": "Além disso, o Dano que o personagem que possui <strong>Orientação de Theosis</strong> causar contra o inimigo ignorará 40% de sua DEF."
+    }
+  }
+}

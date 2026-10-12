@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -44,6 +48,13 @@
       "0": "Effectue un assaut rapide, infligeant des <electro>DGT Électro</electro> aux ennemis en chemin.",
       "1": "<br/>",
       "2": "Lorsque Cyno est sous l'effet d'éclaireur sermenté de son déchaînement élémentaire « Liturgie : Rapidité lupine », il déclenche à la place un <strong>rite mortuaire</strong> qui inflige de tonitruants <electro>DGT Électro de zone</electro> et prolonge la durée d'éclaireur sermenté.",
+      "3": "<br/>",
+      "4": "<i>« Ce jugement ne tolère aucun choix. Il n'y a ici ni rejet ni acceptation... Nous sommes tous deux liés depuis longtemps à cette conviction. »</i>"
+    },
+    "upgradedDescription": {
+      "0": "Effectue un assaut rapide, infligeant des <electro>DGT Électro</electro> aux ennemis en chemin.",
+      "1": "<br/>",
+      "2": "Lorsque Cyno est sous l'effet d'éclaireur sermenté, il déclenche à la place un <strong>rite mortuaire</strong> qui inflige de tonitruants <electro>DGT Électro de zone</electro>. Si Cyno passe en éclaireur sermenté grâce à son déchaînement élémentaire <strong>Liturgie : Rapidité lupine</strong>, déclencher un <strong>rite mortuaire</strong> prolonge également la durée cette instance d'éclaireur sermenté.",
       "3": "<br/>",
       "4": "<i>« Ce jugement ne tolère aucun choix. Il n'y a ici ni rejet ni acceptation... Nous sommes tous deux liés depuis longtemps à cette conviction. »</i>"
     },
@@ -63,7 +74,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -98,7 +113,11 @@
       "12": "Énergie élémentaire",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -106,6 +125,11 @@
     "description": {
       "0": "Lorsque Cyno est sous l'effet d'éclaireur sermenté de <strong>Liturgie : Rapidité lupine</strong>, il entre en posture de prophète final de façon intermittente. S'il utilise <strong>Rite : Traversée abyssale</strong> dans cette posture, il active l'effet Ordalie, augmentant les DGT infligés par cette utilisation de Rite : Traversée abyssale de 35 % et tirant vers l'avant 3 éclairs de sable qui infligent des <electro>DGT Électro</electro> d'une valeur équivalant à 100 % de son ATQ.",
       "1": "Les DGT infligés par les éclairs de sable sont considérés comme des DGT de compétence élémentaire."
+    },
+    "upgradedDescription": {
+      "0": "Lorsque Cyno est sous l'effet d'éclaireur sermenté, il entre en posture de prophète final de façon intermittente. S'il utilise <strong>Rite : Traversée abyssale</strong> dans cette posture, il active l'effet Ordalie, augmentant les DGT infligés par cette utilisation de Rite : Traversée abyssale de 35 % et tirant vers l'avant 3 éclairs de sable qui infligent des <electro>DGT Électro</electro> d'une valeur équivalant à 100 % de son ATQ. Les DGT infligés par les éclairs de sable sont considérés comme des DGT de compétence élémentaire.",
+      "1": "<br/>",
+      "2": "<strong>Radiance « Astroconduction »</strong> : Activer l'effet Ordalie permet à la place à Cyno de tirer 3 <strong>éclairs de sable « Étoime »</strong> vers l'avant pour infliger des <electro>DGT Électro</electro> d'une valeur équivalant à 200 % de son ATQ, ces DGT étant considérés comme des DGT de réaction d'Astroconduction."
     }
   },
   "passive2": {
@@ -116,6 +140,14 @@
         " Les DGT de ses attaques normales sous l'effet d'éclaireur sermenté augmentent d'une valeur équivalant à 150 % de sa maîtrise élémentaire.",
         " Les DGT des éclairs de sable de son aptitude d'élévation « Jugement des plumes » augmentent d'une valeur équivalant à 250 % de sa maîtrise élémentaire."
       ]
+    },
+    "upgradedDescription": {
+      "0": "Les DGT de certaines attaques de Cyno augmentent selon sa maîtrise élémentaire :",
+      "1": [
+        " Les DGT de ses attaques normales sous l'effet d'éclaireur sermenté augmentent d'une valeur équivalant à 150 % de sa maîtrise élémentaire.",
+        " Les DGT des éclairs de sable de son aptitude d'élévation « Jugement des plumes » augmentent d'une valeur équivalant à 250 % de sa maîtrise élémentaire.",
+        " Les DGT des éclairs de sable « Étoime » de son aptitude d'élévation « Jugement des plumes » augmentent d'une valeur équivalant à 600 % de sa maîtrise élémentaire."
+      ]
     }
   },
   "passive3": {
@@ -124,17 +156,35 @@
       "0": "Augmente les récompenses d'une expédition de 20 h à Sumeru de 25 %."
     }
   },
+  "lockedPassive": {
+    "name": "Une étoile pour commencer le voyage",
+    "description": {
+      "0": "Lorsque Cyno utilise sa compétence élémentaire <strong>Rite : Traversée abyssale</strong> sans être dans l'état d'éclaireur sermenté, il passe en éclaireur sermenté pendant 6 s.",
+      "1": "De plus, Cyno passe en <strong>radiance « Astroconduction »</strong> lorsqu'il est dans une <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>étendue polaris</strong></tooltip>."
+    }
+  },
   "constellation1": {
     "name": "Sacrement : Vigile incessante",
     "description": {
       "0": "Après avoir utilisé <strong>Liturgie : Rapidité lupine</strong>, la VIT d'attaque des attaques normales de Cyno augmente de 20 % pendant 10 s. Si l'effet Ordalie de l'aptitude d'élévation « Jugement des plumes » est déclenché pendant <strong>Rite : Traversée abyssale</strong>, la durée de cette augmentation est actualisée.",
       "1": "L'aptitude d'élévation « Jugement des plumes » doit être déjà débloquée."
+    },
+    "upgradedDescription": {
+      "0": "Après avoir utilisé <strong>Liturgie : Rapidité lupine</strong>, la VIT d'attaque des attaques normales de Cyno augmente de 20 % pendant 10 s. Si l'effet Ordalie de l'aptitude d'élévation « Jugement des plumes » est déclenché pendant <strong>Rite : Traversée abyssale</strong>, la durée de cette augmentation est actualisée.",
+      "1": "L'aptitude d'élévation « Jugement des plumes » doit être déjà débloquée.",
+      "2": "<br/>",
+      "3": "<strong>Radiance « Astroconduction »</strong> : Lorsque Cyno se transforme en éclaireur sermenté, il obtient également l'effet <strong>S'élever ensemble</strong> qui augmente la maîtrise élémentaire de 200 pts. De plus, lorsque Cyno bascule pour un autre personnage pendant la durée de cet effet, ce dernier hérite de l'effet <strong>S'élever ensemble</strong> pendant la durée restante."
     }
   },
   "constellation2": {
     "name": "Cérémonie : Retour des esprits",
     "description": {
       "0": "Lorsque l'attaque normale de Cyno a touché un ennemi, son bonus de <electro>DGT Électro</electro> augmente de 10 % pendant 4 s. Cet effet peut être déclenché une fois toutes les 0,1 s et cumulé 5 fois maximum."
+    },
+    "upgradedDescription": {
+      "0": "Lorsque l'attaque normale de Cyno a touché un ennemi, son bonus de <electro>DGT Électro</electro> augmente de 10 % pendant 4 s. Cet effet peut être déclenché une fois toutes les 0,1 s et cumulé 5 fois maximum.",
+      "1": "<br/>",
+      "2": "De plus, lorsqu'un personnage sous l'effet <strong>S'élever ensemble</strong> touche un ennemi avec une attaque normale ou chargée, les DGT de réaction d'Astroconduction de ce personnage augmentent de 16 %. Cet effet dure jusqu'à la fin de l'effet <strong>S'élever ensemble</strong>, peut être déclenché une fois toutes les 0,1 s et cumulé 5 fois maximum."
     }
   },
   "constellation3": {
@@ -147,8 +197,14 @@
   "constellation4": {
     "name": "Protocole : Garde d'interdiction",
     "description": {
-      "0": "Sous l'effet d'éclaireur sermenté de <strong>Liturgie : Rapidité lupine</strong>, lorsque Cyno a déclenché une réaction d'Électrocution, de Sélénocution, de Supraconduction, de Surcharge, de Stimulation, de Suractivation, d'Exubérance ou de Dispersion Électro, tous les personnages de l'équipe à proximité (hormis Cyno) récupèrent 3 pts d'énergie élémentaire.",
+      "0": "Sous l'effet d'éclaireur sermenté de <strong>Liturgie : Rapidité lupine</strong>, lorsque Cyno a déclenché une réaction d'Électrocution, de Sélénocution, de Supraconduction, d'Astroconduction, de Surcharge, de Stimulation, de Suractivation, d'Exubérance ou de Dispersion Électro, tous les personnages de l'équipe à proximité (hormis Cyno) récupèrent 3 pts d'énergie élémentaire.",
       "1": "Cet effet peut être déclenché 5 fois par utilisation de <strong>Liturgie : Rapidité lupine</strong>."
+    },
+    "upgradedDescription": {
+      "0": "Sous l'effet d'éclaireur sermenté de <strong>Liturgie : Rapidité lupine</strong>, lorsque Cyno a déclenché une réaction d'Électrocution, de Sélénocution, de Supraconduction, d'Astroconduction, de Surcharge, de Stimulation, de Suractivation, d'Exubérance ou de Dispersion Électro, tous les personnages de l'équipe à proximité (hormis Cyno) récupèrent 3 pts d'énergie élémentaire.",
+      "1": "Cet effet peut être déclenché 5 fois par utilisation de <strong>Liturgie : Rapidité lupine</strong>.",
+      "2": "<br/>",
+      "3": "Lorsqu'un autre personnage sous l'effet de <strong>S'élever ensemble</strong> a déclenché une des réactions précédentes, Cyno récupère également 20 pts d'énergie élémentaire, cet effet pouvant être déclenché une fois toutes les 18 s."
     }
   },
   "constellation5": {
@@ -164,6 +220,12 @@
       "0": "Après avoir utilisé <strong>Liturgie : Rapidité lupine</strong> ou déclenché l'effet Ordalie de l'aptitude d'élévation « Jugement des plumes », Cyno obtient 4 cumuls de rite charognard. En touchant un ennemi avec une attaque normale, Cyno consomme 1 cumul pour tirer un éclair de sable.",
       "1": "L'effet Rite charognard dure 8 s, peut être cumulé 8 fois maximum, et est annulé à la fin de l'effet d'éclaireur sermenté de « Liturgie : Rapidité lupine ».",
       "2": "L'éclair de sable peut être déclenché une fois toutes les 0,4 s de cette manière.",
+      "3": "L'aptitude d'élévation « Jugement des plumes » doit être déjà débloquée."
+    },
+    "upgradedDescription": {
+      "0": "Après avoir utilisé <strong>Liturgie : Rapidité lupine</strong> ou déclenché l'effet Ordalie de l'aptitude d'élévation « Jugement des plumes », Cyno obtient 4 cumuls de rite charognard. En touchant un ennemi avec une attaque normale, Cyno consomme 1 cumul pour tirer un éclair de sable. Si Cyno est sous l'effet <strong>S'élever ensemble</strong>, il tire un <strong>éclair de sable « Étoime »</strong> à la place.",
+      "1": "L'effet Rite charognard dure 8 s, peut être cumulé 8 fois maximum lors d'un état d'éclaireur sermenté, et est annulé à la fin de l'effet d'éclaireur sermenté de « Liturgie : Rapidité lupine ».",
+      "2": "Un éclair de sable ou un éclair de sable « Étoime » peut être déclenché une fois toutes les 0,4 s de cette manière.",
       "3": "L'aptitude d'élévation « Jugement des plumes » doit être déjà débloquée."
     }
   }

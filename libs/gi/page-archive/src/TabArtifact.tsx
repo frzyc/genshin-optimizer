@@ -5,7 +5,7 @@ import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
 import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
 import type { ArchiveArtifactOption } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { Translate, i18n } from '@genshin-optimizer/gi/i18n'
+import { i18n, Translate } from '@genshin-optimizer/gi/i18n'
 import { getArtSetStat } from '@genshin-optimizer/gi/stats'
 import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
 import SearchIcon from '@mui/icons-material/Search'
@@ -33,6 +33,7 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
+
 const maxRarities = [5, 4, 3] as const
 export default function TabArtifact() {
   const database = useDatabase()
@@ -147,6 +148,7 @@ export default function TabArtifact() {
             const { rarities } = getArtSetStat(setKey)
             return (
               <Suspense
+                key={setKey}
                 fallback={
                   <TableRow>
                     <TableCell colSpan={4}>
@@ -185,13 +187,13 @@ export default function TabArtifact() {
                   <TableCell>
                     <Translate
                       ns={`artifact_${setKey}_gen`}
-                      key18={`setEffects.2`}
+                      key18={'setEffects.2'}
                     />
                   </TableCell>
                   <TableCell>
                     <Translate
                       ns={`artifact_${setKey}_gen`}
-                      key18={`setEffects.4`}
+                      key18={'setEffects.4'}
                     />
                   </TableCell>
                 </TableRow>
@@ -255,7 +257,7 @@ export default function TabArtifact() {
                   <TableCell width="90%">
                     <Translate
                       ns={`artifact_${setKey}_gen`}
-                      key18={`setEffects.1`}
+                      key18={'setEffects.1'}
                     />
                   </TableCell>
                 </TableRow>

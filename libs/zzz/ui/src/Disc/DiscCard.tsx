@@ -32,7 +32,7 @@ import {
 } from '@mui/material'
 import type { Theme } from '@mui/system'
 import type { ReactNode } from 'react'
-import { Suspense, memo, useCallback } from 'react'
+import { memo, Suspense, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { StatDisplay } from '../Character'
 import { LocationAutocomplete } from '../Character/LocationAutocomplete'
@@ -51,7 +51,7 @@ export const DiscCard = memo(function DiscCard({
 }) {
   const { database } = useDatabaseContext()
   const disc = useDisc(discId)
-  const onEditCB = useCallback(() => onEdit && onEdit(discId), [discId, onEdit])
+  const onEditCB = useCallback(() => onEdit?.(discId), [discId, onEdit])
   const onDelete = useCallback(() => {
     database.discs.remove(discId)
   }, [database.discs, discId])
@@ -222,7 +222,7 @@ export function DiscCardObj({
                       justifyContent: 'center',
                       overflow: 'hidden',
                       borderRadius: '50%',
-                      border: `2px solid black`,
+                      border: '2px solid black',
                     }}
                   >
                     <Box

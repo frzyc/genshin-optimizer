@@ -1,0 +1,29 @@
+{
+  "name": "Forjada pela Lei Dourada",
+  "description": {
+    "0": "Um espadão decorado com ouro. Diz a lenda que foi a arma preferida de um certo Harmosta ilustre em um passado distante."
+  },
+  "passiveName": "Dia e Noite Opostos",
+  "passiveDescription": {
+    "0": {
+      "0": "A cada 10s, o portador toca um Movimento Harmônico correspondente na seguinte ordem: aumenta o ATQ em <cryo>18%</cryo>/aumenta a Proficiência Elemental em <cryo>120</cryo>/aumenta o Dano de Brilho Estelar em <cryo>28%</cryo>. Cada efeito de Movimento Harmônico dura 10s, e pode ser desencadeado mesmo quando o portador não for o personagem ativo.",
+      "1": "Depois de desencadear Brilho Estelar, obtém por 12s \"Movimento Harmônico: Oposto\" com os mesmos efeitos do Movimento Harmônico ativo no momento em que a reação Brilho Estelar foi desencadeada. Esse efeito pode acumular sobre o efeito Movimento Harmônico original, e pode ser desencadeado uma vez a cada 12s."
+    },
+    "1": {
+      "0": "A cada 10s, o portador toca um Movimento Harmônico correspondente na seguinte ordem: aumenta o ATQ em <cryo>22.5%</cryo>/aumenta a Proficiência Elemental em <cryo>150</cryo>/aumenta o Dano de Brilho Estelar em <cryo>35%</cryo>. Cada efeito de Movimento Harmônico dura 10s, e pode ser desencadeado mesmo quando o portador não for o personagem ativo.",
+      "1": "Depois de desencadear Brilho Estelar, obtém por 12s \"Movimento Harmônico: Oposto\" com os mesmos efeitos do Movimento Harmônico ativo no momento em que a reação Brilho Estelar foi desencadeada. Esse efeito pode acumular sobre o efeito Movimento Harmônico original, e pode ser desencadeado uma vez a cada 12s."
+    },
+    "2": {
+      "0": "A cada 10s, o portador toca um Movimento Harmônico correspondente na seguinte ordem: aumenta o ATQ em <cryo>27%</cryo>/aumenta a Proficiência Elemental em <cryo>180</cryo>/aumenta o Dano de Brilho Estelar em <cryo>42%</cryo>. Cada efeito de Movimento Harmônico dura 10s, e pode ser desencadeado mesmo quando o portador não for o personagem ativo.",
+      "1": "Depois de desencadear Brilho Estelar, obtém por 12s \"Movimento Harmônico: Oposto\" com os mesmos efeitos do Movimento Harmônico ativo no momento em que a reação Brilho Estelar foi desencadeada. Esse efeito pode acumular sobre o efeito Movimento Harmônico original, e pode ser desencadeado uma vez a cada 12s."
+    },
+    "3": {
+      "0": "A cada 10s, o portador toca um Movimento Harmônico correspondente na seguinte ordem: aumenta o ATQ em <cryo>31.5%</cryo>/aumenta a Proficiência Elemental em <cryo>210</cryo>/aumenta o Dano de Brilho Estelar em <cryo>49%</cryo>. Cada efeito de Movimento Harmônico dura 10s, e pode ser desencadeado mesmo quando o portador não for o personagem ativo.",
+      "1": "Depois de desencadear Brilho Estelar, obtém por 12s \"Movimento Harmônico: Oposto\" com os mesmos efeitos do Movimento Harmônico ativo no momento em que a reação Brilho Estelar foi desencadeada. Esse efeito pode acumular sobre o efeito Movimento Harmônico original, e pode ser desencadeado uma vez a cada 12s."
+    },
+    "4": {
+      "0": "A cada 10s, o portador toca um Movimento Harmônico correspondente na seguinte ordem: aumenta o ATQ em <cryo>36%</cryo>/aumenta a Proficiência Elemental em <cryo>240</cryo>/aumenta o Dano de Brilho Estelar em <cryo>56%</cryo>. Cada efeito de Movimento Harmônico dura 10s, e pode ser desencadeado mesmo quando o portador não for o personagem ativo.",
+      "1": "Depois de desencadear Brilho Estelar, obtém por 12s \"Movimento Harmônico: Oposto\" com os mesmos efeitos do Movimento Harmônico ativo no momento em que a reação Brilho Estelar foi desencadeada. Esse efeito pode acumular sobre o efeito Movimento Harmônico original, e pode ser desencadeado uma vez a cada 12s."
+    }
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "name": "Nicole",
+  "title": "La Taciturna Clamorosa",
+  "description": "Una bruja silenciosa y un ángel sin voz.",
+  "constellationName": "Reliquiarium",
+  "auto": {
+    "name": "Alegoría",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Proclama un decreto en el lenguaje primigenio y realiza hasta 3 ataques que infligen <pyro>Daño Pyro</pyro>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para infligir <pyro>Daño Pyro en el AdE</pyro> frente a sí misma tras un breve periodo de canalización."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo <pyro>Daño Pyro en el AdE</pyro> en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Cargado",
+      "4": "Coste de Aguante de ATQ Cargado",
+      "5": "Daño de Caída",
+      "6": "Daño de impacto de caída baja/alta",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Revelación: Luz no manifiesta",
+    "description": {
+      "0": "Recrea un fugaz destello de la autoridad que llegó a ejercerse en nombre de los cielos en una era pasada para otorgar a todos los personajes cercanos del equipo el efecto de <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>gracia de la kénosis</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11310002 values=[]></tooltip>, el cual aumenta el ATQ de dichos personajes. Además, inflige <pyro>Daño Pyro en el AdE</pyro> y crea un escudo refulgellamas.",
+      "1": "La absorción de daño del escudo refulgellamas dependerá del ATQ de Nicole, y tiene un 250% de efectividad de absorción de <pyro>Daño Pyro</pyro>."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Absorción de escudo",
+      "2": "Duración del escudo",
+      "3": "Proporción del Bono de ATQ de gracia de la kénosis",
+      "4": "Bono de ATQ máximo de gracia de la kénosis",
+      "5": "Duración de gracia de la kénosis",
+      "6": "TdE",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Revelación: Escalinata del ascenso divino",
+    "description": {
+      "0": "Nicole teje el camino del destino “anclado” con hilos de luz dorada, inflige <pyro>Daño Pyro en el AdE</pyro> y pasa al modo de “plegaria contemplativa”.",
+      "1": "Mientras Nicole se encuentre en dicho modo, cuando un personaje en uso cercano del equipo golpee a un enemigo, se invocará una proyección arcana que realizará un ataque coordinado contra el enemigo e infligirá Daño en el AdE del elemento correspondiente al tipo elemental del personaje en cuestión. Dicho daño se beneficiará del ATQ del personaje y se considerará infligido por este mismo.",
+      "2": "Este efecto puede ocurrir, como máximo, una vez cada 3 s, y solo podrá activarse 4 veces cada vez que Nicole cambie al modo de plegaria contemplativa.",
+      "3": "<br/>",
+      "4": "Además, las proyecciones arcanas de los personajes taumatúrgicos parecen tener un aspecto diferente..."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de proyección arcana",
+      "2": "Número de ataques de proyección arcana",
+      "3": "Duración de plegaria contemplativa",
+      "4": "TdE",
+      "5": "Energía Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Méthexis",
+    "description": {
+      "0": "Tras usar la Habilidad Elemental, <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Revelación: Luz no manifiesta</tooltip></strong>, Nicole “observará” continuamente a tu personaje en uso del equipo (a excepción de ella misma) durante 20 s. Cuando un personaje observado permanezca en el campo de batalla durante 3 s, su <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>gracia de la kénosis</strong></tooltip> mejorará a <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>guía de la teosis</strong></tooltip>, lo que aumentará su ATQ de forma adicional en 300 pts. Si el personaje observado es un personaje taumatúrgico, el efecto de <strong>gracia de la kénosis</strong> se convertirá directamente en <strong>guía de la teosis</strong>.",
+      "1": "A excepción de Nicole, cuando los demás personajes se retiren del combate, su <strong>guía de la teosis</strong> volverá a convertirse en <strong>gracia de la kénosis</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Filocalia",
+    "description": {
+      "0": "Cuando un personaje en uso cercano del equipo golpee a un enemigo con Daño Elemental, la <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>gracia de la kénosis</strong></tooltip> de Nicole mejorará a <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>guía de la teosis</strong></tooltip> durante 8 s."
+    }
+  },
+  "passive3": {
+    "name": "Nepsis",
+    "description": {
+      "0": "Cuando Nicole se encuentre fuera de combate en una región de Teyvat en la que se haya desbloqueado la Brújula buscatesoros, su Ataque Cargado se convertirá en “Emisaria guía”, con lo que invocará a un Seelie cercano para que muestre el camino, activando un efecto similar al de la Brújula buscatesoros de la región.",
+      "1": "Este efecto tiene un TdE de 5 s, y no se activará en dominios, Dominios de la cruzada o en la Espiral del Abismo."
+    }
+  },
+  "lockedPassive": {
+    "name": "Rito de la noche de brujas: Luz en la oscuridad",
+    "description": {
+      "0": "Tras completar la misión <strong>«Lecciones del Aquelarre: ¿El deber de una guía?»</strong>, Nicole se convertirá en un personaje <strong>taumatúrgico</strong>. Cuando en el equipo haya al menos 2 personajes taumatúrgicos, estos obtendrán el efecto de <strong>taumaturgia: rito secreto</strong>, el cual les otorgará ciertos fortalecimientos.",
+      "1": "<br/>",
+      "2": "<strong>Taumaturgia: rito secreto</strong>",
+      "3": "Aumenta el daño que infligen las <strong><tooltip ns=char_Nicole_gen baseKey18=burst>proyecciones arcanas</tooltip></strong> de los personajes taumatúrgicos en una cantidad equivalente al 300% del ATQ de Nicole."
+    }
+  },
+  "constellation1": {
+    "name": "“No temas, amado hijo de la humanidad”",
+    "description": {
+      "0": "Cuando tu personaje en uso del equipo golpee a un enemigo, se invocará el efecto adicional especial “proyección arcana: unidad”, que realizará un ataque coordinado contra dicho oponente. Esto infligirá Daño Elemental en el AdE del tipo elemental del personaje en cuestión. Dicho daño equivaldrá al 600% del ATQ del personaje y se considerará daño infligido por este mismo.",
+      "1": "Este efecto puede ocurrir, como máximo, una vez cada 6 s."
+    }
+  },
+  "constellation2": {
+    "name": "“Yo te guiaré y te mostraré el camino que has de recorrer”",
+    "description": {
+      "0": "Fortalece el efecto de la Habilidad Elemental, <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Revelación: Luz no manifiesta</tooltip></strong>, de manera que <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>gracia de la kénosis</strong></tooltip> aumentará el ATQ en 300 pts. adicionales (esto no contará para el límite del Bono de ATQ de dicho efecto), y <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>guía de la teosis</strong></tooltip> reducirá la RES Elemental de los enemigos cercanos al elemento correspondiente en un 25% según el tipo elemental del personaje. La reducción de RES Elemental del mismo elemento no podrá acumularse.",
+      "1": "Además, cuando Nicole use su Habilidad Elemental, <strong>Revelación: Luz no manifiesta</strong>, le aplicará el escudo refulgellamas a los personajes en uso cercanos."
+    }
+  },
+  "constellation3": {
+    "name": "“Un candil que te acompaña, una luz que te ilumina el camino”",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Revelación: Luz no manifiesta</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "“Izquierda o derecha, vayas adonde vayas”",
+    "description": {
+      "0": "Cuando la <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>gracia de la kénosis</strong></tooltip> de un personaje cercano del equipo mejore a <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>guía de la teosis</strong></tooltip>, Nicole también le otorgará el efecto de “bendición pionera” durante 20 s. Cada personaje solo podrá obtener este efecto una vez cada 16 s.",
+      "1": "El daño de los Ataques Normales, Cargados y Descendentes y de las Habilidades Elementales y Definitivas de aquellos personajes que tengan la bendición pionera aumentará en una cantidad equivalente al 70% del ATQ de Nicole. Dicho efecto desaparecerá tras activarse 8 veces o cuando termine su duración.",
+      "2": "Al golpear a varios enemigos a la vez, se consumirán las cargas del efecto en función del número de enemigos golpeados. La bendición pionera de cada personaje del equipo se calculará de forma independiente."
+    }
+  },
+  "constellation5": {
+    "name": "“Oirás mi voz junto a ti”",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Nicole_gen baseKey18=burst>Revelación: Escalinata del ascenso divino</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "“No vaciles, pues este es el camino correcto”",
+    "description": {
+      "0": "Cuando la <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>gracia de la kénosis</strong></tooltip> de Nicole se convierta en <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>guía de la teosis</strong></tooltip>, lo mismo ocurrirá para los personajes cercanos del equipo que también tuvieran el efecto de <strong>gracia de la kénosis</strong>. Además, tras ser mejorada, la <strong>guía de la teosis</strong> no volverá a convertirse en <strong>gracia de la kénosis</strong>.",
+      "1": "Adicionalmente, el daño infligido por los personajes con <strong>guía de la teosis</strong> ignorará el 40% de la DEF del enemigo."
+    }
+  }
+}

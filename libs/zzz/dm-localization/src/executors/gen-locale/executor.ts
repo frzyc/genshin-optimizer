@@ -1,6 +1,7 @@
 import type { PromiseExecutor } from '@nx/devkit'
 import { dumpChars } from './lib/dumpChars'
 import { dumpDiscs } from './lib/dumpDiscs'
+import { dumpTooltips } from './lib/dumpTooltips'
 import { dumpWengines } from './lib/dumpWengines'
 import type { GenLocaleExecutorSchema } from './schema'
 
@@ -15,6 +16,7 @@ const runExecutor: PromiseExecutor<GenLocaleExecutorSchema> = async (
   dumpChars(fileDir)
   dumpDiscs(fileDir)
   dumpWengines(fileDir)
+  dumpTooltips(fileDir)
 
   return {
     success: true,

@@ -1,0 +1,19 @@
+{
+  "name": "Chief Sidekick",
+  "desc": {
+    "0": "Every Bangboo in Roscaelifer would gladly throw themselves into danger for the Chief Technician's scientific pursuits, and this particular one is clearly the quickest to charge in headfirst.",
+    "1": "\"Ehn-nhu nhe na, ehn-nha en-en?\" (Boss Norma, is pretending a Bangboo is a W-Engine actually gonna fool anyone?)",
+    "2": "\"Nhu-en nhe ehn na?\" (And if we can't fool them, can't we just overpower them?)",
+    "3": "—The External Strategy Department's Chief Technician is currently employing her finest technology to remodel her favorite Bangboo sidekick."
+  },
+  "desc2": "Equip to increase Stun Agents' combat capabilities",
+  "desc3": "Nhe-nha ehn ne! (Through fire and flames for Lady Norma!)",
+  "phase": "The Genius's Follower",
+  "phaseDescs": [
+    "The equipper's Impact increases by <ct color=#2BAD00>30</ct>, and their DMG ignores <ct color=#2BAD00>15%</ct> of the target's <ct color=#FF5521>Fire RES</ct>. When the equipper is not the active character, Energy Regen increases by <ct color=#2BAD00>0.4</ct>/s. When the equipper deals <ct color=#FF5521>Fire DMG</ct> with an <ct color=#FFFFFF>EX Special Attack</ct>, all Agents' DMG increases by <ct color=#2BAD00>12.5%</ct> for 30s, stacking up to 2 times. Repeated triggers reset the duration. This effect can trigger once per skill. Only one instance of this effect can exist in the same squad.",
+    "The equipper's Impact increases by <ct color=#2BAD00>33</ct>, and their DMG ignores <ct color=#2BAD00>17.2%</ct> of the target's <ct color=#FF5521>Fire RES</ct>. When the equipper is not the active character, Energy Regen increases by <ct color=#2BAD00>0.46</ct>/s. When the equipper deals <ct color=#FF5521>Fire DMG</ct> with an <ct color=#FFFFFF>EX Special Attack</ct>, all Agents' DMG increases by <ct color=#2BAD00>14.4%</ct> for 30s, stacking up to 2 times. Repeated triggers reset the duration. This effect can trigger once per skill. Only one instance of this effect can exist in the same squad.",
+    "The equipper's Impact increases by <ct color=#2BAD00>36</ct>, and their DMG ignores <ct color=#2BAD00>19.5%</ct> of the target's <ct color=#FF5521>Fire RES</ct>. When the equipper is not the active character, Energy Regen increases by <ct color=#2BAD00>0.52</ct>/s. When the equipper deals <ct color=#FF5521>Fire DMG</ct> with an <ct color=#FFFFFF>EX Special Attack</ct>, all Agents' DMG increases by <ct color=#2BAD00>16.3%</ct> for 30s, stacking up to 2 times. Repeated triggers reset the duration. This effect can trigger once per skill. Only one instance of this effect can exist in the same squad.",
+    "The equipper's Impact increases by <ct color=#2BAD00>39</ct>, and their DMG ignores <ct color=#2BAD00>21.7%</ct> of the target's <ct color=#FF5521>Fire RES</ct>. When the equipper is not the active character, Energy Regen increases by <ct color=#2BAD00>0.58</ct>/s. When the equipper deals <ct color=#FF5521>Fire DMG</ct> with an <ct color=#FFFFFF>EX Special Attack</ct>, all Agents' DMG increases by <ct color=#2BAD00>18.1%</ct> for 30s, stacking up to 2 times. Repeated triggers reset the duration. This effect can trigger once per skill. Only one instance of this effect can exist in the same squad.",
+    "The equipper's Impact increases by <ct color=#2BAD00>42</ct>, and their DMG ignores <ct color=#2BAD00>24%</ct> of the target's <ct color=#FF5521>Fire RES</ct>. When the equipper is not the active character, Energy Regen increases by <ct color=#2BAD00>0.64</ct>/s. When the equipper deals <ct color=#FF5521>Fire DMG</ct> with an <ct color=#FFFFFF>EX Special Attack</ct>, all Agents' DMG increases by <ct color=#2BAD00>20%</ct> for 30s, stacking up to 2 times. Repeated triggers reset the duration. This effect can trigger once per skill. Only one instance of this effect can exist in the same squad."
+  ]
+}

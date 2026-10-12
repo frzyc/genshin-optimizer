@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-interface */
 import type { Tag } from '../tag'
 
 export type OP =

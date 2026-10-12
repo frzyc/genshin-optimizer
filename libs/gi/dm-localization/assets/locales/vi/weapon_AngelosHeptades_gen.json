@@ -1,0 +1,29 @@
+{
+  "name": "Trần Quang Thất Dụ",
+  "description": {
+    "0": "Chiếc hộp vàng lộng lẫy tựa ánh dương. Truyền thuyết kể rằng trong quá khứ xa xôi, nó từng thuộc về sứ giả của đại sảnh vĩnh hằng."
+  },
+  "passiveName": "Vương Miện Kẻ Tận Cùng",
+  "passiveDescription": {
+    "0": {
+      "0": "Tấn Công tăng <cryo>12%</cryo>. Sau khi người trang bị tạo khiên, sẽ nhận hiệu quả \"Ánh Sáng Dẫn Lối\" trong 20s: Dựa trên Tấn Công của người trang bị, mỗi 1000 điểm Tấn Công sẽ khiến nhân vật ra trận hiện tại trong đội bản thân tăng <cryo>10%</cryo> sát thương gây ra, tối đa tăng <cryo>26%</cryo>. Ngoài ra, khi người trang bị tạo khiên, sẽ còn nhận được hiệu quả \"Thỏa Mãn Của Người Chỉ Dẫn\", khiến người trang bị hồi phục <cryo>14</cryo> điểm Năng Lượng Nguyên Tố. Hiệu quả này mỗi 14s tối đa kích hoạt một lần; Khi mở các loại rương ngoài lúc chiến đấu, cũng sẽ nhận được hiệu quả này. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên.",
+      "1": "Hexerei - Nghi Thức Bí Mật: Khi nhân vật Hexerei của bản thân đang dự bị trong đội, cũng sẽ nhận được 50% hiệu quả tăng sát thương từ Ánh Sáng Dẫn Lối."
+    },
+    "1": {
+      "0": "Tấn Công tăng <cryo>15%</cryo>. Sau khi người trang bị tạo khiên, sẽ nhận hiệu quả \"Ánh Sáng Dẫn Lối\" trong 20s: Dựa trên Tấn Công của người trang bị, mỗi 1000 điểm Tấn Công sẽ khiến nhân vật ra trận hiện tại trong đội bản thân tăng <cryo>13%</cryo> sát thương gây ra, tối đa tăng <cryo>34%</cryo>. Ngoài ra, khi người trang bị tạo khiên, sẽ còn nhận được hiệu quả \"Thỏa Mãn Của Người Chỉ Dẫn\", khiến người trang bị hồi phục <cryo>15</cryo> điểm Năng Lượng Nguyên Tố. Hiệu quả này mỗi 14s tối đa kích hoạt một lần; Khi mở các loại rương ngoài lúc chiến đấu, cũng sẽ nhận được hiệu quả này. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên.",
+      "1": "Hexerei - Nghi Thức Bí Mật: Khi nhân vật Hexerei của bản thân đang dự bị trong đội, cũng sẽ nhận được 50% hiệu quả tăng sát thương từ Ánh Sáng Dẫn Lối."
+    },
+    "2": {
+      "0": "Tấn Công tăng <cryo>18%</cryo>. Sau khi người trang bị tạo khiên, sẽ nhận hiệu quả \"Ánh Sáng Dẫn Lối\" trong 20s: Dựa trên Tấn Công của người trang bị, mỗi 1000 điểm Tấn Công sẽ khiến nhân vật ra trận hiện tại trong đội bản thân tăng <cryo>16%</cryo> sát thương gây ra, tối đa tăng <cryo>42%</cryo>. Ngoài ra, khi người trang bị tạo khiên, sẽ còn nhận được hiệu quả \"Thỏa Mãn Của Người Chỉ Dẫn\", khiến người trang bị hồi phục <cryo>16</cryo> điểm Năng Lượng Nguyên Tố. Hiệu quả này mỗi 14s tối đa kích hoạt một lần; Khi mở các loại rương ngoài lúc chiến đấu, cũng sẽ nhận được hiệu quả này. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên.",
+      "1": "Hexerei - Nghi Thức Bí Mật: Khi nhân vật Hexerei của bản thân đang dự bị trong đội, cũng sẽ nhận được 50% hiệu quả tăng sát thương từ Ánh Sáng Dẫn Lối."
+    },
+    "3": {
+      "0": "Tấn Công tăng <cryo>21%</cryo>. Sau khi người trang bị tạo khiên, sẽ nhận hiệu quả \"Ánh Sáng Dẫn Lối\" trong 20s: Dựa trên Tấn Công của người trang bị, mỗi 1000 điểm Tấn Công sẽ khiến nhân vật ra trận hiện tại trong đội bản thân tăng <cryo>19%</cryo> sát thương gây ra, tối đa tăng <cryo>50%</cryo>. Ngoài ra, khi người trang bị tạo khiên, sẽ còn nhận được hiệu quả \"Thỏa Mãn Của Người Chỉ Dẫn\", khiến người trang bị hồi phục <cryo>17</cryo> điểm Năng Lượng Nguyên Tố. Hiệu quả này mỗi 14s tối đa kích hoạt một lần; Khi mở các loại rương ngoài lúc chiến đấu, cũng sẽ nhận được hiệu quả này. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên.",
+      "1": "Hexerei - Nghi Thức Bí Mật: Khi nhân vật Hexerei của bản thân đang dự bị trong đội, cũng sẽ nhận được 50% hiệu quả tăng sát thương từ Ánh Sáng Dẫn Lối."
+    },
+    "4": {
+      "0": "Tấn Công tăng <cryo>24%</cryo>. Sau khi người trang bị tạo khiên, sẽ nhận hiệu quả \"Ánh Sáng Dẫn Lối\" trong 20s: Dựa trên Tấn Công của người trang bị, mỗi 1000 điểm Tấn Công sẽ khiến nhân vật ra trận hiện tại trong đội bản thân tăng <cryo>22%</cryo> sát thương gây ra, tối đa tăng <cryo>58%</cryo>. Ngoài ra, khi người trang bị tạo khiên, sẽ còn nhận được hiệu quả \"Thỏa Mãn Của Người Chỉ Dẫn\", khiến người trang bị hồi phục <cryo>18</cryo> điểm Năng Lượng Nguyên Tố. Hiệu quả này mỗi 14s tối đa kích hoạt một lần; Khi mở các loại rương ngoài lúc chiến đấu, cũng sẽ nhận được hiệu quả này. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên.",
+      "1": "Hexerei - Nghi Thức Bí Mật: Khi nhân vật Hexerei của bản thân đang dự bị trong đội, cũng sẽ nhận được 50% hiệu quả tăng sát thương từ Ánh Sáng Dẫn Lối."
+    }
+  }
+}

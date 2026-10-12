@@ -60,12 +60,14 @@
     "superconduct": "นำไฟฟ้า",
     "vaporize": "ระเหย",
     "melt": "ละลาย",
-    "bloom": "งอกเงย",
+    "bloom": "",
     "burgeon": "เบ่งบาน",
     "hyperbloom": "ไฮเปอร์บลูม",
     "quicken": "ปลุกเร้า",
     "aggravate": "บีบอัด",
-    "spread": "แพร่ขยาย"
+    "spread": "แพร่ขยาย",
+    "stellarconduct": "นำไฟฟ้าดารา",
+    "stellarswirl": "กระจายดารา"
   },
   "stat": {
     "def": "พลังป้องกัน",

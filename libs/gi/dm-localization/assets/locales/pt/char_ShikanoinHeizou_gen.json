@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -69,7 +73,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -97,13 +105,17 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
     "name": "Prática Paradoxal",
     "description": {
-      "0": "Quando Shikanoin Heizou está ativo no campo de batalha e desencadeia a reação de Redemoinho, ele obtém um acúmulo do efeito \"Declinação\" de <strong>Soco Cardíaco</strong>. Esse efeito pode ser desencadeado uma vez por 0.1 segundo."
+      "0": "Quando Shikanoin Heizou está ativo no campo de batalha e desencadeia a reação de Redemoinho ou Redemoinho Estelar, ele obtém um acúmulo do efeito \"Declinação\" de <strong>Soco Cardíaco</strong>. Esse efeito pode ser desencadeado uma vez por 0.1 segundo."
     }
   },
   "passive2": {

@@ -1,0 +1,24 @@
+{
+  "name": "Cung Huyền Lê",
+  "description": {
+    "0": "Cây cung dài mang sức mạnh ngàn cân, dù trong đêm đen sâu thẳm nhất, vẫn tỏa ra ánh hào quang huyền ảo."
+  },
+  "passiveName": "Đan Đêm Làm Đèn",
+  "passiveDescription": {
+    "0": {
+      "0": "Ngoại trừ người trang bị, với mỗi nhân vật trong đội: Có Loại Nguyên Tố giống với người trang bị: Tinh Thông Nguyên Tố của người trang bị tăng <cryo>64</cryo> điểm; Có Loại Nguyên Tố khác với người trang bị: Tấn Công của người trang bị tăng <cryo>12%</cryo>. Hai loại hiệu quả trên tổng cộng tối đa cộng dồn 3 tầng, hiệu quả Loại Nguyên Tố giống nhau sẽ ưu tiên có hiệu lực."
+    },
+    "1": {
+      "0": "Ngoại trừ người trang bị, với mỗi nhân vật trong đội: Có Loại Nguyên Tố giống với người trang bị: Tinh Thông Nguyên Tố của người trang bị tăng <cryo>80</cryo> điểm; Có Loại Nguyên Tố khác với người trang bị: Tấn Công của người trang bị tăng <cryo>15%</cryo>. Hai loại hiệu quả trên tổng cộng tối đa cộng dồn 3 tầng, hiệu quả Loại Nguyên Tố giống nhau sẽ ưu tiên có hiệu lực."
+    },
+    "2": {
+      "0": "Ngoại trừ người trang bị, với mỗi nhân vật trong đội: Có Loại Nguyên Tố giống với người trang bị: Tinh Thông Nguyên Tố của người trang bị tăng <cryo>96</cryo> điểm; Có Loại Nguyên Tố khác với người trang bị: Tấn Công của người trang bị tăng <cryo>18%</cryo>. Hai loại hiệu quả trên tổng cộng tối đa cộng dồn 3 tầng, hiệu quả Loại Nguyên Tố giống nhau sẽ ưu tiên có hiệu lực."
+    },
+    "3": {
+      "0": "Ngoại trừ người trang bị, với mỗi nhân vật trong đội: Có Loại Nguyên Tố giống với người trang bị: Tinh Thông Nguyên Tố của người trang bị tăng <cryo>112</cryo> điểm; Có Loại Nguyên Tố khác với người trang bị: Tấn Công của người trang bị tăng <cryo>21%</cryo>. Hai loại hiệu quả trên tổng cộng tối đa cộng dồn 3 tầng, hiệu quả Loại Nguyên Tố giống nhau sẽ ưu tiên có hiệu lực."
+    },
+    "4": {
+      "0": "Ngoại trừ người trang bị, với mỗi nhân vật trong đội: Có Loại Nguyên Tố giống với người trang bị: Tinh Thông Nguyên Tố của người trang bị tăng <cryo>128</cryo> điểm; Có Loại Nguyên Tố khác với người trang bị: Tấn Công của người trang bị tăng <cryo>24%</cryo>. Hai loại hiệu quả trên tổng cộng tối đa cộng dồn 3 tầng, hiệu quả Loại Nguyên Tố giống nhau sẽ ưu tiên có hiệu lực."
+    }
+  }
+}

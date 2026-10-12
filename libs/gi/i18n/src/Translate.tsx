@@ -81,6 +81,8 @@ const textComponents = {
   burgeon: <ColorText color="burgeon" />,
   hyperbloom: <ColorText color="hyperbloom" />,
   lunarcrystallize: <ColorText color="lunarcrystallize" />,
+  stellarconduct: <ColorText color="stellarconduct" />,
+  stellarswirl: <ColorText color="stellarswirl" />,
   colorText: <ColorText />,
   tooltip: <LinkedTooltip />,
 }
@@ -107,6 +109,8 @@ const badgeComponents = {
   burgeon: <SqBadge color="burgeon" />,
   hyperbloom: <SqBadge color="hyperbloom" />,
   lunarcrystallize: <SqBadge color="lunarcrystallize" />,
+  stellarconduct: <SqBadge color="stellarconduct" />,
+  stellarswirl: <SqBadge color="stellarswirl" />,
   colorText: <ColorText />,
 }
 
@@ -128,8 +132,9 @@ export function Translate({
       ns={ns}
       key18={key18}
       values={values}
-      children={children}
       components={useBadge ? badgeComponents : textComponents}
-    />
+    >
+      {children}
+    </TranslateBase>
   )
 }

@@ -1,4 +1,4 @@
-import { type WeaponKey } from '@genshin-optimizer/gi/consts'
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import {
   equal,
   greaterEq,
@@ -9,8 +9,8 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
-import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
+import { headerTemplate, WeaponSheet } from '../../WeaponSheet'
 
 const key: WeaponKey = 'BlackmarrowLantern'
 

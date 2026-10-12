@@ -2,8 +2,9 @@ import { objKeyMap } from '@genshin-optimizer/common/util'
 import { allDiscMainStatKeys, allDiscSubStatKeys } from './disc'
 
 export const otherStatKeys = [
-  // Used by calc, likely will be bundled into pando
-  'charLvl',
+  'char_lvl',
+  'wengine_lvl',
+  'common_lvl',
   'enemyDef', // Enemy DEF
   'enemyDefRed_', // Enemy DEF shred
   'enemyRes_', // Enemy Resistance
@@ -19,6 +20,7 @@ export const otherStatKeys = [
   'enerRegen',
   'anom_crit_', // Anomaly CRIT Rate
   'anom_crit_dmg_', // Anomaly CRIT DMG
+  'laceration_dmg_', // Laceration DMG
   'dazeInc_', // Daze Increase
   'sheerForce',
   'sheer_dmg_',
@@ -47,6 +49,7 @@ export const baseStatKeys = [
   'impact',
   'crit_',
   'crit_dmg_',
+  'laceration_dmg_',
   'pen_',
   'anomProf',
   'anomMas',
@@ -79,6 +82,8 @@ export const allAttributeKeys = [
   'ice',
   'physical',
   'ether',
+  'wind',
+  'lumiflux',
 ] as const
 export type AttributeKey = (typeof allAttributeKeys)[number]
 
@@ -88,8 +93,21 @@ export const allAttributeDamageKeys = [
   'ice_dmg_',
   'physical_dmg_',
   'ether_dmg_',
+  'wind_dmg_',
 ] as const
 export type AttributeDamageKey = (typeof allAttributeDamageKeys)[number]
+
+// Attribute keys which can proc anomaly effects
+// Also used for Remielle's infusion
+export const allAttributeAnomalyKeys = [
+  'electric',
+  'fire',
+  'ice',
+  'physical',
+  'ether',
+  'wind',
+] as const
+export type AttributeAnomalyKey = (typeof allAttributeAnomalyKeys)[number]
 
 export const allAnomalyDmgKeys = [
   'burn',
@@ -118,7 +136,9 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   defIgn_: 'DEF Ignore',
   crit_: 'CRIT Rate',
   crit_dmg_: 'CRIT DMG',
+  laceration_dmg_: 'Laceration DMG',
   sheer_dmg_: 'Sheer DMG',
+  sharp_dmg_: 'Sharp DMG',
   enerRegen_: 'Energy Regen',
   enerRegen: 'Energy Regen',
   base_enerRegen: 'Base Energy Regen',
@@ -132,7 +152,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   anomBuildup_: 'Anomaly Buildup',
   anom_crit_: 'Anomaly CRIT Rate',
   anom_crit_dmg_: 'Anomaly CRIT DMG',
-  anom_mv_mult_: 'Anomaly Damage Multiplier Increase',
+  anom_mv_mult_: 'Anomaly Damage Multiplier',
   addl_disorder_: 'Additional Disorder Multiplier',
   anom_base_: 'Anomaly Base DMG Increase',
   anom_flat_dmg: 'Anomaly Flat DMG Bonus',
@@ -142,7 +162,11 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   flat_dmg: 'Flat DMG Bonus',
   buff_: 'Buff Bonus',
   dmg_red_: 'DMG Taken Reduction',
-  charLvl: 'Character Level',
+  char_lvl: 'Character Level',
+  wengine_lvl: 'W-Engine Level',
+  common_lvl: 'Enemy Level',
+  phase: 'Phase',
+  modification: 'Modification',
   enemyDef: 'Enemy DEF',
   defRed_: 'Enemy DEF Reduction',
   enemyRes_: 'Enemy Resistance',
@@ -152,6 +176,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   dazeRes_: 'Enemy Daze RES',
   dazeRed_: 'Enemy Daze Taken Reduction',
   dmgInc_: 'Enemy DMG Taken Increase',
+  direct_dmg_: 'Direct DMG Bonus',
 
   initial_hp: 'Initial HP',
   initial_def: 'Initial DEF',
@@ -172,6 +197,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   // Formula display stuff
   crit_mult_: 'CRIT Multiplier',
   anomaly_crit_mult_: 'Anomaly CRIT Multiplier',
+  laceration_mult_: 'Laceration Multiplier',
   dmg_mult_: 'DMG Multiplier',
   def_mult_: 'DEF Multiplier',
   res_mult_: 'Resistance Multiplier',
@@ -188,9 +214,11 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   res_: 'Resistance',
   resRed_: 'Resistance Reduction',
   sheer_mult_: 'Sheer DMG Multiplier',
+  sharp_mult_: 'Sharp DMG Multiplier',
   mv_mult_: 'DMG Multiplier Increase',
   buff_mult_: 'Buff Multiplier',
   anom_base_mult_: 'Anomaly Base DMG Multiplier',
+  direct_dmg_mult_: 'Direct DMG Multiplier',
 }
 
 export const elementalData: Record<AttributeKey, string> = {
@@ -199,10 +227,17 @@ export const elementalData: Record<AttributeKey, string> = {
   ice: 'Ice',
   physical: 'Physical',
   ether: 'Ether',
+  wind: 'Wind',
+  lumiflux: 'Lumiflux',
 } as const
 
+const attributedBaseStats = ['hp', 'hp_', 'atk', 'atk_', 'def', 'def_'] as const
 Object.entries(elementalData).forEach(([e, name]) => {
   statKeyTextMap[`${e}_dmg_`] = `${name} DMG Bonus`
+  for (const base of attributedBaseStats) {
+    const stem = statKeyTextMap[base]
+    if (stem) statKeyTextMap[`${e}_${base}`] = `${name} ${stem}`
+  }
 })
 
 export const rarityColor = {

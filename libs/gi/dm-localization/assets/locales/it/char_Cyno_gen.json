@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -44,6 +48,13 @@
       "0": "Esegue un affondo rapido, infliggendo <electro>DAN da Electro</electro> ai nemici lungo il percorso.",
       "1": "<br/>",
       "2": "Quando Cyno si trova nello stato di Precorritore giurato innescato da Rito sacro: Destrezza del lupo, scatena un <strong>Rito funebre</strong> che infligge fragorosi <electro>DAN da Electro ad area</electro> ed estende la durata di Precorritore giurato.",
+      "3": "<br/>",
+      "4": "<i>\"Questo giudizio non ammette opzioni. In questo luogo non esiste né ripudio né accettazione... È una condanna che da lungo tempo pesa su entrambi.\"</i>"
+    },
+    "upgradedDescription": {
+      "0": "Esegue un affondo rapido, infliggendo <electro>DAN da Electro</electro> ai nemici lungo il percorso.",
+      "1": "<br/>",
+      "2": "Quando Cyno si trova nello stato di Precorritore giurato scatena un <strong>Rito funebre</strong> che infligge fragorosi <electro>DAN da Electro ad area</electro>. Se Cyno entra nello stato di Precorritore giurato tramite il Tripudio elementale <strong>Rito sacro: Destrezza del lupo</strong>, scatenare <strong>Rito funebre</strong> estende la durata dell'iterazione attuale di Precorritore giurato.",
       "3": "<br/>",
       "4": "<i>\"Questo giudizio non ammette opzioni. In questo luogo non esiste né ripudio né accettazione... È una condanna che da lungo tempo pesa su entrambi.\"</i>"
     },
@@ -63,7 +74,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -98,14 +113,23 @@
       "12": "Costo energia",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
     "name": "Giudizio della piuma cadente",
     "description": {
-      "0": "Quando è nello stato di Precorritore giurato attivato da <strong>Rito sacro: Destrezza del lupo</strong>, Cyno assume a intervalli regolari la posizione Occhio liminale. Se attiva <strong>Rito arcano: Guida delle anime del baratro</strong> mentre è in questa posizione, innesca l'effetto Verdetto, che aumenta i DAN di Rito sacro: Guida delle anime del baratro di un 35%, e scaglia 3 Dardi del braccatore che infliggono un 100% dell'ATT di Cyno come <electro>DAN da Electro</electro>.",
+      "0": "Quando è nello stato di Precorritore giurato attivato da <strong>Rito sacro: Destrezza del lupo</strong>, Cyno assume a intervalli regolari la posizione Occhio liminale. Se attiva <strong>Rito arcano: Guida delle anime del baratro</strong> mentre è in questa posizione, innesca l'effetto Verdetto, che aumenta i DAN di Rito arcano: Guida delle anime del baratro di un 35%, e scaglia 3 Dardi del braccatore che infliggono un 100% dell'ATT di Cyno come <electro>DAN da Electro</electro>.",
       "1": "I DAN da Dardo del braccatore sono considerati DAN da abilità elementale."
+    },
+    "upgradedDescription": {
+      "0": "Quando è nello stato di Precorritore giurato, Cyno assume a intervalli regolari la posizione Occhio liminale. Se attiva <strong>Rito arcano: Guida delle anime del baratro</strong> mentre è in questa posizione, innesca l'effetto Verdetto, che aumenta i DAN di Rito arcano: Guida delle anime del baratro di un 35%, e scaglia 3 Dardi del braccatore che infliggono un 100% dell'ATT di Cyno come <electro>DAN da Electro</electro>. I DAN da Dardi del braccatore sono considerati DAN da abilità elementale.",
+      "1": "<br/>",
+      "2": "Nello stato di <strong>Splendore: Astroconduzione</strong>, invece, quando Cyno attiva Verdetto, scaglia 3 <strong>Dardi del braccatore: Armonia stellare</strong> che infliggono un 200% dell'ATT di Cyno come <electro>DAN da Electro</electro> ai nemici di fronte a sé. Tali DAN sono considerati DAN da Astroconduzione."
     }
   },
   "passive2": {
@@ -116,6 +140,14 @@
         " i DAN da attacco normale di Precorritore giurato aumentano di un 150% della sua maestria elementale;",
         " i DAN da Dardo del braccatore del talento d'ascensione Giudizio della piuma cadente aumentano di un 250% della sua maestria elementale."
       ]
+    },
+    "upgradedDescription": {
+      "0": "I valori di DAN di Cyno aumentano in base alla sua maestria elementale con i seguenti criteri:",
+      "1": [
+        " i DAN da attacco normale di Precorritore giurato aumentano di un 150% della sua maestria elementale;",
+        " i DAN da Dardi del braccatore del talento d'ascensione Giudizio della piuma cadente aumentano di un 250% della sua maestria elementale;",
+        " i DAN da Dardi del braccatore: Armonia stellare del talento d'ascensione Giudizio della piuma cadente aumentano di un 600% della sua maestria elementale."
+      ]
     }
   },
   "passive3": {
@@ -124,17 +156,35 @@
       "0": "Ottiene un 25% in più di ricompense quando intraprende una spedizione a Sumeru per 20 ore."
     }
   },
+  "lockedPassive": {
+    "name": "Una stella con cui iniziare il viaggio",
+    "description": {
+      "0": "Se Cyno scatena l'abilità elementale <strong>Rito arcano: Guida delle anime del baratro</strong> mentre non è nello stato di Precorritore giurato, entra nel suddetto stato per 6 s.",
+      "1": "Inoltre, quando si trova all'interno di un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo astropolare</strong></tooltip>, Cyno entra nello stato di <strong>Splendore: Astroconduzione</strong>."
+    }
+  },
   "constellation1": {
     "name": "Ordinanza: Guardia instancabile",
     "description": {
       "0": "Dopo aver usato <strong>Rito sacro: Destrezza del lupo</strong>, la VEL d'ATT normale di Cyno aumenta di un 20% per 10 s. Se l'effetto Verdetto del suo talento d'ascensione Giudizio della piuma cadente viene attivato durante <strong>Rito arcano: Guida delle anime del baratro</strong>, la durata dell'incremento viene ripristinata.",
       "1": "Richiede il talento d'ascensione Giudizio della piuma cadente."
+    },
+    "upgradedDescription": {
+      "0": "Dopo aver usato <strong>Rito sacro: Destrezza del lupo</strong>, la VEL d'ATT normale di Cyno aumenta di un 20% per 10 s. Se l'effetto Verdetto del suo talento d'ascensione Giudizio della piuma cadente viene attivato durante <strong>Rito arcano: Guida delle anime del baratro</strong>, la durata dell'incremento viene ripristinata.",
+      "1": "Richiede il talento d'ascensione Giudizio della piuma cadente.",
+      "2": "<br/>",
+      "3": "Nello stato di <strong>Splendore: Astroconduzione</strong>, quando Cyno entra nello stato di Precorritore giurato ottiene anche l'effetto <strong>Insieme sorgeremo</strong>, che aumenta la maestria elementale di 200. Durante questo periodo di tempo, passando il controllo a un altro personaggio diverso da Cyno, il personaggio che lo sostituisce ottiene il suddetto effetto per la sua durata rimanente."
     }
   },
   "constellation2": {
     "name": "Cerimonia: Raduno degli spiriti",
     "description": {
       "0": "Quando Cyno colpisce gli avversari con attacchi normali, il suo <electro>bonus DAN da Electro</electro> aumenta di un 10% per 4 s. Quest'effetto può attivarsi una volta ogni 0,1 s e accumularsi per un massimo di 5 volte."
+    },
+    "upgradedDescription": {
+      "0": "Quando Cyno colpisce gli avversari con attacchi normali, il suo <electro>bonus DAN da Electro</electro> aumenta di un 10% per 4 s. Quest'effetto può attivarsi una volta ogni 0,1 s e accumularsi per un massimo di 5 volte.",
+      "1": "<br/>",
+      "2": "Inoltre, quando i personaggi affetti da <strong>Insieme sorgeremo</strong> colpiscono un avversario con il loro attacco normale o caricato, i DAN da Astroconduzione che infliggono sono aumentati di un 16%. Quest'effetto può attivarsi una volta ogni 0,1 s, rimane attivo per l'intera durata rimanente di <strong>Insieme sorgeremo</strong> e può accumularsi per un massimo di 5 volte."
     }
   },
   "constellation3": {
@@ -147,8 +197,13 @@
   "constellation4": {
     "name": "Austerità: Guardia arcigna",
     "description": {
-      "0": "Quando Cyno è nello stato di Precorritore giurato attivato da <strong>Rito sacro: Destrezza del lupo</strong>, dopo aver innescato una reazione di Electrocarica, Carica lunare, Superconduzione, Sovraccarico, Vivificazione, Accentuazione, Iperfioritura o Turbinio di Electro, ripristina di 3 l'energia elementale di tutti i membri del gruppo vicini (tranne sé stesso).",
-      "1": "Quest'effetto può verificarsi 5 volte con un unico uso di <strong>Rito sacro: Destrezza del lupo</strong>."
+      "0": "Quando Cyno è nello stato di Precorritore giurato attivato da <strong>Rito sacro: Destrezza del lupo</strong>, dopo aver innescato una reazione di Electrocarica, Carica lunare, Superconduzione, Astroconduzione, Sovraccarico, Vivificazione, Accentuazione, Iperfioritura o Turbinio di Electro, ripristina di 3 l'energia elementale di tutti i membri del gruppo vicini (tranne sé stesso).",
+      "1": "Quest'effetto può verificarsi 5 volte in ciascun uso di <strong>Rito sacro: Destrezza del lupo</strong>."
+    },
+    "upgradedDescription": {
+      "0": "Quando Cyno è nello stato di Precorritore giurato attivato da <strong>Rito sacro: Destrezza del lupo</strong>, dopo aver innescato una reazione di Electrocarica, Carica lunare, Superconduzione, Astroconduzione, Sovraccarico, Vivificazione, Accentuazione, Iperfioritura o Turbinio di Electro, ripristina di 3 l'energia elementale di tutti i membri del gruppo vicini (tranne sé stesso). Quest'effetto può verificarsi 5 volte in ciascun uso di <strong>Rito sacro: Destrezza del lupo</strong>.",
+      "1": "<br/>",
+      "2": "Quando un altro personaggio sotto l'effetto di <strong>Insieme sorgeremo</strong> innesca le sopracitate reazioni, l'energia elementale di Cyno si ripristina di 20. Quest'effetto può attivarsi una volta ogni 18 s."
     }
   },
   "constellation5": {
@@ -165,6 +220,12 @@
       "1": "Giorno dello sciacallo dura 8 s e può essere accumulato per un massimo di 8 volte. I suoi effetti si annullano al termine di Precorritore giurato.",
       "2": "È possibile scagliare 1 Dardo del braccatore in questo modo ogni 0,4 s.",
       "3": "Devi prima sbloccare il talento d'ascensione Giudizio della piuma cadente."
+    },
+    "upgradedDescription": {
+      "0": "Dopo aver usato <strong>Rito sacro: Destrezza del lupo</strong> o attivato l'effetto Verdetto del talento d'ascensione Giudizio della piuma cadente, Cyno ottiene 4 accumuli dell'effetto Giorno dello sciacallo. Quando colpisce gli avversari con gli attacchi normali, Cyno consuma 1 accumulo di Giorno dello sciacallo per scagliare un Dardo del braccatore o, se è sotto l'effetto di <strong>Insieme sorgeremo</strong>, un <strong>Dardo del braccatore: Armonia stellare</strong>.",
+      "1": "Giorno dello sciacallo dura 8 s e può accumularsi fino a 8 volte per ciascuna iterazione di Precorritore giurato. I suoi effetti si annullano al termine dello stato di Precorritore giurato ottenuto da Rito sacro: Destrezza del lupo.",
+      "2": "È possibile scagliare 1 Dardo del braccatore o 1 Dardo del braccatore: Armonia stellare in questo modo ogni 0,4 s.",
+      "3": "Richiede il talento d'ascensione Giudizio della piuma cadente."
     }
   }
 }

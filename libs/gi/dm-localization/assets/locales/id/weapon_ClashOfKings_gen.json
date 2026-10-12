@@ -1,0 +1,24 @@
+{
+  "name": "Clash of Kings",
+  "description": {
+    "0": "Peti emas yang dihiasi berbagai permata mewah, menyimpan permainan favorit para raja padang pasir."
+  },
+  "passiveName": "Without Heed for Day nor Night",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah Karakter yang mengenakan melancarkan Elemental Skill, mendapatkan efek \"Laws of the Board\" selama 6 detik: ATK +<cryo>20%</cryo> dan Elemental Mastery +<cryo>100</cryo> poin. Efek ini dapat terpicu sekali setiap 12 detik dan tidak dapat ditumpuk. Jika Charged Attack Karakter yang mengenakan mengenai musuh saat efek di atas berlangsung, maka durasi efeknya akan diperpanjang 6 detik. Efek dapat diperpanjang hingga maksimum 6 detik melalui cara ini."
+    },
+    "1": {
+      "0": "Setelah Karakter yang mengenakan melancarkan Elemental Skill, mendapatkan efek \"Laws of the Board\" selama 6 detik: ATK +<cryo>25%</cryo> dan Elemental Mastery +<cryo>125</cryo> poin. Efek ini dapat terpicu sekali setiap 12 detik dan tidak dapat ditumpuk. Jika Charged Attack Karakter yang mengenakan mengenai musuh saat efek di atas berlangsung, maka durasi efeknya akan diperpanjang 6 detik. Efek dapat diperpanjang hingga maksimum 6 detik melalui cara ini."
+    },
+    "2": {
+      "0": "Setelah Karakter yang mengenakan melancarkan Elemental Skill, mendapatkan efek \"Laws of the Board\" selama 6 detik: ATK +<cryo>30%</cryo> dan Elemental Mastery +<cryo>150</cryo> poin. Efek ini dapat terpicu sekali setiap 12 detik dan tidak dapat ditumpuk. Jika Charged Attack Karakter yang mengenakan mengenai musuh saat efek di atas berlangsung, maka durasi efeknya akan diperpanjang 6 detik. Efek dapat diperpanjang hingga maksimum 6 detik melalui cara ini."
+    },
+    "3": {
+      "0": "Setelah Karakter yang mengenakan melancarkan Elemental Skill, mendapatkan efek \"Laws of the Board\" selama 6 detik: ATK +<cryo>35%</cryo> dan Elemental Mastery +<cryo>175</cryo> poin. Efek ini dapat terpicu sekali setiap 12 detik dan tidak dapat ditumpuk. Jika Charged Attack Karakter yang mengenakan mengenai musuh saat efek di atas berlangsung, maka durasi efeknya akan diperpanjang 6 detik. Efek dapat diperpanjang hingga maksimum 6 detik melalui cara ini."
+    },
+    "4": {
+      "0": "Setelah Karakter yang mengenakan melancarkan Elemental Skill, mendapatkan efek \"Laws of the Board\" selama 6 detik: ATK +<cryo>40%</cryo> dan Elemental Mastery +<cryo>200</cryo> poin. Efek ini dapat terpicu sekali setiap 12 detik dan tidak dapat ditumpuk. Jika Charged Attack Karakter yang mengenakan mengenai musuh saat efek di atas berlangsung, maka durasi efeknya akan diperpanjang 6 detik. Efek dapat diperpanjang hingga maksimum 6 detik melalui cara ini."
+    }
+  }
+}

@@ -7,13 +7,19 @@ import BashfulDemon from './BashfulDemon'
 import BellicoseBlaze from './BellicoseBlaze'
 import BigCylinder from './BigCylinder'
 import BlazingLaurel from './BlazingLaurel'
+import BloodmarrowCoffer from './BloodmarrowCoffer'
+import BoisterousEchoes from './BoisterousEchoes'
 import BoxCutter from './BoxCutter'
 import BunnyBand from './BunnyBand'
 import CannonRotor from './CannonRotor'
+import CattyLuck from './CattyLuck'
 import CauldronOfClarity from './CauldronOfClarity'
+import ChiefSidekick from './ChiefSidekick'
 import CinderCobalt from './CinderCobalt'
 import CloudcleaveRadiance from './CloudcleaveRadiance'
 import CordisGermina from './CordisGermina'
+import CrimsonMoonCasket from './CrimsonMoonCasket'
+import CrimsonThirst from './CrimsonThirst'
 import DeepSeaVisitor from './DeepSeaVisitor'
 import DemaraBatteryMarkII from './DemaraBatteryMarkII'
 import DreamlitHearth from './DreamlitHearth'
@@ -22,6 +28,7 @@ import ElectroLipGloss from './ElectroLipGloss'
 import ElegantVanity from './ElegantVanity'
 import FlamemakerShaker from './FlamemakerShaker'
 import FlightOfFancy from './FlightOfFancy'
+import FrostfallSickle from './FrostfallSickle'
 import FusionCompiler from './FusionCompiler'
 import GildedBlossom from './GildedBlossom'
 import GrillOWisp from './GrillOWisp'
@@ -33,11 +40,14 @@ import Housekeeper from './Housekeeper'
 import IceJadeTeapot from './IceJadeTeapot'
 import IdentityBase from './IdentityBase'
 import IdentityInflection from './IdentityInflection'
+import JoyauDore from './JoyauDore'
 import KaboomTheCannon from './KaboomTheCannon'
+import KnightsExtolment from './KnightsExtolment'
 import KrakensCradle from './KrakensCradle'
 import LunarDecrescent from './LunarDecrescent'
 import LunarNoviluna from './LunarNoviluna'
 import LunarPleniluna from './LunarPleniluna'
+import LunarSemiluna from './LunarSemiluna'
 import MagneticStormAlpha from './MagneticStormAlpha'
 import MagneticStormBravo from './MagneticStormBravo'
 import MagneticStormCharlie from './MagneticStormCharlie'
@@ -45,6 +55,7 @@ import MarcatoDesire from './MarcatoDesire'
 import Metanukimorphosis from './Metanukimorphosis'
 import MyriadEclipse from './MyriadEclipse'
 import NeonFantasies from './NeonFantasies'
+import OdeOfResurrectedWings from './OdeOfResurrectedWings'
 import OriginalTransmorpher from './OriginalTransmorpher'
 import PeacekeeperSpecialized from './PeacekeeperSpecialized'
 import PracticedPerfection from './PracticedPerfection'
@@ -65,10 +76,12 @@ import SeveredInnocence from './SeveredInnocence'
 import SharpenedStinger from './SharpenedStinger'
 import SixShooter from './SixShooter'
 import SliceOfTime from './SliceOfTime'
+import SolExuvia from './SolExuvia'
 import SpectralGaze from './SpectralGaze'
 import SpringEmbrace from './SpringEmbrace'
 import StarlightEngine from './StarlightEngine'
 import StarlightEngineReplica from './StarlightEngineReplica'
+import StarlightRiderFaceplate from './StarlightRiderFaceplate'
 import SteamOven from './SteamOven'
 import SteelCushion from './SteelCushion'
 import StreetSuperstar from './StreetSuperstar'
@@ -96,13 +109,19 @@ export const wengineUiSheets: Record<WengineKey, UISheetElement> = {
   BellicoseBlaze,
   BigCylinder,
   BlazingLaurel,
+  BloodmarrowCoffer,
+  BoisterousEchoes,
   BoxCutter,
   BunnyBand,
   CannonRotor,
+  CattyLuck,
   CauldronOfClarity,
+  ChiefSidekick,
   CinderCobalt,
   CloudcleaveRadiance,
   CordisGermina,
+  CrimsonMoonCasket,
+  CrimsonThirst,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
   DreamlitHearth,
@@ -111,6 +130,7 @@ export const wengineUiSheets: Record<WengineKey, UISheetElement> = {
   ElegantVanity,
   FlamemakerShaker,
   FlightOfFancy,
+  FrostfallSickle,
   FusionCompiler,
   GildedBlossom,
   GrillOWisp,
@@ -122,11 +142,14 @@ export const wengineUiSheets: Record<WengineKey, UISheetElement> = {
   IceJadeTeapot,
   IdentityBase,
   IdentityInflection,
+  JoyauDore,
   KaboomTheCannon,
+  KnightsExtolment,
   KrakensCradle,
   LunarDecrescent,
   LunarNoviluna,
   LunarPleniluna,
+  LunarSemiluna,
   MagneticStormAlpha,
   MagneticStormBravo,
   MagneticStormCharlie,
@@ -134,6 +157,7 @@ export const wengineUiSheets: Record<WengineKey, UISheetElement> = {
   Metanukimorphosis,
   MyriadEclipse,
   NeonFantasies,
+  OdeOfResurrectedWings,
   OriginalTransmorpher,
   PeacekeeperSpecialized,
   PracticedPerfection,
@@ -154,10 +178,12 @@ export const wengineUiSheets: Record<WengineKey, UISheetElement> = {
   SharpenedStinger,
   SixShooter,
   SliceOfTime,
+  SolExuvia,
   SpectralGaze,
   SpringEmbrace,
   StarlightEngine,
   StarlightEngineReplica,
+  StarlightRiderFaceplate,
   SteamOven,
   SteelCushion,
   StreetSuperstar,

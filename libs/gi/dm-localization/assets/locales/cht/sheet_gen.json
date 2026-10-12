@@ -60,12 +60,14 @@
     "superconduct": "超導",
     "vaporize": "蒸發",
     "melt": "融化",
-    "bloom": "綻放",
+    "bloom": "",
     "burgeon": "烈綻放",
     "hyperbloom": "超綻放",
     "quicken": "原激化",
     "aggravate": "超激化",
-    "spread": "蔓激化"
+    "spread": "蔓激化",
+    "stellarconduct": "星超導",
+    "stellarswirl": "星擴散"
   },
   "stat": {
     "def": "防禦力",

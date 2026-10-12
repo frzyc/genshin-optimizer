@@ -1,0 +1,7 @@
+{
+  "contamination": "Any squad member triggers <strong>Contamination</strong> or <strong>Cleanse</strong>",
+  "enemyHit": "Any squad member's attack hits an enemy",
+  "windswept": "Windswept",
+  "kindlyHits": "<strong>EX Special Attack: Kindly Rest in Peace</strong> hits an enemy",
+  "chillHits": "<strong>EX Special Attack: Don't Catch a Chill</strong> hits an enemy"
+}

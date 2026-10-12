@@ -1,0 +1,29 @@
+{
+  "name": "Angelos' Heptades",
+  "description": {
+    "0": "A golden box as splendid as the light of the heavens. According to legend, it once belonged to a divine envoy of the Eternal Court."
+  },
+  "passiveName": "Crown of the Final Scion",
+  "passiveDescription": {
+    "0": {
+      "0": "ATK is increased by <cryo>12%</cryo>. After the equipping character creates a Shield, they gain \"Pathfinder's Light\" for 20s: Increases your active party member's DMG by <cryo>10%</cryo> for every 1,000 ATK the equipping character has, up to a maximum of <cryo>26%</cryo>. Additionally, when the equipping character creates a Shield, they will also gain \"Guide's Contentment\": Restores <cryo>14</cryo> Elemental Energy to the equipping character. The aforementioned effect can trigger once every 14s, and can also be triggered when any type of chest is opened outside of combat. The equipping character may trigger this effect even when they are an off-field.",
+      "1": "Hexerei: Secret Rite: When your own Hexerei character is off-field in the party, they will also gain 50% of the DMG increase from Pathfinder's Light."
+    },
+    "1": {
+      "0": "ATK is increased by <cryo>15%</cryo>. After the equipping character creates a Shield, they gain \"Pathfinder's Light\" for 20s: Increases your active party member's DMG by <cryo>13%</cryo> for every 1,000 ATK the equipping character has, up to a maximum of <cryo>34%</cryo>. Additionally, when the equipping character creates a Shield, they will also gain \"Guide's Contentment\": Restores <cryo>15</cryo> Elemental Energy to the equipping character. The aforementioned effect can trigger once every 14s, and can also be triggered when any type of chest is opened outside of combat. The equipping character may trigger this effect even when they are an off-field.",
+      "1": "Hexerei: Secret Rite: When your own Hexerei character is off-field in the party, they will also gain 50% of the DMG increase from Pathfinder's Light."
+    },
+    "2": {
+      "0": "ATK is increased by <cryo>18%</cryo>. After the equipping character creates a Shield, they gain \"Pathfinder's Light\" for 20s: Increases your active party member's DMG by <cryo>16%</cryo> for every 1,000 ATK the equipping character has, up to a maximum of <cryo>42%</cryo>. Additionally, when the equipping character creates a Shield, they will also gain \"Guide's Contentment\": Restores <cryo>16</cryo> Elemental Energy to the equipping character. The aforementioned effect can trigger once every 14s, and can also be triggered when any type of chest is opened outside of combat. The equipping character may trigger this effect even when they are an off-field.",
+      "1": "Hexerei: Secret Rite: When your own Hexerei character is off-field in the party, they will also gain 50% of the DMG increase from Pathfinder's Light."
+    },
+    "3": {
+      "0": "ATK is increased by <cryo>21%</cryo>. After the equipping character creates a Shield, they gain \"Pathfinder's Light\" for 20s: Increases your active party member's DMG by <cryo>19%</cryo> for every 1,000 ATK the equipping character has, up to a maximum of <cryo>50%</cryo>. Additionally, when the equipping character creates a Shield, they will also gain \"Guide's Contentment\": Restores <cryo>17</cryo> Elemental Energy to the equipping character. The aforementioned effect can trigger once every 14s, and can also be triggered when any type of chest is opened outside of combat. The equipping character may trigger this effect even when they are an off-field.",
+      "1": "Hexerei: Secret Rite: When your own Hexerei character is off-field in the party, they will also gain 50% of the DMG increase from Pathfinder's Light."
+    },
+    "4": {
+      "0": "ATK is increased by <cryo>24%</cryo>. After the equipping character creates a Shield, they gain \"Pathfinder's Light\" for 20s: Increases your active party member's DMG by <cryo>22%</cryo> for every 1,000 ATK the equipping character has, up to a maximum of <cryo>58%</cryo>. Additionally, when the equipping character creates a Shield, they will also gain \"Guide's Contentment\": Restores <cryo>18</cryo> Elemental Energy to the equipping character. The aforementioned effect can trigger once every 14s, and can also be triggered when any type of chest is opened outside of combat. The equipping character may trigger this effect even when they are an off-field.",
+      "1": "Hexerei: Secret Rite: When your own Hexerei character is off-field in the party, they will also gain 50% of the DMG increase from Pathfinder's Light."
+    }
+  }
+}

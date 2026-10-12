@@ -9,8 +9,11 @@ import type { Info, NumNode, ReadNode, StrNode } from '@genshin-optimizer/gi/wr'
 import {
   customStringRead,
   equal,
+  greaterEq,
   infoMut,
   input,
+  sum,
+  target,
   unequal,
 } from '@genshin-optimizer/gi/wr'
 import type { NonStackBuff } from '@genshin-optimizer/gi/wr-types'
@@ -49,6 +52,7 @@ type CharTransKey =
   | 'TravelerDendro'
   | 'TravelerHydro'
   | 'TravelerPyro'
+  | 'TravelerCryo'
   | 'Traveler'
 export function trans(typeKey: 'char', key: CharTransKey): Translated
 export function trans(typeKey: 'weapon', key: WeaponKey): Translated
@@ -76,14 +80,25 @@ export function trans(
 export function activeCharBuff(
   buffTargetKey: string | StrNode,
   node: NumNode,
-  info: Info
+  info: Info,
+  conditionOR?: NumNode
 ) {
   return [
     infoMut(node, { ...info, isTeamBuff: true }),
-    equal(input.activeCharKey, buffTargetKey, node),
+    conditionOR
+      ? any(node, equal(input.activeCharKey, buffTargetKey, 1), conditionOR)
+      : equal(input.activeCharKey, buffTargetKey, node),
+  ]
+}
+export function inactiveCharBuff(node: NumNode, info: Info) {
+  return [
+    infoMut(node, { ...info, isTeamBuff: true }),
+    unequal(input.activeCharKey, target.charKey, node),
   ]
 }
 
+// First node is the actual buff node
+// Second node is inactive display node
 export function nonStackBuff(
   buffName: NonStackBuff,
   path: string,
@@ -96,5 +111,10 @@ export function nonStackBuff(
       isTeamBuff: true,
       strikethrough: true,
     }),
-  ]
+  ] as const
+}
+
+// Returns `v` if any of `nodes` evaluates to 1
+export function any(v: NumNode | number, ...nodes: NumNode[]) {
+  return greaterEq(sum(...nodes), 1, v)
 }

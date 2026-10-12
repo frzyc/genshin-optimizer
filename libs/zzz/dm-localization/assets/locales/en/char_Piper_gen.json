@@ -180,7 +180,7 @@
   "ability": {
     "name": "Additional Ability: Synced Acceleration",
     "desc": {
-      "0": "When another character in your squad shares the same Attribute or Faction:",
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Anomaly</ct> character, or shares the same Attribute or Faction:",
       "1": "When Piper has 20 or more stacks of <ct color=#FFFFFF>Power</ct>, all squad members' DMG is increased by 18%."
     }
   },

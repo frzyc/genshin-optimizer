@@ -1,0 +1,44 @@
+{
+  "name": "Au-delà de la chrysalide",
+  "description": {
+    "0": "Une longue épée rayonnante de lumière et de couleurs, aussi légère qu'un papillon lorsqu'on la manie. Elle servit jadis à un individu pour se libérer de ses liens."
+  },
+  "passiveName": "Danse des ailes déchaînées",
+  "passiveDescription": {
+    "0": {
+      "0": "Chaque fois que le personnage équipé de l'arme utilise une compétence élémentaire ou un déchaînement élémentaire, il obtient l'un des effets suivants dans l'ordre :",
+      "1": "Vent de dévotion : augmente ses DGT CRIT de <cryo>56 %</cryo> pendant 10 s.",
+      "2": "Vent de défiance : augmente ses DGT de réaction d'Astrodispersion de <cryo>36 %</cryo> pendant 10 s.",
+      "3": "Vent d'abondance : restaure son énergie élémentaire pour <cryo>5</cryo> pts, un maximum de <cryo>5</cryo> pts d'énergie élémentaire pouvant être restauré toutes les 4 s de cette manière.",
+      "4": "Ces effets sont annulés et l'ordre réinitialisé lorsque le personnage équipé de l'arme quitte le terrain."
+    },
+    "1": {
+      "0": "Chaque fois que le personnage équipé de l'arme utilise une compétence élémentaire ou un déchaînement élémentaire, il obtient l'un des effets suivants dans l'ordre :",
+      "1": "Vent de dévotion : augmente ses DGT CRIT de <cryo>72 %</cryo> pendant 10 s.",
+      "2": "Vent de défiance : augmente ses DGT de réaction d'Astrodispersion de <cryo>45 %</cryo> pendant 10 s.",
+      "3": "Vent d'abondance : restaure son énergie élémentaire pour <cryo>5,5</cryo> pts, un maximum de <cryo>5,5</cryo> pts d'énergie élémentaire pouvant être restauré toutes les 4 s de cette manière.",
+      "4": "Ces effets sont annulés et l'ordre réinitialisé lorsque le personnage équipé de l'arme quitte le terrain."
+    },
+    "2": {
+      "0": "Chaque fois que le personnage équipé de l'arme utilise une compétence élémentaire ou un déchaînement élémentaire, il obtient l'un des effets suivants dans l'ordre :",
+      "1": "Vent de dévotion : augmente ses DGT CRIT de <cryo>88 %</cryo> pendant 10 s.",
+      "2": "Vent de défiance : augmente ses DGT de réaction d'Astrodispersion de <cryo>54 %</cryo> pendant 10 s.",
+      "3": "Vent d'abondance : restaure son énergie élémentaire pour <cryo>6</cryo> pts, un maximum de <cryo>6</cryo> pts d'énergie élémentaire pouvant être restauré toutes les 4 s de cette manière.",
+      "4": "Ces effets sont annulés et l'ordre réinitialisé lorsque le personnage équipé de l'arme quitte le terrain."
+    },
+    "3": {
+      "0": "Chaque fois que le personnage équipé de l'arme utilise une compétence élémentaire ou un déchaînement élémentaire, il obtient l'un des effets suivants dans l'ordre :",
+      "1": "Vent de dévotion : augmente ses DGT CRIT de <cryo>104 %</cryo> pendant 10 s.",
+      "2": "Vent de défiance : augmente ses DGT de réaction d'Astrodispersion de <cryo>63 %</cryo> pendant 10 s.",
+      "3": "Vent d'abondance : restaure son énergie élémentaire pour <cryo>6,5</cryo> pts, un maximum de <cryo>6,5</cryo> pts d'énergie élémentaire pouvant être restauré toutes les 4 s de cette manière.",
+      "4": "Ces effets sont annulés et l'ordre réinitialisé lorsque le personnage équipé de l'arme quitte le terrain."
+    },
+    "4": {
+      "0": "Chaque fois que le personnage équipé de l'arme utilise une compétence élémentaire ou un déchaînement élémentaire, il obtient l'un des effets suivants dans l'ordre :",
+      "1": "Vent de dévotion : augmente ses DGT CRIT de <cryo>120 %</cryo> pendant 10 s.",
+      "2": "Vent de défiance : augmente ses DGT de réaction d'Astrodispersion de <cryo>72 %</cryo> pendant 10 s.",
+      "3": "Vent d'abondance : restaure son énergie élémentaire pour <cryo>7</cryo> pts, un maximum de <cryo>7</cryo> pts d'énergie élémentaire pouvant être restauré toutes les 4 s de cette manière.",
+      "4": "Ces effets sont annulés et l'ordre réinitialisé lorsque le personnage équipé de l'arme quitte le terrain."
+    }
+  }
+}

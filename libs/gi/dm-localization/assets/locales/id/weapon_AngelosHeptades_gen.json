@@ -1,0 +1,29 @@
+{
+  "name": "Angelos' Heptades",
+  "description": {
+    "0": "Kotak emas secantik cahaya langit. Konon katanya di masa lalu, pernah menjadi milik utusan Pengadilan Abadi."
+  },
+  "passiveName": "Crown of the Final Scion",
+  "passiveDescription": {
+    "0": {
+      "0": "ATK +<cryo>12%</cryo>. Selama 20 detik setelah Karakter yang mengenakan menciptakan Perisai, Karakter tersebut mendapatkan efek Pathfinder's Light: Untuk setiap 1.000 poin ATK yang dimiliki oleh Karakter yang mengenakan, akan meningkatkan DMG yang diakibatkan Karakter aktif sendiri dalam party sebesar <cryo>10%</cryo>, hingga maksimum <cryo>26%</cryo>. Selain itu, saat Karakter yang mengenakan menciptakan Perisai, Karakter tersebut juga akan mendapatkan efek Guide's Contentment: Memulihkan <cryo>14</cryo> poin Energy Karakter yang mengenakan. Efek ini dapat terpicu sekali setiap 14 detik. Efek ini juga dapat terpicu saat membuka segala jenis peti harta karun di luar pertempuran. Efek ini tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran.",
+      "1": "Hexerei: Secret Rite: Saat Karakter Hexerei sendiri dalam party ada di dalam party namun sedang tidak berada di medan pertempuran, mereka juga akan mendapatkan 50% efek peningkatan DMG dari Pathfinder's Light."
+    },
+    "1": {
+      "0": "ATK +<cryo>15%</cryo>. Selama 20 detik setelah Karakter yang mengenakan menciptakan Perisai, Karakter tersebut mendapatkan efek Pathfinder's Light: Untuk setiap 1.000 poin ATK yang dimiliki oleh Karakter yang mengenakan, akan meningkatkan DMG yang diakibatkan Karakter aktif sendiri dalam party sebesar <cryo>13%</cryo>, hingga maksimum <cryo>34%</cryo>. Selain itu, saat Karakter yang mengenakan menciptakan Perisai, Karakter tersebut juga akan mendapatkan efek Guide's Contentment: Memulihkan <cryo>15</cryo> poin Energy Karakter yang mengenakan. Efek ini dapat terpicu sekali setiap 14 detik. Efek ini juga dapat terpicu saat membuka segala jenis peti harta karun di luar pertempuran. Efek ini tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran.",
+      "1": "Hexerei: Secret Rite: Saat Karakter Hexerei sendiri dalam party ada di dalam party namun sedang tidak berada di medan pertempuran, mereka juga akan mendapatkan 50% efek peningkatan DMG dari Pathfinder's Light."
+    },
+    "2": {
+      "0": "ATK +<cryo>18%</cryo>. Selama 20 detik setelah Karakter yang mengenakan menciptakan Perisai, Karakter tersebut mendapatkan efek Pathfinder's Light: Untuk setiap 1.000 poin ATK yang dimiliki oleh Karakter yang mengenakan, akan meningkatkan DMG yang diakibatkan Karakter aktif sendiri dalam party sebesar <cryo>16%</cryo>, hingga maksimum <cryo>42%</cryo>. Selain itu, saat Karakter yang mengenakan menciptakan Perisai, Karakter tersebut juga akan mendapatkan efek Guide's Contentment: Memulihkan <cryo>16</cryo> poin Energy Karakter yang mengenakan. Efek ini dapat terpicu sekali setiap 14 detik. Efek ini juga dapat terpicu saat membuka segala jenis peti harta karun di luar pertempuran. Efek ini tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran.",
+      "1": "Hexerei: Secret Rite: Saat Karakter Hexerei sendiri dalam party ada di dalam party namun sedang tidak berada di medan pertempuran, mereka juga akan mendapatkan 50% efek peningkatan DMG dari Pathfinder's Light."
+    },
+    "3": {
+      "0": "ATK +<cryo>21%</cryo>. Selama 20 detik setelah Karakter yang mengenakan menciptakan Perisai, Karakter tersebut mendapatkan efek Pathfinder's Light: Untuk setiap 1.000 poin ATK yang dimiliki oleh Karakter yang mengenakan, akan meningkatkan DMG yang diakibatkan Karakter aktif sendiri dalam party sebesar <cryo>19%</cryo>, hingga maksimum <cryo>50%</cryo>. Selain itu, saat Karakter yang mengenakan menciptakan Perisai, Karakter tersebut juga akan mendapatkan efek Guide's Contentment: Memulihkan <cryo>17</cryo> poin Energy Karakter yang mengenakan. Efek ini dapat terpicu sekali setiap 14 detik. Efek ini juga dapat terpicu saat membuka segala jenis peti harta karun di luar pertempuran. Efek ini tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran.",
+      "1": "Hexerei: Secret Rite: Saat Karakter Hexerei sendiri dalam party ada di dalam party namun sedang tidak berada di medan pertempuran, mereka juga akan mendapatkan 50% efek peningkatan DMG dari Pathfinder's Light."
+    },
+    "4": {
+      "0": "ATK +<cryo>24%</cryo>. Selama 20 detik setelah Karakter yang mengenakan menciptakan Perisai, Karakter tersebut mendapatkan efek Pathfinder's Light: Untuk setiap 1.000 poin ATK yang dimiliki oleh Karakter yang mengenakan, akan meningkatkan DMG yang diakibatkan Karakter aktif sendiri dalam party sebesar <cryo>22%</cryo>, hingga maksimum <cryo>58%</cryo>. Selain itu, saat Karakter yang mengenakan menciptakan Perisai, Karakter tersebut juga akan mendapatkan efek Guide's Contentment: Memulihkan <cryo>18</cryo> poin Energy Karakter yang mengenakan. Efek ini dapat terpicu sekali setiap 14 detik. Efek ini juga dapat terpicu saat membuka segala jenis peti harta karun di luar pertempuran. Efek ini tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran.",
+      "1": "Hexerei: Secret Rite: Saat Karakter Hexerei sendiri dalam party ada di dalam party namun sedang tidak berada di medan pertempuran, mereka juga akan mendapatkan 50% efek peningkatan DMG dari Pathfinder's Light."
+    }
+  }
+}

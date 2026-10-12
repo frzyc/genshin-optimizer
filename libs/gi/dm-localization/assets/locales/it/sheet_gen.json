@@ -60,12 +60,14 @@
     "superconduct": "Superconduzione",
     "vaporize": "Vaporizzazione",
     "melt": "Fusione",
-    "bloom": "Fioritura",
+    "bloom": "",
     "burgeon": "Germinazione",
     "hyperbloom": "Iperfioritura",
     "quicken": "Vivificazione",
     "aggravate": "Accentuazione",
-    "spread": "Propagazione"
+    "spread": "Propagazione",
+    "stellarconduct": "Astroconduzione",
+    "stellarswirl": "Turbinio astrale"
   },
   "stat": {
     "def": "DIF",

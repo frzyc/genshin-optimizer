@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -79,7 +83,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -113,7 +121,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -157,7 +169,7 @@
   "constellation4": {
     "name": "Dance of the Snowy Moon and Flute",
     "description": {
-      "0": "Setelah Freminet memicu reaksi Frozen, Shatter, atau Superconduct terhadap musuh, ATK-nya meningkat 9% selama 6 detik. Efek ini dapat ditumpuk sampai 2 lapis dan dapat terpicu sekali setiap 0,3 detik."
+      "0": "Setelah Freminet memicu reaksi Frozen, Shatter, Superconduct, atau Stellar-Conduct terhadap musuh, ATK-nya meningkat 9% selama 6 detik. Efek ini dapat ditumpuk sampai 2 lapis dan dapat terpicu sekali setiap 0,3 detik."
     }
   },
   "constellation5": {
@@ -170,7 +182,7 @@
   "constellation6": {
     "name": "Moment of Waking and Resolve",
     "description": {
-      "0": "Setelah Freminet memicu reaksi Frozen, Shatter, atau Superconduct terhadap musuh, CRIT DMG-nya meningkat 12% selama 6 detik. Efek ini dapat ditumpuk sampai 3 lapis dan dapat terpicu sekali setiap 0,3 detik."
+      "0": "Setelah Freminet memicu reaksi Frozen, Shatter, Superconduct, atau Stellar-Conduct terhadap musuh, CRIT DMG-nya meningkat 12% selama 6 detik. Efek ini dapat ditumpuk sampai 3 lapis dan dapat terpicu sekali setiap 0,3 detik."
     }
   }
 }

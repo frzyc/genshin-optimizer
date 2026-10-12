@@ -60,12 +60,14 @@
     "superconduct": "Supraleiter",
     "vaporize": "Verdampfen",
     "melt": "Schmelzen",
-    "bloom": "Sprießen",
+    "bloom": "",
     "burgeon": "Flammenspross",
     "hyperbloom": "Supraspross",
     "quicken": "Urwuchs",
     "aggravate": "Suprawuchs",
-    "spread": "Rankenwuchs"
+    "spread": "Rankenwuchs",
+    "stellarconduct": "Stellar-Supraleiter",
+    "stellarswirl": "Stellar-Verwirbelung"
   },
   "stat": {
     "def": "VTD",

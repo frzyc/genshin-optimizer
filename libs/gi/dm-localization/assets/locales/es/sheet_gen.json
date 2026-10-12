@@ -60,12 +60,14 @@
     "superconduct": "Superconductor",
     "vaporize": "Vaporizado",
     "melt": "Derretido",
-    "bloom": "Florecimiento",
+    "bloom": "",
     "burgeon": "Crepitar",
     "hyperbloom": "Sobreflorecimiento",
     "quicken": "Aceleración",
     "aggravate": "Intensificación",
-    "spread": "Propagación"
+    "spread": "Propagación",
+    "stellarconduct": "Superconductor Estelar",
+    "stellarswirl": "Torbellino Estelar"
   },
   "stat": {
     "def": "DEF",

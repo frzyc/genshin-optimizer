@@ -1,0 +1,185 @@
+{
+  "name": "Lohen",
+  "title": "Pointe de flèche affûtée",
+  "description": "Vice-capitaine de l'unité à distance de l'Ordre de Favonius, ce chevalier est connu pour son approche peu orthodoxe et son goût pour les tactiques non conventionnelles.",
+  "constellationName": "Lepus Miles",
+  "auto": {
+    "name": "Serment rompu",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 attaques."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher un coup vers l'avant."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Frappe imprévue",
+    "description": {
+      "0": "Tandis qu'il traque les points faibles, Lohen entre dans l'état <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Coup de maître</strong></tooltip>, état pendant lequel :",
+      "1": [
+        " Lohen peut accumuler activement de la <tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>joie</strong></tooltip> pour déclencher sa compétence élémentaire spéciale <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Gravé dans les os et l'âme</strong></tooltip>.",
+        " Les autres personnages de l'équipe à proximité peuvent accumuler de la <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>détermination</strong></tooltip> pour Lohen afin d'augmenter les DGT de <strong>Gravé dans les os et l'âme</strong>."
+      ],
+      "2": "Après avoir utilisé <strong>Gravé dans les os et l'âme</strong> un maximum de 3 fois pendant l'état <strong>Coup de maître</strong>, Lohen ne peut plus obtenir de <strong>joie</strong>.",
+      "3": "<br/>",
+      "4": "<i>« La chevalerie ? Ah ! Quel meilleur moyen de tendre un piège ? Quand un ennemi rêve d'une victoire honorable, il ne se doute jamais de la « bonne surprise » qui l'attend. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "Durée de coup de maître",
+      "10": "DGT de Gravé dans les os et l'âme",
+      "11": "Bonus de DGT de détermination",
+      "12": "Temps de recharge",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Jugement manifeste",
+    "description": {
+      "0": "Exécute une série rapide de frappes vers l'avant, consommant toute la <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>détermination</strong></tooltip> pour infliger des <cryo>DGT Cryo</cryo>, les DGT étant augmentés selon la quantité de <strong>détermination</strong> consommée. Si Lohen est dans l'état <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Coup de maître</strong></tooltip> lors de l'utilisation, la durée de ce <strong>Coup de maître</strong> augmente de 1,65 s.",
+      "1": "<br/>",
+      "2": "<i>« Si prompt à céder ? Quel dommage, je ne faisais que commencer... »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Bonus de DGT de détermination",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Moratoire sur les interrogatoires",
+    "description": {
+      "0": "Pendant l'état <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Coup de maître</strong></tooltip>, Lohen obtient 60 pts de <strong>détermination</strong> supplémentaires lorsqu'un autre personnage de l'équipe à proximité l'aide à cumuler de la <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>détermination</strong></tooltip> si les DGT infligés sont supérieurs ou égaux à 3 000 % de l'ATQ de base de Lohen."
+    }
+  },
+  "passive2": {
+    "name": "Chef-d'œuvre désinvolte",
+    "description": {
+      "0": "Pendant l'état <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Coup de maître</strong></tooltip>, lorsqu'un autre personnage de l'équipe à proximité a déclenché une <cryo>réaction liée à l'élément Cryo</cryo>, son ATQ et celle de Lohen augmentent de 15 % pendant 8 s."
+    }
+  },
+  "passive3": {
+    "name": "Quand l'envie prend",
+    "description": {
+      "0": "Après avoir utilisé sa compétence élémentaire <strong>Frappe imprévue</strong>, Lohen obtient l'effet Esprit exalté pendant 9 s : augmente le niveau de <strong>Frappe imprévue</strong> de 1.",
+      "1": "Si une des attaques normales, une des compétences élémentaires ou un des déchaînements élémentaires d'un autre personnage de l'équipe n'a pas un niveau inférieur à celui de la compétence élémentaire de Lohen lors de son déclenchement, la durée de cet effet Esprit exalté est prolongée de 6 s supplémentaires.",
+      "2": "L'effet Esprit exalté peut être obtenu une fois toutes les 18 s."
+    }
+  },
+  "lockedPassive": {
+    "name": "Veillée de la sorcière : Épine inguérissable",
+    "description": {
+      "0": "Après avoir terminé le <strong>devoir de la sorcière « Question d'opposition »</strong>, Lohen devient un personnage <strong>héxère</strong>. Si l'équipe contient au moins 2 personnages héxères, elle bénéficie de l'effet <strong>Hexerei : Rituel secret</strong> qui améliore les personnages héxères.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei : Rituel secret</strong>",
+      "3": "En touchant un ennemi avec sa compétence élémentaire spéciale <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Gravé dans les os et l'âme</strong></tooltip> ou en utilisant son déchaînement élémentaire <strong>Jugement manifeste</strong>, les DGT des attaques normales et chargées de Lohen augmentent de 40 % pendant 6 s si sa <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>détermination</strong></tooltip> a atteint au moins 50 % de son maximum."
+    }
+  },
+  "constellation1": {
+    "name": "Ô brises, qui portez si souvent de douloureuses lamentations",
+    "description": {
+      "0": "La limite de <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>détermination</strong></tooltip> de Lohen passe à 300 % de sa valeur d'origine.",
+      "1": "De plus, la <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>détermination</strong></tooltip> que les autres personnages de l'équipe à proximité cumulent pour Lohen augmente à 500 % de la valeur d'origine pendant l'effet <strong>Coup de maître</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "En vol, je frappe tout ce qui vole",
+    "description": {
+      "0": "Après avoir touché un ennemi avec sa compétence élémentaire spéciale <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Gravé dans les os et l'âme</strong></tooltip> ou avoir utilisé son déchaînement élémentaire <strong>Jugement manifeste</strong> pendant l'état <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Coup de maître</strong></tooltip>, Lohen obtient l'effet Lame purificatrice pendant 4 s : la prochaine fois qu'il touche un ennemi avec une attaque normale ou chargée pendant l'effet Coup de maître, il déclenche une attaque supplémentaire infligeant des <cryo>DGT Cryo de zone</cryo> d'une valeur équivalant à 500 % de son ATQ et augmente la maîtrise élémentaire des autres personnages de l'équipe à proximité de 200 pts pendant 8 s. L'effet Lame purificatrice peut être obtenu une fois toutes les 4 s."
+    }
+  },
+  "constellation3": {
+    "name": "Seule la lance qui blesse peut guérir",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Lohen_gen baseKey18=skill>Frappe imprévue</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Amour radieux, mort riante",
+    "description": {
+      "0": "En utilisant son déchaînement élémentaire <strong>Jugement manifeste</strong> pendant l'état <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Coup de maître</strong></tooltip>, Lohen cumule de la <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>détermination</strong></tooltip> jusqu'au maximum, ce qui permet à ce déchaînement élémentaire d'infliger le maximum de DGT possible.",
+      "1": "<br/>",
+      "2": "De plus, différents effets se produisent lorsque Lohen passe dans l'état <strong>Coup de maître</strong> :",
+      "3": [
+        " Si son énergie élémentaire n'est pas déjà au maximum, Lohen en récupère 15 pts.",
+        " Si son énergie élémentaire est déjà au maximum, Lohen récupère 15 pts d'énergie élémentaire lorsqu'il utilise son déchaînement élémentaire <strong>Jugement manifeste</strong> pendant les 15 prochaines secondes."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Ne jamais demander, ni vous déranger pour savoir",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Lohen_gen baseKey18=burst>Jugement manifeste</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Se noyer, sombrer, inconscient : Joie suprême",
+    "description": {
+      "0": "Toucher un ennemi avec la compétence élémentaire spéciale <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Gravé dans les os et l'âme</strong></tooltip>, et utiliser le déchaînement élémentaire <strong>Jugement manifeste</strong> pendant l'effet <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Coup de maître</strong></tooltip>, ne consomment pas de <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>détermination</strong></tooltip>, mais restaurent la <tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>joie</strong></tooltip> de Lohen jusqu'au maximum, tout en prolongeant la durée de l'état <strong>Coup de maître</strong> de 1,25 s si la prochaine utilisation de la compétence élémentaire spéciale <strong>Gravé dans les os et l'âme</strong> touche un ennemi. Cet effet peut être déclenché une fois toutes les 7 s.",
+      "1": "De plus, les DGT CRIT de tous les DGT ci-dessus augmentent de 175 %, et le nombre de fois que Lohen peut utiliser <strong>Gravé dans les os et l'âme</strong> pendant cet effet <strong>Coup de maître</strong> augmente de 2."
+    }
+  }
+}

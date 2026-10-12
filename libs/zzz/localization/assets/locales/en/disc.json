@@ -36,7 +36,12 @@
     "uploadBtn": "Upload Screenshot (or Ctrl-V)",
     "clearPrompt": "There is a disc being edited. Are you sure you want to clear the editor?",
     "delete": "Delete",
-    "confirmDelete": "Are you sure you want to delete this disc?"
+    "confirmDelete": "Are you sure you want to delete this disc?",
+    "discAdded": "Disc added",
+    "discUpdated": "Disc updated",
+    "discRemoved": "Disc deleted",
+    "captureActiveHint": "Screen capture is active. Screenshots are taken every 5 seconds when idle. Valid scanned discs are automatically added or updated at the next capture.",
+    "capturePausedInvalid": "Resolve scan errors or clear to continue capture"
   },
   "slot": "Slot",
   "slotName": "Slot {{slotKey}}",

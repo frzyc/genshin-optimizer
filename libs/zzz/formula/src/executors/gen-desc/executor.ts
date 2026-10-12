@@ -1,4 +1,5 @@
-import * as path from 'path'
+import { writeFile } from 'node:fs/promises'
+import * as path from 'node:path'
 import { formatText } from '@genshin-optimizer/common/pipeline'
 import {
   extractCondMetadata,
@@ -10,9 +11,16 @@ import {
   allWengineKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { workspaceRoot } from '@nx/devkit'
-import { writeFile } from 'fs/promises'
 import { data } from '../../data'
-import { type Tag, commonSheets } from '../../data/util'
+import { commonSheets, type Tag } from '../../data/util'
+import type { CatalogListing } from '../../formulaCatalogBuild'
+import { buildFormulaCatalog } from '../../formulaCatalogBuild'
+import {
+  normalizeSheetFormulaKeys,
+  provisionalFormulaMetaKey,
+} from '../../formulaMeta'
+import { STAT_SHEET } from '../../formulaRef'
+import { stripCalcContextTag } from '../../hit'
 import type { GenDescExecutorSchema } from './schema'
 
 export default async function runExecutor(
@@ -24,26 +32,41 @@ export default async function runExecutor(
     sheet: sheet!,
     name: q!,
   }))
-  const formulas = extractFormulaMetadata(data, (tag: Tag, value) => {
-    if (
-      // sheet-specific
-      tag.sheet !== 'agg' &&
-      tag.sheet !== 'disc' &&
-      tag.sheet !== 'wengine' &&
-      // formula listing
-      tag.qt === 'listing' &&
-      tag.q === 'formulas' &&
-      // pattern from `registerFormula`
-      value.op === 'tag' &&
-      'name' in value.tag &&
-      'q' in value.tag
-    ) {
-      const sheet = tag.sheet!
-      const name = value.tag['name']!
-      return { sheet, name, tag: { ...tag, ...value.tag } }
+  const rawFormulas = extractFormulaMetadata<Tag, Tag>(
+    data,
+    (tag: Tag, value, _result) => {
+      if (
+        // sheet-specific
+        tag.sheet !== 'agg' &&
+        tag.sheet !== 'disc' &&
+        tag.sheet !== 'wengine' &&
+        // formula listing
+        tag.qt === 'listing' &&
+        tag.q === 'formulas' &&
+        // pattern from `registerFormula`
+        value.op === 'tag' &&
+        'name' in value.tag &&
+        'q' in value.tag
+      ) {
+        const sheet = tag.sheet!
+        const abilityName = value.tag['name']!
+        const q = value.tag['q']!
+        const metaKey = provisionalFormulaMetaKey(abilityName, q)
+        return {
+          sheet,
+          name: metaKey,
+          tag: { ...tag, ...value.tag, name: abilityName },
+        }
+      }
+      return undefined
     }
-    return undefined
-  })
+  )
+  const formulas = Object.fromEntries(
+    Object.entries(rawFormulas).map(([sheet, sheetFormulas]) => [
+      sheet,
+      normalizeSheetFormulaKeys(sheetFormulas),
+    ])
+  )
   const buffs = extractFormulaMetadata<Tag, Tag>(
     data,
     (tag: Tag, value, result) => {
@@ -53,7 +76,7 @@ export default async function runExecutor(
         tag.sheet !== 'disc' &&
         tag.sheet !== 'wengine' &&
         // formula listing
-        tag.qt == 'listing' &&
+        tag.qt === 'listing' &&
         tag.q === 'buffs' &&
         // pattern from `registerBuffs`
         value.op === 'tag' &&
@@ -79,6 +102,39 @@ export default async function runExecutor(
       return undefined
     }
   )
+
+  const catalogListings: CatalogListing[] = []
+  for (const { tag, value } of data) {
+    if (
+      tag.sheet === 'agg' ||
+      tag.sheet === 'disc' ||
+      tag.sheet === 'wengine' ||
+      tag.qt !== 'listing' ||
+      tag.q !== 'formulas' ||
+      value.op !== 'tag' ||
+      !('q' in value.tag)
+    )
+      continue
+
+    const inner = value.tag as Tag
+    if (inner.name) {
+      catalogListings.push({
+        catalogSheet: tag.sheet!,
+        name: inner.name,
+        dim: inner.q!,
+        tag: { ...tag, ...inner, name: inner.name },
+      })
+      continue
+    }
+    if (!inner.q || !inner.qt) continue
+    catalogListings.push({
+      catalogSheet: STAT_SHEET,
+      name: inner.q,
+      dim: inner.qt,
+      tag: stripCalcContextTag(inner),
+    })
+  }
+  const formulaCatalog = buildFormulaCatalog(catalogListings)
 
   const mapMeta = async (type: string, key: string) => {
     await dumpMeta(
@@ -108,6 +164,15 @@ export default async function runExecutor(
       await mapMeta('common', key)
     }),
   ])
+
+  const catalogPath = path.join(workspaceRoot, outputPath, 'formulaCatalog.ts')
+  const catalogSrc = `
+// WARNING: Generated file, do not modify
+import type { FormulaCatalog } from '../formulaRef'
+
+export const formulaCatalog = ${JSON.stringify(formulaCatalog)} as FormulaCatalog
+`
+  await writeFile(catalogPath, await formatText('index.ts', catalogSrc))
 
   return { success: true }
 }

@@ -1,6 +1,6 @@
-import { existsSync, mkdirSync, writeFileSync } from 'fs'
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs'
 import { langKeys } from '@genshin-optimizer/common/pipeline'
-import { PROJROOT_PATH, languageMap } from '../../../Translated/util'
+import { languageMap, PROJROOT_PATH } from '../../../Translated/util'
 import type { GenAssetsExecutorSchema } from './schema'
 
 const swKeyMap = {
@@ -9,6 +9,7 @@ const swKeyMap = {
   albedo: 'Albedo',
   alhaitham: 'Alhaitham',
   aloy: 'Aloy',
+  alyosha: 'Alyosha',
   amber: 'Amber',
   arlecchino: 'Arlecchino',
   ayaka: 'KamisatoAyaka',
@@ -67,7 +68,9 @@ const swKeyMap = {
   lanyan: 'LanYan',
   lauma: 'Lauma',
   layla: 'Layla',
+  linnea: 'Linnea',
   lisa: 'Lisa',
+  lohen: 'Lohen',
   lumine: 'TravelerF',
   lynette: 'Lynette',
   lyney: 'Lyney',
@@ -79,14 +82,18 @@ const swKeyMap = {
   navia: 'Navia',
   nefer: 'Nefer',
   neuvillette: 'Neuvillette',
+  nicole: 'Nicole',
   nilou: 'Nilou',
   ningguang: 'Ningguang',
   noelle: 'Noelle',
+  odette: 'Odette',
   ororon: 'Ororon',
+  prune: 'Prune',
   qiqi: 'Qiqi',
   raiden: 'RaidenShogun',
   razor: 'Razor',
   rosaria: 'Rosaria',
+  sandrone: 'Sandrone',
   sara: 'KujouSara',
   sayu: 'Sayu',
   sethos: 'Sethos',
@@ -100,6 +107,8 @@ const swKeyMap = {
   varesa: 'Varesa',
   varka: 'Varka',
   venti: 'Venti',
+  vesna: 'Vesna',
+  vodyanitsa: 'Vodyanitsa',
   wanderer: 'Wanderer',
   wriothesley: 'Wriothesley',
   xiangling: 'Xiangling',
@@ -138,7 +147,7 @@ export default async function runExecutor(_options: GenAssetsExecutorSchema) {
     const fileDir = `${localeDir}${langkey}`
     if (!existsSync(fileDir)) mkdirSync(fileDir, { recursive: true })
     const fileName = `${fileDir}/sillyWisher_charNames.json`
-    writeFileSync(fileName, JSON.stringify(content, undefined, 2) + '\n')
+    writeFileSync(fileName, `${JSON.stringify(content, undefined, 2)}\n`)
     console.log('Generated JSON at', fileName)
   })
   return {

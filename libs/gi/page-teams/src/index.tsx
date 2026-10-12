@@ -75,7 +75,7 @@ export default function PageTeams() {
         window.alert(t('importForm.error.verifi'))
       onHideImport()
     } catch (e) {
-      window.alert(t('importForm.error.import') + `\n${e}`)
+      window.alert(`${t('importForm.error.import')}\n${e}`)
 
       return
     }

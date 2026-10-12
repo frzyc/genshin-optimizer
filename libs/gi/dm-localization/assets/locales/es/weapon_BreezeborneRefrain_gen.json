@@ -1,0 +1,24 @@
+{
+  "name": "Estribillo del Viento",
+  "description": {
+    "0": "Un arco verde esmeralda hecho de gemas puras e inmaculadas. Al tensar su cuerda, invoca una brisa suave y cálida como la primavera."
+  },
+  "passiveName": "Balada de la víbora",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta la Recarga de Energía en un <cryo>20%</cryo>. Cuando el portador de esta arma golpea a un enemigo con su Habilidad Elemental o Definitiva, obtiene una carga de “salmo de la Inmaculada”. Este efecto puede acumularse hasta 3 veces y solo se puede obtener una carga cada 0.03 s. Al alcanzar 3 cargas, se eliminarán todas las de salmo de la Inmaculada y se obtendrá el efecto de “mentira viperina”, el cual aumenta el daño de las reacciones de Destello Estelar de todos los personajes cercanos del equipo en un <cryo>24%</cryo> durante 12 s. Durante este tiempo, no se podrán obtener más cargas de salmo de la Inmaculada. Estos efectos se pueden activar incluso cuando el portador está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Aumenta la Recarga de Energía en un <cryo>25%</cryo>. Cuando el portador de esta arma golpea a un enemigo con su Habilidad Elemental o Definitiva, obtiene una carga de “salmo de la Inmaculada”. Este efecto puede acumularse hasta 3 veces y solo se puede obtener una carga cada 0.03 s. Al alcanzar 3 cargas, se eliminarán todas las de salmo de la Inmaculada y se obtendrá el efecto de “mentira viperina”, el cual aumenta el daño de las reacciones de Destello Estelar de todos los personajes cercanos del equipo en un <cryo>30%</cryo> durante 12 s. Durante este tiempo, no se podrán obtener más cargas de salmo de la Inmaculada. Estos efectos se pueden activar incluso cuando el portador está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Aumenta la Recarga de Energía en un <cryo>30%</cryo>. Cuando el portador de esta arma golpea a un enemigo con su Habilidad Elemental o Definitiva, obtiene una carga de “salmo de la Inmaculada”. Este efecto puede acumularse hasta 3 veces y solo se puede obtener una carga cada 0.03 s. Al alcanzar 3 cargas, se eliminarán todas las de salmo de la Inmaculada y se obtendrá el efecto de “mentira viperina”, el cual aumenta el daño de las reacciones de Destello Estelar de todos los personajes cercanos del equipo en un <cryo>36%</cryo> durante 12 s. Durante este tiempo, no se podrán obtener más cargas de salmo de la Inmaculada. Estos efectos se pueden activar incluso cuando el portador está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Aumenta la Recarga de Energía en un <cryo>35%</cryo>. Cuando el portador de esta arma golpea a un enemigo con su Habilidad Elemental o Definitiva, obtiene una carga de “salmo de la Inmaculada”. Este efecto puede acumularse hasta 3 veces y solo se puede obtener una carga cada 0.03 s. Al alcanzar 3 cargas, se eliminarán todas las de salmo de la Inmaculada y se obtendrá el efecto de “mentira viperina”, el cual aumenta el daño de las reacciones de Destello Estelar de todos los personajes cercanos del equipo en un <cryo>42%</cryo> durante 12 s. Durante este tiempo, no se podrán obtener más cargas de salmo de la Inmaculada. Estos efectos se pueden activar incluso cuando el portador está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Aumenta la Recarga de Energía en un <cryo>40%</cryo>. Cuando el portador de esta arma golpea a un enemigo con su Habilidad Elemental o Definitiva, obtiene una carga de “salmo de la Inmaculada”. Este efecto puede acumularse hasta 3 veces y solo se puede obtener una carga cada 0.03 s. Al alcanzar 3 cargas, se eliminarán todas las de salmo de la Inmaculada y se obtendrá el efecto de “mentira viperina”, el cual aumenta el daño de las reacciones de Destello Estelar de todos los personajes cercanos del equipo en un <cryo>48%</cryo> durante 12 s. Durante este tiempo, no se podrán obtener más cargas de salmo de la Inmaculada. Estos efectos se pueden activar incluso cuando el portador está en tu equipo pero no en uso."
+    }
+  }
+}
