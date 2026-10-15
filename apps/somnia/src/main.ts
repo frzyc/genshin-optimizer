@@ -23,7 +23,7 @@ const client = new Client({
     GatewayIntentBits.DirectMessages,
     GatewayIntentBits.DirectMessageReactions,
   ],
-  partials: [Partials.Reaction],
+  partials: [Partials.Message, Partials.Channel, Partials.Reaction],
 })
 
 import * as events from './lib/events'
