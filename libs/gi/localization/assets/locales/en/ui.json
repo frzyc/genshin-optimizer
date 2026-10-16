@@ -46,6 +46,7 @@
     "mefficiency": "Maximum RV",
     "lastEdit": "Recently Edited"
   },
+  "config": "Config",
   "delete": "Delete",
   "locked": "Locked",
   "unlocked": "Unlocked",
