@@ -40,13 +40,15 @@ import {
   CharCalcProvider,
   OptTargetTagRowSxProvider,
 } from '@genshin-optimizer/gi/formula-ui'
-import { CharacterName } from '@genshin-optimizer/gi/ui'
+import {
+  CharacterName,
+  CharacterSingleSelectionModal,
+} from '@genshin-optimizer/gi/ui'
 import { Box, Button, CardContent, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { Suspense, useCallback, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useNavigate, useParams } from 'react-router-dom'
-import { CharacterCommandDialog } from './command/CharacterCommandDialog'
 import { OptTargetCommandDialog } from './command/OptTargetCommandDialog'
 import { useOptimizeShortcuts } from './command/useOptimizeShortcuts'
 import { CharacterOptDisplay } from './CharacterOptDisplay'
@@ -56,7 +58,6 @@ import {
 } from './context/OptimizePageContext'
 import { TeamHeaderHeightProvider } from './context/TeamHeaderHeightContext'
 import { OptimizeChrome } from './OptimizeChrome'
-import { OptimizeReadiness } from './OptimizeReadiness'
 
 function isCharacterKey(key: string | undefined): key is CharacterKey {
   return Boolean(key && allCharacterKeys.includes(key as CharacterKey))
@@ -92,10 +93,13 @@ function OptimizePageContent({ character }: { character: ICachedCharacter }) {
     <TeamHeaderHeightProvider>
       <OptTargetTagRowSxProvider>
         <Suspense fallback={false}>
-          <CharacterCommandDialog
-            open={charPickerOpen}
-            onClose={closeCharPicker}
-            onSelect={setCharacterKey}
+          <CharacterSingleSelectionModal
+            show={charPickerOpen}
+            onHide={closeCharPicker}
+            onSelect={(ck) => {
+              setCharacterKey(ck)
+              closeCharPicker()
+            }}
           />
           <OptTargetCommandDialog
             open={targetPickerOpen}
@@ -106,15 +110,7 @@ function OptimizePageContent({ character }: { character: ICachedCharacter }) {
           characterKey={character.key}
           onCharacterKeyChange={setCharacterKey}
         />
-        <Box
-          sx={{
-            display: 'flex',
-            gap: 1,
-            flexDirection: 'column',
-            mt: 1,
-          }}
-        >
-          <OptimizeReadiness />
+        <Box sx={{ mt: 1 }}>
           <CharacterOptDisplay key={character.key} />
         </Box>
       </OptTargetTagRowSxProvider>
@@ -143,23 +139,22 @@ export default function PageOptimize() {
   }, [urlCharacterKey, characterKey, navigate])
 
   useEffect(() => {
-    if (
-      isCharacterKey(urlCharacterKey) &&
-      urlCharacterKey !== optCharKey
-    ) {
+    if (isCharacterKey(urlCharacterKey) && urlCharacterKey !== optCharKey) {
       database.dbMeta.set({ optCharKey: urlCharacterKey })
     }
   }, [urlCharacterKey, optCharKey, database.dbMeta])
 
   const character = useCharacter(characterKey)
   useEffect(() => {
+    if (chars.length === 0) return
     if (characterKey && !character)
       database.chars.getWithInitWeapon(characterKey)
-  }, [characterKey, character, database.chars])
+  }, [chars.length, characterKey, character, database.chars])
   const pandoTeam = usePandoTeam(characterKey)
   useEffect(() => {
-    if (characterKey) database.pandoTeams.getOrCreate(characterKey)
-  }, [characterKey, database.pandoTeams])
+    if (chars.length === 0 || !characterKey) return
+    database.pandoTeams.getOrCreate(characterKey)
+  }, [chars.length, characterKey, database.pandoTeams])
 
   useTitle(
     useMemo(

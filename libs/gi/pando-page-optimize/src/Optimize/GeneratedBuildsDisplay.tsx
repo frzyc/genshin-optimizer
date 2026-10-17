@@ -44,7 +44,14 @@ import {
   TableRow,
   Typography,
 } from '@mui/material'
-import { memo, useCallback, useContext, useMemo, useState } from 'react'
+import {
+  type KeyboardEvent,
+  memo,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from 'react'
 import { useTranslation } from 'react-i18next'
 import { useOptimizePage } from '../context/OptimizePageContext'
 import { BuildEquipGrid } from '../BuildEquipGrid'
@@ -140,12 +147,28 @@ function BuildTableRow({
   const { t } = useTranslation('page_optimize')
   const [expanded, setExpanded] = useState(false)
   const toggle = useCallback(() => setExpanded((v) => !v), [])
+  const onKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault()
+        toggle()
+      }
+    },
+    [toggle]
+  )
   return (
     <>
       <TableRow
         hover
         onClick={toggle}
-        sx={{ cursor: 'pointer', '& > *': { borderBottom: expanded ? 0 : undefined } }}
+        onKeyDown={onKeyDown}
+        tabIndex={0}
+        role="button"
+        aria-expanded={expanded}
+        sx={{
+          cursor: 'pointer',
+          '& > *': { borderBottom: expanded ? 0 : undefined },
+        }}
       >
         <TableCell>
           <Stack direction="row" spacing={0.5} alignItems="center">
@@ -250,7 +273,10 @@ function DeltaPercent({
   const pct = ((value - baseValue) / baseValue) * 100
   const sign = pct >= 0 ? '+' : ''
   return (
-    <Typography component="span" color={pct >= 0 ? 'success.main' : 'error.main'}>
+    <Typography
+      component="span"
+      color={pct >= 0 ? 'success.main' : 'error.main'}
+    >
       {sign}
       {pct.toFixed(1)}%
     </Typography>
@@ -365,10 +391,7 @@ function BuildDetail({ build }: { build: PandoGeneratedBuild }) {
               <CharStatsDisplay characterKey={character.key} />
             </Grid>
             <Grid item xs={12} md={8} lg={9}>
-              <BuildEquipGrid
-                artIds={build.artIds}
-                weaponId={build.weaponId}
-              />
+              <BuildEquipGrid artIds={build.artIds} weaponId={build.weaponId} />
             </Grid>
           </Grid>
         </Box>
@@ -376,4 +399,3 @@ function BuildDetail({ build }: { build: PandoGeneratedBuild }) {
     </CharCalcProvider>
   )
 }
-

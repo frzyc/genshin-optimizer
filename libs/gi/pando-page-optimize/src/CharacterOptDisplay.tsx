@@ -14,13 +14,7 @@ import {
   EquippedGrid,
   WeaponSheetDisplay,
 } from '@genshin-optimizer/gi/formula-ui'
-import {
-  Box,
-  Grid,
-  Stack,
-  useMediaQuery,
-  useTheme,
-} from '@mui/material'
+import { Box, Grid, Stack, useMediaQuery, useTheme } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
 import { useOptimizePage } from './context/OptimizePageContext'
 import {
@@ -79,66 +73,70 @@ function CharacterOverview() {
 
   return (
     <Box sx={{ display: 'flex', gap: 1, overflow: 'visible' }}>
-      <Grid container spacing={2} sx={{ flexWrap: 'wrap', overflow: 'visible' }}>
-          <Grid
-            item
-            xs={12}
-            sm={7}
-            md={5}
-            lg={4}
-            xl={3}
-            sx={{ height: isNotXs ? '100%' : undefined, overflow: 'visible' }}
-          >
-            <SectionAnchor sectionId={OPT_SECTION_IDS.character}>
-              <Stack spacing={1} sx={isNotXs ? { height: '100%' } : undefined}>
-                <CharacterCard characterKey={characterKey} onClick={onClick} />
-                <Box sx={{ flexGrow: 1 }}>
-                  <Box
-                    sx={
-                      isNotXs
-                        ? {
-                            position: 'sticky',
-                            top: headerHeight + STATS_STICKY_PAD_PX + 44,
-                            bottom: 0,
-                          }
-                        : undefined
-                    }
-                  >
-                    <CharStatsDisplay characterKey={characterKey} />
-                  </Box>
+      <Grid
+        container
+        spacing={2}
+        sx={{ flexWrap: 'wrap', overflow: 'visible' }}
+      >
+        <Grid
+          item
+          xs={12}
+          sm={7}
+          md={5}
+          lg={4}
+          xl={3}
+          sx={{ height: isNotXs ? '100%' : undefined, overflow: 'visible' }}
+        >
+          <SectionAnchor sectionId={OPT_SECTION_IDS.character}>
+            <Stack spacing={1} sx={isNotXs ? { height: '100%' } : undefined}>
+              <CharacterCard characterKey={characterKey} onClick={onClick} />
+              <Box sx={{ flexGrow: 1 }}>
+                <Box
+                  sx={
+                    isNotXs
+                      ? {
+                          position: 'sticky',
+                          top: headerHeight + STATS_STICKY_PAD_PX + 44,
+                          bottom: 0,
+                        }
+                      : undefined
+                  }
+                >
+                  <CharStatsDisplay characterKey={characterKey} />
                 </Box>
+              </Box>
+            </Stack>
+          </SectionAnchor>
+        </Grid>
+        <Grid item xs={12} sm={5} md={7} lg={8} xl={9}>
+          <Stack spacing={3}>
+            <SectionAnchor sectionId={OPT_SECTION_IDS.optTarget}>
+              <Stack spacing={1}>
+                <OptTargetHero />
+                <OptTargetRow />
               </Stack>
             </SectionAnchor>
-          </Grid>
-          <Grid item xs={12} sm={5} md={7} lg={8} xl={9}>
-            <Stack spacing={3}>
-              <SectionAnchor sectionId={OPT_SECTION_IDS.optTarget}>
-                <Stack spacing={1}>
-                  <OptTargetHero />
-                  <OptTargetRow />
-                </Stack>
-              </SectionAnchor>
-              <SectionAnchor sectionId={OPT_SECTION_IDS.eq}>
-                <EquippedGrid />
-              </SectionAnchor>
-              <SectionAnchor sectionId={OPT_SECTION_IDS.playstyle}>
-                <EquippedConditionals />
-              </SectionAnchor>
-              <SectionAnchor sectionId={OPT_SECTION_IDS.teammates}>
-                <TeammatesSection />
-              </SectionAnchor>
-              <SectionAnchor sectionId={OPT_SECTION_IDS.enemy}>
-                <EnemyStatsSection
-                  characterKey={characterKey}
-                  pandoTeam={pandoTeam}
-                />
-              </SectionAnchor>
-              <SectionAnchor sectionId={OPT_SECTION_IDS.mechanics}>
-                <CharSheetDisplay characterKey={characterKey} />
-              </SectionAnchor>
-            </Stack>
-          </Grid>
+            <SectionAnchor sectionId={OPT_SECTION_IDS.eq}>
+              <EquippedGrid />
+            </SectionAnchor>
+            <SectionAnchor sectionId={OPT_SECTION_IDS.playstyle}>
+              <EquippedConditionals />
+            </SectionAnchor>
+            <SectionAnchor sectionId={OPT_SECTION_IDS.teammates}>
+              <TeammatesSection />
+            </SectionAnchor>
+            <SectionAnchor sectionId={OPT_SECTION_IDS.enemy}>
+              <EnemyStatsSection
+                characterKey={characterKey}
+                pandoTeam={pandoTeam}
+              />
+            </SectionAnchor>
+            <SectionAnchor sectionId={OPT_SECTION_IDS.mechanics}>
+              <CharSheetDisplay characterKey={characterKey} />
+            </SectionAnchor>
+          </Stack>
         </Grid>
+      </Grid>
     </Box>
   )
 }

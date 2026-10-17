@@ -1,15 +1,9 @@
 import type { ReactNode } from 'react'
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
+import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 
 /** Sticky optimize chrome (context bar) approximate height. */
 /** Context row + mobile section tabs inside sticky chrome. */
-export const TEAM_HEADER_HEIGHT_PX = 100
+export const TEAM_HEADER_HEIGHT_PX = 88
 /** Mobile sticky chrome when the context trigger row is collapsed. */
 export const MOBILE_STICKY_CHROME_TABS_ONLY_PX = 48
 /** gi-frontend mobile AppBar + toolbar spacer (MUI default). */
@@ -25,7 +19,11 @@ const TeamHeaderHeightSetterContext = createContext<
   ((height: number) => void) | null
 >(null)
 
-export function TeamHeaderHeightProvider({ children }: { children: ReactNode }) {
+export function TeamHeaderHeightProvider({
+  children,
+}: {
+  children: ReactNode
+}) {
   const [height, setHeight] = useState(TEAM_HEADER_HEIGHT_PX)
   const value = useMemo(() => height, [height])
   return (

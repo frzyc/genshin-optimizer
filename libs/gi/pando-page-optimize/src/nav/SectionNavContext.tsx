@@ -1,11 +1,5 @@
 import type { ReactNode } from 'react'
-import {
-  createContext,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
+import { createContext, useCallback, useEffect, useMemo, useState } from 'react'
 import { OPT_SECTION_IDS, type OptimizeSectionId } from './optimizeSections'
 
 type SectionNavContextValue = {
@@ -23,11 +17,12 @@ export const SectionNavContext = createContext<SectionNavContextValue>({
 })
 
 export function SectionNavProvider({ children }: { children: ReactNode }) {
-  const [activeSection, setActiveSection] =
-    useState<OptimizeSectionId>(OPT_SECTION_IDS.character)
-  const [elements, setElements] = useState<
-    Map<OptimizeSectionId, HTMLElement>
-  >(() => new Map())
+  const [activeSection, setActiveSection] = useState<OptimizeSectionId>(
+    OPT_SECTION_IDS.character
+  )
+  const [elements, setElements] = useState<Map<OptimizeSectionId, HTMLElement>>(
+    () => new Map()
+  )
 
   const registerSection = useCallback(
     (id: OptimizeSectionId, el: HTMLElement | null) => {
@@ -60,7 +55,10 @@ export function SectionNavProvider({ children }: { children: ReactNode }) {
 
   return (
     <SectionNavContext.Provider value={value}>
-      <SectionNavObserver elements={elements} setActiveSection={setActiveSection}>
+      <SectionNavObserver
+        elements={elements}
+        setActiveSection={setActiveSection}
+      >
         {children}
       </SectionNavObserver>
     </SectionNavContext.Provider>

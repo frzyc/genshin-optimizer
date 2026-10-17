@@ -3,10 +3,7 @@ import type { ReactNode } from 'react'
 import { useContext, useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { TeamHeaderHeightContext } from '../context/TeamHeaderHeightContext'
-import {
-  OPT_SECTION_I18N,
-  type OptimizeSectionId,
-} from './optimizeSections'
+import { OPT_SECTION_I18N, type OptimizeSectionId } from './optimizeSections'
 import { SectionNavContext } from './SectionNavContext'
 
 export function SectionAnchor({

@@ -17,7 +17,14 @@ export function CompactBuildEquipGrid({
 }) {
   const database = useDatabase()
   return (
-    <Box sx={{ display: 'flex', gap: 0.5, flexWrap: 'nowrap', alignItems: 'center' }}>
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 0.5,
+        flexWrap: 'nowrap',
+        alignItems: 'center',
+      }}
+    >
       {weaponId ? (
         <Box sx={{ width: size, flexShrink: 0 }}>
           <WeaponCardPico weaponId={weaponId} />

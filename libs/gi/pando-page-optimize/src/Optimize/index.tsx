@@ -265,10 +265,7 @@ function OptimizeWrapper() {
           maxBuildsToShow={optConfig.maxBuildsToShow}
           optConfigId={optConfigId}
         />
-        <WorkerSelector
-          numWorkers={numWorkers}
-          setNumWorkers={setNumWorkers}
-        />
+        <WorkerSelector numWorkers={numWorkers} setNumWorkers={setNumWorkers} />
         <Button
           disabled={!cfg}
           title={!cfg ? t('generateDisabledHint') : undefined}

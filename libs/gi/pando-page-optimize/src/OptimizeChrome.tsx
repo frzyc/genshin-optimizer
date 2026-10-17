@@ -33,6 +33,7 @@ import {
 } from '@mui/material'
 import { Suspense, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { DesktopDashboardHeader } from './DesktopDashboardHeader'
 import { CompactBuildEquipGrid } from './CompactBuildEquipGrid'
 import { useOptimizePage } from './context/OptimizePageContext'
 import {
@@ -44,6 +45,7 @@ import {
 import { useRevealOnScrollUp } from './hooks/useRevealOnScrollUp'
 import { OPT_SECTION_IDS } from './nav/optimizeSections'
 import { MobileSectionTabs } from './nav/SectionRail'
+import { OptimizeReadinessBadge } from './readiness/OptimizeReadinessBadge'
 
 export function OptimizeChrome({
   characterKey,
@@ -73,11 +75,10 @@ export function OptimizeChrome({
         position: 'sticky',
         top: { xs: MOBILE_APP_BAR_OFFSET_PX, md: 0 },
         zIndex: 110,
-        bgcolor: 'background.default',
-        borderBottom: 1,
-        borderColor: 'divider',
-        py: 0.75,
-        px: { xs: 0.5, sm: 0 },
+        bgcolor: 'background.paper',
+        boxShadow: (theme) => theme.shadows[1],
+        py: { xs: 0.75, md: 1 },
+        px: { xs: 0.5, sm: 1 },
         display: 'flex',
         flexDirection: 'column',
         gap: 0.5,
@@ -86,10 +87,15 @@ export function OptimizeChrome({
       {isMobile ? (
         <>
           <Collapse in={contextBarVisible} unmountOnExit>
-            <MobileContextTrigger
-              characterKey={characterKey}
-              onOpen={() => setContextDrawerOpen(true)}
-            />
+            <Stack spacing={0.5}>
+              <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+                <OptimizeReadinessBadge />
+              </Box>
+              <MobileContextTrigger
+                characterKey={characterKey}
+                onOpen={() => setContextDrawerOpen(true)}
+              />
+            </Stack>
           </Collapse>
           <MobileSectionTabs />
           <Drawer
@@ -107,10 +113,9 @@ export function OptimizeChrome({
           </Drawer>
         </>
       ) : (
-        <OptimizeContextControls
+        <DesktopDashboardHeader
           characterKey={characterKey}
           onCharacterKeyChange={onCharacterKeyChange}
-          layout="row"
         />
       )}
     </Box>
@@ -146,7 +151,12 @@ function MobileContextTrigger({
         <Typography variant="body2" noWrap>
           <CharacterName characterKey={characterKey} gender={gender ?? 'F'} />
         </Typography>
-        <Typography variant="caption" color="text.secondary" noWrap display="block">
+        <Typography
+          variant="caption"
+          color="text.secondary"
+          noWrap
+          display="block"
+        >
           {tag ? t('mobileContextHasTarget') : t('mobileContextNoTarget')}
         </Typography>
       </Box>
@@ -167,12 +177,8 @@ function OptimizeContextControls({
 }) {
   const { t } = useTranslation('page_optimize')
   const { gender } = useDBMeta()
-  const {
-    openCharPicker,
-    openBuildEditor,
-    openTargetPicker,
-    scrollToSection,
-  } = useOptimizePage()
+  const { openCharPicker, openBuildEditor, openTargetPicker, scrollToSection } =
+    useOptimizePage()
   const { character } = useContext(CharacterContext)
   const { ref: currentRef, tag } = useResolvedOptTarget()
   const pandoTeam = useRequiredPandoTeam()
@@ -180,12 +186,10 @@ function OptimizeContextControls({
   const isColumn = layout === 'column'
   const wrap = () => onNavigate?.()
 
-  const run =
-    (fn: () => void) =>
-    () => {
-      fn()
-      wrap()
-    }
+  const run = (fn: () => void) => () => {
+    fn()
+    wrap()
+  }
 
   return (
     <Stack
@@ -308,9 +312,7 @@ function ContextChip({
         textAlign: 'left',
         minWidth: 0,
         maxWidth: fullWidth ? '100%' : { xs: '100%', sm: 220 },
-        flex: fullWidth
-          ? undefined
-          : { xs: '1 1 45%', sm: '0 1 auto' },
+        flex: fullWidth ? undefined : { xs: '1 1 45%', sm: '0 1 auto' },
         ...sx,
       }}
     >
@@ -386,7 +388,12 @@ function TeamContextChip({
       >
         {t('teamRowLabel')}
       </Typography>
-      <Stack direction="row" spacing={0.25} alignItems="center" sx={{ mt: 0.25 }}>
+      <Stack
+        direction="row"
+        spacing={0.25}
+        alignItems="center"
+        sx={{ mt: 0.25 }}
+      >
         <Tooltip title={t('onField')}>
           <IconButton
             size="small"

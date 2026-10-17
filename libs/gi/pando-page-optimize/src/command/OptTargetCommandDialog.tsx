@@ -1,7 +1,10 @@
 import { ModalWrapper } from '@genshin-optimizer/common/ui'
 import type { FormulaRef } from '@genshin-optimizer/gi/formula'
 import { sameFormula } from '@genshin-optimizer/gi/formula'
+import type { CatalogJoinedRow } from '@genshin-optimizer/gi/formula-ui'
 import {
+  catalogJoinedRowSearchFields,
+  OptFormulaSections,
   OptTargetSelectedLabel,
   refFromJoinedRow,
   useCharCatalogRows,
@@ -12,15 +15,39 @@ import { CharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import SearchIcon from '@mui/icons-material/Search'
 import {
   Box,
+  Divider,
   InputAdornment,
-  List,
-  ListItemButton,
-  ListItemText,
+  Stack,
   TextField,
   Typography,
 } from '@mui/material'
-import { useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
+import {
+  useContext,
+  useDeferredValue,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 import { useTranslation } from 'react-i18next'
+import { CritModeSelector } from '../OptTargetRow/CritModeSelector'
+import { DimensionSelector } from '../OptTargetRow/DimensionSelector'
+import { OptTargetFieldMenuItem } from '../OptTargetRow/OptTargetFieldMenuItem'
+import {
+  commandSearchInputProps,
+  matchesCommandSearchAny,
+  normalizeCommandSearch,
+} from './commandSearch'
+
+function rowMatchesSearch(row: CatalogJoinedRow, search: string): boolean {
+  if (!refFromJoinedRow(row)) return false
+  return matchesCommandSearchAny(catalogJoinedRowSearchFields(row), search)
+}
+
+function filterRows(rows: CatalogJoinedRow[], search: string) {
+  if (!search) return rows
+  return rows.filter((row) => rowMatchesSearch(row, search))
+}
 
 export function OptTargetCommandDialog({
   open,
@@ -34,10 +61,13 @@ export function OptTargetCommandDialog({
   const characterKey = character?.key
   const database = useDatabase()
   const calc = useGiCalcContext()
-  const { ref: currentRef } = useResolvedOptTarget()
-  const { rows } = useCharCatalogRows(characterKey, calc)
+  const { ref: currentRef, tag } = useResolvedOptTarget()
+  const { statRows, categorySections, otherRows } = useCharCatalogRows(
+    characterKey,
+    calc
+  )
   const [search, setSearch] = useState('')
-  const deferredSearch = useDeferredValue(search.trim().toLowerCase())
+  const deferredSearch = useDeferredValue(normalizeCommandSearch(search))
   const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
@@ -49,24 +79,36 @@ export function OptTargetCommandDialog({
     return () => cancelAnimationFrame(id)
   }, [open])
 
-  const options = useMemo(() => {
-    const out: { ref: FormulaRef; label: string }[] = []
-    for (const row of rows) {
-      const formulaRef = refFromJoinedRow(row)
-      if (!formulaRef) continue
-      const label = `${formulaRef.sheet} ${formulaRef.name} ${formulaRef.dim}`
-      if (
-        deferredSearch &&
-        !label.toLowerCase().includes(deferredSearch) &&
-        !formulaRef.name.toLowerCase().includes(deferredSearch)
-      )
-        continue
-      out.push({ ref: formulaRef, label })
-    }
-    return out
-  }, [rows, deferredSearch])
+  const filteredStatRows = useMemo(
+    () => filterRows(statRows, deferredSearch),
+    [statRows, deferredSearch]
+  )
+  const filteredOtherRows = useMemo(
+    () => filterRows(otherRows, deferredSearch),
+    [otherRows, deferredSearch]
+  )
+  const filteredCategorySections = useMemo(
+    () =>
+      categorySections
+        .map((section) => ({
+          ...section,
+          rows: filterRows(section.rows, deferredSearch),
+        }))
+        .filter((section) => section.rows.length > 0),
+    [categorySections, deferredSearch]
+  )
+
+  const hasResults =
+    filteredStatRows.length > 0 ||
+    filteredOtherRows.length > 0 ||
+    filteredCategorySections.length > 0
 
   if (!characterKey) return null
+
+  const onSelectRef = (formulaRef: FormulaRef) => {
+    database.pandoTeams.set(characterKey, { ref: formulaRef })
+    onClose()
+  }
 
   return (
     <ModalWrapper open={open} onClose={onClose}>
@@ -74,20 +116,58 @@ export function OptTargetCommandDialog({
         sx={{
           bgcolor: 'background.paper',
           borderRadius: 1,
-          maxWidth: 560,
+          maxWidth: 640,
           width: '100%',
           mx: 'auto',
           p: 2,
-          maxHeight: 'min(70vh, 520px)',
+          maxHeight: 'min(85vh, 640px)',
           display: 'flex',
           flexDirection: 'column',
-          gap: 1,
+          gap: 1.5,
         }}
       >
-        <Typography variant="subtitle1">{t('commandPickTarget')}</Typography>
-        <Typography variant="caption" color="text.secondary">
-          {t('commandShortcutTarget')}
-        </Typography>
+        <Box>
+          <Typography variant="subtitle1">{t('commandPickTarget')}</Typography>
+          <Typography variant="caption" color="text.secondary">
+            {t('commandShortcutTarget')}
+          </Typography>
+        </Box>
+
+        <Stack
+          direction="row"
+          flexWrap="wrap"
+          gap={1}
+          alignItems="center"
+          sx={{ width: '100%' }}
+        >
+          <Box sx={{ flex: '1 1 200px', minWidth: 0 }}>
+            <Typography
+              variant="caption"
+              color="text.secondary"
+              display="block"
+            >
+              {t('optTarget')}
+            </Typography>
+            <Typography variant="body2" noWrap>
+              {currentRef && tag ? (
+                <OptTargetSelectedLabel formulaRef={currentRef} />
+              ) : (
+                <Typography
+                  component="span"
+                  variant="body2"
+                  color="text.secondary"
+                >
+                  {t('selectOptTarget')}
+                </Typography>
+              )}
+            </Typography>
+          </Box>
+          <DimensionSelector />
+          <CritModeSelector />
+        </Stack>
+
+        <Divider />
+
         <TextField
           inputRef={inputRef}
           size="small"
@@ -95,6 +175,7 @@ export function OptTargetCommandDialog({
           placeholder={t('commandSearchPlaceholder')}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
+          inputProps={commandSearchInputProps}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -103,22 +184,37 @@ export function OptTargetCommandDialog({
             ),
           }}
         />
-        <List dense sx={{ overflow: 'auto', flex: 1 }}>
-          {options.map(({ ref }) => (
-            <ListItemButton
-              key={`${ref.sheet}:${ref.name}:${ref.dim}`}
-              selected={sameFormula(currentRef, ref)}
-              onClick={() => {
-                database.pandoTeams.set(characterKey, { ref })
-                onClose()
+
+        <Box sx={{ overflow: 'auto', flex: 1, minHeight: 0, mx: -0.5 }}>
+          {hasResults ? (
+            <OptFormulaSections
+              characterKey={characterKey}
+              statRows={filteredStatRows}
+              otherRows={filteredOtherRows}
+              categorySections={filteredCategorySections}
+              renderRow={(row) => {
+                const formulaRef = refFromJoinedRow(row)
+                if (!formulaRef) return null
+                return (
+                  <OptTargetFieldMenuItem
+                    key={`${formulaRef.sheet}:${formulaRef.name}:${formulaRef.dim}`}
+                    formulaRef={formulaRef}
+                    selected={sameFormula(currentRef, formulaRef)}
+                    onSelect={() => onSelectRef(formulaRef)}
+                  />
+                )
               }}
+            />
+          ) : (
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              sx={{ py: 2, px: 1 }}
             >
-              <ListItemText
-                primary={<OptTargetSelectedLabel formulaRef={ref} />}
-              />
-            </ListItemButton>
-          ))}
-        </List>
+              {t('commandSearchNoResults')}
+            </Typography>
+          )}
+        </Box>
       </Box>
     </ModalWrapper>
   )

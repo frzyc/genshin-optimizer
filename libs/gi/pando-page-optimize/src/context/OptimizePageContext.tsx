@@ -1,10 +1,13 @@
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { ReactNode } from 'react'
-import { createContext, useCallback, useContext, useMemo, useState } from 'react'
 import {
-  SectionNavContext,
-  SectionNavProvider,
-} from '../nav/SectionNavContext'
+  createContext,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from 'react'
+import { SectionNavContext, SectionNavProvider } from '../nav/SectionNavContext'
 import type { OptimizeSectionId } from '../nav/optimizeSections'
 
 export type OptimizeActions = {
@@ -44,7 +47,10 @@ function OptimizePageContextProvider({ children }: { children: ReactNode }) {
   const closeCharPicker = useCallback(() => setCharPickerOpen(false), [])
   const openTargetPicker = useCallback(() => setTargetPickerOpen(true), [])
   const closeTargetPicker = useCallback(() => setTargetPickerOpen(false), [])
-  const openBuildEditor = useCallback((key: CharacterKey) => setEditorKey(key), [])
+  const openBuildEditor = useCallback(
+    (key: CharacterKey) => setEditorKey(key),
+    []
+  )
   const closeBuildEditor = useCallback(() => setEditorKey(undefined), [])
 
   const value = useMemo(

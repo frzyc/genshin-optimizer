@@ -66,6 +66,7 @@
   "commandPickCharacter": "Switch character",
   "commandPickTarget": "Optimization target",
   "commandSearchPlaceholder": "Search…",
+  "commandSearchNoResults": "No matching optimization targets",
   "commandShortcutCharacter": "Shortcut: Ctrl+K",
   "commandShortcutTarget": "Shortcut: Ctrl+Shift+K",
   "filters": "Filters",
@@ -86,5 +87,6 @@
   "sectionNavLabel": "On this page",
   "mobileContextTitle": "Character, build, target & team",
   "mobileContextHasTarget": "Target set · tap to edit",
-  "mobileContextNoTarget": "Tap to set target & team"
+  "mobileContextNoTarget": "Tap to set target & team",
+  "chromeMoreActions": "More actions"
 }
