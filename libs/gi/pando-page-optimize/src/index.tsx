@@ -1,5 +1,6 @@
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { ImgIcon, useTitle } from '@genshin-optimizer/common/ui'
+import { CardThemed, useTitle } from '@genshin-optimizer/common/ui'
 import { stableArr } from '@genshin-optimizer/common/util'
 import {
   DebugReadProvider,
@@ -11,7 +12,6 @@ import {
   SetConditionalContext,
   SrcDstDisplayContext,
 } from '@genshin-optimizer/game-opt/sheet-ui'
-import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allCharacterKeys } from '@genshin-optimizer/gi/consts'
 import type {
@@ -44,56 +44,117 @@ import {
   CharacterName,
   CharacterSingleSelectionModal,
 } from '@genshin-optimizer/gi/ui'
-import { Box, Button } from '@mui/material'
+import { Box, Button, CardContent, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { Suspense, useCallback, useEffect, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
+import { Link as RouterLink, useNavigate, useParams } from 'react-router-dom'
+import { OptTargetCommandDialog } from './command/OptTargetCommandDialog'
+import { useOptimizeShortcuts } from './command/useOptimizeShortcuts'
 import { CharacterOptDisplay } from './CharacterOptDisplay'
 import {
-  TeamHeaderHeightContext,
-  TEAM_HEADER_HEIGHT_PX,
-} from './context/TeamHeaderHeightContext'
-import { OptTargetRow } from './OptTargetRow'
+  OptimizePageProvider,
+  useOptimizePage,
+} from './context/OptimizePageContext'
+import { TeamHeaderHeightProvider } from './context/TeamHeaderHeightContext'
+import { OptimizeChrome } from './OptimizeChrome'
+
+function isCharacterKey(key: string | undefined): key is CharacterKey {
+  return Boolean(key && allCharacterKeys.includes(key as CharacterKey))
+}
 
 function OptimizePageContent({ character }: { character: ICachedCharacter }) {
+  const database = useDatabase()
+  const navigate = useNavigate()
+  const {
+    charPickerOpen,
+    closeCharPicker,
+    openCharPicker,
+    targetPickerOpen,
+    closeTargetPicker,
+    openTargetPicker,
+  } = useOptimizePage()
+
+  const setCharacterKey = useCallback(
+    (ck: CharacterKey) => {
+      database.dbMeta.set({ optCharKey: ck })
+      navigate(`/optimize/${ck}`, { replace: true })
+    },
+    [database.dbMeta, navigate]
+  )
+
+  useOptimizeShortcuts({
+    enabled: true,
+    onOpenCharacter: openCharPicker,
+    onOpenTarget: openTargetPicker,
+  })
+
   return (
-    <OptTargetTagRowSxProvider>
-      <Box
-        sx={{
-          display: 'flex',
-          gap: 1,
-          flexDirection: 'column',
-          mt: 1,
-        }}
-      >
-        <OptTargetRow />
-        <TeamHeaderHeightContext.Provider value={TEAM_HEADER_HEIGHT_PX}>
+    <TeamHeaderHeightProvider>
+      <OptTargetTagRowSxProvider>
+        <Suspense fallback={false}>
+          <CharacterSingleSelectionModal
+            show={charPickerOpen}
+            onHide={closeCharPicker}
+            onSelect={(ck) => {
+              setCharacterKey(ck)
+              closeCharPicker()
+            }}
+          />
+          <OptTargetCommandDialog
+            open={targetPickerOpen}
+            onClose={closeTargetPicker}
+          />
+        </Suspense>
+        <OptimizeChrome
+          characterKey={character.key}
+          onCharacterKeyChange={setCharacterKey}
+        />
+        <Box sx={{ mt: 1 }}>
           <CharacterOptDisplay key={character.key} />
-        </TeamHeaderHeightContext.Provider>
-      </Box>
-    </OptTargetTagRowSxProvider>
+        </Box>
+      </OptTargetTagRowSxProvider>
+    </TeamHeaderHeightProvider>
   )
 }
 
 export default function PageOptimize() {
   const database = useDatabase()
+  const navigate = useNavigate()
+  const { characterKey: urlCharacterKey } = useParams()
   const { optCharKey, gender } = useDBMeta()
-  const characterKey =
-    (isPandoTeamCharacterKey(optCharKey) && optCharKey) || allCharacterKeys[0]
-  const [show, onShow, onHide] = useBoolState()
-  const setCharacterKey = useCallback(
-    (ck: CharacterKey) => database.dbMeta.set({ optCharKey: ck }),
-    [database.dbMeta]
-  )
+  const chars = useDataManagerValues(database.chars)
+  const { t } = useTranslation('page_optimize')
+
+  const characterKey = useMemo(() => {
+    if (isCharacterKey(urlCharacterKey)) return urlCharacterKey
+    if (isPandoTeamCharacterKey(optCharKey)) return optCharKey
+    return allCharacterKeys[0]
+  }, [urlCharacterKey, optCharKey])
+
+  useEffect(() => {
+    if (!isCharacterKey(urlCharacterKey) && characterKey) {
+      navigate(`/optimize/${characterKey}`, { replace: true })
+    }
+  }, [urlCharacterKey, characterKey, navigate])
+
+  useEffect(() => {
+    if (isCharacterKey(urlCharacterKey) && urlCharacterKey !== optCharKey) {
+      database.dbMeta.set({ optCharKey: urlCharacterKey })
+    }
+  }, [urlCharacterKey, optCharKey, database.dbMeta])
 
   const character = useCharacter(characterKey)
   useEffect(() => {
+    if (chars.length === 0) return
     if (characterKey && !character)
       database.chars.getWithInitWeapon(characterKey)
-  }, [characterKey, character, database.chars])
+  }, [chars.length, characterKey, character, database.chars])
   const pandoTeam = usePandoTeam(characterKey)
   useEffect(() => {
-    if (characterKey) database.pandoTeams.getOrCreate(characterKey)
-  }, [characterKey, database.pandoTeams])
+    if (chars.length === 0 || !characterKey) return
+    database.pandoTeams.getOrCreate(characterKey)
+  }, [chars.length, characterKey, database.pandoTeams])
 
   useTitle(
     useMemo(
@@ -146,38 +207,26 @@ export default function PageOptimize() {
     [pandoTeam?.conditionals]
   )
 
+  if (chars.length === 0) {
+    return (
+      <CardThemed sx={{ my: 1 }}>
+        <CardContent>
+          <Typography variant="h6" gutterBottom>
+            {t('emptyDbTitle')}
+          </Typography>
+          <Typography color="text.secondary" sx={{ mb: 2 }}>
+            {t('emptyDbBody')}
+          </Typography>
+          <Button component={RouterLink} to="/settings" variant="contained">
+            {t('emptyDbCta')}
+          </Button>
+        </CardContent>
+      </CardThemed>
+    )
+  }
+
   return (
-    <Box>
-      <Suspense fallback={false}>
-        <CharacterSingleSelectionModal
-          show={show}
-          onHide={onHide}
-          onSelect={setCharacterKey}
-        />
-      </Suspense>
-      <Box
-        sx={{
-          position: 'sticky',
-          top: 0,
-          zIndex: 100,
-          bgcolor: 'background.default',
-        }}
-      >
-        <Button
-          fullWidth
-          color="success"
-          sx={{ justifyContent: 'flex-start', pl: '6px' }}
-          onClick={onShow}
-        >
-          <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-            <ImgIcon
-              size={2}
-              src={characterAsset(characterKey, 'icon', gender ?? 'F')}
-            />
-            <CharacterName characterKey={characterKey} gender={gender ?? 'F'} />
-          </Box>
-        </Button>
-      </Box>
+    <OptimizePageProvider>
       {character && pandoTeam?.optConfigId && (
         <PandoOptConfigProvider optConfigId={pandoTeam.optConfigId}>
           <CharacterContext.Provider value={{ character }}>
@@ -200,6 +249,6 @@ export default function PageOptimize() {
           </CharacterContext.Provider>
         </PandoOptConfigProvider>
       )}
-    </Box>
+    </OptimizePageProvider>
   )
 }

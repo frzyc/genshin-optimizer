@@ -19,6 +19,8 @@ import {
   allTalentSheetElementKey,
   type TalentSheetElementKey,
 } from './char/consts'
+import { catalogListingDisplayTitle } from './tagLabel'
+import { tagPlainDisplaySearchParts } from './tagPlainDisplayTitle'
 
 export type CatalogJoinedRow = {
   entry: FormulaCatalogEntry
@@ -125,6 +127,19 @@ export function dimReadForDisplay(
   const read = reads.get(dim)
   if (!read) return undefined
   return { tag: read.tag, read }
+}
+
+/** User-visible labels for command-palette / search filtering (one token per field). */
+export function catalogJoinedRowSearchFields(row: CatalogJoinedRow): string[] {
+  const parts = [
+    row.entry.sheet,
+    row.entry.name,
+    catalogListingDisplayTitle(row.entry.name),
+  ]
+  for (const read of row.reads.values()) {
+    parts.push(...tagPlainDisplaySearchParts(read.tag))
+  }
+  return parts
 }
 
 export function refFromJoinedRow({

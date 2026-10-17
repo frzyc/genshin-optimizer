@@ -28,6 +28,7 @@ import {
   getCharMaxLevel,
 } from '@genshin-optimizer/gi/consts'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
+import { commandSearchInputProps } from '../../util/commandPaletteSearch'
 import {
   useCharacter,
   useCharMeta,
@@ -38,6 +39,7 @@ import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import CloseIcon from '@mui/icons-material/Close'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
+import SearchIcon from '@mui/icons-material/Search'
 import type { TooltipProps } from '@mui/material'
 import {
   Box,
@@ -46,6 +48,7 @@ import {
   Divider,
   Grid,
   IconButton,
+  InputAdornment,
   keyframes,
   styled,
   TextField,
@@ -56,10 +59,13 @@ import {
 import type React from 'react'
 import type { ChangeEvent } from 'react'
 import {
+  memo,
+  useCallback,
   useContext,
   useDeferredValue,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -68,6 +74,7 @@ import { iconAsset } from '../../util/iconAsset'
 import { ElementToggle, WeaponToggle } from '../toggles'
 import { CharacterCard } from './CharacterCard'
 import type { CharacterSortKey } from './CharacterSort'
+import { buildCharacterNameSearchFieldsCache } from './characterNameSearchFields'
 import {
   characterFilterConfigs,
   characterSortConfigs,
@@ -94,15 +101,41 @@ export function CharacterSingleSelectionModal({
   const database = useDatabase()
   const state = useDataEntryBase(database.displayCharacter)
 
-  const teamCharKeys = loadoutData.map(
-    (loadoutDatum) =>
-      database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? ''
+  const teamCharKeys = useMemo(
+    () =>
+      loadoutData.map(
+        (loadoutDatum) =>
+          database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? ''
+      ),
+    [database, loadoutData]
   )
 
-  const [searchTerm, setSearchTerm] = useState('')
-  const deferredSearchTerm = useDeferredValue(searchTerm)
+  const [searchQuery, setSearchQuery] = useState('')
+  const onDeferredSearchChange = useCallback((query: string) => {
+    setSearchQuery(query)
+  }, [])
   const deferredState = useDeferredValue(state)
   const charMetaDirty = useDataManagerValues(database.charMeta)
+  const nameSearchFields = useMemo(
+    () => buildCharacterNameSearchFieldsCache(database.gender, silly),
+    [database.gender, silly]
+  )
+  const filterConfigs = useMemo(
+    () => characterFilterConfigs(database, silly, nameSearchFields),
+    [database, silly, nameSearchFields]
+  )
+  const sortConfigs = useMemo(
+    () => characterSortConfigs(database, silly),
+    [database, silly]
+  )
+  const teamSlotByKey = useMemo(() => {
+    const map = new Map<CharacterKey, number>()
+    teamCharKeys.forEach((key, index) => {
+      if (key) map.set(key as CharacterKey, index)
+    })
+    return map
+  }, [teamCharKeys])
+
   const characterKeyList = useMemo(() => {
     const { element, weaponType, sortType, ascending } = deferredState
     const sortByKeys = [
@@ -115,79 +148,97 @@ export function CharacterSingleSelectionModal({
         .filter((key) => teamCharKeys.indexOf(key) === -1)
         .filter(
           filterFunction(
-            { element, weaponType, name: deferredSearchTerm },
-            characterFilterConfigs(database, silly)
+            { element, weaponType, name: searchQuery },
+            filterConfigs
           )
         )
         .sort(
-          sortFunction(
-            sortByKeys,
-            ascending,
-            characterSortConfigs(database, silly),
-            ['new', 'favorite']
-          )
+          sortFunction(sortByKeys, ascending, sortConfigs, [
+            'new',
+            'favorite',
+          ])
         )
     return teamCharKeys.filter((key) => key !== '').concat(filteredKeys)
   }, [
     deferredState,
     newFirst,
     charMetaDirty,
-    deferredSearchTerm,
-    database,
+    searchQuery,
+    filterConfigs,
+    sortConfigs,
     teamCharKeys,
-    silly,
   ])
 
-  const onClose = () => {
-    setSearchTerm('')
+  const onClose = useCallback(() => {
     onHide()
-  }
+  }, [onHide])
 
-  const filterSearchSortProps = {
-    searchTerm: searchTerm,
-    onChangeWeaponFilter: (weaponType: WeaponTypeKey[]) => {
+  const onChangeWeaponFilter = useCallback(
+    (weaponType: WeaponTypeKey[]) => {
       database.displayCharacter.set({ weaponType })
     },
-    onChangeElementFilter: (element: ElementKey[]) => {
+    [database]
+  )
+  const onChangeElementFilter = useCallback(
+    (element: ElementKey[]) => {
       database.displayCharacter.set({ element })
     },
-    onChangeSearch: (e: ChangeEvent<HTMLTextAreaElement>) => {
-      setSearchTerm(e.target.value)
-    },
-    onChangeSort: (sortType: CharacterSortKey) => {
+    [database]
+  )
+  const onChangeSort = useCallback(
+    (sortType: CharacterSortKey) => {
       if (sortType !== 'new') database.displayCharacter.set({ sortType })
     },
-    onChangeAsc: (ascending: boolean) => {
+    [database]
+  )
+  const onChangeAsc = useCallback(
+    (ascending: boolean) => {
       database.displayCharacter.set({ ascending })
     },
-  }
+    [database]
+  )
+
+  const filterSortProps = useMemo(
+    () => ({
+      onChangeWeaponFilter,
+      onChangeElementFilter,
+      onChangeSort,
+      onChangeAsc,
+    }),
+    [
+      onChangeWeaponFilter,
+      onChangeElementFilter,
+      onChangeSort,
+      onChangeAsc,
+    ]
+  )
+
+  const handleSelect = useCallback(
+    (characterKey: CharacterKey) => {
+      onHide()
+      onSelect(characterKey)
+    },
+    [onHide, onSelect]
+  )
 
   return (
     <CharacterSelectionModalBase
       show={show}
       charactersToShow={characterKeyList}
-      filterSearchSortProps={filterSearchSortProps}
+      filterSortProps={filterSortProps}
+      onDeferredSearchChange={onDeferredSearchChange}
       onClose={onClose}
     >
       <CardContent sx={{ flex: '1', overflow: 'auto' }}>
         <Grid container spacing={1} columns={{ xs: 2, sm: 3, md: 4, lg: 5 }}>
           {characterKeyList.map((characterKey) => (
-            <Grid item key={characterKey} xs={1}>
-              <SingleSelectCardWrapper
-                characterKey={characterKey}
-                selectedIndex={selectedIndex}
-                teamSlotIndex={teamCharKeys.indexOf(characterKey)}
-              >
-                <SelectionCard
-                  characterKey={characterKey}
-                  onClick={() => {
-                    setSearchTerm('')
-                    onHide()
-                    onSelect(characterKey)
-                  }}
-                />
-              </SingleSelectCardWrapper>
-            </Grid>
+            <SingleSelectGridRow
+              key={characterKey}
+              characterKey={characterKey}
+              selectedIndex={selectedIndex}
+              teamSlotIndex={teamSlotByKey.get(characterKey) ?? -1}
+              onSelect={handleSelect}
+            />
           ))}
         </Grid>
       </CardContent>
@@ -247,10 +298,39 @@ export function CharacterMultiSelectionModal({
     [database, loadoutData]
   )
 
-  const [searchTerm, setSearchTerm] = useState('')
-  const deferredSearchTerm = useDeferredValue(searchTerm)
+  const [searchQuery, setSearchQuery] = useState('')
+  const onDeferredSearchChange = useCallback((query: string) => {
+    setSearchQuery(query)
+  }, [])
   const deferredState = useDeferredValue(state)
   const charMetaDirty = useDataManagerValues(database.charMeta)
+  const nameSearchFields = useMemo(
+    () => buildCharacterNameSearchFieldsCache(database.gender, silly),
+    [database.gender, silly]
+  )
+  const filterConfigs = useMemo(
+    () => characterFilterConfigs(database, silly, nameSearchFields),
+    [database, silly, nameSearchFields]
+  )
+  const sortConfigs = useMemo(
+    () => characterSortConfigs(database, silly),
+    [database, silly]
+  )
+
+  const teamCharKeysRef = useRef(teamCharKeys)
+  teamCharKeysRef.current = teamCharKeys
+  useEffect(() => {
+    setCachedTeamCharKeys(teamCharKeysRef.current)
+  }, [searchQuery])
+
+  const teamSlotByKey = useMemo(() => {
+    const map = new Map<CharacterKey, number>()
+    teamCharKeys.forEach((key, index) => {
+      if (key) map.set(key as CharacterKey, index)
+    })
+    return map
+  }, [teamCharKeys])
+
   const characterKeyList = useMemo(() => {
     const { element, weaponType, sortType, ascending } = deferredState
     const sortByKeys = [
@@ -263,102 +343,117 @@ export function CharacterMultiSelectionModal({
         .filter((key) => cachedTeamCharKeys.indexOf(key) === -1)
         .filter(
           filterFunction(
-            { element, weaponType, name: deferredSearchTerm },
-            characterFilterConfigs(database, silly)
+            { element, weaponType, name: searchQuery },
+            filterConfigs
           )
         )
         .sort(
-          sortFunction(
-            sortByKeys,
-            ascending,
-            characterSortConfigs(database, silly),
-            ['new', 'favorite']
-          )
+          sortFunction(sortByKeys, ascending, sortConfigs, [
+            'new',
+            'favorite',
+          ])
         )
     return cachedTeamCharKeys.filter((key) => key !== '').concat(filteredKeys)
   }, [
     deferredState,
     newFirst,
     charMetaDirty,
-    deferredSearchTerm,
-    database,
+    searchQuery,
+    filterConfigs,
+    sortConfigs,
     cachedTeamCharKeys,
-    silly,
   ])
 
-  const onClick = (key: CharacterKey) => {
-    const keySlotIndex = teamCharKeys.indexOf(key)
-    const firstOpenIndex = teamCharKeys.indexOf('')
-    if (keySlotIndex === -1) {
-      // Selected character was previously unselected, add to the list of currently selected keys if team is not full
-      if (firstOpenIndex === -1) return
-      setTeamCharKeys([
-        ...teamCharKeys.slice(0, firstOpenIndex),
-        key,
-        ...teamCharKeys.slice(firstOpenIndex + 1),
-      ])
-    } else {
-      // Selected character was previously selected, so replace the slot with
-      // '' to indicate the slot is currently empty
-      setTeamCharKeys([
-        ...teamCharKeys.slice(0, keySlotIndex),
+  const onClick = useCallback((key: CharacterKey) => {
+    setTeamCharKeys((prev) => {
+      const keySlotIndex = prev.indexOf(key)
+      const firstOpenIndex = prev.indexOf('')
+      if (keySlotIndex === -1) {
+        if (firstOpenIndex === -1) return prev
+        return [
+          ...prev.slice(0, firstOpenIndex),
+          key,
+          ...prev.slice(firstOpenIndex + 1),
+        ]
+      }
+      return [
+        ...prev.slice(0, keySlotIndex),
         '',
-        ...teamCharKeys.slice(keySlotIndex + 1),
-      ])
-    }
-  }
+        ...prev.slice(keySlotIndex + 1),
+      ]
+    })
+  }, [])
 
-  const onClose = () => {
-    setSearchTerm('')
+  const onClose = useCallback(() => {
     onSelect(teamCharKeys)
     onHide()
-  }
+  }, [onHide, onSelect, teamCharKeys])
 
-  const filterSearchSortProps = {
-    searchTerm: searchTerm,
-    onChangeWeaponFilter: (weaponType: WeaponTypeKey[]) => {
+  const syncCachedTeam = useCallback(() => {
+    setCachedTeamCharKeys(teamCharKeys)
+  }, [teamCharKeys])
+
+  const onChangeWeaponFilter = useCallback(
+    (weaponType: WeaponTypeKey[]) => {
       database.displayCharacter.set({ weaponType })
-      setCachedTeamCharKeys(teamCharKeys)
+      syncCachedTeam()
     },
-    onChangeElementFilter: (element: ElementKey[]) => {
+    [database, syncCachedTeam]
+  )
+  const onChangeElementFilter = useCallback(
+    (element: ElementKey[]) => {
       database.displayCharacter.set({ element })
-      setCachedTeamCharKeys(teamCharKeys)
+      syncCachedTeam()
     },
-    onChangeSearch: (e: ChangeEvent<HTMLTextAreaElement>) => {
-      setSearchTerm(e.target.value)
-      setCachedTeamCharKeys(teamCharKeys)
-    },
-    onChangeSort: (sortType: CharacterSortKey) => {
+    [database, syncCachedTeam]
+  )
+  const onChangeSort = useCallback(
+    (sortType: CharacterSortKey) => {
       if (sortType !== 'new') database.displayCharacter.set({ sortType })
-      setCachedTeamCharKeys(teamCharKeys)
+      syncCachedTeam()
     },
-    onChangeAsc: (ascending: boolean) => {
+    [database, syncCachedTeam]
+  )
+  const onChangeAsc = useCallback(
+    (ascending: boolean) => {
       database.displayCharacter.set({ ascending })
-      setCachedTeamCharKeys(teamCharKeys)
+      syncCachedTeam()
     },
-  }
+    [database, syncCachedTeam]
+  )
+
+  const filterSortProps = useMemo(
+    () => ({
+      onChangeWeaponFilter,
+      onChangeElementFilter,
+      onChangeSort,
+      onChangeAsc,
+    }),
+    [
+      onChangeWeaponFilter,
+      onChangeElementFilter,
+      onChangeSort,
+      onChangeAsc,
+    ]
+  )
 
   return (
     <CharacterSelectionModalBase
       show={show}
       charactersToShow={characterKeyList}
-      filterSearchSortProps={filterSearchSortProps}
+      filterSortProps={filterSortProps}
+      onDeferredSearchChange={onDeferredSearchChange}
       onClose={onClose}
     >
       <CardContent sx={{ flex: '1', overflow: 'auto' }}>
         <Grid container spacing={1} columns={{ xs: 2, sm: 3, md: 4, lg: 5 }}>
           {characterKeyList.map((characterKey) => (
-            <Grid item key={characterKey} xs={1}>
-              <MultiSelectCardWrapper
-                characterKey={characterKey}
-                teamSlotIndex={teamCharKeys.indexOf(characterKey)}
-              >
-                <SelectionCard
-                  characterKey={characterKey}
-                  onClick={() => onClick(characterKey)}
-                />
-              </MultiSelectCardWrapper>
-            </Grid>
+            <MultiSelectGridRow
+              key={characterKey}
+              characterKey={characterKey}
+              teamSlotIndex={teamSlotByKey.get(characterKey) ?? -1}
+              onSelect={onClick}
+            />
           ))}
         </Grid>
       </CardContent>
@@ -366,11 +461,9 @@ export function CharacterMultiSelectionModal({
   )
 }
 
-type FilterSearchSortProps = {
-  searchTerm: string
+type CharacterSelectionFilterSortProps = {
   onChangeWeaponFilter: (weaps: WeaponTypeKey[]) => void
   onChangeElementFilter: (elements: ElementKey[]) => void
-  onChangeSearch: (e: ChangeEvent<HTMLTextAreaElement>) => void
   onChangeSort: (sortType: CharacterSortKey) => void
   onChangeAsc: (asc: boolean) => void
 }
@@ -378,7 +471,8 @@ type FilterSearchSortProps = {
 type CharacterSelectionModalBaseProps = {
   show: boolean
   charactersToShow: CharacterKey[]
-  filterSearchSortProps: FilterSearchSortProps
+  filterSortProps: CharacterSelectionFilterSortProps
+  onDeferredSearchChange: (search: string) => void
   onClose: () => void
   children: React.ReactNode
 }
@@ -387,7 +481,8 @@ const sortKeys = Object.keys(characterSortMap)
 function CharacterSelectionModalBase({
   show,
   charactersToShow,
-  filterSearchSortProps,
+  filterSortProps,
+  onDeferredSearchChange,
   onClose,
   children,
 }: CharacterSelectionModalBaseProps) {
@@ -399,6 +494,30 @@ function CharacterSelectionModalBase({
   ])
   const database = useDatabase()
   const state = useDataEntryBase(database.displayCharacter)
+  const searchInputRef = useRef<HTMLInputElement>(null)
+  const [searchTerm, setSearchTerm] = useState('')
+  const deferredSearchTerm = useDeferredValue(searchTerm)
+
+  useEffect(() => {
+    onDeferredSearchChange(deferredSearchTerm)
+  }, [deferredSearchTerm, onDeferredSearchChange])
+
+  useEffect(() => {
+    if (show) return
+    setSearchTerm('')
+    onDeferredSearchChange('')
+  }, [show, onDeferredSearchChange])
+
+  useEffect(() => {
+    if (!show) return
+    const id = requestAnimationFrame(() => searchInputRef.current?.focus())
+    return () => cancelAnimationFrame(id)
+  }, [show])
+
+  const charactersShownSet = useMemo(
+    () => new Set(charactersToShow),
+    [charactersToShow]
+  )
 
   const weaponTotals = useMemo(
     () =>
@@ -406,10 +525,10 @@ function CharacterSelectionModalBase({
         allCharacterKeys.forEach((ck) => {
           const wtk = getCharStat(ck).weaponType
           ct[wtk].total++
-          if (charactersToShow.includes(ck)) ct[wtk].current++
+          if (charactersShownSet.has(ck)) ct[wtk].current++
         })
       ),
-    [charactersToShow]
+    [charactersShownSet]
   )
 
   const elementTotals = useMemo(
@@ -418,13 +537,17 @@ function CharacterSelectionModalBase({
         allCharacterKeys.forEach((ck) => {
           const ele = getCharEle(ck)
           ct[ele].total++
-          if (charactersToShow.includes(ck)) ct[ele].current++
+          if (charactersShownSet.has(ck)) ct[ele].current++
         })
       ),
-    [charactersToShow]
+    [charactersShownSet]
   )
 
   const { weaponType, element, sortType, ascending } = state
+  const teamDataContextValue = useMemo(
+    () => ({ teamData: undefined }) as any,
+    []
+  )
 
   return (
     <ModalWrapper
@@ -455,7 +578,7 @@ function CharacterSelectionModalBase({
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
               <WeaponToggle
                 onChange={(weaponType) =>
-                  filterSearchSortProps.onChangeWeaponFilter(weaponType)
+                  filterSortProps.onChangeWeaponFilter(weaponType)
                 }
                 value={weaponType}
                 totals={weaponTotals}
@@ -463,7 +586,7 @@ function CharacterSelectionModalBase({
               />
               <ElementToggle
                 onChange={(element) =>
-                  filterSearchSortProps.onChangeElementFilter(element)
+                  filterSortProps.onChangeElementFilter(element)
                 }
                 value={element}
                 totals={elementTotals}
@@ -476,33 +599,35 @@ function CharacterSelectionModalBase({
           </Box>
           <Box display="flex" gap={1}>
             <TextField
-              autoFocus
-              value={filterSearchSortProps.searchTerm}
+              inputRef={searchInputRef}
+              value={searchTerm}
               onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
-                filterSearchSortProps.onChangeSearch(e)
+                setSearchTerm(e.target.value)
               }
               label={t('characterName')}
               size="small"
               sx={{ height: '100%', mr: 'auto' }}
+              inputProps={commandSearchInputProps}
               InputProps={{
                 sx: { height: '100%' },
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SearchIcon fontSize="small" />
+                  </InputAdornment>
+                ),
               }}
             />
             <SortByButton
               sortKeys={sortKeys}
               value={sortType}
-              onChange={(sortType) =>
-                filterSearchSortProps.onChangeSort(sortType)
-              }
+              onChange={(sortType) => filterSortProps.onChangeSort(sortType)}
               ascending={ascending}
-              onChangeAsc={(ascending) =>
-                filterSearchSortProps.onChangeAsc(ascending)
-              }
+              onChangeAsc={(ascending) => filterSortProps.onChangeAsc(ascending)}
             />
           </Box>
         </CardContent>
         <Divider />
-        <DataContext.Provider value={{ teamData: undefined } as any}>
+        <DataContext.Provider value={teamDataContextValue}>
           {children}
         </DataContext.Provider>
       </CardThemed>
@@ -522,7 +647,7 @@ const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
 // in the appropriate selectedIndex and teamSlotIndex controls whether outlining
 // and flashing the selected outline is enabled, favorite icon and the character
 // tooltip are always present
-function SingleSelectCardWrapper({
+const SingleSelectCardWrapper = memo(function SingleSelectCardWrapper({
   characterKey,
   children,
   selectedIndex = -1,
@@ -591,12 +716,12 @@ function SingleSelectCardWrapper({
       </CardThemed>
     </CustomTooltip>
   )
-}
+})
 
 // used for wrapping SelectionCards for the multi select variant - components
 // using this must provide the teamSlotIndex of the character this card is for
 // (0-3 if the character is in the team being selected for, -1 otherwise)
-function MultiSelectCardWrapper({
+const MultiSelectCardWrapper = memo(function MultiSelectCardWrapper({
   characterKey,
   teamSlotIndex,
   children,
@@ -665,14 +790,14 @@ function MultiSelectCardWrapper({
       </CardThemed>
     </CustomTooltip>
   )
-}
+})
 
-function SelectionCard({
+const SelectionCard = memo(function SelectionCard({
   characterKey,
-  onClick,
+  onSelect,
 }: {
   characterKey: CharacterKey
-  onClick: () => void
+  onSelect: (ck: CharacterKey) => void
 }) {
   const { gender } = useDBMeta()
   const character = useCharacter(characterKey)
@@ -683,7 +808,7 @@ function SelectionCard({
   const rarity = getCharStat(characterKey).rarity
 
   return (
-    <CardActionArea onClick={onClick}>
+    <CardActionArea onClick={() => onSelect(characterKey)}>
       <Box
         display="flex"
         position="relative"
@@ -768,4 +893,49 @@ function SelectionCard({
       </Box>
     </CardActionArea>
   )
-}
+})
+
+const SingleSelectGridRow = memo(function SingleSelectGridRow({
+  characterKey,
+  selectedIndex,
+  teamSlotIndex,
+  onSelect,
+}: {
+  characterKey: CharacterKey
+  selectedIndex: number
+  teamSlotIndex: number
+  onSelect: (ck: CharacterKey) => void
+}) {
+  return (
+    <Grid item xs={1}>
+      <SingleSelectCardWrapper
+        characterKey={characterKey}
+        selectedIndex={selectedIndex}
+        teamSlotIndex={teamSlotIndex}
+      >
+        <SelectionCard characterKey={characterKey} onSelect={onSelect} />
+      </SingleSelectCardWrapper>
+    </Grid>
+  )
+})
+
+const MultiSelectGridRow = memo(function MultiSelectGridRow({
+  characterKey,
+  teamSlotIndex,
+  onSelect,
+}: {
+  characterKey: CharacterKey
+  teamSlotIndex: number
+  onSelect: (ck: CharacterKey) => void
+}) {
+  return (
+    <Grid item xs={1}>
+      <MultiSelectCardWrapper
+        characterKey={characterKey}
+        teamSlotIndex={teamSlotIndex}
+      >
+        <SelectionCard characterKey={characterKey} onSelect={onSelect} />
+      </MultiSelectCardWrapper>
+    </Grid>
+  )
+})
