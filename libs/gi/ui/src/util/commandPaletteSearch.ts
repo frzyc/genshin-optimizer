@@ -11,7 +11,7 @@ export function compactSearchKey(text: string): string {
 /** First letter of each word — `ks` matches `Kuki Shinobu`. */
 export function wordInitialsKey(text: string): string {
   return text
-    .split(/[\s\-]+/)
+    .split(/[\s-]+/)
     .filter((w) => w.length > 0)
     .map((word) => {
       const ch = word.match(/[a-z0-9]/i)?.[0]
@@ -32,7 +32,7 @@ export function matchesCommandSearch(haystack: string, query: string): boolean {
   if (lower.includes(q)) return true
   const compactHay = compactSearchKey(haystack)
   const compactQ = compactSearchKey(q)
-  if (!compactQ) return true
+  if (!compactQ) return false
   if (compactHay.includes(compactQ)) return true
   const initials = wordInitialsKey(haystack)
   return initials.includes(compactQ)

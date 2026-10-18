@@ -1,4 +1,3 @@
-import { ImgIcon } from '@genshin-optimizer/common/ui'
 import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { pandoTeammateMembers } from '@genshin-optimizer/gi/db'
@@ -179,16 +178,33 @@ export function DesktopDashboardHeader({
 
         <Divider orientation="vertical" flexItem />
 
-        <DashboardRegion
-          onClick={() => scrollToSection(OPT_SECTION_IDS.teammates)}
-          ariaLabel={t('teamRowLabel')}
-          sx={{ flex: '0 1 auto', minWidth: 120 }}
+        <Box
+          sx={{
+            flex: '0 1 auto',
+            minWidth: 120,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            px: 2,
+            py: 1.25,
+          }}
         >
           <Typography
             variant="caption"
             color="text.secondary"
-            display="block"
-            sx={{ mb: 0.5, textAlign: 'left' }}
+            component="button"
+            type="button"
+            onClick={() => scrollToSection(OPT_SECTION_IDS.teammates)}
+            sx={{
+              mb: 0.5,
+              textAlign: 'left',
+              border: 'none',
+              background: 'none',
+              p: 0,
+              cursor: 'pointer',
+              display: 'block',
+              '&:hover': { textDecoration: 'underline' },
+            }}
           >
             {t('teamRowLabel')}
           </Typography>
@@ -197,7 +213,7 @@ export function DesktopDashboardHeader({
             onCharacterKeyChange={onCharacterKeyChange}
             onOpenTeamSection={() => scrollToSection(OPT_SECTION_IDS.teammates)}
           />
-        </DashboardRegion>
+        </Box>
 
         <Divider orientation="vertical" flexItem />
 
@@ -331,7 +347,7 @@ function TeamAvatarRow({
   const [pickingSlot, setPickingSlot] = useState<0 | 1 | 2>()
 
   return (
-    <Box onClick={(e) => e.stopPropagation()}>
+    <>
       <Stack direction="row" spacing={0.25} alignItems="center">
         <Tooltip title={t('onField')}>
           <IconButton
@@ -432,6 +448,6 @@ function TeamAvatarRow({
           }}
         />
       </Suspense>
-    </Box>
+    </>
   )
 }

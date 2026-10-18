@@ -6,9 +6,11 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 import { useOptimizeReadiness } from './useOptimizeReadiness'
 
 export function OptimizeReadinessBadge() {
+  const { t } = useTranslation('page_optimize')
   const { items, readyCount, total, isReady } = useOptimizeReadiness()
   if (isReady) return null
 
@@ -49,7 +51,7 @@ export function OptimizeReadinessBadge() {
         component="button"
         type="button"
         onClick={() => firstIncomplete?.action()}
-        aria-label={`${readyCount} of ${total} setup steps complete`}
+        aria-label={t('readinessProgressAria', { readyCount, total })}
         sx={{
           border: 'none',
           background: 'none',

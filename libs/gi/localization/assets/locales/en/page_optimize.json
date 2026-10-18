@@ -61,6 +61,7 @@
   "readinessTarget": "Choose an optimization target",
   "readinessArtifacts": "Import or add artifacts to your database",
   "readinessTeam": "Team context is ready",
+  "readinessProgressAria": "{{readyCount}} of {{total}} setup steps complete",
   "targetHeroTitle": "Choose what to optimize",
   "targetHeroBody": "Genshin Optimizer will not pick a damage target for you. Select the skill, reaction, or stat you want to maximize, then configure filters and generate builds.",
   "commandPickCharacter": "Switch character",

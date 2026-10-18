@@ -1,4 +1,6 @@
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
+import { useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import {
   allCharacterKeys,
   charKeyToLocGenderedCharKey,
@@ -23,9 +25,7 @@ export function characterNameSearchFieldsFor(
   const locKey = charKeyToLocGenderedCharKey(ck, gender)
   const displayName = i18n
     .t(
-      `${
-        silly ? 'sillyWisher_charNames' : 'charNames_gen'
-      }:${locKey}` as const
+      `${silly ? 'sillyWisher_charNames' : 'charNames_gen'}:${locKey}` as const
     )
     .toString()
   const fields: string[] = [
@@ -35,9 +35,7 @@ export function characterNameSearchFieldsFor(
     getCharEle(ck),
   ]
   if (silly) {
-    fields.push(
-      i18n.t(`charNames_gen:${locKey}` as const).toString()
-    )
+    fields.push(i18n.t(`charNames_gen:${locKey}` as const).toString())
   }
   return fields
 }
@@ -62,4 +60,23 @@ export function characterMatchesNameSearch(
   const fields = searchFields.get(ck)
   if (!fields) return false
   return matchesCommandSearchAny([...fields], filter)
+}
+
+/** Rebuild when locale / name namespaces load so search strings stay translated. */
+export function useCharacterNameSearchFieldsCache(
+  gender: GenderKey,
+  silly: boolean
+): CharacterNameSearchFieldsCache | undefined {
+  const { i18n: i18nInst } = useTranslation([
+    'charNames_gen',
+    'sillyWisher_charNames',
+  ])
+  const lang = i18nInst.resolvedLanguage ?? i18nInst.language
+  const namesReady = i18nInst.hasResourceBundle(lang, 'charNames_gen')
+  const sillyReady =
+    !silly || i18nInst.hasResourceBundle(lang, 'sillyWisher_charNames')
+  return useMemo(() => {
+    if (!namesReady || !sillyReady) return undefined
+    return buildCharacterNameSearchFieldsCache(gender, silly)
+  }, [gender, silly, lang, namesReady, sillyReady])
 }

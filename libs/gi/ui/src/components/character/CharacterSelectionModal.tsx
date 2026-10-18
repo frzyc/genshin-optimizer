@@ -74,7 +74,7 @@ import { iconAsset } from '../../util/iconAsset'
 import { ElementToggle, WeaponToggle } from '../toggles'
 import { CharacterCard } from './CharacterCard'
 import type { CharacterSortKey } from './CharacterSort'
-import { buildCharacterNameSearchFieldsCache } from './characterNameSearchFields'
+import { useCharacterNameSearchFieldsCache } from './characterNameSearchFields'
 import {
   characterFilterConfigs,
   characterSortConfigs,
@@ -116,9 +116,9 @@ export function CharacterSingleSelectionModal({
   }, [])
   const deferredState = useDeferredValue(state)
   const charMetaDirty = useDataManagerValues(database.charMeta)
-  const nameSearchFields = useMemo(
-    () => buildCharacterNameSearchFieldsCache(database.gender, silly),
-    [database.gender, silly]
+  const nameSearchFields = useCharacterNameSearchFieldsCache(
+    database.gender,
+    silly
   )
   const filterConfigs = useMemo(
     () => characterFilterConfigs(database, silly, nameSearchFields),
@@ -153,10 +153,7 @@ export function CharacterSingleSelectionModal({
           )
         )
         .sort(
-          sortFunction(sortByKeys, ascending, sortConfigs, [
-            'new',
-            'favorite',
-          ])
+          sortFunction(sortByKeys, ascending, sortConfigs, ['new', 'favorite'])
         )
     return teamCharKeys.filter((key) => key !== '').concat(filteredKeys)
   }, [
@@ -205,12 +202,7 @@ export function CharacterSingleSelectionModal({
       onChangeSort,
       onChangeAsc,
     }),
-    [
-      onChangeWeaponFilter,
-      onChangeElementFilter,
-      onChangeSort,
-      onChangeAsc,
-    ]
+    [onChangeWeaponFilter, onChangeElementFilter, onChangeSort, onChangeAsc]
   )
 
   const handleSelect = useCallback(
@@ -304,9 +296,9 @@ export function CharacterMultiSelectionModal({
   }, [])
   const deferredState = useDeferredValue(state)
   const charMetaDirty = useDataManagerValues(database.charMeta)
-  const nameSearchFields = useMemo(
-    () => buildCharacterNameSearchFieldsCache(database.gender, silly),
-    [database.gender, silly]
+  const nameSearchFields = useCharacterNameSearchFieldsCache(
+    database.gender,
+    silly
   )
   const filterConfigs = useMemo(
     () => characterFilterConfigs(database, silly, nameSearchFields),
@@ -318,7 +310,9 @@ export function CharacterMultiSelectionModal({
   )
 
   const teamCharKeysRef = useRef(teamCharKeys)
-  teamCharKeysRef.current = teamCharKeys
+  useEffect(() => {
+    teamCharKeysRef.current = teamCharKeys
+  }, [teamCharKeys])
   useEffect(() => {
     setCachedTeamCharKeys(teamCharKeysRef.current)
   }, [searchQuery])
@@ -348,10 +342,7 @@ export function CharacterMultiSelectionModal({
           )
         )
         .sort(
-          sortFunction(sortByKeys, ascending, sortConfigs, [
-            'new',
-            'favorite',
-          ])
+          sortFunction(sortByKeys, ascending, sortConfigs, ['new', 'favorite'])
         )
     return cachedTeamCharKeys.filter((key) => key !== '').concat(filteredKeys)
   }, [
@@ -429,12 +420,7 @@ export function CharacterMultiSelectionModal({
       onChangeSort,
       onChangeAsc,
     }),
-    [
-      onChangeWeaponFilter,
-      onChangeElementFilter,
-      onChangeSort,
-      onChangeAsc,
-    ]
+    [onChangeWeaponFilter, onChangeElementFilter, onChangeSort, onChangeAsc]
   )
 
   return (
@@ -622,7 +608,9 @@ function CharacterSelectionModalBase({
               value={sortType}
               onChange={(sortType) => filterSortProps.onChangeSort(sortType)}
               ascending={ascending}
-              onChangeAsc={(ascending) => filterSortProps.onChangeAsc(ascending)}
+              onChangeAsc={(ascending) =>
+                filterSortProps.onChangeAsc(ascending)
+              }
             />
           </Box>
         </CardContent>

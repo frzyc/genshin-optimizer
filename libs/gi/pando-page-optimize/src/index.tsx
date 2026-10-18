@@ -1,5 +1,4 @@
 import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
-import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed, useTitle } from '@genshin-optimizer/common/ui'
 import { stableArr } from '@genshin-optimizer/common/util'
 import {
