@@ -13,13 +13,13 @@ import {
   handleMultiSelect,
   sortFunction,
 } from '@genshin-optimizer/common/util'
-import { specialityDefIcon } from '@genshin-optimizer/zzz/assets'
+import { specialtyDefIcon } from '@genshin-optimizer/zzz/assets'
 import type {
   Raritykey,
-  SpecialityKey,
+  SpecialtyKey,
   WengineKey,
 } from '@genshin-optimizer/zzz/consts'
-import { allRaritykeys, allSpecialityKeys } from '@genshin-optimizer/zzz/consts'
+import { allRaritykeys, allSpecialtyKeys } from '@genshin-optimizer/zzz/consts'
 import { initialWengine } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import AddIcon from '@mui/icons-material/Add'
@@ -59,7 +59,7 @@ import {
 
 const numToShowMap = { xs: 2 * 3, sm: 2 * 3, md: 3 * 3, lg: 4 * 3, xl: 4 * 3 }
 const rarityHandler = handleMultiSelect([...allRaritykeys])
-const wengineTypeHandler = handleMultiSelect([...allSpecialityKeys])
+const wengineTypeHandler = handleMultiSelect([...allSpecialtyKeys])
 
 export function WengineSwapModal({
   wengineId,
@@ -70,7 +70,7 @@ export function WengineSwapModal({
 }: {
   wengineId: string
   onChangeId: (id: string) => void
-  wengineTypeKey: SpecialityKey
+  wengineTypeKey: SpecialtyKey
   show: boolean
   onClose: () => void
 }) {
@@ -90,16 +90,14 @@ export function WengineSwapModal({
   const brPt = useMediaQueryUp()
 
   const [rarity, setRarity] = useState<Raritykey[]>(['S', 'A', 'B'])
-  const [speciality, setWengineType] = useState<SpecialityKey[]>([
-    wengineTypeKey,
-  ])
+  const [specialty, setWengineType] = useState<SpecialtyKey[]>([wengineTypeKey])
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
   const allWengines = useDataManagerValues(database.wengines)
   const wengineIds = useMemo(() => {
     const filterFunc = filterFunction(
-      { speciality, rarity, name: deferredSearchTerm },
+      { specialty, rarity, name: deferredSearchTerm },
       wengineFilterConfigs()
     )
     const sortFunc = sortFunction(
@@ -118,7 +116,7 @@ export function WengineSwapModal({
     }
     return wengineIds
   }, [
-    speciality,
+    specialty,
     rarity,
     deferredSearchTerm,
     allWengines,
@@ -176,7 +174,7 @@ export function WengineSwapModal({
             title={
               <Typography variant="h6" display="flex" gap={1}>
                 {wengineTypeKey ? (
-                  <ImgIcon src={specialityDefIcon(wengineTypeKey)} />
+                  <ImgIcon src={specialtyDefIcon(wengineTypeKey)} />
                 ) : null}
                 <span>{t('page_characters:tabEquip.swapWengine')}</span>
               </Typography>
@@ -195,21 +193,17 @@ export function WengineSwapModal({
               <Grid item>
                 <SolidToggleButtonGroup
                   sx={{ height: '100%' }}
-                  value={speciality}
+                  value={specialty}
                 >
-                  {allSpecialityKeys.map((sk) => (
+                  {allSpecialtyKeys.map((sk) => (
                     <ToggleButton
                       key={sk}
                       value={sk}
                       onClick={() =>
-                        setWengineType(wengineTypeHandler(speciality, sk))
+                        setWengineType(wengineTypeHandler(specialty, sk))
                       }
                     >
-                      <ImgIcon
-                        src={specialityDefIcon(sk)}
-                        size={2}
-                        sideMargin
-                      />
+                      <ImgIcon src={specialtyDefIcon(sk)} size={2} sideMargin />
                     </ToggleButton>
                   ))}
                 </SolidToggleButtonGroup>

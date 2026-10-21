@@ -19,7 +19,7 @@ import {
   allAttributeKeys,
   allCharacterKeys,
   allCharacterRarityKeys,
-  allSpecialityKeys,
+  allSpecialtyKeys,
 } from '@genshin-optimizer/zzz/consts'
 import {
   useCharacter,
@@ -148,7 +148,7 @@ export default function PageCharacter() {
 
   const charSpecialtyTotals = useMemo(
     () =>
-      catTotal(allSpecialityKeys, (sk) =>
+      catTotal(allSpecialtyKeys, (sk) =>
         database.chars.entries.forEach(([id, char]) => {
           const specialty = getCharStat(char.key).specialty
           sk[specialty].total++

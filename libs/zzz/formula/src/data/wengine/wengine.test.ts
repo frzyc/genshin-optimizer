@@ -5,7 +5,7 @@ import {
 } from '@genshin-optimizer/pando/engine'
 import type {
   CharacterKey,
-  SpecialityKey,
+  SpecialtyKey,
   WengineKey,
 } from '@genshin-optimizer/zzz/consts'
 import { getWengineStat } from '@genshin-optimizer/zzz/stats'
@@ -32,7 +32,7 @@ import {
 setDebugMode(true)
 // This is generally unnecessary, but without it, some tags in `DebugCalculator` will be missing
 Object.assign(values, compileTagMapValues(keys, data))
-const specialityMap: Record<SpecialityKey, CharacterKey> = {
+const specialtyMap: Record<SpecialtyKey, CharacterKey> = {
   attack: 'Billy',
   stun: 'Anby',
   anomaly: 'Piper',
@@ -42,7 +42,7 @@ const specialityMap: Record<SpecialityKey, CharacterKey> = {
 
 function testCharacterData(wengineKey: WengineKey) {
   const type = getWengineStat(wengineKey).type
-  const characterKey = specialityMap[type]
+  const characterKey = specialtyMap[type]
   const data: TagMapNodeEntries = [
     ...teamData([characterKey]),
     ...withMember(

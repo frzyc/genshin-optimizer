@@ -1,6 +1,6 @@
 import { objMap } from '@genshin-optimizer/common/util'
 import type {
-  SpecialityKey,
+  SpecialtyKey,
   WengineBaseStatKey,
   WengineKey,
   WengineRarityKey,
@@ -11,7 +11,7 @@ import { extractParamsFromString } from './util'
 
 export type WengineDatum = {
   rarity: WengineRarityKey
-  type: SpecialityKey
+  type: SpecialtyKey
   base_statkey: WengineBaseStatKey
   base_statvalue: number
   second_statkey: WengineSubStatKey

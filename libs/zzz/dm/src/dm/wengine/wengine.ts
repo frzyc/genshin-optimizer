@@ -1,13 +1,13 @@
 import { isPercentStat } from '@genshin-optimizer/common/util'
 import type {
-  SpecialityKey,
+  SpecialtyKey,
   WengineKey,
   WengineRarityKey,
 } from '@genshin-optimizer/zzz/consts'
 import { readHakushinJSON } from '../../util'
 import {
   baseStatMap,
-  specialityMap,
+  specialtyMap,
   subStatMap,
   WengineIdMap,
   wengineRarityMap,
@@ -39,7 +39,7 @@ type WengineRawData = {
 export type WengineData = {
   name: string
   rarity: WengineRarityKey
-  type: SpecialityKey
+  type: SpecialtyKey
   base_statvalue: number
   base_statkey: (typeof baseStatMap)[keyof typeof baseStatMap]
   second_statkey: (typeof subStatMap)[keyof typeof subStatMap]
@@ -64,7 +64,7 @@ export const wengineDetailedJSONData = Object.fromEntries(
     const data: WengineData = {
       name: raw.Name,
       rarity: wengineRarityMap[raw.Rarity],
-      type: specialityMap[Object.keys(raw.WeaponType)[0] as any],
+      type: specialtyMap[Object.keys(raw.WeaponType)[0] as any],
       base_statkey: base_statkey,
       base_statvalue: raw.BaseProperty.Value,
       second_statkey,

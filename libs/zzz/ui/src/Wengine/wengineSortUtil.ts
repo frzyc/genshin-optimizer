@@ -13,7 +13,7 @@ export function wengineSortConfigs(): SortConfigs<WengineSortKey, IWengine> {
 }
 export function wengineFilterConfigs(): FilterConfigs<
   | 'rarity'
-  | 'speciality'
+  | 'specialty'
   | 'name'
   | 'locked'
   | 'showInventory'
@@ -23,7 +23,7 @@ export function wengineFilterConfigs(): FilterConfigs<
 > {
   return {
     rarity: (we, filter) => filter.includes(getWengineStat(we.key).rarity),
-    speciality: (we, filter) => filter.includes(getWengineStat(we.key).type),
+    specialty: (we, filter) => filter.includes(getWengineStat(we.key).type),
     name: (we, filter) =>
       i18n.t(`${we.key}`).toLowerCase().includes(filter.toLowerCase()),
     locked: (we, filter) => {

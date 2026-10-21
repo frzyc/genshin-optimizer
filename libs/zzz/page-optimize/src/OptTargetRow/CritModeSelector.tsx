@@ -6,6 +6,7 @@ import {
   useDatabaseContext,
   useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
+import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { Box, MenuItem } from '@mui/material'
 
 // TODO: translation
@@ -29,7 +30,9 @@ export function CritModeSelector() {
     >
       {critModeKeys
         .filter((k) =>
-          character.specialty === 'armorer' ? true : k !== 'doubleCrit'
+          getCharStat(character.key).specialty === 'armorer'
+            ? true
+            : k !== 'doubleCrit'
         )
         .map((k) => (
           <MenuItem

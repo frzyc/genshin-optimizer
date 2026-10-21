@@ -8,13 +8,13 @@ import {
 import { catTotal } from '@genshin-optimizer/common/util'
 import {
   rarityDefIcon,
-  specialityDefIcon,
+  specialtyDefIcon,
   wengineAsset,
 } from '@genshin-optimizer/zzz/assets'
-import type { SpecialityKey, WengineKey } from '@genshin-optimizer/zzz/consts'
+import type { SpecialtyKey, WengineKey } from '@genshin-optimizer/zzz/consts'
 import {
   allRaritykeys,
-  allSpecialityKeys,
+  allSpecialtyKeys,
   allWengineKeys,
   allWengineRarityKeys,
 } from '@genshin-optimizer/zzz/consts'
@@ -41,7 +41,7 @@ type WengineSelectionModalProps = {
   show: boolean
   onHide: () => void
   onSelect: (wKey: WengineKey) => void
-  wengineTypeFilter?: SpecialityKey | ''
+  wengineTypeFilter?: SpecialtyKey | ''
 }
 
 export function WengineSelectionModal({
@@ -51,8 +51,8 @@ export function WengineSelectionModal({
   wengineTypeFilter,
 }: WengineSelectionModalProps) {
   const { t } = useTranslation(['page_wengine'])
-  const [wengineFilter, setWenginefilter] = useState<SpecialityKey[]>(
-    wengineTypeFilter ? [wengineTypeFilter] : [...allSpecialityKeys]
+  const [wengineFilter, setWenginefilter] = useState<SpecialtyKey[]>(
+    wengineTypeFilter ? [wengineTypeFilter] : [...allSpecialtyKeys]
   )
   if (usePrev(wengineTypeFilter) !== wengineTypeFilter && wengineTypeFilter)
     setWenginefilter([wengineTypeFilter])
@@ -88,7 +88,7 @@ export function WengineSelectionModal({
 
   const wengineTotals = useMemo(
     () =>
-      catTotal(allSpecialityKeys, (ct) =>
+      catTotal(allSpecialtyKeys, (ct) =>
         allWengineKeys.forEach((wk) => {
           const wtk = getWengineStat(wk).type
           if (wk) {
@@ -178,7 +178,7 @@ export function WengineSelectionModal({
                         >
                           <ImgIcon
                             size={1.5}
-                            src={specialityDefIcon(wengineStat.type)}
+                            src={specialtyDefIcon(wengineStat.type)}
                           />
                           <ImgIcon
                             size={1.5}
