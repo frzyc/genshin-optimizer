@@ -76,7 +76,7 @@ export default function PageWengine() {
   const {
     sortType,
     ascending,
-    speciality,
+    specialty,
     rarity,
     locked,
     showEquipped,
@@ -92,7 +92,7 @@ export default function PageWengine() {
         .filter(
           filterFunction(
             {
-              speciality,
+              specialty,
               rarity,
               name: deferredSearchTerm,
               locked,
@@ -113,7 +113,7 @@ export default function PageWengine() {
         .map((key) => key.id),
     [
       allWegines,
-      speciality,
+      specialty,
       rarity,
       deferredSearchTerm,
       locked,

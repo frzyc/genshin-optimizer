@@ -7,11 +7,11 @@ import {
   removeUndefinedFields,
   validateValue,
 } from '@genshin-optimizer/common/util'
-import type { AttributeKey, SpecialityKey } from '@genshin-optimizer/zzz/consts'
+import type { AttributeKey, SpecialtyKey } from '@genshin-optimizer/zzz/consts'
 import {
   allAttributeKeys,
   allDiscSetKeys,
-  allSpecialityKeys,
+  allSpecialtyKeys,
   type DiscMainStatKey,
   type DiscSetKey,
   discMaxLevel,
@@ -101,8 +101,8 @@ const optConfigSchema = z.object({
   optWengine: zodBoolean(),
   wlevelLow: z.number().int().min(0).max(60).catch(wengineMaxLevel),
   wlevelHigh: z.number().int().min(0).max(60).catch(wengineMaxLevel),
-  wEngineTypes: zodFilteredArray(allSpecialityKeys, []) as z.ZodType<
-    SpecialityKey[]
+  wEngineTypes: zodFilteredArray(allSpecialtyKeys, []) as z.ZodType<
+    SpecialtyKey[]
   >,
   useEquippedWengine: zodBoolean(),
 

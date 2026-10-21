@@ -28,7 +28,6 @@ describe('CharacterDataManager', () => {
       chain: 5,
       special: 5,
       assist: 5,
-      specialty: 'attack',
     }
     const result = chars['validate'](valid)
     expect(result?.promotion).toBe(4)
@@ -48,7 +47,6 @@ describe('CharacterDataManager', () => {
       chain: maxSkill + 5,
       special: maxSkill + 5,
       assist: maxSkill + 5,
-      specialty: 'attack',
     }
     const result = chars['validate'](invalid)
     expect(result?.dodge).toBe(maxSkill)
@@ -69,7 +67,6 @@ describe('CharacterDataManager', () => {
       chain: 5,
       special: 5,
       assist: 5,
-      specialty: 'attack',
     }
     const result = chars['validate'](invalid)
     expect(result?.core).toBe(maxCore)

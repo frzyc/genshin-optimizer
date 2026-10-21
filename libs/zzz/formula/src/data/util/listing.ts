@@ -4,7 +4,7 @@ import {
   allCharacterKeys,
   allDiscSetKeys,
   allFactionKeys,
-  allSpecialityKeys,
+  allSpecialtyKeys,
   allWengineKeys,
 } from '@genshin-optimizer/zzz/consts'
 
@@ -119,7 +119,7 @@ export const sheets = [
 
 export const members = [...allCharacterKeys] as const
 
-export const specialties = [...allSpecialityKeys] as const
+export const specialties = [...allSpecialtyKeys] as const
 
 export const factions = [...allFactionKeys] as const
 

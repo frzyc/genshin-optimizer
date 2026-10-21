@@ -4,7 +4,7 @@ import type {
   DiscSetKey,
   FactionKey,
   Raritykey,
-  SpecialityKey,
+  SpecialtyKey,
   WengineKey,
 } from '@genshin-optimizer/zzz/consts'
 import commonImages from './common'
@@ -13,7 +13,7 @@ import mindscape from './common/mindscape'
 import phases from './common/phases'
 import rarity from './common/rarity'
 import skill from './common/skill'
-import speciality from './common/speciality'
+import specialty from './common/specialty'
 import chars from './gen/chars'
 import discs from './gen/discs'
 import wengines from './gen/wengines'
@@ -50,8 +50,8 @@ export function discDefIcon(setKey: DiscSetKey) {
   return setKey ? discs[setKey].circle : ''
 }
 
-export function specialityDefIcon(profKey: SpecialityKey) {
-  return profKey ? speciality[profKey] : ''
+export function specialtyDefIcon(profKey: SpecialtyKey) {
+  return profKey ? specialty[profKey] : ''
 }
 
 export function rarityDefIcon(rarityKey: Raritykey) {

@@ -3,7 +3,7 @@ import type {
   CharacterRarityKey,
   FactionKey,
   SkillKey,
-  SpecialityKey,
+  SpecialtyKey,
   StatKey,
 } from '@genshin-optimizer/zzz/consts'
 
@@ -80,7 +80,7 @@ export const attributeMap: Record<number, AttributeKey> = {
   204: 'wind',
   300: 'lumiflux',
 } as const
-export const specialityMap: Record<number, SpecialityKey> = {
+export const specialtyMap: Record<number, SpecialtyKey> = {
   1: 'attack',
   2: 'stun',
   3: 'anomaly',

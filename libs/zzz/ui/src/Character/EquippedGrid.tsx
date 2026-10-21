@@ -1,8 +1,8 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { ImgIcon } from '@genshin-optimizer/common/ui'
-import { specialityDefIcon } from '@genshin-optimizer/zzz/assets'
-import type { DiscSlotKey, SpecialityKey } from '@genshin-optimizer/zzz/consts'
-import { allSpecialityKeys } from '@genshin-optimizer/zzz/consts'
+import { specialtyDefIcon } from '@genshin-optimizer/zzz/assets'
+import type { DiscSlotKey, SpecialtyKey } from '@genshin-optimizer/zzz/consts'
+import { allSpecialtyKeys } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import {
   CharacterContext,
@@ -64,7 +64,7 @@ export function EquippedGrid({
   const wengine = useWengine(character?.equippedWengine)
   const characterType = character
     ? getCharStat(character.key).specialty
-    : allSpecialityKeys[0]
+    : allSpecialtyKeys[0]
   const discs = useDiscs(character?.equippedDiscs)
   const disc = useDisc(discIdToEdit)
 
@@ -164,7 +164,7 @@ export function WeaponSwapCard({
   onChangeId,
 }: {
   wengineId: string
-  wengineTypeKey: SpecialityKey
+  wengineTypeKey: SpecialtyKey
   onChangeId: (id: string) => void
 }) {
   const [show, onOpen, onClose] = useBoolState()
@@ -181,7 +181,7 @@ export function WeaponSwapCard({
     >
       <CardContent>
         <Typography>
-          <ImgIcon src={specialityDefIcon(wengineTypeKey)} />{' '}
+          <ImgIcon src={specialtyDefIcon(wengineTypeKey)} />{' '}
         </Typography>
       </CardContent>
       <Divider />
@@ -298,7 +298,7 @@ function WengineSwapButton({
   onChangeId,
 }: {
   wengineId: string
-  wengineTypeKey: SpecialityKey
+  wengineTypeKey: SpecialtyKey
   onChangeId: (id: string) => void
 }) {
   const { t } = useTranslation('page_characters')
@@ -332,7 +332,7 @@ function LargeWeaponSwapButton({
   onChangeId,
 }: {
   wengineId: string
-  wengineTypeKey: SpecialityKey
+  wengineTypeKey: SpecialtyKey
   onChangeId: (id: string) => void
 }) {
   const { t } = useTranslation('page_characters')
