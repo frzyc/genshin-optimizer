@@ -284,6 +284,7 @@ function inferDamageType(key: CharacterKey, abilityName: string): DamageType {
     if (key === 'Lucy' && abilityName === 'GuardBoarsToArms') return 'basic'
     if (key === 'Lucy' && abilityName === 'GuardBoarsSpinningSwing')
       return 'basic'
+    if (key === 'Phoenix' && abilityName === 'SoulSearchingBlaze') return 'ult'
     if (key === 'Remielle' && abilityName === 'AssistFlowerFeatherDance')
       return 'entrySkill'
     if (key === 'Roxy' && abilityName === 'EyeOfTheStorm') return 'exSpecial'

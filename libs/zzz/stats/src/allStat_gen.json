@@ -29857,17 +29857,6 @@
               "FeverRecovery": 1650,
               "FeverRecoveryGrowth": 0,
               "AttributeInfliction": 60
-            },
-            {
-              "DamagePercentage": 6.116,
-              "DamagePercentageGrowth": 0.556,
-              "StunRatio": 4.587,
-              "StunRatioGrowth": 0.209,
-              "SpRecovery": 0,
-              "SpRecoveryGrowth": 0,
-              "FeverRecovery": 14407.25,
-              "FeverRecoveryGrowth": 0,
-              "AttributeInfliction": 443.67
             }
           ],
           "QuickAssistAtYourService": [
@@ -30142,6 +30131,1063 @@
           2,
           2.5,
           0.2
+        ]
+      ],
+      "potentialParams": []
+    },
+    "Severian": {
+      "id": "1631",
+      "rarity": "S",
+      "attribute": "wind",
+      "specialty": "attack",
+      "faction": "CriminalInvestigationSpecialResponseTeam",
+      "stats": {
+        "atk_base": 134,
+        "atk_growth": 8.2119,
+        "def_base": 49,
+        "def_growth": 6.6203,
+        "hp_base": 629,
+        "hp_growth": 85.3932,
+        "anomMas": 91,
+        "anomProf": 90,
+        "impact": 94,
+        "enerRegen": 1.2
+      },
+      "promotionStats": [
+        {
+          "hp": 0,
+          "atk": 0,
+          "def": 0
+        },
+        {
+          "hp": 432,
+          "atk": 48,
+          "def": 33
+        },
+        {
+          "hp": 864,
+          "atk": 96,
+          "def": 67
+        },
+        {
+          "hp": 1296,
+          "atk": 144,
+          "def": 100
+        },
+        {
+          "hp": 1727,
+          "atk": 192,
+          "def": 134
+        },
+        {
+          "hp": 2159,
+          "atk": 240,
+          "def": 167
+        }
+      ],
+      "coreStats": [
+        {
+          "atk": 0,
+          "crit_dmg_": 0.096
+        },
+        {
+          "atk": 25,
+          "crit_dmg_": 0.096
+        },
+        {
+          "atk": 25,
+          "crit_dmg_": 0.192
+        },
+        {
+          "atk": 50,
+          "crit_dmg_": 0.192
+        },
+        {
+          "atk": 50,
+          "crit_dmg_": 0.288
+        },
+        {
+          "atk": 75,
+          "crit_dmg_": 0.288
+        }
+      ],
+      "skillParams": {
+        "basic": {
+          "BasicAttackSwiftEdge": [
+            {
+              "DamagePercentage": 0.654,
+              "DamagePercentageGrowth": 0.06,
+              "StunRatio": 0.268,
+              "StunRatioGrowth": 0.013,
+              "SpRecovery": 117.7,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 1091.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 32.66
+            },
+            {
+              "DamagePercentage": 1.066,
+              "DamagePercentageGrowth": 0.097,
+              "StunRatio": 0.496,
+              "StunRatioGrowth": 0.023,
+              "SpRecovery": 204,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 1674.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 56.63
+            },
+            {
+              "DamagePercentage": 1.78,
+              "DamagePercentageGrowth": 0.162,
+              "StunRatio": 0.89,
+              "StunRatioGrowth": 0.041,
+              "SpRecovery": 353.3,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 2678.5,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 98.13
+            },
+            {
+              "DamagePercentage": 2.416,
+              "DamagePercentageGrowth": 0.22,
+              "StunRatio": 1.284,
+              "StunRatioGrowth": 0.059,
+              "SpRecovery": 495.1,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 3498,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 137.52
+            },
+            {
+              "DamagePercentage": 3.382,
+              "DamagePercentageGrowth": 0.308,
+              "StunRatio": 1.339,
+              "StunRatioGrowth": 0.061,
+              "SpRecovery": 438.2,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 3346.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 121.69
+            }
+          ],
+          "BasicAttackRagingWhirlwind": [
+            {
+              "DamagePercentage": 3.382,
+              "DamagePercentageGrowth": 0.308,
+              "StunRatio": 1.339,
+              "StunRatioGrowth": 0.061,
+              "SpRecovery": 438.2,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 3346.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 121.69
+            }
+          ],
+          "BasicAttackAzureWindsShadowhunt": [
+            {
+              "DamagePercentage": 20.277,
+              "DamagePercentageGrowth": 1.844,
+              "StunRatio": 3.117,
+              "StunRatioGrowth": 0.142,
+              "SpRecovery": 510,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 7793.5,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 283.3
+            }
+          ]
+        },
+        "dodge": {
+          "DodgeWindshift": [],
+          "DashAttackSheerAssault": [
+            {
+              "DamagePercentage": 1.074,
+              "DamagePercentageGrowth": 0.098,
+              "StunRatio": 0.422,
+              "StunRatioGrowth": 0.02,
+              "SpRecovery": 138.1,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 1056,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 38.34
+            }
+          ],
+          "DodgeCounterFatalEnd": [
+            {
+              "DamagePercentage": 3.069,
+              "DamagePercentageGrowth": 0.279,
+              "StunRatio": 2.109,
+              "StunRatioGrowth": 0.096,
+              "SpRecovery": 330.2,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 2521.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 91.69
+            }
+          ],
+          "DodgeSpontaneity": []
+        },
+        "special": {
+          "SpecialAttackGaleRend": [
+            {
+              "DamagePercentage": 0.584,
+              "DamagePercentageGrowth": 0.054,
+              "StunRatio": 0.459,
+              "StunRatioGrowth": 0.021,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 1146.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 41.66
+            }
+          ],
+          "EXSpecialAttackSwiftwindRupture": [
+            {
+              "DamagePercentage": 5.66,
+              "DamagePercentageGrowth": 0.515,
+              "StunRatio": 3.693,
+              "StunRatioGrowth": 0.168,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 13004.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 369.98
+            },
+            {
+              "DamagePercentage": 4.092,
+              "DamagePercentageGrowth": 0.372,
+              "StunRatio": 2.549,
+              "StunRatioGrowth": 0.116,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 9702,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 261.94
+            }
+          ]
+        },
+        "chain": {
+          "ChainAttackColdbladeReap": [
+            {
+              "DamagePercentage": 8.714,
+              "DamagePercentageGrowth": 0.793,
+              "StunRatio": 2.458,
+              "StunRatioGrowth": 0.112,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 24431,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 422.86
+            }
+          ],
+          "UltimateAnnihilatingWindstorm": [
+            {
+              "DamagePercentage": 26.764,
+              "DamagePercentageGrowth": 2.434,
+              "StunRatio": 3.484,
+              "StunRatioGrowth": 0.159,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 316.66
+            }
+          ]
+        },
+        "assist": {
+          "QuickAssistFieldOrders": [
+            {
+              "DamagePercentage": 0.642,
+              "DamagePercentageGrowth": 0.059,
+              "StunRatio": 0.505,
+              "StunRatioGrowth": 0.023,
+              "SpRecovery": 165.1,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 1262.25,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 45.84
+            }
+          ],
+          "DefensiveAssistProvocationProhibited": [
+            {
+              "DamagePercentage": 0,
+              "DamagePercentageGrowth": 0,
+              "StunRatio": 2.713,
+              "StunRatioGrowth": 0.124,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            },
+            {
+              "DamagePercentage": 0,
+              "DamagePercentageGrowth": 0,
+              "StunRatio": 3.428,
+              "StunRatioGrowth": 0.156,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            },
+            {
+              "DamagePercentage": 0,
+              "DamagePercentageGrowth": 0,
+              "StunRatio": 1.668,
+              "StunRatioGrowth": 0.076,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            }
+          ],
+          "AssistFollowUpFightForceWithForce": [
+            {
+              "DamagePercentage": 3.647,
+              "DamagePercentageGrowth": 0.332,
+              "StunRatio": 2.443,
+              "StunRatioGrowth": 0.112,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 8219.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 241.22
+            }
+          ],
+          "EntrySkillClearOut": [
+            {
+              "DamagePercentage": 1.541,
+              "DamagePercentageGrowth": 0.141,
+              "StunRatio": 0.606,
+              "StunRatioGrowth": 0.028,
+              "SpRecovery": 396.2,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 3027.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 110.03
+            }
+          ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackSwiftEdge": [],
+          "BasicAttackRagingWhirlwind": [],
+          "BasicAttackAzureWindsShadowhunt": []
+        },
+        "dodge": {
+          "DodgeWindshift": [],
+          "DashAttackSheerAssault": [],
+          "DodgeCounterFatalEnd": [],
+          "DodgeSpontaneity": []
+        },
+        "special": {
+          "SpecialAttackGaleRend": [],
+          "EXSpecialAttackSwiftwindRupture": []
+        },
+        "chain": {
+          "ChainAttackColdbladeReap": [],
+          "UltimateAnnihilatingWindstorm": []
+        },
+        "assist": {
+          "QuickAssistFieldOrders": [],
+          "DefensiveAssistProvocationProhibited": [],
+          "AssistFollowUpFightForceWithForce": [],
+          "EntrySkillClearOut": []
+        }
+      },
+      "coreParams": [
+        [
+          0.3,
+          0.35,
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6
+        ],
+        [
+          0.125,
+          0.146,
+          0.167,
+          0.188,
+          0.208,
+          0.229,
+          0.25
+        ],
+        [
+          0.15,
+          0.175,
+          0.2,
+          0.225,
+          0.25,
+          0.275,
+          0.3
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          180,
+          180,
+          180,
+          180,
+          180,
+          180,
+          180
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          150,
+          150,
+          150,
+          150,
+          150,
+          150,
+          150
+        ],
+        [
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100
+        ],
+        [
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100
+        ]
+      ],
+      "abilityParams": [
+        0.01,
+        8.5,
+        1
+      ],
+      "mindscapeParams": [
+        [
+          50,
+          60,
+          1,
+          0.15
+        ],
+        [
+          150,
+          180,
+          0.2,
+          25
+        ],
+        [
+          2
+        ],
+        [
+          0.1,
+          30,
+          0.1,
+          15
+        ],
+        [
+          2
+        ],
+        [
+          180,
+          180,
+          3.5,
+          5,
+          5
+        ]
+      ],
+      "potentialParams": []
+    },
+    "Phoenix": {
+      "id": "1641",
+      "rarity": "S",
+      "attribute": "fire",
+      "specialty": "anomaly",
+      "faction": "KrampusComplianceAuthority",
+      "stats": {
+        "atk_base": 126,
+        "atk_growth": 7.586,
+        "def_base": 49,
+        "def_growth": 6.6882,
+        "hp_base": 617,
+        "hp_growth": 83.7238,
+        "anomMas": 116,
+        "anomProf": 118,
+        "impact": 86,
+        "enerRegen": 1.2
+      },
+      "promotionStats": [
+        {
+          "hp": 0,
+          "atk": 0,
+          "def": 0
+        },
+        {
+          "hp": 423,
+          "atk": 45,
+          "def": 34
+        },
+        {
+          "hp": 847,
+          "atk": 90,
+          "def": 68
+        },
+        {
+          "hp": 1270,
+          "atk": 134,
+          "def": 101
+        },
+        {
+          "hp": 1694,
+          "atk": 179,
+          "def": 135
+        },
+        {
+          "hp": 2117,
+          "atk": 224,
+          "def": 169
+        }
+      ],
+      "coreStats": [
+        {
+          "atk": 0,
+          "anomMas": 12
+        },
+        {
+          "atk": 25,
+          "anomMas": 12
+        },
+        {
+          "atk": 25,
+          "anomMas": 24
+        },
+        {
+          "atk": 50,
+          "anomMas": 24
+        },
+        {
+          "atk": 50,
+          "anomMas": 36
+        },
+        {
+          "atk": 75,
+          "anomMas": 36
+        }
+      ],
+      "skillParams": {
+        "basic": {
+          "BasicAttackSeverLife": [
+            {
+              "DamagePercentage": 0.156,
+              "DamagePercentageGrowth": 0.015,
+              "StunRatio": 0.132,
+              "StunRatioGrowth": 0.006,
+              "SpRecovery": 32.4,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 330,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 12
+            },
+            {
+              "DamagePercentage": 0.677,
+              "DamagePercentageGrowth": 0.062,
+              "StunRatio": 0.455,
+              "StunRatioGrowth": 0.021,
+              "SpRecovery": 121.3,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 1138.5,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 41.33
+            },
+            {
+              "DamagePercentage": 1.781,
+              "DamagePercentageGrowth": 0.162,
+              "StunRatio": 0.975,
+              "StunRatioGrowth": 0.045,
+              "SpRecovery": 302.3,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 2310,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 113.62
+            },
+            {
+              "DamagePercentage": 3.892,
+              "DamagePercentageGrowth": 0.354,
+              "StunRatio": 2.086,
+              "StunRatioGrowth": 0.095,
+              "SpRecovery": 699.5,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 5343.25,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 239.17
+            }
+          ],
+          "BasicAttackPurifyingFlame": [
+            {
+              "DamagePercentage": 5.473,
+              "DamagePercentageGrowth": 0.498,
+              "StunRatio": 2.75,
+              "StunRatioGrowth": 0.125,
+              "SpRecovery": 450,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 6875,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 361.96
+            }
+          ],
+          "BasicAttackMeltdown": [
+            {
+              "DamagePercentage": 1.781,
+              "DamagePercentageGrowth": 0.162,
+              "StunRatio": 0.963,
+              "StunRatioGrowth": 0.044,
+              "SpRecovery": 352.8,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 2406.25,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 128.79
+            }
+          ]
+        },
+        "dodge": {
+          "DodgeDriftingSway": [],
+          "DashAttackLunge": [
+            {
+              "DamagePercentage": 1.04,
+              "DamagePercentageGrowth": 0.095,
+              "StunRatio": 0.44,
+              "StunRatioGrowth": 0.02,
+              "SpRecovery": 144,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 1100,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 39.98
+            }
+          ],
+          "DodgeCounterTwinPassageOfKarmicFire": [
+            {
+              "DamagePercentage": 2.962,
+              "DamagePercentageGrowth": 0.27,
+              "StunRatio": 2.182,
+              "StunRatioGrowth": 0.1,
+              "SpRecovery": 353.9,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 2706,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 98.3
+            }
+          ]
+        },
+        "special": {
+          "SpecialAttackFireSweep": [
+            {
+              "DamagePercentage": 0.456,
+              "DamagePercentageGrowth": 0.042,
+              "StunRatio": 0.386,
+              "StunRatioGrowth": 0.018,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 965.25,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 35
+            }
+          ],
+          "EXSpecialAttackBlazingSlash": [
+            {
+              "DamagePercentage": 3.805,
+              "DamagePercentageGrowth": 0.346,
+              "StunRatio": 2.564,
+              "StunRatioGrowth": 0.117,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 2598.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 227.83
+            }
+          ],
+          "EXSpecialAttackDazzlingFlare": [
+            {
+              "DamagePercentage": 4.576,
+              "DamagePercentageGrowth": 0.416,
+              "StunRatio": 3.119,
+              "StunRatioGrowth": 0.142,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 12936,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 284.4
+            }
+          ],
+          "EXSpecialAttackFallingSun": [
+            {
+              "DamagePercentage": 6.23,
+              "DamagePercentageGrowth": 0.567,
+              "StunRatio": 4.105,
+              "StunRatioGrowth": 0.187,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 14720.75,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 401.19
+            }
+          ]
+        },
+        "chain": {
+          "ChainAttackLastMinuteSalvation": [
+            {
+              "DamagePercentage": 8.827,
+              "DamagePercentageGrowth": 0.803,
+              "StunRatio": 2.641,
+              "StunRatioGrowth": 0.121,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 24890.25,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 612.43
+            }
+          ],
+          "UltimatePerpetualResurrection": [
+            {
+              "DamagePercentage": 18.139,
+              "DamagePercentageGrowth": 1.649,
+              "StunRatio": 1.829,
+              "StunRatioGrowth": 0.084,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 903.61
+            }
+          ],
+          "SoulSearchingBlaze": [
+            {
+              "DamagePercentage": 0.955,
+              "DamagePercentageGrowth": 0.087,
+              "StunRatio": 0.096,
+              "StunRatioGrowth": 0.005,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 47.56
+            }
+          ]
+        },
+        "assist": {
+          "QuickAssistEmergencyAid": [
+            {
+              "DamagePercentage": 0.954,
+              "DamagePercentageGrowth": 0.087,
+              "StunRatio": 0.807,
+              "StunRatioGrowth": 0.037,
+              "SpRecovery": 264,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 2018.5,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 73.31
+            }
+          ],
+          "DefensiveAssistPatientTurnedDoctor": [
+            {
+              "DamagePercentage": 0,
+              "DamagePercentageGrowth": 0,
+              "StunRatio": 2.713,
+              "StunRatioGrowth": 0.124,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            },
+            {
+              "DamagePercentage": 0,
+              "DamagePercentageGrowth": 0,
+              "StunRatio": 3.428,
+              "StunRatioGrowth": 0.156,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            },
+            {
+              "DamagePercentage": 0,
+              "DamagePercentageGrowth": 0,
+              "StunRatio": 1.668,
+              "StunRatioGrowth": 0.076,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            }
+          ],
+          "AssistFollowUpRegenerationTherapy": [
+            {
+              "DamagePercentage": 4.265,
+              "DamagePercentageGrowth": 0.388,
+              "StunRatio": 3.133,
+              "StunRatioGrowth": 0.143,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 10213.5,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 306.42
+            }
+          ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackSeverLife": [],
+          "BasicAttackPurifyingFlame": [
+            {
+              "formula": "{CAL:225+20*(basicLevel-1),1,2}%"
+            }
+          ],
+          "BasicAttackMeltdown": []
+        },
+        "dodge": {
+          "DodgeDriftingSway": [],
+          "DashAttackLunge": [],
+          "DodgeCounterTwinPassageOfKarmicFire": []
+        },
+        "special": {
+          "SpecialAttackFireSweep": [],
+          "EXSpecialAttackBlazingSlash": [],
+          "EXSpecialAttackDazzlingFlare": [],
+          "EXSpecialAttackFallingSun": []
+        },
+        "chain": {
+          "ChainAttackLastMinuteSalvation": [],
+          "UltimatePerpetualResurrection": [],
+          "SoulSearchingBlaze": [
+            {
+              "formula": "{CAL:300+27*(chainLevel-1),1,2}%"
+            }
+          ]
+        },
+        "assist": {
+          "QuickAssistEmergencyAid": [],
+          "DefensiveAssistPatientTurnedDoctor": [],
+          "AssistFollowUpRegenerationTherapy": []
+        }
+      },
+      "coreParams": [
+        [
+          43,
+          50,
+          57,
+          64,
+          71,
+          78,
+          85
+        ],
+        [
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20
+        ],
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ],
+        [
+          0.125,
+          0.146,
+          0.167,
+          0.188,
+          0.208,
+          0.229,
+          0.25
+        ],
+        [
+          155,
+          155,
+          155,
+          155,
+          155,
+          155,
+          155
+        ],
+        [
+          0.007,
+          0.007,
+          0.007,
+          0.007,
+          0.007,
+          0.007,
+          0.007
+        ],
+        [
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255
+        ],
+        [
+          0.25,
+          0.29,
+          0.33,
+          0.38,
+          0.42,
+          0.46,
+          0.5
+        ],
+        [
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ],
+        [
+          120,
+          120,
+          120,
+          120,
+          120,
+          120,
+          120
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200
+        ],
+        [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        [
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10
+        ],
+        [
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20
+        ]
+      ],
+      "abilityParams": [
+        0.15
+      ],
+      "mindscapeParams": [
+        [
+          1,
+          180,
+          0.25,
+          0.15
+        ],
+        [
+          2,
+          0.3
+        ],
+        [
+          2
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2
+        ],
+        [
+          0.15,
+          1,
+          0.4
         ]
       ],
       "potentialParams": []
@@ -31794,6 +32840,56 @@
             1,
             0.008,
             0.4
+          ]
+        }
+      ]
+    },
+    "CandlelitScheme": {
+      "rarity": "A",
+      "type": "armorer",
+      "base_statkey": "def",
+      "base_statvalue": 24,
+      "second_statkey": "def_",
+      "second_statvalue": 0.16,
+      "phase": [
+        {
+          "params": [
+            0.08,
+            40,
+            0.15,
+            0.5
+          ]
+        },
+        {
+          "params": [
+            0.092,
+            40,
+            0.173,
+            0.5
+          ]
+        },
+        {
+          "params": [
+            0.104,
+            40,
+            0.195,
+            0.5
+          ]
+        },
+        {
+          "params": [
+            0.116,
+            40,
+            0.218,
+            0.5
+          ]
+        },
+        {
+          "params": [
+            0.128,
+            40,
+            0.24,
+            0.5
           ]
         }
       ]
@@ -35134,6 +36230,101 @@
             0.256,
             0.32,
             50
+          ]
+        }
+      ]
+    },
+    "IncarceratingGrip": {
+      "rarity": "S",
+      "type": "attack",
+      "base_statkey": "atk",
+      "base_statvalue": 48,
+      "second_statkey": "crit_",
+      "second_statvalue": 0.096,
+      "phase": [
+        {
+          "params": [
+            0.2,
+            0.1,
+            0.15,
+            16
+          ]
+        },
+        {
+          "params": [
+            0.23,
+            0.115,
+            0.173,
+            16
+          ]
+        },
+        {
+          "params": [
+            0.26,
+            0.13,
+            0.195,
+            16
+          ]
+        },
+        {
+          "params": [
+            0.29,
+            0.145,
+            0.218,
+            16
+          ]
+        },
+        {
+          "params": [
+            0.32,
+            0.16,
+            0.24,
+            16
+          ]
+        }
+      ]
+    },
+    "PlumeOfRebirth": {
+      "rarity": "S",
+      "type": "anomaly",
+      "base_statkey": "atk",
+      "base_statvalue": 48,
+      "second_statkey": "anomMas_",
+      "second_statvalue": 0.12,
+      "phase": [
+        {
+          "params": [
+            90,
+            0.4,
+            20
+          ]
+        },
+        {
+          "params": [
+            99,
+            0.44,
+            20
+          ]
+        },
+        {
+          "params": [
+            108,
+            0.48,
+            20
+          ]
+        },
+        {
+          "params": [
+            117,
+            0.52,
+            20
+          ]
+        },
+        {
+          "params": [
+            126,
+            0.56,
+            20
           ]
         }
       ]

@@ -1,0 +1,15 @@
+{
+  "rarity": "A",
+  "type": "armorer",
+  "base_statkey": "def",
+  "base_statvalue": 24,
+  "second_statkey": "def_",
+  "second_statvalue": 0.16,
+  "phase": [
+    { "params": [0.08, 40, 0.15, 0.5] },
+    { "params": [0.092, 40, 0.173, 0.5] },
+    { "params": [0.104, 40, 0.195, 0.5] },
+    { "params": [0.116, 40, 0.218, 0.5] },
+    { "params": [0.128, 40, 0.24, 0.5] }
+  ]
+}

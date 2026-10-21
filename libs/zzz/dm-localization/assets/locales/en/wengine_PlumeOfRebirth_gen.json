@@ -1,0 +1,22 @@
+{
+  "name": "Plume of Rebirth",
+  "desc": {
+    "0": "The wind roars in her ears, her blood surging hot within her chest.",
+    "1": "Something is trying to burst free. Something is struggling awake.",
+    "2": "She loves this feeling.",
+    "3": "Nothing remains worth fearing, just as nothing remains worth pursuing.",
+    "4": "A spark of life lies buried within that fragile body. Whether it bursts into flame or dies away, it's only waiting to burn anew.",
+    "5": "Morning dew cares not for tomorrow, nor does wildfire wait for the spring breeze.",
+    "6": "The lighter life is, the more freely she longs to spend it. The shorter it is, the brighter it must burn."
+  },
+  "desc2": "Equip to increase Anomaly Agents' combat capabilities",
+  "desc3": "If life is as fleeting as morning dew, then hold nothing back.",
+  "phase": "Hatching Day",
+  "phaseDescs": [
+    "The equipper's Anomaly Proficiency increases by <ct color=#2BAD00>90</ct>. When Anomaly DMG dealt by any squad member to an enemy triggers a critical hit, the equipper's <ct color=#FF5521>Fire DMG</ct> increases by <ct color=#2BAD00>40%</ct> for 20s. Repeated triggers reset the duration.",
+    "The equipper's Anomaly Proficiency increases by <ct color=#2BAD00>99</ct>. When Anomaly DMG dealt by any squad member to an enemy triggers a critical hit, the equipper's <ct color=#FF5521>Fire DMG</ct> increases by <ct color=#2BAD00>44%</ct> for 20s. Repeated triggers reset the duration.",
+    "The equipper's Anomaly Proficiency increases by <ct color=#2BAD00>108</ct>. When Anomaly DMG dealt by any squad member to an enemy triggers a critical hit, the equipper's <ct color=#FF5521>Fire DMG</ct> increases by <ct color=#2BAD00>48%</ct> for 20s. Repeated triggers reset the duration.",
+    "The equipper's Anomaly Proficiency increases by <ct color=#2BAD00>117</ct>. When Anomaly DMG dealt by any squad member to an enemy triggers a critical hit, the equipper's <ct color=#FF5521>Fire DMG</ct> increases by <ct color=#2BAD00>52%</ct> for 20s. Repeated triggers reset the duration.",
+    "The equipper's Anomaly Proficiency increases by <ct color=#2BAD00>126</ct>. When Anomaly DMG dealt by any squad member to an enemy triggers a critical hit, the equipper's <ct color=#FF5521>Fire DMG</ct> increases by <ct color=#2BAD00>56%</ct> for 20s. Repeated triggers reset the duration."
+  ]
+}

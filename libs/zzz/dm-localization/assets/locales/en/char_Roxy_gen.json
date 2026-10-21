@@ -316,10 +316,7 @@
     },
     "6": {
       "name": "Eternity and the Clockwork Doll",
-      "desc": {
-        "0": "The DMG dealt by attacks ignores 15% of the target's <ct color=#A6C5FD>Wind RES</ct>.",
-        "1": "When <ct color=#ffffff>Special Attack: Forgive Me for Not Seeing You Off</ct> detonates <ct color=#ffffff>Eyes of the Storm</ct> to generate a Giant Windstorm, the primary target is inflicted with <ct color=#ffffff>Afterecho</ct>. A Giant Windstorm is generated at the target's location every 3s, for a total of 2 additional Giant Windstorms. Repeated triggers stack the number of additional Giant Windstorm instances generated and refresh the duration of <ct color=#ffffff>Afterecho</ct>. The DMG dealt by the Giant Windstorm increases to 250% of its original value, and the Daze it inflicts increases by 20%."
-      },
+      "desc": "The DMG dealt by attacks ignores 15% of the target's <ct color=#A6C5FD>Wind RES</ct>. When <ct color=#ffffff>Special Attack: Forgive Me for Not Seeing You Off</ct> detonates <ct color=#ffffff>Eyes of the Storm</ct> to generate a Giant Windstorm, the primary target is inflicted with <ct color=#ffffff>Afterecho</ct>. A Giant Windstorm is generated at the target's location every 3s, for a total of 2 additional Giant Windstorms. Repeated triggers stack the number of additional Giant Windstorm instances generated and refresh the duration of <ct color=#ffffff>Afterecho</ct>. The DMG multiplier of the Giant Windstorm increases to 250% of its original value, and the Daze it inflicts increases by 20%.",
       "flavor": {
         "0": "Some believe Roxy only remains by the head of the household's side to sustain her Porcelloy Heart: Flint Workshop used their bloodline to secure a capable assistant.",
         "1": "Roxy has heard such claims so often that she no longer even bothers refuting them. The other person concerned, however, can't help but worry over it.",

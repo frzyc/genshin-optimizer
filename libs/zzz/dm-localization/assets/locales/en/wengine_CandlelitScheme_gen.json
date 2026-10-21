@@ -1,0 +1,14 @@
+{
+  "name": "Candlelit Scheme",
+  "desc": "A candleholder carved from a pumpkin. Its design was deemed so cute that it was voted the worst horror movie prop ever. Ironically, after receiving this dubious \"honor,\" the mass-produced \"Candle-O'-Lantern\" became one of the hottest party and home decorations among young people.",
+  "desc2": "Equip to increase Armorer Agents' combat capabilities",
+  "desc3": "How could a pumpkin this cute possibly scare anyone?!",
+  "phase": "Moment of Fright",
+  "phaseDescs": [
+    "When using an <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's CRIT Rate is increased by <ct color=#2BAD00>8%</ct> for 40s. The equipper deals <ct color=#2BAD00>15%</ct> more DMG to enemies whose current HP is below 50% of their Max HP.",
+    "When using an <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's CRIT Rate is increased by <ct color=#2BAD00>9.2%</ct> for 40s. The equipper deals <ct color=#2BAD00>17.3%</ct> more DMG to enemies whose current HP is below 50% of their Max HP.",
+    "When using an <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's CRIT Rate is increased by <ct color=#2BAD00>10.4%</ct> for 40s. The equipper deals <ct color=#2BAD00>19.5%</ct> more DMG to enemies whose current HP is below 50% of their Max HP.",
+    "When using an <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's CRIT Rate is increased by <ct color=#2BAD00>11.6%</ct> for 40s. The equipper deals <ct color=#2BAD00>21.8%</ct> more DMG to enemies whose current HP is below 50% of their Max HP.",
+    "When using an <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's CRIT Rate is increased by <ct color=#2BAD00>12.8%</ct> for 40s. The equipper deals <ct color=#2BAD00>24%</ct> more DMG to enemies whose current HP is below 50% of their Max HP."
+  ]
+}

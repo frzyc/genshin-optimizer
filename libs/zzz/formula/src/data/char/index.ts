@@ -34,6 +34,7 @@ import Nicole from './sheets/Nicole'
 import Norma from './sheets/Norma'
 import OrphieMagus from './sheets/OrphieMagus'
 import PanYinhu from './sheets/PanYinhu'
+import Phoenix from './sheets/Phoenix'
 import Piper from './sheets/Piper'
 import Promeia from './sheets/Promeia'
 import Pulchra from './sheets/Pulchra'
@@ -44,6 +45,7 @@ import Rina from './sheets/Rina'
 import Roxy from './sheets/Roxy'
 import Seed from './sheets/Seed'
 import Seth from './sheets/Seth'
+import Severian from './sheets/Severian'
 import Sigrid from './sheets/Sigrid'
 import Soldier0Anby from './sheets/Soldier0Anby'
 import Soldier11 from './sheets/Soldier11'
@@ -96,6 +98,7 @@ const data: TagMapNodeEntries[] = [
   Norma,
   OrphieMagus,
   PanYinhu,
+  Phoenix,
   Piper,
   Promeia,
   Pulchra,
@@ -106,6 +109,7 @@ const data: TagMapNodeEntries[] = [
   Roxy,
   Seed,
   Seth,
+  Severian,
   Sigrid,
   Soldier0Anby,
   Soldier11,
