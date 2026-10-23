@@ -1,18 +1,7 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  boolConditional: { sheet: 'Phoenix', name: 'boolConditional', type: 'bool' },
-  listConditional: {
-    sheet: 'Phoenix',
-    name: 'listConditional',
-    type: 'list',
-    list: ['val1', 'val2'],
-  },
-  numConditional: {
-    sheet: 'Phoenix',
-    name: 'numConditional',
-    type: 'num',
-    int_only: true,
-    min: 0,
-    max: 2,
-  },
+  basicAbloom: { sheet: 'Phoenix', name: 'basicAbloom', type: 'bool' },
+  m4Abloom: { sheet: 'Phoenix', name: 'm4Abloom', type: 'bool' },
+  sear: { sheet: 'Phoenix', name: 'sear', type: 'bool' },
+  ultAbloom: { sheet: 'Phoenix', name: 'ultAbloom', type: 'bool' },
 } as const

@@ -1,36 +1,152 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
-  m6_dmg_: {
+  basic_abloom_anom_mv_mult_: {
     sheet: 'Phoenix',
-    name: 'm6_dmg_',
+    name: 'basic_abloom_anom_mv_mult_',
+    tag: {
+      et: 'display',
+      qt: 'dmg',
+      q: 'anom_mv_mult_',
+      sheet: 'Phoenix',
+      damageType1: 'abloom',
+      name: 'basic_abloom_anom_mv_mult_',
+    },
+  },
+  basic_abloom_anom_crit_dmg_: {
+    sheet: 'Phoenix',
+    name: 'basic_abloom_anom_crit_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anom_crit_dmg_',
+      sheet: 'Phoenix',
+      damageType1: 'abloom',
+      name: 'basic_abloom_anom_crit_dmg_',
+    },
+  },
+  ult_abloom_anom_mv_mult_: {
+    sheet: 'Phoenix',
+    name: 'ult_abloom_anom_mv_mult_',
+    tag: {
+      et: 'display',
+      qt: 'dmg',
+      q: 'anom_mv_mult_',
+      sheet: 'Phoenix',
+      damageType1: 'abloom',
+      name: 'ult_abloom_anom_mv_mult_',
+    },
+  },
+  ult_abloom_anom_crit_dmg_: {
+    sheet: 'Phoenix',
+    name: 'ult_abloom_anom_crit_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anom_crit_dmg_',
+      sheet: 'Phoenix',
+      damageType1: 'abloom',
+      name: 'ult_abloom_anom_crit_dmg_',
+    },
+  },
+  core_anomProf: {
+    sheet: 'Phoenix',
+    name: 'core_anomProf',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anomProf',
+      sheet: 'Phoenix',
+      name: 'core_anomProf',
+    },
+  },
+  core_anom_crit_: {
+    sheet: 'Phoenix',
+    name: 'core_anom_crit_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anom_crit_',
+      sheet: 'Phoenix',
+      name: 'core_anom_crit_',
+    },
+  },
+  core_anom_crit_dmg_: {
+    sheet: 'Phoenix',
+    name: 'core_anom_crit_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anom_crit_dmg_',
+      sheet: 'Phoenix',
+      name: 'core_anom_crit_dmg_',
+    },
+  },
+  ability_anom_crit_dmg_: {
+    sheet: 'Phoenix',
+    name: 'ability_anom_crit_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anom_crit_dmg_',
+      sheet: 'Phoenix',
+      name: 'ability_anom_crit_dmg_',
+    },
+  },
+  m1_anom_crit_dmg_: {
+    sheet: 'Phoenix',
+    name: 'm1_anom_crit_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anom_crit_dmg_',
+      sheet: 'Phoenix',
+      name: 'm1_anom_crit_dmg_',
+    },
+  },
+  m2_common_dmg_: {
+    sheet: 'Phoenix',
+    name: 'm2_common_dmg_',
     tag: {
       et: 'display',
       qt: 'combat',
       q: 'common_dmg_',
       sheet: 'Phoenix',
-      name: 'm6_dmg_',
+      name: 'm2_common_dmg_',
     },
   },
-  team_dmg_: {
+  m4_abloom_anom_mv_mult_: {
     sheet: 'Phoenix',
-    name: 'team_dmg_',
+    name: 'm4_abloom_anom_mv_mult_',
+    tag: {
+      et: 'display',
+      qt: 'dmg',
+      q: 'anom_mv_mult_',
+      sheet: 'Phoenix',
+      damageType1: 'abloom',
+      name: 'm4_abloom_anom_mv_mult_',
+    },
+  },
+  m6_resIgn_: {
+    sheet: 'Phoenix',
+    name: 'm6_resIgn_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'resIgn_',
       sheet: 'Phoenix',
-      name: 'team_dmg_',
+      name: 'm6_resIgn_',
     },
   },
-  enemy_defRed_: {
+  m6_abloom_defIgn_: {
     sheet: 'Phoenix',
-    name: 'enemy_defRed_',
+    name: 'm6_abloom_defIgn_',
     tag: {
       et: 'display',
-      qt: 'common',
-      q: 'defRed_',
+      qt: 'combat',
+      q: 'defIgn_',
       sheet: 'Phoenix',
-      name: 'enemy_defRed_',
+      damageType1: 'abloom',
+      name: 'm6_abloom_defIgn_',
     },
   },
 } as const

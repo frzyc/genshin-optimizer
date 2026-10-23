@@ -929,4 +929,17 @@ export const formulas = {
       name: 'AssistFollowUpRegenerationTherapy_0',
     },
   },
+  core_dmg: {
+    sheet: 'Phoenix',
+    name: 'core_dmg',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'standardDmg',
+      sheet: 'Phoenix',
+      attribute: 'fire',
+      damageType1: 'exSpecial',
+      name: 'core_dmg',
+    },
+  },
 } as const

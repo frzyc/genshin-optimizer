@@ -593,7 +593,7 @@
       "circle": "IconRoleCircle1611.png",
       "trap": "IconRoleGeneral1611.png",
       "select": "IconRoleSelect1611.png",
-      "interknot": "IconInterKnotRole0069.png"
+      "interknot": "IconInterKnotRole69.png"
     },
     "Roxy": {
       "full": "IconRole68.png",
@@ -607,14 +607,14 @@
       "circle": "IconRoleCircle1631.png",
       "trap": "IconRoleGeneral1631.png",
       "select": "IconRoleSelect1631.png",
-      "interknot": "IconInterKnotRole001631.png"
+      "interknot": "IconInterKnotRole1631.png"
     },
     "Phoenix": {
       "full": "IconRole1641.png",
       "circle": "IconRoleCircle1641.png",
       "trap": "IconRoleGeneral1641.png",
       "select": "IconRoleSelect1641.png",
-      "interknot": "IconInterKnotRole001641.png"
+      "interknot": "IconInterKnotRole1641.png"
     }
   },
   "wengines": {
