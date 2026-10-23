@@ -44,7 +44,7 @@ const sheet = register(
     teamBuff.dmg.anom_mv_mult_.addWithDmgType(
       'abloom',
       basicAbloom.ifOn(
-        sum(percent(225), prod(percent(20), sum(char.basic, -1)))
+        sum(percent(2.25), prod(percent(0.2), sum(char.basic, -1)))
       )
     )
   ),
@@ -59,7 +59,7 @@ const sheet = register(
     'ult_abloom_anom_mv_mult_',
     teamBuff.dmg.anom_mv_mult_.addWithDmgType(
       'abloom',
-      ultAbloom.ifOn(sum(percent(300), prod(percent(27), sum(char.chain, -1))))
+      ultAbloom.ifOn(sum(percent(3), prod(percent(0.27), sum(char.chain, -1))))
     )
   ),
   registerBuff(
