@@ -1,5 +1,4 @@
 import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
-import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { BuildResult, Progress } from '@genshin-optimizer/game-opt/solver'
 import { Solver } from '@genshin-optimizer/game-opt/solver'
@@ -17,7 +16,6 @@ import {
 import {
   useGiCalcContext,
   useResolvedOptTarget,
-  pandoCardSx,
 } from '@genshin-optimizer/gi/formula-ui'
 import { createOptimizeConfig } from '@genshin-optimizer/gi/pando-solver'
 import { getCharStat, getWeaponStat } from '@genshin-optimizer/gi/stats'
@@ -27,10 +25,12 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import {
   Box,
   Button,
-  CardContent,
+  Drawer,
   LinearProgress,
   Stack,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from '@mui/material'
 import {
   useCallback,
@@ -41,6 +41,8 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useOptimizePage } from '../context/OptimizePageContext'
+import { OPT_SECTION_IDS } from '../nav/optimizeSections'
 import { ArtFilter } from './ArtFilter'
 import { BuildsSelector, WorkerSelector } from './BuildsWorkerSelectors'
 import { StatFilterCard } from './StatFilterCard'
@@ -52,6 +54,10 @@ export default function Optimize() {
 
 function OptimizeWrapper() {
   const { t } = useTranslation('page_optimize')
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'))
+  const { setOptimizeActions, filtersOpen, setFiltersOpen, scrollToSection } =
+    useOptimizePage()
   const database = useDatabase()
   const calc = useGiCalcContext()
   const { tag: optTag } = useResolvedOptTarget()
@@ -195,7 +201,8 @@ function OptimizeWrapper() {
       })),
       buildDate: Date.now(),
     })
-  }, [cfg, database.pandoOptConfigs, optConfigId])
+    scrollToSection(OPT_SECTION_IDS.builds)
+  }, [cfg, database.pandoOptConfigs, optConfigId, scrollToSection])
 
   const onCancel = useCallback(() => {
     cancelToken.current()
@@ -203,45 +210,73 @@ function OptimizeWrapper() {
     setProgress(undefined)
   }, [])
 
-  return (
-    <CardThemed sx={pandoCardSx}>
-      <CardContent>
-        <Stack spacing={1}>
-          <Box
-            sx={{
-              display: 'flex',
-              gap: 1,
-              flexWrap: 'wrap',
-              '& .MuiPaper-root': { flexGrow: 1 },
-            }}
-          >
-            <StatFilterCard />
-            <WeaponFilter weapons={filteredWeapons} />
-            <ArtFilter artsBySlot={artsBySlot} />
-          </Box>
+  useEffect(() => {
+    setOptimizeActions({
+      disabled: !cfg,
+      optimizing,
+      onRun: onOptimize,
+      onCancel,
+    })
+    return () => setOptimizeActions(null)
+  }, [cfg, optimizing, onOptimize, onCancel, setOptimizeActions])
 
-          {progress && <ProgressIndicator progress={progress} />}
-          <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
-            <BuildsSelector
-              maxBuildsToShow={optConfig.maxBuildsToShow}
-              optConfigId={optConfigId}
-            />
-            <WorkerSelector
-              numWorkers={numWorkers}
-              setNumWorkers={setNumWorkers}
-            />
-            <Button
-              disabled={!cfg}
-              onClick={optimizing ? onCancel : onOptimize}
-              color={optimizing ? 'error' : 'primary'}
-              startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
-            >
-              {optimizing ? t('cancel') : t('optimize')}
-            </Button>
-          </Box>
-        </Stack>
-      </CardContent>
-    </CardThemed>
+  const filterGrid = (
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 1,
+        flexWrap: 'wrap',
+        '& .MuiPaper-root': { flexGrow: 1 },
+      }}
+    >
+      <StatFilterCard />
+      <WeaponFilter weapons={filteredWeapons} />
+      <ArtFilter artsBySlot={artsBySlot} />
+    </Box>
+  )
+
+  return (
+    <Stack spacing={1}>
+      {!isMobile && filterGrid}
+      <Drawer
+        anchor="bottom"
+        open={isMobile && filtersOpen}
+        onClose={() => setFiltersOpen(false)}
+        PaperProps={{ sx: { maxHeight: '85vh', p: 2 } }}
+      >
+        <Typography variant="h6" sx={{ mb: 1 }}>
+          {t('filters')}
+        </Typography>
+        {filterGrid}
+        <Button sx={{ mt: 2 }} onClick={() => setFiltersOpen(false)}>
+          {t('filtersDone')}
+        </Button>
+      </Drawer>
+
+      {progress && <ProgressIndicator progress={progress} />}
+      <Box
+        sx={{
+          display: { xs: 'none', md: 'flex' },
+          justifyContent: 'flex-end',
+          gap: 1,
+        }}
+      >
+        <BuildsSelector
+          maxBuildsToShow={optConfig.maxBuildsToShow}
+          optConfigId={optConfigId}
+        />
+        <WorkerSelector numWorkers={numWorkers} setNumWorkers={setNumWorkers} />
+        <Button
+          disabled={!cfg}
+          title={!cfg ? t('generateDisabledHint') : undefined}
+          onClick={optimizing ? onCancel : onOptimize}
+          color={optimizing ? 'error' : 'primary'}
+          startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
+        >
+          {optimizing ? t('cancel') : t('optimize')}
+        </Button>
+      </Box>
+    </Stack>
   )
 }
 
