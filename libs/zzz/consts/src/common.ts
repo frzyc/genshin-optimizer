@@ -160,6 +160,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   common_dmg_: 'DMG Bonus',
   dmg_: 'DMG Bonus',
   flat_dmg: 'Flat DMG Bonus',
+  addlMult_: 'Additional DMG Multiplier',
   buff_: 'Buff Bonus',
   dmg_red_: 'DMG Taken Reduction',
   char_lvl: 'Character Level',

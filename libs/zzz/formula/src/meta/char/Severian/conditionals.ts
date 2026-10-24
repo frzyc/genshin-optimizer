@@ -1,18 +1,5 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  boolConditional: { sheet: 'Severian', name: 'boolConditional', type: 'bool' },
-  listConditional: {
-    sheet: 'Severian',
-    name: 'listConditional',
-    type: 'list',
-    list: ['val1', 'val2'],
-  },
-  numConditional: {
-    sheet: 'Severian',
-    name: 'numConditional',
-    type: 'num',
-    int_only: true,
-    min: 0,
-    max: 2,
-  },
+  dodgeBasic: { sheet: 'Severian', name: 'dodgeBasic', type: 'bool' },
+  inCombat: { sheet: 'Severian', name: 'inCombat', type: 'bool' },
 } as const

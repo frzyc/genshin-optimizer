@@ -86,7 +86,7 @@ export function dmgDazeAndAnom(
   )
   const dmgBase = prod(
     own.final[stat],
-    dmgMulti,
+    sum(dmgMulti, own.final.addlMult_),
     cmpEq(own.dmg.mv_mult_, 0, percent(1), own.dmg.mv_mult_)
   )
   const dmg = arg.cond ? cmpNE(arg.cond, '', dmgBase) : dmgBase
