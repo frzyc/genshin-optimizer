@@ -14,12 +14,8 @@ import {
 import type { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { i18n } from '@genshin-optimizer/gi/i18n'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
-import { matchesCommandSearchAny } from '../../util/commandPaletteSearch'
 import type { CharacterNameSearchFieldsCache } from './characterNameSearchFields'
-import {
-  characterMatchesNameSearch,
-  characterNameSearchFieldsFor,
-} from './characterNameSearchFields'
+import { characterMatchesNameSearch } from './characterNameSearchFields'
 export const characterSortKeys = [
   'new',
   'level',
@@ -78,10 +74,24 @@ export function characterFilterConfigs(
       if (nameSearchFields) {
         return characterMatchesNameSearch(nameSearchFields, ck, filter)
       }
-      if (filter === undefined || filter === '') return true
-      return matchesCommandSearchAny(
-        [...characterNameSearchFieldsFor(ck, database.gender, silly)],
-        filter
+      const locKey = charKeyToLocGenderedCharKey(ck, database.gender)
+      const filterLower = filter?.toLowerCase()
+      return (
+        filter === undefined ||
+        filter === '' ||
+        i18n
+          .t(
+            `${
+              silly ? 'sillyWisher_charNames' : 'charNames_gen' // Should already be loaded by caller
+            }:${locKey}`
+          )
+          .toLowerCase()
+          .includes(filterLower ?? '') ||
+        (silly &&
+          i18n
+            .t(`charNames_gen:${locKey}`)
+            .toLowerCase()
+            .includes(filterLower ?? ''))
       )
     },
     new: (ck, filter) =>
