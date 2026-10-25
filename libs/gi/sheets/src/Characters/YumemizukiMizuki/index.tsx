@@ -440,6 +440,9 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       eleMas: lockDream_eleMas,
     },
   },
+  flags: {
+    radiance: condLockStellarRadiance,
+  },
 })
 
 const sheet: TalentSheet = {

@@ -1,8 +1,10 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
+  compareEq,
   constant,
   equal,
+  equalStr,
   greaterEq,
   infoMut,
   input,
@@ -303,6 +305,14 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       swirl_dmg_: nodeC6swirl_dmg_,
       stellarswirl_dmg_: nodeC6stellarswirl_dmg_,
     },
+  },
+  flags: {
+    radiance: compareEq(
+      condLockStellarRadiance,
+      'on',
+      'sc',
+      equalStr(condLockStellarRadiance, 'ss', 'ss')
+    ),
   },
 })
 

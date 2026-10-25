@@ -128,7 +128,7 @@
   "passive": {
     "name": "Echo of Winter Daydreams",
     "description": {
-      "0": "Memperlihatkan lokasi <strong>produk khas Snezhnaya</strong> di sekitar pada peta kecil.",
+      "0": "Memperlihatkan lokasi <strong>produk khas Snezhnaya</strong> di sekitar pada peta kecil, juga bisa memberikan efek bantuan yang sama di Alam Bayangan.",
       "1": "Saat latihan menari di saat senggang, mungkin ada efek lain yang bisa terpicu ...."
     }
   },
@@ -150,9 +150,9 @@
       "0": "Talenta Ascension \"Spring Rite of the Chosen One\" diperkuat: Setiap lapisan <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Marvelous Splendor</strong></tooltip> juga meningkatkan 7% ATK Karakter.",
       "1": "Selain itu, saat <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solo Dance Double</strong></tooltip> berada di medan pertempuran dan Odette sedang berada dalam status <strong><tooltip ns=tooltips_gen baseKey18=11500004 values=[]>Radiance: Stellar Glimmer</tooltip></strong>, maka Elemental RES musuh di sekitar <strong>Solo Dance Double</strong> akan berkurang 20% untuk elemen berikut:",
       "2": [
-        "<strong>Radiance: Stellar-Conduct</strong>: <cryo>Cryo</cryo> dan <electro>Electro</electro>."
-      ],
-      "3": "<strong>Radiance: Stellar Swirl</strong>: <cryo>Cryo</cryo> dan <anemo>Anemo</anemo>."
+        "<strong>Radiance: Stellar-Conduct</strong>: <cryo>Cryo</cryo> dan <electro>Electro</electro>.",
+        "<strong>Radiance: Stellar Swirl</strong>: <cryo>Cryo</cryo> dan <anemo>Anemo</anemo>."
+      ]
     }
   },
   "constellation3": {

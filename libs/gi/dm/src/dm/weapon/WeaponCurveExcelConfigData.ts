@@ -1,97 +1,98 @@
+import { deobfPropMappings } from '../../mapping'
 import { readDMJSON } from '../../util'
 
-type WeaponCurveExcelConfigData = {
+type WeaponCurveExcelConfigDataObf = {
   level: 1
   curveInfos: [
     {
       type: 'GROW_CURVE_ATTACK_101'
       arith: 'ARITH_MULTI'
-      value: number //1.0
+      [deobfPropMappings.value]: number //1.0
     },
     {
       type: 'GROW_CURVE_ATTACK_102'
       arith: 'ARITH_MULTI'
-      value: number //1.0
+      [deobfPropMappings.value]: number //1.0
     },
     {
       type: 'GROW_CURVE_ATTACK_103'
       arith: 'ARITH_MULTI'
-      value: number //1.0
+      [deobfPropMappings.value]: number //1.0
     },
     {
       type: 'GROW_CURVE_ATTACK_104'
       arith: 'ARITH_MULTI'
-      value: number //1.0
+      [deobfPropMappings.value]: number //1.0
     },
     {
       type: 'GROW_CURVE_ATTACK_105'
       arith: 'ARITH_MULTI'
-      value: number //1.0
+      [deobfPropMappings.value]: number //1.0
     },
     {
       type: 'GROW_CURVE_CRITICAL_101'
       arith: 'ARITH_MULTI'
-      value: number //1.0
+      [deobfPropMappings.value]: number //1.0
     },
     {
       type: 'GROW_CURVE_ATTACK_201'
       arith: 'ARITH_MULTI'
-      value: number //1.0
+      [deobfPropMappings.value]: number //1.0
     },
     {
       type: 'GROW_CURVE_ATTACK_202'
       arith: 'ARITH_MULTI'
-      value: number //1.0
+      [deobfPropMappings.value]: number //1.0
     },
     {
       type: 'GROW_CURVE_ATTACK_203'
       arith: 'ARITH_MULTI'
-      value: number //1.0
+      [deobfPropMappings.value]: number //1.0
     },
     {
       type: 'GROW_CURVE_ATTACK_204'
       arith: 'ARITH_MULTI'
-      value: number //1.0
+      [deobfPropMappings.value]: number //1.0
     },
     {
       type: 'GROW_CURVE_ATTACK_205'
       arith: 'ARITH_MULTI'
-      value: number //1.0
+      [deobfPropMappings.value]: number //1.0
     },
     {
       type: 'GROW_CURVE_CRITICAL_201'
       arith: 'ARITH_MULTI'
-      value: number //1.0
+      [deobfPropMappings.value]: number //1.0
     },
     {
       type: 'GROW_CURVE_ATTACK_301'
       arith: 'ARITH_MULTI'
-      value: number //1.0
+      [deobfPropMappings.value]: number //1.0
     },
     {
       type: 'GROW_CURVE_ATTACK_302'
       arith: 'ARITH_MULTI'
-      value: number //1.0
+      [deobfPropMappings.value]: number //1.0
     },
     {
       type: 'GROW_CURVE_ATTACK_303'
       arith: 'ARITH_MULTI'
-      value: number //1.0
+      [deobfPropMappings.value]: number //1.0
     },
     {
       type: 'GROW_CURVE_ATTACK_304'
       arith: 'ARITH_MULTI'
-      value: number //1.0
+      [deobfPropMappings.value]: number //1.0
     },
     {
       type: 'GROW_CURVE_ATTACK_305'
       arith: 'ARITH_MULTI'
-      value: number //1.0
+      [deobfPropMappings.value]: number //1.0
     },
     {
       type: 'GROW_CURVE_CRITICAL_301'
       arith: 'ARITH_MULTI'
-      value: number //1.0
+      [deobfPropMappings.value]: number //1.0
     },
   ]
 }
@@ -118,7 +119,7 @@ export type WeaponGrowCurveKey =
 
 const weaponCurveExcelConfigDataSrc = JSON.parse(
   readDMJSON('ExcelBinOutput/WeaponCurveExcelConfigData.json')
-) as WeaponCurveExcelConfigData[]
+) as WeaponCurveExcelConfigDataObf[]
 
 export type WeaponExpCurveData = Record<
   WeaponGrowCurveKey,
@@ -127,7 +128,7 @@ export type WeaponExpCurveData = Record<
 
 const weaponCurveExcelConfigData = {} as WeaponExpCurveData
 weaponCurveExcelConfigDataSrc.forEach(({ level, curveInfos }) =>
-  curveInfos.forEach(({ type, value }) => {
+  curveInfos.forEach(({ type, [deobfPropMappings.value]: value }) => {
     if (!weaponCurveExcelConfigData[type]) weaponCurveExcelConfigData[type] = {} // TODO: [0]
     weaponCurveExcelConfigData[type][level] = value
   })

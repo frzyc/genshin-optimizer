@@ -5,15 +5,19 @@ import BashfulDemon from './sheets/BashfulDemon'
 import BellicoseBlaze from './sheets/BellicoseBlaze'
 import BigCylinder from './sheets/BigCylinder'
 import BlazingLaurel from './sheets/BlazingLaurel'
+import BloodmarrowCoffer from './sheets/BloodmarrowCoffer'
 import BoisterousEchoes from './sheets/BoisterousEchoes'
 import BoxCutter from './sheets/BoxCutter'
 import BunnyBand from './sheets/BunnyBand'
 import CannonRotor from './sheets/CannonRotor'
+import CattyLuck from './sheets/CattyLuck'
 import CauldronOfClarity from './sheets/CauldronOfClarity'
 import ChiefSidekick from './sheets/ChiefSidekick'
 import CinderCobalt from './sheets/CinderCobalt'
 import CloudcleaveRadiance from './sheets/CloudcleaveRadiance'
 import CordisGermina from './sheets/CordisGermina'
+import CrimsonMoonCasket from './sheets/CrimsonMoonCasket'
+import CrimsonThirst from './sheets/CrimsonThirst'
 import DeepSeaVisitor from './sheets/DeepSeaVisitor'
 import DemaraBatteryMarkII from './sheets/DemaraBatteryMarkII'
 import DreamlitHearth from './sheets/DreamlitHearth'
@@ -41,6 +45,7 @@ import KrakensCradle from './sheets/KrakensCradle'
 import LunarDecrescent from './sheets/LunarDecrescent'
 import LunarNoviluna from './sheets/LunarNoviluna'
 import LunarPleniluna from './sheets/LunarPleniluna'
+import LunarSemiluna from './sheets/LunarSemiluna'
 import MagneticStormAlpha from './sheets/MagneticStormAlpha'
 import MagneticStormBravo from './sheets/MagneticStormBravo'
 import MagneticStormCharlie from './sheets/MagneticStormCharlie'
@@ -102,15 +107,19 @@ const data: TagMapNodeEntries[] = [
   BellicoseBlaze,
   BigCylinder,
   BlazingLaurel,
+  BloodmarrowCoffer,
   BoisterousEchoes,
   BoxCutter,
   BunnyBand,
   CannonRotor,
+  CattyLuck,
   CauldronOfClarity,
   ChiefSidekick,
   CinderCobalt,
   CloudcleaveRadiance,
   CordisGermina,
+  CrimsonMoonCasket,
+  CrimsonThirst,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
   DreamlitHearth,
@@ -138,6 +147,7 @@ const data: TagMapNodeEntries[] = [
   LunarDecrescent,
   LunarNoviluna,
   LunarPleniluna,
+  LunarSemiluna,
   MagneticStormAlpha,
   MagneticStormBravo,
   MagneticStormCharlie,

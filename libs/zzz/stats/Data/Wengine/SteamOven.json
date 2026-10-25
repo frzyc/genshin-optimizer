@@ -1,7 +1,8 @@
 {
   "rarity": "A",
   "type": "stun",
-  "atk_base": 40,
+  "base_statkey": "atk",
+  "base_statvalue": 40,
   "second_statkey": "enerRegen_",
   "second_statvalue": 0.2,
   "phase": [

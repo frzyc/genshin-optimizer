@@ -473,9 +473,64 @@
     }
   },
   "11400001": {
-    "name": "Pouvoir de la lame spirituelle",
+    "name": "Chant principal",
     "description": {
-      "0": "À propos du pouvoir de la lame spirituelle..."
+      "0": "Lorsque votre personnage déployé de l'équipe inflige des <hydro>DGT Hydro</hydro> ou des <cryo>DGT Cryo</cryo> avec une attaque normale, une attaque chargée, une attaque plongeante, une compétence élémentaire ou un déchaînement élémentaire, il consomme 1 cumul de chant principal pour augmenter les DGT. Si un vortex errant est présent sur le terrain et pendant les 5 s suivant l'explosion d'un vortex errant, cet effet ne se déclenche que lorsque le personnage inflige des DGT de réaction d'Astrodispersion.",
+      "1": "Chaque tranche de 1 000 PV max de Vodyanitsa au-dessus de 40000 augmente les DGT de réaction d'Astrodispersion de cet effet de 260 pts et les <hydro>DGT Hydro</hydro> et <cryo>DGT Cryo</cryo> de 140 pts. Les DGT de réaction d'Astrodispersion peuvent être augmentés d'un maximum de 6500 pts de cette manière, et les <hydro>DGT Hydro</hydro> et <cryo>DGT Cryo</cryo> d'un maximum de 3500 pts."
+    }
+  },
+  "11400002": {
+    "name": "Chœur",
+    "description": {
+      "0": "Cet effet est déclenché par les personnages de l'équipe non déployés et par les autres personnages à proximité (et qui ne sont pas actuellement déployés) et possède les mêmes effets que le chant principal."
+    }
+  },
+  "11430001": {
+    "name": "Armée pour l'action",
+    "description": {
+      "0": "Vesna passe dans cet état pendant un maximum de 15 s après avoir utilisé sa compétence élémentaire <strong>L'art de la victoire</strong>, état qui possède plusieurs effets :",
+      "1": [
+        " La RÉS à l'interruption de Vesna augmente.",
+        " Les attaques normales, chargées et plongeantes de Vesna sont converties pour infliger des <anemo>DGT Anémo</anemo> ne pouvant pas être enchantés et invoquer une penne de tempête pour une attaque coordonnée de l'ennemi, infligeant des <anemo>DGT Anémo</anemo> supplémentaires. De plus, chaque invocation de penne de tempête restaure une certaine quantité d'<strong>énergie d'épée</strong> à Vesna."
+      ],
+      "2": "Vesna peut consommer son <strong>énergie d'épée</strong> pour déclencher la compétence élémentaire spéciale, <strong>Épée du vent</strong> afin d'infliger des <anemo>DGT Anémo</anemo> aux ennemis",
+      "3": [
+        " Vesna quitte cet état une fois la durée écoulée ou après avoir utilisé 3 fois <strong>Épée du vent</strong> à la limite max, ce qui annule également tous ses cumuls d'<strong>énergie d'épée</strong>."
+      ]
+    }
+  },
+  "11430002": {
+    "name": "Énergie d'épée",
+    "description": {
+      "0": "L'énergie d'épée est l'énergie requise pour déclencher la compétence élémentaire spéciale <strong>Épée du vent</strong> pendant l'état <strong>Armée pour l'action</strong>.",
+      "1": "Vesna peut accumuler de l'énergie d'épée de différentes façons :",
+      "2": [
+        " En utilisant une attaque normale, chargée ou plongeante ou en déclenchant une <strong>épée du vent « Transposition »</strong> de la constellation <strong>Ardeur inébranlable</strong>, pendant l'état <strong>Armée pour l'action</strong>.",
+        " En utilisant la compétence élémentaire <strong>L'art de la victoire</strong>.",
+        " En utilisant le déchaînement élémentaire <strong>Pour la Tsarine !</strong>."
+      ]
+    }
+  },
+  "11430003": {
+    "name": "Épée du vent",
+    "description": {
+      "0": "Vesna peut consommer de l'<strong>énergie d'épée</strong> pendant l'état <strong>Armée pour l'action</strong> pour déclencher cette compétence élémentaire spéciale infligeant des <anemo>DGT Anémo</anemo>.",
+      "1": "Chaque utilisation de la compétence élémentaire spéciale <strong>Épée du vent</strong> pendant un état <strong>Armée pour l'action</strong> repousse sa limite : <strong>Épée du vent</strong> commence au Niv.1 et peut atteindre le Niv.3.",
+      "2": "Utiliser <strong>Épée du vent</strong> une fois sa limite repoussée invoque également une <strong>lame éthérée</strong> qui inflige des <anemo>DGT Anémo</anemo> aux ennemis."
+    }
+  },
+  "11430004": {
+    "name": "Lame éthérée",
+    "description": {
+      "0": "Vesna peut invoquer cette arme spéciale qui attaque de façon coordonnée l'ennemi pour infliger des <anemo>DGT Anémo</anemo>.",
+      "1": "Vesna peut invoquer une lame éthérée des manières suivantes :",
+      "2": [
+        " En utilisant la compétence élémentaire spéciale <strong>Épée du vent</strong> après en avoir repoussé la limite.",
+        " En utilisant le déchaînement élémentaire <strong>Pour la Tsarine !</strong>.",
+        " En utilisant l'<strong>épée du vent « Transposition »</strong> de la constellation <strong>Ardeur inébranlable</strong>."
+      ],
+      "3": "<br/>",
+      "4": "<strong>Radiance « Astrodispersion »</strong> : les <strong>lames éthérées</strong> sont converties pour infliger des <anemo>DGT Anémo</anemo> considérés comme des DGT de réaction d'Astrodispersion."
     }
   },
   "11480001": {

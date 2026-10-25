@@ -22,6 +22,9 @@ export function register(
   const internal = ({ tag, value }: TagMapNodeEntry) => {
     // Sheet-specific `enemy` stats adds to `enemyDeBuff` instead
     if (tag.et === 'enemy') tag = { ...tag, et: 'enemyDeBuff' }
+    // Keep addOnce / stackToken channels on the non-stack group sheet.
+    if (tag.qt === 'stackIn' || tag.qt === 'stackTmp' || tag.qt === 'stackOut')
+      return { tag, value }
     return { tag: { ...tag, sheet }, value }
   }
   return data.flatMap((data) =>
@@ -46,7 +49,7 @@ export function customDmg(
     name,
     team,
     'dmg',
-    tag(cond, { move }),
+    tag(cond, { move, ...(eleOverride ? { ele: eleOverride } : {}) }),
     ownBuff.formula.base.add(base),
     ownBuff.prep.ele.add(eleOverride ?? own.reaction.infusion),
     ...extra
@@ -96,10 +99,27 @@ export function customHeal(
   )
 }
 
+/** Talent-sheet scalar (CD, duration, chance, stamina). Not a heal/dmg/shield. */
+export function customParam(
+  name: string,
+  base: number | NumNode,
+  { team, cond = 'infer' }: FormulaArg = {},
+  ...extra: TagMapNodeEntries
+): TagMapNodeEntries {
+  return registerFormula(
+    name,
+    team,
+    'param',
+    cond,
+    ownBuff.formula.base.add(base),
+    ...extra
+  )
+}
+
 function registerFormula(
   name: string,
   team: boolean | undefined,
-  q: 'dmg' | 'heal' | 'shield',
+  q: 'dmg' | 'heal' | 'shield' | 'param',
   cond: string | StrNode,
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
@@ -117,11 +137,18 @@ export function listingItem(t: Read, cond?: string | StrNode) {
   return tag(cond ?? t.ex ?? 'infer', t.tag)
 }
 
+/** This member's contribution to `team.common.hexerei` (0/1, often a Lock Homework cond). */
+export function hexereiTally(value: number | NumNode): TagMapNodeEntry {
+  return ownBuff.common.hexerei.add(value)
+}
+
 export function readStat(
   list: Record<Stat | 'shield_', Read>,
   key: StatKey
 ): Read {
-  return key.endsWith('_dmg_')
-    ? list['dmg_'][key.slice(0, -5) as ElementWithPhyKey]
-    : list[key as Stat]
+  if (key.endsWith('_dmg_'))
+    return list['dmg_'][key.slice(0, -5) as ElementWithPhyKey]
+  if (key.endsWith('_res_') && !key.endsWith('_enemyRes_'))
+    return list['res_'][key.slice(0, -5) as ElementWithPhyKey]
+  return list[key as Stat]
 }

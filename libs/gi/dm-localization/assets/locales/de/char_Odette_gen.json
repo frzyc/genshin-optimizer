@@ -50,7 +50,7 @@
       "2": "<br/>",
       "3": "<strong>Solotanz-Schatten</strong>",
       "4": "Wechselt zwischen den Tanzschritten <strong>Federstreich</strong> und <strong>Flügelwirbel</strong>, greift Gegner in der Nähe in regelmäßigen Abständen elegant und leichtfüßig an, und fügt diesen <cryo>Kryo-Flächenschaden</cryo> zu.",
-      "5": "Ersetzt zudem innerhalb von 6 s nach dem Anwenden von Odettes Elementarfähigkeit <strong>Langsamer Tanz – Phantomnacht</strong> diese durch die besondere Elementarfähigkeit <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Langsamer Tanz – Finale bei Tagesanbruch</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip>. Führt einen gemeinsamen Tanz auf, der Gegnern in der Nähe fortlaufend <cryo>Kryo-Flächenschaden</cryo> zufügt. Verursacht nach Ende des Tanzes einmalig <cryo>Kryo-Flächenschaden</cryo>, der als Schaden durch die Reaktion Stellar-Supraleiter oder Stellar-Verwirbelung gewertet wird."
+      "5": "Ersetzt zudem innerhalb von 6 s nach dem Anwenden von Odettes Elementarfähigkeit <strong>Langsamer Tanz – Phantomnacht</strong> diese durch die besondere Elementarfähigkeit <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Langsamer Tanz – Finale bei Tagesanbruch</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip>. Führt einen gemeinsamen Tanz auf, der Gegnern in der Nähe fortlaufend <cryo>Kryo-Flächenschaden</cryo> zufügt. Verursacht beim Ende des gemeinsamen Tanzes einmalig <cryo>Kryo-Flächenschaden</cryo>, der als Schaden durch die Reaktion Stellar-Supraleiter oder Stellar-Verwirbelung gewertet wird."
     },
     "skillParams": {
       "0": "Fähigkeits-SCH",
@@ -115,33 +115,33 @@
   "passive2": {
     "name": "Klage der Aufrichtigen",
     "description": {
-      "0": "Erhöht für den Anteil von Odettes ANG, der 1.000 überschreitet, den durch eine Stellarfunkeln-Reaktion verursachten Schaden pro 100 Punkte ANG zusätzlich um 1,5 % des ursprünglichen Schaden. Auf diese Weise kann der Schaden um maximal 30 % des ursprünglichen Schadens erhöht werden."
+      "0": "Erhöht für den Anteil von Odettes ANG, der 1.000 überschreitet, den durch Odettes Stellarfunkeln-Reaktionen verursachten Schaden pro 100 Punkte ANG zusätzlich um 1,5 % des ursprünglichen Schadens. Auf diese Weise kann der Schaden um maximal 30 % des ursprünglichen Schadens erhöht werden."
     }
   },
   "passive3": {
     "name": "Sternensegnung – Tanz der Silberdämmerung",
     "description": {
-      "0": "Versetzt Odette, wenn sie sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet oder ein Truppenmitglied in der Nähe die Reaktion Stellar-Verwirbelung auslöst, innerhalb von 8 s in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong>/<strong>Leuchten – Stellar-Verwirbelung</strong>.",
-      "1": "Wandelt, wenn ein Truppenmitglied die Reaktion Supraleiter/Kryo-Verwirbelung auslöst, diese stattdessen in die Reaktion Stellar-Supraleiter/Stellar-Verwirbelung um und erhöht den Basis-Schaden der oben genannten Reaktionen von Truppenmitgliedern basierend auf Odettes ANG: Erhöht den Basis-SCH der oben genannten Reaktionen pro 100 Punkte um 0,7 %. Auf diese Weise kann der Schaden um bis zu 14 % erhöht werden."
+      "0": "Versetzt Odette, wenn sie sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet, in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong> oder versetzt sie, nachdem ein Truppenmitglied in der Nähe die Reaktion Stellar-Verwirbelung ausgelöst hat, 8 s lang in den Zustand <strong>Leuchten – Stellar-Verwirbelung</strong>.",
+      "1": "Wandelt, wenn ein Truppenmitglied die Reaktion Supraleiter/Kryo-Verwirbelung auslöst, diese stattdessen in die Reaktion Stellar-Supraleiter/Stellar-Verwirbelung um und erhöht den Basis-Schaden der oben genannten Reaktionen von Truppenmitgliedern basierend auf Odettes ANG: Erhöht den Basis-SCH der oben genannten Reaktionen pro 100 Punkte ANG um 0,7 %. Auf diese Weise kann der Schaden um bis zu 14 % erhöht werden."
     }
   },
   "passive": {
     "name": "Widerhall des Wintertraums",
     "description": {
-      "0": "Zeigt alle <strong>Besonderheiten Snezhnayas</strong> in der Nähe auf der Minikarte an.",
+      "0": "Zeigt alle <strong>Besonderheiten Snezhnayas</strong> in der Nähe auf der Minikarte an. Dieser Effekt gilt auch im Schattenreich.",
       "1": "Durch Tanzübungen in der Freizeit lassen sich vielleicht auch noch andere Effekte erzielen ..."
     }
   },
   "constellation1": {
     "name": "„Eines Morgens, an dem sie nicht tanzte, blickte sie auf ihr Spiegelbild“",
     "description": {
-      "0": "Odette verursacht nach Anwenden der besonderen Elementarfähigkeit <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Langsamer Tanz – Finale bei Tagesanbruch</strong></tooltip> und beim Ende des Walzers einmalig zusätzlich <cryo>Kryo-Flächenschaden</cryo> bei Gegnern in der Nähe. Hierdurch verursachter Schaden gilt als:",
+      "0": "Odette fügt nach Anwenden der besonderen Elementarfähigkeit <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Langsamer Tanz – Finale bei Tagesanbruch</strong></tooltip>, wenn der gemeinsame Tanz endet, 1-mal zusätzlich <cryo>Kryo-Flächenschaden</cryo> Gegnern in der Nähe zu. Hierdurch verursachter Schaden gilt als:",
       "1": [
         " <strong>Leuchten – Stellar-Supraleiter</strong>, oder, wenn nicht im Leuchten-Zustand: Stellar-Supraleiter-Reaktionsschaden in Höhe von 300 % von Odettes ANG.",
         " <strong>Leuchten – Stellar-Verwirbelung</strong>: Stellar-Verwirbelung-Reaktionsschaden in Höhe von 450 % von Odettes ANG."
       ],
       "2": "<br/>",
-      "3": "Verstärkt zudem das Aufstiegstalent „Frühling der Auserwählten“: Verleiht Odette, wenn sie einen <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solotanz-Schatten</strong></tooltip> beschwört, zusätzlich 2 Stapelungen <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Farbenpracht</strong></tooltip>. Ist Odette inaktiv in der Truppe, erhöht sich die Geschwindigkeit, mit der die Stapelungen von <strong>Farbenpracht</strong> abgebaut werden, auf 2 Stapelungen pro s."
+      "3": "Verstärkt zudem das Aufstiegstalent „Frühling der Auserwählten“: Verleiht Odette, wenn sie einen <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solotanz-Schatten</strong></tooltip> beschwört, zusätzlich 2 Stapelungen <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Farbenpracht</strong></tooltip>. Ist Odette inaktiv in der Truppe, erhöht sich die Geschwindigkeit, mit der die Stapelungen von <strong>Farbenpracht</strong> entfernt werden, auf 2 Stapelungen pro s."
     }
   },
   "constellation2": {
@@ -165,9 +165,9 @@
   "constellation4": {
     "name": "„Aufwärts, hinab in den träumerischen, lodernden blauen Himmel“",
     "description": {
-      "0": "Verstärkt die Spezialfähigkeit <strong>Schneller Tanz – Federntraum</strong>: Erhöht, wenn Odette <strong>Traum der Schneeschwänin</strong> erhält, den von Truppenmitgliedern in der Nähe durch Stellarfunkeln-Reaktionen verursachten Schaden um 50 % des Effekts <strong>Traum der Schneeschwänin</strong>.",
+      "0": "Verstärkt die Spezialfähigkeit <strong>Schneller Tanz – Federntraum</strong>: Erhöht, wenn Odette <strong>Traum der Schneeschwänin</strong> erhält, den von anderen Truppenmitgliedern in der Nähe durch Stellarfunkeln-Reaktionen verursachten Schaden um 50 % des Effekts <strong>Traum der Schneeschwänin</strong>.",
       "1": "<br/>",
-      "2": "Wenn ein Truppenmitglied einem Gegner Schaden mit der Reaktion Stellarfunkeln zufügt, führt Odette einen abgestimmten Angriff auf den Gegner aus, der diesem einmalig <cryo>Kryo-Flächenschaden</cryo> zufügt, 3,5 s Abklingzeit. Hierdurch verursachter Schaden gilt als:",
+      "2": "Wenn ein Truppenmitglied einem Gegner Schaden mit einer Stellarfunkeln-Reaktion zufügt, führt Odette einen abgestimmten Angriff auf den Gegner aus, der diesem einmalig <cryo>Kryo-Flächenschaden</cryo> zufügt, 3,5 s Abklingzeit. Hierdurch verursachter Schaden gilt als:",
       "3": [
         " <strong>Leuchten – Stellar-Supraleiter</strong>, oder, wenn nicht im Leuchten-Zustand: Stellar-Supraleiter-Reaktionsschaden in Höhe von 66 % von Odettes ANG.",
         " <strong>Leuchten – Stellar-Verwirbelung</strong>: Stellar-Verwirbelung-Reaktionsschaden in Höhe von 99 % von Odettes ANG."
@@ -185,7 +185,7 @@
     "name": "„Strecke deine Hand aus und berühre das ewige Antlitz des Himmels“",
     "description": {
       "0": "Verstärkt das Aufstiegstalent „Frühling der Auserwählten“: Reduziert, wenn Odette allen Truppenmitgliedern in der Nähe <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Farbenpracht</strong></tooltip> verleiht, ihre eigene Farbenpracht nicht mehr.",
-      "1": "Erhöht zudem den Schaden durch Stellarfunkeln-Reaktionen, den Figuren unter dem Einfluss von <strong>Farbenpracht</strong> Gegnern zufügen, um <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>25 %</strong></tooltip>. Steigert außerdem den Schaden durch Stellarfunkeln-Reaktionen, den Odette Gegnern zufügt, um weitere 20 %."
+      "1": "<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Steigert</strong></tooltip> zudem den Schaden durch Stellarfunkeln-Reaktionen, den Figuren unter dem Einfluss von <strong>Farbenpracht</strong> Gegnern zufügen, um 25 %. Steigert außerdem den Schaden durch Stellarfunkeln-Reaktionen, den Odette Gegnern zufügt, um zusätzlich 20 %."
     }
   }
 }

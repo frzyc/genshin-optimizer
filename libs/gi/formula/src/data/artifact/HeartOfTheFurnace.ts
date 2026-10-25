@@ -1,36 +1,33 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import { cmpGE } from '@genshin-optimizer/pando/engine'
+import {
+  type ArtifactSetKey,
+  allStellarReactionKeys,
+} from '@genshin-optimizer/gi/consts'
+import { cmpGE, prod } from '@genshin-optimizer/pando/engine'
 import {
   allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
   ownBuff,
   percent,
+  stackToken,
   teamBuff,
 } from '../util'
 import { artCount, registerArt } from './util'
 
-const key: ArtifactSetKey = 'HeartOfTheFurnace'
-const count = artCount(key)
-// TODO: Conditionals
-const { someBoolConditional } = allBoolConditionals(key)
-const { _someListConditional } = allListConditionals(key, [])
-const { _someNumConditional } = allNumConditionals(key)
+const key: ArtifactSetKey = 'HeartOfTheFurnace',
+  count = artCount(key)
+const { ['4Stellar']: set4Stellar } = allBoolConditionals(key)
+
+const furnaceOn = set4Stellar.ifOn(cmpGE(count, 4, 1))
+const { entries: furnaceStack, out: furnaceOut } = stackToken(
+  'heartofthefurnace',
+  furnaceOn
+)
 
 export default registerArt(
   key,
-
-  // TODO:
-  // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
-  // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
-  // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
-  //
-  // Check for 2-set effect using `cmpGE(count, 2, ...)`
-  ownBuff.premod.atk_.add(cmpGE(count, 2, percent(1))),
-  // Check for 4-set effect using `cmpGE(count, 4, ...)`
-  // Applies non-stacking teambuff
-  teamBuff.premod.atk_.addOnce(
-    key,
-    someBoolConditional.ifOn(cmpGE(count, 4, percent(1)))
+  ownBuff.premod.atk_.add(cmpGE(count, 2, percent(0.18))),
+  ownBuff.premod.atk_.add(set4Stellar.ifOn(cmpGE(count, 4, percent(0.12)))),
+  furnaceStack,
+  ...allStellarReactionKeys.map((k) =>
+    teamBuff.premod.dmg_[k].add(prod(furnaceOut, percent(0.5)))
   )
 )

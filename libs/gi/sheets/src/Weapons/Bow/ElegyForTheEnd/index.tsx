@@ -1,5 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { equal, equalStr, input, subscript } from '@genshin-optimizer/gi/wr'
+import { equalStr, input, subscript } from '@genshin-optimizer/gi/wr'
 import { cond, nonStackBuff, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
@@ -13,10 +13,10 @@ const atk_s = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 
 const [condPath, condNode] = cond(key, 'ThePartingRefrain')
 const eleMas = subscript(input.weapon.refinement, eleMasInc, { path: 'eleMas' })
-const eleMas2 = equal(
-  condNode,
-  'on',
-  subscript(input.weapon.refinement, eleMasInc2, { path: 'eleMas' })
+const [eleMas2, eleMas2Inactive] = nonStackBuff(
+  'millenialelemas',
+  'eleMas',
+  subscript(input.weapon.refinement, eleMasInc2)
 )
 
 const nonstackWrite = equalStr(condNode, 'on', input.charKey)
@@ -37,6 +37,7 @@ export const data = dataObjForWeaponSheet(key, {
     },
     nonStacking: {
       millenialatk: nonstackWrite,
+      millenialelemas: nonstackWrite,
     },
   },
 })
@@ -61,6 +62,9 @@ const sheet: IWeaponSheet = {
           fields: [
             {
               node: eleMas2,
+            },
+            {
+              node: eleMas2Inactive,
             },
             {
               node: atk_,

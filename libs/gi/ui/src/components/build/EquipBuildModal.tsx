@@ -35,7 +35,7 @@ import { ArtifactCardNano } from '../artifact'
 import { StatDisplayComponent } from '../character'
 import { WeaponCardNano } from '../weapon'
 
-type Props = {
+export type EquipBuildModalProps = {
   currentName: string
   currentWeaponId: string | undefined
   currentArtifactIds: Record<ArtifactSlotKey, string | undefined>
@@ -43,9 +43,15 @@ type Props = {
   newArtifactIds: Record<ArtifactSlotKey, string | undefined>
   onEquip: () => void
   onHide: () => void
+  show: boolean
 }
-export function EquipBuildModal(props: Props & { show: boolean }) {
-  const { show, onHide } = props
+
+export function EquipBuildModalLayout({
+  children,
+  show,
+  onHide,
+  ...props
+}: EquipBuildModalProps & { children: ReactNode }) {
   /* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it https://github.com/frzyc/genshin-optimizer/issues/1498*/
   return (
     <ModalWrapper
@@ -53,11 +59,26 @@ export function EquipBuildModal(props: Props & { show: boolean }) {
       onClose={onHide}
       containerProps={{ maxWidth: 'xl' }}
     >
-      <Content {...props} />
+      <Content show={show} onHide={onHide} {...props}>
+        {children}
+      </Content>
     </ModalWrapper>
   )
 }
-function Content(props: Props) {
+
+export function EquipBuildModal(props: EquipBuildModalProps) {
+  return (
+    <EquipBuildModalLayout {...props}>
+      <DataWrapper {...props}>
+        <StatDisplayComponent columns={{ xs: 1, sm: 2, md: 3 }} />
+      </DataWrapper>
+    </EquipBuildModalLayout>
+  )
+}
+function Content({
+  children,
+  ...props
+}: EquipBuildModalProps & { children: ReactNode }) {
   const { t } = useTranslation('build')
   const {
     currentName,
@@ -293,16 +314,14 @@ function Content(props: Props) {
                 </Grid>
               ))}
             </Grid>
-            <DataWrapper {...props}>
-              <StatDisplayComponent columns={{ xs: 1, sm: 2, md: 3 }} />
-            </DataWrapper>
+            {children}
           </CardContent>
         </CardThemed>
       </CardContent>
     </CardThemed>
   )
 }
-function DataWrapper(props: Props & { children: ReactNode }) {
+function DataWrapper(props: EquipBuildModalProps & { children: ReactNode }) {
   const { children, ...rest } = props
   const { teamId } = useContext(TeamCharacterContext)
   const {
@@ -328,7 +347,9 @@ function useArtifacts(
     [database, artifacts]
   )
 }
-function TeamDataWrapper(props: Props & { children: ReactNode }) {
+function TeamDataWrapper(
+  props: EquipBuildModalProps & { children: ReactNode }
+) {
   const { children, ...rest } = props
   const {
     teamChar: { key: characterKey },
@@ -356,7 +377,7 @@ function TeamDataWrapper(props: Props & { children: ReactNode }) {
 }
 
 function CharacterDataWrapper(
-  props: Props & { children: ReactNode; currentData?: TeamData }
+  props: EquipBuildModalProps & { children: ReactNode; currentData?: TeamData }
 ) {
   const { children, ...rest } = props
   const {

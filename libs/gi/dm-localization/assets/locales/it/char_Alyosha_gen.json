@@ -92,7 +92,7 @@
       "4": "<br/>",
       "5": "<strong>Tugarin</strong>",
       "6": [
-        " Se nelle vicinanze ci sono avversari, Tugarin si avvicina velocemente a uno di loro ogni 2 s per azzannarlo, infliggendo <strong>DAN da Electro</strong>.",
+        " Se nelle vicinanze ci sono avversari, Tugarin si avvicina velocemente a uno di loro ogni 2 s per azzannarlo, infliggendo <electro>DAN da Electro</electro>.",
         " Se viene colpito un avversario affetto dal <strong>Marchio del cacciatore</strong>, quest'ultimo viene attivato.",
         " Quando ci sono più avversari, Tugarin attacca prima quelli affetti dal <strong>Marchio del cacciatore</strong>."
       ],
@@ -144,7 +144,7 @@
   "passive": {
     "name": "Vedetta arborea",
     "description": {
-      "0": "Mostra sulla minimappa la posizione delle <strong>risorse uniche di Snezhnaya</strong> vicine."
+      "0": "Mostra sulla minimappa la posizione delle <strong>risorse uniche di Snezhnaya</strong> vicine. L'effetto si applica anche nel Regno delle Ombre."
     }
   },
   "constellation1": {

@@ -266,8 +266,11 @@
   "FervorCoupon": {
     "name": "熱誠票券"
   },
-  "PrimeIceCount": {
+  "PrimeIceResource": {
     "name": "臻冰計量"
+  },
+  "VictoryEmblem": {
+    "name": "勝利徽記"
   },
   "Primogem": {
     "name": "原石"
@@ -335,6 +338,9 @@
   "PrismaticCrystal": {
     "name": "奇麗凝晶"
   },
+  "CelebrationChronalNexus": {
+    "name": "事象凝核·盛會"
+  },
   "PyroSigil": {
     "name": "火之印"
   },
@@ -391,6 +397,12 @@
   },
   "CollectiveOfPlentyReputationEXP": {
     "name": "聲望經驗·「沃陸之邦」"
+  },
+  "PredictionScore": {
+    "name": "預測評分"
+  },
+  "FestiveCheer": {
+    "name": "慶典氛圍"
   },
   "ExpeditionInsights": {
     "name": "遊覽心得"
@@ -1187,6 +1199,12 @@
   "Sandrone": {
     "name": "桑多涅"
   },
+  "Vodyanitsa": {
+    "name": "沃雅妮莎"
+  },
+  "Vesna": {
+    "name": "薇斯納"
+  },
   "Alyosha": {
     "name": "阿羅夏"
   },
@@ -1288,6 +1306,12 @@
   },
   "SandronesStellaFortuna": {
     "name": "桑多涅的命星"
+  },
+  "VodyanitsasStellaFortuna": {
+    "name": "沃雅妮莎的命星"
+  },
+  "VesnasStellaFortuna": {
+    "name": "薇斯納的命星"
   },
   "AlyoshasStellaFortuna": {
     "name": "阿羅夏的命星"
@@ -9410,6 +9434,15 @@
   "RecipeSweetScoops": {
     "name": "食譜：甜滋滋冰淇淋球"
   },
+  "RecipeRoyalGrilledFish": {
+    "name": "食譜：宮廷烤魚"
+  },
+  "RecipeCelestialTeaCrisp": {
+    "name": "食譜：仙茗酥"
+  },
+  "RecipeMors": {
+    "name": "食譜：莫爾斯果釀"
+  },
   "CraftedItems": {
     "name": "合成產物"
   },
@@ -10300,6 +10333,9 @@
   },
   "SeveredTailOfTheSkyRoamer": {
     "name": "遊空之物的斷尾"
+  },
+  "VagabondsCrackedArmor": {
+    "name": "游離者的裂甲"
   },
   "TileOfDecarabiansTower": {
     "name": "高塔孤王的破瓦"
@@ -14243,7 +14279,7 @@
   "IzmaylovGuardsJournal": {
     "name": "「伊茲梅洛」守衛的日誌"
   },
-  "YettobeCompletedNewHighTableMelody": {
+  "YettobeCompletedNewHighTableRules": {
     "name": "未完成的「高桌新律」"
   },
   "SandronesTeaPartyInvitationLetter": {
@@ -14297,6 +14333,12 @@
   "IncompleteDataBlock": {
     "name": "缺型資料塊"
   },
+  "EnvoysMedal": {
+    "name": "特使勳章"
+  },
+  "Gobblefin": {
+    "name": "吞吞鯨"
+  },
   "MoongazersEngravingI": {
     "name": "望月者的摹刻·卷一"
   },
@@ -14308,6 +14350,9 @@
   },
   "SnezhnayaVestnik": {
     "name": "至冬先驅報"
+  },
+  "LetterFromXiangling": {
+    "name": "香菱寄來的信"
   },
   "ChampionsTrophyOfTheFirstAdventurersTournament": {
     "name": "首屆「冒險家競技大賽」冠軍獎盃"
@@ -14336,14 +14381,14 @@
   "ScarfWarmRed": {
     "name": "圍巾·暖紅"
   },
-  "ScarfDreamStar": {
-    "name": "圍巾·夢星"
+  "ScarfNoveltyBrace": {
+    "name": "圍巾·趣托"
   },
   "ScarfPlaid": {
     "name": "圍巾·格紋"
   },
-  "ScarfNoveltyBrace": {
-    "name": "圍巾·趣托"
+  "ScarfDreamStar": {
+    "name": "圍巾·夢星"
   },
   "StalkerHood": {
     "name": "伏獵兜帽"
@@ -14372,6 +14417,9 @@
   "StardustTrailRadiantGlow": {
     "name": "鋒曳星跡·蘊輝"
   },
+  "VodyanitsasSpecialNotebook": {
+    "name": "沃雅妮莎的特製筆記本"
+  },
   "RemnantIncenseGuideSnowgrave": {
     "name": "雪葬之地的殘香之引"
   },
@@ -14380,6 +14428,9 @@
   },
   "RemnantIncenseGuideEverfrozenEarth": {
     "name": "凍土之上的殘香之引"
+  },
+  "HappyQuackyPhonographDucky": {
+    "name": "「劈哩啪啦留聲鴨」"
   },
   "SpiritSeekerPreviewCommemorativePhoto": {
     "name": "《尋靈》試演會留念合照"
@@ -14399,11 +14450,17 @@
   "ExitDoorLeverForACertainBasementRoom": {
     "name": "地下室某房間出口門的操縱桿"
   },
+  "DruzhnaSpecialDispatchOrder": {
+    "name": "「冬契軍特別調遣令」"
+  },
   "KresnikEnergy": {
     "name": "克什尼克能量"
   },
   "PeculiarReagentSample": {
     "name": "奇怪的試劑樣品"
+  },
+  "TheSigilGivenByLanYan": {
+    "name": "藍硯贈與的符籙"
   },
   "StardustTrailRadiantGlowSigil": {
     "name": "鋒曳星跡·蘊輝空印"
@@ -14432,6 +14489,9 @@
   "SpecialIceCreamContainer": {
     "name": "特別的冰淇淋保管盒"
   },
+  "VesnasDivineSenseCompass": {
+    "name": "薇斯納的「神識羅盤」"
+  },
   "PictureOfNastyaWithHerMom": {
     "name": "娜斯佳與媽媽的合照"
   },
@@ -14455,6 +14515,24 @@
   },
   "DocumentWithYellowedPages": {
     "name": "紙頁泛黃的資料"
+  },
+  "RequestToExpandVIPRoom": {
+    "name": "擴建貴賓室申請書"
+  },
+  "HighLevelAccessCard": {
+    "name": "高級權限卡"
+  },
+  "ConstructAppearanceFlutterwing": {
+    "name": "造物外觀·風蝶"
+  },
+  "VodyanitsasSpecialHandwrittenTicket": {
+    "name": "沃雅妮莎的特別手寫票"
+  },
+  "VodyanitsasGift": {
+    "name": "沃雅妮莎的禮物"
+  },
+  "OkurovTownSewerSystemDesignPlan": {
+    "name": "《奧古洛夫鎮下水道設計方案》"
   },
   "TearsAmongTheStars": {
     "name": "星間之淚"
@@ -14600,8 +14678,8 @@
   "FlockingweedSeed": {
     "name": "「植絨草」的種子"
   },
-  "GoldenFernSeed": {
-    "name": "「金蕨」的種子"
+  "GoldenFernSpore": {
+    "name": "「金蕨」的孢子"
   },
   "RedBeetSeed": {
     "name": "「紅甜菜」的種子"
@@ -14867,6 +14945,45 @@
   "RegularIceCream": {
     "name": "冰淇淋・常規"
   },
+  "SuspiciousRoyalGrilledFish": {
+    "name": "奇怪的宮廷烤魚"
+  },
+  "RoyalGrilledFish": {
+    "name": "宮廷烤魚"
+  },
+  "DeliciousRoyalGrilledFish": {
+    "name": "美味的宮廷烤魚"
+  },
+  "SuspiciousCelestialTeaCrisp": {
+    "name": "奇怪的仙茗酥"
+  },
+  "CelestialTeaCrisp": {
+    "name": "仙茗酥"
+  },
+  "DeliciousCelestialTeaCrisp": {
+    "name": "美味的仙茗酥"
+  },
+  "SuspiciousMors": {
+    "name": "奇怪的莫爾斯果釀"
+  },
+  "Mors": {
+    "name": "莫爾斯果釀"
+  },
+  "DeliciousMors": {
+    "name": "美味的莫爾斯果釀"
+  },
+  "IridescentAria": {
+    "name": "鱗光詠嘆調"
+  },
+  "HoarfrostSoup": {
+    "name": "霜凍冰花湯"
+  },
+  "VesnaThemedIceCream": {
+    "name": "冰淇淋・薇斯納"
+  },
+  "VodyanitsaThemedIceCream": {
+    "name": "冰淇淋・沃雅妮莎"
+  },
   "WingsOfFirstFlight": {
     "name": "初始之翼"
   },
@@ -14920,6 +15037,9 @@
   },
   "WingsOfLeisurelyMoments": {
     "name": "暇生一聚之翼"
+  },
+  "WingsOfStarryWinterfrost": {
+    "name": "星蒼冬凌之翼"
   },
   "RadiantSpincrystal1": {
     "name": "旋曜玉帛·其一"
@@ -15575,6 +15695,18 @@
   "RadiantSpincrystal200": {
     "name": "旋曜玉帛·其二百"
   },
+  "RadiantSpincrystalALetterFromTheWindI": {
+    "name": "旋曜玉帛·《風的來信》·其一"
+  },
+  "RadiantSpincrystalALetterFromTheWindII": {
+    "name": "旋曜玉帛·《風的來信》·其二"
+  },
+  "RadiantSpincrystalALetterFromTheWindIII": {
+    "name": "旋曜玉帛·《風的來信》·其三"
+  },
+  "RadiantSpincrystalALetterFromTheWindIV": {
+    "name": "旋曜玉帛·《風的來信》·其四"
+  },
   "LanternFiber": {
     "name": "燈紙纖維"
   },
@@ -15682,6 +15814,9 @@
   },
   "RefinedHeart": {
     "name": "練心"
+  },
+  "TeaScentedTassel": {
+    "name": "青翦垂纓"
   },
   "FalconsDance": {
     "name": "鷹隼之舞"
@@ -16706,6 +16841,18 @@
   "TravelNotesFrostfarer": {
     "name": "紀行·霜遊"
   },
+  "VesnaRevelry": {
+    "name": "薇斯納·逸樂"
+  },
+  "VodyanitsaWhirlpool": {
+    "name": "沃雅妮莎·漩渦"
+  },
+  "SnezhnayaFrostfall": {
+    "name": "至冬·冰沫"
+  },
+  "TravelNotesMoontrace": {
+    "name": "紀行·溯月"
+  },
   "EchoDandelionKnight": {
     "name": "遊跡·蒲公英騎士"
   },
@@ -17155,6 +17302,15 @@
   },
   "CryoTreasureCompass": {
     "name": "冰之尋寶羅盤"
+  },
+  "ConductorOfTheYaho": {
+    "name": "「呀吼號」列車長"
+  },
+  "AMiniTrolleyProblem": {
+    "name": "迷你列車難題"
+  },
+  "PrimaDonnasSong": {
+    "name": "首席的獻唱"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "說明：風神瞳共鳴石"
@@ -17870,6 +18026,27 @@
   "KeepingWatchByLanternLight": {
     "name": "執燈守望"
   },
+  "ReadyAndRelaxed": {
+    "name": "悠然待戰"
+  },
+  "ChoreTime": {
+    "name": "家務時間"
+  },
+  "SavoringTheMeal": {
+    "name": "享受美食"
+  },
+  "ValiantBattleStance": {
+    "name": "颯爽戰姿"
+  },
+  "ACelebratoryToast": {
+    "name": "舉杯歡慶"
+  },
+  "PleaseDigIn": {
+    "name": "請用美食"
+  },
+  "EagerlyWaiting": {
+    "name": "期待等候"
+  },
   "FantasticalMarvel": {
     "name": "幻戲瑰意"
   },
@@ -18515,6 +18692,21 @@
   "TemporalWindsEulogy": {
     "name": "頌時風若"
   },
+  "RadianceOverBlossomsAndPeaks": {
+    "name": "遍照花海，隱入群山"
+  },
+  "SurgeOfLightning": {
+    "name": "蒼雷奔湧"
+  },
+  "SevenfoldTransmutation": {
+    "name": "七循之理"
+  },
+  "BookOfBlindingLight": {
+    "name": "白芒之書"
+  },
+  "ElkWithFangedAntlers": {
+    "name": "噬枝之麋"
+  },
   "MagicGuide": {
     "name": "魔導緒論"
   },
@@ -18863,6 +19055,9 @@
   "GladiatorsFinale": {
     "name": "角鬥士的終幕禮"
   },
+  "RecollectionOfDaysPast": {
+    "name": "昔時浮想之思"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -19102,6 +19297,9 @@
   },
   "ElementalTransfigurationThunderbloomBlessing": {
     "name": "元素幻變：雷草祝佑"
+  },
+  "ElementalTransfigurationOverloadBlessing": {
+    "name": "元素幻變：超載祝佑"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交織之冰"
@@ -19373,6 +19571,9 @@
   "FeastingInASharedToast": {
     "name": "齊聚共飲"
   },
+  "ReturnOfTheThreeMoons": {
+    "name": "三月重臨"
+  },
   "Origin": {
     "name": "原初"
   },
@@ -19636,6 +19837,9 @@
   },
   "UnbreakableDurandarte": {
     "name": "無毀·督蘭嘉德"
+  },
+  "ExaiphanesBlade": {
+    "name": "星鋒劍"
   },
   "AdventurerCamp": {
     "name": "冒險家的臨時營地"
@@ -20242,6 +20446,12 @@
   },
   "ChirpingAboutAsBirdsDo": {
     "name": "「如鳥雀般對鳴」"
+  },
+  "MoonlitSplendorAlongEveryWay": {
+    "name": "「月彩滿通衢」"
+  },
+  "BrightProspectsBrighterProfits": {
+    "name": "「錢途閃閃」"
   },
   "EfflorescentIllumination": {
     "name": "「花葉百相之光」"
@@ -21296,8 +21506,8 @@
   "TeaTimeEtiquette": {
     "name": "「品茶的禮儀」"
   },
-  "BalancedBoughs": {
-    "name": "「平衡的枝葉」"
+  "FaintSwayingGold": {
+    "name": "「微黃搖曳」"
   },
   "SteadyCompanionThroughDreams": {
     "name": "「常伴夢鄉」"
@@ -21466,6 +21676,9 @@
   },
   "TheLoveOneSeeks": {
     "name": "「誰所追尋的愛」"
+  },
+  "PureIntention": {
+    "name": "「純粹之意」"
   },
   "StrawHut": {
     "name": "乾草廬屋"
@@ -21709,6 +21922,15 @@
   },
   "NashaStallUnendingSearch": {
     "name": "那夏小攤-「尋人不息」"
+  },
+  "MarketStallFreshFlavors": {
+    "name": "城鎮小攤-「新鮮之味」"
+  },
+  "MarketStallInAHurry": {
+    "name": "城鎮小攤-「節約時間」"
+  },
+  "MarketStallTimeToUnwind": {
+    "name": "城鎮小攤-「愜意時刻」"
   },
   "HilichurlOutpostHut": {
     "name": "丘丘前哨小屋"
@@ -24034,5 +24256,8 @@
   },
   "DancingBeneathSilverWhiteWings": {
     "name": "「於銀白羽翼下起舞」"
+  },
+  "WhereFishSwimAndWatersSing": {
+    "name": "「游魚與水中歌」"
   }
 }

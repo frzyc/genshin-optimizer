@@ -1,31 +1,26 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  own,
-  register,
-} from '../util'
+import { subscript } from '@genshin-optimizer/pando/engine'
+import { allBoolConditionals, own, ownBuff, register } from '../util'
 import { entriesForWeapon } from './util'
 
 const key: WeaponKey = 'SunnyMorningSleepIn'
+const swirl_eleMasArr = [-1, 120, 150, 180, 210, 240]
+const afterSkill_eleMasArr = [-1, 96, 120, 144, 168, 192]
+const afterBurst_eleMasArr = [-1, 32, 40, 48, 56, 64]
 
 const {
-  weapon: { refinement: _refinement },
+  weapon: { refinement },
 } = own
-// TODO: Conditionals
-const { _someBoolConditional } = allBoolConditionals(key)
-const { _someListConditional } = allListConditionals(key, [])
-const { _someNumConditional } = allNumConditionals(key)
+const { swirl, afterSkill, afterBurst } = allBoolConditionals(key)
 
 export default register(
   key,
-  entriesForWeapon(key)
-
-  // TODO:
-  // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
-  // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
-  // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
-  //
-  // TODO: Add refinement bonus
+  entriesForWeapon(key),
+  ownBuff.premod.eleMas.add(swirl.ifOn(subscript(refinement, swirl_eleMasArr))),
+  ownBuff.premod.eleMas.add(
+    afterSkill.ifOn(subscript(refinement, afterSkill_eleMasArr))
+  ),
+  ownBuff.premod.eleMas.add(
+    afterBurst.ifOn(subscript(refinement, afterBurst_eleMasArr))
+  )
 )

@@ -5,6 +5,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "editor-browser",
+      "request": "launch",
+      "name": "Launch VSC Browser against localhost (Requires dev server to be running)",
+      "url": "http://localhost:4200",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
       "type": "chrome",
       "request": "launch",
       "name": "Launch Chrome against localhost (Requires dev server to be running)",

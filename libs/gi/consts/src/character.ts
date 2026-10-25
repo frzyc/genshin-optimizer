@@ -191,6 +191,8 @@ export const nonTravelerCharacterKeys = [
   'Varesa',
   'Varka',
   'Venti',
+  'Vesna',
+  'Vodyanitsa',
   'Wanderer',
   'Wriothesley',
   'Xiangling',

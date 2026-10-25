@@ -117,6 +117,27 @@ describe('artifactReducer', () => {
     expect(artifact?.totalRolls).toBeUndefined()
   })
 
+  it('sets and clears the initial roll of a substat', () => {
+    const withInitial = artifactReducer(
+      {
+        ...baseArtifact,
+        substats: [
+          { key: 'atk_', value: 46.6 },
+          ...baseArtifact.substats.slice(1),
+        ],
+      },
+      { type: 'initialValue', index: 0, value: 5.8 }
+    )
+    expect(withInitial?.substats[0].initialValue).toBe(5.8)
+
+    const cleared = artifactReducer(withInitial!, {
+      type: 'initialValue',
+      index: 0,
+      value: undefined,
+    })
+    expect(cleared?.substats[0].initialValue).toBeUndefined()
+  })
+
   it('preserves initialValue when editing substats', () => {
     const editedArtifact = artifactReducer(baseArtifact, {
       type: 'substat',

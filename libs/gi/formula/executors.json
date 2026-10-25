@@ -4,6 +4,16 @@
       "implementation": "./src/executors/gen-desc/executor",
       "schema": "./src/executors/gen-desc/schema.json",
       "description": "gen-desc executor"
+    },
+    "extract-dm": {
+      "implementation": "./src/executors/extract-dm/executor",
+      "schema": "./src/executors/extract-dm/schema.json",
+      "description": "Copy WR dm blocks into gi-formula character sheets"
+    },
+    "audit-sheets": {
+      "implementation": "./src/executors/audit-sheets/executor",
+      "schema": "./src/executors/audit-sheets/schema.json",
+      "description": "Audit gi-formula stubs vs gi/sheets and emit a port queue"
     }
   }
 }

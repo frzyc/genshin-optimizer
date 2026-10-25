@@ -19,6 +19,7 @@ import BalladOfTheBoundlessBlue from './BalladOfTheBoundlessBlue'
 import BalladOfTheFjords from './BalladOfTheFjords'
 import BeaconOfTheReedSea from './BeaconOfTheReedSea'
 import BeginnersProtector from './BeginnersProtector'
+import BeyondTheChrysalis from './BeyondTheChrysalis'
 import BlackcliffAgate from './BlackcliffAgate'
 import BlackcliffLongsword from './BlackcliffLongsword'
 import BlackcliffPole from './BlackcliffPole'
@@ -29,6 +30,7 @@ import BlackTassel from './BlackTassel'
 import BladeOfAtonement from './BladeOfAtonement'
 import BloodsoakedRuins from './BloodsoakedRuins'
 import BloodtaintedGreatsword from './BloodtaintedGreatsword'
+import BreezeborneRefrain from './BreezeborneRefrain'
 import CalamityOfEshu from './CalamityOfEshu'
 import CalamityQueller from './CalamityQueller'
 import CashflowSupervision from './CashflowSupervision'
@@ -98,6 +100,7 @@ import HarbingerOfDawn from './HarbingerOfDawn'
 import HereticsMoltenBlade from './HereticsMoltenBlade'
 import HuntersBow from './HuntersBow'
 import HuntersPath from './HuntersPath'
+import HymnOfTheMaelstrom from './HymnOfTheMaelstrom'
 import IbisPiercer from './IbisPiercer'
 import IronPoint from './IronPoint'
 import IronSting from './IronSting'
@@ -131,6 +134,7 @@ import Moonpiercer from './Moonpiercer'
 import MoonweaversDawn from './MoonweaversDawn'
 import MountainBracingBolt from './MountainBracingBolt'
 import MouunsMoon from './MouunsMoon'
+import NewBough from './NewBough'
 import NightweaversLookingGlass from './NightweaversLookingGlass'
 import NocturnesCurtainCall from './NocturnesCurtainCall'
 import OathswornEye from './OathswornEye'
@@ -179,6 +183,7 @@ import SequenceOfSolitude from './SequenceOfSolitude'
 import SerenitysCall from './SerenitysCall'
 import SerpentSpine from './SerpentSpine'
 import SharpshootersOath from './SharpshootersOath'
+import SilverLight from './SilverLight'
 import SilverSword from './SilverSword'
 import SilvershowerHeartstrings from './SilvershowerHeartstrings'
 import SkyriderGreatsword from './SkyriderGreatsword'
@@ -243,6 +248,7 @@ import WhitelakeFrostfeather from './WhitelakeFrostfeather'
 import WhiteTassel from './WhiteTassel'
 import WindblumeOde from './WindblumeOde'
 import WineAndSong from './WineAndSong'
+import WintersHeavyHeart from './WintersHeavyHeart'
 import WolfFang from './WolfFang'
 import WolfsGravestone from './WolfsGravestone'
 import XiphosMoonlight from './XiphosMoonlight'
@@ -253,6 +259,7 @@ const data: TagMapNodeEntries[] = [
   AquilaFavonia,
   AthameArtis,
   Azurelight,
+  BeyondTheChrysalis,
   BlackcliffLongsword,
   CalamityOfEshu,
   CinnabarSpindle,
@@ -279,6 +286,7 @@ const data: TagMapNodeEntries[] = [
   LionsRoar,
   MistsplitterReforged,
   MoonweaversDawn,
+  NewBough,
   PeakPatrolSong,
   PrimordialJadeCutter,
   PrototypeRancour,
@@ -286,6 +294,7 @@ const data: TagMapNodeEntries[] = [
   SacrificialSword,
   SapwoodBlade,
   SerenitysCall,
+  SilverLight,
   SilverSword,
   SkyriderSword,
   SkywardBlade,
@@ -397,6 +406,7 @@ const data: TagMapNodeEntries[] = [
   AquaSimulacra,
   AstralVulturesCrimsonPlumage,
   BlackcliffWarbow,
+  BreezeborneRefrain,
   ChainBreaker,
   Cloudforged,
   CompoundBow,
@@ -463,6 +473,7 @@ const data: TagMapNodeEntries[] = [
   Frostbearer,
   FruitOfFulfillment,
   HakushinRing,
+  HymnOfTheMaelstrom,
   JadefallsSplendor,
   KagurasVerity,
   LostPrayerToTheSacredWinds,
@@ -495,6 +506,7 @@ const data: TagMapNodeEntries[] = [
   WanderingEvenstar,
   WaveridingWhirl,
   WineAndSong,
+  WintersHeavyHeart,
 ]
 
 export default data.flat()

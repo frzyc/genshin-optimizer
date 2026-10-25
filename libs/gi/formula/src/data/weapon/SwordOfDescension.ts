@@ -1,31 +1,14 @@
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  own,
-  register,
-} from '../util'
+import { allTravelerKeys, type WeaponKey } from '@genshin-optimizer/gi/consts'
+import { lookup, prod } from '@genshin-optimizer/pando/engine'
+import { customDmg, own, ownBuff, percent, register } from '../util'
 import { entriesForWeapon } from './util'
 
 const key: WeaponKey = 'SwordOfDescension'
-
-const {
-  weapon: { refinement: _refinement },
-} = own
-// TODO: Conditionals
-const { _someBoolConditional } = allBoolConditionals(key)
-const { _someListConditional } = allListConditionals(key, [])
-const { _someNumConditional } = allNumConditionals(key)
+const travelerAtk = Object.fromEntries(allTravelerKeys.map((k) => [k, 66]))
 
 export default register(
   key,
-  entriesForWeapon(key)
-
-  // TODO:
-  // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
-  // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
-  // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
-  //
-  // TODO: Add refinement bonus
+  entriesForWeapon(key),
+  ownBuff.premod.atk.add(lookup(own.char.charKey, travelerAtk, 0)),
+  customDmg('dmg_', 'physical', 'elemental', prod(percent(2), own.premod.atk))
 )

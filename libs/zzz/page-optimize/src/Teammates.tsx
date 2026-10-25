@@ -15,7 +15,7 @@ import {
 import {
   characterAsset,
   factionDefIcon,
-  specialityDefIcon,
+  specialtyDefIcon,
 } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey, DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import {
@@ -331,7 +331,7 @@ function teammateProfileIcons(charKey: CharacterKey) {
   const { specialty, faction } = allStats.char[charKey] ?? {}
   return [
     characterAsset(charKey, 'interknot'),
-    specialityDefIcon(specialty),
+    specialtyDefIcon(specialty),
     factionDefIcon(faction),
   ]
 }

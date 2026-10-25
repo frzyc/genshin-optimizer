@@ -92,7 +92,7 @@
       "4": "<br/>",
       "5": "<strong>Tugarin</strong>.",
       "6": [
-        " Se houver inimigos por perto, Tugarin se moverá rapidamente para perto de um inimigo a cada 2s, mordendo-o e causando <strong>Dano Electro</strong>.",
+        " Se houver inimigos por perto, Tugarin se moverá rapidamente para perto de um inimigo a cada 2s, mordendo-o e causando <electro>Dano Electro</electro>.",
         " Se atingir um inimigo que está afetado por <strong>Selo da Caçada</strong>, ativará <strong>Selo da Caçada</strong>.",
         " Tugarin priorizará atacar inimigos afetados por <strong>Selo da Caçada</strong>."
       ],
@@ -144,7 +144,7 @@
   "passive": {
     "name": "Vigia Arbórea",
     "description": {
-      "0": "Mostra a localização de <strong>Especialidades de Snezhnaya</strong> próximas no mapa."
+      "0": "Exibe a localização de <strong>recursos exclusivos de Snezhnaya</strong> próximos no minimapa. Esse efeito também se aplica ao Reino das Sombras."
     }
   },
   "constellation1": {

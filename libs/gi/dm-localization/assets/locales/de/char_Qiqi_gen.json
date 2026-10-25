@@ -165,7 +165,7 @@
       "1": "<strong>Leuchten – Stellarfunkeln</strong>: Erhöht während der Dauer von Frostbringer durch eigene Truppenmitglieder verursachten, entsprechenden Schaden:",
       "2": "<strong>Leuchten – Stellar-Supraleiter</strong>: Erhöht den durch die Reaktionen Supraleiter und Stellar-Supraleiter verursachten Schaden um 50 %.",
       "3": "<strong>Leuchten – Stellar-Verwirbelung</strong>: Erhöht den durch die Reaktionen Kryo-Verwirbelung und Stellar-Verwirbelung verursachten Schaden um 50 %.",
-      "4": "Versetzt zudem Qiqi, wenn sie sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet oder ein Truppenmitglied in der Nähe die Reaktion Stellar-Verwirbelung auslöst, innerhalb von 8 s in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong>/<strong>Leuchten – Stellar-Verwirbelung</strong>."
+      "4": "Versetzt zudem Qiqi, wenn sie sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet, in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong> oder versetzt sie, nachdem ein Truppenmitglied in der Nähe die Reaktion Stellar-Verwirbelung ausgelöst hat, 8 s lang in den Zustand <strong>Leuchten – Stellar-Verwirbelung</strong>."
     }
   },
   "constellation1": {

@@ -22,6 +22,7 @@ import FlowingPurity from './FlowingPurity'
 import Frostbearer from './Frostbearer'
 import FruitOfFulfillment from './FruitOfFulfillment'
 import HakushinRing from './HakushinRing'
+import HymnOfTheMaelstrom from './HymnOfTheMaelstrom'
 import JadefallsSplendor from './JadefallsSplendor'
 import KagurasVerity from './KagurasVerity'
 import LostPrayerToTheSacredWinds from './LostPrayerToTheSacredWinds'
@@ -54,6 +55,7 @@ import VividNotions from './VividNotions'
 import WanderingEvenstar from './WanderingEvenstar'
 import WaveridingWhirl from './WaveridingWhirl'
 import WineAndSong from './WineAndSong'
+import WintersHeavyHeart from './WintersHeavyHeart'
 
 const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   AThousandFloatingDreams,
@@ -78,6 +80,7 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   Frostbearer,
   FruitOfFulfillment,
   HakushinRing,
+  HymnOfTheMaelstrom,
   JadefallsSplendor,
   KagurasVerity,
   LostPrayerToTheSacredWinds,
@@ -110,5 +113,6 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   WanderingEvenstar,
   WaveridingWhirl,
   WineAndSong,
+  WintersHeavyHeart,
 } as const
 export default catalyst

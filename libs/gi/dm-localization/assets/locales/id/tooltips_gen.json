@@ -472,9 +472,62 @@
     }
   },
   "11400001": {
+    "name": "Lead Vocal",
+    "description": {
+      "0": "Ketika Karakter aktif sendiri dalam party mengakibatkan <hydro>Hydro DMG</hydro> atau <cryo>Cryo DMG</cryo> melalui Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, atau Elemental Burst, akan mengonsumsi 1 lapis Lead Vocal untuk meningkatkan DMG yang diakibatkan. Jika saat ini terdapat Wandering Vortex, atau dalam kurun waktu 5 detik setelah ledakan Wandering Vortex, efek di atas hanya akan terpicu saat Karakter mengakibatkan DMG reaksi Stellar Swirl.",
+      "1": "Untuk setiap 1.000 poin Max HP Vodyanitsa yang melebihi 40000, DMG Stellar Swirl dari efek di atas akan meningkat 260 poin, <hydro>Hydro DMG</hydro> dan <cryo>Cryo DMG</cryo> akan meningkat 140 poin. Dengan cara ini, DMG Stellar Swirl dapat meningkat hingga 6500 poin, sedangkan <hydro>Hydro DMG</hydro> dan <cryo>Cryo DMG</cryo> dapat meningkat hingga 3500 poin."
+    }
+  },
+  "11400002": {
+    "name": "Chorus",
+    "description": {
+      "0": "Dipicu oleh anggota party yang ada di dalam party namun tidak berada di medan pertempuran atau Karakter lain yang ada di sekitar party (dan bukan Karakter aktif sendiri dalam party). Memiliki efek yang sama dengan Lead Vocal."
+    }
+  },
+  "11430001": {
+    "name": "Armed for Action",
+    "description": {
+      "0": "Vesna akan masuk ke mode ini setelah melancarkan Elemental Skill <strong>The Art of Victory</strong>. Mode ini berlangsung maksimum 15 detik dan memiliki karakteristik berikut:",
+      "1": [
+        "Meningkatkan ketahanan Vesna terhadap interupsi.",
+        "Saat Vesna melancarkan Normal Attack, Charged Attack, dan Plunging Attack, serangannya akan berubah menjadi <anemo>Anemo DMG</anemo> yang tidak bisa ditimpa Elemental Infusion lainnya, dan memanggil bulu angin untuk melancarkan serangan terkoordinasi terhadap musuh dan mengakibatkan <anemo>Anemo DMG</anemo> tambahan. Setiap kali bulu angin dipanggil, Vesna akan memulihkan sejumlah <strong>Sword Essence</strong>.",
+        "Vesna dapat mengonsumsi <strong>Sword Essence</strong> untuk melancarkan Elemental Skill khusus <strong>Windborne Sword</strong> dan mengakibatkan <anemo>Anemo DMG</anemo> terhadap musuh.",
+        "Saat durasi berakhir atau setelah melancarkan <strong>Windborne Sword</strong> dengan level tertinggi sebanyak tiga kali, Vesna akan keluar dari mode ini dan menghapus semua <strong>Sword Essence</strong> yang sudah terkumpul."
+      ]
+    }
+  },
+  "11430002": {
+    "name": "Sword Essence",
+    "description": {
+      "0": "Energi yang dibutuhkan untuk melancarkan Elemental Skill Khusus <strong>Windborne Sword</strong> dalam mode <strong>Armed for Action</strong>.",
+      "1": "Vesna dapat mengumpulkan Sword Essence dengan cara berikut:",
+      "2": [
+        "Melancarkan Normal Attack, Charged Attack, Plunging Attack dalam mode <strong>Armed for Action</strong> atau melancarkan <strong>Windborne Sword: Transpose</strong> dari Konstelasi <strong>Unwavering Ardor</strong>.",
+        "Melancarkan Elemental Skill <strong>The Art of Victory</strong>.",
+        "Melancarkan Elemental Burst <strong>For the Tsaritsa!</strong>."
+      ]
+    }
+  },
+  "11430003": {
+    "name": "Windborne Sword",
+    "description": {
+      "0": "Dalam mode <strong>Armed for Action</strong>, Vesna dapat mengonsumsi <strong>Sword Essence</strong> untuk melancarkan Elemental Skill Khusus ini dan mengakibatkan <anemo>Anemo DMG</anemo>.",
+      "1": "Setiap kali melancarkan Elemental Skill Khusus <strong>Windborne Sword</strong> dalam satu durasi <strong>Armed for Action</strong> yang sama, level <strong>Windborne Sword</strong> akan meningkat. Level awalnya adalah Lv. 1 dan dapat meningkat hingga Lv. 3.",
+      "2": "Melancarkan <strong>Windborne Sword</strong> di Lv. 2 dan Lv. 3 juga akan memanggil <strong>Spirit Blade</strong> yang mengakibatkan <anemo>Anemo DMG</anemo> terhadap musuh."
+    }
+  },
+  "11430004": {
     "name": "Spirit Blade",
     "description": {
-      "0": "Pengenalan \"Spirit Blade\""
+      "0": "Sebuah senjata roh yang bisa dipanggil Vesna dan akan menyerang musuh bersamanya, mengakibatkan <anemo>Anemo DMG</anemo>.",
+      "1": "Vesna dapat memanggil Spirit Blade melalui cara berikut:",
+      "2": [
+        "Melancarkan Elemental Skill Khusus <strong>Windborne Sword</strong> dengan level yang sudah ditingkatkan.",
+        "Melancarkan Elemental Burst <strong>For the Tsaritsa!</strong>.",
+        "Melancarkan <strong>Windborne Sword: Transpose</strong> dari Konstelasi <strong>Unwavering Ardor</strong>."
+      ],
+      "3": "<br/>",
+      "4": "<strong>Radiance: Stellar Swirl</strong>: DMG <strong>Spirit Blade</strong> dikonversi menjadi <anemo>Anemo DMG</anemo> yang dianggap sebagai DMG reaksi Stellar Swirl."
     }
   },
   "11480001": {

@@ -1,0 +1,39 @@
+{
+  "name": "Thánh Ca Vòng Xoáy",
+  "description": {
+    "0": "Ngọn đèn tinh xảo được đúc từ mã não xanh, giống như báu vật được sinh ra từ truyện cổ tích. Nghe nói bên trong cát bụi có phong ấn một khúc tụng ca mà tất cả mọi người đã lãng quên."
+  },
+  "passiveName": "Luân Khúc Ngủ Say",
+  "passiveDescription": {
+    "0": {
+      "0": "Tăng <cryo>4%</cryo> hiệu quả trị liệu.",
+      "1": "Khi tiến hành trị liệu, người trang bị sẽ nhận hiệu quả \"Mật Ngọt Chân Thật\": Giới Hạn HP tăng <cryo>4%</cryo>, đồng thời dựa trên phần Giới Hạn HP vượt quá 40000 của người trang bị, mỗi 1000 điểm Giới Hạn HP sẽ tăng <cryo>0.4%</cryo> Tấn Công cho nhân vật ra trận hiện tại trong đội bản thân, tối đa tăng <cryo>8%</cryo> theo cách này. Hiệu quả này duy trì 10s, tối đa cộng dồn 3 tầng.",
+      "2": "Trong vòng 5s sau khi nhân vật trong đội ở gần kích hoạt phản ứng Đóng Băng hoặc Tinh-Khuếch Tán, hiệu quả tăng Giới Hạn HP và Tấn Công kể trên sẽ tăng thêm 75%.",
+      "3": "Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "1": {
+      "0": "Tăng <cryo>5%</cryo> hiệu quả trị liệu.",
+      "1": "Khi tiến hành trị liệu, người trang bị sẽ nhận hiệu quả \"Mật Ngọt Chân Thật\": Giới Hạn HP tăng <cryo>5%</cryo>, đồng thời dựa trên phần Giới Hạn HP vượt quá 40000 của người trang bị, mỗi 1000 điểm Giới Hạn HP sẽ tăng <cryo>0.5%</cryo> Tấn Công cho nhân vật ra trận hiện tại trong đội bản thân, tối đa tăng <cryo>10%</cryo> theo cách này. Hiệu quả này duy trì 10s, tối đa cộng dồn 3 tầng.",
+      "2": "Trong vòng 5s sau khi nhân vật trong đội ở gần kích hoạt phản ứng Đóng Băng hoặc Tinh-Khuếch Tán, hiệu quả tăng Giới Hạn HP và Tấn Công kể trên sẽ tăng thêm 75%.",
+      "3": "Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "2": {
+      "0": "Tăng <cryo>6%</cryo> hiệu quả trị liệu.",
+      "1": "Khi tiến hành trị liệu, người trang bị sẽ nhận hiệu quả \"Mật Ngọt Chân Thật\": Giới Hạn HP tăng <cryo>6%</cryo>, đồng thời dựa trên phần Giới Hạn HP vượt quá 40000 của người trang bị, mỗi 1000 điểm Giới Hạn HP sẽ tăng <cryo>0.6%</cryo> Tấn Công cho nhân vật ra trận hiện tại trong đội bản thân, tối đa tăng <cryo>12%</cryo> theo cách này. Hiệu quả này duy trì 10s, tối đa cộng dồn 3 tầng.",
+      "2": "Trong vòng 5s sau khi nhân vật trong đội ở gần kích hoạt phản ứng Đóng Băng hoặc Tinh-Khuếch Tán, hiệu quả tăng Giới Hạn HP và Tấn Công kể trên sẽ tăng thêm 75%.",
+      "3": "Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "3": {
+      "0": "Tăng <cryo>7%</cryo> hiệu quả trị liệu.",
+      "1": "Khi tiến hành trị liệu, người trang bị sẽ nhận hiệu quả \"Mật Ngọt Chân Thật\": Giới Hạn HP tăng <cryo>7%</cryo>, đồng thời dựa trên phần Giới Hạn HP vượt quá 40000 của người trang bị, mỗi 1000 điểm Giới Hạn HP sẽ tăng <cryo>0.7%</cryo> Tấn Công cho nhân vật ra trận hiện tại trong đội bản thân, tối đa tăng <cryo>14%</cryo> theo cách này. Hiệu quả này duy trì 10s, tối đa cộng dồn 3 tầng.",
+      "2": "Trong vòng 5s sau khi nhân vật trong đội ở gần kích hoạt phản ứng Đóng Băng hoặc Tinh-Khuếch Tán, hiệu quả tăng Giới Hạn HP và Tấn Công kể trên sẽ tăng thêm 75%.",
+      "3": "Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "4": {
+      "0": "Tăng <cryo>8%</cryo> hiệu quả trị liệu.",
+      "1": "Khi tiến hành trị liệu, người trang bị sẽ nhận hiệu quả \"Mật Ngọt Chân Thật\": Giới Hạn HP tăng <cryo>8%</cryo>, đồng thời dựa trên phần Giới Hạn HP vượt quá 40000 của người trang bị, mỗi 1000 điểm Giới Hạn HP sẽ tăng <cryo>0.8%</cryo> Tấn Công cho nhân vật ra trận hiện tại trong đội bản thân, tối đa tăng <cryo>16%</cryo> theo cách này. Hiệu quả này duy trì 10s, tối đa cộng dồn 3 tầng.",
+      "2": "Trong vòng 5s sau khi nhân vật trong đội ở gần kích hoạt phản ứng Đóng Băng hoặc Tinh-Khuếch Tán, hiệu quả tăng Giới Hạn HP và Tấn Công kể trên sẽ tăng thêm 75%.",
+      "3": "Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    }
+  }
+}

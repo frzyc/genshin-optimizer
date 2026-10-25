@@ -50,7 +50,7 @@
       "2": "<br/>",
       "3": "<strong>Controfigura danzante solista</strong>",
       "4": "Alterna i passi di danza <strong>Piuma</strong> e <strong>Ala</strong>, attaccando periodicamente gli avversari vicini e infliggendo loro <cryo>DAN da Cryo ad area</cryo>.",
-      "5": "Inoltre, per 6 s dopo aver scatenato la sua abilità elementale <strong>Adagio: Danza della Notte fantasma</strong>, quest'ultima si trasforma nell'abilità elementale speciale <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Gran finale dell'alba</strong></tooltip>, che infligge <cryo>DAN da Cryo ad area</cryo> nel tempo agli avversari vicini durante un duetto di danza. Al termine del duetto, Odette infligge un'ulteriore iterazione di <cryo>DAN da Cryo ad area</cryo> considerati come DAN da Astroconduzione o da Turbinio astrale."
+      "5": "Inoltre, per 6 s dopo aver scatenato la sua abilità elementale <strong>Adagio: Danza della Notte fantasma</strong>, quest'ultima si trasforma nell'abilità elementale speciale <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Gran finale dell'alba</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip>, che infligge <cryo>DAN da Cryo ad area</cryo> nel tempo agli avversari vicini durante un duetto di danza. Al termine del duetto, Odette infligge un'ulteriore iterazione di <cryo>DAN da Cryo ad area</cryo> considerati come DAN da Astroconduzione o da Turbinio astrale."
     },
     "skillParams": {
       "0": "DAN da abilità",
@@ -79,7 +79,7 @@
     "name": "Presto: Ultimo atto dell'Uccello azzurro",
     "description": {
       "0": "Con passi di danza rapidi e vivaci, Odette infligge diverse iterazioni di <cryo>DAN da Cryo ad area</cryo> ed evoca la sua <strong><tooltip ns=tooltips_gen baseKey18=11500001 values=[]>Controfigura danzante solista</tooltip></strong>. Ottiene inoltre <strong>Sogno del cigno delle nevi</strong>, che aumenta i DAN da reazione di Barlume astrale inflitti da Odette.",
-      "1": "Inoltre, per 6 s dopo aver scatenato il suo Tripudio elementale <strong>Presto: Ultimo atto dell'Uccello azzurro</strong> l'abilità elementale <strong>Adagio: Danza della Notte fantasma</strong> si trasforma nell'abilità elementale speciale <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Gran finale dell'alba</strong></tooltip>.",
+      "1": "Inoltre, per 6 s dopo aver scatenato il suo Tripudio elementale <strong>Presto: Ultimo atto dell'Uccello azzurro</strong> l'abilità elementale <strong>Adagio: Danza della Notte fantasma</strong> si trasforma nell'abilità elementale speciale <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Gran finale dell'alba</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip>.",
       "2": "<br/>",
       "3": "Se in campo è presente la Controfigura danzante solista evocata da Odette, quest'ultima viene evocata di nuovo al suo fianco, ripristinandone al contempo la durata."
     },
@@ -128,7 +128,7 @@
   "passive": {
     "name": "Eco di sogni a occhi aperti invernali",
     "description": {
-      "0": "Mostra sulla minimappa la posizione delle <strong>specialità locali di Snezhnaya</strong>.",
+      "0": "Mostra sulla minimappa la posizione delle <strong>specialità locali di Snezhnaya</strong>. L'effetto si applica anche nel Regno delle Ombre.",
       "1": "Esercitarsi nella danza nel tempo libero potrebbe persino attivare altri effetti..."
     }
   },

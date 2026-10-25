@@ -524,6 +524,9 @@ export const data = dataObjForCharacterSheet(
         ...c6Team_stellar_specialDmg_obj,
       },
     },
+    flags: {
+      radiance: condA0StellarRadiance,
+    },
   },
   {
     premod: {
@@ -798,7 +801,7 @@ const sheet: TalentSheet = {
           ],
         },
         ss: {
-          name: st('elementalReaction.stellarswirl'),
+          name: st('elementalReaction.team.stellarswirl'),
           fields: [
             {
               text: st('elementalReaction.stellar.gainRadianceSs'),

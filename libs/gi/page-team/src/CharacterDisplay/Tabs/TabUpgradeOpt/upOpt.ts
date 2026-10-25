@@ -107,6 +107,10 @@ export class UpOptCalculatorV2 {
   build: Build
   obj: Objective
   candidates: EvaluatedMarkovTree[] = []
+  /** Sets `tryDefine` generated candidates for, per slot. Empty when Define is off. */
+  defineSetKeys: Partial<Record<ArtifactSlotKey, ArtifactSetKey[]>> = {}
+  /** Slots where no set affects the target, so `tryDefine` picked an arbitrary one. */
+  defineFallbackSlots: ArtifactSlotKey[] = []
   fixedIx = 0
   cache: ElixirSimplifiedCache = new Map()
 
@@ -202,7 +206,9 @@ export class UpOptCalculatorV2 {
       if (!validSetKeys.length && setKeys.length > 0) {
         console.warn(`Picking ${setKeys[0]} b/c none of them matter.`)
         validSetKeys = [setKeys[0]] // Default to something so user sees some results
+        this.defineFallbackSlots.push(slotKey)
       }
+      this.defineSetKeys[slotKey] = [...validSetKeys]
       validSetKeys.forEach((setKey) => {
         mainStats.forEach((mainStatKey) => {
           const subOptions = allSubstatKeys

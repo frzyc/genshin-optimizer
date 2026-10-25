@@ -1,0 +1,39 @@
+{
+  "name": "Loblied des Strudels",
+  "description": {
+    "0": "Eine kunstvolle Leuchte aus blauem Chalcedon, wie ein Schatz aus einem Märchen. Sie soll ein Lied in sich tragen, das alle längst vergessen haben."
+  },
+  "passiveName": "Rondo des Schlafes",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den Heilungsbonus um <cryo>4 %</cryo>.",
+      "1": "Verleiht dem Träger, wenn er eine Heilung durchführt, den Effekt „Vatsamongas Prophetischer Wein“: Erhöht die max. LP um <cryo>4 %</cryo>. Erhöht zudem den ANG des eigenen aktiven Truppenmitglieds für den Teil der max. LP des Trägers, der über 40.000 Punkte liegt, um <cryo>0,4 %</cryo> pro 1.000 Punkte, maximal um <cryo>8 %</cryo>. Dieser Effekt hält 10 s an und ist 3-fach stapelbar.",
+      "2": "Erhöht innerhalb von 5 s, nachdem ein Truppenmitglied in der Nähe die Reaktion Gefroren oder Stellar-Verwirbelung ausgelöst hat, die oben genannten Effekte zur Erhöhung der max. LP und des ANG zusätzlich um 75 %.",
+      "3": "Diese Effekte können auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+    },
+    "1": {
+      "0": "Erhöht den Heilungsbonus um <cryo>5 %</cryo>.",
+      "1": "Verleiht dem Träger, wenn er eine Heilung durchführt, den Effekt „Vatsamongas Prophetischer Wein“: Erhöht die max. LP um <cryo>5 %</cryo>. Erhöht zudem den ANG des eigenen aktiven Truppenmitglieds für den Teil der max. LP des Trägers, der über 40.000 Punkte liegt, um <cryo>0,5 %</cryo> pro 1.000 Punkte, maximal um <cryo>10 %</cryo>. Dieser Effekt hält 10 s an und ist 3-fach stapelbar.",
+      "2": "Erhöht innerhalb von 5 s, nachdem ein Truppenmitglied in der Nähe die Reaktion Gefroren oder Stellar-Verwirbelung ausgelöst hat, die oben genannten Effekte zur Erhöhung der max. LP und des ANG zusätzlich um 75 %.",
+      "3": "Diese Effekte können auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+    },
+    "2": {
+      "0": "Erhöht den Heilungsbonus um <cryo>6 %</cryo>.",
+      "1": "Verleiht dem Träger, wenn er eine Heilung durchführt, den Effekt „Vatsamongas Prophetischer Wein“: Erhöht die max. LP um <cryo>6 %</cryo>. Erhöht zudem den ANG des eigenen aktiven Truppenmitglieds für den Teil der max. LP des Trägers, der über 40.000 Punkte liegt, um <cryo>0,6 %</cryo> pro 1.000 Punkte, maximal um <cryo>12 %</cryo>. Dieser Effekt hält 10 s an und ist 3-fach stapelbar.",
+      "2": "Erhöht innerhalb von 5 s, nachdem ein Truppenmitglied in der Nähe die Reaktion Gefroren oder Stellar-Verwirbelung ausgelöst hat, die oben genannten Effekte zur Erhöhung der max. LP und des ANG zusätzlich um 75 %.",
+      "3": "Diese Effekte können auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+    },
+    "3": {
+      "0": "Erhöht den Heilungsbonus um <cryo>7 %</cryo>.",
+      "1": "Verleiht dem Träger, wenn er eine Heilung durchführt, den Effekt „Vatsamongas Prophetischer Wein“: Erhöht die max. LP um <cryo>7 %</cryo>. Erhöht zudem den ANG des eigenen aktiven Truppenmitglieds für den Teil der max. LP des Trägers, der über 40.000 Punkte liegt, um <cryo>0,7 %</cryo> pro 1.000 Punkte, maximal um <cryo>14 %</cryo>. Dieser Effekt hält 10 s an und ist 3-fach stapelbar.",
+      "2": "Erhöht innerhalb von 5 s, nachdem ein Truppenmitglied in der Nähe die Reaktion Gefroren oder Stellar-Verwirbelung ausgelöst hat, die oben genannten Effekte zur Erhöhung der max. LP und des ANG zusätzlich um 75 %.",
+      "3": "Diese Effekte können auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+    },
+    "4": {
+      "0": "Erhöht den Heilungsbonus um <cryo>8 %</cryo>.",
+      "1": "Verleiht dem Träger, wenn er eine Heilung durchführt, den Effekt „Vatsamongas Prophetischer Wein“: Erhöht die max. LP um <cryo>8 %</cryo>. Erhöht zudem den ANG des eigenen aktiven Truppenmitglieds für den Teil der max. LP des Trägers, der über 40.000 Punkte liegt, um <cryo>0,8 %</cryo> pro 1.000 Punkte, maximal um <cryo>16 %</cryo>. Dieser Effekt hält 10 s an und ist 3-fach stapelbar.",
+      "2": "Erhöht innerhalb von 5 s, nachdem ein Truppenmitglied in der Nähe die Reaktion Gefroren oder Stellar-Verwirbelung ausgelöst hat, die oben genannten Effekte zur Erhöhung der max. LP und des ANG zusätzlich um 75 %.",
+      "3": "Diese Effekte können auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+    }
+  }
+}

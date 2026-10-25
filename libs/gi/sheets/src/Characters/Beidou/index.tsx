@@ -3,6 +3,7 @@ import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
   equal,
+  equalStr,
   greaterEq,
   infoMut,
   input,
@@ -242,6 +243,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       eleMas: nodeBurstEleMas,
     },
   },
+  flags: { radiance: equalStr(condLockStellarRadianceSc, 'on', 'sc') },
 })
 
 const sheet: TalentSheet = {

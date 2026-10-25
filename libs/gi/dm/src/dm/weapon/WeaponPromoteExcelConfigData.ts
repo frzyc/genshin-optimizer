@@ -1,7 +1,54 @@
 import { layeredAssignment } from '@genshin-optimizer/common/util'
-import type { PropTypeKey } from '../../mapping'
+import { deobfPropMappings, type PropTypeKey } from '../../mapping'
 import { readDMJSON } from '../../util'
 
+type WeaponPromoteExcelConfigDataObf = {
+  weaponPromoteId: number //12406,
+  promoteLevel: number //6,
+  costItems: {
+    id: number
+    count: number
+  }[]
+  // [
+  //   {
+  //     "id": 114024,
+  //     "count": 4
+  //   },
+  //   {
+  //     "id": 112043,
+  //     "count": 18
+  //   },
+  //   {
+  //     "id": 112007,
+  //     "count": 12
+  //   }
+  // ],
+  coinCost: number
+  addProps: {
+    propType: PropTypeKey
+    [deobfPropMappings.value]: number
+  }[]
+  // [
+  //   {
+  //     "propType": "FIGHT_PROP_BASE_ATTACK",
+  //     "value": 155.60000610351562
+  //   },
+  //   {
+  //     "propType": "FIGHT_PROP_CRITICAL"
+  //   },
+  //   {
+  //     "propType": "FIGHT_PROP_CRITICAL_HURT"
+  //   },
+  //   {
+  //     "propType": "FIGHT_PROP_CHARGE_EFFICIENCY"
+  //   },
+  //   {
+  //     "propType": "FIGHT_PROP_ELEMENT_MASTERY"
+  //   }
+  // ],
+  unlockMaxLevel: number //90,
+  requiredPlayerLevel: number //50
+}
 type WeaponPromoteExcelConfigData = {
   weaponPromoteId: number //12406,
   promoteLevel: number //6,
@@ -49,16 +96,26 @@ type WeaponPromoteExcelConfigData = {
   unlockMaxLevel: number //90,
   requiredPlayerLevel: number //50
 }
+
 const weaponPromoteExcelConfigDataSrc = JSON.parse(
   readDMJSON('ExcelBinOutput/WeaponPromoteExcelConfigData.json')
-) as WeaponPromoteExcelConfigData[]
+) as WeaponPromoteExcelConfigDataObf[]
 
 const weaponPromoteExcelConfigData = {} as Record<
   number,
   Array<WeaponPromoteExcelConfigData | null>
 >
 
-weaponPromoteExcelConfigDataSrc.forEach((data) => {
+weaponPromoteExcelConfigDataSrc.forEach((dataObf) => {
+  const data: WeaponPromoteExcelConfigData = {
+    ...dataObf,
+    addProps: dataObf.addProps.map(
+      ({ [deobfPropMappings.value]: value, ...propRest }) => ({
+        ...propRest,
+        value,
+      })
+    ) as WeaponPromoteExcelConfigData['addProps'],
+  }
   const { weaponPromoteId = 0, promoteLevel = 0 } = data
   if (!weaponPromoteId || !promoteLevel) return
 

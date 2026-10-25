@@ -141,7 +141,7 @@
     "name": "Auserwählter Geheimschatz",
     "description": {
       "0": "Innerhalb von 20 s nach dem Anwenden der Elementarfähigkeit <strong>Eistatzen</strong> führt Diona einen abgestimmten Angriff durchs Abschießen von 3 <strong>Eistatzen</strong> aus, wenn ein Truppenmitglied die Reaktion Stellar-Supraleiter, Supraleiter, Kryo-Verwirbelung oder Stellar-Verwirbelung auslöst. Die auf diese Weise abgeschossenen <strong>Eistatzen</strong> erzeugen keine Elementarteilchen und generieren auch keinen Schild, wenn sie Gegner treffen. Dieser Effekt hat eine Abklingzeit von 3,5 s.",
-      "1": "Versetzt Diona zudem, wenn sie sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet oder ein Truppenmitglied in der Nähe die Reaktion Stellar-Verwirbelung auslöst, innerhalb von 8 s jeweils in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong>/<strong>Leuchten – Stellar-Verwirbelung</strong>."
+      "1": "Versetzt Diona zudem, wenn sie sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet, in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong> oder versetzt sie, nachdem ein Truppenmitglied in der Nähe die Reaktion Stellar-Verwirbelung ausgelöst hat, 8 s lang in den Zustand <strong>Leuchten – Stellar-Verwirbelung</strong>."
     }
   },
   "constellation1": {
@@ -187,14 +187,14 @@
       ]
     },
     "upgradedDescription": {
-      "0": "Verleiht Figuren im Bereich von <strong>Eisgekühlter Branntwein</strong> je nach ihren LP folgende Effekte:",
+      "0": "Verleiht Figuren im Feld von <strong>Eisgekühlter Branntwein</strong> je nach ihren LP folgende Effekte:",
       "1": [
         " Erhöht den passiven Heilungsbonus bei bis zu 50 % LP um 30 %.",
         " Erhöht die Elementarkunde bei mehr als 50 % LP um 200 Punkte."
       ],
       "2": "<br/>",
       "3": "Erhöht zusätzlich Dionas max. LP um 25 %.",
-      "4": "<strong>Leuchten – Stellarfunkeln</strong>: Erhöht den von Figuren im Bereich von „Eisgekühlter Branntwein“ verursachten Schaden der entsprechenden Reaktion:",
+      "4": "<strong>Leuchten – Stellarfunkeln</strong>: Erhöht den von Figuren im Feld von „Eisgekühlter Branntwein“ verursachten Schaden der entsprechenden Reaktion:",
       "5": "<strong>Leuchten – Stellar-Supraleiter</strong>: Erhöht den durch die Reaktionen Supraleiter und Stellar-Supraleiter verursachten Schaden um 40 %.",
       "6": "<strong>Leuchten – Stellar-Verwirbelung</strong>: Erhöht den durch die Reaktionen Kryo-Verwirbelung und Stellar-Verwirbelung verursachten Schaden um 40 %."
     }

@@ -1,0 +1,24 @@
+{
+  "name": "Luz Plateada",
+  "description": {
+    "0": "Una espada larga que dejó Descifravientos, uno de los Tres Ermitaños de Guizang de Liyue. Cuenta la leyenda que fue forjada con plata secreta caída del cielo, y que con ella se cortaron de un tajo las aguas del mar."
+  },
+  "passiveName": "Arrebol sobre el agua",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras usar la Habilidad Elemental, la Maestría Elemental aumenta en <cryo>52</cryo> pts. durante 12 s. Este efecto puede acumularse hasta 2 veces y la duración de cada acumulación es independiente."
+    },
+    "1": {
+      "0": "Tras usar la Habilidad Elemental, la Maestría Elemental aumenta en <cryo>65</cryo> pts. durante 12 s. Este efecto puede acumularse hasta 2 veces y la duración de cada acumulación es independiente."
+    },
+    "2": {
+      "0": "Tras usar la Habilidad Elemental, la Maestría Elemental aumenta en <cryo>78</cryo> pts. durante 12 s. Este efecto puede acumularse hasta 2 veces y la duración de cada acumulación es independiente."
+    },
+    "3": {
+      "0": "Tras usar la Habilidad Elemental, la Maestría Elemental aumenta en <cryo>91</cryo> pts. durante 12 s. Este efecto puede acumularse hasta 2 veces y la duración de cada acumulación es independiente."
+    },
+    "4": {
+      "0": "Tras usar la Habilidad Elemental, la Maestría Elemental aumenta en <cryo>104</cryo> pts. durante 12 s. Este efecto puede acumularse hasta 2 veces y la duración de cada acumulación es independiente."
+    }
+  }
+}

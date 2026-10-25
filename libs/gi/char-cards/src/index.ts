@@ -101,6 +101,8 @@ import Thoma from './Character_Thoma_Card.jpg'
 import Tighnari from './Character_Tighnari_Card.jpg'
 import Varesa from './Character_Varesa_Card.jpg'
 import Venti from './Character_Venti_Card.jpg'
+import Vesna from './Character_Vesna_Card.webp'
+import Vodyanitsa from './Character_Vodyanitsa_Card.webp'
 import Wanderer from './Character_Wanderer_Card.jpg'
 import Wriothesley from './Character_Wriothesley_Card.jpg'
 import Xiangling from './Character_Xiangling_Card.jpg'
@@ -226,6 +228,8 @@ const charCards = {
   Varesa,
   Varka,
   Venti,
+  Vesna,
+  Vodyanitsa,
   Wanderer,
   Wriothesley,
   Xiangling,

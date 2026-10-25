@@ -50,7 +50,7 @@
       "2": "<br/>",
       "3": "<strong>눈 그림자</strong>",
       "4": "<strong>비상</strong>과 <strong>회전</strong> 두 가지 스텝을 번갈아 선보이며, 우아하고 가벼운 춤사위로 주변의 적을 간헐적으로 공격해 <cryo>얼음 원소 범위 피해</cryo>를 준다.",
-      "5": "또한, 원소전투 스킬 <strong>아다지오·한밤의 춤</strong> 발동 후 6초 동안, 오데트의 원소전투 스킬 <strong>아다지오·한밤의 춤</strong>이 특수 원소전투 스킬<tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>아다지오·여명의 춤</strong></tooltip>으로 대체된다. 합동 춤을 통해 주변의 적에게 지속적으로 <cryo>얼음 원소 범위 피해</cryo>를 주고, 합동 춤 종료 시 별 초전도 또는 별 확산 반응 피해로 간주되는 <cryo>얼음 원소 범위 피해</cryo>를 1회 준다"
+      "5": "또한, 원소전투 스킬 <strong>아다지오·한밤의 춤</strong> 발동 후 6초 동안, 오데트의 원소전투 스킬 <strong>아다지오·한밤의 춤</strong>이 특수 원소전투 스킬 <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>아다지오·여명의 춤</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip>으로 대체된다. 합동 춤을 통해 주변의 적에게 지속적으로 <cryo>얼음 원소 범위 피해</cryo>를 주고, 합동 춤 종료 시 별 초전도 또는 별 확산 반응 피해로 간주되는 <cryo>얼음 원소 범위 피해</cryo>를 1회 준다"
     },
     "skillParams": {
       "0": "스킬 피해",
@@ -79,7 +79,7 @@
     "name": "프레스토·하얀 날개의 꿈",
     "description": {
       "0": "빠른 스텝을 선보이며 <cryo>얼음 원소 범위 피해</cryo>를 여러 차례 주고, 자신의 <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>눈 그림자</strong></tooltip>를 소환하여 <strong>백조의 꿈</strong>을 획득한다: 오데트가 주는 별빛 반응 피해가 증가한다.",
-      "1": "또한, 원소폭발 <strong>프레스토·하얀 날개의 꿈</strong> 발동 후 6초 동안, 오데트의 원소전투 스킬 <strong>아다지오·한밤의 춤</strong>이 특수 원소전투 스킬 <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>아다지오·여명의 춤</strong></tooltip>으로 대체된다.",
+      "1": "또한, 원소폭발 <strong>프레스토·하얀 날개의 꿈</strong> 발동 후 6초 동안, 오데트의 원소전투 스킬 <strong>아다지오·한밤의 춤</strong>이 특수 원소전투 스킬 <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>아다지오·여명의 춤</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip>으로 대체된다.",
       "2": "<br/>",
       "3": "필드에 오데트 자신이 소환한 눈 그림자가 존재할 경우, 해당 그림자를 자신의 곁으로 소환하고 지속 시간을 갱신한다"
     },
@@ -128,7 +128,7 @@
   "passive": {
     "name": "겨울꿈의 메아리",
     "description": {
-      "0": "미니맵에 주위의 <strong>스네즈나야 지역 특산물</strong> 위치가 나타난다.",
+      "0": "미니맵에 주위의 <strong>스네즈나야 지역 특산물</strong> 위치가 나타난다. 그림자 영역에서도 동일 효과가 적용된다.",
       "1": "한가할 때 춤을 연습하면 다른 효과가 발동될지도 모른다…"
     }
   },

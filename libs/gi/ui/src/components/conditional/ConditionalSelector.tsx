@@ -72,6 +72,7 @@ function SimpleConditionalSelector({
 
   const conditionalValue = data.get(conditional.value).value
   const [stateKey, st] = Object.entries(evalIfFunc(conditional.states, data))[0]
+  const validValue = conditionalValue === stateKey
   const badge = getStateBadge(st.name)
   const condName = getCondName(conditional.name)
 
@@ -80,17 +81,12 @@ function SimpleConditionalSelector({
       fullWidth
       size="small"
       sx={{ borderRadius: 0 }}
-      color={conditionalValue ? 'success' : 'primary'}
+      color={validValue ? 'success' : 'primary'}
       onClick={() =>
-        setConditional(
-          conditional.path,
-          conditionalValue ? undefined : stateKey
-        )
+        setConditional(conditional.path, validValue ? undefined : stateKey)
       }
       disabled={disabled}
-      startIcon={
-        conditionalValue ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />
-      }
+      startIcon={validValue ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />}
     >
       {condName} {badge}
     </Button>
@@ -218,7 +214,10 @@ function getStateBadge(stateName: ReactNode | undefined): ReactNode {
     }
   }
   return (
-    <SqBadge sx={{ ml: 0.5 }} color={badgeColor as keyof Palette}>
+    <SqBadge
+      sx={{ ml: 0.5, whiteSpace: 'unset' }}
+      color={badgeColor as keyof Palette}
+    >
       {badgeText}
     </SqBadge>
   )

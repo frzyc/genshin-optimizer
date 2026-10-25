@@ -135,7 +135,7 @@ export default function characterSkillParam() {
       upgradeableSkills.push('burst')
     }
 
-    if (sprint)
+    if (sprint && avatarSkillExcelConfigData[sprint].proudSkillGroupId)
       parseSkillParams(
         [...keys, 'sprint'],
         proudSkillExcelConfigData[

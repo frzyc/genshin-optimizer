@@ -472,9 +472,62 @@
     }
   },
   "11400001": {
+    "name": "Lead Vocal",
+    "description": {
+      "0": "When the party's currently active character deals <hydro>Hydro DMG</hydro> or <cryo>Cryo DMG</cryo> with a Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, or Elemental Burst, 1 stack of \"Lead Vocal\" is consumed. This in turn increases the DMG dealt. However, if a Wandering Vortex is present on the field or during the 5s following a Wandering Vortex explosion, this effect will only trigger when the character deals Stellar Swirl reaction DMG.",
+      "1": "Every 1000 Max HP Vodyanitsa has in excess of 40000 will increase the Stellar Swirl reaction DMG from the above effect by 260, as well as <hydro>Hydro DMG</hydro> and <cryo>Cryo DMG</cryo> dealt by 140. Stellar Swirl reaction DMG dealt can be increased by a maximum of 6500 while <hydro>Hydro DMG</hydro> and <cryo>Cryo DMG</cryo> can be increased by a maximum of 3500 in this way."
+    }
+  },
+  "11400002": {
+    "name": "Chorus",
+    "description": {
+      "0": "Triggered by off-field party members or other nearby party members (and not your currently active party member). Effects are the same as those of \"Lead Vocal.\""
+    }
+  },
+  "11430001": {
+    "name": "Armed for Action",
+    "description": {
+      "0": "Vesna switches to this mode after using the Elemental Skill <strong>The Art of Victory</strong>. In this mode, which lasts up to 15s:",
+      "1": [
+        " Vesna's resistance to interruption is increased.",
+        " DMG dealt by Vesna with her Normal Attacks, Charged Attacks, and Plunging Attacks becomes <anemo>Anemo DMG</anemo> that cannot be overridden by another elemental infusion instead. She will also summon a wind pinion that attacks the opponent at the same time, dealing additional <anemo>Anemo DMG</anemo>. Each time the wind pinion is summoned, Vesna will regenerate a certain amount of <strong>Sword Essence</strong>.",
+        " Vesna can consume <strong>Sword Essence</strong> to unleash the special Elemental Skill <strong>Windborne Sword</strong>, which deals <anemo>Anemo DMG</anemo> to her opponents.",
+        " Vesna will exit the mode when its duration ends or after she has used <strong>Windborne Sword</strong> at the highest level 3 times. Exiting will clear all remaining <strong>Sword Essence</strong> she has accrued."
+      ]
+    }
+  },
+  "11430002": {
+    "name": "Sword Essence",
+    "description": {
+      "0": "The energy required to use the special Elemental Skill <strong>Windborne Sword</strong>while in the <strong>Armed for Action</strong> mode.",
+      "1": "Vesna can accumulate Sword Essence in the following ways:",
+      "2": [
+        " By performing a Normal Attack, Charged Attack, or Plunging attack while in the <strong>Armed for Action</strong> mode, or by unleashing <strong>Windborne Sword: Transpose</strong> from the Constellation <strong>Unwavering Ardor</strong>; ",
+        " By using the Elemental Skill <strong>The Art of Victory</strong>; or",
+        " By using the Elemental Burst <strong>For the Tsaritsa!</strong>"
+      ]
+    }
+  },
+  "11430003": {
+    "name": "Windborne Sword",
+    "description": {
+      "0": "When in the <strong>Armed for Action</strong> mode, Vesna can consume <strong>Sword Essence</strong> to use her special Elemental Skill to deal <anemo>Anemo DMG</anemo>.",
+      "1": "Each use of the special Elemental Skill <strong>Windborne Sword</strong> in the same instance of <strong>Armed for Action</strong> will increase the level of <strong>Windborne Sword</strong>, beginning from Lv. 1, up to Lv. 3 max.",
+      "2": "Using <strong>Windborne Sword</strong> at Lv. 2 and Lv. 3 will also summon a <strong>Spirit Blade</strong> which deals <anemo>Anemo DMG</anemo>."
+    }
+  },
+  "11430004": {
     "name": "Spirit Blade",
     "description": {
-      "0": "About \"Spirit Blade\""
+      "0": "A weapon with special power that Vesna can summon. Attacks the opponent alongside Vesna to deal <anemo>Anemo DMG</anemo>.",
+      "1": "Vesna can summon Spirit Blades through the following ways:",
+      "2": [
+        " By unleashing the special Elemental Skill <strong>Windborne Sword</strong> at Lv. 2 and Lv. 3;",
+        " By using the Elemental Burst <strong>For the Tsaritsa!</strong>; or",
+        " By using <strong>Windborne Sword·: Transpose</strong> in the Constellation <strong>Unwavering Ardor</strong>."
+      ],
+      "3": "<br/>",
+      "4": "<strong>Radiance: Stellar Swirl</strong>: DMG dealt by the <strong>Spirit Blades</strong> become <anemo>Anemo DMG</anemo> that is considered Stellar Swirl reaction DMG instead."
     }
   },
   "11480001": {

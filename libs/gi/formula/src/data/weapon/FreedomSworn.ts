@@ -1,31 +1,26 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  own,
-  register,
-} from '../util'
+import { subscript } from '@genshin-optimizer/pando/engine'
+import { allBoolConditionals, own, percent, register, teamBuff } from '../util'
 import { entriesForWeapon } from './util'
 
 const key: WeaponKey = 'FreedomSworn'
+const autoSrc = [-1, 0.16, 0.2, 0.24, 0.28, 0.32]
+const atk_Src = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 
 const {
-  weapon: { refinement: _refinement },
+  weapon: { refinement },
 } = own
-// TODO: Conditionals
-const { _someBoolConditional } = allBoolConditionals(key)
-const { _someListConditional } = allListConditionals(key, [])
-const { _someNumConditional } = allNumConditionals(key)
+const { MillennialMovement } = allBoolConditionals(key)
+const atk_ = MillennialMovement.ifOn(percent(subscript(refinement, atk_Src)))
+const auto_dmg_ = MillennialMovement.ifOn(
+  percent(subscript(refinement, autoSrc))
+)
 
 export default register(
   key,
-  entriesForWeapon(key)
-
-  // TODO:
-  // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
-  // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
-  // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
-  //
-  // TODO: Add refinement bonus
+  entriesForWeapon(key),
+  teamBuff.premod.atk_.addOnce('millenialatk', atk_),
+  teamBuff.premod.dmg_.normal.add(auto_dmg_),
+  teamBuff.premod.dmg_.charged.add(auto_dmg_),
+  teamBuff.premod.dmg_.plunging.add(auto_dmg_)
 )

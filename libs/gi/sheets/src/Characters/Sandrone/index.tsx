@@ -5,8 +5,10 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
+  compareEq,
   constant,
   equal,
+  equalStr,
   greaterEq,
   infoMut,
   input,
@@ -373,7 +375,8 @@ const dmgFormulas = {
           percent(dm.constellation6.dmg2),
           'atk',
           'stellarconduct',
-          'cryo'
+          'cryo',
+          beamAddl
         )
       )
     ),
@@ -387,7 +390,8 @@ const dmgFormulas = {
           percent(dm.constellation6.ssDmg),
           'atk',
           'stellarswirl',
-          'cryo'
+          'cryo',
+          beamAddl
         )
       )
     ),
@@ -411,6 +415,14 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       stellarswirl_baseDmg_: a0_stellarswirl_baseDmg_,
       ...c1Decoding_stellar_dmg_obj,
     },
+  },
+  flags: {
+    radiance: compareEq(
+      condA0StellarRadiance,
+      'on',
+      'sc',
+      equalStr(condA0StellarRadiance, 'ss', 'ss')
+    ),
   },
 })
 
@@ -627,7 +639,7 @@ const sheet: TalentSheet = {
           ],
         },
         ss: {
-          name: st('elementalReaction.stellarswirl'),
+          name: st('elementalReaction.team.stellarswirl'),
           fields: [
             {
               text: st('elementalReaction.stellar.gainRadianceSs'),
@@ -696,7 +708,7 @@ const sheet: TalentSheet = {
           }),
         },
         {
-          node: infoMut(dmgFormulas.constellation4.dmg, {
+          node: infoMut(dmgFormulas.constellation4.ssDmg, {
             name: ct.ch('c4StellarSwirlDmg'),
           }),
         },

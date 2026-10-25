@@ -1,0 +1,24 @@
+{
+  "name": "Silberlampe",
+  "description": {
+    "0": "Ein Langschwert, das vom Windleser, einem der drei Einsiedler von Guizang aus Liyue, hinterlassen wurde. Der Legende nach wurde es aus geheimem Silber geschmiedet, das vom Himmel gefallen war, und hat einst mit einem einzigen Schlag fließendes Meerwasser gespalten."
+  },
+  "passiveName": "Sonnenspiegelung im Wasser",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht nach dem Anwenden der Elementarfähigkeit innerhalb von 12 s die Elementarkunde um <cryo>52</cryo> Punkte. Dieser Effekt ist bis zu 2-fach stapelbar, die Wirkungsdauer jeder Stapelung ist unabhängig."
+    },
+    "1": {
+      "0": "Erhöht nach dem Anwenden der Elementarfähigkeit innerhalb von 12 s die Elementarkunde um <cryo>65</cryo> Punkte. Dieser Effekt ist bis zu 2-fach stapelbar, die Wirkungsdauer jeder Stapelung ist unabhängig."
+    },
+    "2": {
+      "0": "Erhöht nach dem Anwenden der Elementarfähigkeit innerhalb von 12 s die Elementarkunde um <cryo>78</cryo> Punkte. Dieser Effekt ist bis zu 2-fach stapelbar, die Wirkungsdauer jeder Stapelung ist unabhängig."
+    },
+    "3": {
+      "0": "Erhöht nach dem Anwenden der Elementarfähigkeit innerhalb von 12 s die Elementarkunde um <cryo>91</cryo> Punkte. Dieser Effekt ist bis zu 2-fach stapelbar, die Wirkungsdauer jeder Stapelung ist unabhängig."
+    },
+    "4": {
+      "0": "Erhöht nach dem Anwenden der Elementarfähigkeit innerhalb von 12 s die Elementarkunde um <cryo>104</cryo> Punkte. Dieser Effekt ist bis zu 2-fach stapelbar, die Wirkungsdauer jeder Stapelung ist unabhängig."
+    }
+  }
+}

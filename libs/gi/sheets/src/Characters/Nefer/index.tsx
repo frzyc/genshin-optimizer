@@ -225,9 +225,7 @@ const dmgFormulas = {
     skillDmg: splitScaleDmgNode(
       ['atk', 'eleMas'],
       [dm.skill.skillDmgAtk, dm.skill.skillDmgEleMas],
-      'skill',
-      undefined,
-      a1VeilStacks_pp_mult_
+      'skill'
     ),
     nefer1Dmg: splitScaleDmgNode(
       ['atk', 'eleMas'],

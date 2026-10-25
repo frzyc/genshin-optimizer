@@ -266,8 +266,11 @@
   "FervorCoupon": {
     "name": "Coşku Kuponu"
   },
-  "PrimeIceCount": {
-    "name": "Saf Buz Birimi"
+  "PrimeIceResource": {
+    "name": "Saf Buz Kaynağı"
+  },
+  "VictoryEmblem": {
+    "name": "Zafer Amblemi"
   },
   "Primogem": {
     "name": "Köken Taşı"
@@ -335,6 +338,9 @@
   "PrismaticCrystal": {
     "name": "Prizmatik Kristal"
   },
+  "CelebrationChronalNexus": {
+    "name": "Kutlama Zaman Bağı"
+  },
   "PyroSigil": {
     "name": "Ateş Mührü"
   },
@@ -391,6 +397,12 @@
   },
   "CollectiveOfPlentyReputationEXP": {
     "name": "\"Bereket Kolektifi\" İtibar TP"
+  },
+  "PredictionScore": {
+    "name": "Tahmin Puanı"
+  },
+  "FestiveCheer": {
+    "name": "Şenlik Neşesi"
   },
   "ExpeditionInsights": {
     "name": "Keşif Sezgileri"
@@ -1187,6 +1199,12 @@
   "Sandrone": {
     "name": "Sandrone"
   },
+  "Vodyanitsa": {
+    "name": "Vodyanitsa"
+  },
+  "Vesna": {
+    "name": "Vesna"
+  },
   "Alyosha": {
     "name": "Alyosha"
   },
@@ -1288,6 +1306,12 @@
   },
   "SandronesStellaFortuna": {
     "name": "Sandrone'nin Yaşam Yıldızı"
+  },
+  "VodyanitsasStellaFortuna": {
+    "name": "Vodyanitsa'nın Yaşam Yıldızı"
+  },
+  "VesnasStellaFortuna": {
+    "name": "Vesna'nın Yaşam Yıldızı"
   },
   "AlyoshasStellaFortuna": {
     "name": "Alyosha'nın Yaşam Yıldızı"
@@ -9410,6 +9434,15 @@
   "RecipeSweetScoops": {
     "name": "Tarif: Tatlı Toplar"
   },
+  "RecipeRoyalGrilledFish": {
+    "name": "Tarif: Kraliyet Izgara Balığı"
+  },
+  "RecipeCelestialTeaCrisp": {
+    "name": "Tarif: Semavi Çay Gevreği"
+  },
+  "RecipeMors": {
+    "name": "Tarif: Mors"
+  },
   "CraftedItems": {
     "name": "Üretilen Malzemeler"
   },
@@ -10300,6 +10333,9 @@
   },
   "SeveredTailOfTheSkyRoamer": {
     "name": "Gökgezenin Kopmuş Kuyruğu"
+  },
+  "VagabondsCrackedArmor": {
+    "name": "Avarenin Çatlak Zırhı"
   },
   "TileOfDecarabiansTower": {
     "name": "Decarabian'ın Kırık Çinisi"
@@ -14243,8 +14279,8 @@
   "IzmaylovGuardsJournal": {
     "name": "Izmaylov Muhafızının Günlüğü"
   },
-  "YettobeCompletedNewHighTableMelody": {
-    "name": "Henüz Tamamlanmamış \"Yeni Yüksek Şura Melodisi\""
+  "YettobeCompletedNewHighTableRules": {
+    "name": "Henüz Tamamlanmamış \"Yeni Yüksek Şura Kuralları\""
   },
   "SandronesTeaPartyInvitationLetter": {
     "name": "Sandrone'nin Çay Saati Davet Mektubu"
@@ -14297,6 +14333,12 @@
   "IncompleteDataBlock": {
     "name": "Eksik Veri Bloku"
   },
+  "EnvoysMedal": {
+    "name": "Temsilcinin Madalyası"
+  },
+  "Gobblefin": {
+    "name": "Yutaryüzgeç"
+  },
   "MoongazersEngravingI": {
     "name": "Ay Gözcüsünün Oyması (I)"
   },
@@ -14308,6 +14350,9 @@
   },
   "SnezhnayaVestnik": {
     "name": "Snezhnaya Vestnik Gazetesi"
+  },
+  "LetterFromXiangling": {
+    "name": "Xiangling'den Mektup"
   },
   "ChampionsTrophyOfTheFirstAdventurersTournament": {
     "name": "Birinci Maceracılar Turnuvası Şampiyonluk Kupası"
@@ -14336,14 +14381,14 @@
   "ScarfWarmRed": {
     "name": "Atkı: Sıcak Kırmızı"
   },
-  "ScarfDreamStar": {
-    "name": "Atkı: Rüya Yıldızı"
+  "ScarfNoveltyBrace": {
+    "name": "Atkı: Tuhaf Boyunluk"
   },
   "ScarfPlaid": {
     "name": "Atkı: Ekose"
   },
-  "ScarfNoveltyBrace": {
-    "name": "Atkı: Tuhaf Boyunluk"
+  "ScarfDreamStar": {
+    "name": "Atkı: Rüya Yıldızı"
   },
   "StalkerHood": {
     "name": "Avcı Başlığı"
@@ -14372,6 +14417,9 @@
   "StardustTrailRadiantGlow": {
     "name": "Yıldız Tozu İzi: Parlak Işıltı"
   },
+  "VodyanitsasSpecialNotebook": {
+    "name": "Vodyanitsa'nın Özel Defteri"
+  },
   "RemnantIncenseGuideSnowgrave": {
     "name": "Tütsü İzinin Rehberliği - Kar Mezarı"
   },
@@ -14380,6 +14428,9 @@
   },
   "RemnantIncenseGuideEverfrozenEarth": {
     "name": "Tütsü İzinin Rehberliği - Ebedi Buz Diyarı"
+  },
+  "HappyQuackyPhonographDucky": {
+    "name": "Mutlu Vakvak Gramofon Ördekçik"
   },
   "SpiritSeekerPreviewCommemorativePhoto": {
     "name": "\"Ruh Arayıcısı\" Ön Gösterimi Hatıra Fotoğrafı"
@@ -14397,13 +14448,19 @@
     "name": "Bodrum Odası Giriş Kapısı Kolu"
   },
   "ExitDoorLeverForACertainBasementRoom": {
-    "name": "Bir Bodrum Odasının Çıkış Kapısı Kolu"
+    "name": "Bodrum Odasının Çıkış Kapısı Kolu"
+  },
+  "DruzhnaSpecialDispatchOrder": {
+    "name": "Druzhna Özel Sevk Emri"
   },
   "KresnikEnergy": {
     "name": "Kresnik Enerjisi"
   },
   "PeculiarReagentSample": {
     "name": "Tuhaf Reaktif Numunesi"
+  },
+  "TheSigilGivenByLanYan": {
+    "name": "Lan Yan'ın Verdiği Mühür"
   },
   "StardustTrailRadiantGlowSigil": {
     "name": "Yıldız Tozu İzi: Parlak Işıltı Mührü"
@@ -14432,6 +14489,9 @@
   "SpecialIceCreamContainer": {
     "name": "Özel Dondurma Kabı"
   },
+  "VesnasDivineSenseCompass": {
+    "name": "Vesna'nın \"İlahi Sezgi Pusulası\""
+  },
   "PictureOfNastyaWithHerMom": {
     "name": "Nastya'nın Annesiyle Fotoğrafı"
   },
@@ -14455,6 +14515,24 @@
   },
   "DocumentWithYellowedPages": {
     "name": "Sayfaları Sararmış Belge"
+  },
+  "RequestToExpandVIPRoom": {
+    "name": "VIP Odasını Genişletme Talebi"
+  },
+  "HighLevelAccessCard": {
+    "name": "Üst Düzey Erişim Kartı"
+  },
+  "ConstructAppearanceFlutterwing": {
+    "name": "Yapı Görünümü: Pırpır Kanat"
+  },
+  "VodyanitsasSpecialHandwrittenTicket": {
+    "name": "Vodyanitsa'nın Özel El Yazısı Bileti"
+  },
+  "VodyanitsasGift": {
+    "name": "Vodyanitsa'nın Hediyesi"
+  },
+  "OkurovTownSewerSystemDesignPlan": {
+    "name": "Okurov Kasabası Kanalizasyon Sistemi Tasarım Planı"
   },
   "TearsAmongTheStars": {
     "name": "Yıldızlar Arasındaki Gözyaşları"
@@ -14600,8 +14678,8 @@
   "FlockingweedSeed": {
     "name": "Kadife Otu Tohumu"
   },
-  "GoldenFernSeed": {
-    "name": "Altın Eğrelti Otu Tohumu"
+  "GoldenFernSpore": {
+    "name": "Altın Eğrelti Otu Sporu"
   },
   "RedBeetSeed": {
     "name": "Kırmızı Pancar Tohumu"
@@ -14867,6 +14945,45 @@
   "RegularIceCream": {
     "name": "Sıradan Dondurma"
   },
+  "SuspiciousRoyalGrilledFish": {
+    "name": "Kraliyet Izgara Balığı (Tuhaf)"
+  },
+  "RoyalGrilledFish": {
+    "name": "Kraliyet Izgara Balığı"
+  },
+  "DeliciousRoyalGrilledFish": {
+    "name": "Kraliyet Izgara Balığı (Lezzetli)"
+  },
+  "SuspiciousCelestialTeaCrisp": {
+    "name": "Semavi Çay Gevreği (Tuhaf)"
+  },
+  "CelestialTeaCrisp": {
+    "name": "Semavi Çay Gevreği"
+  },
+  "DeliciousCelestialTeaCrisp": {
+    "name": "Semavi Çay Gevreği (Lezzetli)"
+  },
+  "SuspiciousMors": {
+    "name": "Mors (Tuhaf)"
+  },
+  "Mors": {
+    "name": "Mors"
+  },
+  "DeliciousMors": {
+    "name": "Mors (Lezzetli)"
+  },
+  "IridescentAria": {
+    "name": "Işıltılı Arya"
+  },
+  "HoarfrostSoup": {
+    "name": "Kırağı Çorbası"
+  },
+  "VesnaThemedIceCream": {
+    "name": "Vesna Temalı Dondurma"
+  },
+  "VodyanitsaThemedIceCream": {
+    "name": "Vodyanitsa Temalı Dondurma"
+  },
   "WingsOfFirstFlight": {
     "name": "İlk Uçuş Kanatları"
   },
@@ -14920,6 +15037,9 @@
   },
   "WingsOfLeisurelyMoments": {
     "name": "Keyifli Anların Kanatları"
+  },
+  "WingsOfStarryWinterfrost": {
+    "name": "Yıldızlı Kış Ayazı Kanatları"
   },
   "RadiantSpincrystal1": {
     "name": "Parlak Burgu Kristal 1"
@@ -15575,6 +15695,18 @@
   "RadiantSpincrystal200": {
     "name": "Parlak Burgu Kristal 200"
   },
+  "RadiantSpincrystalALetterFromTheWindI": {
+    "name": "Parlak Burgu Kristal \"A Letter from the Wind: I\""
+  },
+  "RadiantSpincrystalALetterFromTheWindII": {
+    "name": "Parlak Burgu Kristal \"A Letter from the Wind: II\""
+  },
+  "RadiantSpincrystalALetterFromTheWindIII": {
+    "name": "Parlak Burgu Kristal \"A Letter from the Wind: III\""
+  },
+  "RadiantSpincrystalALetterFromTheWindIV": {
+    "name": "Parlak Burgu Kristal \"A Letter from the Wind: IV\""
+  },
   "LanternFiber": {
     "name": "Fener Lifi"
   },
@@ -15682,6 +15814,9 @@
   },
   "RefinedHeart": {
     "name": "Saf Kalp"
+  },
+  "TeaScentedTassel": {
+    "name": "Çay Kokulu Püskül"
   },
   "FalconsDance": {
     "name": "Şahin Dansı"
@@ -16706,6 +16841,18 @@
   "TravelNotesFrostfarer": {
     "name": "Gezi Notları: Ayaz Kaşifi"
   },
+  "VesnaRevelry": {
+    "name": "Vesna: Cümbüş"
+  },
+  "VodyanitsaWhirlpool": {
+    "name": "Vodyanitsa: Girdap"
+  },
+  "SnezhnayaFrostfall": {
+    "name": "Snezhnaya: Ayaz Düşüşü"
+  },
+  "TravelNotesMoontrace": {
+    "name": "Gezi Notları: Ay İzi"
+  },
   "EchoDandelionKnight": {
     "name": "Yankı: Karahindiba Şövalyesi"
   },
@@ -17155,6 +17302,15 @@
   },
   "CryoTreasureCompass": {
     "name": "Buz Hazine Pusulası"
+  },
+  "ConductorOfTheYaho": {
+    "name": "\"Ya-ho\" Makinisti"
+  },
+  "AMiniTrolleyProblem": {
+    "name": "Mini Tramvay İkilemi"
+  },
+  "PrimaDonnasSong": {
+    "name": "Primadonnanın Şarkısı"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Talimatlar: Rüzgar Özü Rezonans Taşı"
@@ -17870,6 +18026,27 @@
   "KeepingWatchByLanternLight": {
     "name": "Fener Işığında Nöbet"
   },
+  "ReadyAndRelaxed": {
+    "name": "Hazır ve Rahat"
+  },
+  "ChoreTime": {
+    "name": "Ev İşi Vakti"
+  },
+  "SavoringTheMeal": {
+    "name": "Yemek Keyfi"
+  },
+  "ValiantBattleStance": {
+    "name": "Yiğit Savaş Duruşu"
+  },
+  "ACelebratoryToast": {
+    "name": "Zaferin Şerefine"
+  },
+  "PleaseDigIn": {
+    "name": "Lütfen, Buyurun"
+  },
+  "EagerlyWaiting": {
+    "name": "Heyecanla Bekleyiş"
+  },
   "FantasticalMarvel": {
     "name": "Olağanüstü Mucize"
   },
@@ -18515,6 +18692,21 @@
   "TemporalWindsEulogy": {
     "name": "Zaman Rüzgarına Methiye"
   },
+  "RadianceOverBlossomsAndPeaks": {
+    "name": "Çiçeklerin ve Tepelerin Parıltısı"
+  },
+  "SurgeOfLightning": {
+    "name": "Yıldırım Taşkını"
+  },
+  "SevenfoldTransmutation": {
+    "name": "Yedi Katlı Dönüşüm"
+  },
+  "BookOfBlindingLight": {
+    "name": "Kör Edici Işık Kitabı"
+  },
+  "ElkWithFangedAntlers": {
+    "name": "Sivri Boynuzlu Geyik"
+  },
   "MagicGuide": {
     "name": "Büyü Rehberi"
   },
@@ -18863,6 +19055,9 @@
   "GladiatorsFinale": {
     "name": "Gladyatörün Son Yemini"
   },
+  "RecollectionOfDaysPast": {
+    "name": "Geçmiş Günlerin Anıları"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Limanı Rıhtımı"
   },
@@ -19102,6 +19297,9 @@
   },
   "ElementalTransfigurationThunderbloomBlessing": {
     "name": "Element Başkalaşımı: Yıldırım Çiçeği Lütfu"
+  },
+  "ElementalTransfigurationOverloadBlessing": {
+    "name": "Element Başkalaşımı: Aşırı Yüklenme Lütfu"
   },
   "ElementalResonanceWovenIce": {
     "name": "Element Rezonansı: Örülü Buzlar"
@@ -19373,6 +19571,9 @@
   "FeastingInASharedToast": {
     "name": "Karşılıklı Kalkan Kadehler"
   },
+  "ReturnOfTheThreeMoons": {
+    "name": "Üç Ayın Dönüşü"
+  },
   "Origin": {
     "name": "Köken"
   },
@@ -19636,6 +19837,9 @@
   },
   "UnbreakableDurandarte": {
     "name": "Sarsılmaz: Durandarte"
+  },
+  "ExaiphanesBlade": {
+    "name": "Exaiphanes Kılıcı"
   },
   "AdventurerCamp": {
     "name": "Maceracı Kampı"
@@ -20242,6 +20446,12 @@
   },
   "ChirpingAboutAsBirdsDo": {
     "name": "\"Kuşlar Gibi Cıvıl Cıvıl\""
+  },
+  "MoonlitSplendorAlongEveryWay": {
+    "name": "Her Yolda Ay Işığı İhtişamı"
+  },
+  "BrightProspectsBrighterProfits": {
+    "name": "Parlak Gelecek, Daha Parlak Kazançlar"
   },
   "EfflorescentIllumination": {
     "name": "Gelişen Aydınlatma"
@@ -21296,8 +21506,8 @@
   "TeaTimeEtiquette": {
     "name": "\"Çay Vakti Adabı\""
   },
-  "BalancedBoughs": {
-    "name": "\"Dengeli Dallar\""
+  "FaintSwayingGold": {
+    "name": "Hafifçe Salınan Altın"
   },
   "SteadyCompanionThroughDreams": {
     "name": "\"Rüyalarda Hep Var Olan Yoldaş\""
@@ -21466,6 +21676,9 @@
   },
   "TheLoveOneSeeks": {
     "name": "\"Aşkın Peşinde\""
+  },
+  "PureIntention": {
+    "name": "İyi Niyet"
   },
   "StrawHut": {
     "name": "Hasır Kulübe"
@@ -21709,6 +21922,15 @@
   },
   "NashaStallUnendingSearch": {
     "name": "Nasha Tezgahı: Bitmeyen Araştırma"
+  },
+  "MarketStallFreshFlavors": {
+    "name": "Pazar Tezgahı: Taze Lezzetler"
+  },
+  "MarketStallInAHurry": {
+    "name": "Pazar Tezgahı: Aceleyle"
+  },
+  "MarketStallTimeToUnwind": {
+    "name": "Pazar Tezgahı: Dinlenme Vakti"
   },
   "HilichurlOutpostHut": {
     "name": "Dağ Yabanisi Karakolu"
@@ -23682,7 +23904,7 @@
     "name": "Dostlarla Paylaşılan Sıcaklık"
   },
   "PedunculateOakWoodMoonwardBackedChair": {
-    "name": "Saplı Meşe \"Ay Tılsımı\" Arkalıklı Sandalye"
+    "name": "Saplı Meşe \"Aya Doğru\" Arkalıklı Sandalye"
   },
   "DiningBenchSteadfast": {
     "name": "Yemek Masası: Sarsılmaz"
@@ -24034,5 +24256,8 @@
   },
   "DancingBeneathSilverWhiteWings": {
     "name": "\"Gümüş Beyazı Kanatların Altında Dans\""
+  },
+  "WhereFishSwimAndWatersSing": {
+    "name": "Balıkların Yüzdüğü ve Suların Şarkı Söylediği Yer"
   }
 }

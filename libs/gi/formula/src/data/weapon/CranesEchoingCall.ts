@@ -1,31 +1,21 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  own,
-  register,
-} from '../util'
+import { subscript } from '@genshin-optimizer/pando/engine'
+import { allBoolConditionals, own, percent, register, teamBuff } from '../util'
 import { entriesForWeapon } from './util'
 
 const key: WeaponKey = 'CranesEchoingCall'
+const plunging_dmg_arr = [-1, 0.28, 0.41, 0.54, 0.67, 0.8]
 
 const {
-  weapon: { refinement: _refinement },
+  weapon: { refinement },
 } = own
-// TODO: Conditionals
-const { _someBoolConditional } = allBoolConditionals(key)
-const { _someListConditional } = allListConditionals(key, [])
-const { _someNumConditional } = allNumConditionals(key)
+const { passive } = allBoolConditionals(key)
 
 export default register(
   key,
-  entriesForWeapon(key)
-
-  // TODO:
-  // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
-  // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
-  // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
-  //
-  // TODO: Add refinement bonus
+  entriesForWeapon(key),
+  teamBuff.premod.dmg_.plunging.addOnce(
+    'crane',
+    passive.ifOn(percent(subscript(refinement, plunging_dmg_arr)))
+  )
 )

@@ -16,6 +16,7 @@ export const allWeaponSwordKeys = [
   'AquilaFavonia',
   'AthameArtis',
   'Azurelight',
+  'BeyondTheChrysalis',
   'BlackcliffLongsword',
   'CalamityOfEshu',
   'CinnabarSpindle',
@@ -42,6 +43,7 @@ export const allWeaponSwordKeys = [
   'LionsRoar',
   'MistsplitterReforged',
   'MoonweaversDawn',
+  'NewBough',
   'PeakPatrolSong',
   'PrimordialJadeCutter',
   'PrototypeRancour',
@@ -49,6 +51,7 @@ export const allWeaponSwordKeys = [
   'SacrificialSword',
   'SapwoodBlade',
   'SerenitysCall',
+  'SilverLight',
   'SilverSword',
   'SkyriderSword',
   'SkywardBlade',
@@ -172,6 +175,7 @@ export const allWeaponBowKeys = [
   'AquaSimulacra',
   'AstralVulturesCrimsonPlumage',
   'BlackcliffWarbow',
+  'BreezeborneRefrain',
   'ChainBreaker',
   'Cloudforged',
   'CompoundBow',
@@ -242,6 +246,7 @@ export const allWeaponCatalystKeys = [
   'Frostbearer',
   'FruitOfFulfillment',
   'HakushinRing',
+  'HymnOfTheMaelstrom',
   'JadefallsSplendor',
   'KagurasVerity',
   'LostPrayerToTheSacredWinds',
@@ -274,6 +279,7 @@ export const allWeaponCatalystKeys = [
   'WanderingEvenstar',
   'WaveridingWhirl',
   'WineAndSong',
+  'WintersHeavyHeart',
 ] as const
 export type WeaponCatalystKey = (typeof allWeaponCatalystKeys)[number]
 

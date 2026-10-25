@@ -31,17 +31,18 @@ export function registerWengine(
 
 export function entriesForWengine(key: WengineKey): TagMapNodeEntries {
   const { lvl, modification } = own.wengine
-  const { atk_base, second_statkey, second_statvalue } = allStats.wengine[key]
+  const { base_statkey, base_statvalue, second_statkey, second_statvalue } =
+    allStats.wengine[key]
   const wengineCount = own.common.count.sheet(key)
   return [
     // Main stat (Base ATK)
     // atk_base * 1 + atk_multiplier[level] + 0.8922 * modification
-    ownBuff.base.atk.add(
+    ownBuff.base[base_statkey].add(
       cmpGE(
         wengineCount,
         1,
         prod(
-          atk_base,
+          base_statvalue,
           sum(1, subscript(lvl, atk_multiplier), prod(0.8922, modification))
         )
       )

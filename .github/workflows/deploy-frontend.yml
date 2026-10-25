@@ -5,10 +5,12 @@ on:
   workflow_run:
     workflows:
       - Build GO (WR) PR
+      - Build GI (Pando) PR
       - Build SRO PR
       - Build ZO PR
       - Build ZO Release
       - New Beta GO Release
+      - New Beta GI Release
       - New Beta SRO Release
       - New Beta ZO Release
       - New ZO Release
@@ -20,6 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    permissions:
+      actions: read
+      contents: read
+      deployments: write
+      pull-requests: write
     steps:
       - name: Download build artifact
         uses: actions/download-artifact@v4
@@ -85,7 +92,9 @@ jobs:
         # First line splits the full repo name (frzyc/genshin-optimizer) into $account (frzyc) and $repo (genshin-optimizer)
         run: |
           IFS=/ read -r account repo <<< ${{ vars[steps.vars.outputs.repo_var_name] }}
-          echo "url=Deployed ${{ steps.vars.outputs.ref }} to https://$account.github.io/$repo/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }} (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT
+          preview_url="https://$account.github.io/$repo/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}/"
+          echo "preview_url=$preview_url" >> $GITHUB_OUTPUT
+          echo "url=Deployed ${{ steps.vars.outputs.ref }} to $preview_url (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT
       - name: Output date
         id: output-date2
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
@@ -105,5 +114,74 @@ jobs:
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           issue-number: ${{ steps.vars.outputs.deployment_name }}
+          edit-mode: append
+          append-separator: newline
           body: |
             [${{ steps.vars.outputs.frontend_name }}] [${{ steps.output-date2.outputs.date }}] - ${{ steps.export-url.outputs.url }}
+      - name: Create GitHub Deployment
+        if: ${{ steps.vars.outputs.deployment_name == 'beta' || (github.event.workflow_run.event == 'pull_request' && steps.vars.outputs.deployment_name != '' && steps.vars.outputs.deployment_name != 'beta') }}
+        uses: actions/github-script@v7
+        env:
+          PREVIEW_URL: ${{ steps.export-url.outputs.preview_url }}
+          FRONTEND_NAME: ${{ steps.vars.outputs.frontend_name }}
+          DEPLOY_REF: ${{ steps.vars.outputs.ref }}
+          DEPLOYMENT_NAME: ${{ steps.vars.outputs.deployment_name }}
+        with:
+          script: |
+            const deploymentName = process.env.DEPLOYMENT_NAME;
+            const frontendName = process.env.FRONTEND_NAME;
+            const previewUrl = process.env.PREVIEW_URL;
+            const ref = process.env.DEPLOY_REF;
+            const logUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+
+            let environment;
+            let description;
+            let transientEnvironment;
+
+            if (deploymentName === 'beta') {
+              environment = `beta/${frontendName}`;
+              description = `Beta ${frontendName}`;
+              transientEnvironment = false;
+            } else if (/^\d+$/.test(deploymentName)) {
+              const pullRequests = context.payload.workflow_run.pull_requests ?? [];
+              if (pullRequests.length === 0) {
+                core.info(
+                  'Skipping GitHub Deployment: pull request metadata unavailable (often fork PRs).'
+                );
+                return;
+              }
+              const headRepo = pullRequests[0].head?.repo?.full_name;
+              const thisRepo = `${context.repo.owner}/${context.repo.repo}`;
+              if (headRepo !== thisRepo) {
+                core.info(`Skipping GitHub Deployment: head repo ${headRepo} is not ${thisRepo}.`);
+                return;
+              }
+              environment = `preview/pr-${deploymentName}/${frontendName}`;
+              description = `${frontendName} preview for PR #${deploymentName}`;
+              transientEnvironment = true;
+            } else {
+              core.info('Skipping GitHub Deployment: unrecognized deployment_name.');
+              return;
+            }
+
+            const deployment = await github.rest.repos.createDeployment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref,
+              environment,
+              auto_merge: false,
+              required_contexts: [],
+              production_environment: false,
+              transient_environment: transientEnvironment,
+              description,
+            });
+
+            await github.rest.repos.createDeploymentStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              deployment_id: deployment.data.id,
+              state: 'success',
+              environment_url: previewUrl,
+              log_url: logUrl,
+              description: 'Deployed to GitHub Pages (may take a few minutes to become available)',
+            });

@@ -137,7 +137,7 @@
     "name": "Seleção Refinada",
     "description": {
       "0": "Nos 20s após lançar a Habilidade Elemental <strong>Garra de Gato Gelada</strong>, quando um personagem da equipe desencadear Supercondutor Estelar, Supercondutor, Redemoinho Cryo ou Redemoinho Estelar, Diona disparará 3 <strong>Garras de Gato Gelada</strong>. As <strong>Garras de Gato Gelada</strong> disparadas dessa forma não geram Partículas Elementais, e ao atingir um inimigo, não geram um Escudo. Esse efeito pode ser desencadeado uma vez a cada 3.5s.",
-      "1": "Além disso, quando estiver dentro de um <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo da Estrela Polar</strong></tooltip> nos 8s após um personagem próximo da equipe desencadear Redemoinho Estelar, Diona entrará nos estados <strong>Brilho Reluzente: Supercondutor Estelar</strong>",
+      "1": "Além disso, quando estiver dentro de um <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo da Estrela Polar</strong></tooltip>/nos 8s após um personagem próximo da equipe desencadear Redemoinho Estelar, Diona entra nos estados <strong>Brilho Reluzente: Supercondutor Estelar</strong>",
       "2": "<strong>Brilho Reluzente: Redemoinho Estelar</strong> respectivamente."
     }
   },

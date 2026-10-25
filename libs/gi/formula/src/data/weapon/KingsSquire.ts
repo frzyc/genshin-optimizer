@@ -1,31 +1,32 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { prod, subscript } from '@genshin-optimizer/pando/engine'
 import {
   allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
+  customDmg,
   own,
+  ownBuff,
+  percent,
   register,
 } from '../util'
 import { entriesForWeapon } from './util'
 
 const key: WeaponKey = 'KingsSquire'
+const eleMasArr = [-1, 60, 80, 100, 120, 140]
+const dmg_arr = [-1, 1, 1.2, 1.4, 1.6, 1.8]
 
 const {
-  weapon: { refinement: _refinement },
+  weapon: { refinement },
 } = own
-// TODO: Conditionals
-const { _someBoolConditional } = allBoolConditionals(key)
-const { _someListConditional } = allListConditionals(key, [])
-const { _someNumConditional } = allNumConditionals(key)
+const { passive } = allBoolConditionals(key)
 
 export default register(
   key,
-  entriesForWeapon(key)
-
-  // TODO:
-  // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
-  // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
-  // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
-  //
-  // TODO: Add refinement bonus
+  entriesForWeapon(key),
+  ownBuff.premod.eleMas.add(passive.ifOn(subscript(refinement, eleMasArr))),
+  customDmg(
+    'dmg',
+    undefined,
+    'elemental',
+    prod(percent(subscript(refinement, dmg_arr)), own.final.atk)
+  )
 )

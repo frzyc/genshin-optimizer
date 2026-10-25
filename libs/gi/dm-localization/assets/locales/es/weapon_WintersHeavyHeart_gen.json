@@ -1,0 +1,29 @@
+{
+  "name": "Corazón del Invierno",
+  "description": {
+    "0": "Un objeto ritual formado por la cristalización del hielo y la nieve más puros. Cuenta la leyenda que, hasta hace quinientos años, los sucesivos duques snegovik lo utilizaban en sus ceremonias de coronación."
+  },
+  "passiveName": "Secretos perdidos de la escarcha",
+  "passiveDescription": {
+    "0": {
+      "0": "El portador de esta arma obtiene el efecto de “pacto de sangre argénteo”, de manera que, por cada personaje Cryo que haya en el equipo, la Maestría Elemental del portador aumenta en <cryo>24</cryo> pts., y por cada personaje Electro que haya en el equipo, su ATQ aumenta en un <cryo>4.8%</cryo>. Estos efectos pueden ser proporcionados por un máximo de 4 personajes Cryo o Electro.",
+      "1": "“Esplendor: Destello Estelar”: cambia el efecto de pacto de sangre argénteo, de manera que, por cada personaje Cryo o Electro que haya en el equipo, la Maestría Elemental del portador aumenta en <cryo>20</cryo> pts., y su daño de Destello Estelar aumenta en un <cryo>6%</cryo>."
+    },
+    "1": {
+      "0": "El portador de esta arma obtiene el efecto de “pacto de sangre argénteo”, de manera que, por cada personaje Cryo que haya en el equipo, la Maestría Elemental del portador aumenta en <cryo>30</cryo> pts., y por cada personaje Electro que haya en el equipo, su ATQ aumenta en un <cryo>6%</cryo>. Estos efectos pueden ser proporcionados por un máximo de 4 personajes Cryo o Electro.",
+      "1": "“Esplendor: Destello Estelar”: cambia el efecto de pacto de sangre argénteo, de manera que, por cada personaje Cryo o Electro que haya en el equipo, la Maestría Elemental del portador aumenta en <cryo>25</cryo> pts., y su daño de Destello Estelar aumenta en un <cryo>7.5%</cryo>."
+    },
+    "2": {
+      "0": "El portador de esta arma obtiene el efecto de “pacto de sangre argénteo”, de manera que, por cada personaje Cryo que haya en el equipo, la Maestría Elemental del portador aumenta en <cryo>36</cryo> pts., y por cada personaje Electro que haya en el equipo, su ATQ aumenta en un <cryo>7.2%</cryo>. Estos efectos pueden ser proporcionados por un máximo de 4 personajes Cryo o Electro.",
+      "1": "“Esplendor: Destello Estelar”: cambia el efecto de pacto de sangre argénteo, de manera que, por cada personaje Cryo o Electro que haya en el equipo, la Maestría Elemental del portador aumenta en <cryo>30</cryo> pts., y su daño de Destello Estelar aumenta en un <cryo>9%</cryo>."
+    },
+    "3": {
+      "0": "El portador de esta arma obtiene el efecto de “pacto de sangre argénteo”, de manera que, por cada personaje Cryo que haya en el equipo, la Maestría Elemental del portador aumenta en <cryo>42</cryo> pts., y por cada personaje Electro que haya en el equipo, su ATQ aumenta en un <cryo>8.4%</cryo>. Estos efectos pueden ser proporcionados por un máximo de 4 personajes Cryo o Electro.",
+      "1": "“Esplendor: Destello Estelar”: cambia el efecto de pacto de sangre argénteo, de manera que, por cada personaje Cryo o Electro que haya en el equipo, la Maestría Elemental del portador aumenta en <cryo>35</cryo> pts., y su daño de Destello Estelar aumenta en un <cryo>10.5%</cryo>."
+    },
+    "4": {
+      "0": "El portador de esta arma obtiene el efecto de “pacto de sangre argénteo”, de manera que, por cada personaje Cryo que haya en el equipo, la Maestría Elemental del portador aumenta en <cryo>48</cryo> pts., y por cada personaje Electro que haya en el equipo, su ATQ aumenta en un <cryo>9.6%</cryo>. Estos efectos pueden ser proporcionados por un máximo de 4 personajes Cryo o Electro.",
+      "1": "“Esplendor: Destello Estelar”: cambia el efecto de pacto de sangre argénteo, de manera que, por cada personaje Cryo o Electro que haya en el equipo, la Maestría Elemental del portador aumenta en <cryo>40</cryo> pts., y su daño de Destello Estelar aumenta en un <cryo>12%</cryo>."
+    }
+  }
+}

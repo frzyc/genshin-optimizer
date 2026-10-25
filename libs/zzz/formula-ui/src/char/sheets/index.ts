@@ -12,6 +12,7 @@ import Billy from './Billy'
 import Burnice from './Burnice'
 import Caesar from './Caesar'
 import Cissia from './Cissia'
+import Claret from './Claret'
 import Corin from './Corin'
 import Dialyn from './Dialyn'
 import Ellen from './Ellen'
@@ -41,6 +42,7 @@ import Pyrois from './Pyrois'
 import Qingyi from './Qingyi'
 import Remielle from './Remielle'
 import Rina from './Rina'
+import Roxy from './Roxy'
 import Seed from './Seed'
 import Seth from './Seth'
 import Sigrid from './Sigrid'
@@ -72,6 +74,7 @@ export const charSheets: Record<CharacterKey, CharUISheet> = {
   Burnice,
   Caesar,
   Cissia,
+  Claret,
   Corin,
   Dialyn,
   Ellen,
@@ -101,6 +104,7 @@ export const charSheets: Record<CharacterKey, CharUISheet> = {
   Qingyi,
   Remielle,
   Rina,
+  Roxy,
   Seed,
   Seth,
   Sigrid,

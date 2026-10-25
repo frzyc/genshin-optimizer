@@ -92,7 +92,7 @@
       "4": "<br/>",
       "5": "<strong>Tugarin</strong>",
       "6": [
-        "Si hay enemigos cerca, Tugarin se desplazará rápidamente hacia uno de ellos cada 2 s y le morderá para infligirle <strong>Daño Electro</strong>.",
+        "Si hay enemigos cerca, Tugarin se desplazará rápidamente hacia uno de ellos cada 2 s y le morderá para infligirle <electro>Daño Electro</electro>.",
         "Si el enemigo golpeado está afectado por una <strong>marca de caza</strong>, dicha marca se activará.",
         "Tugarin atacará prioritariamente a los enemigos afectados por una <strong>marca de caza</strong>."
       ],
@@ -125,7 +125,7 @@
   "passive1": {
     "name": "Despertado por los sabuesos aullantes",
     "description": {
-      "0": "Cuando <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> realice un ataque, también restaurará Vida al personaje en uso cercano del equipo en una cantidad equivalente al 120% del ATQ de Aliosha."
+      "0": "Cuando <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> realice un ataque, también restaurará Vida a los personajes en uso cercanos del equipo en una cantidad equivalente al 120% del ATQ de Aliosha."
     }
   },
   "passive2": {
@@ -145,7 +145,7 @@
   "passive": {
     "name": "Vigía arbóreo",
     "description": {
-      "0": "Muestra la ubicación de los <strong>objetos típicos de Snezhnaya</strong> cercanos en el minimapa."
+      "0": "Muestra la ubicación de los <strong>objetos típicos de Snezhnaya</strong> cercanos en el minimapa. También proporcionará la misma ayuda en el Dominio de las Sombras."
     }
   },
   "constellation1": {

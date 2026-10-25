@@ -113,7 +113,7 @@
     "name": "Uralte Rechenvorrichtung",
     "description": {
       "0": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Leuchten – Stellarfunkeln</strong></tooltip>: Wenn beim Anwenden der Elementarfähigkeit <tooltip ns=char_Sandrone_gen baseKey18=skill><strong>Ereignisformel – Gleitende Analyse</strong></tooltip> Fagio über mehr als 50 Punkte <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Berechnungsleistung</tooltip></strong> verfügt, verringert sich die Berechnungsleistung, und das zweite Prismageschoss, das auf einen Gegner in der Nähe abgefeuert wird, verursacht 400 % des ursprünglichen Schadens.",
-      "1": "Verleiht Fagio zudem jedes Mal, wenn die <strong>Berechnungsleistung</strong> um 10 Punkte verringert wird, eine Stapelung des Effekts <strong>Verbesserte Taktik</strong>, die 60 s hält. Dieser Effekt ist 10-fach stapelbar. Löscht, wenn Sandrone im Zustand <strong>Leuchten – Sternenfunkeln</strong> die Spezialfähigkeit <tooltip ns=char_Sandrone_gen baseKey18=burst><strong>Ereignisformel – Beweis aller Prinzipien</strong></tooltip> anwendet, alle Stapelungen „Verbesserte Taktik“, wodurch der durch den Energiestrahl mit negativen Temperaturen verursachte Schaden in Höhe von 100 % + (gelöschte Stapelungen ×10 %) des Ursprungswerts beträgt."
+      "1": "Verleiht Fagio zudem jedes Mal, wenn die <strong>Berechnungsleistung</strong> um 10 Punkte verringert wird, eine Stapelung des Effekts <strong>Verbesserte Taktik</strong>, die 60 s hält. Dieser Effekt ist 10-fach stapelbar. Löscht, wenn Sandrone im Zustand <strong>Leuchten – Stellarfunkeln</strong> die Spezialfähigkeit <tooltip ns=char_Sandrone_gen baseKey18=burst><strong>Ereignisformel – Beweis aller Prinzipien</strong></tooltip> anwendet, alle Stapelungen „Verbesserte Taktik“, wodurch der durch den Energiestrahl mit negativen Temperaturen verursachte Schaden in Höhe von 100 % + (gelöschte Stapelungen ×10 %) des Ursprungswerts beträgt."
     }
   },
   "passive2": {
@@ -125,8 +125,8 @@
   "passive3": {
     "name": "Sternensegnung – Nur die Vernunft sei Licht",
     "description": {
-      "0": "Versetzt Sandrone, wenn sie sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet oder ein Truppenmitglied in der Nähe die Reaktion Stellar-Verwirbelung auslöst, innerhalb von 8 s in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong>/<strong>Leuchten – Stellar-Verwirbelung</strong>.",
-      "1": "Wandelt, wenn ein Truppenmitglied die Reaktion Supraleiter/Kryo-Verwirbelung auslöst, diese stattdessen in die Reaktion Stellar-Supraleiter/Stellar-Verwirbelung um und erhöht den Basis-Schaden der oben genannten Reaktionen von Truppenmitgliedern basierend auf Sandrones ANG: Erhöht den Basis-SCH der oben genannten Reaktionen um 0,7 %. Auf diese Weise kann der Schaden um bis zu 14 % erhöht werden."
+      "0": "Versetzt Sandrone, wenn sie sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet, in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong> oder versetzt sie, nachdem ein Truppenmitglied in der Nähe die Reaktion Stellar-Verwirbelung ausgelöst hat, 8 s lang in den Zustand <strong>Leuchten – Stellar-Verwirbelung</strong>.",
+      "1": "Wandelt, wenn ein Truppenmitglied die Reaktion Supraleiter/Kryo-Verwirbelung auslöst, diese stattdessen in die Reaktion Stellar-Supraleiter/Stellar-Verwirbelung um und erhöht den Basis-Schaden der oben genannten Reaktionen von Truppenmitgliedern basierend auf Sandrones ANG: Erhöht den Basis-SCH der oben genannten Reaktionen pro 100 Punkte ANG um 0,7 %. Auf diese Weise kann der Schaden um bis zu 14 % erhöht werden."
     }
   },
   "passive": {
@@ -171,10 +171,10 @@
     "name": "Die Narzisse erwacht, begrüßt das Morgenlicht",
     "description": {
       "0": "Wandelt, wenn Fagio im Modus <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Berechnung</tooltip></strong> den dritten Kondensationsstrahl abfeuert, diesen zu einem fortlaufenden, stärkeren <strong>Bündelkondensationsstrahl</strong> um, der zusätzlich zu den ursprünglich nachfolgenden Kondensationsstrahlen bis zu 4-maligen <cryo>Kryo-Flächenschaden</cryo> in Höhe von jeweils 100 % von Sandrones ANG verursacht.",
-      "1": "<strong>Leuchten – Stellarfunkeln</strong>: Der <strong>Bündelkondensationsstrahl</strong> verursacht stattdessen bis zu 4-maligen <cryo>Kryo-Flächenschaden</cryo>, der als durch die entsprechende Stellarfunkeln-Reaktion verursachter Schaden gewertet wird, in folgender Höhe von Sandrones ANG:",
+      "1": "<strong>Leuchten – Stellarfunkeln</strong>: Der <strong>Bündelkondensationsstrahl</strong> verursacht nun zusätzlich zu den ursprünglich nachfolgenden Kondensationsstrahlen bis zu 4-maligen <cryo>Kryo-Flächenschaden</cryo>, der als durch die entsprechende Stellarfunkeln-Reaktion verursachter Schaden gewertet wird, in folgender Höhe von Sandrones ANG:",
       "2": "<strong>Leuchten – Stellar-Supraleiter</strong>: 80 %.",
       "3": "<strong>Leuchten – Stellar-Verwirbelung</strong>: 120 %.",
-      "4": "<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Steigert</strong></tooltip> zusätzlich den gesamten von Sandrone durch die Reaktion Stellar-Supraleiter verursachten Schaden um 20 %."
+      "4": "<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Steigert</strong></tooltip> zusätzlich den von Sandrone durch alle Stellarfunkeln-Reaktionen verursachten Schaden um 20 %."
     }
   }
 }

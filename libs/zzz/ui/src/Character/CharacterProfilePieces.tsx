@@ -3,7 +3,7 @@ import { range } from '@genshin-optimizer/common/util'
 import {
   characterAsset,
   rarityDefIcon,
-  specialityDefIcon,
+  specialtyDefIcon,
 } from '@genshin-optimizer/zzz/assets'
 import {
   type CharacterKey,
@@ -178,7 +178,7 @@ function CharChip({ characterKey }: { characterKey: CharacterKey }) {
           <Box sx={{ whiteSpace: 'normal', textAlign: 'center' }}>
             <CharacterName characterKey={characterKey} />
           </Box>
-          <ImgIcon size={1.5} src={specialityDefIcon(specialty)} />
+          <ImgIcon size={1.5} src={specialtyDefIcon(specialty)} />
         </Typography>
       }
     />

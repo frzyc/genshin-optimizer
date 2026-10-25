@@ -158,7 +158,7 @@
   "constellation4": {
     "name": "Verdade do Mundo Jaz no Conhecimento",
     "description": {
-      "0": "Quando o Dano de Supercondutor Estelar/Redemoinho Estelar de Sandrone atingir um inimigo, invoca um Canhão Ressonante Prismático adicional para realizar um Ataque Carregado que causa 125%/187.5% do ATQ de Sandrone como <cryo>Dano Cryo</cryo>. Esse Dano é considerado Dano de Brilho Estelar correspondente, e pode ser desencadeado uma vez a cada 4s."
+      "0": "Quando o Dano de Supercondutor Estelar/Redemoinho Estelar de Sandrone atingir um inimigo, invoca um Canhão Ressonante Prismático adicional para realizar um Ataque Coordenado que causa 125%/187.5% do ATQ de Sandrone como <cryo>Dano Cryo</cryo>. Esse Dano é considerado Dano de Brilho Estelar correspondente, e pode ser desencadeado uma vez a cada 4s."
     }
   },
   "constellation5": {

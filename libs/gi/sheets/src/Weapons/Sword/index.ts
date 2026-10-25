@@ -5,6 +5,7 @@ import AmenomaKageuchi from './AmenomaKageuchi'
 import AquilaFavonia from './AquilaFavonia'
 import AthameArtis from './AthameArtis'
 import Azurelight from './Azurelight'
+import BeyondTheChrysalis from './BeyondTheChrysalis'
 import BlackcliffLongsword from './BlackcliffLongsword'
 import CalamityOfEshu from './CalamityOfEshu'
 import CinnabarSpindle from './CinnabarSpindle'
@@ -31,6 +32,7 @@ import LightOfFoliarIncision from './LightOfFoliarIncision'
 import LionsRoar from './LionsRoar'
 import MistsplitterReforged from './MistsplitterReforged'
 import MoonweaversDawn from './MoonweaversDawn'
+import NewBough from './NewBough'
 import PeakPatrolSong from './PeakPatrolSong'
 import PrimordialJadeCutter from './PrimordialJadeCutter'
 import PrototypeRancour from './PrototypeRancour'
@@ -38,6 +40,7 @@ import RoyalLongsword from './RoyalLongsword'
 import SacrificialSword from './SacrificialSword'
 import SapwoodBlade from './SapwoodBlade'
 import SerenitysCall from './SerenitysCall'
+import SilverLight from './SilverLight'
 import SilverSword from './SilverSword'
 import SkyriderSword from './SkyriderSword'
 import SkywardBlade from './SkywardBlade'
@@ -63,6 +66,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   AquilaFavonia,
   AthameArtis,
   Azurelight,
+  BeyondTheChrysalis,
   BlackcliffLongsword,
   CalamityOfEshu,
   CinnabarSpindle,
@@ -89,6 +93,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   LionsRoar,
   MistsplitterReforged,
   MoonweaversDawn,
+  NewBough,
   PeakPatrolSong,
   PrimordialJadeCutter,
   PrototypeRancour,
@@ -96,6 +101,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   SacrificialSword,
   SapwoodBlade,
   SerenitysCall,
+  SilverLight,
   SilverSword,
   SkyriderSword,
   SkywardBlade,

@@ -1,0 +1,29 @@
+{
+  "name": "Trái Tim Ngưng Tuyết",
+  "description": {
+    "0": "Vật dụng nghi thức được ngưng kết từ băng tuyết tinh khiết nhất, tương truyền cho đến 500 năm trước, nó đều được các vương công Snegovik sử dụng trong nghi thức trao vương miện."
+  },
+  "passiveName": "Bí Mật Sương Giá",
+  "passiveDescription": {
+    "0": {
+      "0": "Người trang bị nhận Khế Ước Máu Ánh Bạc: Với mỗi nhân vật Nguyên Tố Băng trong đội, người trang bị tăng <cryo>24</cryo> điểm Tinh Thông Nguyên Tố; Với mỗi nhân vật Nguyên Tố Lôi trong đội, người trang bị tăng <cryo>4.8%</cryo> Tấn Công. Tối đa 4 nhân vật Nguyên Tố Băng hoặc Lôi có thể cung cấp hiệu quả nêu trên.",
+      "1": "Tỏa Sáng: Tinh Tú Lấp Lánh: Hiệu quả Khế Ước Máu Ánh Bạc đổi thành: Với mỗi nhân vật Nguyên Tố Băng hoặc Lôi trong đội, người trang bị tăng <cryo>20</cryo> điểm Tinh Thông Nguyên Tố, tăng <cryo>6%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh."
+    },
+    "1": {
+      "0": "Người trang bị nhận Khế Ước Máu Ánh Bạc: Với mỗi nhân vật Nguyên Tố Băng trong đội, người trang bị tăng <cryo>30</cryo> điểm Tinh Thông Nguyên Tố; Với mỗi nhân vật Nguyên Tố Lôi trong đội, người trang bị tăng <cryo>6%</cryo> Tấn Công. Tối đa 4 nhân vật Nguyên Tố Băng hoặc Lôi có thể cung cấp hiệu quả nêu trên.",
+      "1": "Tỏa Sáng: Tinh Tú Lấp Lánh: Hiệu quả Khế Ước Máu Ánh Bạc đổi thành: Với mỗi nhân vật Nguyên Tố Băng hoặc Lôi trong đội, người trang bị tăng <cryo>25</cryo> điểm Tinh Thông Nguyên Tố, tăng <cryo>7.5%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh."
+    },
+    "2": {
+      "0": "Người trang bị nhận Khế Ước Máu Ánh Bạc: Với mỗi nhân vật Nguyên Tố Băng trong đội, người trang bị tăng <cryo>36</cryo> điểm Tinh Thông Nguyên Tố; Với mỗi nhân vật Nguyên Tố Lôi trong đội, người trang bị tăng <cryo>7.2%</cryo> Tấn Công. Tối đa 4 nhân vật Nguyên Tố Băng hoặc Lôi có thể cung cấp hiệu quả nêu trên.",
+      "1": "Tỏa Sáng: Tinh Tú Lấp Lánh: Hiệu quả Khế Ước Máu Ánh Bạc đổi thành: Với mỗi nhân vật Nguyên Tố Băng hoặc Lôi trong đội, người trang bị tăng <cryo>30</cryo> điểm Tinh Thông Nguyên Tố, tăng <cryo>9%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh."
+    },
+    "3": {
+      "0": "Người trang bị nhận Khế Ước Máu Ánh Bạc: Với mỗi nhân vật Nguyên Tố Băng trong đội, người trang bị tăng <cryo>42</cryo> điểm Tinh Thông Nguyên Tố; Với mỗi nhân vật Nguyên Tố Lôi trong đội, người trang bị tăng <cryo>8.4%</cryo> Tấn Công. Tối đa 4 nhân vật Nguyên Tố Băng hoặc Lôi có thể cung cấp hiệu quả nêu trên.",
+      "1": "Tỏa Sáng: Tinh Tú Lấp Lánh: Hiệu quả Khế Ước Máu Ánh Bạc đổi thành: Với mỗi nhân vật Nguyên Tố Băng hoặc Lôi trong đội, người trang bị tăng <cryo>35</cryo> điểm Tinh Thông Nguyên Tố, tăng <cryo>10.5%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh."
+    },
+    "4": {
+      "0": "Người trang bị nhận Khế Ước Máu Ánh Bạc: Với mỗi nhân vật Nguyên Tố Băng trong đội, người trang bị tăng <cryo>48</cryo> điểm Tinh Thông Nguyên Tố; Với mỗi nhân vật Nguyên Tố Lôi trong đội, người trang bị tăng <cryo>9.6%</cryo> Tấn Công. Tối đa 4 nhân vật Nguyên Tố Băng hoặc Lôi có thể cung cấp hiệu quả nêu trên.",
+      "1": "Tỏa Sáng: Tinh Tú Lấp Lánh: Hiệu quả Khế Ước Máu Ánh Bạc đổi thành: Với mỗi nhân vật Nguyên Tố Băng hoặc Lôi trong đội, người trang bị tăng <cryo>40</cryo> điểm Tinh Thông Nguyên Tố, tăng <cryo>12%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh."
+    }
+  }
+}

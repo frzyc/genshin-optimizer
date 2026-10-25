@@ -2,15 +2,22 @@ export const deobfPropMappings = {
   // AvatarSkillExcelConfigData, correlates to 465838203 in first object
   // AvatarTalentExcelConfigData, correlates to 1775626709 in first object
   // ProudSkillExcelConfigData, correlates to 2132035084 in first object
-  upgradedDescTextMapHash: 'CMGEIEOLPPL',
+  upgradedDescTextMapHash: 'CJJODEPIILB',
   // AvatarSkillDepotExcelConfigData, correlates to 5-length array in first object
-  inherentProudSkillOpens: 'FDCALBEEAOM',
+  inherentProudSkillOpens: 'LLEFDMDOMGG',
   // AvatarSkillDepotExcelConfigData, correlates to obfuscated property in 5-length array in first object
-  needAvatarPromoteLevel: 'JNHNGFDPBEF',
+  needAvatarPromoteLevel: 'DHIEHDPAFGI',
   // AvatarSkillDepotExcelConfigData, correlates to 2-length array in first object
-  lockedProudSkillOpens: 'MONOHPPNDHN',
+  lockedProudSkillOpens: 'KDCMKCFKPBL',
   // AvatarSkillDepotExcelConfigData, correlates to array property in 2-length array in first object
-  numberArray: 'DFDKNHGCJDE',
+  numberArray: 'LOFMEPDPLBL',
   // AvatarSkillDepotExcelConfigData, correlates to string property in 2-length array in first object
-  unlockCondition: 'KGIBPKJLCEH',
+  unlockCondition: 'OCCGDAJPCNP',
+  // AvatarCurveExcelConfigData, correlates to 1.0 in first object
+  // AvatarPromoteExcelConfigData
+  // EquipAffixExcelConfigData
+  // ReliquaryLevelExcelConfigData inside artifactMainstat.ts
+  // WeaponCurveExcelConfigData
+  // WeaponPromoteExcelConfigData
+  value: 'GGKIEIJLCJJ',
 } as const

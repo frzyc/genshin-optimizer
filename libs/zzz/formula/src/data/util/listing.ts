@@ -4,7 +4,7 @@ import {
   allCharacterKeys,
   allDiscSetKeys,
   allFactionKeys,
-  allSpecialityKeys,
+  allSpecialtyKeys,
   allWengineKeys,
 } from '@genshin-optimizer/zzz/consts'
 
@@ -19,6 +19,7 @@ export const stats = [
   'impact_',
   'crit_',
   'crit_dmg_',
+  'laceration_dmg_',
   'pen_',
   'pen',
   'enerRegen',
@@ -43,6 +44,7 @@ export const stats = [
   'dmg_red_',
   'sheerForce',
   'sheer_dmg_',
+  'sharp_dmg_',
   'flat_dmg',
   'anom_flat_dmg',
   'addl_disorder_',
@@ -78,6 +80,7 @@ export const damageTypes = [
   'quickAssist',
   'defensiveAssist',
   'evasiveAssist',
+  'counterAssist',
   'assistFollowUp',
   'anomaly',
   'disorder',
@@ -86,6 +89,8 @@ export const damageTypes = [
   'sheer',
   'abloom',
   'vortex',
+  'sharp',
+  'maim',
 ] as const
 
 export const skillTypes = [
@@ -116,7 +121,7 @@ export const sheets = [
 
 export const members = [...allCharacterKeys] as const
 
-export const specialties = [...allSpecialityKeys] as const
+export const specialties = [...allSpecialtyKeys] as const
 
 export const factions = [...allFactionKeys] as const
 

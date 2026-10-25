@@ -1,16 +1,8 @@
-import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
-import type {
-  CalcMeta as CalcMetaBase,
-  Read as ReadBase,
-} from '@genshin-optimizer/game-opt/engine'
+import type { CalcMeta as CalcMetaBase } from '@genshin-optimizer/game-opt/engine'
 import { Calculator as Base } from '@genshin-optimizer/game-opt/engine'
 import { createFilterDebug } from '@genshin-optimizer/game-opt/formula'
 import { DebugCalculator } from '@genshin-optimizer/pando/engine'
-import {
-  allAttributeAnomalyKeys,
-  allDiscSetKeys,
-  allWengineKeys,
-} from '@genshin-optimizer/zzz/consts'
+import { allDiscSetKeys, allWengineKeys } from '@genshin-optimizer/zzz/consts'
 import type { Read, Tag } from './data/util'
 import { enemyTag, ownTag, tagStr } from './data/util'
 
@@ -39,27 +31,5 @@ export class Calculator extends Base<Tag, never> {
         throw new Error('non-explicit team value accumulator')
     }
     return
-  }
-  // TODO: Remove me once we figure out what to do with character sheet listing explosion
-  override listFormulas(read: ReadBase<Tag>): ReadBase<Tag>[] {
-    return super
-      .listFormulas(read)
-      .filter(
-        (r) =>
-          shouldShowDevComponents ||
-          r.tag.qt !== 'formula' ||
-          [
-            'standardDmgInst',
-            'sheerDmgInst',
-            'anomalyDmgInst',
-            'abloomDmgInst',
-            'anomalyBuildupInst',
-            'dazeInst',
-            ...allAttributeAnomalyKeys.map((k) => `disorderDmgInst_${k}`),
-            'disorderDmgInst_frost',
-            ...allAttributeAnomalyKeys.map((k) => `vortexDmgInst_${k}`),
-            'vortexDmgInst_frost',
-          ].includes(r.tag.name ?? '')
-      )
   }
 }

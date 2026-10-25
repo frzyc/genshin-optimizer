@@ -1,64 +1,148 @@
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { cmpGE } from '@genshin-optimizer/pando/engine'
+import { cmpGE, prod } from '@genshin-optimizer/pando/engine'
 import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  enemyDebuff,
+  customDmg,
+  customParam,
   own,
   ownBuff,
+  percent,
   register,
-  team,
   teamBuff,
 } from '../util'
-import { dataGenToCharInfo, dmg, entriesForChar } from './util'
+import { dataGenToCharInfo, dmg, entriesForChar, talentSubscript } from './util'
 
 const key: CharacterKey = 'Tartaglia'
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
 
-// TODO: Fill data-mine values here
-const _dm = {
+let a = 0,
+  s = 0,
+  b = 0,
+  p1 = 0
+const dm = {
   normal: {
-    dmg1: skillParam_gen.auto[0],
+    hitArr: [
+      skillParam_gen.auto[a++],
+      skillParam_gen.auto[a++],
+      skillParam_gen.auto[a++],
+      skillParam_gen.auto[a++],
+      skillParam_gen.auto[a++],
+      skillParam_gen.auto[a++],
+    ],
   },
-  charged: {},
-  plunging: {},
-  skill: {},
-  burst: {},
+  charged: {
+    aimed: skillParam_gen.auto[a++],
+    aimedCharged: skillParam_gen.auto[a++],
+  },
+  riptide: {
+    flashDmg: skillParam_gen.auto[a++],
+    burstDmg: skillParam_gen.auto[a++],
+  },
+  plunging: {
+    dmg: skillParam_gen.auto[a++],
+    low: skillParam_gen.auto[a++],
+    high: skillParam_gen.auto[a++],
+  },
+  riptideDuration: skillParam_gen.auto[a++][0],
+  skill: {
+    stanceDmg: skillParam_gen.skill[s++],
+    normal1: skillParam_gen.skill[s++],
+    normal2: skillParam_gen.skill[s++],
+    normal3: skillParam_gen.skill[s++],
+    normal4: skillParam_gen.skill[s++],
+    normal5: skillParam_gen.skill[s++],
+    normal61: skillParam_gen.skill[s++],
+    normal62: skillParam_gen.skill[s++],
+    charged1: skillParam_gen.skill[s++],
+    charged2: skillParam_gen.skill[s++],
+    riptideSlash: skillParam_gen.skill[s++],
+    chargedStamina: skillParam_gen.skill[s++][0],
+    duration: skillParam_gen.skill[s++][0],
+    preemptiveCd1: skillParam_gen.skill[s++][0],
+    preemptiveCd2: skillParam_gen.skill[s++][0],
+    maxCd: skillParam_gen.skill[s++][0],
+  },
+  burst: {
+    meleeDmg: skillParam_gen.burst[b++],
+    riptideBlastDmg: skillParam_gen.burst[b++],
+    rangedDmg: skillParam_gen.burst[b++],
+    enerReturned: skillParam_gen.burst[b++][0],
+    cd: skillParam_gen.burst[b++][0],
+    enerCost: skillParam_gen.burst[b++][0],
+  },
+  passive1: {
+    durationExt: skillParam_gen.passive1[p1++][0],
+  },
+  passive: {
+    auto_boost: 1,
+  },
+  constellation1: {
+    cdRed: 0.2,
+  },
 } as const
 
 const info = dataGenToCharInfo(data_gen)
 const {
-  final: _final,
-  char: { ascension: _ascension, constellation },
+  final,
+  char: { skill, constellation },
 } = own
-// TODO: Conditionals
-const { _someBoolConditional } = allBoolConditionals(info.key)
-const { _someListConditional } = allListConditionals(info.key, [])
-const { _someNumConditional } = allNumConditionals(info.key)
 
-const _count = team.common.count
+function melee(name: string, table: number[], move: 'normal' | 'charged') {
+  return customDmg(
+    name,
+    'hydro',
+    move,
+    prod(percent(talentSubscript(skill, table)), final.atk)
+  )
+}
 
 export default register(
   info.key,
   entriesForChar(info, data_gen),
-  // TODO: Double check these
-  ownBuff.char.burst.add(cmpGE(constellation, 3, 3)),
-  ownBuff.char.skill.add(cmpGE(constellation, 5, 3)),
+  // C3 Abyssal Mayhem: Vortex of Turmoil (skill); C5 Havoc: Annihilation (burst)
+  ownBuff.char.skill.add(cmpGE(constellation, 3, 3)),
+  ownBuff.char.burst.add(cmpGE(constellation, 5, 3)),
 
-  // TODO:
-  // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
-  ownBuff.premod.atk.add(1),
-  // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
-  teamBuff.premod.atk.add(1),
-  // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
-  enemyDebuff.common.defRed_.add(1),
-  //
-  // <buff value> uses `own.*`, `team.*`, `target.*` (target of team buff), and `enemy.*`
+  // WR teamBuff.premod.autoBoost
+  teamBuff.char.auto.add(dm.passive.auto_boost),
 
-  // Formulas
-  // TODO: Add dmg/heal/shield formulas using `dmg`, `customDmg`, `shield`, `customShield`, `fixedShield`, or `customHeal`
-  dmg('normal1', info, 'atk', _dm.normal.dmg1, 'normal')
+  dm.normal.hitArr.flatMap((arr, i) =>
+    dmg(`normal_${i}`, info, 'atk', arr, 'normal')
+  ),
+  dmg('charged_aimed', info, 'atk', dm.charged.aimed, 'charged', {
+    ele: 'physical',
+  }),
+  dmg('charged_aimedCharged', info, 'atk', dm.charged.aimedCharged, 'charged', {
+    ele: 'hydro',
+  }),
+  dmg('riptide_flash', info, 'atk', dm.riptide.flashDmg, 'normal', {
+    ele: 'hydro',
+  }),
+  dmg('riptide_burst', info, 'atk', dm.riptide.burstDmg, 'normal', {
+    ele: 'hydro',
+  }),
+  Object.entries(dm.plunging).flatMap(([k, v]) =>
+    dmg(`plunging_${k}`, info, 'atk', v, 'plunging')
+  ),
+  dmg('skill_stance', info, 'atk', dm.skill.stanceDmg, 'skill'),
+  melee('skill_normal1', dm.skill.normal1, 'normal'),
+  melee('skill_normal2', dm.skill.normal2, 'normal'),
+  melee('skill_normal3', dm.skill.normal3, 'normal'),
+  melee('skill_normal4', dm.skill.normal4, 'normal'),
+  melee('skill_normal5', dm.skill.normal5, 'normal'),
+  melee('skill_normal61', dm.skill.normal61, 'normal'),
+  melee('skill_normal62', dm.skill.normal62, 'normal'),
+  melee('skill_charged1', dm.skill.charged1, 'charged'),
+  melee('skill_charged2', dm.skill.charged2, 'charged'),
+  dmg('skill_riptideSlash', info, 'atk', dm.skill.riptideSlash, 'skill'),
+  dmg('burst_melee', info, 'atk', dm.burst.meleeDmg, 'burst'),
+  dmg('burst_ranged', info, 'atk', dm.burst.rangedDmg, 'burst'),
+  dmg('burst_riptideBlast', info, 'atk', dm.burst.riptideBlastDmg, 'burst'),
+
+  customParam('riptideDuration', dm.riptideDuration),
+  customParam('skill_chargedStamina', dm.skill.chargedStamina),
+  customParam('skill_duration', dm.skill.duration),
+  customParam('burst_cd', dm.burst.cd),
+  customParam('burst_enerCost', dm.burst.enerCost)
 )

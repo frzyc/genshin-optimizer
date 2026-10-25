@@ -470,16 +470,69 @@
     }
   },
   "11400001": {
-    "name": "Geistschwert-Bewaffnung",
+    "name": "Leitgesang",
     "description": {
-      "0": "Einführung in die Geistschwert-Bewaffnung"
+      "0": "Verbraucht, wenn das aktuelle Truppenmitglied mit einem Standardangriff, heftigen Schlag, Angriff aus dem Fall, einer Elementarfähigkeit oder Spezialfähigkeit <hydro>Hydro-Schaden</hydro> oder <cryo>Kryo-Schaden</cryo> verursacht, eine Stapelung „Leitgesang“ und erhöht den verursachten Schaden. Löst, wenn sich auf dem Feld ein fließender Wirbelwind befindet oder innerhalb der letzten 5 s ein solcher explodiert ist, den oben genannten Effekt stattdessen nur aus, wenn die Figur Schaden durch die Reaktion Stellar-Verwirbelung verursacht.",
+      "1": "Erhöht für den Teil von Vodyanitsas max. LP, der 40000 übersteigt, pro 1.000 Punkte den Schaden durch Stellar-Verwirbelung des oben genannten Effekts um 260 Punkte sowie den <hydro>Hydro-Schaden</hydro> und den <cryo>Kryo-Schaden</cryo> um 140 Punkte. Auf diese Weise können der Schaden durch die Reaktion Stellar-Verwirbelung um maximal 6500 Punkte und der <hydro>Hydro-Schaden</hydro> sowie der <cryo>Kryo-Schaden</cryo> um maximal 3500 Punkte erhöht werden."
+    }
+  },
+  "11400002": {
+    "name": "Chor",
+    "description": {
+      "0": "Wird durch ein inaktives Truppenmitglied oder durch ein anderes Truppenmitglied in der Nähe (jedoch nicht durch deine aktuelle Figur) ausgelöst. Der Effekt ist identisch mit „Leitgesang“."
+    }
+  },
+  "11430001": {
+    "name": "Einsatzbereit",
+    "description": {
+      "0": "Vesna wechselt nach der Anwendung der Elementarfähigkeit <strong>Kodex – Der Weg zum Sieg</strong> in diesen Modus. Der Modus dauert bis zu 15 s und hat folgende Eigenschaften:",
+      "1": [
+        " Erhöht Vesnas Unterbrechungs-WDS.",
+        " Wandelt, wenn Vesna Standardangriffe, heftige Schläge oder Angriffe aus dem Fall ausführt, diese in <anemo>Anemo-SCH</anemo> um, der nicht von anderen Elementen überdeckt werden kann. Ruft zudem eine „Feder im Wind“ herbei, die einen abgestimmten Angriff auf Gegner ausführt und zusätzlichen <anemo>Anemo-SCH</anemo> verursacht. Stellt Vesna jedes Mal, wenn sie eine „Feder im Wind“ herbeiruft, eine bestimmte Menge an <strong>Schwertaura</strong> wieder her.",
+        " Vesna kann <strong>Schwertaura</strong> verbrauchen, um die besondere Elementarfähigkeit <strong>Flugwind-Klinge</strong> anzuwenden und Gegnern <anemo>Anemo-SCH</anemo> zuzufügen.",
+        " Wenn die Dauer endet oder die <strong>Flugwind-Klinge</strong> auf der höchsten Stufe dreimal angewendet wurde, verlässt Vesna diesen Modus und alle Stapelungen <strong>Schwertaura</strong> werden entfernt."
+      ]
+    }
+  },
+  "11430002": {
+    "name": "Schwertaura",
+    "description": {
+      "0": "Energie, um im Modus <strong>Einsatzbereit</strong> die besondere Elementarfähigkeit <strong>Flugwind-Klinge</strong> anzuwenden.",
+      "1": "Vesna kann Schwertaura auf folgende Weisen ansammeln:",
+      "2": [
+        " Anwendung von Standardangriffen, heftigen Schlägen, Angriffen aus dem Fall im Modus <strong>Einsatzbereit</strong>, oder Anwendung von <strong>Flugwind-Klinge – Wandlung</strong> aus dem Sternbild <strong>Unerschütterliche Hingabe</strong>.",
+        " Anwendung der Elementarfähigkeit <strong>Kodex – Der Weg zum Sieg</strong>.",
+        " Anwendung der Spezialfähigkeit <strong>Ehrerbietung – Gewidmet Ihrer Majestät der Zarin</strong>."
+      ]
+    }
+  },
+  "11430003": {
+    "name": "Flugwind-Klinge",
+    "description": {
+      "0": "Im Modus <strong>Einsatzbereit</strong> kann Vesna <strong>Schwertaura</strong> verbrauchen, um diese besondere Elementarfähigkeit anzuwenden und <anemo>Anemo-SCH</anemo> zu verursachen.",
+      "1": "Erhöht während der Dauer des aktuellen Modus <strong>Einsatzbereit</strong> nach jeder Anwendung der besonderen Elementarfähigkeit <strong>Flugwind-Klinge</strong> ihre Stufe. Die Anfangsstufe der <strong>Flugwind-Klinge</strong> beträgt Stufe 1 und kann bis auf Stufe 3 gesteigert werden.",
+      "2": "Ruft beim Anwenden der <strong>Flugwind-Klinge</strong>, deren Stufe erhöht worden ist, außerdem ein <strong>Geisterschwert</strong> herbei, das Gegnern <anemo>Anemo-SCH</anemo> zufügt."
+    }
+  },
+  "11430004": {
+    "name": "Geisterschwert",
+    "description": {
+      "0": "Von Vesna beschworene Geisterwaffe, die gemeinsam mit Vesna Gegner angreift und diesen dabei <anemo>Anemo-SCH</anemo> zufügt.",
+      "1": "Vesna kann das Geisterschwert auf folgende Weisen beschwören:",
+      "2": [
+        " Anwenden der auf eine höhere Stufe hochgestuften besonderen Elementarfähigkeit <strong>Flugwind-Klinge</strong>.",
+        " Anwenden der Spezialfähigkeit <strong>Ehrerbietung – Gewidmet Ihrer Majestät der Zarin</strong>.",
+        " Anwenden von <strong>Flugwind-Klinge – Wandlung</strong> aus dem Sternbild <strong>Unerschütterliche Hingabe</strong>."
+      ],
+      "3": "<br/>",
+      "4": "<strong>Leuchten – Stellar-Verwirbelung</strong>: Wandelt den durch das <strong>Geisterschwert</strong> verursachten Schaden in <anemo>Anemo-SCH</anemo> um, der als Schaden durch die Reaktion Stellar-Verwirbelung gewertet wird."
     }
   },
   "11480001": {
     "name": "Mal der Jäger",
     "description": {
       "0": "Ein Spezialeffekt, den Alyosha auf Gegner anwendet.",
-      "1": "Aktiviert, wenn dieser Effekt auf einen Gegner angewendet wird, der bereits unter dem Einfluss von <strong>Mal der Jäger</strong> steht, den Effekt stattdessen: Entfernt das Mal und verleiht allen Truppenmitgliedern in der Nähe den Effekt <strong>Genauigkeit der Jäger</strong>, der, wenn sie sich auf dem Feld befinden, ihren ANG erhöht."
+      "1": "Aktiviert, wenn dieser Effekt auf einen Gegner angewendet wird, der bereits unter dem Einfluss von <strong>Mal der Jäger</strong> steht, dann das <strong>Mal der Jäger</strong>: Entfernt das Mal und verleiht allen Truppenmitgliedern in der Nähe den Effekt <strong>Genauigkeit der Jäger</strong>, der, wenn sie sich auf dem Feld befinden, ihren ANG erhöht."
     }
   },
   "11480002": {

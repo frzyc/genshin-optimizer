@@ -472,9 +472,62 @@
     }
   },
   "11400001": {
-    "name": "Linh Kiếm Vũ Trang",
+    "name": "Hát Dẫn",
     "description": {
-      "0": "Giới Thiệu Linh Kiếm Vũ Trang"
+      "0": "Khi Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của nhân vật ra trận hiện tại trong đội bản thân gây ra Sát Thương Nguyên Tố <hydro>Thủy</hydro> hoặc <cryo>Băng</cryo>, sẽ tiêu hao một tầng \"Hát Dẫn\" để tăng sát thương gây ra. Nếu trong trận có Cụm Gió Phiêu Du, hoặc trong vòng 5s sau khi Cụm Gió Phiêu Du phát nổ, thì sẽ đổi thành khi nhân vật gây sát thương phản ứng Tinh-Khuếch Tán mới có thể kích hoạt hiệu quả trên.",
+      "1": "Dựa trên phần Giới Hạn HP vượt quá 40000 của Vodyanitsa, mỗi 1000 điểm Giới Hạn HP đều sẽ khiến sát thương phản ứng Tinh-Khuếch Tán trong hiệu quả trên tăng 260 điểm, Sát Thương Nguyên Tố <hydro>Thủy</hydro> và <cryo>Băng</cryo> tăng 140 điểm. Thông qua cách này, tối đa khiến sát thương phản ứng Tinh-Khuếch Tán tăng 6500 điểm, Sát Thương Nguyên Tố <hydro>Thủy</hydro> và <cryo>Băng</cryo> tăng 3500 điểm."
+    }
+  },
+  "11400002": {
+    "name": "Hợp Xướng",
+    "description": {
+      "0": "Do nhân vật dự bị trong đội hoặc nhân vật khác trong đội ở gần kích hoạt (không phải nhân vật ra trận hiện tại trong đội bản thân), hiệu quả giống với \"Hát Dẫn\"."
+    }
+  },
+  "11430001": {
+    "name": "Vũ Trang Lướt Gió",
+    "description": {
+      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố <strong>Sách Lược - Nghệ Thuật Chiến Thắng</strong>, Vesna sẽ chuyển sang chế độ này. Chế độ này tối đa duy trì 15s và mang đặc tính sau:",
+      "1": [
+        "Tăng khả năng Kháng Gián Đoạn của Vesna.",
+        "Khi Vesna thực hiện Tấn Công Thường, Trọng Kích và Tấn Công Khi Đáp, sẽ chuyển sang gây <anemo>Sát Thương Nguyên Tố Phong</anemo> không thể bị thay thế, đồng thời triệu hồi Phong Linh hỗ trợ tấn công kẻ địch, gây thêm <anemo>Sát Thương Nguyên Tố Phong</anemo>. Mỗi lần triệu hồi Phong Linh, đều sẽ phục hồi một lượng <strong>Kiếm Khí</strong> nhất định cho Vesna.",
+        "Vesna có thể tiêu hao <strong>Kiếm Khí</strong> để thi triển Kỹ Năng Nguyên Tố đặc biệt <strong>Tường Phong Kiếm</strong>, gây <anemo>Sát Thương Nguyên Tố Phong</anemo> cho kẻ địch.",
+        "Khi kết thúc thời gian duy trì, hoặc sau khi thi triển 3 lần <strong>Tường Phong Kiếm</strong> cảnh giới cao nhất, Vesna sẽ thoát chế độ này và xóa toàn bộ <strong>Kiếm Khí</strong>."
+      ]
+    }
+  },
+  "11430002": {
+    "name": "Kiếm Khí",
+    "description": {
+      "0": "Năng lượng dùng để thi triển Kỹ Năng Nguyên Tố đặc biệt <strong>Tường Phong Kiếm</strong> trong chế độ <strong>Vũ Trang Lướt Gió</strong>.",
+      "1": "Vesna có thể thông qua những cách sau để tích lũy Kiếm Khí:",
+      "2": [
+        "Trong chế độ <strong>Vũ Trang Lướt Gió</strong>, thực hiện Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp, hoặc thi triển <strong>Tường Phong Kiếm - Biến Đổi</strong> trong Cung Mệnh <strong>Tấm Lòng Sắt Son</strong>.",
+        "Thi triển Kỹ Năng Nguyên Tố <strong>Sách Lược - Nghệ Thuật Chiến Thắng</strong>.",
+        "Thi triển Kỹ Năng Nộ <strong>Kính Lễ - Vì Nữ Hoàng Bệ Hạ</strong>."
+      ]
+    }
+  },
+  "11430003": {
+    "name": "Tường Phong Kiếm",
+    "description": {
+      "0": "Trong chế độ <strong>Vũ Trang Lướt Gió</strong>, Vesna có thể tiêu hao <strong>Kiếm Khí</strong> để thi triển Kỹ Năng Nguyên Tố đặc biệt này, gây <anemo>Sát Thương Nguyên Tố Phong</anemo>.",
+      "1": "Sau mỗi lần thi triển Kỹ Năng Nguyên Tố đặc biệt <strong>Tường Phong Kiếm</strong>, trong thời gian duy trì chế độ <strong>Vũ Trang Lướt Gió</strong> lần này, cảnh giới của nó đều sẽ tăng lên. Cảnh giới ban đầu của <strong>Tường Phong Kiếm</strong> là Bậc 1, tối đa tăng đến Bậc 3.",
+      "2": "Khi thi triển <strong>Tường Phong Kiếm</strong> đã gia tăng cảnh giới, sẽ còn triệu hồi <strong>Linh Kiếm</strong> để gây <anemo>Sát Thương Nguyên Tố Phong</anemo> cho kẻ địch."
+    }
+  },
+  "11430004": {
+    "name": "Linh Kiếm",
+    "description": {
+      "0": "Vũ khí linh thể do Vesna triệu hồi, sẽ hỗ trợ Vesna tấn công kẻ địch, gây <anemo>Sát Thương Nguyên Tố Phong</anemo>.",
+      "1": "Vesna có thể thông qua các cách sau để triệu hồi Linh Kiếm:",
+      "2": [
+        "Thi triển Kỹ Năng Nguyên Tố đặc biệt <strong>Tường Phong Kiếm</strong> đã gia tăng cảnh giới.",
+        "Thi triển Kỹ Năng Nộ <strong>Kính Lễ - Vì Nữ Hoàng Bệ Hạ</strong>.",
+        "Thi triển <strong>Tường Phong Kiếm - Biến Đổi</strong> trong Cung Mệnh <strong>Tấm Lòng Sắt Son</strong>."
+      ],
+      "3": "<br/>",
+      "4": "<strong>Tỏa Sáng: Tinh-Khuếch Tán</strong>: <strong>Linh Kiếm</strong> chuyển sang gây <anemo>Sát Thương Nguyên Tố Phong</anemo> được xem là sát thương phản ứng Tinh-Khuếch Tán."
     }
   },
   "11480001": {

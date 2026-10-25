@@ -3,10 +3,10 @@ import {
   type AttributeKey,
   allAttributeKeys,
   allCharacterRarityKeys,
-  allSpecialityKeys,
+  allSpecialtyKeys,
   type CharacterKey,
   type CharacterRarityKey,
-  type SpecialityKey,
+  type SpecialtyKey,
 } from '@genshin-optimizer/zzz/consts'
 import type { ZzzDatabase } from '@genshin-optimizer/zzz/db'
 import { i18n } from '@genshin-optimizer/zzz/i18n'
@@ -68,14 +68,14 @@ export const characterSortMap: Partial<
 export const initialCharacterDisplayState = (): {
   sortType: CharacterSortKey
   ascending: boolean
-  specialtyType: SpecialityKey[]
+  specialtyType: SpecialtyKey[]
   attribute: AttributeKey[]
   rarity: CharacterRarityKey[]
   pageIndex: number
 } => ({
   sortType: characterSortKeys[0],
   ascending: false,
-  specialtyType: [...allSpecialityKeys],
+  specialtyType: [...allSpecialtyKeys],
   attribute: [...allAttributeKeys],
   rarity: [...allCharacterRarityKeys],
   pageIndex: 0,

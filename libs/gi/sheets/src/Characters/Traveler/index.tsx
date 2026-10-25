@@ -1,8 +1,7 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
-import {
-  allElementKeys,
-  type CharacterKey,
-  type CharacterSheetKey,
+import type {
+  CharacterKey,
+  CharacterSheetKey,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { Data, DisplaySub } from '@genshin-optimizer/gi/wr'
@@ -12,7 +11,7 @@ import {
   infoMut,
   mergeData,
 } from '@genshin-optimizer/gi/wr'
-import { cond, stg, trans } from '../../SheetUtil'
+import { cond, st, stg, trans } from '../../SheetUtil'
 import type { IDocumentHeader } from '../../sheet'
 import { CharacterSheet } from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -93,16 +92,19 @@ export function travelerSheet(
     'Traveler',
     'lockedPassive'
   )
-  const allEleConds = objKeyMap(allElementKeys, (ele) => {
-    // Value automatically set in libs/gi/wr/src/api.ts
-    const [path, value] = cond('Traveler', `traveler${ele}`)
-    const buff = equal(
-      condLockedPassive,
-      'on',
-      equal(value, 'on', dm.lockedPassive[ele])
-    )
-    return { path, value, buff }
-  })
+  const allEleConds = objKeyMap(
+    ['anemo', 'geo', 'electro', 'dendro', 'hydro', 'pyro', 'cryo'],
+    (ele) => {
+      // Value automatically set in libs/gi/wr/src/api.ts
+      const [path, value] = cond('Traveler', `traveler${ele}`)
+      const buff = equal(
+        condLockedPassive,
+        'on',
+        equal(value, 'on', dm.lockedPassive[ele])
+      )
+      return { path, value, buff }
+    }
+  )
   const baseData: Data = mergeData([
     {
       base: {
@@ -301,12 +303,31 @@ export function travelerSheet(
       teamBuff: true,
       states: {
         on: {
-          fields: Object.values(allEleConds).map(({ buff }) => ({
-            node: buff,
-          })),
+          fields: [
+            {
+              text: st('hexerei.talentEnhance'),
+            },
+          ],
         },
       },
-    })
+    }),
+    ...Object.entries(allEleConds).map(([ele, { path, value, buff }]) =>
+      ct.condTem('lockedPassive', {
+        path,
+        value,
+        canShow: equal(condLockedPassive, 'on', 1),
+        name: ch(`resonance.${ele}`),
+        states: {
+          on: {
+            fields: [
+              {
+                node: buff,
+              },
+            ],
+          },
+        },
+      })
+    )
   )
 
   return new CharacterSheet(talent, mergeData([data, baseData]))
