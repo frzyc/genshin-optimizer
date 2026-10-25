@@ -79,7 +79,6 @@ const sheet = register(
       sear.ifOn(
         min(
           percent(1),
-
           sum(
             percent(dm.core.anom_crit_),
             prod(
