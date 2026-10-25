@@ -261,6 +261,17 @@
           "FeverRecovery": 1650,
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 60
+        },
+        {
+          "DamagePercentage": 6.116,
+          "DamagePercentageGrowth": 0.556,
+          "StunRatio": 4.587,
+          "StunRatioGrowth": 0.209,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 14407.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 443.67
         }
       ],
       "QuickAssistAtYourService": [
