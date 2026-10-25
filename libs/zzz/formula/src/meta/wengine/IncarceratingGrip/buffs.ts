@@ -1,36 +1,37 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
-  cond_dmg_: {
+  passive_crit_: {
     sheet: 'IncarceratingGrip',
-    name: 'cond_dmg_',
+    name: 'passive_crit_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'crit_',
       sheet: 'IncarceratingGrip',
-      name: 'cond_dmg_',
+      name: 'passive_crit_',
     },
   },
-  team_dmg_: {
+  cond_atk_: {
     sheet: 'IncarceratingGrip',
-    name: 'team_dmg_',
+    name: 'cond_atk_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'atk_',
       sheet: 'IncarceratingGrip',
-      name: 'team_dmg_',
+      name: 'cond_atk_',
     },
   },
-  enemy_defIgn_: {
+  cond_wind_resIgn_: {
     sheet: 'IncarceratingGrip',
-    name: 'enemy_defIgn_',
+    name: 'cond_wind_resIgn_',
     tag: {
       et: 'display',
-      qt: 'common',
-      q: 'dmgRed_',
+      qt: 'combat',
+      q: 'resIgn_',
       sheet: 'IncarceratingGrip',
-      name: 'enemy_defIgn_',
+      attribute: 'wind',
+      name: 'cond_wind_resIgn_',
     },
   },
 } as const

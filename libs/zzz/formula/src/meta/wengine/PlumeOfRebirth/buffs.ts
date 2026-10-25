@@ -1,36 +1,26 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
-  cond_dmg_: {
+  passive_anomProf: {
     sheet: 'PlumeOfRebirth',
-    name: 'cond_dmg_',
+    name: 'passive_anomProf',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'anomProf',
       sheet: 'PlumeOfRebirth',
-      name: 'cond_dmg_',
+      name: 'passive_anomProf',
     },
   },
-  team_dmg_: {
+  cond_fire_dmg_: {
     sheet: 'PlumeOfRebirth',
-    name: 'team_dmg_',
+    name: 'cond_fire_dmg_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'dmg_',
       sheet: 'PlumeOfRebirth',
-      name: 'team_dmg_',
-    },
-  },
-  enemy_defIgn_: {
-    sheet: 'PlumeOfRebirth',
-    name: 'enemy_defIgn_',
-    tag: {
-      et: 'display',
-      qt: 'common',
-      q: 'dmgRed_',
-      sheet: 'PlumeOfRebirth',
-      name: 'enemy_defIgn_',
+      attribute: 'fire',
+      name: 'cond_fire_dmg_',
     },
   },
 } as const

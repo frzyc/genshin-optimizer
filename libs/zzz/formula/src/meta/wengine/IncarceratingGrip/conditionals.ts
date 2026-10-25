@@ -1,22 +1,4 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  boolConditional: {
-    sheet: 'IncarceratingGrip',
-    name: 'boolConditional',
-    type: 'bool',
-  },
-  listConditional: {
-    sheet: 'IncarceratingGrip',
-    name: 'listConditional',
-    type: 'list',
-    list: ['val1', 'val2'],
-  },
-  numConditional: {
-    sheet: 'IncarceratingGrip',
-    name: 'numConditional',
-    type: 'num',
-    int_only: true,
-    min: 0,
-    max: 2,
-  },
+  basicHits: { sheet: 'IncarceratingGrip', name: 'basicHits', type: 'bool' },
 } as const

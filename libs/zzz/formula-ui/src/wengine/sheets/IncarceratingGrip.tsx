@@ -2,27 +2,14 @@ import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { IncarceratingGrip } from '@genshin-optimizer/zzz/formula'
-import { mappedStats } from '@genshin-optimizer/zzz/stats'
+import { fieldForBuff } from '../../char/sheetUtil'
 import { trans } from '../../util'
 import { PhaseWrapper } from '../components'
 
 const key: WengineKey = 'IncarceratingGrip'
-const [chg, _ch] = trans('wengine', key)
-// TODO: Cleanup
-// biome-ignore lint/suspicious/noTsIgnore: temp
-//@ts-ignore
-// biome-ignore lint/correctness/noUnusedVariables: temp
-const dm = mappedStats.wengine[key]
+const [chg, ch] = trans('wengine', key)
 const icon = wengineAsset(key, 'icon')
-// TODO: Cleanup
-// biome-ignore lint/suspicious/noTsIgnore: temp
-//@ts-ignore
-// biome-ignore lint/correctness/noUnusedVariables: temp
 const cond = IncarceratingGrip.conditionals
-// TODO: Cleanup
-// biome-ignore lint/suspicious/noTsIgnore: temp
-//@ts-ignore
-// biome-ignore lint/correctness/noUnusedVariables: temp
 const buff = IncarceratingGrip.buffs
 
 const sheet: UISheetElement = {
@@ -36,6 +23,21 @@ const sheet: UISheetElement = {
           {(phase) => chg(`phaseDescs.${phase - 1}`)}
         </PhaseWrapper>
       ),
+    },
+    {
+      type: 'fields',
+      fields: [fieldForBuff(buff.passive_crit_)],
+    },
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('basicHits'),
+        metadata: cond.basicHits,
+        fields: [
+          fieldForBuff(buff.cond_atk_),
+          fieldForBuff(buff.cond_wind_resIgn_),
+        ],
+      },
     },
   ],
 }

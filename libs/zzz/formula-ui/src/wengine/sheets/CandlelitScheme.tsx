@@ -2,27 +2,14 @@ import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { CandlelitScheme } from '@genshin-optimizer/zzz/formula'
-import { mappedStats } from '@genshin-optimizer/zzz/stats'
-import { trans } from '../../util'
+import { fieldForBuff } from '../../char/sheetUtil'
+import { st, trans } from '../../util'
 import { PhaseWrapper } from '../components'
 
 const key: WengineKey = 'CandlelitScheme'
-const [chg, _ch] = trans('wengine', key)
-// TODO: Cleanup
-// biome-ignore lint/suspicious/noTsIgnore: temp
-//@ts-ignore
-// biome-ignore lint/correctness/noUnusedVariables: temp
-const dm = mappedStats.wengine[key]
+const [chg, ch] = trans('wengine', key)
 const icon = wengineAsset(key, 'icon')
-// TODO: Cleanup
-// biome-ignore lint/suspicious/noTsIgnore: temp
-//@ts-ignore
-// biome-ignore lint/correctness/noUnusedVariables: temp
 const cond = CandlelitScheme.conditionals
-// TODO: Cleanup
-// biome-ignore lint/suspicious/noTsIgnore: temp
-//@ts-ignore
-// biome-ignore lint/correctness/noUnusedVariables: temp
 const buff = CandlelitScheme.buffs
 
 const sheet: UISheetElement = {
@@ -36,6 +23,22 @@ const sheet: UISheetElement = {
           {(phase) => chg(`phaseDescs.${phase - 1}`)}
         </PhaseWrapper>
       ),
+    },
+    {
+      type: 'conditional',
+      conditional: {
+        label: st('uponLaunch.1', { val1: '$t(skills.exSpecial)' }),
+        metadata: cond.exSpecialUsed,
+        fields: [fieldForBuff(buff.cond_crit_)],
+      },
+    },
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('enemyHpBelowHalf'),
+        metadata: cond.enemyHpBelowHalf,
+        fields: [fieldForBuff(buff.cond_common_dmg_)],
+      },
     },
   ],
 }
