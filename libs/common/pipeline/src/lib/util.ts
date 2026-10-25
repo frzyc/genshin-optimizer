@@ -1,6 +1,6 @@
 import { spawn } from 'node:child_process'
 import { mkdirSync, writeFileSync } from 'node:fs'
-import { dirname, join } from 'node:path'
+import { dirname, extname, join } from 'node:path'
 import { workspaceRoot } from '@nx/devkit'
 
 /**
@@ -19,12 +19,14 @@ export async function formatText(path: string, text: string): Promise<string> {
     'biome'
   )
   const biomeConfigPath = join(workspaceRoot, 'biome.json')
+  // we ignore some file formatting so have to use a non existent file name
+  const stdinFilePath = join(workspaceRoot, `temp${extname(path)}`)
 
   return new Promise((resolve, reject) => {
     const spawnedProcess = spawn('node', [
       biomePath,
       'check',
-      `--stdin-file-path=${path}`,
+      `--stdin-file-path=${stdinFilePath}`,
       `--config-path=${biomeConfigPath}`,
       '--fix',
     ])

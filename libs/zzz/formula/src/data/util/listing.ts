@@ -45,6 +45,7 @@ export const stats = [
   'sheer_dmg_',
   'sharp_dmg_',
   'flat_dmg',
+  'addlMult_',
   'anom_flat_dmg',
   'addl_disorder_',
   'direct_dmg_',

@@ -9,6 +9,7 @@ import BloodmarrowCoffer from './sheets/BloodmarrowCoffer'
 import BoisterousEchoes from './sheets/BoisterousEchoes'
 import BoxCutter from './sheets/BoxCutter'
 import BunnyBand from './sheets/BunnyBand'
+import CandlelitScheme from './sheets/CandlelitScheme'
 import CannonRotor from './sheets/CannonRotor'
 import CattyLuck from './sheets/CattyLuck'
 import CauldronOfClarity from './sheets/CauldronOfClarity'
@@ -38,6 +39,7 @@ import Housekeeper from './sheets/Housekeeper'
 import IceJadeTeapot from './sheets/IceJadeTeapot'
 import IdentityBase from './sheets/IdentityBase'
 import IdentityInflection from './sheets/IdentityInflection'
+import IncarceratingGrip from './sheets/IncarceratingGrip'
 import JoyauDore from './sheets/JoyauDore'
 import KaboomTheCannon from './sheets/KaboomTheCannon'
 import KnightsExtolment from './sheets/KnightsExtolment'
@@ -56,6 +58,7 @@ import NeonFantasies from './sheets/NeonFantasies'
 import OdeOfResurrectedWings from './sheets/OdeOfResurrectedWings'
 import OriginalTransmorpher from './sheets/OriginalTransmorpher'
 import PeacekeeperSpecialized from './sheets/PeacekeeperSpecialized'
+import PlumeOfRebirth from './sheets/PlumeOfRebirth'
 import PracticedPerfection from './sheets/PracticedPerfection'
 import PreciousFossilizedCore from './sheets/PreciousFossilizedCore'
 import PuzzleSphere from './sheets/PuzzleSphere'
@@ -111,6 +114,7 @@ const data: TagMapNodeEntries[] = [
   BoisterousEchoes,
   BoxCutter,
   BunnyBand,
+  CandlelitScheme,
   CannonRotor,
   CattyLuck,
   CauldronOfClarity,
@@ -140,6 +144,7 @@ const data: TagMapNodeEntries[] = [
   IceJadeTeapot,
   IdentityBase,
   IdentityInflection,
+  IncarceratingGrip,
   JoyauDore,
   KaboomTheCannon,
   KnightsExtolment,
@@ -158,6 +163,7 @@ const data: TagMapNodeEntries[] = [
   OdeOfResurrectedWings,
   OriginalTransmorpher,
   PeacekeeperSpecialized,
+  PlumeOfRebirth,
   PracticedPerfection,
   PreciousFossilizedCore,
   PuzzleSphere,

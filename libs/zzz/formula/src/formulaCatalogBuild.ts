@@ -28,6 +28,7 @@ function stripAttribute(tag: Tag): Tag {
 const CATALOG_DIM_ORDER = [
   'standardDmg',
   'sheerDmg',
+  'sharpDmg',
   'dazeBuildup',
   'anomBuildup',
   'anomalyDmg',
@@ -124,9 +125,10 @@ function finalizeCatalogEntry(entry: FormulaCatalogEntry) {
   }
   const hasStandard = dimKeys.includes('standardDmg')
   const hasSheer = dimKeys.includes('sheerDmg')
-  if (hasStandard && hasSheer) {
+  const hasSharp = dimKeys.includes('sharpDmg')
+  if (hasStandard && hasSheer && hasSharp) {
     throw new Error(
-      `[zzz-formula] ${entry.sheet}/${entry.name} has both standardDmg and sheerDmg`
+      `[zzz-formula] ${entry.sheet}/${entry.name} has both standardDmg, sheerDmg and sharpDmg`
     )
   }
 

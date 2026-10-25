@@ -118,6 +118,7 @@ const stats: Record<Stat, Desc> = {
   sheer_dmg_: agg,
   sharp_dmg_: agg,
   flat_dmg: agg,
+  addlMult_: agg,
   anom_flat_dmg: agg,
   addl_disorder_: agg,
   direct_dmg_: agg,
