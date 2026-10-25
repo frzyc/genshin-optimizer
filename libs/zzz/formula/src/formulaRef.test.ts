@@ -43,7 +43,7 @@ describe('FormulaRef catalog invariants', () => {
         expect(entry.skill, label).toBeDefined()
         expect(entry.abilityKey, label).toBeDefined()
         for (const [dim, tag] of Object.entries(entry.dims)) {
-          expect(tag.skillType, `${label}:${dim}`).toMatch(/Skill$/)
+          expect(tag.skillType1, `${label}:${dim}`).toMatch(/Skill$/)
         }
       }
     }

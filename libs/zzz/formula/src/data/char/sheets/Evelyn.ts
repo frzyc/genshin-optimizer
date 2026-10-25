@@ -86,7 +86,7 @@ const sheet = register(
   ),
   ...customDmg(
     'm6_follow_up_dmg_',
-    { ...baseTag, skillType: 'chainSkill' },
+    { ...baseTag, skillType1: 'chainSkill' },
     cmpGE(char.mindscape, 6, prod(own.final.atk, percent(dm.m6.dmg))),
     { cond: cmpGE(char.mindscape, 6, 'infer', '') }
   ),
@@ -100,7 +100,8 @@ const sheet = register(
   ),
   registerBuff(
     'ability_chain_ult_dmg_',
-    ownBuff.combat.dmg_.chainSkill.add(
+    ownBuff.combat.dmg_.addWithSkillType(
+      'chainSkill',
       cmpGE(
         sum(
           team.common.count.withSpecialty('stun'),
@@ -113,7 +114,8 @@ const sheet = register(
   ),
   registerBuff(
     'ability_chainSkill_mv_mult',
-    ownBuff.dmg.mv_mult_.chainSkill.add(
+    ownBuff.dmg.mv_mult_.addWithSkillType(
+      'chainSkill',
       cmpGE(
         sum(
           team.common.count.withSpecialty('stun'),

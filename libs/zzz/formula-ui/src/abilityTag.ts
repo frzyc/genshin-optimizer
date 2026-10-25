@@ -8,7 +8,7 @@ import {
 export { abilityBaseName, parseAbilityHitFromName }
 
 export function skillFromTag(tag: Tag): SkillKey | undefined {
-  const skillType = tag.skillType
+  const skillType = tag.skillType1
   if (!skillType?.endsWith('Skill')) return undefined
 
   const skill = skillType.slice(0, -'Skill'.length)

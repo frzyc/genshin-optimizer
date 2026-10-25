@@ -23,7 +23,7 @@ describe('buildFormulaCatalog', () => {
           q: 'dazeBuildup',
           sheet: 'Anby',
           name: 'Hit_0',
-          skillType: 'basicSkill',
+          skillType1: 'basicSkill',
         },
       },
       {
@@ -36,7 +36,7 @@ describe('buildFormulaCatalog', () => {
           q: 'standardDmg',
           sheet: 'Anby',
           name: 'Hit_0',
-          skillType: 'basicSkill',
+          skillType1: 'basicSkill',
         },
       },
     ])

@@ -60,6 +60,29 @@ export const buffs = {
       name: 'ability_ice_dmg_',
     },
   },
+  ability_crit_dmg_: {
+    sheet: 'Ellen',
+    name: 'ability_crit_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'crit_dmg_',
+      sheet: 'Ellen',
+      name: 'ability_crit_dmg_',
+    },
+  },
+  ability_ice_resIgn_: {
+    sheet: 'Ellen',
+    name: 'ability_ice_resIgn_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'resIgn_',
+      sheet: 'Ellen',
+      attribute: 'ice',
+      name: 'ability_ice_resIgn_',
+    },
+  },
   m1_crit_: {
     sheet: 'Ellen',
     name: 'm1_crit_',

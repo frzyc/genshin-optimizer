@@ -1,36 +1,152 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
-  m6_dmg_: {
+  basic_flat_dmg: {
     sheet: 'Zhao',
-    name: 'm6_dmg_',
+    name: 'basic_flat_dmg',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'flat_dmg',
+      sheet: 'Zhao',
+      damageType1: 'basic',
+      name: 'basic_flat_dmg',
+    },
+  },
+  chain_flat_dmg: {
+    sheet: 'Zhao',
+    name: 'chain_flat_dmg',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'flat_dmg',
+      sheet: 'Zhao',
+      damageType1: 'chain',
+      name: 'chain_flat_dmg',
+    },
+  },
+  assistFollowUp_flat_dmg: {
+    sheet: 'Zhao',
+    name: 'assistFollowUp_flat_dmg',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'flat_dmg',
+      sheet: 'Zhao',
+      damageType1: 'assistFollowUp',
+      name: 'assistFollowUp_flat_dmg',
+    },
+  },
+  core_crit_: {
+    sheet: 'Zhao',
+    name: 'core_crit_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'crit_',
+      sheet: 'Zhao',
+      name: 'core_crit_',
+    },
+  },
+  core_hp_: {
+    sheet: 'Zhao',
+    name: 'core_hp_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'hp_',
+      sheet: 'Zhao',
+      name: 'core_hp_',
+    },
+  },
+  core_atk: {
+    sheet: 'Zhao',
+    name: 'core_atk',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'atk',
+      sheet: 'Zhao',
+      name: 'core_atk',
+    },
+  },
+  ability_common_dmg_: {
+    sheet: 'Zhao',
+    name: 'ability_common_dmg_',
     tag: {
       et: 'display',
       qt: 'combat',
       q: 'common_dmg_',
       sheet: 'Zhao',
-      name: 'm6_dmg_',
+      name: 'ability_common_dmg_',
     },
   },
-  team_dmg_: {
+  m1_resIgn_: {
     sheet: 'Zhao',
-    name: 'team_dmg_',
+    name: 'm1_resIgn_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'resIgn_',
       sheet: 'Zhao',
-      name: 'team_dmg_',
+      name: 'm1_resIgn_',
     },
   },
-  enemy_defRed_: {
+  m2_atk_: {
     sheet: 'Zhao',
-    name: 'enemy_defRed_',
+    name: 'm2_atk_',
     tag: {
       et: 'display',
-      qt: 'common',
-      q: 'defRed_',
+      qt: 'combat',
+      q: 'atk_',
       sheet: 'Zhao',
-      name: 'enemy_defRed_',
+      name: 'm2_atk_',
+    },
+  },
+  m2_team_atk_: {
+    sheet: 'Zhao',
+    name: 'm2_team_atk_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'atk_',
+      sheet: 'Zhao',
+      name: 'm2_team_atk_',
+    },
+  },
+  m4_ult_crit_dmg_: {
+    sheet: 'Zhao',
+    name: 'm4_ult_crit_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'crit_dmg_',
+      sheet: 'Zhao',
+      damageType1: 'ult',
+      name: 'm4_ult_crit_dmg_',
+    },
+  },
+  m4_chain_crit_dmg_: {
+    sheet: 'Zhao',
+    name: 'm4_chain_crit_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'crit_dmg_',
+      sheet: 'Zhao',
+      damageType1: 'chain',
+      name: 'm4_chain_crit_dmg_',
+    },
+  },
+  m4_basic_crit_dmg_: {
+    sheet: 'Zhao',
+    name: 'm4_basic_crit_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'crit_dmg_',
+      sheet: 'Zhao',
+      damageType1: 'basic',
+      name: 'm4_basic_crit_dmg_',
     },
   },
 } as const

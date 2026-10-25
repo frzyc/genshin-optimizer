@@ -126,7 +126,7 @@ describe('Disc sheets test', () => {
     expect(calc.compute(anby.final.dmg_.fire).val).toBeCloseTo(0.15)
     expect(calc.compute(anby.final.dmg_.electric).val).toBeCloseTo(0.15)
     expect(calc.compute(anby.final.dmg_.special[0]).val).toBeCloseTo(0.2)
-    expect(calc.compute(anby.final.dmg_.assistSkill).val).toBeCloseTo(0.2)
+    expect(calc.compute(anby.final.dmg_.assistSkill[0]).val).toBeCloseTo(0.2)
   })
   it('ChaoticMetal', () => {
     const data = testCharacterData('ChaoticMetal')

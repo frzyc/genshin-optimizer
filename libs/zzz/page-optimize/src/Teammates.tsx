@@ -77,6 +77,7 @@ export function TeammatesSection() {
             setPickingSlot(undefined)
           }}
           showNone
+          characterFilter={(ck) => ck !== mainCharacterKey}
         />
       </Suspense>
       {EXTRA_TEAMMATE_SLOTS.map((slot) => (

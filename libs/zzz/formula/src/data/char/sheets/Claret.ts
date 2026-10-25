@@ -66,7 +66,7 @@ const sheet = register(
       'basic',
       'BasicAttackBloodbloomOathStarforging',
       2,
-      { ...baseTag, damageType1: 'basic', skillType: 'basicSkill' },
+      { ...baseTag, damageType1: 'basic', skillType1: 'basicSkill' },
       'def',
       undefined,
       ...core_basic_dmg_,
@@ -77,7 +77,7 @@ const sheet = register(
       'basic',
       'BasicAttackBloodbloomOathStarforging',
       3,
-      { ...baseTag, damageType1: 'basic', skillType: 'basicSkill' },
+      { ...baseTag, damageType1: 'basic', skillType1: 'basicSkill' },
       'def',
       undefined,
       ...core_basic_dmg_,
@@ -88,7 +88,7 @@ const sheet = register(
       'basic',
       'BasicAttackBloodbloomOathSubduingAxe',
       0,
-      { ...baseTag, damageType1: 'basic', skillType: 'basicSkill' },
+      { ...baseTag, damageType1: 'basic', skillType1: 'basicSkill' },
       'def',
       undefined,
       ...core_basic_dmg_
@@ -101,7 +101,7 @@ const sheet = register(
       {
         ...baseTag,
         damageType1: 'maim',
-        skillType: 'specialSkill',
+        skillType1: 'specialSkill',
       },
       'def'
     ),
@@ -110,7 +110,7 @@ const sheet = register(
       'chain',
       'ChainAttackBloodbloomOathResonantBloodPact',
       0,
-      { ...baseTag, damageType1: 'chain', skillType: 'chainSkill' },
+      { ...baseTag, damageType1: 'chain', skillType1: 'chainSkill' },
       'def',
       undefined,
       ...m4_chain_dmg_
@@ -120,7 +120,7 @@ const sheet = register(
       'chain',
       'UltimateBloodbloomOathTrialAfterTrial',
       0,
-      { ...baseTag, damageType1: 'ult', skillType: 'chainSkill' },
+      { ...baseTag, damageType1: 'ult', skillType1: 'chainSkill' },
       'def',
       undefined,
       ...m4_ult_dmg_

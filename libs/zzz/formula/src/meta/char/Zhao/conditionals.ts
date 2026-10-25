@@ -1,18 +1,19 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  boolConditional: { sheet: 'Zhao', name: 'boolConditional', type: 'bool' },
-  listConditional: {
+  chargeTime: {
     sheet: 'Zhao',
-    name: 'listConditional',
-    type: 'list',
-    list: ['val1', 'val2'],
-  },
-  numConditional: {
-    sheet: 'Zhao',
-    name: 'numConditional',
+    name: 'chargeTime',
     type: 'num',
     int_only: true,
     min: 0,
-    max: 2,
+    max: 5,
   },
+  etherVeilWellspring: {
+    sheet: 'Zhao',
+    name: 'etherVeilWellspring',
+    type: 'bool',
+  },
+  inEtherVeil: { sheet: 'Zhao', name: 'inEtherVeil', type: 'bool' },
+  offField: { sheet: 'Zhao', name: 'offField', type: 'bool' },
+  recoversHp: { sheet: 'Zhao', name: 'recoversHp', type: 'bool' },
 } as const

@@ -57,7 +57,7 @@ function orderCatalogDims(dims: Record<string, Tag>): Record<string, Tag> {
 }
 
 function overlaysFor(sheet: FormulaSheet, name: string, tag: Tag) {
-  if (tag.skillType) return undefined
+  if (tag.skillType1) return undefined
   if (isGenericDmgInstName(name))
     return { damageType1: true, damageType2: true }
   if (sheet === STAT_SHEET && name === 'dmg_') return { attribute: true }
@@ -139,9 +139,9 @@ function finalizeCatalogEntry(entry: FormulaCatalogEntry) {
   }
 
   const overlays = overlaysFor(entry.sheet, entry.name, sample)
-  if (overlays && sample.skillType) {
+  if (overlays && sample.skillType1) {
     throw new Error(
-      `[zzz-formula] overlays on ability skillType entry ${entry.sheet}/${entry.name}`
+      `[zzz-formula] overlays on ability skillType1 entry ${entry.sheet}/${entry.name}`
     )
   }
   if (overlays?.damageType1 && !isGenericDmgInstName(entry.name)) {
@@ -165,7 +165,7 @@ function stampsFromListingTag(tag: Tag): {
   abilityKey?: string
   hitIndex?: string
 } {
-  const skill = skillFromSkillType(tag.skillType)
+  const skill = skillFromSkillType(tag.skillType1)
   if (!skill || !tag.name) return {}
   const { abilityKey, hitIndex } = parseAbilityHitFromName(
     abilityBaseName(tag.name)

@@ -48,7 +48,7 @@ const sheet: UISheet<'2' | '4'> = {
               fieldRef: buff.set4_off_field_special_dmg_.tag,
             },
             {
-              title: 'Assist Attack Attack DMG', // TODO: L10n
+              title: 'Assist Attack DMG', // TODO: L10n
               fieldRef: buff.set4_off_field_assist_dmg_.tag,
             },
           ],

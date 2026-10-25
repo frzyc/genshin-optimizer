@@ -298,6 +298,7 @@
     "name": "Potential Awakening: Focus",
     "desc": [
       "",
+      "",
       {
         "0": "When activating an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, increases ATK by <ct color=#2BAD00>4%</ct>. Dash Attack: Hiten no Tsuru - Slash and Chasing Thunder ignore <ct color=#2BAD00>5%</ct> of the target's <ct color=#2EB6FF>Electric RES</ct> for 12s. Repeated triggers reset the duration.",
         "1": "Extends the duration of Core Passive's Gleaming Edge to 10s."
