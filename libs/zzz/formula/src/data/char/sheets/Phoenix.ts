@@ -77,14 +77,14 @@ const sheet = register(
     'core_anom_crit_',
     teamBuff.combat.anom_crit_.add(
       sear.ifOn(
-        sum(
-          percent(dm.core.anom_crit_),
-          prod(
-            min(
-              dm.core.maxAnomMastery,
-              max(0, sum(own.initial.anomMas, -dm.core.anomMasteryThreshold))
-            ),
-            percent(dm.core.anom_crit_step)
+        min(
+          percent(1),
+          sum(
+            percent(dm.core.anom_crit_),
+            prod(
+              max(0, sum(own.initial.anomMas, -dm.core.anomMasteryThreshold)),
+              percent(dm.core.anom_crit_step)
+            )
           )
         )
       )
