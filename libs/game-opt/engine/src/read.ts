@@ -166,7 +166,7 @@ export function nonStackingTeamDataEntries(
   return members.flatMap((src, i) => {
     const stacks = pinStack
       ? null
-      : r.withAll('qt', []) as { stackIn: Read<Tag>; stackTmp: Read<Tag> }
+      : (r.withAll('qt', []) as { stackIn: Read<Tag>; stackTmp: Read<Tag> })
     const stackIn = pinStack
       ? r.withTag({ qt: 'stackIn', ...extra } as Tag)
       : stacks!.stackIn
@@ -174,19 +174,25 @@ export function nonStackingTeamDataEntries(
       ? r.withTag({ qt: 'stackTmp', ...extra } as Tag)
       : stacks!.stackTmp
     const ownMember = r.withTag(
-      pinStack ? ({ src, et: 'own', ...extra } as Tag) : ({ src, et: 'own' } as Tag)
+      pinStack
+        ? ({ src, et: 'own', ...extra } as Tag)
+        : ({ src, et: 'own' } as Tag)
     )
     return [
       ownMember.with('qt', 'stackTmp').add(cmpNE(stackIn, 0, i + 1)),
-      ownMember.with('qt', 'stackOut').add(
-        cmpEq(
-          stackTmp.max.withTag(
-            pinStack ? ({ et: 'team', ...extra } as Tag) : ({ et: 'team' } as Tag)
-          ),
-          i + 1,
-          stackIn
-        )
-      ),
+      ownMember
+        .with('qt', 'stackOut')
+        .add(
+          cmpEq(
+            stackTmp.max.withTag(
+              pinStack
+                ? ({ et: 'team', ...extra } as Tag)
+                : ({ et: 'team' } as Tag)
+            ),
+            i + 1,
+            stackIn
+          )
+        ),
     ]
   })
 }
