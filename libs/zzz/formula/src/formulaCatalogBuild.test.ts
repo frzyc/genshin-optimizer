@@ -104,7 +104,7 @@ describe('buildFormulaCatalog', () => {
     expect(catalog.stat.dmg_.dims.final.attribute).toBeUndefined()
   })
 
-  it('throws when standardDmg and sheerDmg share a name', () => {
+  it('throws when standardDmg, sheerDmg and sharpDmg share a name', () => {
     expect(() =>
       buildFormulaCatalog([
         {
@@ -119,8 +119,14 @@ describe('buildFormulaCatalog', () => {
           dim: 'sheerDmg',
           tag: { q: 'sheerDmg', name: 'Hit_0', sheet: 'Yixuan' },
         },
+        {
+          catalogSheet: 'Yixuan',
+          name: 'Hit_0',
+          dim: 'sharpDmg',
+          tag: { q: 'sharpDmg', name: 'Hit_0', sheet: 'Yixuan' },
+        },
       ])
-    ).toThrow(/standardDmg and sheerDmg/)
+    ).toThrow(/standardDmg, sheerDmg and sharpDmg/)
   })
 
   it('throws on a catalog sheet that is not a FormulaSheet', () => {
