@@ -1,6 +1,5 @@
 import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
-import { type AbilityDim, isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import { i18n } from '@genshin-optimizer/zzz/i18n'
 import type { ReactNode } from 'react'
 import { parseAbilityFromTag } from '../abilityTag'
