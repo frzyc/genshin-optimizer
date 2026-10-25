@@ -45,6 +45,18 @@ function compileKeys() {
   ])
 }
 
+describe('non-stacking', () => {
+  test('teamData pins GI listing nulls on stack channel entries', () => {
+    const tags = teamData(['0', '1'])
+      .filter((e) => e.tag.qt === 'stackTmp' || e.tag.qt === 'stackOut')
+      .map((e) => e.tag)
+    expect(tags.length).toBeGreaterThan(0)
+    for (const tag of tags) {
+      expect(tag).toMatchObject(stackListingNulls)
+    }
+  })
+})
+
 describe('stackReadTag', () => {
   test('pins listing cats to null', () => {
     expect(stackReadTag('key', 'stackIn', '0')).toMatchObject({

@@ -12,6 +12,8 @@ import type {
 import {
   tag as baseTag,
   tagVal as baseTagVal,
+  cmpEq,
+  cmpNE,
   constant,
   prod,
   reread,
@@ -62,6 +64,11 @@ export class Read<Tag_ extends Tag = Tag> extends TypedRead<Tag_> {
   }
   sheet(sheet: Sheet<Tag_>): this {
     return super.with('sheet', sheet)
+  }
+
+  /** Extra fields on stackIn / stackTmp / stackOut tags */
+  stackChannelExtras(): Partial<Tag_> {
+    return {}
   }
 
   add(value: number | string | AnyNode): TagMapNodeEntry<Tag_> {
@@ -129,22 +136,11 @@ function destChannel(tag: Tag): string {
   ].join('\0')
 }
 
-/**
- * Listing computes attach `ele`/`move`/`amp`/`cata`/`name` to the cache.
- * Stack channels must pin those cats to `null` so `unique` accu still matches
- * the sheet entries (otherwise `stackOut` reads as 0 and `final.*` addOnce
- * zeros the listing path).
- */
-export const stackListingNulls = {
-  name: null,
-  ele: null,
-  move: null,
-  trans: null,
-  amp: null,
-  cata: null,
-} as const
-
 export type StackQt = 'stackIn' | 'stackTmp' | 'stackOut'
+
+function stackExtrasFromReader(): Partial<Tag> {
+  return (reader as Read).stackChannelExtras()
+}
 
 /** Tag for a `stackIn` / `stackTmp` / `stackOut` read or write. */
 export function stackReadTag<Tag_ extends Tag>(
@@ -157,7 +153,42 @@ export function stackReadTag<Tag_ extends Tag>(
     ...(sheet ? { sheet } : {}),
     qt,
     ...(q !== undefined ? { q } : {}),
+    ...stackExtrasFromReader(),
   } as unknown as Tag_
+}
+
+export function nonStackingTeamDataEntries(
+  members: readonly string[]
+): TagMapNodeEntries<Tag> {
+  const r = reader as Read<Tag>
+  const extra = stackExtrasFromReader()
+  const pinStack = Object.keys(extra).length > 0
+  return members.flatMap((src, i) => {
+    const stacks = pinStack
+      ? null
+      : r.withAll('qt', []) as { stackIn: Read<Tag>; stackTmp: Read<Tag> }
+    const stackIn = pinStack
+      ? r.withTag({ qt: 'stackIn', ...extra } as Tag)
+      : stacks!.stackIn
+    const stackTmp = pinStack
+      ? r.withTag({ qt: 'stackTmp', ...extra } as Tag)
+      : stacks!.stackTmp
+    const ownMember = r.withTag(
+      pinStack ? ({ src, et: 'own', ...extra } as Tag) : ({ src, et: 'own' } as Tag)
+    )
+    return [
+      ownMember.with('qt', 'stackTmp').add(cmpNE(stackIn, 0, i + 1)),
+      ownMember.with('qt', 'stackOut').add(
+        cmpEq(
+          stackTmp.max.withTag(
+            pinStack ? ({ et: 'team', ...extra } as Tag) : ({ et: 'team' } as Tag)
+          ),
+          i + 1,
+          stackIn
+        )
+      ),
+    ]
+  })
 }
 
 /**
