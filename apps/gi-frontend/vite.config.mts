@@ -73,6 +73,7 @@ export default defineConfig(() => ({
   },
 
   build: {
+    sourcemap: true,
     outDir: '../../dist/apps/gi-frontend',
     reportCompressedSize: true,
     commonjsOptions: {
