@@ -20,7 +20,6 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import Filter4Icon from '@mui/icons-material/Filter4'
-import type { ButtonProps } from '@mui/material'
 import {
   Alert,
   Box,
@@ -44,7 +43,6 @@ export default function TeamSetting({
 }: {
   teamId: string
   teamData?: TeamData
-  buttonProps?: ButtonProps
 }) {
   const { t } = useTranslation('page_team')
   const navigate = useNavigate()
