@@ -80,6 +80,7 @@ export default defineConfig(() => ({
   },
 
   build: {
+    sourcemap: true,
     outDir: '../../dist/apps/zzz-frontend',
     reportCompressedSize: true,
     commonjsOptions: {
