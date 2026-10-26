@@ -22,10 +22,17 @@ import type { NumNode } from '@genshin-optimizer/pando/engine'
 import type { Dst, Sheet, Src } from './listing'
 import { members, sheets } from './listing'
 
-export {
-  stackListingNulls,
-  stackReadTag,
-} from '@genshin-optimizer/game-opt/engine'
+export { stackReadTag } from '@genshin-optimizer/game-opt/engine'
+
+/** Listing dims pinned on stack channels so addOnce matches listing reads. */
+export const stackListingNulls = {
+  name: null,
+  ele: null,
+  move: null,
+  trans: null,
+  amp: null,
+  cata: null,
+} as const
 
 export const fixedTags = {
   preset: presets,
@@ -179,6 +186,10 @@ export class Read extends BaseRead<Tag> {
   }
   get nodKrai(): Read {
     return super.with('region', 'nodKrai')
+  }
+
+  override stackChannelExtras() {
+    return stackListingNulls
   }
 }
 
