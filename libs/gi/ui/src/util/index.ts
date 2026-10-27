@@ -1,3 +1,4 @@
+export * from './commandPaletteSearch'
 export * from './getBuildTcData'
 export * from './getCalcDisplay'
 export * from './getDisplayUtil'

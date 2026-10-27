@@ -8,14 +8,17 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import { Box, MenuItem } from '@mui/material'
 import { useContext } from 'react'
+import { useTranslation } from 'react-i18next'
 
-const modeMap: Record<PandoCritModeKey, string> = {
-  avg: 'Average',
-  crit: 'Crit Hit',
-  nonCrit: 'Non-Crit Hit',
+function critModeLabel(
+  t: (key: string) => string,
+  mode: PandoCritModeKey
+): string {
+  return t(`critMode_${mode}`)
 }
 
 export function CritModeSelector() {
+  const { t } = useTranslation('page_optimize')
   const database = useDatabase()
   const pandoTeam = useRequiredPandoTeam()
   const { character } = useContext(CharacterContext)
@@ -23,7 +26,9 @@ export function CritModeSelector() {
   return (
     <DropdownButton
       title={
-        <Box sx={{ textWrap: 'nowrap' }}>Hit mode: {modeMap[critMode]}</Box>
+        <Box sx={{ textWrap: 'nowrap' }}>
+          {t('hitModeLine', { mode: critModeLabel(t, critMode) })}
+        </Box>
       }
       sx={{ px: 1.5, flexShrink: 0 }}
     >
@@ -36,7 +41,7 @@ export function CritModeSelector() {
             database.pandoTeams.set(character.key, { critMode: k })
           }
         >
-          {modeMap[k]}
+          {critModeLabel(t, k)}
         </MenuItem>
       ))}
     </DropdownButton>
