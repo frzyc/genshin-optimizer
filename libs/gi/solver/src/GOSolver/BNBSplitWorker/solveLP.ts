@@ -2,6 +2,12 @@
 type Pivot = { i: number; j: number }
 const zero = 1e-8 // Small number equivalent to 0 for numerical instability
 
+export class LPCycleError extends Error {
+  constructor() {
+    super('Linear program revisited a basis')
+  }
+}
+
 /** Checks that all constraints are satisfied (Ax <= b) */
 export function isFeasible(Ab: number[][], x: number[]): boolean {
   const b = x.length
@@ -20,8 +26,9 @@ export function isFeasible(Ab: number[][], x: number[]): boolean {
  * Implemented according to the Simplex Method (Sec 4) of:
  *   Ferguson, https://www.math.ucla.edu/~tom/LP.pdf
  *
- * Does not implement any cycle detection, though that *shouldnt* be a problem for GO's use
- *   case. This algorithm will always return a feasible solution, though it may be suboptimal.
+ * Throws LPCycleError if a degenerate problem revisits a basis, so callers can
+ *   use a conservative bound rather than accumulating an unbounded pivot history.
+ * This algorithm returns a feasible solution, though it may be suboptimal.
  *
  * @param c        Objective vector
  * @param Ab       Constraints matrix with thresholds. Inputted in block form [A, b]
@@ -38,17 +45,28 @@ export function solveLP(c: number[], Ab: number[][]) {
   c.forEach((cj, j) => (tableau[rows - 1][j] = cj))
 
   const pivotHistory: Pivot[] = [] // Keep track of all chosen pivots for backtracking later
+  const basic = Ab.map((_, i) => c.length + i)
+  const nonbasic = c.map((_, i) => i)
+  const bases = new Set([nonbasic.join(',')])
 
-  while (tableau.some((t, i) => i < rows - 1 && t[cols - 1] < -zero)) {
-    const piv = findPiv2(tableau)
+  function pivot(piv: Pivot) {
+    const { i, j } = piv
+    ;[basic[i], nonbasic[j]] = [nonbasic[j], basic[i]]
+    // A basis is identified by its complementary set of nonbasic variables;
+    // row/column ordering does not change it.
+    const basis = [...nonbasic].sort((a, b) => a - b).join(',')
+    if (bases.has(basis)) throw new LPCycleError()
+    bases.add(basis)
     pivotHistory.push(piv)
     pivotInplace(tableau, piv)
   }
 
+  while (tableau.some((t, i) => i < rows - 1 && t[cols - 1] < -zero)) {
+    pivot(findPiv2(tableau))
+  }
+
   while (tableau[rows - 1].some((t, j) => j < cols - 1 && t < -zero)) {
-    const piv = findPiv1(tableau)
-    pivotHistory.push(piv)
-    pivotInplace(tableau, piv)
+    pivot(findPiv1(tableau))
   }
 
   const xOpt = c.map((_, i) => backtrack(tableau, pivotHistory, i))
