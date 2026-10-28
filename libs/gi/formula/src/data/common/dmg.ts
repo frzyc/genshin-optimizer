@@ -1,6 +1,7 @@
 import {
   custom,
   lookup,
+  min,
   prod,
   subscript,
   sum,
@@ -58,8 +59,7 @@ const data: TagMapNodeEntries = [
       sum(own.char.lvl, 100),
       prod(
         sum(enemy.common.lvl, 100),
-        // WR formula.ts also TODOs a 90% shred cap; keep uncapped for parity.
-        sum(percent(1), prod(-1, enemy.common.defRed_)),
+        sum(percent(1), prod(-1, min(enemy.common.defRed_, percent(0.9)))),
         sum(percent(1), prod(-1, enemy.common.defIgn))
       )
     )

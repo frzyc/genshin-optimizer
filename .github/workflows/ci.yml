@@ -56,6 +56,11 @@ jobs:
       - name: Run Tests
         run: |
           yarn run nx run-many --target=test --exclude=gi-formula,gi-formula-ui,gi-pando-parity
+      - name: Run Pando DEF regression
+        run: |
+          yarn run vitest run \
+            --config libs/gi/formula/vitest.config.mts \
+            src/data/common/dmg.spec.ts
   format:
     runs-on: ubuntu-latest
     timeout-minutes: 20
