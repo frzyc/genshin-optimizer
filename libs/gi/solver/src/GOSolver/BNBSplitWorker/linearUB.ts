@@ -3,7 +3,7 @@ import type { OptNode } from '@genshin-optimizer/gi/wr'
 import type { ArtifactsBySlot, DynStat, MinMax } from '../../common.js'
 import { computeFullArtRange } from '../../common.js'
 import { polyUB } from './polyUB.js'
-import { solveLP } from './solveLP.js'
+import { LPCycleError, solveLP } from './solveLP.js'
 
 export type Linear = DynStat & { $c: number }
 
@@ -113,6 +113,22 @@ function linbound(
         assertUnreachable(direction)
     }
   } catch (e) {
+    if (e instanceof LPCycleError) {
+      // The product's interval is less sharp than the LP bound, but remains
+      // conservative, including for negative factors and lower bounds.
+      const { min, max } = bounds.reduce(
+        ({ min: a, max: b }, { min: c, max: d }) => ({
+          min: Math.min(a * c, a * d, b * c, b * d),
+          max: Math.max(a * c, a * d, b * c, b * d),
+        }),
+        { min: 1, max: 1 }
+      )
+      return {
+        w: bounds.map(() => 0),
+        $c: scaleProd * (direction === 'upper' ? max : min),
+        err: scaleProd * (max - min),
+      }
+    }
     console.log('ERROR on bounds', bounds)
     console.log('Possibly numerical instability issue.')
     console.log(e)
