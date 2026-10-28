@@ -49,6 +49,10 @@ export function solveLP(c: number[], Ab: number[][]) {
   const nonbasic = c.map((_, i) => i)
   const bases = new Set([nonbasic.join(',')])
 
+  /**
+   * Apply one pivot and record its basis before extending the pivot history.
+   * @throws LPCycleError if the new basis has already been visited.
+   */
   function pivot(piv: Pivot) {
     const { i, j } = piv
     ;[basic[i], nonbasic[j]] = [nonbasic[j], basic[i]]
