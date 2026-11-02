@@ -49,7 +49,7 @@ export function linearUB(nodes: OptNode[], arts: ArtifactsBySlot): Linear[] {
  * @returns A linear function L(x) = w . x + $c
  *            satisfying      m(x) <= L(x) <= m(x) + err (resp. m(x) - err <= L(x) <= m(x))
  */
-function linbound(
+export function linbound(
   bounds: MinMax[],
   direction: 'upper' | 'lower' = 'upper'
 ): { w: number[]; $c: number; err: number } {
