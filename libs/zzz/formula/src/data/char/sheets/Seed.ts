@@ -44,6 +44,15 @@ const { energy_consumed } = allNumConditionals(
   dm.m2.max_energy_consumed - dm.m2.energy_consumed
 )
 
+// TODO(Seed kit correctness):
+// - Vanguard is the Attack teammate with the highest initial ATK, excluding Seed.
+//   `team.initial.atk.max` is wrong when Seed's ATK is highest (nobody gets Vanguard).
+//   Rank member0/1/2 (Attack + not Seed) by initial ATK, then match target.char.key.
+//   If using member* sum stats, Calculator.defaultAccu must treat member0/1/2 (and
+//   prev/nextMember) like own/target — otherwise unique accu Ill-form reads in dev.
+// - Seed is never Vanguard; gate ATK/CRIT DMG and m2_vanguard_defIgn_ accordingly.
+// - Besiege DMG%: Seed keeps ownBuff; Vanguard needs a separate notOwnBuff. Drop the
+//   `true` team-listing override on core_dmg_. Direct Strike UI should not be targeted.
 const directStrikeCheck = (node: NumNode | number) =>
   cmpGE(
     sum(
