@@ -417,10 +417,9 @@ function mergeTeammateSrcDstDisplay(
       [teammateKey]: <CharacterName characterKey={teammateKey} />,
     },
     dstDisplay: {
-      [mainCharacterKey]:
-        parent.dstDisplay[mainCharacterKey] ?? (
-          <CharacterName characterKey={mainCharacterKey} />
-        ),
+      [mainCharacterKey]: parent.dstDisplay[mainCharacterKey] ?? (
+        <CharacterName characterKey={mainCharacterKey} />
+      ),
     },
     showSrcPicker: parent.showSrcPicker,
     showDstPicker: parent.showDstPicker,
