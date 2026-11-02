@@ -26,6 +26,7 @@ import {
   customDmgNode,
   dataObjForCharacterSheet,
   dmgNode,
+  hitEle,
   plungingDmgNodes,
   stellarTalentDmgNode,
 } from '../dataUtil'
@@ -317,7 +318,8 @@ const dmgFormulas = {
       6,
       customDmgNode(
         prod(percent(dm.constellation6.transposeDmg), input.total.atk),
-        'elemental'
+        'elemental',
+        hitEle.anemo
       )
     ),
     swordDmg: greaterEq(
@@ -332,7 +334,8 @@ const dmgFormulas = {
             input.total.atk,
             a1Stacks_spiritMult_
           ),
-          'elemental'
+          'elemental',
+          hitEle.anemo
         )
       )
     ),

@@ -1,5 +1,5 @@
 import type {
-  SpecialityKey,
+  SpecialtyKey,
   WengineRarityKey,
 } from '@genshin-optimizer/zzz/consts'
 
@@ -107,7 +107,7 @@ export const WengineIdMap = {
   '14162': 'CrimsonMoonCasket',
 } as const
 
-export const specialityMap: Record<number, SpecialityKey> = {
+export const specialtyMap: Record<number, SpecialtyKey> = {
   1: 'attack',
   2: 'stun',
   3: 'anomaly',

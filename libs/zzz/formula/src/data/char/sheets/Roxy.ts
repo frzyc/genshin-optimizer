@@ -84,7 +84,7 @@ const sheet = register(
       {
         ...baseTag,
         damageType1: 'exSpecial',
-        skillType: 'specialSkill',
+        skillType1: 'specialSkill',
       },
       'atk',
       undefined,
@@ -98,7 +98,7 @@ const sheet = register(
       {
         ...baseTag,
         damageType1: 'exSpecial',
-        skillType: 'specialSkill',
+        skillType1: 'specialSkill',
       },
       'atk',
       undefined,
@@ -109,7 +109,7 @@ const sheet = register(
       'special',
       'EyeOfTheStorm',
       2,
-      { ...baseTag, damageType1: 'special', skillType: 'specialSkill' },
+      { ...baseTag, damageType1: 'special', skillType1: 'specialSkill' },
       'atk',
       undefined,
       ...m6_special_mv_mult_,

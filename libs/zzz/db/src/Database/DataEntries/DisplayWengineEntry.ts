@@ -6,7 +6,7 @@ import {
 } from '@genshin-optimizer/common/database'
 import {
   allLocationKeys,
-  allSpecialityKeys,
+  allSpecialtyKeys,
   allWengineRarityKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { z } from 'zod'
@@ -21,7 +21,7 @@ const displayWengineSchema = z.object({
   sortType: zodEnumWithDefault(wengineSortKeys, 'level'),
   ascending: zodBoolean(),
   rarity: zodFilteredArray(allWengineRarityKeys),
-  speciality: zodFilteredArray(allSpecialityKeys),
+  specialty: zodFilteredArray(allSpecialtyKeys),
   locked: zodFilteredArray(['locked', 'unlocked'] as const),
   showEquipped: zodBoolean(true),
   showInventory: zodBoolean(true),

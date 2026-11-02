@@ -8,7 +8,7 @@ import {
 import { bulkCatTotal, handleMultiSelect } from '@genshin-optimizer/common/util'
 import {
   allLocationKeys,
-  allSpecialityKeys,
+  allSpecialtyKeys,
   allWengineRarityKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
@@ -54,7 +54,7 @@ export default function WengineFilter({
   const { database } = useDatabaseContext()
   const state = useDataEntryBase(database.displayWengine)
 
-  const { speciality, rarity, locked, showEquipped, showInventory, locations } =
+  const { specialty, rarity, locked, showEquipped, showInventory, locations } =
     state
 
   const {
@@ -68,7 +68,7 @@ export default function WengineFilter({
       lockedTotal: ['locked', 'unlocked'],
       equippedTotal: ['equipped', 'unequipped'],
       locationTotal: [...allLocationKeys, ''],
-      wengineTotals: [...allSpecialityKeys],
+      wengineTotals: [...allSpecialtyKeys],
       wengineRarityTotals: [...allWengineRarityKeys],
     } as const
     return bulkCatTotal(catKeys, (ctMap) =>
@@ -76,18 +76,18 @@ export default function WengineFilter({
         const location = wengine.location
         const lock = wengine.lock ? 'locked' : 'unlocked'
         const equipped = location ? 'equipped' : 'unequipped'
-        const speciality = getWengineStat(wengine.key).type
+        const specialty = getWengineStat(wengine.key).type
         const rarity = getWengineStat(wengine.key).rarity
         ctMap['lockedTotal'][lock].total++
         ctMap['equippedTotal'][equipped].total++
         ctMap['locationTotal'][location].total++
-        ctMap['wengineTotals'][speciality].total++
+        ctMap['wengineTotals'][specialty].total++
         if (rarity) ctMap['wengineRarityTotals'][rarity].total++
         if (wengineIds.includes(id)) {
           ctMap['lockedTotal'][lock].current++
           ctMap['equippedTotal'][equipped].current++
           ctMap['locationTotal'][location].current++
-          ctMap['wengineTotals'][speciality].current++
+          ctMap['wengineTotals'][specialty].current++
           if (rarity) ctMap['wengineRarityTotals'][rarity].current++
         }
       })
@@ -132,10 +132,10 @@ export default function WengineFilter({
 
                 <WengineToggle
                   fullWidth
-                  onChange={(speciality) =>
-                    database.displayWengine.set({ speciality })
+                  onChange={(specialty) =>
+                    database.displayWengine.set({ specialty })
                   }
-                  value={speciality}
+                  value={specialty}
                   totals={wengineTotals}
                   size="small"
                 />

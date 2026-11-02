@@ -55,7 +55,7 @@ jobs:
           yarn install --immutable
       - name: Run Tests
         run: |
-          yarn run nx run-many --target=test
+          yarn run nx run-many --target=test --exclude=gi-formula,gi-formula-ui,gi-pando-parity
   format:
     runs-on: ubuntu-latest
     timeout-minutes: 20

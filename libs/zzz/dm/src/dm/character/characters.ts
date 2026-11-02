@@ -10,7 +10,7 @@ const charctersJsonData = JSON.parse(
   {
     code: string // Internal code name probably
     rank: number // => CharacterRarityKey
-    type: number // => SpecialityKey
+    type: number // => SpecialtyKey
     hit: number // =>AttackTypeKey
     EN: string // Actual EN name
   }

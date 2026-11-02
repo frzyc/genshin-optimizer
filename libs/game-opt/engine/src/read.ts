@@ -157,7 +157,6 @@ export function stackReadTag<Tag_ extends Tag>(
     ...(sheet ? { sheet } : {}),
     qt,
     ...(q !== undefined ? { q } : {}),
-    ...stackListingNulls,
   } as unknown as Tag_
 }
 

@@ -6,7 +6,7 @@ import {
 import {
   allAttributeKeys,
   allCharacterRarityKeys,
-  allSpecialityKeys,
+  allSpecialtyKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { z } from 'zod'
 import type { ZzzDatabase } from '../Database'
@@ -24,7 +24,7 @@ const displayCharacterSchema = z.object({
     'level'
   ) as z.ZodType<PersistedSortKey>,
   ascending: zodBoolean(),
-  specialtyType: zodFilteredArray(allSpecialityKeys),
+  specialtyType: zodFilteredArray(allSpecialtyKeys),
   attribute: zodFilteredArray(allAttributeKeys),
   rarity: zodFilteredArray(allCharacterRarityKeys),
 })

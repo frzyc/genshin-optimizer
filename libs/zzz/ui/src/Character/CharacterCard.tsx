@@ -2,7 +2,7 @@ import { ConditionalWrapper, ImgIcon } from '@genshin-optimizer/common/ui'
 import {
   commonDefIcon,
   rarityDefIcon,
-  specialityDefIcon,
+  specialtyDefIcon,
 } from '@genshin-optimizer/zzz/assets'
 import {
   allSkillKeys,
@@ -220,7 +220,7 @@ function CharInformation({
           />
           <ImgIcon
             size={charCardConfig.iconsSize}
-            src={specialityDefIcon(specialty)}
+            src={specialtyDefIcon(specialty)}
           />
           {!charCardConfig.isEditing ? (
             <Typography
