@@ -1,4 +1,4 @@
-import { compileTagMapKeys, compileTagMapValues } from '../tag'
+import { compileTagMapKeys, compileTagMapValues, TagMapKeys } from '../tag'
 import { Calculator } from './calc'
 import { constant, read } from './construction'
 
@@ -49,8 +49,11 @@ describe('Calculator', () => {
     ).toEqual([3])
   })
   it('can detect a nonexistent tag category', () => {
+    // gather/combine ignore unknown cats (shared stack helpers may pin
+    // cross-game nulls). Direct TagMapKeys.get still fails loudly.
     const calc = new Calculator(keys)
-    expect(() => calc.gather({ cat4: 'val1' })).toThrow()
+    expect(calc.gather({ cat4: 'val1' })).toEqual([])
+    expect(() => new TagMapKeys(keys).get({ cat4: 'val1' })).toThrow()
   })
 
   describe('withTag', () => {

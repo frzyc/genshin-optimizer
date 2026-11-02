@@ -61,14 +61,12 @@ export class TagMapKeys {
     id = id.slice()
     let firstReplacedByte = this.tagLen
     for (const [category, value] of Object.entries(extra)) {
-      const entry = this.data[category]!
-      const {
-        // Make sure `category` existed during compilation. Otherwise, it
-        // would crash here, and this non-shaming text would be visible.
-        offset,
-        ids: { [value!]: word },
-        mask,
-      } = entry
+      const entry = this.data[category]
+      // Shared helpers (e.g. stackReadTag / stackListingNulls) may pin cats from
+      // another game (`ele`, `move`, …). Skipping unknown cats is a no-op clear.
+      if (!entry) continue
+      const { offset, ids, mask } = entry
+      const word = ids[value!]
       firstReplacedByte = Math.min(firstReplacedByte, offset)
       id[offset] &= ~mask
       if (value === null) continue

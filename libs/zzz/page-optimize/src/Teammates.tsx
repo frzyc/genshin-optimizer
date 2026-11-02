@@ -410,13 +410,19 @@ function mergeTeammateSrcDstDisplay(
   mainCharacterKey: CharacterKey
 ): SrcDstDisplayContextObj {
   // Teammate card: src = this teammate, dst = main only (no All / other ally).
+  // Preserve picker flags from parent (ZZZ disables both for now).
   return {
     srcDisplay: {
       [teammateKey]: <CharacterName characterKey={teammateKey} />,
     },
     dstDisplay: {
-      [mainCharacterKey]: parent.dstDisplay[mainCharacterKey],
+      [mainCharacterKey]:
+        parent.dstDisplay[mainCharacterKey] ?? (
+          <CharacterName characterKey={mainCharacterKey} />
+        ),
     },
+    showSrcPicker: parent.showSrcPicker,
+    showDstPicker: parent.showDstPicker,
   }
 }
 
