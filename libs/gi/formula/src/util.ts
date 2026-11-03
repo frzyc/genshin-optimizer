@@ -1,5 +1,5 @@
 import type { Preset, SrcCondInfo } from '@genshin-optimizer/game-opt/engine'
-import { stackListingNulls } from '@genshin-optimizer/game-opt/engine'
+import { nonStackingTeamDataEntries } from '@genshin-optimizer/game-opt/engine'
 import {
   type ArtifactSetKey,
   allTravelerKeys,
@@ -8,7 +8,6 @@ import {
   type TravelerKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IWeapon } from '@genshin-optimizer/gi/good'
-import { cmpEq, cmpNE } from '@genshin-optimizer/pando/engine'
 import type { Member, Sheet, TagMapNodeEntries } from './data/util'
 import {
   conditionalEntries,
@@ -237,25 +236,7 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     // Resonance Team Buff
     own.reread(teamBuff.withTag({ et: 'teamBuff', sheet: 'reso', name: null })),
     // Non-stacking
-    members.flatMap((src, i) => {
-      const stackIn = reader.withTag({ qt: 'stackIn', ...stackListingNulls })
-      const stackTmp = reader.withTag({ qt: 'stackTmp', ...stackListingNulls })
-      // Make sure not to use `sheet:agg` here to match `stackOut` on the `reader.addOnce` side
-      const own = reader.withTag({ src, et: 'own', ...stackListingNulls })
-      // Use `i + 1` for priority so that `0` means no buff
-      return [
-        own.with('qt', 'stackTmp').add(cmpNE(stackIn, 0, i + 1)),
-        own
-          .with('qt', 'stackOut')
-          .add(
-            cmpEq(
-              stackTmp.max.withTag({ et: 'team', ...stackListingNulls }),
-              i + 1,
-              stackIn
-            )
-          ),
-      ]
-    }),
+    ...(nonStackingTeamDataEntries(members) as TagMapNodeEntries),
 
     // Total Team Stat
     members.map((src) =>
