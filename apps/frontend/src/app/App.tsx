@@ -1,9 +1,15 @@
-import { ScrollTop, useRefSize, useTitle } from '@genshin-optimizer/common/ui'
+import {
+  ErrorBoundary,
+  ScrollTop,
+  useRefSize,
+  useTitle,
+} from '@genshin-optimizer/common/ui'
 import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
 import '@genshin-optimizer/gi/i18n' // import to load translations
 import { theme } from '@genshin-optimizer/gi/theme'
 import {
+  DatabaseCard,
   GOAdWrapper,
   SillyContext,
   SnowContext,
@@ -29,7 +35,6 @@ import {
   AdRailSticky,
 } from '@genshin-optimizer/common/ad'
 import { useDatabases } from '@genshin-optimizer/common/database-ui'
-import ErrorBoundary from './ErrorBoundary'
 import Footer from './Footer'
 import Header from './Header'
 import Snow from './Snow'
@@ -132,7 +137,7 @@ function App() {
         <SillyContext.Provider value={SillyContextObj}>
           <SnowContext.Provider value={SnowContextObj}>
             <DatabaseContext.Provider value={dbContextObj}>
-              <ErrorBoundary>
+              <ErrorBoundary databaseCard={<DatabaseCard readOnly />}>
                 <HashRouter basename="/">
                   <AdBlockContextWrapper>
                     <Content />
