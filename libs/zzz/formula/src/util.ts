@@ -1,5 +1,5 @@
 import type { Preset, Read } from '@genshin-optimizer/game-opt/engine'
-import { cmpEq, cmpNE } from '@genshin-optimizer/pando/engine'
+import { nonStackingTeamDataEntries } from '@genshin-optimizer/game-opt/engine'
 import {
   type CharacterKey,
   type DiscMainStatKey,
@@ -227,19 +227,7 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
         reader.withTag({ et: 'enemyDeBuff', dst: null, src, name: null })
       )
     ),
-    // Non-stacking
-    members.flatMap((src, i) => {
-      const { stackIn, stackTmp } = reader.withAll('qt', [])
-      // Make sure not to use `sheet:agg` here to match `stackOut` on the `reader.addOnce` side
-      const own = reader.withTag({ src, et: 'own' })
-      // Use `i + 1` for priority so that `0` means no buff
-      return [
-        own.with('qt', 'stackTmp').add(cmpNE(stackIn, 0, i + 1)),
-        own
-          .with('qt', 'stackOut')
-          .add(cmpEq(stackTmp.max.withTag({ et: 'team' }), i + 1, stackIn)),
-      ]
-    }),
+    ...(nonStackingTeamDataEntries(members) as TagMapNodeEntries),
 
     // Total Team Stat
     members.map((src) => teamEntry.add(reader.withTag({ src, et: 'own' }))),

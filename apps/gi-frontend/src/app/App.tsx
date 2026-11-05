@@ -97,7 +97,7 @@ function Content() {
         >
           <Routes>
             <Route index element={<Navigate to="/optimize" replace />} />
-            <Route path="/optimize" element={<PageOptimize />} />
+            <Route path="/optimize/:characterKey?" element={<PageOptimize />} />
             <Route path="/settings" element={<PageSettings />} />
           </Routes>
         </Suspense>

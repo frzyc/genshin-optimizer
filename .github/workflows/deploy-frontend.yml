@@ -126,36 +126,67 @@ jobs:
           FRONTEND_NAME: ${{ steps.vars.outputs.frontend_name }}
           DEPLOY_REF: ${{ steps.vars.outputs.ref }}
           DEPLOYMENT_NAME: ${{ steps.vars.outputs.deployment_name }}
+          BUILD_HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
         with:
           script: |
             const deploymentName = process.env.DEPLOYMENT_NAME;
             const frontendName = process.env.FRONTEND_NAME;
             const previewUrl = process.env.PREVIEW_URL;
-            const ref = process.env.DEPLOY_REF;
+            const buildRef = process.env.DEPLOY_REF.trim();
             const logUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
 
             let environment;
             let description;
             let transientEnvironment;
+            let deploymentRef = buildRef;
 
             if (deploymentName === 'beta') {
               environment = `beta/${frontendName}`;
               description = `Beta ${frontendName}`;
               transientEnvironment = false;
             } else if (/^\d+$/.test(deploymentName)) {
-              const pullRequests = context.payload.workflow_run.pull_requests ?? [];
-              if (pullRequests.length === 0) {
+              const prNumber = Number(deploymentName);
+              let pr;
+              try {
+                const { data } = await github.rest.pulls.get({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: prNumber,
+                });
+                pr = data;
+              } catch (error) {
                 core.info(
-                  'Skipping GitHub Deployment: pull request metadata unavailable (often fork PRs).'
+                  `Skipping GitHub Deployment: could not load PR #${prNumber} (${error.message}).`
                 );
                 return;
               }
-              const headRepo = pullRequests[0].head?.repo?.full_name;
-              const thisRepo = `${context.repo.owner}/${context.repo.repo}`;
-              if (headRepo !== thisRepo) {
-                core.info(`Skipping GitHub Deployment: head repo ${headRepo} is not ${thisRepo}.`);
+              const headRepoFullName = pr.head.repo?.full_name;
+              if (!headRepoFullName) {
+                core.info(
+                  'Skipping GitHub Deployment: pull request head repository unavailable.'
+                );
                 return;
               }
+              const thisRepo = `${context.repo.owner}/${context.repo.repo}`;
+              if (headRepoFullName !== thisRepo) {
+                core.info(
+                  `Skipping GitHub Deployment: head repo ${headRepoFullName} is not ${thisRepo}.`
+                );
+                return;
+              }
+              const builtHeadSha = process.env.BUILD_HEAD_SHA?.trim();
+              if (!builtHeadSha) {
+                core.info('Skipping GitHub Deployment: build head SHA unavailable.');
+                return;
+              }
+              if (pr.head.sha !== builtHeadSha) {
+                core.info(
+                  `Skipping GitHub Deployment: PR head ${pr.head.sha} differs from build head ${builtHeadSha}.`
+                );
+                return;
+              }
+              // Immutable PR head commit (not refs/pull/N/merge or a branch name).
+              deploymentRef = builtHeadSha;
               environment = `preview/pr-${deploymentName}/${frontendName}`;
               description = `${frontendName} preview for PR #${deploymentName}`;
               transientEnvironment = true;
@@ -167,7 +198,7 @@ jobs:
             const deployment = await github.rest.repos.createDeployment({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref,
+              ref: deploymentRef,
               environment,
               auto_merge: false,
               required_contexts: [],

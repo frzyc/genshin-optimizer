@@ -43,8 +43,17 @@ export function ConditionalsDisplay({
   bgt?: CardBackgroundColor
   conditional: Conditional
 }) {
-  const { srcDisplay, dstDisplay } = useContext(SrcDstDisplayContext)
+  const {
+    srcDisplay,
+    dstDisplay,
+    showSrcPicker: showSrcPickerOpt,
+    showDstPicker: showDstPickerOpt,
+  } = useContext(SrcDstDisplayContext)
+  // Defaults keep GI/SR picker behavior; ZZZ opts out via context flags.
+  const showSrcPicker = showSrcPickerOpt ?? true
+  const showDstPicker = showDstPickerOpt ?? true
   const setConditional = useContext(SetConditionalContext)
+  const tag = useContext(TagContext)
   const {
     metadata: { sheet, name },
     targeted,
@@ -67,11 +76,30 @@ export function ConditionalsDisplay({
     [filteredConditionals]
   )
 
-  const [src, setSrc] = useState<string>(Object.keys(srcDisplay)[0])
+  const tagSrc =
+    typeof tag?.src === 'string' && tag.src in srcDisplay
+      ? tag.src
+      : Object.keys(srcDisplay)[0]
+  const [src, setSrc] = useState<string>(tagSrc ?? Object.keys(srcDisplay)[0])
+  // When src picker is off, always follow TagContext (main kit / teammate card).
+  const effectiveSrc = showSrcPicker ? src : tagSrc
+
   // Set to first dst if targeted, else null
   const [dst, setDst] = useState<string | null>(
     targeted ? Object.keys(dstDisplay)[0] : null
   )
+  // Hide the empty adder when every dst for this src is already used.
+  // "All" (dst=null) is not counted — it kept a duplicate empty row after a
+  // named target was already set.
+  const canAddTargeted = useMemo(() => {
+    if (!targeted || !effectiveSrc) return false
+    const dstKeys = Object.keys(dstDisplay)
+    if (!dstKeys.length) return false
+    return dstKeys.some((d) => !hasExisting(effectiveSrc, d))
+  }, [targeted, effectiveSrc, dstDisplay, hasExisting])
+  const showEmptyConditional = targeted
+    ? canAddTargeted
+    : !filteredConditionals.length
   return (
     <Stack spacing={1}>
       {filteredConditionals.map(({ src, dst, condKey, condValue }) => (
@@ -85,18 +113,17 @@ export function ConditionalsDisplay({
           bgt={bgt}
         />
       ))}
-      {/* // empty default conditional UI */}
-      {(targeted || !filteredConditionals.length) && (
+      {showEmptyConditional && (
         <ConditionalDisplay
           conditional={conditional}
           bgt={bgt}
-          src={src}
-          setSrc={setSrc}
+          src={effectiveSrc}
+          setSrc={showSrcPicker ? setSrc : undefined}
           dst={dst}
-          setDst={setDst}
+          setDst={targeted && showDstPicker ? setDst : undefined}
           value={0}
-          setValue={(v) => setConditional(sheet, name, src, dst, v)}
-          disabled={hasExisting(src, dst)}
+          setValue={(v) => setConditional(sheet, name, effectiveSrc, dst, v)}
+          disabled={hasExisting(effectiveSrc, dst)}
         />
       )}
     </Stack>
@@ -125,7 +152,16 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
   disabled?: boolean
 }) {
   const { header, fields, targeted } = conditional
-  const { srcDisplay, dstDisplay } = useContext(SrcDstDisplayContext)
+  const {
+    srcDisplay,
+    dstDisplay,
+    showSrcPicker: showSrcPickerOpt,
+    showDstPicker: showDstPickerOpt,
+  } = useContext(SrcDstDisplayContext)
+  const showSrcPicker = showSrcPickerOpt ?? true
+  const showDstPicker = showDstPickerOpt ?? true
+  const showSrcDstChrome =
+    !!targeted && (showSrcPicker || showDstPicker || setSrc || setDst)
   const tag = useContext(TagContext)
   const newTag = useMemo(
     () => ({
@@ -139,7 +175,7 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
   return (
     <CardThemed bgt={bgt}>
       {!!header && <HeaderDisplay header={header} />}
-      {targeted && (
+      {showSrcDstChrome && (
         <CondSrcDst
           src={src}
           srcDisplay={srcDisplay}
