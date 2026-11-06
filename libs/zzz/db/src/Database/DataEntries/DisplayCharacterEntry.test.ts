@@ -2,7 +2,7 @@ import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import {
   allAttributeKeys,
   allCharacterRarityKeys,
-  allSpecialityKeys,
+  allSpecialtyKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { ZzzDatabase } from '../Database'
 
@@ -20,7 +20,7 @@ describe('DisplayCharacterEntry', () => {
     const invalid = {
       sortType: 'new',
       ascending: false,
-      specialtyType: [...allSpecialityKeys],
+      specialtyType: [...allSpecialtyKeys],
       attribute: [...allAttributeKeys],
       rarity: [...allCharacterRarityKeys],
     }

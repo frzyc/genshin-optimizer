@@ -5,7 +5,7 @@ import type {
   CharacterRarityKey,
   FactionKey,
   SkillKey,
-  SpecialityKey,
+  SpecialtyKey,
 } from '@genshin-optimizer/zzz/consts'
 import { allStats } from './allStats'
 
@@ -13,7 +13,7 @@ export type CharacterDatum = {
   id: string
   rarity: CharacterRarityKey
   attribute: AttributeKey
-  specialty: SpecialityKey
+  specialty: SpecialtyKey
   faction: FactionKey
   stats: {
     atk_base: number

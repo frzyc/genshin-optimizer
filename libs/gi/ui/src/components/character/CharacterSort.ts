@@ -14,6 +14,8 @@ import {
 import type { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { i18n } from '@genshin-optimizer/gi/i18n'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
+import type { CharacterNameSearchFieldsCache } from './characterNameSearchFields'
+import { characterMatchesNameSearch } from './characterNameSearchFields'
 export const characterSortKeys = [
   'new',
   'level',
@@ -61,29 +63,37 @@ export type CharacterFilterConfigs = FilterConfigs<
 >
 export function characterFilterConfigs(
   database: ArtCharDatabase,
-  silly: boolean
+  silly: boolean,
+  nameSearchFields?: CharacterNameSearchFieldsCache
 ): CharacterFilterConfigs {
   return {
     element: (ck, filter) => filter.includes(getCharEle(ck)),
     weaponType: (ck, filter) => filter.includes(getCharStat(ck).weaponType),
     rarity: (ck, filter) => filter.includes(getCharStat(ck).rarity),
-    name: (ck, filter) =>
-      filter === undefined ||
-      i18n
-        .t(
-          `${
-            silly ? 'sillyWisher_charNames' : 'charNames_gen' // Should already be loaded by caller
-          }:${charKeyToLocGenderedCharKey(ck, database.gender)}`
-        )
-        .toLowerCase()
-        .includes(filter.toLowerCase()) ||
-      (silly &&
+    name: (ck, filter) => {
+      if (nameSearchFields) {
+        return characterMatchesNameSearch(nameSearchFields, ck, filter)
+      }
+      const locKey = charKeyToLocGenderedCharKey(ck, database.gender)
+      const filterLower = filter?.toLowerCase()
+      return (
+        filter === undefined ||
+        filter === '' ||
         i18n
           .t(
-            `charNames_gen:${charKeyToLocGenderedCharKey(ck, database.gender)}`
+            `${
+              silly ? 'sillyWisher_charNames' : 'charNames_gen' // Should already be loaded by caller
+            }:${locKey}`
           )
           .toLowerCase()
-          .includes(filter.toLowerCase())),
+          .includes(filterLower ?? '') ||
+        (silly &&
+          i18n
+            .t(`charNames_gen:${locKey}`)
+            .toLowerCase()
+            .includes(filterLower ?? ''))
+      )
+    },
     new: (ck, filter) =>
       filter === undefined ||
       filter === (database.chars.get(ck as CharacterKey) ? 'no' : 'yes'),

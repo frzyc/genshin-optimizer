@@ -1,9 +1,9 @@
 import type { SolidToggleButtonGroupProps } from '@genshin-optimizer/common/ui'
 import { ImgIcon, SolidColoredToggleButton } from '@genshin-optimizer/common/ui'
 import { handleMultiSelect } from '@genshin-optimizer/common/util'
-import { specialityDefIcon } from '@genshin-optimizer/zzz/assets'
-import type { SpecialityKey } from '@genshin-optimizer/zzz/consts'
-import { allSpecialityKeys } from '@genshin-optimizer/zzz/consts'
+import { specialtyDefIcon } from '@genshin-optimizer/zzz/assets'
+import type { SpecialtyKey } from '@genshin-optimizer/zzz/consts'
+import { allSpecialtyKeys } from '@genshin-optimizer/zzz/consts'
 import { Chip, ToggleButtonGroup, useMediaQuery, useTheme } from '@mui/material'
 import type { ReactNode } from 'react'
 
@@ -11,12 +11,12 @@ type CharSpecialtyToggleProps = Omit<
   SolidToggleButtonGroupProps,
   'onChange' | 'value'
 > & {
-  onChange: (value: SpecialityKey[]) => void
-  value: SpecialityKey[]
-  totals: Record<SpecialityKey, ReactNode>
+  onChange: (value: SpecialtyKey[]) => void
+  value: SpecialtyKey[]
+  totals: Record<SpecialtyKey, ReactNode>
 }
 
-const specaltyTypeHandler = handleMultiSelect([...allSpecialityKeys])
+const specaltyTypeHandler = handleMultiSelect([...allSpecialtyKeys])
 export function CharSpecialtyToggle({
   value,
   totals,
@@ -27,7 +27,7 @@ export function CharSpecialtyToggle({
   const xs = !useMediaQuery(theme.breakpoints.up('sm'))
   return (
     <ToggleButtonGroup exclusive value={value} {...props}>
-      {allSpecialityKeys.map((sk) => (
+      {allSpecialtyKeys.map((sk) => (
         <SolidColoredToggleButton
           key={sk}
           value={sk}
@@ -40,7 +40,7 @@ export function CharSpecialtyToggle({
           selectedColor={'primary'}
           onClick={() => onChange(specaltyTypeHandler(value, sk))}
         >
-          <ImgIcon src={specialityDefIcon(sk)} size={2} sideMargin />
+          <ImgIcon src={specialtyDefIcon(sk)} size={2} sideMargin />
           <Chip label={totals[sk]} size="small" />
         </SolidColoredToggleButton>
       ))}

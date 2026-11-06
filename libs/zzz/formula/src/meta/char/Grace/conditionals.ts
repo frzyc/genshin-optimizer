@@ -1,5 +1,6 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
+  abloom: { sheet: 'Grace', name: 'abloom', type: 'bool' },
   chargeConsumed: { sheet: 'Grace', name: 'chargeConsumed', type: 'bool' },
   exSpecialHit: {
     sheet: 'Grace',
@@ -11,4 +12,5 @@ export const conditionals = {
   },
   fullZap: { sheet: 'Grace', name: 'fullZap', type: 'bool' },
   grenadeHit: { sheet: 'Grace', name: 'grenadeHit', type: 'bool' },
+  zapConsumed: { sheet: 'Grace', name: 'zapConsumed', type: 'bool' },
 } as const

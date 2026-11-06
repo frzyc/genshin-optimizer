@@ -7,7 +7,7 @@ import {
 } from '@genshin-optimizer/common/ui'
 import type { WenginePhaseKey } from '@genshin-optimizer/zzz/assets'
 import {
-  specialityDefIcon,
+  specialtyDefIcon,
   wengineAsset,
   wenginePhaseIcon,
 } from '@genshin-optimizer/zzz/assets'
@@ -170,7 +170,7 @@ export function WengineCardObj({
                         {
                           <ImgIcon
                             size={2}
-                            src={specialityDefIcon(wengineStat.type)}
+                            src={specialtyDefIcon(wengineStat.type)}
                           />
                         }{' '}
                         <WengineName wKey={key} />

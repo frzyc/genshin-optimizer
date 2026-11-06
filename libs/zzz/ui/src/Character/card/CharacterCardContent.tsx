@@ -2,7 +2,7 @@ import { ImgIcon } from '@genshin-optimizer/common/ui'
 import {
   commonDefIcon,
   rarityDefIcon,
-  specialityDefIcon,
+  specialtyDefIcon,
 } from '@genshin-optimizer/zzz/assets'
 import { allSkillKeys, type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { useCharacter } from '@genshin-optimizer/zzz/db-ui'
@@ -29,7 +29,7 @@ export function CharacterCardContent({
           <CharacterName characterKey={characterKey} />
         </Typography>
         <ElementIcon ele={attribute} />
-        <ImgIcon size={2} src={specialityDefIcon(specialty)} />
+        <ImgIcon size={2} src={specialtyDefIcon(specialty)} />
       </Box>
 
       <Box display="flex" gap={3} alignItems="center">

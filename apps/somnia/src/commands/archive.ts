@@ -24,7 +24,7 @@ import {
 import { error } from '../lib/message'
 import permissions from '../lib/permissions'
 import { artifactArchive } from './archive/artifact'
-import { charArchive, charReaction } from './archive/char'
+import { charArchive } from './archive/char'
 import { weaponArchive } from './archive/weapon'
 
 export const slashcommand = new SlashCommandBuilder()
@@ -276,14 +276,12 @@ export async function selectmenu(
 
 export async function reaction(
   reaction: MessageReaction,
-  user: User | PartialUser,
-  arg: string[]
+  user: User | PartialUser
 ) {
   if (
     reaction.emoji.name === '❌' &&
     permissions.sender(user, reaction.message.interactionMetadata)
   )
     return reaction.message.delete()
-
-  if (arg[1] === 'char') return charReaction(reaction)
+  return true
 }

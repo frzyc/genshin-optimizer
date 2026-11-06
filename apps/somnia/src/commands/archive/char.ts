@@ -4,6 +4,7 @@ import {
   type CharacterSheetKey,
   type LocationGenderedCharacterKey,
   sheetKeyToCharKey,
+  type TravelerKey,
 } from '@genshin-optimizer/gi/consts'
 import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
 import {
@@ -11,7 +12,7 @@ import {
   getCharParam,
   getCharStat,
 } from '@genshin-optimizer/gi/stats'
-import type { AnyComponentBuilder, MessageReaction } from 'discord.js'
+import type { AnyComponentBuilder } from 'discord.js'
 import {
   ActionRowBuilder,
   EmbedBuilder,
@@ -129,10 +130,13 @@ function getEmbed(
 }
 
 function getAssets(id: CharacterSheetKey) {
-  const locKey = id.includes('Traveler')
-    ? `Traveler${id.charAt(id.length - 1)}`
-    : id
-  return AssetData.chars[locKey as LocationGenderedCharacterKey]
+  if (id.includes('Traveler')) {
+    const locKeyEle = id.slice(0, -1) as TravelerKey
+    const locKeyGender =
+      `Traveler${id.charAt(id.length - 1)}` as LocationGenderedCharacterKey
+    return { ...AssetData.chars[locKeyEle], ...AssetData.chars[locKeyGender] }
+  }
+  return AssetData.chars[id as LocationGenderedCharacterKey]
 }
 
 function getName(id: CharacterSheetKey, lang: string) {
@@ -438,47 +442,4 @@ export async function charArchive(
     embeds: [res.embed],
     components: components,
   }
-}
-
-export async function charReaction(reaction: MessageReaction) {
-  let message = reaction.message
-  if (message.partial) message = await message.fetch()
-  if (!message.embeds[0]) return
-
-  const embed = message.embeds[0].toJSON()
-  const emoji = reaction.emoji.name
-  //reactions to change traveler gender
-  if (
-    embed.author?.name.includes('Traveler') &&
-    embed.author.icon_url &&
-    embed.thumbnail
-  ) {
-    let gender = ''
-    //determine gender
-    if (emoji === '🏳️‍⚧️')
-      gender =
-        embed.author.icon_url?.includes('Girl') ||
-        embed.thumbnail?.url.includes('Girl')
-          ? 'M'
-          : 'F'
-    else if (emoji === '♀️') gender = 'F'
-    else if (emoji === '♂️') gender = 'M'
-    else return
-    //replace gender
-    if (gender === 'F') {
-      embed.author.icon_url = embed.author.icon_url.replace('Boy', 'Girl')
-      embed.thumbnail.url = embed.thumbnail.url.replace('Boy', 'Girl')
-    } else if (gender === 'M') {
-      embed.author.icon_url = embed.author.icon_url.replace('Girl', 'Boy')
-      embed.thumbnail.url = embed.thumbnail.url.replace('Girl', 'Boy')
-    }
-  } else return
-
-  //edit message
-  try {
-    await message.edit({ embeds: [embed] })
-  } catch (e) {
-    console.log(e)
-  }
-  return
 }

@@ -3,10 +3,7 @@ import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
 import { objKeyMap, stableArr } from '@genshin-optimizer/common/util'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-import {
-  allSpecialityKeys,
-  allWengineKeys,
-} from '@genshin-optimizer/zzz/consts'
+import { allSpecialtyKeys, allWengineKeys } from '@genshin-optimizer/zzz/consts'
 import type { ICachedWengine, TeamConditional } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
@@ -136,7 +133,7 @@ function WengineFilterModal({
           <Suspense fallback={<Skeleton width="100%" height={'500px'} />}>
             <Stack spacing={1}>
               <WengineLevelFilter disabled={disabled} />
-              <SpecialitySelector disabled={disabled} />
+              <SpecialtySelector disabled={disabled} />
               <Button
                 disabled={disabled}
                 onClick={() =>
@@ -157,7 +154,7 @@ function WengineFilterModal({
   )
 }
 
-function SpecialitySelector({ disabled }: { disabled?: boolean }) {
+function SpecialtySelector({ disabled }: { disabled?: boolean }) {
   const { database } = useDatabaseContext()
   const { optConfigId, optConfig } = useContext(OptConfigContext)
   const { wEngineTypes } = optConfig
@@ -180,9 +177,9 @@ function SpecialitySelector({ disabled }: { disabled?: boolean }) {
             totals[type]++
             return totals
           },
-          objKeyMap(allSpecialityKeys, () => 0)
+          objKeyMap(allSpecialtyKeys, () => 0)
         )
-      : objKeyMap(allSpecialityKeys, () => 0)
+      : objKeyMap(allSpecialtyKeys, () => 0)
   }, [
     characterKey,
     wengines,
