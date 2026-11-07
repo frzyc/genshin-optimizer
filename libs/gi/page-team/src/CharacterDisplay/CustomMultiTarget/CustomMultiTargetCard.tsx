@@ -7,11 +7,11 @@ import {
   usePrev,
 } from '@genshin-optimizer/common/ui'
 import { arrayMove, clamp, deepClone } from '@genshin-optimizer/common/util'
-import type { CustomTarget } from '@genshin-optimizer/gi/db'
 import {
-  type CustomMultiTarget,
   initCustomTarget,
+  targetListToExpression,
 } from '@genshin-optimizer/gi/db'
+import type { CustomMultiTarget, CustomTarget } from '@genshin-optimizer/gi/db'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
@@ -28,12 +28,14 @@ import {
   IconButton,
   Typography,
 } from '@mui/material'
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { TargetSelectorModal } from '../Tabs/TabOptimize/Components/TargetSelectorModal'
 import CustomTargetDisplay from './CustomTargetDisplay'
 import JsonDescWarning from './JsonDescWarning'
 import MTargetEditor from './MTargetEditor'
+import TargetExpressionEditor from './TargetExpressionEditor'
+
 export default function CustomMultiTargetCard({
   customMultiTarget: targetProp,
   setTarget: setTargetProp,
@@ -62,10 +64,17 @@ export default function CustomMultiTargetCard({
     onHide()
   }
 
+  const [expression, setExpression] = useState(target.expression)
+  const [functions, setFunctions] = useState(target.functions)
+  useEffect(() => {
+    setExpression(target.expression)
+    setFunctions(target.functions)
+  }, [target])
+
   const onSave = useCallback(() => {
     onHide()
-    setTargetProp(target)
-  }, [onHide, setTargetProp, target])
+    setTargetProp({ ...target, expression, functions })
+  }, [expression, functions, onHide, setTargetProp, target])
 
   /**
    * Appends a new custom target (optionally with `multi` variants) and
@@ -153,6 +162,7 @@ export default function CustomMultiTargetCard({
     -1,
     target.targets.length - 1
   )
+
   return (
     <>
       <CardThemed bgt="light">
@@ -160,19 +170,31 @@ export default function CustomMultiTargetCard({
           <CardHeader
             title={
               <Box display="flex" gap={1} alignItems="center">
-                <Chip
-                  sx={{ minWidth: '8em' }}
-                  color={target.targets.length ? 'success' : undefined}
-                  label={
-                    <Trans
-                      t={t}
-                      i18nKey="multiTarget.target"
-                      count={target.targets.length}
-                    >
-                      {{ count: target.targets.length }} Targets
-                    </Trans>
-                  }
-                />
+                {target.expression ? (
+                  <Chip
+                    sx={{ minWidth: '8em' }}
+                    color="electro"
+                    label={
+                      <Trans t={t} i18nKey="multiTarget.expression">
+                        Expression
+                      </Trans>
+                    }
+                  />
+                ) : (
+                  <Chip
+                    sx={{ minWidth: '8em' }}
+                    color={target.targets.length ? 'success' : undefined}
+                    label={
+                      <Trans
+                        t={t}
+                        i18nKey="multiTarget.target"
+                        count={target.targets.length}
+                      >
+                        {{ count: target.targets.length }} Targets
+                      </Trans>
+                    }
+                  />
+                )}
                 <Typography>{name}</Typography>
                 {target.description && (
                   <InfoTooltip title={<Typography>{description}</Typography>} />
@@ -251,6 +273,14 @@ export default function CustomMultiTargetCard({
               >
                 {t('multiTarget.export')}
               </Button>
+              {!target.expression && (
+                <Button
+                  color="warning"
+                  onClick={() => setTarget(targetListToExpression(target))}
+                >
+                  {t`multiTarget.convertToExpression`}
+                </Button>
+              )}
               <Button color="error" onClick={onDelete}>
                 <DeleteForeverIcon />
               </Button>
@@ -265,18 +295,29 @@ export default function CustomMultiTargetCard({
               position: 'relative',
             }}
           >
-            {customTargetDisplays}
-            <AddCustomTargetBtn setTarget={addTarget} />
-            {target.targets[selectedTargetValid] && (
-              <MTargetEditor
-                customTarget={target.targets[selectedTargetValid]}
-                setCustomTarget={setCustomTarget(selectedTargetValid)}
-                deleteCustomTarget={deleteCustomTarget(selectedTargetValid)}
-                rank={selectedTargetValid + 1}
-                maxRank={target.targets.length}
-                setTargetIndex={setTargetIndex(selectedTargetValid)}
-                onDup={dupCustomTarget(selectedTargetValid)}
+            {target.expression ? (
+              <TargetExpressionEditor
+                expression={expression}
+                setExpression={setExpression}
+                functions={functions}
+                setFunctions={setFunctions}
               />
+            ) : (
+              <>
+                {customTargetDisplays}
+                <AddCustomTargetBtn setTarget={addTarget} />
+                {target.targets[selectedTargetValid] && (
+                  <MTargetEditor
+                    customTarget={target.targets[selectedTargetValid]}
+                    setCustomTarget={setCustomTarget(selectedTargetValid)}
+                    deleteCustomTarget={deleteCustomTarget(selectedTargetValid)}
+                    rank={selectedTargetValid + 1}
+                    maxRank={target.targets.length}
+                    setTargetIndex={setTargetIndex(selectedTargetValid)}
+                    onDup={dupCustomTarget(selectedTargetValid)}
+                  />
+                )}
+              </>
             )}
           </CardContent>
         </CardThemed>

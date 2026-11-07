@@ -335,7 +335,11 @@ export default function TabBuild() {
       teamId,
       teamCharId,
       mainStatAssumptionLevel,
-      []
+      {
+        [teamCharId]: {
+          art: [],
+        },
+      }
     )
     if (!teamData) return
     const workerData = uiDataForTeam(teamData.teamData, gender, activeCharKey)[
