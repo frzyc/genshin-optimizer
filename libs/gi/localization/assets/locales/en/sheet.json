@@ -223,6 +223,7 @@
       "cond": "Elemental energy released by the Polestar field"
     } ,
     "team": {
+      "any": "After a party member triggers an Elemental Reaction",
       "pyro": "After a party member triggers a <pyro>Pyro-related</pyro> Elemental Reaction",
       "lunar": "After a party member triggers a Lunar Reaction",
       "lunarbloom": "After a party member triggers a <lunarbloom>Lunar-Bloom</lunarbloom> Reaction",

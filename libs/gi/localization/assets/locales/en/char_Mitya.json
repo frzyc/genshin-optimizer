@@ -1,0 +1,13 @@
+{
+  "skillDetonationCond": "Gradient Beacons consumed",
+  "detonationMult_": "Steady State Core Detonation DMG Mult.",
+  "a1BeaconsCond": "Steady State: Gradient Beacons owned",
+  "a4StacksCond": "Gradient Beacons created",
+  "c1Text": "Maximum number of Gradient Beacons increased",
+  "c1CoreCond": "Detection Core is present",
+  "c2CoreFieldCond": "Detection Core is present and opponent within the Polestar Field",
+  "c2CoreTypeCond": "Detection Core state",
+  "c2CoreSteady": "Steady State",
+  "c2CoreOverloaded": "Overloaded",
+  "detectionCoreMult_": "Detection Core DMG Mult."
+}
