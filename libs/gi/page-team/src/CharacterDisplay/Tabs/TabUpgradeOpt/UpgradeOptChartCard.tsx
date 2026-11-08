@@ -379,6 +379,7 @@ function UpgradeOptChartCardGraph({
           <YAxis
             type="number"
             domain={[0, ymax]}
+            scale={'linear'}
             tickFormatter={(v) => `${(v * 100).toFixed()}%`}
           >
             <Label
