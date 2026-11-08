@@ -10,6 +10,7 @@ import {
   input,
   lookup,
   naught,
+  percent,
   prod,
   subscript,
   target,
@@ -184,13 +185,7 @@ const a4Momentum_stellarconduct_dmgIncDisp = infoMut(
       equal(
         condA0StellarRadianceSc,
         'sc',
-        prod(
-          subscript(input.total.autoIndex, dm.charged.stellarconduct_dmgInc, {
-            unit: '%',
-          }),
-          input.premod.atk,
-          a4Momentum
-        )
+        prod(percent(dm.passive2.radiance_dmg_), input.premod.atk, a4Momentum)
       )
     )
   ),
@@ -207,9 +202,7 @@ const a4Momentum_electro_dmgIncDisp = infoMut(
         condA0StellarRadianceSc,
         'sc',
         prod(
-          subscript(input.total.autoIndex, dm.charged.electro_dmgInc, {
-            unit: '%',
-          }),
+          percent(dm.passive2.nonRadiance_dmg_),
           input.premod.atk,
           a4Momentum
         )

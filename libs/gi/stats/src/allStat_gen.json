@@ -68137,7 +68137,9 @@
             115.2
           ]
         },
-        "baseStats": {}
+        "baseStats": {
+          "eleMas": 200
+        }
       },
       "Flins": {
         "key": "Flins",
@@ -68338,7 +68340,9 @@
             0.384
           ]
         },
-        "baseStats": {}
+        "baseStats": {
+          "eleMas": 100
+        }
       },
       "Durin": {
         "key": "Durin",
@@ -69139,7 +69143,9 @@
             0.384
           ]
         },
-        "baseStats": {}
+        "baseStats": {
+          "eleMas": 100
+        }
       },
       "Valeriy": {
         "key": "Valeriy",

@@ -20,4 +20,6 @@ export const deobfPropMappings = {
   // WeaponCurveExcelConfigData
   // WeaponPromoteExcelConfigData
   value: 'value',
+  // AvatarExcelConfigData, correlates to 200.0 for ID 10000119
+  elementMastery: 'AOBCHLDFLOD',
 } as const

@@ -137,7 +137,11 @@ const a1Beacons = lookup(
   ),
   naught
 )
-const a1BeaconsEleMas = prod(a1Beacons, dm.passive1.eleMas)
+const a1BeaconsEleMas = greaterEq(
+  input.asc,
+  1,
+  prod(a1Beacons, dm.passive1.eleMas)
+)
 
 const [condA4StacksPath, condA4Stacks] = cond(key, 'a4Stacks')
 const a4StacksArr = range(1, dm.passive2.maxStacks)
@@ -146,7 +150,11 @@ const a4Stacks = lookup(
   objKeyMap(a4StacksArr, (core) => constant(core)),
   naught
 )
-const a4Stacks_critRate_ = prod(a4Stacks, dm.passive2.critRate_)
+const a4Stacks_critRate_ = greaterEq(
+  input.asc,
+  4,
+  prod(a4Stacks, dm.passive2.critRate_)
+)
 
 const [condC1CorePath, condC1Core] = cond(key, 'c1Core')
 const c1Core_critDMG_disp = infoMut(

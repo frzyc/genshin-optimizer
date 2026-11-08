@@ -62,5 +62,7 @@
       0.384
     ]
   },
-  "baseStats": {}
+  "baseStats": {
+    "eleMas": 100
+  }
 }

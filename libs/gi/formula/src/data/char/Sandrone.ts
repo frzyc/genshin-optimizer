@@ -196,7 +196,7 @@ export default register(
     'charged_beamSsDmg',
     info,
     'atk',
-    dm.charged.beamStellarDmg,
+    dm.charged.beamSsDmg,
     'charged',
     { ele: 'cryo', cond: beamSsOn },
     c2BeamCrit
