@@ -176,6 +176,7 @@ export const allNonModStats = [
     `${sr}_directDmgInc` as const,
     `${sr}_mult_` as const,
   ]),
+  'stellarconduct_electro_critDMG_' as const,
   ...allEleEnemyResKeys,
   'enemyDefRed_' as const,
   'enemyDefIgn_' as const,
