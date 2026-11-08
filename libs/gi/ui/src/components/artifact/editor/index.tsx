@@ -133,7 +133,6 @@ export function ArtifactEditor({
   )
   const queue = queueRef.current
   const { t } = useTranslation('artifact')
-  const [isUnactivatedSubstat, setIsUnactivatedSubstat] = useState(false)
 
   const database = useDatabase()
 
@@ -208,7 +207,6 @@ export function ArtifactEditor({
   const artStat = artifact && getArtSetStat(artifact.setKey)
   const reset = useCallback(() => {
     cancelEdit?.()
-    setIsUnactivatedSubstat(false)
     artifactDispatch({ type: 'reset' })
     setScannedData(undefined)
   }, [cancelEdit, artifactDispatch])
@@ -400,19 +398,8 @@ export function ArtifactEditor({
     substat: ISubstat,
     isChecked: boolean
   ) => {
-    setIsUnactivatedSubstat(isChecked)
     setSubstat(index, substat, isChecked)
   }
-
-  useEffect(() => {
-    if (level >= 4) {
-      setIsUnactivatedSubstat(false)
-    }
-
-    if (artifactIdToEdit && artifact?.unactivatedSubstats?.[0]?.key) {
-      setIsUnactivatedSubstat(true)
-    }
-  }, [artifact?.unactivatedSubstats, artifactIdToEdit, level])
 
   const removeId = (artifactIdToEdit !== 'new' && artifactIdToEdit) || old?.id
   return (
@@ -721,7 +708,6 @@ export function ArtifactEditor({
                   setSubstat={setSubstat}
                   setInitialSubstatValue={setInitialSubstatValue}
                   onChange={handleChange}
-                  isUnactivatedSubstat={isUnactivatedSubstat}
                 />
               ))}
               {texts && (

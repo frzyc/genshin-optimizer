@@ -40,17 +40,19 @@ import { PercentBadge } from '../../PercentBadge'
 import { ArtifactStatWithUnit } from '../ArtifactStatKeyDisplay'
 import type { RollColorKey } from '../util'
 
-function getCorrectSubstats(
+function isSubstatUnactivated(
   artifact: ICachedArtifact | undefined,
-  isUnactivatedSubstat: boolean,
   substatIndex: number
 ) {
-  if (
-    artifact?.unactivatedSubstats &&
-    substatIndex === 3 &&
-    isUnactivatedSubstat
-  ) {
-    return artifact.unactivatedSubstats[0]
+  return !!artifact?.unactivatedSubstats?.length && substatIndex === 3
+}
+
+function getCorrectSubstats(
+  artifact: ICachedArtifact | undefined,
+  substatIndex: number
+) {
+  if (isSubstatUnactivated(artifact, substatIndex)) {
+    return artifact!.unactivatedSubstats![0]
   } else {
     return artifact?.substats[substatIndex]
   }
@@ -62,7 +64,6 @@ export function SubstatInput({
   setSubstat,
   setInitialSubstatValue,
   onChange,
-  isUnactivatedSubstat,
 }: {
   index: number
   artifact: ICachedArtifact | undefined
@@ -73,7 +74,6 @@ export function SubstatInput({
   ) => void
   setInitialSubstatValue: (index: number, value: number | undefined) => void
   onChange: (index: number, substat: ISubstat, isChecked: boolean) => void
-  isUnactivatedSubstat: boolean
 }) {
   const { t } = useTranslation('artifact')
   const { mainStatKey = '', rarity = 5, level = 0 } = artifact ?? {}
@@ -83,7 +83,8 @@ export function SubstatInput({
     rolls = [],
     efficiency = 0,
     initialValue,
-  } = getCorrectSubstats(artifact, isUnactivatedSubstat, index) ?? {}
+  } = getCorrectSubstats(artifact, index) ?? {}
+  const isUnactivatedSubstat = isSubstatUnactivated(artifact, index)
 
   const accurateValue = rolls.reduce((a, b) => a + b, 0)
   const unit = getUnitStr(key),
