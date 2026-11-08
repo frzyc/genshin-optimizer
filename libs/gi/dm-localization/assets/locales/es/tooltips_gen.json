@@ -475,11 +475,66 @@
       "0": "Al causar una reacción de Superconductor Estelar, el área cercana se convertirá en un <strong>campo estrellapolar</strong> durante un breve periodo de tiempo. Al encontrarse dentro de un campo estrellapolar, ciertos personajes entrarán en el estado de <strong>esplendor: Superconductor Estelar</strong>, lo que causará que sus diferentes habilidades obtengan el efecto de fortalecimiento correspondiente."
     }
   },
+  "11360001": {
+    "name": "Baliza de gradiente",
+    "description": {
+      "0": "Cuando Mitya está en el equipo, al causar una reacción de Superconductor Estelar, en lugar de crearse un <strong>prisma brilloestelar</strong>, se creará una <strong>baliza de gradiente</strong> que dura 6 s. Mitya puede consumir las <strong>balizas de gradiente</strong> para producir diversos efectos.",
+      "1": "Las <strong>balizas</strong> seguirán al personaje en uso y, al ser creadas, convertirán un área cercana más amplia en un <strong>campo estrellapolar</strong>. Mitya puede llevar varias <strong>balizas de gradiente</strong>, con un límite inicial de 4. Al crear una nueva <strong>baliza de gradiente</strong>, se reiniciará la duración de todas las <strong>balizas</strong>."
+    }
+  },
+  "11360002": {
+    "name": "Núcleo de detección",
+    "description": {
+      "0": "Un dispositivo de energía creado tras usar la Habilidad Elemental. Al pulsar una vez dicha habilidad, se creará un núcleo de detección <strong>estable</strong>, y al mantener pulsado, un núcleo de detección <strong>sobrecalentado</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Núcleo de detección estable</strong>",
+      "3": [
+        "Sigue continuamente a los enemigos cercanos y cada cierto tiempo inflige <electro>Daño Electro en el AdE</electro>.",
+        "Cuando Mitya ya no pueda llevar más <strong>balizas de gradiente</strong>, este dispositivo consumirá las nuevas <strong>balizas</strong> que se creen para infligir <electro>Daño Electro en el AdE</electro> considerado como daño de Superconductor Estelar.",
+        "Cuando termine la duración del <strong>núcleo de detección</strong> o cuando se cree uno nuevo, se consumirán todas las <strong>balizas de gradiente</strong> que lleve Mitya para infligir <electro>Daño Electro en el AdE</electro> considerado como daño de Superconductor Estelar en función de la cantidad de balizas consumidas."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Núcleo de detección sobrecalentado</strong>",
+      "6": [
+        "Mientras este dispositivo esté activo y Mitya tenga al menos una <strong>baliza de gradiente</strong>, podrá realizar el Ataque Cargado especial <strong>Implosión de gradiente</strong>, el cual no consume Aguante."
+      ]
+    }
+  },
+  "11370001": {
+    "name": "Mortero directo: Bombardeo a quemarropa",
+    "description": {
+      "0": "El Ataque Cargado especial de Valeri. Al ejecutar un Ataque Cargado cuando tenga al menos 40 pts. de <strong>energía de choque</strong>, la consumirá toda para realizar este Ataque Cargado especial, el cual inflige <electro>Daño Electro en el AdE</electro> frente a sí mismo y otorga 15 cargas de <strong>orden expeledora</strong>.",
+      "1": "Al volver a ejecutar un Ataque Cargado especial, las cargas de <strong>orden expeledora</strong> se reiniciarán.",
+      "2": "Durante 0.8 s después de usar la Habilidad Elemental, <strong>Defensa ofensiva: Asedio blindado</strong>, o la Habilidad Definitiva, <strong>Fuego concentrado: Salva de electrometralla</strong>, si Valeri tiene al menos 40 pts. de <strong>energía de choque</strong>, su siguiente Ataque Normal se transformará en el Ataque Cargado especial <strong>Mortero directo: Bombardeo a quemarropa</strong>."
+    }
+  },
+  "11370002": {
+    "name": "Orden expeledora",
+    "description": {
+      "0": "Un efecto especial que obtiene Valeri tras ejecutar su Ataque Cargado especial <strong>Mortero directo: Bombardeo a quemarropa</strong>. Dependiendo de si Valeri se encuentra o no en el estado de <strong>esplendor: Superconductor Estelar</strong>, potenciará un tipo de <electro>Daño Electro</electro> diferente. Si Valeri:",
+      "1": [
+        "Se encuentra en el estado de <strong>esplendor: Superconductor Estelar</strong>, cuando los personajes en uso cercanos del equipo inflijan <electro>Daño Electro</electro> considerado como daño de Superconductor Estelar con sus Ataques Normales, Cargados o Descendentes, o con sus Habilidades Elementales o Definitivas, se consumirá una carga de <strong>orden expeledora</strong> para aumentar el daño infligido en función del ATQ de Valeri.",
+        "No se encuentra en el estado de <strong>esplendor: Superconductor Estelar</strong>, cuando los personajes en uso cercanos del equipo inflijan <electro>Daño Electro</electro> con sus Ataques Normales, Cargados o Descendentes, o con sus Habilidades Elementales o Definitivas, se consumirá una carga de <strong>orden expeledora</strong> para aumentar el daño infligido en función del ATQ de Valeri."
+      ],
+      "2": "Al golpear a varios enemigos a la vez con un mismo <electro>Daño Electro</electro>, se consumirán cargas de <strong>orden expeledora</strong> en función de la cantidad de enemigos golpeados."
+    }
+  },
+  "11370003": {
+    "name": "Energía de choque",
+    "description": {
+      "0": "Una energía especial que usa Valeri para fortalecer sus capacidades de combate. Su límite inicial es de 100 pts. Cuando tenga al menos 40 pts. de <strong>energía de choque</strong>, podrá realizar el Ataque Cargado especial <strong>Mortero directo: Bombardeo a quemarropa</strong>.",
+      "1": "Valeri puede obtener <strong>energía de choque</strong> de las siguientes formas:",
+      "2": [
+        "Al usar su Habilidad Elemental, <strong>Defensa ofensiva: Asedio blindado</strong>.",
+        "Cuando, una vez que se haya desbloqueado el talento de ascensión “En compañía de un bombardeo”, los ataques <electro>Electro</electro> de los personajes en uso cercanos del equipo golpeen a un enemigo durante la Habilidad Definitiva, <strong>Fuego concentrado: Salva de electrometralla</strong>."
+      ]
+    }
+  },
   "11400001": {
     "name": "Vocalista principal",
     "description": {
       "0": "Cuando tu personaje en uso del equipo inflija <hydro>Daño Hydro</hydro> o <cryo>Daño Cryo</cryo> con su Ataque Normal, Cargado o Descendente, o con su Habilidad Elemental o Definitiva, se consumirá una carga de “vocalista principal” para aumentar el daño infligido. Si en el campo de batalla hay un vórtice errante o si han transcurrido menos de 5 s desde su explosión, el efecto anterior solo se activará cuando el personaje inflija daño de Torbellino Estelar.",
-      "1": "Por cada 1000 pts. de Vida Máx. que Vodyanitsa tenga por encima de los 40000 pts., el daño de Torbellino Estelar del efecto anterior aumentará en 260 pts., y el <hydro>Daño Hydro</hydro> y <cryo>Cryo</cryo> aumentará en 140 pts. Como máximo, solo es posible aumentar el daño de Torbellino Estelar en 6500 pts. y el <hydro>Daño Hydro</hydro> y <cryo>Cryo</cryo> en 3500 pts. de esta manera."
+      "1": "Por cada 1000 pts. de Vida Máx. que Vodyanitsa tenga por encima de los 40000 pts., el daño de Torbellino Estelar del efecto anterior aumentará en 260 pts., y el <hydro>Daño Hydro</hydro> y <cryo>Cryo</cryo> aumentará en 140 pts. Como máximo, solo es posible aumentar el daño de Torbellino Estelar en 6500 pts. y el <hydro>Daño Hydro</hydro> y <cryo>Cryo</cryo> en {PARAM#P1402201|7S1:I} pts. de esta manera."
     }
   },
   "11400002": {

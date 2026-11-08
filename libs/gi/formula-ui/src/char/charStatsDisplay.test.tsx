@@ -5,8 +5,8 @@ import { ThemeProvider } from '@mui/material'
 import { render } from '@testing-library/react'
 import type { ReactNode } from 'react'
 import { describe, expect, it, vi } from 'vitest'
-import { CharStatsDisplay } from './CharStatsDisplay'
 import { GiSheetUiProviders } from './CharCalcProvider'
+import { CharStatsDisplay } from './CharStatsDisplay'
 import { CHAR_UI_AUDIT_KEYS } from './charUiAudit'
 import {
   buildOptimizePageCalc,

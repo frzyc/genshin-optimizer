@@ -95,7 +95,7 @@
         " La finesse serpentine de Skirk se consomme de façon continue.",
         " La portée des attaques normales et chargées et la RÉS à l'interruption de Skirk augmentent.",
         " Les DGT des attaques normales, chargées et plongeantes de Skirk sont convertis en <cryo>DGT Cryo</cryo> ne pouvant pas être enchantés.",
-        " Le déchainement élémentaire <strong>Ravage : Ruine</strong> de Skirk est remplacé par le déchaînement élémentaire spécial <strong>Ravage : Extinction</strong>.",
+        " Le déchaînement élémentaire <strong>Ravage : Ruine</strong> de Skirk est remplacé par le déchaînement élémentaire spécial <strong>Ravage : Extinction</strong>.",
         " Le sprint de Skirk permet de se déplacer sur l'eau."
       ],
       "2": "Le mode prend fin et la compétence élémentaire de Skirk entre en TdR une fois la finesse serpentine épuisée ou à la fin de la durée."
@@ -150,7 +150,7 @@
         " En déclenchant l'effet de l'aptitude d'élévation « La douce grâce du vent »."
       ],
       "2": "<br/>",
-      "3": "Dahlia peut obtenir un maximum de X cumuls de sacrement pendant la durée une faveur favonienne."
+      "3": "Dahlia peut obtenir un maximum de X cumuls de sacrement pendant la durée d'une faveur favonienne."
     }
   },
   "11160001": {
@@ -472,11 +472,66 @@
       "0": "Lorsqu'une réaction d'Astroconduction est déclenchée, la zone environnante se transforme temporairement en <strong>étendue polaris</strong>. Dans cette étendue polaris, certains personnages passent en <strong>radiance « Astroconduction »</strong>, ce qui accorde des bonus à leurs capacités."
     }
   },
+  "11360001": {
+    "name": "Balise de gradient",
+    "description": {
+      "0": "Lorsque Mitya fait partie de l'équipe, les réactions d'Astroconduction ne créent pas de <strong>prismes de lumière stellaire</strong>, mais créent des <strong>balises de gradient</strong> d'une durée de 6 s. Mitya peut consommer les <strong>balises de gradient</strong> pour déclencher divers effets.",
+      "1": "Les <strong>balises de gradient</strong> suivent le personnage déployé et transforment une plus grande zone environnante en <strong>étendue polaris</strong> lors de leur création<strong></strong>. La quantité de <strong>balises de gradient</strong> que Mitya peut avoir en même temps est limitée, avec une limite de départ de 4. Créer une <strong>balise de gradient</strong> réinitialise la durée de toutes les <strong>balises de gradient</strong>."
+    }
+  },
+  "11360002": {
+    "name": "Noyau de détection",
+    "description": {
+      "0": "Un dispositif énergétique créé en utilisant une compétence élémentaire : un appui simple crée un noyau <strong>stable</strong>, tandis qu'un appui long crée un noyau <strong>surchargé</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Noyau de détection stable</strong>",
+      "3": [
+        " Suit de façon continue les ennemis proches et inflige par intermittence des <electro>DGT Électro de zone</electro>.",
+        " Lorsque Mitya a atteint la limite de <strong>balises de gradient</strong> qu'il peut avoir, ce dispositif consomme toute nouvelle <strong>balise de gradient</strong> créée pour infliger des <electro>DGT Électro de zone</electro> considérés comme des DGT d'Astroconduction.",
+        " À la fin de sa durée ou en créant un nouveau <strong>noyau de détection</strong>, toutes les <strong>balises de gradient</strong> sont consommées pour infliger des <electro>DGT Électro de zone</electro> considérés comme des DGT d'Astroconduction selon la quantité de balises consommées."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Noyau de détection surchargé</strong>",
+      "6": [
+        " Lorsqu'un tel dispositif est présent sur le terrain alors que Mitya possède au moins 1 <strong>balise de gradient</strong>, Mitya peut utiliser l'attaque chargée spéciale <strong>Détonation de gradient</strong> qui ne consomme pas d'endurance."
+      ]
+    }
+  },
+  "11370001": {
+    "name": "Mortier à tir direct : Bombardement à bout portant",
+    "description": {
+      "0": "L'attaque chargée spéciale de Valeriy. Utiliser une attaque chargée lorsque Valeriy a au moins 40 pts d'<strong>élan d'impact</strong> consomme tout l'<strong>élan d'impact</strong> pour déclencher cette attaque chargée spéciale à la place, infligeant des <electro>DGT Électro de zone</electro> vers l'avant et lui accordant 15 cumuls d'<strong>ordre d'assaut</strong>.",
+      "1": "Utiliser à nouveau cette attaque chargée spéciale actualise la quantité d'<strong>ordre d'assaut</strong>.",
+      "2": "Pendant 0,8 s après avoir utilisé la compétence élémentaire <strong>Défense active : Charge de bastion</strong> ou le déchaînement élémentaire <strong>Tir concentré : Salve éclair</strong>, la prochaine attaque normale de Valeriy est convertie en attaque chargée spéciale <strong>Mortier à tir direct : Bombardement à bout portant</strong> s'il possède au moins 40 pts d'<strong>élan d'impact</strong>."
+    }
+  },
+  "11370002": {
+    "name": "Ordre d'assaut",
+    "description": {
+      "0": "Valeriy obtient cet effet spécial après avoir utilisé son attaque chargée spéciale <strong>Mortier à tir direct : Bombardement à bout portant</strong>, l'effet augmentant différents types de <electro>DGT Électro</electro> selon la <strong>radiance « Astroconduction »</strong> de Valeriy.",
+      "1": [
+        " Si Valeriy est en <strong>radiance « Astroconduction »</strong> : lorsqu'un personnage déployé de l'équipe à proximité inflige des <electro>DGT Électro</electro> considérés comme des DGT d'Astroconduction à un ennemi avec une attaque normale, chargée, plongeante, une compétence élémentaire ou un déchaînement élémentaire, 1 cumul d'<strong>ordre d'assaut</strong> est consommé pour augmenter les DGT infligés selon l'ATQ de Valeriy.",
+        " Si Valeriy n'est pas en <strong>radiance « Astroconduction »</strong> : lorsqu'un personnage déployé de l'équipe à proximité inflige des <electro>DGT Électro</electro> à un ennemi avec une attaque normale, chargée, plongeante, une compétence élémentaire ou un déchaînement élémentaire, 1 cumul d'<strong>ordre d'assaut</strong> est consommé pour augmenter les DGT infligés selon l'ATQ de Valeriy."
+      ],
+      "2": "Lorsqu'une instance de <electro>DGT Électro</electro> touche plusieurs ennemis en même temps, les cumuls d'<strong>ordre d'assaut</strong> sont consommés selon la quantité d'ennemis touchés."
+    }
+  },
+  "11370003": {
+    "name": "Élan d'impact",
+    "description": {
+      "0": "Une énergie spéciale que Valeriy utilise pour améliorer ses capacités de combat, dont la limite initiale est de 100. Lorsqu'il possède au moins 40 pts d'<strong>élan d'impact</strong>, il peut utiliser l'attaque chargée spéciale <strong>Mortier à tir direct : Bombardement à bout portant</strong>.",
+      "1": "Valeriy peut obtenir de l'<strong>élan d'impact</strong> de différentes manières :",
+      "2": [
+        " En utilisant sa compétence élémentaire <strong>Défense active : Charge de bastion</strong>.",
+        " Lorsqu'une attaque <electro>Électro</electro> d'un personnage déployé de l'équipe à proximité touche un ennemi pendant la durée du déchaînement élémentaire <strong>Tir concentré : Salve éclair</strong> après avoir débloqué l'aptitude d'élévation « Avancer avec le barrage rampant »."
+      ]
+    }
+  },
   "11400001": {
     "name": "Chant principal",
     "description": {
       "0": "Lorsque votre personnage déployé de l'équipe inflige des <hydro>DGT Hydro</hydro> ou des <cryo>DGT Cryo</cryo> avec une attaque normale, une attaque chargée, une attaque plongeante, une compétence élémentaire ou un déchaînement élémentaire, il consomme 1 cumul de chant principal pour augmenter les DGT. Si un vortex errant est présent sur le terrain et pendant les 5 s suivant l'explosion d'un vortex errant, cet effet ne se déclenche que lorsque le personnage inflige des DGT de réaction d'Astrodispersion.",
-      "1": "Chaque tranche de 1 000 PV max de Vodyanitsa au-dessus de 40000 augmente les DGT de réaction d'Astrodispersion de cet effet de 260 pts et les <hydro>DGT Hydro</hydro> et <cryo>DGT Cryo</cryo> de 140 pts. Les DGT de réaction d'Astrodispersion peuvent être augmentés d'un maximum de 6500 pts de cette manière, et les <hydro>DGT Hydro</hydro> et <cryo>DGT Cryo</cryo> d'un maximum de 3500 pts."
+      "1": "Chaque tranche de 1 000 PV max de Vodyanitsa au-dessus de {PARAM#P1402201|3S1:I} augmente les DGT de réaction d'Astrodispersion de cet effet de 260 pts et les <hydro>DGT Hydro</hydro> et <cryo>DGT Cryo</cryo> de 140 pts. Les DGT de réaction d'Astrodispersion peuvent être augmentés d'un maximum de {PARAM#P1402201|6S1:I} pts de cette manière, et les <hydro>DGT Hydro</hydro> et <cryo>DGT Cryo</cryo> d'un maximum de {PARAM#P1402201|7S1:I} pts."
     }
   },
   "11400002": {

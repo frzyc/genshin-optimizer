@@ -407,6 +407,15 @@
   "ExpeditionInsights": {
     "name": "遊覽心得"
   },
+  "EasternThreatSuppression": {
+    "name": "東部威脅削弱值"
+  },
+  "CentralThreatSuppression": {
+    "name": "中部威脅削弱值"
+  },
+  "NorthernThreatSuppression": {
+    "name": "北部威脅削弱值"
+  },
   "MemoryOfEternalFlames": {
     "name": "恆常燃燒的記憶"
   },
@@ -1199,6 +1208,12 @@
   "Sandrone": {
     "name": "桑多涅"
   },
+  "Mitya": {
+    "name": "米提亞"
+  },
+  "Valeriy": {
+    "name": "瓦列里"
+  },
   "Vodyanitsa": {
     "name": "沃雅妮莎"
   },
@@ -1306,6 +1321,12 @@
   },
   "SandronesStellaFortuna": {
     "name": "桑多涅的命星"
+  },
+  "MityasStellaFortuna": {
+    "name": "米提亞的命星"
+  },
+  "ValeriysStellaFortuna": {
+    "name": "瓦列里的命星"
   },
   "VodyanitsasStellaFortuna": {
     "name": "沃雅妮莎的命星"
@@ -3800,6 +3821,12 @@
   "EtherwingMoth": {
     "name": "空羽蛾"
   },
+  "FairyWormwood": {
+    "name": "妖精綠艾"
+  },
+  "Kristallfold": {
+    "name": "析晶褶傘"
+  },
   "FrostfairyFlower": {
     "name": "霜仙花"
   },
@@ -3823,6 +3850,9 @@
   },
   "Lumifluorite": {
     "name": "幽光螢石"
+  },
+  "Lanternberry": {
+    "name": "籠酸漿"
   },
   "BirchWood": {
     "name": "樺木"
@@ -9443,6 +9473,18 @@
   "RecipeMors": {
     "name": "食譜：莫爾斯果釀"
   },
+  "RecipeChickenKitezhgrad": {
+    "name": "食譜：基捷雞"
+  },
+  "RecipeCaviarBlini": {
+    "name": "食譜：魚子醬布林餅"
+  },
+  "RecipeSolyanka": {
+    "name": "食譜：酸辣雜拌湯"
+  },
+  "RecipeSnowyNocturne": {
+    "name": "食譜：雪色夜曲"
+  },
   "CraftedItems": {
     "name": "合成產物"
   },
@@ -10061,6 +10103,15 @@
   "CoiledCoreOfLife": {
     "name": "靈生盤枝心"
   },
+  "SnowbornHeartshard": {
+    "name": "雪結片心"
+  },
+  "SnowbornMirrorheart": {
+    "name": "雪結鏡心"
+  },
+  "SnowbornHeartOfIgnorance": {
+    "name": "雪結無明心"
+  },
   "HurricaneSeed": {
     "name": "颶風之種"
   },
@@ -10336,6 +10387,9 @@
   },
   "VagabondsCrackedArmor": {
     "name": "游離者的裂甲"
+  },
+  "ShatteredStabilityAnchor": {
+    "name": "破碎的穩定錨"
   },
   "TileOfDecarabiansTower": {
     "name": "高塔孤王的破瓦"
@@ -14519,8 +14573,17 @@
   "RequestToExpandVIPRoom": {
     "name": "擴建貴賓室申請書"
   },
+  "WorksiteKey": {
+    "name": "工區鑰匙"
+  },
   "HighLevelAccessCard": {
     "name": "高級權限卡"
+  },
+  "PowerModule": {
+    "name": "供能模組"
+  },
+  "TreeheartPrism": {
+    "name": "樹心的稜晶"
   },
   "ConstructAppearanceFlutterwing": {
     "name": "造物外觀·風蝶"
@@ -14531,8 +14594,116 @@
   "VodyanitsasGift": {
     "name": "沃雅妮莎的禮物"
   },
+  "PreciousPearl": {
+    "name": "價格不菲的珍珠"
+  },
+  "OrdinaryJewelryBox": {
+    "name": "平平無奇的首飾盒"
+  },
+  "MaryyushkasTreasuredGem": {
+    "name": "瑪柳什卡珍藏的寶石"
+  },
+  "TheCellarForgesHeirloomVintage": {
+    "name": "「熔爐石窖」的祖傳名酒"
+  },
+  "OneinaHundredOre": {
+    "name": "百中無一的稀有礦石"
+  },
+  "ExquisitelyCraftedGlasses": {
+    "name": "做工精緻的眼鏡"
+  },
+  "SomeonesHeadscarf": {
+    "name": "某人的頭巾"
+  },
+  "FinelyCraftedSuitcase": {
+    "name": "做工講究的行李箱"
+  },
+  "OldBowlerHat": {
+    "name": "老舊的圓頂帽"
+  },
+  "DelicateCorsage": {
+    "name": "秀美的胸花"
+  },
+  "NotesOnNovokitezhgrad": {
+    "name": "新基捷城見聞筆記"
+  },
   "OkurovTownSewerSystemDesignPlan": {
     "name": "《奧古洛夫鎮下水道設計方案》"
+  },
+  "BorschtRecommendedByButurlina": {
+    "name": "布圖琳娜推薦的紅菜湯"
+  },
+  "SmokedSausageRecommendedByButurlina": {
+    "name": "布圖琳娜推薦的燻腸"
+  },
+  "ZharkoyeRecommendedByIliana": {
+    "name": "伊莉雅娜推薦的罐罐燜肉"
+  },
+  "ColorfulCrystal": {
+    "name": "色彩絢爛的結晶"
+  },
+  "PremiumAccessoryCustomizationBox": {
+    "name": "珍貴飾品訂製盒"
+  },
+  "StardustTrailFieryGleam": {
+    "name": "鋒曳星跡·熾芒"
+  },
+  "StardustTrailFieryGleamSigil": {
+    "name": "鋒曳星跡·熾芒空印"
+  },
+  "RemnantIncenseGuideTeploOasis": {
+    "name": "特普洛綠洲的殘香之引"
+  },
+  "RemnantIncenseGuideNovokitezhgrad": {
+    "name": "新基捷城的殘香之引"
+  },
+  "DanicasSpecialTeaAndTreats": {
+    "name": "達妮卡特製茶點"
+  },
+  "ClueImageMinecart": {
+    "name": "線索畫片·礦車"
+  },
+  "ClueImageFurnaceAsh": {
+    "name": "線索畫片·爐灰"
+  },
+  "SplendidGiftBox": {
+    "name": "精彩禮盒"
+  },
+  "LetterCopy": {
+    "name": "信件副本"
+  },
+  "SuspiciousAdvertisement": {
+    "name": "可疑的廣告"
+  },
+  "BetweenTheNewspaperPages": {
+    "name": "報紙夾縫"
+  },
+  "GeneralHistoryOfSnezhnayaSupplementI": {
+    "name": "至冬國通史補編·卷一"
+  },
+  "GeneralHistoryOfSnezhnayaSupplementII": {
+    "name": "至冬國通史補編·卷二"
+  },
+  "GeneralHistoryOfSnezhnayaSupplementIII": {
+    "name": "至冬國通史補編·卷三"
+  },
+  "BelyiAndChernyi": {
+    "name": "白與黑"
+  },
+  "HeartOfTheAbyssalBeast": {
+    "name": "淵獸之心"
+  },
+  "CaseRecordI": {
+    "name": "案件檔案·其一"
+  },
+  "CaseRecordII": {
+    "name": "案件檔案·其二"
+  },
+  "CaseRecordIII": {
+    "name": "案件檔案·其三"
+  },
+  "CaseRecordIV": {
+    "name": "案件檔案·其四"
   },
   "TearsAmongTheStars": {
     "name": "星間之淚"
@@ -14689,6 +14860,12 @@
   },
   "SnowballFlowerSeed": {
     "name": "「雪球花」的種子"
+  },
+  "FairyWormwoodSeed": {
+    "name": "「妖精綠艾」的種子"
+  },
+  "KristallfoldSpore": {
+    "name": "「析晶褶傘」的孢子"
   },
   "Medaka": {
     "name": "花鱂"
@@ -14983,6 +15160,69 @@
   },
   "VodyanitsaThemedIceCream": {
     "name": "冰淇淋・沃雅妮莎"
+  },
+  "SuspiciousChickenKitezhgrad": {
+    "name": "奇怪的基捷雞"
+  },
+  "ChickenKitezhgrad": {
+    "name": "基捷雞"
+  },
+  "DeliciousChickenKitezhgrad": {
+    "name": "美味的基捷雞"
+  },
+  "SuspiciousCaviarBlini": {
+    "name": "奇怪的魚子醬布林餅"
+  },
+  "CaviarBlini": {
+    "name": "魚子醬布林餅"
+  },
+  "DeliciousCaviarBlini": {
+    "name": "美味的魚子醬布林餅"
+  },
+  "SuspiciousSolyanka": {
+    "name": "奇怪的酸辣雜拌湯"
+  },
+  "Solyanka": {
+    "name": "酸辣雜拌湯"
+  },
+  "DeliciousSolyanka": {
+    "name": "美味的酸辣雜拌湯"
+  },
+  "SuspiciousSnowyNocturne": {
+    "name": "奇怪的雪色夜曲"
+  },
+  "SnowyNocturne": {
+    "name": "雪色夜曲"
+  },
+  "DeliciousSnowyNocturne": {
+    "name": "美味的雪色夜曲"
+  },
+  "EnergyReplenishingMeal": {
+    "name": "「能量補充餐」"
+  },
+  "EmergencyBarricade": {
+    "name": "「應急防禦牆」"
+  },
+  "MityasIceCream": {
+    "name": "冰淇淋・米提亞"
+  },
+  "ValeriysIceCream": {
+    "name": "冰淇淋・瓦列里"
+  },
+  "RoyalRimecurrantIceCream": {
+    "name": "皇家特製冰醋栗冰淇淋"
+  },
+  "RoyalMedovik": {
+    "name": "皇家特製千層蜂蜜糕"
+  },
+  "RoyalSnowrealmOkroshkas": {
+    "name": "皇家特製雪國冷湯"
+  },
+  "RoyalSnowballBloomsAtopSnowfields": {
+    "name": "皇家特製雪原上的雪球花"
+  },
+  "RoyalCaviarBlini": {
+    "name": "皇家特製魚子醬布林餅"
   },
   "WingsOfFirstFlight": {
     "name": "初始之翼"
@@ -15706,6 +15946,30 @@
   },
   "RadiantSpincrystalALetterFromTheWindIV": {
     "name": "旋曜玉帛·《風的來信》·其四"
+  },
+  "RadiantSpincrystal201": {
+    "name": "旋曜玉帛·其二百零一"
+  },
+  "RadiantSpincrystal202": {
+    "name": "旋曜玉帛·其二百零二"
+  },
+  "RadiantSpincrystal203": {
+    "name": "旋曜玉帛·其二百零三"
+  },
+  "RadiantSpincrystal204": {
+    "name": "旋曜玉帛·其二百零四"
+  },
+  "RadiantSpincrystal205": {
+    "name": "旋曜玉帛·其二百零五"
+  },
+  "RadiantSpincrystal206": {
+    "name": "旋曜玉帛·其二百零六"
+  },
+  "RadiantSpincrystal207": {
+    "name": "旋曜玉帛·其二百零七"
+  },
+  "RadiantSpincrystal208": {
+    "name": "旋曜玉帛·其二百零八"
   },
   "LanternFiber": {
     "name": "燈紙纖維"
@@ -16853,6 +17117,21 @@
   "TravelNotesMoontrace": {
     "name": "紀行·溯月"
   },
+  "MityaScarf": {
+    "name": "米提亞·圍巾"
+  },
+  "ValeriyRank": {
+    "name": "瓦列里·勳銜"
+  },
+  "SnezhnayaSnowWings": {
+    "name": "至冬·雪翼"
+  },
+  "AchievementStillness": {
+    "name": "成就·靜謐"
+  },
+  "TravelNotesSacredSpirit": {
+    "name": "紀行·靈聖"
+  },
   "EchoDandelionKnight": {
     "name": "遊跡·蒲公英騎士"
   },
@@ -16921,6 +17200,12 @@
   },
   "EchoVigilantYaksha": {
     "name": "遊跡·護法夜叉"
+  },
+  "EchoArdentFlamesForgeTheSoul": {
+    "name": "遊跡·焮火鑄魂"
+  },
+  "EchoAstuteAmusement": {
+    "name": "遊跡·浮世笑百姿"
   },
   "FaintGlow": {
     "name": "薄光"
@@ -17309,8 +17594,14 @@
   "AMiniTrolleyProblem": {
     "name": "迷你列車難題"
   },
+  "PowerFramingKamera": {
+    "name": "「定格力量」留影機"
+  },
   "PrimaDonnasSong": {
     "name": "首席的獻唱"
+  },
+  "MityasAccessoryBox": {
+    "name": "米提亞的飾品盒"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "說明：風神瞳共鳴石"
@@ -17609,6 +17900,30 @@
   "AshamezsThunderSight": {
     "name": "「阿夏梅茲的千光」的「瞄具」"
   },
+  "SosrukosFlameMuzzle": {
+    "name": "「索斯盧科的灼炎」的「槍口」"
+  },
+  "SosrukosFlameAmmoFeed": {
+    "name": "「索斯盧科的灼炎」的「供彈」"
+  },
+  "SosrukosFlameGunstock": {
+    "name": "「索斯盧科的灼炎」的「槍托」"
+  },
+  "SosrukosFlameGunsight": {
+    "name": "「索斯盧科的灼炎」的「瞄具」"
+  },
+  "ApsatsMountainHuntGunsight": {
+    "name": "「艾維薩緹的山狩」的「瞄具」"
+  },
+  "ApsatsMountainHuntAmplifier": {
+    "name": "「艾維薩緹的山狩」的「增幅器」"
+  },
+  "ApsatsMountainHuntCirculator": {
+    "name": "「艾維薩緹的山狩」的「循環器」"
+  },
+  "ApsatsMountainHuntAction": {
+    "name": "「艾維薩緹的山狩」的「槍機」"
+  },
   "ConstructAppearanceJackFrost": {
     "name": "造物外觀·霜精"
   },
@@ -17623,6 +17938,12 @@
   },
   "ConstructAppearanceTheTides": {
     "name": "造物外觀·潮汐"
+  },
+  "ConstructAppearanceSnowman": {
+    "name": "造物外觀·雪人"
+  },
+  "ConstructAppearanceSnowflake": {
+    "name": "造物外觀·雪花"
   },
   "UpbeatEncouragement": {
     "name": "歡欣鼓舞"
@@ -18047,6 +18368,24 @@
   "EagerlyWaiting": {
     "name": "期待等候"
   },
+  "HuggingLumi": {
+    "name": "抱抱露米"
+  },
+  "ReadyToGo": {
+    "name": "準備出發"
+  },
+  "EnjoyingTea": {
+    "name": "悠然品茶"
+  },
+  "ExpertGuidance": {
+    "name": "專業講解"
+  },
+  "TimeToWork": {
+    "name": "工作時刻"
+  },
+  "ComfortingTheClerk": {
+    "name": "安撫店員"
+  },
   "FantasticalMarvel": {
     "name": "幻戲瑰意"
   },
@@ -18121,6 +18460,9 @@
   },
   "DovefeatherMoondew": {
     "name": "鴿羽月露"
+  },
+  "FloatingLotusListeningSpring": {
+    "name": "聆泉浮蓮"
   },
   "VigorousYapping": {
     "name": "活力相談"
@@ -18707,6 +19049,15 @@
   "ElkWithFangedAntlers": {
     "name": "噬枝之麋"
   },
+  "OdeToAscension": {
+    "name": "昇華讚歌"
+  },
+  "ForNoneMayTakeFromUsOurFreedomOfSong": {
+    "name": "「因為無人能奪去我們歌唱的自由」"
+  },
+  "DawnsReturn": {
+    "name": "重光臨晨"
+  },
   "MagicGuide": {
     "name": "魔導緒論"
   },
@@ -19058,6 +19409,9 @@
   "RecollectionOfDaysPast": {
     "name": "昔時浮想之思"
   },
+  "SongOfDaysPast": {
+    "name": "昔時之歌"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -19300,6 +19654,12 @@
   },
   "ElementalTransfigurationOverloadBlessing": {
     "name": "元素幻變：超載祝佑"
+  },
+  "Zeitlind": {
+    "name": "彩特琳德"
+  },
+  "ElementalTransfigurationBurningBlessing": {
+    "name": "元素幻變：燃燒祝佑"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交織之冰"
@@ -19573,6 +19933,9 @@
   },
   "ReturnOfTheThreeMoons": {
     "name": "三月重臨"
+  },
+  "StreamingSong": {
+    "name": "浮槃之歌"
   },
   "Origin": {
     "name": "原初"
@@ -20453,6 +20816,15 @@
   "BrightProspectsBrighterProfits": {
     "name": "「錢途閃閃」"
   },
+  "DreamsInTheDancingLight": {
+    "name": "「搖光照夢」"
+  },
+  "NightWindsRoamWithEveningStars": {
+    "name": "「夜風與晚星同遊」"
+  },
+  "FactoryFloorLampReliableIllumination": {
+    "name": "工廠地燈-「穩固照明」"
+  },
   "EfflorescentIllumination": {
     "name": "「花葉百相之光」"
   },
@@ -21203,6 +21575,9 @@
   "IndoorRugWarmth": {
     "name": "室內地毯-「暖色」"
   },
+  "TracesAlongTheEdges": {
+    "name": "「循稜印跡」"
+  },
   "VibrantPotBornInFlames": {
     "name": "炫彩陶罐-「生於烈焰」"
   },
@@ -21223,6 +21598,9 @@
   },
   "TallCappedSentinel": {
     "name": "「高筒帽兵士」"
+  },
+  "RockPaperScissorsCompanion": {
+    "name": "「陪伴型猜拳手」"
   },
   "TrustyPortableLamp": {
     "name": "恆亮不熄的提燈"
@@ -22526,6 +22904,18 @@
   "SnezhnayanDwellingElegantCarvings": {
     "name": "至冬民居-「典雅雕花」"
   },
+  "FlowingSweetness": {
+    "name": "「流轉的甘醇」"
+  },
+  "ConvergingTerrace": {
+    "name": "「會聚的階臺」"
+  },
+  "ShadeBeneathTheBreeze": {
+    "name": "「納風的棚蔭」"
+  },
+  "UnarrangedMeeting": {
+    "name": "「無約的相會」"
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "花鳥噴泉"
   },
@@ -23627,6 +24017,9 @@
   "SmallStandingGlassDisplayCase": {
     "name": "直立式小型透明展示櫃"
   },
+  "TavernCabinetTheArtOfDisplay": {
+    "name": "酒館立櫃-「陳列哲學」"
+  },
   "PoolOfSapphireGrace": {
     "name": "「靈沼雲池」"
   },
@@ -23753,6 +24146,18 @@
   "OpenWide": {
     "name": "「張大嘴巴！」"
   },
+  "TavernSignboardDailyMenu": {
+    "name": "酒館招牌-「每日菜單」"
+  },
+  "TavernBarrelStoutStorage": {
+    "name": "酒館酒桶-「扎實留存」"
+  },
+  "SteadySteps": {
+    "name": "「穩步的踏階」"
+  },
+  "WarmthWithinTheGrainTrough": {
+    "name": "「蘊熱的谷槽」"
+  },
   "WeatheredBambooFence": {
     "name": "飽經風雨的竹製圍籬"
   },
@@ -23846,6 +24251,9 @@
   "TempleOpenworkRailing": {
     "name": "「神殿的鏤空低欄」"
   },
+  "FactoryRailingClearDemarcation": {
+    "name": "工廠護欄-「明確界定」"
+  },
   "SmoothWoodenBench": {
     "name": "平整的木製長凳"
   },
@@ -23917,6 +24325,12 @@
   },
   "TheLingeringWarmthOfTheWait": {
     "name": "「等待的餘溫」"
+  },
+  "TavernStoolSteadyLanding": {
+    "name": "酒館坐凳-「平穩著陸」"
+  },
+  "StableSupport": {
+    "name": "「穩固的支撐」"
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "丘丘雙層警戒台"
@@ -24013,6 +24427,9 @@
   },
   "UselessAdvice": {
     "name": "「無用的忠告」"
+  },
+  "DrapedSatin": {
+    "name": "「垂織柔緞」"
   },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "酒肆貨櫃-「會須百杯飲」"
@@ -24214,6 +24631,15 @@
   },
   "SmallGaugePanelControlConsole": {
     "name": "小型「儀盤」控制臺"
+  },
+  "MeasureOfTheFlow": {
+    "name": "「析流的尺度」"
+  },
+  "WatchfulFieldkeeper": {
+    "name": "「守望的巡田者」"
+  },
+  "TavernCounterArcOfEncounters": {
+    "name": "酒館吧檯-「相逢弧度」"
   },
   "SirCapyOfTheLongIncisors": {
     "name": "「睏睏門牙騎士」"

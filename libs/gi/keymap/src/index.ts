@@ -1,3 +1,4 @@
+import elementalData from './ElementalData'
 import type { EleEnemyResKey, StatKey, Unit } from './KeyMap'
 import {
   allEleDmgKeys,
@@ -5,7 +6,6 @@ import {
   allEleResKeys,
   KeyMap,
 } from './KeyMap'
-import elementalData from './ElementalData'
 import type {
   AdditiveReactionsKey,
   AmplifyingReactionsKey,

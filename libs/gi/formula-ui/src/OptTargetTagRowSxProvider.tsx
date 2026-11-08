@@ -3,8 +3,8 @@ import { TagRowSxContext } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { FormulaRef, Tag } from '@genshin-optimizer/gi/formula'
 import {
   isFormulaSheet,
-  sameFormula,
   STAT_SHEET,
+  sameFormula,
 } from '@genshin-optimizer/gi/formula'
 import type { ReactNode } from 'react'
 import { useCallback } from 'react'

@@ -1,0 +1,172 @@
+{
+  "name": "Valeriy",
+  "title": "ปราการสะท้านอัสนี",
+  "description": "หัวหน้า \"กองพันภารกิจพิเศษ\" นายทหารผู้เชี่ยวชาญด้านการคุ้มกันบุคคลสำคัญ และขับเคลื่อนแผนการ",
+  "constellationName": "Ursus Magnus",
+  "auto": {
+    "name": "Sword and Shield",
+    "fields": {
+      "normal": {
+        "0": "<strong>โจมตีปกติ</strong>",
+        "1": "โจมตีด้วยดาบต่อเนื่องมากสุด 3 ครั้ง"
+      },
+      "charged": {
+        "0": "<strong>ชาร์จโจมตี</strong>",
+        "1": "ใช้พลังกายส่วนหนึ่ง เพื่อกระโดดไปข้างหน้าแล้วทุบลงบนพื้น สร้างความเสียหายกายภาพแก่ศัตรูที่อยู่ใกล้เคียง",
+        "2": "เมื่อ Valeriy มี <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impact Momentum</tooltip></strong> อย่างน้อย 40 หน่วย จะใช้ <strong>Impact Momentum</strong> ทั้งหมด แล้วเปลี่ยนไปใช้การชาร์จโจมตีพิเศษ <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Direct-Fire Mortar: Point-Blank Bombardment</tooltip></strong>"
+      },
+      "plunging": {
+        "0": "<strong>โจมตีพุ่งลงจากอากาศ</strong>",
+        "1": "กระโจนจากกลางอากาศลงมายังพื้นดิน เพื่อโจมตีศัตรูที่อยู่ในเส้นทางการโจมตี โดยจะสร้างความเสียหายวงกว้างเมื่อลงถึงพื้น<tooltip ns=tooltips_gen baseKey18=11370002 values=[]></tooltip>"
+      }
+    },
+    "skillParams": {
+      "0": "ความเสียหายขั้น 1",
+      "1": "ความเสียหายขั้น 2",
+      "2": "ความเสียหายขั้น 3",
+      "3": "ความเสียหายชาร์จโจมตี",
+      "4": "ความเสียหาย Direct-Fire Mortar: Point-Blank Bombardment",
+      "5": "ชาร์จโจมตีใช้พลังกาย",
+      "6": "โบนัสความเสียหายไฟฟ้า",
+      "7": "โบนัสความเสียหาย นำไฟฟ้าดารา",
+      "8": "จำนวนชั้นของ Offensive Directive",
+      "9": "ระยะเวลาของ Offensive Directive",
+      "10": "ความเสียหายพุ่งลง",
+      "11": "ความเสียหายพุ่งถึงพื้นจากที่ต่ำ/สูง",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Active Defense: Bastion Charge",
+    "description": {
+      "0": "ยกโล่ขึ้นและพุ่งตัวไปข้างหน้า สร้าง<electro>ความเสียหายไฟฟ้าวงกว้าง</electro> และได้รับ <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impact Momentum</tooltip></strong> 40 หน่วย พร้อมทั้งกางโล่รวมอสนี",
+      "1": "ปริมาณการดูดซับความเสียหายของโล่รวมอสนีจะขึ้นอยู่กับพลังโจมตีของ Valeriy และมีเอฟเฟกต์ดูดซับ<electro>ความเสียหายไฟฟ้า</electro> 250%"
+    },
+    "skillParams": {
+      "0": "ความเสียหายสกิล",
+      "1": "ปริมาณการดูดซับของโล่",
+      "2": "ระยะเวลาต่อเนื่องของโล่",
+      "3": "คูลดาวน์",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Focused Fire: Lightning Salvo",
+    "description": {
+      "0": "สร้าง<electro>ความเสียหายไฟฟ้าวงกว้าง</electro>แก่ศัตรูที่อยู่ใกล้เคียง พร้อมยิง<strong>กระสุนลูกปรายใหญ่อสนี</strong>ขึ้นฟ้า โดย<strong>กระสุนลูกปรายใหญ่อสนี</strong>จะกระจายเป็นห่ากระสุนจำนวนมากตกลงสู่พื้น สร้าง<electro>ความเสียหายไฟฟ้าวงกว้าง</electro>แก่ศัตรูที่อยู่ใกล้เคียง"
+    },
+    "skillParams": {
+      "0": "ความเสียหายสกิล",
+      "1": "ความเสียหายกระสุนลูกปรายใหญ่อสนี",
+      "2": "ระยะเวลาต่อเนื่อง",
+      "3": "คูลดาวน์",
+      "4": "พลังงานธาตุ",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Advance With the Creeping Barrage",
+    "description": {
+      "0": "ในระหว่างที่<strong>กระสุนลูกปรายใหญ่อสนี</strong> จากท่าไม้ตาย <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>Focused Fire: Lightning Salvo</tooltip></strong> กำลังร่วงลงมา เมื่อการโจมตีของตัวละคร<electro>ธาตุไฟฟ้า</electro>ตัวอื่น ๆ ที่เข้าร่วมการต่อสู้ในขณะนั้นที่อยู่ใกล้เคียงของทีมโดนศัตรู Valeriy จะได้รับ <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impact Momentum</tooltip></strong> 5 หน่วย โดยหลังจากปล่อยท่าไม้ตายในแต่ละครั้ง จะสามารถรับ <strong>Impact Momentum</strong> ด้วยวิธีนี้ได้สูงสุด 80 หน่วย"
+    }
+  },
+  "passive2": {
+    "name": "Into the Breach",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11370002 values=[]>Offensive Directive</tooltip></strong> ได้รับการเสริมพลัง: <strong>Impact Momentum</strong> ทุก 1 หน่วยที่ถูกใช้ไป จะทำให้เอฟเฟกต์โบนัสความเสียหายของ <strong>Offensive Directive</strong> เพิ่มขึ้นอีก ตาม <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impact Momentum</tooltip></strong> ที่ถูกใช้เมื่อทำการชาร์จโจมตีพิเศษ <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Direct-Fire Mortar: Point-Blank Bombardment</tooltip></strong> หาก Valeriy:",
+      "1": [
+        "อยู่ในสถานะ<strong>เจิดจรัส: นำไฟฟ้าดารา</strong>: <strong>Impact Momentum</strong> ทุก 1 หน่วยที่ถูกใช้ไป จะทำให้เอฟเฟกต์โบนัสความเสียหายของ <strong>Offensive Directive</strong> เพิ่มขึ้น โดยค่าที่เพิ่มขึ้นเท่ากับ 0.9% ของพลังโจมตีของ Valeriy;",
+        "ไม่อยู่ในสถานะ<strong>เจิดจรัส: นำไฟฟ้าดารา</strong>: <strong>Impact Momentum</strong> ทุก 1 หน่วยที่ถูกใช้ไป จะทำให้เอฟเฟกต์โบนัสความเสียหายของ <strong>Offensive Directive</strong> เพิ่มขึ้น โดยค่าที่เพิ่มขึ้นเท่ากับ 0.3% ของพลังโจมตีของ Valeriy"
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Subzero Conditioning",
+    "description": {
+      "0": "เมื่ออยู่ใน<tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>เขตแดนดาราฉาย</strong></tooltip> Valeriy จะเข้าสู่สถานะ<strong>เจิดจรัส: นำไฟฟ้าดารา</strong>"
+    }
+  },
+  "passive": {
+    "name": "Tundra Operational Intelligence",
+    "description": {
+      "0": "เมื่อทำคำขอการออกสำรวจของ Snezhnaya (ยกเว้น Nod-Krai) ที่ใช้เวลา 20 ชั่วโมง รางวัลที่ได้รับจะเพิ่มขึ้น 25%"
+    }
+  },
+  "constellation1": {
+    "name": "The Cadence of Suppressive Fire",
+    "description": {
+      "0": "หลังจากทำการชาร์จโจมตีพิเศษ <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Direct-Fire Mortar: Point-Blank Bombardment</tooltip></strong> จะฟื้นฟูพลังงานธาตุ 6 หน่วยให้แก่ Valeriy ตาม <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impact Momentum</tooltip></strong> ที่ถูกใช้ไปเมื่อทำการชาร์จโจมตีพิเศษ โดยทุก 10 หน่วย ที่ถูกใช้ไปจากส่วนที่เกินจาก 40 หน่วย จะทำให้ Valeriy ฟื้นฟูพลังงานธาตุเพิ่มอีก 1.5 หน่วย แต่ละครั้งที่ทำการชาร์จโจมตีพิเศษ <strong>Direct-Fire Mortar: Point-Blank Bombardment</strong> จะฟื้นฟูพลังงานธาตุให้แก่ Valeriy ด้วยวิธีนี้ได้มากสุด 15 หน่วย และเอฟเฟกต์นี้สามารถเกิดขึ้นได้มากสุดหนึ่งครั้ง ในทุก 15 วินาที",
+      "1": "นอกจากนี้ แต่ละครั้งที่เข้าสู่สถานะต่อสู้ เมื่อ Valeriy ใช้สกิลธาตุ <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Active Defense: Bastion Charge</tooltip></strong> เป็นครั้งแรก จะได้รับ <strong>Impact Momentum</strong> เพิ่มเติมเท่ากับ 150% ของปริมาณเดิม"
+    }
+  },
+  "constellation2": {
+    "name": "Ranks That Charge as One",
+    "description": {
+      "0": "ภายใน 18 วินาทีหลังจากใช้สกิลธาตุ <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Active Defense: Bastion Charge</tooltip></strong> ความชำนาญธาตุของตัวละครทั้งหมดในทีมที่อยู่ใกล้เคียงจะเพิ่มขึ้น 100 หน่วย",
+      "1": "นอกจากนี้ เมื่ออยู่ภายใต้การปกป้องของโล่รวมอสนี หาก <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impact Momentum</tooltip></strong> ของ Valeriy ถึงขีดจำกัด เมื่อเกิดเอฟเฟกต์รับ <strong>Impact Momentum</strong> จะเปลี่ยนเป็นการเพิ่มปริมาณดูดซับความเสียหายของโล่รวมอสนีแทน โดย <strong>Impact Momentum</strong> ที่เกินมาทุก 1 หน่วย จะทำให้ปริมาณดูดซับความเสียหายของโล่รวมอสนีเพิ่มขึ้น 8% ของพลังโจมตีของ Valeriy โดยสามารถเปลี่ยน <strong>Impact Momentum</strong> ที่เกินมาด้วยวิธีนี้ได้สูงสุด 20 หน่วย"
+    }
+  },
+  "constellation3": {
+    "name": "Vigilance at Close Quarters",
+    "description": {
+      "0": "เพิ่มเลเวลสกิลของการโจมตีปกติ <strong><tooltip ns=char_Valeriy_gen baseKey18=normal>Guard Tactics: Sword and Shield</tooltip></strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
+    }
+  },
+  "constellation4": {
+    "name": "Fortitude Unshaken by Attrition",
+    "description": {
+      "0": "ขีดจำกัดของ <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impact Momentum</tooltip></strong> เพิ่มขึ้น 30 หน่วย และประสิทธิภาพในการรับเพิ่มขึ้น 30%",
+      "1": "นอกจากนี้ เอฟเฟกต์ของพรสวรรค์เพิ่มเติม <strong><tooltip ns=char_Valeriy_gen baseKey18=passive1>Advance With the Creeping Barrage</tooltip></strong> จะได้รับการเสริมพลัง: ทุกครั้งหลังจากใช้ท่าไม้ตาย จะสามารถรับ <strong>Impact Momentum</strong> ผ่านพรสวรรค์ดังกล่าวได้สูงสุด 104 หน่วย ทั้งนี้จะต้องปลดล็อกพรสวรรค์เพิ่มเติม <strong>Advance With the Creeping Barrage</strong> ก่อน"
+    }
+  },
+  "constellation5": {
+    "name": "Resolve to Divide and Destroy",
+    "description": {
+      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Active Defense: Bastion Charge</tooltip></strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
+    }
+  },
+  "constellation6": {
+    "name": "The Strength to Breach Enemy Lines",
+    "description": {
+      "0": "การชาร์จโจมตีพิเศษ <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Direct-Fire Mortar: Point-Blank Bombardment</tooltip></strong> และ<strong>กระสุนลูกปรายใหญ่อสนี</strong>ในท่าไม้ตาย <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>Focused Fire: Lightning Salvo</tooltip></strong> ได้รับการเสริมพลัง: สร้างความเสียหายเพิ่มขึ้น 100% และภายใน 7 วินาทีหลังจากโจมตีโดนศัตรู อัตราคริของ<electro>ความเสียหายไฟฟ้า</electro>ที่ได้รับจะเพิ่มขึ้น 10%; หาก<electro>ความเสียหายไฟฟ้า</electro>ที่ได้รับเป็นความเสียหายปฏิกิริยานำไฟฟ้าดารา ความแรงคริของความเสียหายดังกล่าวจะเพิ่มขึ้น 40%"
+    }
+  }
+}

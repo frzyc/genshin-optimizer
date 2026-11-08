@@ -25,6 +25,7 @@ import '../styles.scss'
 import { ZOAdWrapper } from '@genshin-optimizer/zzz/ui'
 import Footer from './Footer'
 import Header from './Header'
+
 const PageDiscs = lazy(
   () =>
     import('@genshin-optimizer/zzz/page-discs') as unknown as Promise<{

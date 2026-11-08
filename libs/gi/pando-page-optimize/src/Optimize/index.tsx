@@ -15,9 +15,9 @@ import {
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
 import {
+  pandoCardSx,
   useGiCalcContext,
   useResolvedOptTarget,
-  pandoCardSx,
 } from '@genshin-optimizer/gi/formula-ui'
 import { createOptimizeConfig } from '@genshin-optimizer/gi/pando-solver'
 import { getCharStat, getWeaponStat } from '@genshin-optimizer/gi/stats'

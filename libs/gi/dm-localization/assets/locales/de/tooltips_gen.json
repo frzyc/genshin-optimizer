@@ -469,11 +469,66 @@
       "0": "Verwandelt beim Auslösen der Reaktion Stellar-Supraleiter den umliegenden Bereich kurzzeitig in ein <strong>Sternglanzfeld</strong>. Befindet sich eine bestimmte Figur innerhalb des Sternglanzfelds, tritt sie in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong> ein, in dem ihre verschiedenen Fähigkeiten jeweils entsprechende Verstärkungseffekte erhalten."
     }
   },
+  "11360001": {
+    "name": "Umwandlungsbake",
+    "description": {
+      "0": "Generiert, wenn Mitya sich in der Truppe befindet und die Reaktion Stellar-Supraleiter ausgelöst wird, kein <strong>Sternenglanz-Prisma</strong>, sondern stattdessen eine <strong>Umwandlungsbake</strong>, die 6 s lang bestehen bleibt. Mitya kann die <strong>Umwandlungsbake</strong> verbrauchen, um zahlreiche Effekte auszulösen.",
+      "1": "Die <strong>Umwandlungsbake</strong> folgt der aktuellen Figur. Verwandelt bei Generierung der <strong>Umwandlungsbake</strong> zudem einen größeren Bereich in der Nähe in ein <strong>Sternglanzfeld</strong>. Mitya kann mehrere <strong>Umwandlungsbaken</strong> tragen, zu Beginn liegt die Obergrenze bei max. 4 Stück. Setzt, wenn eine <strong>Umwandlungsbake</strong> generiert wird, die Dauer aller <strong>Umwandlungsbaken</strong> zurück."
+    }
+  },
+  "11360002": {
+    "name": "Erkennungskern",
+    "description": {
+      "0": "Ein Energieapparat, der nach dem Anwenden der Elementarfähigkeit erschaffen wird. Durch Drücken kann ein <strong>stabiler</strong> Kern erschaffen werden, durch Gedrückthalten ein Kern mit <strong>Hochspannung</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Erkennungskern – Stabil</strong>",
+      "3": [
+        " Folgt fortlaufend Gegnern in der Umgebung und verursacht in bestimmten Zeitabständen <electro>Elektro-Flächenschaden</electro>.",
+        " Verbraucht, wenn Mityas <strong>Umwandlungsbaken</strong> ihre Obergrenze erreichen und neue generiert werden, diese neuen durch den Apparat, wobei <electro>Elektro-Flächenschaden</electro> verursacht wird, der als Schaden durch die Reaktion Stellar-Supraleiter gewertet wird.",
+        " Verbraucht zum Ende der Dauer oder bei einem neu generierten <strong>Erkennungskern</strong> alle getragenen <strong>Umwandlungsbaken</strong> und verursacht basierend auf der verbrauchten Menge <electro>Elektro-Flächenschaden</electro>, der als Schaden der Reaktion Stellar-Supraleiter gilt."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Erkennungskern – Hochspannung</strong>",
+      "6": [
+        " Ermöglicht es Mitya, wenn dieser Apparat existiert und Mitya mindestens eine <strong>Umwandlungsbake</strong> besitzt, den besonderen heftigen Schlag <strong>Umwandlungssprengung</strong> auszuführen, der keine Ausdauer verbraucht."
+      ]
+    }
+  },
+  "11370001": {
+    "name": "Mörserschuss – Schuss aus der Nähe",
+    "description": {
+      "0": "Valeriys besonderer heftiger Schlag. Verbraucht, wenn er beim Ausführen eines heftigen Schlags mindestens 40 Punkte <strong>Impulsenergie</strong> besitzt, die gesamte <strong>Impulsenergie</strong> und führt stattdessen diesen besonderen heftigen Schlag aus. Dieser verursacht vor ihm <electro>Elektro-Flächenschaden</electro> und verleiht ihm 15 Stapelungen <strong>Angriffsbefehl</strong>.",
+      "1": "Beim erneuten Anwenden des besonderen heftigen Schlags werden die Stapelungen von <strong>Angriffsbefehl</strong> zurückgesetzt.",
+      "2": "Wandelt innerhalb von 0,8 s nach dem Anwenden der Elementarfähigkeit <strong>Offensive Abwehr – Festungsvorstoß</strong> oder der Spezialfähigkeit <strong>Fokusfeuer – Blitz- und Schrotangriff</strong>, wenn Valeriy mindestens 40 Punkte <strong>Impulsenergie</strong> besitzt, Valeriys nächsten Standardangriff in den besonderen heftigen Schlag <strong>Mörserschuss – Schuss aus der Nähe</strong> um."
+    }
+  },
+  "11370002": {
+    "name": "Angriffsbefehl",
+    "description": {
+      "0": "Ein Spezialeffekt, den Valeriy nach dem Anwenden des besonderen heftigen Schlags <strong>Mörserschuss – Schuss aus der Nähe</strong> erhält. Erhöht, je nachdem, ob Valeriy sich im Zustand <strong>Leuchten – Stellar-Supraleiter</strong> befindet oder nicht, eine unterschiedliche Art von <electro>Elektro-Schaden</electro>. Wenn Valeriy sich:",
+      "1": [
+        " im Zustand <strong>Leuchten – Stellar-Supraleiter</strong> befindet: Verbraucht, wenn ein aktuelles Truppenmitglied in der Nähe einem Gegner durch einen Standardangriff, heftigen Schlag, Angriff aus dem Fall, eine Elementarfähigkeit oder Spezialfähigkeit <electro>Elektro-Schaden</electro> zufügt, der als Schaden durch die Reaktion Stellar-Supraleiter gewertet wird, eine Stapelung <strong>Angriffsbefehl</strong>, die den verursachten Schaden basierend auf Valeriys ANG erhöht.",
+        " sich nicht im Zustand <strong>Leuchten – Stellar-Supraleiter</strong> befindet: Verbraucht, wenn ein aktuelles Truppenmitglied in der Nähe einem Gegner durch einen Standardangriff, heftigen Schlag, Angriff aus dem Fall, eine Elementarfähigkeit oder Spezialfähigkeit <electro>Elektro-Schaden</electro> zufügt, eine Stapelung <strong>Angriffsbefehl</strong>, die den verursachten Schaden basierend auf Valeriys ANG erhöht."
+      ],
+      "2": "Verbraucht, wenn mehreren Gegnern gleichzeitig <electro>Elektro-Schaden</electro> zugefügt wird, so viele Stapelungen <strong>Angriffsbefehl</strong>, wie Gegner getroffen wurden."
+    }
+  },
+  "11370003": {
+    "name": "Impulsenergie",
+    "description": {
+      "0": "Eine besondere Energie, die Valeriy nutzt, um seine Kampfkompetenz zu verbessern. Die anfängliche Obergrenze liegt bei 100 Punkten. Wenn er mindestens 40 Punkte <strong>Impulsenergie</strong> besitzt, kann er den besonderen heftigen Schlag <strong>Mörserschuss – Schuss aus der Nähe</strong> ausführen.",
+      "1": "Valeriy kann auf folgende Weise <strong>Impulsenergie</strong> erhalten:",
+      "2": [
+        " Beim Anwenden der Elementarfähigkeit <strong>Offensive Abwehr – Festungsvorstoß</strong>.",
+        " Wenn nach dem Freischalten des Aufstiegstalents „Vorstoß mit dem schleichenden Sperrfeuer“, während der Dauer der Spezialfähigkeit <strong>Fokusfeuer – Blitz- und Schrotangriff</strong> ein aktuelles Truppenmitglied in der Nähe mit einem <electro>Elektro</electro>-Angriff Gegner trifft."
+      ]
+    }
+  },
   "11400001": {
     "name": "Leitgesang",
     "description": {
       "0": "Verbraucht, wenn das aktuelle Truppenmitglied mit einem Standardangriff, heftigen Schlag, Angriff aus dem Fall, einer Elementarfähigkeit oder Spezialfähigkeit <hydro>Hydro-Schaden</hydro> oder <cryo>Kryo-Schaden</cryo> verursacht, eine Stapelung „Leitgesang“ und erhöht den verursachten Schaden. Löst, wenn sich auf dem Feld ein fließender Wirbelwind befindet oder innerhalb der letzten 5 s ein solcher explodiert ist, den oben genannten Effekt stattdessen nur aus, wenn die Figur Schaden durch die Reaktion Stellar-Verwirbelung verursacht.",
-      "1": "Erhöht für den Teil von Vodyanitsas max. LP, der 40000 übersteigt, pro 1.000 Punkte den Schaden durch Stellar-Verwirbelung des oben genannten Effekts um 260 Punkte sowie den <hydro>Hydro-Schaden</hydro> und den <cryo>Kryo-Schaden</cryo> um 140 Punkte. Auf diese Weise können der Schaden durch die Reaktion Stellar-Verwirbelung um maximal 6500 Punkte und der <hydro>Hydro-Schaden</hydro> sowie der <cryo>Kryo-Schaden</cryo> um maximal 3500 Punkte erhöht werden."
+      "1": "Erhöht für den Teil von Vodyanitsas max. LP, der {PARAM#P1402201|3S1:I} übersteigt, pro 1.000 Punkte den Schaden durch Stellar-Verwirbelung des oben genannten Effekts um 260 Punkte sowie den <hydro>Hydro-Schaden</hydro> und den <cryo>Kryo-Schaden</cryo> um 140 Punkte. Auf diese Weise können der Schaden durch die Reaktion Stellar-Verwirbelung um maximal 6500 Punkte und der <hydro>Hydro-Schaden</hydro> sowie der <cryo>Kryo-Schaden</cryo> um maximal {PARAM#P1402201|7S1:I} Punkte erhöht werden."
     }
   },
   "11400002": {
@@ -510,7 +565,7 @@
     "name": "Flugwind-Klinge",
     "description": {
       "0": "Im Modus <strong>Einsatzbereit</strong> kann Vesna <strong>Schwertaura</strong> verbrauchen, um diese besondere Elementarfähigkeit anzuwenden und <anemo>Anemo-SCH</anemo> zu verursachen.",
-      "1": "Erhöht während der Dauer des aktuellen Modus <strong>Einsatzbereit</strong> nach jeder Anwendung der besonderen Elementarfähigkeit <strong>Flugwind-Klinge</strong> ihre Stufe. Die Anfangsstufe der <strong>Flugwind-Klinge</strong> beträgt Stufe 1 und kann bis auf Stufe 3 gesteigert werden.",
+      "1": "Erhöht während der Dauer des aktuellen Modus <strong>Einsatzbereit</strong> nach jeder Anwendung der besonderen Elementarfähigkeit <strong>Flugwind-Klinge</strong> ihre Stufe. Die Anfangsstufe der <strong>Flugwind-Klinge</strong> beträgt 1 und kann bis auf Stufe 3 gesteigert werden.",
       "2": "Ruft beim Anwenden der <strong>Flugwind-Klinge</strong>, deren Stufe erhöht worden ist, außerdem ein <strong>Geisterschwert</strong> herbei, das Gegnern <anemo>Anemo-SCH</anemo> zufügt."
     }
   },

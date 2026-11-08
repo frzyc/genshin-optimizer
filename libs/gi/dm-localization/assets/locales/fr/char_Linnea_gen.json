@@ -122,7 +122,7 @@
   "passive2": {
     "name": "Archive naturaliste universelle",
     "description": {
-      "0": "Linnea augmente la maîtrise élémentaire selon votre personnage déployé d'une valeur équivalant à 5 % de sa DÉF : ",
+      "0": "Linnea augmente la maîtrise élémentaire selon votre personnage déployé d'une valeur équivalant à 5 % de sa DÉF :",
       "1": [
         " Si votre personnage déployé est un personnage signelunaire : la maîtrise élémentaire de ce dernier augmente.",
         " Si votre personnage déployé n'est pas un personnage signelunaire : la maîtrise élémentaire de Linnea augmente."
@@ -140,7 +140,7 @@
   "passive": {
     "name": "Aventurière experte",
     "description": {
-      "0": "Lorsqu'elle n'est pas en combat, le temps de charge requis lorsque Linnea effectue un <strong>tir visé</strong> diminue grandement et elle tire une <strong>flèche ultra-rapide</strong> à la place, déclenchant divers effets selon la cible touchée : ",
+      "0": "Lorsqu'elle n'est pas en combat, le temps de charge requis lorsque Linnea effectue un <strong>tir visé</strong> diminue grandement et elle tire une <strong>flèche ultra-rapide</strong> à la place, déclenchant divers effets selon la cible touchée :",
       "1": [
         " Animal spécifique : la <strong>flèche ultra-rapide</strong> se transforme en filet spécial capable de capturer l'essence et la forme de l'animal, et de les utiliser comme support pour manifester à nouveau sa forme physique. Ce filet ne peut être utilisé qu'un nombre limité de fois par semaine.",
         " Filon de minerai utilisable en forge : Linnea envoie Lumi, qui frappe rapidement le minerai marqué par la <strong>flèche ultra-rapide</strong> et récupère le minerai délogé. Si Lumi n'est pas sur le terrain, Linnea l'invoque brièvement pour l'aider à récupérer le minerai."

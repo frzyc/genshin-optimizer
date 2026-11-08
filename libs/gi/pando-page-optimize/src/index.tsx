@@ -49,8 +49,8 @@ import type { ReactNode } from 'react'
 import { Suspense, useCallback, useEffect, useMemo } from 'react'
 import { CharacterOptDisplay } from './CharacterOptDisplay'
 import {
-  TeamHeaderHeightContext,
   TEAM_HEADER_HEIGHT_PX,
+  TeamHeaderHeightContext,
 } from './context/TeamHeaderHeightContext'
 import { OptTargetRow } from './OptTargetRow'
 

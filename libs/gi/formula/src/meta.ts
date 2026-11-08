@@ -24820,6 +24820,21 @@ export const formulas = {
       },
     },
   },
+  Mitya: {
+    normal1: {
+      sheet: 'Mitya',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Mitya',
+        move: 'normal',
+        ele: 'electro',
+        name: 'normal1',
+      },
+    },
+  },
   Mona: {
     normal_0: {
       sheet: 'Mona',
@@ -33362,6 +33377,20 @@ export const formulas = {
         q: 'param',
         sheet: 'Tighnari',
         name: 'burst_enerCost',
+      },
+    },
+  },
+  Valeriy: {
+    normal1: {
+      sheet: 'Valeriy',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Valeriy',
+        move: 'normal',
+        name: 'normal1',
       },
     },
   },

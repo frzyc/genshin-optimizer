@@ -15,8 +15,8 @@ import {
   buildPando,
   buildWrSolo,
   mapWrEnerRech,
-  parityArtFromDisplay,
   type ParityFixture,
+  parityArtFromDisplay,
   readPandoFinal,
   readWrFinal,
 } from './harness'

@@ -1,6 +1,6 @@
 import {
-  allElementKeys,
   type ArtifactSetKey,
+  allElementKeys,
   type ElementKey,
 } from '@genshin-optimizer/gi/consts'
 

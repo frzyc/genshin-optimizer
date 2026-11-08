@@ -6,15 +6,6 @@ import type {
   SolverConfig,
 } from '@genshin-optimizer/game-opt/solver'
 import { buildCount } from '@genshin-optimizer/game-opt/solver'
-import type { NumTagFree } from '@genshin-optimizer/pando/engine'
-import {
-  constant,
-  detach,
-  max,
-  prod,
-  read,
-  sum,
-} from '@genshin-optimizer/pando/engine'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
@@ -34,6 +25,15 @@ import type {
 } from '@genshin-optimizer/gi/db'
 import type { Calculator, Tag } from '@genshin-optimizer/gi/formula'
 import { Read } from '@genshin-optimizer/gi/formula'
+import type { NumTagFree } from '@genshin-optimizer/pando/engine'
+import {
+  constant,
+  detach,
+  max,
+  prod,
+  read,
+  sum,
+} from '@genshin-optimizer/pando/engine'
 import { rainbowFilter } from './filters'
 
 const EPSILON = 1e-7

@@ -1,0 +1,184 @@
+{
+  "name": "Mitya",
+  "title": "Tüm Kurallar Boşa",
+  "description": "Son derece marifetli bir enerji uzmanı ve \"kaytarma\" sanatının piri.",
+  "constellationName": "Gordion Düğümü",
+  "auto": {
+    "name": "Zincirleme Tepkime",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "<electro>Elektrik Hasarı</electro> veren en fazla 3 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Kullanıldıktan kısa süre sonra belirli miktarda Dayanıklılık harcayarak önündeki alana <electro>Elektrik Alan Hasarı</electro> verir.",
+        "2": "Eğer Mitya tarafından oluşturulan bir <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Tespit Çekirdeği: Aşırı Yüklü</tooltip></strong> alandaysa ve Mitya en az 1 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Kademeli İşarete</tooltip></strong> sahipse, bunun yerine Dayanıklılık harcamayan <strong>Kademeli Patlama</strong> özel Yüklü Saldırısını gerçekleştirir: Önündeki alana 1 defa <electro>Elektrik Alan Hasarı</electro> verir ve basılı tutulduğu süre boyunca sürekli olarak <strong>Kademeli İşaret</strong> harcar. Harcanan her <strong>Kademeli İşaret</strong>, 1 defa önündeki alana Yıldız İletimi Tepkimesi Hasarı olarak kabul edilen <electro>Elektrik Alan Hasarı</electro> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara <electro>Elektrik Alan Hasarı</electro> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Yüklü Saldırı Hasarı",
+      "4": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "5": "Havadan Saldırı Hasarı",
+      "6": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "7": "Kademeli Patlama Hasarı",
+      "8": "Kademeli Patlama Yıldız İletimi Hasarı",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "İlke: Değişken Tespiti",
+    "description": {
+      "0": "Teorik olarak nispeten güvenli bir verimlilikle, teorik olarak nispeten güvenli bir deney gerçekleştirerek <electro>Elektrik Alan Hasarı</electro> verir ve Beceriye dokunulmasına veya basılı tutulmasına bağlı olarak farklı türde bir <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Tespit Çekirdeği</tooltip></strong> oluşturur.",
+      "1": "<br/>",
+      "2": "Kullanıldıktan sonraki 6sn içinde <strong>İlke: Değişken Tespiti</strong> Element Becerisine tekrar dokunmak, <strong>Tespit Çekirdeğinin</strong> durumunu değiştirir. Tespit Çekirdeğinin durumu bu şekilde her 1,5 saniyede bir değiştirilebilir."
+    },
+    "skillParams": {
+      "0": "Beceri Dokunma Hasarı",
+      "1": "Beceri Basılı Tutma Hasarı",
+      "2": "Kararlı Çekirdek Hasarı",
+      "3": "Kararlı Çekirdek Kademeli İşaret Tüketim Hasarı",
+      "4": "Kararlı Çekirdek Patlama Hasarı",
+      "5": "Tespit Çekirdeği Süresi",
+      "6": "BS",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Analiz: Kademeli Teori",
+    "description": {
+      "0": "Elementler tıpkı ilhamın ta kendisi gibi fışkırsın! <electro>Elektrik Alan Hasarı</electro> verir ve 3 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Kademeli İşaret</tooltip></strong> oluşturur."
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Oluşturulan Kademeli İşaretler",
+      "2": "BS",
+      "3": "Enerji Maliyeti",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Temel Stres Testi",
+    "description": {
+      "0": "<strong>İlke: Değişken Tespiti</strong> Element Becerisi ile oluşturulan <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Tespit Çekirdeği</tooltip></strong> geliştirilir. Oluşturulan <strong>Tespit Çekirdeği</strong> durumuna bağlı olarak:",
+      "1": [
+        "Kararlı: Yakındaki tüm grup üyeleri, Mitya'nın sahip olduğu her <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Kademeli İşaret</tooltip></strong> için 30 Element Ustalığı kazanır.",
+        "Aşırı Yüklü: Yakındaki grup üyeleri Yıldız İletimi tepkimelerini tetikledikten sonra, bunun yerine 6sn boyunca her 1,5 saniyede 1 adet <strong>Kademeli İşaret</strong> elde edilir."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Patlayıcı Reaktif: Güvenli Sınır Aşımı",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Kademeli İşaretlerin</tooltip></strong> süresi 10 saniyeye çıkar. Ayrıca bir <strong>Kademeli İşaret</strong> oluşturduktan sonra 15 saniyeliğine Mitya'nın Kritik Oranı %5 artar. Bu etki 4 kademeye kadar birikebilir."
+    }
+  },
+  "passive3": {
+    "name": "Yıldız Takdisi: Çok Gizli Protokol",
+    "description": {
+      "0": "Grup üyeleri Süper İletim tetiklediğinde bu tepkime, Yıldız İletimi tepkimesi olarak değişir. Yıldız İletimi tepkimeleri artık <strong>Yıldız Işığı Prizmaları</strong> oluşturmaz, bunun yerine 3 saniyeliğine her 1,5 saniyede bir yakında 1 adet <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Kademeli İşaret</tooltip></strong> oluşturur. Bu İşaretler Mitya tarafından taşınabilir ve etraflarındaki alanı daha büyük bir <strong>Kutup Yıldızı Alanına</strong> dönüştürür. Başka bir Yıldız İletimi tepkimesi tetiklendiğinde söz konusu etkilerin süresi yenilenir.",
+      "1": "Ek olarak, yakındaki tüm grup üyelerinin verdiği Temel Yıldız İletimi Hasarı, Mitya'nın Element Ustalığına göre artar: Sahip olduğu her bir Element Ustalığı puanı, Temel Yıldız İletimi Hasarını %0,028 artırır. Bu şekilde elde edilebilecek maksimum Temel Hasar artışı %14'tür. Mitya, bir <strong>Kutup Yıldızı Alanı</strong> içindeyken ayrıca <strong>Işıltı: Yıldız İletimi</strong> durumuna girer."
+    }
+  },
+  "passive": {
+    "name": "Enerji Katalizi",
+    "description": {
+      "0": "Yakınlarda parçalanabilir kayalar olduğunda, <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Tespit Çekirdeği: Kararlı</tooltip></strong> onları hızlıca temizleyebilir.",
+      "1": "Ayrıca Mitya gruptayken <strong>Saf Buz Yapısı: Temel Isı Kaynağı</strong> oluşturmak Kresnik Enerjisi tüketmez."
+    }
+  },
+  "constellation1": {
+    "name": "Bir Yokluğun İzini Süren Gözlemci",
+    "description": {
+      "0": "Mitya'nın taşıyabileceği maksimum <tooltip ns=tooltips_gen baseKey18=11360001 values=[]><strong>Kademeli İşaret</strong></tooltip> sayısı 5'e çıkar. <strong>İlke: Değişken Tespiti</strong> Element Becerisi kullanıldığında fazladan 1 <strong>Kademeli İşaret</strong> üretir.",
+      "1": "Alanda <tooltip ns=tooltips_gen baseKey18=11360002 values=[]><strong>Tespit Çekirdeği</strong></tooltip> mevcutken kendi aktif karakterinin Kritik Hasarı %40 artar.",
+      "2": "Ayrıca bir <strong>Kademeli İşaret</strong> üretildiğinde Mitya 10 Element Enerjisi yeniler. Bu etki 8 saniyede bir tetiklenebilir."
+    }
+  },
+  "constellation2": {
+    "name": "Eylemsizliğin Ötesinde Uyuyan Madde",
+    "description": {
+      "0": "Alanda <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Tespit Çekirdeği</tooltip></strong> mevcutken <strong>Kutup Yıldızı Alanı</strong> içindeki tüm düşmanların <cryo>Buz Direnci</cryo> ve <electro>Elektrik Direnci</electro> %20 azalır.",
+      "1": "Ayrıca oluşturulan <strong>Tespit Çekirdeği</strong>, durumuna bağlı olarak aşağıdaki etkileri kazanır:",
+      "2": [
+        "Kararlı: Yakındaki tüm grup üyeleri 123 Element Ustalığı kazanır.",
+        "Aşırı Yüklü: Aktif karakterin 234 Element Ustalığı kazanır."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Değişmez Topolojinin Düğümlü Sicimi",
+    "description": {
+      "0": "<tooltip ns=char_Mitya_gen baseKey18=skill><strong>İlke: Değişken Tespiti</strong></tooltip> Element Becerisinin seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Çürümeden Doğan İzotoplar",
+    "description": {
+      "0": "Mitya tarafından oluşturulan <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Tespit Çekirdekleri</tooltip></strong>, alanda kaldıkları süre boyunca tüketilen her 5 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Kademeli İşaret</tooltip></strong> başına yakındaki düşmanlara 1 defa Mitya'nın Element Ustalığının %300'üne eşit <electro>Elektrik Alan Hasarı</electro> verir. Bu Hasar, Yıldız İletimi Tepkimesi Hasarı olarak kabul edilir."
+    }
+  },
+  "constellation5": {
+    "name": "Tüm Düzene Hükmeden Periyodik Kanun",
+    "description": {
+      "0": "<tooltip ns=char_Mitya_gen baseKey18=normal><strong>Zincirleme Tepkime</strong></tooltip> Normal Saldırısının seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Mantığın Geçidindeki Element Değişimi",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Tespit Çekirdeği</tooltip></strong> geliştirilir. Eğer <strong>Tespit Çekirdeği</strong>:",
+      "1": [
+        "Kararlı Durumdaysa: <strong>Tespit Çekirdeği</strong>, orijinal Hasarının %115'ini verir.",
+        " Aşırı Yüklü Durumdaysa: Mitya, <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Tespit Çekirdeği</tooltip></strong> ile bir <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Kademeli İşaret</tooltip></strong> tükettiğinde %34 ihtimalle 1 yeni <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Kademeli İşaret</tooltip></strong> oluşturur."
+      ],
+      "2": "Ayrıca yakındaki tüm grup üyelerinin verdiği Yıldız İletimi Tepkimesi Hasarı %20 <strong><tooltip ns=tooltips_gen baseKey18=11190007 values=[]>yükselir</tooltip></strong>."
+    }
+  }
+}

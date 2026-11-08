@@ -207,6 +207,7 @@
   "114522": "BalladOfTheCrossroads",
   "114523": "CrownOfTheFinalScion",
   "114524": "RondoOfSlumber",
+  "114525": "DawnstarsFlowingTrail",
   "115301": "BaneOfFlameAndWater",
   "115302": "Precise",
   "115303": "CullTheWeak",
@@ -342,5 +343,15 @@
   "224031": "Muzzle",
   "224032": "AmmoFeed",
   "224033": "Gunstock",
-  "224034": "Gunsights"
+  "224034": "Gunsights",
+  "224101": "SosrukosFlame",
+  "224102": "ApsatsMountainHunt",
+  "224111": "Barrel",
+  "224112": "AmmoFeed",
+  "224113": "Gunstock",
+  "224114": "Gunsights",
+  "224121": "Choke",
+  "224122": "BarrierAmplifier",
+  "224123": "Shellcatcher",
+  "224124": "Action"
 }

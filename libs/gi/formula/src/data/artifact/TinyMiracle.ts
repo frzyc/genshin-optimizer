@@ -1,8 +1,8 @@
+import { objKeyMap } from '@genshin-optimizer/common/util'
 import {
   type ArtifactSetKey,
   allElementKeys,
 } from '@genshin-optimizer/gi/consts'
-import { objKeyMap } from '@genshin-optimizer/common/util'
 import { cmpGE } from '@genshin-optimizer/pando/engine'
 import { allListConditionals, ownBuff, percent } from '../util'
 import { artCount, registerArt } from './util'

@@ -27854,6 +27854,25 @@ export const formulaCatalog = {
       category: 'burst',
     },
   },
+  Mitya: {
+    normal1: {
+      sheet: 'Mitya',
+      name: 'normal1',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Mitya',
+          move: 'normal',
+          ele: 'electro',
+          name: 'normal1',
+        },
+      },
+      exposeInProd: true,
+      category: 'auto',
+    },
+  },
   Mona: {
     normal_0: {
       sheet: 'Mona',
@@ -39140,6 +39159,24 @@ export const formulaCatalog = {
       },
       exposeInProd: false,
       category: 'burst',
+    },
+  },
+  Valeriy: {
+    normal1: {
+      sheet: 'Valeriy',
+      name: 'normal1',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Valeriy',
+          move: 'normal',
+          name: 'normal1',
+        },
+      },
+      exposeInProd: true,
+      category: 'auto',
     },
   },
   Varesa: {

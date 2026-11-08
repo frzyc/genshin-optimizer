@@ -1,0 +1,172 @@
+{
+  "name": "Valeriy",
+  "title": "Blitzschlagbastion",
+  "description": "Anführer des Bataillons für Spezialaufträge, der sich auf den Schutz wichtiger Persönlichkeiten und die Umsetzung von Plänen versteht.",
+  "constellationName": "Ursus Fuscus",
+  "auto": {
+    "name": "Verteidigende Kampfkunst – Schild und Schwert",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 3 Schwerthiebe hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer, springt nach vorn, schlägt auf den Boden auf und fügt Gegnern in der Nähe physischen Schaden zu.",
+        "2": "Verbraucht, wenn Valeriy über mindestens 40 Pkt. <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impulsenergie</tooltip></strong> verfügt, stattdessen die gesamte <strong>Impulsenergie</strong> und führt den besonderen heftigen Schlag <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Mörserschuss – Schuss aus der Nähe</tooltip></strong> aus."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Stürzt sich aus der Luft auf den Boden, greift Gegner auf der Bahn an und verursacht beim Aufprall Flächenschaden.<tooltip ns=tooltips_gen baseKey18=11370002 values=[]></tooltip>"
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH heftiger Schläge",
+      "4": "SCH durch „Mörserschuss – Schuss aus der Nähe“",
+      "5": "Ausdauerverbrauch heftiger Schläge",
+      "6": "Elektro-SCH-Bonus",
+      "7": "SCH-Bonus bei Stellar-Supraleiter-Reaktion",
+      "8": "Stapelungen des Angriffsbefehls",
+      "9": "Dauer des Angriffsbefehls",
+      "10": "SCH beim Fallen",
+      "11": "SCH beim Fallen aus niedriger/großer Höhe",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Offensive Abwehr – Festungsvorstoß",
+    "description": {
+      "0": "Erhebt den Schild, rennt nach vorn, verursacht <electro>Elektro-Flächenschaden</electro>, verleiht 40 Pkt. <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impulsenergie</tooltip></strong> und errichtet einen Blitzladungs-Schild.",
+      "1": "Die Schildstärke des Blitzladungs-Schilds wird anhand von Valeriys ANG berechnet und hält bei <electro>Elektro-SCH</electro> 250 % ab."
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Schildstärke",
+      "2": "Schilddauer",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Fokusfeuer – Blitz- und Schrotangriff",
+    "description": {
+      "0": "Fügt Gegnern in der Nähe <electro>Elektro-Flächenschaden</electro> zu und feuert eine <strong>schwere Blitz-Schrot-Granate</strong> hoch in die Luft. Die <strong>schwere Blitz-Schrot-Granate</strong> teilt sich in eine Vielzahl von Geschossen auf, die auf den Boden stürzen und Gegnern in der Nähe <electro>Elektro-Flächenschaden</electro> zufügen."
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "SCH durch schwere Blitz-Schrot-Granate",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Vorstoß mit dem schleichenden Sperrfeuer",
+    "description": {
+      "0": "Verleiht Valeriy, wenn die <strong>schwere Blitz-Schrot-Granate</strong> der Spezialfähigkeit <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>Fokusfeuer – Blitz- und Schrotangriff</tooltip></strong> herabfällt und ein anderes aktuelles Truppenmitglied in der Nähe währenddessen einen Gegner mit einem <electro>Elektro</electro>-Angriff trifft, 5 Punkte <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impulsenergie</tooltip></strong>. Auf diese Weise können nach jeder Anwendung einer Spezialfähigkeit bis zu 80 Punkte <strong>Impulsenergie</strong> erhalten werden."
+    }
+  },
+  "passive2": {
+    "name": "Ansturm auf die Verteidigungslücke",
+    "description": {
+      "0": "Verstärkt <strong><tooltip ns=tooltips_gen baseKey18=11370002 values=[]>Angriffsbefehl</tooltip></strong>: Erhöht für jeden Punkt <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impulsenergie</tooltip></strong>, der beim Ausführen des besonderen heftigen Schlags <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Mörserschuss – Schuss aus der Nähe</tooltip></strong> verbraucht wird, den SCH-Bonus von <strong>Angriffsbefehl</strong> weiter. Wenn Valeriy:",
+      "1": [
+        " sich im Zustand <strong>Leuchten – Stellar-Supraleiter</strong> befindet: Erhöht den SCH-Bonus von <strong>Angriffsbefehl</strong> pro verbrauchtem Punkt <strong>Impulsenergie</strong> um 0,9 % von Valeriys ANG.",
+        " sich nicht im Zustand <strong>Leuchten – Stellar-Supraleiter</strong> befindet: Erhöht den SCH-Bonus von <strong>Angriffsbefehl</strong> pro verbrauchtem Punkt <strong>Impulsenergie</strong> um 0,3 % von Valeriys ANG."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Permafrost-Trägheit",
+    "description": {
+      "0": "Versetzt Valeriy, wenn er sich in einem <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet, in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong>."
+    }
+  },
+  "passive": {
+    "name": "Infos zur Eiswüstenoperation",
+    "description": {
+      "0": "Bringt bei 20-stündigen Erkundungsentsendungen in Snezhnaya (außerhalb von Nod-Krai) 25 % mehr Belohnungen."
+    }
+  },
+  "constellation1": {
+    "name": "Zeitablauf der anhaltenden Unterdrückung",
+    "description": {
+      "0": "Stellt Valeriy nach dem Anwenden des besonderen heftigen Schlags <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Mörserschuss – Schuss aus der Nähe</tooltip></strong> 6 Punkte Elementarenergie wieder her. Stellt Valeriy zudem für den Teil an der beim Anwenden des besonderen heftigen Schlags verbrauchten <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impulsenergie</tooltip></strong>, der 40 Punkte überschreitet, pro 10 verbrauchte Punkte zusätzlich 1,5 Punkte Elementarenergie wieder her, max. 15 Punkte pro angewendetem besonderen heftigen Schlag <strong>Mörserschuss – Schuss aus der Nähe</strong>, 15 s Abklingzeit.",
+      "1": "Verleiht Valeriy zudem jedes Mal, wenn er in den Kampf eintritt und zum ersten Mal die Elementarfähigkeit <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Offensive Abwehr – Festungsvorstoß</tooltip></strong> anwendet, zusätzlich <strong>Impulsenergie</strong> in Höhe von 150 % des ursprünglichen Werts."
+    }
+  },
+  "constellation2": {
+    "name": "Formation für den Sturmangriff",
+    "description": {
+      "0": "Erhöht innerhalb von 18 s nach dem Anwenden der Elementarfähigkeit <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Offensive Abwehr – Festungsvorstoß</tooltip></strong> die Elementarkunde aller Truppenmitglieder in der Nähe um 100 Punkte.",
+      "1": "Erhöht zudem, wenn Schutz durch einen Blitzladungs-Schild besteht und Valeriys <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impulsenergie</tooltip></strong> die Obergrenze erreicht hat, beim Auslösen eines Effekts zum Erhalt von <strong>Impulsenergie</strong> nun die Schildstärke des Blitzladungs-Schilds. Erhöht die Schildstärke des Blitzladungs-Schilds für jeden überschüssigen Punkt an <strong>Impulsenergie</strong> um 8 % von Valeriys ANG. Auf diese Weise können bis zu 20 überschüssige Punkte an <strong>Impulsenergie</strong> in die Schildstärke umgewandelt werden."
+    }
+  },
+  "constellation3": {
+    "name": "Wachsamkeit im Klingenduell",
+    "description": {
+      "0": "Erhöht die Fähigkeitsstufe des Standardangriffs <strong><tooltip ns=char_Valeriy_gen baseKey18=normal>Verteidigende Kampfkunst – Schild und Schwert</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Unerschütterliche Widerstandskraft",
+    "description": {
+      "0": "Erhöht die Obergrenze von <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impulsenergie</tooltip></strong> um 30 Punkte und die Effizienz beim Erhalt um 30 %.",
+      "1": "Verstärkt zudem den Effekt des Aufstiegstalents <strong><tooltip ns=char_Valeriy_gen baseKey18=passive1>Vorstoß mit dem schleichenden Sperrfeuer</tooltip></strong>: Ermöglicht nach jeder Anwendung der Spezialfähigkeit den Erhalt von max. 104 Punkten <strong>Impulsenergie</strong> durch dieses Talent. Das Aufstiegstalent <strong>Vorstoß mit dem schleichenden Sperrfeuer</strong> muss zuerst freigeschaltet werden."
+    }
+  },
+  "constellation5": {
+    "name": "Entschlossenheit zum Spalten und Vernichten",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Offensive Abwehr – Festungsvorstoß</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Kraft, feindliche Reihen zu durchbrechen",
+    "description": {
+      "0": "Verstärkt den besonderen heftigen Schlag <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Mörserschuss – Schuss aus der Nähe</tooltip></strong> und die <strong>schwere Blitz-Schrot-Granate</strong> der Spezialfähigkeit <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>Fokusfeuer – Blitz- und Schrotangriff</tooltip></strong>: Erhöht den verursachten Schaden um 100 % und erhöht nach dem Treffen eines Gegners 7 s lang die KT seines erlittenen <electro>Elektro-Schadens</electro> um 10 %. Erhöht zudem, wenn es sich bei dem erlittenen <electro>Elektro-Schaden</electro> um Schaden der Reaktion Stellar-Supraleiter handelt, auch den KSCH dieses Schadens um 40 %."
+    }
+  }
+}
