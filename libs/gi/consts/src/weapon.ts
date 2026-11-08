@@ -268,6 +268,7 @@ export const allWeaponCatalystKeys = [
   'SkywardAtlas',
   'SolarPearl',
   'StarcallersWatch',
+  'StarsealedEdict',
   'SunnyMorningSleepIn',
   'SurfsUp',
   'TheWidsith',

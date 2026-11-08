@@ -44,6 +44,7 @@ import SacrificialJade from './SacrificialJade'
 import SkywardAtlas from './SkywardAtlas'
 import SolarPearl from './SolarPearl'
 import StarcallersWatch from './StarcallersWatch'
+import StarsealedEdict from './StaresealedEdict'
 import SunnyMorningSleepIn from './SunnyMorningSleepIn'
 import SurfsUp from './SurfsUp'
 import TheWidsith from './TheWidsith'
@@ -102,6 +103,7 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   SkywardAtlas,
   SolarPearl,
   StarcallersWatch,
+  StarsealedEdict,
   SunnyMorningSleepIn,
   SurfsUp,
   TheWidsith,
