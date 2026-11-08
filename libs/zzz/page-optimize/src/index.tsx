@@ -104,6 +104,9 @@ export default function PageOptimize() {
     return {
       srcDisplay: charDisplay,
       dstDisplay: charDisplay,
+      // ZZZ: src is TagContext / teammate card; dst picker deferred (too confusing).
+      showSrcPicker: false,
+      showDstPicker: false,
     }
   }, [team])
 

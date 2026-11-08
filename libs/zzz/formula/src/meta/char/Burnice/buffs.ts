@@ -1,5 +1,70 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
+  exSpecial_ether_anom_mv_mult_: {
+    sheet: 'Burnice',
+    name: 'exSpecial_ether_anom_mv_mult_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anom_mv_mult_',
+      sheet: 'Burnice',
+      attribute: 'ether',
+      damageType1: 'abloom',
+      name: 'exSpecial_ether_anom_mv_mult_',
+    },
+  },
+  exSpecial_electric_anom_mv_mult_: {
+    sheet: 'Burnice',
+    name: 'exSpecial_electric_anom_mv_mult_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anom_mv_mult_',
+      sheet: 'Burnice',
+      attribute: 'electric',
+      damageType1: 'abloom',
+      name: 'exSpecial_electric_anom_mv_mult_',
+    },
+  },
+  exSpecial_fire_anom_mv_mult_: {
+    sheet: 'Burnice',
+    name: 'exSpecial_fire_anom_mv_mult_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anom_mv_mult_',
+      sheet: 'Burnice',
+      attribute: 'fire',
+      damageType1: 'abloom',
+      name: 'exSpecial_fire_anom_mv_mult_',
+    },
+  },
+  exSpecial_physical_anom_mv_mult_: {
+    sheet: 'Burnice',
+    name: 'exSpecial_physical_anom_mv_mult_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anom_mv_mult_',
+      sheet: 'Burnice',
+      attribute: 'physical',
+      damageType1: 'abloom',
+      name: 'exSpecial_physical_anom_mv_mult_',
+    },
+  },
+  exSpecial_ice_anom_mv_mult_: {
+    sheet: 'Burnice',
+    name: 'exSpecial_ice_anom_mv_mult_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anom_mv_mult_',
+      sheet: 'Burnice',
+      attribute: 'ice',
+      damageType1: 'abloom',
+      name: 'exSpecial_ice_anom_mv_mult_',
+    },
+  },
   core_afterburn_dmg_: {
     sheet: 'Burnice',
     name: 'core_afterburn_dmg_',
@@ -21,6 +86,28 @@ export const buffs = {
       sheet: 'Burnice',
       attribute: 'fire',
       name: 'ability_fire_anomBuildup_',
+    },
+  },
+  potential_anomMas: {
+    sheet: 'Burnice',
+    name: 'potential_anomMas',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anomMas',
+      sheet: 'Burnice',
+      name: 'potential_anomMas',
+    },
+  },
+  potential_common_dmg_: {
+    sheet: 'Burnice',
+    name: 'potential_common_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'common_dmg_',
+      sheet: 'Burnice',
+      name: 'potential_common_dmg_',
     },
   },
   m1_afterburn_fire_anomBuildup_: {
@@ -66,7 +153,7 @@ export const buffs = {
       qt: 'combat',
       q: 'crit_',
       sheet: 'Burnice',
-      skillType: 'assistSkill',
+      skillType1: 'assistSkill',
       name: 'm4_assistSkill_crit_',
     },
   },
@@ -100,7 +187,7 @@ export const buffs = {
     name: 'm6_fire_anom_mv_mult_',
     tag: {
       et: 'display',
-      qt: 'dmg',
+      qt: 'combat',
       q: 'anom_mv_mult_',
       sheet: 'Burnice',
       attribute: 'fire',

@@ -63,12 +63,14 @@ export function CharacterSingleSelectionModal({
   onSelect,
   newFirst = false,
   showNone = false,
+  characterFilter,
 }: {
   show: boolean
   onHide: () => void
   onSelect: (cKey: CharacterKey | null) => void
   newFirst?: boolean
   showNone?: boolean
+  characterFilter?: (ck: CharacterKey) => boolean
 }) {
   const { database } = useDatabaseContext()
   const displayCharacter = useDataEntryBase(database.displayCharacter)
@@ -88,13 +90,14 @@ export function CharacterSingleSelectionModal({
           characterFilterConfigs(database)
         )
       )
+      .filter((ck) => (characterFilter ? characterFilter(ck) : true))
       .sort(
         sortFunction(sortByKeys, ascending, characterSortConfigs(database), [
           'new',
         ])
       )
     return filteredKeys
-  }, [deferredState, newFirst, deferredSearchTerm, database])
+  }, [deferredState, newFirst, deferredSearchTerm, database, characterFilter])
 
   const onClose = () => {
     setSearchTerm('')

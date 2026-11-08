@@ -577,8 +577,10 @@ describe('team', () => {
     ).toBeCloseTo(428, 1)
 
     expect(
-      calc.compute(read(Vivian.buffs.core_electric_abloom.tag, undefined)).val
-    ).toBeCloseTo(428 * 0.1 * 0.032)
+      calc.compute(
+        read(Vivian.buffs.core_electric_anom_mv_mult_.tag, undefined)
+      ).val
+    ).toBeCloseTo(456 * 0.1 * 0.032)
   })
 })
 

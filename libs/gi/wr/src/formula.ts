@@ -488,7 +488,6 @@ const common: Data = {
   },
 
   enemy: {
-    // TODO: shred cap of 90%
     def: min(
       percent(1),
       frac(
@@ -508,7 +507,7 @@ const common: Data = {
         sum(one, prod(-1, enemy.defIgn))
       )
     ),
-    defRed: total.enemyDefRed_,
+    defRed: min(total.enemyDefRed_, percent(0.9)),
     ...objKeyValMap(allElements, (ele) => [
       `${ele}_resMulti_`,
       res(total[`${ele}_enemyRes_`]),

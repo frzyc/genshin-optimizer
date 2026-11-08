@@ -72,7 +72,7 @@ const sheet = register(
       'basic',
       'BasicAttackSmashNBash',
       0,
-      { damageType1: 'basic', skillType: 'basicSkill' },
+      { damageType1: 'basic', skillType1: 'basicSkill' },
       'atk'
     ),
     dmgDazeAndAnomOverride(
@@ -80,7 +80,7 @@ const sheet = register(
       'basic',
       'BasicAttackSmashNBash',
       1,
-      { damageType1: 'basic', skillType: 'basicSkill' },
+      { damageType1: 'basic', skillType1: 'basicSkill' },
       'atk'
     ),
     dmgDazeAndAnomOverride(
@@ -88,7 +88,7 @@ const sheet = register(
       'basic',
       'BasicAttackSmashNBash',
       2,
-      { damageType1: 'basic', skillType: 'basicSkill' },
+      { damageType1: 'basic', skillType1: 'basicSkill' },
       'atk'
     ),
     dmgDazeAndAnomOverride(
@@ -96,7 +96,7 @@ const sheet = register(
       'basic',
       'BasicAttackSmashNBash',
       3,
-      { damageType1: 'basic', skillType: 'basicSkill' },
+      { damageType1: 'basic', skillType1: 'basicSkill' },
       'atk'
     ),
     // Dash Attack is physical
@@ -105,7 +105,7 @@ const sheet = register(
       'dodge',
       'DashAttackTremble',
       0,
-      { damageType1: 'dash', skillType: 'dodgeSkill' },
+      { damageType1: 'dash', skillType1: 'dodgeSkill' },
       'atk'
     ),
     // Per-hit buffs
@@ -114,7 +114,7 @@ const sheet = register(
       'basic',
       'BasicAttackSmashNBash',
       4,
-      { ...baseTag, damageType1: 'basic', skillType: 'basicSkill' },
+      { ...baseTag, damageType1: 'basic', skillType1: 'basicSkill' },
       'atk',
       undefined,
       core_dazeInc_
@@ -124,7 +124,7 @@ const sheet = register(
       'basic',
       'BasicAttackSmashNBash',
       5,
-      { ...baseTag, damageType1: 'basic', skillType: 'basicSkill' },
+      { ...baseTag, damageType1: 'basic', skillType1: 'basicSkill' },
       'atk',
       undefined,
       core_dazeInc_,
@@ -136,7 +136,7 @@ const sheet = register(
       'basic',
       'BasicAttackSmashNBash',
       6,
-      { ...baseTag, damageType1: 'basic', skillType: 'basicSkill' },
+      { ...baseTag, damageType1: 'basic', skillType1: 'basicSkill' },
       'atk',
       undefined,
       core_dazeInc_,
@@ -148,7 +148,7 @@ const sheet = register(
       'special',
       'EXSpecialAttackBoilingFurnace',
       1,
-      { ...baseTag, damageType1: 'exSpecial', skillType: 'specialSkill' },
+      { ...baseTag, damageType1: 'exSpecial', skillType1: 'specialSkill' },
       'atk',
       undefined,
       ...exSpecial_dazeInc_
@@ -158,7 +158,7 @@ const sheet = register(
       'special',
       'EXSpecialAttackBoilingFurnace',
       2,
-      { ...baseTag, damageType1: 'exSpecial', skillType: 'specialSkill' },
+      { ...baseTag, damageType1: 'exSpecial', skillType1: 'specialSkill' },
       'atk',
       undefined,
       ...exSpecial_dazeInc_

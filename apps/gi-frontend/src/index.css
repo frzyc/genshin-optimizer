@@ -13,6 +13,5 @@ code {
 }
 
 a {
-  font-family: monospace;
-  color: white;
+  color: inherit;
 }
