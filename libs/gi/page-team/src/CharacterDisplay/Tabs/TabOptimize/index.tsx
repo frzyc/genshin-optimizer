@@ -61,7 +61,7 @@ import {
   useNumWorkers,
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
-import type { UIData } from '@genshin-optimizer/gi/uidata'
+import type { CalcResult, UIData } from '@genshin-optimizer/gi/uidata'
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi/wr'
@@ -184,7 +184,8 @@ export default function TabBuild() {
   const { data } = useContext(DataContext)
   const compareData = useCompareData()
   const optimizationTargetNode =
-    optimizationTarget && objPathValue(data?.getDisplay(), optimizationTarget)
+    optimizationTarget &&
+    (objPathValue(data?.getDisplay(), optimizationTarget) as CalcResult)
   const isSM = ['xs', 'sm'].includes(useMediaQueryUp())
   const deferredBuildSetting = useDeferredValue(buildSetting)
   const teammateArtifactIds = useTeammateArtifactIds()
@@ -757,12 +758,29 @@ export default function TabBuild() {
         </BootstrapTooltip>
         <BootstrapTooltip
           placement="top"
-          title={!optimizationTarget ? t('selectTargetFirst') : ''}
+          title={
+            !optimizationTarget || optimizationTargetNode?.isEmpty ? (
+              <Typography>
+                {t('selectTargetFirst')}
+                {optimizationTargetNode?.isEmpty && (
+                  <>
+                    <br />
+                    {t('emptyTarget')}
+                  </>
+                )}
+              </Typography>
+            ) : (
+              ''
+            )
+          }
         >
           <span>
             <Button
               disabled={
-                !characterKey || !optimizationTarget || !optimizationTargetNode
+                !characterKey ||
+                !optimizationTarget ||
+                !optimizationTargetNode ||
+                optimizationTargetNode.isEmpty
               }
               color={generatingBuilds ? 'error' : 'success'}
               onClick={
