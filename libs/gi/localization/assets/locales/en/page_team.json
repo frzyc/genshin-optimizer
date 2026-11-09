@@ -13,7 +13,8 @@
     "importBtn": "Import",
     "error": {
       "verifi": "Data verification failed.",
-      "import": "Data Import failed."
+      "import": "Data Import failed.",
+      "multiOpt": "The data you have imported is a Multi-Opt, and not a Team. Please navigate to the desired Team + Character to import the Multi-Opt"
     }
   },
   "teamDelModal": {
