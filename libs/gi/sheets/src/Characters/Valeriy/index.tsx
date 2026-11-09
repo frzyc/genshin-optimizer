@@ -78,8 +78,8 @@ const dm = {
     maxMomentumGain: skillParam_gen.passive1[1][0],
   },
   passive2: {
-    radiance_dmg_: skillParam_gen.passive2[0][0],
-    nonRadiance_dmg_: skillParam_gen.passive2[1][0],
+    nonRadiance_dmg_: skillParam_gen.passive2[0][0],
+    radiance_dmg_: skillParam_gen.passive2[1][0],
     maxMomentum: 100,
   },
   constellation1: {
@@ -160,10 +160,11 @@ const chargedOffensive_electro_dmgInc = equal(
   chargedOffensive_electro_dmgIncDisp
 )
 
-const a4MomentumSmallArr = range(1, dm.passive2.maxMomentum)
+const a4MomentumSmallArr = range(5, dm.passive2.maxMomentum, 5)
 const a4MomentumBigArr = range(
-  1,
-  dm.passive2.maxMomentum + dm.constellation4.momentumLimitInc
+  5,
+  dm.passive2.maxMomentum + dm.constellation4.momentumLimitInc,
+  5
 )
 const [condA4MomentumPath, condA4Momentum] = cond(key, 'a4Momentum')
 const a4Momentum = lookup(
