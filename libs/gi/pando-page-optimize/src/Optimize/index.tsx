@@ -14,6 +14,7 @@ import {
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
 import {
+  pandoCardSx,
   useGiCalcContext,
   useResolvedOptTarget,
 } from '@genshin-optimizer/gi/formula-ui'

@@ -1,0 +1,34 @@
+{
+  "name": "Geheimes Sternorakel",
+  "description": {
+    "0": "Ein schweres Buch, das die internen Arbeitsregeln der zaristischen Energiegesellschaft festhält. Es enthält zahlreiche Einträge und blickt auf eine lange Geschichte zurück."
+  },
+  "passiveName": "Spur des Morgensterns",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den Kritischen Schaden um <cryo>24 %</cryo>. Verleiht dem Träger beim Anwenden der Elementarfähigkeit den Effekt „Kristalline Harmonie“: Erhöht die Elementarkunde 20 s lang um <cryo>48</cryo> Punkte. Verleiht dem Träger, wenn Truppenmitglieder in der Nähe während der Dauer eine Elementarreaktion auslösen, zusätzlich eine Stapelung „Gesetz der Fackel“ und erhöht die Elementarkunde um weitere <cryo>24</cryo> Punkte. Dieser Effekt ist bis zu 3-fach stapelbar und hält bis zum Ende des Effekts „Kristalline Harmonie“ oder bis zur erneuten Anwendung der Elementarfähigkeit an.",
+      "1": "Leuchten – Stellar-Supraleiter: Erhöht zudem den KSCH des durch den Träger verursachten Schadens der Reaktion Stellar-Supraleiter pro Stapelung „Gesetz der Fackel“ um <cryo>12 %</cryo>.",
+      "2": "Dieser Effekt kann auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+    },
+    "1": {
+      "0": "Erhöht den Kritischen Schaden um <cryo>30 %</cryo>. Verleiht dem Träger beim Anwenden der Elementarfähigkeit den Effekt „Kristalline Harmonie“: Erhöht die Elementarkunde 20 s lang um <cryo>60</cryo> Punkte. Verleiht dem Träger, wenn Truppenmitglieder in der Nähe während der Dauer eine Elementarreaktion auslösen, zusätzlich eine Stapelung „Gesetz der Fackel“ und erhöht die Elementarkunde um weitere <cryo>30</cryo> Punkte. Dieser Effekt ist bis zu 3-fach stapelbar und hält bis zum Ende des Effekts „Kristalline Harmonie“ oder bis zur erneuten Anwendung der Elementarfähigkeit an.",
+      "1": "Leuchten – Stellar-Supraleiter: Erhöht zudem den KSCH des durch den Träger verursachten Schadens der Reaktion Stellar-Supraleiter pro Stapelung „Gesetz der Fackel“ um <cryo>15 %</cryo>.",
+      "2": "Dieser Effekt kann auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+    },
+    "2": {
+      "0": "Erhöht den Kritischen Schaden um <cryo>36 %</cryo>. Verleiht dem Träger beim Anwenden der Elementarfähigkeit den Effekt „Kristalline Harmonie“: Erhöht die Elementarkunde 20 s lang um <cryo>72</cryo> Punkte. Verleiht dem Träger, wenn Truppenmitglieder in der Nähe während der Dauer eine Elementarreaktion auslösen, zusätzlich eine Stapelung „Gesetz der Fackel“ und erhöht die Elementarkunde um weitere <cryo>36</cryo> Punkte. Dieser Effekt ist bis zu 3-fach stapelbar und hält bis zum Ende des Effekts „Kristalline Harmonie“ oder bis zur erneuten Anwendung der Elementarfähigkeit an.",
+      "1": "Leuchten – Stellar-Supraleiter: Erhöht zudem den KSCH des durch den Träger verursachten Schadens der Reaktion Stellar-Supraleiter pro Stapelung „Gesetz der Fackel“ um <cryo>18 %</cryo>.",
+      "2": "Dieser Effekt kann auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+    },
+    "3": {
+      "0": "Erhöht den Kritischen Schaden um <cryo>42 %</cryo>. Verleiht dem Träger beim Anwenden der Elementarfähigkeit den Effekt „Kristalline Harmonie“: Erhöht die Elementarkunde 20 s lang um <cryo>84</cryo> Punkte. Verleiht dem Träger, wenn Truppenmitglieder in der Nähe während der Dauer eine Elementarreaktion auslösen, zusätzlich eine Stapelung „Gesetz der Fackel“ und erhöht die Elementarkunde um weitere <cryo>42</cryo> Punkte. Dieser Effekt ist bis zu 3-fach stapelbar und hält bis zum Ende des Effekts „Kristalline Harmonie“ oder bis zur erneuten Anwendung der Elementarfähigkeit an.",
+      "1": "Leuchten – Stellar-Supraleiter: Erhöht zudem den KSCH des durch den Träger verursachten Schadens der Reaktion Stellar-Supraleiter pro Stapelung „Gesetz der Fackel“ um <cryo>21 %</cryo>.",
+      "2": "Dieser Effekt kann auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+    },
+    "4": {
+      "0": "Erhöht den Kritischen Schaden um <cryo>48 %</cryo>. Verleiht dem Träger beim Anwenden der Elementarfähigkeit den Effekt „Kristalline Harmonie“: Erhöht die Elementarkunde 20 s lang um <cryo>96</cryo> Punkte. Verleiht dem Träger, wenn Truppenmitglieder in der Nähe während der Dauer eine Elementarreaktion auslösen, zusätzlich eine Stapelung „Gesetz der Fackel“ und erhöht die Elementarkunde um weitere <cryo>48</cryo> Punkte. Dieser Effekt ist bis zu 3-fach stapelbar und hält bis zum Ende des Effekts „Kristalline Harmonie“ oder bis zur erneuten Anwendung der Elementarfähigkeit an.",
+      "1": "euchten – Stellar-Supraleiter: Erhöht zudem den KSCH des durch den Träger verursachten Schadens der Reaktion Stellar-Supraleiter pro Stapelung „Gesetz der Fackel“ um <cryo>24 %</cryo>.",
+      "2": "Dieser Effekt kann auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+    }
+  }
+}

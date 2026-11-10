@@ -1,0 +1,184 @@
+{
+  "name": "Mitya",
+  "title": "Rules Set at Naught",
+  "description": "Seorang pakar spesialis energi yang jenius dan ahli dalam \"menghindari jadwal\".",
+  "constellationName": "Nodus Gordianus",
+  "auto": {
+    "name": "Chain Reaction",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 3 serangan beruntun yang mengakibatkan <electro>Electro DMG</electro>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina dan mengakibatkan <electro>Electro DMG Area</electro> ke area di depan setelah jeda singkat.",
+        "2": "Jika saat ini terdapat <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Detection Core: Overloaded</tooltip></strong> yang dihasilkan Mitya sendiri di medan pertempuran dan Mitya memiliki setidaknya satu <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacon</tooltip></strong>, maka akan melancarkan Charged Attack spesial <strong>Gradient Detonation</strong> yang tidak mengonsumsi Stamina: mengakibatkan satu kali <electro>Electro DMG Area</electro> ke area di depan dan akan terus mengonsumsi <strong>Gradient Beacon</strong> saat tombol ditahan. Setiap satu <strong>Gradient Beacon</strong> yang dikonsumsi akan mengakibatkan satu kali <electro>Electro DMG Area</electro> ke area di depan yang dianggap sebagai DMG reaksi Stellar-Conduct."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang ke tanah dari udara, menyerang musuh di jalur terjangan, dan mengakibatkan <electro>Electro DMG Area</electro> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Charged Attack",
+      "4": "Konsumsi Stamina Charged Attack",
+      "5": "DMG Selama Plunging",
+      "6": "DMG Plunging Attack Rendah/Tinggi",
+      "7": "DMG Gradient Detonation",
+      "8": "DMG Stellar-Conduct Gradient Detonation",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Principle: Variable Detection",
+    "description": {
+      "0": "Dengan daya ledak yang secara teori relatif aman, Mitya melakukan eksperimen dalam skala yang juga secara teori relatif aman. Mengakibatkan <electro>Electro DMG Area</electro> dan menciptakan <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Detection Core</tooltip></strong> dengan cara yang berbeda berdasarkan Mode Tekan atau Tahan.",
+      "1": "<br/>",
+      "2": "Menekan Elemental Skill sekali lagi dalam kurun waktu 6 detik setelah melancarkan Elemental Skill <strong>Principle: Variable Detection</strong> akan mengganti status <strong>Detection Core</strong>. Status Detection Core hanya dapat diganti dengan cara ini sekali setiap 1,5 detik."
+    },
+    "skillParams": {
+      "0": "DMG Skill (Mode Tekan)",
+      "1": "DMG Skill (Mode Tahan)",
+      "2": "DMG Core dalam Steady State",
+      "3": "DMG Core dalam Steady State saat Mengonsumsi Gradient Beacon",
+      "4": "DMG Ledakan Core dalam Steady State",
+      "5": "Durasi Detection Core",
+      "6": "Cooldown",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Analysis: Gradient Theory",
+    "description": {
+      "0": "Biarkan elemen meledak-ledak bagaikan inspirasi! Mengakibatkan <electro>Electro DMG Area</electro> dan menciptakan 3 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacon</tooltip></strong>."
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Gradient Beacon Diciptakan",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Baseline Stress Test",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Detection Core</tooltip></strong> yang diciptakan dari Elemental Skill <strong>Principle: Variable Detection</strong> akan diperkuat. Jika <strong>Detection Core</strong> yang diciptakan berada dalam kondisi:",
+      "1": [
+        "Steady State: Untuk setiap satu <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacon</tooltip></strong> yang dibawa, Elemental Mastery seluruh Karakter party terdekat meningkat 30 poin.",
+        "Overloaded State: Setelah seluruh Karakter party di sekitar memicu reaksi Stellar-Conduct, maka jumlah <strong>Gradient Beacon</strong> yang diperoleh akan meningkat: mendapatkan satu <strong>Gradient Beacon</strong> setiap 1,5 detik selama 6 detik."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Explosive Reagent: Safe Limits Exceeded",
+    "description": {
+      "0": "Durasi <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacon</tooltip></strong> bertambah menjadi 10 detik. Selain itu, CRIT Rate Mitya meningkat 5% selama 15 detik setelah menciptakan <strong>Gradient Beacon</strong>. Efek ini dapat ditumpuk sampai 4 lapis."
+    }
+  },
+  "passive3": {
+    "name": "Stellar Jubilee: Top-Secret Protocol",
+    "description": {
+      "0": "Saat Karakter dalam party memicu reaksi Superconduct, reaksi ini akan berubah menjadi reaksi Stellar-Conduct. Saat memicu reaksi Stellar-Conduct, reaksi ini tidak akan menciptakan <strong>Starlight Prism</strong>, melainkan: Setelah memicu reaksi Stellar-Conduct, akan tercipta satu <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacon</tooltip></strong> di sekitar setiap 1,5 detik selama 3 detik. Gradient Beacon ini dapat dibawa oleh Mitya dan mengubah area di sekitarnya menjadi <strong>Polestar Field</strong> yang lebih luas. Memicu reaksi Stellar-Conduct lagi akan memperbarui durasi dari efek-efek di atas.",
+      "1": "Selain itu, DMG dasar reaksi Stellar-Conduct yang diakibatkan seluruh Karakter sekitar dalam party akan meningkat berdasarkan Elemental Mastery Mitya: Setiap poin Elemental Mastery akan meningkatkan DMG dasar reaksi Stellar-Conduct sebesar 0,028%, hingga maksimum 14%. Saat berada di dalam <strong>Polestar Field</strong>, Mitya juga akan memasuki status <strong>Radiance: Stellar-Conduct</strong>."
+    }
+  },
+  "passive": {
+    "name": "Energy Catalysis",
+    "description": {
+      "0": "Saat terdapat batu-batuan yang dapat dihancurkan di sekitar, <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Detection Core: Steady State</tooltip></strong> dapat membersihkan batu-batuan ini dengan cepat.",
+      "1": "Selain itu, saat Mitya berada dalam party, pembuatan <strong>Prime Ice Construct: Sumber Kehangatan Sederhana</strong> tidak mengonsumsi Kresnik Energy."
+    }
+  },
+  "constellation1": {
+    "name": "The Observer Seeking What Is Missing",
+    "description": {
+      "0": "Batas <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacon</tooltip></strong> yang bisa dibawa meningkat menjadi 5. Saat melancarkan Elemental Skill <strong>Principle: Variable Detection</strong>, akan ada 1 <strong>Gradient Beacon</strong> tambahan yang tercipta.",
+      "1": "Selama <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Detection Core</tooltip></strong> ada, CRIT DMG Karakter aktif sendiri dalam party meningkat sebesar 40%.",
+      "2": "Selain itu, saat menciptakan <strong>Gradient Beacon</strong>, Mitya juga memulihkan 10 poin Energy. Efek ini dapat terpicu sekali setiap 8 detik."
+    }
+  },
+  "constellation2": {
+    "name": "The Matter That Slumbers Beyond Inertness",
+    "description": {
+      "0": "Selama <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Detection Core</tooltip></strong> ada, semua musuh yang berada di dalam <strong>Polestar Field</strong> akan mengalami pengurangan <cryo>Cryo RES</cryo> dan <electro>Electro RES</electro> sebesar 20%.",
+      "1": "Selain itu, jika <strong>Detection Core</strong> yang diciptakan adalah:",
+      "2": [
+        "Steady State: Elemental Mastery seluruh Karakter di sekitar dalam party meningkat 123 poin.",
+        "Overloaded State: Elemental Mastery Karakter aktif sendiri dalam party meningkat 234 poin."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "The Knotted String of Invariant Topology",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <tooltip ns=char_Mitya_gen baseKey18=skill><strong>Principle: Variable Detection</strong></tooltip>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "The Isotopes Born of Decay",
+    "description": {
+      "0": "Saat <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Detection Core</tooltip></strong> yang diciptakan oleh Mitya sendiri berada di medan pertempuran, <strong>Detection Core</strong> akan mengakibatkan <electro>Electro DMG Area</electro> terhadap musuh di sekitarnya sebesar 300% Elemental Mastery Mitya untuk setiap 5 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacon</tooltip></strong> yang dikonsumsi. DMG ini dianggap sebagai DMG reaksi Stellar-Conduct."
+    }
+  },
+  "constellation5": {
+    "name": "The Periodic Law That Orders All",
+    "description": {
+      "0": "Meningkatkan 3 level Normal Attack <tooltip ns=char_Mitya_gen baseKey18=normal><strong>Chain Reaction</strong></tooltip>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Elemental Transition at the Gate of Reason",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Detection Core</tooltip></strong> diperkuat. Jika <strong>Detection Core</strong> yang diciptakan berada dalam:",
+      "1": [
+        "Steady State: <strong>Detection Core</strong> mengakibatkan 115% dari DMG aslinya.",
+        "Overloaded State: Saat mengonsumsi <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacon</tooltip></strong>, ada 34% kemungkinan untuk menciptakan satu <strong>Gradient Beacon</strong> yang baru."
+      ],
+      "2": "Selain itu, DMG reaksi Stellar-Conduct yang diakibatkan oleh seluruh Karakter di sekitar dalam party <strong><tooltip ns=tooltips_gen baseKey18=11190007 values=[]>bertumbuh</tooltip></strong> 20%."
+    }
+  }
+}

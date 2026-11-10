@@ -1,0 +1,172 @@
+{
+  "name": "Valeriy",
+  "title": "Fortezza folgorante",
+  "description": "Il comandante del Battaglione degli incarichi speciali. Un soldato capace sia di proteggere le personalità di rilievo che di garantire l'esecuzione puntuale delle operazioni.",
+  "constellationName": "Ursus Magnus",
+  "auto": {
+    "name": "Spada e scudo",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra fino a 3 colpi di spada consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per balzare in avanti e colpire violentemente il terreno, infliggendo DAN fisici agli avversari nelle vicinanze.",
+        "2": "Quando Valeriy possiede almeno 40 punti di <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Slancio d'impatto</tooltip></strong>, li consuma <strong></strong> tutti per eseguire l'attacco caricato speciale <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Mortaio a tiro diretto: Bombardamento ravvicinato</tooltip></strong>."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto.<tooltip ns=tooltips_gen baseKey18=11370002 values=[]></tooltip>"
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da ATT caricato",
+      "4": "DAN da Mortaio a tiro diretto: Bombardamento ravvicinato",
+      "5": "Costo vigore attacco caricato",
+      "6": "Bonus DAN da Electro",
+      "7": "Bonus DAN da Astroconduzione",
+      "8": "Accumuli Direttiva d'assalto",
+      "9": "Durata Direttiva d'assalto",
+      "10": "DAN da ATT in picchiata",
+      "11": "DAN da ATT in picchiata basso/alto",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Difesa attiva: Baluardo d'attacco",
+    "description": {
+      "0": "Valeriy imbraccia il suo cannone-scudo e carica in avanti, infliggendo <electro>DAN da Electro ad area</electro>, ottenendo 40 punti di <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Slancio d'impatto</tooltip></strong> e generando uno Scudo supercarico.",
+      "1": "L'assorbimento DAN dello Scudo supercarico è proporzionale all'ATT di Valeriy e ha un'efficienza di assorbimento pari a un 250% contro i <electro></electro>DAN da Electro<electro></electro>."
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Assorbimento DAN scudo",
+      "2": "Durata scudo",
+      "3": "TdR",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Fuoco concentrato: Raffica fulminante",
+    "description": {
+      "0": "Infligge <electro>DAN da Electro ad area</electro> agli avversari nelle vicinanze e spara in aria una <strong>Granata folgorante</strong>. Quest'ultima si frammenta in una raffica di proiettili, che precipitano sugli avversari vicini infliggendo <electro>DAN da Electro ad area</electro>."
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da Granata folgorante",
+      "2": "Durata",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Avanzata con fuoco di copertura",
+    "description": {
+      "0": "Mentre le <strong>Granate folgoranti</strong> del suo Tripudio elementale <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>Fuoco concentrato: Raffica fulminante</tooltip></strong> precipitano, Valeriy ottiene 5 punti di <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Slancio d'impatto</tooltip></strong> ogni volta che un altro personaggio attivo vicino del gruppo colpisce un nemico con un attacco di <electro>Electro</electro>. In questo modo, può ottenere fino a 80 punti di <strong>Slancio d'impatto</strong> dopo ogni utilizzo del suo Tripudio elementale."
+    }
+  },
+  "passive2": {
+    "name": "Oltre la breccia",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11370002 values=[]>Direttiva d'assalto</tooltip></strong> viene potenziato in base ai punti di <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Slancio d'impatto</tooltip></strong> consumati quando Valeriy esegue il suo attacco caricato speciale <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Mortaio a tiro diretto: Bombardamento ravvicinato</tooltip></strong>. Ogni punto consumato aumenta ulteriormente il bonus DAN fornito da <strong>Direttiva d'assalto</strong>.",
+      "1": [
+        " Se Valeriy è nello stato di <strong>Splendore: Astroconduzione</strong>, ogni punto di <strong>Slancio d'impatto</strong> consumato aumenta il suddetto bonus DAN di uno 0,9% dell'ATT di Valeriy.",
+        " Se Valeriy non è nello stato di <strong>Splendore: Astroconduzione</strong>, ogni punto di <strong>Slancio d'impatto</strong> consumato aumenta il suddetto bonus DAN di uno 0,3% dell'ATT di Valeriy."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Condizionamento glaciale",
+    "description": {
+      "0": "Valeriy entra nello stato di <strong>Splendore: Astroconduzione</strong> quando si trova all'interno di un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo astropolare</strong></tooltip>."
+    }
+  },
+  "passive": {
+    "name": "Intelligence operativa della tundra",
+    "description": {
+      "0": "Ottiene un 25% in più di ricompense quando intraprende una spedizione a Snezhnaya (esclusa Nod-Krai) per 20 ore."
+    }
+  },
+  "constellation1": {
+    "name": "Cadenza del fuoco di soppressione",
+    "description": {
+      "0": "L'energia elementale di Valeriy si ripristina di 6 dopo aver utilizzato l'attacco caricato speciale <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Mortaio a tiro diretto: Bombardamento ravvicinato</tooltip></strong>. Quando esegue il suddetto attacco caricato speciale, per ogni 10 punti di <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Slancio d'impatto</tooltip></strong> consumati oltre i 40, l'energia elementale si rigenera di 1,5 punti aggiuntivi. In questo modo, è possibile rigenerare fino a 15 di energia elementale ogni volta che Valeriy esegue <strong>Mortaio a tiro diretto: Bombardamento ravvicinato</strong>. L'effetto può attivarsi una volta ogni 15 s.",
+      "1": "In più, ogni volta che Valeriy entra in un combattimento, la prima volta che usa la sua abilità elementale <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Difesa attiva: Baluardo d'attacco</tooltip></strong> ottiene una quantità aggiuntiva di <strong>Slancio d'impatto</strong> pari a un 150% della quantità ottenuta normalmente."
+    }
+  },
+  "constellation2": {
+    "name": "Carica all'unisono",
+    "description": {
+      "0": "Tutti i membri del gruppo nelle vicinanze ottengono 100 di maestria elementale per 18 s dopo che Valeriy ha usato la sua abilità elementale <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Difesa attiva: Baluardo d'attacco</tooltip></strong>.",
+      "1": "Inoltre, mentre è protetto da uno Scudo supercarico, se Valeriy ha già il massimo di <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Slancio d'impatto</tooltip></strong>, qualsiasi ulteriore punto di <strong>Slancio d'impatto</strong> che otterrebbe viene convertito in assorbimento DAN aggiuntivo per lo scudo. Ogni punto di <strong>Slancio d'impatto</strong> in eccesso aumenta l'assorbimento DAN dello Scudo supercarico di una quantità pari a un 8% dell'ATT di Valeriy. In questo modo, è possibile convertire fino a 20 punti di <strong>Slancio d'impatto</strong> in eccesso."
+    }
+  },
+  "constellation3": {
+    "name": "Vigilanza in prossimità",
+    "description": {
+      "0": "Aumenta di 3 il livello dell'attacco normale <strong><tooltip ns=char_Valeriy_gen baseKey18=normal>Tattiche di guardia: Spada e scudo</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Tempra incrollabile",
+    "description": {
+      "0": "Il limite di <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Slancio d'impatto</tooltip></strong> aumenta di 30 e la sua efficienza di carica di un 30%.",
+      "1": "Inoltre, il talento d'ascensione <strong><tooltip ns=char_Valeriy_gen baseKey18=passive1>Avanzata con fuoco di copertura</tooltip></strong> viene potenziato: la quantità massima di <strong>Slancio d'impatto</strong> che è possibile ottenere da questo talento dopo aver usato il Tripudio elementale è di 104. Per accedere a quest'effetto, è necessario sbloccare il talento d'ascensione <strong>Avanzata con fuoco di copertura</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Risolutezza per dividere e distruggere",
+    "description": {
+      "0": "Aumenta di 3 il livello dell'abilità elementale <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Difesa attiva: Baluardo d'attacco</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sfondamento delle linee nemiche",
+    "description": {
+      "0": "L'attacco caricato speciale <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Mortaio a tiro diretto: Bombardamento ravvicinato</tooltip></strong> e le <strong>Granate folgoranti</strong> del Tripudio elementale <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>Fuoco concentrato: Raffica fulminante</tooltip></strong> vengono potenziati: i loro DAN aumentano di un 100% e i <electro>DAN da Electro</electro> subiti dagli avversari colpiti hanno un 10% di tasso di CRIT aumentato per 7 s. Se i <electro>DAN da Electro</electro> subiti sono DAN da reazione di Astroconduzione, anche i rispettivi DAN da CRIT aumentano di un 40%."
+    }
+  }
+}

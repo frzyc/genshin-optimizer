@@ -21,8 +21,8 @@ import { isValidElement } from 'react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { tagFieldSubset } from './char/tagFieldMap'
 import { talentSheetElement, talentSheetElementIcon } from './char/util'
-import { TagLabel } from './components/TagLabel'
 import { FullTagDisplay, TagDisplay } from './components/TagDisplay'
+import { TagLabel } from './components/TagLabel'
 import { formulaText } from './formulaText'
 import {
   catalogListingDisplayTitle,

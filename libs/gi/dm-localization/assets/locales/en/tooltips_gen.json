@@ -471,11 +471,66 @@
       "0": "When Stellar-Conduct is triggered, the surrounding area will transform into a <strong>Polestar Field</strong> for a short period of time, and when inside a Polestar Field, certain characters will enter the <strong>Radiance: Stellar-Conduct</strong> state, which grants various skill buffs."
     }
   },
+  "11360001": {
+    "name": "Gradient Beacons",
+    "description": {
+      "0": "When Mitya is in the party and a Stellar-Conduct reaction is triggered, a <strong>Gradient Beacon</strong> that lasts for 6s will be created instead of a <strong>Starlight Prism</strong>. Mitya can consume <strong>Gradient Beacons</strong> to trigger various effects.",
+      "1": "<strong>Gradient Beacons</strong> follow the active character and transform a larger nearby area into a <strong>Polestar Field</strong> when a <strong>Gradient Beacon</strong> is created. Mitya can have multiple <strong>Gradient Beacons</strong>, with an initial maximum of 4. Creating a <strong>Gradient Beacon</strong> will reset the duration of all <strong>Gradient Beacons</strong>."
+    }
+  },
+  "11360002": {
+    "name": "Detection Core",
+    "description": {
+      "0": "An energy device Mitya creates after using his Elemental Skill. Tapping it creates a Core in <strong>Steady State</strong>, while holding it creates an <strong>Overloaded</strong> core.",
+      "1": "<br/>",
+      "2": "<strong>Detection Core: Steady State</strong>",
+      "3": [
+        "Continuously follows nearby opponents and intermittently deals <electro>AoE Electro DMG</electro>;",
+        "When Mitya has reached the maximum number of <strong>Gradient Beacons</strong> he can have, the device will consume any newly generated <strong>Gradient Beacon</strong> and deal <electro>AoE Electro DMG</electro> that is considered Stellar-Conduct reaction DMG;",
+        "When its duration ends or another <strong>Detection Core</strong> is created, the device will consume all <strong>Gradient Beacons</strong> Mitya has and deal <electro>AoE Electro DMG</electro> that is considered Stellar-Conduct reaction DMG based on the number consumed."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Detection Core: Overloaded</strong>",
+      "6": [
+        "While this device is present and Mitya has at least 1 <strong>Gradient Beacon</strong>, he can perform the special Charged Attack <strong>Gradient Detonation</strong> without consuming Stamina."
+      ]
+    }
+  },
+  "11370001": {
+    "name": "Direct-Fire Mortar: Point-Blank Bombardment",
+    "description": {
+      "0": "Valeriy's special Charged Attack. Using a Charged Attack while he has at least 40 <strong>Impact Momentum</strong> consumes all <strong>Impact Momentum</strong> to unleash this special Charged Attack instead, dealing <electro>AoE Electro DMG</electro> in front of him and granting 15 stacks of <strong>Offensive Directive</strong>.",
+      "1": "When this special Charged Attack is used again, the <strong>Offensive Directive</strong> stack count will be refreshed.",
+      "2": "Within 0.8s after using the Elemental Skill <strong>Active Defense: Bastion Charge</strong> or the Elemental Burst <strong>Focused Fire: Lightning Salvo</strong>, if Valeriy has at least 40 <strong>Impact Momentum</strong>, the next Normal Attack he uses will be converted to the special Charged Attack <strong>Direct-Fire Mortar: Point-Blank Bombardment</strong>."
+    }
+  },
+  "11370002": {
+    "name": "Offensive Directive",
+    "description": {
+      "0": "A special effect Valeriy gains after performing the special Charged Attack <strong>Direct-Fire Mortar: Point-Blank Bombardment</strong>. It increases different types of <electro>Electro DMG</electro> depending on whether Valeriy is in the <strong>Radiance: Stellar-Conduct</strong> state. If Valeriy is:",
+      "1": [
+        "In the <strong>Radiance: Stellar-Conduct</strong> state: When a nearby active character in the party deals <electro>Electro DMG</electro> considered Stellar-Conduct reaction DMG to an opponent with a Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, or Elemental Burst, 1 stack of <strong>Offensive Directive</strong> is consumed to increase that DMG, with the increase based on Valeriy's ATK;",
+        "Not in the <strong>Radiance: Stellar-Conduct</strong> state: When a nearby active character in the party deals <electro>Electro DMG</electro> to an opponent with a Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, or Elemental Burst, 1 stack of <strong>Offensive Directive</strong> is consumed to increase that DMG, with the increase based on Valeriy's ATK."
+      ],
+      "2": "When a single instance of <electro>Electro DMG</electro> hits multiple opponents simultaneously, <strong>Offensive Directive</strong> stacks are consumed based on the number of opponents hit."
+    }
+  },
+  "11370003": {
+    "name": "Impact Momentum",
+    "description": {
+      "0": "A special energy Valeriy uses to enhance his combat capabilities. Its initial maximum is 100. When he has at least 40 <strong>Impact Momentum</strong>, he can perform the special Charged Attack <strong>Direct-Fire Mortar: Point-Blank Bombardment</strong>.",
+      "1": "Valeriy can gain <strong>Impact Momentum</strong> in the following ways:",
+      "2": [
+        "By using his Elemental Skill <strong>Active Defense: Bastion Charge</strong>;",
+        "After unlocking the Ascension Talent \"Advance With the Creeping Barrage,\" while his Elemental Burst <strong>Focused Fire: Lightning Salvo</strong> is active, when a nearby active character in the party hits an opponent with an <electro>Electro</electro> attack."
+      ]
+    }
+  },
   "11400001": {
     "name": "Lead Vocal",
     "description": {
       "0": "When the party's currently active character deals <hydro>Hydro DMG</hydro> or <cryo>Cryo DMG</cryo> with a Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, or Elemental Burst, 1 stack of \"Lead Vocal\" is consumed. This in turn increases the DMG dealt. However, if a Wandering Vortex is present on the field or during the 5s following a Wandering Vortex explosion, this effect will only trigger when the character deals Stellar Swirl reaction DMG.",
-      "1": "Every 1000 Max HP Vodyanitsa has in excess of 40000 will increase the Stellar Swirl reaction DMG from the above effect by 260, as well as <hydro>Hydro DMG</hydro> and <cryo>Cryo DMG</cryo> dealt by 140. Stellar Swirl reaction DMG dealt can be increased by a maximum of 6500 while <hydro>Hydro DMG</hydro> and <cryo>Cryo DMG</cryo> can be increased by a maximum of 3500 in this way."
+      "1": "Every 1000 Max HP Vodyanitsa has in excess of {PARAM#P1402201|3S1:I} will increase the Stellar Swirl reaction DMG from the above effect by 260, as well as increase <hydro>Hydro DMG</hydro> and <cryo>Cryo DMG</cryo> dealt by 140. Stellar Swirl reaction DMG dealt can be increased by a maximum of {PARAM#P1402201|6S1:I}, while <hydro>Hydro DMG</hydro> and <cryo>Cryo DMG</cryo> can be increased by a maximum of {PARAM#P1402201|7S1:I} in this way."
     }
   },
   "11400002": {
@@ -499,7 +554,7 @@
   "11430002": {
     "name": "Sword Essence",
     "description": {
-      "0": "The energy required to use the special Elemental Skill <strong>Windborne Sword</strong>while in the <strong>Armed for Action</strong> mode.",
+      "0": "The energy required to use the special Elemental Skill <strong>Windborne Sword</strong> while in the <strong>Armed for Action</strong> mode.",
       "1": "Vesna can accumulate Sword Essence in the following ways:",
       "2": [
         " By performing a Normal Attack, Charged Attack, or Plunging attack while in the <strong>Armed for Action</strong> mode, or by unleashing <strong>Windborne Sword: Transpose</strong> from the Constellation <strong>Unwavering Ardor</strong>; ",

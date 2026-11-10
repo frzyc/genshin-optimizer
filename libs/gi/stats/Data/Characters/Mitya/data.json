@@ -1,0 +1,68 @@
+{
+  "key": "Mitya",
+  "ele": "electro",
+  "weaponType": "catalyst",
+  "birthday": {
+    "month": 2,
+    "day": 8
+  },
+  "rarity": 5,
+  "lvlCurves": [
+    {
+      "key": "hp",
+      "base": 905.654,
+      "curve": "GROW_CURVE_HP_S5"
+    },
+    {
+      "key": "atk",
+      "base": 20.482,
+      "curve": "GROW_CURVE_ATTACK_S5"
+    },
+    {
+      "key": "def",
+      "base": 61.6249,
+      "curve": "GROW_CURVE_HP_S5"
+    }
+  ],
+  "ascensionBonus": {
+    "hp": [
+      0,
+      776.5164,
+      1328.2517,
+      2063.899,
+      2615.6343,
+      3167.3696,
+      3719.105
+    ],
+    "def": [
+      0,
+      52.839,
+      90.3825,
+      140.4405,
+      177.984,
+      215.5275,
+      253.071
+    ],
+    "atk": [
+      0,
+      17.56018,
+      30.03715,
+      46.67311,
+      59.15008,
+      71.62705,
+      84.10402
+    ],
+    "critDMG_": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ]
+  },
+  "baseStats": {
+    "eleMas": 100
+  }
+}

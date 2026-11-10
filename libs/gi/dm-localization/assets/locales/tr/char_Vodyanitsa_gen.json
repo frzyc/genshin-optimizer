@@ -131,7 +131,7 @@
   "constellation1": {
     "name": "İhtişamlı Sular",
     "description": {
-      "0": "Vodyanitsa, <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Geçmiş Çağların Şarkısı</tooltip></strong> etkisinin iyileştirmesini her tetiklediğinde 5 saniyeliğine yakındaki grup üyelerinin Saldırısı, Vodyanitsa'nın Maks. Canının %0,8'i kadar artar."
+      "0": "Vodyanitsa, <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Geçmiş Çağların Şarkısının</tooltip></strong> iyileştirme etkisini her tetiklediğinde 5 saniyeliğine yakındaki grup üyelerinin Saldırısı, Vodyanitsa'nın Maks. Canının %0,8'i kadar artar."
     }
   },
   "constellation2": {

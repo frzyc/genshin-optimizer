@@ -48,9 +48,9 @@ import type { ReactNode } from 'react'
 import { Suspense, useCallback, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useNavigate, useParams } from 'react-router-dom'
+import { CharacterOptDisplay } from './CharacterOptDisplay'
 import { OptTargetCommandDialog } from './command/OptTargetCommandDialog'
 import { useOptimizeShortcuts } from './command/useOptimizeShortcuts'
-import { CharacterOptDisplay } from './CharacterOptDisplay'
 import {
   OptimizePageProvider,
   useOptimizePage,

@@ -446,6 +446,7 @@ const inputPremodKeyToGroupMap: Record<InputPremodKey, GroupKey> = {
   lunarcrystallize_reactionDmgInc: 'elem_dmgInc',
   stellarconduct_critRate_: 'reaction_crit',
   stellarconduct_critDMG_: 'reaction_crit',
+  stellarconduct_electro_critDMG_: 'elem_crit',
   stellarconduct_dmgInc: 'elem_dmgInc',
   stellarconduct_directDmgInc: 'elem_dmgInc',
   stellarconduct_reactionDmgInc: 'elem_dmgInc',

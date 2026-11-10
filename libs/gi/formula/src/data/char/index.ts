@@ -68,6 +68,7 @@ import Lynette from './Lynette'
 import Lyney from './Lyney'
 import Mavuika from './Mavuika'
 import Mika from './Mika'
+import Mitya from './Mitya'
 import Mona from './Mona'
 import Mualani from './Mualani'
 import Nahida from './Nahida'
@@ -105,6 +106,7 @@ import TravelerElectro from './TravelerElectro'
 import TravelerGeo from './TravelerGeo'
 import TravelerHydro from './TravelerHydro'
 import TravelerPyro from './TravelerPyro'
+import Valeriy from './Valeriy'
 import Varesa from './Varesa'
 import Varka from './Varka'
 import Venti from './Venti'
@@ -198,6 +200,7 @@ const data: TagMapNodeEntries[] = [
   Lyney,
   Mavuika,
   Mika,
+  Mitya,
   Mona,
   Mualani,
   Nahida,
@@ -228,6 +231,7 @@ const data: TagMapNodeEntries[] = [
   Tartaglia,
   Thoma,
   Tighnari,
+  Valeriy,
   Varesa,
   Varka,
   Venti,

@@ -1,0 +1,172 @@
+{
+  "name": "Valeriy",
+  "title": "Bastião Fulminante",
+  "description": "Comandante do Batalhão de Missões Especiais. Um soldado habilidoso em proteger pessoas importantes e manter operações em progresso.",
+  "constellationName": "Ursus Magnus",
+  "auto": {
+    "name": "Ofensiva de Escudo e Espada",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza até 3 golpes consecutivos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para saltar em frente, golpeando o chão e causando Dano Físico contra os inimigos próximos.",
+        "2": "Quando Valeriy possuir pelo menos 40 de <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Energia de Choque</tooltip></strong>, consumirá tudo de <strong>Energia de Choque</strong> para realizar o Ataque Carregado especial <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Disparo de Morteiro: Bombardeio de Curta Distância</tooltip></strong>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.<tooltip ns=tooltips_gen baseKey18=11370002 values=[]></tooltip>"
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano de Ataque Carregado",
+      "4": "Dano de Disparo de Morteiro: Bombardeio de Curta Distância",
+      "5": "Consumo de Stamina de Ataque Carregado",
+      "6": "Bônus de Dano Electro",
+      "7": "Bônus de Dano de Supercondutor Estelar",
+      "8": "Acúmulos de Ordem de Ataque",
+      "9": "Duração de Ordem de Ataque",
+      "10": "Dano Durante a Queda",
+      "11": "Dano de Queda de Baixa/Alta Altitude",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Defesa de Ofensiva: Ataque Relâmpago da Fortaleza",
+    "description": {
+      "0": "Ergue o escudo e avança em frente, causando <electro>Dano Electro em AdE</electro>, obtendo 40 de <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Energia de Choque</tooltip></strong> e criando seu Escudo Eletrificado.",
+      "1": "A absorção de Dano do Escudo Eletrificado é baseada no ATQ de Valeriy e possui 250% de eficácia contra <electro>Dano Electro</electro>."
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Absorção de Dano do Escudo",
+      "2": "Duração do Escudo",
+      "3": "Tempo de Recarga",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Ponto de Fogo: Invasão Relâmpago",
+    "description": {
+      "0": "Causa <electro>Dano Electro em AdE</electro> contra os inimigos próximos, e dispara para o alto o <strong>Projétil Pesado Relampejante</strong>. O <strong>Projétil Pesado Relampejante</strong> se separará em vários projéteis que cairão para o chão, causando <electro>Dano Electro em AdE</electro>."
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano de Projétil Pesado Relampejante",
+      "2": "Duração",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Na Companhia de Balas",
+    "description": {
+      "0": "Na duração dos <strong>Projéteis Pesados Relampejantes</strong> que caem do Supremo <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>Ponto de Fogo: Invasão Relâmpago</tooltip></strong>, quando o ataque dos outros personagens ativos <electro>Electro</electro> atingirem um inimigo, Valeriy obtém 5 de <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Energia de Choque</tooltip></strong>. É possível obter até 80 de <strong>Energia de Choque</strong> por vez que lançar o Supremo dessa forma."
+    }
+  },
+  "passive2": {
+    "name": "Investida na Lacuna da Defesa",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11370002 values=[]>Ordem de Ataque</tooltip></strong> é fortalecida: baseado no consumo de <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Energia de Choque</tooltip></strong> ao lançar o Ataque Carregado Especial <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Disparo de Morteiro: Bombardeio de Curta Distância</tooltip></strong>, aumenta o Bônus de Dano de <strong>Ordem de Ataque</strong> para cada ponto de <strong>Energia de Choque consumido</strong>. Se Valeriy:",
+      "1": [
+        " Se estiver em <strong>Brilho Reluzente: Supercondutor Estelar</strong>: cada ponto de <strong>Energia de Choque</strong> consumido aumenta o Bônus de Dano de <strong>Ordem de Ataque</strong> em 0.9% do ATQ de Valeriy.",
+        " Se não estiver em <strong>Brilho Reluzente: Supercondutor Estelar</strong>: cada ponto de <strong>Energia de Choque</strong> aumenta o Bônus de Dano de <strong>Ordem de Ataque</strong> em 0.3% do ATQ de Valeriy."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Condicionamento Subzero",
+    "description": {
+      "0": "Valeriy entra no estado <strong>Brilho Reluzente: Supercondutor Estelar</strong> enquanto estiver dentro de um <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo da Estrela Polar</strong></tooltip>."
+    }
+  },
+  "passive": {
+    "name": "Inteligência sobre Operações na Tundra",
+    "description": {
+      "0": "Ganha 25% de recompensas a mais quando enviada numa Expedição em Snezhnaya (exceto Nod-Krai) por 20 horas."
+    }
+  },
+  "constellation1": {
+    "name": "Cadência do Fogo Supressor",
+    "description": {
+      "0": "Depois de realizar o Ataque Carregado especial <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Disparo de Morteiro: Bombardeio de Curta Distância</tooltip></strong>, regenera 6 de Energia Elemental para Valeriy. Regenera mais 1.5 de Energia Elemental para cada 10 pontos consumidos de <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Energia de Choque</tooltip></strong> acima de 40 ao realizar o Ataque Carregado especial. É possível regenerar até 15 de Energia Elemental para Valeriy por cada Ataque Carregado especial <strong>Disparo de Morteiro: Bombardeio de Curta Distância</strong>. Esse efeito pode ser desencadeado uma vez a cada 15s.",
+      "1": "Além disso, na primeira vez que Valeriy lançar sua Habilidade Elemental <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Defesa de Ofensiva: Ataque Relâmpago da Fortaleza</tooltip></strong> por vez que entrar em combate, obtém uma quantidade adicional de <strong>Energia de Choque</strong> equivalente a 150% da quantidade original."
+    }
+  },
+  "constellation2": {
+    "name": "Formação Acompanhante",
+    "description": {
+      "0": "Nos 18s após lançar a Habilidade Elemental <strong>Defesa de Ofensiva: Ataque Relâmpago da Fortaleza</strong>, aumenta a Proficiência Elemental de todos os membros próximos da equipe em 100.",
+      "1": "Além disso, se estiver sob a proteção do Escudo Eletrificado e se Valeriy já tiver alcançado o máximo de <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Energia de Choque</tooltip></strong>, ao ativar o efeito de obtenção de <strong>Energia de Choque</strong>, aumenta a absorção de Dano do Escudo Eletrificado. Cada 1 de <strong>Energia de Choque</strong> acima do máximo aumentam a absorção de Dano do Escudo Eletrificado em 8% do ATQ de Valeriy. É possível converter até 20 de <strong>Energia de Choque</strong> acima do máximo dessa forma."
+    }
+  },
+  "constellation3": {
+    "name": "Cautela de Combate Corpo-a-Corpo",
+    "description": {
+      "0": "Aumenta o nível do Ataque Normal <strong><tooltip ns=char_Valeriy_gen baseKey18=normal>Táticas Druzhina: Ofensiva de Escudo e Espada</tooltip></strong> em 3.",
+      "1": "Nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Resistência Destemida",
+    "description": {
+      "0": "Aumenta o máximo de <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Energia de Choque</tooltip></strong> em 30, e aumenta a chance de obter em 30%.",
+      "1": "Além disso, fortalece o efeito do Talento de Ascensão <strong><tooltip ns=char_Valeriy_gen baseKey18=passive1>Na Companhia de Balas</tooltip></strong>: é possível obter até 104 de <strong>Energia de Choque</strong> por vez que lançar o Supremo. É necessário desbloquear o Talento de Ascensão <strong>Na Companhia de Balas</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Determinação Destruidora",
+    "description": {
+      "0": "Aumenta o nível da Habilidade Elemental <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Defesa de Ofensiva: Ataque Relâmpago da Fortaleza</tooltip></strong> em 3 níveis.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Poder da Operação de Infiltração",
+    "description": {
+      "0": "O<strong>Projétil Pesado Relampejante</strong> do Ataque Carregado especial <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Disparo de Morteiro: Bombardeio de Curta Distância</tooltip></strong> e do Supremo <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>Ponto de Fogo: Invasão Relâmpago</tooltip></strong> é fortalecido: aumenta o Dano causado em 100%, e aumenta a Taxa CRIT em 10% do <electro>Dano Electro</electro> sofrido pelo inimigo por 7s após ele ser atingido. Se o <electro>Dano Electro</electro> for Dano de Supercondutor Estelar, aumenta o Dano CRIT em 40%."
+    }
+  }
+}

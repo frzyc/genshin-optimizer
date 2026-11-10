@@ -234,7 +234,7 @@ const dmgFormulas = {
       condA0StellarRadiance,
       'ss',
       stellarDmgNode(
-        subscript(input.total.autoIndex, dm.charged.beamStellarDmg, {
+        subscript(input.total.autoIndex, dm.charged.beamSsDmg, {
           unit: '%',
         }),
         'atk',

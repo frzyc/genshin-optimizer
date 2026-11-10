@@ -8,17 +8,17 @@ import { isPercentStat, type UnArray } from '@genshin-optimizer/common/util'
 import type { ElementWithPhyKey } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import type {
-  PandoStatFilterTag,
   PandoStatFilters,
+  PandoStatFilterTag,
 } from '@genshin-optimizer/gi/db'
 import {
   newPandoStatFilterTag,
+  type PandoStatFilterStatKey,
   pandoStatFilterStatKeys,
   pandoStatFilterStatQtKeys,
-  type PandoStatFilterStatKey,
 } from '@genshin-optimizer/gi/db'
 import { PandoOptConfigContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { TagDisplay, pandoCardSx } from '@genshin-optimizer/gi/formula-ui'
+import { pandoCardSx, TagDisplay } from '@genshin-optimizer/gi/formula-ui'
 import type { StatKey } from '@genshin-optimizer/gi/keymap'
 import { StatFilterTagToTag } from '@genshin-optimizer/gi/pando-solver'
 import { StatWithUnit } from '@genshin-optimizer/gi/ui'

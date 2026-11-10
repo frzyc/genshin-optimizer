@@ -1,8 +1,8 @@
 import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
+import { Settings } from '@mui/icons-material'
 import CalculateIcon from '@mui/icons-material/Calculate'
 import MenuIcon from '@mui/icons-material/Menu'
-import { Settings } from '@mui/icons-material'
 import {
   AppBar,
   Box,

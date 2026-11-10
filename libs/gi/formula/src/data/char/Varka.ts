@@ -3,11 +3,11 @@ import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   cmpGE,
   min,
+  type NumNode,
   prod,
+  type StrNode,
   subscript,
   sum,
-  type NumNode,
-  type StrNode,
 } from '@genshin-optimizer/pando/engine'
 import {
   allBoolConditionals,
@@ -19,9 +19,9 @@ import {
   ownBuff,
   percent,
   register,
+  type TagMapNodeEntries,
   team,
   teamBuff,
-  type TagMapNodeEntries,
 } from '../util'
 import { dataGenToCharInfo, dmg, entriesForChar, talentSubscript } from './util'
 

@@ -1,0 +1,184 @@
+{
+  "name": "미탸",
+  "title": "규칙 파괴자",
+  "description": "불세출의 에너지 전문가. 온갖 수단을 동원해 탈주를 시도하는 「땡땡이」의 대가이기도 하다",
+  "constellationName": "고르디우스의 매듭자리",
+  "auto": {
+    "name": "연쇄 반응",
+    "fields": {
+      "normal": {
+        "0": "<strong>일반 공격</strong>",
+        "1": "최대 3번 공격해 <electro>번개 원소 피해</electro>를 준다."
+      },
+      "charged": {
+        "0": "<strong>강공격</strong>",
+        "1": "일정 스태미나를 소모해 짧은 영창 후 전방의 구역에 <electro>번개 원소 범위 피해</electro>를 준다.",
+        "2": "현재 필드에 미탸 자신이 생성한 <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>탐지 융합로·과열</tooltip></strong>이 존재하고, 미탸가 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>융합 비콘</tooltip></strong>을 최소 1개 보유하고 있을 경우, 미탸는 강공격을 스태미나를 소모하지 않는 특수 강공격 <strong>융합 폭발</strong>로 전환해 발동한다: 전방 구역에 <electro>번개 원소 범위 피해</electro>를 1회 주며, 홀드 시 지속해서 <strong>융합 비콘</strong>을 소모한다. <strong>융합 비콘</strong>을 1개 소모할 때마다 전방 구역에 별 초전도 반응 피해로 간주되는 <electro>번개 원소 범위 피해</electro>를 1회 준다."
+      },
+      "plunging": {
+        "0": "<strong>낙하 공격</strong>",
+        "1": "공중에서 땅을 내려찍어 경로상의 적을 공격하고 착지 시 <electro>번개 원소 범위 피해</electro>를 준다"
+      }
+    },
+    "skillParams": {
+      "0": "1단 공격 피해",
+      "1": "2단 공격 피해",
+      "2": "3단 공격 피해",
+      "3": "강공격 피해",
+      "4": "강공격 스태미나 소모",
+      "5": "낙하 기간 피해",
+      "6": "저공/고공 추락 충격 피해",
+      "7": "융합 폭발 피해",
+      "8": "융합 폭발 별 초전도 피해",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "법칙·변수 탐지",
+    "description": {
+      "0": "이론상 비교적 안전한 양으로, 이론상 비교적 안전한 실험을 진행해 <electro>번개 원소 범위 피해</electro>를 주고, 짧은 터치 또는 홀드에 따라 각기 다른 방식으로 <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>탐지 융합로</tooltip></strong>를 생성한다.",
+      "1": "<br/>",
+      "2": "원소전투 스킬 <strong>법칙·변수 탐지</strong>를 발동한 후 6초 내에 다시 원소전투 스킬을 짧게 터치하면 <strong>탐지 융합로</strong>의 상태를 전환할 수 있다. 해당 방식을 통해 1.5초마다 상태를 최대 1회 전환할 수 있다"
+    },
+    "skillParams": {
+      "0": "짧은 터치 스킬 피해",
+      "1": "차지 스킬 피해",
+      "2": "안정 융합로 피해",
+      "3": "안정 융합로의 융합 비콘 소모 피해",
+      "4": "안정 융합로 폭발 피해",
+      "5": "탐지 융합로 지속 시간",
+      "6": "재사용 대기시간",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "해석·융합의 이치",
+    "description": {
+      "0": "원소를 영감처럼 폭발시켜 <electro>번개 원소 범위 피해</electro>를 주고, <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>융합 비콘</tooltip></strong>을 3개 생성한다"
+    },
+    "skillParams": {
+      "0": "스킬 피해",
+      "1": "융합 비콘 생성",
+      "2": "재사용 대기시간",
+      "3": "원소 에너지",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "내압 테스트",
+    "description": {
+      "0": "원소전투 스킬 <strong>법칙·변수 탐지</strong>가 생성한 <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>탐지 융합로</tooltip></strong>가 강화된다. 생성된 <strong>탐지 융합로</strong>가:",
+      "1": [
+        "안정: <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>융합 비콘</tooltip></strong>을 1개 보유할 때마다 주변에 있는 파티 내 모든 캐릭터의 원소 마스터리가 30pt 증가한다.",
+        "과열: 주변에 있는 파티 내 모든 캐릭터가 별 초전도 반응 발동 후 획득하는 <strong>융합 비콘</strong>의 개수 증가: 6초 동안 1.5초마다 <strong>융합 비콘</strong>을 1개 획득하는 것으로 변경된다"
+      ]
+    }
+  },
+  "passive2": {
+    "name": "불안정한 시약",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>융합 비콘</tooltip></strong>의 지속 시간이 10초로 증가한다. 또한, <strong>융합 비콘</strong> 생성 후 15초 동안 미탸의 치명타 확률이 5% 증가하며, 해당 효과는 최대 4스택까지 중첩된다"
+    }
+  },
+  "passive3": {
+    "name": "별빛 축복·기밀 협약",
+    "description": {
+      "0": "파티 내 캐릭터가 초전도 반응 발동 시, 별 초전도 반응 발동으로 전환된다. 별 초전도 반응 발동 시, <strong>별빛 결정</strong>을 생성하지 않고 대신 별 초전도 반응 발동 후 3초 동안 1.5초마다 근처에 미탸가 보유할 수 있는 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>융합 비콘</tooltip></strong>을 1개 생성하며, 그 주변의 더 넓은 구역을 <strong>극지의 별영역</strong>으로 변환한다. 다시 별 초전도 반응 발동 시, 상술한 효과의 지속 시간이 갱신된다.",
+      "1": "또한, 미탸의 원소 마스터리에 기반하여 주변에 있는 파티 내 모든 캐릭터가 주는 별 초전도 반응의 기본 피해를 증가시킨다: 원소 마스터리 1pt당 별 초전도 반응의 기본 피해가 0.028% 증가하며, 해당 방식을 통해 기본 피해가 최대 14% 증가한다. <strong>극지의 별영역</strong> 안에 있을 때, 미탸는 <strong>섬광·별 초전도</strong> 상태에 진입한다"
+    }
+  },
+  "passive": {
+    "name": "촉매",
+    "description": {
+      "0": "주변에 파괴 가능한 바위가 있을 때, <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>탐지 융합로·안정</tooltip></strong>을 통해 바위를 빠르게 제거할 수 있다.",
+      "1": "또한, 파티에 미탸가 있을 경우 <strong>순얼음 창조물·간이 열원</strong>을 생성할 때 크레스니크 에너지를 소모하지 않는다"
+    }
+  },
+  "constellation1": {
+    "name": "빈자리를 추적하는 관측자",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>융합 비콘</tooltip></strong>의 보유 상한이 5개로 증가한다. 원소전투 스킬 <strong>법칙·변수 탐지</strong> 발동 시, 추가로 1개의 <strong>융합 비콘</strong>을 생성한다.",
+      "1": "<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>탐지 융합로</tooltip></strong> 존재 기간 동안, 현재 필드 위에 있는 파티 내 자신의 캐릭터의 치명타 피해가 40% 증가한다.",
+      "2": "또한, <strong>융합 비콘</strong> 생성 시, 미탸 자신의 원소 에너지를 10pt 회복한다. 해당 효과는 8초마다 최대 1회 발동된다"
+    }
+  },
+  "constellation2": {
+    "name": "비활성 너머의 침묵",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>탐지 융합로</tooltip></strong> 존재 기간 동안, <strong>극지의 별영역</strong> 내 모든 적의 <cryo>얼음 원소 내성</cryo>과 <electro>번개 원소 내성</electro>이 20% 감소한다.",
+      "1": "또한, 생성된 <strong>탐지 융합로</strong>가:",
+      "2": [
+        "안정: 파티 내 주변에 있는 모든 캐릭터의 원소 마스터리가 123pt 증가한다.",
+        "과열: 현재 필드 위에 있는 파티 내 자신의 캐릭터의 원소 마스터리가 234pt 증가한다"
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "위상 불변의 매듭",
+    "description": {
+      "0": "원소전투 스킬 <tooltip ns=char_Mitya_gen baseKey18=skill><strong>법칙·변수 탐지</strong></tooltip>의 스킬 레벨+3",
+      "1": "최대 Lv.15까지 상승"
+    }
+  },
+  "constellation4": {
+    "name": "붕괴로 생성된 동위원소",
+    "description": {
+      "0": "필드에 미탸 자신이 생성한 <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>탐지 융합로</tooltip></strong>가 존재할 경우, <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>융합 비콘</tooltip></strong>을 5개 소모할 때마다 <strong>탐지 융합로</strong>가 주변의 적에게 1회의 별 초전도 반응 피해로 간주되는 <electro>번개 원소 범위 피해</electro>를 미탸 원소 마스터리의 300%만큼 준다"
+    }
+  },
+  "constellation5": {
+    "name": "만물을 배열하는 주기율",
+    "description": {
+      "0": "일반 공격 <tooltip ns=char_Mitya_gen baseKey18=normal><strong>연쇄 반응</strong></tooltip>의 스킬 레벨+3",
+      "1": "최대 Lv.15까지 상승"
+    }
+  },
+  "constellation6": {
+    "name": "원소 전이와 이치의 문",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>탐지 융합로</tooltip></strong>가 강화된다. 생성한 <strong>탐지 융합로</strong>가:",
+      "1": [
+        "안정: <strong>탐지 융합로</strong>가 기존의 115%에 해당하는 피해를 준다.",
+        "과열: <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>융합 비콘</tooltip></strong>을 소모할 때, 34%의 확률로 새로운 <strong>융합 비콘</strong>을 1개 생성한다."
+      ],
+      "2": "또한, 주변에 있는 파티 내 모든 캐릭터가 주는 별 초전도 반응 피해가 20% <strong><tooltip ns=tooltips_gen baseKey18=11190007 values=[]>승격</tooltip></strong>된다"
+    }
+  }
+}

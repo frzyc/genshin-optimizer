@@ -22,8 +22,8 @@ import { getCharStat } from '@genshin-optimizer/gi/stats'
 import { isValidElement } from 'react'
 import { joinCatalogRows } from '../catalogListing'
 import { TagDisplay } from '../components/TagDisplay'
-import { tagFieldSubset } from './tagFieldMap'
 import { getTagLabel, tagLabelStr } from '../tagLabel'
+import { tagFieldSubset } from './tagFieldMap'
 
 const DEFAULT_WEAPON_BY_TYPE: Record<WeaponTypeKey, WeaponKey> = {
   sword: 'DullBlade',

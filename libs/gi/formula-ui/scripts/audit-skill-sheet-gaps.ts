@@ -1,7 +1,7 @@
 /**
  * Find Pando UISheet skill sections missing WR skill damage formula rows.
  */
-import { readFileSync, readdirSync, writeFileSync } from 'node:fs'
+import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 // biome-ignore lint/style/noRestrictedImports: codegen reads formula source directly
 import { formulas } from '../../formula/src/meta'

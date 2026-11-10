@@ -1,0 +1,178 @@
+{
+  "name": "ミティヤ",
+  "title": "規律の虚無",
+  "description": "優秀なエネルギーの専門家。あの手この手で逃走を図る「おサボり」マスター。",
+  "constellationName": "ゴルディアスの結び目座",
+  "auto": {
+    "name": "連鎖反応",
+    "fields": {
+      "normal": {
+        "0": "<strong>通常攻撃</strong>",
+        "1": "最大3段の攻撃を行い、<electro>雷元素ダメージ</electro>を与える。"
+      },
+      "charged": {
+        "0": "<strong>重撃</strong>",
+        "1": "一定のスタミナを消費し、短い詠唱をした後、前方の敵に<electro>雷元素範囲ダメージ</electro>を与える。",
+        "2": "フィールド上にミティヤ自身が生成した<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>検知コア・オーバーロード</tooltip></strong>が存在し、かつミティヤが1つ以上の<strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>変形ビーコン</tooltip></strong>を所持している場合、ミティヤは代わりにスタミナを消費しない特殊重撃<strong>段階的爆破</strong>を繰り出す。<strong>段階的爆破</strong>は前方エリアに<electro>雷元素範囲ダメージ</electro>を1回与える。長押し中は継続して<strong>変形ビーコン</strong>を消費し、<strong>変形ビーコン</strong>を1つ消費するごとに、前方エリアに星電導反応ダメージと見なされる<electro>雷元素範囲ダメージ</electro>を1回与える。"
+      },
+      "plunging": {
+        "0": "<strong>落下攻撃</strong>",
+        "1": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に<electro>雷元素範囲ダメージ</electro>を与える。"
+      }
+    },
+    "skillParams": {
+      "0": "1段ダメージ",
+      "1": "2段ダメージ",
+      "2": "3段ダメージ",
+      "3": "重撃ダメージ",
+      "4": "重撃スタミナ消費",
+      "5": "落下期間のダメージ",
+      "6": "低空/高空落下攻撃ダメージ",
+      "7": "段階的爆破ダメージ",
+      "8": "段階的爆破星電導ダメージ",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "定律・変数検知",
+    "description": {
+      "0": "理論上比較的安全な当量で、理論上比較的安全な実験を適度に行い、<electro>雷元素範囲ダメージ</electro>を与える。さらに、一回押しと長押しによって異なる方法で<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>検知コア</tooltip></strong>を生成する。",
+      "1": "<br/>",
+      "2": "元素スキル<strong>定律・変数検知</strong>を発動してから6秒以内に再度元素スキルを一回押しすると、<strong>検知コア</strong>の状態を切り替えることができる。この方法で状態を切り替えることができるのは、1.5秒ごとに一回のみ。"
+    },
+    "skillParams": {
+      "0": "一回押しスキルダメージ",
+      "1": "長押しスキルダメージ",
+      "2": "安定状態コアダメージ",
+      "3": "安定状態コアの変形ビーコン消費時ダメージ",
+      "4": "安定状態コアの爆破ダメージ",
+      "5": "検知コア継続時間",
+      "6": "クールタイム",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "解析・変化ノ理",
+    "description": {
+      "0": "元素をインスピレーションのように爆発させよう！<electro>雷元素範囲ダメージ</electro>を与え、<strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>変形ビーコン</tooltip></strong>を3つ生成する。"
+    },
+    "skillParams": {
+      "0": "スキルダメージ",
+      "1": "生成する変形ビーコン",
+      "2": "クールタイム",
+      "3": "元素エネルギー",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "基準耐圧テスト",
+    "description": {
+      "0": "元素スキル<strong>定律・変数検知</strong>によって生成された<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>検知コア</tooltip></strong>が強化される。生成された<strong>検知コア</strong>の状態に応じて、以下の効果が発動する。",
+      "1": "・安定状態の場合、<strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>変形ビーコン</tooltip></strong>を1つ獲得するごとに、付近にいるチームのキャラクター全員の元素熟知+30。",
+      "2": "・オーバーロードの場合、付近にいるチームのキャラクターが星電導反応を起こした後に獲得できる<strong>変形ビーコン</strong>の数が増加し、6秒間、1.5秒ごとに<strong>変形ビーコン</strong>を1つ獲得するようになる。"
+    }
+  },
+  "passive2": {
+    "name": "臨界爆発性試薬",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>変形ビーコン</tooltip></strong>の継続時間が10秒まで延長される。さらに、<strong>変形ビーコン</strong>を生成してから15秒間、ミティヤの会心率+5%。この効果は最大4層まで重ね掛け可能。"
+    }
+  },
+  "passive3": {
+    "name": "星光の祝福・極秘プロトコル",
+    "description": {
+      "0": "チーム内のキャラクターが超電導反応を起こすと、星電導反応へと変わる。星電導反応を起こした時、<strong>スターライトプリズム</strong>は生成されず、代わりに星電導反応を起こしてから3秒間、周囲に1.5秒ごとにミティヤと共に移動する<strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>変形ビーコン</tooltip></strong>を1つ生成し、その付近のさらに広いエリアを<strong>極星フィールド</strong>にする。再び星超電導反応を起こすと、上記効果の継続時間がリセットされる。",
+      "1": "また、ミティヤの元素熟知1につき、付近にいるチームのキャラクターが起こす星電導反応の基礎ダメージ+0.028%。この方法でアップできる基礎ダメージは最大14%まで。<strong>極星フィールド</strong>内にいる時、ミティヤは<strong>輝映・星電導</strong>状態に入る。"
+    }
+  },
+  "passive": {
+    "name": "エネルギー活性触媒",
+    "description": {
+      "0": "周囲に破壊可能な岩が存在する場合、<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>検知コア・安定状態</tooltip></strong>で素早く岩を壊せる。",
+      "1": "また、ミティヤがチームにいる時、<strong>真氷創造物・簡易熱源</strong>を作る際にクルースニクエネルギーを消費しない。"
+    }
+  },
+  "constellation1": {
+    "name": "欠落の痕跡を追う観察者",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>変形ビーコン</tooltip></strong>の所持上限が5つにアップする。元素スキル<strong>定律・変数検知</strong>を発動した時、追加で<strong>変形ビーコン</strong>を1つ生成する。",
+      "1": "<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>検知コア</tooltip></strong>が存在している間、チーム内の自身のフィールド上キャラクターの会心ダメージ+40%。",
+      "2": "また、<strong>変形ビーコン</strong>を生成した時、ミティヤ自身の元素エネルギーを10回復する。この効果は8秒ごとに1回のみ発動可能。"
+    }
+  },
+  "constellation2": {
+    "name": "慣性の彼方に微睡むもの",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>検知コア</tooltip></strong>が存在している間、<strong>極星フィールド</strong>内にいるすべての敵の<cryo>氷元素耐性</cryo>と<electro>雷元素耐性</electro>-20%。",
+      "1": "また、生成した<strong>検知コア</strong>の状態に応じて以下の効果が発動する。",
+      "2": "・安定状態の場合、付近にいるチーム内キャラクター全員の元素熟知+123。",
+      "3": "・オーバーロードの場合、チーム内の自身のフィールド上キャラクターの元素熟知+234。"
+    }
+  },
+  "constellation3": {
+    "name": "不変なる位相の超弦理論",
+    "description": {
+      "0": "元素スキル<tooltip ns=char_Mitya_gen baseKey18=skill><strong>定律・変数検知</strong></tooltip>のスキルLv.+3。",
+      "1": "最大Lv.15まで。"
+    }
+  },
+  "constellation4": {
+    "name": "崩壊より生まれし同位体",
+    "description": {
+      "0": "フィールド上にミティヤ自身が生成した<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>検知コア</tooltip></strong>が存在する時、<strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>変形ビーコン</tooltip></strong>を5つ消費するたびに、<strong>検知コア</strong>は周囲の敵にミティヤの元素熟知の300%に相当する、星電導反応ダメージと見なされる<electro>雷元素範囲ダメージ</electro>を1回与える。"
+    }
+  },
+  "constellation5": {
+    "name": "万物の秩序定めし周期律",
+    "description": {
+      "0": "通常攻撃<tooltip ns=char_Mitya_gen baseKey18=normal><strong>連鎖反応</strong></tooltip>のスキルLv.+3。",
+      "1": "最大Lv.15まで。"
+    }
+  },
+  "constellation6": {
+    "name": "段階的元素跳躍の理の門",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>検知コア</tooltip></strong>が強化される。生成した<strong>検知コア</strong>の状態に応じて以下の効果が発動する。",
+      "1": "・安定状態の場合、<strong>検知コア</strong>は本来の115%のダメージを与える。",
+      "2": "・オーバーロードの場合、<strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>変形ビーコン</tooltip></strong>を消費する時、34%の確率で新たな<strong>変形ビーコン</strong>を1つ生成する。",
+      "3": "さらに、付近にいるチームのキャラクター全員の与える星電導反応ダメージが20%<strong><tooltip ns=tooltips_gen baseKey18=11190007 values=[]>向上</tooltip></strong>する。"
+    }
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "name": "Mitya",
+  "title": "Vạn Luật Hư Danh",
+  "description": "Chuyên gia năng lượng tài ba, bậc thầy \"trốn lịch trình\" đầy sáng tạo.",
+  "constellationName": "Cung Nữu Kết",
+  "auto": {
+    "name": "Phản Ứng Dây Chuyền",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 3 lần tấn công, gây <electro>Sát Thương Nguyên Tố Lôi</electro>."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, sau khi tụ lực, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> cho khu vực phía trước.",
+        "2": "Nếu trong trận hiện tại có <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Lõi Dò Tìm - Quá Tải</tooltip></strong> do bản thân Mitya tạo ra, và Mitya sở hữu ít nhất một <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Tín Hiệu Biến Đổi</tooltip></strong>, Mitya sẽ chuyển sang thực hiện Trọng Kích đặc biệt <strong>Bùng Nổ Biến Đổi</strong> không tiêu hao Thể Lực: Gây một lần <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> cho khu vực phía trước, và khi nhấn giữ sẽ liên tục tiêu hao <strong>Tín Hiệu Biến Đổi</strong>. Mỗi khi tiêu hao một <strong>Tín Hiệu Biến Đổi</strong>, đều sẽ gây một lần <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> được xem là sát thương phản ứng Tinh-Siêu Dẫn cho khu vực phía trước."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát thương lần 1",
+      "1": "Sát thương lần 2",
+      "2": "Sát thương lần 3",
+      "3": "Sát thương Trọng Kích",
+      "4": "Thể lực Trọng Kích tiêu hao",
+      "5": "Sát thương khi đáp",
+      "6": "Sát thương khi đáp từ độ cao thấp/cao",
+      "7": "Sát thương Bùng Nổ Biến Đổi",
+      "8": "Sát thương Tinh-Siêu Dẫn Bùng Nổ Biến Đổi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Quy Luật - Dò Tìm Biến Số",
+    "description": {
+      "0": "Sử dụng lượng tương đối an toàn về mặt lý thuyết, để tiến hành thử nghiệm ở mức độ vừa phải và tương đối an toàn về mặt lý thuyết, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>, đồng thời dựa trên nhấn hoặc nhấn giữ để tạo ra <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Lõi Dò Tìm</tooltip></strong> theo cách khác nhau.",
+      "1": "<br/>",
+      "2": "Trong 6s sau khi thi triển Kỹ Năng Nguyên Tố <strong>Quy Luật - Dò Tìm Biến Số</strong>, nhấn Kỹ Năng Nguyên Tố lần nữa có thể chuyển đổi trạng thái của <strong>Lõi Dò Tìm</strong>, mỗi 1.5s tối đa chuyển đổi trạng thái theo cách này một lần."
+    },
+    "skillParams": {
+      "0": "Sát thương nhấn kỹ năng",
+      "1": "Sát thương nhấn giữ kỹ năng",
+      "2": "Sát thương Lõi Ổn Định",
+      "3": "Sát thương Lõi Ổn Định tiêu hao Tín Hiệu Biến Đổi",
+      "4": "Sát thương Lõi Ổn Định phát nổ",
+      "5": "Lõi Dò Tìm duy trì",
+      "6": "CD",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Phân Tích - Nguyên Lý Biến Đổi",
+    "description": {
+      "0": "Hãy để nguyên tố bùng nổ như nguồn cảm hứng nào! Gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>, đồng thời tạo ra 3 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Tín Hiệu Biến Đổi</tooltip></strong>."
+    },
+    "skillParams": {
+      "0": "Sát thương kỹ năng",
+      "1": "Tạo ra Tín Hiệu Biến Đổi",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Thử Nghiệm Chịu Tải Tiêu Chuẩn",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Lõi Dò Tìm</tooltip></strong> được tạo ra từ Kỹ Năng Nguyên Tố <strong>Quy Luật - Dò Tìm Biến Số</strong> sẽ được cường hóa. Nếu <strong>Lõi Dò Tìm</strong> tạo ra là:",
+      "1": [
+        "Lõi Ổn Định: Với mỗi 1 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Tín Hiệu Biến Đổi</tooltip></strong> mang theo, đều sẽ tăng 30 điểm Tinh Thông Nguyên Tố cho tất cả nhân vật trong đội ở gần.",
+        "Lõi Quá Tải: Tất cả nhân vật trong đội ở gần sau khi kích hoạt phản ứng Tinh-Siêu Dẫn, số lượng <strong>Tín Hiệu Biến Đổi</strong> nhận được sẽ tăng lên: Đổi thành trong vòng 6s, mỗi 1.5s nhận 1 <strong>Tín Hiệu Biến Đổi</strong>."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Thuốc Thử Dễ Nổ Siêu Hạn",
+    "description": {
+      "0": "Thời gian duy trì <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Tín Hiệu Biến Đổi</tooltip></strong> tăng đến 10s. Ngoài ra, sau khi tạo ra <strong>Tín Hiệu Biến Đổi</strong>, Mitya tăng 5% Tỷ Lệ Bạo Kích trong 15s. Hiệu quả này cộng dồn tối đa 4 tầng."
+    }
+  },
+  "passive3": {
+    "name": "Chúc Phúc Tinh Tú - Giao Ước Tối Mật",
+    "description": {
+      "0": "Khi nhân vật trong đội kích hoạt phản ứng Siêu Dẫn, sẽ chuyển thành phản ứng Tinh-Siêu Dẫn. Khi kích hoạt phản ứng Tinh-Siêu Dẫn, sẽ không tạo ra <strong>Pha Lê Tinh Huy</strong>, mà sẽ đổi thành trong 3s sau khi kích hoạt phản ứng Tinh-Siêu Dẫn, mỗi 1.5s sẽ tạo ra một <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Tín Hiệu Biến Đổi</tooltip></strong> ở gần mà Mitya có thể mang theo, đồng thời biến khu vực rộng lớn hơn ở xung quanh thành <strong>Vùng Trục Sao</strong>, khi kích hoạt lại phản ứng Tinh-Siêu Dẫn, sẽ làm mới thời gian duy trì hiệu quả trên.",
+      "1": "Ngoài ra, tăng sát thương cơ bản của phản ứng Tinh-Siêu Dẫn do tất cả nhân vật trong đội ở gần gây ra dựa trên Tinh Thông Nguyên Tố của Mitya: Mỗi điểm Tinh Thông Nguyên Tố sẽ tăng 0.028% sát thương cơ bản của phản ứng Tinh-Siêu Dẫn, tối đa tăng 14% sát thương cơ bản theo cách này. Khi ở trong <strong>Vùng Trục Sao</strong>, Mitya sẽ vào trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>."
+    }
+  },
+  "passive": {
+    "name": "Xúc Tác Hoạt Tính Năng Lượng",
+    "description": {
+      "0": "Khi xung quanh tồn tại khối đá có thể phá hủy, <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Lõi Dò Tìm - Ổn Định</tooltip></strong> có thể nhanh chóng dọn dẹp khối đá.",
+      "1": "Ngoài ra, nếu Mitya ở trong đội, khi tạo ra <strong>Tạo Vật Chân Băng - Nguồn Nhiệt Đơn Giản</strong> sẽ không tiêu hao Năng Lượng Kresnik."
+    }
+  },
+  "constellation1": {
+    "name": "Người Quan Sát Truy Tìm Thiếu Sót",
+    "description": {
+      "0": "Giới hạn mang theo <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Tín Hiệu Biến Đổi</tooltip></strong> tăng lên thành 5. Khi thi triển Kỹ Năng Nguyên Tố <strong>Quy Luật - Dò Tìm Biến Số</strong>, sẽ tạo thêm 1 <strong>Tín Hiệu Biến Đổi</strong>.",
+      "1": "Trong thời gian <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Lõi Dò Tìm</tooltip></strong> tồn tại, nhân vật ra trận hiện tại trong đội bản thân sẽ tăng 40% Sát Thương Bạo Kích.",
+      "2": "Ngoài ra, khi tạo <strong>Tín Hiệu Biến Đổi</strong>, sẽ còn hồi phục 10 điểm Năng Lượng Nguyên Tố cho bản thân Mitya. Hiệu quả này mỗi 8s tối đa kích hoạt một lần."
+    }
+  },
+  "constellation2": {
+    "name": "Vật Tĩnh Lặng Nằm Ngoài Tính Trơ",
+    "description": {
+      "0": "Trong thời gian <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Lõi Dò Tìm</tooltip></strong> tồn tại, tất cả kẻ địch trong <strong>Vùng Trục Sao</strong> sẽ giảm 20% Kháng Nguyên Tố <cryo>Băng</cryo> và <electro>Lôi</electro>.",
+      "1": "Ngoài ra, nếu <strong>Lõi Dò Tìm</strong> được tạo ra là:",
+      "2": [
+        "Lõi Ổn Định: Tăng 123 điểm Tinh Thông Nguyên Tố cho tất cả nhân vật trong đội ở gần.",
+        "Lõi Quá Tải: Tăng 234 điểm Tinh Thông Nguyên Tố cho nhân vật ra trận hiện tại trong đội bản thân."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Chuỗi Thắt Nút Tô-Pô Bất Biến",
+    "description": {
+      "0": "Cấp kỹ năng <tooltip ns=char_Mitya_gen baseKey18=skill><strong>Quy Luật - Dò Tìm Biến Số</strong></tooltip> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Chất Đồng Vị Phân Rã Tương Sinh",
+    "description": {
+      "0": "Khi trong trận tồn tại <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Lõi Dò Tìm</tooltip></strong> do bản thân Mitya tạo ra, mỗi khi tiêu hao 5 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Tín Hiệu Biến Đổi</tooltip></strong>, <strong>Lõi Dò Tìm</strong> sẽ gây cho kẻ địch xung quanh một lần <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> tương đương 300% Tinh Thông Nguyên Tố của Mitya và được xem là sát thương phản ứng Tinh-Siêu Dẫn."
+    }
+  },
+  "constellation5": {
+    "name": "Luật Tuần Hoàn Xác Định Vạn Vật",
+    "description": {
+      "0": "Cấp kỹ năng Tấn Công Thường <tooltip ns=char_Mitya_gen baseKey18=normal><strong>Phản Ứng Dây Chuyền</strong></tooltip> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Cổng Chân Lý Bước Nhảy Nguyên Tố",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Lõi Dò Tìm</tooltip></strong> sẽ được cường hóa. Nếu <strong>Lõi Dò Tìm</strong> được tạo ra là:",
+      "1": [
+        "Lõi Ổn Định: <strong>Lõi Dò Tìm</strong> gây ra 115% sát thương gốc.",
+        "Lõi Quá Tải: Khi tiêu hao <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Tín Hiệu Biến Đổi</tooltip></strong>, có 34% xác suất tạo ra một <strong>Tín Hiệu Biến Đổi</strong> mới."
+      ],
+      "2": "Ngoài ra, sát thương phản ứng Tinh-Siêu Dẫn do tất cả nhân vật trong đội ở gần gây ra sẽ <strong><tooltip ns=tooltips_gen baseKey18=11190007 values=[]>Thăng Tiến</tooltip></strong> 20%."
+    }
+  }
+}

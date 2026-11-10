@@ -75,6 +75,7 @@ import Lynette from './Lynette'
 import Lyney from './Lyney'
 import Mavuika from './Mavuika'
 import Mika from './Mika'
+import Mitya from './Mitya'
 import Mona from './Mona'
 import Mualani from './Mualani'
 import Nahida from './Nahida'
@@ -119,6 +120,7 @@ import TravelerHydroF from './TravelerHydroF'
 import TravelerHydroM from './TravelerHydroM'
 import TravelerPyroF from './TravelerPyroF'
 import TravelerPyroM from './TravelerPyroM'
+import Valeriy from './Valeriy'
 import Varesa from './Varesa'
 import Varka from './Varka'
 import Venti from './Venti'
@@ -212,6 +214,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Lyney,
   Mavuika,
   Mika,
+  Mitya,
   Mona,
   Mualani,
   Nahida,
@@ -256,6 +259,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   TravelerHydroM,
   TravelerPyroF,
   TravelerPyroM,
+  Valeriy,
   Varesa,
   Varka,
   Venti,

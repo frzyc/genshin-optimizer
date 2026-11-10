@@ -1,5 +1,5 @@
-import { STAT_SHEET, formulaCatalog } from './index'
 import { buildFormulaCatalog, categoryFromName } from './formulaCatalogBuild'
+import { formulaCatalog, STAT_SHEET } from './index'
 
 describe('formulaCatalog', () => {
   it('puts unnamed stats under STAT_SHEET with a final dim', () => {

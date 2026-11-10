@@ -12,8 +12,8 @@ import {
   isParamOnlyEntry,
   listingJoinId,
   lookupFormulaRef,
-  sameFormula,
   STAT_SHEET,
+  sameFormula,
 } from '@genshin-optimizer/gi/formula'
 import {
   allTalentSheetElementKey,

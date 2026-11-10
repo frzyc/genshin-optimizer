@@ -1,0 +1,7 @@
+{
+  "offensiveCond": "Consuming a stack of Offensive Directive",
+  "momentumCond": "Stacks of Impact Momentum consumed",
+  "momentumLimitInc": "Impact Moment limit increase",
+  "c6HitCond": "Opponents hit by special Charged Attack or Thunderburst Shells",
+  "shell_dmg_": "Thunderburst Shell DMG Bonus"
+}

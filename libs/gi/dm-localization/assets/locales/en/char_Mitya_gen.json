@@ -1,0 +1,250 @@
+{
+  "name": "Mitya",
+  "title": "Rules Set at Naught",
+  "description": "An exceptionally ingenious energy specialist and a master of the fine art of \"schedule-dodging.\"",
+  "constellationName": "Nodus Gordianus",
+  "auto": {
+    "name": "Chain Reaction",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Performs a maximum of 3 attacks that deal <electro>Electro DMG</electro>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to deal <electro>AoE Electro DMG</electro> to the area in front after a short casting time.",
+        "2": "Mitya will instead perform the special Charged Attack <strong>Gradient Detonation</strong>, which consumes no Stamina, if a <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Detection Core: Overload</tooltip></strong> created by Mitya himself is currently on the field and he has at least 1 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacon</tooltip></strong>: Deals 1 instance of <electro>AoE Electro DMG</electro> to the area in front and continuously consumes <strong>Gradient Beacons</strong> while held. Each <strong>Gradient Beacon</strong> consumed deals 1 instance of <electro>AoE Electro DMG</electro> to the area in front that is considered Stellar-Conduct reaction DMG."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing <electro>AoE Electro DMG</electro> upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "Charged Attack DMG",
+      "4": "Charged Attack Stamina Cost",
+      "5": "Plunge DMG",
+      "6": "Low/High Plunge DMG",
+      "7": "Gradient Detonation DMG",
+      "8": "Gradient Detonation Stellar-Conduct DMG",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%",
+      "3": "{{3, percent(fixed: 1)}}%",
+      "4": "{{4, fixed(fixed: 1)}}",
+      "5": "{{5, percent(fixed: 1)}}%",
+      "6": "{{6, percent(fixed: 1)}}%/{{7, percent(fixed: 1)}}%",
+      "7": "{{8, percent(fixed: 1)}}%",
+      "8": "{{9, percent(fixed: 1)}}% Elemental Mastery",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Principle: Variable Detection",
+    "description": {
+      "0": "Conducts a theoretically relatively safe experiment at a theoretically relatively safe yield, dealing <electro>AoE Electro DMG</electro> and creating a <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Detection Core</tooltip></strong> in different ways depending on whether the Skill is tapped or held.",
+      "1": "<br/>",
+      "2": "Tapping the Elemental Skill <strong>Principle: Variable Detection</strong> again within 6s after using it changes the <strong>Detection Core</strong>'s state. The Detection Core's state can be changed in this way every 1.5s."
+    },
+    "skillParams": {
+      "0": "Tap Skill DMG",
+      "1": "Hold Skill DMG",
+      "2": "Steady State Core DMG",
+      "3": "Steady State Core Gradient Beacon Consumption DMG",
+      "4": "Steady State Core Detonation DMG",
+      "5": "Detection Core Duration",
+      "6": "CD",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%",
+      "3": "{{3, percent(fixed: 1)}}% Elemental Mastery",
+      "4": "{{4, percent(fixed: 1)}}% Elemental Mastery/Beacon",
+      "5": "{{5, fixed(fixed: 1)}}s",
+      "6": "{{6, fixed(fixed: 1)}}s",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Analysis: Gradient Theory",
+    "description": {
+      "0": "Let the elements burst forth like inspiration itself! Deals <electro>AoE Electro DMG</electro> and creates 3 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacons</tooltip></strong>."
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Gradient Beacons Generated",
+      "2": "CD",
+      "3": "Energy Cost",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}% ATK+{{1, percent(fixed: 1)}}% Elemental Mastery",
+      "1": "{{2, fixed(fixed: 1)}}",
+      "2": "{{3, fixed(fixed: 1)}}s",
+      "3": "{{4}}",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Baseline Stress Test",
+    "description": {
+      "0": "The <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Detection Core</tooltip></strong> created by the Elemental Skill <strong>Principle: Variable Detection</strong> is enhanced. Depending on the state of the <strong>Detection Core</strong> created:",
+      "1": [
+        "Steady State: All nearby party members gain 30 Elemental Mastery for each <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacon</tooltip></strong> Mitya has;",
+        "Overloaded: After nearby party members trigger Stellar-Conduct reactions, instead obtain 1 <strong>Gradient Beacon</strong> every 1.5s for 6s."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Explosive Reagent: Safe Limits Exceeded",
+    "description": {
+      "0": "The duration of <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacons</tooltip></strong> is increased to 10s. Additionally, Mitya's CRIT Rate increases by 5% for 15s after creating a <strong>Gradient Beacon</strong>. This effect can stack up to 4 times."
+    }
+  },
+  "passive3": {
+    "name": "Stellar Jubilee: Top-Secret Protocol",
+    "description": {
+      "0": "When party members trigger Superconduct, it will be changed to Stellar-Conduct. Stellar-Conduct reactions will no longer create <strong>Starlight Prisms</strong>, and will instead create 1 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacon</tooltip></strong> nearby every 1.5s for 3s. These Beacons can be carried by Mitya and transform the area around them into an even larger <strong>Polestar Field</strong>. Triggering another Stellar-Conduct reaction will refresh the duration of the aforementioned effects.",
+      "1": "Additionally, the Base Stellar-Conduct DMG dealt by all nearby party members will be increased based on Mitya's Elemental Mastery: Every point of Elemental Mastery he has increases Base Stellar-Conduct DMG by 0.028%. The maximum Base DMG increase that can be gained this way is 14%. While within a <strong>Polestar Field</strong>, Mitya will also enter the <strong>Radiance: Stellar-Conduct</strong> state."
+    }
+  },
+  "passive": {
+    "name": "Energy Catalysis",
+    "description": {
+      "0": "When destructible rocks are nearby, <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Detection Core: Steady State</tooltip></strong> can quickly clear them.",
+      "1": "Additionally, when Mitya is in the party, creating <strong>Prime Ice Construct: Basic Heat Source</strong> does not consume Kresnik Energy."
+    }
+  },
+  "constellation1": {
+    "name": "The Observer Seeking What Is Missing",
+    "description": {
+      "0": "The maximum number of <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacons</tooltip></strong> Mitya can carry is increased to 5. Using the Elemental Skill <strong>Principle: Variable Detection</strong> additionally creates 1 <strong>Gradient Beacon</strong>.",
+      "1": "While the <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Detection Core</tooltip></strong> is present, your own active character's CRIT DMG is increased by 40%.",
+      "2": "Additionally, Mitya regenerates 10 Elemental Energy when a <strong>Gradient Beacon</strong> is created. This effect can be triggered once every 8s."
+    }
+  },
+  "constellation2": {
+    "name": "The Matter That Slumbers Beyond Inertness",
+    "description": {
+      "0": "While the <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Detection Core</tooltip></strong> is present, all opponents within the <strong>Polestar Field</strong> have their <cryo>Cryo RES</cryo> and <electro>Electro RES</electro> decreased by 20%.",
+      "1": "Additionally, if the <strong>Detection Core</strong> created is:",
+      "2": [
+        "Steady State: All nearby party members gain 123 Elemental Mastery;",
+        "Overloaded: Your own active character gains 234 Elemental Mastery."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "The Knotted String of Invariant Topology",
+    "description": {
+      "0": "Increases the Level of the Elemental Skill <tooltip ns=char_Mitya_gen baseKey18=skill><strong>Principle: Variable Detection</strong></tooltip> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "The Isotopes Born of Decay",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Detection Cores</tooltip></strong> created by Mitya himself deals 1 instance of <electro>AoE Electro DMG</electro> equal to 300% of Mitya's Elemental Mastery to nearby opponents for every 5 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacons</tooltip></strong> consumed while it is on the field. This DMG is considered Stellar-Conduct reaction DMG."
+    }
+  },
+  "constellation5": {
+    "name": "The Periodic Law That Orders All",
+    "description": {
+      "0": "Increases the Level of Normal Attack: <tooltip ns=char_Mitya_gen baseKey18=normal><strong>Chain Reaction</strong></tooltip> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Elemental Transition at the Gate of Reason",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Detection Core</tooltip></strong> is enhanced. If the <strong>Detection Core</strong>:",
+      "1": " · Is in the Steady State: <strong>Detection Core</strong> deals 115% of its original DMG.",
+      "2": [
+        " Is Overloaded: There is a 34% chance to create 1 new <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacon</tooltip></strong> whenever Mitya consumes a <strong>Gradient Beacon</strong> with the <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Detection Core</tooltip></strong>."
+      ],
+      "3": "Additionally, Stellar-Conduct reaction DMG dealt by all nearby party members is <strong><tooltip ns=tooltips_gen baseKey18=11190007 values=[]>Elevated</tooltip></strong> by 20%."
+    }
+  }
+}

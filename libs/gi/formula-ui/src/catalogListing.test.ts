@@ -19,9 +19,9 @@ import {
 import type { ICharacter, IWeapon } from '@genshin-optimizer/gi/good'
 import { describe, expect, it } from 'vitest'
 import {
+  dimReadForDisplay,
   groupJoinedRows,
   joinCatalogRows,
-  dimReadForDisplay,
   listingReadForRef,
   refFromJoinedRow,
 } from './catalogListing'

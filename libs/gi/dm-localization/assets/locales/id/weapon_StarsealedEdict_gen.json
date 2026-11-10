@@ -1,0 +1,34 @@
+{
+  "name": "Starsealed Edict",
+  "description": {
+    "0": "Koleksi buku tebal yang mencatat peraturan kerja internal Royal Energy Commission, dengan begitu banyak entri dan sejarah yang panjang."
+  },
+  "passiveName": "Dawnstar's Flowing Trail",
+  "passiveDescription": {
+    "0": {
+      "0": "CRIT DMG +<cryo>24%</cryo>. Saat melancarkan Elemental Skill, Karakter yang mengenakan memperoleh efek Crystal Compounding: Elemental Mastery +<cryo>48</cryo> poin selama 20 detik. Selama durasi ini, saat Karakter party di sekitar memicu Reaksi Elemental, Karakter yang mengenakan juga memperoleh 1 lapis Law of Combustion: Elemental Mastery +<cryo>24</cryo> poin. Efek ini dapat ditumpuk sampai 3 lapis, dan berlangsung hingga efek Crystal Compounding berakhir atau Elemental Skill dilancarkan kembali.",
+      "1": "Radiance: Stellar-Conduct: Setiap lapis Law of Combustion juga meningkatkan CRIT DMG Reaksi Stellar-Conduct yang dihasilkan Karakter yang mengenakan sebesar <cryo>12%</cryo>.",
+      "2": "Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "CRIT DMG +<cryo>30%</cryo>. Saat melancarkan Elemental Skill, Karakter yang mengenakan memperoleh efek Crystal Compounding: Elemental Mastery +<cryo>60</cryo> poin selama 20 detik. Selama durasi ini, saat Karakter party di sekitar memicu Reaksi Elemental, Karakter yang mengenakan juga memperoleh 1 lapis Law of Combustion: Elemental Mastery +<cryo>30</cryo> poin. Efek ini dapat ditumpuk sampai 3 lapis, dan berlangsung hingga efek Crystal Compounding berakhir atau Elemental Skill dilancarkan kembali.",
+      "1": "Radiance: Stellar-Conduct: Setiap lapis Law of Combustion juga meningkatkan CRIT DMG Reaksi Stellar-Conduct yang dihasilkan Karakter yang mengenakan sebesar <cryo>15%</cryo>.",
+      "2": "Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "CRIT DMG +<cryo>36%</cryo>. Saat melancarkan Elemental Skill, Karakter yang mengenakan memperoleh efek Crystal Compounding: Elemental Mastery +<cryo>72</cryo> poin selama 20 detik. Selama durasi ini, saat Karakter party di sekitar memicu Reaksi Elemental, Karakter yang mengenakan juga memperoleh 1 lapis Law of Combustion: Elemental Mastery +<cryo>36</cryo> poin. Efek ini dapat ditumpuk sampai 3 lapis, dan berlangsung hingga efek Crystal Compounding berakhir atau Elemental Skill dilancarkan kembali.",
+      "1": "Radiance: Stellar-Conduct: Setiap lapis Law of Combustion juga meningkatkan CRIT DMG Reaksi Stellar-Conduct yang dihasilkan Karakter yang mengenakan sebesar <cryo>18%</cryo>.",
+      "2": "Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "CRIT DMG +<cryo>42%</cryo>. Saat melancarkan Elemental Skill, Karakter yang mengenakan memperoleh efek Crystal Compounding: Elemental Mastery +<cryo>84</cryo> poin selama 20 detik. Selama durasi ini, saat Karakter party di sekitar memicu Reaksi Elemental, Karakter yang mengenakan juga memperoleh 1 lapis Law of Combustion: Elemental Mastery +<cryo>42</cryo> poin. Efek ini dapat ditumpuk sampai 3 lapis, dan berlangsung hingga efek Crystal Compounding berakhir atau Elemental Skill dilancarkan kembali.",
+      "1": "Radiance: Stellar-Conduct: Setiap lapis Law of Combustion juga meningkatkan CRIT DMG Reaksi Stellar-Conduct yang dihasilkan Karakter yang mengenakan sebesar <cryo>21%</cryo>.",
+      "2": "Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "CRIT DMG +<cryo>48%</cryo>. Saat melancarkan Elemental Skill, Karakter yang mengenakan memperoleh efek Crystal Compounding: Elemental Mastery +<cryo>96</cryo> poin selama 20 detik. Selama durasi ini, saat Karakter party di sekitar memicu Reaksi Elemental, Karakter yang mengenakan juga memperoleh 1 lapis Law of Combustion: Elemental Mastery +<cryo>48</cryo> poin. Efek ini dapat ditumpuk sampai 3 lapis, dan berlangsung hingga efek Crystal Compounding berakhir atau Elemental Skill dilancarkan kembali.",
+      "1": "Radiance: Stellar-Conduct: Setiap lapis Law of Combustion juga meningkatkan CRIT DMG Reaksi Stellar-Conduct yang dihasilkan Karakter yang mengenakan sebesar <cryo>24%</cryo>.",
+      "2": "Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

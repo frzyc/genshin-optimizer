@@ -191,12 +191,11 @@ export default register(
     { ele: 'cryo', cond: beamOn },
     c2BeamCrit
   ),
-  // WR beamSs listing scales with beamStellarDmg (auto[5]), not beamSsDmg (auto[last]).
   dmg(
     'charged_beamSsDmg',
     info,
     'atk',
-    dm.charged.beamStellarDmg,
+    dm.charged.beamSsDmg,
     'charged',
     { ele: 'cryo', cond: beamSsOn },
     c2BeamCrit

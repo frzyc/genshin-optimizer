@@ -470,11 +470,66 @@
       "0": "Ao desencadear Supercondutor Estelar, as áreas próximas serão temporariamente transformadas em <strong>Campo da Estrela Polar</strong>. Quando estiver dentro de um Campo da Estrela Polar, o personagem específico entrará no estado <strong>Brilho Reluzente: Supercondutor Estelar</strong>, com suas Habilidades obtendo bônus de fortalecimento diferentes."
     }
   },
+  "11360001": {
+    "name": "Sinalizador Alternado",
+    "description": {
+      "0": "Quando Mitya está na equipe, ao desencadear a reação de Supercondutor Estelar, em vez de criar um <strong>Prisma de Brilho Estrelar</strong>, será criado um <strong>Sinalizador Alternado</strong> que dura 6s. Mitya pode consumir o <strong>Sinalizador Alternado</strong> para desencadear vários efeitos.",
+      "1": "O <strong>Sinalizador Alternado</strong> seguirá o personagem ativo, transformando uma área próxima maior em um <strong>Campo da Estrela Polar</strong> no momento em que o <strong>Sinalizador Alternado</strong> é criado. Mitya pode carregar múltiplos <strong>Sinalizadores Alternados</strong>, com um limite inicial de 4. Ao criar um <strong>Sinalizador Alternado</strong>, a duração de todos os <strong>Sinalizadores Alternados</strong> será redefinida."
+    }
+  },
+  "11360002": {
+    "name": "Núcleo Detector",
+    "description": {
+      "0": "Dispositivo Energético criado ao lançar a Habilidade Elemental. Pressione para criar o Núcleo <strong>Estável</strong>. Mantenha Pressionado para criar o Núcleo <strong>Sobrecarregado</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Núcleo Detector: Estável</strong>",
+      "3": [
+        " Segue os inimigos próximos, causando <electro>Dano Electro em AdE</electro> periodicamente.",
+        " Quando Mitya alcançar o máximo de <strong>Sinalizadores Alternados</strong> carregáveis, gerar um novo <strong>Sinalizador Alternado</strong> consumirá esse dispositivo e causará <electro>Dano Electro em AdE</electro> que é considerado Dano de Supercondutor Estelar.",
+        " Quando a duração acabar, ou ao recriar um <strong>Núcleo Detector</strong>, consumirá todos os <strong>Sinalizadores Alternados</strong> e, baseado na quantidade consumida, causará <electro>Dano Electro em AdE</electro> que é considerado Dano de Supercondutor Estelar."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Núcleo Detector: Sobrecarregado</strong>",
+      "6": [
+        " Quando esse dispositivo existir e Mitya possuir pelo menos 1 <strong>Sinalizador Alternado</strong>, Mitya pode realizar seu Ataque Carregado Especial <strong>Explosão Concentrada Alternada</strong> sem consumir Stamina."
+      ]
+    }
+  },
+  "11370001": {
+    "name": "Disparo de Morteiro: Bombardeio de Curta Distância",
+    "description": {
+      "0": "Ataque Carregado especial de Valeriy. Ao realizar um Ataque Carregado enquanto possui pelo menos 40 pontos de <strong>Energia de Choque</strong>, consumirá toda a <strong>Energia de Choque</strong> para lançar este Ataque Carregado especial em seu lugar, causando <electro>Dano Electro em uma AdE</electro> à sua frente e concedendo 15 acúmulos de <strong>Ordem de Ataque</strong>.",
+      "1": "Ao usar este Ataque Carregado especial novamente, o número de acúmulos de <strong>Ordem de Ataque</strong> será redefinido.",
+      "2": "Dentro de 0.8s após usar a Habilidade Elemental <strong>Defesa de Ofensiva: Ataque Relâmpago da Fortaleza</strong> ou o Supremo <strong>Ponto de Fogo: Invasão Relâmpago</strong>, se Valeriy possuir pelo menos 40 pontos de <strong>Energia de Choque</strong>, o próximo Ataque Normal que ele realizar será convertido no Ataque Carregado especial <strong>Disparo de Morteiro: Bombardeio de Curta Distância</strong>."
+    }
+  },
+  "11370002": {
+    "name": "Ordem de Ataque",
+    "description": {
+      "0": "Efeito especial obtido após Valeriy realizar seu Ataque Carregado especial <strong>Disparo de Morteiro: Bombardeio de Curta Distância</strong>. Aumenta o <electro>Dano Electro</electro> de formas diferentes se Valeriy estiver no estado <strong>Brilho Reluzente: Supercondutor Estelar</strong>. Se Valeriy:",
+      "1": [
+        " Estiver no estado <strong>Brilho Reluzente: Supercondutor Estelar</strong>: quando o personagem ativo da equipe causar <electro>Dano Electro</electro> que é considerado Dano de Supercondutor Estelar com seu Ataque Normal, Carregado, Imersivo, Habilidade Elemental ou Supremo, consome 1 de <strong>Ordem de Ataque</strong> para aumentar o Dano causado baseado no ATQ de Valeriy.",
+        " Se não estiver no estado <strong>Brilho Reluzente: Supercondutor Estelar</strong>: quando o personagem ativo da equipe causar <electro>Dano Electro</electro> contra o inimigo com seu Ataque Normal, Carregado, Imersivo, Habilidade Elemental ou Supremo, consome 1 de <strong>Ordem de Ataque</strong> para aumentar o Dano causado baseado no ATQ de Valeriy."
+      ],
+      "2": "Se o <electro>Dano Electro</electro> atingir mais de um inimigo ao mesmo tempo, consumirá a quantidade de acúmulos de <strong>Ordem de Ataque</strong> de acordo com a quantidade de inimigos atingidos."
+    }
+  },
+  "11370003": {
+    "name": "Energia de Choque",
+    "description": {
+      "0": "Energia especial usada para fortalecer Valeriy em batalha. Máximo inicial de 100. Ao possuir pelo menos 40 de <strong>Energia de Choque</strong>, pode fazer o Ataque Carregado especial <strong>Disparo de Morteiro: Bombardeio de Curta Distância</strong>.",
+      "1": "Valery pode obter <strong>Energia de Choque</strong> das seguintes maneiras:",
+      "2": [
+        " Ao lançar a Habilidade Elemental <strong>Defesa de Ofensiva: Ataque Relâmpago da Fortaleza</strong>.",
+        " Quando os ataques do personagem ativo de Tipo Elemental <electro>Electro</electro> da equipe atingirem o inimigo após desbloquear o Talento Passivo \"Na Companhia de Balas\" e na duração do Supremo <strong>Ponto de Fogo: Invasão Relâmpago</strong>."
+      ]
+    }
+  },
   "11400001": {
     "name": "Primeira Cantora",
     "description": {
-      "0": "Quando o Ataque Normal, Carregado, Imersivo, a Habilidade Elemental ou o Supremo do personagem ativo causam <hydro>Dano Hydro</hydro> ou <cryo>Dano Cryo</cryo>, consome 1 acúmulo de Primeira Cantora para elevar o Dano causado. Se houver um Vórtice Flutuante ativo, ou se ocorrer nos 5s após a explosão do Vórtice Flutuante, muda para que ao personagem causar Dano de Redemoinho Estelar, desencadeie os efeitos acima.",
-      "1": "Com base na parcela da Vida Máxima de Vodyanitsa que exceder 40000, cada 1.000 pontos de Vida Máxima aumentam o Dano de Redemoinho Estelar dos efeitos acima em 260 e aumentam o <hydro>Dano Hydro</hydro> e o <cryo>Dano Cryo</cryo> em 140. É possível aumentar o Dano de Redemoinho Estelar em até 6500, e o <hydro>Dano Hydro</hydro> e <cryo>Dano Cryo</cryo> em 3500 dessa forma."
+      "0": "Quando o Ataque Normal, Carregado, Imersivo, a Habilidade Elemental ou o Supremo do personagem ativo causam <hydro>Dano Hydro</hydro> ou <cryo>Dano Cryo</cryo>, consome 1 acúmulo de Primeira Cantora para elevar o Dano causado. Se houver um Vórtice Flutuante ativo, ou se ocorrer nos 5s após a explosão do Vórtice Flutuante, muda para que, ao personagem causar Dano de Redemoinho Estelar, desencadeie os efeitos acima.",
+      "1": "Com base na parte da Vida Máxima de Vodyanitsa que exceder 40000, cada 1.000 de Vida Máxima aumentam o Dano de Redemoinho Estelar dos efeitos acima em 260, aumentam o <hydro>Dano Hydro</hydro> e <cryo>Dano Cryo</cryo> em 140. É possível aumentar o Dano de Redemoinho Estelar em até {PARAM#P1402201|6S1:I}, e o <hydro>Dano Hydro</hydro> e <cryo>Dano Cryo</cryo> em {PARAM#P1402201|7S1:I} dessa forma."
     }
   },
   "11400002": {
