@@ -41,7 +41,7 @@ const sheet = register(
   // Buffs
   registerBuff(
     'basic_abloom_anom_mv_mult_',
-    teamBuff.dmg.anom_mv_mult_.addWithDmgType(
+    teamBuff.combat.anom_mv_mult_.addWithDmgType(
       'abloom',
       basicAbloom.ifOn(
         sum(percent(2.25), prod(percent(0.2), sum(char.basic, -1)))
@@ -57,7 +57,7 @@ const sheet = register(
   ),
   registerBuff(
     'ult_abloom_anom_mv_mult_',
-    teamBuff.dmg.anom_mv_mult_.addWithDmgType(
+    teamBuff.combat.anom_mv_mult_.addWithDmgType(
       'abloom',
       ultAbloom.ifOn(sum(percent(3), prod(percent(0.27), sum(char.chain, -1))))
     )
@@ -128,7 +128,7 @@ const sheet = register(
   ),
   registerBuff(
     'm4_abloom_anom_mv_mult_',
-    teamBuff.dmg.anom_mv_mult_.addWithDmgType(
+    teamBuff.combat.anom_mv_mult_.addWithDmgType(
       'abloom',
       cmpGE(char.mindscape, 4, m4Abloom.ifOn(percent(dm.m4.anom_mv_mult_)))
     )

@@ -5,7 +5,7 @@ export const buffs = {
     name: 'basic_abloom_anom_mv_mult_',
     tag: {
       et: 'display',
-      qt: 'dmg',
+      qt: 'combat',
       q: 'anom_mv_mult_',
       sheet: 'Phoenix',
       damageType1: 'abloom',
@@ -29,7 +29,7 @@ export const buffs = {
     name: 'ult_abloom_anom_mv_mult_',
     tag: {
       et: 'display',
-      qt: 'dmg',
+      qt: 'combat',
       q: 'anom_mv_mult_',
       sheet: 'Phoenix',
       damageType1: 'abloom',
@@ -119,7 +119,7 @@ export const buffs = {
     name: 'm4_abloom_anom_mv_mult_',
     tag: {
       et: 'display',
-      qt: 'dmg',
+      qt: 'combat',
       q: 'anom_mv_mult_',
       sheet: 'Phoenix',
       damageType1: 'abloom',

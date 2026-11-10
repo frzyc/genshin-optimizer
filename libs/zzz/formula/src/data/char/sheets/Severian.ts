@@ -55,7 +55,7 @@ const sheet = register(
       {
         ...baseTag,
         damageType1: 'basic',
-        skillType: 'basicSkill',
+        skillType1: 'basicSkill',
       },
       'atk',
       undefined,
