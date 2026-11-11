@@ -1,0 +1,184 @@
+{
+  "name": "Mitya",
+  "title": "Regeln in den Wind geschlagen",
+  "description": "Ein äußerst kompetenter Energieexperte und ein genialer Meister der „Terminumgehung“.",
+  "constellationName": "Nodus Gordianus",
+  "auto": {
+    "name": "Dominoeffekt",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 3 Angriffe aus und verursacht <electro>Elektro-Schaden</electro>."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine bestimmte Menge Ausdauer und verursacht nach kurzem Aufladen <electro>Elektro-Flächenschaden</electro> in dem vorausliegenden Gebiet.",
+        "2": "Wenn sich auf dem Feld ein von Mitya generierter <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Erkennungskern – Hochspannung</tooltip></strong> befindet und Mitya über mindestens eine <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Umwandlungsbake</tooltip></strong> verfügt, führt er stattdessen den besonderen schweren Schlag <strong>Umwandlungssprengung</strong> aus, der keine Ausdauer verbraucht: Verursacht einmal <electro>Elektro-Flächenschaden</electro> in dem vorausliegenden Gebiet. Verbraucht zudem beim Gedrückthalten <strong>Umwandlungsbaken</strong>, wobei für jede verbrauchte <strong>Umwandlungsbake</strong> in dem vorausliegenden Gebiet einmal <electro>Elektro-Flächenschaden</electro> verursacht wird, der als Schaden durch die Reaktion Stellar-Supraleiter gewertet wird."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <electro>Elektro-Flächenschaden</electro>."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH heftiger Schläge",
+      "4": "Ausdauerverbrauch heftiger Schläge",
+      "5": "SCH beim Fallen",
+      "6": "SCH beim Fallen aus niedriger/großer Höhe",
+      "7": "SCH durch Umwandlungssprengung",
+      "8": "SCH durch Umwandlungssprengung (Stellar-Supraleiter)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Gesetz – Umwandlungserkennung",
+    "description": {
+      "0": "Führt in angemessenem Maß mit einer theoretisch relativ sicheren Menge ein theoretisch relativ sicheres Experiment durch, verursacht <electro>Elektro-Flächenschaden</electro> und erschafft je nach Drücken oder Gedrückthalten auf unterschiedliche Weise einen <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Erkennungskern</tooltip></strong>.",
+      "1": "<br/>",
+      "2": "Kann durch erneutes Drücken der Elementarfähigkeit innerhalb von 6 s nach Anwendung der Elementarfähigkeit <strong>Gesetz – Umwandlungserkennung</strong> den Zustand des <strong>Erkennungskerns</strong> wechseln. Auf diese Weise kann der Zustand höchstens einmal alle 1,5 s gewechselt werden."
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH beim Drücken",
+      "1": "Fähigkeits-SCH bei Gedrückthalten",
+      "2": "Schaden durch stabilen Erkennungskern",
+      "3": "SCH durch Verbrauch der Umwandlungsbaken von stabilem Erkennungskern",
+      "4": "SCH durch Sprengung von stabilem Erkennungskern",
+      "5": "Dauer des Erkennungskerns",
+      "6": "Abklingzeit",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Analyse – Prinzip der Umwandlung",
+    "description": {
+      "0": "Lass die Elemente wie eine Inspiration explodieren! Verursacht <electro>Elektro-Flächenschaden</electro> und erschafft 3 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Umwandlungsbaken</tooltip></strong>."
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Generierte Umwandlungsbaken",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Grundlegender Belastungstest",
+    "description": {
+      "0": "Verbessert den durch die Elementarfähigkeit <strong>Gesetz – Umwandlungserkennung</strong> erschaffenen <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Erkennungskern</tooltip></strong>. Wenn sich der erschaffene <strong>Erkennungskern</strong> im folgenden Zustand befindet:",
+      "1": [
+        " Stabil: Erhöht für jede getragene <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Umwandlungsbake</tooltip></strong> die Elementarkunde aller Truppenmitglieder in der Nähe um 30 Punkte.",
+        " Hochspannung: Erhöht, nachdem alle Truppenmitglieder in der Nähe die Reaktion Stellar-Supraleiter ausgelöst haben, die Menge der zu erhaltenden <strong>Umwandlungsbaken</strong>: Verleiht nun innerhalb von 6 s alle 1,5 s eine <strong>Umwandlungsbake</strong>."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Hyperexplosives Reagenz",
+    "description": {
+      "0": "Erhöht die Dauer der <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Umwandlungsbake</tooltip></strong> auf 10 s. Erhöht zudem innerhalb von 15 s nach Erschaffung der <strong>Umwandlungsbake</strong> die KT von Mitya um 5 %. Dieser Effekt ist 4-fach stapelbar."
+    }
+  },
+  "passive3": {
+    "name": "Sternensegnung – Geheimes Protokoll",
+    "description": {
+      "0": "Wandelt, wenn ein Truppenmitglied die Reaktion Supraleiter auslöst, diese stattdessen in die Reaktion Stellar-Supraleiter um. Generiert beim Auslösen der Reaktion Stellar-Supraleiter kein <strong>Sternenglanz-Prisma</strong>, stattdessen innerhalb von 3 s nach dem Auslösen von Stellar-Supraleiter alle 1,5 s in der Nähe eine <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Umwandlungsbake</tooltip></strong>, die Mitya mittragen kann, und die ein größeres Gebiet in der Nähe in ein <strong>Sternglanzfeld</strong> verwandelt. Beim erneuten Auslösen der Reaktion Stellar-Supraleiter wird die Dauer des oben genannten Effekts zurückgesetzt.",
+      "1": "Erhöht zudem basierend auf Mityas Elementarkunde den Basis-Schaden der Reaktion Stellar-Supraleiter, der von allen Truppenmitgliedern in der Nähe verursacht wird: Erhöht den Basis-Schaden von Stellar-Supraleiter für jeden Punkt Elementarkunde um 0,028 %, max. um 14 %. Versetzt Mitya zudem, wenn er sich im <strong>Sternglanzfeld</strong> befindet, in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong>."
+    }
+  },
+  "passive": {
+    "name": "Energieaktive Katalyse",
+    "description": {
+      "0": "Ermöglicht, wenn sich zerstörbare Felsbrocken in der Umgebung befinden, deren schnelle Beseitigung mit <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Erkennungskern – Stabil</tooltip></strong>.",
+      "1": "Verbraucht zudem, wenn sich Mitya in der Truppe befindet, beim Erschaffen von <strong>Ureis-Konstrukt – Einfache Wärmequelle</strong> keine Kresnik-Energie."
+    }
+  },
+  "constellation1": {
+    "name": "Der Beobachter auf der Spur des Fehlenden",
+    "description": {
+      "0": "Erhöht die Obergrenze der tragbaren <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Umwandlungsbaken</tooltip></strong> auf 5. Generiert beim Anwenden der Elementarfähigkeit <strong>Gesetz – Umwandlungserkennung</strong> zusätzlich 1 <strong>Umwandlungsbake</strong>.",
+      "1": "Erhöht, solange der <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Erkennungskern</tooltip></strong> existiert, den KSCH des eigenen aktuellen Truppenmitgliedes um 40 %.",
+      "2": "Stellt Mitya außerdem beim Generieren einer <strong>Umwandlungsbake</strong> 10 Punkte Elementarenergie wieder her, 8 s Abklingzeit."
+    }
+  },
+  "constellation2": {
+    "name": "Stille Materie jenseits der Trägheit",
+    "description": {
+      "0": "Verringert, solange der <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Erkennungskern</tooltip></strong> existiert, den <cryo>Kryo-WDS</cryo> und den <electro>Elektro-WDS</electro> aller Gegner im <strong>Sternglanzfeld</strong> um 20 %.",
+      "1": "Zudem gilt, wenn der erschaffene <strong>Erkennungskern</strong> wie folgt ist:",
+      "2": [
+        " Stabil: Erhöht die Elementarkunde aller Truppenmitglieder in der Nähe um 123 Punkte.",
+        " Hochspannung: Erhöht die Elementarkunde des eigenen aktuellen Truppenmitgliedes um 234 Punkte."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Topologisch invariante Knotensehne",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <tooltip ns=char_Mitya_gen baseKey18=skill><strong>Gesetz – Umwandlungserkennung</strong></tooltip> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Isotope der Zerfallsreihe",
+    "description": {
+      "0": "Fügt, wenn sich ein von Mitya selbst generierter <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Erkennungskern</tooltip></strong> auf dem Feld befindet, durch diesen <strong>Erkennungskern</strong> jedes Mal, wenn 5 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Umwandlungsbaken</tooltip></strong> verbraucht werden, Gegnern in der Umgebung einmal <electro>Elektro-Flächenschaden</electro> in Höhe von 300 % von Mityas Elementarkunde zu, der als Schaden der Reaktion Stellar-Supraleiter gewertet wird."
+    }
+  },
+  "constellation5": {
+    "name": "Zyklusgesetz zur Vermessung aller Dinge",
+    "description": {
+      "0": "Erhöht die Fähigkeitsstufe des Standardangriffs <tooltip ns=char_Mitya_gen baseKey18=normal><strong>Dominoeffekt</strong></tooltip> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Tor der Vernunft des Elementsprungs",
+    "description": {
+      "0": "Verstärkt den <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Erkennungskern</tooltip></strong>. Wenn der erschaffene <strong>Erkennungskern</strong> wie folgt ist:",
+      "1": [
+        " Stabil: Der <strong>Erkennungskern</strong> verursacht 115 % des ursprünglichen Schadens.",
+        " Hochspannung: Generiert beim Verbrauchen einer <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Umwandlungsbake</tooltip></strong> mit einer Wahrscheinlichkeit von 34 % eine neue <strong>Umwandlungsbake</strong>."
+      ],
+      "2": "<strong><tooltip ns=tooltips_gen baseKey18=11190007 values=[]>Steigert</tooltip></strong> zudem den von allen Truppenmitgliedern in der Nähe durch die Reaktion Stellar-Supraleiter verursachten Schaden um 20 %."
+    }
+  }
+}

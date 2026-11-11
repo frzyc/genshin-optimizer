@@ -1,0 +1,34 @@
+{
+  "name": "Starsealed Edict",
+  "description": {
+    "0": "A hefty tome containing the Royal Energy Commission's internal rules and procedures, with numerous entries dating back many years."
+  },
+  "passiveName": "Dawnstar's Flowing Trail",
+  "passiveDescription": {
+    "0": {
+      "0": "Increases CRIT DMG by <cryo>24%</cryo>. The equipping character gains the Crystal Compounding effect when they use their Elemental Skill, increasing Elemental Mastery by <cryo>48</cryo> for 20s. During this time, the equipping character gains a Law of Combustion stack when a nearby party member triggers an Elemental Reaction. Each stack increases Elemental Mastery by an additional <cryo>24</cryo>. Max 3 stacks. These stacks last until Crystal Compounding ends or the equipping character uses their Elemental Skill again.",
+      "1": "Radiance: Stellar-Conduct: Each Law of Combustion stack also increases the equipping character's Stellar-Conduct CRIT DMG by <cryo>12%</cryo>.",
+      "2": "These effects can be triggered even when the equipping character is off-field."
+    },
+    "1": {
+      "0": "Increases CRIT DMG by <cryo>30%</cryo>. The equipping character gains the Crystal Compounding effect when they use their Elemental Skill, increasing Elemental Mastery by <cryo>60</cryo> for 20s. During this time, the equipping character gains a Law of Combustion stack when a nearby party member triggers an Elemental Reaction. Each stack increases Elemental Mastery by an additional <cryo>30</cryo>. Max 3 stacks. These stacks last until Crystal Compounding ends or the equipping character uses their Elemental Skill again.",
+      "1": "Radiance: Stellar-Conduct: Each Law of Combustion stack also increases the equipping character's Stellar-Conduct CRIT DMG by <cryo>15%</cryo>.",
+      "2": "These effects can be triggered even when the equipping character is off-field."
+    },
+    "2": {
+      "0": "Increases CRIT DMG by <cryo>36%</cryo>. The equipping character gains the Crystal Compounding effect when they use their Elemental Skill, increasing Elemental Mastery by <cryo>72</cryo> for 20s. During this time, the equipping character gains a Law of Combustion stack when a nearby party member triggers an Elemental Reaction. Each stack increases Elemental Mastery by an additional <cryo>36</cryo>. Max 3 stacks. These stacks last until Crystal Compounding ends or the equipping character uses their Elemental Skill again.",
+      "1": "Radiance: Stellar-Conduct: Each Law of Combustion stack also increases the equipping character's Stellar-Conduct CRIT DMG by <cryo>18%</cryo>.",
+      "2": "These effects can be triggered even when the equipping character is off-field."
+    },
+    "3": {
+      "0": "Increases CRIT DMG by <cryo>42%</cryo>. The equipping character gains the Crystal Compounding effect when they use their Elemental Skill, increasing Elemental Mastery by <cryo>84</cryo> for 20s. During this time, the equipping character gains a Law of Combustion stack when a nearby party member triggers an Elemental Reaction. Each stack increases Elemental Mastery by an additional <cryo>42</cryo>. Max 3 stacks. These stacks last until Crystal Compounding ends or the equipping character uses their Elemental Skill again.",
+      "1": "Radiance: Stellar-Conduct: Each Law of Combustion stack also increases the equipping character's Stellar-Conduct CRIT DMG by <cryo>21%</cryo>.",
+      "2": "These effects can be triggered even when the equipping character is off-field."
+    },
+    "4": {
+      "0": "Increases CRIT DMG by <cryo>48%</cryo>. The equipping character gains the Crystal Compounding effect when they use their Elemental Skill, increasing Elemental Mastery by <cryo>96</cryo> for 20s. During this time, the equipping character gains a Law of Combustion stack when a nearby party member triggers an Elemental Reaction. Each stack increases Elemental Mastery by an additional <cryo>48</cryo>. Max 3 stacks. These stacks last until Crystal Compounding ends or the equipping character uses their Elemental Skill again.",
+      "1": "Radiance: Stellar-Conduct: Each Law of Combustion stack also increases the equipping character's Stellar-Conduct CRIT DMG by <cryo>24%</cryo>.",
+      "2": "These effects can be triggered even when the equipping character is off-field."
+    }
+  }
+}

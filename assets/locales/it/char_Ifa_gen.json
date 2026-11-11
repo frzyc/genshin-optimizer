@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",
-        "1": "Si scaglia contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria. Infligge <anemo>DAN da Anemo ad area</anemo> all'impatto."
+        "1": "Si scaglia contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria. Infligge <anemo>DAN da Anemo ad area</anemo> all'impatto col suolo."
       }
     },
     "skillParams": {

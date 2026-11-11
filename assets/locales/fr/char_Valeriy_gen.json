@@ -1,0 +1,172 @@
+{
+  "name": "Valeriy",
+  "title": "Fulgurante forteresse",
+  "description": "Le commandant du bataillon des missions spéciales et un soldat expert dans la protection du personnel clé et le bon déroulement des opérations.",
+  "constellationName": "Ursus Magnus",
+  "auto": {
+    "name": "Épée et bouclier",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 3 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour bondir en avant et frapper le sol, infligeant des DGT physiques aux ennemis proches.",
+        "2": "Lorsque Valeriy possède au moins 40 pts d'<strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>élan d'impact</tooltip></strong>, il consomme tout l'<strong>élan d'impact</strong> pour déclencher à la place l'attaque chargée spéciale <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Mortier à tir direct : Bombardement à bout portant</tooltip></strong>."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.<tooltip ns=tooltips_gen baseKey18=11370002 values=[]></tooltip>"
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT attaque chargée",
+      "4": "DGT Mortier à tir direct : Bombardement à bout portant",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "Bonus DGT Électro",
+      "7": "Bonus de DGT (Astroconduction)",
+      "8": "Cumuls d'ordre d'assaut",
+      "9": "Durée d'ordre d'assaut",
+      "10": "DGT durant la chute",
+      "11": "DGT chute basse/élevée",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Défense active : Charge de bastion",
+    "description": {
+      "0": "Valeriy brandit son canon-bouclier et charge en avant, infligeant des <electro>DGT Électro de zone</electro>, gagnant 40 pts d'<strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>élan d'impact</tooltip></strong> et déployant un bouclier super-chargé.",
+      "1": "L'absorption de DGT du bouclier super-chargé est basée sur l'ATQ de Valeriy et ce dernier absorbe les <electro>DGT Électro</electro> 250 % plus efficacement."
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "PV du bouclier",
+      "2": "Durée du bouclier",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Tir concentré : Salve éclair",
+    "description": {
+      "0": "Inflige des <electro>DGT Électro de zone</electro> aux ennemis proches et tire un <strong>obus foudroyant</strong> en l'air. L'<strong>obus foudroyant</strong> se divise ensuite en une pluie de projectiles qui infligent des <electro>DGT Électro de zone</electro> aux ennemis proches."
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT obus foudroyant",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Avancer avec le barrage rampant",
+    "description": {
+      "0": "Valeriy obtient 5 pts d'<strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>élan d'impact</tooltip></strong> lorsqu'un autre personnage déployé de l'équipe à proximité touche un ennemi avec une attaque <electro>Électro</electro> pendant la chute d'un <strong>obus foudroyant</strong> du déchaînement élémentaire <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>Tir concentré : Salve éclair</tooltip></strong>. Un maximum de 80 pts d'<strong>élan d'impact</strong> peut être obtenu de cette manière après chaque déchaînement élémentaire."
+    }
+  },
+  "passive2": {
+    "name": "Dans la brèche",
+    "description": {
+      "0": "L'<strong><tooltip ns=tooltips_gen baseKey18=11370002 values=[]>ordre d'assaut</tooltip></strong> est renforcé selon la quantité d'<strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>élan d'impact</tooltip></strong> consommée lors de l'attaque chargée spéciale <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Mortier à tir direct : Bombardement à bout portant</tooltip></strong>, chaque pt d'<strong>élan d'impact</strong> augmentant davantage le bonus de DGT de l'<strong>ordre d'assaut</strong> :",
+      "1": [
+        " Si Valeriy est en <strong>radiance « Astroconduction »</strong> : chaque pt d'<strong>élan d'impact</strong> consommé augmente le bonus de DGT de l'<strong>ordre d'assaut</strong> d'une valeur équivalant à 0,9 % de l'ATQ de Valeriy.",
+        " Si Valeriy n'est pas en <strong>radiance « Astroconduction »</strong> : chaque pt d'<strong>élan d'impact</strong> consommé augmente le bonus de DGT de l'<strong>ordre d'assaut</strong> d'une valeur équivalant à 0,3 % de l'ATQ de Valeriy."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Conditionnement sous zéro",
+    "description": {
+      "0": "Valeriy passe en <strong>radiance « Astroconduction »</strong> dans une <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>étendue polaris</strong></tooltip>."
+    }
+  },
+  "passive": {
+    "name": "Renseignements opérationnels sur la toundra",
+    "description": {
+      "0": "Augmente les récompenses d'une expédition de 20 h à Snezhnaya (hors Nod-Krai) de 25 %."
+    }
+  },
+  "constellation1": {
+    "name": "La cadence des tirs de suppression",
+    "description": {
+      "0": "Valeriy récupère 6 pts d'énergie élémentaire après avoir utilisé son attaque chargée spéciale <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Mortier à tir direct : Bombardement à bout portant</tooltip></strong>, et 1,5 pts d'énergie élémentaire tous les 10 pts d'<strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>élan d'impact</tooltip></strong> consommés par son attaque chargée spéciale au-dessus de 40. Valeriy peut récupérer un maximum de 15 pts d'énergie élémentaire de cette manière à chaque utilisation de son attaque chargée spéciale <strong>Mortier à tir direct : Bombardement à bout portant</strong>. Cet effet peut être déclenché une fois toutes les 15 s.",
+      "1": "La première fois que Valeriy utilise sa compétence élémentaire <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Défense active : Charge de bastion</tooltip></strong> au début d'un combat, il obtient en plus 150 % des pts d'<strong>élan d'impact</strong> d'origine."
+    }
+  },
+  "constellation2": {
+    "name": "Des rangs qui chargent à l'unisson",
+    "description": {
+      "0": "La maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente de 100 pts pendant 18 s après l'utilisation de la compétence élémentaire <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Défense active : Charge de bastion</tooltip></strong>.",
+      "1": "De plus, lorsque Valeriy est à la limite d'<strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>élan d'impact</tooltip></strong> tout en étant protégé par un bouclier super-chargé, déclencher un effet accordant de l'<strong>élan d'impact</strong> augmente à la place l'absorption de DGT du bouclier super-chargé : chaque point d'<strong>élan d'impact</strong> en trop augmente l'absorption de DGT d'une valeur équivalant à 8 % de l'ATQ de Valeriy, un maximum de 20 pts d'<strong>élan d'impact</strong> en trop pouvant être converti de cette manière."
+    }
+  },
+  "constellation3": {
+    "name": "Vigilance à courte distance",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Valeriy_gen baseKey18=normal>Tactique de garde : Épée et bouclier</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Force inébranlable face à l'usure",
+    "description": {
+      "0": "La limite d'<strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>élan d'impact</tooltip></strong> augmente de 30 pts et son taux d'obtention augmente de 30 %.",
+      "1": "De plus, l'effet de l'aptitude d'élévation <strong><tooltip ns=char_Valeriy_gen baseKey18=passive1>« Avancer avec le barrage rampant »</tooltip></strong> est renforcé : la limite d'<strong>élan d'impact</strong> pouvant être obtenu après chaque déchaînement élémentaire grâce à cette aptitude passe à 104 pts. L'aptitude d'élévation <strong>« Avancer avec le barrage rampant »</strong> doit être déjà débloquée."
+    }
+  },
+  "constellation5": {
+    "name": "Résolution de diviser et de détruire",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Défense active : Charge de bastion</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Force de percer les lignes ennemies",
+    "description": {
+      "0": "L'attaque chargée spéciale <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Mortier à tir direct : Bombardement à bout portant</tooltip></strong> et les <strong>obus foudroyants</strong> du déchaînement élémentaire <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>Tir concentré : Salve éclair</tooltip></strong> sont renforcés : les DGT infligés augmentent de 100 % et toucher un ennemi augmente le taux CRIT des <electro>DGT Électro</electro> qu'il subit de 10 % pendant 7 s. Si les <electro>DGT Électro</electro> subis sont considérés comme des DGT d'Astroconduction, leurs DGT CRIT augmentent également de 40 %."
+    }
+  }
+}

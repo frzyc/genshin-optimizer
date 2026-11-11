@@ -1,0 +1,238 @@
+{
+  "name": "Valeriy",
+  "title": "Fort Fulguration",
+  "description": "Commander of the Special Assignments Battalion. A soldier skilled at protecting key personnel and keeping operations on track.",
+  "constellationName": "Ursus Magnus",
+  "auto": {
+    "name": "Sword and Shield",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Performs up to 3 consecutive sword strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to leap forward and slam the ground, dealing Physical DMG to nearby opponents.",
+        "2": "When Valeriy has at least 40 <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impact Momentum</tooltip></strong>, he will consume all <strong>Impact Momentum</strong> to instead perform the special Charged Attack <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Direct-Fire Mortar: Point-Blank Bombardment</tooltip></strong>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.<tooltip ns=tooltips_gen baseKey18=11370002 values=[]></tooltip>"
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "Charged Attack DMG",
+      "4": "Direct-Fire Mortar: Point-Blank Bombardment DMG",
+      "5": "Charged Attack Stamina Cost",
+      "6": "Electro DMG Bonus",
+      "7": "Stellar-Conduct DMG Bonus",
+      "8": "Offensive Directive Stacks",
+      "9": "Offensive Directive Duration",
+      "10": "Plunge DMG",
+      "11": "Low/High Plunge DMG",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%",
+      "3": "{{3, percent(fixed: 1)}}%",
+      "4": "{{4, percent(fixed: 1)}}%",
+      "5": "{{5, fixed(fixed: 1)}}",
+      "6": "{{6, percent(fixed: 2)}}% ATK",
+      "7": "{{7, percent(fixed: 2)}}% ATK",
+      "8": "{{8}}",
+      "9": "{{9, fixed(fixed: 1)}}s",
+      "10": "{{10, percent(fixed: 1)}}%",
+      "11": "{{11, percent(fixed: 1)}}%/{{12, percent(fixed: 1)}}%",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Active Defense: Bastion Charge",
+    "description": {
+      "0": "Valeriy raises his shield cannon and charges forward, dealing <electro>AoE Electro DMG</electro>, gaining 40 <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impact Momentum</tooltip></strong>, and deploying a Supercharged Shield.",
+      "1": "The Supercharged Shield's DMG Absorption scales with Valeriy's ATK, and has 250% absorption efficiency against <electro></electro>Electro DMG<electro></electro>."
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Shield DMG Absorption",
+      "2": "Shield Duration",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}% ATK+{{2}}",
+      "2": "{{3, fixed(fixed: 1)}}s",
+      "3": "{{4, fixed(fixed: 1)}}s",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Focused Fire: Lightning Salvo",
+    "description": {
+      "0": "Deals <electro>AoE Electro DMG</electro> to nearby opponents and fires a <strong>Thunderburst Shell</strong> high into the air. The <strong>Thunderburst Shell</strong> disperses into a barrage of projectiles that rain down, dealing <electro>AoE Electro DMG</electro> to nearby opponents."
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Thunderburst Shell DMG",
+      "2": "Duration",
+      "3": "CD",
+      "4": "Energy Cost",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, fixed(fixed: 1)}}s",
+      "3": "{{3, fixed(fixed: 1)}}s",
+      "4": "{{4}}",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Advance With the Creeping Barrage",
+    "description": {
+      "0": "Valeriy gains 5 <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impact Momentum</tooltip></strong> whenever another nearby active character in the party hits an opponent with an <electro>Electro</electro> attack while the <strong>Thunderburst Shells</strong> from his Elemental Burst <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>Focused Fire: Lightning Salvo</tooltip></strong> are falling. He can gain up to 80 <strong>Impact Momentum</strong> in this way after each use of his Elemental Burst."
+    }
+  },
+  "passive2": {
+    "name": "Into the Breach",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11370002 values=[]>Offensive Directive</tooltip></strong> is enhanced based on the amount of <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impact Momentum</tooltip></strong> consumed when performing his special Charged Attack <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Direct-Fire Mortar: Point-Blank Bombardment</tooltip></strong>. Each point consumed further increases the DMG Bonus granted by <strong>Offensive Directive</strong>. If Valeriy is:",
+      "1": [
+        "In the <strong>Radiance: Stellar-Conduct</strong> state: Each point of <strong>Impact Momentum</strong> consumed increases this DMG Bonus by an amount equal to 0.9% of Valeriy's ATK;",
+        "Not in the <strong>Radiance: Stellar-Conduct</strong> state: Each point of <strong>Impact Momentum</strong> consumed increases this DMG Bonus by an amount equal to 0.3% of Valeriy's ATK."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Subzero Conditioning",
+    "description": {
+      "0": "Valeriy enters the <strong>Radiance: Stellar-Conduct</strong> state while within a <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>."
+    }
+  },
+  "passive": {
+    "name": "Tundra Operational Intelligence",
+    "description": {
+      "0": "Gains 25% more rewards when dispatched on a Snezhnaya (not including Nod-Krai) Expedition for 20 hours."
+    }
+  },
+  "constellation1": {
+    "name": "The Cadence of Suppressive Fire",
+    "description": {
+      "0": "Valeriy regenerates 6 Elemental Energy after performing the special Charged Attack <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Direct-Fire Mortar: Point-Blank Bombardment</tooltip></strong>. For every 10 <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impact Momentum</tooltip></strong> consumed beyond 40 when performing this special Charged Attack, he regenerates an additional 1.5 Elemental Energy. Each time he performs <strong>Direct-Fire Mortar: Point-Blank Bombardment</strong>, he can regenerate up to 15 Elemental Energy in this way. This effect can trigger once every 15s.",
+      "1": "Additionally, each time Valeriy enters combat, the first time he uses his Elemental Skill <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Active Defense: Bastion Charge</tooltip></strong>, he gains an additional amount of <strong>Impact Momentum</strong> equal to 150% of the amount normally gained."
+    }
+  },
+  "constellation2": {
+    "name": "Ranks That Charge as One",
+    "description": {
+      "0": "All nearby party members gain 100 Elemental Mastery for 18s after Valeriy uses his Elemental Skill <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Active Defense: Bastion Charge</tooltip></strong>.",
+      "1": "Additionally, while protected by a Supercharged Shield, if Valeriy is already at maximum <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impact Momentum</tooltip></strong>, any further <strong>Impact Momentum</strong> he would gain is instead converted into increased DMG Absorption for the shield. Each point of excess <strong>Impact Momentum</strong> increases the Supercharged Shield's DMG Absorption by an amount equal to 8% of Valeriy's ATK. Up to 20 excess <strong>Impact Momentum</strong> can be converted in this way."
+    }
+  },
+  "constellation3": {
+    "name": "Vigilance at Close Quarters",
+    "description": {
+      "0": "Increases the Level of Normal Attack <strong><tooltip ns=char_Valeriy_gen baseKey18=normal>Guard Tactics: Sword and Shield</tooltip></strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Fortitude Unshaken by Attrition",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impact Momentum</tooltip></strong>'s limit is increased by 30, and its charging efficiency is increased by 30%.",
+      "1": "Additionally, the Ascension Talent <strong><tooltip ns=char_Valeriy_gen baseKey18=passive1>Advance With the Creeping Barrage</tooltip></strong> is enhanced: The maximum amount of <strong>Impact Momentum</strong> that can be gained from this Talent after using the Elemental Burst is 104. You must unlock the Ascension Talent <strong>Advance With the Creeping Barrage</strong> to gain access to this effect."
+    }
+  },
+  "constellation5": {
+    "name": "Resolve to Divide and Destroy",
+    "description": {
+      "0": "Increases the Level of the Elemental Skill <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Active Defense: Bastion Charge</tooltip></strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "The Strength to Breach Enemy Lines",
+    "description": {
+      "0": "The special Charged Attack <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Direct-Fire Mortar: Point-Blank Bombardment</tooltip></strong> and <strong>Thunderburst Shells</strong> from Elemental Burst <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>Focused Fire: Lightning Salvo</tooltip></strong> are enhanced: Their DMG is increased by 100%, and opponents they hit have the CRIT Rate of <electro>Electro DMG</electro> they take increased by 10% for 7s. If the <electro>Electro DMG</electro> taken is Stellar-Conduct reaction DMG, that DMG instance's CRIT DMG is also increased by 40%."
+    }
+  }
+}

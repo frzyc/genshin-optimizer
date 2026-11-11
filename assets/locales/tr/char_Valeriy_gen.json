@@ -1,0 +1,172 @@
+{
+  "name": "Valeriy",
+  "title": "Yıldırım Kalesi",
+  "description": "Özel Operasyon Taburu Komutanı. Kilit personeli korumakta ve operasyonları rayında tutmakta usta bir asker.",
+  "constellationName": "Boz Ayı",
+  "auto": {
+    "name": "Kılıç ve Kalkan",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 3 kılıç saldırısı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli bir miktar Dayanıklılık harcayarak öne doğru atılıp yere vurur ve yakındaki düşmanlara Fiziksel Hasar verir.",
+        "2": "Valeriy'nin <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Darbe İvmesi</tooltip></strong> en az 40 olduğunda, tüm <strong>Darbe İvmesini</strong> harcayarak bunun yerine <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Doğrudan Atışlı Havan Topu: Hassas Bombardıman</tooltip></strong> özel Yüklü Saldırısını gerçekleştirir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir.<tooltip ns=tooltips_gen baseKey18=11370002 values=[]></tooltip>"
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Yüklü Saldırı Hasarı",
+      "4": "Doğrudan Atışlı Havan Topu: Hassas Bombardıman Hasarı",
+      "5": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "6": "Elektrik Hasarı Bonusu",
+      "7": "Yıldız İletimi Hasar Bonusu",
+      "8": "Taarruz Emri Kademe Sayısı",
+      "9": "Taarruz Emri Süresi",
+      "10": "Havadan Saldırı Hasarı",
+      "11": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Aktif Savunma: Hisar Hücumu",
+    "description": {
+      "0": "Valeriy, kalkan topunu kaldırır ve ileri atılarak <electro>Elektrik Alan Hasarı</electro> verir, 40 <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Darbe İvmesi</tooltip></strong> kazanır ve bir Süper Yüklü Kalkan oluşturur.",
+      "1": "Süper Yüklü Kalkanın Hasar Emilimi, Valeriy'nin Saldırısı ile orantılıdır ve <electro></electro>Elektrik Hasarını<electro></electro> %250 verimlilikle emer."
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Kalkanın Hasar Emilimi",
+      "2": "Kalkan Süresi",
+      "3": "BS",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Odaklı Ateş: Yıldırım Yaylımı",
+    "description": {
+      "0": "Yakındaki düşmanlara <electro>Elektrik Alan Hasarı</electro> verir ve havaya bir <strong>Yıldırım Patlaması Mermisi</strong> ateşler. <strong>Yıldırım Patlaması Mermisi</strong> dağılarak bir mermi sağanağına dönüşür ve aşağı yağarak yakındaki düşmanlara <electro>Elektrik Alan Hasarı</electro> verir."
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Yıldırım Patlaması Mermisi Hasarı",
+      "2": "Süre",
+      "3": "BS",
+      "4": "Enerji Maliyeti",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Genişleyen Yaylım Ateşiyle İlerleme",
+    "description": {
+      "0": "Valeriy'nin <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>Odaklı Ateş: Yıldırım Yaylımı</tooltip></strong> Element Patlamasından gelen <strong>Yıldırım Patlaması Mermileri</strong> düşerken yakındaki farklı bir grup üyesi, Element Türü <electro>Elektrik</electro> olan bir saldırıyla düşmana her vurduğunda Valeriy 5 <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Darbe İvmesi</tooltip></strong> kazanır. Element Patlamasının her kullanımından sonra bu şekilde en fazla 80 <strong>Darbe İvmesi</strong> kazanabilir."
+    }
+  },
+  "passive2": {
+    "name": "Gediğe Hücum",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11370002 values=[]>Taarruz Emri</tooltip></strong>, <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Doğrudan Atışlı Havan Topu: Hassas Bombardıman</tooltip></strong> özel Yüklü Saldırısı gerçekleştirilirken tüketilen <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Darbe İvmesi</tooltip></strong> miktarına bağlı olarak geliştirilir. Tüketilen her Darbe İvmesi puanı, <strong>Taarruz Emri</strong> tarafından sağlanan Hasar Bonusunu daha da artırır. Eğer Valeriy:",
+      "1": [
+        "<strong>Işıltı: Yıldız İletimi</strong> durumundaysa: Tüketilen her <strong>Darbe İvmesi</strong> puanı, bu Hasar Bonusunu Valeriy'nin Saldırısının %0,9'u kadar artırır.",
+        "<strong>Işıltı: Yıldız İletimi</strong> durumunda değilse: Tüketilen her <strong>Darbe İvmesi</strong> puanı, bu Hasar Bonusunu Valeriy'nin Saldırısının %0,3'ü kadar artırır."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Dondurucu Soğuk Direnci",
+    "description": {
+      "0": "Valeriy, bir <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Kutup Yıldızı Alanı</strong></tooltip> içindeyken <strong>Işıltı: Yıldız İletimi</strong> durumuna girer."
+    }
+  },
+  "passive": {
+    "name": "Tundra Harekat İstihbaratı",
+    "description": {
+      "0": "20 saatliğine bir Snezhnaya Keşfine gönderildiğinde (Nod-Krai hariç) %25 daha fazla ödül kazanır."
+    }
+  },
+  "constellation1": {
+    "name": "Baskılama Ateşinin Ritmi",
+    "description": {
+      "0": "Valeriy, <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Doğrudan Atışlı Havan Topu: Hassas Bombardıman</tooltip></strong> özel Yüklü Saldırısını gerçekleştirdikten sonra 6 Element Enerjisi yeniler. Bu özel Yüklü Saldırıyı gerçekleştirirken 40'ın üzerinde tüketilen her 10 <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Darbe İvmesi</tooltip></strong> için ilave 1,5 Element Enerjisi yeniler. Her <strong>Doğrudan Atışlı Havan Topu: Hassas Bombardıman</strong> gerçekleştirdiğinde bu şekilde en fazla 15 Element Enerjisi yenileyebilir. Bu etki 15 saniyede bir tetiklenebilir.",
+      "1": "Ayrıca Valeriy savaşa her girdiğinde, <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Aktif Savunma: Hisar Hücumu</tooltip></strong> Element Becerisini ilk kullanışında normalde kazanılan miktarın %150'sine eşit ilave <strong>Darbe İvmesi</strong> kazanır."
+    }
+  },
+  "constellation2": {
+    "name": "Tek Yürek Hücum Eden Saflar",
+    "description": {
+      "0": "Valeriy, <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Aktif Savunma: Hisar Hücumu</tooltip></strong> Element Becerisini kullandıktan sonra 18 saniyeliğine yakındaki tüm grup üyeleri 100 Element Ustalığı kazanır.",
+      "1": "Ayrıca bir Süper Yüklü Kalkan tarafından korunurken Valeriy'nin sahip olduğu <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Darbe İvmesi</tooltip></strong> değeri halihazırda en üst düzeydeyse, kazanacağı ilave <strong>Darbe İvmesi</strong> bunun yerine kalkan için ilave Hasar Emilimine dönüştürülür. Fazladan her <strong>Darbe İvmesi</strong> puanı, Süper Yüklü Kalkanın Hasar Emilimini Valeriy'nin Saldırısının %8'i kadar artırır. Bu şekilde en fazla 20 ilave <strong>Darbe İvmesi</strong> dönüştürülebilir."
+    }
+  },
+  "constellation3": {
+    "name": "Yakın Çatışmada Teyakkuz",
+    "description": {
+      "0": "<strong><tooltip ns=char_Valeriy_gen baseKey18=normal>Muhafız Taktikleri: Kılıç ve Kalkan</tooltip></strong> Normal Saldırısının seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Yıpratmayla Sarsılmayan Metanet",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Darbe İvmesi</tooltip></strong> sınırı 30, yükleme verimliliği ise %30 artar.",
+      "1": "Ayrıca <strong><tooltip ns=char_Valeriy_gen baseKey18=passive1>Genişleyen Yaylım Ateşiyle İlerleme</tooltip></strong> Yükseltme Yeteneği gelişir: Element Patlaması kullanıldıktan sonra bu Yetenekten kazanılabilecek maksimum <strong>Darbe İvmesi</strong> miktarı 104 olur. Bu etkiyi kullanabilmek için <strong>Genişleyen Yaylım Ateşiyle İlerleme</strong> Yükseltme Yeteneğinin kilidini açman gerekir."
+    }
+  },
+  "constellation5": {
+    "name": "Bölme ve Yok Etme Azmi",
+    "description": {
+      "0": "<strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Aktif Savunma: Hisar Hücumu</tooltip></strong> Element Becerisinin seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Düşman Hatlarını Aşma Kuvveti",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Doğrudan Atışlı Havan Topu: Hassas Bombardıman</tooltip></strong> özel Yüklü Saldırısı ve <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>Odaklı Ateş: Yıldırım Yaylımı</tooltip></strong> Element Patlamasından gelen <strong>Yıldırım Patlaması Mermileri</strong> gelişir: Hasarları %100 artar ve 7 saniyeliğine isabet ettikleri düşmanların maruz kaldığı <electro>Elektrik Hasarı</electro> için Kritik Oranı %10 artar. Alınan <electro>Elektrik Hasarı</electro>, Yıldız İletimi Tepkimesi Hasarı ise söz konusu Hasar için Kritik Hasar %40 artar."
+    }
+  }
+}

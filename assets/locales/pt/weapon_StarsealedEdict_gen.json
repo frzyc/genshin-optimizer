@@ -1,0 +1,34 @@
+{
+  "name": "Ordens Canônicas Estelares",
+  "description": {
+    "0": "Um tomo volumoso contendo as regras e procedimentos internos da Comissão de Energia Real, com inúmeros registros que datam de muitos anos atrás."
+  },
+  "passiveName": "Estrelas Astrais Errantes",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o Dano CRIT em <cryo>24%</cryo>. Ao lançar a Habilidade Elemental, o portador obtém o efeito Coro Cristalino: aumenta a Proficiência Elemental em <cryo>48</cryo> por 20s. Nessa duração, quando um membro próximo da equipe desencadear uma Reação Elemental, o portador obtém 1 acúmulo de Lei da Tocha, aumentando a Proficiência Elemental em mais <cryo>24</cryo>. Esse efeito pode ser acumulado até 3 vezes, e dura até o efeito Coro Cristalino acabar ou lançar a Habilidade Elemental novamente.",
+      "1": "Brilho Reluzente: Supercondutor Estelar: cada acúmulo de Lei da Tocha aumenta o Dano CRIT de Supercondutor Estelar do portador em <cryo>12%</cryo>.",
+      "2": "Esses efeitos podem ser desencadeados, mesmo quando o portador não for o personagem ativo."
+    },
+    "1": {
+      "0": "Aumenta o Dano CRIT em <cryo>30%</cryo>. Ao lançar a Habilidade Elemental, o portador obtém o efeito Coro Cristalino: aumenta a Proficiência Elemental em <cryo>60</cryo> por 20s. Nessa duração, quando um membro próximo da equipe desencadear uma Reação Elemental, o portador obtém 1 acúmulo de Lei da Tocha, aumentando a Proficiência Elemental em mais <cryo>30</cryo>. Esse efeito pode ser acumulado até 3 vezes, e dura até o efeito Coro Cristalino acabar ou lançar a Habilidade Elemental novamente.",
+      "1": "Brilho Reluzente: Supercondutor Estelar: cada acúmulo de Lei da Tocha aumenta o Dano CRIT de Supercondutor Estelar do portador em <cryo>15%</cryo>.",
+      "2": "Esses efeitos podem ser desencadeados, mesmo quando o portador não for o personagem ativo."
+    },
+    "2": {
+      "0": "Aumenta o Dano CRIT em <cryo>36%</cryo>. Ao lançar a Habilidade Elemental, o portador obtém o efeito Coro Cristalino: aumenta a Proficiência Elemental em <cryo>72</cryo> por 20s. Nessa duração, quando um membro próximo da equipe desencadear uma Reação Elemental, o portador obtém 1 acúmulo de Lei da Tocha, aumentando a Proficiência Elemental em mais <cryo>36</cryo>. Esse efeito pode ser acumulado até 3 vezes, e dura até o efeito Coro Cristalino acabar ou lançar a Habilidade Elemental novamente.",
+      "1": "Brilho Reluzente: Supercondutor Estelar: cada acúmulo de Lei da Tocha aumenta o Dano CRIT de Supercondutor Estelar do portador em <cryo>18%</cryo>.",
+      "2": "Esses efeitos podem ser desencadeados, mesmo quando o portador não for o personagem ativo."
+    },
+    "3": {
+      "0": "Aumenta o Dano CRIT em <cryo>42%</cryo>. Ao lançar a Habilidade Elemental, o portador obtém o efeito Coro Cristalino: aumenta a Proficiência Elemental em <cryo>84</cryo> por 20s. Nessa duração, quando um membro próximo da equipe desencadear uma Reação Elemental, o portador obtém 1 acúmulo de Lei da Tocha, aumentando a Proficiência Elemental em mais <cryo>42</cryo>. Esse efeito pode ser acumulado até 3 vezes, e dura até o efeito Coro Cristalino acabar ou lançar a Habilidade Elemental novamente.",
+      "1": "Brilho Reluzente: Supercondutor Estelar: cada acúmulo de Lei da Tocha aumenta o Dano CRIT de Supercondutor Estelar do portador em <cryo>21%</cryo>.",
+      "2": "Esses efeitos podem ser desencadeados, mesmo quando o portador não for o personagem ativo."
+    },
+    "4": {
+      "0": "Aumenta o Dano CRIT em <cryo>48%</cryo>. Ao lançar a Habilidade Elemental, o portador obtém o efeito Coro Cristalino: aumenta a Proficiência Elemental em <cryo>96</cryo> por 20s. Nessa duração, quando um membro próximo da equipe desencadear uma Reação Elemental, o portador obtém 1 acúmulo de Lei da Tocha, aumentando a Proficiência Elemental em mais <cryo>48</cryo>. Esse efeito pode ser acumulado até 3 vezes, e dura até o efeito Coro Cristalino acabar ou lançar a Habilidade Elemental novamente.",
+      "1": "Brilho Reluzente: Supercondutor Estelar: cada acúmulo de Lei da Tocha aumenta o Dano CRIT de Supercondutor Estelar do portador em <cryo>24%</cryo>.",
+      "2": "Esses efeitos podem ser desencadeados, mesmo quando o portador não for o personagem ativo."
+    }
+  }
+}

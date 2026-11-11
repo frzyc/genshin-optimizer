@@ -3,7 +3,7 @@
   "description": {
     "0": "Una espada larga que alguna vez brilló con la gloriosa luz de la Estrella Albina. Al caer en manos de alguien que ha emprendido un viaje, se ha convertido en un resplandor completamente nuevo que no pertenece a ninguna época pasada."
   },
-  "passiveName": "Senda del viajero",
+  "passiveName": "Senda de la viajera",
   "passiveDescription": {
     "0": {
       "0": "Cuando {F#la Viajera}{M#el Viajero} lleva esta arma equipada, tras golpear a un enemigo, su ATQ aumenta en un <cryo>16%</cryo> durante <cryo>8</cryo> s y recupera <cryo>3</cryo> pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada <cryo>5</cryo> s y se puede activar incluso cuando el personaje está en tu equipo pero no en uso."

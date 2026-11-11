@@ -471,11 +471,66 @@
       "0": "Saat reaksi Stellar-Conduct terpicu, area di sekitar akan berubah menjadi <strong>Polestar Field</strong> untuk sementara. Saat berada di dalam Polestar Field, beberapa Karakter tertentu akan memasuki status <strong>Radiance: Stellar-Conduct</strong> yang memberikan efek penguatan pada skill-nya."
     }
   },
+  "11360001": {
+    "name": "Gradient Beacon",
+    "description": {
+      "0": "Saat Mitya berada dalam party, memicu reaksi Stellar-Conduct tidak akan menciptakan <strong>Starlight Prism</strong>. Melainkan, akan tercipta <strong>Gradient Beacon</strong> yang bertahan selama 6 detik. Mitya dapat mengonsumsi <strong>Gradient Beacon</strong> untuk memicu berbagai efek.",
+      "1": "<strong>Gradient Beacon</strong> akan mengikuti Karakter aktif dan saat <strong>Gradient Beacon</strong> tercipta, area di sekitarnya yang lebih luas akan berubah menjadi <strong>Polestar Field</strong>. Mitya dapat membawa beberapa <strong>Gradient Beacon</strong>, dengan batas awalnya sebesar 4 buah. Saat <strong>Gradient Beacon</strong> terbentuk, durasi seluruh <strong>Gradient Beacon</strong> akan direset."
+    }
+  },
+  "11360002": {
+    "name": "Detection Core",
+    "description": {
+      "0": "Sebuah perangkat energi yang diciptakan setelah Mitya melancarkan Elemental Skill-nya. Tekan untuk menciptakan Detection Core dalam <strong>Steady State</strong>, dan Tahan tombol untuk menciptakan Core dalam <strong>Overloaded State</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Detection Core: Steady State</strong>",
+      "3": [
+        "Akan terus mengikuti musuh di sekitarnya dan mengakibatkan <electro>Electro DMG Area</electro> secara berkala.",
+        "Ketika <strong>Gradient Beacon</strong> yang dibawa Mitya mencapai batas maksimumnya, <strong>Gradient Beacon</strong> yang baru tercipta akan dikonsumsi perangkat ini dan mengakibatkan <electro>Electro DMG Area</electro> yang dianggap sebagai reaksi Stellar-Conduct.",
+        "Ketika durasi berakhir, atau saat <strong>Detection Core</strong> diciptakan kembali, semua <strong>Gradient Beacon</strong> yang dibawa akan dikonsumsi dan mengakibatkan <electro>Electro DMG Area</electro> yang dianggap sebagai reaksi Stellar-Conduct berdasarkan jumlah yang dikonsumsi."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Detection Core: Overloaded</strong>",
+      "6": [
+        "Ketika perangkat ini ada dan Mitya memiliki setidaknya satu <strong>Gradient Beacon</strong>, Mitya dapat melancarkan Charged Attack khusus <strong>Gradient Detonation</strong> tanpa mengonsumsi Stamina."
+      ]
+    }
+  },
+  "11370001": {
+    "name": "Direct-Fire Mortar: Point-Blank Bombardment",
+    "description": {
+      "0": "Charged Attack khusus milik Valeriy. Saat melakukan Charged Attack dengan minimum 40 poin <strong>Impact Momentum</strong>, seluruh <strong>Impact Momentum</strong> akan dikonsumsi dan serangannya akan berubah menjadi Charged Attack khusus ini: mengakibatkan <electro>Electro DMG Area</electro> ke arah di depan dan mendapatkan 15 lapis <strong>Offensive Directive</strong>.",
+      "1": "Saat melancarkan Charged Attack khusus sekali lagi, jumlah lapisan <strong>Offensive Directive</strong> akan diperbarui.",
+      "2": "Dalam kurun 0,8 detik setelah melancarkan Elemental Skill <strong>Active Defense: Bastion Charge</strong> atau Elemental Burst <strong>Focused Fire: Lightning Salvo</strong>, jika Valeriy memiliki setidaknya 40 poin <strong>Impact Momentum</strong>, maka Normal Attack berikutnya yang dilancarkan Valeriy akan berubah menjadi Charged Attack spesial <strong>Direct-Fire Mortar: Point-Blank Bombardment</strong>."
+    }
+  },
+  "11370002": {
+    "name": "Offensive Directive",
+    "description": {
+      "0": "Efek khusus yang diperoleh Valeriy setelah melakukan Charged Attack khusus <strong>Direct-Fire Mortar: Point-Blank Bombardment</strong>. Meningkatkan jenis <electro>Electro DMG</electro> yang berbeda tergantung apakah Valeriy berada dalam status <strong>Radiance: Stellar-Conduct</strong> atau tidak. Jika Valeriy:",
+      "1": [
+        "Berada dalam status <strong>Radiance: Stellar-Conduct</strong>: Saat Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, atau Elemental Burst milik Karakter aktif di sekitar dalam party mengakibatkan <electro>Electro DMG</electro> yang dianggap sebagai DMG reaksi Stellar-Conduct terhadap musuh, maka Valeriy akan mengonsumsi 1 lapis <strong>Offensive Directive</strong> untuk meningkatkan DMG yang diakibatkan berdasarkan ATK Valeriy.",
+        "Tidak berada dalam status <strong>Radiance: Stellar-Conduct</strong>: Saat Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, atau Elemental Burst milik Karakter aktif di sekitar dalam party mengakibatkan <electro>Electro DMG</electro> terhadap musuh, akan mengonsumsi 1 lapis <strong>Offensive Directive</strong> untuk meningkatkan DMG yang diakibatkan berdasarkan ATK Valeriy."
+      ],
+      "2": "Saat satu kali <electro>Electro DMG</electro> mengenai beberapa musuh secara bersamaan, lapisan <strong>Offensive Directive</strong> yang dikonsumsi akan disesuaikan berdasarkan jumlah musuh yang terkena."
+    }
+  },
+  "11370003": {
+    "name": "Impact Momentum",
+    "description": {
+      "0": "Energi khusus milik Valeriy yang digunakan untuk memperkuat kemampuan bertempurnya. Batas awalnya adalah 100 poin. Saat memiliki setidaknya 40 poin <strong>Impact Momentum</strong>, Valeriy dapat melancarkan Charged Attack khusus <strong>Direct-Fire Mortar: Point-Blank Bombardment</strong>.",
+      "1": "Valeriy dapat memperoleh <strong>Impact Momentum</strong> melalui cara berikut:",
+      "2": [
+        "Saat melancarkan Elemental Skill <strong>Active Defense: Bastion Charge</strong>.",
+        "Setelah membuka Talenta Ascension \"Advance With the Creeping Barrage\", selama durasi Elemental Burst <strong>Focused Fire: Lightning Salvo</strong> aktif dan ada serangan Karakter aktif di sekitar dalam party dengan jenis elemen <electro>Electro</electro> yang mengenai musuh."
+      ]
+    }
+  },
   "11400001": {
     "name": "Lead Vocal",
     "description": {
       "0": "Ketika Karakter aktif sendiri dalam party mengakibatkan <hydro>Hydro DMG</hydro> atau <cryo>Cryo DMG</cryo> melalui Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, atau Elemental Burst, akan mengonsumsi 1 lapis Lead Vocal untuk meningkatkan DMG yang diakibatkan. Jika saat ini terdapat Wandering Vortex, atau dalam kurun waktu 5 detik setelah ledakan Wandering Vortex, efek di atas hanya akan terpicu saat Karakter mengakibatkan DMG reaksi Stellar Swirl.",
-      "1": "Untuk setiap 1.000 poin Max HP Vodyanitsa yang melebihi 40000, DMG Stellar Swirl dari efek di atas akan meningkat 260 poin, <hydro>Hydro DMG</hydro> dan <cryo>Cryo DMG</cryo> akan meningkat 140 poin. Dengan cara ini, DMG Stellar Swirl dapat meningkat hingga 6500 poin, sedangkan <hydro>Hydro DMG</hydro> dan <cryo>Cryo DMG</cryo> dapat meningkat hingga 3500 poin."
+      "1": "Untuk setiap 1.000 poin Max HP Vodyanitsa yang melebihi {PARAM#P1402201|3S1:I}, DMG Stellar Swirl dari efek di atas akan meningkat 260 poin, <hydro>Hydro DMG</hydro> dan <cryo>Cryo DMG</cryo> akan meningkat 140 poin. Dengan cara ini, DMG Stellar Swirl dapat meningkat hingga {PARAM#P1402201|6S1:I} poin, sedangkan <hydro>Hydro DMG</hydro> dan <cryo>Cryo DMG</cryo> dapat meningkat hingga {PARAM#P1402201|7S1:I} poin."
     }
   },
   "11400002": {

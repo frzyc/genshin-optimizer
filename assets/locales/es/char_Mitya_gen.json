@@ -1,0 +1,184 @@
+{
+  "name": "Mitya",
+  "title": "El Desacatador de Normas",
+  "description": "Un experto en energía de altísimo nivel y un ingenioso maestro del escape de sus quehaceres.",
+  "constellationName": "Nodus Gordianus",
+  "auto": {
+    "name": "Reacción en cadena",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 3 ataques que infligen <electro>Daño Electro</electro>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para infligir <electro>Daño Electro en el AdE</electro> frente a sí mismo después de un corto tiempo de canalización.",
+        "2": "Si en el campo de batalla ya hay un <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>núcleo de detección sobrecalentado</tooltip></strong> creado por Mitya y este tiene al menos una <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>baliza de gradiente</tooltip></strong>, en su lugar, realizará el Ataque Cargado especial <strong>Implosión de gradiente</strong>, el cual no consumirá Aguante, infligirá una vez <electro>Daño Electro en el AdE</electro> en el área de enfrente y, al mantener pulsado, consumirá continuamente <strong>balizas de gradiente</strong>. Por cada <strong>baliza de gradiente</strong> consumida, infligirá una vez <electro>Daño Electro en el AdE</electro> considerado como daño de Superconductor Estelar en el área de enfrente."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo <electro>Daño Electro en el AdE</electro> en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Cargado",
+      "4": "Coste de Aguante de ATQ Cargado",
+      "5": "Daño de Caída",
+      "6": "Daño de impacto de caída baja/alta",
+      "7": "Daño de Implosión de gradiente",
+      "8": "Daño de Superconductor Estelar de Implosión de gradiente",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Estipulación: Detección de variables",
+    "description": {
+      "0": "Mediante un equivalente teóricamente seguro, realiza con moderación un experimento teóricamente seguro para infligir <electro>Daño Electro en el AdE</electro> y crear un <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>núcleo de detección</tooltip></strong> de distintas formas dependiendo de si se pulsa una vez o se mantiene pulsado.",
+      "1": "<br/>",
+      "2": "Durante 6 s después de usar la Habilidad Elemental, <strong>Estipulación: Detección de variables</strong>, se puede volver a pulsar una vez la Habilidad Elemental para cambiar el estado del <strong>núcleo de detección</strong>. Este cambio solo se puede realizar una vez cada 1.5 s."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad al pulsar una vez",
+      "1": "Daño de habilidad al mantener pulsado",
+      "2": "Daño de núcleo estable",
+      "3": "Daño del núcleo estable al consumir balizas de gradiente",
+      "4": "Daño de explosión del núcleo estable",
+      "5": "Duración de núcleo de detección",
+      "6": "TdE",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Análisis: Teorema del gradiente",
+    "description": {
+      "0": "¡Da rienda suelta a los elementos como si fueran inspiración! Inflige <electro>Daño Electro en el AdE</electro> y crea 3 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>balizas de gradiente</tooltip></strong>."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Balizas de gradiente creadas",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Prueba de presión de referencia",
+    "description": {
+      "0": "Fortalece el <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>núcleo de detección</tooltip></strong> creado con la Habilidad Elemental, <strong>Estipulación: Detección de variables</strong>. Si el <strong>núcleo de detección</strong> creado está:",
+      "1": [
+        "Estable: por cada <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>baliza de gradiente</tooltip></strong> que tenga Mitya, la Maestría Elemental de todos los personajes cercanos del equipo aumenta en 30 pts.",
+        "Sobrecalentado: después de que cualquier personaje cercano del equipo cause una reacción de Superconductor Estelar, la cantidad de <strong>balizas de gradiente</strong> obtenidas aumenta, de manera que se obtiene una cada 1.5 s durante 6 s."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Reactivo ultraexplosivo no seguro",
+    "description": {
+      "0": "Aumenta a 10 s la duración de las <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>balizas de gradiente</tooltip></strong>. Además, tras crear una <strong>baliza de gradiente</strong>, la Prob. CRIT de Mitya aumenta en un 5% durante 15 s. Este efecto puede acumularse hasta 4 veces."
+    }
+  },
+  "passive3": {
+    "name": "Bendición fulgorestelar: Acuerdo de confidencialidad",
+    "description": {
+      "0": "Cuando un personaje del equipo cause una reacción de Superconductor, esta se transformará en una reacción de Superconductor Estelar. Al causar la reacción de Superconductor Estelar, en lugar de crear un <strong>prisma brilloestelar</strong>, se creará en las cercanías una <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>baliza de gradiente</tooltip></strong> cada 1.5 s durante 3 s. Estas balizas pueden ser llevadas por Mitya y harán que un área más grande cercana a ellas se transforme en un <strong>campo estrellapolar</strong>. Al causar otra reacción de Superconductor Estelar, la duración de este efecto se reiniciará.",
+      "1": "Además, el daño base de las reacciones de Superconductor Estelar de todos los personajes cercanos del equipo aumentará en un 0.028% por cada punto de Maestría Elemental que tenga Mitya. Como máximo, dicho daño puede aumentar en un 14% de esta manera. Mitya entrará en el estado de <strong>esplendor: Superconductor Estelar</strong> mientras se encuentre dentro de un <strong>campo estrellapolar</strong>."
+    }
+  },
+  "passive": {
+    "name": "Catálisis activa de energía",
+    "description": {
+      "0": "Cuando haya rocas destruibles en los alrededores, el <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>núcleo de detección estable</tooltip></strong> podrá eliminarlas rápidamente.",
+      "1": "Además, cuando Mitya esté en el equipo, no será necesario consumir energía Kresnik para formar una <strong>creación de hielo supremo: fuente de calor simple</strong>."
+    }
+  },
+  "constellation1": {
+    "name": "Observador de lo ausente",
+    "description": {
+      "0": "El límite de <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>balizas de gradiente</tooltip></strong> que se pueden llevar aumenta a 5. Al usar la Habilidad Elemental, <strong>Estipulación: Detección de variables</strong>, se creará una <strong>baliza de gradiente</strong> adicional.",
+      "1": "Mientras el <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>núcleo de detección</tooltip></strong> esté activo, el Daño CRIT de tu personaje en uso del equipo aumentará en un 40%.",
+      "2": "Además, al crear una <strong>baliza de gradiente</strong>, Mitya recupera 10 pts. de Energía Elemental. Este efecto solo puede activarse una vez cada 8 s."
+    }
+  },
+  "constellation2": {
+    "name": "Materia silenciosa no inerte",
+    "description": {
+      "0": "Mientras el <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>núcleo de detección</tooltip></strong> esté activo, la <cryo>RES Cryo</cryo> y la <electro>RES Electro</electro> de todos los enemigos que haya dentro del <strong>campo estrellapolar</strong> se reducirán en un 20%.",
+      "1": "Además, si el <strong>núcleo de detección</strong> creado está:",
+      "2": [
+        "Estable: la Maestría Elemental de todos los personajes cercanos del equipo aumenta en 123 pts.",
+        "Sobrecalentado: la Maestría Elemental de tu personaje en uso del equipo aumenta en 234 pts."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Cuerdas y nudos de topología invariable",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <tooltip ns=char_Mitya_gen baseKey18=skill><strong>Estipulación: Detección de variables</strong></tooltip> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Isótopos de desintegración",
+    "description": {
+      "0": "Cuando en el campo de batalla haya un <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>núcleo de detección</tooltip></strong> creado por Mitya, por cada 5 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>balizas de gradiente</tooltip></strong> consumidas, el <strong>núcleo</strong> infligirá una vez a los enemigos cercanos <electro>Daño Electro en el AdE</electro> considerado como daño de Superconductor Estelar en una cantidad equivalente al 300% de la Maestría Elemental de Mitya."
+    }
+  },
+  "constellation5": {
+    "name": "Ley periódica definitoria",
+    "description": {
+      "0": "Aumenta el nivel de habilidad del Ataque Normal <tooltip ns=char_Mitya_gen baseKey18=normal><strong>Reacción en cadena</strong></tooltip> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Puertas de la razón de la transición elemental",
+    "description": {
+      "0": "Fortalece el <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>núcleo de detección</tooltip></strong>, de manera que, si el <strong>núcleo</strong> creado está:",
+      "1": [
+        "Estable: el <strong>núcleo de detección</strong> inflige un 115% de su daño original.",
+        "Sobrecalentado: al consumir una <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>baliza de gradiente</tooltip></strong>, hay un 34% de probabilidad de crear una nueva."
+      ],
+      "2": "Además, el daño de Superconductor Estelar de todos los personajes cercanos del equipo <strong><tooltip ns=tooltips_gen baseKey18=11190007 values=[]>asciende</tooltip></strong> en un 20%."
+    }
+  }
+}

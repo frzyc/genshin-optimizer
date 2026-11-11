@@ -1,0 +1,172 @@
+{
+  "name": "Valeriy",
+  "title": "Fort Fulguration",
+  "description": "Ketua Batalyon Penugasan Khusus. Seorang prajurit yang mahir melindungi orang penting dan memastikan rencana berjalan lancar.",
+  "constellationName": "Ursus Magnus",
+  "auto": {
+    "name": "Sword and Shield",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melakukan hingga 3 serangan pedang beruntun."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melompat ke depan dan menghantam tanah, mengakibatkan Physical DMG kepada musuh di sekitar.",
+        "2": "Saat Valeriy memiliki setidaknya 40 poin <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impact Momentum</tooltip></strong>, semua <strong>Impact Momentum</strong> akan dikonsumsi untuk melancarkan Charged Attack spesial <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Direct-Fire Mortar: Point-Blank Bombardment</tooltip></strong>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat.<tooltip ns=tooltips_gen baseKey18=11370002 values=[]></tooltip>"
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Charged Attack",
+      "4": "DMG Direct-Fire Mortar: Point-Blank Bombardment",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "Electro DMG Bonus",
+      "7": "Stellar-Conduct DMG Bonus",
+      "8": "Lapisan Offensive Directive",
+      "9": "Durasi Offensive Directive",
+      "10": "DMG Selama Plunging",
+      "11": "DMG Plunging Attack Rendah/Tinggi",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Active Defense: Bastion Charge",
+    "description": {
+      "0": "Mengangkat perisai dan berlari ke arah depan, mengakibatkan <electro>Electro DMG Area</electro>, memperoleh 40 poin <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impact Momentum</tooltip></strong> dan menciptakan Supercharged Shield.",
+      "1": "Ketahanan DMG Supercharged Shield didasarkan pada ATK Valeriy dan memiliki 250% pertahanan terhadap <electro>Electro DMG</electro>."
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Pertahanan Perisai",
+      "2": "Durasi Perisai",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Focused Fire: Lightning Salvo",
+    "description": {
+      "0": "Mengakibatkan <electro>Electro DMG Area</electro> terhadap musuh di sekitar dan menembakkan <strong>Thunderburst Shell</strong> ke udara. <strong>Thunderburst Shell</strong> akan menyebar menjadi hujan peluru dalam jumlah besar yang jatuh ke tanah dan mengakibatkan <electro>Electro DMG Area</electro> terhadap musuh di sekitar."
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Thunderburst Shell",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Advance With the Creeping Barrage",
+    "description": {
+      "0": "Valeriy akan mendapatkan 5 poin <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impact Momentum</tooltip></strong> saat Karakter aktif lain di sekitar dalam party menyerang dan mengenai musuh dengan serangan elemen <electro>Electro</electro> selama <strong>Thunderburst Shell</strong> dari Elemental Burst <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>Focused Fire: Lightning Salvo</tooltip></strong> sedang berjatuhan. Setiap kali melancarkan Elemental Burst, <strong>Impact Momentum</strong> maksimum yang dapat diperoleh dengan cara ini adalah 80 poin."
+    }
+  },
+  "passive2": {
+    "name": "Into the Breach",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11370002 values=[]>Offensive Directive</tooltip></strong> diperkuat: Setiap satu poin <strong>Impact Momentum</strong> yang dikonsumsi akan meningkatkan efek bonus DMG <strong>Offensive Directive</strong> lagi berdasarkan jumlah <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impact Momentum</tooltip></strong> yang dikonsumsi saat melakukan Charged Attack spesial <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Direct-Fire Mortar: Point-Blank Bombardment</tooltip></strong>. Jika Valeriy:",
+      "1": [
+        " Berada dalam status <strong>Radiance: Stellar-Conduct</strong>: Setiap poin <strong>Impact Momentum</strong> yang dikonsumsi akan meningkatkan efek bonus DMG <strong>Offensive Directive</strong> sebesar 0,9% ATK Valeriy.",
+        " Tidak berada dalam status <strong>Radiance: Stellar-Conduct</strong>: Setiap poin <strong>Impact Momentum</strong> yang dikonsumsi akan meningkatkan efek bonus DMG <strong>Offensive Directive</strong> sebesar 0,3% ATK Valeriy."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Subzero Conditioning",
+    "description": {
+      "0": "Saat berada di dalam <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>, Valeriy akan memasuki status <strong>Radiance: Stellar-Conduct</strong>."
+    }
+  },
+  "passive": {
+    "name": "Tundra Operational Intelligence",
+    "description": {
+      "0": "Ketika dikirim untuk melakukan ekspedisi di Snezhnaya (selain Nod-Krai) selama 20 jam, hadiah yang didapatkan akan bertambah 25%."
+    }
+  },
+  "constellation1": {
+    "name": "The Cadence of Suppressive Fire",
+    "description": {
+      "0": "Valeriy akan memulihkan 6 poin Energy setelah melancarkan Charged Attack khusus <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Direct-Fire Mortar: Point-Blank Bombardment</tooltip></strong>. Saat melancarkan Charged Attack khusus, setiap 10 poin yang dikonsumsi melebihi 40 poin akan memulihkan Energy Valeriy sebesar 1,5 poin tambahan berdasarkan <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impact Momentum</tooltip></strong> yang dikonsumsi. Setiap kali melancarkan Charged Attack khusus <strong>Direct-Fire Mortar: Point-Blank Bombardment</strong>, Energy yang dipulihkan Valeriy dengan cara ini maksimum 15 poin. Efek ini dapat terpicu sekali setiap 15 detik.",
+      "1": "Selain itu, setiap kali memasuki kondisi bertempur, Valeriy akan mendapatkan tambahan <strong>Impact Momentum</strong> sebesar 150% dari jumlah aslinya saat pertama kali melancarkan Elemental Skill <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Active Defense: Bastion Charge</tooltip></strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Ranks That Charge as One",
+    "description": {
+      "0": "Saat Valeriy melancarkan Elemental Skill <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Active Defense: Bastion Charge</tooltip></strong>, Elemental Mastery seluruh Karakter di sekitar dalam party meningkat sebesar 100 poin selama 18 detik.",
+      "1": "Selain itu, saat sedang dilindungi oleh Supercharged Shield, jika <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impact Momentum</tooltip></strong> Valeriy telah mencapai batas maksimum, maka efek perolehan <strong>Impact Momentum</strong> yang terpicu akan dikonversi menjadi peningkatan ketahanan DMG Supercharged Shield. Setiap 1 poin <strong>Impact Momentum</strong> yang berlebih meningkatkan ketahanan DMG Supercharged Shield sebesar 8% ATK Valeriy. Jumlah maksimum <strong>Impact Momentum</strong> berlebih yang dapat dikonversi melalui cara ini adalah 20 poin."
+    }
+  },
+  "constellation3": {
+    "name": "Vigilance at Close Quarters",
+    "description": {
+      "0": "Meningkatkan 3 level Normal Attack <strong><tooltip ns=char_Valeriy_gen baseKey18=normal>Guard Tactics: Sword and Shield</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Fortitude Unshaken by Attrition",
+    "description": {
+      "0": "Batas maksimum <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Impact Momentum</tooltip></strong> meningkat 30 poin dan efisiensi perolehannya meningkat 30%.",
+      "1": "Selain itu, efek Talenta Ascension <strong><tooltip ns=char_Valeriy_gen baseKey18=passive1>Advance With the Creeping Barrage</tooltip></strong> diperkuat: setiap kali melancarkan Elemental Burst, dapat memperoleh maksimum 104 poin <strong>Impact Momentum</strong> melalui Talenta ini. Harus sudah membuka Talenta Ascension <strong>Advance With the Creeping Barrage</strong> terlebih dulu."
+    }
+  },
+  "constellation5": {
+    "name": "Resolve to Divide and Destroy",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Active Defense: Bastion Charge</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "The Strength to Breach Enemy Lines",
+    "description": {
+      "0": "Charged Attack khusus <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Direct-Fire Mortar: Point-Blank Bombardment</tooltip></strong> dan <strong>Thunderburst Shell</strong> dari Elemental Burst <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>Focused Fire: Lightning Salvo</tooltip></strong> diperkuat: DMG yang diakibatkan meningkat 100%, dan setelah mengenai musuh, CRIT Rate untuk <electro>Electro DMG</electro> yang diterima musuh ini meningkat 10% selama 7 detik. Jika <electro>Electro DMG</electro> yang diterima merupakan DMG reaksi Stellar-Conduct, maka CRIT DMG untuk DMG tersebut juga meningkat 40%."
+    }
+  }
+}

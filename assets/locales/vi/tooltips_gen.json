@@ -471,11 +471,66 @@
       "0": "Khi kích hoạt phản ứng Tinh-Siêu Dẫn, khu vực lân cận sẽ tạm thời chuyển thành <strong>Vùng Trục Sao</strong>. Khi ở trong Vùng Trục Sao, nhân vật chỉ định sẽ tiến vào trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>, khiến các kỹ năng khác nhau lần lượt nhận được hiệu quả cường hóa tương ứng."
     }
   },
+  "11360001": {
+    "name": "Tín Hiệu Biến Đổi",
+    "description": {
+      "0": "Khi Mitya ở trong đội, khi kích hoạt phản ứng Tinh-Siêu Dẫn, sẽ không tạo ra <strong>Pha Lê Tinh Huy</strong>, mà thay vào đó sẽ tạo ra <strong>Tín Hiệu Biến Đổi</strong> duy trì 6s. Mitya có thể tiêu hao <strong>Tín Hiệu Biến Đổi</strong> để kích hoạt các hiệu ứng khác nhau.",
+      "1": "<strong>Tín Hiệu Biến Đổi</strong> sẽ đi theo nhân vật trong trận hiện tại, đồng thời khi tạo ra <strong>Tín Hiệu Biến Đổi</strong> sẽ biến khu vực rộng lớn hơn gần đó thành <strong>Vùng Trục Sao</strong>. Mitya có thể mang theo nhiều <strong>Tín Hiệu Biến Đổi</strong>, ban đầu tối đa mang theo 4. Khi tạo ra <strong>Tín Hiệu Biến Đổi</strong>, sẽ đặt lại thời gian duy trì của toàn bộ <strong>Tín Hiệu Biến Đổi</strong>."
+    }
+  },
+  "11360002": {
+    "name": "Lõi Dò Tìm",
+    "description": {
+      "0": "Thiết bị năng lượng được tạo ra sau khi thi triển Kỹ Năng Nguyên Tố. Nhấn để tạo ra Lõi <strong>Ổn Định</strong>, nhấn giữ để tạo ra Lõi <strong>Quá Tải</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Lõi Dò Tìm - Ổn Định</strong>",
+      "3": [
+        "Liên tục đi theo kẻ địch xung quanh và gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> theo chu kỳ.",
+        "Khi <strong>Tín Hiệu Biến Đổi</strong> của Mitya đạt giới hạn mang theo, <strong>Tín Hiệu Biến Đổi</strong> mới tạo ra sẽ được thiết bị này tiêu hao và gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> được xem là sát thương phản ứng Tinh-Siêu Dẫn.",
+        "Khi kết thúc thời gian duy trì, hoặc khi tạo lại <strong>Lõi Dò Tìm</strong>, sẽ tiêu hao toàn bộ <strong>Tín Hiệu Biến Đổi</strong> đang mang, và dựa trên số lượng tiêu hao để gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> được xem là sát thương phản ứng Tinh-Siêu Dẫn."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Lõi Dò Tìm - Quá Tải</strong>",
+      "6": [
+        "Khi thiết bị này tồn tại và Mitya có ít nhất một <strong>Tín Hiệu Biến Đổi</strong>, Mitya có thể tiến hành Trọng Kích đặc biệt <strong>Bùng Nổ Biến Đổi</strong> không tiêu hao Thể Lực."
+      ]
+    }
+  },
+  "11370001": {
+    "name": "Súng Cối Bắn Thẳng - Oanh Tạc Tầm Gần",
+    "description": {
+      "0": "Trọng Kích đặc biệt của Valeriy. Thi triển Trọng Kích khi có ít nhất 40 điểm <strong>Thế Năng Xung Kích</strong>, sẽ tiêu hao toàn bộ <strong>Thế Năng Xung Kích</strong> và chuyển sang thi triển Trọng Kích đặc biệt này, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> về phía trước và nhận 15 tầng <strong>Chỉ Lệnh Tấn Công</strong>.",
+      "1": "Khi thi triển Trọng Kích đặc biệt lần nữa, số tầng <strong>Chỉ Lệnh Tấn Công</strong> sẽ được làm mới.",
+      "2": "Trong vòng 0.8s sau khi thi triển Kỹ Năng Nguyên Tố <strong>Phòng Ngự Tấn Công - Pháo Đài Thần Tốc</strong> hoặc Kỹ Năng Nộ <strong>Tiêu Điểm Hỏa Lực - Sấm Sét Oanh Kích</strong>, nếu Valeriy có ít nhất 40 điểm <strong>Thế Năng Xung Kích</strong>, thì Tấn Công Thường lần sau mà Valeriy thực hiện sẽ đổi thành Trọng Kích đặc biệt <strong>Súng Cối Bắn Thẳng - Oanh Tạc Tầm Gần</strong>."
+    }
+  },
+  "11370002": {
+    "name": "Chỉ Lệnh Tấn Công",
+    "description": {
+      "0": "Hiệu quả đặc biệt Valeriy nhận được sau khi thi triển Trọng Kích đặc biệt <strong>Súng Cối Bắn Thẳng - Oanh Tạc Tầm Gần</strong>. Dựa trên việc Valeriy có đang trong trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong> hay không, sẽ giúp tăng các loại <electro>Sát Thương Nguyên Tố Lôi</electro> khác nhau. Nếu Valeriy:",
+      "1": [
+        "Đang trong trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Khi Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của nhân vật ra trận hiện tại trong đội ở gần gây <electro>Sát Thương Nguyên Tố Lôi</electro> được xem là sát thương phản ứng Tinh-Siêu Dẫn lên kẻ địch, sẽ tiêu hao một tầng <strong>Chỉ Lệnh Tấn Công</strong> để tăng sát thương gây ra, mức tăng dựa trên Tấn Công của Valeriy.",
+        "Không trong trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Khi Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của nhân vật ra trận hiện tại trong đội ở gần gây <electro>Sát Thương Nguyên Tố Lôi</electro> lên kẻ địch, sẽ tiêu hao một tầng <strong>Chỉ Lệnh Tấn Công</strong> để tăng sát thương gây ra, mức tăng dựa trên Tấn Công của Valeriy."
+      ],
+      "2": "Nếu trong một lần <electro>Sát Thương Nguyên Tố Lôi</electro> đánh trúng nhiều kẻ địch cùng lúc, sẽ dựa trên số lượng kẻ địch trúng đòn để tiêu hao số tầng <strong>Chỉ Lệnh Tấn Công</strong>."
+    }
+  },
+  "11370003": {
+    "name": "Thế Năng Xung Kích",
+    "description": {
+      "0": "Năng lượng đặc biệt Valeriy dùng để cường hóa chiến đấu, giới hạn ban đầu là 100 điểm. Khi có ít nhất 40 điểm <strong>Thế Năng Xung Kích</strong>, có thể thi triển Trọng Kích đặc biệt <strong>Súng Cối Bắn Thẳng - Oanh Tạc Tầm Gần</strong>.",
+      "1": "Valeriy có thể nhận <strong>Thế Năng Xung Kích</strong> thông qua những cách sau:",
+      "2": [
+        "Thi triển Kỹ Năng Nguyên Tố <strong>Phòng Ngự Tấn Công - Pháo Đài Thần Tốc</strong>.",
+        "Sau khi mở khóa Thiên Phú Đột Phá \"Tiến Bước Cùng Với Màn Đạn\", trong thời gian duy trì Kỹ Năng Nộ <strong>Tiêu Điểm Hỏa Lực - Sấm Sét Oanh Kích</strong>, khi đòn tấn công <electro>Nguyên Tố Lôi</electro> của nhân vật ra trận hiện tại trong đội ở gần đánh trúng kẻ địch."
+      ]
+    }
+  },
   "11400001": {
     "name": "Hát Dẫn",
     "description": {
       "0": "Khi Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của nhân vật ra trận hiện tại trong đội bản thân gây ra Sát Thương Nguyên Tố <hydro>Thủy</hydro> hoặc <cryo>Băng</cryo>, sẽ tiêu hao một tầng \"Hát Dẫn\" để tăng sát thương gây ra. Nếu trong trận có Cụm Gió Phiêu Du, hoặc trong vòng 5s sau khi Cụm Gió Phiêu Du phát nổ, thì sẽ đổi thành khi nhân vật gây sát thương phản ứng Tinh-Khuếch Tán mới có thể kích hoạt hiệu quả trên.",
-      "1": "Dựa trên phần Giới Hạn HP vượt quá 40000 của Vodyanitsa, mỗi 1000 điểm Giới Hạn HP đều sẽ khiến sát thương phản ứng Tinh-Khuếch Tán trong hiệu quả trên tăng 260 điểm, Sát Thương Nguyên Tố <hydro>Thủy</hydro> và <cryo>Băng</cryo> tăng 140 điểm. Thông qua cách này, tối đa khiến sát thương phản ứng Tinh-Khuếch Tán tăng 6500 điểm, Sát Thương Nguyên Tố <hydro>Thủy</hydro> và <cryo>Băng</cryo> tăng 3500 điểm."
+      "1": "Dựa trên phần Giới Hạn HP vượt quá {PARAM#P1402201|3S1:I} của Vodyanitsa, mỗi 1000 điểm Giới Hạn HP đều sẽ khiến sát thương phản ứng Tinh-Khuếch Tán trong hiệu quả trên tăng 260 điểm, Sát Thương Nguyên Tố <hydro>Thủy</hydro> và <cryo>Băng</cryo> tăng 140 điểm. Thông qua cách này, tối đa khiến sát thương phản ứng Tinh-Khuếch Tán tăng {PARAM#P1402201|6S1:I} điểm, Sát Thương Nguyên Tố <hydro>Thủy</hydro> và <cryo>Băng</cryo> tăng {PARAM#P1402201|7S1:I} điểm."
     }
   },
   "11400002": {

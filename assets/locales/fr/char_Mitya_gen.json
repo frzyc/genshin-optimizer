@@ -1,0 +1,184 @@
+{
+  "name": "Mitya",
+  "title": "Règles réduites à néant",
+  "description": "Un spécialiste de l'énergie exceptionnellement ingénieux et un maître dans l'art subtil de « contourner les horaires ».",
+  "constellationName": "Nodus Gordianus",
+  "auto": {
+    "name": "Réaction en chaîne",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 3 attaques qui infligent des <electro>DGT Électro</electro>."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour infliger des <electro>DGT Électro de zone</electro> vers l'avant après un court délai.",
+        "2": "Si un <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>noyau de détection surchargé</tooltip></strong> créé par Mitya est présent sur le terrain et qu'il possède au moins 1 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>balise de gradient</tooltip></strong>, Mitya effectue à la place l'attaque chargée spéciale <strong>Détonation de gradient</strong> sans consommer d'endurance : inflige une fois des <electro>DGT Électro de zone</electro> vers l'avant, tandis qu'un appui long consomme de façon continue les <strong>balises de gradient</strong>, chaque <strong>balise</strong> consommée infligeant une fois des <electro>DGT Électro de zone</electro> considérés comme des DGT d'Astroconduction vers l'avant."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs, infligeant des DGT aux ennemis en chemin et des <electro>DGT Électro de zone</electro> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT attaque chargée",
+      "4": "Coût d'endurance attaque chargée",
+      "5": "DGT durant la chute",
+      "6": "DGT chute basse/élevée",
+      "7": "DGT Détonation de gradient",
+      "8": "DGT d'Astroconduction Détonation de gradient",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Principe : Détection de variables",
+    "description": {
+      "0": "Mène une expérience théoriquement relativement sûre avec un rendement théoriquement relativement sûr, infligeant des <electro>DGT Électro de zone</electro> et créant différents <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>noyaux de détection</tooltip></strong> selon la méthode de déclenchement.",
+      "1": "<br/>",
+      "2": "Utiliser à nouveau la compétence élémentaire <strong>Principe : Détection de variables</strong> avec un appui simple dans les 6 s après l'avoir utilisée modifie l'état des <strong>noyaux de détection</strong>, leur état pouvant être modifié une fois toutes les 1,5 s de cette manière."
+    },
+    "skillParams": {
+      "0": "DGT appui simple",
+      "1": "DGT appui long",
+      "2": "DGT noyau stable",
+      "3": "DGT noyau stable (consommation de balise de gradient)",
+      "4": "DGT explosion de noyau stable",
+      "5": "Durée de noyau de détection",
+      "6": "Temps de recharge",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Analyse : Théorie de gradient",
+    "description": {
+      "0": "Laissez les éléments jaillir comme l'inspiration elle-même ! Inflige des <electro>DGT Électro de zone</electro> et crée 3 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>balises de gradient</tooltip></strong>."
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Balises de gradient générées",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Test de stress de base",
+    "description": {
+      "0": "Les <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>noyaux de détection</tooltip></strong> créés par la compétence élémentaire <strong>Principe : Détection de variables</strong> sont renforcés selon le type de <strong>noyau</strong> créé :",
+      "1": [
+        " Noyau stable : chaque <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>balise de gradient</tooltip></strong> possédée accorde 30 pts de maîtrise élémentaire à tous les personnages de l'équipe à proximité.",
+        " Noyau surchargé : lorsqu'un personnage de l'équipe à proximité déclenche une réaction d'Astroconduction, la quantité de <strong>balises de gradient</strong> obtenues passe à 1 <strong>balise</strong> toutes les 1,5 s pendant 6 s."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Réactif explosif : Limites de sécurité dépassées",
+    "description": {
+      "0": "La durée des <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>balises de gradient</tooltip></strong> passe à 10 s. De plus, le taux CRIT de Mitya augmente de 5 % pendant 15 s après avoir créé une <strong>balise de gradient</strong>, cet effet pouvant être cumulé 4 fois."
+    }
+  },
+  "passive3": {
+    "name": "Jubilé stellaire : Protocole top secret",
+    "description": {
+      "0": "Lorsqu'un personnage de l'équipe déclenche une réaction de Supraconduction, elle est convertie en réaction d'Astroconduction. Les réactions d'Astroconduction ne créent plus de <strong>prismes de lumière stellaire</strong>, mais créent à la place des <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>balises de gradient</tooltip></strong> à proximité toutes les 1,5 s pendant 3 s, balises que Mitya peut transporter et qui transforment la zone environnante en <strong>étendue polaris</strong> plus grande. Déclencher à nouveau une réaction d'Astroconduction actualise la durée de ces effets.",
+      "1": "De plus, les DGT de base des réactions d'Astroconduction infligées par tous les personnages de l'équipe à proximité augmentent selon la maîtrise élémentaire de Mitya : chaque point de maîtrise élémentaire augmente les DGT de base de 0,028 %, les DGT de base pouvant être augmentés d'un maximum de 14 % de cette manière. Mitya passe en <strong>radiance « Astroconduction »</strong> lorsqu'il se trouve dans une <strong>étendue polaris</strong>."
+    }
+  },
+  "passive": {
+    "name": "Catalyse énergétique",
+    "description": {
+      "0": "Lorsque des rochers destructibles sont à proximité, le <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>noyau de détection stable</tooltip></strong> peut les éliminer rapidement.",
+      "1": "De plus, créer une <strong>structure de glace primale « Source de chaleur de base »</strong> lorsque Mitya est dans l'équipe ne consomme pas d'énergie de Kresnik."
+    }
+  },
+  "constellation1": {
+    "name": "L'observateur à la recherche de ce qui manque",
+    "description": {
+      "0": "La limite de <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>balises de gradient</tooltip></strong> que Mitya peut avoir passe à 5, et utiliser la compétence élémentaire <strong>Principe : Détection de variables</strong> crée une <strong>balise de gradient</strong> supplémentaire.",
+      "1": "Pendant un <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>noyau de détection</tooltip></strong>, les DGT CRIT de tous vos personnages déployés dans l'équipe à proximité augmentent de 40 %.",
+      "2": "De plus, créer une <strong>balise de gradient</strong> accorde 10 pts d'énergie élémentaire à Mitya, cet effet pouvant être déclenché une fois toutes les 8 s."
+    }
+  },
+  "constellation2": {
+    "name": "La matière qui sommeille au-delà de l'inertie",
+    "description": {
+      "0": "Pendant la durée d'un <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>noyau de détection</tooltip></strong>, la <cryo>RÉS Cryo</cryo> et la <electro>RÉS Électro</electro> des ennemis dans l'<strong>étendue polaris</strong> diminuent de 20 %.",
+      "1": "De plus, si le <strong>noyau de détection</strong> est :",
+      "2": [
+        " Stable : la maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente de 123 pts.",
+        " Surchargé : la maîtrise élémentaire de votre personnage déployé augmente de 234 pts."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "La chaîne nouée de la topologie invariante",
+    "description": {
+      "0": "Niveau d'aptitude <tooltip ns=char_Mitya_gen baseKey18=skill><strong>Principe : Détection de variables</strong></tooltip> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Les isotopes issus de la désintégration",
+    "description": {
+      "0": "Si un <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>noyau de détection</tooltip></strong> créé par Mitya est sur le terrain, il<strong></strong> inflige une fois des <electro>DGT Électro de zone</electro> d'une valeur équivalant à 300 % de la maîtrise élémentaire de Mitya aux ennemis proches à chaque fois que 5 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>balises de gradient</tooltip></strong> sont consommées, ces DGT étant considérés comme des DGT d'Astroconduction."
+    }
+  },
+  "constellation5": {
+    "name": "La loi périodique qui ordonne tout",
+    "description": {
+      "0": "Niveau d'aptitude <tooltip ns=char_Mitya_gen baseKey18=normal><strong>Réaction en chaîne</strong></tooltip> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Transition élémentaire à la porte de la raison",
+    "description": {
+      "0": "Les <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>noyaux de détection</tooltip></strong> sont renforcés :<strong></strong>",
+      "1": [
+        " Si le noyau créé est stable : le <strong>noyau de détection</strong> inflige des DGT d'une valeur équivalant à 115 % des DGT d'origine.",
+        " Si le noyau créé est surchargé : consommer une <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>balise de gradient</tooltip></strong> a 34 % de chances de créer une nouvelle <strong>balise de gradient</strong>."
+      ],
+      "2": "De plus, les DGT de réaction d'Astroconduction de tous les personnages de l'équipe à proximité bénéficient d'une <strong><tooltip ns=tooltips_gen baseKey18=11190007 values=[]>élévation</tooltip></strong> de 20 %."
+    }
+  }
+}

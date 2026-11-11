@@ -157,6 +157,7 @@
     "invalidTarget": "INVALID TARGET"
   },
   "selectTargetFirst": "Select an Optimization Target first",
+  "emptyTarget": "This target is empty; ensure that you have any relevant talent conditionals set up correctly",
   "generateButton": {
     "cancel": "Cancel",
     "generateBuilds": "Generate Builds"

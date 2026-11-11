@@ -1,0 +1,34 @@
+{
+  "name": "Yıldız Yazgısı Hükmü",
+  "description": {
+    "0": "Kraliyet Enerji Komisyonunun iç tüzüğünü ve prosedürlerini içeren, uzun yıllar öncesinden kalma çok sayıda kaydın bulunduğu kalın bir cilt."
+  },
+  "passiveName": "Şafak Yıldızının İzi",
+  "passiveDescription": {
+    "0": {
+      "0": "Kritik Hasarı <cryo>%24</cryo> artırır. Kuşanan karakter, Element Becerisini kullandığında Kristal Bileşimi etkisini kazanır: 20 saniyeliğine Element Ustalığı <cryo>48</cryo> artar. Bu süre boyunca kuşanan karakter, yakındaki bir grup üyesi bir Element Tepkimesi tetiklediğinde 1 kademe Patlama Kanunu kazanır. Her kademe, Element Ustalığını ek <cryo>24</cryo> artırır. 3 kademeye kadar birikebilir. Bu kademeler Kristal Bileşimi sona erene veya kuşanan karakter Element Becerisini tekrar kullanıncaya kadar sürer.",
+      "1": "Işıltı: Yıldız İletimi: Her Patlama Kanunu kademesi ayrıca kuşanan karakterin Yıldız İletimi Kritik Hasarını <cryo>%12</cryo> artırır.",
+      "2": "Kuşanan karakter alanda olmasa bile bu etkiler tetiklenebilir."
+    },
+    "1": {
+      "0": "Kritik Hasarı <cryo>%30</cryo> artırır. Kuşanan karakter, Element Becerisini kullandığında Kristal Bileşimi etkisini kazanır: 20 saniyeliğine Element Ustalığı <cryo>60</cryo> artar. Bu süre boyunca kuşanan karakter, yakındaki bir grup üyesi bir Element Tepkimesi tetiklediğinde 1 kademe Patlama Kanunu kazanır. Her kademe, Element Ustalığını ek <cryo>30</cryo> artırır. 3 kademeye kadar birikebilir. Bu kademeler Kristal Bileşimi sona erene veya kuşanan karakter Element Becerisini tekrar kullanıncaya kadar sürer.",
+      "1": "Işıltı: Yıldız İletimi: Her Patlama Kanunu kademesi ayrıca kuşanan karakterin Yıldız İletimi Kritik Hasarını <cryo>%15</cryo> artırır.",
+      "2": "Kuşanan karakter alanda olmasa bile bu etkiler tetiklenebilir."
+    },
+    "2": {
+      "0": "Kritik Hasarı <cryo>%36</cryo> artırır. Kuşanan karakter, Element Becerisini kullandığında Kristal Bileşimi etkisini kazanır: 20 saniyeliğine Element Ustalığı <cryo>72</cryo> artar. Bu süre boyunca kuşanan karakter, yakındaki bir grup üyesi bir Element Tepkimesi tetiklediğinde 1 kademe Patlama Kanunu kazanır. Her kademe, Element Ustalığını ek <cryo>36</cryo> artırır. 3 kademeye kadar birikebilir. Bu kademeler Kristal Bileşimi sona erene veya kuşanan karakter Element Becerisini tekrar kullanıncaya kadar sürer.",
+      "1": "Işıltı: Yıldız İletimi: Her Patlama Kanunu kademesi ayrıca kuşanan karakterin Yıldız İletimi Kritik Hasarını <cryo>%18</cryo> artırır.",
+      "2": "Kuşanan karakter alanda olmasa bile bu etkiler tetiklenebilir."
+    },
+    "3": {
+      "0": "Kritik Hasarı <cryo>%42</cryo> artırır. Kuşanan karakter, Element Becerisini kullandığında Kristal Bileşimi etkisini kazanır: 20 saniyeliğine Element Ustalığı <cryo>84</cryo> artar. Bu süre boyunca kuşanan karakter, yakındaki bir grup üyesi bir Element Tepkimesi tetiklediğinde 1 kademe Patlama Kanunu kazanır. Her kademe, Element Ustalığını ek <cryo>42</cryo> artırır. 3 kademeye kadar birikebilir. Bu kademeler Kristal Bileşimi sona erene veya kuşanan karakter Element Becerisini tekrar kullanıncaya kadar sürer.",
+      "1": "Işıltı: Yıldız İletimi: Her Patlama Kanunu kademesi ayrıca kuşanan karakterin Yıldız İletimi Kritik Hasarını <cryo>%21</cryo> artırır.",
+      "2": "Kuşanan karakter alanda olmasa bile bu etkiler tetiklenebilir."
+    },
+    "4": {
+      "0": "Kritik Hasarı <cryo>%48</cryo> artırır. Kuşanan karakter, Element Becerisini kullandığında Kristal Bileşimi etkisini kazanır: 20 saniyeliğine Element Ustalığı <cryo>96</cryo> artar. Bu süre boyunca kuşanan karakter, yakındaki bir grup üyesi bir Element Tepkimesi tetiklediğinde 1 kademe Patlama Kanunu kazanır. Her kademe, Element Ustalığını ek <cryo>48</cryo> artırır. 3 kademeye kadar birikebilir. Bu kademeler Kristal Bileşimi sona erene veya kuşanan karakter Element Becerisini tekrar kullanıncaya kadar sürer.",
+      "1": "Işıltı: Yıldız İletimi: Her Patlama Kanunu kademesi ayrıca kuşanan karakterin Yıldız İletimi Kritik Hasarını <cryo>%24</cryo> artırır.",
+      "2": "Kuşanan karakter alanda olmasa bile bu etkiler tetiklenebilir."
+    }
+  }
+}
