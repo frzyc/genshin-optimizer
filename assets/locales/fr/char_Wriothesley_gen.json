@@ -187,7 +187,7 @@
     "upgradedDescription": {
       "0": "En utilisant <strong>Morsure lupine de l'or</strong>, chaque cumul d'édit d'accusation de l'aptitude d'élévation « Rétribution pour le péché » augmente les DGT infligés de 40 %.",
       "1": "<br/>",
-      "2": "De plus, avec 5 cumuls d'édit d'accusation : ",
+      "2": "De plus, avec 5 cumuls d'édit d'accusation :",
       "3": [
         " Si Wriothesley est en <strong>radiance « Astroconduction »</strong>, l'aptitude « L'injustice sera dévoilée » est renforcée : la 3e attaque et la 5 attaque du poing de réprimande renforcé par le <strong>châtiment algide</strong> infligent des <cryo>DGT Cryo</cryo> d'une valeur équivalant à 90 % et 120 % des DGT d'origine, respectivement, et le poing bondissant de lustre inflige des <cryo>DGT Cryo de zone</cryo> d'une valeur équivalant à 150 % des DGT d'origine, tous ces DGT étant considérés comme des DGT de réaction d'Astroconduction.",
         " Si Wriothesley n'est pas en <strong>radiance « Astroconduction »</strong>, ses attaques normales et ses attaques chargées infligent respectivement des DGT d'une valeur équivalant à 125 % et 130 % des DGT d'origine."

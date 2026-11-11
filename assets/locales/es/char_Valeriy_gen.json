@@ -1,0 +1,172 @@
+{
+  "name": "Valeri",
+  "title": "El Baluarte Atronador",
+  "description": "Capitán del Batallón de Misiones Especiales. Un militar experto en proteger a personalidades importantes y en sacar adelante cualquier plan.",
+  "constellationName": "Ursus Magnus",
+  "auto": {
+    "name": "Espada y escudo",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 3 ataques consecutivos con espada."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para saltar hacia delante y golpear el suelo, infligiendo Daño Físico a los enemigos cercanos.",
+        "2": "Cuando Valeri tenga al menos 40 pts. de <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>energía de choque</tooltip></strong>, la consumirá toda para realizar el Ataque Cargado especial <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Mortero directo: Bombardeo a quemarropa</tooltip></strong>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto.<tooltip ns=tooltips_gen baseKey18=11370002 values=[]></tooltip>"
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Cargado",
+      "4": "Daño de Mortero directo: Bombardeo a quemarropa",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Aumento de Daño Electro",
+      "7": "Aumento de daño de Superconductor Estelar",
+      "8": "Cargas de orden expeledora",
+      "9": "Duración de orden expeledora",
+      "10": "Daño de Caída",
+      "11": "Daño de impacto de caída baja/alta",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Defensa ofensiva: Asedio blindado",
+    "description": {
+      "0": "Alza su escudo y esprinta hacia delante para infligir <electro>Daño Electro en el AdE</electro>, obtener 40 pts. de <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>energía de choque</tooltip></strong> y crear un escudo electrificado.",
+      "1": "La absorción de daño de dicho escudo varía en función del ATQ de Valeri y tiene un 250% de efectividad de absorción de <electro>Daño Electro</electro>."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Absorción de escudo",
+      "2": "Duración del escudo",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Fuego concentrado: Salva de electrometralla",
+    "description": {
+      "0": "Inflige <electro>Daño Electro en el AdE</electro> a los enemigos cercanos y lanza hacia el aire un <strong>misil de electrometralla</strong>. El <strong>misil de electrometralla</strong> se dividirá en una gran cantidad de proyectiles que caerán al suelo e infligirán <electro>Daño Electro en el AdE</electro> a los enemigos cercanos."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de misil de electrometralla",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "En compañía de un bombardeo",
+    "description": {
+      "0": "Mientras caen los <strong>misiles de electrometralla</strong> de la Habilidad Definitiva, <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>Fuego concentrado: Salva de electrometralla</tooltip></strong>, cuando los demás personajes en uso cercanos del equipo golpeen a un enemigo con ataques <electro>Electro</electro>, Valeri obtendrá 5 pts. de <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>energía de choque</tooltip></strong>. Tras cada uso de la Habilidad Definitiva, se puede obtener un máximo de 80 pts. de <strong>energía de choque</strong> de esta forma."
+    }
+  },
+  "passive2": {
+    "name": "Asalto a la brecha defensiva",
+    "description": {
+      "0": "Fortalece la <strong><tooltip ns=tooltips_gen baseKey18=11370002 values=[]>orden expeledora</tooltip></strong>, de manera que el bono de daño otorgado por esta aumentará aún más en función de la <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>energía de choque</tooltip></strong> consumida al ejecutar el Ataque Cargado especial <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Mortero directo: Bombardeo a quemarropa</tooltip></strong>. Si Valeri:",
+      "1": [
+        "Se encuentra en estado de <strong>esplendor: Superconductor Estelar</strong>, cada punto de <strong>energía de choque</strong> consumido aumentará el bono de daño de la <strong>orden expeledora</strong> en una cantidad equivalente al 0.9% del ATQ de Valeri.",
+        "No se encuentra en estado de <strong>esplendor: Superconductor Estelar</strong>, cada punto de <strong>energía de choque</strong> consumido aumentará el bono de daño de la <strong>orden expeledora</strong> en una cantidad equivalente al 0.3% del ATQ de Valeri."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Adaptación al frío extremo",
+    "description": {
+      "0": "Cuando Valeri se encuentre dentro de un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>campo estrellapolar</strong></tooltip>, entrará en estado de <strong>esplendor: Superconductor Estelar</strong>."
+    }
+  },
+  "passive": {
+    "name": "Información de operaciones en las llanuras heladas",
+    "description": {
+      "0": "Aumenta en un 25% las recompensas de las expediciones de 20 h en Snezhnaya (no incluye Nod Krai)."
+    }
+  },
+  "constellation1": {
+    "name": "Secuencia de represión continua",
+    "description": {
+      "0": "Tras ejecutar el Ataque Cargado especial <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Mortero directo: Bombardeo a quemarropa</tooltip></strong>, Valeri recupera 6 pts. de Energía Elemental. Al realizar dicho Ataque Cargado, por cada 10 pts. de <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>energía de choque</tooltip></strong> consumidos por encima de los 40 pts., Valeri recuperará 1.5 pts. de Energía Elemental adicionales. Cada vez que ejecute el Ataque Cargado especial <strong>Mortero directo: Bombardeo a quemarropa</strong>, Valeri podrá recuperar hasta 15 pts. de Energía Elemental de esta forma. Este efecto solo se puede activar una vez cada 15 s.",
+      "1": "Además, cada vez que se entre en combate, la primera vez que Valeri use su Habilidad Elemental, <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Defensa ofensiva: Asedio blindado</tooltip></strong>, obtendrá una cantidad adicional de <strong>energía de choque</strong> equivalente al 150% de la cantidad original."
+    }
+  },
+  "constellation2": {
+    "name": "Formación de carga acompañante",
+    "description": {
+      "0": "Tras usar la Habilidad Elemental, <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Defensa ofensiva: Asedio blindado</tooltip></strong>, la Maestría Elemental de todos los personajes cercanos del equipo aumenta en 100 pts. durante 18 s.",
+      "1": "Además, al estar bajo la protección del escudo electrificado, si Valeri tiene el máximo de <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>energía de choque</tooltip></strong>, al activar un efecto que otorgue <strong>energía de choque</strong>, en vez de obtener dicha energía, la absorción de daño del escudo electrificado aumentará en una cantidad equivalente al 8% del ATQ de Valeri por cada punto de <strong>energía de choque</strong> excedente. Como máximo, se pueden convertir 20 pts. de <strong>energía de choque</strong> excedente de esta forma."
+    }
+  },
+  "constellation3": {
+    "name": "Cautela de combate cuerpo a cuerpo",
+    "description": {
+      "0": "Aumenta el nivel de habilidad del Ataque Normal <strong><tooltip ns=char_Valeriy_gen baseKey18=normal>Táctica de guardia: Espada y escudo</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Tenacidad inquebrantable",
+    "description": {
+      "0": "Aumenta en 30 pts. el límite máximo de <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>energía de choque</tooltip></strong>, y en un 30% su eficiencia de obtención.",
+      "1": "Además, fortalece el efecto del talento de ascensión <strong><tooltip ns=char_Valeriy_gen baseKey18=passive1>En compañía de un bombardeo</tooltip></strong>, de manera que, después de usar la Habilidad Definitiva, se podrán obtener hasta 104 pts. de <strong>energía de choque</strong> por medio de dicho talento. Es necesario desbloquear el talento de ascensión <strong>En compañía de un bombardeo</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Voluntad devastadora",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Defensa ofensiva: Asedio blindado</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Poderío rompefilas",
+    "description": {
+      "0": "Fortalece el Ataque Cargado especial <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Mortero directo: Bombardeo a quemarropa</tooltip></strong> y los <strong>misiles de electrometralla</strong> de la Habilidad Definitiva, <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>Fuego concentrado: Salva de electrometralla</tooltip></strong>, de manera que el daño infligido aumenta en un 100% y, tras golpear a un enemigo, la Prob. CRIT del <electro>Daño Electro</electro> que reciba el mismo aumentará en un 10% durante 7 s. Si el <electro>Daño Electro</electro> recibido es de Superconductor Estelar, su Daño CRIT también aumentará en un 40%."
+    }
+  }
+}

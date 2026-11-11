@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",
-        "1": "Si tuffa verso il terreno da mezz'aria, infliggendo danni a tutti gli avversari sul suo percorso con impetuosa potenza. Infligge <electro>DAN da Electro ad area</electro> all'impatto col terreno."
+        "1": "Si tuffa verso il terreno da mezz'aria, infliggendo danni a tutti gli avversari sul suo percorso con impetuosa potenza. Infligge <electro>DAN da Electro ad area</electro> all'impatto col suolo."
       }
     },
     "skillParams": {

@@ -407,6 +407,15 @@
   "ExpeditionInsights": {
     "name": "遊覧の心得"
   },
+  "EasternThreatSuppression": {
+    "name": "東部の脅威軽減度"
+  },
+  "CentralThreatSuppression": {
+    "name": "中部の脅威軽減度"
+  },
+  "NorthernThreatSuppression": {
+    "name": "北部の脅威軽減度"
+  },
   "MemoryOfEternalFlames": {
     "name": "恒常燃焼の記憶"
   },
@@ -1199,6 +1208,12 @@
   "Sandrone": {
     "name": "サンドローネ"
   },
+  "Mitya": {
+    "name": "ミティヤ"
+  },
+  "Valeriy": {
+    "name": "バレリー"
+  },
   "Vodyanitsa": {
     "name": "ヴォジャニーツァ"
   },
@@ -1306,6 +1321,12 @@
   },
   "SandronesStellaFortuna": {
     "name": "サンドローネの星屑"
+  },
+  "MityasStellaFortuna": {
+    "name": "ミティヤの星屑"
+  },
+  "ValeriysStellaFortuna": {
+    "name": "バレリーの星屑"
   },
   "VodyanitsasStellaFortuna": {
     "name": "ヴォジャニーツァの星屑"
@@ -3800,6 +3821,12 @@
   "EtherwingMoth": {
     "name": "フェザーモス"
   },
+  "FairyWormwood": {
+    "name": "フェイヨモギ"
+  },
+  "Kristallfold": {
+    "name": "晶石カサキノコ"
+  },
   "FrostfairyFlower": {
     "name": "フロストフラワー"
   },
@@ -3823,6 +3850,9 @@
   },
   "Lumifluorite": {
     "name": "幽光蛍石"
+  },
+  "Lanternberry": {
+    "name": "ランタンベリー"
   },
   "BirchWood": {
     "name": "樺材"
@@ -9443,6 +9473,18 @@
   "RecipeMors": {
     "name": "レシピ：モルス"
   },
+  "RecipeChickenKitezhgrad": {
+    "name": "レシピ：チキンキッチェヴ"
+  },
+  "RecipeCaviarBlini": {
+    "name": "レシピ：キャビアのブリニ"
+  },
+  "RecipeSolyanka": {
+    "name": "レシピ：ソリャンカ"
+  },
+  "RecipeSnowyNocturne": {
+    "name": "レシピ：雪色ノクターン"
+  },
   "CraftedItems": {
     "name": "合成産物"
   },
@@ -10061,6 +10103,15 @@
   "CoiledCoreOfLife": {
     "name": "生命の絡み合う枝"
   },
+  "SnowbornHeartshard": {
+    "name": "氷雪の欠片"
+  },
+  "SnowbornMirrorheart": {
+    "name": "氷雪の鏡像"
+  },
+  "SnowbornHeartOfIgnorance": {
+    "name": "氷雪の無明心"
+  },
   "HurricaneSeed": {
     "name": "暴風の種"
   },
@@ -10336,6 +10387,9 @@
   },
   "VagabondsCrackedArmor": {
     "name": "さすらう者のひび割れた鎧"
+  },
+  "ShatteredStabilityAnchor": {
+    "name": "砕けたアンカー"
   },
   "TileOfDecarabiansTower": {
     "name": "高塔の王の瓦"
@@ -14519,8 +14573,17 @@
   "RequestToExpandVIPRoom": {
     "name": "貴賓室の拡張申請書"
   },
+  "WorksiteKey": {
+    "name": "鉱区の鍵"
+  },
   "HighLevelAccessCard": {
     "name": "上級権限カード"
+  },
+  "PowerModule": {
+    "name": "エネルギー供給モジュール"
+  },
+  "TreeheartPrism": {
+    "name": "樹心のプリズム"
   },
   "ConstructAppearanceFlutterwing": {
     "name": "創造物外観・風蝶"
@@ -14531,8 +14594,116 @@
   "VodyanitsasGift": {
     "name": "ヴォジャニーツァからの贈り物"
   },
+  "PreciousPearl": {
+    "name": "高価な真珠"
+  },
+  "OrdinaryJewelryBox": {
+    "name": "普通のアクセサリーボックス"
+  },
+  "MaryyushkasTreasuredGem": {
+    "name": "マリュシカ秘蔵の宝石"
+  },
+  "TheCellarForgesHeirloomVintage": {
+    "name": "「ペチカ・ポーグリプ」に代々伝わる名酒"
+  },
+  "OneinaHundredOre": {
+    "name": "百に一つもない希少な鉱石"
+  },
+  "ExquisitelyCraftedGlasses": {
+    "name": "精巧な作りの眼鏡"
+  },
+  "SomeonesHeadscarf": {
+    "name": "誰かのバンダナ"
+  },
+  "FinelyCraftedSuitcase": {
+    "name": "精巧な作りのスーツケース"
+  },
+  "OldBowlerHat": {
+    "name": "古びた丸帽子"
+  },
+  "DelicateCorsage": {
+    "name": "優美な花飾り"
+  },
+  "NotesOnNovokitezhgrad": {
+    "name": "ノヴォキッチェヴ見聞ノート"
+  },
   "OkurovTownSewerSystemDesignPlan": {
     "name": "『オクーロフの村・下水道設計案』"
+  },
+  "BorschtRecommendedByButurlina": {
+    "name": "ブトゥリナオススメのボルシチ"
+  },
+  "SmokedSausageRecommendedByButurlina": {
+    "name": "ブトゥリナオススメのスモークソーセージ"
+  },
+  "ZharkoyeRecommendedByIliana": {
+    "name": "イリヤーナオススメの肉の壺焼き"
+  },
+  "ColorfulCrystal": {
+    "name": "色鮮やかな結晶"
+  },
+  "PremiumAccessoryCustomizationBox": {
+    "name": "貴重なアクセサリー用特注ボックス"
+  },
+  "StardustTrailFieryGleam": {
+    "name": "星屑の軌跡・熾光"
+  },
+  "StardustTrailFieryGleamSigil": {
+    "name": "星屑の軌跡・熾光の印"
+  },
+  "RemnantIncenseGuideTeploOasis": {
+    "name": "テプロオアシスの残香の導き"
+  },
+  "RemnantIncenseGuideNovokitezhgrad": {
+    "name": "ノヴォキッチェヴの残香の導き"
+  },
+  "DanicasSpecialTeaAndTreats": {
+    "name": "ダニカの特製お茶菓子"
+  },
+  "ClueImageMinecart": {
+    "name": "手がかりの写真・トロッコ"
+  },
+  "ClueImageFurnaceAsh": {
+    "name": "手がかりの写真・炉灰"
+  },
+  "SplendidGiftBox": {
+    "name": "素敵なギフトボックス"
+  },
+  "LetterCopy": {
+    "name": "手紙の写し"
+  },
+  "SuspiciousAdvertisement": {
+    "name": "怪しげな広告"
+  },
+  "BetweenTheNewspaperPages": {
+    "name": "新聞の隙間"
+  },
+  "GeneralHistoryOfSnezhnayaSupplementI": {
+    "name": "スネージナヤ通史補編・1"
+  },
+  "GeneralHistoryOfSnezhnayaSupplementII": {
+    "name": "スネージナヤ通史補編・2"
+  },
+  "GeneralHistoryOfSnezhnayaSupplementIII": {
+    "name": "スネージナヤ通史補編・3"
+  },
+  "BelyiAndChernyi": {
+    "name": "白と黒"
+  },
+  "HeartOfTheAbyssalBeast": {
+    "name": "淵獣の心"
+  },
+  "CaseRecordI": {
+    "name": "事件ファイル・1"
+  },
+  "CaseRecordII": {
+    "name": "事件ファイル・2"
+  },
+  "CaseRecordIII": {
+    "name": "事件ファイル・3"
+  },
+  "CaseRecordIV": {
+    "name": "事件ファイル・4"
   },
   "TearsAmongTheStars": {
     "name": "星間の涙"
@@ -14689,6 +14860,12 @@
   },
   "SnowballFlowerSeed": {
     "name": "「雪玉花」の種"
+  },
+  "FairyWormwoodSeed": {
+    "name": "「フェイヨモギ」の種"
+  },
+  "KristallfoldSpore": {
+    "name": "「晶石カサキノコ」の胞子"
   },
   "Medaka": {
     "name": "グッピー"
@@ -14983,6 +15160,69 @@
   },
   "VodyanitsaThemedIceCream": {
     "name": "アイスクリーム・ヴォジャニーツァ"
+  },
+  "SuspiciousChickenKitezhgrad": {
+    "name": "微妙なチキンキッチェヴ"
+  },
+  "ChickenKitezhgrad": {
+    "name": "チキンキッチェヴ"
+  },
+  "DeliciousChickenKitezhgrad": {
+    "name": "美味しそうなチキンキッチェヴ"
+  },
+  "SuspiciousCaviarBlini": {
+    "name": "微妙なキャビアのブリニ"
+  },
+  "CaviarBlini": {
+    "name": "キャビアのブリニ"
+  },
+  "DeliciousCaviarBlini": {
+    "name": "美味しそうなキャビアのブリニ"
+  },
+  "SuspiciousSolyanka": {
+    "name": "微妙なソリャンカ"
+  },
+  "Solyanka": {
+    "name": "ソリャンカ"
+  },
+  "DeliciousSolyanka": {
+    "name": "美味しそうなソリャンカ"
+  },
+  "SuspiciousSnowyNocturne": {
+    "name": "微妙な雪色ノクターン"
+  },
+  "SnowyNocturne": {
+    "name": "雪色ノクターン"
+  },
+  "DeliciousSnowyNocturne": {
+    "name": "美味しそうな雪色ノクターン"
+  },
+  "EnergyReplenishingMeal": {
+    "name": "「エネルギー補給食」"
+  },
+  "EmergencyBarricade": {
+    "name": "「応急バリケード」"
+  },
+  "MityasIceCream": {
+    "name": "アイスクリーム・ミティヤ"
+  },
+  "ValeriysIceCream": {
+    "name": "アイスクリーム・バレリー"
+  },
+  "RoyalRimecurrantIceCream": {
+    "name": "皇室御用達・アイススグリのアイスクリーム"
+  },
+  "RoyalMedovik": {
+    "name": "皇室御用達・メドヴィク"
+  },
+  "RoyalSnowrealmOkroshkas": {
+    "name": "皇室御用達・雪国スープ"
+  },
+  "RoyalSnowballBloomsAtopSnowfields": {
+    "name": "皇室御用達・白の雪玉花"
+  },
+  "RoyalCaviarBlini": {
+    "name": "皇室御用達・キャビアのブリニ"
   },
   "WingsOfFirstFlight": {
     "name": "始まりの翼"
@@ -15706,6 +15946,30 @@
   },
   "RadiantSpincrystalALetterFromTheWindIV": {
     "name": "旋曜玉帛・『風の思い出』・4"
+  },
+  "RadiantSpincrystal201": {
+    "name": "旋曜玉帛・201"
+  },
+  "RadiantSpincrystal202": {
+    "name": "旋曜玉帛・202"
+  },
+  "RadiantSpincrystal203": {
+    "name": "旋曜玉帛・203"
+  },
+  "RadiantSpincrystal204": {
+    "name": "旋曜玉帛・204"
+  },
+  "RadiantSpincrystal205": {
+    "name": "旋曜玉帛・205"
+  },
+  "RadiantSpincrystal206": {
+    "name": "旋曜玉帛・206"
+  },
+  "RadiantSpincrystal207": {
+    "name": "旋曜玉帛・207"
+  },
+  "RadiantSpincrystal208": {
+    "name": "旋曜玉帛・208"
   },
   "LanternFiber": {
     "name": "紙の繊維"
@@ -16853,6 +17117,21 @@
   "TravelNotesMoontrace": {
     "name": "紀行・月逐"
   },
+  "MityaScarf": {
+    "name": "ミティヤ・マフラー"
+  },
+  "ValeriyRank": {
+    "name": "バレリー・勲等"
+  },
+  "SnezhnayaSnowWings": {
+    "name": "スネージナヤ・雪の翼"
+  },
+  "AchievementStillness": {
+    "name": "アチーブメント・静謐"
+  },
+  "TravelNotesSacredSpirit": {
+    "name": "紀行・聖霊"
+  },
   "EchoDandelionKnight": {
     "name": "軌跡·蒲公英騎士"
   },
@@ -16921,6 +17200,12 @@
   },
   "EchoVigilantYaksha": {
     "name": "軌跡・護法夜叉"
+  },
+  "EchoArdentFlamesForgeTheSoul": {
+    "name": "軌跡・魂を鋳る烈火"
+  },
+  "EchoAstuteAmusement": {
+    "name": "軌跡・浮世笑百姿"
   },
   "FaintGlow": {
     "name": "薄明"
@@ -17309,8 +17594,14 @@
   "AMiniTrolleyProblem": {
     "name": "ミニミニトロッコ問題"
   },
+  "PowerFramingKamera": {
+    "name": "「パワースナップ」写真機"
+  },
   "PrimaDonnasSong": {
     "name": "プリマドンナの歌声"
+  },
+  "MityasAccessoryBox": {
+    "name": "ミティヤのアクセサリーボックス"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "説明：風神の瞳の共鳴石"
@@ -17609,6 +17900,30 @@
   "AshamezsThunderSight": {
     "name": "「アシャメズの千光」の「照準器」"
   },
+  "SosrukosFlameMuzzle": {
+    "name": "「ソスルコの灼炎」の「銃口」"
+  },
+  "SosrukosFlameAmmoFeed": {
+    "name": "「ソスルコの灼炎」の「給弾」"
+  },
+  "SosrukosFlameGunstock": {
+    "name": "「ソスルコの灼炎」の「銃床」"
+  },
+  "SosrukosFlameGunsight": {
+    "name": "「ソスルコの灼炎」の「照準器」"
+  },
+  "ApsatsMountainHuntGunsight": {
+    "name": "「アイヴィサティの山狩」の「照準器」"
+  },
+  "ApsatsMountainHuntAmplifier": {
+    "name": "「アイヴィサティの山狩」の「増幅装置」"
+  },
+  "ApsatsMountainHuntCirculator": {
+    "name": "「アイヴィサティの山狩」の「循環器」"
+  },
+  "ApsatsMountainHuntAction": {
+    "name": "「アイヴィサティの山狩」の「ボルト」"
+  },
   "ConstructAppearanceJackFrost": {
     "name": "創造物外観・霜の精"
   },
@@ -17623,6 +17938,12 @@
   },
   "ConstructAppearanceTheTides": {
     "name": "創造物外観・潮汐"
+  },
+  "ConstructAppearanceSnowman": {
+    "name": "創造物外観・雪だるま"
+  },
+  "ConstructAppearanceSnowflake": {
+    "name": "創造物外観・雪の花"
   },
   "UpbeatEncouragement": {
     "name": "歓欣鼓舞"
@@ -18047,6 +18368,24 @@
   "EagerlyWaiting": {
     "name": "期待に満ちて"
   },
+  "HuggingLumi": {
+    "name": "ルミをぎゅっ！"
+  },
+  "ReadyToGo": {
+    "name": "出発する"
+  },
+  "EnjoyingTea": {
+    "name": "お茶を嗜む"
+  },
+  "ExpertGuidance": {
+    "name": "専門家の解説"
+  },
+  "TimeToWork": {
+    "name": "仕事の時間"
+  },
+  "ComfortingTheClerk": {
+    "name": "店員をなだめる"
+  },
   "FantasticalMarvel": {
     "name": "素晴らしきトリック"
   },
@@ -18121,6 +18460,9 @@
   },
   "DovefeatherMoondew": {
     "name": "鳩の羽根に宿る月露"
+  },
+  "FloatingLotusListeningSpring": {
+    "name": "泉に耳を澄ます蓮花"
   },
   "VigorousYapping": {
     "name": "元気いっぱいのお話し！"
@@ -18707,6 +19049,15 @@
   "ElkWithFangedAntlers": {
     "name": "枝を咥える鹿"
   },
+  "OdeToAscension": {
+    "name": "昇華の讃歌"
+  },
+  "ForNoneMayTakeFromUsOurFreedomOfSong": {
+    "name": "「謳え、誰にも奪えない自由を」"
+  },
+  "DawnsReturn": {
+    "name": "朝を迎える光"
+  },
   "MagicGuide": {
     "name": "魔導緒論"
   },
@@ -19058,6 +19409,9 @@
   "RecollectionOfDaysPast": {
     "name": "在りし日の空想の念"
   },
+  "SongOfDaysPast": {
+    "name": "在りし日の歌"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -19300,6 +19654,12 @@
   },
   "ElementalTransfigurationOverloadBlessing": {
     "name": "元素変幻・過負荷の祝福"
+  },
+  "Zeitlind": {
+    "name": "カテリンド"
+  },
+  "ElementalTransfigurationBurningBlessing": {
+    "name": "元素変幻・燃焼の祝福"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交錯の氷"
@@ -19573,6 +19933,9 @@
   },
   "ReturnOfTheThreeMoons": {
     "name": "三月の再臨"
+  },
+  "StreamingSong": {
+    "name": "プシュパの歌"
   },
   "Origin": {
     "name": "原初"
@@ -20453,6 +20816,15 @@
   "BrightProspectsBrighterProfits": {
     "name": "「きらめく金運」"
   },
+  "DreamsInTheDancingLight": {
+    "name": "「夢を照らす揺光」"
+  },
+  "NightWindsRoamWithEveningStars": {
+    "name": "「夜風と星が遊ぶ時」"
+  },
+  "FactoryFloorLampReliableIllumination": {
+    "name": "工場のフロアランプ-「安定照明」"
+  },
   "EfflorescentIllumination": {
     "name": "「花葉百相の光」"
   },
@@ -21203,6 +21575,9 @@
   "IndoorRugWarmth": {
     "name": "絨毯-「暖色」"
   },
+  "TracesAlongTheEdges": {
+    "name": "「輪郭に残る跡」"
+  },
   "VibrantPotBornInFlames": {
     "name": "絢爛の陶磁器-「烈焔より生まれしもの」"
   },
@@ -21223,6 +21598,9 @@
   },
   "TallCappedSentinel": {
     "name": "「高帽子の兵士」"
+  },
+  "RockPaperScissorsCompanion": {
+    "name": "「じゃんけんフレンド」"
   },
   "TrustyPortableLamp": {
     "name": "光り続く提灯"
@@ -22526,6 +22904,18 @@
   "SnezhnayanDwellingElegantCarvings": {
     "name": "スネージナヤの民家-「典雅な彫花」"
   },
+  "FlowingSweetness": {
+    "name": "「流転する甘美」"
+  },
+  "ConvergingTerrace": {
+    "name": "「集いの階段」"
+  },
+  "ShadeBeneathTheBreeze": {
+    "name": "「風そよぐ棚陰」"
+  },
+  "UnarrangedMeeting": {
+    "name": "「約束なき出会い」"
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "花鳥の噴水"
   },
@@ -23627,6 +24017,9 @@
   "SmallStandingGlassDisplayCase": {
     "name": "スタンド式小型透明ショーケース"
   },
+  "TavernCabinetTheArtOfDisplay": {
+    "name": "酒場の飾り棚-「陳列の哲学」"
+  },
   "PoolOfSapphireGrace": {
     "name": "「霊沼雲池」"
   },
@@ -23753,6 +24146,18 @@
   "OpenWide": {
     "name": "「大きく口を開けて！」"
   },
+  "TavernSignboardDailyMenu": {
+    "name": "酒場の看板-「日替わりメニュー」"
+  },
+  "TavernBarrelStoutStorage": {
+    "name": "酒場の酒樽-「確かな保存」"
+  },
+  "SteadySteps": {
+    "name": "「着実な踏み段」"
+  },
+  "WarmthWithinTheGrainTrough": {
+    "name": "「熱を秘める穀桶」"
+  },
   "WeatheredBambooFence": {
     "name": "長い年月を経た竹の柵"
   },
@@ -23846,6 +24251,9 @@
   "TempleOpenworkRailing": {
     "name": "「神殿の透かし彫りの柵」"
   },
+  "FactoryRailingClearDemarcation": {
+    "name": "工場のフェンス-「明確な境界」"
+  },
   "SmoothWoodenBench": {
     "name": "平らな木製ベンチ"
   },
@@ -23917,6 +24325,12 @@
   },
   "TheLingeringWarmthOfTheWait": {
     "name": "「待つ温もりの名残」"
+  },
+  "TavernStoolSteadyLanding": {
+    "name": "酒場のスツール-「平穏な着陸」"
+  },
+  "StableSupport": {
+    "name": "「強固な支え」"
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "ヒルチャールの二階建て監視塔"
@@ -24013,6 +24427,9 @@
   },
   "UselessAdvice": {
     "name": "「無用の忠告」"
+  },
+  "DrapedSatin": {
+    "name": "「ドレープ・サテン」"
   },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "酒屋の商品棚-「百杯飲み」"
@@ -24214,6 +24631,15 @@
   },
   "SmallGaugePanelControlConsole": {
     "name": "小型「計器盤」操作台"
+  },
+  "MeasureOfTheFlow": {
+    "name": "「流動の尺度」"
+  },
+  "WatchfulFieldkeeper": {
+    "name": "「畑を見守る巡回者」"
+  },
+  "TavernCounterArcOfEncounters": {
+    "name": "酒場のカウンター-「巡り逢いの弧度」"
   },
   "SirCapyOfTheLongIncisors": {
     "name": "「ねむねむゲッシナイト」"

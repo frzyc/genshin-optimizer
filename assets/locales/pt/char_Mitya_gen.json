@@ -1,0 +1,184 @@
+{
+  "name": "Mitya",
+  "title": "Regras Postas de Lado",
+  "description": "Um especialista energético, especialmente engenhoso e mestre da bela arte da \"evasão planejada\".",
+  "constellationName": "Nodus Gordianus",
+  "auto": {
+    "name": "Reação em Cadeia",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza até 3 golpes consecutivos, causando <electro>Dano Electro</electro>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina e, após uma breve canalização, causa <electro>Dano Electro em AdE</electro> numa área em frente.",
+        "2": "Se houver um <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Núcleo Detector: Sobrecarregado</tooltip></strong> criado por Mitya ativo, e Mitya possuir pelo menos 1 de <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Sinalizador Alternado</tooltip></strong>, Mitya realizará o Ataque Carregado especial <strong>Explosão Concentrada Alternada</strong> que não consome Stamina: causa <electro>Dano Electro em AdE</electro> uma vez contra os inimigos em frente, e consome continuamente <strong>Sinalizador Alternado</strong> baseado no tempo que manter pressionado. Cada <strong>Sinalizador Alternado</strong> consumido causa <electro>Dano Electro em AdE</electro> que é considerado Dano de Supercondutor Estelar uma vez numa área em frente."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo <electro>Dano Electro em AdE</electro> durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano de Ataque Carregado",
+      "4": "Consumo de Stamina de Ataque Carregado",
+      "5": "Dano Durante a Queda",
+      "6": "Dano de Queda de Baixa/Alta Altitude",
+      "7": "Dano de Explosão Concentrada Alternada",
+      "8": "Dano de Supercondutor Estelar de Explosão Concentrada Alternada",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Lógica: Detecção de Variáveis",
+    "description": {
+      "0": "Usando um equivalente teórico relativamente seguro, realiza um experimento teórico relativamente seguro para causar <electro>Dano Electro em AdE</electro>, criando um <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Núcleo Detector</tooltip></strong> de formas diferentes se pressionar ou manter pressionado.",
+      "1": "<br/>",
+      "2": "Ao pressionar para lançar a Habilidade Elemental novamente dentro dos 6s após lançar a Habilidade Elemental <strong>Lógica: Detecção de Variáveis</strong>, é possível trocar para o estado <strong>Núcleo Detector</strong>. É possível trocar dessa forma uma vez a cada 1.5s."
+    },
+    "skillParams": {
+      "0": "Dano de Pressionar Habilidade",
+      "1": "Dano de Habilidade ao Manter Pressionado",
+      "2": "Dano de Núcleo Estável",
+      "3": "Dano de Núcleo Estável que Consumiu Sinalizadores Alternados",
+      "4": "Dano de Explosão do Núcleo Estável",
+      "5": "Duração do Núcleo Detector",
+      "6": "Tempo de Recarga",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Análise: Princípio da Alternância",
+    "description": {
+      "0": "Que os elementos sejam como uma explosão de inspiração! Causa <electro>Dano Electro em AdE</electro> e cria 3 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Sinalizadores Alternados</tooltip></strong>."
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Geração de Sinalizadores Alternados",
+      "2": "Tempo de Recarga",
+      "3": "Energia Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Teste Básico de Estresse",
+    "description": {
+      "0": "O <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Núcleo Detector</tooltip></strong> criado pela Habilidade Elemental <strong>Lógica: Detecção de Variáveis</strong> é fortalecido. Se o <strong>Núcleo Detector</strong> criado for:",
+      "1": [
+        " Estável: cada <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Sinalizador Alternado</tooltip></strong> carregado aumenta a Proficiência Elemental de todos os membros da equipe em 30.",
+        " Sobrecarregado: aumenta o número de <strong>Sinalizadores Alternados</strong> obtidos quando todos os membros próximos da equipe desencadearem Supercondutor Estelar: obtém 1 <strong>Sinalizador Alternado</strong> a cada 1.5s por 6s."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Reagente Ultraexplosivo",
+    "description": {
+      "0": "Aumenta a duração do <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Sinalizador Alternado</tooltip></strong> para 10s. Além disso, nos 15s após criar um <strong>Sinalizador Alternado</strong>, aumenta a Taxa CRIT de Mitya em 5%. Esse efeito pode ser acumulado até 4 vezes."
+    }
+  },
+  "passive3": {
+    "name": "Bênção das Estrelas: Acordo Confidencial",
+    "description": {
+      "0": "Quando um membro da equipe desencadear Supercondutor, causará Supercondutor Estelar. Ao causar Supercondutor Estelar, não criará <strong>Prisma de Brilho Estelar</strong>, mas passará a criar um <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Sinalizador Alternado</tooltip></strong> próximo que Mitya pode carregar a cada 1.5s nos 3s após causar a reação de Supercondutor Estelar, e mudará a área próxima para <strong>Campo da Estrela Polar</strong> maior, ao ativar novamente este efeito, o tempo de duração será redefinido.",
+      "1": "Além disso, aumenta o Dano Básico de Supercondutor Estelar causado por todos os personagens próximos com base na Proficiência Elemental de Mitya: cada ponto de Proficiência Elemental aumenta o Dano Básico de Supercondutor Estelar em 0.028%. É possível aumentar o Dano Básico até 14% dessa forma. Mitya entrará no estado <strong>Brilho Reluzente: Supercondutor Estelar</strong> quando estiver dentro do <strong>Campo da Estrela Polar</strong>."
+    }
+  },
+  "passive": {
+    "name": "Catálise Ativa Energética",
+    "description": {
+      "0": "Quando houver uma construção Geo que pode ser destruída por perto, <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Núcleo Detector: Estável</tooltip></strong> poderá destruí-la rapidamente.",
+      "1": "Além disso, quando Mitya estiver na equipe e criar um <strong>Constructo Glacial: Fonte de Calor Básica</strong>, não consumirá Energia Kresnik."
+    }
+  },
+  "constellation1": {
+    "name": "Observador do Ausente",
+    "description": {
+      "0": "Aumenta o máximo de <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Sinalizadores Alternados</tooltip></strong> carregáveis para 5. Ao lançar a Habilidade Elemental <strong>Lógica: Detecção de Variáveis</strong>, cria um <strong>Sinalizador Alternado</strong> adicional.",
+      "1": "Enquanto existir um <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Núcleo Detector</tooltip></strong>, aumenta o Dano CRIT do personagem ativo em 40%.",
+      "2": "Além disso, ao criar um <strong>Sinalizador Alternado</strong>, regenera 10 de Energia Elemental para Mitya. Esse efeito pode ser desencadeado uma vez a cada 8s."
+    }
+  },
+  "constellation2": {
+    "name": "Matéria Silenciosa Inerte",
+    "description": {
+      "0": "Quando houver um <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Núcleo Detector</tooltip></strong>, reduz a <cryo>RES Cryo</cryo> e <electro>RES Electro</electro> de todos os inimigos dentro do <strong>Campo da Estrela Polar</strong> em 20%.",
+      "1": "Além disso, se o <strong>Núcleo Detector</strong> for:",
+      "2": [
+        " Estável: aumenta a Proficiência Elemental de todos os personagens próximos em 123.",
+        " Sobrecarregado: aumenta a Proficiência Elemental do personagem ativo em 234."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Cordas e Nós de Topologia Invariável",
+    "description": {
+      "0": "Aumenta o nível da Habilidade Elemental<tooltip ns=char_Mitya_gen baseKey18=skill><strong>Lógica: Detecção de Variáveis</strong></tooltip> em 3.",
+      "1": "Nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Isótopos de Decadência",
+    "description": {
+      "0": "Quando houver um <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Núcleo Detector</tooltip></strong> criado por Mitya ativo, a cada 5 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Sinalizadores Alternados</tooltip></strong> consumidos, o <strong>Núcleo Detector</strong> causará 300% da Proficiência Elemental de Mitya como <electro>Dano Electro em AdE</electro> que é considerado Dano de Supercondutor Estelar uma vez contra os inimigos próximos."
+    }
+  },
+  "constellation5": {
+    "name": "Lei Periódica da Ordem Universal",
+    "description": {
+      "0": "Aumenta o nível do Ataque Normal<tooltip ns=char_Mitya_gen baseKey18=normal><strong>Reação em Cadeia</strong></tooltip> em 3.",
+      "1": "Nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Transição Elemental nos Portões da Razão",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Núcleo Detector</tooltip></strong> é fortalecido. Se o <strong>Núcleo Detector</strong> criado for:",
+      "1": [
+        " Estável: aumenta o Dano original do <strong>Núcleo Detector</strong> em 115%.",
+        " Sobrecarregado: ao consumir <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Sinalizadores Alternados</tooltip></strong>, possui 34% de chance de criar um novo <strong>Sinalizador Alternado</strong>."
+      ],
+      "2": "Além disso, <strong><tooltip ns=tooltips_gen baseKey18=11190007 values=[]>Eleva</tooltip></strong> o Dano de Supercondutor Estelar de todos os membros próximos da equipe em 20%."
+    }
+  }
+}
