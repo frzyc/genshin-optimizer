@@ -147,7 +147,7 @@
   "constellation2": {
     "name": "Élan aux bois carnassiers",
     "description": {
-      "0": "Pendant la durée de l'effet Chant nocturne d'oriole du déchaînement élémentaire <tooltip ns=char_Illuga_gen baseKey18=burst><strong>Reflet sans ombre</strong></tooltip>, Illuga invoque Aédon tous les 7 cumuls de <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>chant de rossignol</strong></tooltip> consommés pour infliger une fois des <geo>DGT Géo</geo> d'une valeur équivalant à 400 % de sa maîtrise élémentaire et à 200 % de son DÉF à un ennemi proche, ces DGT étant considérés comme des DGT de déchaînement élémentaire."
+      "0": "Pendant la durée de l'effet Chant nocturne d'oriole du déchaînement élémentaire <tooltip ns=char_Illuga_gen baseKey18=burst><strong>Reflet sans ombre</strong></tooltip>, Illuga invoque Aédon tous les 7 cumuls de <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>chant de rossignol</strong></tooltip> consommés pour infliger une fois des <geo>DGT Géo</geo> d'une valeur équivalant à 400 % de sa maîtrise élémentaire et à 200 % de sa DÉF à un ennemi proche, ces DGT étant considérés comme des DGT de déchaînement élémentaire."
     }
   },
   "constellation3": {

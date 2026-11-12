@@ -1,0 +1,172 @@
+{
+  "name": "발레리",
+  "title": "천둥 요새",
+  "description": "「특수임무대」 대장. 요인 경호와 정확한 일정에 맞춰 계획을 추진하는 데 능한 군인이다",
+  "constellationName": "불곰자리",
+  "auto": {
+    "name": "검과 방패",
+    "fields": {
+      "normal": {
+        "0": "<strong>일반 공격</strong>",
+        "1": "검으로 최대 3번 공격한다."
+      },
+      "charged": {
+        "0": "<strong>강공격</strong>",
+        "1": "일정 스태미나를 소모해 전방으로 도약하고 지면을 내리쳐 주변의 적에게 물리 피해를 준다.",
+        "2": "발레리가 최소 40pt 이상의 <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>대포 에너지</tooltip></strong> 보유 시, 모든 <strong>대포 에너지</strong>를 소모해 특수 강공격 <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>대포·근접 포격</tooltip></strong>을 발동한다."
+      },
+      "plunging": {
+        "0": "<strong>낙하 공격</strong>",
+        "1": "공중에서 땅을 내려찍어 경로상의 적을 공격하고 착지 시 범위 피해를 준다<tooltip ns=tooltips_gen baseKey18=11370002 values=[]></tooltip>"
+      }
+    },
+    "skillParams": {
+      "0": "1단 공격 피해",
+      "1": "2단 공격 피해",
+      "2": "3단 공격 피해",
+      "3": "강공격 피해",
+      "4": "대포·근접 포격 피해",
+      "5": "강공격 스태미나 소모",
+      "6": "번개 원소 피해 증가",
+      "7": "별 초전도 반응 피해 증가",
+      "8": "공격 지령 스택 수",
+      "9": "공격 지령 지속 시간",
+      "10": "낙하 기간 피해",
+      "11": "저공/고공 추락 충격 피해",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "공세 방어·방패 돌격",
+    "description": {
+      "0": "방패를 들고 전방을 향해 대시해 <electro>번개 원소 범위 피해</electro>를 주고, <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>대포 에너지</tooltip></strong> 40pt를 획득하며 번개 방패 보호막을 펼친다.",
+      "1": "번개 방패 보호막의 피해 흡수량은 발레리의 공격력에 기반하며, <electro>번개 원소 피해</electro>에 대해 250%의 흡수 효과가 있다"
+    },
+    "skillParams": {
+      "0": "스킬 피해",
+      "1": "보호막 흡수량",
+      "2": "보호막 지속 시간",
+      "3": "재사용 대기시간",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "화력 집중·번개 포격",
+    "description": {
+      "0": "주변의 적에게 <electro>번개 원소 범위 피해</electro>를 주고, 상공으로 <strong>번개 확산탄</strong>을 발사한다. <strong>번개 확산탄</strong>은 수많은 탄막으로 분산되어 지면으로 떨어지며, 주변의 적에게 <electro>번개 원소 범위 피해</electro>를 준다"
+    },
+    "skillParams": {
+      "0": "스킬 피해",
+      "1": "번개 확산탄 피해",
+      "2": "지속 시간",
+      "3": "재사용 대기시간",
+      "4": "원소 에너지",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "이동 탄막 사격",
+    "description": {
+      "0": "원소폭발 <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>화력 집중·번개 포격</tooltip></strong>의 <strong>번개 확산탄</strong>이 낙하하는 동안, 파티 내 주변에 있는 현재 필드 위 다른 캐릭터가 원소 타입이 <electro>번개 원소</electro>인 공격으로 적 명중 시 발레리가 <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>대포 에너지</tooltip></strong>를 5pt 획득한다. 원소폭발을 발동할 때마다 해당 방식을 통해 <strong>대포 에너지</strong>를 최대 80pt 획득할 수 있다"
+    }
+  },
+  "passive2": {
+    "name": "방어선 돌파",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11370002 values=[]>공격 지령</tooltip></strong>이 강화된다: 특수 강공격 <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>대포·근접 포격</tooltip></strong> 발동 시 소모한 <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>대포 에너지</tooltip></strong>에 따라, 소모한 <strong>대포 에너지</strong> 1pt마다 <strong>공격 지령</strong>의 피해 보너스 효과가 추가로 증가한다. 발레리가:",
+      "1": [
+        "<strong>섬광·별 초전도</strong> 상태인 경우: 소모한 <strong>대포 에너지</strong> 1pt마다 <strong>공격 지령</strong>의 피해 보너스 효과가 증가하며, 증가량은 발레리 공격력의 0.9%에 해당한다.",
+        "<strong>섬광·별 초전도</strong> 상태가 아닌 경우: 소모한 <strong>대포 에너지</strong> 1pt마다 <strong>공격 지령</strong>의 피해 보너스 효과가 증가하며, 증가량은 발레리 공격력의 0.3%에 해당한다"
+      ]
+    }
+  },
+  "passive3": {
+    "name": "극지 적응력",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>극지의 별영역</strong></tooltip> 내에 있을 때, 발레리가 <strong>섬광·별 초전도</strong>상태에 진입한다"
+    }
+  },
+  "passive": {
+    "name": "설원 작전 정보",
+    "description": {
+      "0": "스네즈나야(노드크라이 제외)에서 20시간의 탐사 파견 임무 수행 시 획득하는 보상이 25% 증가한다"
+    }
+  },
+  "constellation1": {
+    "name": "연속 제압의 순서",
+    "description": {
+      "0": "특수 강공격 <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>대포·근접 포격</tooltip></strong> 발동 후, 발레리의 원소 에너지가 6pt 회복된다. 특수 강공격 발동 시 소모한 <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>대포 에너지</tooltip></strong>에 따라, 40pt를 초과하면 초과해 소모한 수치 중 10pt 소모할 때마다 발레리의 원소 에너지가 추가로 1.5pt 회복된다. 특수 강공격 <strong>대포·근접 포격</strong>을 발동할 때마다 해당 방식을 통해 발레리의 원소 에너지가 최대 15pt 회복된다. 해당 효과는 15초마다 최대 1회 발동된다.",
+      "1": "또한, 전투 상태에 진입할 때마다 발레리가 최초로 원소전투 스킬 <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>공세 방어·방패 돌격</tooltip></strong>을 발동하면 기존의 150%에 해당하는 <strong>대포 에너지</strong>를 추가로 획득한다"
+    }
+  },
+  "constellation2": {
+    "name": "집단 돌격의 대형",
+    "description": {
+      "0": "원소전투 스킬 <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>공세 방어·방패 돌격</tooltip></strong> 발동 후 18초 동안 주변에 있는 파티 내 모든 캐릭터의 원소 마스터리가 100pt 증가한다.",
+      "1": "또한, 번개 방패 보호막의 보호를 받고 있을 때 발레리의 <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>대포 에너지</tooltip></strong>가 최대치에 도달한 상태에서 <strong>대포 에너지</strong> 획득 효과 발동 시, 효과가 번개 방패 보호막의 피해 흡수량을 증가시키는 것으로 전환된다. 초과된 <strong>대포 에너지</strong> 1pt마다 번개 방패 보호막의 피해 흡수량이 발레리 공격력의 8%만큼 증가하며, 해당 방식을 통해 초과된 <strong>대포 에너지</strong>를 최대 20pt 전환할 수 있다"
+    }
+  },
+  "constellation3": {
+    "name": "근접 전투의 각오",
+    "description": {
+      "0": "일반 공격 <strong><tooltip ns=char_Valeriy_gen baseKey18=normal>근위 전술·검과 방패</tooltip></strong>의 스킬 레벨+3",
+      "1": "최대 Lv.15까지 상승"
+    }
+  },
+  "constellation4": {
+    "name": "희생 감내의 결의",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>대포 에너지</tooltip></strong>의 최대치가 30pt 증가하고, 획득 효율이 30% 증가한다.",
+      "1": "또한 돌파 특성 <strong><tooltip ns=char_Valeriy_gen baseKey18=passive1>이동 탄막 사격</tooltip></strong>의 효과가 강화된다: 원소폭발을 발동할 때마다 해당 특성을 통해 최대 104pt의 <strong>대포 에너지</strong>를 획득할 수 있다. 돌파 특성 <strong>이동 탄막 사격</strong>을 해금해야 한다"
+    }
+  },
+  "constellation5": {
+    "name": "분할 섬멸의 전술",
+    "description": {
+      "0": "원소전투 스킬 <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>공세 방어·방패 돌격</tooltip></strong>의 스킬 레벨+3",
+      "1": "최대 Lv.15까지 상승"
+    }
+  },
+  "constellation6": {
+    "name": "적진 돌파의 기세",
+    "description": {
+      "0": "특수 강공격 <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>대포·근접 포격</tooltip></strong>과 원소폭발 <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>화력 집중·번개 포격</tooltip></strong>의 <strong>번개 확산탄</strong>이 강화된다: 주는 피해가 100% 증가하고, 적에게 명중한 후 7초 동안 적이 받는 <electro>번개 원소 피해</electro>의 치명타 확률이 10% 증가한다. 만약 받는 <electro>번개 원소 피해</electro>가 별 초전도 반응 피해일 경우, 해당 피해의 치명타 피해도 40% 증가한다"
+    }
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "name": "Mitya",
+  "title": "บัญญัติลวงนามมายา",
+  "description": "ผู้เชี่ยวชาญด้านพลังงานระดับยอดฝีมือ และปรมาจารย์แห่ง \"การโดดตารางงาน\" ผู้มากด้วยชั้นเชิง",
+  "constellationName": "Nodus Gordianus",
+  "auto": {
+    "name": "Chain Reaction",
+    "fields": {
+      "normal": {
+        "0": "<strong>โจมตีปกติ</strong>",
+        "1": "ทำการโจมตีต่อเนื่องมากสุด 3 ครั้ง เพื่อสร้าง<electro>ความเสียหายไฟฟ้า</electro>"
+      },
+      "charged": {
+        "0": "<strong>ชาร์จโจมตี</strong>",
+        "1": "ใช้พลังกายบางส่วน โดยหลังจากร่ายเสร็จ จะสร้าง<electro>ความเสียหายไฟฟ้าวงกว้าง</electro>แก่พื้นที่ด้านหน้า",
+        "2": "หากขณะนั้นในสนามมี <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>แกนตรวจจับ - เกินพิกัด</tooltip></strong> ที่ Mitya สร้างขึ้น และ Mitya มี <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacon</tooltip></strong> อย่างน้อย 1 อัน Mitya จะเปลี่ยนไปทำการชาร์จโจมตีพิเศษ <strong>Gradient Detonation</strong> ที่ไม่ใช้พลังกาย: สร้าง<electro>ความเสียหายไฟฟ้าวงกว้าง</electro> แก่พื้นที่ด้านหน้า 1 ครั้ง และเมื่อกดค้างจะใช้ <strong>Gradient Beacon</strong> อย่างต่อเนื่อง; ทุกครั้งที่ใช้ <strong>Gradient Beacon</strong> 1 อัน จะสร้าง<electro>ความเสียหายไฟฟ้าวงกว้าง</electro> ซึ่งถูกนับเป็นความเสียหายปฏิกิริยานำไฟฟ้าดารา 1 ครั้ง"
+      },
+      "plunging": {
+        "0": "<strong>โจมตีพุ่งลงจากอากาศ</strong>",
+        "1": "กระโจนจากกลางอากาศลงมายังพื้นดิน เพื่อโจมตีศัตรูที่อยู่ในเส้นทางการโจมตี โดยจะสร้าง<electro>ความเสียหายไฟฟ้าวงกว้าง</electro>เมื่อลงถึงพื้น"
+      }
+    },
+    "skillParams": {
+      "0": "ความเสียหายขั้น 1",
+      "1": "ความเสียหายขั้น 2",
+      "2": "ความเสียหายขั้น 3",
+      "3": "ความเสียหายชาร์จโจมตี",
+      "4": "ชาร์จโจมตีใช้พลังกาย",
+      "5": "ความเสียหายพุ่งลง",
+      "6": "ความเสียหายพุ่งถึงพื้นจากที่ต่ำ/สูง",
+      "7": "ความเสียหาย Gradient Detonation",
+      "8": "ความเสียหายนำไฟฟ้าดาราของ Gradient Detonation",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Principle: Variable Detection",
+    "description": {
+      "0": "ทำการทดลองที่ค่อนข้างปลอดภัยตามทฤษฎีอย่างเหมาะสม โดยใช้ปริมาณที่ค่อนข้างปลอดภัยตามทฤษฎี สร้าง<electro>ความเสียหายไฟฟ้าวงกว้าง</electro> และสร้าง<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>แกนตรวจจับ</tooltip></strong>ด้วยวิธีที่แตกต่างกัน โดยขึ้นอยู่กับการกด หรือกดค้าง",
+      "1": "<br/>",
+      "2": "หากกดสกิลธาตุอีกครั้งภายใน 6 วินาทีหลังจากปล่อยสกิลธาตุ <strong>Principle: Variable Detection</strong> จะสามารถเปลี่ยนสถานะของ<strong>แกนตรวจจับ</strong>ได้; สามารถเปลี่ยนสถานะด้วยวิธีนี้ได้สูงสุด 1 ครั้งทุก 1.5 วินาที"
+    },
+    "skillParams": {
+      "0": "ความเสียหายสกิลเมื่อกด",
+      "1": "ความเสียหายสกิลเมื่อกดค้าง",
+      "2": "ความเสียหายของแกนเสถียร",
+      "3": "ความเสียหายแกนเสถียรเมื่อใช้ Gradient Beacon",
+      "4": "ความเสียหายระเบิดของแกนเสถียร",
+      "5": "ระยะเวลาของแกนตรวจจับ",
+      "6": "คูลดาวน์",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Analysis: Gradient Theory",
+    "description": {
+      "0": "ปล่อยให้ธาตุระเบิดออกมาเหมือนแรงบันดาลใจ! สร้าง<electro>ความเสียหายไฟฟ้าวงกว้าง</electro> และสร้าง <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacon</tooltip></strong> 3 อัน"
+    },
+    "skillParams": {
+      "0": "ความเสียหายสกิล",
+      "1": "สร้าง Gradient Beacon",
+      "2": "คูลดาวน์",
+      "3": "พลังงานธาตุ",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Baseline Stress Test",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>แกนตรวจจับ</tooltip></strong>ที่สร้างโดยสกิลธาตุ <strong>Principle: Variable Detection</strong> ได้รับการเสริมพลัง หาก<strong>แกนตรวจจับ</strong>ที่สร้างขึ้นอยู่ใน:",
+      "1": [
+        "สถานะเสถียร: <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacon</tooltip></strong> ทุก 1 อันที่มี จะทำให้ความชำนาญธาตุของตัวละครทั้งหมดในทีมที่อยู่ใกล้เคียงเพิ่มขึ้น 30 หน่วย;",
+        "สถานะเกินพิกัด: หลังจากตัวละครทั้งหมดในทีมที่อยู่ใกล้เคียงทำให้เกิดปฏิกิริยานำไฟฟ้าดารา จำนวน <strong>Gradient Beacon</strong> ที่ได้รับจะเพิ่มขึ้น: เปลี่ยนเป็นภายใน 6 วินาทีจะได้รับ <strong>Gradient Beacon</strong> 1 อันทุก 1.5 วินาที"
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Explosive Reagent: Safe Limits Exceeded",
+    "description": {
+      "0": "ระยะเวลาต่อเนื่องของ <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacon</tooltip></strong> เพิ่มขึ้นเป็น 10 วินาที นอกจากนี้ ภายใน 15 วินาทีหลังจากสร้าง <strong>Gradient Beacon</strong> อัตราคริของ Mitya จะเพิ่มขึ้น 5% เอฟเฟกต์นี้สามารถซ้อนทับได้สูงสุด 4 ชั้น"
+    }
+  },
+  "passive3": {
+    "name": "Stellar Jubilee: Top-Secret Protocol",
+    "description": {
+      "0": "เมื่อตัวละครในทีมทำให้เกิดปฏิกิริยานำไฟฟ้า จะเปลี่ยนเป็นการทำให้เกิดปฏิกิริยานำไฟฟ้าดาราแทน เมื่อเกิดปฏิกิริยานำไฟฟ้าดารา จะไม่สร้าง<strong>ปริซึมดาราฉาย</strong> แต่จะเปลี่ยนเป็นสร้าง <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacon</tooltip></strong> 1 อันที่ Mitya สามารถเก็บไว้ได้ ในบริเวณใกล้เคียงทุก 1.5 วินาที ภายใน 3 วินาทีหลังจากเกิดปฏิกิริยานำไฟฟ้าดารา และเปลี่ยนพื้นที่โดยรอบที่ใหญ่กว่าให้เป็น<strong>เขตแดนดาราฉาย</strong> เมื่อเกิดปฏิกิริยานำไฟฟ้าดาราอีกครั้ง จะรีเฟรชช่วงเวลาต่อเนื่องของเอฟเฟกต์ข้างต้น",
+      "1": "นอกจากนี้ จะเพิ่มความเสียหายพื้นฐานของปฏิกิริยานำไฟฟ้าดารา ที่สร้างโดยตัวละครทั้งหมดในทีมที่อยู่ใกล้เคียง ตามความชำนาญธาตุของ Mitya: ความชำนาญธาตุทุก 1 หน่วย จะเพิ่มความเสียหายพื้นฐานของปฏิกิริยานำไฟฟ้าดาราขึ้น 0.028% และสามารถเพิ่มความเสียหายพื้นฐานด้วยวิธีนี้ได้สูงสุด 14% เมื่ออยู่ใน<strong>เขตแดนดาราฉาย</strong> Mitya จะเข้าสู่สถานะ<strong>เจิดจรัส: นำไฟฟ้าดารา</strong>ด้วย"
+    }
+  },
+  "passive": {
+    "name": "Energy Catalysis",
+    "description": {
+      "0": "เมื่อมีก้อนหินที่สามารถทำลายได้อยู่รอบ ๆ <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>แกนตรวจจับ - เสถียร</tooltip></strong> จะสามารถกำจัดก้อนหินได้อย่างรวดเร็ว",
+      "1": "นอกจากนี้ เมื่อ Mitya อยู่ในทีม ขณะที่สร้าง<strong>สิ่งประดิษฐ์น้ำแข็งพิสุทธิ์ - แหล่งความร้อนแบบง่าย</strong> จะไม่ต้องใช้พลังงาน Kresnik"
+    }
+  },
+  "constellation1": {
+    "name": "The Observer Seeking What Is Missing",
+    "description": {
+      "0": "ขีดจำกัดของ <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacon</tooltip></strong> ที่สามารถมีได้เพิ่มเป็น 5 อัน เมื่อปล่อยสกิลธาตุ <strong>Principle: Variable Detection</strong> จะสร้าง <strong>Gradient Beacon</strong> เพิ่มอีก 1 อัน",
+      "1": "ในระหว่างที่<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>แกนตรวจจับ</tooltip></strong>คงอยู่ ความแรงคริของตัวละครของตัวเองที่เข้าร่วมการต่อสู้ในขณะนั้นในทีมจะเพิ่มขึ้น 40%",
+      "2": "นอกจากนี้ เมื่อสร้าง <strong>Gradient Beacon</strong> จะฟื้นฟูพลังงานธาตุ 10 หน่วยให้กับ Mitya ด้วย โดยเอฟเฟกต์นี้จะเกิดขึ้นได้มากสุดหนึ่งครั้ง ในทุก 8 วินาที"
+    }
+  },
+  "constellation2": {
+    "name": "The Matter That Slumbers Beyond Inertness",
+    "description": {
+      "0": "ในช่วงที่<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>แกนตรวจจับ</tooltip></strong>คงอยู่ <cryo>ความต้านทานน้ำแข็ง</cryo> และ<electro>ความต้านทานไฟฟ้า</electro> ของศัตรูทั้งหมดที่อยู่ใน<strong>เขตแดนดาราฉาย</strong> จะลดลง 20%",
+      "1": "นอกจากนี้ หาก<strong>แกนตรวจจับ</strong>ที่สร้างขึ้นอยู่ใน:",
+      "2": [
+        "สถานะเสถียร: ความชำนาญธาตุของตัวละครทั้งหมดในทีมที่อยู่ใกล้เคียงเพิ่มขึ้น 123 หน่วย;",
+        "สถานะเกินพิกัด: ความชำนาญธาตุของตัวละครของตัวเองในทีมที่เข้าร่วมการต่อสู้ในขณะนั้นเพิ่มขึ้น 234 หน่วย"
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "The Knotted String of Invariant Topology",
+    "description": {
+      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <tooltip ns=char_Mitya_gen baseKey18=skill><strong>Principle: Variable Detection</strong></tooltip> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
+    }
+  },
+  "constellation4": {
+    "name": "The Isotopes Born of Decay",
+    "description": {
+      "0": "เมื่อในสนามมี<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>แกนตรวจจับ</tooltip></strong>ที่ Mitya สร้างขึ้นเอง <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacon</tooltip></strong> ทุก 5 อันที่ถูกใช้ไป จะทำให้<strong>แกนตรวจจับ</strong>สร้าง<electro>ความเสียหายไฟฟ้าวงกว้าง</electro> ซึ่งถูกนับเป็นความเสียหายปฏิกิริยานำไฟฟ้าดาราแก่ศัตรูโดยรอบ 1 ครั้ง เท่ากับ 300% ของความชำนาญธาตุของ Mitya"
+    }
+  },
+  "constellation5": {
+    "name": "The Periodic Law That Orders All",
+    "description": {
+      "0": "เพิ่มเลเวลสกิลของการโจมตีปกติ <tooltip ns=char_Mitya_gen baseKey18=normal><strong>Chain Reaction</strong></tooltip> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
+    }
+  },
+  "constellation6": {
+    "name": "Elemental Transition at the Gate of Reason",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>แกนตรวจจับ</tooltip></strong>ได้รับการเสริมพลัง หาก<strong>แกนตรวจจับ</strong>ที่สร้างอยู่ในสถานะ:",
+      "1": [
+        "เสถียร: <strong>แกนตรวจจับ</strong>สร้างความเสียหาย 115% ของความเสียหายเดิม;",
+        "เกินพิกัด: เมื่อใช้ <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Gradient Beacon</tooltip></strong> มีโอกาส 34% ที่จะสร้าง <strong>Gradient Beacon</strong> ขึ้นมาใหม่ 1 อัน"
+      ],
+      "2": "นอกจากนี้ ความเสียหายปฏิกิริยานำไฟฟ้าดาราที่ตัวละครทั้งหมดในทีมที่อยู่ใกล้เคียงสร้าง จะได้รับการ<strong><tooltip ns=tooltips_gen baseKey18=11190007 values=[]>ยกระดับ</tooltip></strong> 20%"
+    }
+  }
+}

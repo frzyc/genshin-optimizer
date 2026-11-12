@@ -1,0 +1,172 @@
+{
+  "name": "Valeriy",
+  "title": "Sấm Rền Quân Lũy",
+  "description": "Chỉ huy của Đội Nhiệm Vụ Đặc Biệt, một quân nhân giỏi trong việc bảo vệ nhân vật quan trọng và thúc đẩy kế hoạch.",
+  "constellationName": "Cung Hùng Bi",
+  "auto": {
+    "name": "Khiên Kiếm Tấn Công",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 3 lần đánh kiếm liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao Thể Lực nhất định, nhảy về phía trước và nện xuống đất, gây Sát Thương Vật Lý cho kẻ địch ở gần.",
+        "2": "Khi Valeriy có ít nhất 40 điểm <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Thế Năng Xung Kích</tooltip></strong>, sẽ tiêu hao toàn bộ <strong>Thế Năng Xung Kích</strong>, chuyển sang thực hiện Trọng Kích đặc biệt <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Súng Cối Bắn Thẳng - Oanh Tạc Tầm Gần</tooltip></strong>."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất.<tooltip ns=tooltips_gen baseKey18=11370002 values=[]></tooltip>"
+      }
+    },
+    "skillParams": {
+      "0": "Sát thương lần 1",
+      "1": "Sát thương lần 2",
+      "2": "Sát thương lần 3",
+      "3": "Sát thương Trọng Kích",
+      "4": "Sát thương Súng Cối Bắn Thẳng - Oanh Tạc Tầm Gần",
+      "5": "Thể lực Trọng Kích tiêu hao",
+      "6": "Tăng sát thương Nguyên Tố Lôi",
+      "7": "Tăng sát thương phản ứng Tinh-Siêu Dẫn",
+      "8": "Số tầng Chỉ Lệnh Tấn Công",
+      "9": "Chỉ Lệnh Tấn Công duy trì",
+      "10": "Sát thương khi đáp",
+      "11": "Sát thương khi đáp từ độ cao thấp/cao",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Phòng Ngự Tấn Công - Pháo Đài Thần Tốc",
+    "description": {
+      "0": "Giương khiên và xung kích về phía trước, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>, nhận 40 điểm <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Thế Năng Xung Kích</tooltip></strong> và triển khai Khiên Tụ Lôi.",
+      "1": "Lượng hấp thụ sát thương của Khiên Tụ Lôi sẽ dựa trên Tấn Công của Valeriy, có 250% hiệu quả hấp thụ với <electro>Sát Thương Nguyên Tố Lôi</electro>."
+    },
+    "skillParams": {
+      "0": "Sát thương kỹ năng",
+      "1": "Khiên hấp thụ",
+      "2": "Khiên duy trì",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Tiêu Điểm Hỏa Lực - Sấm Sét Oanh Kích",
+    "description": {
+      "0": "Gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> cho kẻ địch ở gần, đồng thời bắn <strong>Lôi Đạn Phân Mảnh</strong> lên không trung. <strong>Lôi Đạn Phân Mảnh</strong> sẽ phân tán thành mưa đạn rơi xuống, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> cho kẻ địch ở gần."
+    },
+    "skillParams": {
+      "0": "Sát thương kỹ năng",
+      "1": "Sát thương Lôi Đạn Phân Mảnh",
+      "2": "Thời gian duy trì",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Tiến Bước Cùng Với Màn Đạn",
+    "description": {
+      "0": "Trong thời gian <strong>Lôi Đạn Phân Mảnh</strong> từ Kỹ Năng Nộ <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>Tiêu Điểm Hỏa Lực - Sấm Sét Oanh Kích</tooltip></strong> rơi xuống, khi đòn tấn công <electro>Nguyên Tố Lôi</electro> của nhân vật khác ra trận hiện tại trong đội ở gần đánh trúng kẻ địch, Valeriy sẽ nhận 5 điểm <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Thế Năng Xung Kích</tooltip></strong>. Sau mỗi lần thi triển Kỹ Năng Nộ, tối đa nhận 80 điểm <strong>Thế Năng Xung Kích</strong> theo cách này."
+    }
+  },
+  "passive2": {
+    "name": "Đột Kích Lỗ Hổng Phòng Tuyến",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11370002 values=[]>Chỉ Lệnh Tấn Công</tooltip></strong> được cường hóa: Dựa trên <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Thế Năng Xung Kích</tooltip></strong> tiêu hao khi thi triển Trọng Kích đặc biệt <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Súng Cối Bắn Thẳng - Oanh Tạc Tầm Gần</tooltip></strong>, mỗi điểm <strong>Thế Năng Xung Kích</strong> tiêu hao đều sẽ tăng cường hiệu quả tăng sát thương của <strong>Chỉ Lệnh Tấn Công</strong>. Nếu Valeriy:",
+      "1": [
+        "Đang trong trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Mỗi điểm <strong>Thế Năng Xung Kích</strong> tiêu hao sẽ tăng cường hiệu quả tăng sát thương của <strong>Chỉ Lệnh Tấn Công</strong>, mức tăng tương đương 0.9% Tấn Công của Valeriy.",
+        "Không trong trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Mỗi điểm <strong>Thế Năng Xung Kích</strong> tiêu hao sẽ tăng cường hiệu quả tăng sát thương của <strong>Chỉ Lệnh Tấn Công</strong>, mức tăng tương đương 0.3% Tấn Công của Valeriy."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Quán Tính Thích Nghi Cực Hàn",
+    "description": {
+      "0": "Khi ở trong <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Vùng Trục Sao</strong></tooltip>, Valeriy sẽ tiến vào trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>."
+    }
+  },
+  "passive": {
+    "name": "Tình Báo Hành Động Băng Nguyên",
+    "description": {
+      "0": "Khi làm nhiệm vụ Phái Đi Thám Hiểm có thời gian là 20 giờ ở Snezhnaya (trừ Nod-Krai), phần thưởng nhận được tăng 25%."
+    }
+  },
+  "constellation1": {
+    "name": "Trình Tự Áp Chế Liên Tục",
+    "description": {
+      "0": "Sau khi thực hiện Trọng Kích đặc biệt <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Súng Cối Bắn Thẳng - Oanh Tạc Tầm Gần</tooltip></strong>, Valeriy sẽ hồi phục 6 điểm Năng Lượng Nguyên Tố. Dựa trên <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Thế Năng Xung Kích</tooltip></strong> tiêu hao khi thực hiện Trọng Kích đặc biệt, với phần vượt quá 40 điểm, mỗi 10 điểm tiêu hao sẽ giúp Valeriy hồi thêm 1.5 điểm Năng Lượng Nguyên Tố. Mỗi lần thực hiện Trọng Kích đặc biệt <strong>Súng Cối Bắn Thẳng - Oanh Tạc Tầm Gần</strong>, Valeriy tối đa được hồi 15 điểm Năng Lượng Nguyên Tố theo cách này. Hiệu quả này mỗi 15s tối đa kích hoạt một lần.",
+      "1": "Ngoài ra, mỗi khi vào trạng thái chiến đấu, lần đầu Valeriy thi triển Kỹ Năng Nguyên Tố <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Phòng Ngự Tấn Công - Pháo Đài Thần Tốc</tooltip></strong>, sẽ nhận thêm <strong>Thế Năng Xung Kích</strong> tương đương 150% mức gốc."
+    }
+  },
+  "constellation2": {
+    "name": "Đội Hình Cùng Nhau Xung Trận",
+    "description": {
+      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Phòng Ngự Tấn Công - Pháo Đài Thần Tốc</tooltip></strong>, tất cả nhân vật trong đội ở gần tăng 100 điểm Tinh Thông Nguyên Tố trong 18s.",
+      "1": "Ngoài ra, khi được Khiên Tụ Lôi bảo vệ, nếu <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Thế Năng Xung Kích</tooltip></strong> của Valeriy đã đạt mức tối đa, khi kích hoạt hiệu quả nhận <strong>Thế Năng Xung Kích</strong>, sẽ chuyển thành tăng lượng hấp thụ sát thương của Khiên Tụ Lôi, mỗi 1 điểm <strong>Thế Năng Xung Kích</strong> dư ra sẽ tăng lượng hấp thụ của Khiên Tụ Lôi tương đương 8% Tấn Công của Valeriy, tối đa có thể chuyển hóa 20 điểm <strong>Thế Năng Xung Kích</strong> dư ra theo cách này."
+    }
+  },
+  "constellation3": {
+    "name": "Cảnh Giác Đối Đầu Cận Chiến",
+    "description": {
+      "0": "Cấp kỹ năng Tấn Công Thường <strong><tooltip ns=char_Valeriy_gen baseKey18=normal>Chiến Lược Bảo Vệ - Khiên Kiếm Tấn Công</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Dẻo Dai Không Ngại Thiệt Hại",
+    "description": {
+      "0": "Giới hạn của <strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>Thế Năng Xung Kích</tooltip></strong> tăng 30 điểm, đồng thời hiệu suất nhận tăng 30%.",
+      "1": "Ngoài ra, hiệu quả Thiên Phú Đột Phá <strong><tooltip ns=char_Valeriy_gen baseKey18=passive1>Tiến Bước Cùng Với Màn Đạn</tooltip></strong> sẽ được cường hóa: Sau mỗi lần thi triển Kỹ Năng Nộ, có thể nhận tối đa 104 điểm <strong>Thế Năng Xung Kích</strong> thông qua thiên phú này. Cần mở khóa Thiên Phú Đột Phá <strong>Tiến Bước Cùng Với Màn Đạn</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Quyết Tâm Cô Lập Tiêu Diệt",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Valeriy_gen baseKey18=skill>Phòng Ngự Tấn Công - Pháo Đài Thần Tốc</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Uy Thế Xuyên Phá Trận Địch",
+    "description": {
+      "0": "Trọng Kích đặc biệt <strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>Súng Cối Bắn Thẳng - Oanh Tạc Tầm Gần</tooltip></strong> và <strong>Lôi Đạn Phân Mảnh</strong> từ Kỹ Năng Nộ <strong><tooltip ns=char_Valeriy_gen baseKey18=burst>Tiêu Điểm Hỏa Lực - Sấm Sét Oanh Kích</tooltip></strong> sẽ được cường hóa: Sát thương gây ra tăng 100%, đồng thời trong vòng 7s sau khi đánh trúng kẻ địch, <electro>Sát Thương Nguyên Tố Lôi</electro> mà mục tiêu phải chịu sẽ tăng 10% Tỷ Lệ Bạo Kích. Nếu <electro>Sát Thương Nguyên Tố Lôi</electro> phải chịu là sát thương phản ứng Tinh-Siêu Dẫn, thì sát thương này cũng sẽ tăng 40% Sát Thương Bạo Kích."
+    }
+  }
+}

@@ -808,6 +808,10 @@
       "icon": "UI_EquipIcon_Catalyst_Bludnye",
       "awakenIcon": "UI_EquipIcon_Catalyst_Bludnye_Awaken"
     },
+    "StarsealedEdict": {
+      "icon": "UI_EquipIcon_Catalyst_Chernaya",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Chernaya_Awaken"
+    },
     "HuntersBow": {
       "icon": "UI_EquipIcon_Bow_Hunters",
       "awakenIcon": "UI_EquipIcon_Bow_Hunters_Awaken"
@@ -3461,6 +3465,42 @@
       "constellation4": "UI_Talent_S_MarionetteNew_03",
       "constellation5": "UI_Talent_U_MarionetteNew_02",
       "constellation6": "UI_Talent_S_MarionetteNew_04"
+    },
+    "Mitya": {
+      "icon": "UI_AvatarIcon_Mitya",
+      "iconSide": "UI_AvatarIcon_Side_Mitya",
+      "banner": "UI_NameCardPic_Mitya_P",
+      "bar": "UI_NameCardPic_Mitya_Alpha",
+      "skill": "Skill_S_Mitya_01",
+      "burst": "Skill_E_Mitya_01_HD",
+      "passive1": "UI_Talent_S_Mitya_05",
+      "passive2": "UI_Talent_S_Mitya_06",
+      "passive3": "UI_Talent_S_Mitya_07",
+      "passive": "UI_Talent_S_Mitya_08",
+      "constellation1": "UI_Talent_S_Mitya_01",
+      "constellation2": "UI_Talent_S_Mitya_02",
+      "constellation3": "UI_Talent_U_Mitya_01",
+      "constellation4": "UI_Talent_S_Mitya_03",
+      "constellation5": "UI_Talent_U_Mitya_02",
+      "constellation6": "UI_Talent_S_Mitya_04"
+    },
+    "Valeriy": {
+      "icon": "UI_AvatarIcon_Valeriy",
+      "iconSide": "UI_AvatarIcon_Side_Valeriy",
+      "banner": "UI_NameCardPic_Valeriy_P",
+      "bar": "UI_NameCardPic_Valeriy_Alpha",
+      "skill": "Skill_S_Valeriy_01",
+      "burst": "Skill_E_Valeriy_01_HD",
+      "passive1": "UI_Talent_S_Valeriy_05",
+      "passive2": "UI_Talent_S_Valeriy_06",
+      "passive3": "UI_Talent_S_Valeriy_08",
+      "passive": "UI_Talent_S_Valeriy_07",
+      "constellation1": "UI_Talent_S_Valeriy_01",
+      "constellation2": "UI_Talent_S_Valeriy_02",
+      "constellation3": "UI_Talent_U_Valeriy_01",
+      "constellation4": "UI_Talent_S_Valeriy_03",
+      "constellation5": "UI_Talent_U_Valeriy_02",
+      "constellation6": "UI_Talent_S_Valeriy_04"
     },
     "Vodyanitsa": {
       "icon": "UI_AvatarIcon_Vodyanitsa",

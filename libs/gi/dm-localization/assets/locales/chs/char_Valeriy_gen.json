@@ -1,0 +1,172 @@
+{
+  "name": "瓦列里",
+  "title": "霆骇军垒",
+  "description": "「特殊任务营」领队，善于保护要员和推进计划的军人。",
+  "constellationName": "熊罴座",
+  "auto": {
+    "name": "盾剑攻斥",
+    "fields": {
+      "normal": {
+        "0": "<strong>普通攻击</strong>",
+        "1": "进行至多三段的连续剑击。"
+      },
+      "charged": {
+        "0": "<strong>重击</strong>",
+        "1": "消耗一定体力，向前方跃起，并砸击地面，对附近的敌人造成物理伤害。",
+        "2": "瓦列里拥有至少40点<strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>冲击势能</tooltip></strong>时，将消耗所有<strong>冲击势能</strong>，改为进行特殊重击<strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>臼炮直射·抵近轰击</tooltip></strong>。"
+      },
+      "plunging": {
+        "0": "<strong>下落攻击</strong>",
+        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。<tooltip ns=tooltips_gen baseKey18=11370002 values=[]></tooltip>"
+      }
+    },
+    "skillParams": {
+      "0": "一段伤害",
+      "1": "二段伤害",
+      "2": "三段伤害",
+      "3": "重击伤害",
+      "4": "臼炮直射·抵近轰击伤害",
+      "5": "重击体力消耗",
+      "6": "雷元素伤害增加",
+      "7": "星超导反应伤害增加",
+      "8": "攻斥指令层数",
+      "9": "攻斥指令持续时间",
+      "10": "下坠期间伤害",
+      "11": "低空/高空坠地冲击伤害",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "攻势防御·堡垒骤进",
+    "description": {
+      "0": "举盾并向前冲刺，造成<electro>雷元素范围伤害</electro>，获得40点<strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>冲击势能</tooltip></strong>，并展开蓄雷护盾。",
+      "1": "蓄雷护盾的伤害吸收量受益于瓦列里的攻击力，对<electro>雷元素伤害</electro>有250%的吸收效果。"
+    },
+    "skillParams": {
+      "0": "技能伤害",
+      "1": "护盾吸收量",
+      "2": "护盾持续时间",
+      "3": "冷却时间",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "火力焦点·雷霰急袭",
+    "description": {
+      "0": "对附近的敌人造成<electro>雷元素范围伤害</electro>，并向高空发射<strong>雷霰重弹</strong>。<strong>雷霰重弹</strong>会分散成大量弹幕坠向地面，对附近的敌人造成<electro>雷元素范围伤害</electro>。"
+    },
+    "skillParams": {
+      "0": "技能伤害",
+      "1": "雷霰重弹伤害",
+      "2": "持续时间",
+      "3": "冷却时间",
+      "4": "元素能量",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "与徐进弹幕为伴",
+    "description": {
+      "0": "元素爆发<strong><tooltip ns=char_Valeriy_gen baseKey18=burst>火力焦点·雷霰急袭</tooltip></strong>中的<strong>雷霰重弹</strong>下坠期间，队伍中附近的当前场上其他角色的元素类型为<electro>雷元素</electro>的攻击命中敌人时，瓦列里将获得5点<strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>冲击势能</tooltip></strong>。每次施放元素爆发后，至多通过这种方式获得80点<strong>冲击势能</strong>。"
+    }
+  },
+  "passive2": {
+    "name": "向防线缺口突击",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11370002 values=[]>攻斥指令</tooltip></strong>获得强化：依据进行特殊重击<strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>臼炮直射·抵近轰击</tooltip></strong>时消耗的<strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>冲击势能</tooltip></strong>，每消耗一点<strong>冲击势能</strong>，都会使<strong>攻斥指令</strong>的伤害加成效果进一步提升。若瓦列里：",
+      "1": [
+        "处于<strong>辉映·星超导</strong>状态：每点消耗的<strong>冲击势能</strong>都会使<strong>攻斥指令</strong>的伤害加成效果提升，提升值相当于瓦列里攻击力的0.9%；",
+        "不处于<strong>辉映·星超导</strong>状态：每点消耗的<strong>冲击势能</strong>都会使<strong>攻斥指令</strong>的伤害加成效果提升，提升值相当于瓦列里攻击力的0.3%。"
+      ]
+    }
+  },
+  "passive3": {
+    "name": "极寒应变惯性",
+    "description": {
+      "0": "处于<tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>极星辉域</strong></tooltip>中时，瓦列里将会进入<strong>辉映·星超导</strong>状态。"
+    }
+  },
+  "passive": {
+    "name": "冰原行动情报",
+    "description": {
+      "0": "在至冬（挪德卡莱除外）执行时长为20小时的探索派遣任务时，获得的奖励增加25%。"
+    }
+  },
+  "constellation1": {
+    "name": "持续压制的时序",
+    "description": {
+      "0": "进行特殊重击<strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>臼炮直射·抵近轰击</tooltip></strong>后，会为瓦列里恢复6点元素能量。依据进行特殊重击时消耗的<strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>冲击势能</tooltip></strong>，超过40点的部分，每消耗10点，都会使瓦列里额外恢复1.5点元素能量。每次进行特殊重击<strong>臼炮直射·抵近轰击</strong>，至多通过这种方式为瓦列里恢复15点元素能量。该效果每15秒至多触发一次。",
+      "1": "此外，每次进入战斗状态时，瓦列里首次施放元素战技<strong><tooltip ns=char_Valeriy_gen baseKey18=skill>攻势防御·堡垒骤进</tooltip></strong>时，还会额外获得相当于原本150%的<strong>冲击势能</strong>。"
+    }
+  },
+  "constellation2": {
+    "name": "伴随冲阵的队型",
+    "description": {
+      "0": "施放元素战技<strong><tooltip ns=char_Valeriy_gen baseKey18=skill>攻势防御·堡垒骤进</tooltip></strong>后的18秒内，队伍中附近的所有角色的元素精通提升100点。",
+      "1": "此外，处于蓄雷护盾庇护下时，若瓦列里的<strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>冲击势能</tooltip></strong>已达到上限，触发获取<strong>冲击势能</strong>的效果时，将转为提升蓄雷护盾的伤害吸收量，每1点溢出的<strong>冲击势能</strong>都会使蓄雷护盾的伤害吸收量提升瓦列里攻击力的8%，至多通过这种方式转化20点溢出的<strong>冲击势能</strong>。"
+    }
+  },
+  "constellation3": {
+    "name": "白刃对决的戒备",
+    "description": {
+      "0": "普通攻击<strong><tooltip ns=char_Valeriy_gen baseKey18=normal>近卫战法·盾剑攻斥</tooltip></strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
+    }
+  },
+  "constellation4": {
+    "name": "不惧折损的韧性",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11370003 values=[]>冲击势能</tooltip></strong>的上限提升30点，且获取效率提升30%。",
+      "1": "此外，突破天赋<strong><tooltip ns=char_Valeriy_gen baseKey18=passive1>与徐进弹幕为伴</tooltip></strong>的效果获得强化：每次施放元素爆发后，至多可以通过该天赋获得104点<strong>冲击势能</strong>。需要解锁突破天赋<strong>与徐进弹幕为伴</strong>。"
+    }
+  },
+  "constellation5": {
+    "name": "分割歼灭的专意",
+    "description": {
+      "0": "元素战技<strong><tooltip ns=char_Valeriy_gen baseKey18=skill>攻势防御·堡垒骤进</tooltip></strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
+    }
+  },
+  "constellation6": {
+    "name": "穿透敌阵的威能",
+    "description": {
+      "0": "特殊重击<strong><tooltip ns=tooltips_gen baseKey18=11370001 values=[]>臼炮直射·抵近轰击</tooltip></strong>与元素爆发<strong><tooltip ns=char_Valeriy_gen baseKey18=burst>火力焦点·雷霰急袭</tooltip></strong>中的<strong>雷霰重弹</strong>获得强化：造成的伤害提升100%，并且在命中敌人后的7秒内，使其受到的<electro>雷元素伤害</electro>的暴击率提升10%；若受到的<electro>雷元素伤害</electro>为星超导反应伤害，则该伤害的暴击伤害也会提升40%。"
+    }
+  }
+}

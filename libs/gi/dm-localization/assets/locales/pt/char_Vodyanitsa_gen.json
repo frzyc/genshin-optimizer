@@ -8,15 +8,15 @@
     "fields": {
       "normal": {
         "0": "<strong>Ataque Normal</strong>",
-        "1": "Canta uma canção antiga das sereias, realizando até 4 ataques, infligindo <hydro>Dano Hydro</hydro>."
+        "1": "Canta uma canção antiga das sereias, realizando até 4 ataques, infligindo <anemo>Dano Hydro</anemo>."
       },
       "charged": {
         "0": "<strong>Ataque Carregado</strong>",
-        "1": "Consome uma certa quantidade de Stamina para disparar uma bola d'água <hydro>Dano Hydro</hydro>."
+        "1": "Consome uma certa quantidade de Stamina para disparar uma bola d'água, infligindo <anemo>Dano Hydro</anemo>."
       },
       "plunging": {
         "0": "<strong>Ataque Imersivo</strong>",
-        "1": "Mergulha ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Inflige <hydro>Dano Hydro em uma AdE</hydro> durante o impacto com o chão."
+        "1": "Mergulha ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Inflige <anemo>Dano Hydro em uma AdE</anemo> durante o impacto com o chão."
       }
     },
     "skillParams": {
@@ -131,7 +131,7 @@
   "constellation1": {
     "name": "Águas Esplendorosas",
     "description": {
-      "0": "Sempre que Vodyanitsa aciona o efeito de cura de <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Canção de Outrora</tooltip></strong>, o ATQ de todos os membros da equipe próximos também é aumentado em 0,8% da Vida Máx. dela por 5s."
+      "0": "Sempre que Vodyanitsa aciona o efeito de cura de <strong><tooltip ns=char_Vodyanitsa_gen baseKey18=skill>Canção de Outrora</tooltip></strong>, o ATQ de todos os membros da equipe próximos também é aumentado em 0.8% da Vida Máx. dela por 5s."
     }
   },
   "constellation2": {

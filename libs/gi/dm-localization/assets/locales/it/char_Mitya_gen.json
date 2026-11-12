@@ -1,0 +1,185 @@
+{
+  "name": "Mitya",
+  "title": "Regole di vana importanza",
+  "description": "Uno specialista dell'energia dal prodigioso ingegno, nonché un maestro nell'arte dello \"svincolarsi dagli impegni\".",
+  "constellationName": "Nodus Gordianus",
+  "auto": {
+    "name": "Reazione a catena",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Effettua un massimo di 3 attacchi che infliggono <electro>DAN da Electro</electro>."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una certa quantità di vigore per infliggere <electro>DAN da Electro ad area</electro> di fronte a sé dopo un breve tempo di lancio.",
+        "2": "Se un <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Nucleo di rilevamento sovraccarico</tooltip></strong> creato da Mitya è presente sul campo, e Mitya possiede almeno 1 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Faro a gradiente</tooltip></strong>, esegue invece l'attacco caricato speciale <strong>Detonazione a gradiente</strong> senza consumare vigore, che infligge 1 iterazione di <electro>DAN da Electro ad area</electro> di fronte a sé e consuma costantemente i <strong>Fari a gradiente</strong> a disposizione tramite la pressione prolungata. Ogni <strong>Faro a gradiente</strong> consumato infligge 1 iterazione di <electro>DAN da Electro ad area</electro> di fronte a sé, considerati come DAN da reazione di Astroconduzione."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e <electro>DAN da Electro ad area</electro> all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da ATT caricato",
+      "4": "Costo vigore ATT caricato",
+      "5": "DAN da ATT in picchiata",
+      "6": "DAN da ATT in picchiata basso/alto",
+      "7": "DAN da Detonazione a gradiente",
+      "8": "DAN da Astroconduzione Detonazione a gradiente",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Principio: Rilevazione delle variabili",
+    "description": {
+      "0": "Conduce un esperimento teoricamente e relativamente sicuro con una resa teoricamente e relativamente sicura, infliggendo <electro>DAN da Electro ad area</electro> e creando un <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Nucleo di rilevamento</tooltip></strong> in modi diversi in base al tocco o alla pressione dell'abilità.",
+      "1": "<br/>",
+      "2": "Premere l'abilità elementale <strong>Principio: Rilevazione delle variabili</strong> nuovamente entro 6 s dopo averla usata, cambia lo stato del <strong>Nucleo di rilevamento</strong>. È possibile effettuare il cambio in questo modo una volta ogni 1,5 s."
+    },
+    "skillParams": {
+      "0": "DAN da abilità pressione",
+      "1": "DAN da abilità pressione prolungata",
+      "2": "DAN da Nucleo stabile",
+      "3": "DAN da consumo Faro a gradiente Nucleo stabile",
+      "4": "DAN da detonazione Nucleo stabile",
+      "5": "Durata Nucleo di rilevamento",
+      "6": "TdR",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Analisi: Teoria gradientale",
+    "description": {
+      "0": "Lasciati travolgere dagli elementi come fai con l'ispirazione! Mitya infligge <electro>DAN da Electro ad area</electro> e genera 3 <tooltip ns=tooltips_gen baseKey18=11360001 values=[]><strong>Fari a gradiente</strong></tooltip>."
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Fari a gradiente generati",
+      "2": "TdR",
+      "3": "Costo energia",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Prova da sforzo standard",
+    "description": {
+      "0": "Il <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Nucleo di rilevamento</tooltip></strong> creato dall'abilità elementale <strong>Principio: Rilevazione delle variabili</strong> viene potenziato in base allo stato del suddetto <strong>Nucleo</strong>.",
+      "1": [
+        " Stabile: tutti i membri del gruppo nelle vicinanze ottengono 30 di maestria elementale per ogni <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Faro a gradiente</tooltip></strong> posseduto da Mitya.",
+        " Sovraccarico: dopo che i membri del gruppo nelle vicinanze hanno innescato reazioni di Astroconduzione, Mitya ottiene 1 <strong>Faro a gradiente</strong> ogni 1,5 s per 6 s."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Reagente esplosivo: Limiti di sicurezza superati",
+    "description": {
+      "0": "La durata dei <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Fari a gradiente</tooltip></strong> aumenta a 10 s. Inoltre, il tasso di CRIT di Mitya aumenta di un 5% per 15 s dopo la creazione di un <strong>Faro a gradiente</strong>. Questo effetto può accumularsi fino a 4 volte."
+    }
+  },
+  "passive3": {
+    "name": "Giubileo astrale: Protocollo top secret",
+    "description": {
+      "0": "Quando i membri del gruppo innescano una reazione di Superconduzione, questa viene convertita in Astroconduzione. Le reazioni di Astroconduzione non creano più <strong>Prismi stellari</strong>, generando al loro posto 1 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Faro a gradiente</tooltip></strong> nelle vicinanze ogni 1,5 s per 3 s. Questi Fari, che Mitya può trasportare, trasformano l'area circostante in un <strong>Campo astropolare</strong> ancora più grande. Innescare un'altra reazione di Astroconduzione ripristina la durata degli effetti sopracitati.",
+      "1": "Inoltre, i DAN base da Astroconduzione di tutti i membri vicini del gruppo vengono aumentati in base alla maestria elementale di Mitya. Per ogni punto di maestria elementale di Mitya, i suddetti DAN base aumentano di uno 0,028%, fino a un 14% massimo. Inoltre, quando Mitya si trova in un <strong>Campo astropolare</strong>, entra nello stato di <strong>Splendore: Astroconduzione</strong>."
+    }
+  },
+  "passive": {
+    "name": "Catalisi energetica",
+    "description": {
+      "0": "Quando sono presenti rocce distruttibili nelle vicinanze, il <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Nucleo di rilevamento stabile</tooltip></strong> può eliminarle rapidamente.",
+      "1": "Inoltre, quando Mitya è nel gruppo, creare un <strong>costrutto di Ghiaccio sublime - Fonte di calore standard</strong> non consuma Energia di Kresnik."
+    }
+  },
+  "constellation1": {
+    "name": "L'osservatore in cerca del tassello mancante",
+    "description": {
+      "0": "Il numero massimo di <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Fari a gradiente</tooltip></strong> che Mitya può trasportare sale a 5, e usare l'abilità elementale <strong>Principio: Rilevazione delle variabili</strong> crea anche 1 <strong>Faro a gradiente</strong>.",
+      "1": "Quando il <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Nucleo di rilevamento</tooltip></strong> è presente in campo, i DAN da CRIT del tuo personaggio attivo nelle vicinanze aumentano di un 40%.",
+      "2": "Inoltre, l'energia elementale di Mitya si rigenera di 10 ogni volta che viene creato un <strong>Faro a gradiente</strong>.",
+      "3": "Quest'effetto può attivarsi una volta ogni 8 s."
+    }
+  },
+  "constellation2": {
+    "name": "La materia assopita al di là dell'inerzia",
+    "description": {
+      "0": "Quando il <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Nucleo di rilevamento</tooltip></strong> è presente, le RES a <cryo>Cryo</cryo> e a <electro>Electro</electro> di tutti gli avversari all'interno del <strong>Campo astropolare</strong> si riducono di un 20%.",
+      "1": "Inoltre, se il <strong>Nucleo di rilevamento</strong> creato:",
+      "2": [
+        " è stabile, tutti i membri del gruppo vicini ottengono 123 di maestria elementale;",
+        " è sovraccarico, il tuo personaggio attivo ottiene 234 di maestria elementale."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "La stringa annodata della topologia invariante",
+    "description": {
+      "0": "Aumenta di 3 il livello dell'abilità elementale <tooltip ns=char_Mitya_gen baseKey18=skill><strong>Principio: Rilevazione delle variabili</strong></tooltip>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Gli isotopi nati dal decadimento",
+    "description": {
+      "0": "I <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Nuclei di rilevamento</tooltip></strong> creati da Mitya stesso infliggono agli avversari vicini 1 iterazione di <electro>DAN da Electro ad area</electro> pari a un 300% della maestria elementale di Mitya per ogni 5 <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Fari a gradiente</tooltip></strong> consumati mentre è in campo. Questi DAN sono considerati DAN da reazione di Astroconduzione."
+    }
+  },
+  "constellation5": {
+    "name": "La legge periodica che ordina il tutto",
+    "description": {
+      "0": "Aumenta di 3 il livello dell'attacco normale <tooltip ns=char_Mitya_gen baseKey18=normal><strong>Reazione a catena</strong></tooltip>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Transizione elementale alle porte della ragione",
+    "description": {
+      "0": "Il <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Nucleo di rilevamento</tooltip></strong> viene potenziato. Se il <strong>Nucleo di rilevamento</strong>:",
+      "1": " · è stabile, il <strong>Nucleo di rilevamento</strong> infligge un 115% dei suoi DAN originali;",
+      "2": [
+        " è sovraccarico, ogni volta che Mitya consuma un <strong>Faro a gradiente</strong> con il <strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>Nucleo di rilevamento</tooltip></strong>, c'è un 34% di probabilità di creare 1 nuovo <strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>Faro a gradiente</tooltip></strong>."
+      ],
+      "3": "Inoltre, i DAN da reazione di Astroconduzione inflitti da tutti i membri del gruppo nelle vicinanze vengono <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>innalzati</strong></tooltip> di un 20%."
+    }
+  }
+}

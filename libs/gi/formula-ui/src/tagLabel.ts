@@ -3,9 +3,9 @@ import type { ElementWithPhyKey } from '@genshin-optimizer/gi/consts'
 import type { Tag } from '@genshin-optimizer/gi/formula'
 import {
   elementalData,
+  type HitMoveKey,
   hitMoves,
   KeyMap,
-  type HitMoveKey,
 } from '@genshin-optimizer/gi/keymap'
 
 /** Pando-only display keys that are not Waverider `KeyMap` stats. */

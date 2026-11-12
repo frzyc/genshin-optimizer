@@ -93,6 +93,8 @@ for (const reaction of allStellarReactionKeys) {
   allNonModStatNodes[`${reaction}_specialDmg_`].info!.variant = reaction
   allNonModStatNodes[`${reaction}_mult_`].info!.variant = reaction
 }
+allNonModStatNodes.stellarconduct_electro_critDMG_.info!.variant =
+  'stellarconduct'
 crittableTransformativeReactions.forEach((reaction) => {
   allNonModStatNodes[`${reaction}_critRate_`].info!.variant = reaction
   allNonModStatNodes[`${reaction}_critDMG_`].info!.variant = reaction
@@ -486,7 +488,6 @@ const common: Data = {
   },
 
   enemy: {
-    // TODO: shred cap of 90%
     def: min(
       percent(1),
       frac(
@@ -506,7 +507,7 @@ const common: Data = {
         sum(one, prod(-1, enemy.defIgn))
       )
     ),
-    defRed: total.enemyDefRed_,
+    defRed: min(total.enemyDefRed_, percent(0.9)),
     ...objKeyValMap(allElements, (ele) => [
       `${ele}_resMulti_`,
       res(total[`${ele}_enemyRes_`]),

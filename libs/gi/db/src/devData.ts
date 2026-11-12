@@ -1,14 +1,14 @@
 import {
+  type ArtifactSlotKey,
   allArtifactSetKeys,
   allWeaponKeys,
   artMaxLevel,
   validateWeaponLevelAsc,
-  type ArtifactSlotKey,
   type WeaponKey,
 } from '@genshin-optimizer/gi/consts'
+import type { IArtifact, IWeapon } from '@genshin-optimizer/gi/good'
 import { allStats, getWeaponStat } from '@genshin-optimizer/gi/stats'
 import { randomizeArtifact } from '@genshin-optimizer/gi/util'
-import type { IArtifact, IWeapon } from '@genshin-optimizer/gi/good'
 import type { ArtCharDatabase } from './Database'
 
 const DEV_ART_COUNT = 1000

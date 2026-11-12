@@ -44,6 +44,11 @@ import type {
   StatFilterSetting,
   StatFilters,
 } from './OptConfigDataManager'
+import {
+  allArtifactSetExclusionKeys,
+  handleArtSetExclusion,
+  maxBuildsToShowList,
+} from './OptConfigDataManager'
 import type {
   PandoArtIds,
   PandoGeneratedBuild,
@@ -54,14 +59,9 @@ import type {
   PandoStatFilter,
   PandoStatFilterStatKey,
   PandoStatFilterStatQtKey,
-  PandoStatFilterTag,
   PandoStatFilters,
+  PandoStatFilterTag,
 } from './PandoOptConfigDataManager'
-import {
-  allArtifactSetExclusionKeys,
-  handleArtSetExclusion,
-  maxBuildsToShowList,
-} from './OptConfigDataManager'
 import {
   newPandoStatFilterTag,
   pandoMaxBuildsToShowDefault,
@@ -82,8 +82,8 @@ import {
   isPandoTeamCharacterKey,
   pandoCritModeKeys,
   pandoMembers,
-  pandoTeamSrcKeys,
   pandoTeammateMembers,
+  pandoTeamSrcKeys,
 } from './PandoTeamDataManager'
 import type { TeamCharacter } from './TeamCharacterDataManager'
 import type {
@@ -133,13 +133,13 @@ export type {
   PandoCritModeKey,
   PandoGeneratedBuild,
   PandoGeneratedBuildList,
+  PandoMember,
   PandoOptConfig,
   PandoStatFilter,
   PandoStatFilterStatKey,
   PandoStatFilterStatQtKey,
-  PandoStatFilterTag,
   PandoStatFilters,
-  PandoMember,
+  PandoStatFilterTag,
   PandoTeam,
   PandoTeamConditional,
   PandoTeammateMember,
@@ -179,10 +179,10 @@ export {
   pandoMembers,
   pandoStatFilterStatKeys,
   pandoStatFilterStatQtKeys,
-  pandoTeamSrcKeys,
   pandoTeammateMembers,
   OperationSpecs,
   targetListToExpression,
+  pandoTeamSrcKeys,
   toBuildTc,
   unitPartFinder,
   validateArtifact,

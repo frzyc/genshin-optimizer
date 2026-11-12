@@ -1,5 +1,5 @@
-import type { Tag } from './data/util'
 import { preserveListingFormulaQ } from './calculator'
+import type { Tag } from './data/util'
 
 const baseInner: Tag = {
   et: 'own',

@@ -1,0 +1,34 @@
+{
+  "name": "Édit d'astre secret",
+  "description": {
+    "0": "Un volumineux ouvrage contenant les règles et procédures internes de la Commission énergétique impériale. Il comporte de nombreuses entrées datant de plusieurs années."
+  },
+  "passiveName": "Traînée de l'astre de l'aube",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente les DGT CRIT de <cryo>24 %</cryo>. En utilisant une compétence élémentaire, le personnage équipé de l'arme obtient l'effet Composition cristalline : augmente la maîtrise élémentaire de <cryo>48</cryo> pts pendant 20 s. Pendant cette durée, le personnage équipé de l'arme obtient un cumul de loi de combustion lorsqu'un personnage de l'équipe à proximité déclenche une réaction élémentaire, augmentant davantage la maîtrise élémentaire de <cryo>24</cryo> pts. Cet effet peut être cumulé 3 fois maximum et dure jusqu'à la fin de la composition cristalline ou lorsque le personnage équipé de l'arme utilise à nouveau une compétence élémentaire.",
+      "1": "Radiance « Astroconduction » : chaque cumul de loi de combustion augmente également les DGT CRIT des réactions d'Astroconduction du personnage équipé de l'arme de <cryo>12 %</cryo>.",
+      "2": "Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "Augmente les DGT CRIT de <cryo>30 %</cryo>. En utilisant une compétence élémentaire, le personnage équipé de l'arme obtient l'effet Composition cristalline : augmente la maîtrise élémentaire de <cryo>60</cryo> pts pendant 20 s. Pendant cette durée, le personnage équipé de l'arme obtient un cumul de loi de combustion lorsqu'un personnage de l'équipe à proximité déclenche une réaction élémentaire, augmentant davantage la maîtrise élémentaire de <cryo>30</cryo> pts. Cet effet peut être cumulé 3 fois maximum et dure jusqu'à la fin de la composition cristalline ou lorsque le personnage équipé de l'arme utilise à nouveau une compétence élémentaire.",
+      "1": "Radiance « Astroconduction » : chaque cumul de loi de combustion augmente également les DGT CRIT des réactions d'Astroconduction du personnage équipé de l'arme de <cryo>15 %</cryo>.",
+      "2": "Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "Augmente les DGT CRIT de <cryo>36 %</cryo>. En utilisant une compétence élémentaire, le personnage équipé de l'arme obtient l'effet Composition cristalline : augmente la maîtrise élémentaire de <cryo>72</cryo> pts pendant 20 s. Pendant cette durée, le personnage équipé de l'arme obtient un cumul de loi de combustion lorsqu'un personnage de l'équipe à proximité déclenche une réaction élémentaire, augmentant davantage la maîtrise élémentaire de <cryo>36</cryo> pts. Cet effet peut être cumulé 3 fois maximum et dure jusqu'à la fin de la composition cristalline ou lorsque le personnage équipé de l'arme utilise à nouveau une compétence élémentaire.",
+      "1": "Radiance « Astroconduction » : chaque cumul de loi de combustion augmente également les DGT CRIT des réactions d'Astroconduction du personnage équipé de l'arme de <cryo>18 %</cryo>.",
+      "2": "Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "Augmente les DGT CRIT de <cryo>42 %</cryo>. En utilisant une compétence élémentaire, le personnage équipé de l'arme obtient l'effet Composition cristalline : augmente la maîtrise élémentaire de <cryo>84</cryo> pts pendant 20 s. Pendant cette durée, le personnage équipé de l'arme obtient un cumul de loi de combustion lorsqu'un personnage de l'équipe à proximité déclenche une réaction élémentaire, augmentant davantage la maîtrise élémentaire de <cryo>42</cryo> pts. Cet effet peut être cumulé 3 fois maximum et dure jusqu'à la fin de la composition cristalline ou lorsque le personnage équipé de l'arme utilise à nouveau une compétence élémentaire.",
+      "1": "Radiance « Astroconduction » : chaque cumul de loi de combustion augmente également les DGT CRIT des réactions d'Astroconduction du personnage équipé de l'arme de <cryo>21 %</cryo>.",
+      "2": "Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "Augmente les DGT CRIT de <cryo>48 %</cryo>. En utilisant une compétence élémentaire, le personnage équipé de l'arme obtient l'effet Composition cristalline : augmente la maîtrise élémentaire de <cryo>96</cryo> pts pendant 20 s. Pendant cette durée, le personnage équipé de l'arme obtient un cumul de loi de combustion lorsqu'un personnage de l'équipe à proximité déclenche une réaction élémentaire, augmentant davantage la maîtrise élémentaire de <cryo>48</cryo> pts. Cet effet peut être cumulé 3 fois maximum et dure jusqu'à la fin de la composition cristalline ou lorsque le personnage équipé de l'arme utilise à nouveau une compétence élémentaire.",
+      "1": "Radiance « Astroconduction » : chaque cumul de loi de combustion augmente également les DGT CRIT des réactions d'Astroconduction du personnage équipé de l'arme de <cryo>24 %</cryo>.",
+      "2": "Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

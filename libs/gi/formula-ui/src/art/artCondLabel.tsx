@@ -1,7 +1,7 @@
 import { ColorText } from '@genshin-optimizer/common/ui'
 import {
-  allElementWithPhyKeys,
   type ArtifactSetKey,
+  allElementWithPhyKeys,
   type ElementWithPhyKey,
 } from '@genshin-optimizer/gi/consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'

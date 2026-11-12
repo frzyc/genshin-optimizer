@@ -407,6 +407,15 @@
   "ExpeditionInsights": {
     "name": "Connaissances d'expédition"
   },
+  "EasternThreatSuppression": {
+    "name": "Suppression de menace orientale"
+  },
+  "CentralThreatSuppression": {
+    "name": "Suppression de menace centrale"
+  },
+  "NorthernThreatSuppression": {
+    "name": "Suppression de menace nord"
+  },
   "MemoryOfEternalFlames": {
     "name": "Souvenir de flamme éternelle"
   },
@@ -1199,6 +1208,12 @@
   "Sandrone": {
     "name": "Sandrone"
   },
+  "Mitya": {
+    "name": "Mitya"
+  },
+  "Valeriy": {
+    "name": "Valeriy"
+  },
   "Vodyanitsa": {
     "name": "Vodyanitsa"
   },
@@ -1306,6 +1321,12 @@
   },
   "SandronesStellaFortuna": {
     "name": "Stella Fortuna de Sandrone"
+  },
+  "MityasStellaFortuna": {
+    "name": "Stella Fortuna de Mitya"
+  },
+  "ValeriysStellaFortuna": {
+    "name": "Stella Fortuna de Valeriy"
   },
   "VodyanitsasStellaFortuna": {
     "name": "Stella Fortuna de Vodyanitsa"
@@ -3800,6 +3821,12 @@
   "EtherwingMoth": {
     "name": "Papillon à ailes d'éther"
   },
+  "FairyWormwood": {
+    "name": "Armoise nivéole"
+  },
+  "Kristallfold": {
+    "name": "Pli-de-cristal"
+  },
   "FrostfairyFlower": {
     "name": "Fleur de féegivre"
   },
@@ -3823,6 +3850,9 @@
   },
   "Lumifluorite": {
     "name": "Sombréfluorite"
+  },
+  "Lanternberry": {
+    "name": "Bailampionne"
   },
   "BirchWood": {
     "name": "Bois de bouleau"
@@ -8196,7 +8226,7 @@
     "name": "Knieperties aux lakkabaies"
   },
   "DeliciousLakkaberryKrumkakes": {
-    "name": "Knieperties aux lakkabaies (suspects)"
+    "name": "Knieperties aux lakkabaies (délicieux)"
   },
   "SuspiciousTodaysBoon": {
     "name": "Grâce du jour (suspecte)"
@@ -9443,6 +9473,18 @@
   "RecipeMors": {
     "name": "Recette : Mors"
   },
+  "RecipeChickenKitezhgrad": {
+    "name": "Recette : Poulet de Kitezhgrad"
+  },
+  "RecipeCaviarBlini": {
+    "name": "Recette : Blinis au caviar"
+  },
+  "RecipeSolyanka": {
+    "name": "Recette : Solianka"
+  },
+  "RecipeSnowyNocturne": {
+    "name": "Recette : Nocturne enneigé"
+  },
   "CraftedItems": {
     "name": "Produit synthétisé"
   },
@@ -10061,6 +10103,15 @@
   "CoiledCoreOfLife": {
     "name": "Noyau de vie"
   },
+  "SnowbornHeartshard": {
+    "name": "Cœur-fragment des neiges"
+  },
+  "SnowbornMirrorheart": {
+    "name": "Cœur-miroir des neiges"
+  },
+  "SnowbornHeartOfIgnorance": {
+    "name": "Cœur-égarement des neiges"
+  },
   "HurricaneSeed": {
     "name": "Graine d'ouragan"
   },
@@ -10336,6 +10387,9 @@
   },
   "VagabondsCrackedArmor": {
     "name": "Armure fissurée de vagabond"
+  },
+  "ShatteredStabilityAnchor": {
+    "name": "Ancre de stabilité brisée"
   },
   "TileOfDecarabiansTower": {
     "name": "Tuile cassée de Décarabian"
@@ -14519,8 +14573,17 @@
   "RequestToExpandVIPRoom": {
     "name": "Demande d'agrandissement du salon VIP"
   },
+  "WorksiteKey": {
+    "name": "Clé de chantier"
+  },
   "HighLevelAccessCard": {
     "name": "Carte d'accès avancé"
+  },
+  "PowerModule": {
+    "name": "Module d'alimentation"
+  },
+  "TreeheartPrism": {
+    "name": "Prisme de cœur d'arbre"
   },
   "ConstructAppearanceFlutterwing": {
     "name": "Apparence de structure : Aile de papillon"
@@ -14531,8 +14594,116 @@
   "VodyanitsasGift": {
     "name": "Cadeau de Vodyanitsa"
   },
+  "PreciousPearl": {
+    "name": "Perle précieuse"
+  },
+  "OrdinaryJewelryBox": {
+    "name": "Boîte à bijoux ordinaire"
+  },
+  "MaryyushkasTreasuredGem": {
+    "name": "Gemme précieuse de Maryyushka"
+  },
+  "TheCellarForgesHeirloomVintage": {
+    "name": "Cru vintage de la Forge de la cave"
+  },
+  "OneinaHundredOre": {
+    "name": "Minerai unique en son genre"
+  },
+  "ExquisitelyCraftedGlasses": {
+    "name": "Lunettes d'une facture exquise"
+  },
+  "SomeonesHeadscarf": {
+    "name": "Foulard de quelqu'un"
+  },
+  "FinelyCraftedSuitcase": {
+    "name": "Valise de fabrication soignée"
+  },
+  "OldBowlerHat": {
+    "name": "Vieux chapeau rond"
+  },
+  "DelicateCorsage": {
+    "name": "Corsage délicat"
+  },
+  "NotesOnNovokitezhgrad": {
+    "name": "Notes sur Novokitezhgrad"
+  },
   "OkurovTownSewerSystemDesignPlan": {
     "name": "Plan de conception du système d'égouts d'Okurov"
+  },
+  "BorschtRecommendedByButurlina": {
+    "name": "Bortsch recommandé par Buturlina"
+  },
+  "SmokedSausageRecommendedByButurlina": {
+    "name": "Saucisse fumée recommandée par Buturlina"
+  },
+  "ZharkoyeRecommendedByIliana": {
+    "name": "Zharkoye recommandé par Iliana"
+  },
+  "ColorfulCrystal": {
+    "name": "Cristal coloré"
+  },
+  "PremiumAccessoryCustomizationBox": {
+    "name": "Boîte de personnalisation d'accessoires haut de gamme"
+  },
+  "StardustTrailFieryGleam": {
+    "name": "Sentier de poussière d'étoiles : Éclat ardent"
+  },
+  "StardustTrailFieryGleamSigil": {
+    "name": "Sceau de sentier de poussière d'étoiles : Éclat ardent"
+  },
+  "RemnantIncenseGuideTeploOasis": {
+    "name": "Guide d'encens : Oasis de Teplo"
+  },
+  "RemnantIncenseGuideNovokitezhgrad": {
+    "name": "Guide d'encens : Novokitezhgrad"
+  },
+  "DanicasSpecialTeaAndTreats": {
+    "name": "Thé et collations spéciaux de Danica"
+  },
+  "ClueImageMinecart": {
+    "name": "Image indice : Wagonnet de mine"
+  },
+  "ClueImageFurnaceAsh": {
+    "name": "Image indice : Cendres de fourneau"
+  },
+  "SplendidGiftBox": {
+    "name": "Splendide coffret cadeau"
+  },
+  "LetterCopy": {
+    "name": "Copie de lettre"
+  },
+  "SuspiciousAdvertisement": {
+    "name": "Publicité suspecte"
+  },
+  "BetweenTheNewspaperPages": {
+    "name": "Entre les pages du journal"
+  },
+  "GeneralHistoryOfSnezhnayaSupplementI": {
+    "name": "Complément sur l'Histoire générale de Snezhnaya (1)"
+  },
+  "GeneralHistoryOfSnezhnayaSupplementII": {
+    "name": "Complément sur l'Histoire générale de Snezhnaya (2)"
+  },
+  "GeneralHistoryOfSnezhnayaSupplementIII": {
+    "name": "Complément sur l'Histoire générale de Snezhnaya (3)"
+  },
+  "BelyiAndChernyi": {
+    "name": "Belyi et Chernyi"
+  },
+  "HeartOfTheAbyssalBeast": {
+    "name": "Cœur de la bête abyssale"
+  },
+  "CaseRecordI": {
+    "name": "Dossier d'affaire (1)"
+  },
+  "CaseRecordII": {
+    "name": "Dossier d'affaire (2)"
+  },
+  "CaseRecordIII": {
+    "name": "Dossier d'affaire (3)"
+  },
+  "CaseRecordIV": {
+    "name": "Dossier d'affaire (4)"
   },
   "TearsAmongTheStars": {
     "name": "Larme parmi les étoiles"
@@ -14689,6 +14860,12 @@
   },
   "SnowballFlowerSeed": {
     "name": "Graine de viorne de neige"
+  },
+  "FairyWormwoodSeed": {
+    "name": "Graine d'armoise nivéole"
+  },
+  "KristallfoldSpore": {
+    "name": "Spore de pli-de-cristal"
   },
   "Medaka": {
     "name": "Médaka"
@@ -14983,6 +15160,69 @@
   },
   "VodyanitsaThemedIceCream": {
     "name": "Glace de Vodyanitsa"
+  },
+  "SuspiciousChickenKitezhgrad": {
+    "name": "Poulet de Kitezhgrad (suspect)"
+  },
+  "ChickenKitezhgrad": {
+    "name": "Poulet de Kitezhgrad"
+  },
+  "DeliciousChickenKitezhgrad": {
+    "name": "Poulet de Kitezhgrad (délicieux)"
+  },
+  "SuspiciousCaviarBlini": {
+    "name": "Blinis au caviar (suspects)"
+  },
+  "CaviarBlini": {
+    "name": "Blinis au caviar"
+  },
+  "DeliciousCaviarBlini": {
+    "name": "Blinis au caviar (délicieux)"
+  },
+  "SuspiciousSolyanka": {
+    "name": "Solianka (suspecte)"
+  },
+  "Solyanka": {
+    "name": "Solianka"
+  },
+  "DeliciousSolyanka": {
+    "name": "Solianka (délicieuse)"
+  },
+  "SuspiciousSnowyNocturne": {
+    "name": "Nocturne enneigé (suspect)"
+  },
+  "SnowyNocturne": {
+    "name": "Nocturne enneigé"
+  },
+  "DeliciousSnowyNocturne": {
+    "name": "Nocturne enneigé (délicieux)"
+  },
+  "EnergyReplenishingMeal": {
+    "name": "Ration énergétique"
+  },
+  "EmergencyBarricade": {
+    "name": "Barricade d'urgence"
+  },
+  "MityasIceCream": {
+    "name": "Glace de Mitya"
+  },
+  "ValeriysIceCream": {
+    "name": "Glace de Valeriy"
+  },
+  "RoyalRimecurrantIceCream": {
+    "name": "Glace à la givroseille (version royale)"
+  },
+  "RoyalMedovik": {
+    "name": "Medovik (version royale)"
+  },
+  "RoyalSnowrealmOkroshkas": {
+    "name": "Okrochka des neiges (version royale)"
+  },
+  "RoyalSnowballBloomsAtopSnowfields": {
+    "name": "Viornes en fleurs sur champ de neige (version royale)"
+  },
+  "RoyalCaviarBlini": {
+    "name": "Blinis au caviar (version royale)"
   },
   "WingsOfFirstFlight": {
     "name": "Planeur du débutant"
@@ -15706,6 +15946,30 @@
   },
   "RadiantSpincrystalALetterFromTheWindIV": {
     "name": "Gyrocristal radiant « A Letter from the Wind » 4"
+  },
+  "RadiantSpincrystal201": {
+    "name": "Gyrocristal radiant 201"
+  },
+  "RadiantSpincrystal202": {
+    "name": "Gyrocristal radiant 202"
+  },
+  "RadiantSpincrystal203": {
+    "name": "Gyrocristal radiant 203"
+  },
+  "RadiantSpincrystal204": {
+    "name": "Gyrocristal radiant 204"
+  },
+  "RadiantSpincrystal205": {
+    "name": "Gyrocristal radiant 205"
+  },
+  "RadiantSpincrystal206": {
+    "name": "Gyrocristal radiant 206"
+  },
+  "RadiantSpincrystal207": {
+    "name": "Gyrocristal radiant 207"
+  },
+  "RadiantSpincrystal208": {
+    "name": "Gyrocristal radiant 208"
   },
   "LanternFiber": {
     "name": "Cellulose de lanterne"
@@ -16853,6 +17117,21 @@
   "TravelNotesMoontrace": {
     "name": "PB - Trace lunaire"
   },
+  "MityaScarf": {
+    "name": "Mitya - Écharpe"
+  },
+  "ValeriyRank": {
+    "name": "Valeriy - Grade"
+  },
+  "SnezhnayaSnowWings": {
+    "name": "Snezhnaya - Ailes de neige"
+  },
+  "AchievementStillness": {
+    "name": "Succès - Sérénité"
+  },
+  "TravelNotesSacredSpirit": {
+    "name": "PB - Esprit sacré"
+  },
   "EchoDandelionKnight": {
     "name": "Écho : Chevalier au Pissenlit"
   },
@@ -16921,6 +17200,12 @@
   },
   "EchoVigilantYaksha": {
     "name": "Écho : Gardien Yaksha"
+  },
+  "EchoArdentFlamesForgeTheSoul": {
+    "name": "Écho : Âme forgée par les vives flammes"
+  },
+  "EchoAstuteAmusement": {
+    "name": "Écho : Frivolité ingénieuse"
   },
   "FaintGlow": {
     "name": "Scintillement léger"
@@ -17309,8 +17594,14 @@
   "AMiniTrolleyProblem": {
     "name": "Mini dilemme du tramway"
   },
+  "PowerFramingKamera": {
+    "name": "Daguerréotype instantané"
+  },
   "PrimaDonnasSong": {
     "name": "Chant de la première soprano"
+  },
+  "MityasAccessoryBox": {
+    "name": "Boîte à accessoires de Mitya"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instructions : Pierre de résonance Anémoculus"
@@ -17609,6 +17900,30 @@
   "AshamezsThunderSight": {
     "name": "Viseur du Tonnerre d'Ashamez"
   },
+  "SosrukosFlameMuzzle": {
+    "name": "Canon de la Flamme de Sosruko"
+  },
+  "SosrukosFlameAmmoFeed": {
+    "name": "Alimentation en munitions de la Flamme de Sosruko"
+  },
+  "SosrukosFlameGunstock": {
+    "name": "Crosse de la Flamme de Sosruko"
+  },
+  "SosrukosFlameGunsight": {
+    "name": "Viseur de la Flamme de Sosruko"
+  },
+  "ApsatsMountainHuntGunsight": {
+    "name": "Viseur de la Chasse en montagne d'Apsat"
+  },
+  "ApsatsMountainHuntAmplifier": {
+    "name": "Amplificateur de la Chasse en montagne d'Apsat"
+  },
+  "ApsatsMountainHuntCirculator": {
+    "name": "Circulateur de la Chasse en montagne d'Apsat"
+  },
+  "ApsatsMountainHuntAction": {
+    "name": "Action de la Chasse en montagne d'Apsat"
+  },
   "ConstructAppearanceJackFrost": {
     "name": "Apparence de structure : Jack frost"
   },
@@ -17623,6 +17938,12 @@
   },
   "ConstructAppearanceTheTides": {
     "name": "Apparence de structure : Marée"
+  },
+  "ConstructAppearanceSnowman": {
+    "name": "Apparence de structure : Bonhomme de neige"
+  },
+  "ConstructAppearanceSnowflake": {
+    "name": "Apparence de structure : Flocon de neige"
   },
   "UpbeatEncouragement": {
     "name": "Encouragement joyeux"
@@ -18047,6 +18368,24 @@
   "EagerlyWaiting": {
     "name": "Avec impatience"
   },
+  "HuggingLumi": {
+    "name": "Câlin avec Lumi"
+  },
+  "ReadyToGo": {
+    "name": "Prêt au départ"
+  },
+  "EnjoyingTea": {
+    "name": "Pause thé"
+  },
+  "ExpertGuidance": {
+    "name": "Conseil d'expert"
+  },
+  "TimeToWork": {
+    "name": "Au boulot"
+  },
+  "ComfortingTheClerk": {
+    "name": "Réconforter le vendeur"
+  },
   "FantasticalMarvel": {
     "name": "Merveille fantastique"
   },
@@ -18121,6 +18460,9 @@
   },
   "DovefeatherMoondew": {
     "name": "Rosée sélénescente"
+  },
+  "FloatingLotusListeningSpring": {
+    "name": "Lotus flottant, source à l'écoute"
   },
   "VigorousYapping": {
     "name": "Parlotte énergétique"
@@ -18707,6 +19049,15 @@
   "ElkWithFangedAntlers": {
     "name": "Élan aux bois carnassiers"
   },
+  "OdeToAscension": {
+    "name": "Ode à l'ascension"
+  },
+  "ForNoneMayTakeFromUsOurFreedomOfSong": {
+    "name": "« Car personne ne peut nous priver de notre liberté de chanter... »"
+  },
+  "DawnsReturn": {
+    "name": "Retour de l'aube"
+  },
   "MagicGuide": {
     "name": "Guide de magie"
   },
@@ -19058,6 +19409,9 @@
   "RecollectionOfDaysPast": {
     "name": "Souvenir venu d'antan"
   },
+  "SongOfDaysPast": {
+    "name": "Chanson des jours d'antan"
+  },
   "LiyueHarborWharf": {
     "name": "Quai du Port de Liyue"
   },
@@ -19300,6 +19654,12 @@
   },
   "ElementalTransfigurationOverloadBlessing": {
     "name": "Transfiguration élémentaire : Grâce de Surcharge"
+  },
+  "Zeitlind": {
+    "name": "Zeitlind"
+  },
+  "ElementalTransfigurationBurningBlessing": {
+    "name": "Transfiguration élémentaire : Grâce de Brûlure"
   },
   "ElementalResonanceWovenIce": {
     "name": "Résonance élémentaire : Glace tissée"
@@ -19573,6 +19933,9 @@
   },
   "ReturnOfTheThreeMoons": {
     "name": "Le retour des trois lunes"
+  },
+  "StreamingSong": {
+    "name": "Chant fluide"
   },
   "Origin": {
     "name": "Origine"
@@ -20453,6 +20816,15 @@
   "BrightProspectsBrighterProfits": {
     "name": "« Perspectives prometteuses, profits meilleurs »"
   },
+  "DreamsInTheDancingLight": {
+    "name": "Rêves dans la lumière dansante"
+  },
+  "NightWindsRoamWithEveningStars": {
+    "name": "Vents nocturnes errant parmi les étoiles du soir"
+  },
+  "FactoryFloorLampReliableIllumination": {
+    "name": "Lampadaire d'usine « Éclairage fiable »"
+  },
   "EfflorescentIllumination": {
     "name": "Illumination efflorescente"
   },
@@ -21203,6 +21575,9 @@
   "IndoorRugWarmth": {
     "name": "Tapis d'intérieur « Chaleureux confort »"
   },
+  "TracesAlongTheEdges": {
+    "name": "« Traces le long des bords »"
+  },
   "VibrantPotBornInFlames": {
     "name": "Pot vibrant « Né des flammes »"
   },
@@ -21223,6 +21598,9 @@
   },
   "TallCappedSentinel": {
     "name": "Sentinelle à chapeau haut"
+  },
+  "RockPaperScissorsCompanion": {
+    "name": "Compagnon de pierre-feuille-ciseaux"
   },
   "TrustyPortableLamp": {
     "name": "Lanterne constamment allumée"
@@ -22526,6 +22904,18 @@
   "SnezhnayanDwellingElegantCarvings": {
     "name": "Habitation snezhnayienne « Sculptures raffinées »"
   },
+  "FlowingSweetness": {
+    "name": "Fluctuation sucrée"
+  },
+  "ConvergingTerrace": {
+    "name": "Terrasse convergente"
+  },
+  "ShadeBeneathTheBreeze": {
+    "name": "Ombre sous la brise"
+  },
+  "UnarrangedMeeting": {
+    "name": "Réunion non organisée"
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Fontaine à fleurs et oiseaux"
   },
@@ -23627,6 +24017,9 @@
   "SmallStandingGlassDisplayCase": {
     "name": "Petite vitrine en verre sur pied"
   },
+  "TavernCabinetTheArtOfDisplay": {
+    "name": "Cabinet de taverne « L'art de la présentation »"
+  },
   "PoolOfSapphireGrace": {
     "name": "« Bassin mystique »"
   },
@@ -23753,6 +24146,18 @@
   "OpenWide": {
     "name": "« Grand ouvert ! »"
   },
+  "TavernSignboardDailyMenu": {
+    "name": "Pancarte de taverne « Menu du jour »"
+  },
+  "TavernBarrelStoutStorage": {
+    "name": "Tonneau de taverne « Stockage robuste »"
+  },
+  "SteadySteps": {
+    "name": "Marches régulières"
+  },
+  "WarmthWithinTheGrainTrough": {
+    "name": "Chaleur à l'intérieur du silo à grains"
+  },
   "WeatheredBambooFence": {
     "name": "Clôture en bambou usagé"
   },
@@ -23846,6 +24251,9 @@
   "TempleOpenworkRailing": {
     "name": "Rambarde ajourée de temple"
   },
+  "FactoryRailingClearDemarcation": {
+    "name": "Garde-corps d'usine « Démarcation claire »"
+  },
   "SmoothWoodenBench": {
     "name": "Banc en bois lisse"
   },
@@ -23917,6 +24325,12 @@
   },
   "TheLingeringWarmthOfTheWait": {
     "name": "« Douce chaleur de l'attente »"
+  },
+  "TavernStoolSteadyLanding": {
+    "name": "Tabouret de taverne « Atterrissage en douceur »"
+  },
+  "StableSupport": {
+    "name": "Support solide"
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "Tour de sentinelle Brutocollinus"
@@ -24013,6 +24427,9 @@
   },
   "UselessAdvice": {
     "name": "Conseil superflu"
+  },
+  "DrapedSatin": {
+    "name": "Satin drapé"
   },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Présentoir de bar à vin « Boisson à volonté »"
@@ -24214,6 +24631,15 @@
   },
   "SmallGaugePanelControlConsole": {
     "name": "Petite console de contrôle « Panneau à jauge »"
+  },
+  "MeasureOfTheFlow": {
+    "name": "Mesure de reflux"
+  },
+  "WatchfulFieldkeeper": {
+    "name": "Gardien de champ vigilant"
+  },
+  "TavernCounterArcOfEncounters": {
+    "name": "Comptoir de taverne « Arc des rencontres »"
   },
   "SirCapyOfTheLongIncisors": {
     "name": "« Chevalier incisif »"

@@ -407,6 +407,15 @@
   "ExpeditionInsights": {
     "name": "游览心得"
   },
+  "EasternThreatSuppression": {
+    "name": "东部威胁削弱值"
+  },
+  "CentralThreatSuppression": {
+    "name": "中部威胁削弱值"
+  },
+  "NorthernThreatSuppression": {
+    "name": "北部威胁削弱值"
+  },
   "MemoryOfEternalFlames": {
     "name": "恒常燃烧的记忆"
   },
@@ -1199,6 +1208,12 @@
   "Sandrone": {
     "name": "桑多涅"
   },
+  "Mitya": {
+    "name": "米提亚"
+  },
+  "Valeriy": {
+    "name": "瓦列里"
+  },
   "Vodyanitsa": {
     "name": "沃雅妮莎"
   },
@@ -1306,6 +1321,12 @@
   },
   "SandronesStellaFortuna": {
     "name": "桑多涅的命星"
+  },
+  "MityasStellaFortuna": {
+    "name": "米提亚的命星"
+  },
+  "ValeriysStellaFortuna": {
+    "name": "瓦列里的命星"
   },
   "VodyanitsasStellaFortuna": {
     "name": "沃雅妮莎的命星"
@@ -3800,6 +3821,12 @@
   "EtherwingMoth": {
     "name": "空羽蛾"
   },
+  "FairyWormwood": {
+    "name": "妖精绿艾"
+  },
+  "Kristallfold": {
+    "name": "析晶褶伞"
+  },
   "FrostfairyFlower": {
     "name": "霜仙花"
   },
@@ -3823,6 +3850,9 @@
   },
   "Lumifluorite": {
     "name": "幽光萤石"
+  },
+  "Lanternberry": {
+    "name": "笼酸浆"
   },
   "BirchWood": {
     "name": "桦木"
@@ -9443,6 +9473,18 @@
   "RecipeMors": {
     "name": "食谱：莫尔斯果酿"
   },
+  "RecipeChickenKitezhgrad": {
+    "name": "食谱：基捷鸡"
+  },
+  "RecipeCaviarBlini": {
+    "name": "食谱：鱼子酱布林饼"
+  },
+  "RecipeSolyanka": {
+    "name": "食谱：酸辣杂拌汤"
+  },
+  "RecipeSnowyNocturne": {
+    "name": "食谱：雪色夜曲"
+  },
   "CraftedItems": {
     "name": "合成产物"
   },
@@ -10061,6 +10103,15 @@
   "CoiledCoreOfLife": {
     "name": "灵生盘枝心"
   },
+  "SnowbornHeartshard": {
+    "name": "雪结片心"
+  },
+  "SnowbornMirrorheart": {
+    "name": "雪结镜心"
+  },
+  "SnowbornHeartOfIgnorance": {
+    "name": "雪结无明心"
+  },
   "HurricaneSeed": {
     "name": "飓风之种"
   },
@@ -10336,6 +10387,9 @@
   },
   "VagabondsCrackedArmor": {
     "name": "游离者的裂甲"
+  },
+  "ShatteredStabilityAnchor": {
+    "name": "破碎的稳定锚"
   },
   "TileOfDecarabiansTower": {
     "name": "高塔孤王的破瓦"
@@ -14519,8 +14573,17 @@
   "RequestToExpandVIPRoom": {
     "name": "扩建贵宾室申请书"
   },
+  "WorksiteKey": {
+    "name": "工区钥匙"
+  },
   "HighLevelAccessCard": {
     "name": "高级权限卡"
+  },
+  "PowerModule": {
+    "name": "供能模块"
+  },
+  "TreeheartPrism": {
+    "name": "树心的棱晶"
   },
   "ConstructAppearanceFlutterwing": {
     "name": "造物外观·风蝶"
@@ -14531,8 +14594,116 @@
   "VodyanitsasGift": {
     "name": "沃雅妮莎的礼物"
   },
+  "PreciousPearl": {
+    "name": "价格不菲的珍珠"
+  },
+  "OrdinaryJewelryBox": {
+    "name": "平平无奇的首饰盒"
+  },
+  "MaryyushkasTreasuredGem": {
+    "name": "玛柳什卡珍藏的宝石"
+  },
+  "TheCellarForgesHeirloomVintage": {
+    "name": "「熔炉石窖」的祖传名酒"
+  },
+  "OneinaHundredOre": {
+    "name": "百中无一的稀有矿石"
+  },
+  "ExquisitelyCraftedGlasses": {
+    "name": "做工精致的眼镜"
+  },
+  "SomeonesHeadscarf": {
+    "name": "谁人的头巾"
+  },
+  "FinelyCraftedSuitcase": {
+    "name": "做工考究的行李箱"
+  },
+  "OldBowlerHat": {
+    "name": "老旧的圆顶帽"
+  },
+  "DelicateCorsage": {
+    "name": "秀美的胸花"
+  },
+  "NotesOnNovokitezhgrad": {
+    "name": "新基捷城见闻笔记"
+  },
   "OkurovTownSewerSystemDesignPlan": {
     "name": "《奥古洛夫镇下水道设计方案》"
+  },
+  "BorschtRecommendedByButurlina": {
+    "name": "布图琳娜推荐的红菜汤"
+  },
+  "SmokedSausageRecommendedByButurlina": {
+    "name": "布图琳娜推荐的熏肠"
+  },
+  "ZharkoyeRecommendedByIliana": {
+    "name": "伊莉雅娜推荐的罐罐焖肉"
+  },
+  "ColorfulCrystal": {
+    "name": "色彩绚烂的结晶"
+  },
+  "PremiumAccessoryCustomizationBox": {
+    "name": "珍贵饰品定制盒"
+  },
+  "StardustTrailFieryGleam": {
+    "name": "锋曳星迹·炽芒"
+  },
+  "StardustTrailFieryGleamSigil": {
+    "name": "锋曳星迹·炽芒空印"
+  },
+  "RemnantIncenseGuideTeploOasis": {
+    "name": "特普洛绿洲的残香之引"
+  },
+  "RemnantIncenseGuideNovokitezhgrad": {
+    "name": "新基捷城的残香之引"
+  },
+  "DanicasSpecialTeaAndTreats": {
+    "name": "达妮卡特制茶点"
+  },
+  "ClueImageMinecart": {
+    "name": "线索画片·矿车"
+  },
+  "ClueImageFurnaceAsh": {
+    "name": "线索画片·炉灰"
+  },
+  "SplendidGiftBox": {
+    "name": "精彩礼盒"
+  },
+  "LetterCopy": {
+    "name": "信件副本"
+  },
+  "SuspiciousAdvertisement": {
+    "name": "可疑的广告"
+  },
+  "BetweenTheNewspaperPages": {
+    "name": "报纸夹缝"
+  },
+  "GeneralHistoryOfSnezhnayaSupplementI": {
+    "name": "至冬国通史补编·卷一"
+  },
+  "GeneralHistoryOfSnezhnayaSupplementII": {
+    "name": "至冬国通史补编·卷二"
+  },
+  "GeneralHistoryOfSnezhnayaSupplementIII": {
+    "name": "至冬国通史补编·卷三"
+  },
+  "BelyiAndChernyi": {
+    "name": "白与黑"
+  },
+  "HeartOfTheAbyssalBeast": {
+    "name": "渊兽之心"
+  },
+  "CaseRecordI": {
+    "name": "案件档案·其一"
+  },
+  "CaseRecordII": {
+    "name": "案件档案·其二"
+  },
+  "CaseRecordIII": {
+    "name": "案件档案·其三"
+  },
+  "CaseRecordIV": {
+    "name": "案件档案·其四"
   },
   "TearsAmongTheStars": {
     "name": "星间之泪"
@@ -14689,6 +14860,12 @@
   },
   "SnowballFlowerSeed": {
     "name": "「雪球花」的种子"
+  },
+  "FairyWormwoodSeed": {
+    "name": "「妖精绿艾」的种子"
+  },
+  "KristallfoldSpore": {
+    "name": "「析晶褶伞」的孢子"
   },
   "Medaka": {
     "name": "花鳉"
@@ -14983,6 +15160,69 @@
   },
   "VodyanitsaThemedIceCream": {
     "name": "冰淇淋・沃雅妮莎"
+  },
+  "SuspiciousChickenKitezhgrad": {
+    "name": "奇怪的基捷鸡"
+  },
+  "ChickenKitezhgrad": {
+    "name": "基捷鸡"
+  },
+  "DeliciousChickenKitezhgrad": {
+    "name": "美味的基捷鸡"
+  },
+  "SuspiciousCaviarBlini": {
+    "name": "奇怪的鱼子酱布林饼"
+  },
+  "CaviarBlini": {
+    "name": "鱼子酱布林饼"
+  },
+  "DeliciousCaviarBlini": {
+    "name": "美味的鱼子酱布林饼"
+  },
+  "SuspiciousSolyanka": {
+    "name": "奇怪的酸辣杂拌汤"
+  },
+  "Solyanka": {
+    "name": "酸辣杂拌汤"
+  },
+  "DeliciousSolyanka": {
+    "name": "美味的酸辣杂拌汤"
+  },
+  "SuspiciousSnowyNocturne": {
+    "name": "奇怪的雪色夜曲"
+  },
+  "SnowyNocturne": {
+    "name": "雪色夜曲"
+  },
+  "DeliciousSnowyNocturne": {
+    "name": "美味的雪色夜曲"
+  },
+  "EnergyReplenishingMeal": {
+    "name": "「能量补充餐」"
+  },
+  "EmergencyBarricade": {
+    "name": "「应急防御墙」"
+  },
+  "MityasIceCream": {
+    "name": "冰淇淋・米提亚"
+  },
+  "ValeriysIceCream": {
+    "name": "冰淇淋・瓦列里"
+  },
+  "RoyalRimecurrantIceCream": {
+    "name": "皇家特制冰醋栗冰淇淋"
+  },
+  "RoyalMedovik": {
+    "name": "皇家特制千层蜂蜜糕"
+  },
+  "RoyalSnowrealmOkroshkas": {
+    "name": "皇家特制雪国冷汤"
+  },
+  "RoyalSnowballBloomsAtopSnowfields": {
+    "name": "皇家特制雪原上的雪球花"
+  },
+  "RoyalCaviarBlini": {
+    "name": "皇家特制鱼子酱布林饼"
   },
   "WingsOfFirstFlight": {
     "name": "初始之翼"
@@ -15706,6 +15946,30 @@
   },
   "RadiantSpincrystalALetterFromTheWindIV": {
     "name": "旋曜玉帛·《风的来信》·其四"
+  },
+  "RadiantSpincrystal201": {
+    "name": "旋曜玉帛·其二百零一"
+  },
+  "RadiantSpincrystal202": {
+    "name": "旋曜玉帛·其二百零二"
+  },
+  "RadiantSpincrystal203": {
+    "name": "旋曜玉帛·其二百零三"
+  },
+  "RadiantSpincrystal204": {
+    "name": "旋曜玉帛·其二百零四"
+  },
+  "RadiantSpincrystal205": {
+    "name": "旋曜玉帛·其二百零五"
+  },
+  "RadiantSpincrystal206": {
+    "name": "旋曜玉帛·其二百零六"
+  },
+  "RadiantSpincrystal207": {
+    "name": "旋曜玉帛·其二百零七"
+  },
+  "RadiantSpincrystal208": {
+    "name": "旋曜玉帛·其二百零八"
   },
   "LanternFiber": {
     "name": "灯纸纤维"
@@ -16853,6 +17117,21 @@
   "TravelNotesMoontrace": {
     "name": "纪行·溯月"
   },
+  "MityaScarf": {
+    "name": "米提亚·围巾"
+  },
+  "ValeriyRank": {
+    "name": "瓦列里·勋衔"
+  },
+  "SnezhnayaSnowWings": {
+    "name": "至冬·雪翼"
+  },
+  "AchievementStillness": {
+    "name": "成就·静谧"
+  },
+  "TravelNotesSacredSpirit": {
+    "name": "纪行·灵圣"
+  },
   "EchoDandelionKnight": {
     "name": "游迹·蒲公英骑士"
   },
@@ -16921,6 +17200,12 @@
   },
   "EchoVigilantYaksha": {
     "name": "游迹·护法夜叉"
+  },
+  "EchoArdentFlamesForgeTheSoul": {
+    "name": "游迹·焮火铸魂"
+  },
+  "EchoAstuteAmusement": {
+    "name": "游迹·浮世笑百姿"
   },
   "FaintGlow": {
     "name": "薄光"
@@ -17309,8 +17594,14 @@
   "AMiniTrolleyProblem": {
     "name": "迷你列车难题"
   },
+  "PowerFramingKamera": {
+    "name": "「定格力量」留影机"
+  },
   "PrimaDonnasSong": {
     "name": "首席的献唱"
+  },
+  "MityasAccessoryBox": {
+    "name": "米提亚的饰品盒"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "说明：风神瞳共鸣石"
@@ -17609,6 +17900,30 @@
   "AshamezsThunderSight": {
     "name": "「阿夏梅兹的千光」的「瞄具」"
   },
+  "SosrukosFlameMuzzle": {
+    "name": "「索斯卢科的灼炎」的「枪口」"
+  },
+  "SosrukosFlameAmmoFeed": {
+    "name": "「索斯卢科的灼炎」的「供弹」"
+  },
+  "SosrukosFlameGunstock": {
+    "name": "「索斯卢科的灼炎」的「枪托」"
+  },
+  "SosrukosFlameGunsight": {
+    "name": "「索斯卢科的灼炎」的「瞄具」"
+  },
+  "ApsatsMountainHuntGunsight": {
+    "name": "「艾维萨缇的山狩」的「瞄具」"
+  },
+  "ApsatsMountainHuntAmplifier": {
+    "name": "「艾维萨缇的山狩」的「增幅器」"
+  },
+  "ApsatsMountainHuntCirculator": {
+    "name": "「艾维萨缇的山狩」的「循环器」"
+  },
+  "ApsatsMountainHuntAction": {
+    "name": "「艾维萨缇的山狩」的「枪机」"
+  },
   "ConstructAppearanceJackFrost": {
     "name": "造物外观·霜精"
   },
@@ -17623,6 +17938,12 @@
   },
   "ConstructAppearanceTheTides": {
     "name": "造物外观·潮汐"
+  },
+  "ConstructAppearanceSnowman": {
+    "name": "造物外观·雪人"
+  },
+  "ConstructAppearanceSnowflake": {
+    "name": "造物外观·雪花"
   },
   "UpbeatEncouragement": {
     "name": "欢欣鼓舞"
@@ -18047,6 +18368,24 @@
   "EagerlyWaiting": {
     "name": "期待等候"
   },
+  "HuggingLumi": {
+    "name": "抱抱露米"
+  },
+  "ReadyToGo": {
+    "name": "准备出发"
+  },
+  "EnjoyingTea": {
+    "name": "悠然品茶"
+  },
+  "ExpertGuidance": {
+    "name": "专业讲解"
+  },
+  "TimeToWork": {
+    "name": "工作时刻"
+  },
+  "ComfortingTheClerk": {
+    "name": "安抚店员"
+  },
   "FantasticalMarvel": {
     "name": "幻戏瑰意"
   },
@@ -18121,6 +18460,9 @@
   },
   "DovefeatherMoondew": {
     "name": "鸽羽月露"
+  },
+  "FloatingLotusListeningSpring": {
+    "name": "聆泉浮莲"
   },
   "VigorousYapping": {
     "name": "活力相谈"
@@ -18707,6 +19049,15 @@
   "ElkWithFangedAntlers": {
     "name": "噬枝之麋"
   },
+  "OdeToAscension": {
+    "name": "升华赞歌"
+  },
+  "ForNoneMayTakeFromUsOurFreedomOfSong": {
+    "name": "「因为无人能夺去我们歌唱的自由」"
+  },
+  "DawnsReturn": {
+    "name": "重光临晨"
+  },
   "MagicGuide": {
     "name": "魔导绪论"
   },
@@ -19058,6 +19409,9 @@
   "RecollectionOfDaysPast": {
     "name": "昔时浮想之思"
   },
+  "SongOfDaysPast": {
+    "name": "昔时之歌"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -19300,6 +19654,12 @@
   },
   "ElementalTransfigurationOverloadBlessing": {
     "name": "元素幻变：超载祝佑"
+  },
+  "Zeitlind": {
+    "name": "彩特琳德"
+  },
+  "ElementalTransfigurationBurningBlessing": {
+    "name": "元素幻变：燃烧祝佑"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鸣：交织之冰"
@@ -19573,6 +19933,9 @@
   },
   "ReturnOfTheThreeMoons": {
     "name": "三月重临"
+  },
+  "StreamingSong": {
+    "name": "浮槃之歌"
   },
   "Origin": {
     "name": "原初"
@@ -20453,6 +20816,15 @@
   "BrightProspectsBrighterProfits": {
     "name": "「钱途闪闪」"
   },
+  "DreamsInTheDancingLight": {
+    "name": "「摇光照梦」"
+  },
+  "NightWindsRoamWithEveningStars": {
+    "name": "「夜风与晚星同游」"
+  },
+  "FactoryFloorLampReliableIllumination": {
+    "name": "工厂地灯-「稳固照明」"
+  },
   "EfflorescentIllumination": {
     "name": "「花叶百相之光」"
   },
@@ -21203,6 +21575,9 @@
   "IndoorRugWarmth": {
     "name": "室内地毯-「暖色」"
   },
+  "TracesAlongTheEdges": {
+    "name": "「循棱印迹」"
+  },
   "VibrantPotBornInFlames": {
     "name": "炫彩陶罐-「生于烈焰」"
   },
@@ -21223,6 +21598,9 @@
   },
   "TallCappedSentinel": {
     "name": "「高筒帽兵士」"
+  },
+  "RockPaperScissorsCompanion": {
+    "name": "「陪伴型猜拳手」"
   },
   "TrustyPortableLamp": {
     "name": "恒亮不熄的提灯"
@@ -22526,6 +22904,18 @@
   "SnezhnayanDwellingElegantCarvings": {
     "name": "至冬民居-「典雅雕花」"
   },
+  "FlowingSweetness": {
+    "name": "「流转的甘醇」"
+  },
+  "ConvergingTerrace": {
+    "name": "「会聚的阶台」"
+  },
+  "ShadeBeneathTheBreeze": {
+    "name": "「纳风的棚荫」"
+  },
+  "UnarrangedMeeting": {
+    "name": "「无约的相会」"
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "花鸟喷泉"
   },
@@ -23627,6 +24017,9 @@
   "SmallStandingGlassDisplayCase": {
     "name": "立式小型透明展示柜"
   },
+  "TavernCabinetTheArtOfDisplay": {
+    "name": "酒馆立柜-「陈列哲学」"
+  },
   "PoolOfSapphireGrace": {
     "name": "「灵沼云池」"
   },
@@ -23753,6 +24146,18 @@
   "OpenWide": {
     "name": "「张大嘴巴！」"
   },
+  "TavernSignboardDailyMenu": {
+    "name": "酒馆招牌-「每日菜单」"
+  },
+  "TavernBarrelStoutStorage": {
+    "name": "酒馆酒桶-「扎实留存」"
+  },
+  "SteadySteps": {
+    "name": "「稳步的踏阶」"
+  },
+  "WarmthWithinTheGrainTrough": {
+    "name": "「蕴热的谷槽」"
+  },
   "WeatheredBambooFence": {
     "name": "饱经风雨的竹制围篱"
   },
@@ -23846,6 +24251,9 @@
   "TempleOpenworkRailing": {
     "name": "「神殿的镂空低栏」"
   },
+  "FactoryRailingClearDemarcation": {
+    "name": "工厂护栏-「明确界定」"
+  },
   "SmoothWoodenBench": {
     "name": "平整的木制长凳"
   },
@@ -23917,6 +24325,12 @@
   },
   "TheLingeringWarmthOfTheWait": {
     "name": "「等待的余温」"
+  },
+  "TavernStoolSteadyLanding": {
+    "name": "酒馆坐凳-「平稳着陆」"
+  },
+  "StableSupport": {
+    "name": "「稳固的支撑」"
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "丘丘双层警戒台"
@@ -24013,6 +24427,9 @@
   },
   "UselessAdvice": {
     "name": "「无用的忠告」"
+  },
+  "DrapedSatin": {
+    "name": "「垂织柔缎」"
   },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "酒肆货柜-「会须百杯饮」"
@@ -24214,6 +24631,15 @@
   },
   "SmallGaugePanelControlConsole": {
     "name": "小型「仪盘」控制台"
+  },
+  "MeasureOfTheFlow": {
+    "name": "「析流的尺度」"
+  },
+  "WatchfulFieldkeeper": {
+    "name": "「守望的巡田者」"
+  },
+  "TavernCounterArcOfEncounters": {
+    "name": "酒馆吧台-「相逢弧度」"
   },
   "SirCapyOfTheLongIncisors": {
     "name": "「困困门牙骑士」"

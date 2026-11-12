@@ -1,0 +1,34 @@
+{
+  "name": "Editto sigillato dalle stelle",
+  "description": {
+    "0": "Un pesante tomo che contiene le regole e le procedure interne della Commissione per l'Energia, con numerose voci risalenti a molti anni or sono."
+  },
+  "passiveName": "Sentiero della Stella dell'alba",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta i DAN da CRIT di un <cryo>24%</cryo>. Quando usa l'abilità elementale, il personaggio che equipaggia l'arma ottiene l'effetto Modulazione cristallina, che aumenta la maestria elementale di <cryo>48</cryo> per 20 s. Mentre l'effetto è attivo, il personaggio che equipaggia l'arma ottiene un accumulo di Legge della combustione quando un membro vicino del gruppo innesca una reazione elementale, fino a un massimo di 3 accumuli. Ogni accumulo aumenta la maestria elementale di <cryo>24</cryo> punti aggiuntivi, e dura fino al termine della durata di Modulazione cristallina o finché il personaggio che equipaggia l'arma non utilizza di nuovo la sua abilità elementale.",
+      "1": "Nello stato di Splendore: Astroconduzione, ogni accumulo di Legge della combustione aumenta anche i DAN da CRIT da Astroconduzione del personaggio che equipaggia l'arma di un <cryo>12%</cryo>.",
+      "2": "Questi effetti possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "1": {
+      "0": "Aumenta i DAN da CRIT di un <cryo>30%</cryo>. Quando usa l'abilità elementale, il personaggio che equipaggia l'arma ottiene l'effetto Modulazione cristallina, che aumenta la maestria elementale di <cryo>60</cryo> per 20 s. Mentre l'effetto è attivo, il personaggio che equipaggia l'arma ottiene un accumulo di Legge della combustione quando un membro vicino del gruppo innesca una reazione elementale, fino a un massimo di 3 accumuli. Ogni accumulo aumenta la maestria elementale di <cryo>30</cryo> punti aggiuntivi, e dura fino al termine della durata di Modulazione cristallina o finché il personaggio che equipaggia l'arma non utilizza di nuovo la sua abilità elementale.",
+      "1": "Nello stato di Splendore: Astroconduzione, ogni accumulo di Legge della combustione aumenta anche i DAN da CRIT da Astroconduzione del personaggio che equipaggia l'arma di un <cryo>15%</cryo>.",
+      "2": "Questi effetti possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "2": {
+      "0": "Aumenta i DAN da CRIT di un <cryo>36%</cryo>. Quando usa l'abilità elementale, il personaggio che equipaggia l'arma ottiene l'effetto Modulazione cristallina, che aumenta la maestria elementale di <cryo>72</cryo> per 20 s. Mentre l'effetto è attivo, il personaggio che equipaggia l'arma ottiene un accumulo di Legge della combustione quando un membro vicino del gruppo innesca una reazione elementale, fino a un massimo di 3 accumuli. Ogni accumulo aumenta la maestria elementale di <cryo>36</cryo> punti aggiuntivi, e dura fino al termine della durata di Modulazione cristallina o finché il personaggio che equipaggia l'arma non utilizza di nuovo la sua abilità elementale.",
+      "1": "Nello stato di Splendore: Astroconduzione, ogni accumulo di Legge della combustione aumenta anche i DAN da CRIT da Astroconduzione del personaggio che equipaggia l'arma di un <cryo>18%</cryo>.",
+      "2": "Questi effetti possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "3": {
+      "0": "Aumenta i DAN da CRIT di un <cryo>42%</cryo>. Quando usa l'abilità elementale, il personaggio che equipaggia l'arma ottiene l'effetto Modulazione cristallina, che aumenta la maestria elementale di <cryo>84</cryo> per 20 s. Mentre l'effetto è attivo, il personaggio che equipaggia l'arma ottiene un accumulo di Legge della combustione quando un membro vicino del gruppo innesca una reazione elementale, fino a un massimo di 3 accumuli. Ogni accumulo aumenta la maestria elementale di <cryo>42</cryo> punti aggiuntivi, e dura fino al termine della durata di Modulazione cristallina o finché il personaggio che equipaggia l'arma non utilizza di nuovo la sua abilità elementale.",
+      "1": "Nello stato di Splendore: Astroconduzione, ogni accumulo di Legge della combustione aumenta anche i DAN da CRIT da Astroconduzione del personaggio che equipaggia l'arma di un <cryo>21%</cryo>.",
+      "2": "Questi effetti possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "4": {
+      "0": "Aumenta i DAN da CRIT di un <cryo>48%</cryo>. Quando usa l'abilità elementale, il personaggio che equipaggia l'arma ottiene l'effetto Modulazione cristallina, che aumenta la maestria elementale di <cryo>96</cryo> per 20 s. Mentre l'effetto è attivo, il personaggio che equipaggia l'arma ottiene un accumulo di Legge della combustione quando un membro vicino del gruppo innesca una reazione elementale, fino a un massimo di 3 accumuli. Ogni accumulo aumenta la maestria elementale di <cryo>48</cryo> punti aggiuntivi, e dura fino al termine della durata di Modulazione cristallina o finché il personaggio che equipaggia l'arma non utilizza di nuovo la sua abilità elementale.",
+      "1": "Nello stato di Splendore: Astroconduzione, ogni accumulo di Legge della combustione aumenta anche i DAN da CRIT da Astroconduzione del personaggio che equipaggia l'arma di un <cryo>24%</cryo>.",
+      "2": "Questi effetti possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    }
+  }
+}

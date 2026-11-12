@@ -29,7 +29,7 @@ const isTraveler = lookup(
 )
 
 const [condPassivePath, condPassive] = cond(key, 'passive')
-const atk_arr = [-1, 0.16, 0.2, 0.24, 0.28, 0.32]
+const atk_arr = [-1, 0.16, 0.2, 0.24, 0.32, 0.4]
 const critDMG_arr = [-1, 0, 0.06, 0.06, 0.06, 0.06]
 const atk_ = equal(
   isTraveler,

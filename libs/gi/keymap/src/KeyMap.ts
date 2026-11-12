@@ -240,6 +240,8 @@ allStellarReactionKeys.forEach((sr) => {
     `${transformativeReactions[sr].name} Direct DMG Increase`
   statMap[`${sr}_mult_`] = `${transformativeReactions[sr].name} Multiplier`
 })
+// One-off for Valeriy C6
+statMap['stellarconduct_electro_critDMG_'] = 'Stellar-Conduct Electro CRIT DMG'
 
 type TransformativeReactionsCritRateKey =
   `${CrittableTransformativeReactionsKey}_critRate_`
@@ -295,6 +297,7 @@ export type StatKey =
   | StellarReactionsReactionDmgIncKey
   | StellarReactionsDirectDmgIncKey
   | StellarReactionsMultKey
+  | 'stellarconduct_electro_critDMG_'
   | CrystallizeKey
   | AmplifyingReactionsDmgKey
   | AmplifyingReactionsMultiKey

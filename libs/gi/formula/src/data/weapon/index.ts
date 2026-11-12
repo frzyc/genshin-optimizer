@@ -204,6 +204,7 @@ import SplendorOfTranquilWaters from './SplendorOfTranquilWaters'
 import StaffOfHoma from './StaffOfHoma'
 import StaffOfTheScarletSands from './StaffOfTheScarletSands'
 import StarcallersWatch from './StarcallersWatch'
+import StarsealedEdict from './StarsealedEdict'
 import SturdyBone from './SturdyBone'
 import SummitShaper from './SummitShaper'
 import SunnyMorningSleepIn from './SunnyMorningSleepIn'
@@ -495,6 +496,7 @@ const data: TagMapNodeEntries[] = [
   SkywardAtlas,
   SolarPearl,
   StarcallersWatch,
+  StarsealedEdict,
   SunnyMorningSleepIn,
   SurfsUp,
   TheWidsith,

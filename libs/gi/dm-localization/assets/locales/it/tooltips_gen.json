@@ -476,11 +476,66 @@
       "0": "Quando viene innescata la reazione di Astroconduzione, l'area circostante si trasforma in un <strong>Campo astropolare</strong> per un breve periodo di tempo. Quando determinati personaggi si trovano all'interno di un Campo astropolare, entrano nello stato di <strong>Splendore: Astroconduzione</strong> che conferisce vari effetti positivi alle loro abilità."
     }
   },
+  "11360001": {
+    "name": "Fari a gradiente",
+    "description": {
+      "0": "Quando Mitya è nel gruppo e viene innescata una reazione di Astroconduzione, si crea un <strong>Faro a gradiente</strong> che dura 6 s al posto di un <strong>Prisma stellare</strong>. Mitya può consumare i <strong>Fari a gradiente</strong> per innescare vari effetti.",
+      "1": "I <strong>Fari a gradiente</strong> seguono il personaggio attivo e, quando vengono creati, trasformano un'area circostante più grande in un <strong>Campo astropolare</strong>. Mitya può avere a disposizione più <strong>Fari a gradiente</strong>, per un massimo iniziale di 4. Creare un <strong>Faro a gradiente</strong> reimposta la durata di tutti i <strong>Fari a gradiente</strong>."
+    }
+  },
+  "11360002": {
+    "name": "Nucleo di rilevamento",
+    "description": {
+      "0": "Un dispositivo energetico creato da Mitya dopo l'uso dell'abilità elementale. La pressione crea un Nucleo <strong>stabile</strong>, mentre la pressione prolungata crea un Nucleo <strong>sovraccarico</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Nucleo di rilevamento stabile</strong>",
+      "3": [
+        " Segue costantemente gli avversari nelle vicinanze e infligge a intermittenza <electro>DAN da Electro ad area</electro>.",
+        " Quando Mitya raggiunge il numero massimo possibile di <strong>Fari a gradiente</strong>, il dispositivo consuma ogni nuovo <strong>Faro a gradiente</strong> generato successivamente per infliggere <electro>DAN da Electro ad area</electro> considerati come DAN da reazione di Astroconduzione.",
+        " Quando la sua durata termina o viene creato un altro <strong>Nucleo di rilevamento</strong>, il dispositivo consuma tutti i <strong>Fari a gradiente</strong> di Mitya per infliggere <electro>DAN da Electro ad area</electro> considerati come DAN da reazione di Astroconduzione, in base al numero di Fari consumati."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Nucleo di rilevamento sovraccarico</strong>",
+      "6": [
+        " Finché questo dispositivo è presente e Mitya possiede almeno 1 <strong>Faro a gradiente</strong>, può eseguire l'attacco caricato speciale <strong>Detonazione a gradiente</strong> senza consumare vigore."
+      ]
+    }
+  },
+  "11370001": {
+    "name": "Mortaio a tiro diretto: Bombardamento ravvicinato",
+    "description": {
+      "0": "L'attacco caricato speciale di Valeriy. Utilizzando un attacco caricato quando dispone di almeno 40 punti di <strong>Slancio d'impatto</strong>, consuma tutti i punti a disposizione <strong></strong>per scatenare questo attacco caricato speciale, infliggendo <electro>DAN da Electro ad area</electro> di fronte a sé e ottenendo 15 accumuli di <strong>Direttiva d'assalto</strong>.",
+      "1": "Quando l'attacco caricato speciale viene utilizzato di nuovo, gli accumuli di <strong>Direttiva d'assalto</strong> vengono ripristinati.",
+      "2": "Entro 0,8 s dall'utilizzo dell'abilità elementale <strong>Difesa attiva: Baluardo d'attacco</strong> o del Tripudio elementale <strong>Fuoco concentrato: Raffica fulminante</strong>, se Valeriy possiede almeno 40 punti di <strong>Slancio d'impatto</strong>, il suo attacco normale successivo viene convertito nell'attacco caricato speciale <strong>Mortaio a tiro diretto: Bombardamento ravvicinato</strong>."
+    }
+  },
+  "11370002": {
+    "name": "Direttiva d'assalto",
+    "description": {
+      "0": "Un effetto speciale che Valeriy ottiene dopo aver eseguito l'attacco caricato speciale <strong>Mortaio a tiro diretto: Bombardamento ravvicinato</strong>. Aumenta diversi tipi di <electro>DAN da Electro</electro> a seconda che Valeriy si trovi o meno nello stato di <strong>Splendore: Astroconduzione</strong>.",
+      "1": [
+        " Se Valeriy è nello stato di <strong>Splendore: Astroconduzione</strong>, quando un personaggio attivo nelle vicinanze all'interno del gruppo usa un attacco normale, un attacco caricato, un attacco in picchiata, un'abilità elementale o un Tripudio elementale per infliggere <electro>DAN da Electro</electro> considerati come DAN da reazione di Astroconduzione a un avversario, viene consumato 1 accumulo di <strong>Direttiva d'assalto</strong> per aumentare i suddetti DAN in base all'ATT di Valeriy.",
+        " Se Valeriy non è nello stato di <strong>Splendore: Astroconduzione</strong>, quando un personaggio attivo nelle vicinanze all'interno del gruppo usa un attacco normale, un attacco caricato, un attacco in picchiata, un'abilità elementale o un Tripudio elementale per infligge <electro>DAN da Electro</electro> a un avversario, viene consumato 1 accumulo di <strong>Direttiva d'assalto</strong> per aumentare i suddetti DAN in base all'ATT di Valeriy."
+      ],
+      "2": "Quando una singola iterazione di <electro>DAN da Electro</electro> colpisce più avversari contemporaneamente, il numero di accumuli di <strong>Direttiva d'assalto</strong> consumati dipende dal numero di avversari colpiti."
+    }
+  },
+  "11370003": {
+    "name": "Slancio d'impatto",
+    "description": {
+      "0": "Un'energia speciale che Valeriy utilizza per potenziare le sue capacità di combattimento. Il suo massimo iniziale è 100. Quando possiede almeno 40 punti di <strong>Slancio d'impatto</strong>, può eseguire l'attacco caricato speciale <strong>Mortaio a tiro diretto: Bombardamento ravvicinato</strong>.",
+      "1": "Valeriy può ottenere <strong>Slancio d'impatto</strong>:",
+      "2": [
+        " utilizzando la sua abilità elementale <strong>Difesa attiva: Baluardo d'attacco</strong>;",
+        " dopo aver sbloccato il talento d'ascensione \"Avanzata con fuoco di copertura\", mentre il suo Tripudio elementale <strong>Fuoco concentrato: Raffica fulminante</strong> è attivo, quando un personaggio attivo vicino del gruppo colpisce un avversario con un attacco di <electro>Electro</electro>."
+      ]
+    }
+  },
   "11400001": {
     "name": "Voce solista",
     "description": {
       "0": "Quando il personaggio attualmente attivo del gruppo infligge <hydro>DAN da Hydro</hydro> o <cryo>DAN da Cryo</cryo> con un attacco normale, caricato, in picchiata, un'abilità elementale o un Tripudio elementale, viene consumato 1 accumulo di \"Voce solista\", che aumenta i DAN inflitti. Tuttavia, se un Vortice errante è presente sul campo di battaglia o se sono trascorsi meno di 5 s dall'esplosione del suddetto Vortice, tale effetto si attiva solo quando il personaggio infligge DAN da reazione di Turbinio astrale.",
-      "1": "Ogni 1.000 PS max che Vodyanitsa possiede al di sopra di 40000 aumenta di 260 i DAN da reazione di Turbinio astrale dell'effetto sopracitato, e di 140 i <hydro>DAN da Hydro</hydro> e i <cryo>DAN da Cryo</cryo> inflitti. I DAN da reazione di Turbinio astrale inflitti possono essere aumentati in questo modo fino a 6500, mentre i <hydro>DAN da Hydro</hydro> e i <cryo>DAN da Cryo</cryo> fino a 3500."
+      "1": "Ogni 1.000 PS max che Vodyanitsa possiede al di sopra di {PARAM#P1402201|3S1:I} aumenta di 260 i DAN da reazione di Turbinio astrale dell'effetto sopracitato, e di 140 i <hydro>DAN da Hydro</hydro> e i <cryo>DAN da Cryo</cryo> inflitti. I DAN da reazione di Turbinio astrale inflitti possono essere aumentati in questo modo fino a {PARAM#P1402201|6S1:I}, mentre i <hydro>DAN da Hydro</hydro> e i <cryo>DAN da Cryo</cryo> fino a {PARAM#P1402201|7S1:I}."
     }
   },
   "11400002": {

@@ -1,0 +1,184 @@
+{
+  "name": "米提亞",
+  "title": "列律名虛",
+  "description": "能力極高的能源專家，獨具匠心的「行程逃脫」大師。",
+  "constellationName": "紐結座",
+  "auto": {
+    "name": "鏈式反應",
+    "fields": {
+      "normal": {
+        "0": "<strong>普通攻擊</strong>",
+        "1": "進行至多三段的攻擊，造成<electro>雷元素傷害</electro>。"
+      },
+      "charged": {
+        "0": "<strong>重擊</strong>",
+        "1": "消耗一定體力，短暫詠唱後，對前方區域造成<electro>雷元素範圍傷害</electro>。",
+        "2": "若目前場上存在米提亞自己創造的<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>偵測爐心·過載</tooltip></strong>，且米提亞擁有至少一枚<strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>遞變信標</tooltip></strong>，米提亞將改為進行不消耗體力的特殊重擊<strong>遞變聚爆</strong>：對前方區域造成一次<electro>雷元素範圍傷害</electro>，並在長按時持續消耗<strong>遞變信標</strong>。每消耗一枚<strong>遞變信標</strong>，都會對前方區域造成一次視為星超導反應傷害的<electro>雷元素範圍傷害</electro>。"
+      },
+      "plunging": {
+        "0": "<strong>下落攻擊</strong>",
+        "1": "從空中下墜衝擊地面，攻擊下落路徑上的敵人，並在落地時造成<electro>雷元素範圍傷害</electro>。"
+      }
+    },
+    "skillParams": {
+      "0": "一段傷害",
+      "1": "二段傷害",
+      "2": "三段傷害",
+      "3": "重擊傷害",
+      "4": "重擊體力消耗",
+      "5": "下墜期間傷害",
+      "6": "低空/高空墜地衝擊傷害",
+      "7": "遞變聚爆傷害",
+      "8": "遞變聚爆星超導傷害",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "律定·變量偵測",
+    "description": {
+      "0": "以理論上較為安全的當量，適度進行理論上較為安全的實驗，造成<electro>雷元素範圍傷害</electro>，並依據點按、長按，以不同的方式創造<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>偵測爐心</tooltip></strong>。",
+      "1": "<br/>",
+      "2": "施放元素戰技<strong>律定·變量偵測</strong>後的6秒內，再次點按元素戰技，可以切換<strong>偵測爐心</strong>的狀態。每1.5秒至多依此方式切換一次狀態。"
+    },
+    "skillParams": {
+      "0": "短按技能傷害",
+      "1": "長按技能傷害",
+      "2": "穩態爐心傷害",
+      "3": "穩態爐心消耗遞變信標傷害",
+      "4": "穩態爐心引爆傷害",
+      "5": "偵測爐心持續時間",
+      "6": "冷卻時間",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "解析·遞變之理",
+    "description": {
+      "0": "讓元素像靈感一樣爆發吧！造成<electro>雷元素範圍傷害</electro>，並創造3枚<strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>遞變信標</tooltip></strong>。"
+    },
+    "skillParams": {
+      "0": "技能傷害",
+      "1": "生成遞變信標",
+      "2": "冷卻時間",
+      "3": "元素能量",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "基準承壓測驗",
+    "description": {
+      "0": "元素戰技<strong>律定·變量偵測</strong>創造的<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>偵測爐心</tooltip></strong>獲得強化。若創造的<strong>偵測爐心</strong>為：",
+      "1": [
+        "穩態：每攜帶一枚<strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>遞變信標</tooltip></strong>，都會使隊伍中附近的所有角色的元素精通提升30點。",
+        "過載：隊伍中附近的所有角色觸發星超導反應後，獲得<strong>遞變信標</strong>的數量提升：改為在6秒內，每1.5秒獲得一枚<strong>遞變信標</strong>。"
+      ]
+    }
+  },
+  "passive2": {
+    "name": "超限易爆試劑",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>遞變信標</tooltip></strong>的持續時間提升至10秒。此外，創造<strong>遞變信標</strong>後的15秒內，米提亞的暴擊率提升5%，該效果至多疊加4層。"
+    }
+  },
+  "passive3": {
+    "name": "星耀祝禮·極密協議",
+    "description": {
+      "0": "隊伍中的角色觸發超導反應時，將轉為觸發星超導反應。觸發星超導反應時，將不會創造<strong>星輝稜晶</strong>，而是改為在觸發星超導反應後的3秒內，每1.5秒在附近創造一枚可以被米提亞攜帶的<strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>遞變信標</tooltip></strong>，並將其附近更大的區域變換為<strong>極星輝域</strong>，再次觸發星超導反應時，將重置上述效果的持續時間。",
+      "1": "此外，基於米提亞的元素精通，提升隊伍中附近的所有角色造成的星超導反應的基礎傷害：每點元素精通都將提升0.028%星超導反應的基礎傷害，至多依此方式提升14%基礎傷害。處於<strong>極星輝域</strong>中時，米提亞還會進入<strong>輝映·星超導</strong>狀態。"
+    }
+  },
+  "passive": {
+    "name": "能源活性催化",
+    "description": {
+      "0": "周圍存在可破壞的岩塊時，<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>偵測爐心·穩態</tooltip></strong>可以快速清理岩塊。",
+      "1": "此外，米提亞在隊伍中時，創造<strong>臻冰造物·簡易暖源</strong>時，無需消耗克什尼克能量。"
+    }
+  },
+  "constellation1": {
+    "name": "缺位尋蹤的觀察者",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>遞變信標</tooltip></strong>的可攜帶上限提升至5枚。施放元素戰技<strong>律定·變量偵測</strong>時，還會額外創造一枚<strong>遞變信標</strong>。",
+      "1": "<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>偵測爐心</tooltip></strong>存在期間，隊伍中自己的目前場上角色的暴擊傷害提升40%。",
+      "2": "此外，創造<strong>遞變信標</strong>時，還會為米提亞自己恢復10點元素能量，該效果每8秒至多觸發一次。"
+    }
+  },
+  "constellation2": {
+    "name": "惰性之外的沉寂物",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>偵測爐心</tooltip></strong>存在期間，處於<strong>極星輝域</strong>內的所有敵人<cryo>冰元素抗性</cryo>與<electro>雷元素抗性</electro>降低20%。",
+      "1": "此外，若創造的<strong>偵測爐心</strong>為：",
+      "2": [
+        "穩態：隊伍中附近的所有角色的元素精通提升123點。",
+        "過載：隊伍中自己的目前場上角色的元素精通提升234點。"
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "拓撲不變的扭結弦",
+    "description": {
+      "0": "元素戰技<tooltip ns=char_Mitya_gen baseKey18=skill><strong>律定·變量偵測</strong></tooltip>的技能等級提高3級。",
+      "1": "至多提升至15級。"
+    }
+  },
+  "constellation4": {
+    "name": "衰變相生的同位素",
+    "description": {
+      "0": "場上存在米提亞自己創造的<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>偵測爐心</tooltip></strong>時，每消耗5枚<strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>遞變信標</tooltip></strong>，<strong>偵測爐心</strong>都會對周圍的敵人造成一次相當於米提亞元素精通300%、視為星超導反應傷害的<electro>雷元素範圍傷害</electro>。"
+    }
+  },
+  "constellation5": {
+    "name": "勘定萬物的週期律",
+    "description": {
+      "0": "普通攻擊<tooltip ns=char_Mitya_gen baseKey18=normal><strong>鏈式反應</strong></tooltip>的技能等級提高3級。",
+      "1": "至多提升至15級。"
+    }
+  },
+  "constellation6": {
+    "name": "元素階躍的理之門",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11360002 values=[]>偵測爐心</tooltip></strong>獲得強化。若創造的<strong>偵測爐心</strong>為：",
+      "1": [
+        "穩態：<strong>偵測爐心</strong>造成原本115%的傷害。",
+        "過載：消耗<strong><tooltip ns=tooltips_gen baseKey18=11360001 values=[]>遞變信標</tooltip></strong>時，有34%的機率創造一枚新的<strong>遞變信標</strong>。"
+      ],
+      "2": "此外，隊伍中附近的所有角色造成的星超導反應傷害<strong><tooltip ns=tooltips_gen baseKey18=11190007 values=[]>擢升</tooltip></strong>20%。"
+    }
+  }
+}

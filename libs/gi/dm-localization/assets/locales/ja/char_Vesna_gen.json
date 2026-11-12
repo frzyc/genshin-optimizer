@@ -48,7 +48,7 @@
       "0": "風の精一族に伝わる霊剣を呼び出し、<anemo>風元素範囲ダメージ</anemo>を与え、<strong><tooltip ns=tooltips_gen baseKey18=11430001 values=[]>風巡りの臨戦</tooltip></strong>モードに切り替わり、<strong><tooltip ns=tooltips_gen baseKey18=11430002 values=[]>「剣気」</tooltip></strong>を2層獲得する。",
       "1": "<br/>",
       "2": "<strong>風巡りの臨戦</strong>",
-      "3": "ヴェスナが通常攻撃・重撃・落下攻撃を行う際、元素付与によって他の元素に変化しない<anemo>風元素ダメージ</anemo>に変わり、風羽を呼び出して敵に追加攻撃を行い、追加の<anemo>風元素ダメージ</anemo>を与える。風羽を呼び出すたびに、ヴェスナの<strong>「剣気」</strong>が一定量回復する。",
+      "3": "ヴェスナが通常攻撃、重撃、または落下攻撃を行う際、元素付与によって他の元素に変化しない<anemo>風元素ダメージ</anemo>に変わり、風羽を呼び出して敵に追加攻撃を行い、追加の<anemo>風元素ダメージ</anemo>を与える。風羽を呼び出すたびに、ヴェスナの<strong>「剣気」</strong>が一定量回復する。",
       "4": "ヴェスナは<strong>「剣気」</strong>を消費し、特殊元素スキル<strong><tooltip ns=tooltips_gen baseKey18=11430003 values=[]>飛翔の剣</tooltip></strong>を発動して敵に<anemo>風元素ダメージ</anemo>を与えることができる。",
       "5": "<strong>「風巡りの臨戦」</strong>モードの継続期間中、特殊元素スキル<strong>飛翔の剣</strong>を発動するたびに「飛翔の剣」のランクが上がり、より大きな<anemo>風元素ダメージ</anemo>を与えるようになる。<strong>飛翔の剣</strong>の初期ランクはランク1で、最大ランク3まで上がる。ランクが上がった<strong>飛翔の剣</strong>を発動する際、さらに<strong><tooltip ns=tooltips_gen baseKey18=11430004 values=[]>霊剣</tooltip></strong>を呼び出し、敵に<anemo>風元素ダメージ</anemo>を与える。",
       "6": "継続時間終了時、または最高ランクの<strong>飛翔の剣</strong>を3回発動した後、ヴェスナはこのモードを終了し、すべての<strong>剣気</strong>がクリアされる。",

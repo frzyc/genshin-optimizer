@@ -63,7 +63,10 @@ export function specialReactionDmgNode(
     sum(
       input.total.critDMG_,
       input.total[`${variant}_critDMG_`],
-      input.total[`${resist}_critDMG_`]
+      input.total[`${resist}_critDMG_`],
+      ...(variant === 'stellarconduct' && resist === 'electro'
+        ? [input.total.stellarconduct_electro_critDMG_]
+        : [])
     ),
     {
       ...input.total.critDMG_.info,

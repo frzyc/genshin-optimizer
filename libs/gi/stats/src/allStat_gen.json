@@ -57882,6 +57882,872 @@
         ],
         "upgradeableSkills": []
       },
+      "Mitya": {
+        "auto": [
+          [
+            0.587984,
+            0.632083,
+            0.676182,
+            0.73498,
+            0.779079,
+            0.823178,
+            0.881976,
+            0.940774,
+            0.999573,
+            1.058371,
+            1.11717,
+            1.175968,
+            1.249466,
+            1.322964,
+            1.396462
+          ],
+          [
+            0.483008,
+            0.519234,
+            0.555459,
+            0.60376,
+            0.639986,
+            0.676211,
+            0.724512,
+            0.772813,
+            0.821114,
+            0.869414,
+            0.917715,
+            0.966016,
+            1.026392,
+            1.086768,
+            1.147144
+          ],
+          [
+            0.690224,
+            0.741991,
+            0.793758,
+            0.86278,
+            0.914547,
+            0.966314,
+            1.035336,
+            1.104358,
+            1.173381,
+            1.242403,
+            1.311426,
+            1.380448,
+            1.466726,
+            1.553004,
+            1.639282
+          ],
+          [
+            1.3688,
+            1.47146,
+            1.57412,
+            1.711,
+            1.81366,
+            1.91632,
+            2.0532,
+            2.19008,
+            2.32696,
+            2.46384,
+            2.60072,
+            2.7376,
+            2.9087,
+            3.0798,
+            3.2509
+          ],
+          [
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50
+          ],
+          [
+            0.568288,
+            0.614544,
+            0.6608,
+            0.72688,
+            0.773136,
+            0.826,
+            0.898688,
+            0.971376,
+            1.044064,
+            1.12336,
+            1.202656,
+            1.281952,
+            1.361248,
+            1.440544,
+            1.51984
+          ],
+          [
+            1.136335,
+            1.228828,
+            1.32132,
+            1.453452,
+            1.545944,
+            1.65165,
+            1.796995,
+            1.94234,
+            2.087686,
+            2.246244,
+            2.404802,
+            2.563361,
+            2.721919,
+            2.880478,
+            3.039036
+          ],
+          [
+            1.419344,
+            1.534872,
+            1.6504,
+            1.81544,
+            1.930968,
+            2.063,
+            2.244544,
+            2.426088,
+            2.607632,
+            2.80568,
+            3.003728,
+            3.201776,
+            3.399824,
+            3.597872,
+            3.79592
+          ],
+          [
+            1.68,
+            1.806,
+            1.932,
+            2.1,
+            2.226,
+            2.352,
+            2.52,
+            2.688,
+            2.856,
+            3.024,
+            3.192,
+            3.36,
+            3.57,
+            3.78,
+            3.99
+          ],
+          [
+            2.24,
+            2.408,
+            2.576,
+            2.8,
+            2.968,
+            3.136,
+            3.36,
+            3.584,
+            3.808,
+            4.032,
+            4.256,
+            4.48,
+            4.76,
+            5.04,
+            5.32
+          ]
+        ],
+        "skill": [
+          [
+            0.9072,
+            0.97524,
+            1.04328,
+            1.134,
+            1.20204,
+            1.27008,
+            1.3608,
+            1.45152,
+            1.54224,
+            1.63296,
+            1.72368,
+            1.8144,
+            1.9278,
+            2.0412,
+            2.1546
+          ],
+          [
+            1.296,
+            1.3932,
+            1.4904,
+            1.62,
+            1.7172,
+            1.8144,
+            1.944,
+            2.0736,
+            2.2032,
+            2.3328,
+            2.4624,
+            2.592,
+            2.754,
+            2.916,
+            3.078
+          ],
+          [
+            0.72,
+            0.774,
+            0.828,
+            0.9,
+            0.954,
+            1.008,
+            1.08,
+            1.152,
+            1.224,
+            1.296,
+            1.368,
+            1.44,
+            1.53,
+            1.62,
+            1.71
+          ],
+          [
+            0.8,
+            0.86,
+            0.92,
+            1,
+            1.06,
+            1.12,
+            1.2,
+            1.28,
+            1.36,
+            1.44,
+            1.52,
+            1.6,
+            1.7,
+            1.8,
+            1.9
+          ],
+          [
+            0.92,
+            0.989,
+            1.058,
+            1.15,
+            1.219,
+            1.288,
+            1.38,
+            1.472,
+            1.564,
+            1.656,
+            1.748,
+            1.84,
+            1.955,
+            2.07,
+            2.185
+          ],
+          [
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25
+          ],
+          [
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18
+          ]
+        ],
+        "burst": [
+          [
+            3.336,
+            3.5862,
+            3.8364,
+            4.17,
+            4.4202,
+            4.6704,
+            5.004,
+            5.3376,
+            5.6712,
+            6.0048,
+            6.3384,
+            6.672,
+            7.089,
+            7.506,
+            7.923
+          ],
+          [
+            6.672,
+            7.1724,
+            7.6728,
+            8.34,
+            8.8404,
+            9.3408,
+            10.008,
+            10.6752,
+            11.3424,
+            12.0096,
+            12.6768,
+            13.344,
+            14.178,
+            15.012,
+            15.846
+          ],
+          [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          [
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15
+          ],
+          [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ]
+        ],
+        "passive1": [
+          [
+            30
+          ]
+        ],
+        "passive2": [
+          [
+            0.05
+          ]
+        ],
+        "passive3": [
+          [
+            0.00028
+          ],
+          [
+            0.14
+          ]
+        ],
+        "passive": [
+          [
+            0.2
+          ]
+        ],
+        "constellation1": [
+          0.4,
+          10,
+          8
+        ],
+        "constellation2": [
+          0.2,
+          123,
+          234
+        ],
+        "constellation3": [],
+        "constellation4": [
+          3
+        ],
+        "constellation5": [],
+        "constellation6": [
+          0.34,
+          0.2,
+          0.15
+        ],
+        "upgradeableSkills": []
+      },
+      "Valeriy": {
+        "auto": [
+          [
+            0.324839,
+            0.35128,
+            0.37772,
+            0.415492,
+            0.441932,
+            0.47215,
+            0.513699,
+            0.555248,
+            0.596798,
+            0.642124,
+            0.68745,
+            0.732777,
+            0.778103,
+            0.82343,
+            0.868756
+          ],
+          [
+            0.29326,
+            0.31713,
+            0.341,
+            0.3751,
+            0.39897,
+            0.42625,
+            0.46376,
+            0.50127,
+            0.53878,
+            0.5797,
+            0.62062,
+            0.66154,
+            0.70246,
+            0.74338,
+            0.7843
+          ],
+          [
+            0.454175,
+            0.491142,
+            0.52811,
+            0.580921,
+            0.617889,
+            0.660137,
+            0.71823,
+            0.776322,
+            0.834414,
+            0.897787,
+            0.96116,
+            1.024533,
+            1.087907,
+            1.15128,
+            1.214653
+          ],
+          [
+            1.00276,
+            1.08438,
+            1.166,
+            1.2826,
+            1.36422,
+            1.4575,
+            1.58576,
+            1.71402,
+            1.84228,
+            1.9822,
+            2.12212,
+            2.26204,
+            2.40196,
+            2.54188,
+            2.6818
+          ],
+          [
+            2.292,
+            2.4639,
+            2.6358,
+            2.865,
+            3.0369,
+            3.2088,
+            3.438,
+            3.6672,
+            3.8964,
+            4.1256,
+            4.3548,
+            4.584,
+            4.8705,
+            5.157,
+            5.4435
+          ],
+          [
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20
+          ],
+          [
+            0.2432,
+            0.26144,
+            0.27968,
+            0.304,
+            0.32224,
+            0.34048,
+            0.3648,
+            0.38912,
+            0.41344,
+            0.43776,
+            0.46208,
+            0.4864,
+            0.5168,
+            0.5472,
+            0.5776
+          ],
+          [
+            0.7296,
+            0.78432,
+            0.83904,
+            0.912,
+            0.96672,
+            1.02144,
+            1.0944,
+            1.16736,
+            1.24032,
+            1.31328,
+            1.38624,
+            1.4592,
+            1.5504,
+            1.6416,
+            1.7328
+          ],
+          [
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15
+          ],
+          [
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18
+          ],
+          [
+            0.639324,
+            0.691362,
+            0.7434,
+            0.81774,
+            0.869778,
+            0.92925,
+            1.011024,
+            1.092798,
+            1.174572,
+            1.26378,
+            1.352988,
+            1.442196,
+            1.531404,
+            1.620612,
+            1.70982
+          ],
+          [
+            1.278377,
+            1.382431,
+            1.486485,
+            1.635134,
+            1.739187,
+            1.858106,
+            2.02162,
+            2.185133,
+            2.348646,
+            2.527025,
+            2.705403,
+            2.883781,
+            3.062159,
+            3.240537,
+            3.418915
+          ],
+          [
+            1.596762,
+            1.726731,
+            1.8567,
+            2.04237,
+            2.172339,
+            2.320875,
+            2.525112,
+            2.729349,
+            2.933586,
+            3.15639,
+            3.379194,
+            3.601998,
+            3.824802,
+            4.047606,
+            4.27041
+          ]
+        ],
+        "skill": [
+          [
+            1.66,
+            1.7845,
+            1.909,
+            2.075,
+            2.1995,
+            2.324,
+            2.49,
+            2.656,
+            2.822,
+            2.988,
+            3.154,
+            3.32,
+            3.5275,
+            3.735,
+            3.9425
+          ],
+          [
+            2.08896,
+            2.245632,
+            2.402304,
+            2.6112,
+            2.767872,
+            2.924544,
+            3.13344,
+            3.342336,
+            3.551232,
+            3.760128,
+            3.969024,
+            4.17792,
+            4.43904,
+            4.70016,
+            4.96128
+          ],
+          [
+            1309.6384,
+            1440.6204,
+            1582.5176,
+            1735.33,
+            1899.0575,
+            2073.7002,
+            2259.258,
+            2455.7312,
+            2663.1194,
+            2881.4229,
+            3110.6414,
+            3350.7751,
+            3601.824,
+            3863.788,
+            4136.6675
+          ],
+          [
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18
+          ],
+          [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+          ]
+        ],
+        "burst": [
+          [
+            1.3512,
+            1.45254,
+            1.55388,
+            1.689,
+            1.79034,
+            1.89168,
+            2.0268,
+            2.16192,
+            2.29704,
+            2.43216,
+            2.56728,
+            2.7024,
+            2.8713,
+            3.0402,
+            3.2091
+          ],
+          [
+            0.3152,
+            0.33884,
+            0.36248,
+            0.394,
+            0.41764,
+            0.44128,
+            0.4728,
+            0.50432,
+            0.53584,
+            0.56736,
+            0.59888,
+            0.6304,
+            0.6698,
+            0.7092,
+            0.7486
+          ],
+          [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          [
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15
+          ],
+          [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ]
+        ],
+        "passive1": [
+          [
+            5
+          ],
+          [
+            80
+          ]
+        ],
+        "passive2": [
+          [
+            0.003
+          ],
+          [
+            0.009
+          ]
+        ],
+        "passive3": [],
+        "passive": [],
+        "constellation1": [
+          6,
+          15,
+          1.5
+        ],
+        "constellation2": [
+          0.08,
+          100,
+          20,
+          18
+        ],
+        "constellation3": [],
+        "constellation4": [
+          0.3
+        ],
+        "constellation5": [],
+        "constellation6": [
+          1,
+          7,
+          0.1,
+          0.4
+        ],
+        "upgradeableSkills": []
+      },
       "Vodyanitsa": {
         "auto": [
           [
@@ -68213,6 +69079,140 @@
         },
         "baseStats": {}
       },
+      "Mitya": {
+        "key": "Mitya",
+        "ele": "electro",
+        "weaponType": "catalyst",
+        "birthday": {
+          "month": 2,
+          "day": 8
+        },
+        "rarity": 5,
+        "lvlCurves": [
+          {
+            "key": "hp",
+            "base": 905.654,
+            "curve": "GROW_CURVE_HP_S5"
+          },
+          {
+            "key": "atk",
+            "base": 20.482,
+            "curve": "GROW_CURVE_ATTACK_S5"
+          },
+          {
+            "key": "def",
+            "base": 61.6249,
+            "curve": "GROW_CURVE_HP_S5"
+          }
+        ],
+        "ascensionBonus": {
+          "hp": [
+            0,
+            776.5164,
+            1328.2517,
+            2063.899,
+            2615.6343,
+            3167.3696,
+            3719.105
+          ],
+          "def": [
+            0,
+            52.839,
+            90.3825,
+            140.4405,
+            177.984,
+            215.5275,
+            253.071
+          ],
+          "atk": [
+            0,
+            17.56018,
+            30.03715,
+            46.67311,
+            59.15008,
+            71.62705,
+            84.10402
+          ],
+          "critDMG_": [
+            0,
+            0,
+            0.096,
+            0.192,
+            0.192,
+            0.288,
+            0.384
+          ]
+        },
+        "baseStats": {
+          "eleMas": 100
+        }
+      },
+      "Valeriy": {
+        "key": "Valeriy",
+        "ele": "electro",
+        "weaponType": "sword",
+        "birthday": {
+          "month": 3,
+          "day": 24
+        },
+        "rarity": 4,
+        "lvlCurves": [
+          {
+            "key": "hp",
+            "base": 838.8477,
+            "curve": "GROW_CURVE_HP_S4"
+          },
+          {
+            "key": "atk",
+            "base": 21.3696,
+            "curve": "GROW_CURVE_ATTACK_S4"
+          },
+          {
+            "key": "def",
+            "base": 58.94175,
+            "curve": "GROW_CURVE_HP_S4"
+          }
+        ],
+        "ascensionBonus": {
+          "hp": [
+            0,
+            626.6622,
+            1071.9221,
+            1665.6022,
+            2110.862,
+            2556.122,
+            3001.382
+          ],
+          "def": [
+            0,
+            44.0325,
+            75.31875,
+            117.03375,
+            148.32,
+            179.60625,
+            210.8925
+          ],
+          "atk": [
+            0,
+            15.96456,
+            27.3078,
+            42.43212,
+            53.77536,
+            65.1186,
+            76.46184
+          ],
+          "atk_": [
+            0,
+            0,
+            0.06,
+            0.12,
+            0.12,
+            0.18,
+            0.24
+          ]
+        },
+        "baseStats": {}
+      },
       "Vodyanitsa": {
         "key": "Vodyanitsa",
         "ele": "hydro",
@@ -78265,6 +79265,53 @@
             0.06,
             0.07,
             0.08
+          ]
+        },
+        "ascensionBonus": {
+          "atk": [
+            0,
+            31.1,
+            62.2,
+            93.4,
+            124.5,
+            155.6,
+            186.7
+          ]
+        }
+      },
+      "StarsealedEdict": {
+        "weaponType": "catalyst",
+        "rarity": 5,
+        "mainStat": {
+          "type": "atk",
+          "base": 44.3358,
+          "curve": "GROW_CURVE_ATTACK_304"
+        },
+        "subStat": {
+          "type": "critDMG_",
+          "base": 0.192,
+          "curve": "GROW_CURVE_CRITICAL_301"
+        },
+        "lvlCurves": [
+          {
+            "key": "atk",
+            "base": 44.3358,
+            "curve": "GROW_CURVE_ATTACK_304"
+          },
+          {
+            "key": "critDMG_",
+            "base": 0.192,
+            "curve": "GROW_CURVE_CRITICAL_301"
+          }
+        ],
+        "refinementBonus": {
+          "critDMG_": [
+            -1,
+            0.24,
+            0.3,
+            0.36,
+            0.42,
+            0.48
           ]
         },
         "ascensionBonus": {
@@ -91932,6 +92979,9 @@
     "PredictionScore": {},
     "FestiveCheer": {},
     "ExpeditionInsights": {},
+    "EasternThreatSuppression": {},
+    "CentralThreatSuppression": {},
+    "NorthernThreatSuppression": {},
     "MemoryOfEternalFlames": {
       "type": "MATERIAL_TALENT"
     },
@@ -92707,7 +93757,7 @@
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "Varka": {
-      "type": "MATERIAL_AVATAR"
+      "type": "MATERIAL_GCG_CARD_FACE"
     },
     "Lohen": {
       "type": "MATERIAL_AVATAR"
@@ -92722,6 +93772,12 @@
       "type": "MATERIAL_AVATAR"
     },
     "Sandrone": {
+      "type": "MATERIAL_AVATAR"
+    },
+    "Mitya": {
+      "type": "MATERIAL_AVATAR"
+    },
+    "Valeriy": {
       "type": "MATERIAL_AVATAR"
     },
     "Vodyanitsa": {
@@ -92830,6 +93886,12 @@
       "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
     },
     "SandronesStellaFortuna": {
+      "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
+    },
+    "MityasStellaFortuna": {
+      "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
+    },
+    "ValeriysStellaFortuna": {
       "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
     },
     "VodyanitsasStellaFortuna": {
@@ -95315,6 +96377,12 @@
     "EtherwingMoth": {
       "type": "MATERIAL_EXCHANGE"
     },
+    "FairyWormwood": {
+      "type": "MATERIAL_EXCHANGE"
+    },
+    "Kristallfold": {
+      "type": "MATERIAL_EXCHANGE"
+    },
     "FrostfairyFlower": {
       "type": "MATERIAL_EXCHANGE"
     },
@@ -95337,6 +96405,9 @@
       "type": "MATERIAL_EXCHANGE"
     },
     "Lumifluorite": {
+      "type": "MATERIAL_EXCHANGE"
+    },
+    "Lanternberry": {
       "type": "MATERIAL_EXCHANGE"
     },
     "BirchWood": {
@@ -100958,6 +102029,18 @@
     "RecipeMors": {
       "type": "MATERIAL_CONSUME"
     },
+    "RecipeChickenKitezhgrad": {
+      "type": "MATERIAL_CONSUME"
+    },
+    "RecipeCaviarBlini": {
+      "type": "MATERIAL_CONSUME"
+    },
+    "RecipeSolyanka": {
+      "type": "MATERIAL_CONSUME"
+    },
+    "RecipeSnowyNocturne": {
+      "type": "MATERIAL_CONSUME"
+    },
     "CraftedItems": {
       "type": "MATERIAL_EXCHANGE"
     },
@@ -101576,6 +102659,15 @@
     "CoiledCoreOfLife": {
       "type": "MATERIAL_AVATAR_MATERIAL"
     },
+    "SnowbornHeartshard": {
+      "type": "MATERIAL_AVATAR_MATERIAL"
+    },
+    "SnowbornMirrorheart": {
+      "type": "MATERIAL_AVATAR_MATERIAL"
+    },
+    "SnowbornHeartOfIgnorance": {
+      "type": "MATERIAL_AVATAR_MATERIAL"
+    },
     "HurricaneSeed": {
       "type": "MATERIAL_AVATAR_MATERIAL"
     },
@@ -101850,6 +102942,9 @@
       "type": "MATERIAL_AVATAR_MATERIAL"
     },
     "VagabondsCrackedArmor": {
+      "type": "MATERIAL_AVATAR_MATERIAL"
+    },
+    "ShatteredStabilityAnchor": {
       "type": "MATERIAL_AVATAR_MATERIAL"
     },
     "TileOfDecarabiansTower": {
@@ -106034,7 +107129,16 @@
     "RequestToExpandVIPRoom": {
       "type": "MATERIAL_QUEST"
     },
+    "WorksiteKey": {
+      "type": "MATERIAL_QUEST"
+    },
     "HighLevelAccessCard": {
+      "type": "MATERIAL_QUEST"
+    },
+    "PowerModule": {
+      "type": "MATERIAL_QUEST"
+    },
+    "TreeheartPrism": {
       "type": "MATERIAL_QUEST"
     },
     "ConstructAppearanceFlutterwing": {},
@@ -106044,7 +107148,115 @@
     "VodyanitsasGift": {
       "type": "MATERIAL_CHEST"
     },
+    "PreciousPearl": {
+      "type": "MATERIAL_QUEST"
+    },
+    "OrdinaryJewelryBox": {
+      "type": "MATERIAL_QUEST"
+    },
+    "MaryyushkasTreasuredGem": {
+      "type": "MATERIAL_QUEST"
+    },
+    "TheCellarForgesHeirloomVintage": {
+      "type": "MATERIAL_QUEST"
+    },
+    "OneinaHundredOre": {
+      "type": "MATERIAL_QUEST"
+    },
+    "ExquisitelyCraftedGlasses": {
+      "type": "MATERIAL_QUEST"
+    },
+    "SomeonesHeadscarf": {
+      "type": "MATERIAL_QUEST"
+    },
+    "FinelyCraftedSuitcase": {
+      "type": "MATERIAL_QUEST"
+    },
+    "OldBowlerHat": {
+      "type": "MATERIAL_QUEST"
+    },
+    "DelicateCorsage": {
+      "type": "MATERIAL_QUEST"
+    },
+    "NotesOnNovokitezhgrad": {
+      "type": "MATERIAL_WORKER_NOTEBOOK"
+    },
     "OkurovTownSewerSystemDesignPlan": {
+      "type": "MATERIAL_QUEST"
+    },
+    "BorschtRecommendedByButurlina": {
+      "type": "MATERIAL_QUEST"
+    },
+    "SmokedSausageRecommendedByButurlina": {
+      "type": "MATERIAL_QUEST"
+    },
+    "ZharkoyeRecommendedByIliana": {
+      "type": "MATERIAL_QUEST"
+    },
+    "ColorfulCrystal": {
+      "type": "MATERIAL_QUEST"
+    },
+    "PremiumAccessoryCustomizationBox": {
+      "type": "MATERIAL_CHEST"
+    },
+    "StardustTrailFieryGleam": {
+      "type": "MATERIAL_TPS_CLOAK_UPGRADE"
+    },
+    "StardustTrailFieryGleamSigil": {
+      "type": "MATERIAL_CONSUME"
+    },
+    "RemnantIncenseGuideTeploOasis": {
+      "type": "MATERIAL_CONSUME"
+    },
+    "RemnantIncenseGuideNovokitezhgrad": {
+      "type": "MATERIAL_CONSUME"
+    },
+    "DanicasSpecialTeaAndTreats": {
+      "type": "MATERIAL_CHEST"
+    },
+    "ClueImageMinecart": {
+      "type": "MATERIAL_QUEST"
+    },
+    "ClueImageFurnaceAsh": {
+      "type": "MATERIAL_QUEST"
+    },
+    "SplendidGiftBox": {
+      "type": "MATERIAL_CHEST"
+    },
+    "LetterCopy": {
+      "type": "MATERIAL_QUEST"
+    },
+    "SuspiciousAdvertisement": {
+      "type": "MATERIAL_QUEST"
+    },
+    "BetweenTheNewspaperPages": {
+      "type": "MATERIAL_QUEST"
+    },
+    "GeneralHistoryOfSnezhnayaSupplementI": {
+      "type": "MATERIAL_QUEST"
+    },
+    "GeneralHistoryOfSnezhnayaSupplementII": {
+      "type": "MATERIAL_QUEST"
+    },
+    "GeneralHistoryOfSnezhnayaSupplementIII": {
+      "type": "MATERIAL_QUEST"
+    },
+    "BelyiAndChernyi": {
+      "type": "MATERIAL_QUEST"
+    },
+    "HeartOfTheAbyssalBeast": {
+      "type": "MATERIAL_QUEST"
+    },
+    "CaseRecordI": {
+      "type": "MATERIAL_QUEST"
+    },
+    "CaseRecordII": {
+      "type": "MATERIAL_QUEST"
+    },
+    "CaseRecordIII": {
+      "type": "MATERIAL_QUEST"
+    },
+    "CaseRecordIV": {
       "type": "MATERIAL_QUEST"
     },
     "TearsAmongTheStars": {
@@ -106201,6 +107413,12 @@
       "type": "MATERIAL_HOME_SEED"
     },
     "SnowballFlowerSeed": {
+      "type": "MATERIAL_HOME_SEED"
+    },
+    "FairyWormwoodSeed": {
+      "type": "MATERIAL_HOME_SEED"
+    },
+    "KristallfoldSpore": {
       "type": "MATERIAL_HOME_SEED"
     },
     "Medaka": {
@@ -106496,6 +107714,69 @@
     },
     "VodyanitsaThemedIceCream": {
       "type": "MATERIAL_NOTICE_ADD_HP"
+    },
+    "SuspiciousChickenKitezhgrad": {
+      "type": "MATERIAL_FOOD"
+    },
+    "ChickenKitezhgrad": {
+      "type": "MATERIAL_FOOD"
+    },
+    "DeliciousChickenKitezhgrad": {
+      "type": "MATERIAL_FOOD"
+    },
+    "SuspiciousCaviarBlini": {
+      "type": "MATERIAL_FOOD"
+    },
+    "CaviarBlini": {
+      "type": "MATERIAL_FOOD"
+    },
+    "DeliciousCaviarBlini": {
+      "type": "MATERIAL_FOOD"
+    },
+    "SuspiciousSolyanka": {
+      "type": "MATERIAL_FOOD"
+    },
+    "Solyanka": {
+      "type": "MATERIAL_FOOD"
+    },
+    "DeliciousSolyanka": {
+      "type": "MATERIAL_FOOD"
+    },
+    "SuspiciousSnowyNocturne": {
+      "type": "MATERIAL_FOOD"
+    },
+    "SnowyNocturne": {
+      "type": "MATERIAL_FOOD"
+    },
+    "DeliciousSnowyNocturne": {
+      "type": "MATERIAL_FOOD"
+    },
+    "EnergyReplenishingMeal": {
+      "type": "MATERIAL_NOTICE_ADD_HP"
+    },
+    "EmergencyBarricade": {
+      "type": "MATERIAL_NOTICE_ADD_HP"
+    },
+    "MityasIceCream": {
+      "type": "MATERIAL_NOTICE_ADD_HP"
+    },
+    "ValeriysIceCream": {
+      "type": "MATERIAL_NOTICE_ADD_HP"
+    },
+    "RoyalRimecurrantIceCream": {
+      "type": "MATERIAL_FOOD"
+    },
+    "RoyalMedovik": {
+      "type": "MATERIAL_NOTICE_ADD_HP"
+    },
+    "RoyalSnowrealmOkroshkas": {
+      "type": "MATERIAL_FOOD"
+    },
+    "RoyalSnowballBloomsAtopSnowfields": {
+      "type": "MATERIAL_FOOD"
+    },
+    "RoyalCaviarBlini": {
+      "type": "MATERIAL_FOOD"
     },
     "WingsOfFirstFlight": {
       "type": "MATERIAL_FLYCLOAK"
@@ -107218,6 +108499,30 @@
       "type": "MATERIAL_BGM"
     },
     "RadiantSpincrystalALetterFromTheWindIV": {
+      "type": "MATERIAL_BGM"
+    },
+    "RadiantSpincrystal201": {
+      "type": "MATERIAL_BGM"
+    },
+    "RadiantSpincrystal202": {
+      "type": "MATERIAL_BGM"
+    },
+    "RadiantSpincrystal203": {
+      "type": "MATERIAL_BGM"
+    },
+    "RadiantSpincrystal204": {
+      "type": "MATERIAL_BGM"
+    },
+    "RadiantSpincrystal205": {
+      "type": "MATERIAL_BGM"
+    },
+    "RadiantSpincrystal206": {
+      "type": "MATERIAL_BGM"
+    },
+    "RadiantSpincrystal207": {
+      "type": "MATERIAL_BGM"
+    },
+    "RadiantSpincrystal208": {
       "type": "MATERIAL_BGM"
     },
     "LanternFiber": {
@@ -108366,6 +109671,21 @@
     "TravelNotesMoontrace": {
       "type": "MATERIAL_NAMECARD"
     },
+    "MityaScarf": {
+      "type": "MATERIAL_NAMECARD"
+    },
+    "ValeriyRank": {
+      "type": "MATERIAL_NAMECARD"
+    },
+    "SnezhnayaSnowWings": {
+      "type": "MATERIAL_NAMECARD"
+    },
+    "AchievementStillness": {
+      "type": "MATERIAL_NAMECARD"
+    },
+    "TravelNotesSacredSpirit": {
+      "type": "MATERIAL_NAMECARD"
+    },
     "EchoDandelionKnight": {
       "type": "MATERIAL_AVATAR_TRACE"
     },
@@ -108433,6 +109753,12 @@
       "type": "MATERIAL_AVATAR_TRACE"
     },
     "EchoVigilantYaksha": {
+      "type": "MATERIAL_AVATAR_TRACE"
+    },
+    "EchoArdentFlamesForgeTheSoul": {
+      "type": "MATERIAL_AVATAR_TRACE"
+    },
+    "EchoAstuteAmusement": {
       "type": "MATERIAL_AVATAR_TRACE"
     },
     "FaintGlow": {
@@ -108822,8 +110148,14 @@
     "AMiniTrolleyProblem": {
       "type": "MATERIAL_WIDGET"
     },
+    "PowerFramingKamera": {
+      "type": "MATERIAL_WIDGET"
+    },
     "PrimaDonnasSong": {
       "type": "MATERIAL_WIDGET"
+    },
+    "MityasAccessoryBox": {
+      "type": "MATERIAL_CHANGE_ORNAMENT"
     },
     "InstructionsAnemoculusResonanceStone": {
       "type": "MATERIAL_CONSUME"
@@ -109122,11 +110454,37 @@
     "AshamezsThunderSight": {
       "type": "MATERIAL_TPS_ACCESSORY"
     },
+    "SosrukosFlameMuzzle": {
+      "type": "MATERIAL_TPS_ACCESSORY"
+    },
+    "SosrukosFlameAmmoFeed": {
+      "type": "MATERIAL_TPS_ACCESSORY"
+    },
+    "SosrukosFlameGunstock": {
+      "type": "MATERIAL_TPS_ACCESSORY"
+    },
+    "SosrukosFlameGunsight": {
+      "type": "MATERIAL_TPS_ACCESSORY"
+    },
+    "ApsatsMountainHuntGunsight": {
+      "type": "MATERIAL_TPS_ACCESSORY"
+    },
+    "ApsatsMountainHuntAmplifier": {
+      "type": "MATERIAL_TPS_ACCESSORY"
+    },
+    "ApsatsMountainHuntCirculator": {
+      "type": "MATERIAL_TPS_ACCESSORY"
+    },
+    "ApsatsMountainHuntAction": {
+      "type": "MATERIAL_TPS_ACCESSORY"
+    },
     "ConstructAppearanceJackFrost": {},
     "ConstructAppearancePolyarbear": {},
     "ConstructAppearanceTheBallerina": {},
     "ConstructAppearanceTheHound": {},
     "ConstructAppearanceTheTides": {},
+    "ConstructAppearanceSnowman": {},
+    "ConstructAppearanceSnowflake": {},
     "UpbeatEncouragement": {
       "type": "MATERIAL_PHOTOGRAPH_POSE"
     },
@@ -109550,6 +110908,24 @@
     "EagerlyWaiting": {
       "type": "MATERIAL_PHOTOGRAPH_POSE"
     },
+    "HuggingLumi": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "ReadyToGo": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "EnjoyingTea": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "ExpertGuidance": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "TimeToWork": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "ComfortingTheClerk": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
     "FantasticalMarvel": {
       "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
     },
@@ -109623,6 +110999,9 @@
       "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
     },
     "DovefeatherMoondew": {
+      "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
+    },
+    "FloatingLotusListeningSpring": {
       "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
     },
     "VigorousYapping": {
@@ -110210,6 +111589,15 @@
     "ElkWithFangedAntlers": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
+    "OdeToAscension": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "ForNoneMayTakeFromUsOurFreedomOfSong": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "DawnsReturn": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
     "MagicGuide": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
@@ -110561,6 +111949,9 @@
     "RecollectionOfDaysPast": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
+    "SongOfDaysPast": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
     "LiyueHarborWharf": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
@@ -110802,6 +112193,12 @@
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "ElementalTransfigurationOverloadBlessing": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "Zeitlind": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "ElementalTransfigurationBurningBlessing": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "ElementalResonanceWovenIce": {
@@ -111075,6 +112472,9 @@
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "ReturnOfTheThreeMoons": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "StreamingSong": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "Origin": {
@@ -111956,6 +113356,15 @@
     "BrightProspectsBrighterProfits": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
+    "DreamsInTheDancingLight": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "NightWindsRoamWithEveningStars": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "FactoryFloorLampReliableIllumination": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
     "EfflorescentIllumination": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
@@ -112706,6 +114115,9 @@
     "IndoorRugWarmth": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
+    "TracesAlongTheEdges": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
     "VibrantPotBornInFlames": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
@@ -112725,6 +114137,9 @@
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "TallCappedSentinel": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "RockPaperScissorsCompanion": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "TrustyPortableLamp": {
@@ -114029,6 +115444,18 @@
     "SnezhnayanDwellingElegantCarvings": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
+    "FlowingSweetness": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "ConvergingTerrace": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "ShadeBeneathTheBreeze": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "UnarrangedMeeting": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
     "BirdAndBlossomDesignFountain": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
@@ -115130,6 +116557,9 @@
     "SmallStandingGlassDisplayCase": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
+    "TavernCabinetTheArtOfDisplay": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
     "PoolOfSapphireGrace": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
@@ -115256,6 +116686,18 @@
     "OpenWide": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
+    "TavernSignboardDailyMenu": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "TavernBarrelStoutStorage": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "SteadySteps": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "WarmthWithinTheGrainTrough": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
     "WeatheredBambooFence": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
@@ -115349,6 +116791,9 @@
     "TempleOpenworkRailing": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
+    "FactoryRailingClearDemarcation": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
     "SmoothWoodenBench": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
@@ -115419,6 +116864,12 @@
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "TheLingeringWarmthOfTheWait": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "TavernStoolSteadyLanding": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "StableSupport": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "TwoStoryHilichurlSentryTower": {
@@ -115515,6 +116966,9 @@
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "UselessAdvice": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "DrapedSatin": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "WineShopDisplayCounterToYourHeartsContent": {
@@ -115716,6 +117170,15 @@
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "SmallGaugePanelControlConsole": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "MeasureOfTheFlow": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "WatchfulFieldkeeper": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "TavernCounterArcOfEncounters": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "SirCapyOfTheLongIncisors": {

@@ -1,0 +1,34 @@
+{
+  "name": "Edicto Selloastral",
+  "description": {
+    "0": "Un grueso libro que recoge las normas de trabajo internas del Real Consorcio de Energía. Cuenta con numerosos apartados y una larga historia."
+  },
+  "passiveName": "Estela del alba",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta en un <cryo>24%</cryo> el Daño CRIT. Al usar la Habilidad Elemental, el portador de esta arma obtiene el efecto de “compuesto cristalino”, el cual aumenta su Maestría Elemental en <cryo>48</cryo> pts. durante 20 s. Mientras este efecto esté activo, cuando los personajes cercanos del equipo causen una Reacción Elemental, el portador también obtendrá una carga de “ley de combustión”, lo que aumentará su Maestría Elemental en <cryo>24</cryo> pts. adicionales. Este efecto puede acumularse hasta 3 veces y dura hasta que termine el efecto de compuesto cristalino o hasta que se vuelva a usar la Habilidad Elemental.",
+      "1": "“Esplendor: Superconductor Estelar”: cada carga de ley de combustión también aumentará en un <cryo>12%</cryo> el Daño CRIT de la reacción de Superconductor Estelar infligido por el portador de esta arma.",
+      "2": "Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Aumenta en un <cryo>30%</cryo> el Daño CRIT. Al usar la Habilidad Elemental, el portador de esta arma obtiene el efecto de “compuesto cristalino”, el cual aumenta su Maestría Elemental en <cryo>60</cryo> pts. durante 20 s. Mientras este efecto esté activo, cuando los personajes cercanos del equipo causen una Reacción Elemental, el portador también obtendrá una carga de “ley de combustión”, lo que aumentará su Maestría Elemental en <cryo>30</cryo> pts. adicionales. Este efecto puede acumularse hasta 3 veces y dura hasta que termine el efecto de compuesto cristalino o hasta que se vuelva a usar la Habilidad Elemental.",
+      "1": "“Esplendor: Superconductor Estelar”: cada carga de ley de combustión también aumentará en un <cryo>15%</cryo> el Daño CRIT de la reacción de Superconductor Estelar infligido por el portador de esta arma.",
+      "2": "Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Aumenta en un <cryo>36%</cryo> el Daño CRIT. Al usar la Habilidad Elemental, el portador de esta arma obtiene el efecto de “compuesto cristalino”, el cual aumenta su Maestría Elemental en <cryo>72</cryo> pts. durante 20 s. Mientras este efecto esté activo, cuando los personajes cercanos del equipo causen una Reacción Elemental, el portador también obtendrá una carga de “ley de combustión”, lo que aumentará su Maestría Elemental en <cryo>36</cryo> pts. adicionales. Este efecto puede acumularse hasta 3 veces y dura hasta que termine el efecto de compuesto cristalino o hasta que se vuelva a usar la Habilidad Elemental.",
+      "1": "“Esplendor: Superconductor Estelar”: cada carga de ley de combustión también aumentará en un <cryo>18%</cryo> el Daño CRIT de la reacción de Superconductor Estelar infligido por el portador de esta arma.",
+      "2": "Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Aumenta en un <cryo>42%</cryo> el Daño CRIT. Al usar la Habilidad Elemental, el portador de esta arma obtiene el efecto de “compuesto cristalino”, el cual aumenta su Maestría Elemental en <cryo>84</cryo> pts. durante 20 s. Mientras este efecto esté activo, cuando los personajes cercanos del equipo causen una Reacción Elemental, el portador también obtendrá una carga de “ley de combustión”, lo que aumentará su Maestría Elemental en <cryo>42</cryo> pts. adicionales. Este efecto puede acumularse hasta 3 veces y dura hasta que termine el efecto de compuesto cristalino o hasta que se vuelva a usar la Habilidad Elemental.",
+      "1": "“Esplendor: Superconductor Estelar”: cada carga de ley de combustión también aumentará en un <cryo>21%</cryo> el Daño CRIT de la reacción de Superconductor Estelar infligido por el portador de esta arma.",
+      "2": "Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Aumenta en un <cryo>48%</cryo> el Daño CRIT. Al usar la Habilidad Elemental, el portador de esta arma obtiene el efecto de “compuesto cristalino”, el cual aumenta su Maestría Elemental en <cryo>96</cryo> pts. durante 20 s. Mientras este efecto esté activo, cuando los personajes cercanos del equipo causen una Reacción Elemental, el portador también obtendrá una carga de “ley de combustión”, lo que aumentará su Maestría Elemental en <cryo>48</cryo> pts. adicionales. Este efecto puede acumularse hasta 3 veces y dura hasta que termine el efecto de compuesto cristalino o hasta que se vuelva a usar la Habilidad Elemental.",
+      "1": "“Esplendor: Superconductor Estelar”: cada carga de ley de combustión también aumentará en un <cryo>24%</cryo> el Daño CRIT de la reacción de Superconductor Estelar infligido por el portador de esta arma.",
+      "2": "Estos efectos se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    }
+  }
+}

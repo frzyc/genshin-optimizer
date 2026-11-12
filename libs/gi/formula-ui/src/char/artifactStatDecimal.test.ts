@@ -1,5 +1,4 @@
 import { toDecimal } from '@genshin-optimizer/common/util'
-import type { ICharacter, IWeapon } from '@genshin-optimizer/gi/good'
 import {
   artifactsData,
   charData,
@@ -13,6 +12,7 @@ import {
   weaponData,
   withMember,
 } from '@genshin-optimizer/gi/formula'
+import type { ICharacter, IWeapon } from '@genshin-optimizer/gi/good'
 import { describe, expect, it } from 'vitest'
 
 const char: ICharacter = {

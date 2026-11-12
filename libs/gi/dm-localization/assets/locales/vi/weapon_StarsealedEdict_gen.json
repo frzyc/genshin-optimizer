@@ -1,0 +1,34 @@
+{
+  "name": "Sắc Lệnh Tinh Tú",
+  "description": {
+    "0": "Cuốn sách dày ghi chép các quy tắc làm việc nội bộ của Hiệp Hội Năng Lượng Hoàng Gia, với vô số điều khoản và lịch sử lâu đời."
+  },
+  "passiveName": "Vết Tích Sao Mai",
+  "passiveDescription": {
+    "0": {
+      "0": "Sát Thương Bạo Kích tăng <cryo>24%</cryo>. Khi thi triển Kỹ Năng Nguyên Tố, người trang bị nhận hiệu quả \"Tinh Chất Hài Hòa\": Tinh Thông Nguyên Tố tăng <cryo>48</cryo> điểm trong 20s. Trong thời gian duy trì, khi nhân vật trong đội ở gần kích hoạt phản ứng nguyên tố, người trang bị sẽ nhận thêm 1 tầng \"Luật Lệ Trong Đuốc\", khiến Tinh Thông Nguyên Tố tăng thêm <cryo>24</cryo> điểm. Hiệu quả này tối đa cộng dồn 3 tầng, duy trì đến khi hiệu quả \"Tinh Chất Hài Hòa\" kết thúc hoặc thi triển Kỹ Năng Nguyên Tố lần nữa.",
+      "1": "Tỏa Sáng: Tinh-Siêu Dẫn: Mỗi tầng \"Luật Lệ Trong Đuốc\" sẽ còn khiến sát thương phản ứng Tinh-Siêu Dẫn do người trang bị gây ra tăng <cryo>12%</cryo> Sát Thương Bạo Kích.",
+      "2": "Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "1": {
+      "0": "Sát Thương Bạo Kích tăng <cryo>30%</cryo>. Khi thi triển Kỹ Năng Nguyên Tố, người trang bị nhận hiệu quả \"Tinh Chất Hài Hòa\": Tinh Thông Nguyên Tố tăng <cryo>60</cryo> điểm trong 20s. Trong thời gian duy trì, khi nhân vật trong đội ở gần kích hoạt phản ứng nguyên tố, người trang bị sẽ nhận thêm 1 tầng \"Luật Lệ Trong Đuốc\", khiến Tinh Thông Nguyên Tố tăng thêm <cryo>30</cryo> điểm. Hiệu quả này tối đa cộng dồn 3 tầng, duy trì đến khi hiệu quả \"Tinh Chất Hài Hòa\" kết thúc hoặc thi triển Kỹ Năng Nguyên Tố lần nữa.",
+      "1": "Tỏa Sáng: Tinh-Siêu Dẫn: Mỗi tầng \"Luật Lệ Trong Đuốc\" sẽ còn khiến sát thương phản ứng Tinh-Siêu Dẫn do người trang bị gây ra tăng <cryo>15%</cryo> Sát Thương Bạo Kích.",
+      "2": "Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "2": {
+      "0": "Sát Thương Bạo Kích tăng <cryo>36%</cryo>. Khi thi triển Kỹ Năng Nguyên Tố, người trang bị nhận hiệu quả \"Tinh Chất Hài Hòa\": Tinh Thông Nguyên Tố tăng <cryo>72</cryo> điểm trong 20s. Trong thời gian duy trì, khi nhân vật trong đội ở gần kích hoạt phản ứng nguyên tố, người trang bị sẽ nhận thêm 1 tầng \"Luật Lệ Trong Đuốc\", khiến Tinh Thông Nguyên Tố tăng thêm <cryo>36</cryo> điểm. Hiệu quả này tối đa cộng dồn 3 tầng, duy trì đến khi hiệu quả \"Tinh Chất Hài Hòa\" kết thúc hoặc thi triển Kỹ Năng Nguyên Tố lần nữa.",
+      "1": "Tỏa Sáng: Tinh-Siêu Dẫn: Mỗi tầng \"Luật Lệ Trong Đuốc\" sẽ còn khiến sát thương phản ứng Tinh-Siêu Dẫn do người trang bị gây ra tăng <cryo>18%</cryo> Sát Thương Bạo Kích.",
+      "2": "Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "3": {
+      "0": "Sát Thương Bạo Kích tăng <cryo>42%</cryo>. Khi thi triển Kỹ Năng Nguyên Tố, người trang bị nhận hiệu quả \"Tinh Chất Hài Hòa\": Tinh Thông Nguyên Tố tăng <cryo>84</cryo> điểm trong 20s. Trong thời gian duy trì, khi nhân vật trong đội ở gần kích hoạt phản ứng nguyên tố, người trang bị sẽ nhận thêm 1 tầng \"Luật Lệ Trong Đuốc\", khiến Tinh Thông Nguyên Tố tăng thêm <cryo>42</cryo> điểm. Hiệu quả này tối đa cộng dồn 3 tầng, duy trì đến khi hiệu quả \"Tinh Chất Hài Hòa\" kết thúc hoặc thi triển Kỹ Năng Nguyên Tố lần nữa.",
+      "1": "Tỏa Sáng: Tinh-Siêu Dẫn: Mỗi tầng \"Luật Lệ Trong Đuốc\" sẽ còn khiến sát thương phản ứng Tinh-Siêu Dẫn do người trang bị gây ra tăng <cryo>21%</cryo> Sát Thương Bạo Kích.",
+      "2": "Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "4": {
+      "0": "Sát Thương Bạo Kích tăng <cryo>48%</cryo>. Khi thi triển Kỹ Năng Nguyên Tố, người trang bị nhận hiệu quả \"Tinh Chất Hài Hòa\": Tinh Thông Nguyên Tố tăng <cryo>96</cryo> điểm trong 20s. Trong thời gian duy trì, khi nhân vật trong đội ở gần kích hoạt phản ứng nguyên tố, người trang bị sẽ nhận thêm 1 tầng \"Luật Lệ Trong Đuốc\", khiến Tinh Thông Nguyên Tố tăng thêm <cryo>48</cryo> điểm. Hiệu quả này tối đa cộng dồn 3 tầng, duy trì đến khi hiệu quả \"Tinh Chất Hài Hòa\" kết thúc hoặc thi triển Kỹ Năng Nguyên Tố lần nữa.",
+      "1": "Tỏa Sáng: Tinh-Siêu Dẫn: Mỗi tầng \"Luật Lệ Trong Đuốc\" sẽ còn khiến sát thương phản ứng Tinh-Siêu Dẫn do người trang bị gây ra tăng <cryo>24%</cryo> Sát Thương Bạo Kích.",
+      "2": "Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    }
+  }
+}

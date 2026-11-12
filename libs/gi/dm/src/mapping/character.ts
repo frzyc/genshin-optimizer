@@ -188,6 +188,8 @@ export const characterIdMap: Record<
   10000131: 'Nicole',
   10000132: 'Prune',
   10000133: 'Sandrone',
+  10000136: 'Mitya',
+  10000137: 'Valeriy',
   10000140: 'Vodyanitsa',
   10000143: 'Vesna',
   10000148: 'Alyosha',
