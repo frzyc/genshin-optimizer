@@ -25,6 +25,7 @@ import { BonusStatsSection } from './BonusStats'
 import { CharSheetSection } from './CharSheetsDisplay'
 import { useOptimizePage } from './context/OptimizePageContext'
 import {
+  MOBILE_APP_BAR_OFFSET_PX,
   STATS_STICKY_PAD_PX,
   TeamHeaderHeightContext,
 } from './context/TeamHeaderHeightContext'
@@ -116,7 +117,14 @@ function CharacterOverview() {
                       isNotXs
                         ? {
                             position: 'sticky',
-                            top: headerHeight + STATS_STICKY_PAD_PX + 44,
+                            top: {
+                              sm:
+                                headerHeight +
+                                MOBILE_APP_BAR_OFFSET_PX +
+                                STATS_STICKY_PAD_PX +
+                                44,
+                              md: headerHeight + STATS_STICKY_PAD_PX + 44,
+                            },
                             bottom: 0,
                           }
                         : undefined

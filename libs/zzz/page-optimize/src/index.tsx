@@ -231,5 +231,5 @@ export default function PageOptimize() {
     </CharacterContext.Provider>
   )
 
-  return <OptimizePageProvider>{page}</OptimizePageProvider>
+  return <OptimizePageProvider key={characterKey}>{page}</OptimizePageProvider>
 }

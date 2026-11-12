@@ -4,18 +4,14 @@ import {
   SqBadge,
 } from '@genshin-optimizer/common/ui'
 import { discDefIcon, wengineAsset } from '@genshin-optimizer/zzz/assets'
-import {
-  type AttributeKey,
-  type DiscSetKey,
-  elementalData,
-  statKeyTextMap,
-} from '@genshin-optimizer/zzz/consts'
+import { type DiscSetKey, elementalData } from '@genshin-optimizer/zzz/consts'
 import type { DiscIds } from '@genshin-optimizer/zzz/db'
 import { useDiscs, useWengine } from '@genshin-optimizer/zzz/db-ui'
 import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { DiscSetName, StatDisplay } from '@genshin-optimizer/zzz/ui'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const ICON_EM = 1.75
 const MAIN_SLOTS = ['4', '5', '6'] as const
@@ -27,6 +23,8 @@ export function CompactBuildEquipGrid({
   wengineId: string | undefined
   discIds: DiscIds | undefined
 }) {
+  const { t } = useTranslation('sheet')
+  const { t: tk } = useTranslation('statKey_gen')
   const discs = useDiscs(discIds)
   const wengine = useWengine(wengineId || undefined)
   const setCounts = useMemo(() => {
@@ -46,7 +44,7 @@ export function CompactBuildEquipGrid({
       sx={{
         display: 'flex',
         gap: 0.75,
-        flexWrap: 'nowrap',
+        flexWrap: { xs: 'wrap', md: 'nowrap' },
         alignItems: 'center',
       }}
     >
@@ -116,7 +114,7 @@ export function CompactBuildEquipGrid({
                     iconProps={{ fontSize: 'small' }}
                   />
                   <Typography variant="caption" noWrap>
-                    {mainStatLabel(statKey)}
+                    {mainStatLabel(statKey, tk, t)}
                   </Typography>
                 </>
               ) : (
@@ -132,12 +130,16 @@ export function CompactBuildEquipGrid({
   )
 }
 
-function mainStatLabel(statKey: string): string {
+function mainStatLabel(
+  statKey: string,
+  tk: (key: string) => string,
+  t: (key: string) => string
+): string {
   const elemental = statKey.match(/^(.*)_dmg_$/)?.[1]
   if (elemental && elemental in elementalData) {
-    return `${elementalData[elemental as AttributeKey]}%`
+    return `${t(`attributes.${elemental}`)}%`
   }
-  const name = statKeyTextMap[statKey] ?? statKey
+  const name = tk(statKey)
   if (statKey.endsWith('_') && !name.includes(' ')) return `${name}%`
   return name
 }

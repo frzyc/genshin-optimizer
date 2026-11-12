@@ -58,7 +58,7 @@ export function CompactBuildEquipGrid({
       sx={{
         display: 'flex',
         gap: 0.75,
-        flexWrap: 'nowrap',
+        flexWrap: { xs: 'wrap', md: 'nowrap' },
         alignItems: 'center',
       }}
     >

@@ -28,25 +28,31 @@ export function useRevealOnScrollUp({ enabled }: { enabled: boolean }) {
         frame = 0
         const y = window.scrollY
         const delta = y - lastYRef.current
+        const hidden = !visibleRef.current
 
         if (y <= TOP_ALWAYS_VISIBLE_PX) {
-          if (!visibleRef.current) {
+          if (hidden) {
             visibleRef.current = true
             setVisible(true)
           }
+          lastYRef.current = y
         } else if (delta > SCROLL_DELTA_PX && y > MIN_SCROLL_BEFORE_HIDE_PX) {
-          if (visibleRef.current) {
+          if (!hidden) {
             visibleRef.current = false
             setVisible(false)
           }
+          lastYRef.current = y
         } else if (delta < -SCROLL_DELTA_PX) {
-          if (!visibleRef.current) {
+          if (hidden) {
             visibleRef.current = true
             setVisible(true)
           }
+          lastYRef.current = y
+        } else if (hidden && delta < 0) {
+          // Keep the reference so small upward steps add up to the reveal threshold.
+        } else {
+          lastYRef.current = y
         }
-
-        lastYRef.current = y
       })
     }
 

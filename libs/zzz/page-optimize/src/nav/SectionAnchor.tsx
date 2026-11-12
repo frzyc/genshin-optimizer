@@ -2,7 +2,10 @@ import { Box, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useContext, useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
-import { TeamHeaderHeightContext } from '../context/TeamHeaderHeightContext'
+import {
+  MOBILE_APP_BAR_OFFSET_PX,
+  TeamHeaderHeightContext,
+} from '../context/TeamHeaderHeightContext'
 import { OPT_SECTION_I18N, type OptimizeSectionId } from './optimizeSections'
 import { SectionNavContext } from './SectionNavContext'
 
@@ -34,7 +37,10 @@ export function SectionAnchor({
       ref={ref}
       id={sectionId}
       sx={{
-        scrollMarginTop: headerHeight + 8,
+        scrollMarginTop: {
+          xs: headerHeight + MOBILE_APP_BAR_OFFSET_PX + 8,
+          md: headerHeight + 8,
+        },
       }}
     >
       {showTitle && (

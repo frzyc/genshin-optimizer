@@ -151,6 +151,7 @@ function BuildTableRow({
   const toggle = useCallback(() => setExpanded((v) => !v), [])
   const onKeyDown = useCallback(
     (e: KeyboardEvent) => {
+      if (e.target !== e.currentTarget) return
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault()
         toggle()

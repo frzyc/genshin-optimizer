@@ -104,7 +104,10 @@ export function TeamAvatarRow({
           show={pickingSlot !== undefined}
           onHide={() => setPickingSlot(undefined)}
           showNone
-          characterFilter={(ck) => ck !== characterKey}
+          characterFilter={(ck) =>
+            ck !== characterKey &&
+            !team?.teammates.some((teammate) => teammate.characterKey === ck)
+          }
           onSelect={(ck) => {
             if (pickingSlot === undefined) return
             if (ck) database.chars.getOrCreate(ck)
