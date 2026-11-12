@@ -7,7 +7,7 @@ import { PROJROOT_PATH } from '../../consts'
 import { DEBUG } from './debug'
 
 const URL_BASE = 'https://static.nanoka.cc/zzz/'
-const VERSION = '3.2'
+const VERSION = '3.3'
 
 async function dumpHakushinData(filename: string, obj: object) {
   obj = convertSnakeToPascal(obj) as object
@@ -80,21 +80,25 @@ export async function getDataFromHakushin() {
     getAndDumpNounData(),
   ])
 }
+const BATCH_SIZE = 10
 async function getAndDumpCategoryData(category: Category) {
   const indexData = (await fetchJsonFromUrl(
     `${URL_BASE + VERSION}/${category}.json`,
     DEBUG
   )) as Record<string, unknown>
   await dumpHakushinIndex(`${category}.json`, indexData)
-  await Promise.all(
-    Object.keys(indexData).map(async (id) => {
-      // NOTE: hakushin also has data in en, ko, chs, ja
-      const itemData = (await fetchJsonFromUrl(
-        `${URL_BASE + VERSION}/en/${category}/${id}.json`
-      )) as object
-      await dumpHakushinData(`${category}/${id}.json`, itemData)
-    })
-  )
+  const ids = Object.keys(indexData)
+  for (let i = 0; i < ids.length; i += BATCH_SIZE) {
+    await Promise.all(
+      ids.slice(i, i + BATCH_SIZE).map(async (id) => {
+        // NOTE: hakushin also has data in en, ko, chs, ja
+        const itemData = (await fetchJsonFromUrl(
+          `${URL_BASE + VERSION}/en/${category}/${id}.json`
+        )) as object
+        await dumpHakushinData(`${category}/${id}.json`, itemData)
+      })
+    )
+  }
 }
 async function getAndDumpNounData() {
   const nounData = (await fetchJsonFromUrl(

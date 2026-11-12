@@ -63,13 +63,14 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
       const strKey = icon.match(/\d+$/)?.[0]
       if (!strKey) throw Error(`Failed to parse character icon name: ${icon}`)
       // Override for Claret
-      const interknot = strKey === '1611' ? '69' : strKey
+      const interknot =
+        strKey === '1611' ? '69' : strKey.length <= 2 ? `00${strKey}` : strKey
       return {
         full: `IconRole${strKey}.png`,
         circle: `IconRoleCircle${strKey}.png`,
         trap: `IconRoleGeneral${strKey}.png`,
         select: `IconRoleSelect${strKey}.png`,
-        interknot: `IconInterKnotRole00${interknot}.png`,
+        interknot: `IconInterKnotRole${interknot}.png`,
       }
     }),
     wengines: objMap(wengineDetailedJSONData, ({ icon }) => {

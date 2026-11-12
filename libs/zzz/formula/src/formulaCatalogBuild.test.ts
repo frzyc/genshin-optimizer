@@ -104,23 +104,27 @@ describe('buildFormulaCatalog', () => {
     expect(catalog.stat.dmg_.dims.final.attribute).toBeUndefined()
   })
 
-  it('throws when standardDmg and sheerDmg share a name', () => {
+  it.each([
+    ['standardDmg', 'sheerDmg'],
+    ['standardDmg', 'sharpDmg'],
+    ['sheerDmg', 'sharpDmg'],
+  ] as const)('throws when %s and %s share a name', (dimA, dimB) => {
     expect(() =>
       buildFormulaCatalog([
         {
           catalogSheet: 'Yixuan',
           name: 'Hit_0',
-          dim: 'standardDmg',
-          tag: { q: 'standardDmg', name: 'Hit_0', sheet: 'Yixuan' },
+          dim: dimA,
+          tag: { q: dimA, name: 'Hit_0', sheet: 'Yixuan' },
         },
         {
           catalogSheet: 'Yixuan',
           name: 'Hit_0',
-          dim: 'sheerDmg',
-          tag: { q: 'sheerDmg', name: 'Hit_0', sheet: 'Yixuan' },
+          dim: dimB,
+          tag: { q: dimB, name: 'Hit_0', sheet: 'Yixuan' },
         },
       ])
-    ).toThrow(/standardDmg and sheerDmg/)
+    ).toThrow(/multiple damage dims/)
   })
 
   it('throws on a catalog sheet that is not a FormulaSheet', () => {
