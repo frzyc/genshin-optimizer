@@ -39,6 +39,8 @@ const CATALOG_DIM_ORDER = [
 
 const catalogDimOrderSet = new Set<string>(CATALOG_DIM_ORDER)
 
+const CATALOG_DMG_DIMS = ['standardDmg', 'sheerDmg', 'sharpDmg'] as const
+
 /** Stable dim key order: known preference, then leftover names. */
 export function orderCatalogDimKeys(dims: Iterable<string>): string[] {
   const keys = [...new Set(dims)]
@@ -123,12 +125,12 @@ function finalizeCatalogEntry(entry: FormulaCatalogEntry) {
       unknown
     )
   }
-  const hasStandard = dimKeys.includes('standardDmg')
-  const hasSheer = dimKeys.includes('sheerDmg')
-  const hasSharp = dimKeys.includes('sharpDmg')
-  if (hasStandard && hasSheer && hasSharp) {
+  const dmgDims = dimKeys.filter((dim) =>
+    (CATALOG_DMG_DIMS as readonly string[]).includes(dim)
+  )
+  if (dmgDims.length > 1) {
     throw new Error(
-      `[zzz-formula] ${entry.sheet}/${entry.name} has both standardDmg, sheerDmg and sharpDmg`
+      `[zzz-formula] ${entry.sheet}/${entry.name} has multiple damage dims (${dmgDims.join(', ')})`
     )
   }
 
