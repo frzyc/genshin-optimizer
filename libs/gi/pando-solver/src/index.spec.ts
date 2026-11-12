@@ -9,11 +9,16 @@ import type { Calculator } from '@genshin-optimizer/gi/formula'
 import {
   artifactsData,
   charData,
+  enemyDebuff,
+  formulaCatalog,
   genshinCalculatorWithEntries,
+  ownBuff,
+  pandoContextEntries,
   teamData,
   weaponData,
   withMember,
 } from '@genshin-optimizer/gi/formula'
+import { compile } from '@genshin-optimizer/pando/engine'
 import type { CreateSolverConfigArgs } from './index'
 import {
   createOptimizeConfig,
@@ -84,8 +89,8 @@ function args(
 
 let dummyCalc: Calculator
 
-beforeAll(() => {
-  dummyCalc = genshinCalculatorWithEntries([
+function noelleEntries() {
+  return [
     ...teamData(['0']),
     ...withMember(
       '0',
@@ -106,7 +111,13 @@ beforeAll(() => {
       }),
       ...artifactsData([])
     ),
-  ]).withTag({ src: '0' })
+  ]
+}
+
+beforeAll(() => {
+  dummyCalc = genshinCalculatorWithEntries(noelleEntries()).withTag({
+    src: '0',
+  })
 })
 
 function accepted(filter: Set<string>[] | undefined, ids: string[]) {
@@ -257,5 +268,57 @@ describe('gi pando solver', () => {
     expect(
       StatFilterTagToTag({ q: 'atk', qt: 'final', ele: 'geo' })
     ).not.toHaveProperty('ele')
+  })
+
+  test('elemental DMG bonus goblet counts toward an elemental hit', () => {
+    const artsBySlot = emptyArts()
+    for (const slot of allArtifactSlotKeys) {
+      artsBySlot[slot].push(art(`${slot}-a`, slot, SET_A))
+    }
+    artsBySlot.goblet = [
+      {
+        ...art('goblet-geo', 'goblet', SET_A),
+        mainStatKey: 'geo_dmg_',
+        mainStatVal: 46.6,
+      },
+      {
+        ...art('goblet-hp', 'goblet', SET_A),
+        mainStatKey: 'hp_',
+        mainStatVal: 46.6,
+      },
+    ]
+    // Damage formulas need an enemy and a crit mode
+    const calc = genshinCalculatorWithEntries([
+      ...noelleEntries(),
+      enemyDebuff.common.lvl.add(100),
+      enemyDebuff.common.preRes.add(0.1),
+      ownBuff.common.critMode.add('avg'),
+      ...pandoContextEntries({ memberKeys: ['0'] }),
+    ]).withTag({ src: '0' })
+    const cfg = createSolverConfig(
+      args({
+        calc,
+        allowRainbow: true,
+        weapons: [wep('w1')],
+        artsBySlot,
+        frames: [
+          {
+            tag: formulaCatalog.Noelle!['skill']!.dims['dmg']!,
+            multiplier: 1,
+          },
+        ],
+      })
+    )
+    const evaluate = compile(cfg.nodes, 'q', cfg.candidates.length)
+    const gobletColumn = allArtifactSlotKeys.indexOf('goblet') + 1
+    const skillDmg = (gobletId: string) =>
+      evaluate(
+        cfg.candidates.map((column, i) =>
+          i === gobletColumn
+            ? column.find((c) => c.id === gobletId)!
+            : column[0]
+        )
+      )[0]
+    expect(skillDmg('goblet-geo')).toBeGreaterThan(skillDmg('goblet-hp'))
   })
 })
