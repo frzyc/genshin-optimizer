@@ -2,6 +2,7 @@ import { SandboxStorage } from '@genshin-optimizer/common/database'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { BuildTc, LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
+import type { FinalizeResult } from '@genshin-optimizer/gi/solver-tc'
 import { optimizeTcUsingNodes } from '@genshin-optimizer/gi/solver-tc'
 import {
   getBuildTcArtifactData,
@@ -11,7 +12,7 @@ import {
 } from '../'
 
 describe('A general optimizeTC usecase', () => {
-  it('generate correct distribution', () => {
+  function optimizeWithMinEnerRech(minEnerRech_: number) {
     const database = new ArtCharDatabase(1, new SandboxStorage({}))
     const buildTcId = database.buildTcs.new({
       name: 'test',
@@ -162,7 +163,7 @@ describe('A general optimizeTC usecase', () => {
     const statFilters = {
       '["basic","enerRech_"]': [
         {
-          value: 150,
+          value: minEnerRech_,
           disabled: false,
         },
       ],
@@ -174,20 +175,37 @@ describe('A general optimizeTC usecase', () => {
       statFilters
     )
     expect(nodes).toBeTruthy()
+    let result: FinalizeResult | undefined
     nodes &&
       optimizeTcUsingNodes(nodes, valueFilter, buildTc, (data) => {
-        if (data.resultType !== 'finalize') return
-        expect(data.maxBufferRolls).toEqual({
-          atk: 0,
-          atk_: 0,
-          critDMG_: 0,
-          critRate_: 1, // dmg assignment
-          eleMas: 0,
-          enerRech_: 1, // assigned to enerRech for 150
-          hp: 0,
-          hp_: 0,
-          other: 0,
-        })
+        if (data.resultType === 'finalize') result = data
       })
+    expect(result).toBeTruthy()
+    return result!
+  }
+
+  it('generate correct distribution', () => {
+    const result = optimizeWithMinEnerRech(150)
+    expect(result.found).toBe(true)
+    expect(result.maxBufferRolls).toEqual({
+      atk: 0,
+      atk_: 0,
+      critDMG_: 0,
+      critRate_: 1, // dmg assignment
+      eleMas: 0,
+      enerRech_: 1, // assigned to enerRech for 150
+      hp: 0,
+      hp_: 0,
+      other: 0,
+    })
+  })
+
+  it('report that no distribution satisfies an unreachable stat filter', () => {
+    // 2 rolls of Energy Recharge can never bring the build to 300%
+    const result = optimizeWithMinEnerRech(300)
+    expect(result.found).toBe(false)
+    expect(result.failed).toBeGreaterThan(0)
+    expect(result.distributed).toBe(0)
+    expect(result.maxBuffer).toEqual({})
   })
 })

@@ -94,11 +94,14 @@ export default function TabTheorycraft() {
 
   const [status, setStatus] = useState(initialBuildStatus())
   const solving = status.type === 'active'
+  // Set when the last run found no distribution that satisfies the constraints
+  const [noDistributionFound, setNoDistributionFound] = useState(false)
 
   const terminateWorker = useCallback(() => {
     workerRef.current?.terminate()
     workerRef.current = null
     setStatus(initialBuildStatus())
+    setNoDistributionFound(false)
   }, [workerRef])
 
   const { minSubLines, minOtherRolls } = useMemo(
@@ -139,6 +142,7 @@ export default function TabTheorycraft() {
     )
     if (!nodes || !valueFilter) return
     workerRef.current.postMessage({ buildTc, nodes, valueFilter })
+    setNoDistributionFound(false)
     setStatus((s) => ({
       ...s,
       type: 'active',
@@ -160,7 +164,8 @@ export default function TabTheorycraft() {
           }))
           break
         case 'finalize': {
-          const { maxBuffer, distributed, tested, failed, skipped } = data
+          const { found, maxBuffer, distributed, tested, failed, skipped } =
+            data
           setStatus((s) => ({
             ...s,
             type: 'inactive',
@@ -169,9 +174,11 @@ export default function TabTheorycraft() {
             skipped,
             finishTime: performance.now(),
           }))
+          setNoDistributionFound(!found)
 
           if (!apply) {
             console.log({
+              found,
               maxBuffer,
               distributed,
               tested,
@@ -180,6 +187,8 @@ export default function TabTheorycraft() {
             })
             break
           }
+          // Nothing satisfies the constraints, so keep the current substats as they are
+          if (!found) break
 
           setBuildTc((buildTc) => {
             buildTc.artifact.substats.stats = objMap(
@@ -374,6 +383,11 @@ export default function TabTheorycraft() {
               </Button>
             )}
             <ScalesWith minOtherRolls={minOtherRolls} />
+            {noDistributionFound && (
+              <Alert severity="warning" variant="filled">
+                {t('tabTheorycraft.noDistributionAlert')}
+              </Alert>
+            )}
             <BuildAlert
               status={status}
               characterKey={characterKey}

@@ -24,6 +24,7 @@ export interface CountResult {
 
 export interface FinalizeResult {
   resultType: 'finalize'
+  found: boolean // whether any substat distribution satisfied every constraint
   maxBuffer: Partial<Record<SubstatKey, number>>
   maxBufferRolls: Partial<Record<SubstatKey, number>>
   distributed: number
@@ -196,6 +197,8 @@ export function optimizeTcUsingNodes(
   )
   callback({
     resultType: 'finalize',
+    // `max` is only updated by a distribution that passed every check
+    found: max !== Number.NEGATIVE_INFINITY,
     distributed,
     maxBufferRolls,
     maxBuffer,
