@@ -92,6 +92,10 @@ export default function BuildTc({
         onEdit={onOpen}
         onDupe={onDupe}
         onRemove={onRemove}
+        disabledTips={{
+          copyTc: t('buildCardTip.disabled.copyTcAlreadyTc'),
+          equip: t('buildCardTip.disabled.equipTc'),
+        }}
       >
         <TcEquip buildTcId={buildTcId} />
       </BuildCard>
