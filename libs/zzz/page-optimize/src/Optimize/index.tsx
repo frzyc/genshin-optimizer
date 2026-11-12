@@ -1,5 +1,4 @@
 import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
-import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { BuildResult, Progress } from '@genshin-optimizer/game-opt/solver'
 import { Solver } from '@genshin-optimizer/game-opt/solver'
@@ -25,10 +24,12 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import {
   Box,
   Button,
-  CardContent,
+  Drawer,
   LinearProgress,
   Stack,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from '@mui/material'
 import {
   useCallback,
@@ -39,6 +40,8 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useOptimizePage } from '../context/OptimizePageContext'
+import { OPT_SECTION_IDS } from '../nav/optimizeSections'
 import { DiscFilter } from './DiscFilter'
 import { StatFilterCard } from './StatFilterCard'
 import { WengineFilter } from './WengineFilter'
@@ -71,7 +74,11 @@ export default function Optimize() {
 }
 
 function OptimizeWrapper() {
-  const { t } = useTranslation('optimize')
+  const { t } = useTranslation('page_optimize')
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'))
+  const { setOptimizeActions, filtersOpen, setFiltersOpen, scrollToSection } =
+    useOptimizePage()
   const { database } = useDatabaseContext()
   const calc = useZzzCalcContext()
   const { key: characterKey } = useCharacterContext()!
@@ -231,53 +238,86 @@ function OptimizeWrapper() {
       })),
       buildDate: Date.now(),
     })
-  }, [cfg, setProgress, database.optConfigs, optConfigId])
+    scrollToSection(OPT_SECTION_IDS.builds)
+  }, [cfg, database.optConfigs, optConfigId, scrollToSection])
 
   const onCancel = useCallback(() => {
     cancelToken.current()
     setOptimizing(false)
     setProgress(undefined)
-  }, [cancelToken, setProgress])
+  }, [])
+
+  useEffect(() => {
+    if (!isMobile) setFiltersOpen(false)
+  }, [isMobile, setFiltersOpen])
+
+  useEffect(() => {
+    setOptimizeActions({
+      disabled: !cfg,
+      optimizing,
+      onRun: onOptimize,
+      onCancel,
+    })
+    return () => setOptimizeActions(null)
+  }, [cfg, optimizing, onOptimize, onCancel, setOptimizeActions])
+
+  const filterGrid = (
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 1,
+        flexWrap: 'wrap',
+        '& .MuiPaper-root': { flexGrow: 1 },
+      }}
+    >
+      <StatFilterCard />
+      <WengineFilter wengines={filteredWengines} />
+      <DiscFilter discsBySlot={discsBySlot} />
+    </Box>
+  )
 
   return (
-    <CardThemed>
-      <CardContent>
-        <Stack spacing={1}>
-          <Box
-            sx={{
-              display: 'flex',
-              gap: 1,
-              flexWrap: 'wrap',
-              '& .MuiPaper-root': { flexGrow: 1 },
-            }}
-          >
-            <StatFilterCard />
-            <WengineFilter wengines={filteredWengines} />
-            <DiscFilter discsBySlot={discsBySlot} />
-          </Box>
+    <Stack spacing={1}>
+      {!isMobile && filterGrid}
+      <Drawer
+        anchor="bottom"
+        open={isMobile && filtersOpen}
+        onClose={() => setFiltersOpen(false)}
+        PaperProps={{ sx: { maxHeight: '85vh', p: 2 } }}
+      >
+        <Typography variant="h6" sx={{ mb: 1 }}>
+          {t('filters')}
+        </Typography>
+        {filterGrid}
+        <Button sx={{ mt: 2 }} onClick={() => setFiltersOpen(false)}>
+          {t('filtersDone')}
+        </Button>
+      </Drawer>
 
-          {progress && <ProgressIndicator progress={progress} />}
-          <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
-            <BuildsSelector
-              maxBuildsToShow={optConfig.maxBuildsToShow}
-              optConfigId={optConfigId}
-            />
-            <WorkerSelector
-              numWorkers={numWorkers}
-              setNumWorkers={setNumWorkers}
-            />
-            <Button
-              disabled={!cfg}
-              onClick={optimizing ? onCancel : onOptimize}
-              color={optimizing ? 'error' : 'primary'}
-              startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
-            >
-              {optimizing ? t('cancel') : t('optimize')}
-            </Button>
-          </Box>
-        </Stack>
-      </CardContent>
-    </CardThemed>
+      {progress && <ProgressIndicator progress={progress} />}
+      <Box
+        sx={{
+          display: { xs: 'none', md: 'flex' },
+          justifyContent: 'flex-end',
+          gap: 1,
+        }}
+      >
+        <BuildsSelector
+          maxBuildsToShow={optConfig.maxBuildsToShow}
+          optConfigId={optConfigId}
+        />
+        <WorkerSelector numWorkers={numWorkers} setNumWorkers={setNumWorkers} />
+        <Button
+          disabled={!cfg}
+          title={!cfg ? t('generateDisabledHint') : undefined}
+          onClick={optimizing ? onCancel : onOptimize}
+          color={optimizing ? 'error' : 'primary'}
+          startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
+        >
+          {optimizing ? t('cancel') : t('optimize')}
+        </Button>
+      </Box>
+    </Stack>
   )
 }
 
@@ -290,7 +330,7 @@ function Monospace({ value }: { value: number }): JSX.Element {
   )
 }
 function ProgressIndicator(props: { progress: Progress }) {
-  const { t } = useTranslation('optimize')
+  const { t } = useTranslation('page_optimize')
   const { computed, remaining, skipped, total } = props.progress
   const unskipped = computed + remaining
 
@@ -303,7 +343,7 @@ function ProgressIndicator(props: { progress: Progress }) {
         <Monospace value={unskipped} />{' '}
       </Typography>
       <Typography>
-        {t('computed + skipped')}: <Monospace value={computed + skipped} /> /{' '}
+        {t('computedSkipped')}: <Monospace value={computed + skipped} /> /{' '}
         <Monospace value={total} />
       </Typography>
       <LinearProgress // ideally, it should be | <computed> | <remaining> | <skipped> |

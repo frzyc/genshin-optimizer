@@ -70,6 +70,21 @@ export function abilityLabelParts(tag: Tag):
   }
 }
 
+/** Plain-text tokens for optimize-target search. */
+export function abilitySearchFields(tag: Tag): string[] {
+  const ability = parseAbilityFromTag(tag)
+  const charKey = tag.sheet as CharacterKey | undefined
+  if (!ability || !charKey) return []
+  const fields = [
+    ability.skill,
+    ability.abilityKey,
+    abilityNameString(charKey, ability),
+  ]
+  const hit = hitParamString(charKey, ability)
+  if (hit) fields.push(hit)
+  return fields
+}
+
 /** Bundled / single ability row title (hit param or ability name). */
 export function AbilityRowTitle({ tag }: { tag: Tag }) {
   const parts = abilityLabelParts(tag)
