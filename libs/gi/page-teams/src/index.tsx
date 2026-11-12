@@ -15,7 +15,10 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import type { TeamSortKey } from '@genshin-optimizer/gi/db'
-import { teamSortKeys } from '@genshin-optimizer/gi/db'
+import {
+  teamSortKeys,
+  validateCustomMultiTarget,
+} from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { CharacterMultiAutocomplete, TeamCard } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
@@ -71,6 +74,10 @@ export default function PageTeams() {
   const importData = () => {
     try {
       const dataObj = JSON.parse(data)
+      if (validateCustomMultiTarget(dataObj)) {
+        window.alert(t('importForm.error.multiOpt'))
+        return
+      }
       if (!database.teams.import(dataObj))
         window.alert(t('importForm.error.verifi'))
       onHideImport()
