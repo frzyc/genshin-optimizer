@@ -283,12 +283,28 @@ function WeaponRedButtons({ weaponIds }: { weaponIds: string[] }) {
     return { numDelete, numUnlock, numLock }
   }, [weaponIds, database])
 
-  const deleteWeapons = () =>
-    window.confirm(`Are you sure you want to delete ${numDelete} weapons?`) &&
-    weaponIds.map((id) => {
-      const weapon = database.weapons.get(id)
-      if (!weapon?.lock && !weapon?.location) database.weapons.remove(id)
-    })
+  const deleteWeapons = () => {
+    const delIds = new Set(
+      weaponIds.filter((id) => {
+        const weapon = database.weapons.get(id)
+        return weapon && !weapon.lock && !weapon.location
+      })
+    )
+    // Builds using a deleted weapon will fall back to a default weapon
+    const numBuilds = database.builds.values.filter(
+      ({ weaponId }) => weaponId && delIds.has(weaponId)
+    ).length
+    const buildsWarning = numBuilds
+      ? `\n${t('deleteWeaponsBuilds', { count: numBuilds })}`
+      : ''
+    if (
+      !window.confirm(
+        `Are you sure you want to delete ${numDelete} weapons?${buildsWarning}`
+      )
+    )
+      return
+    delIds.forEach((id) => database.weapons.remove(id))
+  }
 
   const lockWeapons = () =>
     window.confirm(`Are you sure you want to lock ${numUnlock} weapons ?`) &&

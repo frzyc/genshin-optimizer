@@ -1,5 +1,6 @@
 export * from './BuildCard'
 export * from './BuildDisplayItem'
 export * from './BuildInfoAlert'
+export * from './BuildUsageList'
 export * from './EquipBuildModal'
 export * from './TeammateEquippedAlert'
