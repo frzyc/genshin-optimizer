@@ -24,7 +24,7 @@ import type {
   PandoStatFilterTag,
 } from '@genshin-optimizer/gi/db'
 import type { Calculator, Tag } from '@genshin-optimizer/gi/formula'
-import { Read } from '@genshin-optimizer/gi/formula'
+import { Read, tagToStat } from '@genshin-optimizer/gi/formula'
 import type { NumTagFree } from '@genshin-optimizer/pando/engine'
 import {
   constant,
@@ -115,8 +115,9 @@ function buildDetachedSolverBase({
     if (tag['src'] !== '0') return undefined
     if (tag['et'] !== 'own') return undefined
 
+    // Candidate keys are StatKeys (`geo_dmg_`), so keep `ele` for dmg_/res_
     if (tag['sheet'] === 'dyn' && tag['qt'] === 'premod')
-      return { q: tag['q']! }
+      return { q: tagToStat(tag) }
 
     if (tag['q'] === 'count' && artSetKeys.has(tag['sheet'] as string))
       return { q: tag['sheet']! }
