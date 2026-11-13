@@ -74,5 +74,9 @@
     "stamina_buffs": "Stamina Buffs",
     "misc": "Misc. Stats"
   },
-  "notActive": "(Unactivated)"
+  "notActive": "(Unactivated)",
+  "statToggle": {
+    "enable": "Enable stat",
+    "disable": "Disable stat"
+  }
 }

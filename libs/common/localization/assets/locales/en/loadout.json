@@ -55,6 +55,7 @@
     "teams": "Teams",
     "addNewTeam": "Add new Team",
     "bonusStats": "Bonus Stats",
+    "bonusStatDisabled": "(Disabled)",
     "mltTargets": "Custom multi-targets"
   },
   "loadoutDelModal": {

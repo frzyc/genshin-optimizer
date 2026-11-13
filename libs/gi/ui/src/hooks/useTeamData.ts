@@ -8,6 +8,7 @@ import type {
   ICachedWeapon,
   LoadoutDatum,
 } from '@genshin-optimizer/gi/db'
+import { getEnabledBonusStats } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useDatabase,
@@ -192,7 +193,6 @@ export function getTeamData(
         infusionAura,
         customMultiTargets,
         conditional,
-        bonusStats,
         hitMode,
         reaction,
       } = teamChar
@@ -243,7 +243,7 @@ export function getTeamData(
           infusionAura,
           customMultiTargets,
           conditional: { ...conditional, ...teamConditional },
-          bonusStats,
+          bonusStats: getEnabledBonusStats(teamChar),
 
           enemyOverride,
           hitMode,

@@ -21,6 +21,7 @@ import {
 } from '@genshin-optimizer/gi/ui'
 import type { ReadNode } from '@genshin-optimizer/gi/wr'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
+import type { InputPremodKey } from '@genshin-optimizer/gi/wr-types'
 import { allInputPremodKeys } from '@genshin-optimizer/gi/wr-types'
 import BarChartIcon from '@mui/icons-material/BarChart'
 import CloseIcon from '@mui/icons-material/Close'
@@ -89,10 +90,12 @@ function BonusStatsEditor() {
   const database = useDatabase()
   const {
     teamCharId,
-    teamChar: { bonusStats },
+    teamChar: { bonusStats, disabledBonusStats },
   } = useContext(TeamCharacterContext)
   const setFilter = (bonusStats: TeamCharacter['bonusStats']) =>
     database.teamChars.set(teamCharId, { bonusStats })
+  const setDisabledBonusStats = (disabledBonusStats: InputPremodKey[]) =>
+    database.teamChars.set(teamCharId, { disabledBonusStats })
 
   return (
     <CardThemed bgt="light">
@@ -107,7 +110,8 @@ function BonusStatsEditor() {
                 <a href="https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki">
                   Genshin Impact Wiki
                 </a>
-                for specific values.
+                for specific values. Use the checkbox next to a stat to turn it
+                off without removing it.
               </Trans>
             </Alert>
           </Grid>
@@ -115,6 +119,8 @@ function BonusStatsEditor() {
             statKeys={keys}
             statFilters={bonusStats}
             setStatFilters={setFilter}
+            disabledStatKeys={disabledBonusStats}
+            setDisabledStatKeys={setDisabledBonusStats}
             wrapperFunc={wrapperFunc}
             label={t('addStats.label')}
           />
