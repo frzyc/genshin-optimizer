@@ -16,9 +16,10 @@ export function DetailStatButton({
   const { t } = useTranslation('page_character')
   const [open, onOpen, onClose] = useBoolState()
   const {
-    teamChar: { bonusStats },
+    teamChar: { bonusStats, disabledBonusStats },
   } = useContext(TeamCharacterContext)
   const bStatsNum = Object.keys(bonusStats).length
+  const enabledBStatsNum = bStatsNum - disabledBonusStats.length
   return (
     <>
       <Button
@@ -30,7 +31,9 @@ export function DetailStatButton({
         {t('addStats.title')}
         {!!bStatsNum && (
           <SqBadge sx={{ ml: 1 }} color="success">
-            {bStatsNum}
+            {enabledBStatsNum === bStatsNum
+              ? bStatsNum
+              : `${enabledBStatsNum}/${bStatsNum}`}
           </SqBadge>
         )}
       </Button>

@@ -1,5 +1,6 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import { getEnabledBonusStats } from '@genshin-optimizer/gi/db'
 import { TeamCharacterContext } from '@genshin-optimizer/gi/db-ui'
 import {
   DataContext,
@@ -16,11 +17,9 @@ import BonusStatsModal from '../../../BonusStatsModal'
 export default function BonusStatsCard() {
   const { t } = useTranslation(['page_character_optimize', 'common'])
   const [show, onShow, onHide] = useBoolState()
-  const {
-    teamChar: { bonusStats },
-  } = useContext(TeamCharacterContext)
+  const { teamChar } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
-  const bonusStatsKeys = Object.keys(bonusStats)
+  const bonusStatsKeys = Object.keys(getEnabledBonusStats(teamChar))
   const nodes = bonusStatsKeys.map((k) =>
     data.get(input.customBonus[k] as NumNode)
   )

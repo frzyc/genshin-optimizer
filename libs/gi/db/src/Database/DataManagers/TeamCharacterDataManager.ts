@@ -46,12 +46,33 @@ export interface TeamCharacter {
   conditional: IConditionalValues
 
   bonusStats: Partial<Record<InputPremodKey, number>>
+  /** Bonus stats that are kept in `bonusStats` but excluded from calculations */
+  disabledBonusStats: InputPremodKey[]
   infusionAura?: InfusionAuraElementKey | ''
 
   hitMode: HitModeKey
   reaction?: AmpReactionKey | AdditiveReactionKey
 
   optConfigId: string
+}
+
+/**
+ * Returns the bonus stats that should be applied to calculations, i.e. the
+ * ones that have not been toggled off.
+ */
+export function getEnabledBonusStats({
+  bonusStats,
+  disabledBonusStats,
+}: Pick<
+  TeamCharacter,
+  'bonusStats' | 'disabledBonusStats'
+>): TeamCharacter['bonusStats'] {
+  if (!disabledBonusStats.length) return bonusStats
+  return Object.fromEntries(
+    Object.entries(bonusStats).filter(
+      ([key]) => !disabledBonusStats.includes(key as InputPremodKey)
+    )
+  )
 }
 
 export class TeamCharacterDataManager extends DataManager<
@@ -97,6 +118,7 @@ export class TeamCharacterDataManager extends DataManager<
       customMultiTargets,
       conditional,
       bonusStats,
+      disabledBonusStats,
       infusionAura,
 
       hitMode,
@@ -133,6 +155,15 @@ export class TeamCharacterDataManager extends DataManager<
     )
       bonusStats = {}
 
+    // Only keep toggles for stats that are still in bonusStats
+    if (!Array.isArray(disabledBonusStats)) disabledBonusStats = []
+    const bonusStatKeys = Object.keys(bonusStats)
+    disabledBonusStats = [
+      ...new Set(
+        disabledBonusStats.filter((key) => bonusStatKeys.includes(key))
+      ),
+    ]
+
     if (
       infusionAura &&
       !allInfusionAuraElementKeys.includes(
@@ -160,6 +191,7 @@ export class TeamCharacterDataManager extends DataManager<
       customMultiTargets,
       conditional,
       bonusStats,
+      disabledBonusStats,
       infusionAura,
       hitMode,
       reaction,

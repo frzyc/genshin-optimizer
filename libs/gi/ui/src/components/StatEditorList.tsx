@@ -9,9 +9,12 @@ import { allMainStatKeys, allSubstatKeys } from '@genshin-optimizer/gi/consts'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import type { InputPremodKey } from '@genshin-optimizer/gi/wr-types'
+import CheckBoxIcon from '@mui/icons-material/CheckBox'
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import {
   Box,
+  Button,
   ButtonGroup,
   IconButton,
   InputAdornment,
@@ -32,6 +35,8 @@ export function StatEditorList({
   disabled = false,
   wrapperFunc = (ele) => ele,
   label,
+  disabledStatKeys,
+  setDisabledStatKeys,
 }: {
   statKeys: InputPremodKey[]
   statFilters: Partial<Record<InputPremodKey, number>>
@@ -39,6 +44,9 @@ export function StatEditorList({
   disabled?: boolean
   wrapperFunc?: (ele: JSX.Element, key?: string) => JSX.Element
   label?: string
+  /** Stats that are toggled off. Toggles are only shown when `setDisabledStatKeys` is provided. */
+  disabledStatKeys?: InputPremodKey[]
+  setDisabledStatKeys?: (disabledStatKeys: InputPremodKey[]) => void
 }) {
   const { t: tk } = useTranslation('statKey_gen')
   const statOptions = useMemo(
@@ -73,7 +81,7 @@ export function StatEditorList({
 
   const setKey = useCallback(
     (newk: InputPremodKey, oldk: InputPremodKey | null) => {
-      if (oldk)
+      if (oldk) {
         setStatFilters(
           Object.fromEntries(
             Object.entries(statFilters).map(([k, v]) => [
@@ -82,13 +90,32 @@ export function StatEditorList({
             ])
           )
         )
-      else {
+        // Keep the toggle state when a disabled stat is swapped for another one.
+        // Update the stat filters first, since disabled keys may be validated against them.
+        if (setDisabledStatKeys && disabledStatKeys?.includes(oldk))
+          setDisabledStatKeys(
+            disabledStatKeys.map((k) => (k === oldk ? newk : k))
+          )
+      } else {
         const statFilters_ = { ...statFilters }
         statFilters_[newk] = 0
         setStatFilters({ ...statFilters_ })
       }
     },
-    [statFilters, setStatFilters]
+    [statFilters, setStatFilters, disabledStatKeys, setDisabledStatKeys]
+  )
+
+  const toggleKey = useCallback(
+    (statKey: InputPremodKey) => {
+      if (!setDisabledStatKeys) return
+      const disabledStatKeys_ = disabledStatKeys ?? []
+      setDisabledStatKeys(
+        disabledStatKeys_.includes(statKey)
+          ? disabledStatKeys_.filter((k) => k !== statKey)
+          : [...disabledStatKeys_, statKey]
+      )
+    },
+    [disabledStatKeys, setDisabledStatKeys]
   )
 
   const setFilter = useCallback(
@@ -123,6 +150,8 @@ export function StatEditorList({
             setKey={setKey}
             delKey={delKey}
             getOptionDisabled={getOptionDiabled}
+            toggleKey={setDisabledStatKeys && toggleKey}
+            toggledOff={disabledStatKeys?.includes(statKey as InputPremodKey)}
           />,
           statKey
         )
@@ -155,6 +184,8 @@ function StatFilterItem({
   disabled = false,
   getOptionDisabled,
   label,
+  toggleKey,
+  toggledOff = false,
 }: {
   statKey: InputPremodKey | null
   statKeyOptions: StatOption[]
@@ -165,6 +196,8 @@ function StatFilterItem({
   disabled?: boolean
   getOptionDisabled: (option: StatOption) => boolean
   label?: string
+  toggleKey?: (statKey: InputPremodKey) => void
+  toggledOff?: boolean
 }) {
   const theme = useTheme()
   const { t } = useTranslation('ui')
@@ -189,9 +222,27 @@ function StatFilterItem({
     () => statKey && delKey(statKey),
     [delKey, statKey]
   )
+  const onToggleKey = useCallback(
+    () => statKey && toggleKey?.(statKey),
+    [toggleKey, statKey]
+  )
+  const showToggle = !!statKey && !!toggleKey
   return (
     <Box sx={{ display: 'flex' }}>
       <ButtonGroup sx={{ flexGrow: 1 }}>
+        {showToggle && (
+          <Button
+            sx={{ p: 1, minWidth: 24, flexShrink: 0 }}
+            color={toggledOff ? 'secondary' : 'success'}
+            onClick={onToggleKey}
+            disabled={disabled}
+            aria-label={
+              toggledOff ? t('statToggle.enable') : t('statToggle.disable')
+            }
+          >
+            {toggledOff ? <CheckBoxOutlineBlankIcon /> : <CheckBoxIcon />}
+          </Button>
+        )}
         <GeneralAutocomplete
           size="small"
           options={statKeyOptions}
@@ -233,7 +284,11 @@ function StatFilterItem({
           )}
           sx={{ flexGrow: 1, flexBasis: 150 }}
           textFieldProps={{
-            sx: { '& .MuiInputBase-root': { borderRadius: '4px 0 0 4px' } },
+            sx: {
+              '& .MuiInputBase-root': {
+                borderRadius: showToggle ? 0 : '4px 0 0 4px',
+              },
+            },
           }}
           label={label}
         />

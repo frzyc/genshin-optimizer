@@ -49,7 +49,7 @@
   },
   "addStats": {
     "title": "Bonus Stats",
-    "info": "You can use these fields to add buffs/debuffs not directly supported in GO, such as food buffs, Abyss cards, or Superconduct. Please refer to the <1>Genshin Impact Wiki</1> for specific values.",
+    "info": "You can use these fields to add buffs/debuffs not directly supported in GO, such as food buffs, Abyss cards, or Superconduct. Please refer to the <1>Genshin Impact Wiki</1> for specific values. Use the checkbox next to a stat to turn it off without removing it.",
     "label": "New Bonus Stat",
     "main": "Main Stats",
     "other": "Other Stats",

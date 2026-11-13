@@ -65,6 +65,7 @@ import {
   pandoTeamSrcKeys,
 } from './PandoTeamDataManager'
 import type { TeamCharacter } from './TeamCharacterDataManager'
+import { getEnabledBonusStats } from './TeamCharacterDataManager'
 import type {
   ArtifactData,
   LoadoutDataExportSetting,
@@ -124,6 +125,7 @@ export {
   defaultInitialWeapon,
   defaultInitialWeaponKey,
   defLoadoutExportSetting,
+  getEnabledBonusStats,
   handleArtSetExclusion,
   initCharTC,
   initCustomMultiTarget,

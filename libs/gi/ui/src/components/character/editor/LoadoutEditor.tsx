@@ -12,6 +12,7 @@ import {
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
+import type { InputPremodKey } from '@genshin-optimizer/gi/wr-types'
 import AddIcon from '@mui/icons-material/Add'
 import BarChartIcon from '@mui/icons-material/BarChart'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
@@ -65,6 +66,7 @@ export function LoadoutEditor({
     description,
     customMultiTargets,
     bonusStats,
+    disabledBonusStats,
     optConfigId,
     conditional,
   } = useTeamChar(teamCharId)!
@@ -165,7 +167,10 @@ export function LoadoutEditor({
             <Grid container columns={{ xs: 1, md: 2 }} spacing={2}>
               {!!Object.keys(bonusStats).length && (
                 <Grid item xs={1}>
-                  <BonusStatsCard bonusStats={bonusStats} />
+                  <BonusStatsCard
+                    bonusStats={bonusStats}
+                    disabledBonusStats={disabledBonusStats}
+                  />
                 </Grid>
               )}
               {!!optimizationTarget && (
@@ -263,8 +268,10 @@ export function LoadoutEditor({
 
 function BonusStatsCard({
   bonusStats,
+  disabledBonusStats,
 }: {
   bonusStats: TeamCharacter['bonusStats']
+  disabledBonusStats: TeamCharacter['disabledBonusStats']
 }) {
   const { t } = useTranslation('loadout')
   return (
@@ -291,6 +298,9 @@ function BonusStatsCard({
           {
             fields: Object.entries(bonusStats).map(([key, value]) => ({
               text: KeyMap.getStr(key) ?? key,
+              textSuffix: disabledBonusStats.includes(key as InputPremodKey)
+                ? t('loadoutEditor.bonusStatDisabled')
+                : undefined,
               value: value,
               unit: getUnitStr(key),
             })),
