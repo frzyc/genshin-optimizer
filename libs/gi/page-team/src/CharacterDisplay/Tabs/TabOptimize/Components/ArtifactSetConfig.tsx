@@ -42,7 +42,6 @@ import {
   ArtifactSetName,
   DataContext,
   SetEffectDisplay,
-  SetInclusionButton,
 } from '@genshin-optimizer/gi/ui'
 import { UIData } from '@genshin-optimizer/gi/uidata'
 import { setKeysByRarities } from '@genshin-optimizer/gi/util'
@@ -67,6 +66,7 @@ import {
 } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+import { ArtifactTwoPcBonus } from './ArtifactTwoPcBonus'
 
 export default function ArtifactSetConfig({
   disabled,
@@ -491,7 +491,13 @@ export default function ArtifactSetConfig({
                 </CardThemed>
               </Grid>
             </Grid>
-            <Grid container spacing={1} columns={{ xs: 2, lg: 3 }}>
+            <ArtifactTwoPcBonus />
+            <Grid
+              container
+              spacing={1}
+              columns={{ xs: 2, lg: 3 }}
+              sx={{ mt: 1 }}
+            >
               {artKeys.map((setKey) => (
                 <ArtifactSetCard
                   key={setKey}
@@ -656,15 +662,21 @@ function ArtifactSetCard({
                       }
                     >
                       <Box>
-                        <Typography>
-                          <SqBadge color="success">{t('2set')}</SqBadge>
-                        </Typography>
-                        <Typography>
-                          <Translate
-                            ns={`artifact_${setKey}_gen`}
-                            key18={'setEffects.2'}
-                          />
-                        </Typography>
+                        <Box
+                          sx={{
+                            opacity: setExclusionSet.includes(2) ? 0.6 : 1,
+                          }}
+                        >
+                          <Typography>
+                            <SqBadge color="success">{t('2set')}</SqBadge>
+                          </Typography>
+                          <Typography>
+                            <Translate
+                              ns={`artifact_${setKey}_gen`}
+                              key18={'setEffects.2'}
+                            />
+                          </Typography>
+                        </Box>
                         <Box
                           paddingTop={2}
                           sx={{
@@ -707,10 +719,7 @@ function ArtifactSetCard({
           </Box>
         </Box>
         {allArtifactSetExclusionKeys.includes(setKey as ArtSetExclusionKey) && (
-          <SetInclusionButton
-            setKey={setKey as ArtSetExclusionKey}
-            buttonGroupSx={{ '.MuiButton-root': { borderRadius: 0 } }}
-          />
+          <SetFourExclusionButton setKey={setKey as ArtSetExclusionKey} />
         )}
 
         {!!condNums.length && (
@@ -731,6 +740,32 @@ function ArtifactSetCard({
         )}
       </CardThemed>
     </Grid>
+  )
+}
+
+function SetFourExclusionButton({ setKey }: { setKey: ArtSetExclusionKey }) {
+  const { t } = useTranslation('sheet')
+  const {
+    teamChar: { optConfigId },
+  } = useContext(TeamCharacterContext)
+  const { artSetExclusion } = useOptConfig(optConfigId)!
+  const exclude4 = artSetExclusion?.[setKey]?.includes(4) ?? false
+  const database = useDatabase()
+  return (
+    <Button
+      fullWidth
+      sx={{ borderRadius: 0 }}
+      startIcon={exclude4 ? <CheckBoxOutlineBlank /> : <CheckBox />}
+      onClick={() =>
+        database.optConfigs.set(optConfigId, {
+          artSetExclusion: handleArtSetExclusion(artSetExclusion, setKey, 4),
+        })
+      }
+      color={exclude4 ? 'secondary' : 'success'}
+      endIcon={exclude4 ? <BlockIcon /> : <ShowChartIcon />}
+    >
+      {t('4set')}
+    </Button>
   )
 }
 

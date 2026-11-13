@@ -10,4 +10,5 @@ export type {
 } from './executors/gen-stats/executor'
 export * from './lightCone'
 export * from './relic'
+export * from './relicTwoPc'
 export { allStats, mappedStats }

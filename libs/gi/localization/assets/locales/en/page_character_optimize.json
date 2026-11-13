@@ -116,6 +116,8 @@
     "selected": "Selected",
     "2rainbow": "3-Rainbow",
     "4rainbow": "5-Rainbow",
+    "twoPieceBonus": "2-piece bonus",
+    "setsCanForm2p": "{{count}} sets can form a 2-piece",
     "allowAll2set": "Allow All 2-Set",
     "excludeAll2set": "Exclude All 2-Set",
     "allowAll4set": "Allow All 4-Set",

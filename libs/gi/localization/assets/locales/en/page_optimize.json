@@ -42,6 +42,8 @@
   "showRelevantSets": "Show relevant sets",
   "allow4p": "Allow 4p",
   "allow2p": "Allow 2p",
+  "twoPieceBonus": "2-piece bonus",
+  "setsCanForm2p": "{{count}} sets can form a 2-piece",
   "statFilter": "Stat Filter",
   "addStatFilter": "Add Stat Filter",
   "equipToCrr": "Equip",

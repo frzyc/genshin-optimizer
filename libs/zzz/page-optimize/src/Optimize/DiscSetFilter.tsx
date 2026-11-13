@@ -1,22 +1,37 @@
-import { SqBadge } from '@genshin-optimizer/common/ui'
+import { SqBadge, TwoPcBonusList } from '@genshin-optimizer/common/ui'
 import {
+  getUnitStr,
   objKeyMap,
   stableArr,
+  type TwoPcStats,
   toggleInArr,
+  twoPcSelected,
+  valueString,
 } from '@genshin-optimizer/common/util'
-import type { DiscSetKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
-import { allDiscSetKeys, allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
+import type {
+  DiscSetKey,
+  DiscSlotKey,
+  StatKey,
+} from '@genshin-optimizer/zzz/consts'
+import {
+  allDiscSetKeys,
+  allDiscSlotKeys,
+  discTwoPcGroups,
+  discTwoPcSets,
+} from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc, TeamConditional } from '@genshin-optimizer/zzz/db'
 import { useCharacterContext, useTeam } from '@genshin-optimizer/zzz/db-ui'
 import {
   CharCalcMockCountProvider,
   DiscSheetDisplay,
 } from '@genshin-optimizer/zzz/formula-ui'
-import { Box, Button, ButtonGroup, Grid, Typography } from '@mui/material'
+import { DiscSetName, StatDisplay } from '@genshin-optimizer/zzz/ui'
+import { Box, Button, Grid, Typography } from '@mui/material'
 import { useMemo, useState } from 'react'
 
 export function DiscSetFilter({
   discBySlot,
+  disabled,
   setFilter4,
   setFilter2,
   setSetFilter4,
@@ -45,6 +60,10 @@ export function DiscSetFilter({
 
     return discSetBySlot
   }, [discBySlot])
+  const selected2 = useMemo(
+    () => twoPcSelected(setFilter2, discTwoPcSets),
+    [setFilter2]
+  )
   const [showAllSets, setShowAllSets] = useState(false)
   const visibleSetKeys = useMemo(() => {
     if (showAllSets) return allDiscSetKeys
@@ -71,6 +90,17 @@ export function DiscSetFilter({
           {showAllSets ? 'Show relevant sets' : 'Show all sets'}
         </Button>
       </Box>
+      <TwoPcBonusList
+        title="2-piece"
+        groups={discTwoPcGroups}
+        allowlist={setFilter2}
+        universe={discTwoPcSets}
+        onChange={setSetFilter2}
+        disabled={disabled}
+        label={(group) => (
+          <TwoPcStatLabel stats={group.stats} setKey={group.sets[0]} />
+        )}
+      />
 
       <Box>
         {character && team && (
@@ -85,9 +115,8 @@ export function DiscSetFilter({
                     numSlot={discSetBySlot[d]}
                     setKey={d}
                     setFilter4={setFilter4}
-                    setFilter2={setFilter2}
+                    allowed2={selected2.has(d)}
                     setSetFilter4={setSetFilter4}
-                    setSetFilter2={setSetFilter2}
                   />
                 </Grid>
               ))}
@@ -102,21 +131,18 @@ function AdvSetFilterDiscCard({
   numSlot,
   setKey,
   setFilter4,
-  setFilter2,
+  allowed2,
   setSetFilter4,
-  setSetFilter2,
 }: {
   numSlot: Record<DiscSlotKey, number>
   setKey: DiscSetKey
   setFilter4: DiscSetKey[]
-  setFilter2: DiscSetKey[]
+  allowed2: boolean
   setSetFilter4: (setFilter4: DiscSetKey[]) => void
-  setSetFilter2: (setFilter2: DiscSetKey[]) => void
 }) {
-  const greyOut2 = !!setFilter2.length && !setFilter2.includes(setKey)
   const greyOut4 = !!setFilter4.length && !setFilter4.includes(setKey)
   return (
-    <DiscSheetDisplay setKey={setKey} fade2={greyOut2} fade4={greyOut4}>
+    <DiscSheetDisplay setKey={setKey} fade2={!allowed2} fade4={greyOut4}>
       <Box sx={{ display: 'flex', justifyContent: 'space-around', pb: 1 }}>
         {Object.entries(numSlot).map(([slotKey, count]) => (
           <Box key={slotKey}>
@@ -124,42 +150,54 @@ function AdvSetFilterDiscCard({
           </Box>
         ))}
       </Box>
-      <ButtonGroup fullWidth>
-        <Button
-          sx={{ borderRadius: 0 }}
-          color={
-            !setFilter4.length || setFilter4.includes(setKey)
-              ? 'success'
-              : 'secondary'
-          }
-          onClick={() =>
-            setSetFilter4(
-              setFilter4.length
-                ? toggleInArr([...setFilter4], setKey)
-                : [setKey]
-            )
-          }
-        >
-          Allow 4p
-        </Button>
-        <Button
-          sx={{ borderRadius: 0 }}
-          color={
-            !setFilter2.length || setFilter2.includes(setKey)
-              ? 'success'
-              : 'secondary'
-          }
-          onClick={() =>
-            setSetFilter2(
-              setFilter2.length
-                ? toggleInArr([...setFilter2], setKey)
-                : [setKey]
-            )
-          }
-        >
-          Allow 2p
-        </Button>
-      </ButtonGroup>
+      <Button
+        fullWidth
+        sx={{ borderRadius: 0 }}
+        color={
+          !setFilter4.length || setFilter4.includes(setKey)
+            ? 'success'
+            : 'secondary'
+        }
+        onClick={() =>
+          setSetFilter4(
+            setFilter4.length ? toggleInArr([...setFilter4], setKey) : [setKey]
+          )
+        }
+      >
+        Allow 4p
+      </Button>
     </DiscSheetDisplay>
+  )
+}
+
+function TwoPcStatLabel({
+  stats,
+  setKey,
+}: {
+  stats?: TwoPcStats
+  setKey: DiscSetKey
+}) {
+  if (!stats) return <DiscSetName setKey={setKey} />
+  return (
+    <Box
+      component="span"
+      sx={{
+        display: 'inline-flex',
+        flexWrap: 'wrap',
+        gap: 1,
+        alignItems: 'center',
+      }}
+    >
+      {Object.entries(stats).map(([stat, value]) => (
+        <Box
+          key={stat}
+          component="span"
+          sx={{ display: 'inline-flex', gap: 0.5, alignItems: 'center' }}
+        >
+          <StatDisplay statKey={stat as StatKey} showPercent />+
+          {valueString(value, getUnitStr(stat))}
+        </Box>
+      ))}
+    </Box>
   )
 }
