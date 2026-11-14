@@ -4,33 +4,40 @@ import {
   DropdownButton,
   ImgIcon,
   ModalWrapper,
+  TwoPcBonusList,
 } from '@genshin-optimizer/common/ui'
-import { toggleInArr } from '@genshin-optimizer/common/util'
+import {
+  getUnitStr,
+  type TwoPcStats,
+  toggleInArr,
+  valueString,
+} from '@genshin-optimizer/common/util'
 import { relicAsset } from '@genshin-optimizer/sr/assets'
 import type {
   RelicCavernSetKey,
   RelicPlanarSetKey,
+  StatKey,
 } from '@genshin-optimizer/sr/consts'
+import { allRelicCavernSetKeys } from '@genshin-optimizer/sr/consts'
 import {
-  allRelicCavernSetKeys,
-  allRelicPlanarSetKeys,
-} from '@genshin-optimizer/sr/consts'
-import { RelicSetName } from '@genshin-optimizer/sr/ui'
+  cavernTwoPcGroups,
+  cavernTwoPcSets,
+  planarTwoPcGroups,
+  planarTwoPcSets,
+} from '@genshin-optimizer/sr/stats'
+import { RelicSetName, StatDisplay } from '@genshin-optimizer/sr/ui'
 import { getDefaultRelicSlot } from '@genshin-optimizer/sr/util'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
   Button,
-  ButtonGroup,
   CardContent,
   CardHeader,
   Divider,
   Grid,
   IconButton,
   MenuItem,
-  Typography,
 } from '@mui/material'
-
 export function RelicSetFilter({
   disabled = false,
   setFilter4Cavern,
@@ -54,154 +61,91 @@ export function RelicSetFilter({
       <ModalWrapper open={open} onClose={onClose}>
         <AdvSetFilterCard
           onClose={onClose}
-          setFilter2Cavern={setFilter2Cavern}
           setFilter4Cavern={setFilter4Cavern}
-          setFilter2Planar={setFilter2Planar}
-          setSetFilter2Cavern={setSetFilter2Cavern}
           setSetFilter4Cavern={setSetFilter4Cavern}
-          setSetFilter2Planar={setSetFilter2Planar}
         />
       </ModalWrapper>
-      <CardContent sx={{ display: 'flex', gap: 1 }}>
-        <Box
-          sx={{ flexGrow: 1, display: 'flex', gap: 1, flexDirection: 'column' }}
-        >
-          {setFilter4Cavern.length <= 1 ? (
-            <DropdownButton
-              disabled={disabled}
-              title={
-                setFilter4Cavern[0] ? (
-                  <span>
-                    Force 4-Set:{' '}
-                    <strong>
-                      <RelicSetName setKey={setFilter4Cavern[0]} />
-                    </strong>
-                  </span>
-                ) : (
-                  'Select to force 4-Set'
-                )
-              }
-              sx={{ flexGrow: 1 }}
-            >
-              <MenuItem onClick={() => setSetFilter4Cavern([])}>
-                No 4-Set
+      <CardContent sx={{ display: 'flex', gap: 1, flexDirection: 'column' }}>
+        {setFilter4Cavern.length <= 1 ? (
+          <DropdownButton
+            disabled={disabled}
+            title={
+              setFilter4Cavern[0] ? (
+                <span>
+                  Force 4-Set:{' '}
+                  <strong>
+                    <RelicSetName setKey={setFilter4Cavern[0]} />
+                  </strong>
+                </span>
+              ) : (
+                'Select to force 4-Set'
+              )
+            }
+            sx={{ flexGrow: 1 }}
+          >
+            <MenuItem onClick={() => setSetFilter4Cavern([])}>
+              No 4-Set
+            </MenuItem>
+            {allRelicCavernSetKeys.map((set) => (
+              <MenuItem key={set} onClick={() => setSetFilter4Cavern([set])}>
+                <RelicSetName setKey={set} />
               </MenuItem>
-
-              {allRelicCavernSetKeys.map((d) => (
-                <MenuItem key={d} onClick={() => setSetFilter4Cavern([d])}>
-                  <RelicSetName setKey={d} />
-                </MenuItem>
-              ))}
-            </DropdownButton>
-          ) : (
-            <Button disabled>
-              <span>
-                <strong>{setFilter4Cavern.length}</strong> Relic 4p-set Selected
-              </span>
-            </Button>
+            ))}
+          </DropdownButton>
+        ) : (
+          <Button disabled>
+            <span>
+              <strong>{setFilter4Cavern.length}</strong> Relic 4p-set Selected
+            </span>
+          </Button>
+        )}
+        <TwoPcBonusList
+          title="Cavern 2-piece"
+          groups={cavernTwoPcGroups}
+          allowlist={setFilter2Cavern}
+          universe={cavernTwoPcSets}
+          onChange={setSetFilter2Cavern}
+          disabled={disabled}
+          resetLabel="Reset"
+          label={(group) => (
+            <TwoPcStatLabel stats={group.stats} setKey={group.sets[0]} />
           )}
-
-          {setFilter2Cavern.length <= 1 ? (
-            <DropdownButton
-              disabled={disabled}
-              title={
-                setFilter2Cavern[0] ? (
-                  <span>
-                    Force 2-Set:{' '}
-                    <strong>
-                      <RelicSetName setKey={setFilter2Cavern[0]} />
-                    </strong>
-                  </span>
-                ) : (
-                  'Select to force 2-Set'
-                )
-              }
-              sx={{ flexGrow: 1 }}
-            >
-              <MenuItem onClick={() => setSetFilter2Cavern([])}>
-                No 2-Set
-              </MenuItem>
-
-              {allRelicCavernSetKeys.map((d) => (
-                <MenuItem key={d} onClick={() => setSetFilter2Cavern([d])}>
-                  <RelicSetName setKey={d} />
-                </MenuItem>
-              ))}
-            </DropdownButton>
-          ) : (
-            <Button disabled>
-              <span>
-                <strong>{setFilter2Cavern.length}</strong> Relic Cavern 2p-set
-                Selected
-              </span>
-            </Button>
+        />
+        <TwoPcBonusList
+          title="Planar 2-piece"
+          groups={planarTwoPcGroups}
+          allowlist={setFilter2Planar}
+          universe={planarTwoPcSets}
+          onChange={setSetFilter2Planar}
+          disabled={disabled}
+          resetLabel="Reset"
+          label={(group) => (
+            <TwoPcStatLabel stats={group.stats} setKey={group.sets[0]} />
           )}
-          {setFilter2Planar.length <= 1 ? (
-            <DropdownButton
-              disabled={disabled}
-              title={
-                setFilter2Planar[0] ? (
-                  <span>
-                    Force 2-Set:{' '}
-                    <strong>
-                      <RelicSetName setKey={setFilter2Planar[0]} />
-                    </strong>
-                  </span>
-                ) : (
-                  'Select to force 2-Set'
-                )
-              }
-              sx={{ flexGrow: 1 }}
-            >
-              <MenuItem onClick={() => setSetFilter2Planar([])}>
-                No 2-Set
-              </MenuItem>
-
-              {allRelicPlanarSetKeys.map((d) => (
-                <MenuItem key={d} onClick={() => setSetFilter2Planar([d])}>
-                  <RelicSetName setKey={d} />
-                </MenuItem>
-              ))}
-            </DropdownButton>
-          ) : (
-            <Button disabled>
-              <span>
-                <strong>{setFilter2Planar.length}</strong> Relic Planar 2p-set
-                Selected
-              </span>
-            </Button>
-          )}
-        </Box>
-        <Box sx={{ display: 'flex', alignItems: 'stretch' }}>
+        />
+        <Box>
           <Button disabled={disabled} onClick={onOpen} color="info">
-            Advanced Set-Filter Config
+            Advanced 4-Set Config
           </Button>
         </Box>
       </CardContent>
     </CardThemed>
   )
 }
+
 function AdvSetFilterCard({
   onClose,
   setFilter4Cavern,
-  setFilter2Cavern,
-  setFilter2Planar,
   setSetFilter4Cavern,
-  setSetFilter2Cavern,
-  setSetFilter2Planar,
 }: {
   onClose: () => void
   setFilter4Cavern: RelicCavernSetKey[]
-  setFilter2Cavern: RelicCavernSetKey[]
-  setFilter2Planar: RelicPlanarSetKey[]
   setSetFilter4Cavern: (setFilter4Cavern: RelicCavernSetKey[]) => void
-  setSetFilter2Cavern: (setFilter2Cavern: RelicCavernSetKey[]) => void
-  setSetFilter2Planar: (setFilter2Planar: RelicPlanarSetKey[]) => void
 }) {
   return (
     <CardThemed>
       <CardHeader
-        title="Advanced Set-Filter Config"
+        title="Advanced 4-Set Config"
         action={
           <IconButton onClick={onClose}>
             <CloseIcon />
@@ -210,8 +154,6 @@ function AdvSetFilterCard({
       />
       <Divider />
       <CardContent>
-        {/* TODO: translate */}
-        <Typography variant="h6">Cavern</Typography>
         <Box sx={{ display: 'flex', gap: 1, mb: 1 }}>
           <Button
             disabled={!setFilter4Cavern.length}
@@ -219,58 +161,38 @@ function AdvSetFilterCard({
           >
             Reset 4p filter
           </Button>
-          <Button
-            disabled={!setFilter2Cavern.length}
-            onClick={() => setSetFilter2Cavern([])}
-          >
-            Reset 2p filter
-          </Button>
         </Box>
         <Grid container spacing={1}>
-          {allRelicCavernSetKeys.map((d) => (
-            <Grid
-              key={d}
-              size={{
-                xs: 1,
-                md: 2,
-                lg: 3,
-              }}
-            >
-              <AdvSetFilterRelicCavernCard
-                setKey={d}
-                setFilter4Cavern={setFilter4Cavern}
-                setFilter2Cavern={setFilter2Cavern}
-                setSetFilter4Cavern={setSetFilter4Cavern}
-                setSetFilter2Cavern={setSetFilter2Cavern}
-              />
-            </Grid>
-          ))}
-        </Grid>
-        {/* TODO: translate */}
-        <Typography variant="h6">Planar</Typography>
-        <Box sx={{ display: 'flex', gap: 1, mb: 1 }}>
-          <Button
-            disabled={!setFilter2Cavern.length}
-            onClick={() => setSetFilter2Planar([])}
-          >
-            Reset 2p filter
-          </Button>
-        </Box>
-        <Grid container spacing={1}>
-          {allRelicPlanarSetKeys.map((d) => (
-            <Grid
-              key={d}
-              size={{
-                xs: 1,
-                md: 2,
-                lg: 3,
-              }}
-            >
-              <AdvSetFilterRelicPlanarCard
-                setKey={d}
-                setFilter2Planar={setFilter2Planar}
-                setSetFilter2Planar={setSetFilter2Planar}
-              />
+          {allRelicCavernSetKeys.map((set) => (
+            <Grid key={set} size={{ xs: 12, sm: 6, md: 4 }}>
+              <CardThemed bgt="light">
+                <CardHeader
+                  title={<RelicSetName setKey={set} />}
+                  avatar={
+                    <ImgIcon
+                      src={relicAsset(set, getDefaultRelicSlot(set))}
+                      size={2}
+                    />
+                  }
+                />
+                <Button
+                  fullWidth
+                  color={
+                    !setFilter4Cavern.length || setFilter4Cavern.includes(set)
+                      ? 'success'
+                      : 'secondary'
+                  }
+                  onClick={() =>
+                    setSetFilter4Cavern(
+                      setFilter4Cavern.length
+                        ? toggleInArr([...setFilter4Cavern], set)
+                        : [set]
+                    )
+                  }
+                >
+                  Allow 4p
+                </Button>
+              </CardThemed>
             </Grid>
           ))}
         </Grid>
@@ -278,105 +200,35 @@ function AdvSetFilterCard({
     </CardThemed>
   )
 }
-function AdvSetFilterRelicCavernCard({
+
+function TwoPcStatLabel({
+  stats,
   setKey,
-  setFilter4Cavern,
-  setFilter2Cavern,
-  setSetFilter4Cavern,
-  setSetFilter2Cavern,
 }: {
-  setKey: RelicCavernSetKey
-  setFilter4Cavern: RelicCavernSetKey[]
-  setFilter2Cavern: RelicCavernSetKey[]
-  setSetFilter4Cavern: (setFilter4Cavern: RelicCavernSetKey[]) => void
-  setSetFilter2Cavern: (setFilter2Cavern: RelicCavernSetKey[]) => void
+  stats?: TwoPcStats
+  setKey: RelicCavernSetKey | RelicPlanarSetKey
 }) {
+  if (!stats) return <RelicSetName setKey={setKey} />
   return (
-    <CardThemed bgt="light">
-      <CardHeader
-        title={<RelicSetName setKey={setKey} />}
-        avatar={
-          <ImgIcon
-            src={relicAsset(setKey, getDefaultRelicSlot(setKey))}
-            size={2}
-          />
-        }
-      />
-      <ButtonGroup fullWidth>
-        <Button
-          color={
-            !setFilter4Cavern.length || setFilter4Cavern.includes(setKey)
-              ? 'success'
-              : 'secondary'
-          }
-          onClick={() =>
-            setSetFilter4Cavern(
-              setFilter4Cavern.length
-                ? toggleInArr([...setFilter4Cavern], setKey)
-                : [setKey]
-            )
-          }
+    <Box
+      component="span"
+      sx={{
+        display: 'inline-flex',
+        flexWrap: 'wrap',
+        gap: 1,
+        alignItems: 'center',
+      }}
+    >
+      {Object.entries(stats).map(([stat, value]) => (
+        <Box
+          key={stat}
+          component="span"
+          sx={{ display: 'inline-flex', gap: 0.5, alignItems: 'center' }}
         >
-          Allow 4p
-        </Button>
-        <Button
-          color={
-            !setFilter2Cavern.length || setFilter2Cavern.includes(setKey)
-              ? 'success'
-              : 'secondary'
-          }
-          onClick={() =>
-            setSetFilter2Cavern(
-              setFilter2Cavern.length
-                ? toggleInArr([...setFilter2Cavern], setKey)
-                : [setKey]
-            )
-          }
-        >
-          Allow 2p
-        </Button>
-      </ButtonGroup>
-    </CardThemed>
-  )
-}
-function AdvSetFilterRelicPlanarCard({
-  setKey,
-  setFilter2Planar,
-  setSetFilter2Planar,
-}: {
-  setKey: RelicPlanarSetKey
-  setFilter2Planar: RelicPlanarSetKey[]
-  setSetFilter2Planar: (setFilter2Planar: RelicPlanarSetKey[]) => void
-}) {
-  return (
-    <CardThemed bgt="light">
-      <CardHeader
-        title={<RelicSetName setKey={setKey} />}
-        avatar={
-          <ImgIcon
-            src={relicAsset(setKey, getDefaultRelicSlot(setKey))}
-            size={2}
-          />
-        }
-      />
-      <ButtonGroup fullWidth>
-        <Button
-          color={
-            !setFilter2Planar.length || setFilter2Planar.includes(setKey)
-              ? 'success'
-              : 'secondary'
-          }
-          onClick={() =>
-            setSetFilter2Planar(
-              setFilter2Planar.length
-                ? toggleInArr([...setFilter2Planar], setKey)
-                : [setKey]
-            )
-          }
-        >
-          Allow 2p
-        </Button>
-      </ButtonGroup>
-    </CardThemed>
+          <StatDisplay statKey={stat as StatKey} showPercent />+
+          {valueString(value, getUnitStr(stat))}
+        </Box>
+      ))}
+    </Box>
   )
 }
