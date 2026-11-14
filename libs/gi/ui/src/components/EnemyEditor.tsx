@@ -85,7 +85,14 @@ export function EnemyExpandCard({ teamId }: { teamId: string }) {
           <Typography>
             {t('enemyEditor.defRed', { value: enemyDefRed_ })}
           </Typography>
-          <Box flexGrow={1} display="flex" justifyContent="flex-end" gap={1}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: 'flex',
+              justifyContent: 'flex-end',
+              gap: 1,
+            }}
+          >
             <ExpandButton
               expand={expanded}
               onClick={toggle}
@@ -146,12 +153,13 @@ export function EnemyEditor({
   const eDefIgn = enemyOverride.enemyDefIgn_ ?? 0
   return (
     <Grid container spacing={1}>
-      <Grid item {...bsProps}>
+      <Grid>
         <Button
           fullWidth
           sx={{ height: '100%' }}
           size="small"
           component="a"
+          nativeButton={false}
           color="warning"
           href="https://genshin-impact.fandom.com/wiki/Resistance#Base_Enemy_Resistances"
           target="_blank"
@@ -160,7 +168,7 @@ export function EnemyEditor({
           {t('enemyEditor.announceBtn')}
         </Button>
       </Grid>
-      <Grid item {...bsProps}>
+      <Grid>
         <StatInput
           sx={{ bgcolor: (t) => t.palette.contentLight.main, width: '100%' }}
           name={<b>{KeyMap.get('enemyLevel')}</b>}
@@ -184,7 +192,7 @@ export function EnemyEditor({
         const val = enemyOverride[statKey]
         const elementImmunity = val === Number.MAX_VALUE
         return (
-          <Grid item key={eleKey} {...bsProps}>
+          <Grid key={eleKey}>
             <StatInput
               sx={{
                 bgcolor: (t) => t.palette.contentLight.main,
@@ -235,7 +243,7 @@ export function EnemyEditor({
           </Grid>
         )
       })}
-      <Grid item {...bsProps}>
+      <Grid>
         <StatInput
           sx={{ bgcolor: (t) => t.palette.contentLight.main, width: '100%' }}
           name={<b>{KeyMap.get('enemyDefIgn_')}</b>}
@@ -250,7 +258,7 @@ export function EnemyEditor({
           percent
         />
       </Grid>
-      <Grid item {...bsProps}>
+      <Grid>
         <StatInput
           sx={{ bgcolor: (t) => t.palette.contentLight.main, width: '100%' }}
           name={<b>{KeyMap.get('enemyDefRed_')}</b>}
@@ -265,7 +273,7 @@ export function EnemyEditor({
           percent
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <small>{t('enemyEditor.note')}</small>
       </Grid>
     </Grid>

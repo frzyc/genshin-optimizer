@@ -21,7 +21,13 @@ export function SortByButton<Key extends string>({
 }) {
   const { t } = useTranslation('ui')
   return (
-    <Box display="flex" alignItems="center" gap={1}>
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 1,
+      }}
+    >
       <Trans t={t} i18nKey="sortBy">
         Sort by:{' '}
       </Trans>

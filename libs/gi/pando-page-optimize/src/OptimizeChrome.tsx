@@ -33,7 +33,6 @@ import {
 } from '@mui/material'
 import { Suspense, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { DesktopDashboardHeader } from './DesktopDashboardHeader'
 import { CompactBuildEquipGrid } from './CompactBuildEquipGrid'
 import { useOptimizePage } from './context/OptimizePageContext'
 import {
@@ -42,6 +41,7 @@ import {
   TEAM_HEADER_HEIGHT_PX,
   useReportTeamHeaderHeight,
 } from './context/TeamHeaderHeightContext'
+import { DesktopDashboardHeader } from './DesktopDashboardHeader'
 import { useRevealOnScrollUp } from './hooks/useRevealOnScrollUp'
 import { OPT_SECTION_IDS } from './nav/optimizeSections'
 import { MobileSectionTabs } from './nav/SectionRail'
@@ -102,7 +102,9 @@ export function OptimizeChrome({
             anchor="bottom"
             open={contextDrawerOpen}
             onClose={() => setContextDrawerOpen(false)}
-            PaperProps={{ sx: { maxHeight: '85vh' } }}
+            slotProps={{
+              paper: { sx: { maxHeight: '85vh' } },
+            }}
           >
             <OptimizeContextControls
               characterKey={characterKey}
@@ -153,9 +155,11 @@ function MobileContextTrigger({
         </Typography>
         <Typography
           variant="caption"
-          color="text.secondary"
           noWrap
-          display="block"
+          sx={{
+            color: 'text.secondary',
+            display: 'block',
+          }}
         >
           {tag ? t('mobileContextHasTarget') : t('mobileContextNoTarget')}
         </Typography>
@@ -196,9 +200,12 @@ function OptimizeContextControls({
       direction={isColumn ? 'column' : 'row'}
       spacing={0.5}
       useFlexGap
-      flexWrap={isColumn ? 'nowrap' : 'wrap'}
-      alignItems="stretch"
-      sx={{ p: isColumn ? 2 : 0, width: '100%' }}
+      sx={{
+        flexWrap: isColumn ? 'nowrap' : 'wrap',
+        alignItems: 'stretch',
+        p: isColumn ? 2 : 0,
+        width: '100%',
+      }}
     >
       {isColumn && (
         <Typography variant="subtitle1" sx={{ mb: 0.5 }}>
@@ -260,11 +267,23 @@ function OptimizeContextControls({
                   <OptTargetSelectedLabel formulaRef={currentRef} />
                 </Typography>
               ) : (
-                <Typography variant="body2" color="text.secondary" noWrap>
+                <Typography
+                  variant="body2"
+                  noWrap
+                  sx={{
+                    color: 'text.secondary',
+                  }}
+                >
                   {t('selectOptTarget')}
                 </Typography>
               )}
-              <Typography variant="caption" color="text.secondary" noWrap>
+              <Typography
+                variant="caption"
+                noWrap
+                sx={{
+                  color: 'text.secondary',
+                }}
+              >
                 {t('hitModeLine', { mode: hitModeLabel })}
               </Typography>
             </Stack>
@@ -316,8 +335,19 @@ function ContextChip({
         ...sx,
       }}
     >
-      <Stack spacing={0} alignItems="flex-start" sx={{ minWidth: 0 }}>
-        <Typography variant="caption" color="text.secondary">
+      <Stack
+        spacing={0}
+        sx={{
+          alignItems: 'flex-start',
+          minWidth: 0,
+        }}
+      >
+        <Typography
+          variant="caption"
+          sx={{
+            color: 'text.secondary',
+          }}
+        >
           {label}
         </Typography>
         <Box
@@ -372,11 +402,11 @@ function TeamContextChip({
     >
       <Typography
         variant="caption"
-        color="text.secondary"
         component="button"
         type="button"
         onClick={onOpenTeamSection}
         sx={{
+          color: 'text.secondary',
           border: 'none',
           background: 'none',
           p: 0,
@@ -391,8 +421,10 @@ function TeamContextChip({
       <Stack
         direction="row"
         spacing={0.25}
-        alignItems="center"
-        sx={{ mt: 0.25 }}
+        sx={{
+          alignItems: 'center',
+          mt: 0.25,
+        }}
       >
         <Tooltip title={t('onField')}>
           <IconButton

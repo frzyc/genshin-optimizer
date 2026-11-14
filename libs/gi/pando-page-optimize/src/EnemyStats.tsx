@@ -28,28 +28,41 @@ export function EnemyStatsSection({
             <NumberInputLazy
               label="Enemy Lvl"
               value={pandoTeam.enemyLvl}
-              inputProps={{ min: 1, max: 200, sx: { width: '5em' } }}
+              slotProps={{
+                htmlInput: { min: 1, max: 200, sx: { width: '5em' } },
+              }}
               onChange={(v) => set({ enemyLvl: v })}
             />
             <NumberInputLazy
               label="RES"
               float
               value={pandoTeam.enemyPreRes}
-              inputProps={{ min: -2, max: 1, step: 0.05, sx: { width: '6em' } }}
+              slotProps={{
+                htmlInput: {
+                  min: -2,
+                  max: 1,
+                  step: 0.05,
+                  sx: { width: '6em' },
+                },
+              }}
               onChange={(v) => set({ enemyPreRes: v })}
             />
             <NumberInputLazy
               label="DEF shred"
               float
               value={pandoTeam.enemyDefRed_}
-              inputProps={{ min: 0, max: 1, step: 0.05, sx: { width: '6em' } }}
+              slotProps={{
+                htmlInput: { min: 0, max: 1, step: 0.05, sx: { width: '6em' } },
+              }}
               onChange={(v) => set({ enemyDefRed_: v })}
             />
             <NumberInputLazy
               label="DEF ignore"
               float
               value={pandoTeam.enemyDefIgn}
-              inputProps={{ min: 0, max: 1, step: 0.05, sx: { width: '6em' } }}
+              slotProps={{
+                htmlInput: { min: 0, max: 1, step: 0.05, sx: { width: '6em' } },
+              }}
               onChange={(v) => set({ enemyDefIgn: v })}
             />
           </Box>

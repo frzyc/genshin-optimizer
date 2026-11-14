@@ -187,21 +187,23 @@ function OptimizationTargetEditorItem({
         onChange={onChange}
         placeholder="Stat Value"
         size="small"
-        inputProps={{ sx: { textAlign: 'right' } }}
-        InputProps={{
-          sx: { flex: 1, fontSize: '0.9rem' },
-          endAdornment: (
-            <InputAdornment position="end" sx={{ ml: 0 }}>
-              {isPercent ? '%' : undefined}{' '}
-              <IconButton
-                aria-label="Delete Stat Constraint"
-                onClick={() => delTarget(path, index)}
-                edge="end"
-              >
-                <DeleteForever sx={{ fontSize: '1.25rem' }} />
-              </IconButton>
-            </InputAdornment>
-          ),
+        slotProps={{
+          htmlInput: { sx: { textAlign: 'right' } },
+          input: {
+            sx: { flex: 1, fontSize: '0.9rem' },
+            endAdornment: (
+              <InputAdornment position="end" sx={{ ml: 0 }}>
+                {isPercent ? '%' : undefined}{' '}
+                <IconButton
+                  aria-label="Delete Stat Constraint"
+                  onClick={() => delTarget(path, index)}
+                  edge="end"
+                >
+                  <DeleteForever sx={{ fontSize: '1.25rem' }} />
+                </IconButton>
+              </InputAdornment>
+            ),
+          },
         }}
       />
     </Box>

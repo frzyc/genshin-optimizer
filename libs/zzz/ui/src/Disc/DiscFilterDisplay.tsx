@@ -165,7 +165,16 @@ export function DiscFilterDisplay({
     <Box>
       <Grid container spacing={1}>
         {/* left */}
-        <Grid item xs={12} md={6} display="flex" flexDirection="column">
+        <Grid
+          size={{
+            xs: 12,
+            md: 6,
+          }}
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
           {/* General */}
           <Trans t={t} i18nKey="subheadings.general" />
           <Stack spacing={1}>
@@ -213,7 +222,13 @@ export function DiscFilterDisplay({
                     })
                   }
                 >
-                  <Box whiteSpace="nowrap">{t('sub', { count: line })}</Box>
+                  <Box
+                    sx={{
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    {t('sub', { count: line })}
+                  </Box>
                   <Chip label={linesTotal[line]} size="small" />
                 </ToggleButton>
               ))}
@@ -228,7 +243,12 @@ export function DiscFilterDisplay({
               value={slotKeys}
             />
           </Stack>
-          <Stack spacing={1.5} pt={1.5}>
+          <Stack
+            spacing={1.5}
+            sx={{
+              pt: 1.5,
+            }}
+          >
             {/* Disc set dropdown */}
             <DiscSetMultiAutocomplete
               totals={setTotal}
@@ -255,7 +275,17 @@ export function DiscFilterDisplay({
           </Stack>
         </Grid>
         {/* right */}
-        <Grid item xs={12} md={6} display="flex" flexDirection="column" gap={1}>
+        <Grid
+          size={{
+            xs: 12,
+            md: 6,
+          }}
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 1,
+          }}
+        >
           {/* Inventory */}
           <Box>
             <Trans t={t} i18nKey="subheadings.inventory" />
@@ -336,7 +366,12 @@ export function DiscFilterDisplay({
                 />
               </Button>
             </Stack>
-            <Stack spacing={1.5} pt={1.5}>
+            <Stack
+              spacing={1.5}
+              sx={{
+                pt: 1.5,
+              }}
+            >
               {/* Filter characters */}
               <Suspense fallback={null}>
                 <BootstrapTooltip

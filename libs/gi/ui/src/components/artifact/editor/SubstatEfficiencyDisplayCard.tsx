@@ -19,8 +19,12 @@ export function SubstatEfficiencyDisplayCard({
   return (
     <CardThemed bgt="light" sx={{ py: 1, px: 2 }}>
       <Grid container spacing={1}>
-        <Grid item>{t(`editor.${eff}`)}</Grid>
-        <Grid item flexGrow={1}>
+        <Grid>{t(`editor.${eff}`)}</Grid>
+        <Grid
+          sx={{
+            flexGrow: 1,
+          }}
+        >
           <InfoTooltip
             title={
               <span>
@@ -32,7 +36,7 @@ export function SubstatEfficiencyDisplayCard({
             }
           />
         </Grid>
-        <Grid item xs="auto">
+        <Grid size="auto">
           <PercentBadge
             valid={valid}
             max={9}

@@ -91,7 +91,12 @@ export default function ResinCard() {
       <Divider />
       <CardContent>
         <CardThemed bgt="light">
-          <CardActionArea sx={{ p: 2 }} component={RouterLink} to="/tools">
+          <CardActionArea
+            sx={{ p: 2 }}
+            component={RouterLink}
+            nativeButton={false}
+            to="/tools"
+          >
             <Typography variant="h2" sx={{ textAlign: 'center' }}>
               <ImgIcon src={imgAssets.resin.fragile} />
               <span>

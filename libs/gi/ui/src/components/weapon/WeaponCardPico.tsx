@@ -48,18 +48,22 @@ export function WeaponCardPicoObj({ weapon }: { weapon: ICachedWeapon }) {
       }}
     >
       <Box
-        display="flex"
-        flexDirection="column"
-        alignContent="flex-end"
         className={`grad-${getWeaponStat(weapon.key).rarity}star`}
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignContent: 'flex-end',
+        }}
       >
         <WeaponNameTooltip weaponKey={weapon.key} addlText={tooltipAddl}>
           <Box
             component="img"
             src={weaponAsset(weapon.key, weapon.ascension >= 2)}
-            maxWidth="100%"
-            maxHeight="100%"
-            sx={{ mt: 'auto' }}
+            sx={{
+              maxWidth: '100%',
+              maxHeight: '100%',
+              mt: 'auto',
+            }}
           />
         </WeaponNameTooltip>
       </Box>

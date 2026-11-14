@@ -156,8 +156,10 @@ function CoverArea({
       <Box
         src={characterAsset(characterKey, 'full')}
         component="img"
-        width="100%"
-        height="auto"
+        sx={{
+          width: '100%',
+          height: 'auto',
+        }}
       />
     </Box>
   )

@@ -40,24 +40,37 @@ export function WeaponFullCardObj({
   if (!weapon || !weaponSheet || !UIData) return null
   return (
     <CardThemed bgt={bgt}>
-      <Box display="flex">
+      <Box
+        sx={{
+          display: 'flex',
+        }}
+      >
         <Box
-          flexShrink={1}
-          maxWidth="35%"
-          display="flex"
-          flexDirection="column"
-          alignContent="flex-end"
           className={`grad-${getWeaponStat(weapon.key).rarity}star`}
+          sx={{
+            flexShrink: 1,
+            maxWidth: '35%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignContent: 'flex-end',
+          }}
         >
           <Box
             component="img"
             src={weaponAsset(weapon.key, weapon.ascension >= 2)}
-            width="100%"
-            height="auto"
-            sx={{ mt: 'auto' }}
+            sx={{
+              width: '100%',
+              height: 'auto',
+              mt: 'auto',
+            }}
           />
         </Box>
-        <Box flexGrow={1} sx={{ p: 1 }}>
+        <Box
+          sx={{
+            flexGrow: 1,
+            p: 1,
+          }}
+        >
           <Typography variant="body2" gutterBottom>
             <strong>
               <WeaponName weaponKey={weapon.key} />

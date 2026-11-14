@@ -248,8 +248,10 @@ export function SubstatInput({
             }
             disabled={!key || (isUnactivatedSubstat && index === 3)}
             error={!!error}
-            inputProps={{
-              sx: { textAlign: 'right' },
+            slotProps={{
+              htmlInput: {
+                sx: { textAlign: 'right' },
+              },
             }}
           />
           {!!rollData.length && (
@@ -283,7 +285,11 @@ export function SubstatInput({
           })}
         </ButtonGroup>
       </Box>
-      <Box px={2}>
+      <Box
+        sx={{
+          px: 2,
+        }}
+      >
         <SliderWrapper
           value={value}
           marks={marks}
@@ -306,7 +312,7 @@ export function SubstatInput({
           <SqBadge color="error">{t('ui:error')}</SqBadge>
         ) : (
           <Grid container>
-            <Grid item>
+            <Grid>
               <SqBadge
                 color={
                   rollNum === 0
@@ -319,7 +325,7 @@ export function SubstatInput({
                   : t('editor.substat.noRoll')}
               </SqBadge>
             </Grid>
-            <Grid item>
+            <Grid>
               {!!rolls.length &&
                 sortedSubstatRolls(rolls, initialValue !== undefined).map(
                   (val, i) => (
@@ -338,7 +344,11 @@ export function SubstatInput({
                   )
                 )}
             </Grid>
-            <Grid item flexGrow={1}>
+            <Grid
+              sx={{
+                flexGrow: 1,
+              }}
+            >
               {index === 3 ? (
                 <FormControlLabel
                   label={t('editor.unactivated')}
@@ -362,7 +372,12 @@ export function SubstatInput({
                 ''
               )}
             </Grid>
-            <Grid item xs="auto" flexShrink={1}>
+            <Grid
+              size="auto"
+              sx={{
+                flexShrink: 1,
+              }}
+            >
               <Typography>
                 <Trans
                   t={t}

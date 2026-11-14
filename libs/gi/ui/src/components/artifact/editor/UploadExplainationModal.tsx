@@ -37,17 +37,35 @@ export function UploadExplainationModal({
               <strong>ENGLISH</strong> artifacts.
             </Trans>
           </Alert>
-          <Grid container spacing={1} mt={1}>
-            <Grid item xs={8} md={6}>
+          <Grid
+            container
+            spacing={1}
+            sx={{
+              mt: 1,
+            }}
+          >
+            <Grid
+              size={{
+                xs: 8,
+                md: 6,
+              }}
+            >
               <Box
                 component="img"
                 alt="snippet of the screen to take"
                 src={Snippet}
-                width="100%"
-                height="auto"
+                sx={{
+                  width: '100%',
+                  height: 'auto',
+                }}
               />
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid
+              size={{
+                xs: 12,
+                md: 6,
+              }}
+            >
               <Trans t={t} i18nKey="editor.uploadExp.section1">
                 <Typography gutterBottom>
                   Using screenshots can dramatically decrease the amount of time
@@ -89,7 +107,12 @@ export function UploadExplainationModal({
                 </Typography>
               </Trans>
             </Grid>
-            <Grid item xs={12} md={7}>
+            <Grid
+              size={{
+                xs: 12,
+                md: 7,
+              }}
+            >
               <Trans t={t} i18nKey="editor.uploadExp.section2">
                 <Typography variant="h5">
                   Adding Screenshot to Genshin Optimizer
@@ -121,13 +144,20 @@ export function UploadExplainationModal({
                 </Typography>
               </Trans>
             </Grid>
-            <Grid item xs={8} md={5}>
+            <Grid
+              size={{
+                xs: 8,
+                md: 5,
+              }}
+            >
               <Box
                 component="img"
                 alt="main screen after importing stats"
                 src={scan_art_main}
-                width="100%"
-                height="auto"
+                sx={{
+                  width: '100%',
+                  height: 'auto',
+                }}
               />
             </Grid>
           </Grid>

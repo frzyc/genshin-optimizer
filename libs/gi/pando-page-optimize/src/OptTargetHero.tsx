@@ -29,7 +29,12 @@ export function OptTargetHero() {
       <FlagIcon color="warning" />
       <Box sx={{ flex: 1 }}>
         <Typography variant="subtitle2">{t('targetHeroTitle')}</Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography
+          variant="body2"
+          sx={{
+            color: 'text.secondary',
+          }}
+        >
           {t('targetHeroBody')}
         </Typography>
       </Box>

@@ -49,8 +49,10 @@ export function ArtifactCardPico({
           component="img"
           className={`grad-${rarity}star`}
           src={artifactAsset(art.setKey, art.slotKey)}
-          maxWidth="100%"
-          maxHeight="100%"
+          sx={{
+            maxWidth: '100%',
+            maxHeight: '100%',
+          }}
         />
         <Typography
           sx={{

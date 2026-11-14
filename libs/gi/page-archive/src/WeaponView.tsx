@@ -54,9 +54,19 @@ export function WeaponView({
           {weaponStat && weaponUIData && (
             <Grid container spacing={1.5}>
               {/* Left column */}
-              <Grid item xs={12} sm={3}>
+              <Grid
+                size={{
+                  xs: 12,
+                  sm: 3,
+                }}
+              >
                 <Grid container spacing={1.5}>
-                  <Grid item xs={6} sm={12}>
+                  <Grid
+                    size={{
+                      xs: 6,
+                      sm: 12,
+                    }}
+                  >
                     <Box sx={{ position: 'relative', display: 'flex' }}>
                       <Box
                         component="img"
@@ -71,7 +81,12 @@ export function WeaponView({
                       />
                     </Box>
                   </Grid>
-                  <Grid item xs={6} sm={12}>
+                  <Grid
+                    size={{
+                      xs: 6,
+                      sm: 12,
+                    }}
+                  >
                     <Typography>
                       <small>{key && <WeaponDesc weaponKey={key} />}</small>
                     </Typography>
@@ -80,12 +95,19 @@ export function WeaponView({
               </Grid>
               {/* right column */}
               <Grid
-                item
-                xs={12}
-                sm={9}
                 sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+                size={{
+                  xs: 12,
+                  sm: 9,
+                }}
               >
-                <Box display="flex" gap={1} flexWrap="wrap">
+                <Box
+                  sx={{
+                    display: 'flex',
+                    gap: 1,
+                    flexWrap: 'wrap',
+                  }}
+                >
                   <Typography variant="h5">
                     <WeaponName weaponKey={key} />
                   </Typography>
@@ -115,7 +137,13 @@ export function WeaponView({
                     />
                   )}
                 </Typography>
-                <Box display="flex" flexDirection="column" gap={1}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 1,
+                  }}
+                >
                   <CardThemed bgt="light">
                     <FieldDisplayList bgt="light">
                       {[

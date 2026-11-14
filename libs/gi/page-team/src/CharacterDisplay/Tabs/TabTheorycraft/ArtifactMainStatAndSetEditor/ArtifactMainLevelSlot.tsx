@@ -63,10 +63,12 @@ export function ArtifactMainLevelSlot({
 
   return (
     <Box
-      display="flex"
-      gap={1}
-      justifyContent="space-between"
-      alignItems="center"
+      sx={{
+        display: 'flex',
+        gap: 1,
+        justifyContent: 'space-between',
+        alignItems: 'center',
+      }}
     >
       <SlotIcon slotKey={slotKey} />
       <CardThemed
@@ -74,12 +76,14 @@ export function ArtifactMainLevelSlot({
       >
         {keys.length === 1 ? (
           <Box
-            p={1}
-            justifyContent="center"
-            alignItems="center"
-            width="100%"
-            display="flex"
-            gap={1}
+            sx={{
+              p: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '100%',
+              display: 'flex',
+              gap: 1,
+            }}
           >
             <StatIcon statKey={keys[0]} iconProps={iconInlineProps} />{' '}
             {KeyMap.getStr(keys[0])}
@@ -130,18 +134,25 @@ export function ArtifactMainLevelSlot({
         onChange={(l) => l !== undefined && setSlot({ level: l })}
         color={artifactLevelVariant(level)}
         size="small"
-        inputProps={{
-          sx: { width: '2ch' },
-          max: 20,
-          min: 0,
-        }}
-        InputProps={{
-          startAdornment: <InputAdornment position="start">+</InputAdornment>,
+        slotProps={{
+          htmlInput: {
+            sx: { width: '2ch' },
+            max: 20,
+            min: 0,
+          },
+          input: {
+            startAdornment: <InputAdornment position="start">+</InputAdornment>,
+          },
         }}
         focused
       />
       <CardThemed sx={{ height: '100%', minWidth: '4em' }}>
-        <Box p={1} textAlign="center">{`${artDisplayValue(
+        <Box
+          sx={{
+            p: 1,
+            textAlign: 'center',
+          }}
+        >{`${artDisplayValue(
           getMainStatDisplayValue(statKey, rarity, level),
           getUnitStr(statKey)
         )}${getUnitStr(statKey)}`}</Box>

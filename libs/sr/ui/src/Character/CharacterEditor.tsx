@@ -68,7 +68,6 @@ function CharacterEditorContent({
           type="number"
           label="Level"
           variant="outlined"
-          inputProps={{ min: 1, max: 90 }}
           value={character?.level || 0}
           onChange={(e) =>
             database.chars.set(characterKey, {
@@ -76,12 +75,14 @@ function CharacterEditorContent({
             })
           }
           disabled={!character}
+          slotProps={{
+            htmlInput: { min: 1, max: 90 },
+          }}
         />
         <TextField
           type="number"
           label="Ascension"
           variant="outlined"
-          inputProps={{ min: 0, max: 6 }}
           value={character?.ascension || 0}
           onChange={(e) =>
             database.chars.set(characterKey, {
@@ -89,6 +90,9 @@ function CharacterEditorContent({
             })
           }
           disabled={!character}
+          slotProps={{
+            htmlInput: { min: 0, max: 6 },
+          }}
         />
         <DropdownButton
           title={`Eidolon Lv. ${character?.eidolon ?? 0}`}
@@ -109,8 +113,13 @@ function CharacterEditorContent({
         <Stack spacing={1}>
           <Typography variant="h6">Abilites</Typography>
           <Divider />
-          <Grid container gap={1}>
-            <Grid item>
+          <Grid
+            container
+            sx={{
+              gap: 1,
+            }}
+          >
+            <Grid>
               <AbilityDropdown
                 characterKey={characterKey}
                 abilityKey="basic"
@@ -125,7 +134,7 @@ function CharacterEditorContent({
                 }}
               />
             </Grid>
-            <Grid item>
+            <Grid>
               <AbilityDropdown
                 characterKey={characterKey}
                 abilityKey="skill"
@@ -140,7 +149,7 @@ function CharacterEditorContent({
                 }}
               />
             </Grid>
-            <Grid item>
+            <Grid>
               <AbilityDropdown
                 characterKey={characterKey}
                 abilityKey="ult"
@@ -155,7 +164,7 @@ function CharacterEditorContent({
                 }}
               />
             </Grid>
-            <Grid item>
+            <Grid>
               <AbilityDropdown
                 characterKey={characterKey}
                 abilityKey="talent"
@@ -173,10 +182,15 @@ function CharacterEditorContent({
           </Grid>
           <Typography variant="h6">Bonus Abilities</Typography>
           <Divider />
-          <Grid container gap={1}>
+          <Grid
+            container
+            sx={{
+              gap: 1,
+            }}
+          >
             {Object.entries(character?.bonusAbilities ?? {}).map(
               ([bonusAbility, enabled]) => (
-                <Grid item key={bonusAbility}>
+                <Grid key={bonusAbility}>
                   <Button
                     color={enabled ? 'success' : 'primary'}
                     onClick={() => {
@@ -206,7 +220,12 @@ function CharacterEditorContent({
           </Grid>
           <Typography variant="h6">Stat Boosts</Typography>
           <Divider />
-          <Grid container gap={1}>
+          <Grid
+            container
+            sx={{
+              gap: 1,
+            }}
+          >
             {Object.entries(character?.statBoosts ?? {}).map(
               ([statBoost, enabled]) => {
                 const { statKey, value } = getCharStatBoostStat(
@@ -214,7 +233,7 @@ function CharacterEditorContent({
                   statBoost
                 )
                 return (
-                  <Grid item key={statBoost}>
+                  <Grid key={statBoost}>
                     <Button
                       color={enabled ? 'success' : 'primary'}
                       onClick={() => {

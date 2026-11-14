@@ -90,14 +90,14 @@ export function BasicFieldDisplay({
   const suffix = field.textSuffix && <span> {field.textSuffix}</span>
   return (
     <Box
-      width="100%"
+      component={component ?? 'div'}
       sx={{
+        width: '100%',
         display: 'flex',
         justifyContent: 'space-between',
         gap: 1,
         py: 0.25,
       }}
-      component={component}
     >
       <Typography color={`${variant}.main`}>
         {text}
@@ -195,8 +195,9 @@ export function NodeFieldDisplay({
 
   return (
     <Box
-      width="100%"
+      component={component ?? 'div'}
       sx={{
+        width: '100%',
         display: 'flex',
         justifyContent: 'space-between',
         gap: 1,
@@ -204,7 +205,6 @@ export function NodeFieldDisplay({
         py: 0.25,
         textDecoration: strikethrough ? 'line-through' : undefined,
       }}
-      component={component}
     >
       <NodeFieldDisplayText node={(calcRes ?? compareCalcRes)!} />
       <Typography

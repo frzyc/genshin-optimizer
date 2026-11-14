@@ -1,4 +1,5 @@
 import { ModalWrapper } from '@genshin-optimizer/common/ui'
+import { CharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { FormulaRef } from '@genshin-optimizer/gi/formula'
 import { sameFormula } from '@genshin-optimizer/gi/formula'
 import type { CatalogJoinedRow } from '@genshin-optimizer/gi/formula-ui'
@@ -11,7 +12,6 @@ import {
   useGiCalcContext,
   useResolvedOptTarget,
 } from '@genshin-optimizer/gi/formula-ui'
-import { CharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import SearchIcon from '@mui/icons-material/Search'
 import {
   Box,
@@ -128,23 +128,32 @@ export function OptTargetCommandDialog({
       >
         <Box>
           <Typography variant="subtitle1">{t('commandPickTarget')}</Typography>
-          <Typography variant="caption" color="text.secondary">
+          <Typography
+            variant="caption"
+            sx={{
+              color: 'text.secondary',
+            }}
+          >
             {t('commandShortcutTarget')}
           </Typography>
         </Box>
 
         <Stack
           direction="row"
-          flexWrap="wrap"
-          gap={1}
-          alignItems="center"
-          sx={{ width: '100%' }}
+          sx={{
+            flexWrap: 'wrap',
+            gap: 1,
+            alignItems: 'center',
+            width: '100%',
+          }}
         >
           <Box sx={{ flex: '1 1 200px', minWidth: 0 }}>
             <Typography
               variant="caption"
-              color="text.secondary"
-              display="block"
+              sx={{
+                color: 'text.secondary',
+                display: 'block',
+              }}
             >
               {t('optTarget')}
             </Typography>
@@ -155,7 +164,9 @@ export function OptTargetCommandDialog({
                 <Typography
                   component="span"
                   variant="body2"
-                  color="text.secondary"
+                  sx={{
+                    color: 'text.secondary',
+                  }}
                 >
                   {t('selectOptTarget')}
                 </Typography>
@@ -175,13 +186,16 @@ export function OptTargetCommandDialog({
           placeholder={t('commandSearchPlaceholder')}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          inputProps={commandSearchInputProps}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon fontSize="small" />
-              </InputAdornment>
-            ),
+          slotProps={{
+            input: {
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon fontSize="small" />
+                </InputAdornment>
+              ),
+            },
+
+            htmlInput: commandSearchInputProps,
           }}
         />
 
@@ -208,8 +222,11 @@ export function OptTargetCommandDialog({
           ) : (
             <Typography
               variant="body2"
-              color="text.secondary"
-              sx={{ py: 2, px: 1 }}
+              sx={{
+                color: 'text.secondary',
+                py: 2,
+                px: 1,
+              }}
             >
               {t('commandSearchNoResults')}
             </Typography>

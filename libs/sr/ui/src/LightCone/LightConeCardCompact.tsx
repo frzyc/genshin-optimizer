@@ -163,10 +163,14 @@ export function LightConeCardCompactObj({
           </Box>
           {/* substats */}
           <Box
-            display="flex"
-            flexDirection="column"
-            justifyContent="space-between"
-            sx={{ py: '3px', pr: '3px', minWidth: '5em' }}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              py: '3px',
+              pr: '3px',
+              minWidth: '5em',
+            }}
           >
             {(['hp', 'atk', 'def'] as const).map((stat) => (
               <SubstatDisplay key={stat} calc={calc} stat={stat} />
@@ -187,13 +191,23 @@ function SubstatDisplay({
   // const numRolls = stat.rolls?.length ?? 0
   // const rollColor = `roll${clamp(numRolls, 1, 6)}`
   return (
-    <Box display="flex" gap={1} alignContent="center">
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 1,
+        alignContent: 'center',
+      }}
+    >
       <Typography
         sx={{ flexGrow: 1, display: 'flex', gap: 0.5, alignItems: 'center' }}
         // color={(numRolls ? `${rollColor}.main` : 'error.main') as any}
         component="span"
       >
-        <Box lineHeight={0}>
+        <Box
+          sx={{
+            lineHeight: 0,
+          }}
+        >
           <StatIcon statKey={stat} iconProps={{ fontSize: 'inherit' }} />
         </Box>
         <span>

@@ -142,9 +142,8 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
         columns={{ xs: 2, sm: 2, md: 2, lg: 2, xl: 2 }}
       >
         <Grid
-          item
-          xs={1}
           sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+          size={1}
         >
           <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
             <WeaponCardNanoObj
@@ -180,7 +179,7 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
           )}
         </Grid>
 
-        <Grid item xs={1}>
+        <Grid size={1}>
           <CardThemed
             sx={{
               flexGrow: 1,
@@ -205,7 +204,7 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
           </CardThemed>
         </Grid>
         {[substatsArr1, substatsArr2].map((arr, i) => (
-          <Grid item xs={1} key={i}>
+          <Grid key={i} size={1}>
             <CardThemed sx={{ flexGrow: 1, height: '100%' }}>
               <Box
                 sx={{

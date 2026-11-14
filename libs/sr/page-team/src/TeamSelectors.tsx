@@ -9,7 +9,13 @@ export default function TeamSelectors({ teamId }: { teamId: string }) {
   const team = useTeam(teamId)!
 
   return (
-    <Box display="flex" flexDirection="column" gap={1}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1,
+      }}
+    >
       {team.teamMetadata.map((meta, index) => (
         <TeammateSelector
           key={`${index}_${meta?.characterKey}`}

@@ -42,6 +42,7 @@ export default function QuickLinksCard() {
               fullWidth
               startIcon={icon}
               component="a"
+              nativeButton={false}
               href={url}
               target="_blank"
               rel="noreferrer"

@@ -9,9 +9,9 @@ import { SpecificDmgTypeSelector } from './SpecificDmgTypeSelector'
 export function OptTargetRow() {
   return (
     <Box
-      display="flex"
-      gap={1}
       sx={{
+        display: 'flex',
+        gap: 1,
         position: 'sticky',
         top: 36,
         zIndex: 100,

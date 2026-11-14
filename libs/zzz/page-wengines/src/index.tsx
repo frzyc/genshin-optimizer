@@ -169,7 +169,13 @@ export default function PageWengine() {
       database.displayWengine.set({ ascending }),
   }
   return (
-    <Box display="flex" flexDirection="column" gap={1}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1,
+      }}
+    >
       <Suspense fallback={false}>
         <WengineSelectionModal
           show={newWengineModalShow}
@@ -192,10 +198,12 @@ export default function PageWengine() {
       <CardThemed>
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Box
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            flexWrap="wrap"
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+            }}
           >
             <TextField
               autoFocus
@@ -206,7 +214,9 @@ export default function PageWengine() {
               }
               label={t('wengineName')}
               sx={{ height: '100%' }}
-              InputProps={{ sx: { height: '100%' } }}
+              slotProps={{
+                input: { sx: { height: '100%' } },
+              }}
             />
             <ShowingAndSortOptionSelect
               showingTextProps={showingTextProps}
@@ -221,7 +231,7 @@ export default function PageWengine() {
       <Box>
         <Grid container spacing={1} columns={columns}>
           {wenginesIdsToShow.map((wengineId) => (
-            <Grid item key={wengineId} xs={1}>
+            <Grid key={wengineId} size={1}>
               <WengineCard
                 key={wengineId}
                 wengineId={wengineId}

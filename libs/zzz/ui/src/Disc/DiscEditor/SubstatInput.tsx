@@ -52,7 +52,13 @@ export default function SubstatInput({
     [rarity]
   )
   return (
-    <Stack direction="row" sx={{ alignItems: 'center' }} gap={1}>
+    <Stack
+      direction="row"
+      sx={{
+        gap: 1,
+        alignItems: 'center',
+      }}
+    >
       <DropdownButton
         // startIcon={key ? <StatIcon statKey={key} /> : undefined}
         title={

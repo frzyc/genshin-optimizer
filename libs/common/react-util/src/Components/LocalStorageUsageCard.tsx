@@ -137,7 +137,13 @@ export function LocalStorageUsageCard() {
             gap: 2,
           }}
         >
-          <Typography pb={4}>{t('storage.info')}</Typography>
+          <Typography
+            sx={{
+              pb: 4,
+            }}
+          >
+            {t('storage.info')}
+          </Typography>
           {/* Stack a bunch of circle bars together */}
           <CircularProgress
             size={100}
@@ -169,36 +175,47 @@ export function LocalStorageUsageCard() {
           <Typography variant="h6">
             <Box
               component="span"
-              color={
-                percent > ERROR_PERCENT_THRESH
-                  ? 'error.main'
-                  : percent > WARNING_PERCENT_THRESH
-                    ? 'warning.main'
-                    : undefined
-              }
+              sx={{
+                color:
+                  percent > ERROR_PERCENT_THRESH
+                    ? 'error.main'
+                    : percent > WARNING_PERCENT_THRESH
+                      ? 'warning.main'
+                      : undefined,
+              }}
             >
               {totalMB.toFixed(2)}MB
             </Box>{' '}
-            <Box component="span" color="secondary.main">
+            <Box
+              component="span"
+              sx={{
+                color: 'secondary.main',
+              }}
+            >
               / {MAX_LOCAL_STORAGE_MB}MB
             </Box>{' '}
             <br />
             <Box
               component="span"
-              color={
-                percent > ERROR_PERCENT_THRESH
-                  ? 'error.main'
-                  : percent > WARNING_PERCENT_THRESH
-                    ? 'warning.main'
-                    : undefined
-              }
+              sx={{
+                color:
+                  percent > ERROR_PERCENT_THRESH
+                    ? 'error.main'
+                    : percent > WARNING_PERCENT_THRESH
+                      ? 'warning.main'
+                      : undefined,
+              }}
             >
               {percent.toFixed(2)}%
             </Box>
           </Typography>
         </Box>
         {/* Table */}
-        <Box display="flex">
+        <Box
+          sx={{
+            display: 'flex',
+          }}
+        >
           <TableContainer sx={{ width: 'max-content' }}>
             <Table
               size="small"
@@ -228,11 +245,12 @@ export function LocalStorageUsageCard() {
                   >
                     <TableCell>
                       <Box
-                        display="inline-block"
-                        width="16px"
-                        height="16px"
-                        mr={2}
                         sx={{
+                          display: 'inline-block',
+                          width: '16px',
+                          height: '16px',
+                          mr: 2,
+
                           backgroundColor:
                             percentByCategory[key] > DISPLAY_PERCENT_THRESH
                               ? COLORS[key]

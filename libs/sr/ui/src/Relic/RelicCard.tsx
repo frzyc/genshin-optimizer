@@ -163,9 +163,13 @@ export function RelicCard({
                 {!slotDescTooltip ? <Skeleton width={10} /> : slotDescTooltip} */}
             </Box>
             <Typography
-              color="text.secondary"
               variant="body2"
-              sx={{ display: 'flex', gap: 0.5, alignItems: 'center' }}
+              sx={{
+                color: 'text.secondary',
+                display: 'flex',
+                gap: 0.5,
+                alignItems: 'center',
+              }}
             >
               <SlotIcon iconProps={{ fontSize: 'inherit' }} slotKey={slotKey} />
               {tk(`relics_gen:${slotKey}`)}
@@ -225,8 +229,16 @@ export function RelicCard({
                 <SubstatDisplay key={substat.key} substat={substat} />
               )
           )}
-          <Box flexGrow={1} />
-          <Typography color="success.main">
+          <Box
+            sx={{
+              flexGrow: 1,
+            }}
+          />
+          <Typography
+            sx={{
+              color: 'success.main',
+            }}
+          >
             {/* TODO: depends on if we swap to using relic set names as card title
               {(setKey && <RelicSetName setKey={setKey} />) || 'Relic Set'}{' '} */}
             {/* TODO: requires sheets
@@ -254,11 +266,13 @@ export function RelicCard({
             )}
           </Box>
           <Box
-            display="flex"
-            gap={1}
-            alignItems="stretch"
-            height="100%"
-            sx={{ '& .MuiButton-root': { minWidth: 0, height: '100%' } }}
+            sx={{
+              display: 'flex',
+              gap: 1,
+              alignItems: 'stretch',
+              height: '100%',
+              '& .MuiButton-root': { minWidth: 0, height: '100%' },
+            }}
           >
             {!!onEdit && (
               <BootstrapTooltip

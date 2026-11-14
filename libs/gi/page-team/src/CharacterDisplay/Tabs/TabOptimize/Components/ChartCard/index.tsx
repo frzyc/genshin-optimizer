@@ -225,11 +225,17 @@ export default function ChartCard({
   return (
     <CardThemed bgt="light">
       <CardContent>
-        <Grid container spacing={1} alignItems="center">
-          <Grid item>
+        <Grid
+          container
+          spacing={1}
+          sx={{
+            alignItems: 'center',
+          }}
+        >
+          <Grid>
             <Typography>{t('tcGraph.vs')}</Typography>
           </Grid>
-          <Grid item>
+          <Grid>
             <BootstrapTooltip
               placement="top"
               title={
@@ -251,7 +257,7 @@ export default function ChartCard({
               </span>
             </BootstrapTooltip>
           </Grid>
-          <Grid item>
+          <Grid>
             <BootstrapTooltip
               title={!plotBase ? '' : t('ui:reset')}
               placement="top"
@@ -267,14 +273,18 @@ export default function ChartCard({
               </span>
             </BootstrapTooltip>
           </Grid>
-          <Grid item flexGrow={1}>
+          <Grid
+            sx={{
+              flexGrow: 1,
+            }}
+          >
             <InfoTooltip
               placement="top"
               title={t('page_character_optimize:tcGraph.desc')}
             />
           </Grid>
           {!!downloadData && (
-            <Grid item>
+            <Grid>
               <Button
                 size="small"
                 startIcon={showMin ? <CheckBox /> : <CheckBoxOutlineBlank />}
@@ -286,7 +296,7 @@ export default function ChartCard({
             </Grid>
           )}
           {!!downloadData && (
-            <Grid item>
+            <Grid>
               <Button
                 size="small"
                 color="info"

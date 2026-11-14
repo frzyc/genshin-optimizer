@@ -254,7 +254,12 @@ export default function ArtifactSetConfig({
           <CardContent>
             <CardThemed bgt="light" sx={{ mb: 1 }}>
               <CardContent>
-                <Box display="flex" gap={1}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    gap: 1,
+                  }}
+                >
                   <Typography>
                     <strong>{t('artSetConfig.modal.setCond.title')}</strong>
                   </Typography>
@@ -402,21 +407,21 @@ export default function ArtifactSetConfig({
               sx={{ mb: 1 }}
               spacing={1}
             >
-              <Grid item xs={1}>
+              <Grid size={1}>
                 <AllSetAllowExcludeCard
                   allowTotal={allowTotals['2']}
                   setNum={2}
                   setAllExclusion={setAllExclusion}
                 />
               </Grid>
-              <Grid item xs={1}>
+              <Grid size={1}>
                 <AllSetAllowExcludeCard
                   allowTotal={allowTotals['4']}
                   setNum={4}
                   setAllExclusion={setAllExclusion}
                 />
               </Grid>
-              <Grid item xs={1}>
+              <Grid size={1}>
                 <CardThemed bgt="light">
                   <CardContent>
                     <Typography gutterBottom>
@@ -598,15 +603,17 @@ function ArtifactSetCard({
     })
   }, [sheet.setEffects, setExclusionSet])
   return (
-    <Grid item key={setKey} xs={1}>
+    <Grid key={setKey} size={1}>
       <CardThemed
         bgt="light"
         sx={{ height: '100%', opacity: slots < 2 ? '50%' : undefined }}
       >
         <Box
           className={`grad-${Math.max(...artStat.rarities)}star`}
-          width="100%"
-          sx={{ display: 'flex' }}
+          sx={{
+            width: '100%',
+            display: 'flex',
+          }}
         >
           <Box
             component="img"
@@ -629,9 +636,11 @@ function ArtifactSetCard({
               {/* If there is ever a 2-Set conditional, we will need to change this */}
               <Typography
                 variant="subtitle1"
-                display="flex"
-                gap={1}
-                alignItems="center"
+                sx={{
+                  display: 'flex',
+                  gap: 1,
+                  alignItems: 'center',
+                }}
               >
                 {artStat.rarities
                   .filter((r) => r >= 3)
@@ -666,8 +675,8 @@ function ArtifactSetCard({
                           />
                         </Typography>
                         <Box
-                          paddingTop={2}
                           sx={{
+                            paddingTop: 2,
                             opacity: setExclusionSet.includes(4) ? 0.6 : 1,
                           }}
                         >

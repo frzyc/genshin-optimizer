@@ -470,9 +470,11 @@ function WeaponCard({ weapon }: { weapon: ICachedWeapon }) {
       <Box
         component="img"
         src={weaponAsset(weapon.key, weapon.ascension >= 2)}
-        maxWidth="100%"
-        maxHeight="50px"
-        sx={{ mt: 'auto' }}
+        sx={{
+          maxWidth: '100%',
+          maxHeight: '50px',
+          mt: 'auto',
+        }}
       />
       <Box
         sx={{

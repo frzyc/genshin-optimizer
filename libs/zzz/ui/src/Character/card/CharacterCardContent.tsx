@@ -23,7 +23,13 @@ export function CharacterCardContent({
   const { level, core } = character
   return (
     <>
-      <Box display="flex" gap={1.5} alignItems="center">
+      <Box
+        sx={{
+          display: 'flex',
+          gap: 1.5,
+          alignItems: 'center',
+        }}
+      >
         <ImgIcon size={2} src={rarityDefIcon(rarity)} />
         <Typography variant="h4">
           <CharacterName characterKey={characterKey} />
@@ -32,39 +38,57 @@ export function CharacterCardContent({
         <ImgIcon size={2} src={specialtyDefIcon(specialty)} />
       </Box>
 
-      <Box display="flex" gap={3} alignItems="center">
+      <Box
+        sx={{
+          display: 'flex',
+          gap: 3,
+          alignItems: 'center',
+        }}
+      >
         <Box>
           <Typography
             component="span"
             variant="h5"
-            whiteSpace="nowrap"
-            fontStyle="italic"
-            fontWeight="bold"
-            fontSize="1.625rem"
             sx={{
+              whiteSpace: 'nowrap',
+              fontStyle: 'italic',
+              fontWeight: 'bold',
+              fontSize: '1.625rem',
               textShadow: 'none',
             }}
           >
             <strong>{t('characterCard.charLevel', { level: level })}</strong>
           </Typography>
         </Box>
-        <Box display="flex" gap={1.5} marginLeft="14px" alignItems="center">
+        <Box
+          sx={{
+            display: 'flex',
+            gap: 1.5,
+            marginLeft: '14px',
+            alignItems: 'center',
+          }}
+        >
           {allSkillKeys.map((item, index) => (
-            <Box key={index} position="relative">
+            <Box
+              key={index}
+              sx={{
+                position: 'relative',
+              }}
+            >
               <ImgIcon size={2} src={commonDefIcon(item)} />
               <Box
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                position="absolute"
-                bottom="-10px"
-                left="-4px"
-                width="1.7em"
-                height="1.7em"
-                borderRadius="1rem"
-                fontWeight="bold"
-                fontSize="0.8rem"
                 sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  position: 'absolute',
+                  bottom: '-10px',
+                  left: '-4px',
+                  width: '1.7em',
+                  height: '1.7em',
+                  borderRadius: '1rem',
+                  fontWeight: 'bold',
+                  fontSize: '0.8rem',
                   background: '#1C1C1C',
                 }}
               >
@@ -72,21 +96,25 @@ export function CharacterCardContent({
               </Box>
             </Box>
           ))}
-          <Box position="relative">
+          <Box
+            sx={{
+              position: 'relative',
+            }}
+          >
             <ImgIcon size={2} src={commonDefIcon('core')} />
             <Box
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-              position="absolute"
-              bottom="-10px"
-              left="-4px"
-              width="1.7em"
-              height="1.7em"
-              borderRadius="1rem"
-              fontWeight="bold"
-              fontSize="0.8rem"
               sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                position: 'absolute',
+                bottom: '-10px',
+                left: '-4px',
+                width: '1.7em',
+                height: '1.7em',
+                borderRadius: '1rem',
+                fontWeight: 'bold',
+                fontSize: '0.8rem',
                 background: '#1C1C1C',
               }}
             >

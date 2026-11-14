@@ -185,7 +185,11 @@ function DebugReadModalContent({
       <CardContent>
         <CardThemed bgt="normal">
           <CardContent>
-            <Stack gap={1}>
+            <Stack
+              sx={{
+                gap: 1,
+              }}
+            >
               Computed value: {computed?.val}
               <Divider />
               <Typography variant="h6">Read</Typography>

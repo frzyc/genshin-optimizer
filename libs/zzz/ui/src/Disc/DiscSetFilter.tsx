@@ -168,7 +168,14 @@ function AdvSetFilterCard({
         </Box>
         <Grid container spacing={1}>
           {allDiscSetKeys.map((d) => (
-            <Grid item key={d} xs={1} md={2} lg={3}>
+            <Grid
+              key={d}
+              size={{
+                xs: 1,
+                md: 2,
+                lg: 3,
+              }}
+            >
               <AdvSetFilterDiscCard
                 setKey={d}
                 setFilter4={setFilter4}

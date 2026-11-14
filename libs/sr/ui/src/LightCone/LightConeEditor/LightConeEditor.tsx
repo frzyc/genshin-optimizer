@@ -70,7 +70,12 @@ export function LightConeEditor({
 
   const footer = useMemo(
     () => (
-      <Box display="flex" gap={2}>
+      <Box
+        sx={{
+          display: 'flex',
+          gap: 2,
+        }}
+      >
         <Button
           startIcon={<Add />}
           onClick={() => {

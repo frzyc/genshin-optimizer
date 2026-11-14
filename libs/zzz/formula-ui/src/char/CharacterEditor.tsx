@@ -26,7 +26,7 @@ import {
   IconButton,
   Skeleton,
 } from '@mui/material'
-import type { Variant } from '@mui/material/styles/createTypography'
+import type { TypographyVariant as Variant } from '@mui/material/styles'
 import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
@@ -114,8 +114,19 @@ export function Content({ onClose }: { onClose?: () => void }) {
   }, [characterKey])
 
   return (
-    <Box display="flex" flexDirection="column" gap={1}>
-      <Box display="flex" gap={1}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1,
+      }}
+    >
+      <Box
+        sx={{
+          display: 'flex',
+          gap: 1,
+        }}
+      >
         <Button
           color="error"
           onClick={() => deleteCharacter()}
@@ -132,7 +143,15 @@ export function Content({ onClose }: { onClose?: () => void }) {
       </Box>
       <Box>
         <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
-          <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
+          <Grid
+            size={{
+              xs: 6,
+              sm: 4,
+              md: 4,
+              lg: 4,
+              xl: 4,
+            }}
+          >
             <CardThemed
               sx={{
                 height: '100%',
@@ -181,22 +200,23 @@ export function Content({ onClose }: { onClose?: () => void }) {
             </CardThemed>
           </Grid>
           <Grid
-            item
-            xs={6}
-            sm={8}
-            md={8}
-            lg={8}
-            xl={8}
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+            size={{
+              xs: 6,
+              sm: 8,
+              md: 8,
+              lg: 8,
+              xl: 8,
+            }}
           >
             <Box>
               <Grid container columns={3} spacing={1}>
                 {allSkillKeys.map((sk) => (
-                  <Grid item xs={1} key={sk}>
+                  <Grid key={sk} size={1}>
                     <SkillDropdown key={sk} skillKey={sk} />
                   </Grid>
                 ))}
-                <Grid item xs={1} key={'core'}>
+                <Grid key={'core'} size={1}>
                   <CoreDropdown />
                 </Grid>
               </Grid>

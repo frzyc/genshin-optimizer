@@ -151,9 +151,19 @@ export function WeaponEditor({
           {weaponStat && weaponUIData && (
             <Grid container spacing={1.5}>
               {/* Left column */}
-              <Grid item xs={12} sm={3}>
+              <Grid
+                size={{
+                  xs: 12,
+                  sm: 3,
+                }}
+              >
                 <Grid container spacing={1.5}>
-                  <Grid item xs={6} sm={12}>
+                  <Grid
+                    size={{
+                      xs: 6,
+                      sm: 12,
+                    }}
+                  >
                     <Box sx={{ position: 'relative', display: 'flex' }}>
                       <Box
                         component="img"
@@ -182,7 +192,12 @@ export function WeaponEditor({
                       </IconButton>
                     </Box>
                   </Grid>
-                  <Grid item xs={6} sm={12}>
+                  <Grid
+                    size={{
+                      xs: 6,
+                      sm: 12,
+                    }}
+                  >
                     <Typography>
                       <small>{key && <WeaponDesc weaponKey={key} />}</small>
                     </Typography>
@@ -191,12 +206,19 @@ export function WeaponEditor({
               </Grid>
               {/* right column */}
               <Grid
-                item
-                xs={12}
-                sm={9}
                 sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+                size={{
+                  xs: 12,
+                  sm: 9,
+                }}
               >
-                <Box display="flex" gap={1} flexWrap="wrap">
+                <Box
+                  sx={{
+                    display: 'flex',
+                    gap: 1,
+                    flexWrap: 'wrap',
+                  }}
+                >
                   <ButtonGroup>
                     <Button color="info" onClick={onShowModal}>
                       {(key && <WeaponName weaponKey={key} />) ||
@@ -216,7 +238,13 @@ export function WeaponEditor({
                     </IconButton>
                   )}
                 </Box>
-                <Box display="flex" gap={1} flexWrap="wrap">
+                <Box
+                  sx={{
+                    display: 'flex',
+                    gap: 1,
+                    flexWrap: 'wrap',
+                  }}
+                >
                   {key && (
                     <WeaponLevelSelect
                       level={level}
@@ -243,11 +271,19 @@ export function WeaponEditor({
                     />
                   )}
                 </Typography>
-                <Box display="flex" flexDirection="column" gap={1}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 1,
+                  }}
+                >
                   <CardThemed>
                     <CardHeader
                       title={'Main Stats'}
-                      titleTypographyProps={{ variant: 'subtitle2' }}
+                      slotProps={{
+                        title: { variant: 'subtitle2' },
+                      }}
                     />
                     <Divider />
                     <FieldDisplayList>
@@ -281,7 +317,11 @@ export function WeaponEditor({
         {footer && id && (
           <CardContent sx={{ py: 1 }}>
             <Grid container spacing={1}>
-              <Grid item flexGrow={1}>
+              <Grid
+                sx={{
+                  flexGrow: 1,
+                }}
+              >
                 <LocationAutocomplete
                   location={location}
                   setLocation={setLocation}

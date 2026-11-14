@@ -38,22 +38,24 @@ export default function PageHome() {
     return (
       <Grid container spacing={2} direction={'row-reverse'}>
         <Grid
-          item
-          xs={12}
-          lg={5}
-          xl={4}
           sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+          size={{
+            xs: 12,
+            lg: 5,
+            xl: 4,
+          }}
         >
           <QuickLinksCard />
           <ResinCard />
           <AdResponsive dataAdSlot="6687816711" Ad={GOAdWrapper} />
         </Grid>
         <Grid
-          item
-          xs={12}
-          lg={7}
-          xl={8}
           sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+          size={{
+            xs: 12,
+            lg: 7,
+            xl: 8,
+          }}
         >
           <IntroCard />
           <LootbarCard />
@@ -65,7 +67,14 @@ export default function PageHome() {
       </Grid>
     )
   return (
-    <Box my={1} display="flex" flexDirection="column" gap={1}>
+    <Box
+      sx={{
+        my: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1,
+      }}
+    >
       <IntroCard />
       <LootbarCard />
       <QuickLinksCard />

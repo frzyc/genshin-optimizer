@@ -85,6 +85,7 @@ export default function PageArchive() {
               key={value}
               label={t(i18Key)}
               component={RouterLink}
+              nativeButton={false}
               to={`/archive${to}`}
             />
           )

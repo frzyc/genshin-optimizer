@@ -64,9 +64,21 @@ export function ArtifactSetEditor({
 
   return (
     <CardThemed bgt="light">
-      <Box display="flex">
+      <Box
+        sx={{
+          display: 'flex',
+        }}
+      >
         <ArtifactSetTooltip setKey={setKey} numInSet={value}>
-          <Box flexGrow={1} p={1} display="flex" gap={1} alignItems="center">
+          <Box
+            sx={{
+              flexGrow: 1,
+              p: 1,
+              display: 'flex',
+              gap: 1,
+              alignItems: 'center',
+            }}
+          >
             <ImgIcon size={2} src={artifactDefIcon(setKey)} />
             <Box>
               <ArtifactSetName setKey={setKey} />
@@ -77,7 +89,15 @@ export function ArtifactSetEditor({
         <ButtonGroup>
           <DropdownButton
             size="small"
-            title={<Box whiteSpace="nowrap">{value}-set</Box>}
+            title={
+              <Box
+                sx={{
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {value}-set
+              </Box>
+            }
             disabled={disabled}
           >
             {Object.keys(artifactSheet.setEffects)

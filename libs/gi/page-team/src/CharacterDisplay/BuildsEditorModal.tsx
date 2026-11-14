@@ -41,12 +41,14 @@ export function BuildsEditorModal({
         <CardHeader
           title={t('buildInfo.editorTitle')}
           avatar={<CheckroomIcon />}
-          titleTypographyProps={{ variant: 'h6' }}
           action={
             <IconButton onClick={onClose}>
               <CloseIcon />
             </IconButton>
           }
+          slotProps={{
+            title: { variant: 'h6' },
+          }}
         />
         <Divider />
         <CardContent>
@@ -84,13 +86,13 @@ function BuildManagementContent({ onClose }: { onClose: () => void }) {
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
       <EquippedBuildInfoAlert />
       <Grid container columns={columns} spacing={2}>
-        <Grid item xs={1}>
+        <Grid size={1}>
           <BuildEquipped
             active={loadoutDatum?.buildType === 'equipped'}
             onChangeBuild={onChangeBuild}
           />
         </Grid>
-        <Grid item xs={1}>
+        <Grid size={1}>
           <AdResponsive dataAdSlot="5385429639" bgt="light" Ad={GOAdWrapper} />
         </Grid>
       </Grid>
@@ -112,7 +114,7 @@ function BuildManagementContent({ onClose }: { onClose: () => void }) {
       <Box>
         <Grid container columns={columns} spacing={2}>
           {characterBuilds.map(([id]) => (
-            <Grid item xs={1} key={id}>
+            <Grid key={id} size={1}>
               <BuildReal
                 buildId={id}
                 active={
@@ -148,7 +150,7 @@ function BuildManagementContent({ onClose }: { onClose: () => void }) {
       <Box>
         <Grid container columns={columns} spacing={2}>
           {characterTcBuilds.map(([id]) => (
-            <Grid item xs={1} key={id}>
+            <Grid key={id} size={1}>
               <BuildTc
                 buildTcId={id}
                 active={

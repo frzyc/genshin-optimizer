@@ -138,7 +138,7 @@ export function CharacterSingleSelectionModal({
         >
           <Grid container spacing={0.5} columns={{ xs: 1, sm: 2, lg: 3 }}>
             {showNone && (
-              <Grid item xs={1}>
+              <Grid size={1}>
                 <CharacterCard
                   characterKey={undefined}
                   onClick={() => {
@@ -149,7 +149,7 @@ export function CharacterSingleSelectionModal({
               </Grid>
             )}
             {characterKeyList.map((characterKey) => (
-              <Grid item key={characterKey} xs={1}>
+              <Grid key={characterKey} size={1}>
                 <CharacterCard
                   characterKey={characterKey}
                   onClick={() => {
@@ -293,7 +293,12 @@ function CharacterSelectionModalBase({
               <CloseIcon />
             </IconButton>
           </Box>
-          <Box display="flex" gap={1}>
+          <Box
+            sx={{
+              display: 'flex',
+              gap: 1,
+            }}
+          >
             <TextField
               autoFocus
               value={filterSearchSortProps.searchTerm}
@@ -303,8 +308,10 @@ function CharacterSelectionModalBase({
               label={t('characterName')}
               size="small"
               sx={{ height: '100%', mr: 'auto' }}
-              InputProps={{
-                sx: { height: '100%' },
+              slotProps={{
+                input: {
+                  sx: { height: '100%' },
+                },
               }}
             />
             <SortByButton
@@ -440,14 +447,18 @@ function SelectionCard({
                       <Typography
                         variant="body2"
                         component="span"
-                        whiteSpace="nowrap"
+                        sx={{
+                          whiteSpace: 'nowrap',
+                        }}
                       >
                         {t('charLevel', { level: level })}
                       </Typography>
                       <Typography
                         variant="body2"
                         component="span"
-                        color="text.secondary"
+                        sx={{
+                          color: 'text.secondary',
+                        }}
                       >
                         /{milestoneMaxLevel[promotion]}
                       </Typography>

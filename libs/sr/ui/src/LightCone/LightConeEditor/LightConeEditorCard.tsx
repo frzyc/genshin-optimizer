@@ -52,7 +52,16 @@ export function LightConeEditorCard({
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
         <Grid container spacing={1} columns={{ xs: 1, md: 2 }}>
           {/* name */}
-          <Grid item xs={1} md={true} display="flex" flexDirection="column">
+          <Grid
+            size={{
+              xs: 1,
+              md: 'grow',
+            }}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+          >
             <LightConeAutocomplete
               lcKey={lightCone?.key ?? ''}
               setLCKey={(lcKey) => setLightCone({ key: lcKey as LightConeKey })}
@@ -61,7 +70,15 @@ export function LightConeEditorCard({
           </Grid>
 
           {/* superimpose */}
-          <Grid item xs={true} md="auto" display="flex">
+          <Grid
+            size={{
+              xs: 'grow',
+              md: 'auto',
+            }}
+            sx={{
+              display: 'flex',
+            }}
+          >
             <SuperimpositionDropdown
               superimpose={lightCone?.superimpose ?? 1}
               setSuperimposition={(sk: SuperimposeKey) =>
@@ -71,9 +88,23 @@ export function LightConeEditorCard({
             />
           </Grid>
         </Grid>
-        <Grid container spacing={1} columns={{ xs: 1, md: 4 }} marginBottom={1}>
+        <Grid
+          container
+          spacing={1}
+          columns={{ xs: 1, md: 4 }}
+          sx={{
+            marginBottom: 1,
+          }}
+        >
           {/* level */}
-          <Grid item xs={1} display="flex" flexDirection="row" gap={1}>
+          <Grid
+            size={1}
+            sx={{
+              display: 'flex',
+              flexDirection: 'row',
+              gap: 1,
+            }}
+          >
             <LevelDropdown
               level={lightCone?.level}
               ascension={lightCone?.ascension}
@@ -85,13 +116,24 @@ export function LightConeEditorCard({
           </Grid>
 
           {/* ascension */}
-          <Grid item xs={1} display="flex" gap={1}>
+          <Grid
+            size={1}
+            sx={{
+              display: 'flex',
+              gap: 1,
+            }}
+          >
             <CardThemed
               bgt="light"
               sx={{ p: 1, flexGrow: 1, alignContent: 'center' }}
             >
               <Suspense fallback={<Skeleton width="60%" />}>
-                <Typography color="text.secondary" align="center">
+                <Typography
+                  align="center"
+                  sx={{
+                    color: 'text.secondary',
+                  }}
+                >
                   {t('editor.ascension')} {lightCone?.ascension || 0}
                 </Typography>
               </Suspense>
@@ -101,12 +143,15 @@ export function LightConeEditorCard({
           {/* character location */}
           {!hideLocation && (
             <Grid
-              item
-              xs={1}
-              md={2}
-              display="flex"
-              flexDirection="column"
-              gap={1}
+              size={{
+                xs: 1,
+                md: 2,
+              }}
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 1,
+              }}
             >
               <LocationAutocomplete
                 locKey={lightCone?.location ?? ''}

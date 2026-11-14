@@ -123,7 +123,9 @@ function SelectorSection({
           avatar={header.icon}
           title={header.title}
           action={header.action && <SqBadge>{header.action}</SqBadge>}
-          titleTypographyProps={{ variant: 'subtitle1' }}
+          slotProps={{
+            title: { variant: 'subtitle1' },
+          }}
         />
       )}
       <Divider />

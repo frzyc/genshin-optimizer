@@ -86,13 +86,13 @@ function BuildEquip({
   const weaponTypeKey = getCharStat(characterKey).weaponType
   return (
     <Grid container spacing={1} columns={{ xs: 2, sm: 2, md: 2, lg: 3, xl: 3 }}>
-      <Grid item xs={1}>
+      <Grid size={1}>
         <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
           <WeaponCardNano weaponId={weaponId} weaponTypeKey={weaponTypeKey} />
         </CardThemed>
       </Grid>
       {Object.entries(artifactIds).map(([slotKey, id]) => (
-        <Grid item key={id || slotKey} xs={1}>
+        <Grid key={id || slotKey} size={1}>
           <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
             <ArtifactCardNano artifactId={id} slotKey={slotKey} />
           </CardThemed>

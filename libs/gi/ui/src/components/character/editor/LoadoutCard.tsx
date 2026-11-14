@@ -51,7 +51,7 @@ export function LoadoutCard({
         <CardContent sx={{ p: 1 }}>
           <Grid container columns={columns} spacing={1}>
             {teamIds.map((teamId) => (
-              <Grid item xs={1} key={teamId}>
+              <Grid key={teamId} size={1}>
                 <TeamCard
                   teamId={teamId}
                   onClick={(cid) =>
@@ -60,7 +60,7 @@ export function LoadoutCard({
                 />
               </Grid>
             ))}
-            <Grid item xs={1}>
+            <Grid size={1}>
               <Button
                 fullWidth
                 sx={{ height: '100%', backgroundColor: 'contentNormal.main' }}

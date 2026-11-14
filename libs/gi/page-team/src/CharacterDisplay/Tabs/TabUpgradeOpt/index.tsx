@@ -559,14 +559,18 @@ export default function TabUpopt() {
     <CardThemed bgt="light">
       <CardContent>
         <Grid container>
-          <Grid item flexGrow={1}>
+          <Grid
+            sx={{
+              flexGrow: 1,
+            }}
+          >
             <Pagination
               count={numPages}
               page={currentPageIndex + 1}
               onChange={setPage}
             />
           </Grid>
-          <Grid item>
+          <Grid>
             <ShowingArt
               numShowing={indexes.length}
               total={upOptCalc?.candidates.length ?? 0}
@@ -578,7 +582,13 @@ export default function TabUpopt() {
   )
 
   return (
-    <Box display="flex" flexDirection="column" gap={1}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1,
+      }}
+    >
       {noArtifact && <NoArtWarning />}
       {/* Build Generator Editor */}
       {dataContext && (
@@ -588,13 +598,16 @@ export default function TabUpopt() {
               <Grid container spacing={1}>
                 {/* 1*/}
                 <Grid
-                  item
-                  xs={12}
-                  sm={6}
-                  lg={3}
-                  display="flex"
-                  flexDirection="column"
-                  gap={1}
+                  size={{
+                    xs: 12,
+                    sm: 6,
+                    lg: 3,
+                  }}
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 1,
+                  }}
                 >
                   {/* character card */}
                   <OptCharacterCard characterKey={characterKey} />
@@ -604,13 +617,16 @@ export default function TabUpopt() {
 
                 {/* 2 */}
                 <Grid
-                  item
-                  xs={12}
-                  sm={6}
-                  lg={4}
-                  display="flex"
-                  flexDirection="column"
-                  gap={1}
+                  size={{
+                    xs: 12,
+                    sm: 6,
+                    lg: 4,
+                  }}
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 1,
+                  }}
                 >
                   <LevelFilter
                     levelTotal={levelTotal['in']}
@@ -643,13 +659,16 @@ export default function TabUpopt() {
                 </Grid>
                 {/* 3 */}
                 <Grid
-                  item
-                  xs={12}
-                  sm={6}
-                  lg={5}
-                  display="flex"
-                  flexDirection="column"
-                  gap={1}
+                  size={{
+                    xs: 12,
+                    sm: 6,
+                    lg: 5,
+                  }}
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 1,
+                  }}
                 >
                   <ArtifactSetConfig disabled={false} />
                   <AddArtifactButton
@@ -659,7 +678,12 @@ export default function TabUpopt() {
                   <CardThemed bgt="light">
                     <CardContent>
                       <Stack spacing={1}>
-                        <Box display="flex" alignItems="center">
+                        <Box
+                          sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                          }}
+                        >
                           <FormControlLabel
                             control={
                               <Checkbox
@@ -693,7 +717,12 @@ export default function TabUpopt() {
                           />
                         </Box>
                         <Box>
-                          <Typography variant="body2" color="text.secondary">
+                          <Typography
+                            variant="body2"
+                            sx={{
+                              color: 'text.secondary',
+                            }}
+                          >
                             {t('upOptReshape.rolls')}
                           </Typography>
                           <ButtonGroup size="small" sx={{ mt: 0.5 }}>
@@ -723,7 +752,12 @@ export default function TabUpopt() {
                   <CardThemed bgt="light">
                     <CardContent>
                       <Stack spacing={1}>
-                        <Box display="flex" alignItems="center">
+                        <Box
+                          sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                          }}
+                        >
                           <FormControlLabel
                             control={
                               <Checkbox
@@ -746,7 +780,12 @@ export default function TabUpopt() {
                           />
                         </Box>
                         <Box>
-                          <Typography variant="body2" color="text.secondary">
+                          <Typography
+                            variant="body2"
+                            sx={{
+                              color: 'text.secondary',
+                            }}
+                          >
                             {t('upOptDefine.substats')}
                             <SqBadge color="info" sx={{ ml: 1 }}>
                               {upOptDefineSubstats.length}
@@ -756,7 +795,7 @@ export default function TabUpopt() {
                             {allSubstatKeys.map((key) => {
                               const selected = upOptDefineSubstats.includes(key)
                               return (
-                                <Grid item key={key}>
+                                <Grid key={key}>
                                   <Button
                                     size="small"
                                     color={selected ? 'success' : 'secondary'}
@@ -781,7 +820,12 @@ export default function TabUpopt() {
                           </Grid>
                         </Box>
                         <Box>
-                          <Typography variant="body2" color="text.secondary">
+                          <Typography
+                            variant="body2"
+                            sx={{
+                              color: 'text.secondary',
+                            }}
+                          >
                             {t('upOptDefine.sets')}
                             <SqBadge color="info" sx={{ ml: 1 }}>
                               {defineSets.length}
@@ -789,10 +833,12 @@ export default function TabUpopt() {
                           </Typography>
                           {defineSets.length ? (
                             <Box
-                              display="flex"
-                              flexWrap="wrap"
-                              gap={0.5}
-                              sx={{ mt: 0.5 }}
+                              sx={{
+                                display: 'flex',
+                                flexWrap: 'wrap',
+                                gap: 0.5,
+                                mt: 0.5,
+                              }}
                             >
                               {defineSets.map(
                                 ({ setKey, slotKeys, arbitrary }) => (
@@ -831,7 +877,9 @@ export default function TabUpopt() {
                           ) : (
                             <Typography
                               variant="caption"
-                              color="text.secondary"
+                              sx={{
+                                color: 'text.secondary',
+                              }}
                             >
                               {t('upOptDefine.setsEmpty')}
                             </Typography>
@@ -892,11 +940,11 @@ export default function TabUpopt() {
             <CardThemed bgt="light">
               <CardContent>
                 <Grid container spacing={1}>
-                  <Grid item />
-                  <Grid item>
+                  <Grid />
+                  <Grid>
                     <HitModeToggle size="small" />
                   </Grid>
-                  <Grid item>
+                  <Grid>
                     <ReactionToggle size="small" />
                   </Grid>
                 </Grid>
@@ -955,7 +1003,11 @@ function ShowingArt({
 }) {
   const { t } = useTranslation('page_character_optimize')
   return (
-    <Typography color="text.secondary">
+    <Typography
+      sx={{
+        color: 'text.secondary',
+      }}
+    >
       <Trans t={t} i18nKey="upOptShowingNum" count={numShowing} value={total}>
         Showing {{ count: numShowing }} out of {{ value: total }} Artifacts
       </Trans>
