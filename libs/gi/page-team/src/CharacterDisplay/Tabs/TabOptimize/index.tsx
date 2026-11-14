@@ -13,19 +13,24 @@ import {
   DropdownButton,
   InfoTooltip,
   ModalWrapper,
+  SolidToggleButtonGroup,
   SqBadge,
+  StarsDisplay,
   useConstObj,
   usePrev,
 } from '@genshin-optimizer/common/ui'
 import {
   bulkCatTotal,
+  catTotal,
+  handleMultiSelect,
   notEmpty,
   objKeyMap,
   objPathValue,
   range,
 } from '@genshin-optimizer/common/util'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import type { ArtifactRarity, CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
+  allArtifactRarityKeys,
   allArtifactSlotKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
@@ -83,12 +88,14 @@ import {
   ButtonGroup,
   CardContent,
   CardHeader,
+  Chip,
   Divider,
   Grid,
   IconButton,
   MenuItem,
   Skeleton,
   TextField,
+  ToggleButton,
   Typography,
 } from '@mui/material'
 import type React from 'react'
@@ -172,6 +179,7 @@ export default function TabBuild() {
     maxBuildsToShow,
     levelLow,
     levelHigh,
+    rarity,
     generatedBuildListId,
     useTeammateBuild,
   } = buildSetting
@@ -204,6 +212,7 @@ export default function TabBuild() {
         artExclusion,
         levelLow,
         levelHigh,
+        rarity,
         useExcludedArts,
         useTeammateBuild,
       } = optConfig
@@ -214,6 +223,7 @@ export default function TabBuild() {
           return false
         if (art.level < levelLow) return false
         if (art.level > levelHigh) return false
+        if (!rarity.includes(art.rarity)) return false
         const mainStats = mainStatKeys[art.slotKey]
         if (mainStats?.length && !mainStats.includes(art.mainStatKey))
           return false
@@ -290,6 +300,17 @@ export default function TabBuild() {
       filteredArtIdMap,
       teammateArtifactIds,
     ])
+
+  const rarityTotal = useMemo(
+    () =>
+      catTotal(allArtifactRarityKeys, (ct) =>
+        artEntries.forEach(([id, { rarity }]) => {
+          ct[rarity].total++
+          if (filteredArtIdMap[id]) ct[rarity].current++
+        })
+      ),
+    [artEntries, filteredArtIdMap]
+  )
 
   const tabFocused = useRef(true)
   useEffect(() => {
@@ -599,6 +620,14 @@ export default function TabBuild() {
             levelTotal={levelTotal['in']}
             levelLow={levelLow}
             levelHigh={levelHigh}
+            disabled={generatingBuilds}
+            optConfigId={optConfigId}
+          />
+
+          {/* Rarity Filter */}
+          <RarityFilter
+            rarityTotal={rarityTotal}
+            rarity={rarity}
             disabled={generatingBuilds}
             optConfigId={optConfigId}
           />
@@ -982,6 +1011,52 @@ const LevelFilter = memo(function LevelFilter({
         }
         disabled={disabled}
       />
+    </CardThemed>
+  )
+})
+
+const rarityHandler = handleMultiSelect([...allArtifactRarityKeys])
+const RarityFilter = memo(function RarityFilter({
+  rarityTotal,
+  rarity,
+  disabled,
+  optConfigId,
+}: {
+  rarityTotal: Record<ArtifactRarity, string>
+  rarity: ArtifactRarity[]
+  disabled: boolean
+  optConfigId: string
+}) {
+  const database = useDatabase()
+  const { t } = useTranslation('page_character_optimize')
+  return (
+    <CardThemed bgt="light">
+      <CardContent>
+        <Typography sx={{ fontWeight: 'bold' }}>{t('rarityFilter')}</Typography>
+      </CardContent>
+      <Divider />
+      <SolidToggleButtonGroup
+        fullWidth
+        value={rarity}
+        size="small"
+        disabled={disabled}
+      >
+        {allArtifactRarityKeys.map((star) => (
+          <ToggleButton
+            key={star}
+            sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}
+            value={star}
+            onClick={() =>
+              database.optConfigs.set(optConfigId, {
+                rarity: rarityHandler(rarity, star),
+              })
+            }
+          >
+            <StarsDisplay stars={star} inline />
+            <Chip label={rarityTotal[star]} size="small" />
+          </ToggleButton>
+        ))}
+      </SolidToggleButtonGroup>
     </CardThemed>
   )
 })
