@@ -437,7 +437,7 @@ function BookDisplay(props) {
       </CardContent>
       <Divider />
       <CardContent>
-        <Grid container>
+        <Grid container spacing={0}>
           <Grid size={3}>
             <ImgFullwidth src={booksData[bookKey].img} />
           </Grid>

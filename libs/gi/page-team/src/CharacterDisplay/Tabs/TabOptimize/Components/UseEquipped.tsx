@@ -373,9 +373,9 @@ export default function UseEquipped({
           <CardContent>
             <Grid
               container
+              spacing={1}
               sx={{
                 pb: 1,
-                gap: 1,
                 flexWrap: 'nowrap',
               }}
             >
