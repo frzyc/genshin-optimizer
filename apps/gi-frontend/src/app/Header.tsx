@@ -112,6 +112,7 @@ function DesktopHeader({
         <Tab
           value=""
           component={RouterLink}
+          nativeButton={false}
           to="/optimize"
           label={
             <Box
@@ -142,6 +143,7 @@ function DesktopHeader({
               key={value}
               value={value}
               component={RouterLink}
+              nativeButton={false}
               to={to}
               icon={tooltipIcon as ReactElement}
               iconPosition="start"
@@ -209,6 +211,7 @@ function MobileHeader({
               key={value}
               value={value}
               component={RouterLink}
+              nativeButton={false}
               to={to}
               icon={icon as ReactElement}
               iconPosition="start"

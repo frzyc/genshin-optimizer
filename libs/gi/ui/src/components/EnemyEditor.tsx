@@ -159,6 +159,7 @@ export function EnemyEditor({
           sx={{ height: '100%' }}
           size="small"
           component="a"
+          nativeButton={false}
           color="warning"
           href="https://genshin-impact.fandom.com/wiki/Resistance#Base_Enemy_Resistances"
           target="_blank"

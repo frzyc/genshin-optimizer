@@ -133,7 +133,12 @@ export function UploadCard({
                 type="file"
                 onChange={onUpload}
               />
-              <Button component="span" color="info" startIcon={<FileOpen />}>
+              <Button
+                component="span"
+                nativeButton={false}
+                color="info"
+                startIcon={<FileOpen />}
+              >
                 {t('uploadCard.buttons.open')}
               </Button>
             </label>

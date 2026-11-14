@@ -160,6 +160,7 @@ function DesktopHeader({
         <Tab
           value=""
           component={RouterLink}
+          nativeButton={false}
           to="/"
           label={
             <Box
@@ -191,6 +192,7 @@ function DesktopHeader({
               key={value}
               value={value}
               component={RouterLink}
+              nativeButton={false}
               to={to}
               icon={tooltipIcon as ReactElement}
               iconPosition="start"
@@ -282,6 +284,7 @@ function MobileHeader({
             <Tab
               value=""
               component={RouterLink}
+              nativeButton={false}
               to={'/'}
               onClick={handleDrawerToggle}
               label={
@@ -294,6 +297,7 @@ function MobileHeader({
                 key={value}
                 value={value}
                 component={RouterLink}
+                nativeButton={false}
                 to={to}
                 onClick={handleDrawerToggle}
                 icon={icon as ReactElement}
@@ -322,6 +326,7 @@ function MobileHeader({
               color: `${theme.palette.neutral200.main} !important`,
             })}
             component={RouterLink}
+            nativeButton={false}
             to="/"
           >
             <Typography variant="h6" noWrap component="div" sx={{ px: 1 }}>

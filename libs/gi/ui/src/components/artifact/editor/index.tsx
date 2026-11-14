@@ -659,6 +659,7 @@ export function ArtifactEditor({
                             />
                             <Button
                               component="span"
+                              nativeButton={false}
                               startIcon={<PhotoCamera />}
                             >
                               {t('editor.uploadBtn')}

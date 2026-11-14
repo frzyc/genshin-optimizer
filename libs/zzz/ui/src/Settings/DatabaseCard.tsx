@@ -196,6 +196,7 @@ function DataCard({ index }: { index: number }) {
                 <Button
                   fullWidth
                   component="span"
+                  nativeButton={false}
                   color="info"
                   startIcon={<Upload />}
                   onClick={onOpen}

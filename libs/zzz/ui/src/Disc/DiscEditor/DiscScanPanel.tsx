@@ -143,7 +143,11 @@ export function DiscScanPanel({
                   type="file"
                   onChange={onUpload}
                 />
-                <Button component="span" startIcon={<PhotoCameraIcon />}>
+                <Button
+                  component="span"
+                  nativeButton={false}
+                  startIcon={<PhotoCameraIcon />}
+                >
                   {uploadLabel}
                 </Button>
               </label>

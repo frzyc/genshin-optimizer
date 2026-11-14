@@ -221,7 +221,12 @@ export default function PageOptimize() {
           >
             {t('emptyDbBody')}
           </Typography>
-          <Button component={RouterLink} to="/settings" variant="contained">
+          <Button
+            component={RouterLink}
+            nativeButton={false}
+            to="/settings"
+            variant="contained"
+          >
             {t('emptyDbCta')}
           </Button>
         </CardContent>

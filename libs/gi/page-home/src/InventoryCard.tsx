@@ -102,6 +102,7 @@ export default function InventoryCard() {
               flexWrap: 'wrap',
             }}
             component={RouterLink}
+            nativeButton={false}
             to="/characters"
           >
             <Chip
@@ -139,6 +140,7 @@ export default function InventoryCard() {
               flexWrap: 'wrap',
             }}
             component={RouterLink}
+            nativeButton={false}
             to="/weapons"
           >
             <Chip
@@ -176,6 +178,7 @@ export default function InventoryCard() {
               flexWrap: 'wrap',
             }}
             component={RouterLink}
+            nativeButton={false}
             to="/artifacts"
           >
             <Chip
@@ -213,6 +216,7 @@ export default function InventoryCard() {
               flexWrap: 'wrap',
             }}
             component={RouterLink}
+            nativeButton={false}
             to="/teams"
           >
             <Chip

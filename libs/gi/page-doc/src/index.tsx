@@ -65,47 +65,60 @@ export default function PageDocumentation() {
                 aria-label="Documentation Navigation"
                 sx={{ borderRight: 1, borderColor: 'divider' }}
               >
-                <Tab label="Overview" value="" component={Link} to="" />
+                <Tab
+                  label="Overview"
+                  value=""
+                  component={Link}
+                  nativeButton={false}
+                  to=""
+                />
                 <Tab
                   label={'Key naming convention'}
                   value="KeyNaming"
                   component={Link}
+                  nativeButton={false}
                   to="KeyNaming"
                 />
                 <Tab
                   label={<code>StatKey</code>}
                   value="StatKey"
                   component={Link}
+                  nativeButton={false}
                   to="StatKey"
                 />
                 <Tab
                   label={<code>ArtifactSetKey</code>}
                   value="ArtifactSetKey"
                   component={Link}
+                  nativeButton={false}
                   to="ArtifactSetKey"
                 />
                 <Tab
                   label={<code>CharacterKey</code>}
                   value="CharacterKey"
                   component={Link}
+                  nativeButton={false}
                   to="CharacterKey"
                 />
                 <Tab
                   label={<code>WeaponKey</code>}
                   value="WeaponKey"
                   component={Link}
+                  nativeButton={false}
                   to="WeaponKey"
                 />
                 <Tab
                   label={<code>MaterialKey</code>}
                   value="MaterialKey"
                   component={Link}
+                  nativeButton={false}
                   to="MaterialKey"
                 />
                 <Tab
                   label={'Version History'}
                   value="VersionHistory"
                   component={Link}
+                  nativeButton={false}
                   to="VersionHistory"
                 />
               </Tabs>
