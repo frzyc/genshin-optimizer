@@ -122,7 +122,10 @@ function Content() {
             <Routes>
               <Route index element={<PageHome />} />
               <Route path="/discs" element={<PageDiscs />} />
-              <Route path="/optimize" element={<PageOptimize />} />
+              <Route
+                path="/optimize/:characterKey?"
+                element={<PageOptimize />}
+              />
               <Route path="/characters/*" element={<PageCharacters />} />
               <Route path="/wengines" element={<PageWengines />} />
               <Route path="/settings" element={<PageSettings />} />

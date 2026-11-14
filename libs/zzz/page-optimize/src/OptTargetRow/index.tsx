@@ -12,10 +12,8 @@ export function OptTargetRow() {
       sx={{
         display: 'flex',
         gap: 1,
-        position: 'sticky',
-        top: 36,
-        zIndex: 100,
-        background: '#0C1020',
+        flexWrap: 'wrap',
+        alignItems: 'center',
       }}
     >
       <OptSelector />

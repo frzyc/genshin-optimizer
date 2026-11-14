@@ -33,7 +33,6 @@ import {
   Box,
   Button,
   CardContent,
-  Chip,
   Collapse,
   Grid,
   Stack,
@@ -54,8 +53,11 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { BuildEquipGrid } from '../BuildEquipGrid'
+import { CompactBuildEquipGrid } from '../CompactBuildEquipGrid'
 import { useOptimizePage } from '../context/OptimizePageContext'
 import { OPT_SECTION_IDS } from '../nav/optimizeSections'
+
+const shrinkCol = { width: '1%', whiteSpace: 'nowrap' } as const
 
 const GeneratedBuildsDisplay = memo(function GeneratedBuildsDisplay() {
   const { t } = useTranslation('page_optimize')
@@ -82,9 +84,10 @@ const GeneratedBuildsDisplay = memo(function GeneratedBuildsDisplay() {
       <Table size="small" sx={{ display: { xs: 'none', md: 'table' } }}>
         <TableHead>
           <TableRow>
-            <TableCell>{t('buildsColRank')}</TableCell>
-            <TableCell>{valueLabel}</TableCell>
-            <TableCell align="right">{t('buildsColDelta')}</TableCell>
+            <TableCell sx={shrinkCol}>{t('buildsColRank')}</TableCell>
+            <TableCell sx={shrinkCol}>{valueLabel}</TableCell>
+            <TableCell sx={shrinkCol}>{t('buildsColDelta')}</TableCell>
+            <TableCell sx={shrinkCol}>{t('buildsColGear')}</TableCell>
             <TableCell align="right" />
           </TableRow>
         </TableHead>
@@ -150,7 +153,6 @@ function BuildTableRow({
   baseValue: number | undefined
   valueLabel: string
 }) {
-  const { t } = useTranslation('page_optimize')
   const [expanded, setExpanded] = useState(false)
   const toggle = useCallback(() => setExpanded((v) => !v), [])
   const onKeyDown = useCallback(
@@ -176,34 +178,32 @@ function BuildTableRow({
           '& > *': { borderBottom: expanded ? 0 : undefined },
         }}
       >
-        <TableCell>
-          <Stack
-            direction="row"
-            spacing={0.5}
-            sx={{
-              alignItems: 'center',
-            }}
-          >
+        <TableCell sx={shrinkCol}>
+          <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center' }}>
             {expanded ? (
               <ExpandLessIcon fontSize="small" aria-hidden />
             ) : (
               <ExpandMoreIcon fontSize="small" aria-hidden />
             )}
             <span>{index + 1}</span>
-            {index === 0 && (
-              <Chip size="small" color="success" label={t('buildBest')} />
-            )}
           </Stack>
         </TableCell>
-        <TableCell>
+        <TableCell sx={shrinkCol}>
           <BuildValueCompare
             value={build.value}
             baseValue={baseValue}
             label={valueLabel}
           />
         </TableCell>
-        <TableCell align="right">
+        <TableCell sx={shrinkCol}>
           <DeltaPercent value={build.value} baseValue={baseValue} />
+        </TableCell>
+        <TableCell sx={shrinkCol}>
+          <CompactBuildEquipGrid
+            weaponId={build.weaponId}
+            artIds={build.artIds}
+            iconPx={40}
+          />
         </TableCell>
         <TableCell align="right" onClick={(e) => e.stopPropagation()}>
           <EquipBtn build={build} />
@@ -211,7 +211,7 @@ function BuildTableRow({
       </TableRow>
       <TableRow>
         <TableCell
-          colSpan={4}
+          colSpan={5}
           sx={{ py: 0, borderBottom: expanded ? undefined : 0 }}
         >
           <Collapse in={expanded} timeout="auto" unmountOnExit>
@@ -247,6 +247,7 @@ function EquipBtn({
       size="small"
       startIcon={<CheckroomIcon />}
       onClick={onEquip}
+      sx={{ whiteSpace: 'nowrap' }}
     >
       {t('equipToCrr')}
     </Button>
@@ -347,16 +348,7 @@ function GeneratedBuildDisplay({
               <ExpandMoreIcon fontSize="small" aria-hidden />
             )}
             <Typography component="span" sx={{ minWidth: 0 }}>
-              {t('buildN', { n: index + 1 })}
-              {index === 0 && (
-                <Chip
-                  size="small"
-                  color="success"
-                  label={t('buildBest')}
-                  sx={{ ml: 0.5 }}
-                />
-              )}
-              :{' '}
+              {t('buildN', { n: index + 1 })}:{' '}
               <BuildValueCompare
                 value={build.value}
                 baseValue={baseValue}
@@ -370,6 +362,13 @@ function GeneratedBuildDisplay({
           <Box onClick={(e) => e.stopPropagation()} sx={{ flexShrink: 0 }}>
             <EquipBtn build={build} />
           </Box>
+        </Box>
+        <Box sx={{ pt: 1 }}>
+          <CompactBuildEquipGrid
+            weaponId={build.weaponId}
+            artIds={build.artIds}
+            iconPx={40}
+          />
         </Box>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <Box sx={{ pt: 1 }}>
