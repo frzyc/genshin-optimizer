@@ -132,7 +132,13 @@ function NewBuildButton({
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
             <Typography>{t('createBuildReal.desc')}</Typography>
-            <Box display="flex" alignItems="center" sx={{ ml: -1 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                ml: -1,
+              }}
+            >
               <Checkbox
                 size="small"
                 checked={toTCBuild}

@@ -21,8 +21,10 @@ export function ScanImagePreview({
     <Stack
       direction={{ xs: 'column', sm: 'row' }}
       spacing={2}
-      alignItems={{ xs: 'center', sm: 'flex-start' }}
-      width="100%"
+      sx={{
+        alignItems: { xs: 'center', sm: 'flex-start' },
+        width: '100%',
+      }}
     >
       <Box
         sx={{
@@ -101,8 +103,19 @@ export function ScanImagePreview({
             maxWidth: { xs: 350, sm: 'none' },
           }}
         >
-          <Stack direction="row" flexWrap="wrap" gap={1.5}>
-            <Typography variant="caption" color="text.secondary">
+          <Stack
+            direction="row"
+            sx={{
+              flexWrap: 'wrap',
+              gap: 1.5,
+            }}
+          >
+            <Typography
+              variant="caption"
+              sx={{
+                color: 'text.secondary',
+              }}
+            >
               <Box
                 component="span"
                 sx={{
@@ -116,7 +129,12 @@ export function ScanImagePreview({
               />
               Line (incl. wrap)
             </Typography>
-            <Typography variant="caption" color="text.secondary">
+            <Typography
+              variant="caption"
+              sx={{
+                color: 'text.secondary',
+              }}
+            >
               <Box
                 component="span"
                 sx={{
@@ -136,8 +154,11 @@ export function ScanImagePreview({
               <Typography
                 key={`${index}-${line.text}`}
                 variant="caption"
-                color="text.secondary"
-                sx={{ fontFamily: 'monospace', lineHeight: 1.3 }}
+                sx={{
+                  color: 'text.secondary',
+                  fontFamily: 'monospace',
+                  lineHeight: 1.3,
+                }}
               >
                 {line.text}
               </Typography>

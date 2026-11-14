@@ -348,7 +348,12 @@ const sheet: TalentSheet = {
     {
       text: (
         <>
-          <Typography fontWeight="bold" gutterBottom>
+          <Typography
+            gutterBottom
+            sx={{
+              fontWeight: 'bold',
+            }}
+          >
             <Translate ns="tooltips_gen" key18="11370002.name" />
           </Typography>
           <Translate ns="tooltips_gen" key18="11370002.description" />

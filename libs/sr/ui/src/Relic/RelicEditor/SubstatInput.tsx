@@ -183,7 +183,11 @@ export default function SubstatInput({
           })} */}
         </ButtonGroup>
       </Box>
-      <Box px={2}>
+      <Box
+        sx={{
+          px: 2,
+        }}
+      >
         <SliderWrapper
           value={roundStat(toPercent(value, key), key as RelicSubStatKey)}
           marks={marks}
@@ -215,7 +219,11 @@ export default function SubstatInput({
                   : t('editor.substat.noRoll')}
               </SqBadge>
             </Grid> */}
-            <Grid item flexGrow={1}>
+            <Grid
+              sx={{
+                flexGrow: 1,
+              }}
+            >
               {!!rolls.length &&
                 [...rolls].sort().map((val, i) => (
                   <Typography
@@ -233,7 +241,12 @@ export default function SubstatInput({
                   </Typography>
                 ))}
             </Grid>
-            <Grid item xs="auto" flexShrink={1}>
+            <Grid
+              size="auto"
+              sx={{
+                flexShrink: 1,
+              }}
+            >
               <Typography>
                 <Trans
                   t={t}

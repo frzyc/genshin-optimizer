@@ -86,7 +86,7 @@ export function dmgDazeAndAnom(
   )
   const dmgBase = prod(
     own.final[stat],
-    dmgMulti,
+    sum(dmgMulti, own.final.addlMult_),
     cmpEq(own.dmg.mv_mult_, 0, percent(1), own.dmg.mv_mult_)
   )
   const dmg = arg.cond ? cmpNE(arg.cond, '', dmgBase) : dmgBase
@@ -144,7 +144,7 @@ export function dmgDazeAndAnomMerge(
   )
   const dmgBase = prod(
     own.final[stat],
-    dmgMulti,
+    sum(dmgMulti, own.final.addlMult_),
     cmpEq(own.dmg.mv_mult_, 0, percent(1), own.dmg.mv_mult_)
   )
   const dazeBase = sum(
@@ -284,6 +284,7 @@ function inferDamageType(key: CharacterKey, abilityName: string): DamageType {
     if (key === 'Lucy' && abilityName === 'GuardBoarsToArms') return 'basic'
     if (key === 'Lucy' && abilityName === 'GuardBoarsSpinningSwing')
       return 'basic'
+    if (key === 'Phoenix' && abilityName === 'SoulSearchingBlaze') return 'ult'
     if (key === 'Remielle' && abilityName === 'AssistFlowerFeatherDance')
       return 'entrySkill'
     if (key === 'Roxy' && abilityName === 'EyeOfTheStorm') return 'exSpecial'

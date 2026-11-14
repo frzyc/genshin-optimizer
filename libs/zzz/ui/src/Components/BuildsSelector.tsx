@@ -16,7 +16,12 @@ export function BuildsSelector({
   return (
     <DropdownButton title={t('build', { count: maxBuildsToShow })}>
       <MenuItem>
-        <Typography variant="caption" color="info.main">
+        <Typography
+          variant="caption"
+          sx={{
+            color: 'info.main',
+          }}
+        >
           {t('buildDropdownDesc')}
         </Typography>
       </MenuItem>

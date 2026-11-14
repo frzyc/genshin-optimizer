@@ -73,7 +73,13 @@ export const UseTeammateArt = memo(function UseTeammateArt({
                       }}
                       key={loadoutDatum.teamCharId}
                     >
-                      <Box display="flex" alignItems="center" gap={1}>
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 1,
+                        }}
+                      >
                         {characterKey && (
                           <CharIconSide characterKey={characterKey} />
                         )}
@@ -84,7 +90,7 @@ export const UseTeammateArt = memo(function UseTeammateArt({
                       {artifacts ? (
                         <Grid container columns={5} spacing={1}>
                           {Object.entries(artifacts).map(([slotKey, art]) => (
-                            <Grid item key={slotKey} xs={1}>
+                            <Grid key={slotKey} size={1}>
                               <ArtifactCardPico
                                 artifactObj={art}
                                 slotKey={slotKey}
@@ -123,7 +129,12 @@ export const UseTeammateArt = memo(function UseTeammateArt({
           }}
           disabled={disabled}
         >
-          <Box display="flex" gap={1}>
+          <Box
+            sx={{
+              display: 'flex',
+              gap: 1,
+            }}
+          >
             <span>{t('useTeamArts')}</span>
             <Chip label={totalTally} size="small" />
           </Box>

@@ -167,12 +167,14 @@ export default function TabCharacter() {
           variant="outlined"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon />
-              </InputAdornment>
-            ),
+          slotProps={{
+            input: {
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            },
           }}
         />
       </CardContent>
@@ -242,6 +244,7 @@ const CharacterRow = memo(function CharacterRow({
         level: 90,
         ascension: 6,
         constellation: 6,
+
         talent: {
           auto: 10,
           skill: 10,
@@ -275,7 +278,11 @@ const CharacterRow = memo(function CharacterRow({
         </TableCell>
 
         <TableCell>
-          <Box display="flex">
+          <Box
+            sx={{
+              display: 'flex',
+            }}
+          >
             <ColorText color={`rarity${rarity}` as keyof Palette}>
               <StarRoundedIcon />
             </ColorText>

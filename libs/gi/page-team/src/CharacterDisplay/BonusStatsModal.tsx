@@ -80,7 +80,7 @@ export default function BonusStatsModal({
 }
 const keys = [...allInputPremodKeys]
 const wrapperFunc = (e: JSX.Element, key?: string) => (
-  <Grid item key={key} xs={1}>
+  <Grid key={key} size={1}>
     {e}
   </Grid>
 )
@@ -98,7 +98,7 @@ function BonusStatsEditor() {
     <CardThemed bgt="light">
       <CardContent sx={{ display: 'flex' }}>
         <Grid container columns={cols} sx={{ pt: 1 }} spacing={1}>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Alert severity="info" variant="filled">
               <Trans i18nKey={'addStats.info'} t={t}>
                 You can use these fields to add buffs/debuffs not directly
@@ -216,7 +216,7 @@ function MainStatsCards() {
     <CardThemed bgt="light">
       <CardContent>
         <Grid container columns={cols} spacing={1}>
-          <Grid item xs={1}>
+          <Grid size={1}>
             <StatDisplayCard title={t('addStats.main')}>
               <StatDisplayContent
                 nodes={mainReadNodes}
@@ -246,13 +246,13 @@ function MainStatsCards() {
               />
             </StatDisplayCard>
           </Grid>
-          <Grid item xs={1}>
+          <Grid size={1}>
             <StatDisplayCard title={t('addStats.other')}>
               <StatDisplayContent nodes={otherStatReadNodes} />
             </StatDisplayCard>
           </Grid>
           {!!miscStatReadNodes.length && (
-            <Grid item xs={1}>
+            <Grid size={1}>
               <StatDisplayCard title={t('addStats.misc')}>
                 <StatDisplayContent nodes={miscStatReadNodes} />
               </StatDisplayCard>
@@ -273,7 +273,12 @@ function StatDisplayCard({
   return (
     <CardThemed>
       <CardContent sx={{ py: 1 }}>
-        <Box display="flex" justifyContent="space-between">
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+          }}
+        >
           <Typography variant="subtitle1">{title}</Typography>
         </Box>
       </CardContent>

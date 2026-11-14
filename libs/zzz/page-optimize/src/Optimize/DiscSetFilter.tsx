@@ -110,7 +110,14 @@ export function DiscSetFilter({
           >
             <Grid container spacing={1}>
               {visibleSetKeys.map((d) => (
-                <Grid item key={d} xs={1} md={2} lg={3}>
+                <Grid
+                  key={d}
+                  size={{
+                    xs: 1,
+                    md: 2,
+                    lg: 3,
+                  }}
+                >
                   <AdvSetFilterDiscCard
                     numSlot={discSetBySlot[d]}
                     setKey={d}

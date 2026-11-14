@@ -21,11 +21,9 @@ import {
   STATS_STICKY_PAD_PX,
   TeamHeaderHeightContext,
 } from './context/TeamHeaderHeightContext'
-import { OptTargetHero } from './OptTargetHero'
-import { OptTargetRow } from './OptTargetRow'
 import { EnemyStatsSection } from './EnemyStats'
-import { SectionAnchor } from './nav/SectionAnchor'
 import { OPT_SECTION_IDS } from './nav/optimizeSections'
+import { SectionAnchor } from './nav/SectionAnchor'
 import { DesktopSectionRail } from './nav/SectionRail'
 import Optimize from './Optimize'
 import GeneratedBuildsDisplay from './Optimize/GeneratedBuildsDisplay'
@@ -33,13 +31,20 @@ import {
   MobileOptimizeBar,
   MobileOptimizeBarSpacer,
 } from './Optimize/MobileOptimizeBar'
+import { OptTargetHero } from './OptTargetHero'
+import { OptTargetRow } from './OptTargetRow'
 import { TeammatesSection } from './Teammates'
 
 export function CharacterOptDisplay() {
   const { editorKey, closeBuildEditor } = useOptimizePage()
 
   return (
-    <Stack gap={1} sx={{ pb: 1 }}>
+    <Stack
+      sx={{
+        gap: 1,
+        pb: 1,
+      }}
+    >
       <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 0 }}>
         <Stack spacing={2} sx={{ flex: 1, minWidth: 0 }}>
           <CharacterOverview />
@@ -79,13 +84,14 @@ function CharacterOverview() {
         sx={{ flexWrap: 'wrap', overflow: 'visible' }}
       >
         <Grid
-          item
-          xs={12}
-          sm={7}
-          md={5}
-          lg={4}
-          xl={3}
           sx={{ height: isNotXs ? '100%' : undefined, overflow: 'visible' }}
+          size={{
+            xs: 12,
+            sm: 7,
+            md: 5,
+            lg: 4,
+            xl: 3,
+          }}
         >
           <SectionAnchor sectionId={OPT_SECTION_IDS.character}>
             <Stack spacing={1} sx={isNotXs ? { height: '100%' } : undefined}>
@@ -108,7 +114,15 @@ function CharacterOverview() {
             </Stack>
           </SectionAnchor>
         </Grid>
-        <Grid item xs={12} sm={5} md={7} lg={8} xl={9}>
+        <Grid
+          size={{
+            xs: 12,
+            sm: 5,
+            md: 7,
+            lg: 8,
+            xl: 9,
+          }}
+        >
           <Stack spacing={3}>
             <SectionAnchor sectionId={OPT_SECTION_IDS.optTarget}>
               <Stack spacing={1}>
@@ -157,12 +171,12 @@ function EquippedConditionals() {
     <Box>
       <Grid container spacing={1} columns={{ xs: 1, sm: 1, md: 2, lg: 3 }}>
         {weapon && (
-          <Grid item xs={1}>
+          <Grid size={1}>
             <WeaponSheetDisplay weapon={weapon} />
           </Grid>
         )}
         {Object.entries(sets).map(([setKey, count]) => (
-          <Grid item key={setKey} xs={1}>
+          <Grid key={setKey} size={1}>
             <ArtSheetDisplay
               setKey={setKey as ArtifactSetKey}
               fade2={count < 2}

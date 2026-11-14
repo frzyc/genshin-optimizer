@@ -7,7 +7,14 @@ export default function PageRelics() {
   const [relicIdToEdit, setRelicIdToEdit] = useState('')
 
   return (
-    <Box display="flex" flexDirection="column" gap={1} my={1}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1,
+        my: 1,
+      }}
+    >
       <RelicEditor
         relicIdToEdit={relicIdToEdit}
         cancelEdit={() => setRelicIdToEdit('')}

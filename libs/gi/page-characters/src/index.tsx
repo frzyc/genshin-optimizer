@@ -214,7 +214,13 @@ export default function PageCharacter() {
   }
 
   return (
-    <Box display="flex" flexDirection="column" gap={1}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1,
+      }}
+    >
       {characterKey && (
         <CharacterEditor
           characterKey={characterKey}
@@ -232,7 +238,7 @@ export default function PageCharacter() {
       <CardThemed>
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Grid container spacing={1}>
-            <Grid item>
+            <Grid>
               <WeaponToggle
                 sx={{ height: '100%' }}
                 onChange={(weaponType) =>
@@ -243,7 +249,7 @@ export default function PageCharacter() {
                 size="small"
               />
             </Grid>
-            <Grid item>
+            <Grid>
               <ElementToggle
                 sx={{ height: '100%' }}
                 onChange={(element) =>
@@ -254,7 +260,7 @@ export default function PageCharacter() {
                 size="small"
               />
             </Grid>
-            <Grid item>
+            <Grid>
               <CharacterRarityToggle
                 sx={{ height: '100%' }}
                 onChange={(rarity) => database.displayCharacter.set({ rarity })}
@@ -263,8 +269,12 @@ export default function PageCharacter() {
                 size="small"
               />
             </Grid>
-            <Grid item flexGrow={1} />
-            <Grid item>
+            <Grid
+              sx={{
+                flexGrow: 1,
+              }}
+            />
+            <Grid>
               <TextField
                 autoFocus
                 value={searchTerm}
@@ -274,17 +284,21 @@ export default function PageCharacter() {
                 label={t('characterName')}
                 size="small"
                 sx={{ height: '100%' }}
-                InputProps={{
-                  sx: { height: '100%' },
+                slotProps={{
+                  input: {
+                    sx: { height: '100%' },
+                  },
                 }}
               />
             </Grid>
           </Grid>
           <Box
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            flexWrap="wrap"
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+            }}
           >
             <ShowingAndSortOptionSelect
               showingTextProps={showingTextProps}
@@ -311,7 +325,7 @@ export default function PageCharacter() {
       >
         <Grid container spacing={1} columns={columns}>
           {charKeysToShow.map((charKey) => (
-            <Grid item key={charKey} xs={1}>
+            <Grid key={charKey} size={1}>
               <CharacterCard
                 characterKey={charKey}
                 onClick={() => navigate(`${charKey}`)}

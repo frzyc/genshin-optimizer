@@ -197,10 +197,13 @@ export function RelicCardCompactObj({
           </Box>
           {/* substats */}
           <Box
-            display="flex"
-            flexDirection="column"
-            justifyContent="space-between"
-            sx={{ py: '3px', pr: '3px' }}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              py: '3px',
+              pr: '3px',
+            }}
           >
             {substats.map((stat: ICachedSubstat, i: number) => (
               <SubstatDisplay key={i + stat.key} stat={stat} />
@@ -219,13 +222,23 @@ function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
   // const rollColor = `roll${clamp(numRolls, 1, 6)}`
   const statUnit = getUnitStr(stat.key)
   return (
-    <Box display="flex" gap={1} alignContent="center">
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 1,
+        alignContent: 'center',
+      }}
+    >
       <Typography
         sx={{ flexGrow: 1, display: 'flex', gap: 0.5, alignItems: 'center' }}
         // color={(numRolls ? `${rollColor}.main` : 'error.main') as any}
         component="span"
       >
-        <Box lineHeight={0}>
+        <Box
+          sx={{
+            lineHeight: 0,
+          }}
+        >
           <StatIcon statKey={statKey} iconProps={{ fontSize: 'inherit' }} />
         </Box>
         <span>{`${toPercent(value, statKey).toFixed(

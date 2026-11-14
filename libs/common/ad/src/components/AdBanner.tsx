@@ -18,7 +18,11 @@ export function AdBanner({
   if (!width) return null
 
   return (
-    <Box m={1}>
+    <Box
+      sx={{
+        m: 1,
+      }}
+    >
       <AdWrapper
         fullWidth
         dataAdSlot={dataAdSlot}

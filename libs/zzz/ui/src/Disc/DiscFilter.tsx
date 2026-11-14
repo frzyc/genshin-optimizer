@@ -39,21 +39,22 @@ export default function DiscFilter({
       <CardThemed>
         <CardContent>
           <Grid container>
-            <Grid item>
+            <Grid>
               <Typography variant="h6">{t('discFilter')}</Typography>
             </Grid>
             <Grid
-              item
-              flexGrow={1}
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
+              sx={{
+                flexGrow: 1,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
             >
               <Typography>
                 <strong>{numShowing}</strong> / {total}
               </Typography>
             </Grid>
-            <Grid item>
+            <Grid>
               <Button
                 size="small"
                 color="error"

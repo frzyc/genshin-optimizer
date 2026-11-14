@@ -79,8 +79,19 @@ function Content({ onClose }: { onClose?: () => void }) {
   const characterSheet = getCharSheet(characterKey, gender)
 
   return (
-    <Box display="flex" flexDirection="column" gap={1}>
-      <Box display="flex" gap={1}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1,
+      }}
+    >
+      <Box
+        sx={{
+          display: 'flex',
+          gap: 1,
+        }}
+      >
         {!!buildTc && (
           <BootstrapTooltip
             title={
@@ -116,7 +127,7 @@ function Content({ onClose }: { onClose?: () => void }) {
       </Box>
       <Box>
         <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
-          <Grid item xs={5}>
+          <Grid size={5}>
             <CardThemed
               bgt="light"
               sx={{
@@ -130,14 +141,19 @@ function Content({ onClose }: { onClose?: () => void }) {
             </CardThemed>
           </Grid>
           <Grid
-            item
-            xs={7}
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+            size={7}
           >
-            <Box display={'flex'} flexDirection={'column'} gap={1}>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 1,
+              }}
+            >
               <Grid container columns={1} spacing={1}>
                 {(['auto', 'skill', 'burst'] as const).map((talentKey) => (
-                  <Grid item xs={1} key={talentKey}>
+                  <Grid key={talentKey} size={1}>
                     <TalentDropdown
                       key={talentKey}
                       talentKey={talentKey}

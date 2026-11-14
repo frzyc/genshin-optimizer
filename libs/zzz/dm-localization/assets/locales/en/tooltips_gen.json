@@ -176,6 +176,44 @@
     "name": "Eye of the Storm",
     "desc": "<ct color=#FFFFFF>EX Special Attack: Kindly Rest in Peace</ct> consumes all Wind Energy, leaving the corresponding number of <ct color=#FFFFFF>Eyes of the Storm</ct> on the field. When hit by <ct color=#FFFFFF>Special Attack: Forgive Me for Not Seeing You Off</ct>, they detonate to generate Miniature Windstorms or Giant Windstorms."
   },
+  "1000041": {
+    "name": "Flow",
+    "desc": {
+      "0": "When Severian hits enemies with specific skills or triggers a Perfect Dodge, he gains <ct color=#FFFFFF>Flow</ct>. <ct color=#FFFFFF>Flow</ct> is capped at 150.",
+      "1": "When <ct color=#FFFFFF>Flow</ct> reaches 100, hold <IconNormal /> to consume 100 <ct color=#FFFFFF>Flow</ct> and use <ct color=#FFFFFF>Basic Attack: Azure Wind's Shadowhunt</ct>."
+    }
+  },
+  "1000042": {
+    "name": "Shadowflash",
+    "desc": {
+      "0": "When Severian enters the battlefield, he gains 2 stacks of <ct color=#FFFFFF>Shadowflash</ct>. This effect can trigger once every 180s in Investigation Zone mode.",
+      "1": "When Severian has <ct color=#FFFFFF>Shadowflash</ct> and is not Invulnerable, if he is hit by a non-Control Skill attack from an enemy and fails to actively dodge or parry the attack, Severian consumes 1 stack of <ct color=#FFFFFF>Shadowflash</ct> to automatically dodge the attack and use <ct color=#FFFFFF>Basic Attack: Raging Whirlwind</ct>.",
+      "2": "<ct color=#FFFFFF>Shadowflash</ct> can stack up to 2 times. If Severian gains <ct color=#FFFFFF>Shadowflash</ct> while possessing max stacks, he gains 1 stack of Windborne instead, and his next <ct color=#FFFFFF>Basic Attack: Swift Edge</ct> is upgraded to <ct color=#FFFFFF>Basic Attack: Raging Whirlwind</ct>."
+    }
+  },
+  "1000043": {
+    "name": "Windborne",
+    "desc": "Each time Severian triggers a Perfect Dodge, he gains 1 stack of <ct color=#FFFFFF>Windborne</ct>. When Severian has <ct color=#FFFFFF>Windborne</ct>, switching to Severian or having Severian enter via a Quick Assist consumes this effect and automatically uses his <ct color=#FFFFFF>Entry Skill</ct>."
+  },
+  "1000046": {
+    "name": "Combustion Attack",
+    "desc": {
+      "0": "Some of Phoenix's skills count as Combustion Attacks. While performing a Combustion Attack, her Anti-Interrupt Level is increased, and dealing DMG restores Pyre. Phoenix can have up to 120 points of Pyre.",
+      "1": "After performing a Combustion Attack, press <IconSpecial /> to skip the retreat portion of Special Attack: Fire Sweep and EX Special Attack: Blazing Slash, and immediately follow up with an upward slash."
+    }
+  },
+  "1000047": {
+    "name": "Pyre",
+    "desc": "When a Combustion Attack deals DMG, it generates Pyre. Phoenix can have up to 120 Pyre. With enough Pyre, hold <IconNormal /> to activate <ct color=#FFFFFF>Basic Attack: Purifying Flame</ct>."
+  },
+  "1000048": {
+    "name": "Sear",
+    "desc": "When any squad member deals Anomaly DMG to an enemy, the enemy enters the Sear state. While in the Sear state, Anomaly DMG taken by the enemy has a chance to CRIT."
+  },
+  "1000049": {
+    "name": "Ascension",
+    "desc": "Using EX Special Attack: Falling Sun grants 1 point of Ascension. Phoenix can have up to 1 point of Ascension. While Phoenix has Ascension, press <IconSpecial /> to use <ct color=#FFFFFF>EX Special Attack: Blazing Slash</ct>."
+  },
   "2000001": {
     "name": "Corruptive Barrier",
     "desc": {
@@ -211,6 +249,249 @@
   "2000006": {
     "name": "Counter Assist",
     "desc": "When an enemy uses a <ct color=#FFAF2C>Control Skill</ct> to attack, if a specific Agent is in your squad, a <ct color=#FFAF2C>golden flash</ct> prompt will appear. Press <IconSwitch /> within a short window to switch to that specific Agent and trigger <ct color=#FFAF2C>Counter Assist</ct>. Then press <IconNormal /> to engage in a tug-of-war with the enemy. Succeed, and you'll break free from the enemy's <ct color=#FFAF2C>Control Skill</ct>."
+  },
+  "3000001": {
+    "name": "Ether Veil",
+    "desc": {
+      "0": "A special domain created by certain skills.",
+      "1": "While active, characters or enemies on the field gain its corresponding effects, such as enhancing characters, weakening enemies, or triggering Special Attacks."
+    }
+  },
+  "3000002": {
+    "name": "Abloom",
+    "desc": {
+      "0": "An additional damage effect triggered when certain skills hit enemies affected by an Attribute Anomaly.",
+      "1": "When triggered, it deals an additional instance of Attribute Anomaly DMG. The exact DMG multiplier varies based on character stats and skill mechanics."
+    }
+  },
+  "3000003": {
+    "name": "Disorder",
+    "desc": "Applying another type of Attribute Anomaly to an enemy that has already been afflicted with one overrides the original, and causes the <ct color=#FFAF2C>Disorder</ct> effect. The <ct color=#FFAF2C>Disorder</ct> effect is calculated based on the original Anomaly, <ct color=#FFAF2C>dealing additional DMG and accumulating Daze</ct>."
+  },
+  "3000004": {
+    "name": "Vortex",
+    "desc": {
+      "0": "When applying a different type of Attribute Anomaly effect to an enemy already afflicted with an Attribute Anomaly, if one of the Anomaly effects is Windswept, Disorder will not be triggered. Instead, the <ct color=#A6C5FD>Vortex</ct> effect will be triggered: Upon triggering, the Attribute Anomaly other than <ct color=#A6C5FD>Windswept</ct> will be settled, dealing <ct color=#FFAF2C>AoE Anomaly DMG</ct> of the corresponding attribute.",
+      "1": "For a period of time after triggering <ct color=#A6C5FD>Vortex</ct>, it cannot be triggered again. Additionally, triggering <ct color=#A6C5FD>Vortex</ct> <ct color=#FFAF2C>forces</ct> the enemy into the Contamination state corresponding to <ct color=#A6C5FD>Vortex</ct>'s attribute."
+    }
+  },
+  "3000005": {
+    "name": "Anomaly Buildup",
+    "desc": "When characters deal Attribute damage, <ct color=#FFAF2C>Anomaly Buildup</ct> is accumulated. The enemy's current <ct color=#FFAF2C>Anomaly Buildup</ct> is displayed to the right of its HP. When the <ct color=#FFAF2C>Anomaly Buildup</ct> reaches its limit, the enemy will be afflicted with the corresponding <ct color=#FFAF2C>Attribute Anomaly</ct>. The effect of an <ct color=#FFAF2C>Attribute Anomaly</ct> is related to the characters who inflicted <ct color=#FFAF2C>Anomaly Buildup</ct> and their contributions."
+  },
+  "3000006": {
+    "name": "Assault",
+    "desc": {
+      "0": "The <IconGeneralBuffPhysDmg /> <ct color=#F0D12B>Physical Attribute Anomaly</ct> is <ct color=#F0D12B>Assault</ct>.",
+      "1": "The <ct color=#F0D12B>Assault</ct> effect can interrupt enemy actions and deal massive <ct color=#F0D12B>Physical DMG</ct>."
+    }
+  },
+  "3000007": {
+    "name": "Shock",
+    "desc": {
+      "0": "The <IconGeneralBuffThunder /> <ct color=#2EB6FF>Electric Attribute Anomaly</ct> is <ct color=#2EB6FF>Shock</ct>.",
+      "1": "The <ct color=#2EB6FF>Shock</ct> effect causes the target to intermittently take additional <ct color=#2EB6FF>Electric DMG</ct> when attacked for a period of time.",
+      "2": "Inflicting <ct color=#2EB6FF>Shock</ct> on enemies weak to <ct color=#2EB6FF>Electric</ct> can interrupt their actions."
+    }
+  },
+  "3000008": {
+    "name": "Polarity Disorder",
+    "desc": {
+      "0": "A special Disorder effect.",
+      "1": "Triggered when certain skills hit enemies affected by an Attribute Anomaly, dealing Disorder DMG without removing the target's current Attribute Anomaly."
+    }
+  },
+  "3000009": {
+    "name": "Gather Enemies",
+    "desc": "An effect that attracts or pulls nearby enemies together, making it easier for characters to hit multiple enemies at once and improving AoE DMG and combat efficiency."
+  },
+  "3000010": {
+    "name": "Contamination",
+    "desc": {
+      "0": "An additional Attribute effect triggered during the Windswept state.",
+      "1": "When an enemy is in the Windswept state, the first instance of <ct color=#FF5521>Fire DMG</ct>, <ct color=#98EFF0>Ice DMG</ct>, <ct color=#2EB6FF>Electric DMG</ct>, <ct color=#F0D12B>Physical DMG</ct>, or <ct color=#FE437E>Ether DMG</ct> they receive triggers the corresponding Attribute's Contamination effect. While Contamination is active, the <ct color=#A6C5FD>direct Wind DMG</ct> and direct DMG of the Attribute that triggered Contamination received by the enemy are both increased based on the Tempest Coefficient of the character who triggered the Wind Anomaly.",
+      "2": "Contamination can only be triggered once this way during the same Windswept state."
+    }
+  },
+  "3000011": {
+    "name": "Windswept",
+    "desc": {
+      "0": "<IconGeneralBuffWind /> <ct color=#A6C5FD>Wind Anomaly</ct> is the <ct color=#A6C5FD>Windswept</ct> state.",
+      "1": "When an enemy enters the <ct color=#A6C5FD>Windswept</ct> state, their actions are interrupted, and they take massive <ct color=#A6C5FD>Wind DMG</ct>.",
+      "2": "While in the <ct color=#A6C5FD>Windswept</ct> state, the <ct color=#A6C5FD>direct Wind DMG</ct> they receive is increased based on the Tempest Coefficient of the character who triggered the Wind Anomaly."
+    }
+  },
+  "3000012": {
+    "name": "Quick Swap",
+    "desc": "An action where a character briefly takes the field to use a key skill or trigger an effect, then quickly switches back to another character to continue fighting."
+  },
+  "3000013": {
+    "name": "Versatile",
+    "desc": "A versatile type with broad applications, typically not tied to any single character, team, or combat scenario, and useful across a variety of setups."
+  },
+  "3000014": {
+    "name": "Cycle",
+    "desc": "A sequence of actions that a character or team repeatedly performs in combat, typically involving building up resources, using key skills, triggering effects, and then preparing for the next round of damage."
+  },
+  "3000015": {
+    "name": "Laceration DMG",
+    "desc": {
+      "0": "A CRIT DMG bonus exclusive to Sharp DMG.",
+      "1": "When Sharp DMG triggers a critical hit, the CRIT DMG Bonus does not apply. Instead, a Laceration DMG Bonus is calculated. If CRIT Rate exceeds 100% and a critical hit has already been triggered, the excess CRIT Rate is used for an additional Laceration check. If Laceration is triggered, a Laceration DMG Bonus is calculated an additional time."
+    }
+  },
+  "3000016": {
+    "name": "Sharp DMG",
+    "desc": "<IconAvatarClassArmorer /> All DMG dealt by Armorer characters is <ct color=#FFAF2C>Sharp DMG</ct>, with <ct color=#FFAF2C>DEF</ct> used as the skill DMG Multiplier. When a critical hit is triggered, Sharp DMG does not benefit from the CRIT DMG Bonus and instead calculates a Laceration DMG bonus."
+  },
+  "3000017": {
+    "name": "Converging Spear",
+    "desc": "A special Basic Attack Sigrid can launch while in the Aerial Patrol Spear state. When used, she unleashes the stage of this attack based on the number accumulated, up to 3 stages. Stages can be accumulated or retained through blocking, chaining skills, and other methods."
+  },
+  "3000018": {
+    "name": "Qingming Sword Force",
+    "desc": {
+      "0": "An exclusive resource Ye Shunguang builds up in combat and gains through certain skills.",
+      "1": "When 6 points of Qingming Sword Force are accumulated, Ye Shunguang can enter the Enlightened Mind state and gain access to more powerful skills. While in the Enlightened Mind state, Qingming Sword Force is consumed as skills are used or as time passes. When Qingming Sword Force is insufficient or depleted, Ye Shunguang exits the Enlightened Mind state."
+    }
+  },
+  "3000019": {
+    "name": "Enlightened Mind",
+    "desc": {
+      "0": "Ye Shunguang's enhanced combat state.",
+      "1": "After entering the Enlightened Mind state, some of Ye Shunguang's skills, including her Basic Attack and EX Special Attack, become enhanced Enlightened Mind skills. When Qingming Sword Force is insufficient or depleted, Ye Shunguang exits the Enlightened Mind state."
+    }
+  },
+  "3000020": {
+    "name": "Airborne Hover",
+    "desc": "A combat state in which Ye Shunguang rises into the air and briefly hovers, allowing her to chain into certain aerial combos. While in the Enlightened Mind state, some combos can only be performed after entering the Airborne Hover state."
+  },
+  "3000021": {
+    "name": "Dual Form",
+    "desc": {
+      "0": "Ye Shunguang has two combat states.",
+      "1": "Enlightened Mind is her enhanced combat state. While in this state, some of Ye Shunguang's skills, including her Basic Attack and EX Special Attack, are enhanced."
+    }
+  },
+  "3000022": {
+    "name": "Fallen Frost",
+    "desc": {
+      "0": "Hoshimi Miyabi's exclusive combat resource, obtained through certain attacks, her Ultimate, or when any squad member triggers Disorder.",
+      "1": "When 6 points of Fallen Frost are accumulated, Hoshimi Miyabi can <ct color=#FFAF2C>hold</ct> <IconNormal /> to enter Shimotsuki Stance and begin charging. Releasing the button or depleting Fallen Frost unleashes the powerful Basic Attack: Shimotsuki, dealing massive <ct color=#98EFF0>Frost DMG</ct>."
+    }
+  },
+  "3000023": {
+    "name": "Charged Slash",
+    "desc": {
+      "0": "Hoshimi Miyabi's powerful skill Basic Attack: Shimotsuki.",
+      "1": "When she has 2 or more points of Fallen Frost, <ct color=#FFAF2C>hold</ct> <IconNormal /> to activate:",
+      "2": "Hoshimi Miyabi sheathes her blade, enters Shimotsuki Stance, and begins charging. Each charge stage consumes 2 points of Fallen Frost, up to a maximum of 3 stages. When the button is released, or Fallen Frost is depleted, Hoshimi Miyabi draws her blade and unleashes a powerful forward slash based on the current number of charge stages, dealing massive <ct color=#98EFF0>Frost DMG</ct>, then exits Shimotsuki Stance."
+    }
+  },
+  "3000024": {
+    "name": "Totalize",
+    "desc": "When an EX Special Attack or Ultimate hits a Stunned enemy, Totalize is triggered, increasing the skill's DMG Multiplier based on the enemy's remaining Stun duration when Totalize is triggered. After Totalize is triggered, the enemy's Stunned state immediately ends, and a certain amount of Daze is reapplied based on the enemy's remaining Daze when Totalize was triggered."
+  },
+  "3000025": {
+    "name": "Flash Freeze Charge",
+    "desc": {
+      "0": "Ellen's exclusive combat resource.",
+      "1": "While Ellen is in the Roaming state, hitting enemies with Swift Scissors or Charged Scissor Strike grants Flash Freeze Charges. When Ellen has Flash Freeze Charges, she can consume a certain amount after specific skills to use Basic Attack: Glacial Blade Wave, dealing massive <ct color=#98EFF0>Ice DMG</ct>."
+    }
+  },
+  "3000026": {
+    "name": "Dual Ultimate Mechanic",
+    "desc": {
+      "0": "Yixuan has two Ultimates triggered under different conditions, switching between them based on her current resources.",
+      "1": "When Decibel Rating reaches <ct color=#FFAF2C>Maximum</ct>, she can use Ultimate: Qingming Skyshade. When Technique Point is sufficient, she can use Ultimate: Endless Talisman Suppression. If both Technique Point and Decibel Rating meet their respective requirements, Ultimate: Endless Talisman Suppression takes priority. Both Ultimates deal massive <ct color=#FE437E>Auric Ink DMG</ct>."
+    }
+  },
+  "3000027": {
+    "name": "Hunter's Gait",
+    "desc": "An enhanced state Pulchra enters after using an EX Special Attack, Assist Follow-Up, Chain Attack, or Ultimate. While in Hunter's Gait, Pulchra deals increased Daze. Additionally, when another active character in the squad hits an enemy with a Special Attack or EX Special Attack, Pulchra's Aftershock is triggered."
+  },
+  "3000028": {
+    "name": "Stance",
+    "desc": {
+      "0": "Tsukishiro Yanagi has two Stances: Jougen and Kagen.",
+      "1": "In combat, Tsukishiro Yanagi gains corresponding buffs based on her current Stance:",
+      "2": "Jougen Buff: Increases her Electric DMG and Anti-Interrupt Level during Basic Attacks.",
+      "3": "Kagen Buff: Increases her PEN Ratio and Interrupt Level of Basic Attacks."
+    }
+  },
+  "3000029": {
+    "name": "Suppressive Mode",
+    "desc": {
+      "0": "A special attack mode Zhu Yuan enters by <ct color=#FFAF2C>holding</ct><IconNormal />.",
+      "1": "In Suppressive Mode, Zhu Yuan uses her shotgun to perform up to 3 stages of piercing shots forward. If she has Enhanced Shotshells when firing, she consumes 1 Enhanced Shotshells to deal massive <ct color=#FE437E>Ether DMG</ct>. Releasing Basic Attack exits this mode."
+    }
+  },
+  "3000030": {
+    "name": "Summon Motorcycle",
+    "desc": "Starlight - Billy's mechanic for summoning his motorcycle to attack using certain skills. After summoning it, he can use motorcycle-based skills, including drifting, ramming, spinning, launching enemies, and ground slams to deal <ct color=#F0D12B>Physical DMG</ct>. Certain motorcycle skills make him invulnerable while in use and can be chained into other EX Special Attacks."
+  },
+  "3000031": {
+    "name": "Dual Ranged/Melee Forms",
+    "desc": {
+      "0": "Asaba Harumasa can fight using both ranged shots and close-range attacks.",
+      "1": "In combat, ranged shots can apply Electro Prison to enemies. When Electro Prison reaches 2 or more stacks, the target becomes X-Marked. At this point, Asaba Harumasa can move in at close range and deal damage with slashing skills such as Dash Attack: Hiten no Tsuru - Slash."
+    }
+  },
+  "3000032": {
+    "name": "Dashing Slash",
+    "desc": "When an X-Marked enemy is present on the field, Harumasa enters the Awakened state. While Awakened, press <IconNormal /> while dodging to trigger Dash Attack: Hiten no Tsuru - Slash, quickly dashing toward an X-Marked enemy and unleashing a powerful slash. When the slash hits, it consumes Electro Prison and X-Marked. Before X-Marked is depleted, repeatedly press <IconNormal /> to continuously trigger Dash Attack: Hiten no Tsuru - Slash."
+  },
+  "3000033": {
+    "name": "Shimotsuki Stance",
+    "desc": {
+      "0": "A special charging stance Hoshimi Miyabi enters when consuming Fallen Frost to use Basic Attack: Shimotsuki.",
+      "1": "When Hoshimi Miyabi has 2 or more points of Fallen Frost, she can <ct color=#FFAF2C>hold</ct> <IconNormal /> to enter Shimotsuki Stance. She is invulnerable while in Shimotsuki Stance."
+    }
+  },
+  "3000034": {
+    "name": "Roaming",
+    "desc": {
+      "0": "Ellen's high-speed movement state.",
+      "1": "<ct color=#FFAF2C>Hold</ct> or <ct color=#FFAF2C>double-press</ct><IconEvade /> to enter Roaming, gaining brief invulnerability upon entering. While Roaming, press <IconNormal /> to use Swift Scissors, or <ct color=#FFAF2C>hold</ct><IconNormal /> to use Charged Scissor Strike. Hitting an enemy with Swift Scissors or Charged Scissor Strike grants Flash Freeze Charge."
+    }
+  },
+  "3000035": {
+    "name": "Technique Point",
+    "desc": {
+      "0": "Yixuan's exclusive combat resource.",
+      "1": "Upon entering combat, Yixuan gains <ct color=#FFAF2C>120</ct> points of Adrenaline. Consuming Adrenaline restores Technique Points. When Technique Points reach <ct color=#FFAF2C>120</ct>, press <IconUltimateReady /> to use Ultimate: Endless Talisman Suppression."
+    }
+  },
+  "3000036": {
+    "name": "Adrenaline",
+    "desc": {
+      "0": "<IconAvatarClassRupture /> Energy exclusive to the Rupture Specialty.",
+      "1": "Rupture Agents must consume Adrenaline to use an EX Special Attack. Hitting enemies with skills such as Basic Attacks and Dodge Counters grants Adrenaline.",
+      "2": "The Adrenaline gauge is displayed below HP, and the amount required for an EX Special Attack is shown on the gauge as a red marker."
+    }
+  },
+  "3000037": {
+    "name": "Enhanced Shotshells",
+    "desc": {
+      "0": "Zhu Yuan's exclusive combat resource.",
+      "1": "By accumulating Enhanced Shotshells, Zhu Yuan can increase the power of certain skills. Using skills such as her EX Special Attack, Chain Attack, Ultimate, or Assist Follow-Up allows her to quickly gain Enhanced Shotshells."
+    }
+  },
+  "3000038": {
+    "name": "Gash",
+    "desc": "Sharp DMG causes Gash buildup. When Gash buildup is full, the enemy is inflicted with Gash. Gash can be used to trigger Maim, dealing additional DMG. Gash can stack up to 3 times."
+  },
+  "3000039": {
+    "name": "Maim",
+    "desc": "When an enemy has at least 1 stack of Gash, certain skills can consume Gash on hit to trigger Maim and deal additional DMG."
+  },
+  "3000040": {
+    "name": "Sharpness",
+    "desc": {
+      "0": "<IconAvatarClassArmorer /> Energy exclusive to the Armorer Specialty.",
+      "1": "Armorer Agents must consume Sharpness to use an EX Special Attack. Hitting enemies with skills such as Basic Attacks and Dodge Counters grants Sharpness.",
+      "2": "The Sharpness gauge is displayed below HP, and the amount required for an EX Special Attack is shown on the gauge as a red marker."
+    }
   },
   "4000001": {
     "name": "Basic Technique",
@@ -351,6 +632,91 @@
   "4000035": {
     "name": "Strong Shield",
     "desc": "While an Agent has a shield, their CRIT Rate increases by <ct color=#2BAD00>10%</ct>."
+  },
+  "4000036": {
+    "name": "Strength",
+    "desc": "Increases the DMG of each hit dealt by all attack Cards. Each stack of Strength adds 1 to final DMG. All stacks are cleared at the end of the turn."
+  },
+  "4000037": {
+    "name": "Cheer",
+    "desc": "Increases the total DMG dealt by the next attack Card. Each stack of Cheer increases total DMG by 10%. All stacks are consumed after attacking and cleared at the end of the turn."
+  },
+  "4000038": {
+    "name": "Energize",
+    "desc": "Increases the combo count of all attack Cards by 1 for every 10 stacks of Energize. Persists permanently and is not cleared between turns."
+  },
+  "4000039": {
+    "name": "Opening",
+    "desc": "Triggers an additional effect when this Card is placed at the far left of your hand"
+  },
+  "4000040": {
+    "name": "Curtain Call",
+    "desc": "Triggers an additional effect when this Card is placed at the far right of your hand"
+  },
+  "4000041": {
+    "name": "Chain Attack",
+    "desc": "Triggers an additional effect when the previous Card is a Chain Attack Card"
+  },
+  "4000042": {
+    "name": "Buildup",
+    "desc": "Includes the Kinetic Buildup and Precise Buildup Cards. Sell these Cards to gain stacks of Energize."
+  },
+  "4000043": {
+    "name": "Strength",
+    "desc": "Increases the DMG of each hit dealt by all attack Cards. Each stack of Strength adds 1 to final DMG. All stacks are cleared at the end of the turn."
+  },
+  "4000044": {
+    "name": "Cheer",
+    "desc": "Increases the total DMG dealt by the next attack Card. Each stack of Cheer increases total DMG by 10%. All stacks are consumed after attacking and cleared at the end of the turn."
+  },
+  "4000045": {
+    "name": "Energize",
+    "desc": "Increases the combo count of all attack Cards by 1 for every 10 stacks of Energize. Persists permanently and is not cleared between turns."
+  },
+  "4000046": {
+    "name": "Opening",
+    "desc": "Triggers an additional effect when this Card is placed at the far left of your hand"
+  },
+  "4000047": {
+    "name": "Curtain Call",
+    "desc": "Triggers an additional effect when this Card is placed at the far right of your hand"
+  },
+  "4000048": {
+    "name": "Chain Attack",
+    "desc": "Triggers an additional effect when the previous Card is a Chain Attack Card"
+  },
+  "4000049": {
+    "name": "Buildup",
+    "desc": "Includes the Kinetic Buildup and Precise Buildup Cards. Sell these Cards to gain stacks of Energize."
+  },
+  "4000050": {
+    "name": "Kinetic Buildup",
+    "desc": {
+      "0": "Sell this Card to gain stacks of Energize.",
+      "1": "Effect of the 1-star version: When sold, this Card grants 3 Energize instead of Coin"
+    }
+  },
+  "4000051": {
+    "name": "Precise Buildup",
+    "desc": {
+      "0": "Sell this Card to gain stacks of Energize.",
+      "1": "Effect of the 1-star version: When sold, this Card grants 16% Energize instead of Coin"
+    }
+  },
+  "4000052": {
+    "name": "Little Flame",
+    "desc": "This Card transforms into Flame of Rebirth when its star level increases"
+  },
+  "4000053": {
+    "name": "Flame of Rebirth",
+    "desc": "This Card transforms into Fields of Fire when its star level increases"
+  },
+  "4000054": {
+    "name": "Fields of Fire",
+    "desc": {
+      "0": "The Fireball Build relies on frequently crafting other Cards to obtain Fields of Fire.",
+      "1": "Effect of the 1-star version: Increases this Card's DMG by 100% for each Fields of Fire Card played"
+    }
   },
   "10000081": {
     "name": "Windbloom",

@@ -66,8 +66,19 @@ export function Content({ onClose }: { onClose?: () => void }) {
   }, [database, navigate, characterKey, gender, silly, t])
 
   return (
-    <Box display="flex" flexDirection="column" gap={1}>
-      <Box display="flex" gap={1}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1,
+      }}
+    >
+      <Box
+        sx={{
+          display: 'flex',
+          gap: 1,
+        }}
+      >
         <TravelerGenderSelect />
         <Button
           color="error"
@@ -85,7 +96,14 @@ export function Content({ onClose }: { onClose?: () => void }) {
       </Box>
       <Box>
         <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
-          <Grid item xs={8} sm={5} md={4} lg={3}>
+          <Grid
+            size={{
+              xs: 8,
+              sm: 5,
+              md: 4,
+              lg: 3,
+            }}
+          >
             <CardThemed
               bgt="light"
               sx={{
@@ -130,17 +148,18 @@ export function Content({ onClose }: { onClose?: () => void }) {
             </CardThemed>
           </Grid>
           <Grid
-            item
-            xs={12}
-            sm={7}
-            md={8}
-            lg={9}
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+            size={{
+              xs: 12,
+              sm: 7,
+              md: 8,
+              lg: 9,
+            }}
           >
             <Box>
               <Grid container columns={3} spacing={1}>
                 {(['auto', 'skill', 'burst'] as const).map((talentKey) => (
-                  <Grid item xs={1} key={talentKey}>
+                  <Grid key={talentKey} size={1}>
                     <TalentDropdown
                       key={talentKey}
                       talentKey={talentKey}

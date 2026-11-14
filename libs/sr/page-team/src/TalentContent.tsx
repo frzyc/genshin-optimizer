@@ -43,12 +43,6 @@ import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useTeammateContext } from './context'
 
-const talentSpacing = {
-  xs: 12,
-  sm: 6,
-  md: 4,
-}
-
 export default function CharacterTalentPane() {
   const { characterKey } = useTeammateContext()
   const calc = useSrCalcContext()
@@ -122,11 +116,12 @@ export default function CharacterTalentPane() {
         {/* constellations for 4column */}
         {grlg && (
           <Grid
-            item
-            xs={12}
-            md={12}
-            lg={3}
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+            size={{
+              xs: 12,
+              md: 12,
+              lg: 3,
+            }}
           >
             <EidolonDropdown eidolon={eidolon} />
             {eidolonCards?.map((c, i) => (
@@ -136,13 +131,21 @@ export default function CharacterTalentPane() {
             ))}
           </Grid>
         )}
-        <Grid item xs={12} md={12} lg={9} container spacing={1}>
+        <Grid
+          container
+          spacing={1}
+          size={{
+            xs: 12,
+            md: 12,
+            lg: 9,
+          }}
+        >
           {/* auto, skill, burst */}
           {skillBurstList.map((tKey) => {
             const sheetElement = characterSheet[tKey]
             if (!sheetElement) return null
             return (
-              <Grid item key={tKey} {...talentSpacing}>
+              <Grid key={tKey}>
                 <SkillDisplayCard
                   talentKey={tKey}
                   sheetElement={sheetElement}
@@ -186,8 +189,16 @@ export default function CharacterTalentPane() {
         </Grid>
         {/* constellations for < 4 columns */}
         {!grlg && (
-          <Grid item xs={12} md={12} lg={3} container spacing={1}>
-            <Grid item xs={12}>
+          <Grid
+            container
+            spacing={1}
+            size={{
+              xs: 12,
+              md: 12,
+              lg: 3,
+            }}
+          >
+            <Grid size={12}>
               <EidolonDropdown eidolon={eidolon} />
             </Grid>
             {/* {constellationCards.map((c, i) => (
@@ -350,7 +361,7 @@ function SkillDisplayCard({
         >
           <Grid container sx={{ flexWrap: 'nowrap' }}>
             {img && (
-              <Grid item>
+              <Grid>
                 <Box
                   component="img"
                   src={img}
@@ -358,7 +369,12 @@ function SkillDisplayCard({
                 />
               </Grid>
             )}
-            <Grid item flexGrow={1} sx={{ pl: 1 }}>
+            <Grid
+              sx={{
+                flexGrow: 1,
+                pl: 1,
+              }}
+            >
               <Typography variant="subtitle1">{title}</Typography>
               {subtitle && (
                 <Typography variant="subtitle2">{subtitle}</Typography>

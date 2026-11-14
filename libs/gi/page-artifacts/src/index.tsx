@@ -117,7 +117,13 @@ export default function PageArtifact() {
       database.displayArtifact.set({ ascending }),
   }
   return (
-    <Box display="flex" flexDirection="column" gap={1}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1,
+      }}
+    >
       <Suspense fallback={false}>
         <ArtifactEditor
           artifactIdToEdit={artifactIdToEdit}
@@ -151,11 +157,13 @@ export default function PageArtifact() {
       <CardThemed>
         <CardContent>
           <Box
-            pb={2}
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            flexWrap="wrap"
+            sx={{
+              pb: 2,
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+            }}
           >
             <ShowingAndSortOptionSelect
               showingTextProps={showingTextProps}
@@ -166,7 +174,7 @@ export default function PageArtifact() {
         </CardContent>
       </CardThemed>
       <Grid container columns={columns} spacing={1}>
-        <Grid item xs>
+        <Grid size="grow">
           <Button
             fullWidth
             onClick={() => setArtifactIdToEdit('new')}
@@ -176,7 +184,7 @@ export default function PageArtifact() {
             {t('addNew')}
           </Button>
         </Grid>
-        <Grid item xs={1}>
+        <Grid size={1}>
           <Button
             fullWidth
             onClick={onShowDup}
@@ -197,7 +205,7 @@ export default function PageArtifact() {
       >
         <Grid container spacing={1} columns={columns}>
           {artifactIdsToShow.map((artId) => (
-            <Grid item key={artId} xs={1}>
+            <Grid key={artId} size={1}>
               <ArtifactCard
                 artifactId={artId}
                 effFilter={effFilterSet}

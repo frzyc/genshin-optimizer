@@ -36,7 +36,13 @@ export default function PageScanner() {
   const { t } = useTranslation('page_scanner')
   ReactGA.send({ hitType: 'pageview', page: '/scanner' })
   return (
-    <Box display="flex" flexDirection="column" gap={2}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+      }}
+    >
       <CardThemed>
         <CardContent>
           <Trans t={t} i18nKey="intro">
@@ -64,7 +70,7 @@ export default function PageScanner() {
       </CardThemed>
 
       <Grid container columns={{ xs: 1, md: 2, lg: 4 }} spacing={2}>
-        <Grid item xs={1}>
+        <Grid size={1}>
           <CardThemed sx={{ height: '100%' }}>
             <CardActionArea
               href="https://artiscan.ninjabay.org/"
@@ -73,8 +79,19 @@ export default function PageScanner() {
               <CardMedia component="img" image={Artiscan} />
             </CardActionArea>
             <CardContent>
-              <Box display="flex" gap={1} alignItems="center">
-                <Typography variant="h5" flexGrow={1}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  gap: 1,
+                  alignItems: 'center',
+                }}
+              >
+                <Typography
+                  variant="h5"
+                  sx={{
+                    flexGrow: 1,
+                  }}
+                >
                   <Trans t={t} i18nKey="nb.title">
                     Artiscan
                   </Trans>
@@ -120,7 +137,7 @@ export default function PageScanner() {
             </CardContent>
           </CardThemed>
         </Grid>
-        <Grid item xs={1}>
+        <Grid size={1}>
           <CardThemed sx={{ height: '100%' }}>
             <CardActionArea
               href="https://github.com/taiwenlee/Inventory_Kamera/blob/master/README.md"
@@ -129,8 +146,19 @@ export default function PageScanner() {
               <CardMedia component="img" image={GIScanner} />
             </CardActionArea>
             <CardContent>
-              <Box display="flex" gap={1} alignItems="center">
-                <Typography variant="h5" flexGrow={1}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  gap: 1,
+                  alignItems: 'center',
+                }}
+              >
+                <Typography
+                  variant="h5"
+                  sx={{
+                    flexGrow: 1,
+                  }}
+                >
                   <Trans t={t} i18nKey="ik.title">
                     Inventory Kamera
                   </Trans>
@@ -215,7 +243,7 @@ export default function PageScanner() {
             </CardContent>
           </CardThemed>
         </Grid>
-        <Grid item xs={1}>
+        <Grid size={1}>
           <CardThemed sx={{ height: '100%' }}>
             <CardActionArea
               href="https://github.com/D1firehail/AdeptiScanner-GI/blob/master/README.md"
@@ -224,8 +252,19 @@ export default function PageScanner() {
               <CardMedia component="img" image={AdScanner} />
             </CardActionArea>
             <CardContent>
-              <Box display="flex" gap={1} alignItems="center">
-                <Typography variant="h5" flexGrow={1}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  gap: 1,
+                  alignItems: 'center',
+                }}
+              >
+                <Typography
+                  variant="h5"
+                  sx={{
+                    flexGrow: 1,
+                  }}
+                >
                   <Trans t={t} i18nKey="as.title">
                     AdeptiScanner
                   </Trans>
@@ -299,7 +338,7 @@ export default function PageScanner() {
             </CardContent>
           </CardThemed>
         </Grid>
-        <Grid item xs={1}>
+        <Grid size={1}>
           <CardThemed sx={{ height: '100%' }}>
             <CardActionArea
               href="https://konkers.github.io/irminsul/02-quickstart.html"
@@ -308,8 +347,19 @@ export default function PageScanner() {
               <CardMedia component="img" image={Irminsul} />
             </CardActionArea>
             <CardContent>
-              <Box display="flex" gap={1} alignItems="center">
-                <Typography variant="h5" flexGrow={1}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  gap: 1,
+                  alignItems: 'center',
+                }}
+              >
+                <Typography
+                  variant="h5"
+                  sx={{
+                    flexGrow: 1,
+                  }}
+                >
                   <Trans t={t} i18nKey="is.title">
                     Irminsul
                   </Trans>

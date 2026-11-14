@@ -155,15 +155,21 @@ export function DiscSwapModal({
         <Divider />
         <CardContent>
           <Box
-            pb={1}
-            display="flex"
-            justifyContent="space-between"
-            alignItems="flex-end"
-            flexWrap="wrap"
+            sx={{
+              pb: 1,
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-end',
+              flexWrap: 'wrap',
+            }}
           >
             <ShowingAndSortOptionSelect showingTextProps={showingTextProps} />
           </Box>
-          <Box mt={1}>
+          <Box
+            sx={{
+              mt: 1,
+            }}
+          >
             <Suspense
               fallback={
                 <Skeleton variant="rectangular" width="100%" height={1000} />
@@ -172,7 +178,7 @@ export function DiscSwapModal({
               <Grid container spacing={1} columns={{ xs: 2, md: 3, lg: 4 }}>
                 {/* only show "unequip" when a disc is equipped */}
                 {discId && (
-                  <Grid item xs={1}>
+                  <Grid size={1}>
                     <CardThemed
                       bgt="light"
                       sx={{ width: '100%', height: '100%' }}
@@ -205,9 +211,7 @@ export function DiscSwapModal({
                 )}
                 {discIdsToShow.map((id) => (
                   <Grid
-                    item
                     key={id}
-                    xs={1}
                     sx={(theme) => ({
                       ...(discId === id && {
                         '> .MuiCard-root': {
@@ -217,6 +221,7 @@ export function DiscSwapModal({
                         },
                       }),
                     })}
+                    size={1}
                   >
                     <DiscCardObj
                       disc={database.discs.get(id) as IDisc}

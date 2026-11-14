@@ -77,17 +77,24 @@ export default function TeyvatTime() {
       </CardContent>
       <Divider />
       <CardContent>
-        <Grid container justifyContent="center" spacing={3}>
-          <Grid item sx={{ my: 4 }}>
+        <Grid
+          container
+          spacing={3}
+          sx={{
+            justifyContent: 'center',
+          }}
+        >
+          <Grid sx={{ my: 4 }}>
             <Typography variant="h2">
               {time.toLocaleTimeString([], { timeZone: 'UTC' })}
             </Typography>
           </Grid>
           <Grid
-            item
-            display="flex"
-            flexDirection="column"
-            justifyContent="space-around"
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-around',
+            }}
           >
             <Typography>
               Server Date: <b>{time.toDateString()}</b>

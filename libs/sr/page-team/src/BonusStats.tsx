@@ -149,20 +149,22 @@ function BonusStatDisplay({
           onChange={setValue}
           placeholder="Stat Value"
           size="small"
-          inputProps={{ sx: { textAlign: 'right' } }}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end" sx={{ ml: 0 }}>
-                {isPercent ? '%' : undefined}{' '}
-                <IconButton
-                  aria-label="Delete Bonus Stat"
-                  onClick={onDelete}
-                  edge="end"
-                >
-                  <DeleteForever fontSize="small" />
-                </IconButton>
-              </InputAdornment>
-            ),
+          slotProps={{
+            htmlInput: { sx: { textAlign: 'right' } },
+            input: {
+              endAdornment: (
+                <InputAdornment position="end" sx={{ ml: 0 }}>
+                  {isPercent ? '%' : undefined}{' '}
+                  <IconButton
+                    aria-label="Delete Bonus Stat"
+                    onClick={onDelete}
+                    edge="end"
+                  >
+                    <DeleteForever fontSize="small" />
+                  </IconButton>
+                </InputAdornment>
+              ),
+            },
           }}
         />
       </CardContent>

@@ -60,30 +60,32 @@ export function WeaponLevelSelect({
           setLevel(e || 1)
         }}
         type="number"
-        InputProps={{
-          inputProps: {
+        slotProps={{
+          htmlInput: {
             min: 0,
             max: 100,
             sx: { width: '4em' },
           },
-          endAdornment: (
-            <InputAdornment position="end" sx={{ width: '100%' }}>
-              <Button
-                sx={{ ml: 'auto' }}
-                disabled={
-                  !(
-                    useLow
-                      ? ambiguousLevelLow
-                      : (l: number) => ambiguousLevel(l, maxLevel)
-                  )(level) || disabled
-                }
-                onClick={setAscension}
-                color={warning ? 'warning' : undefined}
-              >
-                <strong>/ {ascensionMaxLevel[ascension]}</strong>
-              </Button>
-            </InputAdornment>
-          ),
+          input: {
+            endAdornment: (
+              <InputAdornment position="end" sx={{ width: '100%' }}>
+                <Button
+                  sx={{ ml: 'auto' }}
+                  disabled={
+                    !(
+                      useLow
+                        ? ambiguousLevelLow
+                        : (l: number) => ambiguousLevel(l, maxLevel)
+                    )(level) || disabled
+                  }
+                  onClick={setAscension}
+                  color={warning ? 'warning' : undefined}
+                >
+                  <strong>/ {ascensionMaxLevel[ascension]}</strong>
+                </Button>
+              </InputAdornment>
+            ),
+          },
         }}
         color={warning ? 'warning' : undefined}
         focused={warning ? true : undefined}

@@ -125,7 +125,7 @@ export function ArtSetFilter({
       >
         <Grid container spacing={1} columns={{ xs: 2, lg: 3 }}>
           {visibleSetKeys.map((d) => (
-            <Grid item key={d} xs={1}>
+            <Grid key={d} size={1}>
               <AdvSetFilterCard
                 numSlot={artSetBySlot[d]}
                 setKey={d}
@@ -207,8 +207,7 @@ function ArtifactFilterHeader({
   return (
     <Box
       className={`grad-${Math.max(...artStat.rarities)}star`}
-      width="100%"
-      sx={{ display: 'flex' }}
+      sx={{ display: 'flex', width: '100%' }}
     >
       <Box
         component="img"
@@ -229,9 +228,7 @@ function ArtifactFilterHeader({
         </Typography>
         <Typography
           variant="subtitle1"
-          display="flex"
-          gap={1}
-          alignItems="center"
+          sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
         >
           {artStat.rarities
             .filter((rarity) => rarity >= 3)
@@ -263,7 +260,7 @@ function ArtifactFilterHeader({
                       />
                     </Typography>
                   </Box>
-                  <Box paddingTop={2} sx={{ opacity: fade4 ? 0.6 : 1 }}>
+                  <Box sx={{ paddingTop: 2, opacity: fade4 ? 0.6 : 1 }}>
                     <Typography>
                       <SqBadge color="success">{t('4set')}</SqBadge>
                     </Typography>

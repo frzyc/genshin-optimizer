@@ -164,7 +164,7 @@ function AdvSetFilterCard({
         </Box>
         <Grid container spacing={1}>
           {allRelicCavernSetKeys.map((set) => (
-            <Grid item key={set} xs={12} sm={6} md={4}>
+            <Grid key={set} size={{ xs: 12, sm: 6, md: 4 }}>
               <CardThemed bgt="light">
                 <CardHeader
                   title={<RelicSetName setKey={set} />}

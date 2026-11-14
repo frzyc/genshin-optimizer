@@ -28,6 +28,7 @@ function stripAttribute(tag: Tag): Tag {
 const CATALOG_DIM_ORDER = [
   'standardDmg',
   'sheerDmg',
+  'sharpDmg',
   'dazeBuildup',
   'anomBuildup',
   'anomalyDmg',
@@ -37,6 +38,8 @@ const CATALOG_DIM_ORDER = [
 ] as const
 
 const catalogDimOrderSet = new Set<string>(CATALOG_DIM_ORDER)
+
+const CATALOG_DMG_DIMS = ['standardDmg', 'sheerDmg', 'sharpDmg'] as const
 
 /** Stable dim key order: known preference, then leftover names. */
 export function orderCatalogDimKeys(dims: Iterable<string>): string[] {
@@ -122,11 +125,12 @@ function finalizeCatalogEntry(entry: FormulaCatalogEntry) {
       unknown
     )
   }
-  const hasStandard = dimKeys.includes('standardDmg')
-  const hasSheer = dimKeys.includes('sheerDmg')
-  if (hasStandard && hasSheer) {
+  const dmgDims = dimKeys.filter((dim) =>
+    (CATALOG_DMG_DIMS as readonly string[]).includes(dim)
+  )
+  if (dmgDims.length > 1) {
     throw new Error(
-      `[zzz-formula] ${entry.sheet}/${entry.name} has both standardDmg and sheerDmg`
+      `[zzz-formula] ${entry.sheet}/${entry.name} has multiple damage dims (${dmgDims.join(', ')})`
     )
   }
 

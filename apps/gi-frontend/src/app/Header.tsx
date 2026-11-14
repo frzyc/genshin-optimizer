@@ -112,9 +112,15 @@ function DesktopHeader({
         <Tab
           value=""
           component={RouterLink}
+          nativeButton={false}
           to="/optimize"
           label={
-            <Box display="flex" alignItems="center">
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
               <Typography variant="h6" sx={{ px: 1, fontWeight: 'Normal' }}>
                 GI Pando
               </Typography>
@@ -137,12 +143,19 @@ function DesktopHeader({
               key={value}
               value={value}
               component={RouterLink}
+              nativeButton={false}
               to={to}
               icon={tooltipIcon as ReactElement}
               iconPosition="start"
               label={
                 isXL || textSuffix ? (
-                  <Box display="flex" gap={0.5} alignItems="center">
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      gap: 0.5,
+                      alignItems: 'center',
+                    }}
+                  >
                     {isXL && <span>{t(i18Key)}</span>}
                     {textSuffix}
                   </Box>
@@ -198,6 +211,7 @@ function MobileHeader({
               key={value}
               value={value}
               component={RouterLink}
+              nativeButton={false}
               to={to}
               icon={icon as ReactElement}
               iconPosition="start"

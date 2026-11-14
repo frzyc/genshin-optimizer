@@ -95,7 +95,13 @@ export function WeaponCardNanoObj({
   )
   return (
     <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
-      <Box display="flex" height="100%" alignItems="stretch">
+      <Box
+        sx={{
+          display: 'flex',
+          height: '100%',
+          alignItems: 'stretch',
+        }}
+      >
         <Box
           className={`grad-${getWeaponStat(weapon.key).rarity}star`}
           sx={{
@@ -181,7 +187,13 @@ export function WeaponCardNanoObj({
             )}
           </Box>
         </Box>
-        <Box display="flex" flexDirection="column" sx={{ p: 1 }}>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            p: 1,
+          }}
+        >
           <WeaponStat node={UIData.get(input.weapon.main)} />
           <WeaponStat node={UIData.get(input.weapon.sub)} />
         </Box>
@@ -193,7 +205,13 @@ function WeaponStat({ node }: { node: CalcResult }) {
   const { name, icon } = resolveInfo(node.info)
   if (!name) return null
   return (
-    <Box display="flex" gap={1} alignContent="center">
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 1,
+        alignContent: 'center',
+      }}
+    >
       <Typography
         sx={{ flexGrow: 1, display: 'flex', gap: 1 }}
         component="span"

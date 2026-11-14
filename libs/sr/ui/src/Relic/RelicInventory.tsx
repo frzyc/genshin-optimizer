@@ -53,13 +53,19 @@ export function RelicInventory({ onAdd, onEdit }: RelicInventoryProps) {
       <CardThemed bgt="dark">
         <CardContent>
           <Box
-            pb={2}
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            flexWrap="wrap"
+            sx={{
+              pb: 2,
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+            }}
           >
-            <Typography color="text.secondary">
+            <Typography
+              sx={{
+                color: 'text.secondary',
+              }}
+            >
               Showing <b>{showingTextProps.numShowing}</b> out of{' '}
               {showingTextProps.totalShowing} Items
             </Typography>
@@ -67,7 +73,7 @@ export function RelicInventory({ onAdd, onEdit }: RelicInventoryProps) {
         </CardContent>
       </CardThemed>
       <Grid container columns={columns} spacing={1}>
-        <Grid item xs>
+        <Grid size="grow">
           <Button
             fullWidth
             onClick={onAdd}
@@ -88,7 +94,7 @@ export function RelicInventory({ onAdd, onEdit }: RelicInventoryProps) {
       >
         <Grid container columns={columns} spacing={1}>
           {relicsIdsToShow.map((relicId) => (
-            <Grid item key={relicId} xs={1}>
+            <Grid key={relicId} size={1}>
               <RelicCard
                 relic={database.relics.get(relicId)!}
                 onEdit={() => onEdit?.(relicId)}

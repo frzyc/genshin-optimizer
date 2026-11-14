@@ -6,10 +6,10 @@ import { OptSelector } from './OptSelector'
 export function OptTargetRow() {
   return (
     <Box
-      display="flex"
-      gap={1}
-      flexWrap="wrap"
       sx={{
+        display: 'flex',
+        gap: 1,
+        flexWrap: 'wrap',
         '& > *': { flex: '1 1 auto', minWidth: 0 },
       }}
     >

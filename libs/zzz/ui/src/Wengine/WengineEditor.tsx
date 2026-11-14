@@ -110,9 +110,19 @@ export function WengineEditor({
           {wengineStat && (
             <Grid container spacing={1.5}>
               {/* Left column */}
-              <Grid item xs={12} sm={3}>
+              <Grid
+                size={{
+                  xs: 12,
+                  sm: 3,
+                }}
+              >
                 <Grid container spacing={1.5}>
-                  <Grid item xs={6} sm={12}>
+                  <Grid
+                    size={{
+                      xs: 6,
+                      sm: 12,
+                    }}
+                  >
                     <Box sx={{ position: 'relative', display: 'flex' }}>
                       <Box
                         component="img"
@@ -141,7 +151,12 @@ export function WengineEditor({
                       </IconButton>
                     </Box>
                   </Grid>
-                  <Grid item xs={6} sm={12}>
+                  <Grid
+                    size={{
+                      xs: 6,
+                      sm: 12,
+                    }}
+                  >
                     <Typography>
                       <small>
                         {key && (
@@ -154,12 +169,19 @@ export function WengineEditor({
               </Grid>
               {/* right column */}
               <Grid
-                item
-                xs={12}
-                sm={9}
                 sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+                size={{
+                  xs: 12,
+                  sm: 9,
+                }}
               >
-                <Box display="flex" gap={1} flexWrap="wrap">
+                <Box
+                  sx={{
+                    display: 'flex',
+                    gap: 1,
+                    flexWrap: 'wrap',
+                  }}
+                >
                   <ButtonGroup>
                     <Button color="info" onClick={onShowModal}>
                       {key ? <WengineName wKey={key} /> : 'Select a Wengine'}
@@ -178,7 +200,13 @@ export function WengineEditor({
                     </IconButton>
                   )}
                 </Box>
-                <Box display="flex" gap={1} flexWrap="wrap">
+                <Box
+                  sx={{
+                    display: 'flex',
+                    gap: 1,
+                    flexWrap: 'wrap',
+                  }}
+                >
                   {key && (
                     <LevelSelect
                       level={level}
@@ -196,11 +224,19 @@ export function WengineEditor({
                 <Typography gutterBottom>
                   {key && <WengineRefineDesc phase={phase} wKey={key} />}
                 </Typography>
-                <Box display="flex" flexDirection="column" gap={1}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 1,
+                  }}
+                >
                   <CardThemed>
                     <CardHeader
                       title={'Main Stats'}
-                      titleTypographyProps={{ variant: 'subtitle2' }}
+                      slotProps={{
+                        title: { variant: 'subtitle2' },
+                      }}
                     />
                     <Divider />
                     <FieldDisplayList sx={{ padding: '8px' }}>
@@ -253,13 +289,21 @@ export function WengineEditor({
         {footer && id && (
           <CardContent sx={{ py: 1 }}>
             <Grid container spacing={1}>
-              <Grid item flexGrow={1}>
+              <Grid
+                sx={{
+                  flexGrow: 1,
+                }}
+              >
                 <LocationAutocomplete
                   locKey={location}
                   setLocKey={setLocation}
                 />
               </Grid>
-              <Grid item flexGrow={1}>
+              <Grid
+                sx={{
+                  flexGrow: 1,
+                }}
+              >
                 {!!deleteWengine && (
                   <Button
                     color="error"

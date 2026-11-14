@@ -39,7 +39,11 @@ export function TeammatesSection() {
   const [pickingSlot, setPickingSlot] = useState<0 | 1 | 2>()
 
   return (
-    <Stack gap={1}>
+    <Stack
+      sx={{
+        gap: 1,
+      }}
+    >
       <OnFieldSelector />
       <Grid container spacing={1} columns={{ xs: 1, md: 3 }}>
         <Suspense fallback={false}>
@@ -86,7 +90,11 @@ function OnFieldSelector() {
     pandoTeam.activeMember
   )
   return (
-    <Stack gap={0.5}>
+    <Stack
+      sx={{
+        gap: 0.5,
+      }}
+    >
       <Typography variant="subtitle2">{t('onField')}</Typography>
       <SolidToggleButtonGroup
         exclusive
@@ -137,8 +145,13 @@ function TeammateSlotColumn({
   const { t } = useTranslation('page_optimize')
   const { gender } = useDBMeta()
   return (
-    <Grid item xs={1}>
-      <Stack gap={1} sx={{ height: '100%' }}>
+    <Grid size={1}>
+      <Stack
+        sx={{
+          gap: 1,
+          height: '100%',
+        }}
+      >
         <Button
           fullWidth
           color={teammateKey ? 'success' : 'primary'}

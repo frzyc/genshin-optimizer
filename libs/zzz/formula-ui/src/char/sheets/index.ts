@@ -35,6 +35,7 @@ import Nicole from './Nicole'
 import Norma from './Norma'
 import OrphieMagus from './OrphieMagus'
 import PanYinhu from './PanYinhu'
+import Phoenix from './Phoenix'
 import Piper from './Piper'
 import Promeia from './Promeia'
 import Pulchra from './Pulchra'
@@ -45,6 +46,7 @@ import Rina from './Rina'
 import Roxy from './Roxy'
 import Seed from './Seed'
 import Seth from './Seth'
+import Severian from './Severian'
 import Sigrid from './Sigrid'
 import Soldier0Anby from './Soldier0Anby'
 import Soldier11 from './Soldier11'
@@ -97,6 +99,7 @@ export const charSheets: Record<CharacterKey, CharUISheet> = {
   Norma,
   OrphieMagus,
   PanYinhu,
+  Phoenix,
   Piper,
   Promeia,
   Pulchra,
@@ -107,6 +110,7 @@ export const charSheets: Record<CharacterKey, CharUISheet> = {
   Roxy,
   Seed,
   Seth,
+  Severian,
   Sigrid,
   Soldier0Anby,
   Soldier11,

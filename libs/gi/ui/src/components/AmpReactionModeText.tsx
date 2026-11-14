@@ -37,7 +37,12 @@ export function AmpReactionModeText({
   if (!base) return null
 
   return (
-    <Box display="flex" alignItems="center">
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
       <ColorText color="melt">{t(`reaction.${reaction}`)}</ColorText>
       <SqBadge sx={sqBadgeStyle} color={base}>
         {<ElementIcon ele={base} iconProps={iconInlineProps} />}

@@ -199,9 +199,15 @@ function DesktopHeader({
         <Tab
           value=""
           component={RouterLink}
+          nativeButton={false}
           to="/"
           label={
-            <Box display="flex" alignItems="center">
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
               <Avatar
                 src={silly ? silly_icon : go_icon}
                 variant="rounded"
@@ -233,12 +239,19 @@ function DesktopHeader({
               key={value}
               value={value}
               component={RouterLink}
+              nativeButton={false}
               to={to}
               icon={tooltipIcon as ReactElement}
               iconPosition="start"
               label={
                 isXL || textSuffix ? (
-                  <Box display="flex" gap={0.5} alignItems="center">
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      gap: 0.5,
+                      alignItems: 'center',
+                    }}
+                  >
                     {isXL && <Typography>{t(i18Key)}</Typography>}
                     {textSuffix}
                   </Box>
@@ -294,11 +307,13 @@ function MobileHeader({
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
           }}
-          PaperProps={{
-            sx: (theme) => ({
-              // backgroundColor: 'neutral700.main',
-              backgroundImage: `linear-gradient(to right, ${theme.palette.neutral700.main}, ${theme.palette.neutral700.main})`,
-            }),
+          slotProps={{
+            paper: {
+              sx: (theme) => ({
+                // backgroundColor: 'neutral700.main',
+                backgroundImage: `linear-gradient(to right, ${theme.palette.neutral700.main}, ${theme.palette.neutral700.main})`,
+              }),
+            },
           }}
         >
           <Tabs
@@ -306,12 +321,6 @@ function MobileHeader({
             orientation="vertical"
             variant="scrollable"
             scrollButtons={false}
-            TabIndicatorProps={{
-              sx: {
-                left: 0,
-                width: '4px',
-              },
-            }}
             sx={(theme) => ({
               '& .Mui-selected': {
                 backgroundImage: `linear-gradient(to right, ${theme.palette.brand500.main}, ${theme.palette.neutral700.main})`,
@@ -320,10 +329,19 @@ function MobileHeader({
                   '0.1px 0 0 currentColor, -0.1px 0 0 currentColor, 0 0.1px 0 currentColor, 0 -0.1px 0',
               },
             })}
+            slotProps={{
+              indicator: {
+                sx: {
+                  left: 0,
+                  width: '4px',
+                },
+              },
+            }}
           >
             <Tab
               value=""
               component={RouterLink}
+              nativeButton={false}
               to={'/'}
               onClick={handleDrawerToggle}
               icon={
@@ -349,12 +367,19 @@ function MobileHeader({
                 key={value}
                 value={value}
                 component={RouterLink}
+                nativeButton={false}
                 to={to}
                 onClick={handleDrawerToggle}
                 icon={icon as ReactElement}
                 iconPosition="start"
                 label={
-                  <Box display="flex" gap={0.5} alignItems="center">
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      gap: 0.5,
+                      alignItems: 'center',
+                    }}
+                  >
                     <Typography>{t(i18Key)}</Typography>
                     {textSuffix}
                   </Box>
@@ -371,6 +396,7 @@ function MobileHeader({
               color: `${theme.palette.neutral200.main} !important`,
             })}
             component={RouterLink}
+            nativeButton={false}
             to="/"
             startIcon={
               <Avatar
@@ -391,7 +417,11 @@ function MobileHeader({
               <Typography variant="body1">(Dev Mode)</Typography>
             ) : undefined}
           </Button>
-          <Box flexGrow={1} />
+          <Box
+            sx={{
+              flexGrow: 1,
+            }}
+          />
           <IconButton
             color="inherit"
             aria-label="open drawer"

@@ -1,0 +1,382 @@
+{
+  "name": "Phoenix",
+  "fullName": "Phoenix Reffaella",
+  "basic": {
+    "BasicAttackSeverLife": {
+      "name": "Basic Attack: Sever Life",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Performs up to 4 attacks forward, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "The 3rd and 4th Basic Attacks are considered <tooltip ns=tooltips_gen baseKey18=1000046>Combustion Attack</tooltip>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackPurifyingFlame": {
+      "name": "Basic Attack: Purifying Flame",
+      "desc": {
+        "0": "With enough <tooltip ns=tooltips_gen baseKey18=1000047>Pyre</tooltip>, consume 90 Pyre and hold <IconNormal /> to activate:",
+        "1": "Phoenix throws her weapon, dealing massive <ct color=#FF5521>Fire DMG</ct> to enemies in an area ahead.",
+        "2": "When the Finishing Move hits an enemy affected by <ct color=#98EFF0>Ice Anomaly</ct>, <ct color=#FE437E>Ether Anomaly</ct>, <ct color=#2EB6FF>Electric Anomaly</ct>, <ct color=#FF5521>Fire Anomaly</ct>, <ct color=#F0D12B>Physical Anomaly</ct>, or <ct color=#A6C5FD>Wind Anomaly</ct>, it triggers 1 instance of <ct color=#FFFFFF>Abloom</ct>, dealing Anomaly DMG of the corresponding attribute with a <ct color=#2BAD00>{CAL:225+20*(AvatarSkillLevel(0)-1),1,2}%</ct> multiplier.",
+        "3": "When this instance of <ct color=#FFFFFF>Abloom</ct> triggers a critical hit, its CRIT DMG is increased by an additional 40%.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Abloom Multiplier "
+      ]
+    },
+    "BasicAttackMeltdown": {
+      "name": "Basic Attack: Meltdown",
+      "desc": {
+        "0": "If Special Attack: Fire Sweep does not trigger a Perfect Block, press <IconNormal /> to activate:",
+        "1": "Charges forward, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "This skill is considered a <tooltip ns=tooltips_gen baseKey18=1000046>Combustion Attack</tooltip>.",
+        "3": "During this skill, press <IconNormal /> to follow up with the 3rd hit of a Basic Attack."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeDriftingSway": {
+      "name": "Dodge: Drifting Sway",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackLunge": {
+      "name": "Dash Attack: Lunge",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Dashes forward and slashes, dealing <ct color=#FF5521>Fire DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterTwinPassageOfKarmicFire": {
+      "name": "Dodge Counter: Twin Passage of Karmic Fire",
+      "desc": {
+        "0": "After triggering a <ct color=#FFFFFF>Perfect Dodge</ct>, press <IconNormal /> to activate:",
+        "1": "Dashes forward and unleashes a quick slash, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill. Press <IconNormal /> to follow up with the 3rd hit of a Basic Attack."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackFireSweep": {
+      "name": "Special Attack: Fire Sweep",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "After retreating back, quickly launches an upward slash forward, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "During the retreat, DMG taken is reduced by 40%.",
+        "3": "If attacked at the instant the upward slash begins, or if the slash hits an enemy flashing red or yellow, a Perfect Block is triggered, negating that instance of DMG. Press <IconNormal /> to immediately follow up with the 3rd hit of a Basic Attack.",
+        "4": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackBlazingSlash": {
+      "name": "EX Special Attack: Blazing Slash",
+      "desc": {
+        "0": "While possessing <tooltip ns=tooltips_gen baseKey18=1000049>Ascension</tooltip>, press <IconSpecial /> to consume 1 point of Ascension and activate:",
+        "1": "After retreating, quickly performs a powerful upward slash, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Hold <IconSpecial /> while retreating to continue charging.",
+        "3": "While charging, release <IconSpecial /> to perform a powerful upward slash, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "4": "When chained into from a <ct color=#FFFFFF><tooltip ns=tooltips_gen baseKey18=1000046>Combustion Attack</tooltip></ct>, skips the retreat and immediately performs the upward slash.",
+        "5": "DMG taken while retreating and charging is reduced by 40%.",
+        "6": "Receiving an attack just as the upward slash begins or hitting an enemy flashing red or yellow triggers a Perfect Block.",
+        "7": "This skill counts as a Combustion Attack.",
+        "8": "Character is invulnerable while using this skill. Press <IconNormal /> to follow up with the 3rd hit of a Basic Attack."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackDazzlingFlare": {
+      "name": "EX Special Attack: Dazzling Flare",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Quickly spins around, dealing massive <ct color=#FF5521>Fire DMG</ct> to enemies.",
+        "2": "Receiving an attack at the moment the spin begins or hitting an enemy flashing red or yellow triggers a Perfect Block.",
+        "3": "This skill is considered a <tooltip ns=tooltips_gen baseKey18=1000046>Combustion Attack</tooltip>.",
+        "4": "Character is invulnerable while using this skill. Press <IconNormal /> to follow up with the 3rd hit of a Basic Attack."
+      },
+      "params": [
+        " ",
+        "Energy Cost "
+      ]
+    },
+    "EXSpecialAttackFallingSun": {
+      "name": "EX Special Attack: Falling Sun",
+      "desc": {
+        "0": "After using EX Special Attack: Dazzling Flare, and with enough Energy, press or hold <IconSpecialReady /> to activate:",
+        "1": "Rises into the air and throws her weapon, dealing massive <ct color=#FF5521>Fire DMG</ct> to enemies.",
+        "2": "Gains 1 point of Ascension upon activating this skill. Up to 1 point of Ascension can be held.",
+        "3": "Receiving an attack at the moment she starts rising or hitting an enemy flashing red or yellow triggers a Perfect Block.",
+        "4": "This skill is considered a <tooltip ns=tooltips_gen baseKey18=1000046>Combustion Attack</tooltip>.",
+        "5": "Character is invulnerable while using this skill. Press <IconNormal /> to follow up with the 3rd hit of a Basic Attack."
+      },
+      "params": [
+        " ",
+        "Energy Cost "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackLastMinuteSalvation": {
+      "name": "Chain Attack: Last-Minute Salvation",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleashes multiple attacks forward, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "This skill is considered a <tooltip ns=tooltips_gen baseKey18=1000046>Combustion Attack</tooltip>.",
+        "3": "Character is invulnerable while using this skill. Press <IconNormal /> to follow up with the 3rd hit of a Basic Attack."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimatePerpetualResurrection": {
+      "name": "Ultimate: Perpetual Resurrection",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Flies into the air, then dives at the enemy, consuming all of Phoenix's HP to trigger an explosion, dealing massive <ct color=#FF5521>Fire DMG</ct>. Phoenix then enters the Wither state and triggers the next character's Quick Assist.",
+        "2": "This skill is considered a <tooltip ns=tooltips_gen baseKey18=1000046>Combustion Attack</tooltip>.",
+        "3": "Active attacks cannot be performed while in the Wither state.",
+        "4": "After using this skill, Soul-Searching Blaze is automatically activated after a short period. Press <IconNormal /> to quickly activate Soul-Searching Blaze.",
+        "5": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "SoulSearchingBlaze": {
+      "name": "Soul-Searching Blaze",
+      "desc": {
+        "0": "Triggered when Phoenix is in the Wither state, the next time she enters the field through a normal switch-in, Quick Assist, or Defensive Assist:",
+        "1": "Phoenix covers herself in flames, dealing <ct color=#FF5521>Fire DMG</ct> to nearby enemies, and exits the Wither state. This damage is considered Ultimate DMG. She then recovers all HP consumed by <ct color=#FFFFFF>Ultimate: Perpetual Resurrection</ct>, plus an additional 10% of her Max HP.",
+        "2": "When the Finishing Move hits an enemy affected by <ct color=#98EFF0>Ice Anomaly</ct>, <ct color=#FE437E>Ether Anomaly</ct>, <ct color=#2EB6FF>Electric Anomaly</ct>, <ct color=#FF5521>Fire Anomaly</ct>, <ct color=#F0D12B>Physical Anomaly</ct>, or <ct color=#A6C5FD>Wind Anomaly</ct>, it triggers 1 instance of <ct color=#FFFFFF>Abloom</ct>, resolving the corresponding Attribute Anomaly at a <ct color=#2BAD00>{CAL:300+27*(AvatarSkillLevel(3)-1),1,2}%</ct> multiplier.",
+        "3": "When this <ct color=#FFFFFF>Abloom</ct> effect triggers a critical hit, its CRIT DMG is increased by an additional 40%.",
+        "4": "When Phoenix enters the field via <ct color=#FFFFFF>Chain Attack: Last-Minute Salvation</ct> or <ct color=#FFFFFF>Ultimate: Perpetual Resurrection</ct> while in the Wither state, the HP recovery and <ct color=#FFFFFF>Abloom</ct> effects described above are also triggered.",
+        "5": "Character is invulnerable while using this skill. Press <IconNormal /> to follow up with the 3rd hit of a Basic Attack."
+      },
+      "params": [
+        " ",
+        "Abloom Multiplier "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistEmergencyAid": {
+      "name": "Quick Assist: Emergency Aid",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Dashes forward and unleashes a quick slash, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill. Press <IconNormal /> to follow up with the 3rd hit of a Basic Attack."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistPatientTurnedDoctor": {
+      "name": "Defensive Assist: Patient Turned Doctor",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpRegenerationTherapy": {
+      "name": "Assist Follow-Up: Regeneration Therapy",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Throws her weapon at the enemy, then recalls it and performs a slash, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill. Press <IconNormal /> to follow up with the 3rd hit of a Basic Attack."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Nirvana",
+    "desc": [
+      {
+        "0": "Phoenix's Anomaly Proficiency increases by <ct color=#2BAD00>43</ct>.",
+        "1": "When any squad member deals Anomaly DMG to an enemy, the enemy enters the Sear state for 20s. Repeated triggers reset the duration. When an enemy in the Sear state takes Anomaly DMG, the DMG has a chance to trigger a critical hit, with a base CRIT Rate of 30% and CRIT DMG of <ct color=#2BAD00>12.5%</ct>. If Phoenix's initial Anomaly Mastery exceeds 155, each point above this threshold increases this effect's CRIT Rate by an additional 0.7%, reaching its maximum value when Phoenix's initial Anomaly Mastery reaches 255.",
+        "2": "Enemies in the Sear state take <ct color=#FF5521>Fire DMG</ct> equal to <ct color=#2BAD00>25%</ct> of Phoenix's ATK every 8s. This DMG is considered EX Special Attack DMG.",
+        "3": "During Combustion Attacks, Anti-Interrupt Level increases, and dealing DMG grants Pyre. Phoenix can have up to 120 Pyre.",
+        "4": "After Combustion Attacks, press <IconSpecial /> to skip the backward retreat of Special Attack: Fire Sweep and EX Special Attack: Blazing Slash, and immediately follow up with the rising attack.",
+        "5": "When Phoenix takes fatal DMG, she will not be defeated and leave the field. Instead, Rebirth is triggered. The next time Phoenix enters the field through a normal switch-in, Quick Assist, or Defensive Assist, she recovers HP equal to 50% of her Max HP. In Investigation Zone Mode, this effect can trigger once every 1,200s.",
+        "6": "When Phoenix triggers a Perfect Block, she gains 5 Pyre. This effect can trigger once every 10s.",
+        "7": "When Phoenix uses an <ct color=#FFFFFF>EX Special Attack</ct>, she enters the <ct color=#FFFFFF>Wither and Bloom</ct> state for 20s. Hitting an enemy with a <ct color=#FFFFFF>Combustion Attack</ct> or reapplying this state refreshes its duration.",
+        "8": "While in the <ct color=#FFFFFF>Wither and Bloom</ct> state, after using <ct color=#FFFFFF>EX Special Attack: Dazzling Flare</ct>, the next <ct color=#FFFFFF>EX Special Attack: Dazzling Flare</ct> is replaced with <ct color=#FFFFFF>EX Special Attack: Falling Sun</ct>."
+      },
+      {
+        "0": "Phoenix's Anomaly Proficiency increases by <ct color=#2BAD00>50</ct>.",
+        "1": "When any squad member deals Anomaly DMG to an enemy, the enemy enters the Sear state for 20s. Repeated triggers reset the duration. When an enemy in the Sear state takes Anomaly DMG, the DMG has a chance to trigger a critical hit, with a base CRIT Rate of 30% and CRIT DMG of <ct color=#2BAD00>14.6%</ct>. If Phoenix's initial Anomaly Mastery exceeds 155, each point above this threshold increases this effect's CRIT Rate by an additional 0.7%, reaching its maximum value when Phoenix's initial Anomaly Mastery reaches 255.",
+        "2": "Enemies in the Sear state take <ct color=#FF5521>Fire DMG</ct> equal to <ct color=#2BAD00>29%</ct> of Phoenix's ATK every 8s. This DMG is considered EX Special Attack DMG.",
+        "3": "During Combustion Attacks, Anti-Interrupt Level increases, and dealing DMG grants Pyre. Phoenix can have up to 120 Pyre.",
+        "4": "After Combustion Attacks, press <IconSpecial /> to skip the backward retreat of Special Attack: Fire Sweep and EX Special Attack: Blazing Slash, and immediately follow up with the rising attack.",
+        "5": "When Phoenix takes fatal DMG, she will not be defeated and leave the field. Instead, Rebirth is triggered. The next time Phoenix enters the field through a normal switch-in, Quick Assist, or Defensive Assist, she recovers HP equal to 50% of her Max HP. In Investigation Zone Mode, this effect can trigger once every 1,200s.",
+        "6": "When Phoenix triggers a Perfect Block, she gains 5 Pyre. This effect can trigger once every 10s.",
+        "7": "When Phoenix uses an <ct color=#FFFFFF>EX Special Attack</ct>, she enters the <ct color=#FFFFFF>Wither and Bloom</ct> state for 20s. Hitting an enemy with a <ct color=#FFFFFF>Combustion Attack</ct> or reapplying this state refreshes its duration.",
+        "8": "While in the <ct color=#FFFFFF>Wither and Bloom</ct> state, after using <ct color=#FFFFFF>EX Special Attack: Dazzling Flare</ct>, the next <ct color=#FFFFFF>EX Special Attack: Dazzling Flare</ct> is replaced with <ct color=#FFFFFF>EX Special Attack: Falling Sun</ct>."
+      },
+      {
+        "0": "Phoenix's Anomaly Proficiency increases by <ct color=#2BAD00>57</ct>.",
+        "1": "When any squad member deals Anomaly DMG to an enemy, the enemy enters the Sear state for 20s. Repeated triggers reset the duration. When an enemy in the Sear state takes Anomaly DMG, the DMG has a chance to trigger a critical hit, with a base CRIT Rate of 30% and CRIT DMG of <ct color=#2BAD00>16.7%</ct>. If Phoenix's initial Anomaly Mastery exceeds 155, each point above this threshold increases this effect's CRIT Rate by an additional 0.7%, reaching its maximum value when Phoenix's initial Anomaly Mastery reaches 255.",
+        "2": "Enemies in the Sear state take <ct color=#FF5521>Fire DMG</ct> equal to <ct color=#2BAD00>33%</ct> of Phoenix's ATK every 8s. This DMG is considered EX Special Attack DMG.",
+        "3": "During Combustion Attacks, Anti-Interrupt Level increases, and dealing DMG grants Pyre. Phoenix can have up to 120 Pyre.",
+        "4": "After Combustion Attacks, press <IconSpecial /> to skip the backward retreat of Special Attack: Fire Sweep and EX Special Attack: Blazing Slash, and immediately follow up with the rising attack.",
+        "5": "When Phoenix takes fatal DMG, she will not be defeated and leave the field. Instead, Rebirth is triggered. The next time Phoenix enters the field through a normal switch-in, Quick Assist, or Defensive Assist, she recovers HP equal to 50% of her Max HP. In Investigation Zone Mode, this effect can trigger once every 1,200s.",
+        "6": "When Phoenix triggers a Perfect Block, she gains 5 Pyre. This effect can trigger once every 10s.",
+        "7": "When Phoenix uses an <ct color=#FFFFFF>EX Special Attack</ct>, she enters the <ct color=#FFFFFF>Wither and Bloom</ct> state for 20s. Hitting an enemy with a <ct color=#FFFFFF>Combustion Attack</ct> or reapplying this state refreshes its duration.",
+        "8": "While in the <ct color=#FFFFFF>Wither and Bloom</ct> state, after using <ct color=#FFFFFF>EX Special Attack: Dazzling Flare</ct>, the next <ct color=#FFFFFF>EX Special Attack: Dazzling Flare</ct> is replaced with <ct color=#FFFFFF>EX Special Attack: Falling Sun</ct>."
+      },
+      {
+        "0": "Phoenix's Anomaly Proficiency increases by <ct color=#2BAD00>64</ct>.",
+        "1": "When any squad member deals Anomaly DMG to an enemy, the enemy enters the Sear state for 20s. Repeated triggers reset the duration. When an enemy in the Sear state takes Anomaly DMG, the DMG has a chance to trigger a critical hit, with a base CRIT Rate of 30% and CRIT DMG of <ct color=#2BAD00>18.8%</ct>. If Phoenix's initial Anomaly Mastery exceeds 155, each point above this threshold increases this effect's CRIT Rate by an additional 0.7%, reaching its maximum value when Phoenix's initial Anomaly Mastery reaches 255.",
+        "2": "Enemies in the Sear state take <ct color=#FF5521>Fire DMG</ct> equal to <ct color=#2BAD00>38%</ct> of Phoenix's ATK every 8s. This DMG is considered EX Special Attack DMG.",
+        "3": "During Combustion Attacks, Anti-Interrupt Level increases, and dealing DMG grants Pyre. Phoenix can have up to 120 Pyre.",
+        "4": "After Combustion Attacks, press <IconSpecial /> to skip the backward retreat of Special Attack: Fire Sweep and EX Special Attack: Blazing Slash, and immediately follow up with the rising attack.",
+        "5": "When Phoenix takes fatal DMG, she will not be defeated and leave the field. Instead, Rebirth is triggered. The next time Phoenix enters the field through a normal switch-in, Quick Assist, or Defensive Assist, she recovers HP equal to 50% of her Max HP. In Investigation Zone Mode, this effect can trigger once every 1,200s.",
+        "6": "When Phoenix triggers a Perfect Block, she gains 5 Pyre. This effect can trigger once every 10s.",
+        "7": "When Phoenix uses an <ct color=#FFFFFF>EX Special Attack</ct>, she enters the <ct color=#FFFFFF>Wither and Bloom</ct> state for 20s. Hitting an enemy with a <ct color=#FFFFFF>Combustion Attack</ct> or reapplying this state refreshes its duration.",
+        "8": "While in the <ct color=#FFFFFF>Wither and Bloom</ct> state, after using <ct color=#FFFFFF>EX Special Attack: Dazzling Flare</ct>, the next <ct color=#FFFFFF>EX Special Attack: Dazzling Flare</ct> is replaced with <ct color=#FFFFFF>EX Special Attack: Falling Sun</ct>."
+      },
+      {
+        "0": "Phoenix's Anomaly Proficiency increases by <ct color=#2BAD00>71</ct>.",
+        "1": "When any squad member deals Anomaly DMG to an enemy, the enemy enters the Sear state for 20s. Repeated triggers reset the duration. When an enemy in the Sear state takes Anomaly DMG, the DMG has a chance to trigger a critical hit, with a base CRIT Rate of 30% and CRIT DMG of <ct color=#2BAD00>20.8%</ct>. If Phoenix's initial Anomaly Mastery exceeds 155, each point above this threshold increases this effect's CRIT Rate by an additional 0.7%, reaching its maximum value when Phoenix's initial Anomaly Mastery reaches 255.",
+        "2": "Enemies in the Sear state take <ct color=#FF5521>Fire DMG</ct> equal to <ct color=#2BAD00>42%</ct> of Phoenix's ATK every 8s. This DMG is considered EX Special Attack DMG.",
+        "3": "During Combustion Attacks, Anti-Interrupt Level increases, and dealing DMG grants Pyre. Phoenix can have up to 120 Pyre.",
+        "4": "After Combustion Attacks, press <IconSpecial /> to skip the backward retreat of Special Attack: Fire Sweep and EX Special Attack: Blazing Slash, and immediately follow up with the rising attack.",
+        "5": "When Phoenix takes fatal DMG, she will not be defeated and leave the field. Instead, Rebirth is triggered. The next time Phoenix enters the field through a normal switch-in, Quick Assist, or Defensive Assist, she recovers HP equal to 50% of her Max HP. In Investigation Zone Mode, this effect can trigger once every 1,200s.",
+        "6": "When Phoenix triggers a Perfect Block, she gains 5 Pyre. This effect can trigger once every 10s.",
+        "7": "When Phoenix uses an <ct color=#FFFFFF>EX Special Attack</ct>, she enters the <ct color=#FFFFFF>Wither and Bloom</ct> state for 20s. Hitting an enemy with a <ct color=#FFFFFF>Combustion Attack</ct> or reapplying this state refreshes its duration.",
+        "8": "While in the <ct color=#FFFFFF>Wither and Bloom</ct> state, after using <ct color=#FFFFFF>EX Special Attack: Dazzling Flare</ct>, the next <ct color=#FFFFFF>EX Special Attack: Dazzling Flare</ct> is replaced with <ct color=#FFFFFF>EX Special Attack: Falling Sun</ct>."
+      },
+      {
+        "0": "Phoenix's Anomaly Proficiency increases by <ct color=#2BAD00>78</ct>.",
+        "1": "When any squad member deals Anomaly DMG to an enemy, the enemy enters the Sear state for 20s. Repeated triggers reset the duration. When an enemy in the Sear state takes Anomaly DMG, the DMG has a chance to trigger a critical hit, with a base CRIT Rate of 30% and CRIT DMG of <ct color=#2BAD00>22.9%</ct>. If Phoenix's initial Anomaly Mastery exceeds 155, each point above this threshold increases this effect's CRIT Rate by an additional 0.7%, reaching its maximum value when Phoenix's initial Anomaly Mastery reaches 255.",
+        "2": "Enemies in the Sear state take <ct color=#FF5521>Fire DMG</ct> equal to <ct color=#2BAD00>46%</ct> of Phoenix's ATK every 8s. This DMG is considered EX Special Attack DMG.",
+        "3": "During Combustion Attacks, Anti-Interrupt Level increases, and dealing DMG grants Pyre. Phoenix can have up to 120 Pyre.",
+        "4": "After Combustion Attacks, press <IconSpecial /> to skip the backward retreat of Special Attack: Fire Sweep and EX Special Attack: Blazing Slash, and immediately follow up with the rising attack.",
+        "5": "When Phoenix takes fatal DMG, she will not be defeated and leave the field. Instead, Rebirth is triggered. The next time Phoenix enters the field through a normal switch-in, Quick Assist, or Defensive Assist, she recovers HP equal to 50% of her Max HP. In Investigation Zone Mode, this effect can trigger once every 1,200s.",
+        "6": "When Phoenix triggers a Perfect Block, she gains 5 Pyre. This effect can trigger once every 10s.",
+        "7": "When Phoenix uses an <ct color=#FFFFFF>EX Special Attack</ct>, she enters the <ct color=#FFFFFF>Wither and Bloom</ct> state for 20s. Hitting an enemy with a <ct color=#FFFFFF>Combustion Attack</ct> or reapplying this state refreshes its duration.",
+        "8": "While in the <ct color=#FFFFFF>Wither and Bloom</ct> state, after using <ct color=#FFFFFF>EX Special Attack: Dazzling Flare</ct>, the next <ct color=#FFFFFF>EX Special Attack: Dazzling Flare</ct> is replaced with <ct color=#FFFFFF>EX Special Attack: Falling Sun</ct>."
+      },
+      {
+        "0": "Phoenix's Anomaly Proficiency increases by <ct color=#2BAD00>85</ct>.",
+        "1": "When any squad member deals Anomaly DMG to an enemy, the enemy enters the Sear state for 20s. Repeated triggers reset the duration. When an enemy in the Sear state takes Anomaly DMG, the DMG has a chance to trigger a critical hit, with a base CRIT Rate of 30% and CRIT DMG of <ct color=#2BAD00>25%</ct>. If Phoenix's initial Anomaly Mastery exceeds 155, each point above this threshold increases this effect's CRIT Rate by an additional 0.7%, reaching its maximum value when Phoenix's initial Anomaly Mastery reaches 255.",
+        "2": "Enemies in the Sear state take <ct color=#FF5521>Fire DMG</ct> equal to <ct color=#2BAD00>50%</ct> of Phoenix's ATK every 8s. This DMG is considered EX Special Attack DMG.",
+        "3": "During Combustion Attacks, Anti-Interrupt Level increases, and dealing DMG grants Pyre. Phoenix can have up to 120 Pyre.",
+        "4": "After Combustion Attacks, press <IconSpecial /> to skip the backward retreat of Special Attack: Fire Sweep and EX Special Attack: Blazing Slash, and immediately follow up with the rising attack.",
+        "5": "When Phoenix takes fatal DMG, she will not be defeated and leave the field. Instead, Rebirth is triggered. The next time Phoenix enters the field through a normal switch-in, Quick Assist, or Defensive Assist, she recovers HP equal to 50% of her Max HP. In Investigation Zone Mode, this effect can trigger once every 1,200s.",
+        "6": "When Phoenix triggers a Perfect Block, she gains 5 Pyre. This effect can trigger once every 10s.",
+        "7": "When Phoenix uses an <ct color=#FFFFFF>EX Special Attack</ct>, she enters the <ct color=#FFFFFF>Wither and Bloom</ct> state for 20s. Hitting an enemy with a <ct color=#FFFFFF>Combustion Attack</ct> or reapplying this state refreshes its duration.",
+        "8": "While in the <ct color=#FFFFFF>Wither and Bloom</ct> state, after using <ct color=#FFFFFF>EX Special Attack: Dazzling Flare</ct>, the next <ct color=#FFFFFF>EX Special Attack: Dazzling Flare</ct> is replaced with <ct color=#FFFFFF>EX Special Attack: Falling Sun</ct>."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Krampus Ace",
+    "desc": {
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Anomaly</ct> character or shares the same faction:",
+      "1": "Anomaly DMG against enemies in the <tooltip ns=tooltips_gen baseKey18=1000048>Sear</tooltip> state gains 15% increased CRIT DMG."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Lingering Pain and Thrilling Procession",
+      "desc": {
+        "0": "Upon entering the battlefield, Phoenix gains 1 point of <ct color=#FFFFFF>Ascension</ct>. In Investigation Zone mode, this effect can trigger once every 180s.",
+        "1": "The CRIT DMG of Anomaly DMG dealt to enemies in the <ct color=#FFFFFF>Sear</ct> state is increased by an additional 25%.",
+        "2": "When a <ct color=#FFFFFF>Combustion Attack</ct> deals DMG, <ct color=#FFFFFF>Pyre</ct> generation efficiency increases by 15%."
+      },
+      "flavor": {
+        "0": "Chasing the limits, savoring the pain, stumbling onward along the trail left by old wounds, as if they might lead to a fleeting moment of truly being alive.",
+        "1": "Pain beats the drum for the march, while the heart provides the only applause that never ends."
+      }
+    },
+    "2": {
+      "name": "Curiosity Won't Kill the Cat",
+      "desc": {
+        "0": "When Phoenix applies <ct color=#FF5521>Burn</ct> to an enemy, its duration is increased by 2s.",
+        "1": "Phoenix's DMG against enemies in the <ct color=#FFFFFF>Sear</ct> state increases by 30%."
+      },
+      "flavor": {
+        "0": "They say cats have nine lives, so they can climb the highest rooftops without a care.",
+        "1": "She likes to walk on tiptoe too, and if one step finds nothing beneath it, the long fall is merely another unremarkable adventure.",
+        "2": "Following the trail of clues danger leaves behind, she keeps moving forward, with the end of the story forever out of reach."
+      }
+    },
+    "3": {
+      "name": "Scarecrow Complex",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "With the steady tick-tock of her heartbeat, she wakes again beneath a ceiling that feels at once familiar and unfamiliar.",
+        "1": "She listens as the nurse tells her a distant fairy tale: at the end of life lies a town above the clouds, cut off from the world behind towering walls. There are no worries or fears there, no pain or sorrow.",
+        "2": "Carefree scarecrows make their home there, living quietly and happily, day after day. For they have no feelings and no love. They have lost their shadows and their hearts as well.",
+        "3": "She listens intently, as though recognizing an invitation she has rejected countless times before."
+      }
+    },
+    "4": {
+      "name": "Life's End and the Heartless Wonderland",
+      "desc": "When the Finishing Move of <ct color=#FFFFFF>Soul-Searching Blaze</ct> or <ct color=#FFFFFF>Basic Attack: Purifying Flame</ct> hits an enemy affected by an Attribute Anomaly, it triggers 1 additional instance of <ct color=#FFFFFF>Abloom</ct>, resolving the corresponding Attribute Anomaly DMG at a fixed 600% multiplier.",
+      "flavor": {
+        "0": "She has reached the end of life countless times. There is no town above the clouds, no scarecrows who have lost their hearts. There is only a towering wall, asking if she would trade her shadow and her heart for eternal peace.",
+        "1": "She touches her shadow. Her heart is there, beating awkwardly, stubbornly. She still has a shadow. She wants to hold on to her heart.",
+        "2": "So she enters the deep forest again and again, and each time, she turns back at the very end. Even if there is no sunlight, no refuge, only thorns, wounds, and an exile without end.",
+        "3": "That's okay. She's used to it by now. Even if she can never arrive, she can at least keep searching."
+      }
+    },
+    "5": {
+      "name": "Carnival of Madness",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "The world is a stage, and everyone has a part to play in the story of their life. She is no different.",
+        "1": "She is the helpless patient and the righteous judge; a capricious executioner, a reckless adventurer; a child fascinated by everything, a strange soul indifferent to pain...",
+        "2": "She can be anyone. But none of those people are Phoenix.",
+        "3": "She embraces everyone but herself. She delights in death, yet has never truly known what it means to live.",
+        "4": "But that stopped mattering long ago. The show must go on, and she has only one thing to do: choose a mask and start playing herself.",
+        "5": "So why not play a circus clown? Always making a scene, always laughing out loud."
+      }
+    },
+    "6": {
+      "name": "Notes From Confinement",
+      "desc": {
+        "0": "Phoenix ignores 15% of the targets' All-Attribute RES.",
+        "1": "When Phoenix uses <ct color=#FFFFFF>EX Special Attack: Dazzling Flare</ct>, she gains 1 point of <ct color=#FFFFFF>Ascension</ct>.",
+        "2": "<ct color=#FFFFFF>Abloom</ct> effects triggered by Phoenix ignore 40% of enemy DEF."
+      },
+      "flavor": {
+        "0": "She still asks the dead of night for one grand fall, still loves the sound of the wind tearing past her ears.",
+        "1": "She still embraces the thorns, letting the world's sharp edges pierce her flesh, letting her blood follow the tracks of days gone by into the abyss.",
+        "2": "But this time, the thorns don't fall back into the soil.",
+        "3": "Someone barges into her little garden without so much as asking, picks up the branches she's left behind, winds them around the gate and window frames, and builds a crooked little fence. Then they stand before her, blocking the desolate path ahead.",
+        "4": "She hesitates time and again, but finally takes a step back."
+      }
+    }
+  },
+  "potential": {}
+}

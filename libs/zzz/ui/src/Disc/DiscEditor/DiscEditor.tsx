@@ -358,7 +358,14 @@ export function DiscEditor({
             >
               <Grid container spacing={1} columns={{ xs: 1, md: 2 }}>
                 {/* left column */}
-                <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
+                <Grid
+                  size={1}
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 1,
+                  }}
+                >
                   {/* set */}
                   <Box sx={{ display: 'flex', gap: 1 }}>
                     <DiscSetAutocomplete
@@ -378,7 +385,12 @@ export function DiscEditor({
                     />
                   </Box>
                   {/* level */}
-                  <Box component="div" display="flex">
+                  <Box
+                    component="div"
+                    sx={{
+                      display: 'flex',
+                    }}
+                  >
                     <TextField
                       label="Level"
                       variant="filled"
@@ -423,9 +435,18 @@ export function DiscEditor({
                     </ButtonGroup>
                   </Box>
                   {/* slot */}
-                  <Stack direction="row" gap={1}>
+                  <Stack
+                    direction="row"
+                    sx={{
+                      gap: 1,
+                    }}
+                  >
                     <CardThemed bgt="light" sx={{ px: 2, py: 1 }}>
-                      <Typography color="text.secondary">
+                      <Typography
+                        sx={{
+                          color: 'text.secondary',
+                        }}
+                      >
                         Slot [{slotKey}]
                       </Typography>
                     </CardThemed>
@@ -453,14 +474,24 @@ export function DiscEditor({
                     </Button>
                   </Stack>
                   {/* main stat */}
-                  <Box component="div" display="flex" gap={1}>
+                  <Box
+                    component="div"
+                    sx={{
+                      display: 'flex',
+                      gap: 1,
+                    }}
+                  >
                     <DiscMainStatGroup
                       slotKey={slotKey}
                       statKey={disc?.mainStatKey}
                       setStatKey={(mainStatKey) => setDisc({ mainStatKey })}
                     />
                     <CardThemed bgt="light" sx={{ p: 1, flexGrow: 1 }}>
-                      <Typography color="text.secondary">
+                      <Typography
+                        sx={{
+                          color: 'text.secondary',
+                        }}
+                      >
                         {disc?.mainStatKey
                           ? `${toPercent(
                               getDiscMainStatVal(
@@ -509,7 +540,14 @@ export function DiscEditor({
                 </Grid>
 
                 {/* right column */}
-                <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
+                <Grid
+                  size={1}
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 1,
+                  }}
+                >
                   {/* substat selections */}
                   {[0, 1, 2, 3].map((index) => (
                     <SubstatInput
@@ -524,7 +562,12 @@ export function DiscEditor({
                     <CardThemed bgt="light">
                       <CardContent>
                         {texts.map((text, i) => (
-                          <Typography key={i} color="warning.main">
+                          <Typography
+                            key={i}
+                            sx={{
+                              color: 'warning.main',
+                            }}
+                          >
                             {text}
                           </Typography>
                         ))}
@@ -542,18 +585,21 @@ export function DiscEditor({
                   spacing={1}
                 >
                   <Grid
-                    item
-                    xs={12}
-                    md={5.5}
-                    lg={4}
                     sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+                    size={{
+                      xs: 12,
+                      md: 5.5,
+                      lg: 4,
+                    }}
                   >
                     <CardThemed bgt="light">
                       <Typography
-                        sx={{ textAlign: 'center' }}
-                        py={1}
                         variant="h6"
-                        color="text.secondary"
+                        sx={{
+                          py: 1,
+                          color: 'text.secondary',
+                          textAlign: 'center',
+                        }}
                       >
                         {prevEditType !== 'edit'
                           ? prevEditType === 'duplicate'
@@ -566,11 +612,14 @@ export function DiscEditor({
                   </Grid>
                   {grmd && (
                     <Grid
-                      item
-                      md={1}
-                      display="flex"
-                      alignItems="center"
-                      justifyContent="center"
+                      size={{
+                        md: 1,
+                      }}
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
                     >
                       <CardThemed bgt="light" sx={{ display: 'flex' }}>
                         <ChevronRightIcon sx={{ fontSize: 40 }} />
@@ -578,18 +627,21 @@ export function DiscEditor({
                     </Grid>
                   )}
                   <Grid
-                    item
-                    xs={12}
-                    md={5.5}
-                    lg={4}
                     sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+                    size={{
+                      xs: 12,
+                      md: 5.5,
+                      lg: 4,
+                    }}
                   >
                     <CardThemed bgt="light">
                       <Typography
-                        sx={{ textAlign: 'center' }}
-                        py={1}
                         variant="h6"
-                        color="text.secondary"
+                        sx={{
+                          py: 1,
+                          color: 'text.secondary',
+                          textAlign: 'center',
+                        }}
                       >
                         {t('editor.preview')}
                       </Typography>
@@ -607,7 +659,12 @@ export function DiscEditor({
                 </Alert>
               )}
               {/* Buttons */}
-              <Box display="flex" gap={2}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  gap: 2,
+                }}
+              >
                 {prevEditType === 'edit' && prev?.id ? (
                   <Button
                     startIcon={<AddIcon />}

@@ -29,18 +29,18 @@ export function EquipGrid({
   )
   return (
     <Grid container spacing={1} columns={columns}>
-      <Grid item xs={1} key={wengine?.id}>
+      <Grid key={wengine?.id} size={1}>
         <Stack spacing={1}>
           <CompactWengineCard wengineId={wengine?.id} onClick={onClick} />
           <DiscSetCardCompact discs={discs} />
         </Stack>
       </Grid>
 
-      <Grid item {...discColumns}>
+      <Grid>
         <Grid container spacing={1} columns={discColumns}>
           {!!discs &&
             Object.entries(discs).map(([slotKey, disc]) => (
-              <Grid item xs={1} key={disc?.id || slotKey}>
+              <Grid key={disc?.id || slotKey} size={1}>
                 <CompactDiscCard
                   disc={disc}
                   slotKey={slotKey}

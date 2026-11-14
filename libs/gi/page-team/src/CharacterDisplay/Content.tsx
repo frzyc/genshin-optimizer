@@ -182,6 +182,7 @@ function LoadoutTabs({
           label={t('tabs.theorycraft')}
           icon={<ScienceIcon />}
           component={RouterLink}
+          nativeButton={false}
           to=""
         />
       ) : (
@@ -191,6 +192,7 @@ function LoadoutTabs({
           label={t('tabs.overview')}
           icon={<PersonIcon />}
           component={RouterLink}
+          nativeButton={false}
           to=""
         />
       )}
@@ -200,6 +202,7 @@ function LoadoutTabs({
         label={t('tabs.talent')}
         icon={<FactCheckIcon />}
         component={RouterLink}
+        nativeButton={false}
         to="talent"
       />
       {!isTCBuild && (
@@ -209,6 +212,7 @@ function LoadoutTabs({
           label={t('tabs.optimize')}
           icon={<TrendingUpIcon />}
           component={RouterLink}
+          nativeButton={false}
           to="optimize"
         />
       )}
@@ -219,6 +223,7 @@ function LoadoutTabs({
           label={t('tabs.upopt')}
           icon={<UpgradeIcon />}
           component={RouterLink}
+          nativeButton={false}
           to="upopt"
         />
       )}

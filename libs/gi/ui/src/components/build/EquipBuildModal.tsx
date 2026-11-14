@@ -213,7 +213,7 @@ function Content({
               spacing={1}
               columns={{ xs: 2, sm: 3, md: 4, lg: 6 }}
             >
-              <Grid item xs={1}>
+              <Grid size={1}>
                 <CardThemed
                   sx={{
                     height: '100%',
@@ -229,7 +229,7 @@ function Content({
                 </CardThemed>
               </Grid>
               {Object.entries(currentArtifactIds).map(([slotKey, id]) => (
-                <Grid item key={id || slotKey} xs={1}>
+                <Grid key={id || slotKey} size={1}>
                   <CardThemed
                     sx={{
                       height: '100%',
@@ -251,11 +251,11 @@ function Content({
           </CardContent>
         </CardThemed>
         <Box
-          flexGrow={1}
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
           sx={{
+            flexGrow: 1,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
             height: 0,
             my: -0.5,
           }}
@@ -279,7 +279,7 @@ function Content({
               spacing={1}
               columns={{ xs: 2, sm: 3, md: 4, lg: 6 }}
             >
-              <Grid item xs={1}>
+              <Grid size={1}>
                 <CardThemed
                   sx={{
                     height: '100%',
@@ -295,7 +295,7 @@ function Content({
                 </CardThemed>
               </Grid>
               {Object.entries(newArtifactIds).map(([slotKey, id]) => (
-                <Grid item key={id || slotKey} xs={1}>
+                <Grid key={id || slotKey} size={1}>
                   <CardThemed
                     sx={{
                       height: '100%',

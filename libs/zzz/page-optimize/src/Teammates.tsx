@@ -105,8 +105,13 @@ function TeammateSlotColumn({
   onPick: () => void
 }) {
   return (
-    <Grid item xs={1}>
-      <Stack gap={1} sx={{ height: '100%' }}>
+    <Grid size={1}>
+      <Stack
+        sx={{
+          gap: 1,
+          height: '100%',
+        }}
+      >
         <Button
           fullWidth
           color={
@@ -142,13 +147,19 @@ function TeammateProfileCard({ teammateKey }: { teammateKey: CharacterKey }) {
         spacing={0.5}
       >
         {range(0, 2).map((iconIndex) => (
-          <Grid item xs={1} key={iconIndex} height="90px">
+          <Grid
+            key={iconIndex}
+            size={1}
+            sx={{
+              height: '90px',
+            }}
+          >
             <TeammateIconCard>
               <ImgIcon size={5} src={profileIcons[iconIndex]} />
             </TeammateIconCard>
           </Grid>
         ))}
-        <Grid item xs={1}>
+        <Grid size={1}>
           <TeammateIconCard>
             <ElementIcon
               ele={getCharStat(teammateKey)?.attribute}

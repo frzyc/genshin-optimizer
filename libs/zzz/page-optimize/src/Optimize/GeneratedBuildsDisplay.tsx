@@ -186,10 +186,24 @@ function GeneratedBuildDisplay({
               <CompareCalcContext.Provider value={baseCalc as Calculator}>
                 <Box>
                   <Grid container spacing={1}>
-                    <Grid item xs={6} md={4} lg={3} xl={3}>
+                    <Grid
+                      size={{
+                        xs: 6,
+                        md: 4,
+                        lg: 3,
+                        xl: 3,
+                      }}
+                    >
                       <CharStatsDisplay />
                     </Grid>
-                    <Grid item xs={6} md={8} lg={9} xl={9}>
+                    <Grid
+                      size={{
+                        xs: 6,
+                        md: 8,
+                        lg: 9,
+                        xl: 9,
+                      }}
+                    >
                       <EquipGrid
                         discIds={build.discIds}
                         wengineId={build.wengineId}

@@ -33,13 +33,24 @@ export function CodeBlock({ text }: { text: string }) {
   const lines = text.split(/\r\n|\r|\n/)
 
   return (
-    <Box display="flex" flexDirection="row" px={1} pb={1}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'row',
+        px: 1,
+        pb: 1,
+      }}
+    >
       <CodeArea
         spellCheck="false"
         aria-label="Code Sample"
         sx={{ mt: 0, pt: 0 }}
       >
-        <Box display="flex">
+        <Box
+          sx={{
+            display: 'flex',
+          }}
+        >
           <Box sx={{ flexGrow: 1 }} />
           <IconButton
             size="small"

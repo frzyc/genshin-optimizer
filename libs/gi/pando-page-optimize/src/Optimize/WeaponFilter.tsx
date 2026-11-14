@@ -182,7 +182,7 @@ function WeaponCondSelector({ weapons }: { weapons: ICachedWeapon[] }) {
       >
         <Grid container spacing={1} columns={{ xs: 2, md: 3, lg: 4 }}>
           {weaponKeys.map((d) => (
-            <Grid item key={d} xs={1}>
+            <Grid key={d} size={1}>
               <WeaponCondCard
                 weaponKey={d}
                 count={weapons.filter((w) => w.key === d).length}

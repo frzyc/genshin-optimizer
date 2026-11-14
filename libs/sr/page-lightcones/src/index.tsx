@@ -7,7 +7,14 @@ export default function PageLightCones() {
   const [lightConeIdToEdit, setLightConeIdToEdit] = useState('')
 
   return (
-    <Box display="flex" flexDirection="column" gap={1} my={1}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1,
+        my: 1,
+      }}
+    >
       <LightConeEditor
         lightConeIdToEdit={lightConeIdToEdit}
         cancelEdit={() => setLightConeIdToEdit('')}

@@ -98,21 +98,22 @@ export default function WengineFilter({
     <CardThemed>
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
         <Grid container>
-          <Grid item>
+          <Grid>
             <Typography variant="h6">{t('wengineFilterTitle')}</Typography>
           </Grid>
           <Grid
-            item
-            flexGrow={1}
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
+            sx={{
+              flexGrow: 1,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
           >
             <Typography>
               <strong>{numShowing}</strong> / {total}
             </Typography>
           </Grid>
-          <Grid item>
+          <Grid>
             <Button
               size="small"
               color="error"
@@ -125,7 +126,16 @@ export default function WengineFilter({
         </Grid>
         <Box>
           <Grid container spacing={1}>
-            <Grid item xs={12} md={6} display="flex" flexDirection="column">
+            <Grid
+              size={{
+                xs: 12,
+                md: 6,
+              }}
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
               <Trans t={t} i18nKey="subheadings.general" />
               <Stack spacing={1}>
                 <Divider sx={{ bgcolor: theme.palette.contentNormal.light }} />
@@ -150,12 +160,15 @@ export default function WengineFilter({
               </Stack>
             </Grid>
             <Grid
-              item
-              xs={12}
-              md={6}
-              display="flex"
-              flexDirection="column"
-              gap={1}
+              size={{
+                xs: 12,
+                md: 6,
+              }}
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 1,
+              }}
             >
               <Box>
                 <Trans t={t} i18nKey="subheadings.inventory" />
@@ -217,7 +230,12 @@ export default function WengineFilter({
                     />
                   </Button>
                 </Stack>
-                <Stack spacing={1.5} pt={1.5}>
+                <Stack
+                  spacing={1.5}
+                  sx={{
+                    pt: 1.5,
+                  }}
+                >
                   <Suspense fallback={null}>
                     <BootstrapTooltip
                       title={showEquipped ? t('locationsTooltip') : ''}

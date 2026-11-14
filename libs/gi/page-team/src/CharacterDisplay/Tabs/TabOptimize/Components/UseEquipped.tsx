@@ -287,7 +287,12 @@ export default function UseEquipped({
   const totalStr = useTot === total ? useTot : `${useTot}/${total}`
 
   return (
-    <Box display="flex" gap={1}>
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 1,
+      }}
+    >
       {/* Begin modal */}
       <ModalWrapper
         open={show}
@@ -300,19 +305,31 @@ export default function UseEquipped({
           {/* Header */}
           <CardHeader
             title={t('excludeChar.title')}
-            titleTypographyProps={{ variant: 'h6' }}
             action={
               <IconButton onClick={onClose}>
                 <CloseIcon />
               </IconButton>
             }
+            slotProps={{
+              title: { variant: 'h6' },
+            }}
           />
           <Divider />
           {/* Content */}
           <CardContent sx={{ pb: 0 }}>
-            <Stack gap={1}>
+            <Stack
+              sx={{
+                gap: 1,
+              }}
+            >
               {/* State + Search box */}
-              <Box display="flex" gap={1} flexWrap="wrap">
+              <Box
+                sx={{
+                  display: 'flex',
+                  gap: 1,
+                  flexWrap: 'wrap',
+                }}
+              >
                 <WeaponToggle
                   sx={{ height: '100%' }}
                   onChange={setWeaponTypeKeys}
@@ -343,8 +360,10 @@ export default function UseEquipped({
                   label={t_pc('characterName')}
                   size="small"
                   sx={{ height: '100%' }}
-                  InputProps={{
-                    sx: { height: '100%' },
+                  slotProps={{
+                    input: {
+                      sx: { height: '100%' },
+                    },
                   }}
                 />
               </Box>
@@ -352,8 +371,15 @@ export default function UseEquipped({
           </CardContent>
           {/* Allow/Disallow + grid */}
           <CardContent>
-            <Grid container pb={1} gap={1} flexWrap="nowrap">
-              <Grid item xs={6}>
+            <Grid
+              container
+              spacing={1}
+              sx={{
+                pb: 1,
+                flexWrap: 'nowrap',
+              }}
+            >
+              <Grid size={6}>
                 <Button color="success" fullWidth onClick={allowAll}>
                   {t('excludeChar.modal.allow_all')}
                   <SqBadge sx={{ ml: 1 }}>
@@ -361,7 +387,7 @@ export default function UseEquipped({
                   </SqBadge>
                 </Button>
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Button fullWidth color="error" onClick={disallowAll}>
                   {t('excludeChar.modal.disallow_All')}
                   <SqBadge sx={{ ml: 1 }}>
@@ -383,7 +409,7 @@ export default function UseEquipped({
 
                 const allowed = (selected && !isBeingExcluded) || isBeingAllowed
                 return (
-                  <Grid item key={lk} xs={1}>
+                  <Grid key={lk} size={1}>
                     <SelectItem
                       key={lk}
                       allowed={allowed}
@@ -478,10 +504,12 @@ const SelectItem = memo(function SelectItem({
   const content = useMemo(
     () => (
       <Box
-        fontSize="0.85em"
-        display="flex"
-        justifyContent="space-between"
-        p={0.3}
+        sx={{
+          fontSize: '0.85em',
+          display: 'flex',
+          justifyContent: 'space-between',
+          p: 0.3,
+        }}
       >
         {allArtifactSlotKeys.map((s) => (
           <SlotIcon

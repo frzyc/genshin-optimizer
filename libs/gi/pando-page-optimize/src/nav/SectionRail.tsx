@@ -92,7 +92,9 @@ export function DesktopSectionRail() {
           >
             <ListItemText
               primary={t(OPT_SECTION_I18N[id])}
-              primaryTypographyProps={{ variant: 'body2' }}
+              slotProps={{
+                primary: { variant: 'body2' },
+              }}
             />
           </ListItemButton>
         ))}

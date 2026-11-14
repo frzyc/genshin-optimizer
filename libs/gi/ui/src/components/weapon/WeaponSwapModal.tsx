@@ -175,7 +175,13 @@ export function WeaponSwapModal({
         <CardThemed>
           <CardHeader
             title={
-              <Typography variant="h6" display="flex" gap={1}>
+              <Typography
+                variant="h6"
+                sx={{
+                  display: 'flex',
+                  gap: 1,
+                }}
+              >
                 {weaponTypeKey ? (
                   <ImgIcon src={imgAssets.weaponTypes[weaponTypeKey]} />
                 ) : null}
@@ -193,7 +199,7 @@ export function WeaponSwapModal({
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
             <Grid container spacing={1}>
-              <Grid item>
+              <Grid>
                 <SolidToggleButtonGroup
                   sx={{ height: '100%' }}
                   value={rarity}
@@ -205,7 +211,11 @@ export function WeaponSwapModal({
                       value={star}
                       onClick={() => setRarity(rarityHandler(rarity, star))}
                     >
-                      <Box display="flex">
+                      <Box
+                        sx={{
+                          display: 'flex',
+                        }}
+                      >
                         <strong>{star}</strong>
                         <StarRoundedIcon />
                       </Box>
@@ -213,7 +223,11 @@ export function WeaponSwapModal({
                   ))}
                 </SolidToggleButtonGroup>
               </Grid>
-              <Grid item flexGrow={1}>
+              <Grid
+                sx={{
+                  flexGrow: 1,
+                }}
+              >
                 <TextField
                   autoFocus
                   size="small"
@@ -223,17 +237,21 @@ export function WeaponSwapModal({
                   }
                   label={t('page_weapon:weaponName')}
                   sx={{ height: '100%' }}
-                  InputProps={{
-                    sx: { height: '100%' },
+                  slotProps={{
+                    input: {
+                      sx: { height: '100%' },
+                    },
                   }}
                 />
               </Grid>
             </Grid>
             <Box
-              display="flex"
-              justifyContent="space-between"
-              alignItems="center"
-              flexWrap="wrap"
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+              }}
             >
               <ShowingAndSortOptionSelect showingTextProps={showingTextProps} />
             </Box>
@@ -253,12 +271,7 @@ export function WeaponSwapModal({
             <Grid container spacing={1}>
               {weaponIdsToShow.map((id) => (
                 <Grid
-                  item
                   key={id}
-                  xs={6}
-                  sm={6}
-                  md={4}
-                  lg={3}
                   sx={(theme) => ({
                     ...(weaponId === id && {
                       '> .MuiCard-root': {
@@ -266,6 +279,12 @@ export function WeaponSwapModal({
                       },
                     }),
                   })}
+                  size={{
+                    xs: 6,
+                    sm: 6,
+                    md: 4,
+                    lg: 3,
+                  }}
                 >
                   <WeaponCard
                     weaponId={id}

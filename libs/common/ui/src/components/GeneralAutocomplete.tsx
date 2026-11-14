@@ -77,24 +77,25 @@ export function GeneralAutocomplete<T extends string>({
           ? (theme.palette[variant] as PaletteColor | undefined)?.main
           : undefined
         const valueKey = value?.key
-        const { InputLabelProps, InputProps, inputProps, ...restParams } =
-          params
         return (
           <TextField
-            {...restParams}
+            {...params}
             {...(textFieldProps as TextFieldProps)}
             label={label}
-            InputProps={{
-              ...InputProps,
-              startAdornment:
-                typeof valueKey === 'string' ? toImg(valueKey) : undefined,
-            }}
-            inputProps={{
-              ...inputProps,
-              autoComplete: 'new-password', // disable autocomplete and autofill
-              style: { color },
-            }}
             color={valueKey ? 'success' : 'primary'}
+            slotProps={{
+              ...params.slotProps,
+              input: {
+                ...params.slotProps.input,
+                startAdornment:
+                  typeof valueKey === 'string' ? toImg(valueKey) : undefined,
+              },
+              htmlInput: {
+                ...params.slotProps.htmlInput,
+                autoComplete: 'new-password', // disable autocomplete and autofill
+                style: { color },
+              },
+            }}
           />
         )
       }}
@@ -188,11 +189,15 @@ export function GeneralAutocompleteMulti<T extends string>({
         <TextField
           {...params}
           label={label}
-          inputProps={{
-            ...params.inputProps,
-            autoComplete: 'new-password', // disable autocomplete and autofill
-          }}
           color={keys.length ? 'success' : 'primary'}
+          slotProps={{
+            ...params.slotProps,
+
+            htmlInput: {
+              ...params.slotProps.htmlInput,
+              autoComplete: 'new-password', // disable autocomplete and autofill
+            },
+          }}
         />
       )}
       renderOption={(props, option) => (
@@ -213,11 +218,11 @@ export function GeneralAutocompleteMulti<T extends string>({
           {!!option.favorite && <FavoriteIcon />}
         </MenuItem>
       )}
-      renderTags={(selected, getTagProps) =>
+      renderValue={(selected, getItemProps) =>
         selected.map(({ key, label, color: variant }, index) => (
           <Chip
             {...chipProps}
-            {...getTagProps({ index })}
+            {...getItemProps({ index })}
             key={`${index}${key}${label}`}
             icon={toImg(key)}
             label={

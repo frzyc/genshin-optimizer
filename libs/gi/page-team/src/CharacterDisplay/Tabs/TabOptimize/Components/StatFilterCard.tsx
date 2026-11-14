@@ -38,7 +38,12 @@ export default function StatFilterCard({
             flexDirection: 'column',
           }}
         >
-          <Box display="flex" justifyContent="space-between">
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+            }}
+          >
             <Typography sx={{ fontWeight: 'bold' }}>
               {t('constraintFilter.title')}
             </Typography>
@@ -49,10 +54,11 @@ export default function StatFilterCard({
         </CardContent>
         <Divider />
         <Box
-          display="flex"
-          flexDirection="column"
-          gap={1}
           sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 1,
+
             '.MuiButtonBase-root': {
               fontSize: '0.7rem',
             },

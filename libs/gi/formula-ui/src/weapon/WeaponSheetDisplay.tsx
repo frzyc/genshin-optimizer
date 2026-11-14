@@ -35,8 +35,10 @@ export function WeaponSheetDisplay({
           <ImgIcon src={weaponAsset(weaponKey, ascension >= 2)} size={2} />
         }
         action={headerAction}
-        titleTypographyProps={{ variant: 'subtitle1' }}
         subheader={`Lv. ${level}${showPassive ? ` R${refinement}` : ''}`}
+        slotProps={{
+          title: { variant: 'subtitle1' },
+        }}
       />
       <Box sx={{ opacity: fade ? 0.5 : 1 }}>
         {showPassive && (

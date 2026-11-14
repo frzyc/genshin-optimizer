@@ -17,10 +17,13 @@ function FooterContent() {
       elevation={0}
     >
       <Box
-        display="flex"
-        justifyContent="space-between"
-        sx={{ px: 2, py: 1 }}
-        gap={2}
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: 2,
+          px: 2,
+          py: 1,
+        }}
       >
         <Typography variant="caption" sx={{ color: 'neutral400.main' }}>
           Build:

@@ -322,10 +322,12 @@ function NumConditional({
       <NumberInputLazy
         fullWidth
         float={!int_only}
-        inputProps={{ min, max }}
-        InputProps={{
-          startAdornment: labelEle && <Box sx={{ mr: 1 }}>{labelEle}</Box>,
-          endAdornment: <Badge>{evalIfFunc(badge, calc, value)}</Badge>,
+        slotProps={{
+          htmlInput: { min, max },
+          input: {
+            startAdornment: labelEle && <Box sx={{ mr: 1 }}>{labelEle}</Box>,
+            endAdornment: <Badge>{evalIfFunc(badge, calc, value)}</Badge>,
+          },
         }}
         value={value}
         onChange={(newVal) => setValue(newVal)}
@@ -335,7 +337,12 @@ function NumConditional({
   return (
     <Box sx={{ px: 2 }}>
       {(labelEle || badge) && (
-        <Typography display="flex" justifyContent="space-between">
+        <Typography
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+          }}
+        >
           {labelEle} {<Badge>{badgeEle}</Badge>}
         </Typography>
       )}
@@ -386,7 +393,13 @@ function CondSrcDst<S extends string, D extends string>({
   if (!Object.keys(srcDisplay).length || !Object.keys(dstDisplay).length)
     return null
   return (
-    <Box display="flex" alignItems="center" justifyContent="space-between">
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}
+    >
       <SrcDisplay target={src} targetMap={srcDisplay} setTarget={setSrc} />
       <ArrowRightAltIcon />
       <DstDisplay target={dst} targetMap={dstDisplay} setTarget={setDst} />

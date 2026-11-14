@@ -35,7 +35,12 @@ export function StatFilterCard({ disabled = false }: { disabled?: boolean }) {
             flexDirection: 'column',
           }}
         >
-          <Box display="flex" justifyContent="space-between">
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+            }}
+          >
             <Typography sx={{ fontWeight: 'bold' }}>
               {t('constraintFilter.title')}
             </Typography>

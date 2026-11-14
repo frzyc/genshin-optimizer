@@ -97,7 +97,13 @@ export function LoadoutEditor({
       <CardThemed>
         <CardHeader
           title={
-            <Box display="flex" gap={1} alignItems="center">
+            <Box
+              sx={{
+                display: 'flex',
+                gap: 1,
+                alignItems: 'center',
+              }}
+            >
               <PersonIcon />
               <strong>{name}</strong>
             </Box>
@@ -130,7 +136,7 @@ export function LoadoutEditor({
           />
           <Box>
             <Grid container columns={{ xs: 1, md: 2 }} spacing={2}>
-              <Grid item xs={1}>
+              <Grid size={1}>
                 <Button
                   color="info"
                   onClick={() => onDup()}
@@ -140,7 +146,7 @@ export function LoadoutEditor({
                   {t('loadoutEditor.dupBtn')}
                 </Button>
               </Grid>
-              <Grid item xs={1}>
+              <Grid size={1}>
                 <RemoveLoadout
                   show={showRemoval}
                   onHide={onHideRemoval}
@@ -164,12 +170,12 @@ export function LoadoutEditor({
           <Box>
             <Grid container columns={{ xs: 1, md: 2 }} spacing={2}>
               {!!Object.keys(bonusStats).length && (
-                <Grid item xs={1}>
+                <Grid size={1}>
                   <BonusStatsCard bonusStats={bonusStats} />
                 </Grid>
               )}
               {!!optimizationTarget && (
-                <Grid item xs={1}>
+                <Grid size={1}>
                   <CardThemed bgt="light">
                     <CardHeader
                       title={
@@ -201,11 +207,11 @@ export function LoadoutEditor({
                 </Grid>
               )}
               {!!customMultiTargets.length && (
-                <Grid item xs={1}>
+                <Grid size={1}>
                   <MultiTargetCard customMultiTargets={customMultiTargets} />
                 </Grid>
               )}
-              <Grid item xs={1}>
+              <Grid size={1}>
                 <CardThemed bgt="light">
                   <CardContent>
                     <Typography variant="h6">
@@ -232,7 +238,7 @@ export function LoadoutEditor({
           <TeamInfoAlert />
           <Grid container columns={{ xs: 1, md: 2 }} spacing={2}>
             {teamIds.map((teamId) => (
-              <Grid item xs={1} key={teamId}>
+              <Grid key={teamId} size={1}>
                 <TeamCard
                   bgt="light"
                   teamId={teamId}
@@ -242,7 +248,7 @@ export function LoadoutEditor({
                 />
               </Grid>
             ))}
-            <Grid item xs={1}>
+            <Grid size={1}>
               <Button
                 fullWidth
                 sx={{ height: '100%', backgroundColor: 'contentLight.main' }}
@@ -282,7 +288,9 @@ function BonusStatsCard({
             <span>{t('loadoutEditor.bonusStats')}</span>
           </Box>
         }
-        titleTypographyProps={{ variant: 'h6' }}
+        slotProps={{
+          title: { variant: 'h6' },
+        }}
       />
 
       <DocumentDisplay
@@ -321,7 +329,9 @@ function MultiTargetCard({
             <span>{t('loadoutEditor.mltTargets')}</span>
           </Box>
         }
-        titleTypographyProps={{ variant: 'h6' }}
+        slotProps={{
+          title: { variant: 'h6' },
+        }}
       />
 
       <DocumentDisplay

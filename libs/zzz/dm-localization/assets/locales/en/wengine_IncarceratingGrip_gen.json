@@ -1,0 +1,19 @@
+{
+  "name": "Incarcerating Grip",
+  "desc": {
+    "0": "He's far too calm. However wide his blade swings, however much blood his claws have spilled, the moment the shackles snap shut with a crisp click, his gaze is as placid as a lake without a breath of wind.",
+    "1": "And so there are always those who pry, trying to pierce his seemingly impenetrable armor and discover what it is he truly desires. Temptations of wealth and power, threats both deliberate and otherwise... You move too fast, your methods are too ruthless. After giving up so much, what exactly are you hoping to bargain for at the table?",
+    "2": "Don't tell me it's justice. What a joke. He's as immovable as a rock and as cold as iron, his very soul stained a hazy gray. He must have cast aside such bright, fanciful notions long ago. Even at the bedside of a fellow Public Security officer, his expression betrays nothing. So don't be ridiculous, he must...",
+    "3": "\"If they could understand me, wouldn't that mean I've sunk to their level?\""
+  },
+  "desc2": "Equip to increase Attack Agents' combat capabilities",
+  "desc3": "Grasping evil in his grip, crushing decay beneath the fingertips.",
+  "phase": "Evil Caught Within",
+  "phaseDescs": [
+    "The equipper's CRIT Rate increases by <ct color=#2BAD00>20%</ct>. When the equipper's <ct color=#FFFFFF>Basic Attack</ct> hits an enemy, their ATK increases by <ct color=#2BAD00>10%</ct>, and their DMG ignores <ct color=#2BAD00>15%</ct> of the target's <ct color=#A6C5FD>Wind RES</ct> for 16s.",
+    "The equipper's CRIT Rate increases by <ct color=#2BAD00>23%</ct>. When the equipper's <ct color=#FFFFFF>Basic Attack</ct> hits an enemy, their ATK increases by <ct color=#2BAD00>11.5%</ct>, and their DMG ignores <ct color=#2BAD00>17.3%</ct> of the target's <ct color=#A6C5FD>Wind RES</ct> for 16s.",
+    "The equipper's CRIT Rate increases by <ct color=#2BAD00>26%</ct>. When the equipper's <ct color=#FFFFFF>Basic Attack</ct> hits an enemy, their ATK increases by <ct color=#2BAD00>13%</ct>, and their DMG ignores <ct color=#2BAD00>19.5%</ct> of the target's <ct color=#A6C5FD>Wind RES</ct> for 16s.",
+    "The equipper's CRIT Rate increases by <ct color=#2BAD00>29%</ct>. When the equipper's <ct color=#FFFFFF>Basic Attack</ct> hits an enemy, their ATK increases by <ct color=#2BAD00>14.5%</ct>, and their DMG ignores <ct color=#2BAD00>21.8%</ct> of the target's <ct color=#A6C5FD>Wind RES</ct> for 16s.",
+    "The equipper's CRIT Rate increases by <ct color=#2BAD00>32%</ct>. When the equipper's <ct color=#FFFFFF>Basic Attack</ct> hits an enemy, their ATK increases by <ct color=#2BAD00>16%</ct>, and their DMG ignores <ct color=#2BAD00>24%</ct> of the target's <ct color=#A6C5FD>Wind RES</ct> for 16s."
+  ]
+}

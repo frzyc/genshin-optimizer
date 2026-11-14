@@ -71,8 +71,19 @@ export function WeaponEditorCard({
         onSelect={(k) => setWeapon({ key: k })}
         weaponTypeFilter={weaponTypeKey}
       />
-      <Box display="flex" flexDirection="column" gap={1}>
-        <Box display="flex" gap={1}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 1,
+        }}
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            gap: 1,
+          }}
+        >
           <Box
             className={`grad-${getWeaponStat(weapon.key).rarity}star`}
             component="img"
@@ -84,7 +95,12 @@ export function WeaponEditorCard({
               borderRadius: 1,
             }}
           />
-          <Stack spacing={1} flexGrow={1}>
+          <Stack
+            spacing={1}
+            sx={{
+              flexGrow: 1,
+            }}
+          >
             <Button
               fullWidth
               color="info"
@@ -115,7 +131,9 @@ export function WeaponEditorCard({
         <CardThemed>
           <CardHeader
             title={'Main Stats'}
-            titleTypographyProps={{ variant: 'subtitle2' }}
+            slotProps={{
+              title: { variant: 'subtitle2' },
+            }}
           />
           <Divider />
           {weaponUIData && (

@@ -123,8 +123,18 @@ export function DiscScanPanel({
     <CardThemed bgt="light">
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
         <Suspense fallback={<Skeleton width="100%" height={100} />}>
-          <Grid container spacing={1} alignItems="center">
-            <Grid item flexGrow={1}>
+          <Grid
+            container
+            spacing={1}
+            sx={{
+              alignItems: 'center',
+            }}
+          >
+            <Grid
+              sx={{
+                flexGrow: 1,
+              }}
+            >
               <label htmlFor="disc-scan-file-input">
                 <InputInvis
                   accept="image/*"
@@ -133,12 +143,16 @@ export function DiscScanPanel({
                   type="file"
                   onChange={onUpload}
                 />
-                <Button component="span" startIcon={<PhotoCameraIcon />}>
+                <Button
+                  component="span"
+                  nativeButton={false}
+                  startIcon={<PhotoCameraIcon />}
+                >
                   {uploadLabel}
                 </Button>
               </label>
             </Grid>
-            <Grid item>
+            <Grid>
               <Button
                 onClick={onToggleCapture}
                 startIcon={isCapturing ? <StopIcon /> : <ScreenShareIcon />}
@@ -149,11 +163,11 @@ export function DiscScanPanel({
               </Button>
             </Grid>
             {shouldShowDevComponents && preview?.debugImgs && (
-              <Grid item>
+              <Grid>
                 <ScanDebugModal imgs={preview.debugImgs} />
               </Grid>
             )}
-            <Grid item>
+            <Grid>
               <ScanInfoModal />
             </Grid>
           </Grid>
@@ -172,7 +186,11 @@ export function DiscScanPanel({
             ))}
 
           {preview?.imageURL && (
-            <Box width="100%">
+            <Box
+              sx={{
+                width: '100%',
+              }}
+            >
               <ScanImagePreview
                 imageURL={preview.imageURL}
                 imageWidth={preview.imageWidth}
@@ -193,7 +211,12 @@ export function DiscScanPanel({
 
           {!!queueTotal && (
             <CardThemed sx={{ pl: 2 }}>
-              <Box display="flex" alignItems="center">
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                }}
+              >
                 {!!scanningNum && <CircularProgress size="1em" />}
                 <Typography sx={{ flexGrow: 1, ml: 1 }}>
                   Screenshots in file-queue: <b>{queueTotal}</b>

@@ -152,7 +152,12 @@ function DiscFilterModal({
               >
                 {t('allowRainbow')}
               </Button>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                sx={{
+                  color: 'text.secondary',
+                }}
+              >
                 {t('allowRainbowDesc')}
               </Typography>
               <SetFilter discBySlot={discsBySlot} disabled={disabled} />

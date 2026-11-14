@@ -37,7 +37,11 @@ export function WengineRarityToggle({
           }}
           onClick={() => onChange(rarityHandler(value, wrk))}
         >
-          <Box display="flex">
+          <Box
+            sx={{
+              display: 'flex',
+            }}
+          >
             <strong>{wrk}</strong>
             <Chip label={totals[wrk]} size="small" />
           </Box>
