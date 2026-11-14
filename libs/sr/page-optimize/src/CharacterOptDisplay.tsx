@@ -50,7 +50,11 @@ export function CharacterOptDisplay() {
 
   return (
     <SectionNumContext.Provider value={sections.length}>
-      <Stack gap={1}>
+      <Stack
+        sx={{
+          gap: 1,
+        }}
+      >
         {sections.map(([key, title, content], i) => (
           <Section key={key} title={title} index={i}>
             {content}

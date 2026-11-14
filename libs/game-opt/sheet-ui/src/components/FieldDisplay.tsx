@@ -153,14 +153,14 @@ export function TextFieldDisplay({
   const subtitleEle = subtitle && <span> {subtitle}</span>
   return (
     <Box
-      width="100%"
+      component={component ?? 'div'}
       sx={{
+        width: '100%',
         display: 'flex',
         justifyContent: 'space-between',
         gap: 1,
         py: 0.25,
       }}
-      component={component}
     >
       <Typography color={`${variant}.main`}>
         {titleEle}
@@ -245,10 +245,13 @@ export function MultiTagFieldDisplay({
 
   return (
     <Box
-      width="100%"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      component={component ?? 'div'}
       sx={[
+        {
+          width: '100%',
+        },
         {
           display: 'flex',
           justifyContent: 'space-between',
@@ -263,7 +266,6 @@ export function MultiTagFieldDisplay({
           : []),
         ...(rowSx ? (Array.isArray(rowSx) ? rowSx : [rowSx]) : []),
       ]}
-      component={component}
     >
       <Typography
         component="div"
@@ -320,7 +322,9 @@ export function MultiTagFieldDisplay({
                   <Typography
                     component="span"
                     variant="body2"
-                    color="text.secondary"
+                    sx={{
+                      color: 'text.secondary',
+                    }}
                   >
                     {label}
                   </Typography>
@@ -412,10 +416,13 @@ export function TagFieldDisplay({
 
   return (
     <Box
-      width="100%"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      component={component ?? 'div'}
       sx={[
+        {
+          width: '100%',
+        },
         {
           display: 'flex',
           justifyContent: 'space-between',
@@ -431,7 +438,6 @@ export function TagFieldDisplay({
           : []),
         ...(rowSx ? (Array.isArray(rowSx) ? rowSx : [rowSx]) : []),
       ]}
-      component={component}
     >
       <Typography
         component="div"

@@ -138,20 +138,40 @@ export function CharacterCardHeaderContent({
         sx={{ opacity: 0.85 }}
       />
       <Box
-        display="flex"
-        gap={1}
-        sx={{ textShadow: '0 0 5px gray' }}
-        alignItems="center"
+        sx={{
+          display: 'flex',
+          gap: 1,
+          alignItems: 'center',
+          textShadow: '0 0 5px gray',
+        }}
       >
         <Box>
-          <Typography component="span" variant="h6" whiteSpace="nowrap">
+          <Typography
+            component="span"
+            variant="h6"
+            sx={{
+              whiteSpace: 'nowrap',
+            }}
+          >
             Lv. {level}
           </Typography>
-          <Typography component="span" variant="h6" color="text.secondary">
+          <Typography
+            component="span"
+            variant="h6"
+            sx={{
+              color: 'text.secondary',
+            }}
+          >
             /{getCharMaxLevel(level, ascension)}
           </Typography>
         </Box>
-        <Typography component="span" whiteSpace="nowrap" sx={{ opacity: 0.85 }}>
+        <Typography
+          component="span"
+          sx={{
+            whiteSpace: 'nowrap',
+            opacity: 0.85,
+          }}
+        >
           <SqBadge
             color={
               `roll${constellation < 3 ? 3 : constellation}` as RollColorKey
@@ -162,7 +182,13 @@ export function CharacterCardHeaderContent({
           </SqBadge>
         </Typography>
       </Box>
-      <Box display="flex" gap={1} sx={{ opacity: 0.85 }}>
+      <Box
+        sx={{
+          display: 'flex',
+          gap: 1,
+          opacity: 0.85,
+        }}
+      >
         <Chip
           size="small"
           color="secondary"
@@ -179,7 +205,12 @@ export function CharacterCardHeaderContent({
           label={<strong>{talent.burst}</strong>}
         />
       </Box>
-      <Typography variant="h6" lineHeight={1}>
+      <Typography
+        variant="h6"
+        sx={{
+          lineHeight: 1,
+        }}
+      >
         <StarsDisplay stars={charStat.rarity} colored inline />
       </Typography>
     </>
@@ -202,11 +233,16 @@ function CharacterCardEquipmentRow({
   return (
     <Box>
       <Grid container columns={6} spacing={0.5}>
-        <Grid item xs={1} height="100%">
+        <Grid
+          size={1}
+          sx={{
+            height: '100%',
+          }}
+        >
           <WeaponCardPico weaponId={character.equippedWeapon} />
         </Grid>
         {artifacts.map(([slotKey, art]) => (
-          <Grid item key={slotKey} xs={1}>
+          <Grid key={slotKey} size={1}>
             <ArtifactCardPico artifactObj={art} slotKey={slotKey} />
           </Grid>
         ))}

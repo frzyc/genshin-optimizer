@@ -593,7 +593,7 @@
       "circle": "IconRoleCircle1611.png",
       "trap": "IconRoleGeneral1611.png",
       "select": "IconRoleSelect1611.png",
-      "interknot": "IconInterKnotRole0069.png"
+      "interknot": "IconInterKnotRole69.png"
     },
     "Roxy": {
       "full": "IconRole68.png",
@@ -601,6 +601,20 @@
       "trap": "IconRoleGeneral68.png",
       "select": "IconRoleSelect68.png",
       "interknot": "IconInterKnotRole0068.png"
+    },
+    "Severian": {
+      "full": "IconRole1631.png",
+      "circle": "IconRoleCircle1631.png",
+      "trap": "IconRoleGeneral1631.png",
+      "select": "IconRoleSelect1631.png",
+      "interknot": "IconInterKnotRole1631.png"
+    },
+    "Phoenix": {
+      "full": "IconRole1641.png",
+      "circle": "IconRoleCircle1641.png",
+      "trap": "IconRoleGeneral1641.png",
+      "select": "IconRoleSelect1641.png",
+      "interknot": "IconInterKnotRole1641.png"
     }
   },
   "wengines": {
@@ -751,6 +765,10 @@
     "BloodmarrowCoffer": {
       "icon": "Weapon_A_Common_21.png",
       "big": "Weapon_A_Common_21Big.png"
+    },
+    "CandlelitScheme": {
+      "icon": "Weapon_A_Common_22.png",
+      "big": "Weapon_A_Common_22Big.png"
     },
     "DemaraBatteryMarkII": {
       "icon": "Weapon_A_1011.png",
@@ -1003,6 +1021,14 @@
     "CrimsonMoonCasket": {
       "icon": "Weapon_S_1621.png",
       "big": "Weapon_S_1621Big.png"
+    },
+    "IncarceratingGrip": {
+      "icon": "Weapon_S_1631.png",
+      "big": "Weapon_S_1631Big.png"
+    },
+    "PlumeOfRebirth": {
+      "icon": "Weapon_S_1641.png",
+      "big": "Weapon_S_1641Big.png"
     }
   }
 }

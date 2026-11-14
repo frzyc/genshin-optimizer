@@ -87,7 +87,9 @@ export function OptimizeChrome({
             anchor="bottom"
             open={contextDrawerOpen}
             onClose={() => setContextDrawerOpen(false)}
-            PaperProps={{ sx: { maxHeight: '85vh' } }}
+            slotProps={{
+              paper: { sx: { maxHeight: '85vh' } },
+            }}
           >
             <OptimizeContextControls
               characterKey={characterKey}
@@ -131,7 +133,7 @@ function MobileContextTrigger({
           variant="caption"
           color="text.secondary"
           noWrap
-          display="block"
+          sx={{ display: 'block' }}
         >
           {tag ? t('mobileContextHasTarget') : t('mobileContextNoTarget')}
         </Typography>
@@ -165,8 +167,7 @@ function OptimizeContextControls({
       direction="column"
       spacing={0.5}
       useFlexGap
-      alignItems="stretch"
-      sx={{ p: 2, width: '100%' }}
+      sx={{ alignItems: 'stretch', p: 2, width: '100%' }}
     >
       <Typography variant="subtitle1" sx={{ mb: 0.5 }}>
         {t('mobileContextTitle')}
@@ -283,7 +284,7 @@ function ContextChip({
         maxWidth: '100%',
       }}
     >
-      <Stack spacing={0} alignItems="flex-start" sx={{ minWidth: 0 }}>
+      <Stack spacing={0} sx={{ alignItems: 'flex-start', minWidth: 0 }}>
         <Typography variant="caption" color="text.secondary">
           {label}
         </Typography>

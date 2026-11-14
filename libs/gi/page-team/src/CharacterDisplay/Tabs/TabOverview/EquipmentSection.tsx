@@ -50,7 +50,11 @@ export default function EquipmentSection() {
       weaponSheet &&
       weaponSheet.document.length > 0 && (
         <CardThemed bgt="light">
-          <Box p={1}>
+          <Box
+            sx={{
+              p: 1,
+            }}
+          >
             <DocumentDisplay sections={weaponSheet.document} />
           </Box>
         </CardThemed>
@@ -76,18 +80,26 @@ export default function EquipmentSection() {
       <Grid container spacing={1}>
         {breakpoint && (
           <Grid
-            item
-            xs={12}
-            md={12}
-            lg={3}
-            xl={3}
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+            size={{
+              xs: 12,
+              md: 12,
+              lg: 3,
+              xl: 3,
+            }}
           >
             {weaponDoc && weaponDoc}
             <ArtifactSectionCard />
           </Grid>
         )}
-        <Grid item xs={12} md={12} lg={9} xl={9}>
+        <Grid
+          size={{
+            xs: 12,
+            md: 12,
+            lg: 9,
+            xl: 9,
+          }}
+        >
           <BuildEditContext.Provider value={editBuildId}>
             <EquippedGrid
               weaponTypeKey={weaponTypeKey}
@@ -117,18 +129,33 @@ export default function EquipmentSection() {
           </BuildEditContext.Provider>
         </Grid>
         {!breakpoint && (
-          <Grid item xs={12} md={12} xl={3} container spacing={1}>
+          <Grid
+            container
+            spacing={1}
+            size={{
+              xs: 12,
+              md: 12,
+              xl: 3,
+            }}
+          >
             {weaponDoc && (
-              <Grid item xs={12} md={6} lg={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 6,
+                  lg: 4,
+                }}
+              >
                 {weaponDoc}
               </Grid>
             )}
             <Grid
-              item
-              xs={12}
-              md={6}
-              lg={4}
               sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+              size={{
+                xs: 12,
+                md: 6,
+                lg: 4,
+              }}
             >
               <ArtifactSectionCard />
             </Grid>
@@ -181,7 +208,11 @@ function ArtifactSectionCard() {
           {t('tabEquip.unequipArts')}
         </Button>
       )}
-      <Box p={1}>
+      <Box
+        sx={{
+          p: 1,
+        }}
+      >
         <Stack spacing={1}>
           {setEffects &&
             Object.entries(setEffects).flatMap(([setKey, setNumKeyArr]) =>

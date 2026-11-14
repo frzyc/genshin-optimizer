@@ -31,7 +31,12 @@ function GODevAd({ children }: { children: ReactNode }) {
         over-engineered Genshin website ever made? Can you distinguish which one
         of the following is a pokemon?
       </Typography>
-      <Typography color="coral" fontFamily="monospace">
+      <Typography
+        color="coral"
+        sx={{
+          fontFamily: 'monospace',
+        }}
+      >
         React MaterialUI nx ekans GraphQL git metapod NextJS discord.js vite
         nodeJS emotion prisma Agumon tesseract.js typescript bun sawk webpack
         next-auth jest

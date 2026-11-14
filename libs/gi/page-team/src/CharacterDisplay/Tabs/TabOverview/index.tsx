@@ -34,16 +34,24 @@ export default function TabOverview() {
     <Stack spacing={1}>
       <Box>
         <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
-          <Grid item xs={8} sm={8} md={3} lg={2.3}>
+          <Grid
+            size={{
+              xs: 8,
+              sm: 8,
+              md: 3,
+              lg: 2.3,
+            }}
+          >
             <CharacterProfileCard />
           </Grid>
           <Grid
-            item
-            xs={12}
-            sm={12}
-            md={9}
-            lg={9.7}
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+            size={{
+              xs: 12,
+              sm: 12,
+              md: 9,
+              lg: 9.7,
+            }}
           >
             <EquipmentRow onClick={onScroll} />
             <CardThemed
@@ -90,7 +98,7 @@ function EquipmentRow({ onClick }: { onClick: () => void }) {
 
   return (
     <Grid container spacing={1} columns={{ xs: 2, sm: 2, md: 3, lg: 6, xl: 6 }}>
-      <Grid item xs={1}>
+      <Grid size={1}>
         <CardThemed bgt="light" sx={{ height: '100%', maxHeight: '8em' }}>
           <WeaponCardNano
             weaponId={data.get(input.weapon.id).value}
@@ -99,7 +107,7 @@ function EquipmentRow({ onClick }: { onClick: () => void }) {
         </CardThemed>
       </Grid>
       {allArtifactSlotKeys.map((slotKey) => (
-        <Grid item key={slotKey} xs={1}>
+        <Grid key={slotKey} size={1}>
           <CardThemed bgt="light" sx={{ height: '100%', maxHeight: '8em' }}>
             <ArtifactCardNano
               artifactId={data.get(input.art[slotKey].id).value?.toString()}

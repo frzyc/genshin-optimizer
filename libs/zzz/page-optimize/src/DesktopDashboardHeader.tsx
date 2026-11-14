@@ -71,8 +71,7 @@ export function DesktopDashboardHeader({
         <Stack
           direction="row"
           spacing={1.5}
-          alignItems="center"
-          sx={{ minWidth: 0 }}
+          sx={{ alignItems: 'center', minWidth: 0 }}
         >
           <Box
             component="img"
@@ -86,14 +85,14 @@ export function DesktopDashboardHeader({
             }}
           />
           <Box sx={{ minWidth: 0, textAlign: 'left' }}>
-            <Typography variant="subtitle1" noWrap fontWeight={600}>
+            <Typography variant="subtitle1" noWrap sx={{ fontWeight: 600 }}>
               <CharacterName characterKey={characterKey} />
             </Typography>
             <Typography
               variant="caption"
               color="text.secondary"
               noWrap
-              display="block"
+              sx={{ display: 'block' }}
             >
               {t('commandShortcutCharacter')}
             </Typography>
@@ -116,7 +115,7 @@ export function DesktopDashboardHeader({
             {t('optimizeTarget')}
           </Typography>
           {currentRef && tag ? (
-            <Typography variant="body2" noWrap fontWeight={500}>
+            <Typography variant="body2" noWrap sx={{ fontWeight: 500 }}>
               <OptTargetSelectedLabel formulaRef={currentRef} inline />
             </Typography>
           ) : (
@@ -140,8 +139,7 @@ export function DesktopDashboardHeader({
         <Typography
           variant="caption"
           color="text.secondary"
-          display="block"
-          sx={{ mb: 0.5, textAlign: 'left' }}
+          sx={{ display: 'block', mb: 0.5, textAlign: 'left' }}
         >
           {t('contextBuild')}
         </Typography>

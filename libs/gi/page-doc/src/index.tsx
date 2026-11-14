@@ -36,10 +36,14 @@ export default function PageDocumentation() {
   return (
     <CardThemed>
       <Grid container sx={{ px: 2, py: 1 }}>
-        <Grid item flexGrow={1}>
+        <Grid
+          sx={{
+            flexGrow: 1,
+          }}
+        >
           <Typography variant="h6">Documentation</Typography>
         </Grid>
-        <Grid item>
+        <Grid>
           <Typography variant="h6">
             <SqBadge color="info">Version 3</SqBadge>
           </Typography>
@@ -48,7 +52,12 @@ export default function PageDocumentation() {
       <Divider />
       <CardContent>
         <Grid container spacing={1}>
-          <Grid item xs={12} md={2}>
+          <Grid
+            size={{
+              xs: 12,
+              md: 2,
+            }}
+          >
             <CardThemed bgt="light" sx={{ height: '100%' }}>
               <Tabs
                 orientation="vertical"
@@ -56,53 +65,71 @@ export default function PageDocumentation() {
                 aria-label="Documentation Navigation"
                 sx={{ borderRight: 1, borderColor: 'divider' }}
               >
-                <Tab label="Overview" value="" component={Link} to="" />
+                <Tab
+                  label="Overview"
+                  value=""
+                  component={Link}
+                  nativeButton={false}
+                  to=""
+                />
                 <Tab
                   label={'Key naming convention'}
                   value="KeyNaming"
                   component={Link}
+                  nativeButton={false}
                   to="KeyNaming"
                 />
                 <Tab
                   label={<code>StatKey</code>}
                   value="StatKey"
                   component={Link}
+                  nativeButton={false}
                   to="StatKey"
                 />
                 <Tab
                   label={<code>ArtifactSetKey</code>}
                   value="ArtifactSetKey"
                   component={Link}
+                  nativeButton={false}
                   to="ArtifactSetKey"
                 />
                 <Tab
                   label={<code>CharacterKey</code>}
                   value="CharacterKey"
                   component={Link}
+                  nativeButton={false}
                   to="CharacterKey"
                 />
                 <Tab
                   label={<code>WeaponKey</code>}
                   value="WeaponKey"
                   component={Link}
+                  nativeButton={false}
                   to="WeaponKey"
                 />
                 <Tab
                   label={<code>MaterialKey</code>}
                   value="MaterialKey"
                   component={Link}
+                  nativeButton={false}
                   to="MaterialKey"
                 />
                 <Tab
                   label={'Version History'}
                   value="VersionHistory"
                   component={Link}
+                  nativeButton={false}
                   to="VersionHistory"
                 />
               </Tabs>
             </CardThemed>
           </Grid>
-          <Grid item xs={12} md={10}>
+          <Grid
+            size={{
+              xs: 12,
+              md: 10,
+            }}
+          >
             <CardThemed bgt="light" sx={{ height: '100%' }}>
               <CardContent>
                 <Suspense
@@ -392,7 +419,13 @@ function MaterialKeyPane() {
 
 function VersionHistoryPane() {
   return (
-    <Box display="flex" flexDirection="column" gap={2}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+      }}
+    >
       <Typography gutterBottom variant="h4">
         Version History
       </Typography>

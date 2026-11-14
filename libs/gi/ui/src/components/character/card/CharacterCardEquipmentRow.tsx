@@ -20,7 +20,12 @@ export function CharacterCardEquipmentRow({
     <Box>
       <Grid container columns={hideWeapon ? 5 : 6} spacing={0.5}>
         {!hideWeapon && (
-          <Grid item xs={1} height="100%">
+          <Grid
+            size={1}
+            sx={{
+              height: '100%',
+            }}
+          >
             <WeaponCardPico
               weaponId={data.get(input.weapon.id).value?.toString() ?? ''}
             />
@@ -44,7 +49,7 @@ function Artifacts() {
     <>
       {artifacts.map(
         ([key, art]: [ArtifactSlotKey, ICachedArtifact | undefined]) => (
-          <Grid item key={key} xs={1}>
+          <Grid key={key} size={1}>
             <ArtifactCardPico artifactObj={art} slotKey={key} />
           </Grid>
         )
@@ -62,11 +67,16 @@ export function CharacterCardEquipmentRowTC({
     <Box>
       <Grid container columns={weapon ? 6 : 5} spacing={0.5} sx={{}}>
         {weapon && (
-          <Grid item xs={1} height="100%">
+          <Grid
+            size={1}
+            sx={{
+              height: '100%',
+            }}
+          >
             <WeaponCardPicoObj weapon={weapon} />
           </Grid>
         )}
-        <Grid item xs={5}>
+        <Grid size={5}>
           <Card
             sx={{
               backgroundColor: 'secondary.main',

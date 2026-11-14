@@ -27,7 +27,7 @@ export function RelicSheetsDisplay() {
       <Box>
         <Grid container columns={3} spacing={1}>
           {relicList.map((setKey) => (
-            <Grid item xs={1} key={setKey}>
+            <Grid key={setKey} size={1}>
               <RelicSheetDisplay setKey={setKey} />
             </Grid>
           ))}

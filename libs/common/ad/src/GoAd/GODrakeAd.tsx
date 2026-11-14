@@ -27,11 +27,13 @@ function GODrakeAd({ children }: { children: ReactNode }) {
       <Box
         component="img"
         src={drake}
-        maxWidth="100%"
-        maxHeight="100%"
-        width="100%"
-        height="100%"
-        sx={{ objectFit: 'contain' }}
+        sx={{
+          maxWidth: '100%',
+          maxHeight: '100%',
+          width: '100%',
+          height: '100%',
+          objectFit: 'contain',
+        }}
       />
     </Box>
   )

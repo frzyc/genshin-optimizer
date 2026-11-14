@@ -56,7 +56,11 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
   } = art
   const mainVariant = KeyMap.getVariant(mainStatKey)
   return (
-    <Box p={1}>
+    <Box
+      sx={{
+        p: 1,
+      }}
+    >
       <Typography variant="h6">
         <SlotIcon slotKey={slotKey} iconProps={iconInlineProps} />{' '}
         <ArtifactSetSlotName setKey={setKey} slotKey={slotKey} />
@@ -76,7 +80,11 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
         <StarsDisplay stars={rarity} />
         <SqBadge color={artifactLevelVariant(level)}>+{level}</SqBadge>{' '}
       </Typography>
-      <Box py={1}>
+      <Box
+        sx={{
+          py: 1,
+        }}
+      >
         {substats.map(
           ({ value, key, rolls }) =>
             !!(value && key) && (
@@ -103,7 +111,11 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
         )}
       </Box>
 
-      <Typography color="success.main">
+      <Typography
+        sx={{
+          color: 'success.main',
+        }}
+      >
         <ArtifactSetName setKey={setKey} />
       </Typography>
       <LocationName color="secondary.main" location={art.location} />

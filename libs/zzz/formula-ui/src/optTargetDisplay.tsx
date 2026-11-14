@@ -121,7 +121,13 @@ function AbilityOptTargetLabel({
           sx={{ minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis' }}
         >
           {abilityName}
-          <Typography component="span" variant="body2" color="text.secondary">
+          <Typography
+            component="span"
+            variant="body2"
+            sx={{
+              color: 'text.secondary',
+            }}
+          >
             {' · '}
             {secondary}
           </Typography>
@@ -148,8 +154,10 @@ function AbilityOptTargetLabel({
         <Typography
           component="span"
           variant="caption"
-          color="text.secondary"
           noWrap
+          sx={{
+            color: 'text.secondary',
+          }}
         >
           {secondary}
         </Typography>

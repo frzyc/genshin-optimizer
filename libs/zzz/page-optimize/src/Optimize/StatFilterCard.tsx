@@ -62,7 +62,12 @@ export function StatFilterCard({ disabled = false }: { disabled?: boolean }) {
           flexDirection: 'column',
         }}
       >
-        <Box display="flex" justifyContent="space-between">
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+          }}
+        >
           {/* TODO: Translate */}
           <Typography sx={{ fontWeight: 'bold' }}>Stat Filter</Typography>
           {/* <InfoTooltip
@@ -142,7 +147,13 @@ export function StatFilterDisplay({
   const newTarget = (q: StatFilterStatKey) => setTarget(newStatFilterTag(q))
 
   return (
-    <Box display="flex" flexDirection="column" gap={1}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1,
+      }}
+    >
       {statFilters.map((statFilter, i) => (
         <StatFilterItem
           statFilter={statFilter}
@@ -236,20 +247,22 @@ function StatFilterItem({
           onChange={setTargetValue}
           placeholder="Stat Value"
           size="small"
-          inputProps={{ sx: { textAlign: 'right' } }}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end" sx={{ ml: 0 }}>
-                {isPercent ? '%' : undefined}{' '}
-                <IconButton
-                  aria-label="Delete Stat Constraint"
-                  onClick={delTarget}
-                  edge="end"
-                >
-                  <DeleteForever fontSize="small" />
-                </IconButton>
-              </InputAdornment>
-            ),
+          slotProps={{
+            htmlInput: { sx: { textAlign: 'right' } },
+            input: {
+              endAdornment: (
+                <InputAdornment position="end" sx={{ ml: 0 }}>
+                  {isPercent ? '%' : undefined}{' '}
+                  <IconButton
+                    aria-label="Delete Stat Constraint"
+                    onClick={delTarget}
+                    edge="end"
+                  >
+                    <DeleteForever fontSize="small" />
+                  </IconButton>
+                </InputAdornment>
+              ),
+            },
           }}
         />
       </CardContent>

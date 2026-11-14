@@ -65,7 +65,13 @@ export default function PageTeam() {
   if (invalidKey) return <Navigate to="/teams" />
 
   return (
-    <Box display="flex" flexDirection="column" gap={1}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1,
+      }}
+    >
       <Suspense
         fallback={<Skeleton variant="rectangular" width="100%" height={1000} />}
       >

@@ -80,10 +80,12 @@ function Content() {
   useTitle()
   return (
     <Box
-      display="flex"
-      flexDirection="column"
-      minHeight="100vh"
-      position="relative"
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+        position: 'relative',
+      }}
     >
       <Header anchor="back-to-top-anchor" />
       <Container maxWidth="xl" sx={{ px: { xs: 0.5, sm: 1 } }}>
@@ -102,7 +104,11 @@ function Content() {
           </Routes>
         </Suspense>
       </Container>
-      <Box flexGrow={1} />
+      <Box
+        sx={{
+          flexGrow: 1,
+        }}
+      />
       <Footer />
     </Box>
   )

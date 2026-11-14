@@ -121,10 +121,10 @@ export function EquippedGrid({
             )}
           </Box>
           <Box>
-            <Grid item columns={columns} container spacing={1}>
+            <Grid columns={columns} container spacing={1}>
               {!!discs &&
                 Object.entries(discs).map(([slotKey, disc]) => (
-                  <Grid item xs={1} key={disc?.id || slotKey}>
+                  <Grid key={disc?.id || slotKey} size={1}>
                     {disc?.id ? (
                       <DiscCardObj
                         disc={disc}

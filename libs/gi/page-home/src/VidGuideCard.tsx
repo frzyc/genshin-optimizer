@@ -23,10 +23,12 @@ export default function VidGuideCard() {
           <Typography
             variant="h5"
             component={Link}
-            color="inherit"
             href={process.env.NX_URL_YOUTUBE_TUTPL}
             target="_blank"
             rel="noopener"
+            sx={{
+              color: 'inherit',
+            }}
           >
             {t('vidGuideCard.title')}
           </Typography>
@@ -37,7 +39,7 @@ export default function VidGuideCard() {
       <CardContent>
         <Grid container columns={{ xs: 1, sm: 2 }} spacing={2}>
           {embeds.map((embed) => (
-            <Grid item xs={1} key={embed}>
+            <Grid key={embed} size={1}>
               <Box
                 key={embed}
                 sx={{

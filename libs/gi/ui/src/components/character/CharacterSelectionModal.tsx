@@ -28,7 +28,6 @@ import {
   getCharMaxLevel,
 } from '@genshin-optimizer/gi/consts'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
-import { commandSearchInputProps } from '../../util/commandPaletteSearch'
 import {
   useCharacter,
   useCharMeta,
@@ -70,16 +69,17 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DataContext, SillyContext } from '../../context'
+import { commandSearchInputProps } from '../../util/commandPaletteSearch'
 import { iconAsset } from '../../util/iconAsset'
 import { ElementToggle, WeaponToggle } from '../toggles'
 import { CharacterCard } from './CharacterCard'
 import type { CharacterSortKey } from './CharacterSort'
-import { useCharacterNameSearchFieldsCache } from './characterNameSearchFields'
 import {
   characterFilterConfigs,
   characterSortConfigs,
   characterSortMap,
 } from './CharacterSort'
+import { useCharacterNameSearchFieldsCache } from './characterNameSearchFields'
 import { CharacterName } from './Trans'
 
 export function CharacterSingleSelectionModal({
@@ -531,7 +531,10 @@ function CharacterSelectionModalBase({
 
   const { weaponType, element, sortType, ascending } = state
   const teamDataContextValue = useMemo(
-    () => ({ teamData: undefined }) as any,
+    () =>
+      ({
+        teamData: undefined,
+      }) as any,
     []
   )
 
@@ -583,7 +586,12 @@ function CharacterSelectionModalBase({
               <CloseIcon />
             </IconButton>
           </Box>
-          <Box display="flex" gap={1}>
+          <Box
+            sx={{
+              display: 'flex',
+              gap: 1,
+            }}
+          >
             <TextField
               inputRef={searchInputRef}
               value={searchTerm}
@@ -593,14 +601,17 @@ function CharacterSelectionModalBase({
               label={t('characterName')}
               size="small"
               sx={{ height: '100%', mr: 'auto' }}
-              inputProps={commandSearchInputProps}
-              InputProps={{
-                sx: { height: '100%' },
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <SearchIcon fontSize="small" />
-                  </InputAdornment>
-                ),
+              slotProps={{
+                input: {
+                  sx: { height: '100%' },
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <SearchIcon fontSize="small" />
+                    </InputAdornment>
+                  ),
+                },
+
+                htmlInput: commandSearchInputProps,
               }}
             />
             <SortByButton
@@ -798,10 +809,12 @@ const SelectionCard = memo(function SelectionCard({
   return (
     <CardActionArea onClick={() => onSelect(characterKey)}>
       <Box
-        display="flex"
-        position="relative"
         className={!banner ? `grad-${rarity}star` : undefined}
         sx={{
+          display: 'flex',
+          position: 'relative',
+          width: '100%',
+
           '&::before': {
             content: '""',
             display: 'block',
@@ -816,32 +829,38 @@ const SelectionCard = memo(function SelectionCard({
             backgroundSize: 'cover',
           },
         }}
-        width="100%"
       >
         <Box
-          flexShrink={1}
-          sx={{ maxWidth: { xs: '33%', lg: '30%' } }}
-          alignSelf="flex-end"
-          display="flex"
-          flexDirection="column"
-          zIndex={1}
+          sx={{
+            flexShrink: 1,
+            alignSelf: 'flex-end',
+            display: 'flex',
+            flexDirection: 'column',
+            zIndex: 1,
+            maxWidth: { xs: '33%', lg: '30%' },
+          }}
         >
           <Box
             component="img"
             src={iconAsset(characterKey, gender, silly)}
-            width="100%"
-            height="auto"
-            maxWidth={256}
-            sx={{ mt: 'auto' }}
+            sx={{
+              width: '100%',
+              height: 'auto',
+              maxWidth: 256,
+              mt: 'auto',
+            }}
           />
         </Box>
         <Box
-          flexGrow={1}
-          sx={{ pr: 1, pt: 1 }}
-          display="flex"
-          flexDirection="column"
-          zIndex={1}
-          justifyContent="space-evenly"
+          sx={{
+            flexGrow: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            zIndex: 1,
+            justifyContent: 'space-evenly',
+            pr: 1,
+            pt: 1,
+          }}
         >
           <Typography variant="body2" sx={{ flexGrow: 1 }}>
             <SqBadge
@@ -857,14 +876,18 @@ const SelectionCard = memo(function SelectionCard({
                 <Typography
                   variant="body2"
                   component="span"
-                  whiteSpace="nowrap"
+                  sx={{
+                    whiteSpace: 'nowrap',
+                  }}
                 >
                   Lv. {level}
                 </Typography>
                 <Typography
                   variant="body2"
                   component="span"
-                  color="text.secondary"
+                  sx={{
+                    color: 'text.secondary',
+                  }}
                 >
                   /{getCharMaxLevel(level, ascension)}
                 </Typography>
@@ -895,7 +918,7 @@ const SingleSelectGridRow = memo(function SingleSelectGridRow({
   onSelect: (ck: CharacterKey) => void
 }) {
   return (
-    <Grid item xs={1}>
+    <Grid size={1}>
       <SingleSelectCardWrapper
         characterKey={characterKey}
         selectedIndex={selectedIndex}
@@ -917,7 +940,7 @@ const MultiSelectGridRow = memo(function MultiSelectGridRow({
   onSelect: (ck: CharacterKey) => void
 }) {
   return (
-    <Grid item xs={1}>
+    <Grid size={1}>
       <MultiSelectCardWrapper
         characterKey={characterKey}
         teamSlotIndex={teamSlotIndex}

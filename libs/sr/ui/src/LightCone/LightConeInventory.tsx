@@ -89,13 +89,19 @@ export function LightConeInventory({ onAdd, onEdit }: LightConeInventoryProps) {
       <CardThemed bgt="dark">
         <CardContent>
           <Box
-            pb={2}
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            flexWrap="wrap"
+            sx={{
+              pb: 2,
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+            }}
           >
-            <Typography color="text.secondary">
+            <Typography
+              sx={{
+                color: 'text.secondary',
+              }}
+            >
               Showing <b>{showingTextProps.numShowing}</b> out of{' '}
               {showingTextProps.total} Items
             </Typography>
@@ -103,7 +109,7 @@ export function LightConeInventory({ onAdd, onEdit }: LightConeInventoryProps) {
         </CardContent>
       </CardThemed>
       <Grid container columns={columns} spacing={1}>
-        <Grid item xs>
+        <Grid size="grow">
           <Button
             fullWidth
             onClick={onAdd}
@@ -124,7 +130,7 @@ export function LightConeInventory({ onAdd, onEdit }: LightConeInventoryProps) {
       >
         <Grid container columns={columns} spacing={1}>
           {lightConeIdsToShow.map((lightConeId) => (
-            <Grid item key={lightConeId} xs={1}>
+            <Grid key={lightConeId} size={1}>
               <LightConeCard
                 lightCone={database.lightCones.get(lightConeId)!}
                 onEdit={() => onEdit?.(lightConeId)}

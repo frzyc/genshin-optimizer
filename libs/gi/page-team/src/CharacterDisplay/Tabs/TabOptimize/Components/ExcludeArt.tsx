@@ -98,7 +98,13 @@ export default function ExcludeArt({
         <CardThemed>
           <CardHeader
             title={
-              <Box display="flex" gap={1} alignItems="center">
+              <Box
+                sx={{
+                  display: 'flex',
+                  gap: 1,
+                  alignItems: 'center',
+                }}
+              >
                 <Typography variant="h6">
                   {t('excludeArt.title_exclude')}
                 </Typography>
@@ -136,7 +142,11 @@ export default function ExcludeArt({
             </Button>
             {!!numExcludedArt && (
               <CardThemed bgt="light" sx={{ mb: 1 }}>
-                <Typography textAlign="center">
+                <Typography
+                  sx={{
+                    textAlign: 'center',
+                  }}
+                >
                   {t('excludeArt.deSelectExc')}
                 </Typography>
               </CardThemed>
@@ -147,7 +157,7 @@ export default function ExcludeArt({
               spacing={1}
             >
               {artExclusion.map((id) => (
-                <Grid item key={id} xs={1}>
+                <Grid key={id} size={1}>
                   <CardThemed
                     bgt="light"
                     sx={{ height: '100%', maxHeight: '8em' }}
@@ -243,8 +253,20 @@ function ExcludeArtRedButtons({
     onInclude(artifactIds)
 
   return (
-    <Grid container spacing={1} alignItems="center">
-      <Grid item xs={12} sm={6} md={6}>
+    <Grid
+      container
+      spacing={1}
+      sx={{
+        alignItems: 'center',
+      }}
+    >
+      <Grid
+        size={{
+          xs: 12,
+          sm: 6,
+          md: 6,
+        }}
+      >
         <Button
           fullWidth
           color="error"
@@ -258,7 +280,13 @@ function ExcludeArtRedButtons({
           </SqBadge>
         </Button>
       </Grid>
-      <Grid item xs={12} sm={6} md={6}>
+      <Grid
+        size={{
+          xs: 12,
+          sm: 6,
+          md: 6,
+        }}
+      >
         <Button
           fullWidth
           color="error"
@@ -272,8 +300,19 @@ function ExcludeArtRedButtons({
           </SqBadge>
         </Button>
       </Grid>
-      <Grid item xs={12} display="flex" justifyContent="space-around">
-        <Typography variant="caption" color="text.secondary">
+      <Grid
+        size={12}
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-around',
+        }}
+      >
+        <Typography
+          variant="caption"
+          sx={{
+            color: 'text.secondary',
+          }}
+        >
           <Trans t={t} i18nKey="buttonHint">
             Note: the red buttons above only apply to
             <b>currently filtered artifacts</b>
@@ -356,7 +395,11 @@ function ArtifactSelectModal({
               excludedIds={artExclusion}
             />
           </Suspense>
-          <Box mt={1}>
+          <Box
+            sx={{
+              mt: 1,
+            }}
+          >
             <ExcludeArtRedButtons
               artifactIds={artifactIds}
               artExclusion={artExclusion}
@@ -364,7 +407,11 @@ function ArtifactSelectModal({
               onInclude={onInclude}
             />
           </Box>
-          <Box mt={1}>
+          <Box
+            sx={{
+              mt: 1,
+            }}
+          >
             <Suspense
               fallback={
                 <Skeleton variant="rectangular" width="100%" height={300} />
@@ -372,7 +419,7 @@ function ArtifactSelectModal({
             >
               <Grid container spacing={1} columns={{ xs: 2, md: 3, lg: 4 }}>
                 {artifactIdsToShow.map((id) => (
-                  <Grid item key={id} xs={1}>
+                  <Grid key={id} size={1}>
                     <ArtifactCard
                       artifactId={id}
                       excluded={artExclusion.includes(id)}

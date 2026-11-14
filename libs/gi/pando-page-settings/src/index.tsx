@@ -9,7 +9,11 @@ export default function PageSettings() {
   return (
     <CardThemed sx={{ my: 1 }}>
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-        <Box maxWidth="50%">
+        <Box
+          sx={{
+            maxWidth: '50%',
+          }}
+        >
           <LocalStorageUsageCard />
         </Box>
         <DatabaseCard />

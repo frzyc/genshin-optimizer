@@ -83,9 +83,18 @@ export default function MainStatSelectionCard({
   }, [database, filteredArtIdMap])
 
   return (
-    <Box display="flex" flexDirection="column">
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
       <Divider />
-      <Box display="flex">
+      <Box
+        sx={{
+          display: 'flex',
+        }}
+      >
         <CardContent sx={{ flexGrow: 1 }}>
           <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
             <BootstrapTooltip
@@ -94,7 +103,11 @@ export default function MainStatSelectionCard({
             >
               <FlowerIcon fontSize="inherit" />
             </BootstrapTooltip>
-            <Box flexGrow={1}>
+            <Box
+              sx={{
+                flexGrow: 1,
+              }}
+            >
               <SqBadge color="info">
                 <HpIcon {...iconInlineProps} /> {mainStatSlotTots.flower.hp}
               </SqBadge>
@@ -110,7 +123,11 @@ export default function MainStatSelectionCard({
             >
               <PlumeIcon fontSize="inherit" />
             </BootstrapTooltip>
-            <Box flexGrow={1}>
+            <Box
+              sx={{
+                flexGrow: 1,
+              }}
+            >
               <SqBadge color="info">
                 <AtkIcon {...iconInlineProps} /> {mainStatSlotTots.plume.atk}
               </SqBadge>
@@ -133,14 +150,22 @@ export default function MainStatSelectionCard({
                   placement="top"
                   title={<Typography>{t(`slotName.${slotKey}`)}</Typography>}
                 >
-                  <Box lineHeight={0}>
+                  <Box
+                    sx={{
+                      lineHeight: 0,
+                    }}
+                  >
                     <SlotIcon
                       slotKey={slotKey}
                       iconProps={{ fontSize: 'inherit' }}
                     />
                   </Box>
                 </BootstrapTooltip>
-                <Box flexGrow={1}>
+                <Box
+                  sx={{
+                    flexGrow: 1,
+                  }}
+                >
                   <SqBadge color="info">{slotTots[slotKey]}</SqBadge>
                 </Box>
               </Box>
@@ -154,14 +179,15 @@ export default function MainStatSelectionCard({
                     : 'secondary'
                   return (
                     <Grid
-                      item
                       key={mainStatKey}
-                      flexGrow={1}
-                      xs={
+                      size={
                         (i < 3 && slotKey !== 'goblet') || slotKey === 'goblet'
                           ? 4
                           : undefined
                       }
+                      sx={{
+                        flexGrow: 1,
+                      }}
                     >
                       <BootstrapTooltip
                         placement="top"

@@ -131,11 +131,12 @@ export default function CharacterTalentPane() {
         {/* constellations for 4column */}
         {grlg && (
           <Grid
-            item
-            xs={12}
-            md={12}
-            lg={3}
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+            size={{
+              xs: 12,
+              md: 12,
+              lg: 3,
+            }}
           >
             <ConstellationDropdown />
             {constellationCards.map((c, i) => (
@@ -145,15 +146,23 @@ export default function CharacterTalentPane() {
             ))}
           </Grid>
         )}
-        <Grid item xs={12} md={12} lg={9} container spacing={1}>
+        <Grid
+          container
+          spacing={1}
+          size={{
+            xs: 12,
+            md: 12,
+            lg: 9,
+          }}
+        >
           {/* auto, skill, burst */}
           {skillBurstList.map(([tKey, tText]) => (
-            <Grid item key={tKey} {...talentSpacing}>
+            <Grid key={tKey}>
               <SkillDisplayCard talentKey={tKey} subtitle={tText} />
             </Grid>
           ))}
           {!!characterSheet.getTalentOfKey('sprint') && (
-            <Grid item {...talentSpacing}>
+            <Grid>
               <SkillDisplayCard
                 talentKey="sprint"
                 subtitle={t('talents.altSprint')}
@@ -161,7 +170,7 @@ export default function CharacterTalentPane() {
             </Grid>
           )}
           {!!characterSheet.getTalentOfKey('passive') && (
-            <Grid item {...talentSpacing}>
+            <Grid>
               <SkillDisplayCard talentKey="passive" subtitle="Passive" />
             </Grid>
           )}
@@ -170,12 +179,7 @@ export default function CharacterTalentPane() {
             const enabled = ascension >= asc
             if (!characterSheet.getTalentOfKey(tKey)) return null
             return (
-              <Grid
-                item
-                key={tKey}
-                style={{ opacity: enabled ? 1 : 0.5 }}
-                {...talentSpacing}
-              >
+              <Grid key={tKey} style={{ opacity: enabled ? 1 : 0.5 }}>
                 <SkillDisplayCard talentKey={tKey} subtitle={tText} />
               </Grid>
             )
@@ -183,17 +187,20 @@ export default function CharacterTalentPane() {
         </Grid>
         {/* constellations for < 4 columns */}
         {!grlg && (
-          <Grid item xs={12} md={12} lg={3} container spacing={1}>
-            <Grid item xs={12}>
+          <Grid
+            container
+            spacing={1}
+            size={{
+              xs: 12,
+              md: 12,
+              lg: 3,
+            }}
+          >
+            <Grid size={12}>
               <ConstellationDropdown />
             </Grid>
             {constellationCards.map((c, i) => (
-              <Grid
-                item
-                key={i}
-                sx={{ opacity: constellation >= i + 1 ? 1 : 0.5 }}
-                {...talentSpacing}
-              >
+              <Grid key={i} sx={{ opacity: constellation >= i + 1 ? 1 : 0.5 }}>
                 {c}
               </Grid>
             ))}
@@ -216,7 +223,7 @@ function ReactionDisplay() {
             .filter(([_, node]) => !node.isEmpty)
             .map(([key, node]) => {
               return (
-                <Grid item key={key}>
+                <Grid key={key}>
                   <CardThemed>
                     <CardContent sx={{ p: 1, '&:last-child': { pb: 1 } }}>
                       <NodeFieldDisplay calcRes={node} />
@@ -308,14 +315,19 @@ function SkillDisplayCard({
           wrapper={actionWrapperFunc}
         >
           <Grid container sx={{ flexWrap: 'nowrap' }}>
-            <Grid item>
+            <Grid>
               <Box
                 component="img"
                 src={talentSheet?.img}
                 sx={{ width: 60, height: 'auto' }}
               />
             </Grid>
-            <Grid item flexGrow={1} sx={{ pl: 1 }}>
+            <Grid
+              sx={{
+                flexGrow: 1,
+                pl: 1,
+              }}
+            >
               <Typography variant="h6">{talentSheet?.name}</Typography>
               <Typography variant="subtitle1">{subtitle}</Typography>
             </Grid>

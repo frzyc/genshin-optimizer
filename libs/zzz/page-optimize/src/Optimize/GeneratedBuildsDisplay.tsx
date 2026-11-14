@@ -174,7 +174,7 @@ function BuildTableRow({
         }}
       >
         <TableCell sx={shrinkCol}>
-          <Stack direction="row" spacing={0.5} alignItems="center">
+          <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center' }}>
             {expanded ? (
               <ExpandLessIcon fontSize="small" aria-hidden />
             ) : (
@@ -387,10 +387,10 @@ function BuildDetail({ build }: { build: GeneratedBuild }) {
       <CompareCalcContext.Provider value={baseCalc as Calculator}>
         <Box>
           <Grid container spacing={1}>
-            <Grid item xs={12} md={4} lg={3}>
+            <Grid size={{ xs: 12, md: 4, lg: 3 }}>
               <CharStatsDisplay />
             </Grid>
-            <Grid item xs={12} md={8} lg={9}>
+            <Grid size={{ xs: 12, md: 8, lg: 9 }}>
               <EquipGrid discIds={build.discIds} wengineId={build.wengineId} />
             </Grid>
           </Grid>

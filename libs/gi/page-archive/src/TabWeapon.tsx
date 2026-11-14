@@ -224,12 +224,14 @@ export default function TabWeapon() {
           variant="outlined"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon />
-              </InputAdornment>
-            ),
+          slotProps={{
+            input: {
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            },
           }}
         />
       </CardContent>
@@ -344,7 +346,11 @@ const WeaponRow = memo(function WeaponRow({
           />
         </TableCell>
         <TableCell>
-          <Box display="flex">
+          <Box
+            sx={{
+              display: 'flex',
+            }}
+          >
             <ColorText color={`rarity${rarity}` as keyof Palette}>
               <StarRoundedIcon />
             </ColorText>
@@ -365,7 +371,11 @@ function StatDisplay({ node }: { node: CalcResult }) {
   if (Number.isNaN(node.value)) return null
   return (
     <Box sx={{ display: 'flex' }}>
-      <Typography flexGrow={1}>
+      <Typography
+        sx={{
+          flexGrow: 1,
+        }}
+      >
         {icon} {name}
       </Typography>
       <Typography>{GetCalcDisplay(node).valueString}</Typography>

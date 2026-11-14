@@ -123,7 +123,13 @@ function BuildsEmpty() {
   const { scrollToSection } = useOptimizePage()
   return (
     <Box>
-      <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+      <Typography
+        variant="body2"
+        sx={{
+          color: 'text.secondary',
+          mb: 2,
+        }}
+      >
         {t('buildsEmptyBody')}
       </Typography>
       <Button
@@ -173,7 +179,7 @@ function BuildTableRow({
         }}
       >
         <TableCell sx={shrinkCol}>
-          <Stack direction="row" spacing={0.5} alignItems="center">
+          <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center' }}>
             {expanded ? (
               <ExpandLessIcon fontSize="small" aria-hidden />
             ) : (
@@ -392,10 +398,22 @@ function BuildDetail({ build }: { build: PandoGeneratedBuild }) {
       <CompareCalcContext.Provider value={baseCalc as Calculator}>
         <Box>
           <Grid container spacing={1}>
-            <Grid item xs={12} md={4} lg={3}>
+            <Grid
+              size={{
+                xs: 12,
+                md: 4,
+                lg: 3,
+              }}
+            >
               <CharStatsDisplay characterKey={character.key} />
             </Grid>
-            <Grid item xs={12} md={8} lg={9}>
+            <Grid
+              size={{
+                xs: 12,
+                md: 8,
+                lg: 9,
+              }}
+            >
               <BuildEquipGrid artIds={build.artIds} weaponId={build.weaponId} />
             </Grid>
           </Grid>

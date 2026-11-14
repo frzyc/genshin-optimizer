@@ -159,7 +159,13 @@ export default function CustomMultiTargetCard({
         <CardActionArea onClick={onShow}>
           <CardHeader
             title={
-              <Box display="flex" gap={1} alignItems="center">
+              <Box
+                sx={{
+                  display: 'flex',
+                  gap: 1,
+                  alignItems: 'center',
+                }}
+              >
                 <Chip
                   sx={{ minWidth: '8em' }}
                   color={target.targets.length ? 'success' : undefined}
@@ -234,7 +240,12 @@ export default function CustomMultiTargetCard({
               minRows={2}
             />
 
-            <Box display="flex" gap={2}>
+            <Box
+              sx={{
+                display: 'flex',
+                gap: 2,
+              }}
+            >
               <Button
                 onClick={onDup}
                 color="info"

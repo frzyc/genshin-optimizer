@@ -82,15 +82,19 @@ export function CharacterCardPico({
           wrapper={actionWrapperFunc}
         >
           <Box
-            display="flex"
             className={`grad-${getCharStat(characterKey).rarity}star`}
+            sx={{
+              display: 'flex',
+            }}
           >
             <Box
               component="img"
               src={iconAsset(characterKey, gender, silly)}
-              maxWidth="100%"
-              maxHeight="100%"
               draggable={false}
+              sx={{
+                maxWidth: '100%',
+                maxHeight: '100%',
+              }}
             />
           </Box>
           {character && (

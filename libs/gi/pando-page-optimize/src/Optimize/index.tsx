@@ -242,7 +242,9 @@ function OptimizeWrapper() {
         anchor="bottom"
         open={isMobile && filtersOpen}
         onClose={() => setFiltersOpen(false)}
-        PaperProps={{ sx: { maxHeight: '85vh', p: 2 } }}
+        slotProps={{
+          paper: { sx: { maxHeight: '85vh', p: 2 } },
+        }}
       >
         <Typography variant="h6" sx={{ mb: 1 }}>
           {t('filters')}

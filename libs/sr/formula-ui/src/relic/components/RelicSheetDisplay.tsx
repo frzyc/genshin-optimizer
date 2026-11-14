@@ -58,7 +58,12 @@ export function RelicUiSheetElement({
   const { documents, title } = uiSheetElement
   return (
     <CardThemed bgt="light">
-      <CardHeader title={title} titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader
+        title={title}
+        slotProps={{
+          title: { variant: 'h6' },
+        }}
+      />
       <Divider />
       <CardContent>
         <Stack spacing={1}>

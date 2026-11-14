@@ -118,21 +118,22 @@ function WeaponFilter({
     <CardThemed>
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
         <Grid container>
-          <Grid item>
+          <Grid>
             <Typography variant="h6">{t('weaponFilterTitle')}</Typography>
           </Grid>
           <Grid
-            item
-            flexGrow={1}
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
+            sx={{
+              flexGrow: 1,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
           >
             <Typography>
               <strong>{numShowing}</strong> / {total}
             </Typography>
           </Grid>
-          <Grid item>
+          <Grid>
             <Button
               size="small"
               color="error"
@@ -145,7 +146,16 @@ function WeaponFilter({
         </Grid>
         <Box>
           <Grid container spacing={1}>
-            <Grid item xs={12} md={6} display="flex" flexDirection="column">
+            <Grid
+              size={{
+                xs: 12,
+                md: 6,
+              }}
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
               <Trans t={t} i18nKey="subheadings.general" />
               <Stack spacing={1}>
                 <Divider sx={{ bgcolor: theme.palette.contentNormal.light }} />
@@ -169,12 +179,15 @@ function WeaponFilter({
               </Stack>
             </Grid>
             <Grid
-              item
-              xs={12}
-              md={6}
-              display="flex"
-              flexDirection="column"
-              gap={1}
+              size={{
+                xs: 12,
+                md: 6,
+              }}
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 1,
+              }}
             >
               <Box>
                 <Trans t={t} i18nKey="subheadings.inventory" />
@@ -236,7 +249,12 @@ function WeaponFilter({
                     />
                   </Button>
                 </Stack>
-                <Stack spacing={1.5} pt={1.5}>
+                <Stack
+                  spacing={1.5}
+                  sx={{
+                    pt: 1.5,
+                  }}
+                >
                   <Suspense fallback={null}>
                     <BootstrapTooltip
                       title={showEquipped ? t('locationsTooltip') : ''}
@@ -299,8 +317,20 @@ function WeaponRedButtons({ weaponIds }: { weaponIds: string[] }) {
     weaponIds.map((id) => database.weapons.set(id, { lock: false }))
 
   return (
-    <Grid container spacing={1} alignItems="center">
-      <Grid item xs={16} sm={8} md={4}>
+    <Grid
+      container
+      spacing={1}
+      sx={{
+        alignItems: 'center',
+      }}
+    >
+      <Grid
+        size={{
+          xs: 16,
+          sm: 8,
+          md: 4,
+        }}
+      >
         <Button
           fullWidth
           color="error"
@@ -316,7 +346,13 @@ function WeaponRedButtons({ weaponIds }: { weaponIds: string[] }) {
           </SqBadge>
         </Button>
       </Grid>
-      <Grid item xs={16} sm={8} md={4}>
+      <Grid
+        size={{
+          xs: 16,
+          sm: 8,
+          md: 4,
+        }}
+      >
         <Button
           fullWidth
           color="error"
@@ -332,7 +368,13 @@ function WeaponRedButtons({ weaponIds }: { weaponIds: string[] }) {
           </SqBadge>
         </Button>
       </Grid>
-      <Grid item xs={16} sm={8} md={4}>
+      <Grid
+        size={{
+          xs: 16,
+          sm: 8,
+          md: 4,
+        }}
+      >
         <Button
           fullWidth
           color="error"
@@ -348,8 +390,19 @@ function WeaponRedButtons({ weaponIds }: { weaponIds: string[] }) {
           </SqBadge>
         </Button>
       </Grid>
-      <Grid item xs={12} display="flex" justifyContent="space-around">
-        <Typography variant="caption" color="text.secondary">
+      <Grid
+        size={12}
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-around',
+        }}
+      >
+        <Typography
+          variant="caption"
+          sx={{
+            color: 'text.secondary',
+          }}
+        >
           <Trans t={t} i18nKey="buttonHint">
             Note: the red buttons above only apply to
             <b>currently filtered weapons</b>

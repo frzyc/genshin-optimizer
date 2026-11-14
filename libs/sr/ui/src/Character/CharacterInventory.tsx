@@ -45,13 +45,19 @@ export function CharacterInventory() {
           />
         }
       >
-        <Box display="flex" flexDirection="column" gap={1}>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 1,
+          }}
+        >
           <CardThemed bgt="dark">
             <CardHeader title="Characters" />
           </CardThemed>
           <Grid container spacing={1} columns={columns}>
             {charactersInView.map((c, i) => (
-              <Grid item key={i} xs={1}>
+              <Grid key={i} size={1}>
                 <CharacterCard
                   character={c}
                   onClick={() => setCharacterKey(c.key)}

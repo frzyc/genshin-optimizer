@@ -162,10 +162,12 @@ export function WengineCardObj({
                         noWrap
                         variant="subtitle1"
                         align="center"
-                        fontWeight="bold"
-                        maxWidth={'100%'}
-                        width="200px"
                         onClick={onShow}
+                        sx={{
+                          fontWeight: 'bold',
+                          maxWidth: '100%',
+                          width: '200px',
+                        }}
                       >
                         {
                           <ImgIcon
@@ -191,10 +193,12 @@ export function WengineCardObj({
                   />
                 </Box>
                 <Box
-                  display="flex"
-                  justifyContent="space-between"
-                  width="100%"
-                  alignItems="center"
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    width: '100%',
+                    alignItems: 'center',
+                  }}
                 >
                   <Typography
                     sx={{
@@ -217,11 +221,13 @@ export function WengineCardObj({
             </CardThemed>
             <Stack spacing={1} sx={{ pt: 1 }}>
               <Box
-                display="flex"
-                gap={1}
-                alignItems="center"
-                width={'100%'}
-                color={`${rarityColor[wengineStat.rarity]}.main`}
+                sx={{
+                  display: 'flex',
+                  gap: 1,
+                  alignItems: 'center',
+                  width: '100%',
+                  color: `${rarityColor[wengineStat.rarity]}.main`,
+                }}
               >
                 <Typography
                   variant="subtitle1"
@@ -247,7 +253,11 @@ export function WengineCardObj({
           </CardContent>
         </ConditionalWrapper>
 
-        <Box flexGrow={1} />
+        <Box
+          sx={{
+            flexGrow: 1,
+          }}
+        />
         <Box
           sx={{
             p: 1,
@@ -265,11 +275,13 @@ export function WengineCardObj({
             )}
           </Box>
           <Box
-            display="flex"
-            gap={1}
-            alignItems="stretch"
-            height="100%"
-            sx={{ '& .MuiButton-root': { minWidth: 0, height: '100%' } }}
+            sx={{
+              display: 'flex',
+              gap: 1,
+              alignItems: 'stretch',
+              height: '100%',
+              '& .MuiButton-root': { minWidth: 0, height: '100%' },
+            }}
           >
             {!!onEdit && (
               <BootstrapTooltip

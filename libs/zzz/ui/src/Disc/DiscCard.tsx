@@ -191,9 +191,11 @@ export function DiscCardObj({
                         noWrap
                         variant="subtitle1"
                         align="center"
-                        fontWeight="bold"
-                        maxWidth={'100%'}
                         onClick={onShow}
+                        sx={{
+                          fontWeight: 'bold',
+                          maxWidth: '100%',
+                        }}
                       >
                         [{slotKey}] <DiscSetName setKey={setKey} />
                       </Typography>
@@ -262,11 +264,13 @@ export function DiscCardObj({
             </CardThemed>
             <Stack spacing={1} sx={{ pt: 1 }}>
               <Box
-                display="flex"
-                gap={1}
-                alignItems="center"
-                width={'100%'}
-                color={`${rarityColor[rarity]}.main`}
+                sx={{
+                  display: 'flex',
+                  gap: 1,
+                  alignItems: 'center',
+                  width: '100%',
+                  color: `${rarityColor[rarity]}.main`,
+                }}
               >
                 <Typography
                   variant="subtitle1"
@@ -302,7 +306,11 @@ export function DiscCardObj({
           </CardContent>
         </ConditionalWrapper>
 
-        <Box flexGrow={1} />
+        <Box
+          sx={{
+            flexGrow: 1,
+          }}
+        />
         <Box
           sx={{
             p: 1,
@@ -320,11 +328,13 @@ export function DiscCardObj({
             )}
           </Box>
           <Box
-            display="flex"
-            gap={1}
-            alignItems="stretch"
-            height="100%"
-            sx={{ '& .MuiButton-root': { minWidth: 0, height: '100%' } }}
+            sx={{
+              display: 'flex',
+              gap: 1,
+              alignItems: 'stretch',
+              height: '100%',
+              '& .MuiButton-root': { minWidth: 0, height: '100%' },
+            }}
           >
             {!!onEdit && (
               <BootstrapTooltip

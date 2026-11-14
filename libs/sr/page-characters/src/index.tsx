@@ -3,7 +3,11 @@ import { Box } from '@mui/material'
 
 export default function PageCharacters() {
   return (
-    <Box my={1}>
+    <Box
+      sx={{
+        my: 1,
+      }}
+    >
       <CharacterInventory />
     </Box>
   )

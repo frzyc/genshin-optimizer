@@ -99,8 +99,14 @@ export function EquippedGrid() {
           cancelEdit={() => setArtifactIdToEdit(undefined)}
         />
       </Suspense>
-      <Grid item columns={columns} container spacing={1}>
-        <Grid item xs={1} display="flex" flexDirection="column">
+      <Grid columns={columns} container spacing={1}>
+        <Grid
+          size={1}
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
           {weaponId ? (
             <WeaponCard
               weaponId={weaponId}
@@ -123,7 +129,7 @@ export function EquippedGrid() {
         </Grid>
         {!!artifactIds &&
           Object.entries(artifactIds).map(([slotKey, id]) => (
-            <Grid item xs={1} key={id || slotKey}>
+            <Grid key={id || slotKey} size={1}>
               {id ? (
                 <ArtifactCard
                   artifactId={id}

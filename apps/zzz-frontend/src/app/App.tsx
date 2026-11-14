@@ -84,20 +84,24 @@ function Content() {
   const adWidth = width - (theme.breakpoints.values.xl + 10) //account for the "full width" of container
   return (
     <Box
-      display="flex"
-      flexDirection="column"
-      minHeight="100vh"
-      position="relative"
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+        position: 'relative',
+      }}
     >
       <Header anchor="back-to-top-anchor" />
       {/* Top banner ad */}
       <AdBanner width={width} dataAdSlot="4434533013" Ad={ZOAdWrapper} />
       {/* Main content */}
       <Box
-        display="flex"
         ref={ref}
-        justifyContent="center"
-        alignItems="flex-start"
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'flex-start',
+        }}
       >
         {/* left Rail ad */}
         <AdRailSticky
@@ -138,7 +142,11 @@ function Content() {
       </Box>
 
       {/* make sure footer is always at bottom */}
-      <Box flexGrow={1} />
+      <Box
+        sx={{
+          flexGrow: 1,
+        }}
+      />
 
       {/* Footer Ad */}
       <AdBanner width={width} dataAdSlot="3150205650" Ad={ZOAdWrapper} />

@@ -78,7 +78,13 @@ export function OptimizationTargetEditorList({
   )
 
   return (
-    <Box display="flex" flexDirection="column" gap={1}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1,
+      }}
+    >
       {statFilters.map((statFilter, i) => (
         <OptimizationTargetEditorItem
           statFilter={statFilter}
@@ -154,20 +160,22 @@ function OptimizationTargetEditorItem({
         onChange={setTargetValue}
         placeholder="Stat Value"
         size="small"
-        inputProps={{ sx: { textAlign: 'right' } }}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end" sx={{ ml: 0 }}>
-              {isPercent ? '%' : undefined}{' '}
-              <IconButton
-                aria-label="Delete Stat Constraint"
-                onClick={delTarget}
-                edge="end"
-              >
-                <DeleteForever fontSize="small" />
-              </IconButton>
-            </InputAdornment>
-          ),
+        slotProps={{
+          htmlInput: { sx: { textAlign: 'right' } },
+          input: {
+            endAdornment: (
+              <InputAdornment position="end" sx={{ ml: 0 }}>
+                {isPercent ? '%' : undefined}{' '}
+                <IconButton
+                  aria-label="Delete Stat Constraint"
+                  onClick={delTarget}
+                  edge="end"
+                >
+                  <DeleteForever fontSize="small" />
+                </IconButton>
+              </InputAdornment>
+            ),
+          },
         }}
       />
     </Box>

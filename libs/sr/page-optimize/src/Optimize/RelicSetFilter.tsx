@@ -228,7 +228,14 @@ function AdvSetFilterCard({
         </Box>
         <Grid container spacing={1}>
           {allRelicCavernSetKeys.map((d) => (
-            <Grid item key={d} xs={1} md={2} lg={3}>
+            <Grid
+              key={d}
+              size={{
+                xs: 1,
+                md: 2,
+                lg: 3,
+              }}
+            >
               <AdvSetFilterRelicCavernCard
                 setKey={d}
                 setFilter4Cavern={setFilter4Cavern}
@@ -251,7 +258,14 @@ function AdvSetFilterCard({
         </Box>
         <Grid container spacing={1}>
           {allRelicPlanarSetKeys.map((d) => (
-            <Grid item key={d} xs={1} md={2} lg={3}>
+            <Grid
+              key={d}
+              size={{
+                xs: 1,
+                md: 2,
+                lg: 3,
+              }}
+            >
               <AdvSetFilterRelicPlanarCard
                 setKey={d}
                 setFilter2Planar={setFilter2Planar}

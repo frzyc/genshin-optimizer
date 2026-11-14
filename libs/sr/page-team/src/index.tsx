@@ -68,7 +68,13 @@ export default function PageTeam() {
   if (invalidKey) return <Navigate to="/teams" />
 
   return (
-    <Box display="flex" flexDirection="column" gap={1}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1,
+      }}
+    >
       <Suspense fallback={fallback}>
         {teamId && <Page teamId={teamId} />}
       </Suspense>

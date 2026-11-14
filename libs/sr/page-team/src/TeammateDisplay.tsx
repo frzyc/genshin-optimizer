@@ -84,7 +84,11 @@ export default function TeammateDisplay() {
 
   return (
     <SectionNumContext.Provider value={sections.length}>
-      <Stack gap={1}>
+      <Stack
+        sx={{
+          gap: 1,
+        }}
+      >
         {sections.map(([key, title, content], i) => (
           <Section key={key} title={title} index={i}>
             {content}
@@ -161,10 +165,12 @@ function ComboEditorSection() {
         value={frame.multiplier}
         onChange={(v) => setFrame({ multiplier: v })}
         size="small"
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">Multi x </InputAdornment>
-          ),
+        slotProps={{
+          input: {
+            startAdornment: (
+              <InputAdornment position="start">Multi x </InputAdornment>
+            ),
+          },
         }}
       />
       <OptimizationTargetSelector

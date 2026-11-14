@@ -90,7 +90,15 @@ export function ArtSetFilter({
       >
         <Grid container spacing={1}>
           {visibleSetKeys.map((d) => (
-            <Grid item key={d} xs={12} sm={6} md={4} lg={3}>
+            <Grid
+              key={d}
+              size={{
+                xs: 12,
+                sm: 6,
+                md: 4,
+                lg: 3,
+              }}
+            >
               <AdvSetFilterCard
                 numSlot={artSetBySlot[d]}
                 setKey={d}

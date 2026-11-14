@@ -69,6 +69,8 @@ export const characterIdMap = {
   '1591': 'Sigrid',
   '1611': 'Claret',
   '1621': 'Roxy',
+  '1631': 'Severian',
+  '1641': 'Phoenix',
 } as const
 
 export const attributeMap: Record<number, AttributeKey> = {

@@ -28,7 +28,7 @@ export function TeamAvatarRow({
 
   return (
     <>
-      <Stack direction="row" spacing={0.25} alignItems="center">
+      <Stack direction="row" spacing={0.25} sx={{ alignItems: 'center' }}>
         <Tooltip title={t('onField')}>
           <Box
             component="img"

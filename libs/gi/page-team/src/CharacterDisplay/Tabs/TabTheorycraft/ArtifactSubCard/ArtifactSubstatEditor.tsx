@@ -90,10 +90,12 @@ export function ArtifactSubstatEditor({
   return (
     <Stack spacing={0.5}>
       <Box
-        display="flex"
-        gap={1}
-        justifyContent="space-between"
-        alignItems="center"
+        sx={{
+          display: 'flex',
+          gap: 1,
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
       >
         <NumberInputLazy
           color={displayValue ? 'success' : 'primary'}
@@ -101,18 +103,25 @@ export function ArtifactSubstatEditor({
           value={Number.parseFloat(displayValue.toFixed(2))}
           onChange={(v) => v !== undefined && setValue(v)}
           size="small"
-          inputProps={{
-            sx: {
-              width: '4em',
-              textAlign: 'right',
+          slotProps={{
+            htmlInput: {
+              sx: {
+                width: '4em',
+                textAlign: 'right',
+              },
+              min: 0,
+              max: 9999,
             },
-            min: 0,
-            max: 9999,
-          }}
-          InputProps={{
-            endAdornment: getUnitStr(statKey) || (
-              <Box width="0.8em" component="span" />
-            ),
+            input: {
+              endAdornment: getUnitStr(statKey) || (
+                <Box
+                  component="span"
+                  sx={{
+                    width: '0.8em',
+                  }}
+                />
+              ),
+            },
           }}
           focused
         />
@@ -137,33 +146,35 @@ export function ArtifactSubstatEditor({
           value={Number.parseFloat(rolls.toFixed(2))}
           onChange={(v) => v !== undefined && setValue(v * substatValue)}
           size="small"
-          inputProps={{
-            sx: {
-              width: '2em',
-              textAlign: 'right',
+          slotProps={{
+            htmlInput: {
+              sx: {
+                width: '2em',
+                textAlign: 'right',
+              },
+              min: 0,
+              max: 99, // 3 digits aren't visible
             },
-            min: 0,
-            max: 99, // 3 digits aren't visible
-          }}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <Box
-                  sx={{
-                    whiteSpace: 'nowrap',
-                    width: '3em',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                  }}
-                >
-                  <span>
-                    {artDisplayValue(substatValue, unit)}
-                    {unit}
-                  </span>
-                  <span>x</span>
-                </Box>
-              </InputAdornment>
-            ),
+            input: {
+              startAdornment: (
+                <InputAdornment position="start">
+                  <Box
+                    sx={{
+                      whiteSpace: 'nowrap',
+                      width: '3em',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                    }}
+                  >
+                    <span>
+                      {artDisplayValue(substatValue, unit)}
+                      {unit}
+                    </span>
+                    <span>x</span>
+                  </Box>
+                </InputAdornment>
+              ),
+            },
           }}
           focused
         />
@@ -189,10 +200,12 @@ export function ArtifactSubstatEditor({
         </CardThemed>
       </Box>
       <Box
-        display="flex"
-        gap={1}
-        justifyContent="space-between"
-        alignItems="center"
+        sx={{
+          display: 'flex',
+          gap: 1,
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
       >
         <CardThemed
           sx={{
@@ -231,17 +244,19 @@ export function ArtifactSubstatEditor({
                 : 'success'
           }
           focused
-          inputProps={{
-            sx: { width: '2ch' },
-            min: 0,
-            max: 99, // 3 digits aren't visible
-          }}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                {t('tabTheorycraft.substat.max')}
-              </InputAdornment>
-            ),
+          slotProps={{
+            htmlInput: {
+              sx: { width: '2ch' },
+              min: 0,
+              max: 99, // 3 digits aren't visible
+            },
+            input: {
+              startAdornment: (
+                <InputAdornment position="start">
+                  {t('tabTheorycraft.substat.max')}
+                </InputAdornment>
+              ),
+            },
           }}
         />
       </Box>

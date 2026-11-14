@@ -133,16 +133,18 @@ export function OptTargetCommandDialog({
 
         <Stack
           direction="row"
-          flexWrap="wrap"
-          gap={1}
-          alignItems="center"
-          sx={{ width: '100%' }}
+          sx={{
+            flexWrap: 'wrap',
+            gap: 1,
+            alignItems: 'center',
+            width: '100%',
+          }}
         >
           <Box sx={{ flex: '1 1 200px', minWidth: 0 }}>
             <Typography
               variant="caption"
               color="text.secondary"
-              display="block"
+              sx={{ display: 'block' }}
             >
               {t('optTarget')}
             </Typography>
@@ -176,13 +178,15 @@ export function OptTargetCommandDialog({
           placeholder={t('commandSearchPlaceholder')}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          inputProps={commandSearchInputProps}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon fontSize="small" />
-              </InputAdornment>
-            ),
+          slotProps={{
+            input: {
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon fontSize="small" />
+                </InputAdornment>
+              ),
+            },
+            htmlInput: commandSearchInputProps,
           }}
         />
 

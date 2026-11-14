@@ -241,7 +241,14 @@ export function RelicEditor({
           >
             <Grid container spacing={1} columns={{ xs: 1, md: 2 }}>
               {/* left column */}
-              <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
+              <Grid
+                size={1}
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 1,
+                }}
+              >
                 {/* set */}
                 <Box sx={{ display: 'flex', gap: 1 }}>
                   <RelicSetAutocomplete
@@ -263,7 +270,12 @@ export function RelicEditor({
                 </Box>
 
                 {/* level */}
-                <Box component="div" display="flex">
+                <Box
+                  component="div"
+                  sx={{
+                    display: 'flex',
+                  }}
+                >
                   <TextField
                     label="Level"
                     variant="filled"
@@ -307,7 +319,12 @@ export function RelicEditor({
                 </Box>
 
                 {/* slot */}
-                <Box component="div" display="flex">
+                <Box
+                  component="div"
+                  sx={{
+                    display: 'flex',
+                  }}
+                >
                   <DropdownButton
                     startIcon={
                       relic?.slotKey ? (
@@ -335,7 +352,11 @@ export function RelicEditor({
                   </DropdownButton>
                   <CardThemed bgt="light" sx={{ p: 1, ml: 1, flexGrow: 1 }}>
                     <Suspense fallback={<Skeleton width="60%" />}>
-                      <Typography color="text.secondary">
+                      <Typography
+                        sx={{
+                          color: 'text.secondary',
+                        }}
+                      >
                         {tk(`relics_gen:${slotKey}`)}
                       </Typography>
                     </Suspense>
@@ -343,7 +364,13 @@ export function RelicEditor({
                 </Box>
 
                 {/* main stat */}
-                <Box component="div" display="flex" gap={1}>
+                <Box
+                  component="div"
+                  sx={{
+                    display: 'flex',
+                    gap: 1,
+                  }}
+                >
                   <RelicMainStatDropdown
                     slotKey={slotKey}
                     statKey={relic?.mainStatKey}
@@ -355,7 +382,11 @@ export function RelicEditor({
                     }}
                   />
                   <CardThemed bgt="light" sx={{ p: 1, flexGrow: 1 }}>
-                    <Typography color="text.secondary">
+                    <Typography
+                      sx={{
+                        color: 'text.secondary',
+                      }}
+                    >
                       {relic
                         ? getRelicMainStatDisplayVal(
                             rarity,
@@ -380,7 +411,14 @@ export function RelicEditor({
               </Grid>
 
               {/* right column */}
-              <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
+              <Grid
+                size={1}
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 1,
+                }}
+              >
                 {/* substat selections */}
                 {[0, 1, 2, 3].map((index) => (
                   <SubstatInput
@@ -400,13 +438,21 @@ export function RelicEditor({
                 sx={{ justifyContent: 'space-around' }}
                 spacing={1}
               >
-                <Grid item xs={12} md={5.5} lg={4}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 5.5,
+                    lg: 4,
+                  }}
+                >
                   <CardThemed bgt="light">
                     <Typography
-                      sx={{ textAlign: 'center' }}
-                      py={1}
                       variant="h6"
-                      color="text.secondary"
+                      sx={{
+                        py: 1,
+                        color: 'text.secondary',
+                        textAlign: 'center',
+                      }}
                     >
                       {prevEditType !== 'edit'
                         ? prevEditType === 'duplicate'
@@ -419,24 +465,35 @@ export function RelicEditor({
                 </Grid>
                 {grmd && (
                   <Grid
-                    item
-                    md={1}
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
+                    size={{
+                      md: 1,
+                    }}
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
                   >
                     <CardThemed bgt="light" sx={{ display: 'flex' }}>
                       <ChevronRightIcon sx={{ fontSize: 40 }} />
                     </CardThemed>
                   </Grid>
                 )}
-                <Grid item xs={12} md={5.5} lg={4}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 5.5,
+                    lg: 4,
+                  }}
+                >
                   <CardThemed bgt="light">
                     <Typography
-                      sx={{ textAlign: 'center' }}
-                      py={1}
                       variant="h6"
-                      color="text.secondary"
+                      sx={{
+                        py: 1,
+                        color: 'text.secondary',
+                        textAlign: 'center',
+                      }}
                     >
                       {t('editor.preview')}
                     </Typography>
@@ -455,7 +512,12 @@ export function RelicEditor({
               </Alert>
             )}
             {/* Buttons */}
-            <Box display="flex" gap={2}>
+            <Box
+              sx={{
+                display: 'flex',
+                gap: 2,
+              }}
+            >
               {prevEditType === 'edit' ? (
                 <Button
                   startIcon={<AddIcon />}

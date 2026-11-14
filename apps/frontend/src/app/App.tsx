@@ -154,23 +154,29 @@ function Content() {
   const adWidth = width - (theme.breakpoints.values.xl + 10) //account for the "full width" of container
   return (
     <Box
-      display="flex"
-      flexDirection="column"
-      minHeight="100vh"
-      position="relative"
-      sx={(theme) => ({
-        background: `radial-gradient(ellipse at top, ${theme.palette.neutral700.main} 0%, ${theme.palette.neutral800.main} 100%)`,
-      })}
+      sx={[
+        {
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '100vh',
+          position: 'relative',
+        },
+        (theme) => ({
+          background: `radial-gradient(ellipse at top, ${theme.palette.neutral700.main} 0%, ${theme.palette.neutral800.main} 100%)`,
+        }),
+      ]}
     >
       <Header anchor="back-to-top-anchor" />
       {/* Top banner ad */}
       <AdBanner width={width} dataAdSlot="3477080462" Ad={GOAdWrapper} />
       {/* Main content */}
       <Box
-        display="flex"
         ref={ref}
-        justifyContent="center"
-        alignItems="flex-start"
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'flex-start',
+        }}
       >
         {/* left Rail ad */}
         <AdRailSticky
@@ -218,7 +224,11 @@ function Content() {
       </Box>
 
       {/* make sure footer is always at bottom */}
-      <Box flexGrow={1} />
+      <Box
+        sx={{
+          flexGrow: 1,
+        }}
+      />
       <Snow />
       {/* Footer Ad */}
       <AdBanner width={width} dataAdSlot="2396256483" Ad={GOAdWrapper} />

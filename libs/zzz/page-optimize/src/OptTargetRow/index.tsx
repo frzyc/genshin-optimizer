@@ -8,7 +8,14 @@ import { SpecificDmgTypeSelector } from './SpecificDmgTypeSelector'
 
 export function OptTargetRow() {
   return (
-    <Box display="flex" gap={1} flexWrap="wrap" alignItems="center">
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 1,
+        flexWrap: 'wrap',
+        alignItems: 'center',
+      }}
+    >
       <OptSelector />
       <DimensionSelector />
       <SpecificDmgTypeSelector />

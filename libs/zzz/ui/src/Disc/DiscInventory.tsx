@@ -81,13 +81,19 @@ export function DiscInventory({
       <CardThemed bgt="dark">
         <CardContent>
           <Box
-            pb={2}
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            flexWrap="wrap"
+            sx={{
+              pb: 2,
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+            }}
           >
-            <Typography color="text.secondary">
+            <Typography
+              sx={{
+                color: 'text.secondary',
+              }}
+            >
               Showing <b>{showingTextProps.numShowing}</b> out of{' '}
               {showingTextProps.totalShowing} Items
             </Typography>
@@ -95,7 +101,7 @@ export function DiscInventory({
         </CardContent>
       </CardThemed>
       <Grid container columns={columns} spacing={1}>
-        <Grid item xs>
+        <Grid size="grow">
           <Button
             fullWidth
             onClick={onAdd}
@@ -105,7 +111,7 @@ export function DiscInventory({
             {t('addNew')}
           </Button>
         </Grid>
-        <Grid item xs={1}>
+        <Grid size={1}>
           <Button
             fullWidth
             onClick={onShowDup}
@@ -127,7 +133,7 @@ export function DiscInventory({
         <Box>
           <Grid container columns={columns} spacing={1}>
             {discsIdsToShow.map((discId) => (
-              <Grid item key={discId} xs={1}>
+              <Grid key={discId} size={1}>
                 <DiscCard key={discId} discId={discId} onEdit={onEdit} />
               </Grid>
             ))}

@@ -134,8 +134,10 @@ export const reactionConditionals: DocumentConditional[] = [
         <Box
           component="img"
           src={imgAssets.reaction.superconduct}
-          width="2em"
-          height="auto"
+          sx={{
+            width: '2em',
+            height: 'auto',
+          }}
         />
       ),
       description: tr('superconduct.desc'),
@@ -167,8 +169,10 @@ export const reactionConditionals: DocumentConditional[] = [
         <Box
           component="img"
           src={imgAssets.reaction.stellarconduct}
-          width="2em"
-          height="auto"
+          sx={{
+            width: '2em',
+            height: 'auto',
+          }}
         />
       ),
       description: tr('stellarconduct.desc'),
@@ -195,8 +199,10 @@ export const reactionConditionals: DocumentConditional[] = [
         <Box
           component="img"
           src={imgAssets.reaction.polestarField}
-          width="2em"
-          height="auto"
+          sx={{
+            width: '2em',
+            height: 'auto',
+          }}
         />
       ),
       description: tr('stellarconduct.fieldDesc'),

@@ -98,7 +98,13 @@ export function TeamCardCompact({
               const characterKey =
                 teamCharId && database.teamChars.get(teamCharId)?.key
               return (
-                <Grid key={i} item xs={1} height="100%">
+                <Grid
+                  key={i}
+                  size={1}
+                  sx={{
+                    height: '100%',
+                  }}
+                >
                   {characterKey ? (
                     <CardActionArea onClick={() => onClick(characterKey)}>
                       <CharacterCardPico

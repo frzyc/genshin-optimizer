@@ -71,25 +71,27 @@ export function EnemyStatsSection() {
         <NumberInputLazy
           label="Enemy Lvl"
           value={enemyLvl}
-          inputProps={{ min: 0, sx: { width: '4em' } }}
+          slotProps={{ htmlInput: { min: 0, sx: { width: '4em' } } }}
           onChange={(v) => database.teams.set(characterKey, { enemyLvl: v })}
         />
         <NumberInputLazy
           label="Enemy DEF"
           value={enemyDef}
-          inputProps={{ min: 0, sx: { width: '4em' } }}
+          slotProps={{ htmlInput: { min: 0, sx: { width: '4em' } } }}
           onChange={(v) => database.teams.set(characterKey, { enemyDef: v })}
         />
         <NumberInputLazy
           label="Enemy Stun Multiplier"
           value={enemyStunMultiplier}
-          inputProps={{ min: 0, sx: { width: '8em' } }}
+          slotProps={{
+            htmlInput: { min: 0, sx: { width: '8em' } },
+            input: {
+              endAdornment: <InputAdornment position="end">%</InputAdornment>,
+            },
+          }}
           onChange={(v) =>
             database.teams.set(characterKey, { enemyStunMultiplier: v })
           }
-          InputProps={{
-            endAdornment: <InputAdornment position="end">%</InputAdornment>,
-          }}
         />
       </Box>
       <DocumentDisplay document={enemyDoc} />
@@ -182,20 +184,22 @@ function EnemyStatDisplay({
           onChange={setValue}
           placeholder="Stat Value"
           size="small"
-          inputProps={{ sx: { textAlign: 'right' } }}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end" sx={{ ml: 0 }}>
-                {isPercent ? '%' : undefined}{' '}
-                <IconButton
-                  aria-label="Delete Enemy Stat"
-                  onClick={onDelete}
-                  edge="end"
-                >
-                  <DeleteForever fontSize="small" />
-                </IconButton>
-              </InputAdornment>
-            ),
+          slotProps={{
+            htmlInput: { sx: { textAlign: 'right' } },
+            input: {
+              endAdornment: (
+                <InputAdornment position="end" sx={{ ml: 0 }}>
+                  {isPercent ? '%' : undefined}{' '}
+                  <IconButton
+                    aria-label="Delete Enemy Stat"
+                    onClick={onDelete}
+                    edge="end"
+                  >
+                    <DeleteForever fontSize="small" />
+                  </IconButton>
+                </InputAdornment>
+              ),
+            },
           }}
         />
       </CardContent>

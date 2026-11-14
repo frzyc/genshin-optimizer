@@ -180,11 +180,13 @@ export function ArtifactSwapModal({
         <Divider />
         <CardContent>
           <Box
-            pb={1}
-            display="flex"
-            justifyContent="space-between"
-            alignItems="flex-end"
-            flexWrap="wrap"
+            sx={{
+              pb: 1,
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-end',
+              flexWrap: 'wrap',
+            }}
           >
             <ShowingAndSortOptionSelect showingTextProps={showingTextProps} />
           </Box>
@@ -196,7 +198,11 @@ export function ArtifactSwapModal({
           >
             {t('artifact:addNew')}
           </Button>
-          <Box mt={1}>
+          <Box
+            sx={{
+              mt: 1,
+            }}
+          >
             <Suspense
               fallback={
                 <Skeleton variant="rectangular" width="100%" height={300} />
@@ -210,7 +216,7 @@ export function ArtifactSwapModal({
               <Grid container spacing={1} columns={{ xs: 2, md: 3, lg: 4 }}>
                 {/* only show "unequip" when an artifact is equipped */}
                 {artId && (
-                  <Grid item xs={1}>
+                  <Grid size={1}>
                     <CardThemed
                       bgt="light"
                       sx={{ width: '100%', height: '100%' }}
@@ -243,9 +249,7 @@ export function ArtifactSwapModal({
                 )}
                 {artifactIdsToShow.map((id) => (
                   <Grid
-                    item
                     key={id}
-                    xs={1}
                     sx={(theme) => ({
                       ...(artId === id && {
                         '> .MuiCard-root': {
@@ -253,6 +257,7 @@ export function ArtifactSwapModal({
                         },
                       }),
                     })}
+                    size={1}
                   >
                     <ArtifactCard
                       artifactId={id}
