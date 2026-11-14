@@ -163,6 +163,8 @@ const a1Stellar = cmpGE(
 export default register(
   info.key,
   entriesForChar(info, data_gen),
+  // WR flags.radiance `'sc'`
+  ownBuff.common.radianceSc.add(lockStellarRadianceSc.ifOn(1)),
   hexereiTally(lockRevelation.ifOn(1)),
   // C3 The Five Great Mysteries (skill); C5 The Ironbound Oath (burst)
   ownBuff.char.skill.add(cmpGE(constellation, 3, 3)),

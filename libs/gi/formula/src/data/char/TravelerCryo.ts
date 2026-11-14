@@ -244,6 +244,8 @@ function lockedPassiveCa(
 export default register(
   info.key,
   entriesForChar(info, data_gen),
+  // WR flags.radiance `'sc'`
+  ownBuff.common.radianceSc.add(radianceSc),
   // C3 Glacial Shard (burst); C5 Bittercold Fog (skill) — WR skillBoost C5, burstBoost C3
   ownBuff.char.burst.add(cmpGE(constellation, 3, 3)),
   ownBuff.char.skill.add(cmpGE(constellation, 5, 3)),

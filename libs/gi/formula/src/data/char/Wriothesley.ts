@@ -162,6 +162,8 @@ const c6Rebuke_critDMG_ = cmpGE(
 export default register(
   info.key,
   entriesForChar(info, data_gen),
+  // WR flags.radiance `'sc'`
+  ownBuff.common.radianceSc.add(radianceOn),
   hexereiTally(hexOn),
   // C3 Darkgold Wolfbite (auto); C5 Rebuke: Vaulting Fist (burst)
   ownBuff.char.auto.add(cmpGE(constellation, 3, 3)),

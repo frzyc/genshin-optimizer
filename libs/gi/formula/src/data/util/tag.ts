@@ -130,6 +130,8 @@ export const ownTag = {
     eleCount: fixed,
     moonsign: isoSum,
     hexerei: isoSum,
+    /** 1 when WR `flags.radiance` is `'sc'`. */
+    radianceSc: isoSum,
     /** 1 when this member is on-field and has `ele`. Team max is `active.charEle`. */
     activeEle: isoSum,
   },

@@ -193,6 +193,8 @@ function burstHit(
 export default register(
   info.key,
   entriesForChar(info, data_gen),
+  // WR flags.radiance `'sc'`
+  ownBuff.common.radianceSc.add(radianceOn),
   hexereiTally(hexOn),
   // C3 Sacred Rite: Wolf's Swiftness (burst); C5 Secret Rite: Wolf's Swiftness (skill)
   ownBuff.char.burst.add(cmpGE(constellation, 3, 3)),
