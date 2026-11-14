@@ -18,6 +18,13 @@ import {
 import type { ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 
+export type BuildCardActionKey =
+  | 'edit'
+  | 'copyTc'
+  | 'duplicate'
+  | 'equip'
+  | 'delete'
+
 export function BuildCard({
   avatar,
   name,
@@ -31,6 +38,7 @@ export function BuildCard({
   onDupe,
   onEquip,
   onRemove,
+  disabledTips = {},
   hideFooter = false,
 }: {
   avatar?: ReactNode
@@ -46,6 +54,11 @@ export function BuildCard({
   onDupe?: () => void
   onEquip?: () => void
   onRemove?: () => void
+  /**
+   * Explains why an action is unavailable. Shown in place of the action's
+   * regular tooltip when its handler is not provided (button is disabled).
+   */
+  disabledTips?: Partial<Record<BuildCardActionKey, ReactNode>>
   hideFooter?: boolean
 }) {
   const { t } = useTranslation('build')
@@ -113,90 +126,73 @@ export function BuildCard({
             marginTop: 'auto',
           }}
         >
-          <Tooltip
-            title={<Typography>{t('buildCardTip.edit')}</Typography>}
-            placement="top"
-            arrow
-          >
-            <Box>
-              <IconButton
-                color="info"
-                size="small"
-                onClick={onEdit}
-                disabled={!onEdit}
-              >
-                <span>
-                  <EditIcon />
-                </span>
-              </IconButton>
-            </Box>
-          </Tooltip>
-          <Tooltip
-            title={<Typography>{t('buildCardTip.copyTc')}</Typography>}
-            placement="top"
-            arrow
-          >
-            <Box>
-              <IconButton
-                color="info"
-                size="small"
-                onClick={onCopyToTc}
-                disabled={!onCopyToTc}
-              >
-                <ScienceIcon />
-              </IconButton>
-            </Box>
-          </Tooltip>
-          <Tooltip
-            title={<Typography>{t('buildCardTip.duplicate')}</Typography>}
-            placement="top"
-            arrow
-          >
-            <Box>
-              <IconButton
-                color="info"
-                size="small"
-                onClick={onDupe}
-                disabled={!onDupe}
-              >
-                <ContentCopyIcon />
-              </IconButton>
-            </Box>
-          </Tooltip>
-          <Tooltip
-            title={<Typography>{t('buildCardTip.equip')}</Typography>}
-            placement="top"
-            arrow
-          >
-            <Box>
-              <IconButton
-                color="info"
-                size="small"
-                onClick={onEquip}
-                disabled={!onEquip}
-              >
-                <CheckroomIcon />
-              </IconButton>
-            </Box>
-          </Tooltip>
-          <Tooltip
-            title={<Typography>{t('buildCardTip.delete')}</Typography>}
-            placement="top"
-            arrow
-          >
-            <Box>
-              <IconButton
-                color="error"
-                size="small"
-                onClick={onRemove}
-                disabled={!onRemove}
-              >
-                <DeleteForeverIcon />
-              </IconButton>
-            </Box>
-          </Tooltip>
+          <BuildCardAction
+            title={t('buildCardTip.edit')}
+            disabledTip={disabledTips.edit}
+            onClick={onEdit}
+            icon={<EditIcon />}
+          />
+          <BuildCardAction
+            title={t('buildCardTip.copyTc')}
+            disabledTip={disabledTips.copyTc}
+            onClick={onCopyToTc}
+            icon={<ScienceIcon />}
+          />
+          <BuildCardAction
+            title={t('buildCardTip.duplicate')}
+            disabledTip={disabledTips.duplicate}
+            onClick={onDupe}
+            icon={<ContentCopyIcon />}
+          />
+          <BuildCardAction
+            title={t('buildCardTip.equip')}
+            disabledTip={disabledTips.equip}
+            onClick={onEquip}
+            icon={<CheckroomIcon />}
+          />
+          <BuildCardAction
+            title={t('buildCardTip.delete')}
+            disabledTip={disabledTips.delete}
+            onClick={onRemove}
+            icon={<DeleteForeverIcon />}
+            color="error"
+          />
         </CardActions>
       )}
     </CardThemed>
+  )
+}
+
+function BuildCardAction({
+  title,
+  disabledTip,
+  onClick,
+  icon,
+  color = 'info',
+}: {
+  title: ReactNode
+  disabledTip?: ReactNode
+  onClick?: () => void
+  icon: ReactNode
+  color?: 'info' | 'error'
+}) {
+  return (
+    <Tooltip
+      title={<Typography>{(!onClick && disabledTip) || title}</Typography>}
+      placement="top"
+      arrow
+    >
+      {/* Wrapper so the tooltip still shows when the button is disabled */}
+      <Box>
+        <IconButton
+          color={color}
+          size="small"
+          onClick={onClick}
+          disabled={!onClick}
+        >
+          {icon}
+        </IconButton>
+      </Box>
+    </Tooltip>
   )
 }

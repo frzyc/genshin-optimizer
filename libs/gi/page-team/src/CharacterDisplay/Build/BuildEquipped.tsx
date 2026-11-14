@@ -68,6 +68,11 @@ export function BuildEquipped({
       onActive={onActive}
       onCopyToTc={copyToTc}
       onDupe={onDupe}
+      disabledTips={{
+        edit: t('buildCardTip.disabled.editEquipped'),
+        equip: t('buildCardTip.disabled.equipAlreadyEquipped'),
+        delete: t('buildCardTip.disabled.deleteEquipped'),
+      }}
     >
       <BuildEquip weaponId={equippedWeapon} artifactIds={equippedArtifacts} />
     </BuildCard>
