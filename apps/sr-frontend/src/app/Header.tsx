@@ -185,7 +185,12 @@ function DesktopHeader({
           component={RouterLink}
           to="/"
           label={
-            <Box display="flex" alignItems="center">
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
               <Typography variant="h6" sx={{ px: 1, fontWeight: 'Normal' }}>
                 {t('pageTitle')}
               </Typography>
@@ -213,7 +218,13 @@ function DesktopHeader({
               iconPosition="start"
               label={
                 isXL || textSuffix ? (
-                  <Box display="flex" gap={0.5} alignItems="center">
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      gap: 0.5,
+                      alignItems: 'center',
+                    }}
+                  >
                     {isXL && <span>{t(`header:${i18Key}`)}</span>}
                     {textSuffix}
                   </Box>
@@ -265,11 +276,13 @@ function MobileHeader({
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
           }}
-          PaperProps={{
-            sx: (theme) => ({
-              // backgroundColor: 'neutral700.main',
-              backgroundImage: `linear-gradient(to right, ${theme.palette.neutral700.main}, ${theme.palette.neutral700.main})`,
-            }),
+          slotProps={{
+            paper: {
+              sx: (theme) => ({
+                // backgroundColor: 'neutral700.main',
+                backgroundImage: `linear-gradient(to right, ${theme.palette.neutral700.main}, ${theme.palette.neutral700.main})`,
+              }),
+            },
           }}
         >
           <Tabs
@@ -277,12 +290,6 @@ function MobileHeader({
             orientation="vertical"
             variant="scrollable"
             scrollButtons={false}
-            TabIndicatorProps={{
-              sx: {
-                left: 0,
-                width: '4px',
-              },
-            }}
             sx={(theme) => ({
               '& .Mui-selected': {
                 backgroundImage: `linear-gradient(to right, ${theme.palette.brand500.main}, ${theme.palette.neutral700.main})`,
@@ -291,6 +298,14 @@ function MobileHeader({
                   '0.1px 0 0 currentColor, -0.1px 0 0 currentColor, 0 0.1px 0 currentColor, 0 -0.1px 0',
               },
             })}
+            slotProps={{
+              indicator: {
+                sx: {
+                  left: 0,
+                  width: '4px',
+                },
+              },
+            }}
           >
             <Tab
               value=""
@@ -309,7 +324,13 @@ function MobileHeader({
                 icon={icon as ReactElement}
                 iconPosition="start"
                 label={
-                  <Box display="flex" gap={0.5} alignItems="center">
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      gap: 0.5,
+                      alignItems: 'center',
+                    }}
+                  >
                     <Typography>{t(`header:${i18Key}`)}</Typography>
                     {textSuffix}
                   </Box>
@@ -335,7 +356,11 @@ function MobileHeader({
               <Typography variant="body1">(Dev Mode)</Typography>
             ) : undefined}
           </Button>
-          <Box flexGrow={1} />
+          <Box
+            sx={{
+              flexGrow: 1,
+            }}
+          />
           <IconButton
             color="inherit"
             aria-label="open drawer"

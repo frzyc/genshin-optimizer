@@ -163,7 +163,13 @@ export function WeaponCardObj({
               <Typography component="span" variant="h5">
                 Lv. {level}
               </Typography>
-              <Typography component="span" variant="h5" color="text.secondary">
+              <Typography
+                component="span"
+                variant="h5"
+                sx={{
+                  color: 'text.secondary',
+                }}
+              >
                 /{ascensionMaxLevel[ascension]}
               </Typography>
               <Typography variant="h6">
@@ -179,9 +185,11 @@ export function WeaponCardObj({
               <Box
                 component="img"
                 src={img ?? ''}
-                width="auto"
-                height="100%"
-                sx={{ float: 'right' }}
+                sx={{
+                  width: 'auto',
+                  height: '100%',
+                  float: 'right',
+                }}
               />
             </Box>
           </Box>
@@ -191,7 +199,11 @@ export function WeaponCardObj({
               if (!name) return null
               return (
                 <Box key={JSON.stringify(node.info)} sx={{ display: 'flex' }}>
-                  <Typography flexGrow={1}>
+                  <Typography
+                    sx={{
+                      flexGrow: 1,
+                    }}
+                  >
                     {icon} {name}
                   </Typography>
                   <Typography>{GetCalcDisplay(node).valueString}</Typography>
@@ -225,11 +237,13 @@ export function WeaponCardObj({
             )}
           </Box>
           <Box
-            display="flex"
-            gap={1}
-            alignItems="stretch"
-            height="100%"
-            sx={{ '& .MuiButton-root': { minWidth: 0, height: '100%' } }}
+            sx={{
+              display: 'flex',
+              gap: 1,
+              alignItems: 'stretch',
+              height: '100%',
+              '& .MuiButton-root': { minWidth: 0, height: '100%' },
+            }}
           >
             {!!onEdit && (
               <Tooltip

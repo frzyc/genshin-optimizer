@@ -52,12 +52,21 @@ export function InfoComponent({
   return (
     <CardThemed>
       <Grid container>
-        <Grid item flexGrow={1}>
-          <Typography variant="caption" pl={1}>
+        <Grid
+          sx={{
+            flexGrow: 1,
+          }}
+        >
+          <Typography
+            variant="caption"
+            sx={{
+              pl: 1,
+            }}
+          >
             {displayText}
           </Typography>
         </Grid>
-        <Grid item xs="auto">
+        <Grid size="auto">
           <Button
             size="small"
             color="info"

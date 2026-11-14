@@ -213,7 +213,12 @@ export default function PageOptimize() {
           <Typography variant="h6" gutterBottom>
             {t('emptyDbTitle')}
           </Typography>
-          <Typography color="text.secondary" sx={{ mb: 2 }}>
+          <Typography
+            sx={{
+              color: 'text.secondary',
+              mb: 2,
+            }}
+          >
             {t('emptyDbBody')}
           </Typography>
           <Button component={RouterLink} to="/settings" variant="contained">

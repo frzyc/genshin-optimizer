@@ -140,8 +140,10 @@ export function WengineSelectionModal({
             }
             label={t('wengineName')}
             sx={{ height: '100%' }}
-            InputProps={{
-              sx: { height: '100%' },
+            slotProps={{
+              input: {
+                sx: { height: '100%' },
+              },
             }}
           />
           <IconButton onClick={onHide} sx={{ ml: 'auto' }}>
@@ -154,7 +156,13 @@ export function WengineSelectionModal({
             {wengineIdList.map((wengineKey) => {
               const wengineStat = getWengineStat(wengineKey)
               return (
-                <Grid item key={wengineKey} lg={3} md={4}>
+                <Grid
+                  key={wengineKey}
+                  size={{
+                    lg: 3,
+                    md: 4,
+                  }}
+                >
                   <CardThemed bgt="light" sx={{ height: '100%' }}>
                     <CardActionArea
                       onClick={() => {

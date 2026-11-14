@@ -21,13 +21,23 @@ export function OptimizeReadinessBadge() {
     <Tooltip
       title={
         <Stack spacing={0.5} sx={{ py: 0.5 }}>
-          <Typography variant="caption" fontWeight={600}>
+          <Typography
+            variant="caption"
+            sx={{
+              fontWeight: 600,
+            }}
+          >
             {readyCount}/{total}
           </Typography>
           {items.map((item) => (
             <Box key={item.id}>
               {item.done ? (
-                <Typography variant="caption" color="success.light">
+                <Typography
+                  variant="caption"
+                  sx={{
+                    color: 'success.light',
+                  }}
+                >
                   ✓ {item.label}
                 </Typography>
               ) : (

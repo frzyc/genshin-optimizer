@@ -172,7 +172,13 @@ export function WengineSwapModal({
         <CardThemed>
           <CardHeader
             title={
-              <Typography variant="h6" display="flex" gap={1}>
+              <Typography
+                variant="h6"
+                sx={{
+                  display: 'flex',
+                  gap: 1,
+                }}
+              >
                 {wengineTypeKey ? (
                   <ImgIcon src={specialtyDefIcon(wengineTypeKey)} />
                 ) : null}
@@ -190,7 +196,7 @@ export function WengineSwapModal({
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
             <Grid container spacing={1}>
-              <Grid item>
+              <Grid>
                 <SolidToggleButtonGroup
                   sx={{ height: '100%' }}
                   value={specialty}
@@ -208,7 +214,7 @@ export function WengineSwapModal({
                   ))}
                 </SolidToggleButtonGroup>
               </Grid>
-              <Grid item>
+              <Grid>
                 <SolidToggleButtonGroup
                   sx={{ height: '100%' }}
                   value={rarity}
@@ -222,14 +228,22 @@ export function WengineSwapModal({
                         setRarity(rarityHandler(rarity, rarityKey))
                       }
                     >
-                      <Box display="flex">
+                      <Box
+                        sx={{
+                          display: 'flex',
+                        }}
+                      >
                         <strong>{rarityKey}</strong>
                       </Box>
                     </ToggleButton>
                   ))}
                 </SolidToggleButtonGroup>
               </Grid>
-              <Grid item flexGrow={1}>
+              <Grid
+                sx={{
+                  flexGrow: 1,
+                }}
+              >
                 <TextField
                   autoFocus
                   size="small"
@@ -239,17 +253,21 @@ export function WengineSwapModal({
                   }
                   label={t('page_wengine:wengineName')}
                   sx={{ height: '100%' }}
-                  InputProps={{
-                    sx: { height: '100%' },
+                  slotProps={{
+                    input: {
+                      sx: { height: '100%' },
+                    },
                   }}
                 />
               </Grid>
             </Grid>
             <Box
-              display="flex"
-              justifyContent="space-between"
-              alignItems="center"
-              flexWrap="wrap"
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+              }}
             >
               <ShowingAndSortOptionSelect showingTextProps={showingTextProps} />
             </Box>
@@ -261,7 +279,11 @@ export function WengineSwapModal({
             >
               {t('page_wengine:addWengine')}
             </Button>
-            <Box mt={1}>
+            <Box
+              sx={{
+                mt: 1,
+              }}
+            >
               <Suspense
                 fallback={
                   <Skeleton variant="rectangular" width="100%" height={1000} />
@@ -270,7 +292,14 @@ export function WengineSwapModal({
                 <Grid container spacing={1}>
                   {/* only show "unequip" when a wengine is equipped */}
                   {wengineId && (
-                    <Grid item xs={6} sm={6} md={4} lg={3}>
+                    <Grid
+                      size={{
+                        xs: 6,
+                        sm: 6,
+                        md: 4,
+                        lg: 3,
+                      }}
+                    >
                       <CardThemed
                         bgt="light"
                         sx={{ width: '100%', height: '100%' }}
@@ -303,12 +332,7 @@ export function WengineSwapModal({
                   )}
                   {wengineIdsToShow.map((id) => (
                     <Grid
-                      item
                       key={id}
-                      xs={6}
-                      sm={6}
-                      md={4}
-                      lg={3}
                       sx={(theme) => ({
                         ...(wengineId === id && {
                           '> .MuiCard-root': {
@@ -318,6 +342,12 @@ export function WengineSwapModal({
                           },
                         }),
                       })}
+                      size={{
+                        xs: 6,
+                        sm: 6,
+                        md: 4,
+                        lg: 3,
+                      }}
                     >
                       <WengineCard
                         key={id}

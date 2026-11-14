@@ -138,8 +138,10 @@ export function WeaponSelectionModal({
             }
             label={t('weaponName')}
             sx={{ height: '100%' }}
-            InputProps={{
-              sx: { height: '100%' },
+            slotProps={{
+              input: {
+                sx: { height: '100%' },
+              },
             }}
           />
           <IconButton onClick={onHide} sx={{ ml: 'auto' }}>
@@ -152,7 +154,13 @@ export function WeaponSelectionModal({
             {weaponIdList.map((weaponKey) => {
               const weaponStat = getWeaponStat(weaponKey)
               return (
-                <Grid item key={weaponKey} lg={3} md={4}>
+                <Grid
+                  key={weaponKey}
+                  size={{
+                    lg: 3,
+                    md: 4,
+                  }}
+                >
                   <CardThemed bgt="light" sx={{ height: '100%' }}>
                     <CardActionArea
                       onClick={() => {

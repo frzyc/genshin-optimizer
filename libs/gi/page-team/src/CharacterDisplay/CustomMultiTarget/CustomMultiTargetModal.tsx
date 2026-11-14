@@ -115,10 +115,9 @@ export function CustomMultiTargetModal({
     () =>
       customMultiTargets.map((ctar, i) => (
         <Grid
-          item
           // Use a unique key, because indices dont allow for swapping very well.
           key={`${i}${ctar.name}`}
-          xs={1}
+          size={1}
         >
           <CustomMultiTargetCard
             customMultiTarget={ctar}
@@ -151,7 +150,13 @@ export function CustomMultiTargetModal({
           <CardThemed>
             <CardHeader
               title={
-                <Box display="flex" gap={1} alignItems="center">
+                <Box
+                  sx={{
+                    display: 'flex',
+                    gap: 1,
+                    alignItems: 'center',
+                  }}
+                >
                   <DashboardCustomizeIcon />
                   <Typography variant="h6">{t('multiTarget.title')}</Typography>
                   <InfoTooltip
@@ -198,7 +203,7 @@ export function CustomMultiTargetModal({
             >
               <Box>
                 <Grid container columns={{ xs: 1, md: 2 }} spacing={2}>
-                  <Grid item xs={1}>
+                  <Grid size={1}>
                     <Button
                       fullWidth
                       onClick={addNewCustomMultiTarget}
@@ -207,7 +212,7 @@ export function CustomMultiTargetModal({
                       {t('multiTarget.addNewMTarget')}
                     </Button>
                   </Grid>
-                  <Grid item xs={1}>
+                  <Grid size={1}>
                     <CustomMultiTargetImportBtn
                       setCustomMultiTarget={setCustomMultiTarget(
                         customMultiTargets.length

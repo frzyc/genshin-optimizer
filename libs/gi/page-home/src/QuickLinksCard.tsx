@@ -113,7 +113,12 @@ export default function QuickLinksCard() {
       >
         <CardThemed bgt="light">
           <CardContent>
-            <Typography marginBottom={1} variant="h6">
+            <Typography
+              variant="h6"
+              sx={{
+                marginBottom: 1,
+              }}
+            >
               Genshin Optimizer
             </Typography>
             <Box
@@ -150,7 +155,12 @@ export default function QuickLinksCard() {
         </CardThemed>
         <CardThemed bgt="light">
           <CardContent>
-            <Typography marginBottom={1} variant="h6">
+            <Typography
+              variant="h6"
+              sx={{
+                marginBottom: 1,
+              }}
+            >
               frzyc
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
@@ -179,7 +189,12 @@ export default function QuickLinksCard() {
         </CardThemed>
         <CardThemed bgt="light">
           <CardContent>
-            <Typography marginBottom={1} variant="h6">
+            <Typography
+              variant="h6"
+              sx={{
+                marginBottom: 1,
+              }}
+            >
               Other links
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>

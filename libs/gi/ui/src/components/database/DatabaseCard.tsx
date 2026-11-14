@@ -37,7 +37,7 @@ export function DatabaseCard({ readOnly = false }: { readOnly?: boolean }) {
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
         <Grid container spacing={2} columns={{ xs: 1, md: 2 }}>
           {range(0, 3).map((i) => (
-            <Grid key={i} item xs={1}>
+            <Grid key={i} size={1}>
               <DataCard index={i} readOnly={readOnly} />
             </Grid>
           ))}
@@ -166,8 +166,17 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
       </CardContent>
       <Divider />
       <CardContent>
-        <Box display="flex" gap={2}>
-          <Box flexGrow={1}>
+        <Box
+          sx={{
+            display: 'flex',
+            gap: 2,
+          }}
+        >
+          <Box
+            sx={{
+              flexGrow: 1,
+            }}
+          >
             <Typography noWrap>
               <Trans t={t} i18nKey="count.chars" /> <strong>{numChar}</strong>
             </Typography>
@@ -192,7 +201,7 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
           </Box>
           <Box>
             <Grid container spacing={1} columns={{ xs: 2 }}>
-              <Grid item xs={1}>
+              <Grid size={1}>
                 <Button
                   fullWidth
                   disabled={!hasData}
@@ -203,7 +212,7 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
                   <Trans t={t} i18nKey="DatabaseCard.button.copy" />
                 </Button>
               </Grid>
-              <Grid item xs={1}>
+              <Grid size={1}>
                 <ModalWrapper open={uploadOpen} onClose={onClose}>
                   <UploadCard index={index} onReplace={onClose} />
                 </ModalWrapper>
@@ -218,7 +227,7 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
                   {t('DatabaseCard.button.upload')}
                 </Button>
               </Grid>
-              <Grid item xs={1}>
+              <Grid size={1}>
                 <Button
                   fullWidth
                   disabled={!hasData}
@@ -228,7 +237,7 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
                   {t('DatabaseCard.button.download')}
                 </Button>
               </Grid>
-              <Grid item xs={1}>
+              <Grid size={1}>
                 <Button
                   fullWidth
                   disabled={!hasData || readOnly}
@@ -240,7 +249,7 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
                 </Button>
               </Grid>
               {shouldShowDevComponents && (
-                <Grid item xs={2}>
+                <Grid size={2}>
                   <Button
                     fullWidth
                     color="warning"

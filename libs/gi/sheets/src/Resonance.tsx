@@ -468,8 +468,10 @@ export function getMoonsignSheet(uiData: UIData | undefined): IResonance {
       <Box
         component="img"
         src={imgAssets.resonance.moonsign}
-        width="2em"
-        height="auto"
+        sx={{
+          width: '2em',
+          height: 'auto',
+        }}
       />
     ),
     canShow: (data) => data.get(tally.moonsign).value >= 1,
@@ -482,8 +484,10 @@ export function getMoonsignSheet(uiData: UIData | undefined): IResonance {
             <Box
               component="img"
               src={imgAssets.resonance.moonsign}
-              width="2em"
-              height="auto"
+              sx={{
+                width: '2em',
+                height: 'auto',
+              }}
             />
           ),
         },
@@ -500,18 +504,26 @@ export function getMoonsignSheet(uiData: UIData | undefined): IResonance {
           title: tr('Moonsign.ascendantGleam.name'),
           description: tr('Moonsign.ascendantGleam.desc'),
           icon: (
-            <Box display="flex">
+            <Box
+              sx={{
+                display: 'flex',
+              }}
+            >
               <Box
                 component="img"
                 src={imgAssets.resonance.moonsign}
-                width="2em"
-                height="auto"
+                sx={{
+                  width: '2em',
+                  height: 'auto',
+                }}
               />
               <Box
                 component="img"
                 src={imgAssets.resonance.moonsign}
-                width="2em"
-                height="auto"
+                sx={{
+                  width: '2em',
+                  height: 'auto',
+                }}
               />
             </Box>
           ),
@@ -543,14 +555,18 @@ export const hexereiSheet: IResonance = {
       <Box
         component="img"
         src={imgAssets.resonance.hexerei}
-        width="2em"
-        height="auto"
+        sx={{
+          width: '2em',
+          height: 'auto',
+        }}
       />
       <Box
         component="img"
         src={imgAssets.resonance.hexerei}
-        width="2em"
-        height="auto"
+        sx={{
+          width: '2em',
+          height: 'auto',
+        }}
       />
     </>
   ),
@@ -565,14 +581,18 @@ export const hexereiSheet: IResonance = {
             <Box
               component="img"
               src={imgAssets.resonance.hexerei}
-              width="2em"
-              height="auto"
+              sx={{
+                width: '2em',
+                height: 'auto',
+              }}
             />
             <Box
               component="img"
               src={imgAssets.resonance.hexerei}
-              width="2em"
-              height="auto"
+              sx={{
+                width: '2em',
+                height: 'auto',
+              }}
             />
           </>
         ),
@@ -603,18 +623,26 @@ export function MoonsignConditionalSection(
       title: tr('Moonsign.ascendantGleam.name'),
       description: tr('Moonsign.ascendantGleam.desc'),
       icon: (
-        <Box display="flex">
+        <Box
+          sx={{
+            display: 'flex',
+          }}
+        >
           <Box
             component="img"
             src={imgAssets.resonance.moonsign}
-            width="2em"
-            height="auto"
+            sx={{
+              width: '2em',
+              height: 'auto',
+            }}
           />
           <Box
             component="img"
             src={imgAssets.resonance.moonsign}
-            width="2em"
-            height="auto"
+            sx={{
+              width: '2em',
+              height: 'auto',
+            }}
           />
         </Box>
       ),

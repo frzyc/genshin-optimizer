@@ -38,7 +38,11 @@ export function WeaponRarityToggle({
           }}
           onClick={() => onChange(rarityHandler(value, star))}
         >
-          <Box display="flex">
+          <Box
+            sx={{
+              display: 'flex',
+            }}
+          >
             <strong>{star}</strong>
             <StarRoundedIcon />
             <Chip label={totals[star]} size="small" />

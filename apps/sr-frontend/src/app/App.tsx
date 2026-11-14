@@ -86,10 +86,12 @@ export default function App() {
 function Content() {
   return (
     <Box
-      display="flex"
-      flexDirection="column"
-      minHeight="100vh"
-      position="relative"
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+        position: 'relative',
+      }}
     >
       <Header anchor="back-to-top-anchor" />
 
@@ -117,7 +119,11 @@ function Content() {
         </Suspense>
       </Container>
       {/* make sure footer is always at bottom */}
-      <Box flexGrow={1} />
+      <Box
+        sx={{
+          flexGrow: 1,
+        }}
+      />
       <Footer />
     </Box>
   )

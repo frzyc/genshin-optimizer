@@ -217,7 +217,13 @@ export default function PageCharacter() {
       database.displayCharacter.set({ ascending }),
   }
   return (
-    <Box display="flex" flexDirection="column" gap={2}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+      }}
+    >
       {characterKey && character && team && (
         <TagContext.Provider value={tag}>
           <StatHighlightContext.Provider value={statHLContextObj}>
@@ -246,7 +252,7 @@ export default function PageCharacter() {
       <CardThemed>
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Grid container spacing={1}>
-            <Grid item>
+            <Grid>
               <CharSpecialtyToggle
                 sx={{ height: '100%' }}
                 onChange={(specialtyType) =>
@@ -257,7 +263,7 @@ export default function PageCharacter() {
                 size="small"
               />
             </Grid>
-            <Grid item>
+            <Grid>
               <ElementToggle
                 sx={{ height: '100%' }}
                 onChange={(attribute) =>
@@ -268,7 +274,7 @@ export default function PageCharacter() {
                 size="small"
               />
             </Grid>
-            <Grid item>
+            <Grid>
               <CharacterRarityToggle
                 sx={{ height: '100%' }}
                 onChange={(rarity) => database.displayCharacter.set({ rarity })}
@@ -277,8 +283,12 @@ export default function PageCharacter() {
                 size="small"
               />
             </Grid>
-            <Grid item flexGrow={1} />
-            <Grid item>
+            <Grid
+              sx={{
+                flexGrow: 1,
+              }}
+            />
+            <Grid>
               <TextField
                 autoFocus
                 value={searchTerm}
@@ -288,17 +298,21 @@ export default function PageCharacter() {
                 label={t('characterName')}
                 size="small"
                 sx={{ height: '100%' }}
-                InputProps={{
-                  sx: { height: '100%' },
+                slotProps={{
+                  input: {
+                    sx: { height: '100%' },
+                  },
                 }}
               />
             </Grid>
           </Grid>
           <Box
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            flexWrap="wrap"
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+            }}
           >
             <ShowingAndSortOptionSelect
               showingTextProps={showingTextProps}
@@ -325,7 +339,7 @@ export default function PageCharacter() {
       >
         <Grid container spacing={2} columns={columns}>
           {charKeysToShow.map((charKey) => (
-            <Grid item key={charKey} xs={1}>
+            <Grid key={charKey} size={1}>
               <CharacterCard
                 characterKey={charKey}
                 onClick={() => navigate(`${charKey}`)}

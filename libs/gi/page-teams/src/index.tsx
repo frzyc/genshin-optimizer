@@ -151,10 +151,22 @@ export default function PageTeams() {
   }
 
   return (
-    <Box display="flex" flexDirection="column" gap={1}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1,
+      }}
+    >
       <CardThemed>
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-          <Box display="flex" gap={1} alignItems="stretch">
+          <Box
+            sx={{
+              display: 'flex',
+              gap: 1,
+              alignItems: 'stretch',
+            }}
+          >
             <CharacterMultiAutocomplete
               teamIds={filteredTeamIds}
               charKeys={charKeys}
@@ -170,16 +182,20 @@ export default function PageTeams() {
               label={t('searchLabel.team')}
               // size="small"
               sx={{ height: '100%', flexGrow: 1 }}
-              InputProps={{
-                sx: { height: '100%' },
+              slotProps={{
+                input: {
+                  sx: { height: '100%' },
+                },
               }}
             />
           </Box>
           <Box
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            flexWrap="wrap"
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+            }}
           >
             <ShowingAndSortOptionSelect
               showingTextProps={showingTextProps}
@@ -239,7 +255,7 @@ export default function PageTeams() {
       >
         <Grid container spacing={2} columns={columns}>
           {TeamIdsToShow.map((tid) => (
-            <Grid item xs={1} key={tid}>
+            <Grid key={tid} size={1}>
               <Suspense
                 fallback={
                   <Skeleton variant="rectangular" width="100%" height={150} />

@@ -15,7 +15,14 @@ export function CardHeaderCustom({
   compact?: boolean
 }) {
   return (
-    <Box display="flex" gap={1} p={compact ? 1.5 : 2} alignItems="center">
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 1,
+        p: compact ? 1.5 : 2,
+        alignItems: 'center',
+      }}
+    >
       {avatar}
       <Typography
         variant={compact ? 'subtitle2' : 'subtitle1'}

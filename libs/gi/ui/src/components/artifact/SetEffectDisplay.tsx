@@ -26,7 +26,12 @@ export function SetEffectDisplay({
         ?.filter((section) => 'states' in section)
     : sheet.setEffectDocument(setNumKey)
   return (
-    <Box display="flex" flexDirection="column">
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
       {document ? (
         <DocumentDisplay
           sections={document}

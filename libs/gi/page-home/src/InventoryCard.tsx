@@ -253,7 +253,7 @@ export default function InventoryCard() {
             spacing={1}
           >
             {latestBuilds.map((teamId) => (
-              <Grid item key={teamId} xs={1}>
+              <Grid key={teamId} size={1}>
                 <TeamCardCompact
                   teamId={teamId}
                   onClick={(ck) =>

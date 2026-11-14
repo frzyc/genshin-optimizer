@@ -49,15 +49,18 @@ export function TeamInventory() {
         <CardContent>
           <Button onClick={() => database.teams.new()}>Create Team</Button>
           <Box
-            sx={{ overflow: 'auto', maxHeight: '50vh' }}
-            my={1}
-            display="flex"
-            flexDirection="column"
-            gap={1}
+            sx={{
+              my: 1,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 1,
+              overflow: 'auto',
+              maxHeight: '50vh',
+            }}
           >
             <Grid container spacing={1} columns={columns}>
               {teamIdsToShow.map((teamId) => (
-                <Grid item key={teamId} xs={1}>
+                <Grid key={teamId} size={1}>
                   <TeamCard
                     teamId={teamId}
                     onClick={(charId) =>

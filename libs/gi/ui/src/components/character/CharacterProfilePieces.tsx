@@ -57,7 +57,7 @@ export function CharacterCompactTalent() {
         {(['auto', 'skill', 'burst'] as const).map((tKey) => {
           const badgeContent = tlvl[tKey].toString()
           return (
-            <Grid item xs={4} key={tKey}>
+            <Grid key={tKey} size={4}>
               <Badge
                 badgeContent={badgeContent}
                 color={tBoost[tKey] ? 'info' : 'secondary'}
@@ -82,8 +82,10 @@ export function CharacterCompactTalent() {
                 <Box
                   component="img"
                   src={characterSheet.getTalentOfKey(tKey)?.img}
-                  width="100%"
-                  height="auto"
+                  sx={{
+                    width: '100%',
+                    height: 'auto',
+                  }}
                 />
               </Badge>
             </Grid>
@@ -110,7 +112,7 @@ export function CharacterCompactConstSelector({
   return (
     <Grid container spacing={1}>
       {range(1, 6).map((i) => (
-        <Grid item xs={4} key={i}>
+        <Grid key={i} size={4}>
           <CardActionArea
             onClick={() => setConstellation(i === constellation ? i - 1 : i)}
             style={{
@@ -127,10 +129,10 @@ export function CharacterCompactConstSelector({
                 )?.img
               }
               sx={{
+                width: '100%',
+                height: 'auto',
                 ...(constellation >= i ? {} : { filter: 'brightness(50%)' }),
               }}
-              width="100%"
-              height="auto"
             />
           </CardActionArea>
         </Grid>
@@ -172,7 +174,14 @@ function SillyCoverArea({
 
   return (
     <Box sx={{ display: 'flex', position: 'relative' }}>
-      <Box src={src} component="img" width="100%" height="auto" />
+      <Box
+        src={src}
+        component="img"
+        sx={{
+          width: '100%',
+          height: 'auto',
+        }}
+      />
       <Box sx={{ position: 'absolute', width: '100%', height: '100%' }}>
         <Typography
           variant="h6"
@@ -258,7 +267,14 @@ function CoverArea({
         <FavoriteButton />
         <LevelBadge level={level} ascension={ascension} />
       </Box>
-      <Box src={src} component="img" width="100%" height="auto" />
+      <Box
+        src={src}
+        component="img"
+        sx={{
+          width: '100%',
+          height: 'auto',
+        }}
+      />
     </Box>
   )
 }

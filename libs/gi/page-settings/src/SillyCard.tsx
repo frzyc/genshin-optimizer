@@ -33,7 +33,13 @@ export default function SillyCard() {
             Optimizer.
           </Trans>
         </Typography>
-        <Box display="flex" gap={2} pt={2}>
+        <Box
+          sx={{
+            display: 'flex',
+            gap: 2,
+            pt: 2,
+          }}
+        >
           <Button
             onClick={() => setSilly(!silly)}
             startIcon={silly ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />}

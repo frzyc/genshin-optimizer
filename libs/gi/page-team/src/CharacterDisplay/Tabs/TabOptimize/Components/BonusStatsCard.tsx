@@ -29,13 +29,15 @@ export default function BonusStatsCard() {
       <BonusStatsModal open={show} onClose={onHide} />
       <CardHeader
         title={t('bonusStats.title')}
-        titleTypographyProps={{ variant: 'subtitle1' }}
         avatar={<BarChartIcon />}
         action={
           <Button color="info" onClick={onShow}>
             {t('common:edit')}
           </Button>
         }
+        slotProps={{
+          title: { variant: 'subtitle1' },
+        }}
       />
       <Divider />
       <FieldDisplayList bgt="light">

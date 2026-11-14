@@ -29,7 +29,11 @@ export default function CharacterProfileCard() {
   return (
     <CardThemed bgt="light" sx={{ height: '100%' }}>
       <CharacterCoverArea />
-      <Box p={1}>
+      <Box
+        sx={{
+          p: 1,
+        }}
+      >
         <CharProfileCharEditor show={showEditor} onClose={onHideEditor} />
         <Box>
           <Button
@@ -67,7 +71,7 @@ export function CharacterCompactConstellation() {
   return (
     <Grid container spacing={1}>
       {range(1, 6).map((i) => (
-        <Grid item xs={4} key={i}>
+        <Grid key={i} size={4}>
           <Box
             component="img"
             src={
@@ -76,10 +80,10 @@ export function CharacterCompactConstellation() {
               )?.img
             }
             sx={{
+              width: '100%',
+              height: 'auto',
               ...(constellation >= i ? {} : { filter: 'brightness(50%)' }),
             }}
-            width="100%"
-            height="auto"
           />
         </Grid>
       ))}

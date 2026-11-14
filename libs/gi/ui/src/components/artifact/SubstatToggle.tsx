@@ -23,7 +23,13 @@ export function SubstatToggle({
   const selKeys1 = selectedKeys.filter((k) => keys1.includes(k))
   const selKeys2 = selectedKeys.filter((k) => keys2.includes(k))
   return (
-    <Box display="flex" gap={1} flexWrap="wrap">
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 1,
+        flexWrap: 'wrap',
+      }}
+    >
       <SolidToggleButtonGroup value={selKeys1} sx={{ flexGrow: 1 }}>
         {keys1.map((key) => (
           <ToggleButton
@@ -33,7 +39,13 @@ export function SubstatToggle({
             value={key}
             onClick={() => onChange(rvfilterHandler(selectedKeys, key))}
           >
-            <Box display="flex" gap={1} alignItems="center">
+            <Box
+              sx={{
+                display: 'flex',
+                gap: 1,
+                alignItems: 'center',
+              }}
+            >
               <StatIcon statKey={key} iconProps={iconInlineProps} />
               {renderLabel ? (
                 renderLabel(key)
@@ -53,7 +65,13 @@ export function SubstatToggle({
             value={key}
             onClick={() => onChange(rvfilterHandler(selectedKeys, key))}
           >
-            <Box display="flex" gap={1} alignItems="center">
+            <Box
+              sx={{
+                display: 'flex',
+                gap: 1,
+                alignItems: 'center',
+              }}
+            >
               <StatIcon statKey={key} iconProps={iconInlineProps} />
               {renderLabel ? (
                 renderLabel(key)

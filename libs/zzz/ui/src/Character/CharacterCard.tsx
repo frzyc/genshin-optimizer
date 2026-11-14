@@ -15,7 +15,7 @@ import type { CharacterDatum } from '@genshin-optimizer/zzz/stats'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
 import { Badge, CardActionArea, Typography } from '@mui/material'
-import type { Variant } from '@mui/material/styles/createTypography'
+import type { TypographyVariant as Variant } from '@mui/material/styles'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
 import { useCallback } from 'react'
@@ -146,10 +146,12 @@ function CharImage({
       <Box
         src={`${CHARACTER_IMAGE_URL_BASE}${id}.png`}
         component="img"
-        width={charCardConfig.charImgWidth}
-        height="auto"
-        position="relative"
-        zIndex="2"
+        sx={{
+          width: charCardConfig.charImgWidth,
+          height: 'auto',
+          position: 'relative',
+          zIndex: '2',
+        }}
       />
     </Box>
   )
@@ -188,8 +190,8 @@ function CharInformation({
         }}
       >
         <Box
-          gap={1}
           sx={{
+            gap: 1,
             display: 'flex',
             alignItems: 'center',
           }}
@@ -268,8 +270,8 @@ function CharInformation({
               </Typography>
             </Box>
             <Box
-              gap={1.5}
               sx={{
+                gap: 1.5,
                 display: 'flex',
                 alignItems: 'center',
               }}

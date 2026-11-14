@@ -66,9 +66,12 @@ export function DesktopDashboardHeader({
   return (
     <Stack
       direction="row"
-      alignItems="center"
       spacing={1.5}
-      sx={{ width: '100%', minWidth: 0 }}
+      sx={{
+        alignItems: 'center',
+        width: '100%',
+        minWidth: 0,
+      }}
     >
       <OptimizeReadinessBadge />
       <Paper
@@ -91,8 +94,10 @@ export function DesktopDashboardHeader({
           <Stack
             direction="row"
             spacing={1.5}
-            alignItems="center"
-            sx={{ minWidth: 0 }}
+            sx={{
+              alignItems: 'center',
+              minWidth: 0,
+            }}
           >
             <Box
               component="img"
@@ -106,7 +111,13 @@ export function DesktopDashboardHeader({
               }}
             />
             <Box sx={{ minWidth: 0, textAlign: 'left' }}>
-              <Typography variant="subtitle1" noWrap fontWeight={600}>
+              <Typography
+                variant="subtitle1"
+                noWrap
+                sx={{
+                  fontWeight: 600,
+                }}
+              >
                 <CharacterName
                   characterKey={characterKey}
                   gender={gender ?? 'F'}
@@ -114,9 +125,11 @@ export function DesktopDashboardHeader({
               </Typography>
               <Typography
                 variant="caption"
-                color="text.secondary"
                 noWrap
-                display="block"
+                sx={{
+                  color: 'text.secondary',
+                  display: 'block',
+                }}
               >
                 {t('commandShortcutCharacter')}
               </Typography>
@@ -135,19 +148,42 @@ export function DesktopDashboardHeader({
             spacing={0.25}
             sx={{ minWidth: 0, width: '100%', textAlign: 'left' }}
           >
-            <Typography variant="caption" color="text.secondary">
+            <Typography
+              variant="caption"
+              sx={{
+                color: 'text.secondary',
+              }}
+            >
               {t('optimizeTarget')}
             </Typography>
             {currentRef && tag ? (
-              <Typography variant="body2" noWrap fontWeight={500}>
+              <Typography
+                variant="body2"
+                noWrap
+                sx={{
+                  fontWeight: 500,
+                }}
+              >
                 <OptTargetSelectedLabel formulaRef={currentRef} />
               </Typography>
             ) : (
-              <Typography variant="body2" color="text.secondary" noWrap>
+              <Typography
+                variant="body2"
+                noWrap
+                sx={{
+                  color: 'text.secondary',
+                }}
+              >
                 {t('selectOptTarget')}
               </Typography>
             )}
-            <Typography variant="caption" color="text.secondary" noWrap>
+            <Typography
+              variant="caption"
+              noWrap
+              sx={{
+                color: 'text.secondary',
+              }}
+            >
               {t('hitModeLine', { mode: hitModeLabel })}
             </Typography>
           </Stack>
@@ -162,9 +198,12 @@ export function DesktopDashboardHeader({
         >
           <Typography
             variant="caption"
-            color="text.secondary"
-            display="block"
-            sx={{ mb: 0.5, textAlign: 'left' }}
+            sx={{
+              color: 'text.secondary',
+              display: 'block',
+              mb: 0.5,
+              textAlign: 'left',
+            }}
           >
             {t('contextBuild')}
           </Typography>
@@ -191,11 +230,11 @@ export function DesktopDashboardHeader({
         >
           <Typography
             variant="caption"
-            color="text.secondary"
             component="button"
             type="button"
             onClick={() => scrollToSection(OPT_SECTION_IDS.teammates)}
             sx={{
+              color: 'text.secondary',
               mb: 0.5,
               textAlign: 'left',
               border: 'none',
@@ -348,7 +387,13 @@ function TeamAvatarRow({
 
   return (
     <>
-      <Stack direction="row" spacing={0.25} alignItems="center">
+      <Stack
+        direction="row"
+        spacing={0.25}
+        sx={{
+          alignItems: 'center',
+        }}
+      >
         <Tooltip title={t('onField')}>
           <IconButton
             size="small"

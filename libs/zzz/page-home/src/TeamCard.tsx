@@ -66,7 +66,13 @@ export default function TeamCard() {
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
         <Grid container spacing={1}>
           {team.map(({ name, img, title, subtitle, url = '' }) => (
-            <Grid item key={name} xs={6} md={4}>
+            <Grid
+              key={name}
+              size={{
+                xs: 6,
+                md: 4,
+              }}
+            >
               <CardThemed bgt="light" sx={{ height: '100%' }}>
                 <CardContent>
                   <Box
@@ -74,16 +80,23 @@ export default function TeamCard() {
                     src={img}
                     sx={{ width: '100%', height: 'auto', borderRadius: '50%' }}
                   />
-                  <Box display="flex" flexDirection="column">
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                    }}
+                  >
                     {url ? (
                       <Typography
                         variant="h6"
-                        sx={{ textAlign: 'center' }}
-                        color="inherit"
                         component={Link}
                         href={url}
                         target="_blank"
                         rel="noopener"
+                        sx={{
+                          color: 'inherit',
+                          textAlign: 'center',
+                        }}
                       >
                         <strong>{name}</strong>
                       </Typography>
@@ -101,9 +114,9 @@ export default function TeamCard() {
                     <Typography
                       variant="subtitle2"
                       sx={{
+                        color: 'secondary.light',
                         textAlign: 'center',
                       }}
-                      color="secondary.light"
                     >
                       {subtitle}
                     </Typography>

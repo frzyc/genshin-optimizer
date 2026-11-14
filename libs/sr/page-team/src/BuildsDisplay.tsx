@@ -216,11 +216,21 @@ function BuildBase({
         outline: active ? `solid ${theme.palette.success.main}` : undefined,
       })}
     >
-      <Box display={'flex'}>
+      <Box
+        sx={{
+          display: 'flex',
+        }}
+      >
         <CardActionArea onClick={onEdit}>
           <CardHeader title={name} subheader={description} />
         </CardActionArea>
-        <Box display={'flex'} alignContent={'center'} sx={{ padding: 1 }}>
+        <Box
+          sx={{
+            display: 'flex',
+            alignContent: 'center',
+            padding: 1,
+          }}
+        >
           <Button
             size="small"
             color="success"
@@ -530,15 +540,17 @@ function SlotEditor({
       </Box>
       <NumberInputLazy
         value={level}
-        inputProps={{
-          sx: { width: '2ch' },
-          max: relicMaxLevel[rarity],
-          min: 0,
-        }}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">Level</InputAdornment>
-          ),
+        slotProps={{
+          htmlInput: {
+            sx: { width: '2ch' },
+            max: relicMaxLevel[rarity],
+            min: 0,
+          },
+          input: {
+            startAdornment: (
+              <InputAdornment position="start">Level</InputAdornment>
+            ),
+          },
         }}
         size="small"
         onChange={setLevel}
@@ -627,18 +639,25 @@ function TCSubstatEditor({
         onChange={setValue}
         float={getUnitStr(statKey) === '%'}
         size="small"
-        inputProps={{
-          sx: {
-            width: '4em',
-            textAlign: 'right',
+        slotProps={{
+          htmlInput: {
+            sx: {
+              width: '4em',
+              textAlign: 'right',
+            },
+            min: 0,
+            max: 9999,
           },
-          min: 0,
-          max: 9999,
-        }}
-        InputProps={{
-          endAdornment: getUnitStr(statKey) || (
-            <Box width="0.8em" component="span" />
-          ),
+          input: {
+            endAdornment: getUnitStr(statKey) || (
+              <Box
+                component="span"
+                sx={{
+                  width: '0.8em',
+                }}
+              />
+            ),
+          },
         }}
       />
     </Box>

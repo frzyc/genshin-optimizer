@@ -69,15 +69,22 @@ class ErrorBoundary extends Component<Props, State> {
             <ThemeProvider theme={theme}>
               <CssBaseline enableColorScheme />
               <Box
-                display="flex"
-                minWidth="100vw"
-                minHeight="100vh"
-                justifyContent="center"
-                alignItems="center"
-                p={2}
+                sx={{
+                  display: 'flex',
+                  minWidth: '100vw',
+                  minHeight: '100vh',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  p: 2,
+                }}
               >
                 <CardThemed bgt="light">
-                  <Box display="flex" flexDirection="column">
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                    }}
+                  >
                     <CardContent
                       sx={{
                         display: 'flex',
@@ -90,7 +97,11 @@ class ErrorBoundary extends Component<Props, State> {
                       <ErrorIcon color="error" />
                     </CardContent>
                     <Divider />
-                    <Box display="flex">
+                    <Box
+                      sx={{
+                        display: 'flex',
+                      }}
+                    >
                       <CardContent sx={{ flexGrow: 1, maxWidth: 600 }}>
                         <Typography>{t`p1.1`}</Typography>
                         <Typography>{t`p1.2`}</Typography>
@@ -151,17 +162,31 @@ class ErrorBoundary extends Component<Props, State> {
                           </Typography>
                         </ul>
                       </CardContent>
-                      <Stack p={1}>
+                      <Stack
+                        sx={{
+                          p: 1,
+                        }}
+                      >
                         <Box
                           component="img"
                           src={SpaghettiCode}
-                          maxWidth={400}
+                          sx={{
+                            maxWidth: 400,
+                          }}
                         />
-                        <Typography fontStyle="italic">{t`caption`}</Typography>
+                        <Typography
+                          sx={{
+                            fontStyle: 'italic',
+                          }}
+                        >{t`caption`}</Typography>
                       </Stack>
                     </Box>
                     <CardContent sx={{ gap: 2, p: 0 }}>
-                      <Box p={2}>
+                      <Box
+                        sx={{
+                          p: 2,
+                        }}
+                      >
                         <ReadOnlyTextArea value={textBoxVal} />
                       </Box>
                       <DatabaseCard readOnly />

@@ -50,10 +50,12 @@ export function CharacterCardHeader({
   return (
     <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
       <Box
-        display="flex"
-        position="relative"
         className={!banner ? `grad-${charStat.rarity}star` : undefined}
         sx={{
+          display: 'flex',
+          position: 'relative',
+          width: '100%',
+
           '&::before': {
             content: '""',
             display: 'block',
@@ -68,25 +70,29 @@ export function CharacterCardHeader({
             backgroundSize: 'cover',
           },
         }}
-        width="100%"
       >
         <Box
-          flexShrink={1}
           component="img"
           src={iconAsset(characterKey, gender, silly)}
-          sx={{ maxWidth: '40%' }}
-          alignSelf="flex-end"
-          display="flex"
-          flexDirection="column"
-          zIndex={1}
+          sx={{
+            flexShrink: 1,
+            alignSelf: 'flex-end',
+            display: 'flex',
+            flexDirection: 'column',
+            zIndex: 1,
+            maxWidth: '40%',
+          }}
         />
         <Box
-          flexGrow={1}
-          sx={{ py: 1, pr: 1 }}
-          display="flex"
-          flexDirection="column"
-          zIndex={1}
-          justifyContent="space-between"
+          sx={{
+            flexGrow: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            zIndex: 1,
+            justifyContent: 'space-between',
+            py: 1,
+            pr: 1,
+          }}
         >
           {children}
         </Box>
@@ -130,17 +136,21 @@ export function CharacterCardHeaderContent({
         sx={{ opacity: 0.85 }}
       />
       <Box
-        display="flex"
-        gap={1}
-        sx={{ textShadow: '0 0 5px gray' }}
-        alignItems="center"
+        sx={{
+          display: 'flex',
+          gap: 1,
+          alignItems: 'center',
+          textShadow: '0 0 5px gray',
+        }}
       >
         <Box>
           <Typography
             component="span"
             variant="h6"
-            whiteSpace="nowrap"
             color={tcOverride ? 'yellow ' : undefined}
+            sx={{
+              whiteSpace: 'nowrap',
+            }}
           >
             Lv. {characterLevel}
           </Typography>
@@ -154,8 +164,8 @@ export function CharacterCardHeaderContent({
         </Box>
         <Typography
           component="span"
-          whiteSpace="nowrap"
           sx={{
+            whiteSpace: 'nowrap',
             opacity: 0.85,
           }}
         >
@@ -170,9 +180,9 @@ export function CharacterCardHeaderContent({
         </Typography>
       </Box>
       <Box
-        display="flex"
-        gap={1}
         sx={{
+          display: 'flex',
+          gap: 1,
           opacity: 0.85,
         }}
       >
@@ -195,7 +205,12 @@ export function CharacterCardHeaderContent({
           label={<strong>{tBurst}</strong>}
         />
       </Box>
-      <Typography variant="h6" lineHeight={1}>
+      <Typography
+        variant="h6"
+        sx={{
+          lineHeight: 1,
+        }}
+      >
         <StarsDisplay stars={charStat.rarity} colored inline />
       </Typography>
     </>
@@ -221,12 +236,20 @@ export function HeaderContentNew({
         color={getCharEle(characterKey)}
         sx={{ opacity: 0.85 }}
       />
-      <Box mt={1}>
+      <Box
+        sx={{
+          mt: 1,
+        }}
+      >
         <Typography variant="h4">
           <SqBadge>NEW</SqBadge>
         </Typography>
       </Box>
-      <Typography mt={1.5}>
+      <Typography
+        sx={{
+          mt: 1.5,
+        }}
+      >
         <StarsDisplay stars={charStat.rarity} colored />
       </Typography>
     </>

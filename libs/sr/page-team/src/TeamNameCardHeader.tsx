@@ -84,16 +84,25 @@ export default function TeamNameCardHeader() {
           <CardHeader
             title={t('team.editNameDesc')}
             avatar={<GroupsIcon />}
-            titleTypographyProps={{ variant: 'h6' }}
             action={
               <IconButton onClick={() => setEditMode(false)}>
                 <CloseIcon />
               </IconButton>
             }
+            slotProps={{
+              title: { variant: 'h6' },
+            }}
           />
           <Divider />
           <CardContent>
-            <Box display="flex" flexDirection="column" gap={2} sx={{ mt: 2 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 2,
+                mt: 2,
+              }}
+            >
               <TextFieldLazy
                 label={t('team.name')}
                 value={team.name}

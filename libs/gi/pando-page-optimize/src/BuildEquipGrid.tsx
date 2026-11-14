@@ -22,7 +22,7 @@ export function BuildEquipGrid({
   return (
     <Grid container columns={columns} spacing={1}>
       {weaponId ? (
-        <Grid item xs={1}>
+        <Grid size={1}>
           <WeaponCard weaponId={weaponId} />
         </Grid>
       ) : null}
@@ -30,7 +30,7 @@ export function BuildEquipGrid({
         const artId = artIds[slot]
         if (!artId) return null
         return (
-          <Grid item xs={1} key={slot}>
+          <Grid key={slot} size={1}>
             <ArtifactCard artifactId={artId} hideLocation />
           </Grid>
         )

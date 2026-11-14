@@ -20,7 +20,12 @@ export function AdditiveReactionModeText({
   const trigger = reaction === 'spread' ? 'dendro' : 'electro'
 
   return (
-    <Box display="flex" alignItems="center">
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
       <ColorText color={reaction}>{t(`reaction.${reaction}`)}</ColorText>
       <SqBadge sx={sqBadgeStyle} color={'dendro'}>
         <DendroIcon {...iconInlineProps} />

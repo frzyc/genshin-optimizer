@@ -30,7 +30,7 @@ export function WengineSheetsDisplay() {
       <Box>
         <Grid container columns={3} spacing={1}>
           {wList.map((wk) => (
-            <Grid item xs={1} key={wk}>
+            <Grid key={wk} size={1}>
               <WengineSheetDisplay
                 wengine={{
                   key: wk,

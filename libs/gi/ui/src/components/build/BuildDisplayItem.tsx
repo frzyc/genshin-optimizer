@@ -189,7 +189,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
 
   const weapNano = useMemo(() => {
     return (
-      <Grid item xs={1}>
+      <Grid size={1}>
         <CardThemed
           sx={{
             height: '100%',
@@ -213,7 +213,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
   const artNanos = useMemo(
     () =>
       allArtifactSlotKeys.map((slotKey) => (
-        <Grid item xs={1} key={slotKey}>
+        <Grid key={slotKey} size={1}>
           <CardThemed
             sx={{
               height: '100%',
@@ -326,7 +326,13 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
           />
         )}
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-          <Box display="flex" gap={1} flexWrap="wrap">
+          <Box
+            sx={{
+              display: 'flex',
+              gap: 1,
+              flexWrap: 'wrap',
+            }}
+          >
             {label !== undefined && (
               <SqBadge color={currentlyEquipped ? 'success' : 'info'}>
                 <Typography sx={{ display: 'flex', gap: 1 }}>
@@ -466,14 +472,32 @@ function CompareWeaponModal({
           }}
         >
           {diffCurrentWeap && (
-            <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
+            <Box
+              sx={{
+                minWidth: 320,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 1,
+              }}
+            >
               <CardThemed bgt="light" sx={{ p: 1 }}>
-                <Typography variant="h6" textAlign="center">
+                <Typography
+                  variant="h6"
+                  sx={{
+                    textAlign: 'center',
+                  }}
+                >
                   {t('buildDisplay.oldWeapon')}
                 </Typography>
               </CardThemed>
               {oldId === 'tc' ? (
-                <Typography variant="h6" textAlign="center" color="info">
+                <Typography
+                  variant="h6"
+                  color="info"
+                  sx={{
+                    textAlign: 'center',
+                  }}
+                >
                   <SqBadge>{t('buildDisplay.tcWeapon')}</SqBadge>
                 </Typography>
               ) : (
@@ -481,16 +505,48 @@ function CompareWeaponModal({
               )}
             </Box>
           )}
-          {diffCurrentWeap && <Box display="flex" flexGrow={1} />}
           {diffCurrentWeap && (
-            <Box display="flex" alignItems="center" justifyContent="center">
+            <Box
+              sx={{
+                display: 'flex',
+                flexGrow: 1,
+              }}
+            />
+          )}
+          {diffCurrentWeap && (
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
               <ChevronRight sx={{ fontSize: 40 }} />
             </Box>
           )}
-          {diffCurrentWeap && <Box display="flex" flexGrow={1} />}
-          <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
+          {diffCurrentWeap && (
+            <Box
+              sx={{
+                display: 'flex',
+                flexGrow: 1,
+              }}
+            />
+          )}
+          <Box
+            sx={{
+              minWidth: 320,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 1,
+            }}
+          >
             <CardThemed bgt="light" sx={{ p: 1 }}>
-              <Typography variant="h6" textAlign="center">
+              <Typography
+                variant="h6"
+                sx={{
+                  textAlign: 'center',
+                }}
+              >
                 {t('buildDisplay.newWeapon')}
               </Typography>
             </CardThemed>
@@ -551,14 +607,32 @@ function CompareArtifactModal({
             />
           </Suspense>
           {oldId && (
-            <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
+            <Box
+              sx={{
+                minWidth: 320,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 1,
+              }}
+            >
               <CardThemed bgt="light" sx={{ p: 1 }}>
-                <Typography variant="h6" textAlign="center">
+                <Typography
+                  variant="h6"
+                  sx={{
+                    textAlign: 'center',
+                  }}
+                >
                   {t('compareArtModal.oldArt')}
                 </Typography>
               </CardThemed>
               {oldId === 'tc' ? (
-                <Typography variant="h6" textAlign="center" color="info">
+                <Typography
+                  variant="h6"
+                  color="info"
+                  sx={{
+                    textAlign: 'center',
+                  }}
+                >
                   <SqBadge>{t('compareArtModal.tcArt')}</SqBadge>
                 </Typography>
               ) : (
@@ -581,17 +655,49 @@ function CompareArtifactModal({
               )}
             </Box>
           )}
-          {oldId && <Box display="flex" flexGrow={1} />}
           {oldId && (
-            <Box display="flex" alignItems="center" justifyContent="center">
+            <Box
+              sx={{
+                display: 'flex',
+                flexGrow: 1,
+              }}
+            />
+          )}
+          {oldId && (
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
               <ChevronRight sx={{ fontSize: 40 }} />
             </Box>
           )}
-          {oldId && <Box display="flex" flexGrow={1} />}
-          <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
+          {oldId && (
+            <Box
+              sx={{
+                display: 'flex',
+                flexGrow: 1,
+              }}
+            />
+          )}
+          <Box
+            sx={{
+              minWidth: 320,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 1,
+            }}
+          >
             {oldId && (
               <CardThemed bgt="light" sx={{ p: 1 }}>
-                <Typography variant="h6" textAlign="center">
+                <Typography
+                  variant="h6"
+                  sx={{
+                    textAlign: 'center',
+                  }}
+                >
                   {t('compareArtModal.newArt')}
                 </Typography>
               </CardThemed>

@@ -114,13 +114,23 @@ export function BuildAlert({
       {title}
       {subtitle}
       {progress !== undefined && (
-        <Grid container spacing={1} alignItems="center">
+        <Grid
+          container
+          spacing={1}
+          sx={{
+            alignItems: 'center',
+          }}
+        >
           {hasTotal && (
-            <Grid item>
+            <Grid>
               <Typography>{`${progress.toFixed(1)}%`}</Typography>
             </Grid>
           )}
-          <Grid item flexGrow={1}>
+          <Grid
+            sx={{
+              flexGrow: 1,
+            }}
+          >
             <BorderLinearProgress
               variant={hasTotal ? 'determinate' : 'indeterminate'}
               value={progress}

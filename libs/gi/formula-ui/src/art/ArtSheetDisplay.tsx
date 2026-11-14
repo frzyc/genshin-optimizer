@@ -34,7 +34,9 @@ export function ArtSheetDisplay({
       <CardHeader
         title={<ArtifactSetName setKey={setKey} />}
         avatar={<ImgIcon src={artifactDefIcon(setKey)} size={2} />}
-        titleTypographyProps={{ variant: 'subtitle1' }}
+        slotProps={{
+          title: { variant: 'subtitle1' },
+        }}
       />
       {children}
       <Stack divider={<Divider />}>

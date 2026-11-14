@@ -69,8 +69,10 @@ export function getDisplayHeader(
         <Box
           component="img"
           src={characterAsset('Nicole', 'burst')}
-          width="2em"
-          height="auto"
+          sx={{
+            width: '2em',
+            height: 'auto',
+          }}
         />
       ),
     }
@@ -78,18 +80,26 @@ export function getDisplayHeader(
     return {
       title: 'Moonsign: Ascendant Gleam',
       icon: (
-        <Box display="flex">
+        <Box
+          sx={{
+            display: 'flex',
+          }}
+        >
           <Box
             component="img"
             src={imgAssets.resonance.moonsign}
-            width="2em"
-            height="auto"
+            sx={{
+              width: '2em',
+              height: 'auto',
+            }}
           />
           <Box
             component="img"
             src={imgAssets.resonance.moonsign}
-            width="2em"
-            height="auto"
+            sx={{
+              width: '2em',
+              height: 'auto',
+            }}
           />
         </Box>
       ),

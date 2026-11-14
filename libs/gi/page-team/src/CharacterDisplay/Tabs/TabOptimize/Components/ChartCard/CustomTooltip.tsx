@@ -123,9 +123,24 @@ export default function CustomTooltip({
         onClick={(e) => e.stopPropagation()}
       >
         <Box>
-          <Stack gap={1}>
-            <Stack direction="row" alignItems="start" gap={1}>
-              <Stack spacing={0.5} flexGrow={99}>
+          <Stack
+            sx={{
+              gap: 1,
+            }}
+          >
+            <Stack
+              direction="row"
+              sx={{
+                alignItems: 'start',
+                gap: 1,
+              }}
+            >
+              <Stack
+                spacing={0.5}
+                sx={{
+                  flexGrow: 99,
+                }}
+              >
                 {currentlyEquipped && (
                   <SqBadge color="info">
                     <strong>{t('currentlyEquippedBuild')}</strong>
@@ -153,14 +168,14 @@ export default function CustomTooltip({
             </Stack>
             <Grid container direction="row" spacing={0.75} columns={6}>
               {selectedPoint.build?.weaponId && (
-                <Grid item xs={1}>
+                <Grid size={1}>
                   <Suspense fallback={<Skeleton width={75} height={75} />}>
                     <WeaponCardPico weaponId={selectedPoint.build.weaponId} />
                   </Suspense>
                 </Grid>
               )}
               {allArtifactSlotKeys.map((key) => (
-                <Grid item key={key} xs={1}>
+                <Grid key={key} size={1}>
                   <Suspense fallback={<Skeleton width={75} height={75} />}>
                     <ArtifactCardPico
                       artifactObj={artifactsBySlot[key]}

@@ -64,7 +64,11 @@ export function CharacterOptDisplay() {
   return (
     <OptTargetTagRowSxProvider>
       <SectionNumContext.Provider value={sections.length}>
-        <Stack gap={1}>
+        <Stack
+          sx={{
+            gap: 1,
+          }}
+        >
           {sections.map(([key, content], i) => (
             <Section key={key} title={key} index={i} zIndex={100}>
               {content}
@@ -183,15 +187,16 @@ function CharacterSection() {
               sx={{ flexWrap: 'wrap', overflow: 'visible' }}
             >
               <Grid
-                item
-                xs={12}
-                sm={7}
-                md={5}
-                lg={4}
-                xl={3}
                 sx={{
                   height: isNotXs ? '100%' : undefined,
                   overflow: 'visible',
+                }}
+                size={{
+                  xs: 12,
+                  sm: 7,
+                  md: 5,
+                  lg: 4,
+                  xl: 3,
                 }}
               >
                 <Stack
@@ -220,7 +225,15 @@ function CharacterSection() {
                   </Box>
                 </Stack>
               </Grid>
-              <Grid item xs={12} sm={5} md={7} lg={8} xl={9}>
+              <Grid
+                size={{
+                  xs: 12,
+                  sm: 5,
+                  md: 7,
+                  lg: 8,
+                  xl: 9,
+                }}
+              >
                 <Stack spacing={1.5}>
                   {characterInfoSections.map(([key, content], i) => (
                     <Section
@@ -276,12 +289,12 @@ function EquippedConditionals() {
     <Box>
       <Grid container spacing={1} columns={{ xs: 1, sm: 1, md: 2, lg: 3 }}>
         {wengine && (
-          <Grid item xs={1}>
+          <Grid size={1}>
             <WengineSheetDisplay wengine={wengine} />
           </Grid>
         )}
         {Object.entries(sets).map(([setKey, count]) => (
-          <Grid item key={setKey} xs={1}>
+          <Grid key={setKey} size={1}>
             <DiscSheetDisplay
               setKey={setKey}
               fade2={count < 2}

@@ -53,12 +53,14 @@ export function LoadoutEditorModal({
         <CardHeader
           title={t('loadout.edit')}
           avatar={<LoadoutIcon />}
-          titleTypographyProps={{ variant: 'h6' }}
           action={
             <IconButton onClick={onClose}>
               <CloseIcon />
             </IconButton>
           }
+          slotProps={{
+            title: { variant: 'h6' },
+          }}
         />
         <Divider />
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>

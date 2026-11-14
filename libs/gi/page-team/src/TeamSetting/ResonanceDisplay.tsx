@@ -42,7 +42,10 @@ export function ResonanceDisplay({
       ({
         teamId,
         team,
-        teamCharId: '', // can be left blank since its only modifying team conditional
+
+        // can be left blank since its only modifying team conditional
+        teamCharId: '',
+
         teamChar: {},
       }) as TeamCharacterContextObj,
     [team, teamId]
@@ -52,16 +55,36 @@ export function ResonanceDisplay({
     dataContextValue && (
       <DataContext.Provider value={dataContextValue}>
         <TeamCharacterContext.Provider value={teamCharContextObj}>
-          <Grid item xs={1} display="flex">
+          <Grid
+            size={1}
+            sx={{
+              display: 'flex',
+            }}
+          >
             <ElementalResonance teamId={teamId} />
           </Grid>
-          <Grid item xs={1} display="flex">
+          <Grid
+            size={1}
+            sx={{
+              display: 'flex',
+            }}
+          >
             <Moonsign />
           </Grid>
-          <Grid item xs={1} display="flex">
+          <Grid
+            size={1}
+            sx={{
+              display: 'flex',
+            }}
+          >
             <Hexerei />
           </Grid>
-          <Grid item xs={1} display="flex">
+          <Grid
+            size={1}
+            sx={{
+              display: 'flex',
+            }}
+          >
             <Reactions />
           </Grid>
         </TeamCharacterContext.Provider>
@@ -92,7 +115,9 @@ function ElementalResonance({ teamId }: { teamId: string }) {
             />
           </span>
         }
-        titleTypographyProps={{ variant: 'h6' }}
+        slotProps={{
+          title: { variant: 'h6' },
+        }}
       />
 
       <Divider />
@@ -130,7 +155,9 @@ function Moonsign() {
             </strong>
           </span>
         }
-        titleTypographyProps={{ variant: 'h6' }}
+        slotProps={{
+          title: { variant: 'h6' },
+        }}
       />
 
       <Divider />
@@ -165,7 +192,9 @@ function Hexerei() {
             </strong>
           </span>
         }
-        titleTypographyProps={{ variant: 'h6' }}
+        slotProps={{
+          title: { variant: 'h6' },
+        }}
       />
 
       <Divider />
@@ -196,7 +225,9 @@ function TeamResonanceDisplay({ resonances }: { resonances: IResonance[] }) {
                 </span>
               }
               action={res.icon}
-              titleTypographyProps={{ variant: 'subtitle2' }}
+              slotProps={{
+                title: { variant: 'subtitle2' },
+              }}
             />
             {res.canShow(data) && <Divider />}
             {res.canShow(data) && (
@@ -219,7 +250,9 @@ function Reactions() {
     <CardThemed bgt="light" sx={{ opacity: show ? 1 : 0.5, width: '100%' }}>
       <CardHeader
         title={t('elementalReaction.name')}
-        titleTypographyProps={{ variant: 'h6' }}
+        slotProps={{
+          title: { variant: 'h6' },
+        }}
       />
       <Divider />
       <CardContent>

@@ -217,20 +217,22 @@ function StatFilterItem({
               iconProps={{ color: KeyMap.getVariant(sKey) }}
             />
           )}
-          ListboxProps={{
-            style: {
-              display: 'grid',
-              gridTemplateColumns: isOneCol
-                ? '100%'
-                : isThreeCol
-                  ? '33% 33% 33%'
-                  : '50% 50%',
+          slotProps={{
+            listbox: {
+              style: {
+                display: 'grid',
+                gridTemplateColumns: isOneCol
+                  ? '100%'
+                  : isThreeCol
+                    ? '33% 33% 33%'
+                    : '50% 50%',
+              },
             },
           }}
           // This needs to be done with `style` prop, not `sx` prop, or it doesn't work
-          PopperComponent={(props) => (
-            <Popper {...props} style={{ width: '60%' }} />
-          )}
+          slots={{
+            popper: (props) => <Popper {...props} style={{ width: '60%' }} />,
+          }}
           sx={{ flexGrow: 1, flexBasis: 150 }}
           textFieldProps={{
             sx: { '& .MuiInputBase-root': { borderRadius: '4px 0 0 4px' } },
@@ -250,24 +252,26 @@ function StatFilterItem({
           onChange={onValueChange}
           placeholder="Stat Value"
           size="small"
-          inputProps={{ sx: { textAlign: 'right' } }}
-          InputProps={{
-            sx: {
-              borderTopLeftRadius: 0,
-              borderBottomLeftRadius: 0,
+          slotProps={{
+            htmlInput: { sx: { textAlign: 'right' } },
+            input: {
+              sx: {
+                borderTopLeftRadius: 0,
+                borderBottomLeftRadius: 0,
+              },
+              endAdornment: (
+                <InputAdornment position="end" sx={{ ml: 0 }}>
+                  {statKey ? getUnitStr(statKey) : undefined}{' '}
+                  <IconButton
+                    aria-label="Delete Stat Constraint"
+                    onClick={onDeleteKey}
+                    edge="end"
+                  >
+                    <DeleteForeverIcon fontSize="small" />
+                  </IconButton>
+                </InputAdornment>
+              ),
             },
-            endAdornment: (
-              <InputAdornment position="end" sx={{ ml: 0 }}>
-                {statKey ? getUnitStr(statKey) : undefined}{' '}
-                <IconButton
-                  aria-label="Delete Stat Constraint"
-                  onClick={onDeleteKey}
-                  edge="end"
-                >
-                  <DeleteForeverIcon fontSize="small" />
-                </IconButton>
-              </InputAdornment>
-            ),
           }}
         />
       )}

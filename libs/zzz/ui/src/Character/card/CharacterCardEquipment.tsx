@@ -78,14 +78,16 @@ export function CharacterCardEquipment({
       }}
     >
       <Box
-        flexShrink={1}
         component="img"
         src={characterAsset(characterKey, 'full')}
-        sx={{ maxWidth: '100%' }}
-        position="absolute"
-        zIndex={0}
-        left="-83px"
-        top="15px"
+        sx={{
+          flexShrink: 1,
+          position: 'absolute',
+          zIndex: 0,
+          left: '-83px',
+          top: '15px',
+          maxWidth: '100%',
+        }}
       />
 
       <Discs discs={characterDiscs} />
@@ -126,11 +128,11 @@ function Discs({ discs }: { discs: ICachedDisc[] }) {
               })}
             >
               <Box
-                width="30px"
-                height="30px"
-                display="flex"
-                justifyContent="center"
                 sx={{
+                  width: '30px',
+                  height: '30px',
+                  display: 'flex',
+                  justifyContent: 'center',
                   position: 'relative',
                   borderRadius: '50%',
                   overflow: 'hidden',
@@ -139,8 +141,10 @@ function Discs({ discs }: { discs: ICachedDisc[] }) {
                 <Box
                   component="img"
                   src={discDefIcon(discInfo.disc?.setKey)}
-                  width="30px"
-                  height="30px"
+                  sx={{
+                    width: '30px',
+                    height: '30px',
+                  }}
                 />
                 <Box sx={{ position: 'absolute', bottom: -3 }}>
                   <Typography

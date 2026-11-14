@@ -114,7 +114,7 @@ export function UploadCard({
       </CardContent>
       <CardContent>
         <Grid container spacing={2} sx={{ mb: 1 }}>
-          <Grid item>
+          <Grid>
             <label htmlFor="icon-button-file">
               <InvisInput
                 accept=".json"
@@ -127,7 +127,11 @@ export function UploadCard({
               </Button>
             </label>
           </Grid>
-          <Grid item flexGrow={1}>
+          <Grid
+            sx={{
+              flexGrow: 1,
+            }}
+          >
             <CardThemed sx={{ px: 2, py: 1 }}>
               <Typography>
                 {filename ? (
@@ -246,22 +250,34 @@ function SRODUploadInfo({
       <Divider />
       <CardContent>
         <Grid container spacing={2}>
-          <Grid container item spacing={2}>
-            <Grid item flexGrow={1}>
+          <Grid container spacing={2}>
+            <Grid
+              sx={{
+                flexGrow: 1,
+              }}
+            >
               <MergeResult
                 result={relics}
                 dbTotal={importedDatabase.relics.values.length}
                 type="relics"
               />
             </Grid>
-            <Grid item flexGrow={1}>
+            <Grid
+              sx={{
+                flexGrow: 1,
+              }}
+            >
               <MergeResult
                 result={lightCones}
                 dbTotal={importedDatabase.lightCones.values.length}
                 type="lightCones"
               />
             </Grid>
-            <Grid item flexGrow={1}>
+            <Grid
+              sx={{
+                flexGrow: 1,
+              }}
+            >
               <MergeResult
                 result={characters}
                 dbTotal={importedDatabase.chars.values.length}
@@ -314,7 +330,11 @@ function MergeResult({
           </Typography>
         )}
         {'remove' in result && !!result.remove.length && (
-          <Typography color="warning.main">
+          <Typography
+            sx={{
+              color: 'warning.main',
+            }}
+          >
             <Trans t={t} i18nKey="count.removed" />{' '}
             <strong>{result.remove.length}</strong>
           </Typography>
@@ -331,7 +351,11 @@ function MergeResult({
         </Typography>
         {'invalid' in result && !!result.invalid?.length && (
           <div>
-            <Typography color="error.main">
+            <Typography
+              sx={{
+                color: 'error.main',
+              }}
+            >
               <Trans t={t} i18nKey="count.invalid" />{' '}
               <strong>{result.invalid.length}</strong> / {total}
             </Typography>

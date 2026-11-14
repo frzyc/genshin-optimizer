@@ -33,7 +33,14 @@ export default function PageDiscs() {
 
   return (
     <DiscEditorSnackbarProvider>
-      <Box display="flex" flexDirection="column" gap={1} my={1}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 1,
+          my: 1,
+        }}
+      >
         <Suspense fallback={false}>
           <DiscEditor
             disc={disc}

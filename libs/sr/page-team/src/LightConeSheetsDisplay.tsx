@@ -26,7 +26,7 @@ export function LightConeSheetsDisplay() {
       <Box>
         <Grid container columns={3} spacing={1}>
           {lcList.map((setKey) => (
-            <Grid item xs={1} key={setKey}>
+            <Grid key={setKey} size={1}>
               <LightConeSheetDisplay lcKey={setKey} />
             </Grid>
           ))}

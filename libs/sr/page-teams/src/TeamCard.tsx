@@ -52,7 +52,13 @@ export function TeamCard({
           </CardActionArea>
         </Box>
         <CardContent>
-          <Grid container columns={4} gap={1}>
+          <Grid
+            container
+            columns={4}
+            sx={{
+              gap: 1,
+            }}
+          >
             {team.teamMetadata.map((cmdata, i) => (
               <CardThemed
                 key={`${i}-${cmdata?.characterKey}`}
