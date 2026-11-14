@@ -107,6 +107,11 @@ export class BuildDataManager extends DataManager<
     )
   }
 
+  /** Entries of the builds that have `weaponId` as their weapon. */
+  entriesWithWeapon(weaponId: string): [string, Build][] {
+    return this.entries.filter(([, b]) => b.weaponId === weaponId)
+  }
+
   new(build: Partial<Build> & Pick<Build, 'characterKey'>): string {
     const id = this.generateKey()
     if (!this.set(id, build)) return ''

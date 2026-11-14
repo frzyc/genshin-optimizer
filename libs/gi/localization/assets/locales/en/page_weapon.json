@@ -7,6 +7,14 @@
   "removeWeapon": "Are you sure you want to remove {{value}}?",
   "addWeapon": "Add New Weapon",
   "cantDeleteLock": "Cannot delete weapon because it is locked",
+  "weaponDelModal": {
+    "title": "Delete Weapon:",
+    "buildsAlert_one": "This weapon is used in {{count}} build. Deleting it will replace it with a default weapon in that build.",
+    "buildsAlert_other": "This weapon is used in {{count}} builds. Deleting it will replace it with a default weapon in those builds.",
+    "delBtn": "Delete Weapon"
+  },
+  "deleteWeaponsBuilds_one": "{{count}} build uses these weapons and will have its weapon replaced with a default weapon.",
+  "deleteWeaponsBuilds_other": "{{count}} builds use these weapons and will have their weapons replaced with a default weapon.",
   "button": {
     "deleteWeapons": "Delete Weapons",
     "lockWeapons": "Lock Weapons",
