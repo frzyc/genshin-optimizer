@@ -169,6 +169,8 @@ const c6_ss_dmg_ = prod(
 export default register(
   info.key,
   entriesForChar(info, data_gen),
+  // WR flags.radiance `'sc'` when lockStellarRadianceSc is `'on'`
+  ownBuff.common.radianceSc.add(lockStellarRadianceSc.map({ on: 1, ss: 0 })),
   hexereiTally(lockRevelation.ifOn(1)),
   // C3 Signature Mix (burst); C5 Icy Paws (skill)
   ownBuff.char.burst.add(cmpGE(constellation, 3, 3)),

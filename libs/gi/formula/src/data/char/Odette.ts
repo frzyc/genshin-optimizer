@@ -227,6 +227,8 @@ function stellarHit(name: string, table: number[], cond: typeof scOn) {
 export default register(
   info.key,
   entriesForChar(info, data_gen),
+  // WR flags.radiance `'sc'`
+  ownBuff.common.radianceSc.add(radianceSc),
   // C3 Adagio: Phantom Night Dancers (skill); C5 Presto: Bluebird Finale (burst)
   ownBuff.char.skill.add(cmpGE(constellation, 3, 3)),
   ownBuff.char.burst.add(cmpGE(constellation, 5, 3)),
