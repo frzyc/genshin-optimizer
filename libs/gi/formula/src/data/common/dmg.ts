@@ -74,7 +74,7 @@ const data: TagMapNodeEntries = [
   ),
   ownBuff.dmg.critMulti.add(
     lookup(own.common.critMode, {
-      crit: sum(1, own.common.cappedCritRate_),
+      crit: sum(1, own.final.critDMG_),
       nonCrit: 1,
       avg: sum(1, prod(own.common.cappedCritRate_, own.final.critDMG_)),
     })
