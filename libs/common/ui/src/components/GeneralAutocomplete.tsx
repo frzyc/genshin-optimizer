@@ -10,9 +10,9 @@ import type {
 import {
   Autocomplete,
   Chip,
+  ListItem,
   ListItemIcon,
   ListItemText,
-  MenuItem,
   Skeleton,
   TextField,
   useTheme,
@@ -104,12 +104,7 @@ export function GeneralAutocomplete<T extends string>({
         const { key, ...rest } =
           props as React.HTMLAttributes<HTMLLIElement> & { key: string }
         return (
-          <MenuItem
-            value={option.key}
-            sx={{ whiteSpace: 'normal' }}
-            key={key}
-            {...rest}
-          >
+          <ListItem sx={{ whiteSpace: 'normal' }} key={key} {...rest}>
             <ListItemIcon>{toImg(option.key)}</ListItemIcon>
             <ListItemText color={option.color}>
               <Suspense fallback={<Skeleton variant="text" width={100} />}>
@@ -127,7 +122,7 @@ export function GeneralAutocomplete<T extends string>({
               </Suspense>
             </ListItemText>
             {!!option.favorite && <FavoriteIcon />}
-          </MenuItem>
+          </ListItem>
         )
       }}
       filterOptions={(options, { inputValue }) =>
@@ -200,24 +195,31 @@ export function GeneralAutocompleteMulti<T extends string>({
           }}
         />
       )}
-      renderOption={(props, option) => (
-        <MenuItem value={option.key} {...props} key={option.key}>
-          <ListItemIcon>{toImg(option.key)}</ListItemIcon>
-          <ListItemText>
-            <Suspense fallback={<Skeleton variant="text" width={100} />}>
-              <ColorText color={option.color} sx={{ display: 'flex', gap: 1 }}>
-                {keys.includes(option.key) ? (
-                  <strong>{option.label}</strong>
-                ) : (
-                  <span>{option.label}</span>
-                )}
-                {toExItemLabel?.(option.key)}
-              </ColorText>
-            </Suspense>
-          </ListItemText>
-          {!!option.favorite && <FavoriteIcon />}
-        </MenuItem>
-      )}
+      renderOption={(props, option) => {
+        const { key, ...rest } =
+          props as React.HTMLAttributes<HTMLLIElement> & { key: string }
+        return (
+          <ListItem sx={{ whiteSpace: 'normal' }} key={key} {...rest}>
+            <ListItemIcon>{toImg(option.key)}</ListItemIcon>
+            <ListItemText>
+              <Suspense fallback={<Skeleton variant="text" width={100} />}>
+                <ColorText
+                  color={option.color}
+                  sx={{ display: 'flex', gap: 1 }}
+                >
+                  {keys.includes(option.key) ? (
+                    <strong>{option.label}</strong>
+                  ) : (
+                    <span>{option.label}</span>
+                  )}
+                  {toExItemLabel?.(option.key)}
+                </ColorText>
+              </Suspense>
+            </ListItemText>
+            {!!option.favorite && <FavoriteIcon />}
+          </ListItem>
+        )
+      }}
       renderValue={(selected, getItemProps) =>
         selected.map(({ key, label, color: variant }, index) => (
           <Chip
