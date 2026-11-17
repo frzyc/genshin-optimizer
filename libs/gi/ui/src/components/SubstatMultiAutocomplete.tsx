@@ -12,7 +12,7 @@ export function SubstatMultiAutocomplete<
   substatKeys,
   setSubstatKeys,
   totals,
-  fullWidth = true,
+  fullWidth = false,
   allSubstatKeys,
 }: {
   substatKeys: SubstatKeyParam[]

@@ -170,7 +170,6 @@ export function GeneralAutocompleteMulti<T extends string>({
   )
   return (
     <Autocomplete
-      fullWidth
       autoHighlight
       options={options}
       multiple

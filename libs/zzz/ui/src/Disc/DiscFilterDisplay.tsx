@@ -267,6 +267,7 @@ export function DiscFilterDisplay({
             />
             {/* Sub stat dropdown */}
             <SubstatMultiAutocomplete
+              fullWidth
               totals={subStatTotal}
               substatKeys={substats}
               setSubstatKeys={(substats) => filterOptionDispatch({ substats })}
