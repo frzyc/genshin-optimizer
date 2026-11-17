@@ -17,6 +17,7 @@ import {
   Box,
   Divider,
   InputAdornment,
+  MenuList,
   Stack,
   TextField,
   Typography,
@@ -201,24 +202,26 @@ export function OptTargetCommandDialog({
 
         <Box sx={{ overflow: 'auto', flex: 1, minHeight: 0, mx: -0.5 }}>
           {hasResults ? (
-            <OptFormulaSections
-              characterKey={characterKey}
-              statRows={filteredStatRows}
-              otherRows={filteredOtherRows}
-              categorySections={filteredCategorySections}
-              renderRow={(row) => {
-                const formulaRef = refFromJoinedRow(row)
-                if (!formulaRef) return null
-                return (
-                  <OptTargetFieldMenuItem
-                    key={`${formulaRef.sheet}:${formulaRef.name}:${formulaRef.dim}`}
-                    formulaRef={formulaRef}
-                    selected={sameFormula(currentRef, formulaRef)}
-                    onSelect={() => onSelectRef(formulaRef)}
-                  />
-                )
-              }}
-            />
+            <MenuList dense disablePadding>
+              <OptFormulaSections
+                characterKey={characterKey}
+                statRows={filteredStatRows}
+                otherRows={filteredOtherRows}
+                categorySections={filteredCategorySections}
+                renderRow={(row) => {
+                  const formulaRef = refFromJoinedRow(row)
+                  if (!formulaRef) return null
+                  return (
+                    <OptTargetFieldMenuItem
+                      key={`${formulaRef.sheet}:${formulaRef.name}:${formulaRef.dim}`}
+                      formulaRef={formulaRef}
+                      selected={sameFormula(currentRef, formulaRef)}
+                      onSelect={() => onSelectRef(formulaRef)}
+                    />
+                  )
+                }}
+              />
+            </MenuList>
           ) : (
             <Typography
               variant="body2"
