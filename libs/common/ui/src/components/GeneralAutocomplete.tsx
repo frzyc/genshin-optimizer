@@ -104,11 +104,7 @@ export function GeneralAutocomplete<T extends string>({
         const { key, ...rest } =
           props as React.HTMLAttributes<HTMLLIElement> & { key: string }
         return (
-          <ListItem
-            sx={{ whiteSpace: 'normal' }}
-            key={key}
-            {...rest}
-          >
+          <ListItem sx={{ whiteSpace: 'normal' }} key={key} {...rest}>
             <ListItemIcon>{toImg(option.key)}</ListItemIcon>
             <ListItemText color={option.color}>
               <Suspense fallback={<Skeleton variant="text" width={100} />}>
@@ -208,7 +204,10 @@ export function GeneralAutocompleteMulti<T extends string>({
             <ListItemIcon>{toImg(option.key)}</ListItemIcon>
             <ListItemText>
               <Suspense fallback={<Skeleton variant="text" width={100} />}>
-                <ColorText color={option.color} sx={{ display: 'flex', gap: 1 }}>
+                <ColorText
+                  color={option.color}
+                  sx={{ display: 'flex', gap: 1 }}
+                >
                   {keys.includes(option.key) ? (
                     <strong>{option.label}</strong>
                   ) : (
