@@ -123,7 +123,7 @@ export function ArtSetFilter({
         character={character}
         conditionals={conditionals}
       >
-        <Grid container spacing={1} columns={{ xs: 2, lg: 3 }}>
+        <Grid container spacing={1} columns={{ xs: 1, sm: 2, lg: 3 }}>
           {visibleSetKeys.map((d) => (
             <Grid key={d} size={1}>
               <AdvSetFilterCard

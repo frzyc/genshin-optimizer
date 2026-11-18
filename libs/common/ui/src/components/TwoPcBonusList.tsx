@@ -66,6 +66,7 @@ export function TwoPcBonusList<K extends string>({
               disabled={disabled}
               variant={allOn || someOn ? 'contained' : 'outlined'}
               color={allOn ? 'success' : someOn ? 'info' : 'primary'}
+              aria-pressed={someOn ? 'mixed' : allOn}
               onClick={() =>
                 onChange(
                   toggleTwoPcGroup(
