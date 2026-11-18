@@ -128,11 +128,11 @@ const sheet: UISheet<TalentSheetElementKey> = {
       label: ct.ch('momentumCond'),
       fields: [
         {
-          title: ct.ch('a4Momentum_electro_dmgInc'),
+          title: ct.chg('auto.skillParams.6'),
           fieldRef: formula.a4Momentum_electro_dmgInc.tag,
         },
         {
-          title: ct.ch('a4Momentum_stellarconduct_dmgInc'),
+          title: ct.chg('auto.skillParams.7'),
           fieldRef: formula.a4Momentum_stellarconduct_dmgInc.tag,
         },
       ],
