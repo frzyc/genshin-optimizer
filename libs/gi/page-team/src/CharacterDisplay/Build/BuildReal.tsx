@@ -146,6 +146,9 @@ export default function BuildReal({
         onDupe={onDupe}
         onEquip={weaponId ? onShow : undefined}
         onRemove={onRemove}
+        disabledTips={{
+          equip: t('buildCardTip.disabled.equipNoWeapon'),
+        }}
       >
         <Box
           sx={{
