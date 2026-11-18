@@ -133,9 +133,9 @@ export class WeaponDataManager extends DataManager<
     const weapon = this.get(id)
     if (!weapon || weapon.location) return undefined // Can't delete equipped weapon here
     const deletedWeapon = super.remove(id, notify)
-    this.database.builds.entries.forEach(([buildId, { weaponId }]) => {
-      weaponId === id && this.database.builds.set(buildId, {}) // use validator function to update
-    })
+    this.database.builds
+      .entriesWithWeapon(id)
+      .forEach(([buildId]) => this.database.builds.set(buildId, {})) // use validator function to update
     return deletedWeapon
   }
   override importGOOD(good: IGOOD & IGO, result: ImportResult) {
