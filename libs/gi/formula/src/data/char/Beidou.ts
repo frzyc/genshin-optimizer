@@ -124,6 +124,8 @@ const c6EleMas = burst.ifOn(
 export default register(
   info.key,
   entriesForChar(info, data_gen),
+  // WR flags.radiance `'sc'`
+  ownBuff.common.radianceSc.add(lockStellarRadianceSc.ifOn(1)),
   // C3 Tidecaller (skill); C5 Stormbreaker (burst)
   ownBuff.char.skill.add(cmpGE(constellation, 3, 3)),
   ownBuff.char.burst.add(cmpGE(constellation, 5, 3)),

@@ -1,4 +1,5 @@
 {
+  "a0_stellarconduct_baseDmg_": "Base Stellar-Conduct DMG Bonus",
   "skillDetonationCond": "Gradient Beacons consumed",
   "detonationMult_": "Steady State Core Detonation DMG Mult.",
   "a1BeaconsCond": "Steady State: Gradient Beacons owned",

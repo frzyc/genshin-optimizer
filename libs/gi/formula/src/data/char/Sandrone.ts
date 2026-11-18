@@ -148,6 +148,8 @@ const c2BeamCrit = ownBuff.premod.critDMG_.charged.add(c2_beam_critDMG_)
 export default register(
   info.key,
   entriesForChar(info, data_gen),
+  // WR flags.radiance `'sc'` when a0StellarRadianceSc is `'on'`
+  ownBuff.common.radianceSc.add(radianceOn),
   // C3 Self-Evident Proposition (auto); C5 Formule Phenomenale: Q.E.D. (burst)
   ownBuff.char.auto.add(cmpGE(constellation, 3, 3)),
   ownBuff.char.burst.add(cmpGE(constellation, 5, 3)),

@@ -145,6 +145,8 @@ const c6_stellarconduct_dmgInc = cmpNE(
 export default register(
   info.key,
   entriesForChar(info, data_gen),
+  // WR flags.radiance `'sc'` when lockStellarRadianceSc is `'on'`
+  ownBuff.common.radianceSc.add(radianceOn),
   // C3 Adeptus Art: Preserver of Fortune (burst); C5 Adeptus Art: Herald of Frost (skill)
   ownBuff.char.burst.add(cmpGE(constellation, 3, 3)),
   ownBuff.char.skill.add(cmpGE(constellation, 5, 3)),

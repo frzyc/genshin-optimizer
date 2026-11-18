@@ -134,6 +134,8 @@ const c6Precision_eleMas = cmpNE(
 export default register(
   info.key,
   entriesForChar(info, data_gen),
+  // WR flags.radiance `'sc'`
+  ownBuff.common.radianceSc.add(a0StellarRadianceSc.ifOn(1)),
   // C3 skill; C5 burst
   ownBuff.char.skill.add(cmpGE(constellation, 3, 3)),
   ownBuff.char.burst.add(cmpGE(constellation, 5, 3)),

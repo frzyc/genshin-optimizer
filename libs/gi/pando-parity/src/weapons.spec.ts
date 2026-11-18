@@ -137,6 +137,89 @@ describe('weapons WR ↔ Pando', () => {
       expect(wrDelta).toBeGreaterThan(0.1)
       expect(relDiff(wrDelta, pDelta)).toBeLessThan(REL_TOL)
     })
+    test('StarsealedEdict skill EM, stacks, radiance crit', () => {
+      const off = withWeapon('StarsealedEdict', 1)
+      const on = withWeapon('StarsealedEdict', 1, {
+        wrConditionals: { StarsealedEdict: { skill: 'on', stacks: '3' } },
+        pandoConditionals: [
+          pandoCond('StarsealedEdict', 'skill'),
+          pandoCond('StarsealedEdict', 'stacks', 3),
+        ],
+      })
+      const wrOff = buildWrSolo(off)
+      const pOff = buildPando(off)
+      const wrOn = buildWrSolo(on)
+      const pOn = buildPando(on)
+      assertFinals(wrOff, pOff)
+      assertFinals(wrOn, pOn)
+      const wrEm =
+        (wrOn.get(input.total.eleMas).value as number) -
+        (wrOff.get(input.total.eleMas).value as number)
+      const pEm =
+        (pOn.compute(own.final.eleMas).val as number) -
+        (pOff.compute(own.final.eleMas).val as number)
+      // R1: 48 + 3 * 24
+      expect(wrEm).toBeCloseTo(120)
+      expect(relDiff(wrEm, pEm)).toBeLessThan(REL_TOL)
+      const wrCrit =
+        (wrOn.get(input.total.critDMG_).value as number) -
+        (wrOff.get(input.total.critDMG_).value as number)
+      // Noelle has no radiance flag, so stack crit stays 0.
+      expect(wrCrit).toBeCloseTo(0)
+
+      const member = NOELLE_BASE.members[0]
+      if (!member) throw new Error('missing member')
+      const radiant: ParityFixture = {
+        members: [
+          {
+            char: {
+              key: 'Alyosha',
+              level: 80,
+              talent: { auto: 8, skill: 8, burst: 8 },
+              ascension: 6,
+              constellation: 6,
+            },
+            weapon: {
+              ...member.weapon,
+              key: 'StarsealedEdict',
+              refinement: 1,
+              location: 'Alyosha',
+            },
+          },
+        ],
+        enemy: { lvl: 90, preRes: 0.1 },
+        hitMode: 'avgHit',
+        wrConditionals: {
+          StarsealedEdict: { skill: 'on', stacks: '3' },
+          Alyosha: { a0StellarRadianceSc: 'on' },
+        },
+        pandoConditionals: [
+          pandoCond('StarsealedEdict', 'skill'),
+          pandoCond('StarsealedEdict', 'stacks', 3),
+          pandoCond('Alyosha', 'a0StellarRadianceSc'),
+        ],
+      }
+      const wrRad = buildWrSolo(radiant)
+      const pRad = buildPando(radiant)
+      assertFinals(wrRad, pRad)
+      const wrRadCrit = wrRad.get(input.total.critDMG_).value as number
+      const pRadCrit = pRad.compute(own.final.critDMG_).val as number
+      expect(relDiff(wrRadCrit, pRadCrit)).toBeLessThan(REL_TOL)
+      const plain: ParityFixture = {
+        ...radiant,
+        wrConditionals: { StarsealedEdict: { skill: 'on', stacks: '3' } },
+        pandoConditionals: [
+          pandoCond('StarsealedEdict', 'skill'),
+          pandoCond('StarsealedEdict', 'stacks', 3),
+        ],
+      }
+      const pPlain = buildPando(plain)
+      // R1 radiance stacks: 3 * 12%
+      expect(
+        (pRadCrit as number) -
+          (pPlain.compute(own.final.critDMG_).val as number)
+      ).toBeCloseTo(0.36)
+    })
     test('TulaytullahsRemembrance atkSPD_ R1', () => {
       const fixture = withWeapon('TulaytullahsRemembrance')
       const wr = buildWrSolo(fixture)
