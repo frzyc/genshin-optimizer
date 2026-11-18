@@ -20,24 +20,29 @@ export function ArtSheetDisplay({
   setKey,
   fade2 = false,
   fade4 = false,
+  header,
   children,
 }: {
   setKey: ArtifactSetKey
   fade2?: boolean
   fade4?: boolean
+  /** Replaces the compact name-and-icon header. */
+  header?: ReactNode
   children?: ReactNode
 }) {
   const artSheet = artUiSheets[setKey]
   if (!artSheet) return null
   return (
     <CardThemed bgt="light" sx={{ height: '100%', ...pandoCardSx }}>
-      <CardHeader
-        title={<ArtifactSetName setKey={setKey} />}
-        avatar={<ImgIcon src={artifactDefIcon(setKey)} size={2} />}
-        slotProps={{
-          title: { variant: 'subtitle1' },
-        }}
-      />
+      {header ?? (
+        <CardHeader
+          title={<ArtifactSetName setKey={setKey} />}
+          avatar={<ImgIcon src={artifactDefIcon(setKey)} size={2} />}
+          slotProps={{
+            title: { variant: 'subtitle1' },
+          }}
+        />
+      )}
       {children}
       <Stack divider={<Divider />}>
         {Object.entries(artSheet).map(([key, uiSheetElement]) =>
