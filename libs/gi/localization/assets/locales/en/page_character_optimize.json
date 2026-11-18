@@ -24,6 +24,7 @@
     "buildAlreadyInList": "Build is already in the list"
   },
   "levelFilter": "Artifact Level Filter",
+  "rarityFilter": "Artifact Rarity Filter",
   "upOptLevelFilter": "Artifact Upgrader Level Filter",
   "upOptLevelFilterTooltip": "This level filter is not synced with Optimize config.",
   "upOptNoResults": "It looks like there aren't any artifacts available for upgrading that could enhance your setup. Your artifact filters might be too restrictive. Alternatively, try the main artifact optimizer to find a better build.",
