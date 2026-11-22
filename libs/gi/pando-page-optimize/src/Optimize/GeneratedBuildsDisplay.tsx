@@ -287,7 +287,7 @@ function DeltaPercent({
   return (
     <Typography
       component="span"
-      color={pct >= 0 ? 'success.main' : 'error.main'}
+      color={pct >= 0 ? 'success' : 'error'}
     >
       {sign}
       {pct.toFixed(1)}%

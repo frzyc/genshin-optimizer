@@ -162,7 +162,7 @@ export function TextFieldDisplay({
         py: 0.25,
       }}
     >
-      <Typography color={`${variant}.main`}>
+      <Typography color={variant}>
         {titleEle}
         {subtitleEle}
       </Typography>

@@ -26,7 +26,7 @@ export function IconStatDisplay({
   return (
     <Typography
       key={statKey}
-      color={color ? `${color}.main` : undefined}
+      color={color}
       {...typographyProps}
     >
       <StatIcon statKey={statKey} iconProps={iconInlineProps} /> {tk(statKey)}{' '}
