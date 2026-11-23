@@ -17,6 +17,7 @@ import { initialWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   WeaponCard,
+  WeaponDeleteModal,
   WeaponEditor,
   WeaponSelectionModal,
   weaponFilterConfigs,
@@ -62,19 +63,37 @@ export default function PageWeapon() {
 
   const brPt = useMediaQueryUp()
 
-  const deleteWeapon = useCallback(
-    async (key: string) => {
-      const weapon = database.weapons.get(key)
-      if (!weapon) return
-      const name = t(`weaponNames_gen:${weapon.key}`)
-
-      if (!window.confirm(t('removeWeapon', { value: name }))) return
+  const removeWeapon = useCallback(
+    (key: string) => {
       database.weapons.remove(key)
       if (displayWeapon.editWeaponId === key)
         database.displayWeapon.set({ editWeaponId: '' })
     },
-    [displayWeapon.editWeaponId, database, t]
+    [displayWeapon.editWeaponId, database]
   )
+
+  // Id of the weapon pending deletion in the modal that lists affected builds
+  const [delWeaponId, setDelWeaponId] = useState('')
+  const deleteWeapon = useCallback(
+    (key: string) => {
+      const weapon = database.weapons.get(key)
+      if (!weapon) return
+      if (database.builds.entriesWithWeapon(key).length) {
+        setDelWeaponId(key)
+        return
+      }
+      const name = t(`weaponNames_gen:${weapon.key}`)
+
+      if (!window.confirm(t('removeWeapon', { value: name }))) return
+      removeWeapon(key)
+    },
+    [database, removeWeapon, t]
+  )
+  const onHideDelModal = useCallback(() => setDelWeaponId(''), [])
+  const onConfirmDelete = useCallback(() => {
+    removeWeapon(delWeaponId)
+    setDelWeaponId('')
+  }, [delWeaponId, removeWeapon])
 
   const editWeapon = useCallback(
     (key: string | undefined) => {
@@ -205,6 +224,14 @@ export default function PageWeapon() {
           weaponId={editWeaponId}
           footer
           onClose={resetEditWeapon}
+        />
+      </Suspense>
+      <Suspense fallback={false}>
+        <WeaponDeleteModal
+          weaponId={delWeaponId}
+          show={!!delWeaponId}
+          onHide={onHideDelModal}
+          onDelete={onConfirmDelete}
         />
       </Suspense>
 

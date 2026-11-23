@@ -27,11 +27,7 @@ import {
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact, ICachedSubstat } from '@genshin-optimizer/gi/db'
-import {
-  useArtifact,
-  useDatabase,
-  useDBMeta,
-} from '@genshin-optimizer/gi/db-ui'
+import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   artDisplayValue,
@@ -52,10 +48,6 @@ import {
   CardHeader,
   Chip,
   IconButton,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
   Skeleton,
   SvgIcon,
   Typography,
@@ -64,12 +56,8 @@ import type { ReactNode } from 'react'
 import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CloseIcon, ExcludeIcon } from '../../consts'
-import {
-  CharacterName,
-  CharIconSide,
-  LocationAutocomplete,
-  LocationName,
-} from '../character'
+import { BuildUsageList } from '../build/BuildUsageList'
+import { LocationAutocomplete, LocationName } from '../character'
 import { PercentBadge } from '../PercentBadge'
 import { ArtifactSetTooltipContent } from './ArtifactSetTooltip'
 import {
@@ -181,19 +169,15 @@ export function ArtifactCardObj({
   )
   const database = useDatabase()
   const buildEntries = useDataManagerEntries(database.builds)
-  const builds: {
-    buildName: string
-    charKey: CharacterKey
-  }[] = useMemo(() => {
-    return buildEntries
-      .filter(
-        ([, { artifactIds }]) => artifactIds[artifact.slotKey] === artifact.id
-      )
-      .map(([, { name, characterKey }]) => ({
-        charKey: characterKey,
-        buildName: name,
-      }))
-  }, [buildEntries, artifact.slotKey, artifact.id])
+  const builds = useMemo(
+    () =>
+      buildEntries
+        .filter(
+          ([, { artifactIds }]) => artifactIds[artifact.slotKey] === artifact.id
+        )
+        .map(([, build]) => build),
+    [buildEntries, artifact.slotKey, artifact.id]
+  )
   const artifactValid = maxEfficiency !== 0
   const slotName = <ArtifactSetSlotName setKey={setKey} slotKey={slotKey} />
   const slotDesc = <ArtifactSetSlotDesc setKey={setKey} slotKey={slotKey} />
@@ -629,12 +613,8 @@ function ArtifactBuildUsageModal({
   show: boolean
   onHide: () => void
   usageText: string
-  builds: {
-    buildName: string
-    charKey: CharacterKey
-  }[]
+  builds: { characterKey: CharacterKey; name: string }[]
 }) {
-  const { gender } = useDBMeta()
   return (
     <ModalWrapper open={show} onClose={onHide}>
       <CardThemed>
@@ -657,28 +637,7 @@ function ArtifactBuildUsageModal({
             </IconButton>
           }
         />
-        <List>
-          {builds.map((build, index) => (
-            <ListItem key={index}>
-              <ListItemIcon>
-                <CharIconSide characterKey={build.charKey} />
-              </ListItemIcon>
-              <ListItemText
-                disableTypography={true}
-                sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}
-                primary={
-                  <>
-                    <CharacterName
-                      characterKey={build.charKey}
-                      gender={gender}
-                    />
-                    {`: ${build.buildName}`}
-                  </>
-                }
-              />
-            </ListItem>
-          ))}
-        </List>
+        <BuildUsageList builds={builds} />
       </CardThemed>
     </ModalWrapper>
   )
