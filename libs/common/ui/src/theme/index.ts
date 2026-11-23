@@ -115,6 +115,17 @@ declare module '@mui/material/Button' {
   }
 }
 
+declare module '@mui/material/Typography' {
+  interface TypographyPropsColorOverrides {
+    roll1: true
+    roll2: true
+    roll3: true
+    roll4: true
+    roll5: true
+    roll6: true
+  }
+}
+
 declare module '@mui/material/Chip' {
   interface ChipPropsColorOverrides {
     warning: true

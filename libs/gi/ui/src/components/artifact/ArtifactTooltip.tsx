@@ -65,7 +65,7 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
         <SlotIcon slotKey={slotKey} iconProps={iconInlineProps} />{' '}
         <ArtifactSetSlotName setKey={setKey} slotKey={slotKey} />
       </Typography>
-      <Typography variant="subtitle1" color={`${mainVariant}.main`}>
+      <Typography variant="subtitle1" color={mainVariant}>
         <StatIcon statKey={mainStatKey} iconProps={iconInlineProps} />{' '}
         {tk(mainStatKey)} {getMainStatDisplayStr(mainStatKey, rarity, level)}
       </Typography>
@@ -118,7 +118,7 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
       >
         <ArtifactSetName setKey={setKey} />
       </Typography>
-      <LocationName color="secondary.main" location={art.location} />
+      <LocationName color="secondary" location={art.location} />
     </Box>
   )
 }

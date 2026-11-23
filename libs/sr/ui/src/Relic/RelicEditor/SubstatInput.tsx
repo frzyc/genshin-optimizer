@@ -233,7 +233,7 @@ export default function SubstatInput({
                       rollOffset + rollData.indexOf(val),
                       1,
                       6
-                    )}.main`}
+                    )}`}
                     sx={{ ml: 1 }}
                   >
                     {/* {artDisplayValue(val, unit)} */}

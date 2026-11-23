@@ -24,11 +24,7 @@ export function IconStatDisplay({
   const unit = getUnitStr(statKey)
   const valueStr = artDisplayValue(value, unit)
   return (
-    <Typography
-      key={statKey}
-      color={color ? `${color}.main` : undefined}
-      {...typographyProps}
-    >
+    <Typography key={statKey} color={color} {...typographyProps}>
       <StatIcon statKey={statKey} iconProps={iconInlineProps} /> {tk(statKey)}{' '}
       <strong>{`${prefix}${valueStr}${unit}`}</strong>
     </Typography>

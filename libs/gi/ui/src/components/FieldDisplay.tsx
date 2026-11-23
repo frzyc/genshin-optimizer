@@ -99,7 +99,7 @@ export function BasicFieldDisplay({
         py: 0.25,
       }}
     >
-      <Typography color={`${variant}.main`}>
+      <Typography color={variant}>
         {text}
         {suffix}
       </Typography>

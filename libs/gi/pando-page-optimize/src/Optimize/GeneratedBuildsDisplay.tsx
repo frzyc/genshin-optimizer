@@ -285,10 +285,7 @@ function DeltaPercent({
   const pct = ((value - baseValue) / baseValue) * 100
   const sign = pct >= 0 ? '+' : ''
   return (
-    <Typography
-      component="span"
-      color={pct >= 0 ? 'success.main' : 'error.main'}
-    >
+    <Typography component="span" color={pct >= 0 ? 'success' : 'error'}>
       {sign}
       {pct.toFixed(1)}%
     </Typography>
