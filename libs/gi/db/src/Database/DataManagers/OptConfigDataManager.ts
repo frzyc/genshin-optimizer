@@ -7,6 +7,7 @@ import {
 import { clamp, deepClone, deepFreeze } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import {
+  allArtifactRarityKeys,
   allArtifactSetKeys,
   allLocationCharacterKeys,
   allSubstatKeys,
@@ -112,6 +113,7 @@ const optConfigSchema = z.object({
   compareBuild: zodBoolean(true),
   levelLow: zodClampedNumber(0, 20, defaultOptArtifactLevel),
   levelHigh: zodClampedNumber(0, 20, defaultOptArtifactLevel),
+  rarity: zodFilteredArray(allArtifactRarityKeys, allArtifactRarityKeys),
   useTeammateBuild: zodBoolean(),
   generatedBuildListId: z.string().optional().catch(undefined),
   upOptLevelLow: zodClampedNumber(0, 20, 0),
@@ -148,6 +150,7 @@ export class OptConfigDataManager extends DataManager<
       generatedBuildListId,
       levelLow,
       levelHigh,
+      rarity,
       upOptLevelLow,
       upOptLevelHigh,
     } = data
@@ -189,6 +192,10 @@ export class OptConfigDataManager extends DataManager<
     levelLow = clamp(levelLow, levelLow, levelHigh)
     levelHigh = clamp(levelHigh, levelLow, levelHigh)
 
+    // Business logic: dedupe rarities, and allow all rarities if none are selected
+    rarity = [...new Set(rarity)]
+    if (!rarity.length) rarity = [...allArtifactRarityKeys]
+
     // Business logic: ensure upOptLevelLow <= upOptLevelHigh
     upOptLevelLow = clamp(upOptLevelLow, upOptLevelLow, upOptLevelHigh)
     upOptLevelHigh = clamp(upOptLevelHigh, upOptLevelLow, upOptLevelHigh)
@@ -200,6 +207,7 @@ export class OptConfigDataManager extends DataManager<
       generatedBuildListId,
       levelLow,
       levelHigh,
+      rarity,
       upOptLevelLow,
       upOptLevelHigh,
       upOptReshapeRolls,

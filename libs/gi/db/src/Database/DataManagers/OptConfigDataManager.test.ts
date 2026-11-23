@@ -93,6 +93,45 @@ describe('OptConfigDataManager', () => {
     expect(result?.levelLow).toBeLessThanOrEqual(result?.levelHigh ?? 0)
   })
 
+  it('should default to allowing all artifact rarities', () => {
+    const id = optConfigs.new()
+    expect(optConfigs.get(id)?.rarity).toEqual([5, 4, 3])
+  })
+
+  it('should keep a valid rarity selection', () => {
+    const id = optConfigs.new()
+    const valid = {
+      ...optConfigs.get(id),
+      rarity: [5, 4],
+    }
+    const result = optConfigs['validate'](valid, id)
+    expect(result?.rarity).toEqual([5, 4])
+  })
+
+  it('should filter out invalid and duplicate rarities', () => {
+    const id = optConfigs.new()
+    const invalid = {
+      ...optConfigs.get(id),
+      rarity: [5, 1, 5, '4', 2],
+    }
+    const result = optConfigs['validate'](invalid, id)
+    expect(result?.rarity).toEqual([5])
+  })
+
+  it('should allow all rarities when none are selected', () => {
+    const id = optConfigs.new()
+    const empty = {
+      ...optConfigs.get(id),
+      rarity: [],
+    }
+    expect(optConfigs['validate'](empty, id)?.rarity).toEqual([5, 4, 3])
+    const invalid = {
+      ...optConfigs.get(id),
+      rarity: 'INVALID',
+    }
+    expect(optConfigs['validate'](invalid, id)?.rarity).toEqual([5, 4, 3])
+  })
+
   it('should ensure upOptLevelLow <= upOptLevelHigh', () => {
     const id = optConfigs.new()
     const invalid = {
