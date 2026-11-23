@@ -11,7 +11,15 @@
     "copyTc": "Copy to TC Builds",
     "duplicate": "Duplicate Build",
     "equip": "Equip Build",
-    "delete": "Delete Build"
+    "delete": "Delete Build",
+    "disabled": {
+      "editEquipped": "The Equipped Build reflects the character's current equipment, so it cannot be edited here",
+      "equipAlreadyEquipped": "This build is already equipped",
+      "deleteEquipped": "The Equipped Build cannot be deleted",
+      "copyTcAlreadyTc": "This is already a TC Build",
+      "equipTc": "TC Builds are theorycrafts and cannot be equipped",
+      "equipNoWeapon": "This build has no weapon, so it cannot be equipped"
+    }
   },
   "buildEqCard": {
     "name": "Equipped Build",
