@@ -249,9 +249,7 @@ function SubstatDisplay({
     >
       <Typography
         sx={{ flexGrow: 1, display: 'flex', gap: 0.5, alignItems: 'center' }}
-        color={
-          numRolls ? rollColor : !isActiveStat ? 'secondary' : 'error'
-        }
+        color={numRolls ? rollColor : !isActiveStat ? 'secondary' : 'error'}
         component="span"
       >
         <BootstrapTooltip

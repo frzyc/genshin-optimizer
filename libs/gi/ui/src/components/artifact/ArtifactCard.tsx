@@ -593,7 +593,9 @@ function SubstatDisplay({
       <Typography
         sx={{ flexGrow: 1 }}
         color={
-          hideValue ? 'roll1' : getSubstatColor(numRolls, isActiveStat, rollColor)
+          hideValue
+            ? 'roll1'
+            : getSubstatColor(numRolls, isActiveStat, rollColor)
         }
         component="span"
       >
