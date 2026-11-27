@@ -1,6 +1,9 @@
 import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import type { Read } from '@genshin-optimizer/game-opt/engine'
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
+import {
+  type CharacterKey,
+  statKeyTextMap,
+} from '@genshin-optimizer/zzz/consts'
 import type {
   FormulaCatalogEntry,
   FormulaRef,
@@ -13,10 +16,12 @@ import {
   STAT_SHEET,
   sameFormula,
 } from '@genshin-optimizer/zzz/formula'
+import { abilitySearchFields } from './char/abilityFormulaLabels'
 import {
   allTalentSheetElementKey,
   type TalentSheetElementKey,
 } from './char/consts'
+import { getTagLabel } from './tagLabel'
 
 export type CatalogJoinedRow = {
   entry: FormulaCatalogEntry
@@ -168,4 +173,25 @@ export function groupJoinedRows(rows: CatalogJoinedRow[]): {
     }))
 
   return { statRows, otherRows, categorySections }
+}
+
+/** User-visible labels for command-palette / search filtering. */
+export function catalogJoinedRowSearchFields(row: CatalogJoinedRow): string[] {
+  const { entry } = row
+  const parts = [
+    entry.sheet,
+    entry.name,
+    entry.abilityKey ?? '',
+    entry.skill ?? '',
+    entry.hitIndex ?? '',
+  ]
+  for (const read of row.reads.values()) {
+    parts.push(...abilitySearchFields(read.tag))
+    const labelKey = getTagLabel(read.tag)
+    if (!labelKey) continue
+    parts.push(labelKey)
+    const mapped = statKeyTextMap[labelKey]
+    if (mapped) parts.push(mapped)
+  }
+  return parts.filter(Boolean)
 }
