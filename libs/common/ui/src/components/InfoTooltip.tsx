@@ -14,6 +14,7 @@ export function InfoTooltipInline(props: Omit<TooltipProps, 'children'>) {
     <BootstrapTooltip placement="top" {...props}>
       <InfoIcon
         fontSize="inherit"
+        tabIndex={0}
         sx={{ cursor: 'help', verticalAlign: '-10%' }}
       />
     </BootstrapTooltip>
